@@ -384,6 +384,7 @@ addEventListener('message', (e) => {
 // 捲出畫面就暫停（省電、也不會在看不到的地方自己換頁），捲回來且沒被使用者按停就繼續
 const vio = new IntersectionObserver((es) => es.forEach((en) => {
   const a = en.target._auto; if (!a) return;
+  if (en.isIntersecting && !a.st.visible) a.peek();
   a.st.visible = en.isIntersecting; a.apply();
 }), { threshold: 0.35 });
 const phones = [...document.querySelectorAll('figure.ph.shot')].filter((f) => {
@@ -460,8 +461,11 @@ const pio = new IntersectionObserver((entries) => entries.forEach((en) => {
     f._fr?.contentWindow?.postMessage({ type: 'tz-auto-ctl', cmd: p ? 'pause' : 'play' }, '*');
   };
   const label = (paused) => { if (paused) { st.sticky = true; apply(); } };   // 畫面裡使用者自己動手了
-  btn.onclick = (e) => { e.stopPropagation(); st.sticky = !st.sticky; apply(); };
-  f._auto = { st, apply }; f._label = label;
+  btn.onclick = (e) => { e.stopPropagation(); st.sticky = !st.sticky; apply(); peek(); };
+  // 觸控裝置沒有滑鼠移上去：播放中只在捲進畫面、按過之後亮一下就收，暫停時才一直顯示（使用者 2026-10-12：一直擋住畫面）
+  let peekT = 0;
+  const peek = () => { btn.classList.add('is-peek'); clearTimeout(peekT); peekT = setTimeout(() => btn.classList.remove('is-peek'), 1500); };
+  f._auto = { st, apply, peek }; f._label = label;
   // 鎖定畫面：時間條要在首頁上直接拖，不蓋「點了就全螢幕」那一層
   f.append(...(DIRECT.has(f.dataset.screen) ? [] : [hit]), ...(auto ? [btn] : []));
   frames.set(fr, label); vio.observe(f);

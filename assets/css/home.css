@@ -562,7 +562,9 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
 .auto-ctl::before { content:""; width:14px; height:18px; border-left:5px solid #fff; border-right:5px solid #fff; box-sizing:border-box; }
 .auto-ctl[data-paused="true"]::before { width:0; height:0; border:0; border-left:17px solid #fff;
   border-top:11px solid transparent; border-bottom:11px solid transparent; margin-left:5px; }
-@media (hover:none) { .auto-ctl { opacity:.85; transform:scale(.8); } }
+/* 觸控：播放中不擋畫面，捲進來／按過之後亮 1.5 秒就收；暫停時一直顯示（隱形時照樣點得到） */
+@media (hover:none) { .auto-ctl { transform:scale(.8); transition:opacity .4s, transform .15s; }
+  .auto-ctl.is-peek, .auto-ctl[data-paused="true"] { opacity:.85; } }
 /* 點手機畫面就全螢幕：一層透明的按鈕蓋在畫面上 */
 .phone-hit { position:absolute; inset:0; z-index:4; border:0; padding:0; background:transparent; border-radius:inherit; cursor:zoom-in; }
 .phone-hit:focus-visible { box-shadow:0 0 0 3px var(--accent); }
