@@ -1,0 +1,24 @@
+/* 首頁的快取版本號：`node tools/stamp-home.mjs`（改了 home.css／home.js／screens 的自動示範腳本之後跑）。
+ *
+ * tripezgo.com 前面的 Cloudflare 把 CSS／JS 快取 4 小時、網址不帶版本，手機會一直用舊檔（2026-10-12）。
+ * 1. screens/autoplay.js＋stories*.js 的內容雜湊 → home.js 的 AUTO_V（iframe 網址帶 av=，一路帶到 stories-*.js）
+ * 2. home.css、home.js 的內容雜湊 → index.html 的 ?v=
+ * 3. 重產 en／ja 首頁（tools/home-i18n.py 照母版帶這兩行） */
+import { createHash } from 'node:crypto';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+
+const root = new URL('../', import.meta.url);
+const read = (p) => readFileSync(new URL(p, root));
+const hash = (...ps) => { const h = createHash('sha256'); ps.forEach((p) => h.update(read(p))); return h.digest('hex').slice(0, 10); };
+const swap = (p, re, to) => {
+  const s = read(p).toString(); if (!re.test(s)) throw new Error(`${p} 裡找不到 ${re}`);
+  writeFileSync(new URL(p, root), s.replace(re, to));
+};
+
+const av = hash('screens/autoplay.js', 'screens/stories.js', 'screens/stories-plan.js', 'screens/stories-map.js', 'screens/stories-tools.js');
+swap('assets/js/home.js', /const AUTO_V = '[^']*';/, `const AUTO_V = '${av}';`);
+swap('index.html', /href="\/assets\/css\/home\.css[^"]*"/, `href="/assets/css/home.css?v=${hash('assets/css/home.css')}"`);
+swap('index.html', /src="\/assets\/js\/home\.js[^"]*"/, `src="/assets/js/home.js?v=${hash('assets/js/home.js')}"`);
+execFileSync('python3', [new URL('tools/home-i18n.py', root).pathname], { stdio: 'ignore' });
+console.log('stamped: av', av);

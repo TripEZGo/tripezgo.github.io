@@ -365,6 +365,8 @@ function fitPlay() {
   f.querySelector('iframe').style.transform = `scale(${w / 402})`;
 }
 const DIRECT = new Set(['lock']);
+// autoplay.js＋stories*.js 的內容雜湊（tools/stamp-home.mjs 蓋）：帶進 iframe 網址，改了腳本手機不會用到快取裡的舊版
+const AUTO_V = 'd0ff7513ae';
 const NO_AUTO = new Set(['note', 'members', 'lock', 'widget', 'apple-calendar', 'scan', 'fx', 'siri']);   // 沒有東西可演的、或使用者自己拖比較好的
 addEventListener('message', (e) => {
   if (e.data?.type === 'tz-esc' && playDlg?.open) { playDlg.close(); return; }
@@ -372,7 +374,13 @@ addEventListener('message', (e) => {
   if (e.data?.type === 'tz-auto-progress') {
     const f = phones.find((p) => [...p.querySelectorAll('iframe')].some((fr) => fr.contentWindow === e.source));
     const bar = f?.querySelector('.auto-prog > i'); if (!bar) return;
-    bar.classList.toggle('is-reset', e.data.p === 0); bar.style.width = (e.data.p * 100).toFixed(1) + '%';
+    const d = e.data;
+    if (d.reset) { bar.style.transition = 'none'; bar.style.width = '0'; return; }
+    if (d.hold) { bar.style.width = getComputedStyle(bar).width; bar.style.transition = 'none'; return; }   // 停在現在的位置
+    if (d.from == null) return;
+    // 這一步：從 from 線性走到 to，花這一步的時間
+    bar.style.transition = 'none'; bar.style.width = (d.from * 100).toFixed(2) + '%'; void bar.offsetWidth;
+    bar.style.transition = `width ${d.ms}ms linear`; bar.style.width = (d.to * 100).toFixed(2) + '%';
     return;
   }
   if (e.data?.type === 'tz-auto-loop') { for (const f of phones) if (f._fr?.contentWindow === e.source) reloop(f); return; }
@@ -439,7 +447,7 @@ function mountPhone(f) {
   const fr = document.createElement('iframe');
   // 自動示範只給有東西可操作的段落：Hero 三張與筆記不跑（使用者 2026-10-11）
   const auto = !f.closest('.hero') && !NO_AUTO.has(f.dataset.screen);
-  fr.src = `/screens/${page}.html?lang=${SCREEN_LANG}&interactive=1${auto ? '&auto=' + f.dataset.screen : ''}${q ? '&' + q : ''}`;
+  fr.src = `/screens/${page}.html?lang=${SCREEN_LANG}&interactive=1${auto ? '&auto=' + f.dataset.screen + '&av=' + AUTO_V : ''}${q ? '&' + q : ''}`;
   fr.name = `ph-${f.dataset.screen}-${phones.indexOf(f)}`;   // 每支手機自己的狀態 id（autoplay、demo-state 用）
   fr.title = f.querySelector('img').alt; fr.width = 402; fr.height = 874;
   const isMap = page === 'map-live';
@@ -468,7 +476,7 @@ function mountPhone(f) {
   f._auto = { st, apply };
   // 鎖定畫面：時間條要在首頁上直接拖，不蓋「點了就全螢幕」那一層
   f.append(...(DIRECT.has(f.dataset.screen) ? [] : [hit]));
-  if (auto) f.insertAdjacentHTML('beforeend', '<span class="auto-prog" aria-hidden="true"><i class="is-reset"></i></span>');
+  if (auto) f.insertAdjacentHTML('beforeend', '<span class="auto-prog" aria-hidden="true"><i></i></span>');
   if (auto) f.classList.add('has-prog');
   vio.observe(f);
 }
@@ -489,6 +497,9 @@ phones.forEach((f) => { (SCREEN_OF[f.dataset.screen][0] === 'map-live' ? mio : p
     new IntersectionObserver(([e]) => { past = !e.isIntersecting && e.boundingClientRect.top < 0; sync(); }).observe(hero);
     const eio = new IntersectionObserver((es) => { es.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target))); sync(); });
     ends.forEach((a) => eio.observe(a));
+    // 捲動中淡出、停下來 250ms 再淡入（使用者 2026-10-12）
+    let idle = 0;
+    addEventListener('scroll', () => { fab.classList.add('is-scrolling'); clearTimeout(idle); idle = setTimeout(() => fab.classList.remove('is-scrolling'), 250); }, { passive: true });
   }
 }
 

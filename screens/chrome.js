@@ -138,7 +138,7 @@ export function ready() {
   document.fonts.ready.then(() => {
     document.body.dataset.ready = '1';
     // 首頁外框帶 auto=<故事> 才自動操作（screens/autoplay.js）；截圖工具不帶
-    if (interactive && params.get('auto')) import('./autoplay.js');
+    if (interactive && params.get('auto')) import('./autoplay.js' + (params.get('av') ? '?v=' + params.get('av') : ''));   // av：home.js 蓋的版本號
   });
 }
 

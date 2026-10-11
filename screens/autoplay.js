@@ -19,7 +19,7 @@
 //   { wait: ms }                         多停一下
 //   { call: 'name' }                     呼叫頁面掛在 window.__auto[name] 的函式（真的沒辦法用點的時候才用）
 // 所有選擇器都在這支 iframe 的 document 裡找；找不到就等最多 2 秒，再找不到跳過這一步。
-import { STORIES, INPLACE } from './stories.js';
+const { STORIES, INPLACE } = await import('./stories.js' + new URL(import.meta.url).search);   // 版本號一路帶下去
 
 const GAP = 500;
 const params = new URLSearchParams(location.search);
@@ -27,14 +27,21 @@ const story = params.get('auto');
 const steps = STORIES[story] || [];
 const KEY = `tz-auto:${window.name || story}`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-// 進度回報給首頁（外框底下的進度條，使用者 2026-10-12）：做完第幾步／共幾步，0 是一輪重來
-const progress = (i) => parent.postMessage({ type: 'tz-auto-progress', p: steps.length ? i / steps.length : 0 }, '*');
+// 進度回報給首頁（外框底下的進度條，使用者 2026-10-12）。照每一步「大概要多久」算，條才會跟著動畫等速走：
+// 每一步開始時送 from→to 跟這一步的毫秒數，首頁那邊用線性動畫補；暫停時送 hold，條停在原地。
+const est = (s) => (s.wait ?? 0) + (s.call || s.wait ? 0 : 420) + (s.tap ? 380 : 0) + (s.press ? s.hold || 600 : 0)
+  + (s.drag || s.swipe ? (s.swipe ? 0 : s.hold ?? 450) + (s.ms || (s.swipe ? 350 : 650)) : 0)
+  + (s.type ? 120 * s.text.length : 0) + (s.scroll ? 450 : 0) + GAP;
+const END = 1500, cum = steps.reduce((a, s) => (a.push(a.at(-1) + est(s)), a), [0]), total = cum.at(-1) + END;
+const progress = (data) => parent.postMessage({ type: 'tz-auto-progress', ...data }, '*');
+const stepProgress = (i) => progress({ from: cum[i] / total, to: (i < steps.length ? cum[i + 1] : total) / total, ms: i < steps.length ? est(steps[i]) : END });
 
 // 一開始是停著的：首頁確認這支手機捲進畫面（35% 以上）才送 play 過來；捲出去送 pause
 let paused = true, waiters = [];
 const untilPlaying = () => paused ? new Promise((r) => waiters.push(r)) : Promise.resolve();
 function setPaused(p, tell = true) {
   paused = p;
+  progress(p ? { hold: true } : {});
   if (!p) { waiters.splice(0).forEach((r) => r()); }
   if (tell) parent.postMessage({ type: 'tz-auto', paused: p }, '*');
 }
@@ -154,13 +161,14 @@ async function main() {
       await untilPlaying();
       const step = steps[st.i];
       if (step.page && step.page !== here()) { await sleep(200); continue; }   // 還沒換到該頁（剛點了 go()）
+      stepProgress(st.i);
       st.i += 1; save(st);                        // 先記下一步：這一步若換頁，新頁接著做
-      await run(step); progress(st.i);
+      await run(step);
       await sleep(GAP);
     }
     // 一輪結束：多停一下
-    await sleep(1500); await untilPlaying();
-    progress(0);
+    stepProgress(steps.length); await sleep(END); await untilPlaying();
+    progress({ reset: true });
     // 地圖類：原地從第一步重來，不重新載入（故事最後一步已回到起始狀態）
     if (INPLACE.has(story)) { st = { start: st.start, i: 0 }; save(st); continue; }
     // 其他：請首頁在背景開一份新的、淡入蓋過這份（不在這裡 reload，才不會閃白）
