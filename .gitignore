@@ -5,3 +5,5 @@ test-results/
 playwright-report/
 # screens/ 的渲染產物（node tools/screens.mjs）——要上站的截圖另外轉成 assets/img/shots/v2/ 的 webp
 screens/out/
+# 本機 MapKit token（tools/mapkit-dev-token.mjs 產生，私鑰簽的）——永遠不進 repo
+screens/.mapkit-dev-token.js

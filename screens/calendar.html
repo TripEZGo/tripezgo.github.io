@@ -76,89 +76,388 @@
   .fab svg { width: 24px; height: 24px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; }
   .scrim { position: absolute; left: 0; right: 0; top: 760px; bottom: 0; z-index: 20;
     background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 30px); }
+
+  /* ── 互動模式（interactive=1）才用得到的樣子；截圖模式一格都不碰 ── */
+  .grid.scroll { overflow-y: auto; scrollbar-width: none; overscroll-behavior: contain; }
+  .grid.scroll::-webkit-scrollbar, .chips.scroller::-webkit-scrollbar { display: none; }
+  .cv { position: relative; }
+  .chips.scroller { right: 0; padding-left: 28px; overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .chips.scroller .chip { flex: none; }
+  .chip-end { flex: none; width: 12px; }
+  .is-interactive .ev { -webkit-touch-callout: none; }
+  .is-interactive .ev:focus { outline: none; }
+  .is-interactive .ev:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  /* 已取消：EventBlockCell —— 底 surface、邊 border、色條 border、每一行 muted＋劃線 */
+  .ev.cx { background: var(--surface); border-color: var(--border); }
+  .ev.cx::before, .ad.cx::before { background: var(--border); }
+  .ev.cx .t, .ev.cx .m, .ad.cx { color: var(--muted); text-decoration: line-through; }
+  .ad.cx { background: var(--surface); border-color: var(--border); }
+  /* 拿起來：描邊 2pt（editingOutlineWidth），顏色跟這一則的色票（已取消的是 muted）；原處 0.42 透明 */
+  .ev.picked { z-index: 6; box-shadow: 0 0 0 2px var(--sw-base), 0 10px 24px rgba(31,25,20,.18); }
+  .ev.cx.picked { box-shadow: 0 0 0 2px var(--muted), 0 10px 24px rgba(31,25,20,.18); }
+  .ev.line.picked { box-shadow: none; outline: 2px solid var(--sw-base); outline-offset: 1px; }
+  .ev.origin { opacity: .42; pointer-events: none; }
+  /* RouteLegCell：沒設路程＝白底虛線、500、muted；間隔不足＝整顆琥珀（TripMapLegLabelView.warningFill／Edge，tzWarningInk） */
+  .leg-pill.unset { background: var(--card); border-style: dashed; color: var(--muted); font-weight: 500; }
+  .leg-pill.over { background: rgb(249,234,214); border-color: rgb(228,188,132); color: var(--amber200); }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { fmt, params, t, loadTrip, loadCategories, categoryName, chrome, svg, swatchClass, duration, toMin, ready } from './chrome.js';
+import { fmt, params, lang, t, loadTrip, loadCategories, categoryName, chrome, svg, swatchClass, duration, toMin, ready, interactive, go } from './chrome.js';
+import { applyState, patchEvent, clock } from './demo-state.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
 await loadCategories();
-const dayNo = +(params.get('day') || 2);
+if (interactive) applyState(trip);   // 在詳情／路程頁改過的東西（demo-state.js）
+let dayNo = +(params.get('day') || 2);
 const todayNo = +(params.get('today') || 1);
 const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
 const topHour = +(params.get('top') ?? 7);
 const dateOf = n => new Date(start.getTime() + (n - 1) * 864e5);
 const today = dateOf(todayNo);
+const tap = interactive ? ' data-tap' : '';
 
 // 頁首
 d.insertAdjacentHTML('beforeend', `
   <div class="head"><div class="greet">${t.monthDay(today.getMonth() + 1, today.getDate())} · ${t.weekday[today.getDay()]}</div>
   <div class="title">${fmt(trip.title)}</div></div>
-  <div class="head-act">${svg('readingTimeline')}</div>`);
+  <div class="head-act" id="mode"${tap}>${svg('readingTimeline')}</div>`);
 
 // 日期籤：把選中那一籤捲進畫面（App 捲到「選中那一籤的前一籤露出一點」——照截圖，第 2 天時往左捲 24）
 const chips = Array.from({ length: trip.dayCount }, (_, i) => {
   const n = i + 1, dt = dateOf(n), isToday = n === todayNo;
-  return `<div class="chip${n === dayNo ? ' on' : ''}"><b>${isToday ? '<i></i>' : ''}${isToday ? t.today : t.day(n)}</b>
+  return `<div class="chip${n === dayNo ? ' on' : ''}" data-day="${n}"${tap}><b>${isToday ? '<i></i>' : ''}${isToday ? t.today : t.day(n)}</b>
     <span>${t.shortDate(dt.getMonth() + 1, dt.getDate())} ${t.weekday[dt.getDay()]}</span></div>`;
 }).join('');
 d.insertAdjacentHTML('beforeend', `<div class="chips" id="chips">${chips}</div>`);
 const chipsEl = document.getElementById('chips');
 const firstX = 28 - (dayNo > 1 ? 24 : 0);
-chipsEl.style.left = firstX + 'px';
+if (!interactive) chipsEl.style.left = firstX + 'px';
+else {
+  // 互動：整排可以橫向捲（DayChipCell 是一排 collection view）。內容的位置跟截圖一樣：左邊留 28、捲 24
+  chipsEl.classList.add('scroller');
+  chipsEl.insertAdjacentHTML('beforeend', '<div class="chip-end"></div>');
+  chipsEl.scrollLeft = 28 - firstX;
+}
 
 // 全日
-const allDay = trip.allDayEvents.filter(a => a.fromDay <= dayNo && dayNo <= a.toDay);
-d.insertAdjacentHTML('beforeend', `<div class="allday" id="allday"><div class="allday-label">${t.allDay}</div>
-  ${allDay.map(a => `<div class="ad ${swatchClass(a.category)}">${fmt(a.title)}${(a.todos || []).length ? '<span class="todo-dot"></span>' : ''}</div>`).join('')}</div>`);
-const gridTop = document.getElementById('allday').getBoundingClientRect().bottom;
+const allDayHTML = () => {
+  const allDay = trip.allDayEvents.filter(a => a.fromDay <= dayNo && dayNo <= a.toDay);
+  return `<div class="allday-label">${t.allDay}</div>
+  ${allDay.map(a => `<div class="ad ${swatchClass(a.category)}${a.isCancelled ? ' cx' : ''}" data-key="${a.key}"${tap}>${fmt(a.title)}${(a.todos || []).length ? '<span class="todo-dot"></span>' : ''}</div>`).join('')}`;
+};
+d.insertAdjacentHTML('beforeend', `<div class="allday" id="allday">${allDayHTML()}</div>`);
+const alldayEl = document.getElementById('allday');
 
 // 時間軸
 const H = 66;
 const grid = document.createElement('div');
-grid.className = 'grid'; grid.style.top = gridTop + 'px';
+grid.className = 'grid';
 d.appendChild(grid);
+const placeGrid = () => { grid.style.top = alldayEl.getBoundingClientRect().bottom + 'px'; };
+placeGrid();
 const firstLine = 33.5;                // 第一條可見時刻線距離時間軸頂端（照截圖：07:00 在 310.3）
-const y = min => firstLine + (min - topHour * 60) / 60 * H;
-let html = '';
-for (let h = topHour - 1; h <= 24; h++) html += `<div class="hour" style="top:${y(h * 60)}px"><span>${String(h).padStart(2, '0')}:00</span></div>`;
-
-const day = trip.days.find(x => x.day === dayNo);
-const evs = day.events.filter(e => e.start && e.end).map(e => ({ ...e, s: toMin(e.start), e2: toMin(e.end) }));
+// 截圖：最上面那一條是 topHour。互動：整天 00:00–24:00 畫出來、捲到 topHour（位置跟截圖一樣）
+const Y0 = interactive ? 0 : topHour * 60;
+const y = min => firstLine + (min - Y0) / 60 * H;
 const M = 3; // blockMarginVMax
-evs.forEach((e, i) => {
-  const top = y(e.s), bot = y(e.e2), hgt = bot - top;
-  const sw = swatchClass(e.category);
-  if (hgt < 20) {            // 太短：畫成一條色條＋旁邊的名稱（EventBlockCell 的 line 形）
-    html += `<div class="ev line ${sw}" style="top:${top}px;height:${hgt}px;--bar:123px"><div class="t">${fmt(e.title)}</div></div>`;
-  } else {
-    const meta = [categoryName(e.category), e.place && e.place.name].filter(Boolean).join(' · ');
-    html += `<div class="ev ${sw}" style="top:${top + M}px;height:${hgt - 2 * M}px">
-      <div class="t">${fmt(e.title)}</div><div class="m">${fmt(`${e.start} – ${e.end}`)} · ${duration(e.e2 - e.s)}</div>
-      ${hgt > 52 ? `<div class="m">${fmt(meta)}</div>` : ''}</div>`;
-  }
-  // 跟上一個行程之間的路線與路程膠囊
-  const prev = evs[i - 1];
-  if (prev) {
-    const a = y(prev.e2) + 4, b = top - 4;
-    if (b > a) html += `<div class="route" style="top:${a}px;height:${b - a}px"></div>`;
-    const leg = e.leg;
-    if (leg && leg.mode === 'transit' && leg.runs && b - a > 34) {
-      const run = leg.runs[leg.selectedRunIndex || 0];
-      const mins = toMin(run.arrival) - toMin(run.departure);
-      html += `<div class="leg" style="top:${(a + b) / 2 - 13}px"><div class="leg-pill">${svg('transit')}<span>${run.name}</span>
-        <span class="g">${run.departure}</span><span>${duration(mins)}</span>${svg('picker', 'pk')}</div></div>`;
-    }
-  }
-});
-grid.innerHTML = html;
 
-d.insertAdjacentHTML('beforeend', `<div class="fab">${svg('plus')}</div><div class="scrim"></div>`);
-chrome(d, { tab: 1 });
-ready();
+let evs = [];
+const loadDay = () => {
+  const day = trip.days.find(x => x.day === dayNo);
+  evs = day.events.filter(e => e.start && e.end).map(e => ({ ...e, src: e, s: toMin(e.start), e2: toMin(e.end) }));
+};
+loadDay();
+
+function renderStatic() {
+  let html = '';
+  for (let h = topHour - 1; h <= 24; h++) html += `<div class="hour" style="top:${y(h * 60)}px"><span>${String(h).padStart(2, '0')}:00</span></div>`;
+  evs.forEach((e, i) => {
+    const top = y(e.s), bot = y(e.e2), hgt = bot - top;
+    const sw = swatchClass(e.category);
+    if (hgt < 20) {            // 太短：畫成一條色條＋旁邊的名稱（EventBlockCell 的 line 形）
+      html += `<div class="ev line ${sw}" style="top:${top}px;height:${hgt}px;--bar:123px"><div class="t">${fmt(e.title)}</div></div>`;
+    } else {
+      const meta = [categoryName(e.category), e.place && e.place.name].filter(Boolean).join(' · ');
+      html += `<div class="ev ${sw}" style="top:${top + M}px;height:${hgt - 2 * M}px">
+        <div class="t">${fmt(e.title)}</div><div class="m">${fmt(`${e.start} – ${e.end}`)} · ${duration(e.e2 - e.s)}</div>
+        ${hgt > 52 ? `<div class="m">${fmt(meta)}</div>` : ''}</div>`;
+    }
+    // 跟上一個行程之間的路線與路程膠囊
+    const prev = evs[i - 1];
+    if (prev) {
+      const a = y(prev.e2) + 4, b = top - 4;
+      if (b > a) html += `<div class="route" style="top:${a}px;height:${b - a}px"></div>`;
+      const leg = e.leg;
+      if (leg && leg.mode === 'transit' && leg.runs && b - a > 34) {
+        const run = leg.runs[leg.selectedRunIndex || 0];
+        const mins = toMin(run.arrival) - toMin(run.departure);
+        html += `<div class="leg" style="top:${(a + b) / 2 - 13}px"><div class="leg-pill">${svg('transit')}<span>${run.name}</span>
+          <span class="g">${run.departure}</span><span>${duration(mins)}</span>${svg('picker', 'pk')}</div></div>`;
+      }
+    }
+  });
+  grid.innerHTML = html;
+}
+
+if (!interactive) {
+  renderStatic();
+  d.insertAdjacentHTML('beforeend', `<div class="fab">${svg('plus')}</div><div class="scrim"></div>`);
+  chrome(d, { tab: 1 });
+  ready();
+} else {
+  /* ── 互動模式 ─────────────────────────────────────────────────────────────
+     規則照 App（出處抄自 assets/js/demos/calendar.js 的檔頭，那裡逐條查過）：
+     - 一小時 66pt（TripCalendarMetrics.hourHeight）。
+     - 拖曳：CalendarGeometry.movedTimes —— 開始時刻貼齊 moveSnapMinutes＝15 分、時長不變、夾在 00:00–24:00。
+       觸控先按住 dragHoldDuration＝0.42 秒、手指在 dragHoldSlop＝10pt 內才拿起來（不然就是捲動）；
+       拿起來那一塊描邊 2pt（editingOutlineWidth），原處留一塊 0.42 透明（CalendarOriginView）。滑鼠直接拖。
+       鍵盤 ↑／↓＝VoiceOver 那兩個動作「往前移／往後移 15 分」（EventBlockCell custom actions → DayView nudge）。
+     - 路程（RouteGraph）：已取消的不在路線上；每一段的路程是**下游那一則**的（to.leg）；間隔＝下一則開始 − 上一則結束。
+       字：RouteText.legPill（班次：TripTextFormatter.runLabel；其餘「方式 走多久（±差）」，差 0 或超過 3 小時不寫括號）；
+       沒設路程的有空檔才畫（虛線、時鐘、寫空檔）。間隔不足：RouteGraph.Leg.isOverrunning —— 有班次比「那班幾點到」
+       ＞下一則開始，其餘比 路程時間 ＞ 間隔；整顆轉琥珀＋警告記號（RouteLegCell，色票 TripMapLegLabelView.warningFill／Edge）。
+       行事曆模式放不下膠囊就只畫線。
+     - 已取消：留在原處、轉灰、每一行劃線、色票拿掉（EventBlockCell `if event.isCancelled`），墊在最底下。 */
+  const SNAP = 15, HOLD = 420, SLOP = 10, PPM = H / 60;
+  const S = {
+    'zh-Hant-TW': { paren: (a, b) => `${a}（${b}）`, noGap: '無間隔', mode: { walking: '步行', driving: '開車', cycling: '騎車', transit: '大眾運輸', other: '其他' } },
+    en: { paren: (a, b) => `${a} (${b})`, noGap: 'No gap', mode: { walking: 'Walking', driving: 'Driving', cycling: 'Cycling', transit: 'Transit', other: 'Other' } },
+    ja: { paren: (a, b) => `${a}（${b}）`, noGap: '間隔なし', mode: { walking: '徒歩', driving: '車', cycling: '自転車', transit: '公共交通', other: 'その他' } },
+  }[lang] || null;
+  const L = S || { paren: (a, b) => `${a}（${b}）`, noGap: '無間隔', mode: { walking: '步行', driving: '開車', cycling: '騎車', transit: '大眾運輸', other: '其他' } };
+  // DesignIcon.swift（24 格）——chrome.js 沒有的幾枚
+  const EXTRA_ICON = {
+    driving: '<path d="M5 16.5V13l1.9-4.3q.6-1.2 1.8-1.2h6.6q1.2 0 1.8 1.2L19 13v3.5M4 13h16"/><circle cx="8" cy="16.5" r="1.4"/><circle cx="16" cy="16.5" r="1.4"/>',
+    ellipsis: '<circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/>',
+    warning: '<path d="M12 4 2.5 20h19zM12 10v4M12 17.2v.1"/>',
+  };
+  const icon = (k, cls = '') => EXTRA_ICON[k] ? `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${EXTRA_ICON[k]}</svg>` : svg(k, cls);
+  const modeIcon = m => ({ walking: 'walking', transit: 'transit', driving: 'driving', cycling: 'driving', other: 'ellipsis' }[m] || 'clock');
+
+  /** CalendarGeometry.movedTimes */
+  const movedTimes = (s, e, dMin) => {
+    const len = e - s;
+    let ns = Math.round((s + dMin) / SNAP) * SNAP;
+    ns = Math.min(Math.max(ns, 0), 1440 - len);
+    return [ns, ns + len];
+  };
+
+  /** 一群互相重疊的行程分欄（OverlapLayout 的簡化版，同 demos/calendar.js） */
+  const columns = () => {
+    const s = [...evs].sort((a, b) => a.s - b.s || a.e2 - b.e2);
+    const drawnEnd = e => Math.max(e.e2, e.s + 18 / PPM);
+    const out = new Map();
+    let cluster = [], clusterEnd = -1;
+    const flush = () => {
+      const cols = [];
+      cluster.forEach(e => {
+        let c = cols.findIndex(end => end <= e.s);
+        if (c < 0) { c = cols.length; cols.push(0); }
+        cols[c] = drawnEnd(e); out.set(e.key, { col: c });
+      });
+      cluster.forEach(e => (out.get(e.key).n = cols.length));
+    };
+    s.forEach(e => {
+      if (e.s >= clusterEnd && cluster.length) { flush(); cluster = []; }
+      cluster.push(e); clusterEnd = Math.max(clusterEnd, drawnEnd(e));
+    });
+    if (cluster.length) flush();
+    return out;
+  };
+
+  /** 這一段路程膠囊：RouteText.legPill ＋ RouteGraph.Leg.isOverrunning */
+  const legOf = (from, to) => {
+    const gap = to.s - from.e2, l = to.leg && to.leg.mode ? to.leg : null;
+    if (!l) return { gap, set: false, shows: gap > 0, over: false };
+    const run = l.runs && l.selectedRunIndex != null ? l.runs[l.selectedRunIndex] : null;
+    if (run) return { gap, set: true, shows: true, run, over: toMin(run.arrival) > to.s, alt: l.runs.length > 1, mode: l.mode };
+    const travel = l.durationMinutes || 0, name = L.mode[l.mode] || L.mode.other;
+    let text;
+    if (!travel) text = gap > 0 ? `${name} · ${duration(gap)}` : name;
+    else {
+      const diff = travel - gap;
+      text = `${name} ${duration(travel)}`;
+      if (diff && Math.abs(diff) <= 180) text = L.paren(text, `${diff > 0 ? '+' : '−'}${duration(Math.abs(diff))}`);
+    }
+    return { gap, set: true, shows: true, text, over: travel > 0 && travel > gap, mode: l.mode };
+  };
+
+  let drag = null;   // { key, id, x0, y0, s0, e0, active, touch, timer, sc0 }
+
+  function render(focusKey) {
+    let html = '';
+    for (let h = 0; h <= 24; h++) html += `<div class="hour" style="top:${y(h * 60)}px"><span>${String(h).padStart(2, '0')}:00</span></div>`;
+    // 路線與路程膠囊（已取消的不在路線上）
+    const route = evs.filter(e => !e.isCancelled).sort((a, b) => a.s - b.s || a.e2 - b.e2);
+    route.forEach((to, i) => {
+      const from = route[i - 1];
+      if (!from) return;
+      const a = y(from.e2) + 4, b = y(to.s) - 4;
+      const g = legOf(from, to);
+      if (b > a) html += `<div class="route" style="top:${a}px;height:${b - a}px"></div>`;
+      if (!g.shows || b - a <= 34) return;
+      const cls = `leg-pill${g.set ? '' : ' unset'}${g.over ? ' over' : ''}`;
+      const target = g.set ? ` data-leg="${to.key}" data-tap` : '';
+      if (g.run) {
+        const mins = toMin(g.run.arrival) - toMin(g.run.departure);
+        html += `<div class="leg" style="top:${(a + b) / 2 - 13}px"${target}><div class="${cls}">${svg('transit')}<span>${g.run.name}</span>
+          <span class="g">${g.run.departure}</span><span>${duration(mins)}</span>${g.alt ? svg('picker', 'pk') : ''}${g.over ? icon('warning') : ''}</div></div>`;
+      } else {
+        html += `<div class="leg" style="top:${(a + b) / 2 - 13}px"${target}><div class="${cls}">${icon(g.set ? modeIcon(g.mode) : 'clock')}<span>${fmt(g.set ? g.text : duration(g.gap))}</span>${g.over ? icon('warning') : ''}</div></div>`;
+      }
+    });
+    // 行程區塊：已取消的墊底（EventBlockCell「墊底的取消行程」），拿起來的那一塊在最上面
+    const cols = columns();
+    const order = [...evs].sort((a, b) => (b.isCancelled ? 1 : 0) - (a.isCancelled ? 1 : 0));
+    for (const e of order) {
+      const picked = drag && drag.active && drag.key === e.key;
+      if (picked) html += blockHTML({ ...e, s: drag.s0, e2: drag.e0 }, cols, ' origin', false);
+      html += blockHTML(e, cols, picked ? ' picked' : '', true);
+    }
+    grid.querySelector('.cv').innerHTML = html;
+    if (focusKey) grid.querySelector(`.ev[data-key="${focusKey}"]:not(.origin)`)?.focus({ preventScroll: true });
+  }
+
+  function blockHTML(e, cols, extra, live) {
+    const top = y(e.s), bot = y(e.e2), hgt = bot - top;
+    const sw = swatchClass(e.category) + (e.isCancelled ? ' cx' : '') + extra;
+    const { col = 0, n = 1 } = cols.get(e.key) || {};
+    const w = 326 / n;
+    const pos = n > 1 ? `;left:${56 + col * w + (col ? 2 : 0)}px;right:auto;width:${w - (n > 1 ? 2 : 0)}px` : '';
+    const attrs = live ? ` data-key="${e.key}" tabindex="0" role="button"` : ' aria-hidden="true"';
+    const times = `${clock(e.s)} – ${clock(e.e2)}`;
+    if (hgt < 20) {
+      return `<div class="ev line ${sw}"${attrs} style="top:${top}px;height:${hgt}px;--bar:${n > 1 ? Math.min(123, w - 10) : 123}px${pos}"><div class="t">${fmt(e.title)}</div></div>`;
+    }
+    const meta = [categoryName(e.category), e.place && e.place.name].filter(Boolean).join(' · ');
+    return `<div class="ev ${sw}"${attrs} style="top:${top + M}px;height:${hgt - 2 * M}px${pos}">
+        <div class="t">${fmt(e.title)}</div><div class="m">${fmt(times)} · ${duration(e.e2 - e.s)}</div>
+        ${hgt > 52 ? `<div class="m">${fmt(meta)}</div>` : ''}</div>`;
+  }
+
+  grid.innerHTML = `<div class="cv" style="height:${y(1440) + 140}px"></div>`;
+  grid.classList.add('scroll');
+  render();
+  grid.scrollTop = topHour * H;
+
+  d.insertAdjacentHTML('beforeend', `<div class="fab" data-tap>${svg('plus')}</div><div class="scrim"></div>`);
+  chrome(d, { tab: 1 });
+
+  const save = e => {
+    e.src.start = clock(e.s); e.src.end = clock(e.e2);   // 換日再換回來時讀的是範本那一份
+    patchEvent(e.key, { start: e.src.start, end: e.src.end });
+  };
+  const open = key => go('event', { event: key, day: dayNo });
+
+  // ── 換日 ──
+  function setDay(n) {
+    if (n === dayNo) return;
+    dayNo = n;
+    chipsEl.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', +c.dataset.day === n));
+    const chip = chipsEl.querySelector(`[data-day="${n}"]`);
+    const prevChip = chip.previousElementSibling;
+    // 選中那一籤的前一籤從左緣 4pt 開始露出（同截圖第 2 天：捲 24）
+    chipsEl.scrollTo({ left: prevChip ? prevChip.offsetLeft - 4 : 0, behavior: 'smooth' });
+    alldayEl.innerHTML = allDayHTML();
+    placeGrid();
+    loadDay();
+    render();
+    const first = Math.min(...evs.map(e => e.s), 24 * 60);
+    grid.scrollTop = Math.floor((first === 1440 ? topHour * 60 : first) / 60) * H;
+    const q = new URLSearchParams(location.search); q.set('day', n);
+    try { history.replaceState(null, '', `?${q}`); } catch { /* 沙箱 iframe 不給改網址也沒關係 */ }
+  }
+  chipsEl.addEventListener('click', ev => { const c = ev.target.closest('.chip'); if (c) setDay(+c.dataset.day); });
+  document.getElementById('mode').addEventListener('click', () => go('timeline', { day: dayNo }));
+  alldayEl.addEventListener('click', ev => { const a = ev.target.closest('.ad'); if (a) open(a.dataset.key); });
+
+  // ── 拖曳／點 ──
+  let pillTap = null;
+  grid.addEventListener('pointerdown', ev => {
+    const p = ev.target.closest('.leg[data-leg]');
+    if (p) { pillTap = { key: p.dataset.leg, x: ev.clientX, y: ev.clientY }; return; }
+    const b = ev.target.closest('.ev[data-key]');
+    if (!b || ev.button > 0) return;
+    const e = evs.find(x => x.key === b.dataset.key);
+    drag = { key: e.key, id: ev.pointerId, x0: ev.clientX, y0: ev.clientY, s0: e.s, e0: e.e2, active: false, touch: ev.pointerType !== 'mouse', sc0: grid.scrollTop };
+    if (drag.touch) drag.timer = setTimeout(() => { if (drag && !drag.active) lift(); }, HOLD);
+  });
+  function lift() {
+    drag.active = true;
+    try { grid.setPointerCapture(drag.id); } catch { /* 已經放開 */ }
+    try { navigator.vibrate?.(8); } catch { /* 不支援 */ }
+    render();
+  }
+  let lastY = 0, edgeTimer = null;
+  function follow() {
+    if (!drag || !drag.active) return;
+    const e = evs.find(x => x.key === drag.key);
+    const dy = lastY - drag.y0 + (grid.scrollTop - drag.sc0);
+    const [s, en] = movedTimes(drag.s0, drag.e0, dy / PPM);
+    if (s !== e.s) { e.s = s; e.e2 = en; render(); }
+  }
+  // 拖到可視區上下緣時跟著捲（App 的 UICollectionView 拖曳也會）
+  function edgeScroll() {
+    clearInterval(edgeTimer); edgeTimer = null;
+    if (!drag || !drag.active) return;
+    const r = grid.getBoundingClientRect(), bottom = Math.min(r.bottom, 760);
+    const v = lastY < r.top + 36 ? -8 : lastY > bottom - 36 ? 8 : 0;
+    if (!v) return;
+    edgeTimer = setInterval(() => { grid.scrollTop += v; follow(); }, 16);
+  }
+  grid.addEventListener('pointermove', ev => {
+    if (pillTap && Math.hypot(ev.clientX - pillTap.x, ev.clientY - pillTap.y) > SLOP) pillTap = null;
+    if (!drag || ev.pointerId !== drag.id) return;
+    lastY = ev.clientY;
+    if (!drag.active) {
+      const far = Math.hypot(ev.clientX - drag.x0, ev.clientY - drag.y0);
+      if (drag.touch) { if (far > SLOP) { clearTimeout(drag.timer); drag = null; } return; }
+      if (Math.abs(ev.clientY - drag.y0) < 3) return;
+      lift();
+    }
+    follow();
+    edgeScroll();
+  });
+  function end(ev, cancelled) {
+    if (pillTap && !cancelled) { const k = pillTap.key; pillTap = null; return go('leg', { event: k, day: dayNo }); }
+    pillTap = null;
+    if (!drag) return;
+    clearTimeout(drag.timer); clearInterval(edgeTimer); edgeTimer = null;
+    const { active, key, x0, y0 } = drag;
+    drag = null;
+    const e = evs.find(x => x.key === key);
+    if (active) { save(e); render(key); return; }
+    if (!cancelled && ev && Math.hypot(ev.clientX - x0, ev.clientY - y0) <= SLOP) open(key);
+  }
+  grid.addEventListener('pointerup', ev => end(ev, false));
+  grid.addEventListener('pointercancel', ev => end(ev, true));
+  // 按住期間（還在 10pt 內）與拿起來之後，頁面不跟著捲；超出 10pt 又還沒拿起來＝捲動
+  grid.addEventListener('touchmove', ev => {
+    if (!drag) return;
+    const tch = ev.touches[0];
+    if (drag.active || Math.hypot(tch.clientX - drag.x0, tch.clientY - drag.y0) <= SLOP) ev.preventDefault();
+  }, { passive: false });
+  grid.addEventListener('contextmenu', ev => { if (ev.target.closest('.ev')) ev.preventDefault(); });
+
+  // ── 鍵盤：↑／↓ 挪 15 分，Enter／空白鍵 開詳情 ──
+  grid.addEventListener('keydown', ev => {
+    const b = ev.target.closest('.ev[data-key]');
+    if (!b) return;
+    if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); return open(b.dataset.key); }
+    if (ev.key !== 'ArrowUp' && ev.key !== 'ArrowDown') return;
+    ev.preventDefault();
+    const e = evs.find(x => x.key === b.dataset.key);
+    [e.s, e.e2] = movedTimes(e.s, e.e2, ev.key === 'ArrowUp' ? -SNAP : SNAP);
+    save(e);
+    render(e.key);
+  });
+
+  ready();
+}
 </script>
 </body>
 </html>

@@ -1,0 +1,72 @@
+/* 讓 AI 幫你排行程（assets/js/demos/ai-chat.js）——這個小元件就是那一段對話 */
+.d-ai-chat { container-type:inline-size; display:grid; gap:12px; padding:16px; border-radius:var(--radius-lg); background:var(--page);
+  border:1px solid var(--border); box-shadow:var(--shadow-md); font-size:14px; line-height:1.5; color:var(--fg); min-width:0; }
+.d-ai-chat .i { width:16px; height:16px; flex:none; }
+.d-ai-chat button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+
+.d-ai-chat__top { display:flex; flex-wrap:wrap; align-items:center; gap:4px 8px; padding-bottom:10px; border-bottom:1px solid var(--border-soft);
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.04em; color:var(--muted); }
+.d-ai-chat__top > .i { color:var(--accent-ink); }
+.d-ai-chat__status { display:inline-flex; align-items:center; gap:5px; margin-inline-start:auto; font-family:inherit; }
+.d-ai-chat__status i { width:7px; height:7px; border-radius:50%; background:var(--success); }
+
+.d-ai-chat__log { display:grid; gap:8px; align-content:start; }
+.d-ai-chat__log:empty { display:none; }
+.d-ai-chat .d-ai-chat__me, .d-ai-chat .d-ai-chat__ai { margin:0; padding:9px 13px; border-radius:16px; max-width:88%; overflow-wrap:anywhere; animation:d-ai-chat-in .25s ease-out both; }
+.d-ai-chat .d-ai-chat__me { justify-self:end; background:var(--accent-ink); color:var(--accent-on); border-end-end-radius:6px; }
+.d-ai-chat .d-ai-chat__ai { justify-self:start; background:var(--surface); border:1px solid var(--border-soft); border-end-start-radius:6px; font-size:13.5px; }
+.d-ai-chat__tools { display:flex; flex-wrap:wrap; gap:5px; }
+.d-ai-chat__chip { display:inline-flex; align-items:center; gap:4px; padding:3px 8px; border-radius:var(--radius-pill);
+  background:var(--accent-wash); color:var(--accent-ink); font-size:11px; animation:d-ai-chat-in .2s ease-out both; max-width:100%; }
+.d-ai-chat__chip .i { width:12px; height:12px; stroke-width:2.6; }
+.d-ai-chat__chip code { font-family:var(--font-mono); font-size:11px; overflow-wrap:anywhere; }
+.d-ai-chat__chip small { font-family:var(--font-mono); font-size:10px; opacity:.8; }
+.d-ai-chat__chip small:empty { display:none; }
+
+/* 那一天 */
+.d-ai-chat__day { border-radius:var(--radius-md); background:var(--surface); border:1px solid var(--border-soft); padding:10px; display:grid; gap:6px; }
+.d-ai-chat__dayhead { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:2px 8px; }
+.d-ai-chat__dayhead b { font-size:13px; }
+.d-ai-chat__count { font-size:11px; color:var(--accent-ink); font-weight:700; font-variant-numeric:tabular-nums; }
+.d-ai-chat__list { list-style:none; margin:0; padding:0; display:grid; gap:3px; }
+.d-ai-chat__ev { display:grid; grid-template-columns:40px minmax(0, 1fr) auto; gap:6px; align-items:center; padding:5px 8px; border-radius:8px;
+  background:var(--page); font-size:12.5px; transition:background .3s; }
+.d-ai-chat__t { font-variant-numeric:tabular-nums; color:var(--muted); font-size:11.5px; }
+.d-ai-chat__n { overflow-wrap:anywhere; }
+.d-ai-chat__ev em, .d-ai-chat__leg em { font-style:normal; font-size:10px; font-weight:700; color:var(--accent-ink); white-space:nowrap; }
+.d-ai-chat__ev.is-mark { background:var(--accent-wash); box-shadow:inset 3px 0 0 var(--accent); }
+.d-ai-chat__ev.is-fresh, .d-ai-chat__leg.is-fresh { animation:d-ai-chat-in .3s ease-out both; }
+.d-ai-chat__leg { display:flex; gap:8px; align-items:center; padding:0 8px 0 54px; font-size:11px; color:var(--muted); position:relative; }
+.d-ai-chat__leg::before { content:''; position:absolute; left:28px; top:0; bottom:0; border-inline-start:1.5px dashed var(--border); }
+.d-ai-chat__leg.is-mark span { color:var(--accent-ink); }
+.d-ai-chat__empty { padding:10px 4px; text-align:center; color:var(--muted); font-size:12px; }
+
+.d-ai-chat__prompts { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+.d-ai-chat .d-ai-chat__pick { flex-basis:100%; margin:0; font-size:11px; color:var(--muted); }
+.d-ai-chat__ask, .d-ai-chat__again { display:inline-flex; align-items:center; gap:6px; min-height:34px; padding:6px 12px; border-radius:var(--radius-pill);
+  border:1px solid var(--border); background:var(--page); font:inherit; font-size:13px; color:var(--fg); cursor:pointer; text-align:start; max-width:100%; }
+.d-ai-chat__ask:hover:not(:disabled) { border-color:var(--accent); background:var(--accent-wash); }
+.d-ai-chat__ask:disabled { opacity:.5; cursor:default; }
+.d-ai-chat__again { border-color:var(--accent); color:var(--accent-ink); font-weight:600; }
+.d-ai-chat .d-ai-chat__wifi { display:flex; gap:6px; align-items:flex-start; margin:0; padding-top:10px; border-top:1px solid var(--border-soft);
+  font-size:12px; color:var(--muted); }
+.d-ai-chat__wifi .i { margin-top:1px; color:var(--accent-ink); }
+.d-ai-chat__wifi b { color:var(--fg); }
+
+@keyframes d-ai-chat-in { from { opacity:0; transform:translateY(4px); } }
+@container (max-width:300px) {
+  .d-ai-chat__ev { grid-template-columns:36px minmax(0, 1fr); }
+  .d-ai-chat__ev em { grid-column:2; }
+  .d-ai-chat__leg { padding-left:44px; flex-wrap:wrap; gap:0 8px; }
+  .d-ai-chat__leg::before { left:22px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .d-ai-chat__me, .d-ai-chat__ai, .d-ai-chat__chip, .is-fresh { animation:none; }
+  .d-ai-chat__ev { transition:none; }
+}
+
+/* 窄卡片（手機兩欄約 100–150px）：子項不准把格子撐開 */
+.d-ai-chat, .d-ai-chat * { min-width:0; }
+.d-ai-chat { overflow-wrap:anywhere; }
+.d-ai-chat .d-ai-chat__t, .d-ai-chat__leg span, .d-ai-chat__chip code { overflow-wrap:normal; }
+.d-ai-chat .d-ai-chat__t { white-space:nowrap; }

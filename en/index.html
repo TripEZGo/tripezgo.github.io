@@ -29,6 +29,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/css/home.css">
+<script type="module" src="/assets/js/home.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,6 +49,7 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.5 5.2h3"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 13 5 5 9-11"/></symbol>
   <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="m21 16-5-5-9 9"/></symbol>
   <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9.5h18M7.5 14.5h4"/></symbol>
@@ -89,22 +91,27 @@
       <a class="hide-sm" href="#privacy">Privacy</a>
       <a class="hide-sm" href="#features">Features</a>
       <a class="hide-sm" href="#plans">Pricing</a>
-      <a class="lang" href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a>
-      <a class="lang" href="/ja/" hreflang="ja" lang="ja">日本語</a>
+      <details class="lang-menu">
+        <summary>English</summary>
+        <div class="lang-list">
+          <a class="lang" href="/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a class="lang" href="/ja/" hreflang="ja" lang="ja">日本語</a>
+        </div>
+      </details>
     </nav>
   </div>
 </header>
 
 <main id="main">
 
-    <section class="hero">
+  <section class="hero">
     <div class="wrap">
       <div>
         <p class="eyebrow">Trip planning for iPhone and iPad</p>
         <h1>Plan the trip, carry what it needs —<br><em>all in one app</em></h1>
         <p class="lede">Plan the days, keep the tickets, check the connections — and take it all with you when you go.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372">Download on the App Store</a>
+          <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372" target="_blank" rel="noopener">Download on the App Store</a>
           <a class="btn btn-ghost" href="#features">See how it works</a>
         </div>
         <ul class="hero-tags">
@@ -121,210 +128,253 @@
     </div>
   </section>
 
-    <section class="section section-alt privacy-band" id="privacy">
+  <section class="section section-alt privacy-band" id="privacy">
     <div class="wrap">
       <div>
         <p class="eyebrow">Privacy and security</p>
         <h2>Your trips live <span class="nb">only on your phone</span> <span class="nb">and in your iCloud</span></h2>
-        <p class="lede">No account. We run no server and never see your trips. Backup, sync and sharing all go through iCloud.</p>
+        <p class="lede">No account. We run no server and never see your trips. Backup, sync and sharing all go through iCloud — and you can edit without a connection.</p>
+        <details class="more"><summary>Read more</summary><div class="more-body">
+<p><b>Privacy and data security come first.</b> With AI everywhere, keeping your data safe and private matters more than ever. TripEZGo is built without a server of its own, so we have nowhere to keep your travel data. It lives on your device, or in Apple iCloud for backup and sync across your devices. Even when several people co-edit a trip, it runs on iCloud sharing.</p>
+<p>Everything in your trips, files and photos included, stays on your phone or in your iCloud. Export and import backups yourself, or just let iCloud back up and sync.</p>
+<p><b>Works offline.</b> Everything lives on your phone, so you can open and edit all of it without a connection. If iCloud backup and sync or sharing is on, your changes sync once you're back online.</p>
+          </div></details>
         <a class="more-link" href="/en/privacy.html">Read the full privacy policy →</a>
       </div>
       <div class="feature-media">
-        <div class="vault" role="img" aria-label="Diagram: this iPhone holds all your data — events, files, to-dos, notes, shopping list and photos; it is encrypted, backed up and synced to iCloud with your Apple Account, and co-editing runs on iCloud sharing">
-          <div class="vault-card">
-            <div class="vault-head"><svg class="i"><use href="#i-phone"/></svg><b>This iPhone</b><span>All your data</span></div>
-            <ul class="vault-chips">
-              <li>Events</li><li>Files</li><li>To-dos</li><li>Notes</li><li>Shopping list</li><li>Photos</li>
-            </ul>
-            <div class="vault-row"><svg class="i"><use href="#i-lock"/></svg><b>Encrypted iCloud backup and sync</b><span>Only your Apple Account can open it</span></div>
-            <div class="vault-row"><svg class="i"><use href="#i-users"/></svg><b>Co-editing with companions</b><span>Through iCloud sharing</span></div>
-          </div>
-          <p class="vault-note">No account, no server of ours. Opens just the same on a plane.</p>
+        <div class="flow" data-demo="flow" role="group" aria-label="How your data flows: it lives on this iPhone; turn on iCloud backup and sync and it goes to your Apple iCloud and syncs to your iPad; turn on trip sharing and it reaches three companions through iCloud sharing">
+          <noscript><p>Your data stays on this iPhone and is backed up and synced through your Apple iCloud. Trip sharing runs on iCloud sharing too.</p></noscript>
         </div>
       </div>
     </div>
   </section>
 
-    <section class="section" id="features">
+  <section class="section" id="features">
     <div class="wrap">
-            <article class="feature">
+      <article class="feature">
         <div>
           <p class="eyebrow">01 · Plan events</p>
           <h3>Everything you need, <em>attached to the event</em></h3>
           <p>Tickets, bookings and to-dos stay with the event. When you get there, one tap opens them.</p>
-          <ul class="points">
-            <li><svg class="i"><use href="#i-clip"/></svg><span>Photos, files and e-ticket links</span></li>
-            <li><svg class="i"><use href="#i-todo"/></svg><span>To-dos to tick off before you leave</span></li>
-            <li><svg class="i"><use href="#i-train"/></svg><span>How you travel between events</span></li>
-            <li><svg class="i"><use href="#i-swap"/></svg><span>Miss this train? The backup is already lined up</span></li>
-          </ul>
+          <ul class="points"><li><svg class="i"><use href="#i-pin"/></svg><span>Search for a place, or just paste a Google Maps link</span></li><li><svg class="i"><use href="#i-clip"/></svg><span>Photos, files and e-ticket links</span></li><li><svg class="i"><use href="#i-clock"/></svg><span>Different start and end time zones, all-day and unscheduled events</span></li><li><svg class="i"><use href="#i-todo"/></svg><span>To-dos to tick off before you leave</span></li></ul>
+          <details class="more"><summary>Read more</summary><div class="more-body">
+<p>We've thought of everything an event needs. For each event you can set:</p>
+<ul>
+<li><b>Place</b>: search by name or address, or just paste a Google Maps link or an address</li>
+<li><b>Type / title</b>: filled in as you enter a place, with the type worked out for you</li>
+<li><b>Files</b>: add photos (from the Photos app), files (from the Files app), or links (an e-ticket, say)</li>
+<li><b>Time</b>: different start and end time zones (take off in Taipei, land in Okinawa), all-day events (a hotel stay), and unscheduled events (no time set yet)</li>
+<li><b>To-dos</b>: “remember to book a table,” for example</li>
+</ul>
+<p>Once an event is in, you can cancel it (it stays, struck through), delete it (gone for good), or move it later or earlier — it and every event after it shift by X hours and Y minutes.</p>
+          </div></details>
         </div>
         <div class="feature-media">
-          <div class="duo">
-            <figure class="ph shot"><img src="/assets/img/shots/v2/en/event-extra.webp" width="720" height="1565" alt="Event details: the JR Pass with its to-dos and files — a web link, a PDF e-ticket and a photo" loading="lazy"></figure>
-            <figure class="ph shot"><img src="/assets/img/shots/v2/en/leg.webp" width="720" height="1565" alt="Leg: three departures side by side; the selected one shows departure, arrival and waiting time" loading="lazy"></figure>
-          </div>
+          <figure class="ph shot"><img src="/assets/img/shots/v2/en/event-airport.webp" width="720" height="1565" alt="Event details: check-in at Taoyuan Airport, with a to-do list and files — a web link, a PDF boarding pass and a passport photo" loading="lazy"></figure>
         </div>
       </article>
-
-            <article class="feature is-flipped">
+      <article class="feature is-flipped">
         <div>
-          <p class="eyebrow">02 · Calendar / Timeline</p>
+          <p class="eyebrow">02 · Legs</p>
+          <h3>Miss this train? <em>The next one is already lined up</em></h3>
+          <p>Between two events there's a leg — and if there isn't enough time, you'll hear about it first.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-route"/></svg><span>Walking, driving or transit, with the time estimated for you</span></li><li><svg class="i"><use href="#i-bell"/></svg><span>A warning when the leg takes longer than the gap</span></li><li><svg class="i"><use href="#i-train"/></svg><span>Several departures, with a reminder for the nearest one on the day</span></li></ul>
+          
+          <details class="more"><summary>Read more</summary><div class="more-body">
+<p>You can set a leg between any two events. A leg is how you get there — walking, driving or transit — and each gives you an estimated travel time between the two places. If the gap between the events is shorter than the leg, you get a warning (say they are 30 minutes apart, but the drive actually takes an hour).</p>
+<p>Transit gets special care. Enter several departures ahead of time, and on the day you're reminded of the one closest to now. Early, or just missed it? Decide on the spot and jump straight to the next train or bus.</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/en/leg.webp" width="720" height="1565" alt="Leg: three departures side by side; the selected one shows departure, arrival and waiting time" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="feature">
+        <div>
+          <p class="eyebrow">03 · Calendar / Timeline</p>
           <h3>Today's plan, <em>at a glance</em></h3>
           <p>Events, free time and travel time, laid out on a single line of time.</p>
-          <ul class="points">
-            <li><svg class="i"><use href="#i-clock"/></svg><span>How long you stay, how much time is free</span></li>
-            <li><svg class="i"><use href="#i-bell"/></svg><span>A heads-up when the gap is too short</span></li>
-            <li><svg class="i"><use href="#i-swap"/></svg><span>Switch between calendar and timeline anytime</span></li>
-          </ul>
-        </div>
-        <div class="feature-media modes">
-          <div class="duo is-even">
-            <figure class="ph shot"><img src="/assets/img/shots/v2/en/calendar.webp" width="720" height="1565" alt="Calendar: day 2 of the six-day San'yō trip, events laid out by time, with the JR San'yō Line departure between breakfast and the ferry" loading="lazy"></figure>
-            <span class="swap" role="img" aria-label="Switch between calendar and timeline"><svg class="i"><use href="#i-swap"/></svg></span>
-            <figure class="ph shot"><img src="/assets/img/shots/v2/en/timeline.webp" width="720" height="1565" alt="Timeline: day 2 as a single line of events, with time spent at each stop and the legs between" loading="lazy"></figure>
-          </div>
-          <div class="mode-label" aria-hidden="true"><span>Calendar</span><span>Timeline</span></div>
-        </div>
-      </article>
-
-            <article class="feature">
-        <div>
-          <p class="eyebrow">03 · Map</p>
-          <h3>Where's next? <em>The map shows you</em></h3>
-          <p>Each day's events join into a route, with the shops along the way marked too.</p>
-          <ul class="points">
-            <li><svg class="i"><use href="#i-route"/></svg><span>Daily routes and legs</span></li>
-            <li><svg class="i"><use href="#i-pin"/></svg><span>Pin the places you want to go</span></li>
-            <li><svg class="i"><use href="#i-bag"/></svg><span>Japanese convenience stores, department stores and drugstores</span></li>
-            <li><svg class="i"><use href="#i-nav"/></svg><span>Walking directions</span></li>
-          </ul>
+          <ul class="points"><li><svg class="i"><use href="#i-shift"/></svg><span>Drag to plan and rearrange events</span></li><li><svg class="i"><use href="#i-clock"/></svg><span>How long you stay, how much time is free</span></li><li><svg class="i"><use href="#i-swap"/></svg><span>Switch between calendar and timeline anytime</span></li></ul>
+          <details class="more"><summary>Read more</summary><div class="more-body">
+<p><b>Calendar view</b>: every event sits on a calendar, just like an appointment. It's easy to read, and it's the easiest way to plan — drag to place an event, drag again to move it. Still not sure what comes first? Rearranging takes seconds.</p>
+<p><b>Timeline view</b>: if you'd rather read your day as a timeline, switch over. Where to be and when, how long to stay, how long to get there — all at a glance.</p>
+          </div></details>
         </div>
         <div class="feature-media">
-          <div class="duo is-three">
-            <figure class="ph shot"><img src="/assets/img/shots/v2/en/map.webp" width="720" height="1565" alt="Map: a day's walking route on Miyajima, with events and distances along the way" loading="lazy"></figure>
-            <figure class="ph shot"><img src="/assets/img/shots/v2/en/map-store.webp" width="720" height="1565" alt="Map: a nearby 7-Eleven opened, showing it is open 24 hours, with a walking button" loading="lazy"></figure>
-            <figure class="ph shot"><img src="/assets/img/shots/v2/en/map-nav.webp" width="720" height="1565" alt="Walking directions to the 7-Eleven along the route on the map: continue straight, about 9 minutes to go" loading="lazy"></figure>
-          </div>
+          <figure class="ph shot"><img src="/assets/img/shots/v2/en/calendar.webp" width="720" height="1565" alt="Calendar: day 2 of the six-day San'yō trip, events laid out by time, with the JR San'yō Line departure between breakfast and the ferry" loading="lazy"></figure>
         </div>
       </article>
-
-            <article class="feature is-flipped">
+      <article class="feature is-flipped">
         <div>
           <p class="eyebrow">04 · Overview</p>
           <h3>The whole trip, <em>on one page</em></h3>
           <p>Events, files and to-dos — whatever you need is one tap away.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-calendar"/></svg><span>The whole trip, grouped by day</span></li><li><svg class="i"><use href="#i-clip"/></svg><span>Each day's files in one place</span></li><li><svg class="i"><use href="#i-todo"/></svg><span>See at a glance which day, and which event, still has to-dos</span></li></ul>
+          <details class="more"><summary>Read more</summary><div class="more-body">
+<p>Overview puts the whole trip on one page. It also gathers every event's files and to-dos, grouped by day — so you can open any event's files right here, or see which event on which day still has to-dos.</p>
+          </div></details>
         </div>
         <div class="feature-media">
           <figure class="ph shot"><img src="/assets/img/shots/v2/en/overview.webp" width="720" height="1565" alt="Overview: today's events listed by time, with walking time and gaps between them" loading="lazy"></figure>
         </div>
       </article>
-
-            <article class="feature">
+      <article class="feature">
         <div>
-          <p class="eyebrow">05 · Companions</p>
+          <p class="eyebrow">05 · Map</p>
+          <h3>Where's next? <em>The map shows you</em></h3>
+          <p>Each day's events join into a route, with the shops along the way marked too.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-route"/></svg><span>Daily routes and legs</span></li><li><svg class="i"><use href="#i-pin"/></svg><span>Pin the places you want to go</span></li><li><svg class="i"><use href="#i-bag"/></svg><span>Japanese convenience stores, department stores and drugstores</span></li><li><svg class="i"><use href="#i-nav"/></svg><span>Walking directions</span></li></ul>
+          <details class="more"><summary>Read more</summary><div class="more-body">
+<p>Give your events a place, and the map shows how each day's events sit in relation to one another, and the route between them.</p>
+<p>Besides your events, you can drop markers on places you'd like to go, so on the road you can always check what else is nearby. Convenience stores and department stores from several chains are built in too — open the map and you'll see if one is close.</p>
+<p>Walking directions, too: spotted somewhere nearby but not sure how to get there? Tap to start navigating and just follow along.</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <div class="duo">
+            <figure class="ph shot"><img src="/assets/img/shots/v2/en/map-route.webp" width="720" height="1565" alt="The map as it opens: today's events numbered in order and joined into a route, with your own markers and nearby convenience stores alongside" loading="lazy"></figure>
+            <figure class="ph shot"><img src="/assets/img/shots/v2/en/map-live.webp" width="720" height="1565" alt="Map: day 2, with walking directions under way to the Atomic Bomb Dome and convenience stores and companions marked along the route" loading="lazy"></figure>
+          </div>
+        </div>
+      </article>
+      <article class="feature is-flipped">
+        <div>
+          <p class="eyebrow">06 · Co-editing and location sharing</p>
           <h3>Plan together, <em>travel together</em></h3>
           <p>Companions edit events, notes and files together. Share your location on the road, so you can find each other if you split up.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-users"/></svg><span>Invite companions to plan the same trip with you</span></li><li><svg class="i"><use href="#i-pin"/></svg><span>See each other's location on the road</span></li><li><svg class="i"><use href="#i-eyeoff"/></svg><span>Choose whether notes, files, to-dos and the shopping list are shared</span></li></ul>
+          <details class="more"><summary>Read more</summary><div class="more-body">
+<p>Share a trip and co-edit it, so your companions build it with you. Once you're on the road, companions can turn on location sharing to look out for each other — and find each other if you get separated.</p>
+<p>Notes, files, to-dos and the shopping list can each be shared for co-editing, or kept to yourself.</p>
+          </div></details>
         </div>
         <div class="feature-media">
           <div class="duo">
             <figure class="ph shot"><img src="/assets/img/shots/v2/en/members.webp" width="720" height="1565" alt="Trip sharing: the sharing switch, invite link and QR code, with companions listed below" loading="lazy"></figure>
-            <figure class="ph shot"><img src="/assets/img/shots/v2/en/share-location.webp" width="720" height="1565" alt="Location sharing: companions on the map, showing how long ago each was updated" loading="lazy"></figure>
+            <figure class="ph shot"><img src="/assets/img/shots/v2/en/map-mates.webp" width="720" height="1565" alt="Location sharing: companions on the map; the gray ones haven't updated in over an hour" loading="lazy"></figure>
           </div>
         </div>
       </article>
     </div>
   </section>
 
-    <section class="section section-alt" id="glance">
+  <section class="section section-alt" id="glance">
     <div class="wrap">
-      <div class="feature" style="padding:0">
+      <article class="feature">
         <div>
           <p class="eyebrow">Without opening the app</p>
-          <h2>No unlocking — <span class="nb">your next stop is on the Lock Screen</span></h2>
-          <p class="lede">Where you are, how long you have left, and how to get to the next stop.</p>
-          <div class="caps">
-            <div class="cap">
-              <div class="cap-head"><svg class="i"><use href="#i-island"/></svg>Live Activity<span class="tag tag-premium">Premium</span></div>
-              <p>On the Lock Screen and Dynamic Island, the current event at a glance</p>
-            </div>
-            <div class="cap">
-              <div class="cap-head"><svg class="i"><use href="#i-widget"/></svg>Widget</div>
-              <p>Today's events on your Home Screen and Lock Screen</p>
-            </div>
-            <div class="cap">
-              <div class="cap-head"><svg class="i"><use href="#i-bell"/></svg>Notifications</div>
-              <p>A reminder when a to-do is due</p>
-            </div>
-            <div class="cap">
-              <div class="cap-head"><svg class="i"><use href="#i-wave"/></svg>Siri</div>
-              <p>Ask, and hear what's next</p>
-            </div>
-          </div>
+          <h3>No unlocking — <em>your next stop is on the Lock Screen</em></h3>
+          <p>Where you are, how long you have left, and how to get to the next stop.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-island"/></svg><span>Live Activity: the current event on the Lock Screen and in the Dynamic Island, anytime</span></li><li><svg class="i"><use href="#i-bell"/></svg><span>Notifications: before you set off, before an event starts, and while to-dos are still open</span></li><li><svg class="i"><use href="#i-widget"/></svg><span>Widgets: today's events on your Home Screen and Lock Screen, with to-dos you can tick off right there</span></li></ul>
+          <details class="more"><summary>Read more</summary><div class="more-body">
+<p>A wide range of widgets puts what you need right on your Home Screen or Lock Screen, ready to check and open.</p>
+<p>While a trip is under way, the Live Activity means you don't even have to unlock your phone: one glance tells you how long you have at the current event, how you're getting to the next one, and what it is.</p>
+<p>You'll get a notification before a trip begins, before each event starts, and while to-dos are still open.</p>
+          </div></details>
         </div>
         <div class="feature-media">
           <div class="duo">
-            <figure class="ph shot"><img src="/assets/img/shots/v2/en/lock.webp" width="720" height="1565" alt="Live Activity on the Lock Screen: Itsukushima Shrine under way, time left and the next stop" loading="lazy"></figure>
+            <figure class="ph shot"><img src="/assets/img/shots/v2/en/lock.webp" width="720" height="1565" alt="Lock Screen: the Live Activity shows Itsukushima Shrine under way, the time left and the next stop, with TripEZGo notifications stacked below" loading="lazy"></figure>
             <figure class="ph shot"><img src="/assets/img/shots/v2/en/widget.webp" width="720" height="1565" alt="Home Screen widgets: today's events and a currency converter" loading="lazy"></figure>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
-    <section class="section" id="tools">
+  <section class="section" id="tools">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Tools</p>
         <h2>What you need on the road, <span class="nb">all in one place</span></h2>
+        <p class="lede">Plenty of travel tools built in — one app for all of it.</p>
       </div>
       <div class="tools">
         <article class="tool">
           <figure class="ph shot"><img src="/assets/img/shots/v2/en/note.webp" width="720" height="1565" alt="Notes: text and photos, @ links to events, and Japanese phrases that can be read aloud" loading="lazy"></figure>
           <h3>Notes</h3>
-          <p>Text and photos, with Japanese phrases read aloud for you</p>
-        </article>
-        <article class="tool">
-          <figure class="ph shot"><img src="/assets/img/shots/v2/en/fx.webp" width="720" height="1565" alt="Currency: converting between two currencies, with recent conversions below" loading="lazy"></figure>
-          <h3>Currency</h3>
-          <p>Works without a connection</p>
-        </article>
-        <article class="tool">
-          <figure class="ph shot"><img src="/assets/img/shots/v2/en/shop.webp" width="720" height="1565" alt="Shopping list: counts of to-buy, bought and skipped items, with items in a photo grid by category" loading="lazy"></figure>
-          <h3>Shopping list</h3>
-          <p>Snap it to save it, and see which shop is cheapest</p>
+          <p>Text and photos — and it reads phrases aloud when you don't speak the language</p>
         </article>
         <article class="tool">
           <figure class="ph shot"><img src="/assets/img/shots/v2/en/scan.webp" width="720" height="1565" alt="QR code scanner: scanned links and text kept in a history your companions can see too" loading="lazy"></figure>
           <h3>QR code scanner</h3>
-          <p>Scanned links and text are saved for your companions too</p>
+          <p>Open, scan, and it's saved — your companions see it too</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/en/fx.webp" width="720" height="1565" alt="Currency: converting between two currencies, with recent conversions below" loading="lazy"></figure>
+          <h3>Currency</h3>
+          <p>Uses today's rate, and works offline</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/en/shop.webp" width="720" height="1565" alt="Shopping list: counts of to-buy, bought and skipped items, with items in a photo grid by category" loading="lazy"></figure>
+          <h3>Shopping list</h3>
+          <p>See what's left to buy, and compare prices to get the cheapest</p>
         </article>
       </div>
+      <details class="more"><summary>Read more</summary><div class="more-body">
+<ul>
+<li><b>Notes</b>: rich text-and-photo editing, plus read-aloud — don't speak the language? Let your phone say it for you.</li>
+<li><b>Currency</b>: uses today's rate, and converts even without a connection.</li>
+<li><b>Shopping list</b>: write down everything you want to buy and see at a glance what's still left. Note each shop's price too, so you get the cheapest one.</li>
+<li><b>QR code scanner</b>: open it, scan, and it's saved to a history your companions can see too.</li>
+</ul>
+          </div></details>
     </div>
   </section>
 
-    <section class="section section-alt" id="ai">
+  <section class="section section-alt" id="more">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Integrations</p>
+        <h2>Works with the other apps <span class="nb">on your iPhone</span></h2>
+      </div>
+      <div class="tools is-three">
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/en/share-ig.webp" width="720" height="1565" alt="Sharing in: tap Share on a post in a social app, pick TripEZGo, and it's saved as a note" loading="lazy"></figure>
+          <h3>Share in from other apps</h3>
+          <p>Found a place in Google Maps, Instagram or Threads? Share it and it's saved</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/en/apple-calendar.webp" width="720" height="1565" alt="Apple Calendar's day view: day 2's events, synced in from TripEZGo" loading="lazy"></figure>
+          <h3>Apple / Google Calendar integration</h3>
+          <p>Your events sync straight to your calendar</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/en/siri.webp" width="720" height="1565" alt="Asking Siri “What's my next event?”: Itsukushima Shrine now, then Momijidani Park at 11:30" loading="lazy"></figure>
+          <h3>Siri and Apple Intelligence</h3>
+          <p>Ask “What's my next event?” and get the answer without opening the app</p>
+        </article>
+      </div>
+      <details class="more"><summary>Read more</summary><div class="more-body">
+<p><b>Share in from other apps</b>: found somewhere you want to go, or a spot a coworker recommended? Tap Share in Google Maps, Instagram, Threads or another app, pick TripEZGo, and it's saved.</p>
+<p><b>Apple / Google Calendar integration</b>: sync your events straight to your calendar.</p>
+<p><b>Siri and Apple Intelligence</b>: ask Siri or Apple Intelligence about your plans and get to your events fast.</p>
+<p><b>Public sharing</b>: make a trip public so travelers anywhere can see your plan. Only event titles, places and times are shared — never descriptions, files or to-do lists.</p>
+          </div></details>
+    </div>
+  </section>
+
+  <section class="section" id="ai">
     <div class="wrap">
       <div class="ai-band">
         <div>
           <h2>Let AI <span class="nb">plan it for you</span></h2>
           <p>Built-in MCP connects your AI agent. Say "Plan day two in Kyoto for me" and the events appear.</p>
+          <details class="more"><summary>Read more</summary><div class="more-body">
+<p>When your phone and computer are on the same Wi-Fi, connect your AI agent to the TripEZGo app over MCP and have it plan the trip for you.</p>
+          </div></details>
         </div>
-        <div class="chat" role="img" aria-label="Example chat: the user asks AI to plan day two in Kyoto, and the AI adds events through TripEZGo">
-          <div class="chat-top"><svg class="i"><use href="#i-plug"/></svg>Example chat · Connected to TripEZGo</div>
-          <div class="bubble me">Plan day two in Kyoto: Fushimi Inari in the morning, Nishiki Market in the afternoon.</div>
-          <div class="tool-call"><svg class="i"><use href="#i-check"/></svg>TripEZGo · Added 2 events and 1 leg to day 2</div>
-          <div class="bubble ai">Done — open the app and it's there.</div>
-        </div>
+        <div class="demo-slot" data-lazy-demo="ai-chat"></div>
       </div>
     </div>
   </section>
 
-    <section class="section" id="plans">
+  <section class="section section-alt" id="plans">
     <div class="wrap">
       <div class="section-head plans-head">
         <p class="eyebrow">Pricing</p>
         <h2>Start free, <span class="nb">upgrade when you need to</span></h2>
+        <p class="lede">Free to use, better with Premium.</p>
       </div>
       <table class="compare">
         <colgroup><col><col class="c-plan"><col class="c-prem"></colgroup>
@@ -338,7 +388,7 @@
           <tr><th scope="row">Calendar / timeline, map, overview</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">Files, to-dos, legs and backup departures</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">Co-editing and location sharing</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
-          <tr><th scope="row">Widget、Siri</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">Widgets, Siri</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">Tools (notes, currency, shopping list)</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">iCloud sync and backup</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">Import and export</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
@@ -348,13 +398,57 @@
         </tbody>
       </table>
       <p class="plans-note">Premium is available as a weekly, monthly or yearly subscription, or a one-time purchase. Cancel anytime in your App Store subscription settings.</p>
+      <div class="plans-more">
+      <details class="more"><summary>Why charge at all?</summary><div class="more-body">
+<p>Pricing was the thing I agonized over most. I built this to genuinely help people who travel on their own — but realistically, it has to earn something to keep going.</p>
+<p>What it costs right now: US$200 a month for AI, US$99 a year for the Apple Developer Program, plus about 30 hours a week of my own time building it.</p>
+<p>So TripEZGo starts from “free to use, better with Premium.” Free and Premium differ in just these ways: no ads, the number of trips (Free keeps 3 at a time — delete an old one to make room), companions per trip (3 on Free), Live Activity, and Apple / Google Calendar integration. Premium comes as a weekly, monthly or yearly subscription, or a lifetime purchase.</p>
+          </div></details>
+      </div>
       <div class="hero-actions plans-cta">
-        <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372">Download on the App Store</a>
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372" target="_blank" rel="noopener">Download on the App Store</a>
       </div>
     </div>
   </section>
 
+  <section class="section" id="story">
+    <div class="wrap">
+      <details class="story">
+        <summary>
+          <span class="eyebrow">Behind the app</span>
+          <span class="story-title">Why an iOS engineer who often travels solo built his own trip planner</span>
+          <span class="story-toggle">Read the story</span>
+        </summary>
+        <div class="story-body">
+<h3>How it started</h3>
+<p>On past trips I always had great companions who did the planning, and I mostly went with the flow. Then in September 2023 I took my first-ever solo trip — <a href="https://en.zhgchg.li/posts/travel-journals/nagoya-one-day-quick-trip-peach-aviation-flight-experience-and-travel-tips-7b8a0563c157/" target="_blank" rel="noopener">a one-day dash to Nagoya</a> — and something switched on. Like people say: you either never do it, or you never stop.</p>
+<p>Plenty more followed: <a href="https://en.zhgchg.li/posts/travel-journals/kyushu-10-day-solo-travel-guide-explore-fukuoka-nagasaki-kumamoto-efficiently-d78e0b15a08a/" target="_blank" rel="noopener">10 days solo in Kyushu</a>, <a href="https://en.zhgchg.li/posts/travel-journals/sanyo-region-travel-guide-6-day-hiroshima-okayama-itinerary-for-freedom-seekers-31b9b3a63abc/" target="_blank" rel="noopener">6 days solo in Hiroshima and Okayama</a>, <a href="https://en.zhgchg.li/posts/travel-journals/san-in-kansai-7-day-solo-trip-explore-izumo-matsue-tottori-himeji-osaka-kobe-aacd5f5cacd1/" target="_blank" rel="noopener">7 days solo through Shimane, Tottori, Himeji and Kobe</a>, 10 days solo around Nagoya, Ise and Mie… and so on.</p>
+<p>Planning before you leave, keeping on top of things once you're there — when you travel on your own, and especially solo, it's all on you. I needed a tool to keep track of all of it. I tried plenty of approaches, and none fit quite right. <b>With AI everywhere, and being an iOS developer myself, I thought: why not build one?</b></p>
+
+<h3>Apple Notes / Obsidian / Notion / Google Docs</h3>
+<figure class="story-fig"><img src="/assets/img/story/notes-app.webp" width="1200" height="857" alt="A San'in and Kansai trip in Apple Notes: one note per day, with map screenshots, departures and transfer times pasted in" loading="lazy"></figure>
+<p>This is what I first planned trips with. The upside is that it's simple: open it and you're in a rich text editor, free to drop in event titles, images and attachments however you like.</p>
+<p>The downside is that same freedom. There's no fixed format, so it's hard to see the whole trip at a glance. Once the plan gets long, scrolling to find things is painful; on the road there's no quick way to jump to where you are now; and when plans change, it's a real hassle. And there are no notifications, calendar, trip map or widgets.</p>
+<p>In practice, I found it great for collecting places and sketching an outline — you can get a rough plan down fast. But for working out the details, or checking things mid-trip, it's not very handy.</p>
+
+<h3>Apple Calendar / Google Calendar</h3>
+<figure class="story-fig"><img src="/assets/img/story/calendar-app.webp" width="1200" height="1264" alt="Apple Calendar's week view: each day of an Okinawa trip, with plans and travel laid out as blocks of events" loading="lazy"></figure>
+<p>On my most recent trip, <a href="https://en.zhgchg.li/posts/okinawa-summer-5-day-self-drive-tour-snorkeling-aquarium-entertainment-highlights-2cbc121a1b7c/" target="_blank" rel="noopener">Okinawa on our own</a>, we planned everything in Apple / Google Calendar. Planning is really easy: drag, drop, and the event's there; changing a time is just another drag. You can see the whole trip at a glance — where the gaps are, where you're staying too long. On the road you can set alerts, so you know right away how long you've got here and what's next, and last-minute changes are easy. Notifications and widgets work too.</p>
+<p>The downside is that things end up scattered. There's no overview of your to-dos, files or notes, and no map view. A calendar is all about the event itself, and each event stands on its own. But some trip information cuts across events: train tickets, a souvenir list, notes. Or say I finish event A with plenty of time left — I want to know which events on other days are on the way and could move to today.</p>
+
+<h3>Other trip-planning apps</h3>
+<p>I also tried a few trip planners from big e-commerce groups. Each had standout features — an overview of your plans, adding events straight from a place, automatic scheduling, maps. But in use, they all felt geared more toward social and shopping. Fair enough: for a company, a product has to make money.</p>
+<p>And so there's TripEZGo — plan the trip, carry what it needs, all in one app.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
 </main>
+<aside class="fab-dl" hidden>
+  <figure class="fab-qr"><img src="/assets/img/appstore-qr.svg" width="120" height="120" alt="QR code to download on the App Store"><figcaption>Scan with your iPhone</figcaption></figure>
+  <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372" target="_blank" rel="noopener">Get the App</a>
+</aside>
 
 <footer class="site-footer">
   <div class="wrap">

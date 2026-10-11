@@ -82,3 +82,13 @@ body { width: 402px; height: 874px; overflow: hidden; }
 /* 「–」「→」：見 chrome.js 的 fmt()。-apple-system 在中文頁會被解析成 PingFang，指名西文字型才畫得出窄的那一個 */
 .lt { font-family: "Helvetica Neue", Helvetica, sans-serif; }
 .lt.ar { font-family: "Lucida Grande", "Helvetica Neue", sans-serif; }
+
+/* 互動模式（首頁的 iPhone 外框裡）：可點的東西給游標與按壓回饋；截圖模式不受影響 */
+.is-interactive .tab, .is-interactive [data-tap] { cursor:pointer; }
+.is-interactive [data-tap]:active { filter:brightness(.94); }
+.is-interactive body, .is-interactive .device { user-select:none; -webkit-user-select:none; }
+
+/* 互動模式換頁（go()）：底色跟 App 一樣白，不露出截圖用的灰底；同源跨頁淡入淡出，不閃 */
+@view-transition { navigation: auto; }
+html.is-interactive, html.is-interactive body { background:#fff; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration:.22s; }

@@ -79,30 +79,115 @@
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .file .mt { flex: none; font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); }
   .file .chev { width: 15px; height: 15px; stroke-width: 2; }
+
+  /* ── 互動模式（interactive=1）才用得到的樣子 ── */
+  .h1.cx { color: var(--muted); text-decoration: line-through; }   /* EventFactsView.headingText：已取消＝muted＋劃線 */
+  .pin.on { background: var(--accent); border-color: var(--accent); }   /* BookendPinButton：啟用＝實心 */
+  .pin.on svg { stroke: #fff; }
+  .sec-tog { flex: none; font: 600 var(--t-xs)/14.3px var(--font); color: var(--muted-on-sunken); }
+  .count.ok { color: var(--muted-on-sunken); }   /* TodoCountView：全部做完＝mutedOnSunken、沒有點 */
+  .todo .box i { display: grid; place-items: center; }
+  .todo.done .box i { background: var(--ink); border-color: var(--ink); }   /* TodoCheckButton：勾了＝ink 實心＋白勾 13 */
+  .todo.done .box i svg { width: 13px; height: 13px; fill: none; stroke: #fff; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+  .todo.done span { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--border); }
+  .is-interactive .sheet { transition: transform .32s cubic-bezier(.2,.8,.2,1), filter .32s; transform-origin: 50% 0; touch-action: pan-y; }
+  .sheet.back { transform: translateY(6px) scale(.94); filter: brightness(.9); }
+  .dragzone { position: absolute; left: 0; right: 0; top: 0; height: 72px; touch-action: none; }
+  .above { position: absolute; left: 0; right: 0; top: 0; height: 62px; }
+  /* 子 sheet（延後／提前、附件預覽）：iOS 26 的浮動紙，四邊內縮 8，圓角 Radius.lg 12（preferredCornerRadius） */
+  .dim2 { position: absolute; inset: 0; background: rgba(0,0,0,.2); opacity: 0; transition: opacity .3s; z-index: 60; }
+  .dim2.on { opacity: 1; }
+  .ssheet { position: absolute; left: 8px; right: 8px; bottom: 8px; background: var(--card); border-radius: 12px; z-index: 61;
+    box-shadow: 0 0 30px rgba(0,0,0,.1); transform: translateY(105%); transition: transform .34s cubic-bezier(.2,.8,.2,1); overflow: hidden; }
+  .ssheet.on { transform: none; }
+  .ssheet.full { top: 70px; left: 0; right: 0; bottom: 0; border-radius: 12px 12px 0 0; background: var(--page); }
+  .ssheet .grabber { left: 50%; margin-left: -18px; }
+  .subnav { height: 44px; margin-top: 16px; display: flex; align-items: center; justify-content: center; padding: 0 64px;
+    font: 600 17px/22px var(--font); color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .subnav span { overflow: hidden; text-overflow: ellipsis; }
+  .subbody { padding: 16px 20px 0; display: flex; flex-direction: column; gap: 16px; }
+  /* ShiftEventSheet：兩顆晶片置中（ChipControl：高 44、左右 16、膠囊；選中 ink 底、白字粗體）、倒數輪、一句範圍提示、分隔線、套用 */
+  .dirs { display: flex; justify-content: center; gap: 8px; }
+  .schip { height: 44px; padding: 0 16px; border-radius: 22px; border: 1px solid var(--border); background: var(--sunken);
+    display: flex; align-items: center; font: 400 var(--t-sm)/16px var(--font); color: var(--ink); }
+  .schip.on { background: var(--ink); border-color: var(--ink); color: var(--page); font-weight: 700; }
+  .wheel { position: relative; height: 216px; display: flex; justify-content: center;
+    -webkit-mask-image: linear-gradient(transparent, #000 34%, #000 66%, transparent); mask-image: linear-gradient(transparent, #000 34%, #000 66%, transparent); }
+  .wheel .band { position: absolute; left: 0; right: 0; top: 92px; height: 32px; border-radius: 8px; background: rgba(118,118,128,.12); }
+  .wcol { position: relative; width: 64px; height: 216px; overflow-y: scroll; scroll-snap-type: y mandatory; scrollbar-width: none;
+    padding: 92px 0; overscroll-behavior: contain; touch-action: pan-y; }
+  .wcol::-webkit-scrollbar { display: none; }
+  .wr { height: 32px; line-height: 32px; text-align: right; padding-right: 8px; scroll-snap-align: center; font: 400 21px/32px -apple-system, BlinkMacSystemFont, sans-serif; color: #000; }
+  .wlab { position: relative; width: 64px; height: 32px; top: 92px; font: 600 17px/32px var(--font); color: #000; padding-left: 2px; white-space: nowrap; }
+  .hint { font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); }
+  .sep { height: 1px; background: var(--border-soft); margin-top: 12px; }
+  .primary { margin: 12px 20px 22px; min-height: 48px; border-radius: 8px; background: var(--accent-ink); color: #fff;
+    display: grid; place-items: center; font: 600 var(--t-base)/18px var(--font); }
+  /* 系統 alert（UIAlertController .alert，iOS 26）：刪除行程？ */
+  .alert { position: absolute; left: 50%; top: 50%; width: 300px; transform: translate(-50%,-50%) scale(1.06); opacity: 0; z-index: 71;
+    background: rgba(255,255,255,.97); border-radius: 34px; padding: 22px 18px 16px; text-align: center; transition: opacity .2s, transform .2s;
+    box-shadow: 0 10px 40px rgba(0,0,0,.18); }
+  .alert.on { opacity: 1; transform: translate(-50%,-50%); }
+  .alert b { display: block; font: 600 17px/22px var(--font); color: #000; }
+  .alert p { margin-top: 6px; font: 400 14px/19px var(--font); color: rgba(60,60,67,.85); white-space: pre-line; }
+  .abtns { display: flex; gap: 10px; margin-top: 18px; }
+  .abtn { flex: 1; height: 48px; border-radius: 24px; background: rgba(120,120,128,.14); display: grid; place-items: center;
+    font: 400 17px/22px var(--font); color: #000; }
+  .abtn.pref { font-weight: 600; }
+  .abtn.red { color: #ff383c; }
+  /* ToastView（.success）：深底膠囊、白字 13、勾 18 tzSuccess */
+  .toast { position: absolute; left: 50%; bottom: 52px; max-width: 354px; transform: translate(-50%, 14px); opacity: 0; z-index: 80;
+    display: flex; align-items: center; gap: 9px; padding: 11px 16px 11px 13px; border-radius: 22px; background: var(--n500); color: #fff;
+    font: 400 var(--t-sm)/16px var(--font); box-shadow: 0 6px 20px rgba(31,25,20,.22); transition: opacity .2s, transform .25s; pointer-events: none; }
+  .toast.on { opacity: 1; transform: translate(-50%, 0); }
+  .toast svg { flex: none; width: 18px; height: 18px; fill: none; stroke: var(--success); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+  /* 附件預覽（QuickLook／App 內瀏覽器）：只做「打得開」的樣子 */
+  .pclose { left: 16px; width: 44px; justify-content: center; z-index: 2; }
+  .pbody { position: absolute; left: 0; right: 0; top: 76px; bottom: 0; background: #f2f2f4; display: grid; place-items: start center; padding-top: 24px; }
+  .page { width: 300px; height: 420px; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.12); padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; }
+  .page i { display: block; height: 8px; border-radius: 4px; background: #e6e2dc; }
+  .page i.h { height: 14px; width: 70%; background: #cfc8bf; margin-bottom: 8px; }
+  .photo { width: 340px; height: 440px; border-radius: 4px; background: linear-gradient(160deg, #e9dfd2, #c9b9a4 55%, #a8927a); display: grid; place-items: center; }
+  .photo svg { width: 64px; height: 64px; fill: none; stroke: rgba(255,255,255,.85); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+  .web { position: absolute; inset: 0; background: #fff; }
+  .web .bar { position: absolute; left: 12px; right: 12px; bottom: 30px; height: 44px; border-radius: 22px; background: #f0f0f2;
+    display: grid; place-items: center; font: 400 15px/20px -apple-system, sans-serif; color: #000; }
+  .web .pg { padding: 24px 20px; display: flex; flex-direction: column; gap: 10px; }
+  .web .pg i { display: block; height: 10px; border-radius: 5px; background: #ececee; }
+  .web .pg i.h { height: 22px; width: 80%; background: #dedee2; margin-bottom: 10px; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { params, lang, loadTrip, loadCategories, categoryName, chrome, ready } from './chrome.js';
+import { params, lang, t, loadTrip, loadCategories, categoryName, chrome, ready, interactive, go, duration } from './chrome.js';
+import { applyState, loadState, patchEvent, doneTodos, shiftFrom, toMin, clock } from './demo-state.js';
 
 // App 的字串（Scripts/i18n/maps：Trips.detailAllDay、UI.daySpan／todoListTitle／addTodo／filesLabel）
 const S = {
   'zh-Hant-TW': { allDay: s => `全日 · ${s}`, span: (a, b) => a === b ? `第 ${a} 天` : `第 ${a}–${b} 天`,
-    todos: '待辦清單', addTodo: '新增待辦', files: '附件', locale: 'zh-TW' },
+    todos: '待辦清單', addTodo: '新增待辦', files: '附件', locale: 'zh-TW', hideDone: '收起已完成', showDone: '顯示已完成' },
   en: { allDay: s => `All-day · ${s}`, span: (a, b) => a === b ? `Day ${a}` : `Days ${a}–${b}`,
-    todos: 'To-Do List', addTodo: 'Add to-do', files: 'Files', locale: 'en-US' },
+    todos: 'To-Do List', addTodo: 'Add to-do', files: 'Files', locale: 'en-US', hideDone: 'Hide finished', showDone: 'Show finished' },
   ja: { allDay: s => `終日 · ${s}`, span: (a, b) => a === b ? `${a}日目` : `${a}〜${b} 日目`,
-    todos: 'やることリスト', addTodo: 'やることを追加', files: '添付', locale: 'ja-JP' },
+    todos: 'やることリスト', addTodo: 'やることを追加', files: '添付', locale: 'ja-JP', hideDone: '完了したものを隠す', showDone: '完了したものを表示' },
 }[lang] || null;
-const L = S || { allDay: s => `全日 · ${s}`, span: (a, b) => `第 ${a}–${b} 天`, todos: '待辦清單', addTodo: '新增待辦', files: '附件', locale: 'zh-TW' };
+const L = S || { allDay: s => `全日 · ${s}`, span: (a, b) => `第 ${a}–${b} 天`, todos: '待辦清單', addTodo: '新增待辦', files: '附件', locale: 'zh-TW', hideDone: '收起已完成', showDone: '顯示已完成' };
 
 // 範本裡沒有的附件（extra=1）：一份 PDF 電子票券、一張照片。列的長相、圖示、第二行（副檔名大寫）照 App。
-const EXTRA = {
-  'zh-Hant-TW': [['JR Pass 電子票券.pdf', 'pdf'], ['兌換收據.jpg', 'image']],
-  en: [['JR Pass e-ticket.pdf', 'pdf'], ['Exchange receipt.jpg', 'image']],
-  ja: [['JR Pass 電子チケット.pdf', 'pdf'], ['引換レシート.jpg', 'image']],
-}[lang] || [];
+const EXTRA_BY_EVENT = {
+  'jr-pass': {
+    'zh-Hant-TW': [['JR Pass 電子票券.pdf', 'pdf'], ['兌換收據.jpg', 'image']],
+    en: [['JR Pass e-ticket.pdf', 'pdf'], ['Exchange receipt.jpg', 'image']],
+    ja: [['JR Pass 電子チケット.pdf', 'pdf'], ['引換レシート.jpg', 'image']],
+  },
+  'd1-airport': {
+    'zh-Hant-TW': [['虎航 電子登機證.pdf', 'pdf'], ['護照資料頁.jpg', 'image']],
+    en: [['Tigerair boarding pass.pdf', 'pdf'], ['Passport photo page.jpg', 'image']],
+    ja: [['タイガーエア 搭乗券.pdf', 'pdf'], ['パスポート顔写真ページ.jpg', 'image']],
+  },
+};
+const EXTRA = (EXTRA_BY_EVENT[params.get('event') || 'jr-pass'] || EXTRA_BY_EVENT['jr-pass'])[lang] || [];
 
 // DesignIcon.swift 的轉寫（24 格）。收進 chrome.js 之前先放這裡。
 const I = {
@@ -116,6 +201,11 @@ const I = {
   photo: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M4 17l5.5-5.5L14 16l2.5-2.5L20 17"/>',
   paperclip: '<path d="M21 12l-8.5 8.5Q7 22 5.5 13.5L14 5Q20.5 6.5 19 10l-8.5 8.5Q8.5 19.5 7.5 15.5L16 7"/>',
   chevronRight: '<path d="M9 5l7 7-7 7"/>',
+  // 互動模式用到的（DesignIcon.swift：refresh＝改回要去、shiftTime＝延後／提前、check＝勾掉的待辦、close）
+  refresh: '<path d="M12 4.5A7.5 7.5 0 1 1 5.32 8.6M12 1.5v3M8.6 4.5H12V8"/>',
+  shift: '<path d="M20.2 12a8.2 8.2 0 1 1-2.62-6.01M20.4 3v4.4H16M12 7.6V12l3.1 1.9"/>',
+  check: '<path d="M5 13l5 5 9-11"/>',
+  close: '<path d="M6 6l12 12M18 6 6 18"/>',
 };
 // 「·」在中日文的 cascade 裡是全形字（PingFang／Hiragino 畫的），SF 的是窄的那一個；「↔」「→」用 SF 的，但 UIKit 的漢字／西文自動間距
 // 把它當西文，兩邊各留一點——Chromium 的 text-autospace 不認符號，這裡補
@@ -128,12 +218,16 @@ const FILE_ICON = { pdf: 'document', image: 'photo', link: 'code', other: 'paper
 const d = document.getElementById('d');
 const trip = await loadTrip();
 await loadCategories();
+if (interactive) applyState(trip);   // 在行事曆拖過、在這裡按過的（demo-state.js）
 const key = params.get('event') || 'jr-pass';
 const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
 const dateOf = n => new Date(start.getTime() + (n - 1) * 864e5);
 
 let ev = trip.allDayEvents.find(e => e.key === key), dayNo = null;
 if (!ev) for (const day of trip.days) { const e = day.events.find(x => x.key === key); if (e) { ev = e; dayNo = day.day; break; } }
+// 回到底下那一頁：行事曆的哪一天（全日行程跨好幾天，看的是從哪一天點進來）
+const backDay = +(params.get('day') || dayNo || 2);
+if (!ev && interactive) { if (params.get('from')) go(params.get('from')); else go('calendar', { day: backDay }); await new Promise(() => {}); }   // 這一則已經刪掉了
 
 // TripTextFormatter.detailDateParts：「2026年10月10日 · 週六 –」「10月14日 · 週三」，片段內的空白換成不斷行空白
 const fullDate = (dt, year = true) => {
@@ -154,33 +248,62 @@ const dateLine = parts.map(p => p.replace(/ /g, ' ')).join(' ');
 const subtitle = [categoryName(ev.category), ev.place && ev.place.name].filter(Boolean).join(' · ');
 
 const todos = ev.todos || [];
-const files = (ev.links || []).map(l => ({ name: l.title || l.url, kind: 'link', meta: '' }));
+// 待辦：打勾的（互動模式從 demo-state 讀）、這一次才勾的（stickyDoneIDs）、使用者有沒有按「顯示已完成」
+const done = interactive ? doneTodos(key) : new Set();
+const sticky = new Set();
+let showsCompleted = false;
+const files = (ev.links || []).map(l => ({ name: l.title || l.url, kind: 'link', meta: '', url: l.url }));
 if (params.get('extra') === '1') EXTRA.forEach(([name, kind]) => files.push({ name, kind, meta: name.split('.').pop().toUpperCase() }));
+
+// 導覽列（TripEventDetailViewController.applyPins）：左邊「延後／提前、我不去了」（已取消或全日的沒有延後），
+// 右邊由外而內「刪除、編輯」，全日的再加兩顆釘選鈕（每日開始／結束，R12d）。
+const pinned = kind => ((ev[kind === 'opening' ? 'openingDays' : 'closingDays']) || []).includes(backDay);
+function navHTML() {
+  const cx = !!ev.isCancelled;
+  const cancelBtn = ic(cx ? 'refresh' : 'cancel');
+  const left = dayNo === null || cx
+    ? `<div class="glass l"${interactive ? ' data-act="cancel" data-tap' : ''}>${cancelBtn}</div>`
+    : `<div class="glass" style="left:16px;width:100px"><div class="slot" style="left:1px" data-act="shift" data-tap>${ic('shift')}</div>
+      <div class="slot" style="left:55px" data-act="cancel" data-tap>${cancelBtn}</div></div>`;
+  const tp = interactive ? ' data-tap' : '';
+  const right = dayNo === null
+    ? `<div class="glass r">
+    <div class="slot" style="left:4px" data-act="opening"${tp}><div class="pin${pinned('opening') ? ' on' : ''}">${ic('dayOpening')}</div></div>
+    <div class="slot" style="left:64px" data-act="closing"${tp}><div class="pin${pinned('closing') ? ' on' : ''}">${ic('dayClosing')}</div></div>
+    <div class="slot" style="left:121px" data-act="edit"${tp}>${ic('pencil')}</div>
+    <div class="slot" style="left:174.7px" data-act="delete"${tp}>${ic('trash')}</div>
+  </div>`
+    : `<div class="glass" style="left:286px;width:100px"><div class="slot" style="left:1px" data-act="edit"${tp}>${ic('pencil')}</div>
+      <div class="slot" style="left:55px" data-act="delete"${tp}>${ic('trash')}</div></div>`;
+  return left + right;
+}
+
+// EventSectionHeaderView.configureTodos ＋ TodoCountView ＋ EventTodoRowCell／TodoCheckButton
+function todosHTML() {
+  const n = done.size, unfinished = n < todos.length;
+  const visible = todos.map((x, i) => i).filter(i => showsCompleted || !done.has(i) || sticky.has(i));
+  const showsRows = visible.some(i => done.has(i));
+  return `<div class="sec-head"><b>${L.todos}</b>${todos.length ? `<span class="count${unfinished ? ' due' : ' ok'}">${unfinished ? '<i></i>' : ''}${n}/${todos.length}</span>` : ''}${n > 0 ? `<span class="sec-tog" data-tog data-tap>${showsRows ? L.hideDone : L.showDone}</span>` : ''}</div>
+    ${visible.map(i => `<div class="todo${done.has(i) ? ' done' : ''}"><div class="box"${interactive ? ` data-todo="${i}" role="checkbox" aria-checked="${done.has(i)}"` : ''}><i>${done.has(i) ? ic('check') : ''}</i></div><span>${esc(todos[i])}</span></div>`).join('')}
+    <div class="todo composer"><div class="box"><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10.2" fill="none"
+      stroke="var(--border)" stroke-width="1.6" stroke-dasharray="3 3"/></svg></div><span>${L.addTodo}</span></div>`;
+}
 
 d.insertAdjacentHTML('beforeend', `
 <div class="sheet" id="sheet">
   <div class="grabber"></div>
-  <div class="glass l">${ic('cancel')}</div>
-  <div class="glass r">
-    ${dayNo === null ? `<div class="slot" style="left:4px"><div class="pin">${ic('dayOpening')}</div></div>
-    <div class="slot" style="left:64px"><div class="pin">${ic('dayClosing')}</div></div>` : ''}
-    <div class="slot" style="left:121px">${ic('pencil')}</div>
-    <div class="slot" style="left:174.7px">${ic('trash')}</div>
-  </div>
+  <div id="nav">${navHTML()}</div>
   <div class="facts" id="facts">
-    <div class="h1">${escD(ev.title)}</div>
+    <div class="h1${ev.isCancelled ? ' cx' : ''}">${escD(ev.title)}</div>
     <div class="date">${esc(dateLine)}</div>
-    <div class="range">${escD(range)}</div>
+    <div class="range" id="range">${escD(range)}</div>
     ${subtitle ? `<div class="sub">${esc(subtitle)}</div>` : ''}
   </div>
   <div class="body" id="body">
     ${ev.notes ? `<div class="notes">${esc(ev.notes)}</div>` : ''}
-    <div class="sec-head"><b>${L.todos}</b>${todos.length ? `<span class="count due"><i></i>0/${todos.length}</span>` : ''}</div>
-    ${todos.map(t => `<div class="todo"><div class="box"><i></i></div><span>${esc(t)}</span></div>`).join('')}
-    <div class="todo composer"><div class="box"><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10.2" fill="none"
-      stroke="var(--border)" stroke-width="1.6" stroke-dasharray="3 3"/></svg></div><span>${L.addTodo}</span></div>
+    <div id="todos">${todosHTML()}</div>
     ${files.length ? `<div class="sec-head"><b>${L.files}</b><span class="count">${files.length}</span></div>
-    ${files.map(f => `<div class="file">${ic(FILE_ICON[f.kind])}<span class="nm">${esc(f.name)}</span>${f.meta ? `<span class="mt">${f.meta}</span>` : ''}${ic('chevronRight', 'chev')}</div>`).join('')}` : ''}
+    ${files.map((f, i) => `<div class="file" data-file="${i}"${interactive ? ' data-tap' : ''}>${ic(FILE_ICON[f.kind])}<span class="nm">${esc(f.name)}</span>${f.meta ? `<span class="mt">${f.meta}</span>` : ''}${ic('chevronRight', 'chev')}</div>`).join('')}` : ''}
   </div>
 </div>`);
 
@@ -202,6 +325,294 @@ document.querySelectorAll('.file .nm').forEach(el => {
   const a = Math.ceil(lo / 2);
   el.textContent = full.slice(0, a) + '…' + full.slice(full.length - (lo - a));
 });
+
+
+/* ── 互動模式 ───────────────────────────────────────────────────────────────
+   照 App（Modules/UI/…/TripEventDetail/TripEventDetailViewController.swift，規則出處另見 assets/js/demos/event-actions.js 檔頭）：
+   - 我不去了／改回要去：一顆鈕兩個方向（applyCancelItem：cancel ↔ refresh 圖示）；標題轉 muted＋劃線（EventFactsView.headingText）。
+     已取消的沒有延後鈕（canShift）。
+   - 延後／提前：ShiftEventSheet —— 兩顆方向晶片（預設延後）＋小時／分鐘倒數輪（1 分一格，預設 1 小時，0 不給套用）＋
+     「後續行程將一併延後／提前。」＋套用。挪的是 EventShift.from（demo-state.js shiftFrom），回報那一句是
+     TripCalendarViewController.shiftAndDescribe，顯示在這一頁的 toast（showNotice，.success）。
+   - 刪除：先問（UIAlertController .alert，「返回」是 preferredAction），刪了就收掉這張紙回行事曆。
+   - 待辦：勾了＝ink 實心＋白勾、字 muted＋劃線；計數 TodoCountView（還有沒做完＝紅點＋紅字，做完＝mutedOnSunken）；
+     這一次才勾的留在原地（stickyDoneIDs），「收起已完成／顯示已完成」看的是畫面上有沒有已完成的列。
+   - 釘選鈕（全日，R12d）：啟用＝實心；一天只有一則開始／結束；回報 bookendSet／bookendUnset。
+   - 附件：點一列打開（PDF、照片走 QuickLook，連結走 App 內瀏覽器）——這裡只畫一張「打開了」的紙。
+   - 關掉：往下拖這張紙，或點紙上面那一條。 */
+if (interactive) {
+  const X = {
+    'zh-Hant-TW': { shiftTitle: '延後／提前', later: '延後', earlier: '提前', scope: '後續行程將一併延後／提前。', apply: '套用',
+      delAsk: '刪除行程？', delMsg: '刪除後無法復原，附件與相鄰的路程設定會一併移除。\n只是行程有變，可以改用「我不去了」保留紀錄。',
+      del: '刪除行程', back: '返回', hideDone: '收起已完成', showDone: '顯示已完成', hours: '小時', mins: '分鐘', close: '關閉',
+      cancel: '我不去了', uncancel: '改回要去', shift: '延後或提前', edit: '編輯行程',
+      shifted: (later, n, len) => `${later ? '已延後' : '已提前'} ${n} 則 ${len}`, edge: later => later ? '最後' : '最前',
+      clamped: (n, e) => `，其中 ${n} 則只挪到這一天的${e}`, blocked: (n, e) => `，另有 ${n} 則已經貼在${e}、動不了`,
+      stuck: e => `已經貼在這一天的${e}，挪不動了`,
+      pinSet: (dd, k) => `已設為${dd}的${k}行程`, pinUnset: (dd, k) => `已取消${dd}的${k}行程`, opening: '開始', closing: '結束' },
+    en: { shiftTitle: 'Later / Earlier', later: 'Later', earlier: 'Earlier', scope: 'Later events shift with it.', apply: 'Apply',
+      delAsk: 'Delete event?', delMsg: 'Deleting can\'t be undone, and attachments and the legs on either side go with it.\nIf the plan has only changed, “I\'m Not Going” keeps the record.',
+      del: 'Delete Event', back: 'Back', hideDone: 'Hide finished', showDone: 'Show finished', hours: 'hours', mins: 'min', close: 'Close',
+      cancel: 'I\'m Not Going', uncancel: 'I\'m Going After All', shift: 'Move later or earlier', edit: 'Edit Event',
+      shifted: (later, n, len) => `Moved ${n} events ${later ? 'later' : 'earlier'} by ${len}`, edge: later => later ? 'the end' : 'the start',
+      clamped: (n, e) => `, though ${n} of them only reached ${e} of the day`, blocked: (n, e) => `, and ${n} more are already at ${e} and can't move`,
+      stuck: e => `Already at ${e} of the day, so it can't move`,
+      pinSet: (dd, k) => `Set as the ${k} event on ${dd}`, pinUnset: (dd, k) => `No longer the ${k} event on ${dd}`, opening: 'opening', closing: 'closing' },
+    ja: { shiftTitle: '後ろへ／前へ', later: '後ろへ', earlier: '前へ', scope: '以降の予定もまとめて動きます。', apply: '適用',
+      delAsk: '予定を削除しますか？', delMsg: '削除すると元に戻せません。添付や前後の移動の設定も一緒に外れます。\n予定が変わっただけなら、「行かないことにする」で記録を残せます。',
+      del: '予定を削除', back: '戻る', hideDone: '完了したものを隠す', showDone: '完了したものを表示', hours: '時間', mins: '分', close: '閉じる',
+      cancel: '行かないことにする', uncancel: 'やっぱり行く', shift: '後ろへ、または前へ', edit: '予定を編集',
+      shifted: (later, n, len) => `${n} 件を ${len} ${later ? '後ろ' : '前'}にずらしました`, edge: later => later ? '最後' : '最初',
+      clamped: (n, e) => `。うち ${n} 件はこの日の${e}までしかずれていません`, blocked: (n, e) => `。ほかの ${n} 件はすでに${e}に接していて動きません`,
+      stuck: e => `すでにこの日の${e}に接しているため、ずらせません`,
+      pinSet: (dd, k) => `${dd}の${k}の予定にしました`, pinUnset: (dd, k) => `${dd}の${k}の予定を解除しました`, opening: '最初', closing: '最後' },
+  }[lang] || null;
+  const W = X || {};
+  const sheet = document.getElementById('sheet');
+  const nav = document.getElementById('nav');
+  const todosEl = document.getElementById('todos');
+  const h1 = facts.querySelector('.h1');
+  // 從哪裡點進來就回哪裡：?from=<page>（例如筆記裡的 @提及），沒有就回行事曆的那一天
+  const from = params.get('from');
+  const back = () => {
+    if (from) { if (history.length > 1 && document.referrer.includes(`/${from}.html`)) history.back(); else go(from); }
+    else go('calendar', { day: backDay });
+  };
+  const attr = v => String(v).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+  // 唸的名字（圖示鈕沒有字）
+  const label = () => {
+    const names = { cancel: ev.isCancelled ? W.uncancel : W.cancel, shift: W.shift, edit: W.edit, delete: W.del };
+    nav.querySelectorAll('[data-act]').forEach(b => { if (names[b.dataset.act]) b.setAttribute('aria-label', names[b.dataset.act]); });
+  };
+  label();
+
+  // ── toast ──
+  d.insertAdjacentHTML('beforeend', `<div class="toast" id="toast" role="status">${ic('check')}<span></span></div>`);
+  const toastEl = document.getElementById('toast');
+  let toastTimer = 0;
+  const toast = msg => {
+    toastEl.querySelector('span').textContent = msg;
+    toastEl.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('on'), 2400 + msg.length * 40);
+  };
+
+  // ── 往下拖收掉（主紙與子紙共用）；拖過就不算一次點 ──
+  let swallowClick = false;
+  document.addEventListener('click', e => { if (swallowClick) { swallowClick = false; e.stopPropagation(); e.preventDefault(); } }, true);
+  function dragToDismiss(el, { allow = () => true, onClose }) {
+    let st = null;
+    el.addEventListener('pointerdown', e => {
+      if (e.button > 0 || !allow(e)) return;
+      st = { y0: e.clientY, t0: performance.now(), id: e.pointerId, dy: 0, on: false };
+    });
+    el.addEventListener('pointermove', e => {
+      if (!st || e.pointerId !== st.id) return;
+      const dy = e.clientY - st.y0;
+      if (!st.on) {
+        if (dy < -8) { st = null; return; }
+        if (dy < 8) return;
+        st.on = true;
+        try { el.setPointerCapture(st.id); } catch { /* 已放開 */ }
+        el.style.transition = 'none';
+      }
+      st.dy = Math.max(0, dy - 8);
+      el.style.transform = `translateY(${st.dy}px)`;
+    });
+    const up = () => {
+      if (!st) return;
+      const s = st; st = null;
+      if (!s.on) return;
+      swallowClick = true; setTimeout(() => { swallowClick = false; }, 0);
+      el.style.transition = '';
+      const v = s.dy / Math.max(1, performance.now() - s.t0);
+      if (s.dy > 120 || v > 0.7) { el.style.transform = 'translateY(105%)'; onClose(); }
+      else el.style.transform = '';
+    };
+    el.addEventListener('pointerup', up);
+    el.addEventListener('pointercancel', up);
+  }
+  const closeMain = () => { sheet.style.transition = 'transform .25s ease-in'; sheet.style.transform = 'translateY(100%)'; setTimeout(back, 230); };
+  // 觸控只從頂端那一條（抓桿＋導覽列）拖——其他地方留給首頁捲動；滑鼠哪裡都能拖
+  sheet.insertAdjacentHTML('afterbegin', '<div class="dragzone"></div>');
+  dragToDismiss(sheet, {
+    allow: e => !sub && (e.pointerType === 'mouse' || e.target.closest('.dragzone, .grabber, .glass')),
+    onClose: () => setTimeout(back, 200),
+  });
+  d.insertAdjacentHTML('beforeend', '<div class="above" id="above"></div>');
+  document.getElementById('above').addEventListener('click', () => { if (!sub) closeMain(); });
+
+  // ── 子紙：延後／提前、附件預覽、刪除確認 ──
+  let sub = null;
+  d.insertAdjacentHTML('beforeend', '<div class="dim2" id="dim2" hidden></div>');
+  const dim2 = document.getElementById('dim2');
+  function present(html, { pushBack = true } = {}) {
+    dim2.hidden = false;
+    d.insertAdjacentHTML('beforeend', html);
+    sub = d.lastElementChild;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      dim2.classList.add('on'); sub.classList.add('on');
+      if (pushBack) sheet.classList.add('back');
+    }));
+    return sub;
+  }
+  function dismiss() {
+    if (!sub) return;
+    const el = sub; sub = null;
+    el.style.transition = ''; el.classList.remove('on');
+    if (el.classList.contains('ssheet')) el.style.transform = 'translateY(105%)';
+    dim2.classList.remove('on'); sheet.classList.remove('back');
+    setTimeout(() => { el.remove(); if (!sub) dim2.hidden = true; }, 340);
+  }
+  dim2.addEventListener('click', () => { if (sub && !sub.classList.contains('alert')) dismiss(); });
+
+  // 延後／提前
+  function openShift() {
+    let later = true;
+    const rows = n => Array.from({ length: n }, (_, i) => `<div class="wr" data-v="${i}">${i}</div>`).join('');
+    const el = present(`<div class="ssheet" role="dialog" aria-label="${W.shiftTitle}"><div class="grabber"></div>
+      <div class="subnav"><span>${esc(W.shiftTitle)}</span></div>
+      <div class="subbody">
+        <div class="dirs"><div class="schip on" data-dir="1" data-tap>${W.later}</div><div class="schip" data-dir="0" data-tap>${W.earlier}</div></div>
+        <div class="wheel"><div class="band"></div>
+          <div class="wcol" data-u="h" tabindex="0" aria-label="${W.hours}">${rows(24)}</div><div class="wlab">${W.hours}</div>
+          <div class="wcol" data-u="m" tabindex="0" aria-label="${W.mins}">${rows(60)}</div><div class="wlab">${W.mins}</div>
+        </div>
+        <p class="hint">${esc(W.scope)}</p>
+      </div>
+      <div class="sep"></div>
+      <div class="primary" data-apply data-tap>${W.apply}</div></div>`);
+    const [hc, mc] = el.querySelectorAll('.wcol');
+    const ROW = 32;
+    const val = c => Math.max(0, Math.round(c.scrollTop / ROW));
+    hc.scrollTop = ROW;   // 預設一小時（applyDefaultDuration）
+    let settle = 0;
+    const onScroll = () => {
+      clearTimeout(settle);
+      settle = setTimeout(() => {
+        // .countDownTimer 生不出 0：轉到 0 小時 0 分會自己跳到 1 分
+        if (val(hc) === 0 && val(mc) === 0) mc.scrollTo({ top: ROW, behavior: 'smooth' });
+      }, 160);
+    };
+    [hc, mc].forEach(c => {
+      c.addEventListener('scroll', onScroll);
+      c.addEventListener('click', e => { const r = e.target.closest('.wr'); if (r) c.scrollTo({ top: +r.dataset.v * ROW, behavior: 'smooth' }); });
+      c.addEventListener('keydown', e => {
+        if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
+        e.preventDefault(); c.scrollTo({ top: (val(c) + (e.key === 'ArrowDown' ? 1 : -1)) * ROW, behavior: 'smooth' });
+      });
+    });
+    el.querySelector('.dirs').addEventListener('click', e => {
+      const c = e.target.closest('.schip'); if (!c) return;
+      later = c.dataset.dir === '1';
+      el.querySelectorAll('.schip').forEach(x => x.classList.toggle('on', x === c));
+    });
+    el.querySelector('[data-apply]').addEventListener('click', () => {
+      const minutes = val(hc) * 60 + val(mc);
+      if (minutes <= 0) return;
+      apply(later ? minutes : -minutes);
+    });
+    dragToDismiss(el, { allow: e => !e.target.closest('.wheel'), onClose: dismiss });
+  }
+  function apply(minutes) {
+    const day = trip.days.find(x => x.day === dayNo);
+    const list = day.events.filter(e => e.start && e.end)
+      .map(e => ({ key: e.key, src: e, start: toMin(e.start), end: toMin(e.end), cancelled: !!e.isCancelled }))
+      .sort((a, b) => a.start - b.start || a.end - b.end);
+    const anchor = list.find(e => e.key === key);
+    const before = new Map(list.map(e => [e.key, e.start]));
+    const r = shiftFrom(anchor, list, minutes);
+    for (const e of list) {
+      if (e.start === before.get(e.key)) continue;
+      e.src.start = clock(e.start); e.src.end = clock(e.end);
+      patchEvent(e.key, { start: e.src.start, end: e.src.end });
+    }
+    document.getElementById('range').innerHTML = escD(`${ev.start} – ${ev.end}`);
+    const edge = W.edge(minutes > 0);
+    const msg = !r.moved ? W.stuck(edge)
+      : W.shifted(minutes > 0, r.moved, duration(Math.abs(minutes))) + (r.clamped ? W.clamped(r.clamped, edge) : '') + (r.blocked ? W.blocked(r.blocked, edge) : '');
+    dismiss();
+    setTimeout(() => toast(msg), 200);
+  }
+
+  // 刪除確認
+  function openDelete() {
+    const el = present(`<div class="alert" role="alertdialog" aria-label="${attr(W.delAsk)}"><b>${esc(W.delAsk)}</b><p>${esc(W.delMsg)}</p>
+      <div class="abtns"><div class="abtn pref" data-a="back" data-tap tabindex="0">${esc(W.back)}</div><div class="abtn red" data-a="del" data-tap tabindex="0">${esc(W.del)}</div></div></div>`, { pushBack: false });
+    el.querySelector('[data-a="back"]').focus({ preventScroll: true });
+    el.addEventListener('click', e => {
+      const b = e.target.closest('[data-a]'); if (!b) return;
+      if (b.dataset.a === 'back') return dismiss();
+      patchEvent(key, { deleted: true });
+      dismiss();
+      setTimeout(closeMain, 120);
+    });
+  }
+
+  // 附件預覽
+  function openFile(f) {
+    const body = f.kind === 'link'
+      ? `<div class="web"><div class="pg"><i class="h"></i><i></i><i></i><i style="width:70%"></i><i></i><i style="width:55%"></i></div>
+         <div class="bar">${esc((() => { try { return new URL(f.url).host; } catch { return f.name; } })())}</div></div>`
+      : f.kind === 'image'
+        ? `<div class="photo">${ic('photo')}</div>`
+        : `<div class="page"><i class="h"></i><i></i><i></i><i style="width:80%"></i><i></i><i style="width:60%"></i><i></i><i></i><i style="width:40%"></i></div>`;
+    const el = present(`<div class="ssheet full" role="dialog" aria-label="${attr(f.name)}"><div class="grabber"></div>
+      <div class="glass pclose" data-tap aria-label="${W.close}">${ic('close')}</div>
+      <div class="subnav"><span>${esc(f.name)}</span></div>
+      <div class="pbody">${body}</div></div>`);
+    el.querySelector('.pclose').addEventListener('click', dismiss);
+    dragToDismiss(el, { allow: e => e.pointerType === 'mouse' || e.clientY - el.getBoundingClientRect().top < 76, onClose: dismiss });
+  }
+
+  // ── 導覽列 ──
+  nav.addEventListener('click', e => {
+    const b = e.target.closest('[data-act]'); if (!b) return;
+    const act = b.dataset.act;
+    if (act === 'cancel') {
+      ev.isCancelled = !ev.isCancelled;
+      patchEvent(key, { cancelled: ev.isCancelled });
+      h1.classList.toggle('cx', ev.isCancelled);
+      nav.innerHTML = navHTML(); label();
+    } else if (act === 'shift') openShift();
+    else if (act === 'delete') openDelete();
+    else if (act === 'opening' || act === 'closing') {
+      const field = act === 'opening' ? 'openingDays' : 'closingDays';
+      const on = pinned(act);
+      ev[field] = on ? (ev[field] || []).filter(n => n !== backDay) : [...(ev[field] || []), backDay];
+      patchEvent(key, { [field]: ev[field] });
+      // 一天只有一則開始、一則結束：別的全日行程讓出這一天
+      if (!on) for (const a of trip.allDayEvents) {
+        if (a === ev || !(a[field] || []).includes(backDay)) continue;
+        a[field] = a[field].filter(n => n !== backDay);
+        patchEvent(a.key, { [field]: a[field] });
+      }
+      nav.innerHTML = navHTML(); label();
+      toast((on ? W.pinUnset : W.pinSet)(t.day(backDay), W[act]));
+    }
+    // 編輯：這裡沒有複刻編輯表單，只給按壓回饋
+  });
+
+  // ── 待辦 ──
+  todosEl.addEventListener('click', e => {
+    const box = e.target.closest('[data-todo]');
+    if (box) {
+      const i = +box.dataset.todo;
+      if (done.has(i)) done.delete(i); else { done.add(i); sticky.add(i); }
+      patchEvent(key, { done: [...done] });
+    } else if (e.target.closest('[data-tog]')) {
+      const showsRows = [...done].some(i => showsCompleted || sticky.has(i));
+      if (showsRows) { showsCompleted = false; sticky.clear(); } else showsCompleted = true;
+    } else return;
+    todosEl.innerHTML = todosHTML();
+  });
+
+  // ── 附件 ──
+  document.getElementById('body').addEventListener('click', e => {
+    const r = e.target.closest('[data-file]'); if (r) openFile(files[+r.dataset.file]);
+  });
+}
 
 chrome(d);
 ready();

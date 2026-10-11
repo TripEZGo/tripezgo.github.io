@@ -29,6 +29,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/css/home.css">
+<script type="module" src="/assets/js/home.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,6 +50,7 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.5 5.2h3"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 13 5 5 9-11"/></symbol>
   <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="m21 16-5-5-9 9"/></symbol>
   <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9.5h18M7.5 14.5h4"/></symbol>
@@ -90,15 +92,19 @@
       <a class="hide-sm" href="#privacy">隱私</a>
       <a class="hide-sm" href="#features">功能</a>
       <a class="hide-sm" href="#plans">方案</a>
-      <a class="lang" href="/en/" hreflang="en" lang="en">EN</a>
-      <a class="lang" href="/ja/" hreflang="ja" lang="ja">日本語</a>
+      <details class="lang-menu">
+        <summary>繁體中文</summary>
+        <div class="lang-list">
+          <a class="lang" href="/en/" hreflang="en" lang="en">English</a>
+          <a class="lang" href="/ja/" hreflang="ja" lang="ja">日本語</a>
+        </div>
+      </details>
     </nav>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- 1 ─── Hero ─────────────────────────────────────────────────── -->
   <section class="hero">
     <div class="wrap">
       <div>
@@ -106,7 +112,7 @@
         <h1>旅行規劃、旅途所需<br><em>一次搞定</em></h1>
         <p class="lede">排行程、帶票券、查交通，出發後也跟著你走。</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372">在 App Store 下載</a>
+          <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372" target="_blank" rel="noopener">在 App Store 下載</a>
           <a class="btn btn-ghost" href="#features">看看它怎麼運作</a>
         </div>
         <ul class="hero-tags">
@@ -123,221 +129,253 @@
     </div>
   </section>
 
-  <!-- 隱私（Hero 之後第一個內容區塊）：暖白 surface 底＋上下髮絲線，跟 Hero、功能區的白底分開 -->
   <section class="section section-alt privacy-band" id="privacy">
     <div class="wrap">
       <div>
         <p class="eyebrow">隱私與安全</p>
         <h2>你的旅程，<span class="nb">只在你的手機</span><span class="nb">和你的 iCloud</span></h2>
-        <p class="lede">不用帳號，我們沒有伺服器，也看不到你的行程。備份、同步、共享都走 iCloud。</p>
+        <p class="lede">不用帳號，我們沒有伺服器，也看不到你的行程。備份、同步、共享都走 iCloud；沒有網路也能編輯。</p>
+        <details class="more"><summary>展開介紹</summary><div class="more-body">
+<p><b>隱私與資料安全優先</b>：AI 大行其道之下，資料安全與隱私更需要被重視。TripEZGo 採用不自建伺服器的設計，我們沒有自己的伺服器來保存你的旅遊資料；你的資料只會存在你的裝置上，或透過 Apple iCloud 備份與跨裝置同步，即使是多人共編旅程，也同樣透過 iCloud 共享來實現。</p>
+<p>所有旅程資料，包含附件檔案、圖片，都只存在你的手機或你的 iCloud；你可以自己匯入匯出備份，或直接用 iCloud 備份同步。</p>
+<p><b>支援離線編輯</b>：因為所有資料都存在你的手機，即使沒有網路也能存取、編輯所有資料；有開啟 iCloud 備份同步或共享的話，會在有網路時同步。</p>
+          </div></details>
         <a class="more-link" href="/privacy.html">閱讀完整隱私權政策 →</a>
       </div>
       <div class="feature-media">
-        <div class="vault" role="img" aria-label="示意圖：這台 iPhone 裡有全部資料——行程、附件、待辦、筆記、購物清單、照片；用你的 Apple 帳號加密備份與同步到 iCloud，旅伴共編也走 iCloud 共享">
-          <div class="vault-card">
-            <div class="vault-head"><svg class="i"><use href="#i-phone"/></svg><b>這台 iPhone</b><span>全部資料</span></div>
-            <ul class="vault-chips">
-              <li>行程</li><li>附件</li><li>待辦</li><li>筆記</li><li>購物清單</li><li>照片</li>
-            </ul>
-            <div class="vault-row"><svg class="i"><use href="#i-lock"/></svg><b>iCloud 加密備份與同步</b><span>只有你的 Apple 帳號解得開</span></div>
-            <div class="vault-row"><svg class="i"><use href="#i-users"/></svg><b>旅伴共編</b><span>走 iCloud 共享</span></div>
-          </div>
-          <p class="vault-note">沒有帳號，沒有我們的伺服器。飛機上一樣打得開。</p>
+        <div class="flow" data-demo="flow" role="group" aria-label="資料流向示意：資料存在這台 iPhone；打開 iCloud 同步備份後，傳到你的 Apple iCloud 並同步到 iPad；再打開旅程共編，透過 iCloud 共享給三位旅伴">
+          <noscript><p>資料存在這台 iPhone，透過你的 Apple iCloud 備份同步；旅程共編也走 iCloud 共享。</p></noscript>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2–6 ─── 功能 ─────────────────────────────────────────────────── -->
   <section class="section" id="features">
     <div class="wrap">
-      <!-- 2 安排行程 -->
       <article class="feature">
         <div>
           <p class="eyebrow">01 · 安排行程</p>
           <h3>該帶的，<em>都掛在行程上</em></h3>
           <p>車票、訂位、待辦跟著行程走，到現場點了就開。</p>
-          <ul class="points">
-            <li><svg class="i"><use href="#i-clip"/></svg><span>照片、檔案、電子車票連結</span></li>
-            <li><svg class="i"><use href="#i-todo"/></svg><span>出發前逐項打勾的待辦</span></li>
-            <li><svg class="i"><use href="#i-train"/></svg><span>行程之間設定交通方式</span></li>
-            <li><svg class="i"><use href="#i-swap"/></svg><span>錯過這班車，備案班次已經排好</span></li>
-          </ul>
+          <ul class="points"><li><svg class="i"><use href="#i-pin"/></svg><span>地點搜尋，也能直接貼 Google 地圖網址</span></li><li><svg class="i"><use href="#i-clip"/></svg><span>照片、檔案、電子車票連結</span></li><li><svg class="i"><use href="#i-clock"/></svg><span>起迄不同時區、全日、待排行程</span></li><li><svg class="i"><use href="#i-todo"/></svg><span>出發前逐項打勾的待辦</span></li></ul>
+          <details class="more"><summary>展開介紹</summary><div class="more-body">
+<p>行程所需要的資料我們都考慮到了！你可以在行程設定：</p>
+<ul>
+<li><b>地點</b>：支援地點名稱搜尋、地址搜尋，或直接貼上 Google 地圖網址或地址</li>
+<li><b>類型／標題</b>：輸入地點時會自動帶入、推導類型</li>
+<li><b>附件</b>：支援上傳圖片（從照片 App）、上傳檔案（從檔案 App）、儲存網址（例如電子車票）</li>
+<li><b>時間</b>：支援起迄不同時區（例如台北起飛、沖繩落地）、全日行程（例如住宿飯店）、待排行程（時間未定）</li>
+<li><b>待辦事項</b>：例如記得訂位</li>
+</ul>
+<p>行程建立後支援「取消」（保留但顯示刪除線）、「刪除」（完全移除）、「延後／提前」（這個行程跟後面的行程一起延後或提前 X 小時 Y 分鐘）。</p>
+          </div></details>
         </div>
         <div class="feature-media">
-          <div class="duo">
-            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/event-extra.webp" width="720" height="1565" alt="行程詳情：JR Pass 的待辦清單與附件，附件有網頁連結、PDF 電子票券與照片" loading="lazy"></figure>
-            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/leg.webp" width="720" height="1565" alt="路程：三個班次並排，選中的那一班顯示發車、抵達與候車時間" loading="lazy"></figure>
-          </div>
+          <figure class="ph shot"><img src="/assets/img/shots/v2/zh/event-airport.webp" width="720" height="1565" alt="行程詳情：桃園機場報到，待辦清單與附件——網頁連結、PDF 電子登機證與護照照片" loading="lazy"></figure>
         </div>
       </article>
-
-      <!-- 3 行事曆／時間軸 -->
       <article class="feature is-flipped">
         <div>
-          <p class="eyebrow">02 · 行事曆／時間軸</p>
-          <h3>今天怎麼走，<em>一眼看完</em></h3>
-          <p>行程、空檔、路上要多久，排在同一條時間上。</p>
-          <ul class="points">
-            <li><svg class="i"><use href="#i-clock"/></svg><span>停留多久、空檔多少</span></li>
-            <li><svg class="i"><use href="#i-bell"/></svg><span>來不及先提醒你</span></li>
-            <li><svg class="i"><use href="#i-swap"/></svg><span>行事曆、時間軸隨時切換</span></li>
-          </ul>
-        </div>
-        <div class="feature-media modes">
-          <div class="duo is-even">
-            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/calendar.webp" width="720" height="1565" alt="行事曆模式：山陽 6 日的第 2 天，行程沿時間排開，早餐與渡輪之間標著 JR 山陽本線的班次" loading="lazy"></figure>
-            <span class="swap" role="img" aria-label="行事曆與時間軸可互相切換"><svg class="i"><use href="#i-swap"/></svg></span>
-            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/timeline.webp" width="720" height="1565" alt="時間軸模式：第 2 天的行程依序排成一條線，標出停留時間與路程" loading="lazy"></figure>
-          </div>
-          <div class="mode-label" aria-hidden="true"><span>行事曆</span><span>時間軸</span></div>
-        </div>
-      </article>
-
-      <!-- 4 地圖 -->
-      <article class="feature">
-        <div>
-          <p class="eyebrow">03 · 地圖模式</p>
-          <h3>下一站在哪，<em>地圖告訴你</em></h3>
-          <p>每天的行程連成路線，順路的店也標在上面。</p>
-          <ul class="points">
-            <li><svg class="i"><use href="#i-route"/></svg><span>每日路線與路程</span></li>
-            <li><svg class="i"><use href="#i-pin"/></svg><span>標記想去的地方</span></li>
-            <li><svg class="i"><use href="#i-bag"/></svg><span>日本超商、百貨藥妝圖資</span></li>
-            <li><svg class="i"><use href="#i-nav"/></svg><span>支援步行導航</span></li>
-          </ul>
+          <p class="eyebrow">02 · 路程</p>
+          <h3>錯過這班車，<em>下一班已經排好</em></h3>
+          <p>兩個行程之間就是一段路程，時間不夠會先提醒你。</p>
+          <ul class="points"><li><svg class="i"><use href="#i-route"/></svg><span>步行、開車、大眾運輸，自動估算時間</span></li><li><svg class="i"><use href="#i-bell"/></svg><span>路程比空檔還久，先跳警告</span></li><li><svg class="i"><use href="#i-train"/></svg><span>多組班次，旅途中提醒最接近的那一班</span></li></ul>
+          
+          <details class="more"><summary>展開介紹</summary><div class="more-body">
+<p>兩個行程之間都可以設定一段路程，路程就是交通方式，可以設定步行、開車、大眾運輸，不同的交通方式會算出兩點之間的預估時間；如果兩個行程的間隔比路程花的時間還短，會出現警告（例如兩個行程只隔 30 分鐘，但開車實際要 1 小時）。</p>
+<p>特別優化的是大眾運輸：可以預先輸入多筆班次，旅途中會依照最接近現在的班次提醒你；提早到了或是錯過了，都能當機立斷，馬上跳到下一班火車或公車。</p>
+          </div></details>
         </div>
         <div class="feature-media">
-          <div class="duo is-three">
-            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/map.webp" width="720" height="1565" alt="地圖：宮島一天的步行路線，沿途標出行程與距離" loading="lazy"></figure>
-            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/map-store.webp" width="720" height="1565" alt="地圖：點開附近的 7-ELEVEN，顯示 24 小時營業與步行導航鈕" loading="lazy"></figure>
-            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/map-nav.webp" width="720" height="1565" alt="步行導航中：沿著地圖上的路線走向 7-ELEVEN，卡片顯示繼續直行 360 公尺、還有 710 公尺約 9 分" loading="lazy"></figure>
-          </div>
+          <figure class="ph shot"><img src="/assets/img/shots/v2/zh/leg.webp" width="720" height="1565" alt="路程：三個班次並排，選中的那一班顯示發車、抵達與候車時間" loading="lazy"></figure>
         </div>
       </article>
-
-      <!-- 5 總覽 -->
+      <article class="feature">
+        <div>
+          <p class="eyebrow">03 · 行事曆／時間軸</p>
+          <h3>今天怎麼走，<em>一眼看完</em></h3>
+          <p>行程、空檔、路上要多久，排在同一條時間上。</p>
+          <ul class="points"><li><svg class="i"><use href="#i-shift"/></svg><span>一拖一拉就能安排、調整行程</span></li><li><svg class="i"><use href="#i-clock"/></svg><span>停留多久、空檔多少</span></li><li><svg class="i"><use href="#i-swap"/></svg><span>行事曆、時間軸隨時切換</span></li></ul>
+          <details class="more"><summary>展開介紹</summary><div class="more-body">
+<p><b>行事曆模式</b>：你的行程就是一個行事曆事件，除了瀏覽直覺，安排行程時也最好用——一拖一拉就能排好行程，要改也只要拖曳就能換位置；規劃階段還不確定誰先誰後的行程，可以很快地調整。</p>
+<p><b>時間軸模式</b>：如果你習慣用時間軸看行程，也可以切換過去。今天幾點幾分要去哪？停留多久？路程多久？一目瞭然。</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/zh/calendar.webp" width="720" height="1565" alt="行事曆模式：山陽 6 日的第 2 天，行程沿時間排開，早餐與渡輪之間標著 JR 山陽本線的班次" loading="lazy"></figure>
+        </div>
+      </article>
       <article class="feature is-flipped">
         <div>
           <p class="eyebrow">04 · 總覽模式</p>
           <h3>整趟旅程，<em>一頁看完</em></h3>
           <p>行程、附件、待辦，要找的東西點一下就到。</p>
+          <ul class="points"><li><svg class="i"><use href="#i-calendar"/></svg><span>整趟行程按日分組</span></li><li><svg class="i"><use href="#i-clip"/></svg><span>每一天的附件集中在一起</span></li><li><svg class="i"><use href="#i-todo"/></svg><span>哪一天、哪個行程還有待辦，一看就知道</span></li></ul>
+          <details class="more"><summary>展開介紹</summary><div class="more-body">
+<p>總覽模式讓你一頁掌握整趟行程安排；除此之外，這裡也會依照每一天分組整理行程的附件與待辦事項，在這邊就能快速打開每個行程的附件，或是知道哪一天的哪一個行程還有待辦。</p>
+          </div></details>
         </div>
         <div class="feature-media">
           <figure class="ph shot"><img src="/assets/img/shots/v2/zh/overview.webp" width="720" height="1565" alt="總覽：今天的行程依時間列出，行程之間標著步行時間與間隔" loading="lazy"></figure>
         </div>
       </article>
-
-      <!-- 6 旅伴共編 -->
       <article class="feature">
         <div>
-          <p class="eyebrow">05 · 旅伴共編</p>
+          <p class="eyebrow">05 · 地圖模式</p>
+          <h3>下一站在哪，<em>地圖告訴你</em></h3>
+          <p>每天的行程連成路線，順路的店也標在上面。</p>
+          <ul class="points"><li><svg class="i"><use href="#i-route"/></svg><span>每日路線與路程</span></li><li><svg class="i"><use href="#i-pin"/></svg><span>標記想去的地方</span></li><li><svg class="i"><use href="#i-bag"/></svg><span>日本超商、百貨藥妝圖資</span></li><li><svg class="i"><use href="#i-nav"/></svg><span>支援步行導航</span></li></ul>
+          <details class="more"><summary>展開介紹</summary><div class="more-body">
+<p>你每天安排的行程，只要設定好地點，就能在地圖上快速掌握行程彼此之間的位置關係與路線。</p>
+<p>除了行程的標記，也能新增想去的地點標記，方便旅途中隨時看看附近還有哪些景點；另外還內建多家超商、百貨圖資，附近有沒有超商百貨，一打開就知道。</p>
+<p>支援步行導航：附近看到一個想去的景點、不知道怎麼走？直接點開始導航就知道。</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <div class="duo">
+            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/map-route.webp" width="720" height="1565" alt="打開地圖的預設畫面：今天的行程依序編號、連成路線，旁邊是自訂標記與附近的超商" loading="lazy"></figure>
+            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/map-live.webp" width="720" height="1565" alt="地圖：第 2 天，正在步行導航到原爆圓頂，沿途標出超商與旅伴的位置" loading="lazy"></figure>
+          </div>
+        </div>
+      </article>
+      <article class="feature is-flipped">
+        <div>
+          <p class="eyebrow">06 · 旅伴共編、位置共享</p>
           <h3>一起排，<em>一起出發</em></h3>
           <p>旅伴一起編行程、筆記與附件。路上分享位置，走散了也找得到彼此。</p>
+          <ul class="points"><li><svg class="i"><use href="#i-users"/></svg><span>邀請旅伴一起安排同一趟</span></li><li><svg class="i"><use href="#i-pin"/></svg><span>旅途中互相看到位置</span></li><li><svg class="i"><use href="#i-eyeoff"/></svg><span>筆記、附件、待辦、待購清單可以選擇要不要共享</span></li></ul>
+          <details class="more"><summary>展開介紹</summary><div class="more-body">
+<p>支援旅程共享共編，讓旅伴們一起完成這趟旅程；旅途進行中，旅伴可以開啟位置共享，互相照顧彼此安全，走散了也找得到彼此。</p>
+<p>筆記、附件、待辦事項、待購清單，都可以設定要不要共編共享。</p>
+          </div></details>
         </div>
         <div class="feature-media">
           <div class="duo">
             <figure class="ph shot"><img src="/assets/img/shots/v2/zh/members.webp" width="720" height="1565" alt="旅程共編：分享開關、邀請連結與 QR Code，下方列出旅伴" loading="lazy"></figure>
-            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/share-location.webp" width="720" height="1565" alt="分享位置：旅伴的位置出現在地圖上，標示多久前更新" loading="lazy"></figure>
+            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/map-mates.webp" width="720" height="1565" alt="位置共享：旅伴的位置出現在地圖上，灰色的是超過一小時沒更新" loading="lazy"></figure>
           </div>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- 7 ─── 即時動態、Widget、推播、Siri ───────────────────────────── -->
   <section class="section section-alt" id="glance">
     <div class="wrap">
-      <div class="feature" style="padding:0">
+      <article class="feature">
         <div>
           <p class="eyebrow">不用打開 App</p>
-          <h2>不用解鎖，<span class="nb">下一站就在鎖定畫面</span></h2>
-          <p class="lede">現在在哪、還能待多久、下一站怎麼去。</p>
-          <div class="caps">
-            <div class="cap">
-              <div class="cap-head"><svg class="i"><use href="#i-island"/></svg>即時動態<span class="tag tag-premium">Premium</span></div>
-              <p>鎖定畫面與動態島，隨時看進行中的行程</p>
-            </div>
-            <div class="cap">
-              <div class="cap-head"><svg class="i"><use href="#i-widget"/></svg>Widget</div>
-              <p>主畫面、鎖定畫面放今天的行程</p>
-            </div>
-            <div class="cap">
-              <div class="cap-head"><svg class="i"><use href="#i-bell"/></svg>推播</div>
-              <p>待辦時間到了提醒你</p>
-            </div>
-            <div class="cap">
-              <div class="cap-head"><svg class="i"><use href="#i-wave"/></svg>Siri</div>
-              <p>問一句就知道下一個行程</p>
-            </div>
-          </div>
+          <h3>不用解鎖，<em>下一站就在鎖定畫面</em></h3>
+          <p>現在在哪、還能待多久、下一站怎麼去。</p>
+          <ul class="points"><li><svg class="i"><use href="#i-island"/></svg><span>即時動態：鎖定畫面與動態島，隨時看進行中的行程</span></li><li><svg class="i"><use href="#i-bell"/></svg><span>推播：出發前、行程開始前、還有待辦時提醒你</span></li><li><svg class="i"><use href="#i-widget"/></svg><span>Widget：主畫面、鎖定畫面放今天的行程，待辦直接打勾</span></li></ul>
+          <details class="more"><summary>展開介紹</summary><div class="more-body">
+<p>支援豐富的 Widget，你可以把需要的資訊直接放到主畫面或鎖定畫面，快速查看、存取。</p>
+<p>旅程進行中的即時動態，讓你不用解鎖手機，拿出來瞄一眼就知道目前行程的停留時間、路程資訊與下一個行程。</p>
+<p>旅程開始前、行程開始前、還有待辦事項時，都會推播通知你。</p>
+          </div></details>
         </div>
         <div class="feature-media">
           <div class="duo">
-            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/lock.webp" width="720" height="1565" alt="鎖定畫面上的即時動態：嚴島神社進行中、剩餘時間與下一站" loading="lazy"></figure>
+            <figure class="ph shot"><img src="/assets/img/shots/v2/zh/lock.webp" width="720" height="1565" alt="鎖定畫面：即時動態顯示嚴島神社進行中、剩餘時間與下一站，底下疊著 TripEZGo 的推播通知" loading="lazy"></figure>
             <figure class="ph shot"><img src="/assets/img/shots/v2/zh/widget.webp" width="720" height="1565" alt="主畫面 Widget：今天的行程與匯率換算" loading="lazy"></figure>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
-  <!-- 8 ─── 旅行小工具 ──────────────────────────────────────────────── -->
   <section class="section" id="tools">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">小工具</p>
         <h2>路上用得到的，<span class="nb">都帶著</span></h2>
+        <p class="lede">內建豐富的旅途小工具，一個 App 搞定所有事。</p>
       </div>
       <div class="tools">
         <article class="tool">
           <figure class="ph shot"><img src="/assets/img/shots/v2/zh/note.webp" width="720" height="1565" alt="筆記：圖文筆記，@ 連到行程，日文句子可以朗讀" loading="lazy"></figure>
           <h3>筆記</h3>
-          <p>圖文都能記，日文萬用句幫你念</p>
-        </article>
-        <article class="tool">
-          <figure class="ph shot"><img src="/assets/img/shots/v2/zh/fx.webp" width="720" height="1565" alt="匯率換算：台幣與日圓互換，下方是最近的換算紀錄" loading="lazy"></figure>
-          <h3>匯率換算</h3>
-          <p>沒網路也能算</p>
-        </article>
-        <article class="tool">
-          <figure class="ph shot"><img src="/assets/img/shots/v2/zh/shop.webp" width="720" height="1565" alt="購物清單：待購、已購、不買了的件數，商品依分類排成照片格" loading="lazy"></figure>
-          <h3>待購清單</h3>
-          <p>拍照記下，哪家便宜一看就知道</p>
+          <p>圖文都能記，不會當地語言也能唸給你聽</p>
         </article>
         <article class="tool">
           <figure class="ph shot"><img src="/assets/img/shots/v2/zh/scan.webp" width="720" height="1565" alt="QR Code 掃描：掃過的網址與文字留在紀錄裡，旅伴也看得到" loading="lazy"></figure>
           <h3>QR Code 掃描</h3>
-          <p>網址、文字掃了就存，旅伴一起看</p>
+          <p>一開一掃留下紀錄，旅伴也看得到</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/zh/fx.webp" width="720" height="1565" alt="匯率換算：台幣與日圓互換，下方是最近的換算紀錄" loading="lazy"></figure>
+          <h3>匯率換算</h3>
+          <p>使用當日匯率，沒網路也能算</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/zh/shop.webp" width="720" height="1565" alt="購物清單：待購、已購、不買了的件數，商品依分類排成照片格" loading="lazy"></figure>
+          <h3>待購清單</h3>
+          <p>還有什麼沒買一看就知，比價買最便宜</p>
         </article>
       </div>
+      <details class="more"><summary>展開介紹</summary><div class="more-body">
+<ul>
+<li><b>筆記</b>：支援豐富的圖文編輯，還特別支援朗讀，不會當地語言也可以直接唸給對方聽。</li>
+<li><b>匯率換算</b>：使用當日匯率，沒網路也能換算。</li>
+<li><b>待購清單</b>：想買什麼都記在這裡，還有什麼沒買一看就知道；也可以記下各家價格，讓你買到最便宜的。</li>
+<li><b>QR Code 掃描</b>：一開一掃並留下紀錄，旅伴也能直接看到。</li>
+</ul>
+          </div></details>
     </div>
   </section>
 
-  <!-- 9 ─── AI Agent 整合 ───────────────────────────────────────────── -->
-  <section class="section section-alt" id="ai">
+  <section class="section section-alt" id="more">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">整合</p>
+        <h2>跟 iPhone 上的其他 App，<span class="nb">接在一起</span></h2>
+      </div>
+      <div class="tools is-three">
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/zh/share-ig.webp" width="720" height="1565" alt="分享進來：在社群 App 的貼文按分享，選 TripEZGo，就存成筆記" loading="lazy"></figure>
+          <h3>從其他 App 分享進來</h3>
+          <p>Google 地圖、Instagram、Threads 看到的地方，分享一下就存進來</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/zh/apple-calendar.webp" width="720" height="1565" alt="Apple 行事曆的單日檢視：TripEZGo 同步進去的第 2 天行程" loading="lazy"></figure>
+          <h3>Apple／Google 行事曆整合</h3>
+          <p>行程直接同步到你的行事曆</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/zh/siri.webp" width="720" height="1565" alt="問 Siri「下一個行程是什麼」：現在是嚴島神社，接下來是紅葉谷公園，11:30 開始" loading="lazy"></figure>
+          <h3>Siri、Apple Intelligence</h3>
+          <p>問一句「下一個行程是什麼」，不用打開 App 就有答案</p>
+        </article>
+      </div>
+      <details class="more"><summary>展開介紹</summary><div class="more-body">
+<p><b>從其他 App 分享進來</b>：看到想去的地方？同事推薦的景點？直接在 Google 地圖、Instagram、Threads 等 App 裡點分享、選 TripEZGo，就能把資料存進來。</p>
+<p><b>Apple／Google 行事曆整合</b>：可以把行程直接同步到你的行事曆上。</p>
+<p><b>Siri、Apple Intelligence</b>：可以直接問 Siri、Apple Intelligence 行程安排，快速存取行程。</p>
+<p><b>公開分享</b>：支援把旅程公開分享給所有人，方便你跟全世界的旅行者分享你的行程安排。公開分享只會分享行程標題、地點、時間安排，不會公開行程描述、附件與待辦清單。</p>
+          </div></details>
+    </div>
+  </section>
+
+  <section class="section" id="ai">
     <div class="wrap">
       <div class="ai-band">
         <div>
           <h2>讓 AI <span class="nb">幫你排行程</span></h2>
           <p>內建 MCP，接上你的 AI Agent，說一句「幫我排京都第二天」，行程就進來了。</p>
+          <details class="more"><summary>展開介紹</summary><div class="more-body">
+<p>手機與電腦在同一個 Wi-Fi 底下時，可以直接用 MCP 連接 TripEZGo App，請 AI Agent 幫你把旅程安排好。</p>
+          </div></details>
         </div>
-        <div class="chat" role="img" aria-label="對話示意：使用者請 AI 排京都第二天，AI 透過 TripEZGo 新增行程">
-          <div class="chat-top"><svg class="i"><use href="#i-plug"/></svg>對話示意 · 已連線 TripEZGo</div>
-          <div class="bubble me">幫我排京都第二天：早上去伏見稻荷，下午想逛錦市場。</div>
-          <div class="tool-call"><svg class="i"><use href="#i-check"/></svg>TripEZGo · 已在第 2 天新增 2 個行程與 1 段路程</div>
-          <div class="bubble ai">排好了，打開 App 就看得到。</div>
-        </div>
+        <div class="demo-slot" data-lazy-demo="ai-chat"></div>
       </div>
     </div>
   </section>
 
-  <!-- 11 ─── 方案 ────────────────────────────────────────────────────── -->
-  <section class="section" id="plans">
+  <section class="section section-alt" id="plans">
     <div class="wrap">
       <div class="section-head plans-head">
         <p class="eyebrow">方案</p>
         <h2>免費開始，<span class="nb">需要再升級</span></h2>
+        <p class="lede">免費就能用，付費更好用。</p>
       </div>
       <table class="compare">
         <colgroup><col><col class="c-plan"><col class="c-prem"></colgroup>
@@ -361,13 +399,57 @@
         </tbody>
       </table>
       <p class="plans-note">Premium 提供週、月、年自動續訂或一次買斷，可隨時在 App Store 的訂閱設定取消。</p>
+      <div class="plans-more">
+      <details class="more"><summary>為什麼要收費</summary><div class="more-body">
+<p>定價是我最苦惱的一件事：這個工具的出發點，是希望真的能幫到自由行的旅行者；但現實上也必須要有收費，才能走得更遠。</p>
+<p>目前的成本：每月 200 美元的 AI 費用、每年 99 美元的 Apple Developer Program，加上每週約 30 小時的個人開發時間。</p>
+<p>所以 TripEZGo 還是以「免費就能用、付費更好用」為出發點，免費版與 Premium 只有這幾項差異：無廣告、旅程數（免費版同時保留 3 趟，超過要先刪掉舊的）、每趟旅伴（免費版 3 位）、即時動態、Apple／Google 行事曆整合。Premium 提供週訂閱、月訂閱、年訂閱與終身買斷。</p>
+          </div></details>
+      </div>
       <div class="hero-actions plans-cta">
-        <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372">在 App Store 下載</a>
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372" target="_blank" rel="noopener">在 App Store 下載</a>
       </div>
     </div>
   </section>
 
+  <section class="section" id="story">
+    <div class="wrap">
+      <details class="story">
+        <summary>
+          <span class="eyebrow">開發背景</span>
+          <span class="story-title">一個常常獨旅的 iOS 工程師，為什麼自己做了一個旅遊規劃 App</span>
+          <span class="story-toggle">展開故事</span>
+        </summary>
+        <div class="story-body">
+<h3>背景</h3>
+<p>之前自由行都有給力的旅伴，我主要當 P 人；2023 年 9 月人生第一次獨旅去「<a href="https://zhgchg.li/posts/7b8a0563c157/" target="_blank" rel="noopener">名古屋一日快閃</a>」之後，獨旅的開關就被打開了，就像大家說的，只有 0 次跟無數次。</p>
+<p>中間又去了好幾趟：「<a href="https://zhgchg.li/posts/d78e0b15a08a/" target="_blank" rel="noopener">九州 10 日獨旅</a>」、「<a href="https://zhgchg.li/posts/31b9b3a63abc/" target="_blank" rel="noopener">山陽地區廣島岡山 6 日獨旅</a>」、「<a href="https://zhgchg.li/posts/aacd5f5cacd1/" target="_blank" rel="noopener">山陰地區島根鳥取＋姬路神戶 7 日獨旅</a>」、中部地區名古屋伊勢三重 10 日獨旅……等等。</p>
+<p>不管是出發前的行程安排，還是旅行當中的掌控，自由行、獨旅一切都要靠自己；需要一個工具能記錄和追蹤這些事。我試過很多種方式，沒有一個完美符合我的需求——<b>AI 當道，加上本身就是 iOS 開發者，想一想，為什麼不自己做一款？</b></p>
+
+<h3>Apple 備忘錄／Obsidian／Notion／Google 文件</h3>
+<figure class="story-fig"><img src="/assets/img/story/notes-app.webp" width="1200" height="857" alt="Apple 備忘錄裡的山陰關西行：每一天一則筆記，貼著地圖截圖、班次與轉乘時間" loading="lazy"></figure>
+<p>這是我最一開始旅行用的規劃工具，優點是簡單好用，一打開就是富文本編輯器，可以隨意插入行程標題、圖片、附加檔案。</p>
+<p>缺點也是「隨意」這件事：沒有固定的格式，很難一眼看出整趟旅程的安排；行程一長，滾動找資料很痛苦；旅行進行中也沒辦法快速定位到目前的行程；行程如果有異動更是麻煩。另外也不支援通知、行事曆、行程地圖、Widget 等功能。</p>
+<p>體驗上，我覺得在搜集景點或排大綱的階段蠻好用的，可以快速把大致的行程記下來；但在細節安排、或是旅程進行中查看，就不太方便。</p>
+
+<h3>Apple 行事曆／Google 日曆</h3>
+<figure class="story-fig"><img src="/assets/img/story/calendar-app.webp" width="1200" height="1264" alt="Apple 行事曆的週檢視：沖繩自由行每天的行程與交通排成一格一格的事件" loading="lazy"></figure>
+<p>最近一次去「<a href="https://zhgchg.li/posts/2cbc121a1b7c/" target="_blank" rel="noopener">沖繩自由行</a>」，我們是用 Apple／Google 行事曆排行程。優點是規劃起來非常方便，一拖一拉一放就能建立行程，要改時間也是拖一下就好；整趟旅程一目瞭然，哪裡有空檔、哪裡待太久都能馬上知道；旅行進行中也能設定通知，馬上知道這個行程預計待多久、下一個行程是什麼，要臨時調整也很容易；也支援通知、Widget。</p>
+<p>缺點是資料分散：沒有一個總覽可以查看待辦、附件或筆記，也沒有地圖檢視。畢竟行事曆工具專注的是「事件」本身，事件彼此之間是獨立的；但旅程安排上有些資訊是跨行程的，例如車票、伴手禮清單、筆記，或是我跑完 A 行程後時間還很多，想知道其他天有哪些行程是順路的、可以改成今天去。</p>
+
+<h3>其他旅行規劃 App</h3>
+<p>也試了幾個電商集團做的旅行規劃 App，各有亮眼的功能，例如總覽看行程、直接用地點新增行程、自動安排時間、地圖功能；但體驗上我覺得都更偏向社交和電商服務，畢竟對公司來說，產品是要能變現的。</p>
+<p>所以就有了 TripEZGo——旅行規劃、旅途所需一次搞定。</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
 </main>
+<aside class="fab-dl" hidden>
+  <figure class="fab-qr"><img src="/assets/img/appstore-qr.svg" width="120" height="120" alt="App Store 下載 QR Code"><figcaption>用 iPhone 掃描下載</figcaption></figure>
+  <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372" target="_blank" rel="noopener">立即下載 App</a>
+</aside>
 
 <footer class="site-footer">
   <div class="wrap">

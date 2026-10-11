@@ -5,8 +5,11 @@
 <meta name="viewport" content="width=402">
 <title>主畫面小工具</title>
 <!--
-  iPhone 主畫面，放兩支 TripEZGo widget：中尺寸「行程」（進行中那一種）＋小尺寸「匯率換算」。
-  App：TripEZGoWidget/Views/AgendaCards.swift（live）、ExchangeCards.swift、WidgetPieces.swift、
+  iPhone 主畫面第 1 頁放四支 TripEZGo widget（App 的 TripWidgets.swift 那一排，尺寸照 iPhone 17 Pro 小 170、中 364×170、大 364×382）：
+  中「行程」（進行中那一種）→ 小「旅程」（旅程中：第幾天的環）＋小「檔案」（今日檔案）→ 中「待辦」（今日待辦）。
+  互動模式第 2 頁：大「待辦」、小「匯率換算」、小「檢視筆記」。
+  App：TripEZGoWidget/Views/AgendaCards.swift（live）、TripsCards.swift、FilesCards.swift、TodosCards.swift、
+  ExchangeCards.swift、NoteCards.swift、WidgetPieces.swift、
   WidgetTheme.swift、WidgetPalette.swift；字串 Scripts/i18n/maps/TripEZGoWidget.json。
   參數：?lang=zh-Hant-TW|en|ja &day=2 &start=2026-10-10 &now=10:41
   主畫面本身（格線、圖示、Dock、搜尋膠囊）是系統 UI，照 iOS 26「大圖示、不顯示名稱」的樣子畫；
@@ -70,12 +73,72 @@
     background: rgba(255,255,255,.22); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
     box-shadow: inset 0 0 0 .5px rgba(255,255,255,.4); }
   .find svg { width: 14px; height: 14px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; }
+
+  /* ── 互動模式才用得到的（截圖模式不會產生這些元素） ── */
+  .pager { position: absolute; inset: 0; touch-action: pan-y; }
+  .pg { position: absolute; inset: 0; transition: transform .38s cubic-bezier(.25,.8,.3,1); }
+  .pager.drag .pg { transition: none; }
+  .pdots { position: absolute; left: 50%; bottom: 116px; transform: translateX(-50%); height: 30px; padding: 0 12px;
+    border-radius: 15px; display: flex; align-items: center; gap: 9px; opacity: 0; pointer-events: none; transition: opacity .2s;
+    background: rgba(255,255,255,.22); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: inset 0 0 0 .5px rgba(255,255,255,.4); }
+  .pdots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.42); }
+  .pdots i.on { background: #fff; }
+  .is-paging .pdots { opacity: 1; }
+  .is-paging .find { opacity: 0; }
+  .find { transition: opacity .2s; }
+  /* 大尺寸「待辦」（TodosCard.large）：364×382 */
+  .w.l { left: 19px; width: 364px; height: 382px; }
+  .wl-body { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; transition: opacity .25s; }
+  .wl-body.fade { opacity: .35; transition: none; }
+  /* WidgetGroupLabel：10 bold 大寫 字距 .08em、下距 3、非第一組上距 7 */
+  .grp { font: 700 10px/13px var(--font); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); padding-bottom: 3px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .grp + .grp, .td + .grp { padding-top: 7px; }
+  /* WidgetTodoRow（大）：勾選欄 16、圖示 14、間距 8、上下 5、名稱 13 字距 .02em、時刻 10 等寬 */
+  .td { display: flex; align-items: center; gap: 8px; padding: 5px 0; }
+  .td + .td { border-top: 1px solid var(--border-soft); }
+  .td .ck { flex: none; width: 16px; height: 44px; margin: -15px 0; display: grid; place-items: center; cursor: pointer; }
+  .td .ck svg { width: 14px; height: 14px; fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .td.done .ck svg { stroke: var(--green200); }
+  .td .tx { flex: 1 1 auto; min-width: 0; font: 400 13px/17px var(--font); letter-spacing: .26px; color: var(--ink);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .td.done .tx { color: var(--muted); text-decoration: line-through; }
+  .td .at { flex: none; font: 400 10px/13px var(--mono); color: var(--muted); }
+  .td .at.late { font-weight: 700; color: var(--red200); }
+  /* WidgetSummary：分隔線＋上距 10、字 12 */
+  .sum { margin-top: auto; border-top: 1px solid var(--border); padding-top: 10px; font: 400 12px/15px var(--font); letter-spacing: .24px;
+    color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* WidgetHead 的綠點（旅程中）：6、跟字標同一列 */
+  .wh i.live { flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+  /* 旅程（TripsCards.live，小）：環 62、stroke 6、環與字距 12；第幾天 13 粗、共幾天 12 */
+  .ring-wrap { margin: auto 0; display: flex; align-items: center; gap: 12px; }
+  .ring { flex: none; width: 62px; height: 62px; }
+  .ring circle { fill: none; stroke: var(--border); stroke-width: 6; }
+  .ring circle.on { stroke: var(--accent); stroke-linecap: round; }
+  .ring text { font: 700 16px var(--mono); fill: var(--ink); text-anchor: middle; dominant-baseline: central; }
+  .ring-wrap b { display: block; font: 700 13px/17px var(--font); color: var(--ink); white-space: nowrap; }
+  .ring-wrap span { display: block; margin-top: 2px; font: 400 12px/15px var(--font); color: var(--muted); white-space: nowrap; }
+  .ring-wrap + .foot { margin-top: 0; }
+  /* WidgetFileRow（小）：圖示欄 15、圖示 13、間距 8、上下 4、名稱 12、中間省略 */
+  .fr { display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+  .fr + .fr { border-top: 1px solid var(--border-soft); }
+  .fr svg { flex: none; width: 13px; height: 13px; margin-right: 2px; fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .fr span { flex: 1 1 auto; min-width: 0; font: 400 12px/15px var(--font); letter-spacing: .26px; color: var(--ink); white-space: nowrap; overflow: hidden; }
+  /* 待辦（中）：列上下 4 */
+  .w.m .td { padding: 4px 0; }
+  .w.m .wl-body .foot { margin-top: auto; }
+  /* 檢視筆記（小）：標題 15 粗兩行、髮絲線上 9 下 6、段落 13 各一行、段距 2 */
+  .nt-ti { font: 700 15px/19px var(--font); letter-spacing: .3px; color: var(--ink); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  .nt-hr { margin: 9px 0 6px; height: 1px; background: var(--border); }
+  .nt-p { font: 400 13px/17px var(--font); letter-spacing: .26px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .nt-p + .nt-p { margin-top: 2px; }
 </style>
 </head>
 <body>
 <div class="device" id="d"><div class="dim"></div></div>
 <script type="module">
-import { fmt, lang, params, loadTrip, loadCategories, categoryName, chrome, toMin, duration, ready } from './chrome.js';
+import { fmt, lang, params, loadTrip, loadCategories, categoryName, chrome, toMin, duration, ready, interactive } from './chrome.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
@@ -89,12 +152,27 @@ const date = new Date(start.getTime() + (dayNo - 1) * 864e5);
 const S = {
   'zh-Hant-TW': { live: '進行中', day: n => `第 ${n} 天`, remain: '還有 ', ends: x => ` · ${x} 結束`,
     fx: '匯率換算', tap: '點一下換算', find: '搜尋',
+    tripOngoing: '旅程中', dayCountTotal: n => `共 ${n} 天`, returnsOn: (a, n) => `回程 ${a} · 還有 ${n} 天`,
+    filesToday: '今日檔案', moreFiles: n => `還有 ${n} 個檔案`,
+    todosToday: '今日待辦', open: n => `未完成 · ${n} 件`, done: '已完成', leftToday: n => `今天還有 ${n} 件沒做`, noEvent: '不綁行程',
+    remainingOpen: n => `還有 ${n} 件未完成`, nearest: x => ` · 最近 ${x}`, allDone: '今天的都做完了', act: x => `完成：${x}`,
+    note: '筆記',
     sample: { amount: '¥1,580', result: '$332.12', rate: '¥100 ≈ $21.02' } },
   en: { live: 'Now', day: n => `Day ${n}`, remain: 'In ', ends: x => ` · ends ${x}`,
     fx: 'Currency', tap: 'Tap to convert', find: 'Search',
+    tripOngoing: 'On the trip', dayCountTotal: n => `${n} days`, returnsOn: (a, n) => `Back ${a} · ${n} days to go`,
+    filesToday: 'Today’s files', moreFiles: n => `${n} more files`,
+    todosToday: 'Today’s to-dos', open: n => `Open · ${n}`, done: 'Done', leftToday: n => `${n} left today`, noEvent: 'No event',
+    remainingOpen: n => `${n} still open`, nearest: x => ` · soonest ${x}`, allDone: 'All done for today', act: x => `Complete: ${x}`,
+    note: 'Note',
     sample: { amount: '¥1,580', result: '$10.57', rate: '¥100 ≈ $0.67' } },
   ja: { live: '進行中', day: n => `${n}日目`, remain: '残り ', ends: x => ` · ${x} 終了`,
     fx: '為替換算', tap: 'タップして換算', find: '検索',
+    tripOngoing: '旅行中', dayCountTotal: n => `全 ${n} 日`, returnsOn: (a, n) => `帰着 ${a} · あと ${n} 日`,
+    filesToday: '今日のファイル', moreFiles: n => `ほかに ${n} 件のファイル`,
+    todosToday: '今日のやること', open: n => `未完了 · ${n} 件`, done: '完了', leftToday: n => `今日はあと ${n} 件`, noEvent: '予定に紐づけない',
+    remainingOpen: n => `未完了があと ${n} 件`, nearest: x => ` · 直近 ${x}`, allDone: '今日の分はすべて終わりました', act: x => `完了：${x}`,
+    note: 'メモ',
     sample: { amount: '￥1,580', result: 'NT$332.12', rate: '￥100 ≈ NT$21.02' } },
 }[lang];
 
@@ -104,12 +182,79 @@ const nowMin = toMin(now);
 const i = events.findIndex(e => toMin(e.start) <= nowMin && nowMin < toMin(e.end));
 const cur = events[i], rest = events.slice(i + 1, i + 3);
 const brand = '<circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M6 8.4v4.2a3.4 3.4 0 0 0 3.4 3.4h5.2"/>';
-const head = (label, trailing) => `<div class="wh"><span class="mark"><svg viewBox="0 0 24 24">${brand}</svg></span>
-  <b>${label}</b>${trailing ? `<span>${trailing}</span>` : ''}</div>`;
-
+// WidgetHead：字標＋（旅程那一支才有的）綠點＋大寫標籤＋右邊等寬的那一格
+const head = (label, trailing, live = false) => `<div class="wh"><span class="mark"><svg viewBox="0 0 24 24">${brand}</svg></span>
+  ${live ? '<i class="live"></i>' : ''}<b>${label}</b>${trailing ? `<span>${trailing}</span>` : ''}</div>`;
 const md = `${date.getMonth() + 1}/${date.getDate()}`;
-const TOP = 74, GAP = 34, PITCH = 106, ROW = 64 + 42;
-d.insertAdjacentHTML('beforeend', `
+
+// ── 旅程（TripsCards.live，小）：環＝第幾天／共幾天，底下「回程 M/d · 還有 N 天」 ──
+const dayCount = trip.dayCount;
+const end = new Date(start.getTime() + (dayCount - 1) * 864e5);
+const ringR = 28, ringC = 2 * Math.PI * ringR;
+const tripsSmall = `${head(S.tripOngoing, null, true)}
+  <div class="ring-wrap"><svg class="ring" viewBox="0 0 62 62"><circle cx="31" cy="31" r="${ringR}"/>
+    <circle class="on" cx="31" cy="31" r="${ringR}" stroke-dasharray="${(ringC * dayNo / dayCount).toFixed(2)} ${ringC.toFixed(2)}" transform="rotate(-90 31 31)"/>
+    <text x="31" y="31">${dayNo}</text></svg>
+    <div><b>${S.day(dayNo)}</b><span>${S.dayCountTotal(dayCount)}</span></div></div>
+  <div class="foot">${S.returnsOn(`${end.getMonth() + 1}/${end.getDate()}`, dayCount - dayNo)}</div>`;
+
+// ── 檔案（FilesCards，小）：今天畫得到的行程上的附件，最多 3 列，其餘寫「還有 N 個檔案」 ──
+// 範本的連結匯入成「連結」附件；JR Pass 那兩份（PDF、照片）是 event.html extra=1 同一組行銷用樣本。
+const EXTRA = { 'zh-Hant-TW': [['JR Pass 電子票券.pdf', 'pdf'], ['兌換收據.jpg', 'image']],
+  en: [['JR Pass e-ticket.pdf', 'pdf'], ['Exchange receipt.jpg', 'image']],
+  ja: [['JR Pass 電子チケット.pdf', 'pdf'], ['引換レシート.jpg', 'image']] }[lang] || [];
+const FILE_ICON = {
+  pdf: '<path d="M14 3H6v18h12V7zM14 3v4h4M9 13h6M9 17h6"/>',
+  image: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M4 17l5.5-5.5L14 16l2.5-2.5L20 17"/>',
+  link: '<path d="M21 12l-8.5 8.5Q7 22 5.5 13.5L14 5Q20.5 6.5 19 10l-8.5 8.5Q8.5 19.5 7.5 15.5L16 7"/>',
+};
+const files = [];
+for (const e of trip.allDayEvents || []) if (e.fromDay <= dayNo && dayNo <= Math.max(e.fromDay, e.toDay)) {
+  (e.links || []).forEach(l => files.push([l.title, 'link']));
+  if (e.key === 'jr-pass') files.push(...EXTRA);
+}
+for (const e of trip.days.find(x => x.day === dayNo).events) if (!e.isCancelled) (e.links || []).forEach(l => files.push([l.title, 'link']));
+const filesSmall = `${head(S.filesToday, md)}
+  ${files.slice(0, 3).map(([n, k]) => `<div class="fr"><svg viewBox="0 0 24 24">${FILE_ICON[k]}</svg><span>${fmt(n)}</span></div>`).join('')}
+  ${files.length > 3 ? `<div class="foot">${S.moreFiles(files.length - 3)}</div>` : ''}`;
+
+// ── 待辦（TodosCards）：TripWidgetUseCase.todos ──
+// 旅程中、今天畫得到的行程上有待辦 → 今日待辦；排序＝未完成在前、提醒時刻早的在前（沒時刻的排後面）、已完成沉底。
+// 提醒時刻＝綁的那一則行程的開始；綁全日行程的沒有時刻，照 App 寫「不綁行程」。逾期未完成只把時刻轉赭紅粗體。
+const todos = [];
+for (const e of trip.allDayEvents || []) if (e.fromDay <= dayNo && dayNo <= Math.max(e.fromDay, e.toDay))
+  (e.todos || []).forEach(text => todos.push({ text, at: null }));
+for (const e of trip.days.find(x => x.day === dayNo).events.filter(e => !e.isCancelled)) (e.todos || []).forEach(text => todos.push({ text, at: e.start || null }));
+todos.forEach((x, k) => { x.id = k; x.pos = k; x.done = false; });
+const KEY = 'tz-demo:widget-todos';
+if (interactive) try { const saved = JSON.parse(sessionStorage.getItem(KEY) || '[]'); todos.forEach(x => { x.done = saved.includes(x.id); }); } catch {}
+const saveTodos = () => { try { sessionStorage.setItem(KEY, JSON.stringify(todos.filter(x => x.done).map(x => x.id))); } catch {} };
+const box = '<circle cx="12" cy="12" r="8.4"/>', checked = box + '<path d="M8.6 12.2l2.3 2.3 4.5-4.7"/>';
+const sorted = () => [...todos].sort((a, b) => (a.done - b.done) || ((a.at ? toMin(a.at) : 1e9) - (b.at ? toMin(b.at) : 1e9)) || (a.pos - b.pos));
+const todoRow = x => `<div class="td${x.done ? ' done' : ''}"><span class="ck" role="checkbox" aria-checked="${x.done}" aria-label="${fmt(S.act(x.text)).replace(/"/g, '&quot;')}" data-tap data-id="${x.id}"><svg viewBox="0 0 24 24">${x.done ? checked : box}</svg></span>
+  <span class="tx">${fmt(x.text)}</span><span class="at${!x.done && x.at && toMin(x.at) < nowMin ? ' late' : ''}">${x.at || fmt(S.noEvent)}</span></div>`;
+const trailing = () => `${todos.filter(x => x.done).length} / ${todos.length}`;
+// 中：前 3 列（WidgetTheme.rowCap）＋底行「還有 N 件未完成 · 最近 HH:mm」
+const todosMedium = () => {
+  const all = sorted(), open = all.filter(x => !x.done), first = open[0];
+  return `${all.slice(0, 3).map(todoRow).join('')}<div class="foot">${open.length
+    ? S.remainingOpen(open.length) + (first?.at ? S.nearest(first.at) : '') : S.allDone}</div>`;
+};
+// 大：未完成組（最多 5）＋已完成組（最多 3）＋「今天還有 N 件沒做」
+const todosLarge = () => {
+  const all = sorted(), open = all.filter(x => !x.done), done = all.filter(x => x.done);
+  return `<div class="grp">${fmt(S.open(open.length))}</div>${open.slice(0, 5).map(todoRow).join('')}
+    ${done.length ? `<div class="grp">${fmt(S.done)}</div>${done.slice(0, 3).map(todoRow).join('')}` : ''}
+    <div class="sum">${fmt(S.leftToday(open.length))}</div>`;
+};
+
+// ── 主畫面第 1 頁（截圖就是這一頁）：行程（中）→ 旅程＋檔案（小、小）→ 待辦（中） ──
+const TOP = 74, GAP = 34, ROW = 64 + 42;
+const y2 = TOP + 170 + GAP, y3 = y2 + 170 + GAP;
+const cols = [19, 125, 213, 319];
+const pager = document.createElement('div'); pager.className = 'pager';
+const p1 = document.createElement('div'); p1.className = 'pg'; pager.append(p1); d.append(pager);
+p1.insertAdjacentHTML('beforeend', `
   <div class="w m" style="top:${TOP}px">
     ${head(S.live, `${md} · ${S.day(dayNo)}`)}
     <div class="wa"><i></i><b>${fmt(cur.title)}</b></div>
@@ -118,26 +263,110 @@ d.insertAdjacentHTML('beforeend', `
     ${rest.map(e => `<div class="row"><span class="tm">${e.start}</span><span class="nm">${fmt(e.title)}</span>
       <span class="st">${categoryName(e.category)}</span></div>`).join('')}
   </div>
-  <div class="w s" style="top:${TOP + 170 + GAP}px">
-    ${head(S.fx)}
-    <div class="fx-a">${S.sample.amount}</div>
-    <div class="fx-r"><i>≈</i><b>${S.sample.result}</b></div>
-    <div class="foot">${S.sample.rate} · ${S.tap}</div>
-  </div>`);
+  <div class="w s" style="top:${y2}px">${tripsSmall}</div>
+  <div class="w s" style="left:213px;top:${y2}px">${filesSmall}</div>
+  <div class="w m td-w" style="top:${y3}px">${head(S.todosToday, trailing())}<div class="wl-body">${todosMedium()}</div></div>`);
+d.insertAdjacentHTML('beforeend', `<div class="find"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4.5 4.5"/></svg>${S.find}</div>
+  <div class="dock"></div>` + cols.map(x => `<div class="ic blank" style="left:${x}px;bottom:24px"></div>`).join(''));
 
-// 圖示：小 widget 右邊 2×2、下面一整列；TripEZGo 自己用官網的 icon
-const y2 = TOP + 170 + GAP, y3 = y2 + 170 + GAP;
-const cols = [19, 125, 213, 319];
-const slots = [[2, y2], [3, y2], [2, y2 + ROW], [3, y2 + ROW], [0, y3], [1, y3], [2, y3], [3, y3], [0, y3 + ROW], [1, y3 + ROW]];
-d.insertAdjacentHTML('beforeend', slots.map(([c, y], k) => k === 4
-  ? `<div class="ic" style="left:${cols[c]}px;top:${y}px"><img src="img/app-icon-180.png" alt=""></div>`
-  : `<div class="ic blank" style="left:${cols[c]}px;top:${y}px"></div>`).join('')
-  + `<div class="find"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4.5 4.5"/></svg>${S.find}</div>
-  <div class="dock"></div>`
-  + cols.map(x => `<div class="ic blank" style="left:${x}px;bottom:24px"></div>`).join(''));
+// 版面讓步，照 App：WidgetHead 放不下兩樣就只留標籤（ViewThatFits）、檔名中間省略（WidgetFileRow .truncationMode(.middle)）、
+// 底行放不下先縮字（SecondaryLine 的 minimumScaleFactor），不截半句。寬度由排版量，不是猜字數。
+function fit(root) {
+  root.querySelectorAll('.wh').forEach(wh => { const t = wh.querySelector(':scope > span:last-child'), b = wh.querySelector('b');
+    if (t && b && b.scrollWidth > b.clientWidth) t.style.display = 'none'; });
+  root.querySelectorAll('.fr span').forEach(el => {
+    const full = Array.from(el.textContent); if (el.scrollWidth <= el.clientWidth) return;
+    let lo = 1, hi = full.length; const cut = k => { const a = Math.ceil(k / 2); return full.slice(0, a).join('') + '…' + full.slice(full.length - (k - a)).join(''); };
+    while (lo < hi) { const k = Math.ceil((lo + hi) / 2); el.textContent = cut(k); if (el.scrollWidth <= el.clientWidth) lo = k; else hi = k - 1; }
+    el.textContent = cut(lo);
+  });
+  root.querySelectorAll('.foot').forEach(el => { el.style.fontSize = ''; for (let s = 12; s > 9.6 && el.scrollWidth > el.clientWidth; s -= .2) el.style.fontSize = s + 'px'; });
+}
+await document.fonts.ready;
+fit(d);
 
 chrome(d, { dark: true });
 ready();
+
+/* ── 互動模式（截圖模式不跑這一段） ──
+   1. 待辦打勾：WidgetTodoRow 的勾選框是 iOS 17 的 Button(intent: ToggleTodoIntent)——只翻 isDone、不開 App，
+      系統重畫那一格（同一趟的其他 widget 也一起 reload：WidgetCenter.reloadAllTimelines）。
+   2. 往左滑到第 2 頁：大尺寸待辦（勾掉的沉到「已完成」，可以再勾回來）、匯率換算、筆記（檢視筆記，小）、
+      TripEZGo 的 App 圖示。匯率、行程、旅程、檔案、筆記整格點下去只是開 App（widgetURL），不在 widget 裡互動。
+   App：TodosCards.swift、WidgetPieces.swift、ToggleTodoIntent.swift、ExchangeCards.swift、NoteCards.swift（小：
+   標題 15 粗、兩段各一行）；筆記內容＝範本裡那一則，@ 提及照 App 換成行程名稱。 */
+if (interactive) {
+  // 第 2 頁
+  const p2 = document.createElement('div'); p2.className = 'pg'; p2.style.transform = 'translateX(402px)'; pager.append(p2);
+  const note = (trip.notes || [])[0];
+  const titleOf = k => trip.days.flatMap(x => x.events).concat(trip.allDayEvents || []).find(e => e.key === k)?.title || '';
+  const paras = (note?.paragraphs || []).map(p => p.replace(/\{@([\w-]+)\}/g, (_, k) => titleOf(k)));
+  const yS = TOP + 382 + GAP;
+  p2.insertAdjacentHTML('beforeend', `
+    <div class="w l" style="top:${TOP}px">${head(S.todosToday, trailing())}<div class="wl-body">${todosLarge()}</div></div>
+    <div class="w s" style="top:${yS}px">${head(S.fx)}
+      <div class="fx-a">${S.sample.amount}</div><div class="fx-r"><i>≈</i><b>${S.sample.result}</b></div>
+      <div class="foot">${S.sample.rate} · ${S.tap}</div></div>
+    <div class="w s" style="left:213px;top:${yS}px">${head(S.note)}
+      <div class="nt-ti">${fmt(note?.title || '')}</div><div class="nt-hr"></div>
+      ${paras.slice(0, 2).map(p => `<div class="nt-p">${fmt(p)}</div>`).join('')}</div>`);
+  fit(p2);
+
+  // 兩支待辦共用同一份狀態：勾一下兩支一起重畫
+  const redraw = () => {
+    for (const [w, fn] of [[p1.querySelector('.td-w'), todosMedium], [p2.querySelector('.w.l'), todosLarge]]) {
+      const body = w.querySelector('.wl-body');
+      body.classList.add('fade'); body.innerHTML = fn(); w.querySelector('.wh > span:last-child').textContent = trailing();
+      requestAnimationFrame(() => requestAnimationFrame(() => body.classList.remove('fade')));
+    }
+    fit(pager);
+  };
+  pager.addEventListener('click', (e) => {
+    const ck = e.target.closest('.ck'); if (!ck) return;
+    const x = todos.find(y => y.id === +ck.dataset.id); x.done = !x.done; saveTodos(); redraw();
+  });
+  if (todos.some(x => x.done)) redraw();
+
+  // 頁點：一滑動，搜尋膠囊換成頁點；停下來一會兒再換回來（iOS 17 起的主畫面）
+  const dots = document.createElement('div'); dots.className = 'pdots'; dots.innerHTML = '<i class="on"></i><i></i>';
+  d.querySelector('.find').after(dots);
+  let pageNo = 0, hideDots;
+  const place = (dx = 0) => {
+    const edge = (pageNo === 0 && dx > 0) || (pageNo === 1 && dx < 0) ? dx / 3 : dx;   // 頭尾有阻尼
+    p1.style.transform = `translateX(${-pageNo * 402 + edge}px)`; p2.style.transform = `translateX(${(1 - pageNo) * 402 + edge}px)`;
+    dots.children[0].className = pageNo === 0 ? 'on' : ''; dots.children[1].className = pageNo === 1 ? 'on' : '';
+  };
+  const showDots = () => { clearTimeout(hideDots); d.classList.add('is-paging'); };
+  const laterHide = () => { clearTimeout(hideDots); hideDots = setTimeout(() => d.classList.remove('is-paging'), 1400); };
+  let x0 = null, dx = 0, moved = false, pid = null;
+  pager.addEventListener('pointerdown', (e) => { pid = e.pointerId; x0 = e.clientX; dx = 0; moved = false; });
+  pager.addEventListener('pointermove', (e) => {
+    if (x0 == null || e.pointerId !== pid) return;
+    dx = e.clientX - x0;
+    if (!moved && Math.abs(dx) < 8) return;
+    if (!moved) { moved = true; pager.classList.add('drag'); showDots(); try { pager.setPointerCapture(pid); } catch {} }
+    place(dx);
+  });
+  const up = (e) => {
+    if (x0 == null || e.pointerId !== pid) return;
+    x0 = null; pager.classList.remove('drag');
+    if (!moved) return;
+    if (dx < -60 && pageNo === 0) pageNo = 1; else if (dx > 60 && pageNo === 1) pageNo = 0;
+    place(); laterHide();
+  };
+  pager.addEventListener('pointerup', up); pager.addEventListener('pointercancel', up);
+  pager.addEventListener('click', (e) => { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+
+  // 第一次真的被看見時，把第 1 頁往左帶一下再彈回來，讓人知道右邊還有一頁
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((es) => {
+      if (!es.some(x => x.intersectionRatio > .6) || pageNo !== 0) return;
+      io.disconnect();
+      setTimeout(() => { if (pageNo || x0 != null) return; showDots(); place(-46); setTimeout(() => { place(); laterHide(); }, 520); }, 900);
+    }, { threshold: [0, .6, 1] });
+    io.observe(d);
+  }
+}
 </script>
 </body>
 </html>

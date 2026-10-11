@@ -84,19 +84,63 @@ const SB_ICONS = `
   <path d="M78 5v3.6c.7-.3 1.2-1 1.2-1.8S78.7 5.3 78 5z" fill-opacity=".4"/>
 </svg>`;
 
+/* ── 互動模式 ──────────────────────────────────────────────────────────
+   首頁把這些畫面放進 iPhone 外框（iframe），網址帶 interactive=1。
+   截圖工具（tools/screens.mjs）不帶，畫面維持靜態、輸出不變——**互動只能在 interactive 為真時掛上**。 */
+export const interactive = params.get('interactive') === '1';
+if (interactive) document.documentElement.classList.add('is-interactive');
+/** 換到另一個畫面（同語言、同互動模式）。給分頁列、點行程開詳情等用。 */
+export function go(page, query = '') {
+  const q = new URLSearchParams(query);
+  q.set('lang', lang); if (interactive) q.set('interactive', '1');
+  if (interactive && params.get('auto')) q.set('auto', params.get('auto'));   // 換頁後自動示範要接著跑
+  const url = new URL(`./${page}.html?${q}`, location.href).href;
+  // 在首頁的外框裡：請外面在背景載好新的一頁、畫完再瞬間換上，整頁不會閃（使用者 2026-10-12）。
+  // 外面沒回 tz-nav-ok（直接開這一頁、或不是首頁）就照舊換頁。
+  if (interactive && parent !== window) {
+    let ok = false;
+    const on = (e) => { if (e.source === parent && e.data?.type === 'tz-nav-ok') ok = true; };
+    addEventListener('message', on);
+    parent.postMessage({ type: 'tz-nav', url }, '*');
+    setTimeout(() => { removeEventListener('message', on); if (!ok) location.href = url; }, 300);
+    return;
+  }
+  location.href = url;
+}
+/** 分頁列每一格對到哪個畫面（設定分頁還沒有複刻，點了不動） */
+export const TAB_PAGES = ['overview', 'calendar', 'map', 'shop', null];
+
 export function chrome(device, { tab = null, dark = false } = {}) {
+  if (interactive) {
+    document.documentElement.classList.add('is-interactive');
+    // 首頁全螢幕試玩時焦點在這裡：Esc 交給外面關視窗
+    if (!document.documentElement.dataset.escHooked) {
+      document.documentElement.dataset.escHooked = '1';
+      addEventListener('keydown', (e) => { if (e.key === 'Escape') parent.postMessage({ type: 'tz-esc' }, '*'); });
+    }
+  }
   device.insertAdjacentHTML('beforeend', `
     <div class="sb${dark ? ' on-dark' : ''}"><div class="sb-time">9:41</div><div class="sb-island"></div>${SB_ICONS}</div>
     <div class="home${dark ? ' on-dark' : ''}"></div>`);
   if (tab !== null) {
     const icons = ['overview', 'calendar', 'map', 'notes', 'settings'];
     device.insertAdjacentHTML('beforeend', `<nav class="tabbar">${icons.map((ic, i) =>
-      `<div class="tab${i === tab ? ' on' : ''}">${svg(ic)}<span>${t.tabs[i]}</span></div>`).join('')}</nav>`);
+      `<div class="tab${i === tab ? ' on' : ''}" data-tab="${i}">${svg(ic)}<span>${t.tabs[i]}</span></div>`).join('')}</nav>`);
+    if (interactive) device.querySelector('.tabbar').addEventListener('click', (e) => {
+      const el = e.target.closest('[data-tab]'); if (!el) return;
+      const i = +el.dataset.tab; if (i !== tab && TAB_PAGES[i]) go(TAB_PAGES[i], i === 1 ? 'day=2' : '');
+    });
   }
 }
 
 // 截圖工具等這個旗標：字型、資料都畫完了才拍
-export function ready() { document.fonts.ready.then(() => { document.body.dataset.ready = '1'; }); }
+export function ready() {
+  document.fonts.ready.then(() => {
+    document.body.dataset.ready = '1';
+    // 首頁外框帶 auto=<故事> 才自動操作（screens/autoplay.js）；截圖工具不帶
+    if (interactive && params.get('auto')) import('./autoplay.js');
+  });
+}
 
 // EventTypeSwatch.swift 的分組：類型名稱 → 色組
 const SWATCH = {

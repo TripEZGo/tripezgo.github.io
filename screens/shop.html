@@ -83,7 +83,7 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, params, chrome, ready, fmt } from './chrome.js';
+import { lang, params, chrome, ready, fmt, interactive, go, t as T, svg, swatchClass } from './chrome.js';
 
 const d = document.getElementById('d');
 
@@ -91,21 +91,34 @@ const d = document.getElementById('d');
 const s = {
   'zh-Hant-TW': { title: '小工具', subs: ['筆記', '掃描', '匯率換算', '購物清單'], all: '全部',
     stat: ['待購買', '已購買', '不買了'], flag: '目前行程', sep: '　·　', yen: '¥',
-    cats: { drug: '藥妝', cloth: '衣服', souv: '紀念品', food: '食品', lux: '精品', goods: '雜貨' } },
+    cats: { drug: '藥妝', cloth: '衣服', souv: '紀念品', food: '食品', lux: '精品', goods: '雜貨' },
+    empty: '無項目', quotes: '價格比較', best: p => `最低 ${p}`, quoteAdd: '新增比價', events: '關聯行程', approx: v => `約 ${v}`,
+    unTitle: '退回待購買？', unMsg: '你填的購買價格會一起清掉。', unOk: '退回待購買', cancel: '取消',
+    paidTitle: '購買價格', paidLabel: '價格', paidHint: p => `參考價格是 ${p}。`, paidSave: '標成已購買', locale: 'zh-TW' },
   en: { title: 'Tools', subs: ['Notes', 'Scan', 'Currency', 'Shopping'], all: 'All',
     stat: ['To buy', 'Bought', 'Skipped'], flag: 'On itinerary', sep: ' · ', yen: '¥',
-    cats: { drug: 'Drugstore', cloth: 'Clothing', souv: 'Souvenirs', food: 'Food', lux: 'Luxury', goods: 'Daily Goods' } },
+    cats: { drug: 'Drugstore', cloth: 'Clothing', souv: 'Souvenirs', food: 'Food', lux: 'Luxury', goods: 'Daily Goods' },
+    empty: 'No items', quotes: 'Price check', best: p => `Lowest ${p}`, quoteAdd: 'Add a price', events: 'Linked events', approx: v => `About ${v}`,
+    unTitle: 'Back to to-buy?', unMsg: 'The purchase price you entered will be cleared too.', unOk: 'Back to to-buy', cancel: 'Cancel',
+    paidTitle: 'Price paid', paidLabel: 'Price', paidHint: p => `Reference price is ${p}.`, paidSave: 'Mark as bought', locale: 'en-US' },
   ja: { title: 'ツール', subs: ['メモ', 'スキャン', '為替', '買い物'], all: 'すべて',
     stat: ['購入予定', '購入済み', 'やめた'], flag: '予定あり', sep: '　·　', yen: '￥',
-    cats: { drug: 'ドラッグストア', cloth: '衣類', souv: 'お土産', food: '食品', lux: 'ブランド品', goods: '雑貨' } },
+    cats: { drug: 'ドラッグストア', cloth: '衣類', souv: 'お土産', food: '食品', lux: 'ブランド品', goods: '雑貨' },
+    empty: '項目なし', quotes: '価格の比較', best: p => `最安 ${p}`, quoteAdd: '価格を追加', events: '関連する予定', approx: v => `約 ${v}`,
+    unTitle: '未購入に戻しますか？', unMsg: '入力した購入価格も消えます。', unOk: '未購入に戻す', cancel: 'キャンセル',
+    paidTitle: '購入価格', paidLabel: '価格', paidHint: p => `参考価格は ${p}。`, paidSave: '購入済みにする', locale: 'ja-JP' },
 }[lang];
 
 // 範例項目（範本裡沒有購物清單）。img 的高寬比跟 svg 的 viewBox 一致。
+// quotes（價格比較）與 event（關聯行程，範本裡的行程 key）只在互動模式的卡片上看得到。
 const N = (zh, en, ja) => ({ 'zh-Hant-TW': zh, en, ja }[lang]);
 const ITEMS = [
-  { img: 'manju', r: 1, name: N('紅葉饅頭 12 入', 'Momiji manju, box of 12', 'もみじ饅頭 12 個入'), cat: 'souv', price: 1600, status: 'pending', linked: true },
-  { img: 'brush', r: .75, name: N('熊野筆 腮紅刷', 'Kumano blush brush', '熊野筆 チークブラシ'), cat: 'lux', price: 4800, status: 'pending' },
-  { img: 'drops', r: 1, name: N('眼藥水', 'Eye drops', '目薬'), cat: 'drug', price: 698, status: 'pending' },
+  { img: 'manju', r: 1, name: N('紅葉饅頭 12 入', 'Momiji manju, box of 12', 'もみじ饅頭 12 個入'), cat: 'souv', price: 1600, status: 'pending', linked: true,
+    event: 'd2-omotesando', quotes: [[N('山田屋 宮島本店', 'Yamadaya, Miyajima', 'やまだ屋 宮島本店'), 1600], [N('ekie 廣島站', 'ekie, Hiroshima Sta.', 'ekie 広島駅'), 1650]] },
+  { img: 'brush', r: .75, name: N('熊野筆 腮紅刷', 'Kumano blush brush', '熊野筆 チークブラシ'), cat: 'lux', price: 4800, status: 'pending',
+    quotes: [[N('筆之里工房', 'Fude-no-Sato Kobo', '筆の里工房'), 4620], [N('ekie 廣島站', 'ekie, Hiroshima Sta.', 'ekie 広島駅'), 4800], [N('晃祐堂 熊野本店', 'Koyudo, Kumano', '晃祐堂 熊野本店'), 4950]] },
+  { img: 'drops', r: 1, name: N('眼藥水', 'Eye drops', '目薬'), cat: 'drug', price: 698, status: 'pending',
+    quotes: [[N('唐吉訶德 廣島本通店', 'Don Quijote Hondori', 'ドン・キホーテ 広島本通店'), 658], [N('大國藥妝 本通店', 'Daikoku Drug Hondori', 'ダイコクドラッグ 本通店'), 698], [N('松本清 廣島站前店', 'Matsukiyo, Hiroshima Sta.', 'マツモトキヨシ 広島駅前店'), 715]] },
   { img: 'soy', r: 1, name: N('牡蠣醬油', 'Oyster soy sauce', 'かき醤油'), cat: 'food', price: 540, status: 'pending' },
   { img: 'shamoji', r: .75, name: N('宮島杓子', 'Miyajima rice paddle', '宮島しゃもじ'), cat: 'souv', price: 880, status: 'pending' },
   { img: 'tote', r: 1, name: N('倉敷帆布托特包', 'Kurashiki canvas tote', '倉敷帆布トート'), cat: 'goods', price: 6380, status: 'pending' },
@@ -119,6 +132,10 @@ const IC = {
   shoppingBag: '<path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/>',
   ban: '<circle cx="12" cy="12" r="10"/><path d="m4.929 4.929 14.142 14.142"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
+  check: '<path d="M5 13l5 5 9-11"/>',
+  close: '<path d="M6 6l12 12M18 6 6 18"/>',
+  trash: '<path d="M4 7h16M10 11v6M14 11v6M5.5 7l1 12a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/>',
+  pencil: '<path d="M17 3a2.8 2.8 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5z"/>',
 };
 const ic = n => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
 
@@ -128,33 +145,231 @@ d.insertAdjacentHTML('beforeend', `<div class="wg-title">${s.title}</div>
   <div class="seg"><div class="seg-pill" style="left:${2 + TAB * 90.3}px"></div>
   ${s.subs.map((x, i) => `<div class="seg-t${i === TAB ? ' on' : ''}" style="left:${2 + i * 90.3}px">${x}</div>`).join('')}</div>`);
 
-const count = st => ITEMS.filter(i => i.status === st).length;
+// ── 狀態：截圖模式就是 ITEMS 原樣；互動模式從 sessionStorage 接回來（跨小工具四格切換還在） ──
+const STATUSES = ['pending', 'bought', 'skipped'];
 const cats = ['drug', 'cloth', 'souv', 'food', 'lux', 'goods'];
-d.insertAdjacentHTML('beforeend', `<div class="head" id="head">
-  <div class="stats">${['pending', 'bought', 'skipped'].map((st, i) =>
-    `<div class="stat${i === 0 ? ' todo' : ''}"><b class="mono">${count(st)}</b><i>${s.stat[i]}</i></div>`).join('')}</div>
-  <div class="chips"><div class="chip on">${s.all}</div>${cats.map(c => `<div class="chip">${s.cats[c]}</div>`).join('')}</div>
-</div>`);
+const state = { status: ITEMS.map(i => i.status), paid: ITEMS.map(() => null), statusFilter: [...STATUSES], catFilter: [] };
+let saved = null;
+if (interactive) {
+  const { remember } = await import('./tools.js');
+  saved = remember('shop', null);
+  const v = saved.get();
+  if (v && v.status?.length === ITEMS.length) Object.assign(state, v);
+}
+const persist = () => saved?.set(state);
+
+const count = st => state.status.filter(x => x === st).length;
+const yen = v => `${s.yen}${v.toLocaleString('en-US')}`;
+const shown = i => state.paid[i] ?? ITEMS[i].price;
+
+// 牆：ShoppingViewModel.rebuild → 分類（多選，空＝全部）× 狀態（多選）篩，sortedByItinerary 排：
+// 還沒處理的在前（已購買／不買了同一階沉到底）、排進行程的在前、其餘照原本順序
+const visible = () => ITEMS.map((it, i) => i).filter(i =>
+  (!state.catFilter.length || state.catFilter.includes(ITEMS[i].cat)) && state.statusFilter.includes(state.status[i]))
+  .sort((a, b) => ((state.status[a] !== 'pending') - (state.status[b] !== 'pending'))
+    || ((ITEMS[a].linked ? 0 : 1) - (ITEMS[b].linked ? 0 : 1)) || a - b);
+
+const headHTML = () => `<div class="stats">${STATUSES.map((st, i) =>
+    `<div class="stat${i === 0 ? ' todo' : ''}${state.statusFilter.includes(st) ? '' : ' off'}" data-st="${st}"><b class="mono">${count(st)}</b><i>${s.stat[i]}</i></div>`).join('')}</div>
+  <div class="chips"><div class="chip${state.catFilter.length ? '' : ' on'}" data-cat="">${s.all}</div>${cats.map(c => `<div class="chip${state.catFilter.includes(c) ? ' on' : ''}" data-cat="${c}">${s.cats[c]}</div>`).join('')}</div>`;
+d.insertAdjacentHTML('beforeend', `<div class="head" id="head">${headHTML()}</div>`);
 
 // 牆：最矮的那一欄先放（估計高度＝封面高寬比＋0.5，同 ShoppingCardView.estimatedHeight）
-const yen = v => `${s.yen}${v.toLocaleString('en-US')}`;
-const cols = [[], []], h = [0, 0];
-for (const it of ITEMS) {
-  const k = h[0] <= h[1] ? 0 : 1;
-  cols[k].push(it); h[k] += it.r + .5;
-}
-const card = it => `<div class="card ${it.status}${it.linked ? ' linked' : ''}">
+const card = i => {
+  const it = ITEMS[i], st = state.status[i];
+  return `<div class="card ${st}${it.linked ? ' linked' : ''}" data-i="${i}">
   <div class="media"><div class="content"><img src="img/shop-${it.img}.svg" alt="">${it.linked ? `<span class="flag">${s.flag}</span>` : ''}</div>
-    ${it.status === 'bought' ? `<div class="badge">${ic('shoppingBag')}</div>` : it.status === 'skipped' ? `<div class="badge">${ic('ban')}</div>` : ''}</div>
-  <div class="cap"><div class="n">${fmt(it.name)}</div><div class="p"><span class="mono">${yen(it.price)}</span>${s.sep}${s.cats[it.cat]}</div></div></div>`;
+    ${st === 'bought' ? `<div class="badge">${ic('shoppingBag')}</div>` : st === 'skipped' ? `<div class="badge">${ic('ban')}</div>` : ''}</div>
+  <div class="cap"><div class="n">${fmt(it.name)}</div><div class="p"><span class="mono">${yen(shown(i))}</span>${s.sep}${s.cats[it.cat]}</div></div></div>`;
+};
+const wallHTML = () => {
+  const list = visible();
+  if (!list.length) return `<div class="wall-empty">${s.empty}</div>`;
+  const cols = [[], []], h = [0, 0];
+  for (const i of list) { const k = h[0] <= h[1] ? 0 : 1; cols[k].push(i); h[k] += ITEMS[i].r + .5; }
+  return cols.map(c => `<div class="col">${c.map(card).join('')}</div>`).join('');
+};
 const headBottom = document.getElementById('head').getBoundingClientRect().bottom;
 const scroll = +(params.get('scroll') || 0);
-d.insertAdjacentHTML('beforeend', `<div class="wall-clip" style="top:${headBottom + 12}px"><div class="wall" style="top:${-scroll}px">${cols.map(c => `<div class="col">${c.map(card).join('')}</div>`).join('')}</div></div>
+d.insertAdjacentHTML('beforeend', `<div class="wall-clip" style="top:${headBottom + 12}px"><div class="wall" style="top:${-scroll}px">${wallHTML()}</div></div>
   <div class="fab">${ic('plus')}</div><div class="scrim"></div>`);
 
 chrome(d, { tab: 3 });
 await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; })));
 ready();
+
+/* ── 互動模式 ─────────────────────────────────────────────────────────────
+   規則出處（App repo /Users/zhgchgli/Projects/tripezgo/App/iOS/Modules/Widgets/Sources/Widgets/Shopping/）：
+   - ShoppingViewModel.toggle(status:)：上面三格同時是統計與篩選、各自開關；關掉最後一格整組跳回全選
+     ShoppingViewModel.toggle(category:)：分類多選，再按一次取消，「全部」清掉篩選
+     ShoppingViewController.StatButton.render：關掉的那一格不沉底、字變 muted（待購買的數字照樣墨色）
+   - ShoppingCardViewController：點牆上一格開卡片（pageSheet）；導覽列寫狀態，品名在圖下；
+     priceLine（有實付寫實付、把不同的參考價劃掉）、converted（約 TWD …）、renderQuotes（同幣比最低、
+     兩列以上且只有一種幣才寫「最低 ¥x」）、關聯行程那一列點了開行程檢視頁
+   - ShoppingCardViewController.pick：待購買→已購買先問實付（ShoppingPaidViewController，medium、留空就是不填）；
+     待購買→不買了；已購買再按＝問一次「退回待購買？」（.alert、取消是 preferred）；不買了再按＝回待購買
+     closeIfSettled：變成已購買／不買了就收卡片回牆；退回待購買留在卡片上
+   - StatusSegments.render：待購買兩顆（已購買主色、不買了 plain）；已購買／不買了只剩自己那一顆、墨底反白 */
+if (interactive) {
+  const { subTabs, alert, sheet } = await import('./tools.js');
+  const trip = await (await fetch(`./data/sanyo.${lang}.json`)).json();
+  subTabs(d, TAB);
+  d.insertAdjacentHTML('beforeend', `<style>
+    .stat, .chip, .card { cursor: pointer; }
+    .stat.off { background: transparent; } .stat.off b { color: var(--muted); } .stat.todo.off b { color: var(--ink); } .stat.off i { color: var(--muted); }
+    .chips { overflow-x: auto; scrollbar-width: none; margin-right: -20px; padding-right: 20px; } .chips::-webkit-scrollbar { display: none; }
+    .wall-clip { overflow-y: auto; scrollbar-width: none; } .wall-clip::-webkit-scrollbar { display: none; }
+    .wall { position: relative; top: 0 !important; left: 0; right: 0; margin: 0 20px; padding-bottom: 120px; }
+    .wall-empty { width: 100%; padding-top: 80px; text-align: center; font: 400 var(--t-sm)/18px var(--font); color: var(--muted); }
+    .card { transition: transform .12s; } .card:active { transform: scale(.97); }
+    /* 卡片（ShoppingCardViewController.Metrics）：左右 20、上 10、圖下 14、品名下 8、分類上 12、段落上 20 */
+    .sc-nav { position: absolute; left: 0; right: 0; top: 16px; height: 44px; z-index: 2; }
+    .sc-nav .t { position: absolute; left: 100px; right: 100px; top: 12px; text-align: center; font: 600 17px/20px var(--font); color: #191919; }
+    .sc-nav .g { position: absolute; right: 16px; top: 0; width: 96px; height: 44px; border-radius: 22px; background: #fdfdfd;
+      box-shadow: 0 4px 22px rgba(0,0,0,.07); display: flex; }
+    .sc-nav .g span { flex: 1; display: grid; place-items: center; } .sc-nav .g svg { width: 20px; height: 20px; stroke-width: 1.8; }
+    .sc-nav .g .del { color: var(--danger); } .sc-nav .g .ed { color: var(--accent-ink); }
+    .sc-body { position: absolute; left: 0; right: 0; top: 76px; bottom: 81px; overflow-y: auto; padding: 10px 20px 20px; scrollbar-width: none; }
+    .sc-body::-webkit-scrollbar { display: none; }
+    .sc-fig { max-height: 341px; overflow: hidden; border-radius: 8px; margin-bottom: 14px; display: flex; align-items: center; }
+    .sc-fig img { display: block; width: 100%; }
+    .sc-title { font: 600 var(--t-xxl)/33px var(--font); letter-spacing: -.56px; color: var(--ink); margin-bottom: 8px; }
+    .sc-title .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin: 0 8px 4px 0; vertical-align: middle; }
+    .bought-t { color: var(--accent-ink); } .skipped-t { color: var(--muted); text-decoration: line-through; }
+    .sc-price { font: 600 var(--t-xl)/26px var(--font); color: var(--ink); }
+    .sc-price s { font: 400 var(--t-sm)/16px var(--font); color: var(--muted); margin-left: 8px; }
+    .sc-price.struck { text-decoration: line-through; }
+    .sc-conv { margin-top: 2px; font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); }
+    .sc-cat { margin-top: 12px; font: 400 var(--t-sm)/16px var(--font); color: var(--muted); } .sc-cat.struck { text-decoration: line-through; }
+    .sc-sec { margin-top: 20px; }
+    .sc-sec-h { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+    .sc-sec-h b { font: 700 var(--t-sm)/16px var(--font); } .sc-sec-h span { margin-left: auto; font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); }
+    .q { display: flex; align-items: baseline; gap: 10px; min-height: 44px; padding: 13px 2px 8px; border-bottom: 1px solid var(--border-soft); font: 400 var(--t-sm)/16px var(--font); }
+    .q .l { flex: 1; } .q .v { color: var(--muted); } .q.best .l, .q.best .v { font-weight: 700; color: var(--ink); }
+    .q svg { width: 13px; height: 13px; color: var(--muted); stroke-width: 2; flex: none; align-self: center; }
+    .pillb { display: inline-flex; margin-top: 10px; padding: 6px 14px; border-radius: 99px; border: 1px solid var(--border); font: 600 var(--t-sm)/16px var(--font); color: var(--accent-ink); }
+    .ev { display: flex; align-items: center; gap: 10px; min-height: 44px; font: 400 var(--t-sm)/16px var(--font); cursor: pointer; border-radius: 6px; }
+    .ev:active { background: var(--surface); }
+    .ev .ld { width: 92px; flex: none; font: 400 var(--t-xs)/14px var(--font); color: var(--muted); }
+    .ev i { width: 8px; height: 8px; border-radius: 50%; background: var(--sw-base); flex: none; }
+    /* 底下那一條（SheetFootView 上下 12、左右 20、頂一條 border-soft；StatusSegments） */
+    .sc-foot { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 20px 46px; background: var(--page); border-top: 1px solid var(--border-soft); }
+    .seg2 { display: flex; gap: 2px; padding: 2px; border-radius: 9px; background: var(--sunken); }
+    .seg2 span { flex: 1; height: 40px; border-radius: 7px; display: flex; align-items: center; justify-content: center; gap: 7px;
+      font: 600 var(--t-sm)/16px var(--font); color: var(--muted-on-sunken); cursor: pointer; }
+    .seg2 span svg { width: 17px; height: 17px; stroke-width: 2.2; }
+    .seg2 .primary { background: var(--accent-ink); color: #fff; } .seg2 .pressed { background: var(--ink); color: var(--page); font-weight: 700; }
+    /* 實付那一張（ShoppingPaidViewController，medium detent） */
+    .pd-title { position: absolute; left: 0; right: 0; top: 28px; text-align: center; font: 600 17px/20px var(--font); }
+    .pd { position: absolute; left: 20px; right: 20px; top: 76px; }
+    .pd label { display: block; font: 600 var(--t-xs)/14.3px var(--font); color: var(--muted); margin-bottom: 6px; }
+    .pd .f { display: flex; align-items: center; gap: 10px; height: 48px; padding: 0 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+    .pd .f:focus-within { border-color: var(--ink); }
+    .pd .f b { font: 700 var(--t-xs)/14px var(--font); color: var(--muted); letter-spacing: .72px; }
+    .pd input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 600 var(--t-xl)/26px system-ui, -apple-system, sans-serif; color: var(--ink); font-variant-numeric: tabular-nums; }
+    .pd .h { margin-top: 8px; font: 400 var(--t-xs)/16px var(--font); color: var(--muted); }
+    .pd .go { margin-top: 20px; height: 48px; border-radius: 8px; background: var(--accent-ink); color: #fff; display: grid; place-items: center; font: 600 var(--t-base)/18px var(--font); cursor: pointer; }
+  </style>`);
+
+  const head = document.getElementById('head');
+  const clip = d.querySelector('.wall-clip'), wall = d.querySelector('.wall');
+  const repaint = () => {
+    head.innerHTML = headHTML();
+    wall.innerHTML = wallHTML();
+    persist();
+  };
+
+  head.addEventListener('click', (e) => {
+    const st = e.target.closest('[data-st]')?.dataset.st;
+    if (st) {
+      const f = state.statusFilter;
+      state.statusFilter = f.includes(st) ? f.filter(x => x !== st) : [...f, st];
+      if (!state.statusFilter.length) state.statusFilter = [...STATUSES];
+      return repaint();
+    }
+    const chip = e.target.closest('[data-cat]');
+    if (chip) {
+      const c = chip.dataset.cat;
+      const keep = head.querySelector('.chips').scrollLeft;
+      state.catFilter = !c ? [] : state.catFilter.includes(c) ? state.catFilter.filter(x => x !== c) : [...state.catFilter, c];
+      repaint();
+      head.querySelector('.chips').scrollLeft = keep;
+      clip.scrollTop = 0;
+    }
+  });
+
+  // 一項的卡片
+  const ccy = new Intl.NumberFormat(s.locale, { style: 'currency', currency: 'TWD', currencyDisplay: 'code', maximumFractionDigits: 2 });
+  const RATE = 4.96; // 1 TWD = 4.96 JPY，同匯率換算那一頁
+  const findEvent = key => { for (const day of trip.days) { const ev = day.events.find(e => e.key === key); if (ev) return { day: day.day, ev }; } return null; };
+  const statusName = st => s.stat[STATUSES.indexOf(st)];
+
+  const openCard = (i) => {
+    const it = ITEMS[i];
+    const cardSheet = sheet(d, `<div class="sc-nav"><div class="t"></div><div class="g"><span class="del">${ic('trash')}</span><span class="ed">${ic('pencil')}</span></div></div>
+      <div class="sc-body"></div><div class="sc-foot"><div class="seg2"></div></div>`, { onClose: repaint });
+    const el = cardSheet.el;
+    const render = () => {
+      const st = state.status[i], paid = state.paid[i];
+      el.querySelector('.sc-nav .t').textContent = statusName(st);
+      const struck = st === 'skipped';
+      // 實付跟參考價不同才把參考價劃掉擺後面（priceLine）
+      const price = `<span class="mono">${yen(paid ?? it.price)}</span>${paid != null && paid !== it.price ? `<s class="mono">${yen(it.price)}</s>` : ''}`;
+      const low = it.quotes ? Math.min(...it.quotes.map(q => q[1])) : null;
+      const link = it.event && findEvent(it.event);
+      el.querySelector('.sc-body').innerHTML = `
+        <div class="sc-fig"><img src="img/shop-${it.img}.svg" alt=""></div>
+        <div class="sc-title ${st}-t">${st === 'bought' ? '<i class="dot"></i>' : ''}${fmt(it.name)}</div>
+        <div class="sc-price${struck ? ' struck' : ''}">${price}</div>
+        <div class="sc-conv mono">${s.approx(ccy.format((paid ?? it.price) / RATE))}</div>
+        <div class="sc-cat${struck ? ' struck' : ''}">${s.cats[it.cat]}</div>
+        ${it.quotes ? `<div class="sc-sec"><div class="sc-sec-h"><b>${s.quotes}</b>${it.quotes.length > 1 ? `<span class="mono">${s.best(yen(low))}</span>` : ''}</div>
+          ${it.quotes.map(([l, v]) => `<div class="q${v === low ? ' best' : ''}"><span class="l">${fmt(l)}</span><span class="v mono">${yen(v)}</span>${ic('close')}</div>`).join('')}
+          <span class="pillb">${s.quoteAdd}</span></div>` : ''}
+        ${link ? `<div class="sc-sec"><div class="sc-sec-h"><b>${s.events}</b></div>
+          <div class="ev" data-ev="${it.event}"><span class="ld mono">${T.day(link.day)} ${link.ev.start}</span><i class="${swatchClass(link.ev.category)}"></i><span>${fmt(link.ev.title)}</span></div></div>` : ''}`;
+      el.querySelector('.seg2').innerHTML =
+        (st !== 'skipped' ? `<span data-pick="bought" class="${st === 'bought' ? 'pressed' : 'primary'}">${ic('check')}${s.stat[1]}</span>` : '') +
+        (st !== 'bought' ? `<span data-pick="skipped" class="${st === 'skipped' ? 'pressed' : ''}">${ic('close')}${s.stat[2]}</span>` : '');
+    };
+    const set = (st) => {
+      state.status[i] = st;
+      if (st !== 'bought') state.paid[i] = null;   // 離開已購買就把實付金額清掉（ShoppingViewModel.setStatus）
+      persist(); render();
+      if (st !== 'pending') setTimeout(cardSheet.close, 250);   // closeIfSettled
+    };
+    const askPaid = () => {
+      const pd = sheet(d, `<div class="pd-title">${s.paidTitle}</div><div class="pd"><label>${s.paidLabel}</label>
+        <div class="f"><b class="mono">JPY</b><input inputmode="decimal" placeholder="0" aria-label="${s.paidLabel}"></div>
+        <div class="h">${s.paidHint(yen(it.price))}</div><div class="go" data-tap>${s.paidSave}</div></div>`);
+      pd.el.style.top = '437px';
+      pd.el.querySelector('.go').addEventListener('click', () => {
+        const v = Number(pd.el.querySelector('input').value.replace(/[^\d.]/g, ''));
+        pd.close();
+        state.paid[i] = v > 0 ? v : null;   // 空白或 0 就是不填
+        set('bought');
+      });
+    };
+    el.querySelector('.seg2').addEventListener('click', (e) => {
+      const want = e.target.closest('[data-pick]')?.dataset.pick; if (!want) return;
+      const now = state.status[i];
+      if (now === 'pending' && want === 'bought') askPaid();
+      else if (now === 'pending' && want === 'skipped') set('skipped');
+      else if (now === 'skipped' && want === 'skipped') set('pending');
+      else if (now === 'bought' && want === 'bought') alert(d, { title: s.unTitle, message: s.unMsg, actions: [
+        { label: s.cancel, style: 'cancel', preferred: true },
+        { label: s.unOk, style: 'destructive', run: () => set('pending') },
+      ] });
+    });
+    el.querySelector('.sc-body').addEventListener('click', (e) => {
+      const ev = e.target.closest('[data-ev]'); if (ev) go('event', `event=${ev.dataset.ev}&from=shop`);
+    });
+    render();
+  };
+  wall.addEventListener('click', (e) => { const c = e.target.closest('.card'); if (c) openCard(+c.dataset.i); });
+  // 從別的分頁回來時用存著的狀態重畫
+  if (saved.get()) repaint();
+}
 </script>
 </body>
 </html>

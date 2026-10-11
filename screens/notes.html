@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=402">
+<title>小工具・筆記</title>
+<!--
+  小工具分頁・筆記清單（App：Modules/Notes/…/NotesViewController.swift ＋ UI/…/NoteList/）。
+  參數：?lang=zh-Hant-TW|en|ja
+  抬頭與四格切換同 fx／scan／shop（SubTabContainer）；搜尋列、標籤鈕、列照 NoteListMetrics.swift ＋ screens/ref/zh/tools.png。
+  內容：範本 data/sanyo.<lang>.json 的 notes（一則）；摘要是內文接起來、提及寫成「@行程標題」，一行截斷。
+  互動模式：點列開筆記內頁（note.html），搜尋列打字就篩（標題＋內文）。
+-->
+<link rel="stylesheet" href="screen.css">
+<style>
+  @font-face { font-family: "TZTitleCJK"; src: local("PingFangTC-Semibold"), local("PingFang TC Semibold"); font-weight: 600;
+    unicode-range: U+3000-30FF, U+3400-9FFF, U+FF00-FFEF; size-adjust: 95%; }
+  .wg-title { position: absolute; left: 20px; top: 75.4px; font: 600 var(--t-xxl)/34px var(--font); letter-spacing: -.56px; }
+  html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
+  .seg { position: absolute; left: 20px; width: 362px; top: 119.67px; height: 45px; border-radius: 22.5px; background: #eeeeef; }
+  .seg-pill { position: absolute; top: 2.33px; height: 40.33px; width: 86.7px; border-radius: 20.2px; background: #fff;
+    box-shadow: 0 0 0 .5px rgba(0,0,0,.03), 0 2px 6px rgba(0,0,0,.04); }
+  .seg-t { position: absolute; top: 0; height: 45px; width: 86.7px; display: grid; place-items: center;
+    font: 400 var(--t-sm)/16px var(--font); color: #73675b; white-space: nowrap; }
+  .seg-t.on { font-weight: 700; color: var(--ink); }
+  .ic { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* 上緣 14（NotesViewController.subTabTopInset）；左右 20、控制列間距 8（NoteListMetrics） */
+  .ctl { position: absolute; left: 20px; right: 20px; top: 184px; display: flex; gap: 8px; }
+  /* 搜尋：高 44、左右 12、間距 8、圖示 17／1.9；sunken 底、圓角 8、1px border（NoteSearchField） */
+  .search { flex: 1; height: 44px; padding: 0 12px; display: flex; align-items: center; gap: 8px; background: var(--sunken);
+    border: 1px solid var(--border); border-radius: 8px; color: var(--muted); }
+  .search svg { width: 17px; height: 17px; stroke-width: 1.9; flex: none; }
+  .search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 400 var(--t-base)/18px var(--font); color: var(--ink); }
+  .search input::placeholder { color: var(--muted); opacity: 1; }
+  .tagb { width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--border-soft); background: var(--card); display: grid; place-items: center; color: var(--muted); }
+  .tagb svg { width: 20px; height: 20px; stroke-width: 1.8; }
+  /* 列：上下 12、左右 4；標題 base semibold、摘要 sm muted、上 2，都一行截斷；列底 border-soft */
+  .list { position: absolute; left: 20px; right: 20px; top: 240px; }
+  .row { padding: 12px 4px; border-bottom: 1px solid var(--border-soft); }
+  .row b { display: block; font: 600 var(--t-base)/18px var(--font); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row span { display: block; margin-top: 2px; font: 400 var(--t-sm)/17px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .fab { position: absolute; right: 16px; top: 723px; width: 52px; height: 52px; border-radius: 50%; background: var(--card); z-index: 30;
+    border: 1px solid var(--border); box-shadow: 0 6px 18px -8px rgba(31,25,20,.22), 0 4px 14px rgba(31,25,20,.06); display: grid; place-items: center; color: var(--ink); }
+  .fab svg { width: 22px; height: 22px; stroke-width: 2; }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module">
+import { lang, loadTrip, chrome, ready, fmt, interactive, go } from './chrome.js';
+
+const d = document.getElementById('d');
+const trip = await loadTrip();
+
+// App 的字（Widgets.json widgets.tab.title／subtab.*、UI.json ui.search.notes）
+const s = {
+  'zh-Hant-TW': { title: '小工具', subs: ['筆記', '掃描', '匯率換算', '購物清單'], search: '搜尋筆記' },
+  en: { title: 'Tools', subs: ['Notes', 'Scan', 'Currency', 'Shopping'], search: 'Search notes' },
+  ja: { title: 'ツール', subs: ['メモ', 'スキャン', '為替', '買い物'], search: 'メモを検索' },
+}[lang];
+
+// DesignIcon.swift：search、tag、plus
+const IC = {
+  search: '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>',
+  tag: '<path d="M3 12V5a2 2 0 0 1 2-2h7l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.4"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+};
+const ic = n => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
+
+const TAB = 0;
+d.insertAdjacentHTML('beforeend', `<div class="wg-title">${s.title}</div>
+  <div class="seg"><div class="seg-pill" style="left:${2 + TAB * 90.3}px"></div>
+  ${s.subs.map((x, i) => `<div class="seg-t${i === TAB ? ' on' : ''}" style="left:${2 + i * 90.3}px">${x}</div>`).join('')}</div>`);
+
+// 提及 {@key} 解成「@行程標題」（摘要是純文字，不上色）
+const titles = {};
+(function walk(o) {
+  if (Array.isArray(o)) return o.forEach(walk);
+  if (o && typeof o === 'object') { if (o.key && o.title) titles[o.key] = o.title; Object.values(o).forEach(walk); }
+})(trip);
+const plain = p => p.replace(/\{@([^}]+)\}/g, (_, k) => `@${titles[k] || k}`);
+const notes = trip.notes.map(n => ({ title: n.title, summary: n.paragraphs.map(plain).join(' ') }));
+
+d.insertAdjacentHTML('beforeend', `
+  <div class="ctl"><label class="search">${ic('search')}<input placeholder="${s.search}" aria-label="${s.search}"${interactive ? '' : ' disabled'}></label>
+    <div class="tagb">${ic('tag')}</div></div>
+  <div class="list">${notes.map((n, i) => `<div class="row" data-n="${i}"><b>${fmt(n.title)}</b><span>${fmt(n.summary)}</span></div>`).join('')}</div>
+  <div class="fab">${ic('plus')}</div>`);
+
+chrome(d, { tab: 3 });
+ready();
+
+if (interactive) {
+  const { subTabs } = await import('./tools.js');
+  subTabs(d, TAB);
+  d.insertAdjacentHTML('beforeend', '<style>.row { cursor: pointer; } .row:active { background: var(--surface); }</style>');
+  d.querySelector('.list').addEventListener('click', (e) => { if (e.target.closest('.row')) go('note'); });
+  const q = d.querySelector('.search input');
+  q.addEventListener('input', () => {
+    const k = q.value.trim().toLowerCase();
+    d.querySelectorAll('.row').forEach((r, i) => { r.hidden = !!k && !`${notes[i].title} ${notes[i].summary}`.toLowerCase().includes(k); });
+  });
+  d.addEventListener('pointerdown', (e) => { if (!e.target.closest('.search')) q.blur(); });   // 點空白收鍵盤
+}
+</script>
+</body>
+</html>

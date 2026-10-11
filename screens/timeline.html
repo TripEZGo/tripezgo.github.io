@@ -93,7 +93,8 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { fmt, params, lang, t, loadTrip, loadCategories, chrome, svg, swatchClass, toMin, ready } from './chrome.js';
+import { fmt, params, lang, t, loadTrip, loadCategories, chrome, svg, swatchClass, toMin, ready, interactive, go } from './chrome.js';
+import { applyState } from './demo-state.js';
 
 // EventTypeIcons.swift（Maki，15 格，even-odd 填色）——只收這份範本用得到的類型
 const MAKI = {
@@ -150,6 +151,7 @@ const maki = (k, cls = 'maki') => `<svg class="${cls}" viewBox="0 0 15 15"><path
 const d = document.getElementById('d');
 const trip = await loadTrip();
 await loadCategories();
+if (interactive) applyState(trip);   // 跟行事曆共用同一份（demo-state.js）：拖過的時刻、取消、刪除、班次
 const dayNo = +(params.get('day') || 2);
 const todayNo = +(params.get('today') || 1);
 const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
@@ -198,7 +200,7 @@ d.appendChild(grid);
 
 // ── 量膠囊（TimelineAxis.Room：DayView.measuredRoom 量的是八個字的名字＋一句停留時間） ──
 function nodeHTML(e, cls) {
-  return `<div class="node ${cls}"><div class="halo"><div class="npill">${MAKI[e.category] ? maki(e.category, '') : ''}<span>${fmt(e.title)}</span></div></div>
+  return `<div class="node ${cls}"${interactive && e.key ? ` data-key="${e.key}" data-tap` : ''}><div class="halo"><div class="npill">${MAKI[e.category] ? maki(e.category, '') : ''}<span>${fmt(e.title)}</span></div></div>
     ${e.e2 > e.s ? `<div class="stayt">${dur(e.e2 - e.s)}</div>` : ''}</div>`;
 }
 function measure(html) {
@@ -250,7 +252,7 @@ const legs = [];
 if (opening && evs[0]) legs.push({ from: openingY, to: Y(evs[0].s), leg: evs[0].leg?.mode ? evs[0].leg : null, gap: evs[0].s });
 evs.slice(1).forEach((e, i) => {
   const p = evs[i];
-  legs.push({ from: Y(p.e2), to: Y(e.s), leg: e.leg?.mode ? e.leg : null, gap: e.s - p.e2 });
+  legs.push({ from: Y(p.e2), to: Y(e.s), leg: e.leg?.mode ? e.leg : null, gap: e.s - p.e2, toKey: e.key });
 });
 const last = evs[evs.length - 1];
 if (closing && last) legs.push({ from: Y(last.e2), to: closingY, leg: last.closingLeg?.mode ? last.closingLeg : null, gap: 1440 - last.e2 });
@@ -307,7 +309,7 @@ function legIcon(lg) {
 for (const l of legs) {
   if (l.to - l.from < legPillHeight + 2 * DOT) continue;
   const alt = l.leg && l.leg.runs && l.leg.runs.length > 1;
-  content.insertAdjacentHTML('beforeend', `<div class="lpill${l.leg ? '' : ' unset'}"><div>${legIcon(l.leg)}<span>${fmt(legText(l))}</span>${alt ? line('swap', 1.8, 'swap') : ''}</div></div>`);
+  content.insertAdjacentHTML('beforeend', `<div class="lpill${l.leg ? '' : ' unset'}"${interactive && l.leg && l.toKey ? ` data-leg="${l.toKey}" data-tap` : ''}><div>${legIcon(l.leg)}<span>${fmt(legText(l))}</span>${alt ? line('swap', 1.8, 'swap') : ''}</div></div>`);
   const el = content.lastElementChild;
   el.style.left = CX + 'px'; el.style.maxWidth = (colW - 16) + 'px';
   el.style.top = ((l.from + l.to) / 2 - el.getBoundingClientRect().height / 2) + 'px';
@@ -315,6 +317,18 @@ for (const l of legs) {
 
 d.insertAdjacentHTML('beforeend', `<div class="fab">${svg('plus')}</div>`);
 chrome(d, { tab: 1 });
+// 互動：抬頭那顆切回行事曆、日期籤換日、點名稱膠囊或圓點開詳情、點路程膠囊開路程（RouteNodeCell／RouteDotCell／RouteLegCell 的點擊）
+if (interactive) {
+  document.querySelector('.head-act').addEventListener('click', () => go('calendar', { day: dayNo }));
+  document.querySelectorAll('.chip').forEach((c, i) => c.addEventListener('click', () => { if (i + 1 !== dayNo) go('timeline', { day: i + 1 }); }));
+  // 捲動：內容比可視區高時可以上下捲（App 的時間軸是一張 collection view）
+  grid.style.overflowY = 'auto'; grid.style.scrollbarWidth = 'none';
+  if (scroll >= 0) { content.style.top = '0px'; content.style.height = H + 'px'; grid.scrollTop = scroll; }
+  grid.addEventListener('click', e => {
+    const n = e.target.closest('[data-key]'); if (n) return go('event', { event: n.dataset.key, day: dayNo });
+    const l = e.target.closest('[data-leg]'); if (l) return go('leg', { event: l.dataset.leg, day: dayNo });
+  });
+}
 ready();
 </script>
 </body>

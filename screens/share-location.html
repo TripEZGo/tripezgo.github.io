@@ -97,12 +97,58 @@
   .note { margin-top: 8px; font: 400 var(--t-xs)/17px var(--font); color: var(--muted); }
   .deck-toggle { position: absolute; left: 190px; width: 22px; height: 22px; z-index: 5; color: var(--ink); }
   .deck-toggle svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  /* ── 互動模式 ── */
+  .is-interactive .mate, .is-interactive .me, .is-interactive .live, .is-interactive .card-btn, .is-interactive .open { cursor: pointer; }
+  .is-interactive .open:active { filter: brightness(.95); }
+  .mate { transition: transform .18s; }
+  .card[hidden], .deck-toggle[hidden], .fab[hidden], .note[hidden] { display: none !important; }
+  .card-ic.solid::before { -webkit-mask: none; background: transparent; border: 2px solid currentColor; box-sizing: border-box; }
+  .fab.add { display: grid; place-items: center; color: var(--ink); }
+  .fab.add svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+  /* LiveShareChip 關著：卡片底 94%、border、灰字灰點 */
+  .live.off { background: rgba(255,255,255,.94); border: 1px solid var(--border); color: var(--muted); }
+  .live.off i { background: var(--muted); box-shadow: none; }
+  /* 分享我的位置那張紙（LiveShareSheetViewController：左右 20、段距 18、標題下 7；列 44、上下 10、左右 16、間距 12；頭像 30） */
+  .ls-wrap { position: absolute; inset: 0; z-index: 60; background: rgba(0,0,0,0); transition: background .3s; }
+  .ls-wrap.on { background: rgba(0,0,0,.2); }
+  .ls { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 20px 44px; border-radius: 12px 12px 0 0; background: var(--page);
+    transform: translateY(100%); transition: transform .32s cubic-bezier(.2,.8,.2,1); }
+  .ls-wrap.on .ls { transform: none; }
+  .ls-grab { margin: 5px auto 0; width: 36px; height: 5px; border-radius: 2.5px; background: #c1c1c3; }
+  .ls-nav { position: relative; height: 52px; display: grid; place-items: center; }
+  .ls-nav b { font: 600 17px/22px var(--font); color: #000; }
+  .ls-x { position: absolute; right: -4px; top: 6px; width: 36px; height: 36px; border-radius: 50%; background: rgba(120,120,128,.14);
+    display: grid; place-items: center; cursor: pointer; }
+  .ls-x svg { width: 14px; height: 14px; fill: none; stroke: #3c3c43; stroke-width: 2.4; stroke-linecap: round; }
+  .ls-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--card); }
+  .ls-sw { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 10px 16px; }
+  .ls-sw > div:first-child { flex: 1; min-width: 0; }
+  .ls-sn { font-size: var(--t-base); line-height: 16.5px; color: var(--ink); }
+  .ls-sd { margin-top: 2px; font-size: var(--t-xs); line-height: 13.8px; color: var(--muted); }
+  .ls .switch { flex: none; position: relative; width: 63px; height: 28px; border-radius: 14px; background: #c5c5c7; cursor: pointer; transition: background .2s; }
+  .ls .switch::after { content: ""; position: absolute; left: 2px; top: 2px; width: 37px; height: 24px; border-radius: 12px;
+    background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.12); transition: left .2s; }
+  .ls .switch.on { background: var(--success); }
+  .ls .switch.on::after { left: 24px; }
+  .ls-pend { margin: 7px 16px 0; font: 400 var(--t-xs)/14px var(--font); color: var(--muted); }
+  .ls-h { margin: 18px 16px 7px; font: 400 var(--t-sm)/16px var(--font); color: var(--muted); }
+  .ls-row { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 10px 16px; }
+  .ls-row[data-go] { cursor: pointer; padding-right: 5px; }
+  .ls-sep { height: 1px; background: var(--border-soft); }
+  .ls-av { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--sw-base);
+    color: var(--sw-base); font: 700 var(--t-sm)/1 var(--font); }
+  .ls-av.ls-me { --sw-base: var(--accent-ink); }
+  .ls-av.dash { border-style: dashed; }
+  .ls-dev { flex: none; width: 30px; height: 19px; fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-linecap: round; }
+  .ls-n { flex: 1; min-width: 0; font: 400 var(--t-base)/18px var(--font); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ls-w { flex: none; font: 400 var(--t-xs)/14px var(--font); color: var(--muted); }
+  .ls-go { flex: none; width: 17px; height: 17px; margin: 0 6px 0 0; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 </style>
 </head>
 <body>
 <div class="device" id="d"><div class="map"></div></div>
 <script type="module">
-import { fmt, lang, params, t, loadTrip, chrome, svg, ready } from './chrome.js';
+import { fmt, lang, params, t, loadTrip, chrome, svg, ready, interactive } from './chrome.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
@@ -149,12 +195,12 @@ const chips = [`<div class="chip all"><b>${S.all}</b></div>`].concat(Array.from(
 })).join('');
 d.insertAdjacentHTML('beforeend', `<div class="chips">${chips}</div>
   <div class="search">${S.search}</div>
-  <div class="live"><i></i>${S.on}</div>`);
+  <div class="live" id="live"><i></i>${S.on}</div>`);
 
 // 旅伴與我
 const initial = n => [...n][0].toUpperCase();
-d.insertAdjacentHTML('beforeend', MATES.map(m => `
-  <div class="mate sw-${m.colour}${m.sel ? ' sel' : ''}${m.dashed ? ' dashed' : ''}" style="left:${m.x}px;top:${m.y}px">
+d.insertAdjacentHTML('beforeend', MATES.map((m, i) => `
+  <div class="mate sw-${m.colour}${m.sel ? ' sel' : ''}${m.dashed ? ' dashed' : ''}" data-mate="${i}" style="left:${m.x}px;top:${m.y}px">
     <div class="h">${initial(m.name)}</div>${m.sel ? `<div class="bubble">${fmt(m.name)}</div>` : ''}</div>`).join('')
   + `<div class="me" style="left:${ME.x}px;top:${ME.y}px"><div class="bubble">${S.me}</div></div>`);
 
@@ -165,17 +211,154 @@ d.insertAdjacentHTML('beforeend', `<div class="card" id="card">
   <div class="card-top"><div class="card-ic sw-${sel.colour}"><span>${initial(sel.name)}</span></div>
     <div class="card-t">${fmt(sel.name)}</div>
     <div class="card-btn"><svg viewBox="0 0 24 24">${walking}</svg></div>
-    <div class="card-btn x"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></div></div>
+    <div class="card-btn x" data-close><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></div></div>
   <div class="status"><i></i>${S.updated}</div>
-  <div class="open"><svg viewBox="0 0 24 24"><path d="M12 21C16.5 16.5 19 13 19 10A7 7 0 0 0 5 10C5 13 7.5 16.5 12 21Z"/><circle cx="12" cy="10" r="2.6"/></svg>${S.open}</div>
+  <div class="open" data-open><svg viewBox="0 0 24 24"><path d="M12 21C16.5 16.5 19 13 19 10A7 7 0 0 0 5 10C5 13 7.5 16.5 12 21Z"/><circle cx="12" cy="10" r="2.6"/></svg>${S.open}</div>
   <div class="note">${fmt(S.whenInUse)}</div></div>`);
 
 // 右側圓鈕與收合箭頭跟著卡片頂端走（截圖量到：導航鈕底＝卡片頂 − 42，兩顆間距 12）
 const top = document.getElementById('card').getBoundingClientRect().top;
 const navTop = top - 42 - 52, locTop = navTop - 12 - 52;
-d.insertAdjacentHTML('beforeend', `<div class="fab locate" style="top:${locTop}px"></div>
-  <div class="fab nav" style="top:${navTop}px"></div>
-  <div class="deck-toggle" style="top:${top - 26}px"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></div>`);
+d.insertAdjacentHTML('beforeend', `<div class="fab locate" id="fab-loc" style="top:${locTop}px"></div>
+  <div class="fab nav" id="fab-nav" style="top:${navTop}px"></div>
+  <div class="deck-toggle" id="deck" style="top:${top - 26}px"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></div>`);
+
+/* ── 互動模式（首頁的 iPhone 外框） ───────────────────────────────────────────
+   照 App：
+   - 點旅伴的圖釘 → 那一位的卡片（MapPlaceCard.configure(_ mate:)）：名字、「更新於 X 前」（RelativeDateTimeFormatter .full，
+     Map.json map.liveshare.updated）、在地圖開啟、只在 App 使用期間分享的那一位才有底下那一句（whenInUseNote）。
+     選中的圖釘放大＋名牌（LiveMateAnnotationView）。右上 × 收卡片，右側圓鈕回到底下、「新增標記」那顆回來。
+   - 新鮮度：一小時沒更新畫成灰的、照樣點得開（LivePosition.coldAfter = 60 分，MapViewController.mate(_:now:) 的 isStale）；
+     卡片與名單的時間每 30 秒跟著老（LiveShareSheetViewController.followTheClock）。
+   - 「正在分享位置」藥丸 → **開那張紙，不是切換**（MapViewController.liveShareTapped）。紙上「分享給旅伴」開關、
+     開著時有「位置來源」與自己那一列；旅伴那幾列點下去收紙、把那一位選起來（onGoToMate）。
+     關掉之後藥丸變回「分享我的位置」（LiveShareChip：卡片底、灰字灰點）。
+   - 點自己的藍點：名牌出現、再點收掉（TripMapView.showMyNameBubble）。 */
+if (interactive) {
+  const LOC = { 'zh-Hant-TW': 'zh-TW', en: 'en', ja: 'ja' }[lang];
+  const M = {
+    'zh-Hant-TW': { updated: x => `更新於 ${x}`, off: '分享我的位置', sheet: '分享我的位置', sw: '分享給旅伴', swDetail: '旅伴在地圖上看得到你現在的位置',
+      source: '位置來源', providing: '正在提供', thisDevice: n => `${n}（本裝置）`, section: '正在分享的人', you: '你', now: '正在分享',
+      turningOn: '正在開啟…', turningOff: '正在關閉…' },
+    en: { updated: x => `Updated ${x}`, off: 'Share my location', sheet: 'Share my location', sw: 'Share with Companions', swDetail: 'Travel companions see where you are on the map',
+      source: 'Where it comes from', providing: 'Providing', thisDevice: n => `${n} (this device)`, section: 'Sharing right now', you: 'You', now: 'Sharing',
+      turningOn: 'Turning on…', turningOff: 'Turning off…' },
+    ja: { updated: x => `${x}に更新`, off: '現在地を共有', sheet: '現在地を共有', sw: '旅の仲間に共有', swDetail: '旅の仲間があなたの現在地を地図で見られます',
+      source: '位置の提供元', providing: '提供中', thisDevice: n => `${n}（このデバイス）`, section: '共有中の人', you: 'あなた', now: '共有中',
+      turningOn: 'オンにしています…', turningOff: 'オフにしています…' },
+  }[lang];
+  // 樣本：幾分鐘前更新、在哪（給「在地圖開啟」）、是不是只在 App 使用期間（虛線）
+  const AGE = [3, 14, 57];
+  const AT = [[34.29593, 132.31960], [34.29984, 132.32246], [34.29452, 132.31702]];
+  MATES.forEach((m, i) => { m.age = AGE[i]; m.at = AT[i]; m.wiu = !!m.dashed; });
+  const t0 = Date.now();
+  const rtf = new Intl.RelativeTimeFormat(LOC, { numeric: 'always', style: 'long' });
+  const age = m => m.age + Math.floor((Date.now() - t0) / 60000);
+  const ago = m => { const a = age(m); return a < 60 ? rtf.format(-a, 'minute') : a < 1440 ? rtf.format(-Math.floor(a / 60), 'hour') : rtf.format(-Math.floor(a / 1440), 'day'); };
+  const cold = m => age(m) >= 60;
+  let sel = MATES.findIndex(m => m.sel), sharing = true, meBubble = true;
+
+  const card = document.getElementById('card'), deck = document.getElementById('deck');
+  const fabLoc = document.getElementById('fab-loc'), fabNav = document.getElementById('fab-nav'), live = document.getElementById('live');
+  d.insertAdjacentHTML('beforeend', `<div class="fab add" id="fab-add" hidden><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>`);
+  const fabAdd = document.getElementById('fab-add');
+  const meEl = d.querySelector('.me');
+
+  const drawPins = () => d.querySelectorAll('.mate').forEach((el, i) => {
+    const m = MATES[i];
+    el.classList.toggle('sel', i === sel);
+    el.style.setProperty('--sw-base', cold(m) ? 'var(--muted-on-sunken)' : '');
+    el.querySelector('.bubble')?.remove();
+    if (i === sel) el.insertAdjacentHTML('beforeend', `<div class="bubble">${fmt(m.name)}</div>`);
+  });
+  // 右側圓鈕：有卡片時跟著卡片頂（導航鈕底＝卡片頂 − 42）；沒有卡片時排回分頁列上面，「新增標記」那顆回來
+  const placeFabs = () => {
+    if (sel >= 0) {
+      const top = card.offsetTop, navTop = top - 42 - 52;
+      fabNav.style.top = `${navTop}px`; fabLoc.style.top = `${navTop - 64}px`; deck.style.top = `${top - 26}px`;
+      fabAdd.hidden = true; deck.hidden = false;
+    } else {
+      // 底圖（ref/zh/map.png 切的）在這兩格本來就畫著這兩顆鈕：照它的位置疊上去
+      fabNav.style.top = '724px'; fabLoc.style.top = '660px'; fabAdd.style.top = '596px';
+      fabAdd.hidden = false; deck.hidden = true;
+    }
+  };
+  const drawCard = () => {
+    if (sel < 0) { card.hidden = true; placeFabs(); return; }
+    const m = MATES[sel];
+    card.hidden = false;
+    card.querySelector('.card-ic').className = `card-ic sw-${m.colour}${m.wiu ? '' : ' solid'}`;
+    card.querySelector('.card-ic span').textContent = initial(m.name);
+    card.querySelector('.card-t').innerHTML = fmt(m.name);
+    card.querySelector('.status').innerHTML = `<i></i>${fmt(M.updated(ago(m)))}`;
+    const note = card.querySelector('.note');
+    note.hidden = !m.wiu;
+    placeFabs();
+  };
+  const select = i => { sel = i; drawPins(); drawCard(); };
+
+  d.addEventListener('click', (e) => {
+    const pin = e.target.closest('.mate');
+    if (pin) return select(+pin.dataset.mate);
+    if (e.target.closest('[data-close]')) return select(-1);
+    if (e.target.closest('[data-open]') && sel >= 0) {
+      const m = MATES[sel];
+      window.open(`https://maps.apple.com/?ll=${m.at[0]},${m.at[1]}&q=${encodeURIComponent(m.name)}`, '_blank', 'noopener');
+      return;
+    }
+    if (e.target.closest('.me')) {
+      meBubble = !meBubble;
+      meEl.querySelector('.bubble')?.remove();
+      if (meBubble) meEl.insertAdjacentHTML('beforeend', `<div class="bubble">${S.me}</div>`);
+      return;
+    }
+    if (e.target.closest('#live')) openSheet();
+  });
+  setInterval(() => { drawPins(); if (sel >= 0) card.querySelector('.status').innerHTML = `<i></i>${fmt(M.updated(ago(MATES[sel])))}`; }, 30000);
+
+  const drawChip = () => {
+    live.classList.toggle('off', !sharing);
+    live.innerHTML = `<i></i>${sharing ? S.on : M.off}`;
+  };
+  const PHONE = '<rect x="7" y="2.5" width="10" height="19" rx="2.4"/><path d="M10.6 5.2h2.8"/>';
+  function openSheet() {
+    const w = document.createElement('div'); w.className = 'ls-wrap';
+    w.innerHTML = `<div class="ls"><div class="ls-grab"></div><div class="ls-nav"><b>${M.sheet}</b>
+      <div class="ls-x" data-tap><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></div></div><div class="ls-body"></div></div>`;
+    d.append(w);
+    const body = w.querySelector('.ls-body');
+    let pending = null;
+    const row = (av, name, when, i) => `<div class="ls-row"${i != null ? ` data-go="${i}"` : ''}>${av}<span class="ls-n">${fmt(name)}</span><span class="ls-w">${fmt(when)}</span>
+      ${i != null ? '<svg class="ls-go" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>' : ''}</div>`;
+    const av = (txt, cls, style = '') => `<span class="ls-av ${cls}" style="${style}">${fmt(txt)}</span>`;
+    const draw = () => {
+      const on = pending ?? sharing;
+      const people = (on ? [row(av(S.me, 'ls-me'), M.you, M.now)] : [])
+        .concat(MATES.map((m, i) => row(av(initial(m.name), `sw-${m.colour}${m.wiu ? ' dash' : ''}`, cold(m) ? '--sw-base: var(--muted-on-sunken)' : ''), m.name, M.updated(ago(m)), i)));
+      body.innerHTML = `<div class="ls-card"><div class="ls-sw"><div><div class="ls-sn">${M.sw}</div><div class="ls-sd">${M.swDetail}</div></div>
+          <div class="switch${on ? ' on' : ''}" data-sw></div></div></div>
+        ${pending !== null ? `<div class="ls-pend">${pending ? M.turningOn : M.turningOff}</div>` : ''}
+        ${on ? `<div class="ls-h">${M.source}</div><div class="ls-card"><div class="ls-row"><svg class="ls-dev" viewBox="0 0 24 24">${PHONE}</svg>
+          <span class="ls-n">${M.thisDevice('iPhone 17 Pro')}</span><span class="ls-w">${M.providing}</span></div></div>` : ''}
+        <div class="ls-h">${M.section}</div><div class="ls-card">${people.join('<div class="ls-sep"></div>')}</div>`;
+    };
+    draw();
+    requestAnimationFrame(() => requestAnimationFrame(() => w.classList.add('on')));
+    const close = (after) => { w.classList.remove('on'); setTimeout(() => { w.remove(); after?.(); }, 320); };
+    w.addEventListener('click', (e) => {
+      if (e.target === w || e.target.closest('.ls-x')) return close();
+      if (e.target.closest('[data-sw]') && pending === null) {
+        // 撥開關：當下就換成新的位置，底下寫「正在開啟…／正在關閉…」，回來了才算數（isTogglePending）
+        pending = !sharing; draw();
+        setTimeout(() => { sharing = pending; pending = null; draw(); drawChip(); }, 700);
+        return;
+      }
+      const go = e.target.closest('[data-go]');
+      if (go) close(() => select(+go.dataset.go));
+    });
+  }
+  placeFabs();
+}
 
 chrome(d, { tab: 2 });
 ready();

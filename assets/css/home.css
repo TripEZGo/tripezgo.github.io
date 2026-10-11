@@ -307,3 +307,465 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
 @media (min-width:880px) { .feature, .ai-band { grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); } }
 @media (min-width:900px) { .hero .wrap { grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); } }
 @media (max-width:560px) { .nb { white-space:normal; } }
+
+/* ─── 展開介紹：每段一個，預設收合，內容是使用者手稿的原文 ─────────── */
+.more { margin-top:18px; max-width:38em; }
+.more > summary {
+  display:inline-flex; align-items:center; gap:6px; cursor:pointer; list-style:none;
+  font-size:var(--text-sm); font-weight:600; color:var(--accent-ink);
+}
+.more > summary::-webkit-details-marker { display:none; }
+.more > summary::after {
+  content:""; width:7px; height:7px; border-right:1.6px solid currentColor; border-bottom:1.6px solid currentColor;
+  transform:translateY(-2px) rotate(45deg); transition:transform .15s ease;
+}
+.more[open] > summary::after { transform:translateY(1px) rotate(225deg); }
+.more[open] > summary { margin-bottom:10px; }
+.more-body { border-inline-start:2px solid var(--border-soft); padding-inline-start:16px; color:var(--muted);
+  font-size:15px; line-height:1.75; }
+.more-body p, .feature .more-body p { margin:0 0 10px; color:var(--muted); max-width:none; }
+.more-body ul { margin:0 0 10px; padding-inline-start:1.2em; }
+.more-body li { margin-bottom:4px; }
+.more-body b { color:var(--fg); font-weight:600; }
+.section-head + .tools + .more, .tools + .more { margin-top:24px; }
+.plans-more { max-width:860px; margin:18px auto 0; display:flex; justify-content:center; }
+.plans-more .more { text-align:start; }
+
+/* ─── 開發背景故事：整段一個 details，預設收合 ─────────────────────── */
+.story { border:1px solid var(--border-soft); border-radius:var(--radius-lg); background:var(--surface); }
+.story > summary { list-style:none; cursor:pointer; padding:clamp(20px, 3vw, 32px); display:grid; gap:6px; }
+.story > summary::-webkit-details-marker { display:none; }
+.story .eyebrow { margin:0; }
+.story-title { font-size:clamp(20px, 2.6vw, 26px); font-weight:700; line-height:1.3; letter-spacing:var(--tracking-display); }
+.story-toggle { font-size:var(--text-sm); font-weight:600; color:var(--accent-ink); }
+.story[open] .story-toggle { display:none; }
+.story-body { padding:0 clamp(20px, 3vw, 32px) clamp(24px, 3vw, 36px); max-width:46em; color:var(--muted); }
+.story-body h3 { color:var(--fg); margin:28px 0 10px; font-size:var(--text-lg); }
+.story-body p { margin:0 0 14px; }
+.story-body b { color:var(--fg); }
+.story-fig { margin:8px 0 16px; }
+.story-fig img { width:100%; height:auto; border-radius:var(--radius-md); border:1px solid var(--border-soft); }
+
+/* ─── 這一輪新增、還沒有真實截圖的版位：虛線框＋「新」標記 ─────────── */
+.ph.is-new { border-color:var(--warn); }
+.ph.is-new::before { content:"新版位"; position:absolute; top:10px; left:50%; transform:translateX(-50%);
+  font-family:var(--font-mono); font-size:10px; letter-spacing:.08em; color:var(--warn); }
+
+/* 整合區三張卡 */
+@media (min-width:700px) { .tools.is-three { grid-template-columns:repeat(3, minmax(0, 1fr)); } }
+.tool h3 .tag { margin-inline-start:2px; }
+
+/* ══════════ 互動示意（assets/js/home.js）══════════ */
+.demo-card { background:var(--page); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); padding:18px; }
+.btn-mini { display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:6px 14px; border-radius:var(--radius-pill);
+  border:1px solid var(--border); background:var(--page); color:var(--fg); font:inherit; font-size:var(--text-sm); font-weight:600; cursor:pointer; }
+.btn-mini:hover { border-color:var(--accent); background:var(--accent-wash); }
+
+/* 隱私＋離線 */
+.demo-net { display:flex; align-items:center; gap:10px; padding:12px 22px 0; font-size:var(--text-sm); color:var(--muted); }
+.switch { margin-inline-start:auto; width:46px; height:28px; border-radius:14px; border:0; padding:0; cursor:pointer;
+  background:var(--border); position:relative; transition:background .2s; }
+.switch i { position:absolute; top:3px; left:3px; width:22px; height:22px; border-radius:50%; background:#fff;
+  box-shadow:0 1px 3px rgba(0,0,0,.2); transition:transform .2s; }
+.switch[aria-checked="true"] { background:var(--success); }
+.switch[aria-checked="true"] i { transform:translateX(18px); }
+.badge-off { color:var(--warn) !important; font-weight:600; }
+.vault-chips .add { padding:0; border:0; }
+.demo-add { display:inline-flex; align-items:center; gap:4px; padding:6px 14px; border:1px dashed var(--accent);
+  border-radius:var(--radius-pill); background:var(--accent-wash); color:var(--accent-ink); font:inherit; font-size:15px; cursor:pointer; }
+.demo-add .i { width:16px; height:16px; }
+.vault-chips .is-added { border-color:var(--accent); color:var(--accent-ink); }
+.vault-chips .is-pop { animation:pop .35s ease; }
+@keyframes pop { from { transform:scale(.7); opacity:0; } to { transform:none; opacity:1; } }
+.sync.is-ok { color:var(--success) !important; }
+.sync.is-wait { color:var(--warn) !important; }
+.sync.is-syncing { color:var(--accent-ink) !important; }
+.is-offline .vault-row:first-of-type .i { color:var(--warn); }
+
+/* 班次備案 */
+.demo[data-demo="runs"] { width:min(100%, 300px); flex:none; }
+.runs-card { display:grid; gap:12px; font-size:var(--text-sm); }
+.runs-ends { display:grid; grid-template-columns:14px 1fr; column-gap:10px; align-items:center; }
+.runs-ends b { font-size:15px; }
+.runs-ends small { grid-column:2; color:var(--muted); }
+.runs-ends .dot { width:12px; height:12px; border-radius:50%; background:var(--fg); }
+.runs-ends .dot.is-end { background:var(--page); border:2.5px solid var(--fg); }
+.runs-walk { margin:0 0 0 24px; color:var(--muted); font-size:13px; }
+.runs-chips { display:flex; gap:8px; margin-left:24px; flex-wrap:wrap; }
+.run { display:grid; gap:0; padding:6px 10px; border-radius:12px; border:1px solid var(--border); background:var(--surface);
+  font:inherit; text-align:start; cursor:pointer; color:var(--fg); min-width:76px; }
+.run b { font-size:15px; font-variant-numeric:tabular-nums; }
+.run small { font-size:11px; color:var(--muted); white-space:nowrap; }
+.run.on { background:var(--fg); border-color:var(--fg); color:var(--page); }
+.run.on small { color:color-mix(in srgb, var(--page) 70%, var(--fg)); }
+.run.gone { opacity:.45; text-decoration:line-through; cursor:default; }
+.runs-pick, .runs-warn { margin-left:24px; display:flex; gap:10px; align-items:flex-start; padding:10px 12px;
+  border-radius:12px; background:var(--accent-wash); }
+.runs-pick .i, .runs-warn .i { flex:none; color:var(--accent-ink); }
+.runs-pick div { display:grid; } .runs-pick span { color:var(--muted); font-variant-numeric:tabular-nums; }
+.runs-warn { background:color-mix(in srgb, var(--danger) 10%, var(--page)); color:var(--fg); line-height:1.6; }
+.runs-warn .i { color:var(--danger); }
+.runs-actions { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-left:24px; }
+.runs-note { color:var(--success); font-weight:600; }
+
+/* 即時動態：鎖定畫面 */
+.glance-media { display:grid; gap:18px; width:100%; max-width:520px; margin-inline:auto; }
+@media (min-width:560px) { .glance-media { grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); align-items:start; } }
+.glance-side { display:grid; gap:14px; }
+.lock { border-radius:32px; padding:22px 14px 16px; color:#fff; min-height:420px; display:flex; flex-direction:column; gap:14px;
+  background:linear-gradient(170deg, #5aa7c9 0%, #3f8fb3 38%, #2d6e8f 62%, #1f4f68 100%); box-shadow:var(--shadow-lg); }
+.lock-clock { text-align:center; }
+.lock-clock small { display:block; font-size:13px; opacity:.85; }
+.lock-time { font-size:64px; font-weight:600; line-height:1; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+.la { margin-top:auto; border-radius:22px; padding:12px 14px; background:rgba(20,20,22,.72); backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px); display:grid; gap:6px; font-size:13px; }
+.la-top { display:flex; justify-content:space-between; opacity:.75; font-size:11px; }
+.la-app { display:inline-flex; align-items:center; gap:6px; }
+.la-mark { width:16px; height:16px; border-radius:5px; flex:none; background:url(/assets/img/icon-180.png) center / cover; }
+.la-main { display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+.la-main b { font-size:17px; line-height:1.3; }
+.la-left { font-variant-numeric:tabular-nums; white-space:nowrap; color:#7ad7d4; font-weight:600; }
+.la-bar { height:5px; border-radius:3px; background:rgba(255,255,255,.18); overflow:hidden; }
+.la-bar i { display:block; height:100%; background:#5cc6c3; border-radius:3px; transition:width .15s; }
+.la-bar.is-leg i { background:#e9a535; }
+.la-sub { display:flex; justify-content:space-between; gap:10px; opacity:.8; font-size:12px; }
+.lock-scrub { display:grid; gap:4px; font-size:12px; text-align:center; opacity:.95; }
+.lock-scrub input { width:100%; accent-color:#5cc6c3; }
+
+/* Widget */
+.home-screen { display:grid; gap:12px; }
+.wg { border-radius:22px; padding:14px 16px; background:var(--page); border:1px solid var(--border); box-shadow:var(--shadow-md); font-size:13px; }
+.wg-head { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.wg-head b { font-size:15px; }
+.wg-head small { margin-inline-start:auto; color:var(--muted); font-variant-numeric:tabular-nums; }
+.wg-head .i { width:18px; height:18px; color:var(--accent-ink); }
+.wg-list, .wg-todos { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+.wg-list li { display:grid; grid-template-columns:44px 1fr; gap:8px; color:var(--muted); }
+.wg-list .t { font-variant-numeric:tabular-nums; }
+.wg-list .n { overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.wg-list .is-now { color:var(--fg); font-weight:600; }
+.wg-todos button { display:flex; gap:10px; align-items:flex-start; width:100%; padding:2px 0; background:none; border:0;
+  font:inherit; color:var(--fg); text-align:start; cursor:pointer; line-height:1.45; }
+.wg-todos .box { flex:none; width:20px; height:20px; border-radius:50%; border:1.5px solid var(--border); display:grid; place-items:center; margin-top:1px; }
+.wg-todos .box .i { width:13px; height:13px; opacity:0; color:#fff; stroke-width:3; }
+.wg-todos .on .box { background:var(--success); border-color:var(--success); }
+.wg-todos .on .box .i { opacity:1; }
+.wg-todos .on .txt { color:var(--muted); text-decoration:line-through; }
+.wg-owner { margin:8px 0 0; color:var(--muted); font-size:12px; }
+
+/* 推播 */
+.notifs { display:grid; gap:8px; }
+.notif { display:grid; grid-template-columns:22px 1fr auto; gap:10px; align-items:start; padding:10px 12px; border-radius:18px;
+  background:color-mix(in srgb, var(--surface) 80%, var(--border)); font-size:13px; line-height:1.45; }
+.notif .la-mark { width:22px; height:22px; border-radius:6px; }
+.notif b { display:block; font-size:13px; }
+.notif p { margin:0; color:var(--muted); }
+.notif small { color:var(--muted); font-size:11px; white-space:nowrap; }
+
+/* 整合區的小插畫 */
+.art { width:100%; aspect-ratio:4 / 3; margin:0 0 18px; border-radius:16px; background:var(--page); border:1px solid var(--border-soft);
+  padding:14px; display:flex; flex-direction:column; gap:10px; font-size:12px; overflow:hidden; }
+.art ul { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+.art li { display:grid; grid-template-columns:40px 1fr; gap:6px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.art li span { color:var(--muted); font-variant-numeric:tabular-nums; }
+.art-sheet-head { display:flex; gap:10px; align-items:center; padding-bottom:10px; border-bottom:1px solid var(--border-soft); }
+.art-sheet-head div { display:grid; } .art-sheet-head small { color:var(--muted); }
+.art-thumb { width:36px; height:36px; border-radius:8px; background:linear-gradient(135deg, #9fd3c7, #5aa7c9); flex:none; }
+.art-apps { display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; margin-top:auto; }
+.art-apps span { display:grid; justify-items:center; gap:4px; font-size:10px; color:var(--muted); }
+.art-apps i, .art-apps img { width:40px; height:40px; border-radius:10px; display:block; }
+.art-apps .c1 { background:#7fc98b; } .art-apps .c2 { background:#7aa9e0; } .art-apps .c3 { background:#efd27a; }
+.art-apps .is-pick { color:var(--accent-ink); font-weight:700; }
+.art-apps .is-pick img { box-shadow:0 0 0 2.5px var(--page), 0 0 0 4.5px var(--accent); }
+.art-cal-head { display:flex; justify-content:space-between; align-items:baseline; }
+.art-cal li { padding:5px 8px; border-radius:6px; background:color-mix(in srgb, var(--accent) 12%, var(--page)); border-inline-start:3px solid var(--accent); }
+.art-url { font-family:var(--font-mono); font-size:10px; color:var(--muted); padding:5px 10px; border-radius:var(--radius-pill); background:var(--surface); }
+.art-web b { font-size:13px; line-height:1.35; }
+@media (prefers-reduced-motion:reduce) { .vault-chips .is-pop { animation:none; } }
+/* 截圖旁邊放互動卡：窄螢幕換到下一行，卡片吃滿寬度 */
+.duo:has(.demo) { flex-wrap:wrap; align-items:flex-start; }
+.demo[data-demo="runs"] { flex:1 1 260px; width:auto; max-width:320px; min-width:0; }
+.duo:has(.demo) .ph:last-child { margin-bottom:0; }
+
+/* ─── 截圖 ⇄ 動手試試 ─────────────────────────────────────────────── */
+.media-switch { display:flex; flex-direction:column; align-items:center; gap:14px; width:100%; }
+.ms-shot, .ms-demo { width:100%; display:flex; justify-content:center; }
+.ms-shot[hidden], .ms-demo[hidden] { display:none; }
+.ms-tabs { display:inline-flex; padding:3px; gap:2px; border-radius:var(--radius-pill); background:var(--sunken); border:1px solid var(--border-soft); }
+.ms-tabs button { display:inline-flex; align-items:center; gap:6px; border:0; background:none; font:inherit; font-size:13px; font-weight:600;
+  color:var(--muted); padding:6px 14px; border-radius:var(--radius-pill); cursor:pointer; min-height:32px; }
+.ms-tabs button[aria-selected="true"] { background:var(--page); color:var(--fg); box-shadow:var(--shadow-sm); }
+.ms-dot { width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); }
+.ms-loading { width:40px; height:40px; margin:60px auto; border-radius:50%; border:3px solid var(--border); border-top-color:var(--accent); animation:spin .8s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.tool .media-switch { gap:10px; margin-bottom:18px; }
+.tool .media-switch .ph, .tool .media-switch .art { margin-bottom:0; }
+.tool .ms-tabs button { padding:5px 10px; font-size:12px; }
+.ai-band .media-switch { align-items:stretch; }
+/* 包進切換元件後，原本 .feature-media 上的排版要搬到 .ms-shot 上 */
+.modes .ms-shot { flex-direction:column; align-items:center; gap:16px; }
+.ms-shot > .duo, .ms-shot > .modes, .ms-shot > figure { margin-inline:auto; }
+.ms-shot > .duo { width:100%; }
+
+/* ─── 互動小元件放文字欄（取代切換）─────────────────────────────── */
+.demo-slot { margin-top:24px; max-width:486px; }
+.demo-slot:empty { min-height:1px; } /* 不能 display:none：IntersectionObserver 看不到就永遠不載入 */
+.demo-slot .demo[data-demo="runs"] { max-width:none; width:100%; }
+.tool .demo-slot { margin-top:14px; max-width:none; }
+.ai-band .demo-slot { margin-top:0; max-width:none; }
+.glance-demos { display:grid; gap:14px; max-width:none; }
+@media (min-width:1100px) { .glance-demos { grid-template-columns:minmax(0, 1.1fr) minmax(0, 1fr); align-items:start; } }
+.glance-demos .lock { min-height:360px; }
+
+/* 整合三張卡：手機一欄（卡片裡有互動元件，兩欄只剩 100px 寬） */
+@media (max-width:699px) { .tools.is-three { grid-template-columns:minmax(0, 1fr); } }
+
+/* ─── iPhone 外框：圖（預覽）→ 捲到附近換成可操作的 HTML 畫面 ─────────── */
+.ph.shot.phone { position:relative; overflow:hidden; background:#000;
+  box-shadow:0 0 0 calc(var(--w) * .022) #1b1b1d, 0 0 0 calc(var(--w) * .028) #3a3a3d, var(--shadow-lg); }
+.ph.shot.phone > img { position:absolute; inset:0; transition:opacity .25s; }
+.ph.shot.phone > iframe { position:absolute; top:0; left:0; width:402px; height:874px; border:0; transform-origin:0 0;
+  opacity:0; transition:opacity .25s; background:#fff; }
+.ph.shot.phone.is-live > iframe { opacity:1; }
+.ph.shot.phone.is-live > img { opacity:0; }
+/* 整合卡片裡的手機 */
+.tool > .ph:not(.shot), .tool > .ph.shot { --w:min(100%, 200px); margin:0 auto 18px; }
+/* 小工具／整合卡片裡的手機：卡片多寬就多寬（上限 220），手機兩欄時也撐得住 */
+.tool > .ph.shot, .tool > .ph:not(.shot) { --w:min(100%, 220px); --r:clamp(16px, 4vw, 26px); margin:0 auto 18px; }
+
+/* ═══ 統一的 iPhone 外框（所有手機同一款，照比例縮放）═══════════════
+   機身：螢幕外一圈黑色邊框（寬度＝螢幕寬的 3.2%）＋鈦金屬外緣；圓角照 iPhone 17 Pro 螢幕比例；左右側鍵。 */
+.ph.shot.phone {
+  --bz:calc(var(--wpx, 260px) * .032);
+  border-radius:calc(var(--wpx, 260px) * .148);
+  overflow:visible; background:#000;
+  box-shadow:
+    0 0 0 var(--bz) #0b0b0c,
+    0 0 0 calc(var(--bz) + 1.2px) #8e8e93,
+    0 0 0 calc(var(--bz) + 2.4px) #3a3a3c,
+    var(--shadow-lg);
+  margin:calc(var(--bz) + 3px);
+}
+.ph.shot.phone > img, .ph.shot.phone > iframe { border-radius:inherit; }
+.ph.shot.phone > iframe { clip-path:inset(0 round 59px); }   /* iframe 座標（402 寬）裡的 .148 × 402 */
+.ph.shot.phone::before, .ph.shot.phone::after { content:""; position:absolute; width:calc(var(--bz) * .9);
+  background:linear-gradient(90deg, #2c2c2e, #6e6e73); border-radius:2px; pointer-events:none; }
+.ph.shot.phone::before { left:calc(-1 * var(--bz) - 2.4px - var(--bz) * .8); top:22%; height:12%; }   /* 音量鍵 */
+.ph.shot.phone::after  { right:calc(-1 * var(--bz) - 2.4px - var(--bz) * .8); top:26%; height:16%; }  /* 側邊按鈕 */
+.ph.shot.phone > img { overflow:hidden; }
+
+/* 暫停／播放鈕：手機正中央，滑鼠移上手機才出現 */
+.auto-ctl { position:absolute; z-index:6; left:50%; top:50%; width:56px; height:56px; margin:-28px 0 0 -28px; border-radius:50%;
+  border:0; background:rgba(20,20,22,.55); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:0 4px 16px rgba(0,0,0,.25);
+  display:grid; place-items:center; cursor:pointer; opacity:0; transform:scale(.85); transition:opacity .15s, transform .15s; }
+.ph.shot.phone:hover .auto-ctl, .auto-ctl:focus-visible { opacity:1; transform:none; }
+.auto-ctl::before { content:""; width:14px; height:18px; border-left:5px solid #fff; border-right:5px solid #fff; box-sizing:border-box; }
+.auto-ctl[data-paused="true"]::before { width:0; height:0; border:0; border-left:17px solid #fff;
+  border-top:11px solid transparent; border-bottom:11px solid transparent; margin-left:5px; }
+@media (hover:none) { .auto-ctl { opacity:.85; transform:scale(.8); } }
+/* 點手機畫面就全螢幕：一層透明的按鈕蓋在畫面上 */
+.phone-hit { position:absolute; inset:0; z-index:4; border:0; padding:0; background:transparent; border-radius:inherit; cursor:zoom-in; }
+.phone-hit:focus-visible { box-shadow:0 0 0 3px var(--accent); }
+
+/* ═══ 手機放大：裡面的字跟著手機縮放，手機太小字就讀不到（使用者 2026-10-11）═══ */
+.feature-media > .ph.shot { --w:clamp(220px, 27vw, 320px); }
+.feature-media .duo { --gap:clamp(16px, 2.4vw, 32px); max-width:620px; }
+.feature-media .duo:not(.is-three) .ph { --w:min(290px, calc((100% - var(--gap)) / 2)); }
+/* 三支手機總寬約 2.3 × --c（中間 1、兩側各 .78、各疊進去 .2，再加外框）：--c 照這一欄自己的寬度算，不照視窗算，
+   不然桌機會蓋到左邊的標題、右邊那支被切出畫面（2026-10-12） */
+.trio { container-type:inline-size; }
+.trio > * { --c:min(280px, 36cqi); }
+@media (min-width:880px) { .feature { grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr); } }
+/* 小工具：每列兩張，手機才夠大；整合三張維持一列三張 */
+@media (min-width:560px) { .tools:not(.is-three) { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+@media (min-width:900px) { .tools:not(.is-three) { grid-template-columns:repeat(4, minmax(0, 1fr)); } }   /* 小工具一行四張（使用者 2026-10-12） */
+.tool > .ph.shot { --w:min(100%, 280px); }
+.tools:not(.is-three) .tool { display:grid; grid-template-columns:minmax(0, 1fr); }
+
+/* 全螢幕試玩 */
+.play-dlg { border:0; padding:0; max-width:none; max-height:none; width:100vw; height:100dvh; background:transparent; }
+.play-dlg::backdrop { background:color-mix(in srgb, #000 72%, transparent); backdrop-filter:blur(6px); }
+.play-wrap { height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; position:relative; }
+.play-phone { margin:0; }
+.play-phone .auto-ctl, .play-phone .phone-hit { display:none; }
+.play-phone > iframe { opacity:1 !important; }
+.play-hint { margin:0; color:#fff; font-size:14px; opacity:.85; text-align:center; padding:0 16px; }
+.play-x { position:absolute; top:16px; right:16px; width:44px; height:44px; border-radius:50%; border:0; cursor:pointer;
+  background:rgba(255,255,255,.16); color:#fff; display:grid; place-items:center; }
+.play-x svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; }
+
+/* ─── 隱私：資料流向圖（版面由 OpenDesign 設計，2026-10-12 改橫向；類別一律 pf- 開頭，避開首頁的 .switch）── */
+.flow { width:100%; max-width:600px; margin-inline:auto; }
+/* ─── 外框：米白卡片 ─────────────────────────────────────────── */
+/* 卡片是 size container：外層不能用 grid/flex 置中（內容寬會被量成 0），用 margin 置中 */
+.pf-card {
+  container: pf / inline-size;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(16px, 4vw, 22px);
+  box-shadow: var(--shadow-md);
+}
+.pf-status { margin: 0 0 20px; font-size: 15px; font-weight: 600; line-height: 1.5; min-height: 1.5em; text-wrap: balance; }
+
+/* ─── 圖：左＝你的帳號，右＝旅伴 ─────────────────────────────── */
+.pf-stage {
+  position: relative;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center; column-gap: clamp(40px, 11cqi, 68px);
+}
+.pf-wires { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
+
+.pf-account {
+  --account-bg: color-mix(in srgb, var(--page) 60%, var(--surface));
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--account-bg);
+  padding: 18px 14px 14px;
+  display: grid; grid-template-columns: auto auto; justify-content: space-between;
+  align-items: center;
+}
+/* 帳號名稱壓在框線上，省一列高度 */
+.pf-account-label {
+  position: absolute; top: 0; left: 12px; transform: translateY(-50%);
+  margin: 0; padding: 0 6px;
+  font-size: var(--text-xs); color: var(--muted); letter-spacing: .04em; line-height: 1.4; white-space: nowrap;
+  background: linear-gradient(var(--surface) 50%, var(--account-bg) 50%);
+}
+.pf-devices { display: grid; row-gap: 14px; justify-items: center; }
+
+.pf-node {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  text-align: center;
+  transition: opacity .35s ease, visibility .35s;
+}
+.pf-tile {
+  width: 44px; height: 44px; border-radius: 13px;
+  display: grid; place-items: center; flex: none;
+  background: var(--page); color: var(--fg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: border-color .35s, background-color .35s, color .35s;
+}
+.pf-tile svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.pf-nm b { display: block; font-size: var(--text-sm); font-weight: 600; line-height: 1.3; white-space: nowrap; }
+.pf-nm small { display: block; margin-top: 1px; font-size: var(--text-xs); color: var(--muted); line-height: 1.4; white-space: nowrap; }
+
+/* 主角：你的 iPhone */
+.pf-phone .pf-tile {
+  width: 54px; height: 54px; border-radius: 16px;
+  background: var(--accent-wash); color: var(--accent-ink);
+  border-color: color-mix(in srgb, var(--accent) 34%, var(--border));
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 7%, transparent), var(--shadow-sm);
+}
+.pf-phone .pf-tile svg { width: 26px; height: 26px; }
+
+/* 旅伴：一欄直排，圓形首字＋名字 */
+.pf-mates { display: grid; row-gap: 14px; }
+.pf-mate { flex-direction: row; gap: 10px; text-align: start; }
+.pf-mate .pf-tile {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--sunken); box-shadow: none;
+  font-size: 14px; font-weight: 600; line-height: 1;
+}
+
+/* 未啟用：虛線、淡出；iPad 則整個不在 */
+.pf-stage[data-sync="false"] .pf-cloud,
+.pf-stage[data-share="false"] .pf-mate { opacity: .45; }
+.pf-stage[data-sync="false"] .pf-cloud .pf-tile,
+.pf-stage[data-share="false"] .pf-mate .pf-tile { border-style: dashed; background: transparent; box-shadow: none; color: var(--muted); }
+.pf-stage[data-sync="false"] .pf-ipad { opacity: 0; visibility: hidden; }
+
+/* 傳輸線：底軌＋流動虛線 */
+.pf-wire { opacity: 0; transition: opacity .35s ease; }
+.pf-stage[data-sync="true"] .pf-wire.a,
+.pf-stage[data-share="true"] .pf-wire.b { opacity: 1; }
+.pf-wire path { fill: none; }
+.pf-wire .pf-track { stroke: color-mix(in srgb, var(--accent) 26%, var(--border)); stroke-width: 1.25; }
+.pf-wire .pf-flow {
+  stroke: var(--accent); stroke-width: 1.75; stroke-linecap: round;
+  stroke-dasharray: 1.5 7;
+  animation: pf-flow 1.1s linear infinite;
+}
+@keyframes pf-flow { to { stroke-dashoffset: -17; } }
+
+/* ─── 開關：圖下方一列兩欄 ───────────────────────────────────── */
+.pf-settings {
+  list-style: none; margin: 18px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  background: var(--page); border: 1px solid var(--border); border-radius: var(--radius-md);
+}
+.pf-setting { display: flex; align-items: center; gap: 10px; padding: 10px 12px 10px 14px; min-height: 60px; min-width: 0; }
+.pf-setting + .pf-setting { border-left: 1px solid var(--border-soft); }
+.pf-setting label { flex: 1; min-width: 0; cursor: pointer; }
+.pf-setting b { display: block; font-size: 15px; font-weight: 600; line-height: 1.35; white-space: nowrap; }
+.pf-setting span { display: block; margin-top: 1px; font-size: 13px; color: var(--muted); line-height: 1.45; }
+.pf-setting.is-locked label { cursor: not-allowed; }
+.pf-setting.is-locked b { color: var(--muted); }
+
+.pf-sw {
+  position: relative; flex: none;
+  width: 51px; height: 31px; padding: 0; border: 0; border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--fg) 15%, var(--page));
+  cursor: pointer;
+  transition: background-color .2s ease, opacity .2s ease;
+}
+.pf-sw::before { content: ""; position: absolute; inset: -7px -4px; }  /* 觸控範圍 ≥ 44px */
+.pf-sw::after {
+  content: ""; position: absolute; top: 2px; left: 2px;
+  width: 27px; height: 27px; border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .18), 0 0 0 .5px rgba(0, 0, 0, .06);
+  transition: transform .22s cubic-bezier(.3, .7, .4, 1);
+}
+.pf-sw[aria-checked="true"] { background: var(--accent); }
+.pf-sw[aria-checked="true"]::after { transform: translateX(20px); }
+.pf-sw:hover { background: color-mix(in srgb, var(--fg) 24%, var(--page)); }
+.pf-sw[aria-checked="true"]:hover { background: color-mix(in srgb, var(--accent) 86%, var(--fg)); }
+.pf-sw:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.pf-sw[aria-disabled="true"] { opacity: .4; cursor: not-allowed; background: color-mix(in srgb, var(--fg) 15%, var(--page)); }
+
+
+/* ─── 窄卡片（卡片內容寬 380px 以下，也就是手機）：旅伴移到框下方排成一列，開關上下疊。首頁右欄的卡片內容只有約 418px，設計稿原本的 420 門檻會讓桌機也掉進窄版 ─── */
+@container pf (max-width: 379px) {
+  .pf-stage { grid-template-columns: minmax(0, 1fr); row-gap: 40px; }
+  .pf-mates { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pf-mate { flex-direction: column; gap: 6px; text-align: center; }
+  .pf-settings { grid-template-columns: minmax(0, 1fr); }
+  .pf-setting + .pf-setting { border-left: 0; border-top: 1px solid var(--border-soft); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-wire .pf-flow { animation: none; }
+  .pf-node, .pf-tile, .pf-wire, .pf-sw, .pf-sw::after { transition: none; }
+}
+
+/* 循環重播：新的那份先透明疊在上面，畫好再淡入 */
+.ph.shot.phone > iframe.is-next { opacity:0 !important; }
+.ph.shot.phone > iframe { transition:opacity .35s; }
+
+
+
+/* 小工具／整合卡片：外框是 box-shadow 畫的、不佔版面，間距要把框的厚度加回去，標題才不會貼著手機（使用者 2026-10-12） */
+.tool > .ph.shot.phone { margin-top:calc(var(--bz) + 2px); margin-bottom:calc(var(--bz) + 24px); }
+
+/* 捲過 hero 之後右下角的「立即下載 App」（使用者 2026-10-12）；頁尾的下載鈕看得到時收起來，免得兩顆疊在一起 */
+.fab-dl { position:fixed; right:max(16px, env(safe-area-inset-right)); bottom:max(16px, env(safe-area-inset-bottom)); z-index:50;
+  display:flex; flex-direction:column; align-items:stretch; gap:10px;
+  opacity:0; transform:translateY(12px); pointer-events:none; transition:opacity .25s, transform .25s; }
+.fab-dl > .btn { box-shadow:var(--shadow-md); }
+/* 電腦版（滑鼠＋可懸停）：上面先放商店的 QR Code，用手機掃；連結放在下面 */
+.fab-qr { display:none; margin:0; padding:12px 12px 10px; background:var(--page); border:1px solid var(--border); border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-md); text-align:center; }
+.fab-qr img { display:block; width:120px; height:120px; margin:0 auto; padding:6px; background:#fff; color:#000; border-radius:var(--radius-sm); }
+.fab-qr figcaption { margin-top:8px; font-size:var(--text-xs); color:var(--muted); }
+@media (hover:hover) and (pointer:fine) and (min-width:900px) { .fab-qr { display:block; } }
+.fab-dl.is-on { opacity:1; transform:none; pointer-events:auto; }
+@media (prefers-reduced-motion:reduce) { .fab-dl { transition:none; } }
+
+/* 兩欄開關的副標：右欄只有約 205px，13px 會把最後一個字擠到第二行 */
+.pf-setting span { font-size:12px; }
+.pf-setting { padding:10px 10px 10px 12px; gap:8px; }
+@container pf (max-width: 379px) { .pf-setting span { font-size:13px; } }

@@ -51,7 +51,7 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, loadTrip, chrome, ready, fmt } from './chrome.js';
+import { lang, loadTrip, chrome, ready, fmt, interactive, go } from './chrome.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
@@ -63,7 +63,7 @@ const titles = {};
   if (Array.isArray(o)) return o.forEach(walk);
   if (o && typeof o === 'object') { if (o.key && o.title) titles[o.key] = o.title; Object.values(o).forEach(walk); }
 })(trip);
-const para = s => fmt(s).replace(/\{@([^}]+)\}/g, (_, k) => `<span class="m">@${fmt(titles[k] || k)}</span>`);
+const para = s => fmt(s).replace(/\{@([^}]+)\}/g, (_, k) => `<span class="m" data-key="${k}">@${fmt(titles[k] || k)}</span>`);
 
 const IC = {
   chevronLeft: '<path d="m15 5-7 7 7 7"/>',
@@ -95,6 +95,71 @@ d.insertAdjacentHTML('beforeend', `
 chrome(d, { tab: null });
 await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; })));
 ready();
+
+/* ── 互動模式 ─────────────────────────────────────────────────────────────
+   規則出處（App repo /Users/zhgchgli/Projects/tripezgo/）：
+   - design/tripezgo-flow-spec.md R14i＋UI/…/NoteEditor/NoteEditorView.swift：檢視時點發音標記就唸；一次只唸一段；
+     再點同一段＝停止。朗讀中（NoteDecorationView.speakingRun）底色加深到 accent 24%、底線換成實心 accent、喇叭換成停止方塊
+     （NoteEditorMetrics.pronunciationSpeakingFillMix）
+   - 語言跟旅程目的地走（Asia/Tokyo → ja-JP），不是介面語言；語速 0.9×（NoteEditorMetrics.speechRateFactor）
+   - NoteSpeaker.canSpeak：沒有那個語言的聲音就明講 notes.speech.unsupported，不靜靜地沒反應
+   - Notes/…/NoteReaderViewController.noteEditorDidTapMention → route：提及點了開那一則行程（檢視行程 sheet）
+   - 導覽列返回回到筆記清單（notes.html） */
+if (interactive) {
+  const U = {
+    'zh-Hant-TW': { unsupported: '這台裝置不支援語音朗讀。\n你加上的發音都還在，換一台裝置或更新系統之後就能唸。', ok: '好' },
+    en: { unsupported: 'This device can’t read text aloud.\nThe pronunciations you added are all still there — another device, or a system update, will speak them.', ok: 'OK' },
+    ja: { unsupported: 'この端末は読み上げに対応していません。\n追加した読みはすべて残っているので、ほかの端末や OS の更新後には読み上げられます。', ok: 'OK' },
+  }[lang];
+  const { alert } = await import('./tools.js');
+  d.insertAdjacentHTML('beforeend', `<style>
+    .nav-btn.back, .m, .pr { cursor: pointer; }
+    .m { border-radius: 4px; transition: background .15s; } .m.press { background: rgba(29,115,112,.16); }
+    .pr.speaking { background: rgba(47,145,142,.24); box-shadow: inset 0 -1.5px 0 #2f918e; }
+    .pr.speaking svg { color: #2f918e; }
+  </style>`);
+  const STOP = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor" stroke="none"/></svg>';
+  d.querySelector('.nav-btn.back').addEventListener('click', () => go('notes'));
+  d.querySelectorAll('.m').forEach(m => m.addEventListener('click', () => {
+    m.classList.add('press');
+    setTimeout(() => go('event', `event=${m.dataset.key}&from=note`), 160);
+  }));
+  const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
+  const pills = [...d.querySelectorAll('.pr')];
+  let speaking = null;
+  const paint = () => pills.forEach(p => {
+    const on = p === speaking;
+    p.classList.toggle('speaking', on);
+    p.querySelector('svg').outerHTML = on ? STOP : ic('speaker');
+  });
+  const stop = () => { speaking = null; synth?.cancel(); paint(); };
+  const jaVoice = () => synth.getVoices().find(v => v.lang.replace('_', '-').toLowerCase().startsWith('ja'));
+  const cannot = () => { stop(); alert(d, { title: U.unsupported.split('\n')[0], message: U.unsupported.split('\n')[1], actions: [{ label: U.ok, preferred: true }] }); };
+  // 首頁自動示範（auto=…）點的不是真人（!isTrusted）：不真的出聲，只亮「朗讀中」約 1.2 秒
+  const demo = new URLSearchParams(location.search).has('auto');
+  pills.forEach(p => p.addEventListener('click', (e) => {
+    if (speaking === p) return stop();
+    if (demo && !e.isTrusted) {
+      speaking = p; paint();
+      setTimeout(() => { if (speaking === p) { speaking = null; paint(); } }, 1200);
+      return;
+    }
+    if (!synth || (synth.getVoices().length && !jaVoice())) return cannot();
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(p.textContent.trim());
+    u.lang = 'ja-JP'; u.rate = 0.9;
+    const v = jaVoice(); if (v) u.voice = v;
+    u.onend = () => { if (speaking === p) { speaking = null; paint(); } };
+    u.onerror = (e) => {
+      if (speaking !== p || e.error === 'interrupted' || e.error === 'canceled') return;
+      if (/unavailable/.test(e.error)) cannot(); else { speaking = null; paint(); }
+    };
+    speaking = p; paint();
+    synth.speak(u);
+  }));
+  addEventListener('pagehide', () => synth?.cancel());
+  document.addEventListener('visibilitychange', () => { if (document.hidden && speaking) stop(); });
+}
 </script>
 </body>
 </html>

@@ -67,12 +67,71 @@
     background: rgba(255,255,255,.2); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
     box-shadow: inset 0 0 0 .5px rgba(255,255,255,.35); }
   .qa svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ── 互動模式才用得到的（截圖模式不會產生這些元素） ── */
+  .is-interactive .la { touch-action: pan-y; cursor: ew-resize; user-select: none; -webkit-user-select: none; }
+  .is-interactive .la-refresh { cursor: pointer; }
+  .la-refresh.spin svg { animation: la-spin .6s ease-out; }
+  @keyframes la-spin { to { transform: rotate(360deg); } }
+  /* 移動中標題前那一枚交通圖示：16pt、底比基線低 2pt（TripActivityCard.title） */
+  .la-gl { display: inline-block; width: 16px; height: 16px; margin-right: 6px; vertical-align: -2px; }
+  .la-gl svg { display: block; width: 16px; height: 16px; }
+  .la-gl svg.ln { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .la-gl svg.mk { fill: currentColor; fill-rule: evenodd; }
+  .la-gl svg.dots { fill: currentColor; }
+  /* ActivityAltRow：上距 7、圖示 12、字 11、字距 .22；趕不上整行轉琥珀加粗 */
+  .la-alt { margin-top: 7px; display: flex; align-items: center; gap: 6px; font-size: 11px; line-height: 16.5px; letter-spacing: .22px;
+    color: var(--on-dark-muted); white-space: nowrap; overflow: hidden; }
+  .la-alt span { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .la-alt svg { flex: none; width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .la-alt.warn { color: var(--warning); font-weight: 600; }
+  /* 撥時間的那一條（互動模式才有）：放在手電筒與相機中間，長相照 iOS 媒體播放的玻璃進度條——細軌、白色已走、小圓把手 */
+  .lk-scrub { position: absolute; left: 110px; right: 110px; bottom: 52px; height: 50px; display: flex; flex-direction: column;
+    justify-content: center; gap: 7px; touch-action: none; cursor: pointer; outline: none; user-select: none; -webkit-user-select: none; }
+  .lk-scrub-t { text-align: center; font: 600 13px/16px var(--font); font-variant-numeric: tabular-nums; color: rgba(255,255,255,.92);
+    text-shadow: 0 1px 6px rgba(0,30,60,.3); }
+  .lk-scrub-track { position: relative; height: 6px; border-radius: 3px; background: rgba(255,255,255,.28);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: inset 0 0 0 .5px rgba(255,255,255,.35); }
+  .lk-scrub-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: rgba(255,255,255,.9); }
+  .lk-scrub-thumb { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,.25); transition: transform .15s; }
+  .lk-scrub.active .lk-scrub-thumb { transform: scale(1.35); }
+  .lk-scrub:focus-visible .lk-scrub-track { box-shadow: 0 0 0 2px rgba(255,255,255,.8); }
+
+  /* ── 鎖定畫面的通知（系統 UI）：即時動態在最上面，通知接在它下面，整欄貼著手電筒那一排之上 ── */
+  .lk-col { position: absolute; left: 20px; right: 20px; bottom: 132px; max-height: 498px; display: flex; flex-direction: column;
+    gap: 8px; overflow-y: auto; scrollbar-width: none; }
+  .lk-col::-webkit-scrollbar { display: none; }
+  .lk-col > :first-child { margin-top: auto; }
+  .lk-col .la { position: relative; left: auto; right: auto; bottom: auto; flex: none; }
+  .nt { display: flex; flex-direction: column; gap: 8px; flex: none; }
+  .nt:empty { display: none; }
+  .nt-card { position: relative; z-index: 2; display: flex; gap: 10px; padding: 12px 14px 12px 12px; border-radius: 22px; color: #000;
+    background: rgba(246,244,242,.66); -webkit-backdrop-filter: blur(30px) saturate(180%); backdrop-filter: blur(30px) saturate(180%); }
+  .nt-card img { flex: none; width: 38px; height: 38px; border-radius: 9px; margin-top: 1px; }
+  .nt-t { flex: 1 1 auto; min-width: 0; }
+  .nt-h { display: flex; align-items: baseline; gap: 8px; }
+  .nt-h b { flex: 1 1 auto; min-width: 0; font: 600 15px/20px var(--font); letter-spacing: -.2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .nt-h span { flex: none; font: 400 13px/18px var(--font); color: rgba(0,0,0,.48); }
+  .nt-b { font: 400 15px/20px var(--font); letter-spacing: -.2px; white-space: pre-line; display: -webkit-box; -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; overflow: hidden; }
+  .nt-card.open .nt-b { -webkit-line-clamp: 12; }
+  .nt-card.open .nt-h b { white-space: normal; }
+  /* 收合的同一組：最上面那一則完整，後面的疊成兩片 */
+  .nt-pile { position: relative; flex: none; }
+  .nt-plate { position: relative; z-index: 1; height: 22px; margin-top: -14px; border-radius: 0 0 20px 20px;
+    background: rgba(246,244,242,.5); -webkit-backdrop-filter: blur(30px); backdrop-filter: blur(30px); }
+  .nt-plate + .nt-plate { z-index: 0; margin-left: 12px; margin-right: 12px; background: rgba(246,244,242,.36); }
+  .nt-plate:first-of-type { margin-left: 6px; margin-right: 6px; }
+  .nt-less { align-self: flex-end; height: 26px; padding: 0 12px; border-radius: 13px; font: 600 13px/26px var(--font); color: #000;
+    background: rgba(246,244,242,.66); -webkit-backdrop-filter: blur(30px); backdrop-filter: blur(30px); }
+  .is-interactive .nt-card, .is-interactive .nt-less { cursor: pointer; }
 </style>
 </head>
 <body>
 <div class="device" id="d"><div class="dim"></div></div>
 <script type="module">
-import { fmt, lang, params, loadTrip, chrome, toMin, ready } from './chrome.js';
+import { fmt, lang, params, loadTrip, chrome, toMin, ready, interactive, duration, loadCategories, categoryName } from './chrome.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
@@ -107,7 +166,7 @@ const nextStop = '<path d="M5 12h11M12 8l4 4-4 4"/><circle cx="19.4" cy="12" r="
 
 d.insertAdjacentHTML('beforeend', `
   <div class="clock"><div class="date">${S.date(date)}</div><div class="time">${+hh}:${mm}</div></div>
-  <div class="la">
+  <div class="lk-col"><div class="la">
     <div class="la-head"><span class="la-icon"><svg viewBox="0 0 24 24">${brand}</svg></span>
       <span class="la-app">TripEZGo · ${fmt(trip.title)}</span><span class="la-day">${S.day(dayNo)}</span>
       <span class="la-refresh"><svg viewBox="0 0 24 24">${refresh}</svg></span></div>
@@ -121,12 +180,347 @@ d.insertAdjacentHTML('beforeend', `
     <div class="la-ends"><span>${cur.start}</span><span>${cur.end}</span></div>
     ${next ? `<div class="la-rule"></div><div class="la-next"><svg viewBox="0 0 24 24">${nextStop}</svg>
       <span class="nm">${fmt(S.next(next.title))}</span><span class="tm">${next.start}</span></div>` : ''}
-  </div>
+  </div><div class="nt"></div></div>
   <div class="qa" style="left:46px"><svg viewBox="0 0 24 24"><path d="M9 3h6v4l-1.6 2.2v11.3h-2.8V9.2L9 7z"/><path d="M12 12.5v2"/></svg></div>
   <div class="qa" style="right:46px"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.6"/><path d="M9 7l1.4-2.4h3.2L15 7"/></svg></div>`);
 
+
+/* ── 鎖定畫面上的 TripEZGo 通知 ────────────────────────────────────────────────
+   排哪幾則、什麼時候響照 App：Domain/UseCase/TripReminderUseCase.swift
+     出發前 7／3／1 天 09:00（3 天那一則只在還有待辦時）、旅程中每天 07:00 摘要、
+     下一則行程＝每一則結束那一刻（後面還有比它晚結束的才排）、班次＝發車前 5 分（坐超過 10 分的再加到站前 5 分）、
+     行程前待辦＝開始前 5 分且那一則還有沒做完的待辦；同一分鐘撞在一起的待辦併進下一則／發車那一則
+     （ReminderSwitchboard.apply）。標題與內文：TripEZGo/Core/Reminders/TripReminderController.request、
+     UI/DesignSystem/TripReminderText.swift；字串 Scripts/i18n/maps/UI.json（ui.reminder.*、ui.nextup.*、
+     ui.todoreminder.*、ui.run.*、ui.digest.*）。
+   注意：App 對範例旅程（isDemo）不排「行程前待辦」；這裡當成使用者自己的旅程畫。
+   第 1 天那些逐則的通知視為已經看過（解鎖過），不列出；出發前三則與兩天的摘要留著，疊在最舊的那一疊。
+   畫面：最新的在最上面，最多三則完整，更舊的疊在第三則底下（點一下展開整組）。相對時間照 iOS。 */
+const NT = {
+  'zh-Hant-TW': { lead7: '旅程快到了', body7: x => `${x}，都準備好了嗎？`, lead3: n => `還有 ${n} 項待辦沒完成`, body3: x => `出發前把 ${x} 的待辦清一清吧`,
+    lead1: '明天就出發了', body1: '明天就出發了，今天早點睡吧。', left: n => `還有 ${n} 項待辦。`,
+    digest: (n, r) => `今天有 ${n} 個行程，${r}`, nextT: x => `接下來：${x}`, nextB: (a, x) => `${a} 開始 · ${x}`,
+    todoT: (x, n) => `下個行程 ${x} 尚有 ${n} 個待辦事項`, item: x => `・${x}`, more: n => `…還有 ${n} 項`, merged: n => ` · 還有 ${n} 項待辦`,
+    depT: (r, a) => `${r} ${a} 開`, arrT: (r, a) => `${r} ${a} 到`, runB: (e, x) => `前往 ${e} · ${x}`, unnamed: '預計搭乘的班次',
+    ago: m => m < 1 ? '現在' : m < 60 ? `${m}分鐘前` : m < 1440 ? `${Math.floor(m / 60)}小時前` : `${Math.floor(m / 1440)}天前`, less: '顯示較少' },
+  en: { lead7: 'Your trip is close', body7: x => `${x} — all set?`, lead3: n => `${n} to-dos still open`, body3: x => `Clear the to-dos for ${x} before you go`,
+    lead1: 'You leave tomorrow', body1: 'You leave tomorrow — get an early night.', left: n => `${n} to-dos left.`,
+    digest: (n, r) => `${n} events today, ${r}`, nextT: x => `Next: ${x}`, nextB: (a, x) => `Starts ${a} · ${x}`,
+    todoT: (x, n) => `${x}: ${n} to-dos left`, item: x => `・${x}`, more: n => `…and ${n} more`, merged: n => ` · ${n} to-dos left`,
+    depT: (r, a) => `${r} leaves at ${a}`, arrT: (r, a) => `${r} arrives at ${a}`, runB: (e, x) => `To ${e} · ${x}`, unnamed: 'Your ride',
+    ago: m => m < 1 ? 'now' : m < 60 ? `${m}m ago` : m < 1440 ? `${Math.floor(m / 60)}h ago` : `${Math.floor(m / 1440)}d ago`, less: 'Show less' },
+  ja: { lead7: '旅行が近づいてきました', body7: x => `${x}、準備はできましたか？`, lead3: n => `やることがあと ${n} 件`, body3: x => `出発前に ${x} のやることを片づけましょう`,
+    lead1: '明日は出発です', body1: '明日は出発です。今日は早めに休みましょう。', left: n => `やることがあと ${n} 件あります。`,
+    digest: (n, r) => `今日は予定が ${n} 件、${r}`, nextT: x => `このあと：${x}`, nextB: (a, x) => `${a} 開始 · ${x}`,
+    todoT: (x, n) => `次の予定「${x}」に未完了の ToDo が ${n} 件あります`, item: x => `・${x}`, more: n => `…ほか ${n} 件`, merged: n => ` · ToDo 残り ${n} 件`,
+    depT: (r, a) => `${r} は ${a} 発`, arrT: (r, a) => `${r} は ${a} 着`, runB: (e, x) => `${e} へ · ${x}`, unnamed: '乗車予定の便',
+    ago: m => m < 1 ? '今' : m < 60 ? `${m}分前` : m < 1440 ? `${Math.floor(m / 60)}時間前` : `${Math.floor(m / 1440)}日前`, less: '表示を減らす' },
+}[lang] || null;
+const N = NT || {};
+const hm = m => `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+const clip = (s, n) => { const a = Array.from(String(s).replace(/\s*\n\s*/g, ' ').trim()); return a.length > n ? a.slice(0, n).join('').trim() + '…' : a.join(''); };
+const todoBody = (items, n) => { const shown = items.slice(0, 3).map(x => N.item(clip(x, 20))); return [...shown, ...(n > shown.length ? [N.more(n - shown.length)] : [])].join('\n'); };
+// 時刻一律換成「相對第 dayNo 天 00:00 的分鐘」，前幾天是負的
+const timedOf = dn => (trip.days.find(x => x.day === dn)?.events || []).filter(e => e.start && e.end && !e.isCancelled)
+  .map(e => ({ ...e, s: toMin(e.start), e2: toMin(e.end) })).sort((a, b) => a.s - b.s);
+const allTodos = (trip.todos || []).length + (trip.allDayEvents || []).reduce((n, e) => n + (e.todos || []).length, 0)
+  + trip.days.reduce((n, x) => n + x.events.reduce((k, e) => k + (e.todos || []).length, 0), 0);
+const NOTES = [];
+{
+  const D = 1440, before = dayNo - 1;   // 第 1 天 00:00 ＝ -before*D
+  const t0 = -before * D;
+  // 出發前 7／3／1 天 09:00（字串照 TripReminderText.leadUp*；「還有 N 項待辦。」直接接在後面）
+  NOTES.push({ at: t0 - 7 * D + 540, title: N.lead7, body: N.body7(trip.title) + (allTodos ? N.left(allTodos) : '') });
+  if (allTodos) NOTES.push({ at: t0 - 3 * D + 540, title: N.lead3(allTodos), body: N.body3(trip.title) });
+  NOTES.push({ at: t0 - 1 * D + 540, title: N.lead1, body: N.body1 + (allTodos ? N.left(allTodos) : '') });
+  // 每天 07:00 摘要（第 1 天到今天）
+  for (let dn = 1; dn <= dayNo; dn++) {
+    const ev = timedOf(dn), base = (dn - dayNo) * D;
+    NOTES.push({ at: base + 420, title: trip.title, body: N.digest(ev.length, `${hm(Math.min(...ev.map(e => e.s)))} – ${hm(Math.max(...ev.map(e => e.e2)))}`) });
+  }
+  // 今天的逐則通知
+  const today = timedOf(dayNo), day = [];
+  today.forEach((c, k) => {
+    const f = today.slice(k + 1).find(x => x.e2 > c.e2);
+    if (f) day.push({ at: c.e2, kind: 'next', title: N.nextT(f.title), body: N.nextB(f.start, trip.title) });
+    const r = c.leg?.runs && c.leg.selectedRunIndex != null ? c.leg.runs[c.leg.selectedRunIndex] : null;
+    if (r?.departure) {
+      const name = (r.name || '').trim() || N.unnamed, dep = toMin(r.departure);
+      day.push({ at: dep - 5, kind: 'dep', title: N.depT(name, r.departure), body: N.runB(c.title, trip.title) });
+      if (r.arrival) { let arr = toMin(r.arrival); if (arr < dep) arr += D;
+        if (arr - dep >= 10) day.push({ at: arr - 5, kind: 'arr', title: N.arrT(name, hm(arr % D)), body: N.runB(c.title, trip.title) }); }
+    }
+    if (c.todos?.length) day.push({ at: c.s - 5, kind: 'todo', title: N.todoT(clip(c.title, 12), c.todos.length),
+      body: todoBody(c.todos, c.todos.length), items: c.todos });
+  });
+  // ReminderSwitchboard：撞在同一分鐘的待辦併進下一則行程／發車那一則
+  for (const td of day.filter(x => x.kind === 'todo')) {
+    const host = day.find(x => x.at === td.at && (x.kind === 'next' || x.kind === 'dep'));
+    if (host) { host.body += N.merged(td.items.length) + '\n' + todoBody(td.items, td.items.length); day.splice(day.indexOf(td), 1); }
+  }
+  NOTES.push(...day);
+  NOTES.forEach((x, k) => { x.id = k; });
+}
+const ntEl = d.querySelector('.nt');
+const ntOpen = new Set(); let ntGroupOpen = false;
+const card = (x, t) => `<div class="nt-card${ntOpen.has(x.id) ? ' open' : ''}" data-id="${x.id}"><img src="img/app-icon-180.png" alt="">
+  <div class="nt-t"><div class="nt-h"><b>${fmt(x.title)}</b><span>${N.ago(Math.floor(t - x.at))}</span></div><div class="nt-b">${fmt(x.body)}</div></div></div>`;
+function drawNotes(t) {
+  const list = NOTES.filter(x => x.at <= t).sort((a, b) => b.at - a.at);
+  if (ntGroupOpen && list.length > 3) {
+    ntEl.innerHTML = `<div class="nt-less" data-less>${N.less}</div>` + list.map(x => card(x, t)).join('');
+  } else {
+    const shown = list.slice(0, 3), rest = list.length - shown.length;
+    ntEl.innerHTML = shown.map((x, k) => k === shown.length - 1 && rest > 0
+      ? `<div class="nt-pile" data-pile>${card(x, t)}${'<div class="nt-plate"></div>'.repeat(Math.min(2, rest))}</div>` : card(x, t)).join('');
+  }
+}
+drawNotes(nowMin + 12 / 60);
+
 chrome(d, { dark: true });
 ready();
+
+/* ── 互動模式：時間往前走，即時動態跟著換（截圖模式不跑這一段） ─────────────────────────────
+   左右拖動卡片＝撥時間（1px＝1 分，往右是往後），點一下卡片＝往後 15 分；倒數與進度條每秒自己走，
+   同 Text(timerInterval:)／ProgressView(timerInterval:)。抬頭那顆「更新」把卡片拉回此刻（轉一圈）。
+   哪一刻是哪一種狀態照 App：
+     Domain/UseCase/TripMomentUseCase.swift（進行中／即將開始／移動中[候車]／今日完成，已取消的不算）
+     LiveActivity/TripActivityContent.swift（每一格寫什麼）、TripEZGoWidget/Views/TripActivityCard.swift、
+     ActivityPieces.swift（倒數、進度、備案、下一站）、ActivityTheme.swift（狀態點顏色、交通圖示）
+     Domain/Model/Event.swift（Leg.minutesLate、nextRunAfterSelected）
+   字串：Scripts/i18n/maps/LiveActivity.json、Domain.json（legMode*）；類型名稱＝TransitKind.displayName。
+   手電筒與相機中間那一條「撥時間」不是 iOS 也不是 App 的東西，是首頁示意用的（只在互動模式出現）。 */
+if (interactive) {
+  await loadCategories();
+  const LS = {
+    'zh-Hant-TW': { live: '進行中', remaining: '還剩', nextStop: x => `下一站 · ${x}`, upcoming: '即將開始', untilStart: '後開始',
+      now: '現在', startsAt: x => `${x} 開始`, beforeLeaving: x => `出發前 · ${x}`, moving: '移動中', untilArrival: '後抵達',
+      leavesAt: x => `${x} 出發`, arrivesAt: x => `${x} 抵達`, destination: x => `目的地 · ${x}`, tooTight: '趕不上',
+      legTravel: x => `路程 ${x}`, runTravel: (k, x) => `${k} · 路程 ${x}`, nextRun: x => `下一班 ${x}`,
+      lateBy: x => `會比下一個行程晚 ${x}到`, noMoreRuns: '今天沒有別的班次了', done: '今日完成', doneTitle: '今天的旅程都走完了',
+      doneCounts: (a, b) => `${a} 個安排 · 移動 ${b} 段`, tomorrowFirstLabel: '明天第一站', tomorrowFirst: x => `明天 · ${x}`,
+      headingTo: x => `前往 ${x}`, waiting: '候車中', untilDeparture: '後發車', runWindow: (a, b, c) => `${a} → ${b} · ${c}`,
+      mode: { walking: '步行', driving: '開車', cycling: '騎車', other: '其他', transit: '大眾運輸', idle: '空檔' },
+      scrub: '時間' },
+    en: { live: 'Now', remaining: 'Ends in', nextStop: x => `Next · ${x}`, upcoming: 'Up next', untilStart: 'till start',
+      now: 'Now', startsAt: x => `Starts ${x}`, beforeLeaving: x => `Before leaving · ${x}`, moving: 'On the move', untilArrival: 'till arrival',
+      leavesAt: x => `Leave ${x}`, arrivesAt: x => `Arrive ${x}`, destination: x => `Destination · ${x}`, tooTight: 'Running late',
+      legTravel: x => `${x} journey`, runTravel: (k, x) => `${k} · ${x} journey`, nextRun: x => `Next service ${x}`,
+      lateBy: x => `${x} late for the next event`, noMoreRuns: 'No other services today', done: 'Done for today', doneTitle: 'That’s everything for today',
+      doneCounts: (a, b) => `${a} events · ${b} legs`, tomorrowFirstLabel: 'till tomorrow’s first stop', tomorrowFirst: x => `Tomorrow · ${x}`,
+      headingTo: x => `Heading to ${x}`, waiting: 'Waiting', untilDeparture: 'until departure', runWindow: (a, b, c) => `${a} → ${b} · ${c}`,
+      mode: { walking: 'Walking', driving: 'Driving', cycling: 'Cycling', other: 'Other', transit: 'Transit', idle: 'Free time' },
+      scrub: 'Time' },
+    ja: { live: '進行中', remaining: '残り', nextStop: x => `次 · ${x}`, upcoming: 'まもなく', untilStart: '後に開始',
+      now: '現在', startsAt: x => `${x} 開始`, beforeLeaving: x => `出発前 · ${x}`, moving: '移動中', untilArrival: '後に到着',
+      leavesAt: x => `${x} 出発`, arrivesAt: x => `${x} 到着`, destination: x => `目的地 · ${x}`, tooTight: '間に合いません',
+      legTravel: x => `所要 ${x}`, runTravel: (k, x) => `${k} · 所要 ${x}`, nextRun: x => `次の便 ${x}`,
+      lateBy: x => `次の予定に ${x} 遅れて到着`, noMoreRuns: '今日はほかの便がありません', done: '本日終了', doneTitle: '今日の予定はすべて終わりました',
+      doneCounts: (a, b) => `予定 ${a} 件 · 移動 ${b} 区間`, tomorrowFirstLabel: '明日の最初の目的地', tomorrowFirst: x => `明日 · ${x}`,
+      headingTo: x => `${x} へ移動中`, waiting: '待機中', untilDeparture: '後に出発', runWindow: (a, b, c) => `${a} → ${b} · ${c}`,
+      mode: { walking: '徒歩', driving: '車', cycling: '自転車', other: 'その他', transit: '公共交通', idle: '空き時間' },
+      scrub: '時刻' },
+  };
+  const S2 = LS[lang] || LS['zh-Hant-TW'];
+
+  // EventTypeIcons（Maki 15 格）——交通類型借行程類型那一枚（ActivityTheme.legGlyphImage）
+  const MAKI = {
+    train: 'M 3 1 C 2.4477 1 2 1.4477 2 2 L 2 10 C 2 10.5523 2.4477 11 3 11 L 12 11 C 12.5523 11 13 10.5523 13 10 L 13 2 C 13 1.4477 12.5523 1 12 1 L 3 1 z M 5.75 1.5 L 5.7597656 1.5 L 9.2597656 1.5 C 9.3978656 1.5 9.5097656 1.6119 9.5097656 1.75 C 9.5097656 1.8881 9.3978656 2 9.2597656 2 L 5.75 2 C 5.6119 2 5.5 1.8881 5.5 1.75 C 5.5 1.6119 5.6119 1.5 5.75 1.5 z M 3.5 3 L 7 3 L 7 7 L 3.5 7 C 3.2239 7 3 6.7761 3 6.5 L 3 3.5 C 3 3.2239 3.2239 3 3.5 3 z M 8 3 L 11.5 3 C 11.7761 3 12 3.2239 12 3.5 L 12 6.5 C 12 6.7761 11.7761 7 11.5 7 L 8 7 L 8 3 z M 5 8 C 5.5523 8 6 8.4477 6 9 C 6 9.5523 5.5523 10 5 10 C 4.4477 10 4 9.5523 4 9 C 4 8.4477 4.4477 8 5 8 z M 10 8 C 10.5523 8 11 8.4477 11 9 C 11 9.5523 10.5523 10 10 10 C 9.4477 10 9 9.5523 9 9 C 9 8.4477 9.4477 8 10 8 z M 10.445312 11.994141 C 10.380597 11.999652 10.314981 12.018581 10.253906 12.050781 C 10.030606 12.168381 9.9302313 12.433922 10.019531 12.669922 L 10.189453 13 L 4.8105469 13 L 4.9394531 12.730469 C 5.0371531 12.472169 4.9067375 12.183637 4.6484375 12.085938 C 4.4124375 11.996738 4.1468969 12.097113 4.0292969 12.320312 L 3.0292969 14.320312 C 3.0080969 14.377912 2.9986 14.4387 3 14.5 C 3 14.7761 3.2239 15 3.5 15 C 3.6802 14.999 3.8450875 14.899434 3.9296875 14.740234 L 3.9296875 14.689453 L 4 14.689453 L 4.3105469 14 L 10.689453 14 L 11 14.689453 L 11 14.740234 C 11.0846 14.899434 11.249488 14.999 11.429688 15 C 11.705787 15 11.929688 14.7761 11.929688 14.5 C 11.949587 14.4212 11.949587 14.338566 11.929688 14.259766 L 10.929688 12.259766 C 10.833163 12.076541 10.639459 11.977608 10.445312 11.994141 z',
+    ferry: 'M5.33,11c0.6745,0.009,1.3262,0.245,1.85,0.67l0.26,0.23h0.05l0.31-0.28c0.9817-0.8115,2.379-0.8846,3.44-0.18L13.5,7L12,6 V2.45c-0.0466-0.8-0.6989-1.4305-1.5-1.45H10c0.0343-0.518-0.3579-0.9657-0.8759-1C9.0828-0.0027,9.0413-0.0027,9,0H6 C5.482-0.0343,5.0343,0.3579,5,0.8759C4.9973,0.9172,4.9973,0.9587,5,1H4.5C3.6989,1.0195,3.0466,1.65,3,2.45V6L1.5,7l2.25,4.53 C4.2143,11.2041,4.7631,11.02,5.33,11z M4,2.45c0.0105-0.2594,0.2293-0.4611,0.4886-0.4506C4.4924,1.9996,4.4962,1.9998,4.5,2h6 c0.259-0.0171,0.4829,0.1789,0.5,0.4379c0.0014,0.0207,0.0014,0.0414,0,0.0621v3l-3.5-2L4,5.45C4,5.45,4,2.45,4,2.45z M14,13v1 c-0.2626,0.0194-0.5069,0.1416-0.68,0.34c-0.2717,0.2883-0.6178,0.4959-1,0.6c-0.6147,0.1815-1.2795,0.0425-1.77-0.37l-0.39-0.35 c-0.3043-0.3026-0.7957-0.3026-1.1,0c-0.14,0.12-0.27,0.25-0.42,0.37c-0.7328,0.5856-1.7814,0.556-2.48-0.07l-0.39-0.35 c-0.2864-0.2502-0.7136-0.2502-1,0c-0.19,0.15-0.36,0.32-0.55,0.47c-0.7043,0.5215-1.6732,0.4968-2.35-0.06l-0.31-0.27 C1.4153,14.1443,1.2172,14.0346,1,14v-1c0.2585-0.032,0.5205,0.0169,0.75,0.14c0.2782,0.1722,0.5424,0.3661,0.79,0.58 c0.2051,0.2235,0.5147,0.319,0.81,0.25c0.1125-0.0333,0.2177-0.0876,0.31-0.16c0.16-0.12,0.29-0.26,0.45-0.39 c0.7106-0.5888,1.7394-0.5888,2.45,0c0.16,0.13,0.31,0.28,0.47,0.41c0.2864,0.2502,0.7136,0.2502,1,0c0.16-0.13,0.31-0.28,0.47-0.41 c0.7123-0.5943,1.7477-0.5943,2.46,0c0.15,0.13,0.29,0.27,0.44,0.39c0.2864,0.2502,0.7136,0.2502,1,0l0.47-0.41 C13.1895,13.1408,13.5886,12.9995,14,13z',
+  };
+
+  const clock = m => { m = ((Math.round(m) % 1440) + 1440) % 1440; return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`; };
+  // TripMomentUseCase.timeline：當天有時刻、沒取消的，依開始排序
+  const dayEvents = d2 => (trip.days.find(x => x.day === d2)?.events || [])
+    .filter(e => e.start && e.end && !e.isCancelled).sort((a, b) => toMin(a.start) - toMin(b.start));
+  const today = dayEvents(dayNo).map(e => ({ ...e, s: toMin(e.start), e: toMin(e.end) }));
+  const byKey = Object.fromEntries(trip.days.find(x => x.day === dayNo).events.map(e => [e.key, e]));
+  const tomorrow = dayEvents(dayNo + 1)[0];
+  const travel = leg => leg?.durationMinutes || 0;
+  const selectedRun = leg => leg?.runs && leg.selectedRunIndex != null ? leg.runs[leg.selectedRunIndex] : null;
+  const runName = r => (r?.name || '').trim() || null;
+  const legName = leg => !leg?.mode ? null : leg.mode === 'transit' && leg.transitKind ? categoryName(leg.transitKind) : S2.mode[leg.mode];
+  const counts = { events: today.length, legs: today.filter(x => travel(x.leg) > 0).length };
+
+  // Leg.journeyWindow：有選班次用那一班的發／到，否則「開始 − 路程時間」
+  function journey(ev) {
+    const r = selectedRun(ev.leg);
+    if (r && r.departure && r.arrival) {
+      const dep = toMin(r.departure), arr = toMin(r.arrival);
+      if (dep < arr && dep < ev.s) return { dep, arr };
+    }
+    const m = travel(ev.leg);
+    return m > 0 ? { dep: ev.s - m, arr: ev.s } : null;
+  }
+  // Leg.minutesLate：有班次問那一班到站晚不晚；沒有就「路程 − 空檔」
+  function late(ev) {
+    const r = selectedRun(ev.leg);
+    if (r && r.arrival) { const x = toMin(r.arrival) - ev.s; return x > 0 ? x : null; }
+    const up = ev.leg?.fromKey && byKey[ev.leg.fromKey];
+    if (!up || !up.end || !travel(ev.leg)) return null;
+    const x = travel(ev.leg) - (ev.s - toMin(up.end));
+    return x > 0 ? x : null;
+  }
+  function alternative(ev, lateBy) {
+    const leg = ev.leg, sel = selectedRun(leg);
+    let next = null;
+    if (sel?.departure) {
+      const from = toMin(sel.departure);
+      const r = (leg.runs || []).filter(x => x.departure && toMin(x.departure) > from).sort((a, b) => toMin(a.departure) - toMin(b.departure))[0];
+      if (r) next = [S2.nextRun(r.departure), runName(r)].filter(Boolean).join(' · ');
+    }
+    if (lateBy == null) return next;
+    const all = (leg?.runs || []).length > 0 && leg.runs.every(x => x.departure);
+    return [S2.lateBy(duration(lateBy)), next || (all && sel ? S2.noMoreRuns : null)].filter(Boolean).join(' · ');
+  }
+
+  // TripMomentUseCase ＋ TripActivityContent：t 是當天的第幾分鐘（含秒的小數）
+  function stateAt(t) {
+    const i = today.findIndex(x => x.s <= t && t < x.e);
+    if (i >= 0) {
+      const c = today[i], nx = today.slice(i + 1).find(x => x.e > c.e);
+      return { phase: 'live', label: S2.live, title: c.title, time: `${c.start} – ${c.end}`, place: c.place?.name,
+        to: c.e, unit: S2.remaining, prog: [c.s, c.e], ends: [c.start, c.end],
+        next: nx && S2.nextStop(nx.title), nextAt: nx?.start, foot: 'nextStop' };
+    }
+    const j = today.findIndex(x => x.s > t);
+    if (j >= 0) {
+      const up = today[j], following = today[j + 1], w = journey(up), prevEnd = j > 0 ? today[j - 1].e : null;
+      if (w && t >= Math.min(prevEnd ?? w.dep, w.dep) && t < Math.min(w.arr, up.s)) {
+        const waiting = t < w.dep, lateBy = late(up), run = runName(selectedRun(up.leg));
+        const mins = w.arr - w.dep, kind = legName(up.leg);
+        const sub = [run && kind ? S2.runTravel(kind, duration(mins)) : S2.legTravel(duration(mins)), up.leg?.note].filter(Boolean).join(' · ');
+        const win = [S2.runWindow(clock(w.dep), clock(w.arr), duration(mins)), up.leg?.note].filter(Boolean).join(' · ');
+        return { phase: 'moving', tight: lateBy != null,
+          label: lateBy != null ? S2.tooTight : waiting ? S2.waiting : S2.moving,
+          title: run || kind || S2.headingTo(up.title),
+          glyph: up.leg?.mode === 'transit' && up.leg.transitKind ? { maki: up.leg.transitKind } : { mode: up.leg?.mode },
+          place: waiting ? win : sub,
+          to: waiting ? w.dep : w.arr, unit: waiting ? S2.untilDeparture : S2.untilArrival,
+          prog: [w.dep, w.arr], ends: [S2.leavesAt(clock(w.dep)), S2.arrivesAt(clock(w.arr))],
+          alt: alternative(up, lateBy), next: S2.destination(up.title), nextAt: up.start, foot: 'destination' };
+      }
+      const sel = selectedRun(up.leg);
+      return { phase: 'soon', label: S2.upcoming, title: up.title, time: `${up.start} – ${up.end}`, place: up.place?.name,
+        to: up.s, unit: S2.untilStart, prog: null, ends: [S2.now, S2.startsAt(up.start)],
+        next: up.leg && S2.beforeLeaving(up.leg.note || runName(sel) || up.title),
+        nextAt: up.leg && (sel?.departure ? S2.leavesAt(sel.departure)
+          : [up.leg.mode && S2.mode[up.leg.mode], travel(up.leg) > 0 ? duration(travel(up.leg)) : null].filter(Boolean).join(' ') || null),
+        foot: 'nextStop', following };
+    }
+    return { phase: 'done', label: S2.done, title: S2.doneTitle, place: S2.doneCounts(counts.events, counts.legs),
+      fixed: tomorrow?.start, unit: tomorrow ? S2.tomorrowFirstLabel : null, noProgress: true,
+      next: tomorrow && S2.tomorrowFirst(tomorrow.title), nextAt: tomorrow?.start, foot: 'nextStop' };
+  }
+
+  const DOT = { live: 'var(--success)', soon: 'var(--warning)', moving: 'var(--brand-teal)', done: 'rgba(255,255,255,.45)' };
+  const GLYPH = {
+    walking: '<svg class="ln" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2" fill="currentColor" stroke="none"/><path d="M11.5 8.5 9 13l3 2 1 6M13.5 8.5l2 3.5 3 1M12 15l-3 6"/></svg>',
+    transit: '<svg class="ln" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="12" rx="2"/><path d="M6 11h12M9.5 19.5 8 22M14.5 19.5 16 22"/></svg>',
+    other: '<svg class="dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>',
+    idle: '<svg class="ln" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3 1.8"/></svg>',
+  };
+  const FOOT = { nextStop, destination: '<path d="M12 3.4v6.4"/><circle cx="12" cy="14.6" r="3.6"/>' };
+  const ALT = { clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3 1.8"/>', warning: '<path d="M12 4 2.5 20h19zM12 10v4M12 17.2v.1"/>' };
+  const timer = s => { s = Math.max(0, Math.round(s)); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = String(s % 60).padStart(2, '0');
+    return h ? `${h}:${String(m).padStart(2, '0')}:${x}` : `${m}:${x}`; };
+
+  function body(st, tSec) {
+    const t = tSec / 60;
+    const glyph = st.glyph ? (st.glyph.maki ? `<svg class="mk" viewBox="0 0 15 15"><path d="${MAKI[st.glyph.maki]}"/></svg>` : GLYPH[st.glyph.mode] || '') : '';
+    const sub = [st.time, st.place].filter(Boolean).join(' · ');
+    const number = st.to != null ? timer(st.to * 60 - tSec) : st.fixed;
+    const frac = st.prog ? Math.min(1, Math.max(0, (t - st.prog[0]) / (st.prog[1] - st.prog[0]))) : 0;
+    return `
+    <div class="la-main">
+      <div class="la-l"><div class="la-state"><i style="background:${st.tight ? 'var(--warning)' : DOT[st.phase]}"></i>${fmt(st.label)}</div>
+        <div class="la-title">${glyph ? `<span class="la-gl" style="color:${st.tight ? 'var(--warning)' : '#fff'}">${glyph}</span>` : ''}${fmt(st.title)}</div>
+        ${sub ? `<div class="la-sub">${fmt(sub)}</div>` : ''}</div>
+      <div class="la-count">${number ? `<div class="la-n">${number}</div>` : ''}${st.unit ? `<div class="la-u">${fmt(st.unit)}</div>` : ''}</div>
+    </div>
+    ${st.noProgress ? '' : `<div class="la-bar"><span style="width:${(frac * 100).toFixed(1)}%"></span></div>
+    <div class="la-ends"><span>${fmt(st.ends[0])}</span><span>${fmt(st.ends[1])}</span></div>`}
+    ${st.alt ? `<div class="la-alt${st.tight ? ' warn' : ''}"><svg viewBox="0 0 24 24">${ALT[st.tight ? 'warning' : 'clock']}</svg><span>${fmt(st.alt)}</span></div>` : ''}
+    ${st.next ? `<div class="la-rule"></div><div class="la-next"><svg viewBox="0 0 24 24">${FOOT[st.foot]}</svg>
+      <span class="nm">${fmt(st.next)}</span>${st.nextAt ? `<span class="tm">${fmt(st.nextAt)}</span>` : ''}</div>` : ''}`;
+  }
+
+  const la = d.querySelector('.la'), head = la.querySelector('.la-head'), timeEl = d.querySelector('.time');
+  const MIN = toMin('07:00') * 60, MAX = toMin('21:00') * 60;
+  let tSec = toMin(now) * 60 + 12;            // 跟截圖同一幀：10:41 又 12 秒
+  let shown = Math.floor(tSec / 60), syncBar = null;
+  const draw = () => {
+    while (head.nextSibling) head.nextSibling.remove();
+    head.insertAdjacentHTML('afterend', body(stateAt(tSec / 60), tSec));
+    const m = Math.floor(tSec / 60);
+    if (m !== shown) { shown = m; timeEl.textContent = `${Math.floor(m / 60)}:${String(m % 60).padStart(2, '0')}`; drawNotes(tSec / 60); }
+    syncBar?.();
+  };
+  // 通知：點一則＝展開內文（iOS 點開預覽那樣），再點收回；點疊起來那一疊＝展開整組，「顯示較少」收回
+  ntEl.addEventListener('click', (e) => {
+    if (e.target.closest('[data-less]')) { ntGroupOpen = false; drawNotes(tSec / 60); return; }
+    if (e.target.closest('[data-pile]')) { ntGroupOpen = true; drawNotes(tSec / 60); return; }
+    const c = e.target.closest('.nt-card'); if (!c) return;
+    const id = +c.dataset.id; ntOpen.has(id) ? ntOpen.delete(id) : ntOpen.add(id); c.classList.toggle('open');
+  });
+  const setT = v => { tSec = Math.min(MAX, Math.max(MIN, v)); draw(); };
+  // 倒數與進度條由系統每秒自己走
+  setInterval(() => { if (!document.hidden && !dragging && tSec < MAX) setT(tSec + 1); }, 1000);
+
+  // 撥時間的那一條：07:00–21:00，拖、點軌道、鍵盤（←→ 15 分、PageUp/Down 1 小時、Home/End）。跟拖卡片走同一個 setT。
+  d.insertAdjacentHTML('beforeend', `<div class="lk-scrub" role="slider" tabindex="0" aria-label="${S2.scrub}"
+    aria-valuemin="${MIN / 60}" aria-valuemax="${MAX / 60}"><div class="lk-scrub-t"></div>
+    <div class="lk-scrub-track"><div class="lk-scrub-fill"></div><div class="lk-scrub-thumb"></div></div></div>`);
+  const bar = d.querySelector('.lk-scrub'), track = bar.querySelector('.lk-scrub-track');
+  syncBar = () => {
+    const f = (tSec - MIN) / (MAX - MIN), m = Math.floor(tSec / 60), label = `${Math.floor(m / 60)}:${String(m % 60).padStart(2, '0')}`;
+    bar.querySelector('.lk-scrub-fill').style.width = `${(f * 100).toFixed(2)}%`;
+    bar.querySelector('.lk-scrub-thumb').style.left = `${(f * 100).toFixed(2)}%`;
+    bar.querySelector('.lk-scrub-t').textContent = label;
+    bar.setAttribute('aria-valuenow', m); bar.setAttribute('aria-valuetext', label);
+  };
+  syncBar();
+  const fromX = x => { const r = track.getBoundingClientRect(); const f = Math.min(1, Math.max(0, (x - r.left) / r.width));
+    return Math.round((MIN + f * (MAX - MIN)) / 60) * 60 + (tSec % 60); };
+  let barPid = null;
+  bar.addEventListener('pointerdown', (e) => { barPid = e.pointerId; bar.classList.add('active'); dragging = true;
+    try { bar.setPointerCapture(barPid); } catch {} setT(fromX(e.clientX)); });
+  bar.addEventListener('pointermove', (e) => { if (e.pointerId === barPid) setT(fromX(e.clientX)); });
+  const barEnd = (e) => { if (e.pointerId !== barPid) return; barPid = null; dragging = false; bar.classList.remove('active'); };
+  bar.addEventListener('pointerup', barEnd); bar.addEventListener('pointercancel', barEnd);
+  bar.addEventListener('keydown', (e) => {
+    const step = { ArrowRight: 15, ArrowUp: 15, ArrowLeft: -15, ArrowDown: -15, PageUp: 60, PageDown: -60 }[e.key];
+    if (step) setT(tSec + step * 60);
+    else if (e.key === 'Home') setT(MIN); else if (e.key === 'End') setT(MAX); else return;
+    e.preventDefault();
+  });
+  const used = () => {};
+
+  // 抬頭的「更新」：AdvanceTripActivityIntent——把卡片拉回此刻，不開 App
+  const refresh = la.querySelector('.la-refresh');
+  refresh.dataset.tap = '';
+  refresh.addEventListener('click', (e) => { e.stopPropagation(); refresh.classList.remove('spin'); void refresh.offsetWidth; refresh.classList.add('spin'); draw(); });
+
+  let dragging = false, x0 = 0, t0 = 0, moved = false, pid = null;
+  la.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('.la-refresh')) return;
+    pid = e.pointerId; x0 = e.clientX; t0 = tSec; moved = false; dragging = true;
+  });
+  la.addEventListener('pointermove', (e) => {
+    if (!dragging || e.pointerId !== pid) return;
+    const dx = e.clientX - x0;
+    if (!moved && Math.abs(dx) < 6) return;
+    if (!moved) { moved = true; try { la.setPointerCapture(pid); } catch {} used(); }
+    setT(t0 + Math.round(dx) * 60);             // 1px＝1 分
+  });
+  const end = (e) => {
+    if (!dragging || e.pointerId !== pid) return;
+    dragging = false;
+    if (!moved && e.type === 'pointerup') { used(); setT(tSec + 15 * 60); }   // 點一下＝往後 15 分
+  };
+  la.addEventListener('pointerup', end);
+  la.addEventListener('pointercancel', end);
+}
 </script>
 </body>
 </html>

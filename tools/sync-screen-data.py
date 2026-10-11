@@ -22,4 +22,10 @@ for e in domain['entries']:
         for l in LANGS:
             cats[l][k.split('.')[-1]] = e.get(l)
 json.dump(cats, open(os.path.join(here, 'categories.json'), 'w'), ensure_ascii=False, indent=1)
+# 首頁互動示意也讀同一份範本（assets/data/sanyo-<zh|en|ja>.json，壓成一行）
+site = os.path.join(os.path.dirname(__file__), '..', 'assets', 'data')
+for l, k in (('zh-Hant-TW', 'zh'), ('en', 'en'), ('ja', 'ja')):
+    d = json.load(open(os.path.join(here, f'sanyo.{l}.json'), encoding='utf-8'))
+    json.dump(d, open(os.path.join(site, f'sanyo-{k}.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+json.dump(cats, open(os.path.join(site, 'categories.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
 print('synced', LANGS, len(cats['en']), 'categories')

@@ -59,12 +59,61 @@
   .leg svg.maki { fill: var(--muted); fill-rule: evenodd; }
   .leg svg.line { fill: none; stroke: var(--muted); stroke-linecap: round; stroke-linejoin: round; }
   .leg span { font: 400 var(--t-xs)/14.33px var(--font); color: var(--muted); white-space: pre; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+
+  /* ── 互動模式與 ?tab= 的那幾段（TripOverviewMetrics／OverviewCells／OverviewHeaderView） ── */
+  .row.x .name i { background: var(--border); }
+  .row.x .name span { color: var(--muted); text-decoration: line-through; }
+  .pager { position: absolute; left: 0; width: 402px; top: 183px; bottom: 83px; display: flex; overflow-x: auto; overflow-y: hidden;
+    scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .pager::-webkit-scrollbar, .page::-webkit-scrollbar { display: none; }
+  .page { flex: 0 0 402px; height: 100%; overflow-y: auto; overflow-x: hidden; padding: 0 20px; scroll-snap-align: start; scrollbar-width: none; }
+  .page .hdr { position: sticky; top: 0; z-index: 1; background: var(--page); } /* plain table 的分組標題會釘住 */
+  .hdr.key { min-height: 46px; }
+  .hdr.key .tc b { font: 700 var(--t-sm)/16px var(--font); color: var(--ink); letter-spacing: 0; }
+  .hdr .zone { font: 400 var(--t-xs)/14px var(--font); color: var(--muted); white-space: nowrap; }
+  .hdr.past .tc b, .hdr.past .tc span { color: var(--muted-on-sunken); }
+  .hdr.past svg { stroke: var(--muted-on-sunken); }
+  .di { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+  /* OverviewActionCell：上 10、最矮 52、虛線 4/3、圓角 8；圖示 16、間距 6 */
+  .act { position: relative; margin-top: 10px; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 6px;
+    font: 600 var(--t-sm)/16px var(--font); color: var(--muted); }
+  .act .dash { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--border); stroke-dasharray: 4 3; }
+  .act .dash rect { width: calc(100% - 1px); height: calc(100% - 1px); }
+  .act .di { width: 16px; height: 16px; }
+  /* OverviewFileCell：上下 10、最矮 52、圖示 18、間距 10；分隔線從 32 起 */
+  .frow, .trow { position: relative; display: flex; align-items: center; gap: 10px; }
+  .frow { min-height: 52px; padding: 10px 4px; }
+  .frow::after, .trow::after { content: ""; position: absolute; right: 0; bottom: 0; height: 1px; background: var(--border-soft); }
+  .frow::after { left: 32px; } .trow::after { left: 34px; }
+  .fmain, .tmain { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; }
+  .fi { flex: none; width: 18px; height: 18px; color: var(--muted); }
+  .ft, .tt { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 1px; }
+  .ft b { font: 600 var(--t-sm)/16px var(--font); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ft span, .tt span { font: 400 var(--t-xs)/14px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .frow.x .ft b { color: var(--muted); text-decoration: line-through; }
+  /* GoToEventButton：寬 44、最矮 44、圖示 15 */
+  .goev { flex: none; width: 44px; min-height: 44px; margin: -10px 0; display: grid; place-items: center; color: var(--muted); }
+  .goev svg { width: 15px; height: 15px; }
+  .goev svg.mk { fill: var(--muted); fill-rule: evenodd; }
+  /* OverviewTodoCell：上下 9、最矮 44；勾選框 22、框線 1.5、勾 13；分隔線從 34 起 */
+  .trow { min-height: 44px; padding: 9px 4px; }
+  .box { flex: none; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--border); display: grid; place-items: center; }
+  .box .di { width: 13px; height: 13px; color: #fff; }
+  .trow.done .box { background: var(--accent-ink); border-color: var(--accent-ink); }
+  .tt b { font: 400 var(--t-sm)/16px var(--font); color: var(--ink); }
+  .trow.done .tt b { color: var(--muted); text-decoration: line-through; }
+  .box.ring { border: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='10.25' fill='none' stroke='%23dbd5cd' stroke-width='1.5' stroke-dasharray='3 3'/%3E%3C/svg%3E"); }
+  .tin { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 400 var(--t-sm)/16px var(--font); color: var(--ink); padding: 0; }
+  .tin::placeholder { color: rgba(60, 60, 67, .3); }
+  /* 分段控制的滑塊：第一格量自截圖（右邊讓 4.67），另兩格照同一個間隙推 */
+  .seg div.on[data-pos="1"] { margin: 0 2.33px; }
+  .seg div.on[data-pos="2"] { margin: 0 0 0 4.67px; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { fmt, params, lang, t, loadTrip, chrome, swatchClass, toMin, ready } from './chrome.js';
+import { fmt, params, lang, t, loadTrip, chrome, swatchClass, toMin, ready, interactive, go, ICON } from './chrome.js';
 
 // EventTypeIcons.swift（Maki，15 格，even-odd 填色）——只收這份範本用得到的類型
 const MAKI = {
@@ -158,9 +207,11 @@ function legIcon(lg) {
   if (lg.mode === 'transit' && lg.transitKind && MAKI[lg.transitKind]) return maki(lg.transitKind);
   return line({ walking: 'walking', transit: 'transit', other: 'ellipsis' }[lg.mode] || 'transit', 1.8);
 }
-const legRow = (lg, gap, key) => `<div class="leg">${legIcon(lg)}<span>${fmt(legLabel(lg, gap, key))}</span></div>`;
-const eventRow = (lead, title, cat, done) =>
-  `<div class="row${done ? ' done' : ''}"><div class="lead"${/\d/.test(lead) ? ' lang="en"' : ''}>${fmt(lead)}</div>
+// data-leg／data-ev 只給互動模式找點的是哪一列（不影響畫面）
+const legRow = (lg, gap, key, toKey) => `<div class="leg"${lg.runs?.length ? ` data-leg="${toKey}"` : ''}>${legIcon(lg)}<span>${fmt(legLabel(lg, gap, key))}</span></div>`;
+// 已取消：點變成 border 色、名字劃線變淡（EventRowView.configure：dot = isCancelled ? .tzBorder : swatch）
+const eventRow = (lead, title, cat, done, key, cancelled) =>
+  `<div class="row${done ? ' done' : ''}${cancelled ? ' x' : ''}"${key ? ` data-ev="${key}"` : ''}><div class="lead"${/\d/.test(lead) ? ' lang="en"' : ''}>${fmt(lead)}</div>
     <div class="name ${swatchClass(cat)}"><i></i><span>${fmt(title)}</span></div>${MAKI[cat] ? maki(cat) : ''}</div>`;
 
 function dayRows(n) {
@@ -173,23 +224,31 @@ function dayRows(n) {
   })).sort((a, b) => a.s - b.s);
   const isDone = end => n < todayNo || (n === todayNo && end <= nowMin);
   let html = '', count = 0;
-  for (const a of allDay) { html += eventRow(s.allDay, a.title, a.category, n < todayNo); count++; }
-  for (const a of allDay.filter(a => (a.openingDays || []).includes(n))) { html += eventRow(s.opening, a.title, a.category, n < todayNo); count++; }
+  for (const a of allDay) { html += eventRow(s.allDay, a.title, a.category, n < todayNo, a.key); count++; }
+  for (const a of allDay.filter(a => (a.openingDays || []).includes(n))) { html += eventRow(s.opening, a.title, a.category, n < todayNo, a.key); count++; }
+  // 已取消的行程不當路程的端點（OverviewSections.rows(for:)：live = cluster.filter { !$0.isCancelled }）
+  const live = timed.filter(e => !e.isCancelled);
   timed.forEach((e, i) => {
-    const up = timed.find(x => x.key === e.leg?.fromKey) || timed[i - 1];
-    if (e.leg?.mode) html += legRow(e.leg, up ? Math.max(0, e.s - up.e2) : null, e.key);
-    html += eventRow(`${clock(e.s)} – ${clock(e.e2)}`, e.title, e.category, isDone(e.e2));
+    const prev = live.filter(x => x.s < e.s).pop();
+    const named = timed.find(x => x.key === e.leg?.fromKey);
+    const up = (named && !named.isCancelled ? named : null) || prev || timed[i - 1];
+    if (e.leg?.mode && !e.isCancelled) html += legRow(e.leg, up ? Math.max(0, e.s - up.e2) : null, e.key, e.key);
+    html += eventRow(`${clock(e.s)} – ${clock(e.e2)}`, e.title, e.category, isDone(e.e2), e.key, e.isCancelled);
     count++;
   });
-  const last = timed[timed.length - 1];
+  const last = live[live.length - 1];
   for (const a of allDay.filter(a => (a.closingDays || []).includes(n))) {
     if (last?.closingLeg?.mode) html += legRow(last.closingLeg, 1440 - last.e2, `${last.key}:closing`);
-    html += eventRow(s.closing, a.title, a.category, n < todayNo);
+    html += eventRow(s.closing, a.title, a.category, n < todayNo, a.key);
     count++;
   }
   return { html, count };
 }
 
+const tabParam = { files: 1, todos: 2 }[params.get('tab')];
+if (interactive || tabParam) {
+  await buildPager();
+} else {
 let table = '';
 for (let n = todayNo; n <= trip.dayCount; n++) {
   const dt = dateOf(n), { html, count } = dayRows(n), open = n === todayNo;
@@ -199,6 +258,190 @@ for (let n = todayNo; n <= trip.dayCount; n++) {
     <svg viewBox="0 0 24 24">${open ? LINE.chevronDown : LINE.chevronRight}</svg></div>${open ? html : ''}`;
 }
 d.insertAdjacentHTML('beforeend', `<div class="table">${table}</div>`);
+}
+
+/* ── 互動模式（首頁的 iPhone 外框）與 ?tab=files|todos 的靜態截圖 ─────────────────────────
+   照 App 的 TripOverviewView／OverviewSections／OverviewContentGroups：
+   - 三段閱讀並排在一條橫向軌道上，分段控制與左右滑做同一件事（TripOverviewView 檔頭：「Three lists side by
+     side」）；每一段各自留著捲動位置。這裡用 CSS scroll-snap 當那條軌道。
+   - 旅程：待排行程（恆展開、沒有 chevron、最後一列「＋ 新增行程」）→「日程行程 · N 項 · 時區」→ 每一天。
+     **已過去的日子預設收合，其餘展開**（OverviewSections.header：isExpanded = toggled[kind] ?? !isPast），點標題切換；
+     收合狀態**每一段各記各的**（TripOverviewView.toggled[segment]，C8-1）。一打開停在今天（landOnTodayIfNeeded，只有旅程那一段）。
+   - 附件：重要附件（trip.links，最後一列虛線「新增附件」）→「日程附件 · N 項 · 時區」→ 只列有附件的日子。
+     第二行 = 網域 · 所屬行程（AttachmentRowText.meta，www. 拿掉）；路程的附件寫「上一站 → 這一站」，右邊那顆開的是路程
+     （OverviewContentGroups.detail、TripOverviewView `cell.onGoToEvent`）。所屬行程已取消時劃線。
+   - 待辦：重要事項（trip.todos，最後一列是一列空白的待辦）→「日程待辦 · 已完成/總數」→ 每一天，標籤都是「已完成/總數」
+     （OverviewSections.todoSections）。打勾當下畫上、不換位置（didSelectRowAt 的 optimistic 那一段）。
+   - 點行程列開詳情、點有班次的路程列開路程紙（didSelectRowAt → tripOverviewDidTapEvent／DidTapLeg）。
+   打勾、收合、目前在哪一段記在 sessionStorage（tz-demo:overview），從詳情回來還在。 */
+async function buildPager() {
+  const U = {
+    'zh-Hant-TW': { unscheduled: '待排行程', planEvents: '日程行程', planFiles: '日程附件', planTodos: '日程待辦',
+      keyFiles: '重要附件', keyTodos: '重要事項', addEvent: '新增行程', addFile: '新增附件', addTodo: '新增待辦', rowUnscheduled: '未定' },
+    en: { unscheduled: 'Unscheduled', planEvents: 'Scheduled events', planFiles: 'Files for the day', planTodos: 'To-dos for the day',
+      keyFiles: 'Key Files', keyTodos: 'Key To-Dos', addEvent: 'Add event', addFile: 'Add attachment', addTodo: 'Add to-do', rowUnscheduled: 'Unscheduled' },
+    ja: { unscheduled: '未定の予定', planEvents: '日程の予定', planFiles: '日程の添付', planTodos: '日程のやること',
+      keyFiles: '重要なファイル', keyTodos: '重要なやること', addEvent: '予定を追加', addFile: '添付を追加', addTodo: 'やることを追加', rowUnscheduled: '未定' },
+  }[lang] || {};
+  // PrimaryTimeZone.name：系統的短名字；短名字只是縮寫（JST）時退回完整名字
+  const zoneName = (() => {
+    const loc = { 'zh-Hant-TW': 'zh-Hant-TW', en: 'en', ja: 'ja' }[lang];
+    const nm = style => new Intl.DateTimeFormat(loc, { timeZone: trip.defaultTimeZoneID, timeZoneName: style })
+      .formatToParts(new Date()).find(p => p.type === 'timeZoneName')?.value;
+    const short = nm('shortGeneric');
+    return short && !/^[A-Z0-9+\-:]+$/.test(short) ? short : nm('longGeneric');
+  })();
+
+  // DesignIcon.swift
+  const DI = {
+    code: ['<path d="m9 8-5 4 5 4M15 8l5 4-5 4M13.5 5l-3 14"/>', 1.8],
+    upload: ['<path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/>', 1.8],
+    plus: ['<path d="M12 5v14M5 12h14"/>', 2],
+    check: ['<path d="m5 13 5 5 9-11"/>', 2.6],
+    calendar: [ICON.calendar, 1.7],
+    readingTimeline: [ICON.readingTimeline, 1.7],
+    chevronRight: ['<path d="M9 5l7 7-7 7"/>', 2],
+  };
+  const di = (n, cls = '') => `<svg class="di ${cls}" viewBox="0 0 24 24" style="stroke-width:${DI[n][1]}">${DI[n][0]}</svg>`;
+
+  // ── 狀態 ──
+  const KEY = 'tz-demo:overview';
+  let st = { tab: tabParam || 0, toggled: [{}, {}, {}], done: {}, added: [] };
+  // **只有從另一支畫面回來時才接上次的狀態**（例如點行程開詳情再關掉）。首頁上兩支手機（hero、04）同源、共用
+  // sessionStorage——剛載入時一律從截圖那個樣子開始，不然 04 那支會打開在 hero 上切過去的那一段。
+  const navType = performance.getEntriesByType?.('navigation')[0]?.type;
+  const back = navType === 'back_forward'
+    || (/\/screens\/[\w-]+\.html/.test(document.referrer) && !/overview\.html/.test(document.referrer));
+  if (interactive && back) try { Object.assign(st, JSON.parse(sessionStorage.getItem(KEY) || '{}')); } catch {}
+  if (tabParam) st.tab = tabParam;
+  const save = () => { if (interactive) try { sessionStorage.setItem(KEY, JSON.stringify(st)); } catch {} };
+
+  const allTimed = trip.days.flatMap(x => x.events.map(e => ({ ...e, day: x.day })));
+  const byKey = Object.fromEntries([...allTimed, ...trip.allDayEvents.map(a => ({ ...a, day: a.fromDay }))].map(e => [e.key, e]));
+  const isPast = n => n < todayNo;
+  const isOpen = (tab, n) => st.toggled[tab][n] ?? !isPast(n);
+  const dayFace = n => { const dt = dateOf(n); return { title: n === todayNo ? t.today : t.day(n),
+    sub: `${t.shortDate(dt.getMonth() + 1, dt.getDate())} ${t.weekday[dt.getDay()]}` }; };
+
+  // 標題列：日期那一種（xs bold muted、可收合）／不綁日期那一種（sm bold ink、沒有 chevron）——OverviewHeaderView.configure
+  const dayHdr = (tab, n, tag) => { const f = dayFace(n), open = isOpen(tab, n);
+    return `<div class="hdr${isPast(n) ? ' past' : ''}" data-day="${n}" data-tap><div class="tc"><b>${f.title}</b><span>${f.sub}</span></div>
+      <div class="tag">${tag}</div><div class="sp"></div>
+      <svg viewBox="0 0 24 24">${open ? LINE.chevronDown : LINE.chevronRight}</svg></div>`; };
+  const keyHdr = (title, tag, zone) => `<div class="hdr key"><div class="tc"><b>${fmt(title)}</b></div>
+      ${tag !== null ? `<div class="tag">${tag}</div>` : ''}<div class="sp"></div>${zone ? `<div class="zone">${fmt(zone)}</div>` : ''}</div>`;
+  const action = (label, icon) => `<div class="act" data-tap><svg class="dash"><rect x=".5" y=".5" rx="8"/></svg>${di(icon)}<span>${label}</span></div>`;
+  const goEv = (icon, attr) => `<div class="goev" ${attr} data-tap>${icon}</div>`;
+  const makiIc = k => MAKI[k] ? `<svg class="mk" viewBox="0 0 15 15"><path d="${MAKI[k]}"/></svg>` : di('calendar');
+
+  // ── 行程 ──
+  function itinerary() {
+    const un = trip.unscheduledEvents;
+    let h = `<section>${keyHdr(U.unscheduled, s.count(un.length))}${un.map(u =>
+      eventRow(U.rowUnscheduled, u.title, u.category, false)).join('')}${action(U.addEvent, 'plus')}</section>`;
+    const per = []; for (let n = 1; n <= trip.dayCount; n++) per.push([n, dayRows(n)]);
+    h += `<section>${keyHdr(U.planEvents, s.count(per.reduce((a, [, x]) => a + x.count, 0)), zoneName)}</section>`;
+    for (const [n, x] of per) h += `<section>${dayHdr(0, n, s.count(x.count))}${isOpen(0, n) ? x.html : ''}</section>`;
+    return h;
+  }
+
+  // ── 附件 ──
+  const host = u => { try { const h = new URL(u).host; return h.startsWith('www.') ? h.slice(4) : h; } catch { return null; } };
+  const fileDays = new Map();
+  for (let n = 1; n <= trip.dayCount; n++) {
+    const list = [];
+    for (const a of trip.allDayEvents.filter(a => a.fromDay === n)) (a.links || []).forEach(l => list.push({ l, ev: a }));
+    const evs = (trip.days.find(x => x.day === n)?.events || []).slice().sort((a, b) => toMin(a.start) - toMin(b.start));
+    for (const e of evs) {
+      (e.leg?.links || []).forEach(l => list.push({ l, ev: e, up: byKey[e.leg.fromKey] }));
+      (e.links || []).forEach(l => list.push({ l, ev: e }));
+    }
+    if (list.length) fileDays.set(n, list);
+  }
+  const fileRow = ({ l, ev, up }) => {
+    const detail = ev ? (up ? `${up.title} → ${ev.title}` : ev.title) : null;
+    const meta = [host(l.url), detail].filter(Boolean).join(' · ');
+    const go = ev ? goEv(up ? di('readingTimeline') : makiIc(ev.category), up && ev.leg?.runs?.length ? `data-leg="${ev.key}"` : `data-ev="${ev.key}"`) : '';
+    return `<div class="frow${ev?.isCancelled ? ' x' : ''}" data-url="${l.url}" data-tap><div class="fmain">${di('code', 'fi')}
+      <div class="ft"><b>${fmt(l.title || l.url)}</b><span>${fmt(meta)}</span></div></div>${go}</div>`;
+  };
+  function files() {
+    let h = `<section>${keyHdr(U.keyFiles, s.count(trip.links.length))}${trip.links.map(l => fileRow({ l })).join('')}${action(U.addFile, 'upload')}</section>`;
+    const total = [...fileDays.values()].reduce((a, x) => a + x.length, 0);
+    h += `<section>${keyHdr(U.planFiles, s.count(total), zoneName)}</section>`;
+    for (const [n, list] of fileDays) h += `<section>${dayHdr(1, n, s.count(list.length))}${isOpen(1, n) ? list.map(fileRow).join('') : ''}</section>`;
+    return h;
+  }
+
+  // ── 待辦 ──
+  const todoDays = new Map();
+  for (let n = 1; n <= trip.dayCount; n++) {
+    const list = [];
+    for (const a of trip.allDayEvents.filter(a => a.fromDay === n)) (a.todos || []).forEach((x, i) => list.push({ id: `${a.key}-${i}`, text: x, ev: a }));
+    const evs = (trip.days.find(x => x.day === n)?.events || []).slice().sort((a, b) => toMin(a.start) - toMin(b.start));
+    for (const e of evs) (e.todos || []).forEach((x, i) => list.push({ id: `${e.key}-${i}`, text: x, ev: e }));
+    if (list.length) todoDays.set(n, list);
+  }
+  const keyTodos = () => [...trip.todos.map((x, i) => ({ id: `k${i}`, text: x })), ...st.added.map((x, i) => ({ id: `a${i}`, text: x }))];
+  const tally = list => `${list.filter(x => st.done[x.id]).length}/${list.length}`;
+  const todoRow = x => { const done = !!st.done[x.id];
+    return `<div class="trow${done ? ' done' : ''}" data-todo="${x.id}" data-tap><div class="tmain"><div class="box">${done ? di('check') : ''}</div>
+      <div class="tt"><b>${fmt(x.text)}</b>${x.ev ? `<span>${fmt(x.ev.title)}</span>` : ''}</div></div>
+      ${x.ev ? goEv(di('calendar'), `data-ev="${x.ev.key}"`) : ''}</div>`; };
+  function todos() {
+    const k = keyTodos();
+    let h = `<section>${keyHdr(U.keyTodos, tally(k))}${k.map(todoRow).join('')}
+      <div class="trow comp"><div class="tmain"><div class="box ring"></div><input class="tin" enterkeyhint="next" placeholder="${U.addTodo}"></div></div></section>`;
+    h += `<section>${keyHdr(U.planTodos, tally([...todoDays.values()].flat()), zoneName)}</section>`;
+    for (const [n, list] of todoDays) h += `<section>${dayHdr(2, n, tally(list))}${isOpen(2, n) ? list.map(todoRow).join('') : ''}</section>`;
+    return h;
+  }
+
+  // ── 軌道 ──
+  const BUILD = [itinerary, files, todos];
+  d.insertAdjacentHTML('beforeend', `<div class="pager">${BUILD.map((_, i) => `<div class="page" data-page="${i}"></div>`).join('')}</div>`);
+  const pager = d.querySelector('.pager'), pages = [...d.querySelectorAll('.page')], segs = [...d.querySelectorAll('.seg div')];
+  const draw = i => { const y = pages[i].scrollTop; pages[i].innerHTML = BUILD[i](); pages[i].scrollTop = y; };
+  BUILD.forEach((_, i) => draw(i));
+  const mark = i => segs.forEach((x, j) => { x.classList.toggle('on', j === i); x.dataset.pos = j; });
+  const land = () => { const h = pages[0].querySelector(`[data-day="${todayNo}"]`); if (h) pages[0].scrollTop = h.parentElement.offsetTop; };
+  land();
+  pager.scrollLeft = st.tab * 402;
+  mark(st.tab);
+  if (!interactive) return;
+
+  segs.forEach((x, i) => { x.setAttribute('data-tap', ''); x.addEventListener('click', () => {
+    mark(i); st.tab = i; save(); pager.scrollTo({ left: i * 402, behavior: 'smooth' }); }); });
+  // 滑到一半就換滑塊（followPager），放開才算數
+  let settle;
+  pager.addEventListener('scroll', () => {
+    const i = Math.round(pager.scrollLeft / 402); mark(i);
+    clearTimeout(settle); settle = setTimeout(() => { if (st.tab !== i) { st.tab = i; save(); } }, 120);
+  }, { passive: true });
+
+  pager.addEventListener('click', e => {
+    const page = e.target.closest('.page'); if (!page) return;
+    const tab = +page.dataset.page;
+    const g = e.target.closest('.goev');
+    if (g) { if (g.dataset.leg) go('leg', `event=${g.dataset.leg}`); else go('event', `event=${g.dataset.ev}`); return; }
+    const hd = e.target.closest('[data-day]');
+    if (hd) { const n = +hd.dataset.day; st.toggled[tab][n] = !isOpen(tab, n); save(); draw(tab); return; }
+    const td = e.target.closest('[data-todo]');
+    if (td) { const id = td.dataset.todo; st.done[id] = !st.done[id]; if (!st.done[id]) delete st.done[id]; save(); draw(tab); return; }
+    const lg = e.target.closest('[data-leg]');
+    if (lg) { go('leg', `event=${lg.dataset.leg}`); return; }
+    const ev = e.target.closest('[data-ev]');
+    if (ev) { go('event', `event=${ev.dataset.ev}`); return; }
+    const f = e.target.closest('[data-url]');
+    if (f) window.open(f.dataset.url, '_blank', 'noopener');
+  });
+  // 待辦最後那一列空白：寫完 Return 就送出、欄位清空、焦點留著（OverviewTodoComposerCell）
+  pager.addEventListener('keydown', e => {
+    if (e.key !== 'Enter' || !e.target.matches('.tin')) return;
+    const v = e.target.value.trim(); if (!v) return;
+    st.added.push(v); save(); draw(2); pages[2].querySelector('.tin')?.focus({ preventScroll: true });   // 不帶 preventScroll 會連首頁一起捲
+  });
+}
 
 chrome(d, { tab: 0 });
 ready();

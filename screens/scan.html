@@ -76,7 +76,7 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, params, chrome, ready, fmt } from './chrome.js';
+import { lang, params, chrome, ready, fmt, interactive } from './chrome.js';
 
 const d = document.getElementById('d');
 const shared = params.get('shared') !== '0';
@@ -137,14 +137,15 @@ d.insertAdjacentHTML('beforeend', `<div class="wg-title">${s.title}</div>
 
 const who = r => r.who === 'me' ? { name: s.me, initial: [...s.me][0], sw: 'sw-see' }
   : { name: MATE[0], initial: MATE[1], sw: 'sw-eat' };
-const rows = SAMPLE.map(r => {
+const rowHTML = (r, i) => {
   const w = who(r);
   const content = r.url ? `<span class="lat"><b>${r.url[0]}</b><code>${r.url[1]}</code></span>` : fmt(r.text).replace(/-/g, '<span class="lat">-</span>');
-  return `<div class="row"><div class="ty ${r.url ? 'url' : 'text'}">${ic(r.url ? 'link' : 'text')}</div>
+  return `<div class="row" data-r="${i}"><div class="ty ${r.url ? 'url' : 'text'}">${ic(r.url ? 'link' : 'text')}</div>
     <div class="main"><div class="ct">${content}</div>
       <div class="meta">${shared ? `<span class="av ${w.sw}">${w.initial}</span>${w.name} · ` : ''}${r.time}</div></div>
     ${ic('chevronRight', 'chev')}</div>`;
-}).join('');
+};
+const rows = SAMPLE.map(rowHTML).join('');
 
 d.insertAdjacentHTML('beforeend', `<div class="page">
   <div class="card"><div class="card-top"><div class="card-ico">${ic('scan')}</div>
@@ -159,6 +160,232 @@ if (words.scrollWidth > words.clientWidth + .5) document.getElementById('head').
 
 chrome(d, { tab: 3 });
 ready();
+
+/* ── 互動模式 ─────────────────────────────────────────────────────────────
+   規則出處（App repo …/Modules/）：
+   - Widgets/…/Scan/ScannerViewController.swift：滿版深色相機；取景框 250、中心在畫面高 44%、四角 40／4／圓角 16、框外壓暗 35%；
+     左上 ✕（44 圓、黑 45%）、標題、框下提示（widgets.scanner.hint）、底下手電筒／從相簿選；掃到時框變主色（frame == .hit）
+     → 結果紙蓋在相機上（ScanResultSheet，高度貼內容）；收掉結果紙回到相機，✕ 才回紀錄
+   - Widgets/…/Scan/ScanResultSheet.swift：類型列（28 格圖示＋「網址」／「文字 · N 個字」）、網域 xl bold、
+     沉底一格的完整網址、〔開啟〕主鈕、〔複製〕〔分享〕；最後一句 note（存進／移到最上面）
+   - TripEZGoData/…/ScanRecordRepository.record：同一趟、內容一字不差只留一筆——時間與掃描者改成這一次、移到最上面，
+     回傳上一次（誰、何時）；Widgets/…/Scan/ScanResult.note(for:)：重複時寫「{上一次的日期} {誰}掃過同一個網址／同一段文字…」，
+     自己掃的寫「你」
+   - ScanHistoryViewController.confirmClear：清除要問一次（共編中跟獨自各一句），清完是空狀態那段字 */
+if (interactive) {
+  const { subTabs, remember, alert, sheet } = await import('./tools.js');
+  subTabs(d, TAB);
+  const trip = await (await fetch(`./data/sanyo.${lang}.json`)).json();
+  const tripName = trip.title;
+  const X = {
+    'zh-Hant-TW': { scanTitle: '掃描 QR Code', hint: '把 QR Code 放進框裡，掃到會自動停下', torch: '手電筒', photos: '從相簿選', close: '關閉',
+      result: '掃描結果', url: '網址', textCount: n => `文字 · ${n} 個字`, open: '開啟', copy: '複製', share: '分享', you: '你',
+      saved: n => `已存進「${n}」的掃描紀錄`, movedUrl: (dt, w) => `${dt} ${w}掃過同一個網址，那一筆已經移到紀錄最上面。`,
+      movedText: (dt, w) => `${dt} ${w}掃過同一段文字，那一筆已經移到紀錄最上面。`, meta: (w, t) => `${w} 掃描於 ${t}`, today: t => `今天 ${t}`,
+      clearTitle: '清除全部掃描紀錄？', clearShared: '這趟旅程的旅伴都會看不到這些紀錄，清掉之後救不回來。', clearSolo: '這趟旅程的掃描紀錄會全部清掉，救不回來。',
+      cancel: '取消', empty: '還沒有掃過東西。\n掃到的網址與文字會留在這裡，\n整趟旅程都找得到。', locale: 'zh-TW' },
+    en: { scanTitle: 'Scan a QR Code', hint: 'Fit the QR code in the frame — it stops on its own when it reads one', torch: 'Flashlight', photos: 'Photos', close: 'Close',
+      result: 'Scan Result', url: 'Link', textCount: n => `Text · ${n} characters`, open: 'Open', copy: 'Copy', share: 'Share', you: 'You',
+      saved: n => `Saved to the scan history of “${n}”`, movedUrl: (dt, w) => `${w} scanned the same link on ${dt} — that entry is now at the top of the history.`,
+      movedText: (dt, w) => `${w} scanned the same text on ${dt} — that entry is now at the top of the history.`, meta: (w, t) => `Scanned by ${w} · ${t}`, today: t => `Today ${t}`,
+      clearTitle: 'Clear all scan history?', clearShared: 'Every travel companion on this trip will lose these records. This can’t be undone.', clearSolo: 'All scan history for this trip will be cleared. This can’t be undone.',
+      cancel: 'Cancel', empty: 'Nothing scanned yet.\nLinks and text you scan stay here\nfor the whole trip.', locale: 'en-US' },
+    ja: { scanTitle: 'QR コードをスキャン', hint: 'QR コードを枠に合わせてください。読み取ると自動で止まります', torch: 'ライト', photos: '写真から', close: '閉じる',
+      result: 'スキャン結果', url: 'URL', textCount: n => `テキスト · ${n} 文字`, open: '開く', copy: 'コピー', share: '共有', you: 'あなた',
+      saved: n => `「${n}」のスキャン履歴に保存しました`, movedUrl: (dt, w) => `${dt} に${w}が同じ URL をスキャンしています。その履歴をいちばん上に移動しました。`,
+      movedText: (dt, w) => `${dt} に${w}が同じテキストをスキャンしています。その履歴をいちばん上に移動しました。`, meta: (w, t) => `${w} がスキャン · ${t}`, today: t => `今日 ${t}`,
+      clearTitle: 'スキャン履歴をすべて消去しますか？', clearShared: 'この旅程の旅の仲間全員から履歴が消えます。元に戻せません。', clearSolo: 'この旅行のスキャン履歴がすべて消えます。元に戻せません。',
+      cancel: 'キャンセル', empty: 'まだ何もスキャンしていません。\nスキャンした URL やテキストはここに残り、\n旅行中いつでも見られます。', locale: 'ja-JP' },
+  }[lang];
+  const IC2 = {
+    close: '<path d="M6 6l12 12M18 6 6 18"/>',
+    torch: '<path d="M8 3h8v3.5l-2 3V20a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V9.5l-2-3z"/><path d="M8 6.5h8M12 13v2.5"/>',
+    photo: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M4 17l5.5-5.5L14 16l2.5-2.5L20 17"/>',
+    copy: '<rect x="9" y="9" width="11" height="12" rx="2"/><path d="M5 15V7a2 2 0 0 1 2-2h8"/>',
+    share: '<path d="M12 16V4M8 7.5 12 3.5l4 4M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"/>',
+    check: '<path d="M5 13l5 5 9-11"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.1"/>',
+  };
+  const ic2 = n => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${IC2[n]}</svg>`;
+
+  // 紀錄：{ content, who, at(ms) | label }。範例四筆的時間沿用畫面上那幾個字
+  const isURL = c => /^https?:\/\//.test(c);
+  const seed = SAMPLE.map((r, i) => ({ content: r.url ? `https://${r.url[0]}${r.url[1]}` : r.text, who: r.who, label: r.time,
+    at: Date.now() - (i < 2 ? 0 : 86400000) }));
+  const seed0 = JSON.stringify(seed);   // 首頁自動示範歸零用（record() 會改到 seed 這個陣列本身）
+  const store = remember('scan', { records: seed, n: 0 });
+  const st = store.get();
+  const hm = new Intl.DateTimeFormat(X.locale, { hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+  const md = new Intl.DateTimeFormat(X.locale, { month: 'numeric', day: 'numeric' });
+  const label = r => r.label || hm.format(new Date(r.at));
+  const toRow = r => isURL(r.content)
+    ? (() => { const u = new URL(r.content); return { url: [u.host, r.content.slice(r.content.indexOf(u.host) + u.host.length)], who: r.who, time: label(r) }; })()
+    : { text: r.content, who: r.who, time: label(r) };
+  // 每按一次掃到的東西：新網址 → 旅伴今天掃的那段 Wi-Fi（重複）→ 新文字 → 旅伴昨天掃的網址（重複）；之後輪回來都是自己剛掃過的
+  const SCANS = [
+    'https://www.itsukushimajinja.jp/',
+    seed[1].content,
+    { 'zh-Hant-TW': '置物櫃 27 號　密碼 4512', en: 'Locker #27  PIN 4512', ja: 'ロッカー 27 番　暗証番号 4512' }[lang],
+    seed[2].content,
+  ];
+
+  d.insertAdjacentHTML('beforeend', `<style>
+    .page { bottom: 0; overflow-y: auto; padding-bottom: 110px; scrollbar-width: none; } .page::-webkit-scrollbar { display: none; }
+    .btn, .row, .clear { cursor: pointer; } .btn:active { filter: brightness(.9); }
+    .row { transition: background .5s; } .row.flash { background: #e2f0ef; }
+    .empty { padding: 48px 12px 0; text-align: center; white-space: pre-line; font: 400 var(--t-sm)/20px var(--font); color: var(--muted); }
+    /* 相機（ScannerViewController.Metrics） */
+    .cam { position: absolute; inset: 0; z-index: 44; background: #0d0b0a; overflow: hidden; opacity: 0; transition: opacity .25s; }
+    .cam.on { opacity: 1; }
+    .cam .scene { position: absolute; inset: -20px; background: radial-gradient(ellipse at 40% 35%, #5a5148 0%, #2c2722 45%, #141110 100%); filter: blur(1px); }
+    .cam .paper { position: absolute; left: 118px; top: 300px; width: 170px; height: 190px; border-radius: 6px; background: #ece7df;
+      box-shadow: 0 8px 30px rgba(0,0,0,.5); transform: translate(140px, 260px) rotate(14deg); transition: transform 1.1s cubic-bezier(.25,.8,.25,1); }
+    .cam.aim .paper { transform: translate(-2px, -2px) rotate(-3deg); }
+    .cam .paper svg { position: absolute; left: 21px; top: 21px; width: 128px; height: 128px; }
+    .cam .dimmed { position: absolute; left: 76px; top: 259.6px; width: 250px; height: 250px; border-radius: 16px; box-shadow: 0 0 0 999px rgba(0,0,0,.35); }
+    .cam .vf { position: absolute; left: 76px; top: 259.6px; width: 250px; height: 250px; color: #fff; transition: all .3s; }
+    .cam.hit .vf { color: #7ad7d4; left: 112px; top: 296px; width: 178px; height: 178px; }
+    .cam .vf i { position: absolute; width: 40px; height: 40px; border: 4px solid currentColor; }
+    .cam .vf i:nth-child(1) { left: 0; top: 0; border-right: 0; border-bottom: 0; border-top-left-radius: 16px; }
+    .cam .vf i:nth-child(2) { right: 0; top: 0; border-left: 0; border-bottom: 0; border-top-right-radius: 16px; }
+    .cam .vf i:nth-child(3) { left: 0; bottom: 0; border-right: 0; border-top: 0; border-bottom-left-radius: 16px; }
+    .cam .vf i:nth-child(4) { right: 0; bottom: 0; border-left: 0; border-top: 0; border-bottom-right-radius: 16px; }
+    .cam .x { position: absolute; left: 16px; top: 67px; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,0,0,.45); display: grid; place-items: center; color: #fff; cursor: pointer; }
+    .cam .x svg { width: 18px; height: 18px; stroke-width: 2.2; }
+    .cam .tt { position: absolute; left: 70px; right: 70px; top: 78px; text-align: center; color: #fff; font: 600 17px/22px var(--font); text-shadow: 0 1px 3px rgba(0,0,0,.5); }
+    .cam .hint { position: absolute; left: 24px; right: 24px; top: 526px; text-align: center; color: #fff; font: 400 var(--t-sm)/18px var(--font); text-shadow: 0 1px 3px rgba(0,0,0,.6); transition: opacity .2s; }
+    .cam.hit .hint, .cam.hit .bts { opacity: 0; }
+    .cam .bts { position: absolute; left: 0; right: 0; bottom: 54px; display: flex; justify-content: center; gap: 72px; transition: opacity .2s; }
+    .cam .bts div { display: flex; flex-direction: column; align-items: center; gap: 8px; color: #fff; font: 400 var(--t-xs)/14px var(--font); }
+    .cam .bts b { width: 46px; height: 46px; border-radius: 50%; background: rgba(0,0,0,.5); border: 1px solid rgba(255,255,255,.22); display: grid; place-items: center; }
+    .cam .bts svg { width: 24px; height: 24px; stroke-width: 1.7; }
+    /* 結果紙（ScanResultSheet.Metrics：上 4、左右 20、間距 12、下 32） */
+    .rs { padding: 24px 20px 66px; display: flex; flex-direction: column; gap: 12px; }
+    .rs-h { text-align: center; font: 600 17px/20px var(--font); margin-bottom: 8px; }
+    .rs-kind { display: flex; align-items: center; gap: 8px; font: 400 var(--t-xs)/14px var(--font); color: var(--muted); }
+    .rs-kind span { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; }
+    .rs-kind span svg { width: 16px; height: 16px; stroke-width: 1.8; }
+    .rs-kind .url { background: #e2f0ef; color: var(--accent-ink); } .rs-kind .text { background: var(--sunken); color: var(--muted-on-sunken); }
+    .rs-host { font: 700 var(--t-xl)/27px system-ui, -apple-system, var(--font); word-break: break-all; }
+    .rs-box { background: var(--sunken); border: 1px solid var(--border); border-radius: 8px; padding: 12px; word-break: break-all; }
+    .rs-box.mono { font: 400 var(--t-xs)/17px system-ui, -apple-system, sans-serif; color: var(--muted-on-sunken); }
+    .rs-box.txt { font: 400 var(--t-base)/21px var(--font); color: var(--ink); word-break: normal; }
+    .rs-open { height: 48px; border-radius: 8px; background: var(--accent-ink); color: #fff; display: grid; place-items: center; font: 600 var(--t-base)/18px var(--font); }
+    .rs-row { display: flex; gap: 8px; }
+    .rs-row span { flex: 1; height: 44px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--accent-ink);
+      display: flex; align-items: center; justify-content: center; gap: 6px; font: 600 var(--t-sm)/16px var(--font); }
+    .rs-row svg { width: 16px; height: 16px; stroke-width: 1.9; }
+    .rs-note { display: flex; gap: 8px; align-items: flex-start; font: 400 var(--t-xs)/16px var(--font); }
+    .rs-note svg { width: 16px; height: 16px; stroke-width: 2; flex: none; }
+    .rs-note.ok { color: #367f4f; } .rs-note.warn { color: #8a6212; }
+    .rs-meta { font: 400 var(--t-xs)/14px var(--font); color: var(--muted); }
+  </style>`);
+
+  const page = d.querySelector('.page');
+  const qr = (() => {   // 一張看起來像 QR Code 的圖（隨機但固定的 21×21 格，三個定位角）
+    let seedN = 7, cells = '';
+    const rnd = () => (seedN = (seedN * 9301 + 49297) % 233280) / 233280;
+    const finder = (x, y) => (x < 7 && y < 7) || (x > 13 && y < 7) || (x < 7 && y > 13);
+    for (let y = 0; y < 21; y++) for (let x = 0; x < 21; x++) if (!finder(x, y) && rnd() > .52) cells += `<rect x="${x}" y="${y}" width="1" height="1"/>`;
+    const f = (x, y) => `<path d="M${x} ${y}h7v7h-7zM${x + 1} ${y + 1}v5h5v-5z" fill-rule="evenodd"/><rect x="${x + 2}" y="${y + 2}" width="3" height="3"/>`;
+    return `<svg viewBox="0 0 21 21" fill="#1f1914" shape-rendering="crispEdges">${f(0, 0)}${f(14, 0)}${f(0, 14)}${cells}</svg>`;
+  })();
+
+  const paint = (flash) => {
+    page.querySelectorAll('.row, .empty').forEach(n => n.remove());
+    const recs = st.records;
+    page.querySelector('.head').style.display = recs.length ? '' : 'none';
+    page.insertAdjacentHTML('beforeend', recs.length ? recs.map((r, i) => rowHTML(toRow(r), i)).join('') : `<div class="empty">${X.empty}</div>`);
+    if (flash !== undefined) { const el = page.querySelector(`.row[data-r="${flash}"]`); el?.classList.add('flash'); setTimeout(() => el?.classList.remove('flash'), 900); }
+    store.set(st);
+  };
+
+  // ScanRecordRepository.record
+  const record = (content) => {
+    const i = st.records.findIndex(r => r.content === content);
+    const now = Date.now();
+    if (i >= 0) {
+      const prev = st.records[i];
+      const whoName = prev.who === 'me' ? X.you : MATE[0];
+      const dt = md.format(new Date(prev.at));
+      st.records.splice(i, 1);
+      st.records.unshift({ content, who: 'me', at: now });
+      return { tone: 'warn', note: isURL(content) ? X.movedUrl(dt, whoName) : X.movedText(dt, whoName) };
+    }
+    st.records.unshift({ content, who: 'me', at: now });
+    return { tone: 'ok', note: X.saved(tripName) };
+  };
+
+  const showResult = (content, { note, tone, meta } = {}) => {
+    const url = isURL(content);
+    const u = url ? new URL(content) : null;
+    const html = `<div class="rs"><div class="rs-h">${X.result}</div>
+      <div class="rs-kind"><span class="${url ? 'url' : 'text'}">${ic(url ? 'link' : 'text')}</span>${url ? X.url : X.textCount([...content].length)}</div>
+      ${url ? `<div class="rs-host">${u.host}</div><div class="rs-box mono">${content}</div><div class="rs-open" data-tap>${X.open}</div>`
+        : `<div class="rs-box txt">${fmt(content)}</div>`}
+      <div class="rs-row"><span data-tap>${ic2('copy')}${X.copy}</span><span data-tap>${ic2('share')}${X.share}</span></div>
+      ${note ? `<div class="rs-note ${tone}">${ic2(tone === 'ok' ? 'check' : 'info')}<span>${note}</span></div>` : ''}
+      ${meta ? `<div class="rs-meta">${meta}</div>` : ''}</div>`;
+    const sh = sheet(d, html);
+    // 高度貼內容（ScanResultSheet 的 custom detent）
+    sh.el.style.top = `${Math.max(62, 874 - sh.el.querySelector('.rs').offsetHeight)}px`;
+    return sh;
+  };
+
+  let cam = null;
+  const closeCam = () => {
+    if (!cam) return;
+    const c = cam; cam = null;
+    c.classList.remove('on'); setTimeout(() => c.remove(), 260);
+    d.querySelectorAll('.sb, .home').forEach(n => n.classList.remove('on-dark'));
+  };
+  d.querySelector('.btn').addEventListener('click', () => {
+    if (cam) return;
+    cam = document.createElement('div');
+    cam.className = 'cam';
+    cam.innerHTML = `<div class="scene"></div><div class="paper">${qr}</div><div class="dimmed"></div><div class="vf"><i></i><i></i><i></i><i></i></div>
+      <div class="x" data-tap>${ic2('close')}</div><div class="tt">${X.scanTitle}</div><div class="hint">${X.hint}</div>
+      <div class="bts"><div><b>${ic2('torch')}</b>${X.torch}</div><div><b>${ic2('photo')}</b>${X.photos}</div></div>`;
+    d.append(cam);
+    d.querySelectorAll('.sb, .home').forEach(n => n.classList.add('on-dark'));   // 相機頁整頁固定深色
+    const c = cam;
+    c.querySelector('.x').addEventListener('click', closeCam);
+    requestAnimationFrame(() => requestAnimationFrame(() => c.classList.add('on')));
+    setTimeout(() => c.classList.add('aim'), 350);
+    setTimeout(() => {
+      if (cam !== c) return;
+      c.classList.add('hit');
+      const content = SCANS[st.n % SCANS.length]; st.n++;
+      const r = record(content);
+      paint(0);
+      setTimeout(() => {
+        if (cam !== c) return;
+        // 收掉結果紙＝回到相機（照樣在掃）；這裡相機沒有東西可掃了，框回到原位
+        showResult(content, r);
+      }, 380);
+      setTimeout(() => c.classList.remove('hit', 'aim'), 1400);
+    }, 1700);
+  });
+
+  page.addEventListener('click', (e) => {
+    if (e.target.closest('.clear')) {
+      return alert(d, { title: X.clearTitle, message: shared ? X.clearShared : X.clearSolo, actions: [
+        { label: X.cancel, style: 'cancel', preferred: true },
+        { label: S.clear, style: 'destructive', run: () => { st.records = []; paint(); } },
+      ] });
+    }
+    const row = e.target.closest('.row[data-r]');
+    if (row) {
+      const r = st.records[+row.dataset.r];
+      const w = r.who === 'me' ? s.me : MATE[0];
+      const t = r.label || X.today(hm.format(new Date(r.at)));
+      showResult(r.content, { meta: shared ? X.meta(w, t) : t });
+    }
+  });
+  paint();
+  // 首頁自動示範一輪的最後一步：紀錄回到範例那四筆（掃描紀錄存在 sessionStorage，不歸零下一輪會接著長）
+  window.__auto = { reset: () => { st.records = JSON.parse(seed0); st.n = 0; paint(); } };
+}
 </script>
 </body>
 </html>

@@ -56,18 +56,18 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, chrome, ready } from './chrome.js';
+import { lang, chrome, ready, interactive } from './chrome.js';
 
 const d = document.getElementById('d');
 
-// App 的字（Scripts/i18n/maps/Widgets.json）
+// App 的字（Scripts/i18n/maps/Widgets.json；「完成」是 UI.json ui.done）
 const s = {
   'zh-Hant-TW': { title: '小工具', subs: ['筆記', '掃描', '匯率換算', '購物清單'], recent: '最近換算', clear: '清除',
-    sep: '　·　', date: '2026年10月9日', locale: 'zh-TW' },
+    sep: '　·　', date: '2026年10月9日', locale: 'zh-TW', done: '完成' },
   en: { title: 'Tools', subs: ['Notes', 'Scan', 'Currency', 'Shopping'], recent: 'Recent', clear: 'Clear',
-    sep: ' · ', date: 'Oct 9, 2026', locale: 'en-US' },
+    sep: ' · ', date: 'Oct 9, 2026', locale: 'en-US', done: 'Done' },
   ja: { title: 'ツール', subs: ['メモ', 'スキャン', '為替', '買い物'], recent: '最近の換算', clear: '消去',
-    sep: '　·　', date: '2026年10月9日', locale: 'ja-JP' },
+    sep: '　·　', date: '2026年10月9日', locale: 'ja-JP', done: '完了' },
 }[lang];
 
 const IC = {
@@ -82,26 +82,162 @@ d.insertAdjacentHTML('beforeend', `<div class="wg-title">${s.title}</div>
   <div class="seg"><div class="seg-pill" style="left:${2 + TAB * 90.3}px"></div>
   ${s.subs.map((x, i) => `<div class="seg-t${i === TAB ? ' on' : ''}" style="left:${2 + i * 90.3}px">${x}</div>`).join('')}</div>`);
 
-// 數字照 ExchangeViewModel.format：≥1000 不留小數、≥1 兩位
+// 數字照 ExchangeViewModel.format：≥1000 不留小數、≥1 兩位、<1 四位
 const RATE = 4.96;
-const num = v => v.toLocaleString(s.locale, { maximumFractionDigits: Math.abs(v) >= 1000 ? 0 : 2 });
+const RATES = { TWD: 1, JPY: RATE };   // 1 TWD = 4.96 JPY（基準圖那一天）
+const convert = (v, from, to) => v / RATES[from] * RATES[to];
+const num = v => v.toLocaleString(s.locale, { maximumFractionDigits: Math.abs(v) >= 1000 ? 0 : Math.abs(v) >= 1 ? 2 : 4 });
 const money = (v, c) => `${num(v)} ${c}`;
-const RECENT = [[1000, 'TWD'], [12800, 'JPY'], [3300, 'JPY'], [500, 'TWD'], [1980, 'JPY']]
-  .map(([v, c]) => [money(v, c), c === 'TWD' ? money(v * RATE, 'JPY') : money(v / RATE, 'TWD')]);
+
+// 狀態（ExchangeViewModel）：打的是哪一格（editing）＋他打的那串字（typed）；另一格是算出來的
+const fx = { source: 'TWD', target: 'JPY', editing: 'source', typed: '1000',
+  recent: [[1000, 'TWD'], [12800, 'JPY'], [3300, 'JPY'], [500, 'TWD'], [1980, 'JPY']].map(([v, c]) => ({ amount: v, from: c, to: c === 'TWD' ? 'JPY' : 'TWD' })) };
+let saved = null;
+if (interactive) {
+  const { remember } = await import('./tools.js');
+  saved = remember('fx', null);
+  window.__fx0 = JSON.stringify(fx);   // 首頁自動示範歸零用（底下 window.__auto.reset）
+  if (saved.get()) Object.assign(fx, saved.get());
+}
+const parse = str => { const n = Number(String(str).replace(/,/g, '')); return str === '' || !Number.isFinite(n) || n < 0 ? null : n; };
+const mirrored = () => { const n = parse(fx.typed); return n === null ? null : fx.editing === 'source' ? convert(n, fx.source, fx.target) : convert(n, fx.target, fx.source); };
+const amountText = side => fx.editing === side ? fx.typed : (mirrored() === null ? '' : num(mirrored()));
+const rateLine = () => `1 ${fx.source} = ${num(convert(1, fx.source, fx.target))} ${fx.target}${s.sep}${s.date}`;
+const histHTML = () => fx.recent.map((c, i) => `<div class="hr mono" data-r="${i}"><span>${money(c.amount, c.from)}</span><span>${money(convert(c.amount, c.from, c.to), c.to)}</span></div>`).join('');
 
 d.insertAdjacentHTML('beforeend', `<div class="head">
   <div class="pair">
-    <div class="cell"><div class="cur mono">TWD${ic('chevronDown')}</div><div class="amt mono">1000</div></div>
+    <div class="cell" data-side="source"><div class="cur mono">${fx.source}${ic('chevronDown')}</div><div class="amt mono">${amountText('source')}</div></div>
     <div class="swap">${ic('swapArrows')}</div>
-    <div class="cell"><div class="cur mono">JPY${ic('chevronDown')}</div><div class="amt mono">${num(1000 * RATE)}</div></div>
+    <div class="cell" data-side="target"><div class="cur mono">${fx.target}${ic('chevronDown')}</div><div class="amt mono">${amountText('target')}</div></div>
   </div>
-  <div class="rate mono">1 TWD = ${RATE} JPY${s.sep}${s.date}</div>
+  <div class="rate mono">${rateLine()}</div>
   <div class="hist-head"><span>${s.recent}</span><b>${s.clear}</b></div>
-  <div class="hist">${RECENT.map(([a, b]) => `<div class="hr mono"><span>${a}</span><span>${b}</span></div>`).join('')}</div>
+  <div class="hist">${histHTML()}</div>
 </div>`);
 
 chrome(d, { tab: 3 });
 ready();
+
+/* ── 互動模式 ─────────────────────────────────────────────────────────────
+   規則出處（App repo …/Modules/Widgets/Sources/Widgets/Exchange/）：
+   - ExchangeViewModel.setAmount(_:on:)：兩格都打得動，打哪一格另一格就是算出來的（format 過、帶千分位）
+   - ExchangeViewController.CurrencyCell：數字鍵盤（.decimalPad）＋鍵盤上一條「完成」（addsKeyboardDoneBar）；
+     正在打的那一格框線變墨色（setFocused）；離開那一格（editingDidEnd）才 rememberAmount()——不是每一鍵都記
+   - rememberAmount()：金額 > 0 才記；ExchangeRateStore：最新的排前面、同一組（幣別＋金額）只留一筆、留 10 筆
+   - swap()：先收鍵盤、記一筆，兩種幣對調，帶過去的是右格算出來的那個金額（plain，不帶千分位）
+   - use(_:)：點最近那一筆，幣別與金額一起帶回上面；clearRecent()：整份清掉，抬頭跟著收起來
+   - 全 app 點空白收鍵盤（keyboard-dismiss-everywhere）——點畫面其他地方＝完成 */
+if (interactive) {
+  const { subTabs } = await import('./tools.js');
+  subTabs(d, TAB);
+  d.insertAdjacentHTML('beforeend', `<style>
+    .cell, .swap, .hr, .hist-head b { cursor: pointer; }
+    .cell.focus { border-color: var(--ink); }
+    .cell.focus .amt::after { content: ""; width: 2px; height: 26px; margin-left: 1px; background: var(--accent); animation: tzblink 1s steps(1) infinite; }
+    @keyframes tzblink { 50% { opacity: 0; } }
+    .swap { transition: transform .25s; } .swap.spin { transform: rotate(180deg); }
+    .hr { transition: background .3s; } .hr.flash { background: var(--surface); }
+    .hist { max-height: 470px; overflow-y: auto; scrollbar-width: none; } .hist::-webkit-scrollbar { display: none; }
+    /* 系統數字鍵盤（iOS 26 decimalPad）＋ App 的 KeyboardDoneBar（surface 94%、頂一條 border、右邊「完成」accentInk sm semibold） */
+    .kb { position: absolute; left: 0; right: 0; bottom: 0; z-index: 45; transform: translateY(100%); transition: transform .3s cubic-bezier(.2,.8,.2,1); }
+    .kb.on { transform: none; }
+    .kb-bar { height: 44px; background: rgba(251,248,244,.94); border-top: 1px solid var(--border); display: flex; justify-content: flex-end; align-items: center; padding: 0 16px; }
+    .kb-bar span { font: 600 var(--t-sm)/16px var(--font); color: var(--accent-ink); padding: 8px 4px; cursor: pointer; }
+    .kb-keys { background: #d4d6dc; padding: 6px 6px 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .kb-keys span { height: 47px; border-radius: 8px; background: #fff; box-shadow: 0 1px 0 rgba(0,0,0,.3); display: flex; flex-direction: column;
+      align-items: center; justify-content: center; font: 400 25px/26px -apple-system, system-ui, sans-serif; color: #000; cursor: pointer; }
+    .kb-keys span small { font: 600 10px/11px -apple-system, system-ui, sans-serif; letter-spacing: 2px; }
+    .kb-keys span.fn { background: transparent; box-shadow: none; }
+    .kb-keys span:active { background: #b4b7be; }
+    .kb-keys span.fn svg { width: 26px; height: 22px; fill: none; stroke: #000; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+  </style>
+  <div class="kb"><div class="kb-bar"><span data-done>${s.done}</span></div><div class="kb-keys">
+    ${[['1', ''], ['2', 'ABC'], ['3', 'DEF'], ['4', 'GHI'], ['5', 'JKL'], ['6', 'MNO'], ['7', 'PQRS'], ['8', 'TUV'], ['9', 'WXYZ']].map(([k, l]) => `<span data-k="${k}">${k}${l ? `<small>${l}</small>` : ''}</span>`).join('')}
+    <span class="fn" data-k=".">.</span><span data-k="0">0</span>
+    <span class="fn" data-k="del"><svg viewBox="0 0 26 22"><path d="M8 3h15a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H8l-7-8z"/><path d="m12 7.5 7 7M19 7.5l-7 7"/></svg></span>
+  </div></div>`);
+
+  const cells = { source: d.querySelector('[data-side="source"]'), target: d.querySelector('[data-side="target"]') };
+  const kb = d.querySelector('.kb');
+  let focus = null;
+  const persist = () => saved.set(fx);
+  const render = () => {
+    for (const side of ['source', 'target']) {
+      cells[side].querySelector('.cur').innerHTML = `${fx[side]}${ic('chevronDown')}`;
+      cells[side].querySelector('.amt').textContent = amountText(side);
+      cells[side].classList.toggle('focus', focus === side);
+    }
+    d.querySelector('.rate').textContent = rateLine();
+    d.querySelector('.hist').innerHTML = histHTML();
+    d.querySelector('.hist-head').style.visibility = fx.recent.length ? '' : 'hidden';   // 一筆都沒有就整區收起來
+    persist();
+  };
+  const remember = () => {
+    const n = parse(fx.typed); if (n === null) return;
+    const amount = fx.editing === 'source' ? n : mirrored();
+    if (!(amount > 0)) return;
+    const a = Math.round(amount * 100) / 100;
+    fx.recent = [{ amount: a, from: fx.source, to: fx.target }, ...fx.recent.filter(c => !(c.amount === a && c.from === fx.source && c.to === fx.target))].slice(0, 10);
+    render();
+    d.querySelector('.hr')?.classList.add('flash'); setTimeout(() => d.querySelector('.hr')?.classList.remove('flash'), 500);
+  };
+  const plain = v => String(Math.round(v * 100) / 100);
+  const startEditing = (side) => {
+    if (focus && focus !== side) { remember(); }
+    if (fx.editing !== side) { const m = mirrored(); fx.editing = side; fx.typed = m === null ? '' : plain(m); }
+    focus = side; kb.classList.add('on'); render();
+  };
+  const endEditing = () => { if (!focus) return; focus = null; kb.classList.remove('on'); remember(); render(); };
+  const key = (k) => {
+    if (!focus) return;
+    let v = fx.typed;
+    if (k === 'del') v = v.slice(0, -1);
+    else if (k === '.') { if (!v.includes('.')) v = (v || '0') + '.'; }
+    else if (v.replace('.', '').length < 12) v = v === '0' ? k : v + k;
+    fx.typed = v; render();
+  };
+
+  Object.entries(cells).forEach(([side, el]) => el.addEventListener('click', (e) => { e.stopPropagation(); startEditing(side); }));
+  kb.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (e.target.closest('[data-done]')) return endEditing();
+    const k = e.target.closest('[data-k]')?.dataset.k; if (k) key(k);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!focus) return;
+    if (/^[0-9.]$/.test(e.key)) key(e.key);
+    else if (e.key === 'Backspace') key('del');
+    else if (e.key === 'Enter' || e.key === 'Escape') endEditing();
+    else return;
+    e.preventDefault();
+  });
+  d.querySelector('.swap').addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (focus) { focus = null; kb.classList.remove('on'); }   // 按 ⇄ 先收鍵盤（endEditing → rememberAmount）
+    remember();
+    const n = parse(fx.typed);
+    const targetValue = n === null ? null : fx.editing === 'target' ? n : mirrored();
+    [fx.source, fx.target] = [fx.target, fx.source];
+    fx.editing = 'source';
+    if (targetValue !== null) fx.typed = plain(targetValue);
+    const sw = d.querySelector('.swap'); sw.classList.toggle('spin');
+    render();
+  });
+  d.querySelector('.hist').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const r = e.target.closest('[data-r]'); if (!r) return;
+    if (focus) endEditing();
+    const c = fx.recent[+r.dataset.r];
+    fx.source = c.from; fx.target = c.to; fx.editing = 'source'; fx.typed = plain(c.amount);
+    render();
+  });
+  d.querySelector('.hist-head b').addEventListener('click', (e) => { e.stopPropagation(); if (focus) endEditing(); fx.recent = []; render(); });
+  d.addEventListener('click', () => endEditing());   // 點空白收鍵盤
+  if (saved.get()) render();
+  // 首頁自動示範一輪的最後一步：回到截圖那個樣子（狀態存在 sessionStorage，不歸零下一輪會接著長）
+  window.__auto = { reset: () => { focus = null; kb.classList.remove('on'); d.querySelector('.swap').classList.remove('spin'); Object.assign(fx, JSON.parse(window.__fx0)); render(); } };
+}
 </script>
 </body>
 </html>

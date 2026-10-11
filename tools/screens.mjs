@@ -20,10 +20,11 @@ const LANGS = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja' };
 // 官網用到的畫面：[檔名, 頁面, 參數]
 export const SHOTS = [
   ['calendar', 'calendar', 'day=2'],
-  ['timeline', 'timeline', 'day=2'], ['overview', 'overview', ''],
-  ['note', 'note', ''], ['scan', 'scan', ''], ['fx', 'fx', ''], ['shop', 'shop', ''],
-  ['event', 'event', ''], ['event-extra', 'event', 'extra=1'], ['leg', 'leg', ''],
-  ['map', 'map', ''], ['map-place', 'map-place', ''], ['map-store', 'map-store', ''], ['map-nav', 'map-nav', ''],
+  ['timeline', 'timeline', 'day=2'], ['overview', 'overview', ''], ['overview-files', 'overview', 'tab=files'], ['overview-todos', 'overview', 'tab=todos'],
+  ['notes', 'notes', ''], ['note', 'note', ''], ['scan', 'scan', ''], ['fx', 'fx', ''], ['shop', 'shop', ''],
+  ['event', 'event', ''], ['event-extra', 'event', 'extra=1'], ['event-airport', 'event', 'event=d1-airport&extra=1'], ['leg', 'leg', ''],
+  ['map-live', 'map-live', ''], ['map-route', 'map-live', 'nav=0&today=2&start=2026-10-09'], ['map-mates', 'map-live', 'nav=0&today=2&start=2026-10-09&focus=mates'], ['map', 'map', ''], ['map-place', 'map-place', ''], ['map-store', 'map-store', ''], ['map-nav', 'map-nav', ''],
+  ['share-ig', 'share-ig', ''], ['apple-calendar', 'apple-calendar', ''], ['siri', 'siri', ''],
   ['members', 'members', ''], ['share-location', 'share-location', ''], ['lock', 'lock', ''], ['widget', 'widget', ''],
 ];
 
@@ -39,8 +40,18 @@ function serve() {
   });
 }
 
+// MapKit JS 的 token 只認 https://tripezgo.com：頁面一律開在那個 origin，請求接到本機檔案（網站 repo 根目錄）。
+// 其他第三方（MapKit 的 cdn 與圖磚）照常連網。
+async function routeSite(page) {
+  await page.route('https://tripezgo.com/**', (route) => {
+    const p = path.join(root, decodeURIComponent(new URL(route.request().url()).pathname));
+    if (!p.startsWith(root) || !fs.existsSync(p) || fs.statSync(p).isDirectory()) return route.fulfill({ status: 404, body: '' });
+    route.fulfill({ status: 200, contentType: TYPES[path.extname(p)] || 'application/octet-stream', body: fs.readFileSync(p) });
+  });
+}
 async function shoot(page, port, name, query, lang) {
-  const url = `http://localhost:${port}/${name}.html?lang=${LANGS[lang]}&${query || ''}`;
+  if (!page._routed) { await routeSite(page); page._routed = true; }
+  const url = `https://tripezgo.com/screens/${name}.html?lang=${LANGS[lang]}&${query || ''}`;
   await page.goto(url);
   await page.waitForSelector('body[data-ready="1"]', { timeout: 15000 });
   return page.locator('#d').screenshot();

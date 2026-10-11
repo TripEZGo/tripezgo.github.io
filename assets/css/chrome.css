@@ -116,14 +116,28 @@
   font-size: var(--text-sm); font-weight: 500; white-space: nowrap;
 }
 .site-nav a:hover { color: var(--fg); }
-.site-nav .lang {
-  color: var(--fg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  padding: 4px 12px;
-  font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: .04em;
+/* 語言切換：下拉選單（使用者 2026-10-12）。上面顯示這一頁的語言，點開列出另外兩種 */
+.lang-menu { position: relative; }
+.lang-menu > summary {
+  list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+  color: var(--fg); border: 1px solid var(--border); border-radius: var(--radius-pill);
+  padding: 4px 10px 4px 12px; font-size: var(--text-xs); font-weight: 500; white-space: nowrap;
 }
-.site-nav .lang:hover { border-color: var(--accent); color: var(--accent-ink); }
+.lang-menu > summary::-webkit-details-marker { display: none; }
+.lang-menu > summary::after {
+  content: ""; width: 6px; height: 6px; margin-top: -3px;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg);
+  transition: transform .15s;
+}
+.lang-menu[open] > summary::after { transform: translateY(3px) rotate(-135deg); }
+.lang-menu > summary:hover, .lang-menu[open] > summary { border-color: var(--accent); color: var(--accent-ink); }
+.lang-list {
+  position: absolute; right: 0; top: calc(100% + 6px); z-index: 60; min-width: 140px;
+  display: grid; padding: 6px; background: var(--page);
+  border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-md);
+}
+.site-nav .lang-list .lang { padding: 8px 10px; border-radius: var(--radius-sm); color: var(--fg); font-size: var(--text-sm); }
+.site-nav .lang-list .lang:hover { background: var(--sunken); color: var(--fg); }
 @media (max-width: 640px) {
   .site-nav .hide-sm { display: none; }
 }
