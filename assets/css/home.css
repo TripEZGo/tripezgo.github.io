@@ -555,8 +555,8 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
 .ph.shot.phone > img { overflow:hidden; }
 
 /* 自動示範的進度：就是螢幕底部那條 Home 指示條本身，黑色往右填，不用主題色（使用者 2026-10-12）。
-   指示條 134×5pt、離底 8pt（iPhone 17 Pro 402 寬），照手機寬等比縮放 */
-.auto-prog { position:absolute; z-index:5; left:50%; bottom:calc(var(--wpx, 260px) * 8 / 402); width:calc(var(--wpx, 260px) * 134 / 402);
+   跟畫面裡的 .home 同一個位置大小（141×5、離底 8，402 寬），照手機寬等比縮放；有示範的畫面把原生那條藏掉（autoplay.js） */
+.auto-prog { position:absolute; z-index:5; left:50%; bottom:calc(var(--wpx, 260px) * 8 / 402); width:calc(var(--wpx, 260px) * 141 / 402);
   height:calc(var(--wpx, 260px) * 5 / 402); min-height:3px; transform:translateX(-50%); border-radius:99px; overflow:hidden; pointer-events:none;
   background:rgba(0,0,0,.18); }
 .auto-prog > i { display:block; height:100%; width:0; border-radius:inherit; background:#000; }   /* 寬度動畫由 home.js 依每一步的時間設 */

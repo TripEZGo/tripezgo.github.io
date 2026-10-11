@@ -64,6 +64,7 @@ hand.innerHTML = `<span class="auto-ring"></span><svg viewBox="0 0 40 48" aria-h
 document.documentElement.append(hand);
 const css = document.createElement('style');
 css.textContent = `
+.home{visibility:hidden}   /* 原生 Home 指示條：首頁外框在同一個位置畫成進度條（使用者 2026-10-12） */
 .auto-hand{position:fixed;left:0;top:0;width:44px;height:52px;pointer-events:none;z-index:99999;opacity:0;
   transform:translate(-15.5px,-4.5px);transition:opacity .2s,left .38s cubic-bezier(.3,.7,.3,1),top .38s cubic-bezier(.3,.7,.3,1);
   filter:drop-shadow(0 3px 6px rgba(0,0,0,.28))}
