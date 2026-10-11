@@ -554,17 +554,18 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
 .ph.shot.phone::after  { right:calc(-1 * var(--bz) - 2.4px - var(--bz) * .8); top:26%; height:16%; }  /* 側邊按鈕 */
 .ph.shot.phone > img { overflow:hidden; }
 
-/* 暫停／播放鈕：手機正中央，滑鼠移上手機才出現 */
-.auto-ctl { position:absolute; z-index:6; left:50%; top:50%; width:56px; height:56px; margin:-28px 0 0 -28px; border-radius:50%;
-  border:0; background:rgba(20,20,22,.55); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:0 4px 16px rgba(0,0,0,.25);
-  display:grid; place-items:center; cursor:pointer; opacity:0; transform:scale(.85); transition:opacity .15s, transform .15s; }
-.ph.shot.phone:hover .auto-ctl, .auto-ctl:focus-visible { opacity:1; transform:none; }
-.auto-ctl::before { content:""; width:14px; height:18px; border-left:5px solid #fff; border-right:5px solid #fff; box-sizing:border-box; }
-.auto-ctl[data-paused="true"]::before { width:0; height:0; border:0; border-left:17px solid #fff;
-  border-top:11px solid transparent; border-bottom:11px solid transparent; margin-left:5px; }
-/* 觸控：播放中不擋畫面，捲進來／按過之後亮 1.5 秒就收；暫停時一直顯示（隱形時照樣點得到） */
-@media (hover:none) { .auto-ctl { transform:scale(.8); transition:opacity .4s, transform .15s; }
-  .auto-ctl.is-peek, .auto-ctl[data-paused="true"] { opacity:.85; } }
+/* 自動示範的進度條：手機底下一條，主題色（使用者 2026-10-12） */
+.ph.shot.phone.has-prog { margin-bottom:calc(var(--bz) + 24px); }
+.auto-prog { position:absolute; left:28%; right:28%; top:calc(100% + var(--bz) + 12px); height:4px; border-radius:2px;
+  background:color-mix(in srgb, var(--accent) 18%, transparent); overflow:hidden; pointer-events:none; }
+.auto-prog > i { display:block; height:100%; width:0; border-radius:inherit; background:var(--accent); transition:width .45s ease-out; }
+.auto-prog > i.is-reset { transition:none; }
+/* 地圖畫面載入中：預覽圖上蓋一個轉圈，MapKit 取完景才換成真的地圖 */
+.ph-loading { position:absolute; z-index:3; left:50%; top:50%; width:36px; height:36px; margin:-18px 0 0 -18px; border-radius:50%;
+  border:3px solid rgba(255,255,255,.55); border-top-color:var(--accent); background:rgba(255,255,255,.35);
+  box-shadow:0 2px 10px rgba(0,0,0,.15); animation:spin .8s linear infinite; pointer-events:none; transition:opacity .25s; }
+.ph.shot.phone.is-live > .ph-loading { opacity:0; animation:none; }
+.play-phone .auto-prog, .play-phone .ph-loading { display:none; }
 /* 點手機畫面就全螢幕：一層透明的按鈕蓋在畫面上 */
 .phone-hit { position:absolute; inset:0; z-index:4; border:0; padding:0; background:transparent; border-radius:inherit; cursor:zoom-in; }
 .phone-hit:focus-visible { box-shadow:0 0 0 3px var(--accent); }
@@ -589,7 +590,7 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
 .play-dlg::backdrop { background:color-mix(in srgb, #000 72%, transparent); backdrop-filter:blur(6px); }
 .play-wrap { height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; position:relative; }
 .play-phone { margin:0; }
-.play-phone .auto-ctl, .play-phone .phone-hit { display:none; }
+.play-phone .phone-hit { display:none; }
 .play-phone > iframe { opacity:1 !important; }
 .play-hint { margin:0; color:#fff; font-size:14px; opacity:.85; text-align:center; padding:0 16px; }
 .play-x { position:absolute; top:16px; right:16px; width:44px; height:44px; border-radius:50%; border:0; cursor:pointer;

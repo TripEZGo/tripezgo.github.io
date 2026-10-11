@@ -27,6 +27,8 @@ const story = params.get('auto');
 const steps = STORIES[story] || [];
 const KEY = `tz-auto:${window.name || story}`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// 進度回報給首頁（外框底下的進度條，使用者 2026-10-12）：做完第幾步／共幾步，0 是一輪重來
+const progress = (i) => parent.postMessage({ type: 'tz-auto-progress', p: steps.length ? i / steps.length : 0 }, '*');
 
 // 一開始是停著的：首頁確認這支手機捲進畫面（35% 以上）才送 play 過來；捲出去送 pause
 let paused = true, waiters = [];
@@ -153,11 +155,12 @@ async function main() {
       const step = steps[st.i];
       if (step.page && step.page !== here()) { await sleep(200); continue; }   // 還沒換到該頁（剛點了 go()）
       st.i += 1; save(st);                        // 先記下一步：這一步若換頁，新頁接著做
-      await run(step);
+      await run(step); progress(st.i);
       await sleep(GAP);
     }
     // 一輪結束：多停一下
     await sleep(1500); await untilPlaying();
+    progress(0);
     // 地圖類：原地從第一步重來，不重新載入（故事最後一步已回到起始狀態）
     if (INPLACE.has(story)) { st = { start: st.start, i: 0 }; save(st); continue; }
     // 其他：請首頁在背景開一份新的、淡入蓋過這份（不在這裡 reload，才不會閃白）

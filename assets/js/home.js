@@ -335,7 +335,6 @@ const SCREEN_OF = {
   'map-live': ['map-live', 'pan=0'], 'map-route': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09'], 'map-mates': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09&focus=mates'], 'share-ig': ['share-ig', ''], 'apple-calendar': ['apple-calendar', ''], siri: ['siri', ''],
 };
 const SCREEN_LANG = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja' }[L2];
-const [PAUSE, PLAY] = pick({ zh: ['暫停示範', '繼續示範'], en: ['Pause demo', 'Resume demo'], ja: ['デモを一時停止', 'デモを再開'] });
 const [ZOOM, CLOSE, PLAYHINT] = pick({ zh: ['放大，自己玩玩看', '關閉', '親自玩玩看'], en: ['Open full screen and try it', 'Close', 'Try it yourself'], ja: ['拡大して自分で試す', '閉じる', '実際に触ってみよう'] });
 // 全螢幕試玩：一個 <dialog>，裡面一支放大的手機（同一個畫面，互動但不自動播放）
 let playDlg;
@@ -348,7 +347,7 @@ function openPlay(page, q, title) {
     document.body.append(playDlg);
     playDlg.querySelector('.play-x').onclick = () => playDlg.close();
     playDlg.addEventListener('click', (e) => { if (e.target === playDlg) playDlg.close(); });
-    playDlg.addEventListener('close', () => { playDlg.querySelector('iframe').src = 'about:blank'; document.documentElement.style.overflow = ''; });
+    playDlg.addEventListener('close', () => { playDlg.querySelector('iframe').src = 'about:blank'; document.documentElement.style.overflow = ''; phones.forEach((f) => f._auto?.apply()); });
     new ResizeObserver(() => fitPlay()).observe(playDlg);
   }
   const fr = playDlg.querySelector('iframe');
@@ -365,26 +364,27 @@ function fitPlay() {
   f.style.setProperty('--w', w + 'px');
   f.querySelector('iframe').style.transform = `scale(${w / 402})`;
 }
-const frames = new Map(), ctl = new Map();
 const DIRECT = new Set(['lock']);
 const NO_AUTO = new Set(['note', 'members', 'lock', 'widget', 'apple-calendar', 'scan', 'fx', 'siri']);   // 沒有東西可演的、或使用者自己拖比較好的
-// 手機裡的畫面回報「使用者自己動手了→已暫停」
 addEventListener('message', (e) => {
   if (e.data?.type === 'tz-esc' && playDlg?.open) { playDlg.close(); return; }
   if (e.data?.type === 'tz-auto-hello') { for (const f of phones) if (f._fr?.contentWindow === e.source) f._auto?.apply(); return; }
+  if (e.data?.type === 'tz-auto-progress') {
+    const f = phones.find((p) => [...p.querySelectorAll('iframe')].some((fr) => fr.contentWindow === e.source));
+    const bar = f?.querySelector('.auto-prog > i'); if (!bar) return;
+    bar.classList.toggle('is-reset', e.data.p === 0); bar.style.width = (e.data.p * 100).toFixed(1) + '%';
+    return;
+  }
   if (e.data?.type === 'tz-auto-loop') { for (const f of phones) if (f._fr?.contentWindow === e.source) reloop(f); return; }
   if (e.data?.type === 'tz-nav') {
     const old = [...document.querySelectorAll('.ph.shot.phone > iframe')].find((fr) => fr.contentWindow === e.source);
     if (old && new URL(e.data.url).origin === location.origin) { e.source.postMessage({ type: 'tz-nav-ok' }, '*'); navSwap(old, e.data.url); }
     return;
   }
-  if (e.data?.type !== 'tz-auto') return;
-  for (const f of phones) if (f._fr?.contentWindow === e.source) f._label?.(e.data.paused);
 });
-// 捲出畫面就暫停（省電、也不會在看不到的地方自己換頁），捲回來且沒被使用者按停就繼續
+// 捲出畫面就暫停（省電、也不會在看不到的地方自己換頁），捲回來就繼續
 const vio = new IntersectionObserver((es) => es.forEach((en) => {
   const a = en.target._auto; if (!a) return;
-  if (en.isIntersecting && !a.st.visible) a.peek();
   a.st.visible = en.isIntersecting; a.apply();
 }), { threshold: 0.35 });
 const phones = [...document.querySelectorAll('figure.ph.shot')].filter((f) => {
@@ -430,10 +430,9 @@ function navSwap(old, url) {
 }
 const fit = (f) => { f.style.setProperty('--wpx', f.clientWidth + 'px'); f.querySelectorAll('iframe').forEach((fr) => { fr.style.transform = `scale(${f.clientWidth / 402})`; }); };
 const ro = new ResizeObserver((es) => es.forEach((e) => fit(e.target)));
-const pio = new IntersectionObserver((entries) => entries.forEach((en) => {
-  if (!en.isIntersecting) return;
-  pio.unobserve(en.target);
-  const f = en.target, [page, q] = SCREEN_OF[f.dataset.screen];
+function mountPhone(f) {
+  if (f._mounted) return; f._mounted = true;
+  const [page, q] = SCREEN_OF[f.dataset.screen];
   // MapKit JS 的 token 只認 tripezgo.com；本機用 tools/mapkit-dev-token.mjs 簽的那張（只認 localhost:8770）。
   // 其他網域兩張都沒有，地圖畫不出來，留著預覽圖就好
   if (page === 'map-live' && !['tripezgo.com', 'localhost'].includes(location.hostname)) return;
@@ -442,35 +441,41 @@ const pio = new IntersectionObserver((entries) => entries.forEach((en) => {
   const auto = !f.closest('.hero') && !NO_AUTO.has(f.dataset.screen);
   fr.src = `/screens/${page}.html?lang=${SCREEN_LANG}&interactive=1${auto ? '&auto=' + f.dataset.screen : ''}${q ? '&' + q : ''}`;
   fr.name = `ph-${f.dataset.screen}-${phones.indexOf(f)}`;   // 每支手機自己的狀態 id（autoplay、demo-state 用）
-  fr.title = f.querySelector('img').alt; fr.loading = 'lazy'; fr.width = 402; fr.height = 874;
-  fr.addEventListener('load', () => { f.classList.add('is-live'); f._auto?.apply(); });   // 載入前送的 play/pause 會掉，載入後補送一次
+  fr.title = f.querySelector('img').alt; fr.width = 402; fr.height = 874;
+  const isMap = page === 'map-live';
+  if (!isMap) fr.loading = 'lazy';
+  // 地圖：iframe 的 load 只代表 HTML 到了，MapKit 還沒取完景（畫面一片白）。先蓋著預覽圖＋轉圈，畫面回報 ready 才換上（使用者 2026-10-12）
+  if (isMap) f.insertAdjacentHTML('beforeend', '<span class="ph-loading" aria-hidden="true"></span>');
+  const live = () => { f.classList.add('is-live'); f._auto?.apply(); };   // 載入前送的 play/pause 會掉，載入後補送一次
+  fr.addEventListener('load', () => {
+    if (!isMap) return live();
+    const t0 = Date.now();
+    const wait = () => (fr.contentDocument?.body?.dataset.ready === '1' || Date.now() - t0 > 12000 ? live() : setTimeout(wait, 100));
+    wait();
+  });
   f._fr = fr; f._src = fr.src;
   f.append(fr); fit(f); ro.observe(f);
   // 點手機畫面＝全螢幕打開，自己玩（首頁上這支只負責示範，不直接操作）。
-  const st = { sticky: false, visible: false };   // visible 由 vio 回報；捲進畫面才播
+  const st = { visible: false };   // visible 由 vio 回報；捲進畫面才播
   const hit = document.createElement('button');
   hit.type = 'button'; hit.className = 'phone-hit'; hit.setAttribute('aria-label', ZOOM); hit.title = ZOOM;
-  hit.onclick = () => { st.sticky = true; apply(); openPlay(page, q, f.querySelector('img').alt); };
-  const btn = document.createElement('button');
-  btn.type = 'button'; btn.className = 'auto-ctl';
-  // 只有使用者按了才暫停（再按繼續）；滑鼠移上去只是讓按鈕出現，不影響播放。捲出畫面時也停（不算使用者按的）。
+  hit.onclick = () => { openPlay(page, q, f.querySelector('img').alt); apply(); };
+  // 沒有暫停鈕，使用者也停不了（使用者 2026-10-12）：只在捲出畫面、或全螢幕試玩開著的時候停，關掉就接著播
   const apply = () => {
-    const p = st.sticky || !st.visible;
-    btn.dataset.paused = String(st.sticky);
-    btn.setAttribute('aria-label', st.sticky ? PLAY : PAUSE); btn.title = btn.getAttribute('aria-label');
+    const p = !st.visible || !!playDlg?.open;
     f._fr?.contentWindow?.postMessage({ type: 'tz-auto-ctl', cmd: p ? 'pause' : 'play' }, '*');
   };
-  const label = (paused) => { if (paused) { st.sticky = true; apply(); } };   // 畫面裡使用者自己動手了
-  btn.onclick = (e) => { e.stopPropagation(); st.sticky = !st.sticky; apply(); peek(); };
-  // 觸控裝置沒有滑鼠移上去：播放中只在捲進畫面、按過之後亮一下就收，暫停時才一直顯示（使用者 2026-10-12：一直擋住畫面）
-  let peekT = 0;
-  const peek = () => { btn.classList.add('is-peek'); clearTimeout(peekT); peekT = setTimeout(() => btn.classList.remove('is-peek'), 1500); };
-  f._auto = { st, apply, peek }; f._label = label;
+  f._auto = { st, apply };
   // 鎖定畫面：時間條要在首頁上直接拖，不蓋「點了就全螢幕」那一層
-  f.append(...(DIRECT.has(f.dataset.screen) ? [] : [hit]), ...(auto ? [btn] : []));
-  frames.set(fr, label); vio.observe(f);
-}), { rootMargin: '300px 0px' });
-phones.forEach((f) => { pio.observe(f); ro.observe(f); fit(f); });
+  f.append(...(DIRECT.has(f.dataset.screen) ? [] : [hit]));
+  if (auto) f.insertAdjacentHTML('beforeend', '<span class="auto-prog" aria-hidden="true"><i class="is-reset"></i></span>');
+  if (auto) f.classList.add('has-prog');
+  vio.observe(f);
+}
+// 一般畫面捲到附近（300px）才載；地圖提早很多（MapKit 要拉 SDK 跟圖磚），捲到時已經畫好（使用者 2026-10-12）
+const lazyIO = (margin) => new IntersectionObserver((es, io) => es.forEach((en) => { if (en.isIntersecting) { io.unobserve(en.target); mountPhone(en.target); } }), { rootMargin: margin });
+const pio = lazyIO('300px 0px'), mio = lazyIO('2000px 0px');
+phones.forEach((f) => { (SCREEN_OF[f.dataset.screen][0] === 'map-live' ? mio : pio).observe(f); ro.observe(f); fit(f); });
 
 /* ── 右下角「立即下載 App」：捲過 hero 才出現；最底下的下載區看得到時收起來（使用者 2026-10-12） ── */
 {

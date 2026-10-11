@@ -92,9 +92,9 @@
     text-shadow: 0 1px 6px rgba(0,30,60,.3); }
   .lk-scrub-track { position: relative; height: 6px; border-radius: 3px; background: rgba(255,255,255,.28);
     -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: inset 0 0 0 .5px rgba(255,255,255,.35); }
-  .lk-scrub-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: rgba(255,255,255,.9); }
-  .lk-scrub-thumb { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: #fff;
-    box-shadow: 0 1px 4px rgba(0,0,0,.25); transition: transform .15s; }
+  .lk-scrub-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); }   /* 主題色（使用者 2026-10-12） */
+  .lk-scrub-thumb { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 2px #fff, 0 1px 4px rgba(0,0,0,.25); transition: transform .15s; }
   .lk-scrub.active .lk-scrub-thumb { transform: scale(1.35); }
   .lk-scrub:focus-visible .lk-scrub-track { box-shadow: 0 0 0 2px rgba(255,255,255,.8); }
 
