@@ -554,11 +554,23 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
 .ph.shot.phone::after  { right:calc(-1 * var(--bz) - 2.4px - var(--bz) * .8); top:26%; height:16%; }  /* 側邊按鈕 */
 .ph.shot.phone > img { overflow:hidden; }
 
-/* 自動示範的進度條：手機底下一條，主題色（使用者 2026-10-12） */
-.ph.shot.phone.has-prog { margin-bottom:calc(var(--bz) + 24px); }
-.auto-prog { position:absolute; left:28%; right:28%; top:calc(100% + var(--bz) + 12px); height:4px; border-radius:2px;
-  background:color-mix(in srgb, var(--accent) 18%, transparent); overflow:hidden; pointer-events:none; }
+/* 自動示範的進度：畫在螢幕底部那條 Home 指示條上，主題色往右填（使用者 2026-10-12）。
+   指示條 134×5pt、離底 8pt（iPhone 17 Pro 402 寬），照手機寬等比縮放 */
+.auto-prog { position:absolute; z-index:5; left:50%; bottom:calc(var(--wpx, 260px) * 8 / 402); width:calc(var(--wpx, 260px) * 134 / 402);
+  height:calc(var(--wpx, 260px) * 5 / 402); min-height:3px; transform:translateX(-50%); border-radius:99px; overflow:hidden; pointer-events:none;
+  background:rgba(0,0,0,.22); }
 .auto-prog > i { display:block; height:100%; width:0; border-radius:inherit; background:var(--accent); }   /* 寬度動畫由 home.js 依每一步的時間設 */
+/* 鎖定畫面的「時間」拉桿：搬到手機外面、手機底下（使用者 2026-10-12），拖它就撥畫面裡的時間 */
+.ph.shot.phone.has-ext { margin-bottom:calc(var(--bz) + 64px); }
+.lk-ext { position:absolute; left:8%; right:8%; top:calc(100% + var(--bz) + 14px); display:grid; gap:8px; touch-action:none; cursor:pointer;
+  user-select:none; -webkit-user-select:none; outline:none; }
+.lk-ext-t { text-align:center; font-size:var(--text-sm, 14px); font-weight:600; font-variant-numeric:tabular-nums; color:var(--text); }
+.lk-ext-track { position:relative; height:6px; border-radius:3px; background:color-mix(in srgb, var(--accent) 18%, transparent); }
+.lk-ext-fill { position:absolute; left:0; top:0; bottom:0; border-radius:3px; background:var(--accent); }
+.lk-ext-thumb { position:absolute; top:50%; width:18px; height:18px; margin:-9px 0 0 -9px; border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px var(--page, #fff), 0 1px 4px rgba(0,0,0,.25); transition:transform .15s; }
+.lk-ext.active .lk-ext-thumb { transform:scale(1.25); }
+.lk-ext:focus-visible .lk-ext-track { box-shadow:0 0 0 2px var(--accent); }
 /* 地圖畫面載入中：預覽圖上蓋一個轉圈，MapKit 取完景才換成真的地圖 */
 .ph-loading { position:absolute; z-index:3; left:50%; top:50%; width:36px; height:36px; margin:-18px 0 0 -18px; border-radius:50%;
   border:3px solid rgba(255,255,255,.55); border-top-color:var(--accent); background:rgba(255,255,255,.35);

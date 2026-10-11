@@ -371,6 +371,12 @@ const NO_AUTO = new Set(['note', 'members', 'lock', 'widget', 'apple-calendar', 
 addEventListener('message', (e) => {
   if (e.data?.type === 'tz-esc' && playDlg?.open) { playDlg.close(); return; }
   if (e.data?.type === 'tz-auto-hello') { for (const f of phones) if (f._fr?.contentWindow === e.source) f._auto?.apply(); return; }
+  if (e.data?.type === 'tz-lock-state') {
+    const f = phones.find((p) => p._fr?.contentWindow === e.source); if (!f) return;
+    const x = f._ext || (f._ext = lockSlider(f, e.data.label0));
+    x.update(e.data.f, e.data.label);
+    return;
+  }
   if (e.data?.type === 'tz-auto-progress') {
     const f = phones.find((p) => [...p.querySelectorAll('iframe')].some((fr) => fr.contentWindow === e.source));
     const bar = f?.querySelector('.auto-prog > i'); if (!bar) return;
@@ -406,7 +412,7 @@ const phones = [...document.querySelectorAll('figure.ph.shot')].filter((f) => {
 function reloop(f) {
   const old = f._fr, nf = document.createElement('iframe');
   nf.width = 402; nf.height = 874; nf.title = old.title; nf.className = 'is-next';
-  nf.name = `${old.name.replace(/-r\d+$/, '')}-r${Date.now()}`;
+  nf.name = `${old.name.replace(/r\d+$/, '')}r${Date.now()}`;   // 新的 name＝乾淨的狀態；要符合 demo-state 的 tzd[a-z0-9]+，不然會被換成亂數
   nf.src = f._src;
   nf.addEventListener('load', () => setTimeout(() => {
     f._fr = nf; f._auto?.apply();
@@ -419,7 +425,9 @@ function reloop(f) {
 // 同一個 name，畫面自己的狀態（sessionStorage）接得上；標題列與分頁列位置不變，看起來只有中間在換。
 function navSwap(old, url) {
   const nf = document.createElement('iframe');
-  nf.width = 402; nf.height = 874; nf.title = old.title; nf.name = old.name; nf.className = 'is-next';
+  nf.width = 402; nf.height = 874; nf.title = old.title; nf.className = 'is-next';
+  // 沿用舊那一頁「實際的」window.name：示範進度與畫面狀態都掛在它底下，換了就從第一步重來、卡在等頁面（2026-10-12）
+  nf.name = old.contentWindow?.name || old.name;
   nf.style.transform = old.style.transform; nf.style.transition = 'none';
   nf.src = url;
   nf.addEventListener('load', () => {
@@ -447,8 +455,9 @@ function mountPhone(f) {
   const fr = document.createElement('iframe');
   // 自動示範只給有東西可操作的段落：Hero 三張與筆記不跑（使用者 2026-10-11）
   const auto = !f.closest('.hero') && !NO_AUTO.has(f.dataset.screen);
-  fr.src = `/screens/${page}.html?lang=${SCREEN_LANG}&interactive=1${auto ? '&auto=' + f.dataset.screen + '&av=' + AUTO_V : ''}${q ? '&' + q : ''}`;
-  fr.name = `ph-${f.dataset.screen}-${phones.indexOf(f)}`;   // 每支手機自己的狀態 id（autoplay、demo-state 用）
+  fr.src = `/screens/${page}.html?lang=${SCREEN_LANG}&interactive=1${auto ? '&auto=' + f.dataset.screen + '&av=' + AUTO_V : ''}${f.dataset.screen === 'lock' ? '&ext=1' : ''}${q ? '&' + q : ''}`;
+  // 每支手機自己的狀態 id（autoplay、demo-state 用）。demo-state 只認 tzd[a-z0-9]+，其他的會被它換成亂數
+  fr.name = `tzdp${phones.indexOf(f)}${f.dataset.screen.replace(/[^a-z0-9]/g, '')}`;
   fr.title = f.querySelector('img').alt; fr.width = 402; fr.height = 874;
   const isMap = page === 'map-live';
   if (!isMap) fr.loading = 'lazy';
@@ -479,6 +488,30 @@ function mountPhone(f) {
   if (auto) f.insertAdjacentHTML('beforeend', '<span class="auto-prog" aria-hidden="true"><i></i></span>');
   if (auto) f.classList.add('has-prog');
   vio.observe(f);
+}
+// 鎖定畫面的時間拉桿：畫在手機外面、手機底下（使用者 2026-10-12）。拖、點軌道、鍵盤都轉成 tz-lock-set 送進畫面
+function lockSlider(f, name) {
+  f.classList.add('has-ext');
+  f.insertAdjacentHTML('beforeend', `<div class="lk-ext" role="slider" tabindex="0" aria-label="${name}" aria-valuemin="0" aria-valuemax="100">
+    <div class="lk-ext-t"></div><div class="lk-ext-track"><div class="lk-ext-fill"></div><div class="lk-ext-thumb"></div></div></div>`);
+  const el = f.querySelector('.lk-ext'), track = el.querySelector('.lk-ext-track');
+  let cur = 0, last = 0, pid = null;   // last：最後送進去的值（畫面回報 cur 是非同步的，放開時要用 last）
+  const send = (v, dragging = false) => { last = Math.min(1, Math.max(0, v)); f._fr?.contentWindow?.postMessage({ type: 'tz-lock-set', f: last, dragging }, '*'); };
+  const fromX = (x) => { const r = track.getBoundingClientRect(); return (x - r.left) / r.width; };
+  el.addEventListener('pointerdown', (e) => { pid = e.pointerId; el.classList.add('active'); try { el.setPointerCapture(pid); } catch {} send(fromX(e.clientX), true); });
+  el.addEventListener('pointermove', (e) => { if (e.pointerId === pid) send(fromX(e.clientX), true); });
+  const end = (e) => { if (e.pointerId !== pid) return; pid = null; el.classList.remove('active'); send(last); };
+  el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+  el.addEventListener('keydown', (e) => {   // 07:00–21:00 共 14 小時：←→ 15 分、PageUp/Down 1 小時
+    const step = { ArrowRight: 1, ArrowUp: 1, ArrowLeft: -1, ArrowDown: -1, PageUp: 4, PageDown: -4 }[e.key];
+    if (step) send(cur + step / 56); else if (e.key === 'Home') send(0); else if (e.key === 'End') send(1); else return;
+    e.preventDefault();
+  });
+  return { update(v, label) {
+    cur = v; const pct = (v * 100).toFixed(2) + '%';
+    el.querySelector('.lk-ext-fill').style.width = pct; el.querySelector('.lk-ext-thumb').style.left = pct;
+    el.querySelector('.lk-ext-t').textContent = label; el.setAttribute('aria-valuenow', Math.round(v * 100)); el.setAttribute('aria-valuetext', label);
+  } };
 }
 // 一般畫面捲到附近（300px）才載；地圖提早很多（MapKit 要拉 SDK 跟圖磚），捲到時已經畫好（使用者 2026-10-12）
 const lazyIO = (margin) => new IntersectionObserver((es, io) => es.forEach((en) => { if (en.isIntersecting) { io.unobserve(en.target); mountPhone(en.target); } }), { rootMargin: margin });

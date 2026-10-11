@@ -86,6 +86,7 @@
   .la-alt svg { flex: none; width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .la-alt.warn { color: var(--warning); font-weight: 600; }
   /* 撥時間的那一條（互動模式才有）：放在手電筒與相機中間，長相照 iOS 媒體播放的玻璃進度條——細軌、白色已走、小圓把手 */
+  .lk-scrub[hidden] { display: none; }
   .lk-scrub { position: absolute; left: 110px; right: 110px; bottom: 52px; height: 50px; display: flex; flex-direction: column;
     justify-content: center; gap: 7px; touch-action: none; cursor: pointer; outline: none; user-select: none; -webkit-user-select: none; }
   .lk-scrub-t { text-align: center; font: 600 13px/16px var(--font); font-variant-numeric: tabular-nums; color: rgba(255,255,255,.92);
@@ -472,8 +473,16 @@ if (interactive) {
     aria-valuemin="${MIN / 60}" aria-valuemax="${MAX / 60}"><div class="lk-scrub-t"></div>
     <div class="lk-scrub-track"><div class="lk-scrub-fill"></div><div class="lk-scrub-thumb"></div></div></div>`);
   const bar = d.querySelector('.lk-scrub'), track = bar.querySelector('.lk-scrub-track');
+  // ext=1（首頁外框）：拉桿畫在手機外面（home.js），這條藏起來；外面拖＝送 tz-lock-set 進來，這裡每次變動回報 tz-lock-state（使用者 2026-10-12）
+  const ext = params.get('ext') === '1' && parent !== window;
+  if (ext) {
+    bar.hidden = true;
+    addEventListener('message', (e) => { if (e.source === parent && e.data?.type === 'tz-lock-set') {
+      dragging = !!e.data.dragging; setT(Math.round((MIN + e.data.f * (MAX - MIN)) / 60) * 60 + (tSec % 60)); } });
+  }
   syncBar = () => {
     const f = (tSec - MIN) / (MAX - MIN), m = Math.floor(tSec / 60), label = `${Math.floor(m / 60)}:${String(m % 60).padStart(2, '0')}`;
+    if (ext) parent.postMessage({ type: 'tz-lock-state', f, label, label0: S2.scrub }, '*');
     bar.querySelector('.lk-scrub-fill').style.width = `${(f * 100).toFixed(2)}%`;
     bar.querySelector('.lk-scrub-thumb').style.left = `${(f * 100).toFixed(2)}%`;
     bar.querySelector('.lk-scrub-t').textContent = label;

@@ -94,6 +94,8 @@ export function go(page, query = '') {
   const q = new URLSearchParams(query);
   q.set('lang', lang); if (interactive) q.set('interactive', '1');
   if (interactive && params.get('auto')) q.set('auto', params.get('auto'));   // 換頁後自動示範要接著跑
+  if (interactive && params.get('av')) q.set('av', params.get('av'));          // 腳本的版本號也帶著
+  if (interactive && params.get('ext')) q.set('ext', params.get('ext'));
   const url = new URL(`./${page}.html?${q}`, location.href).href;
   // 在首頁的外框裡：請外面在背景載好新的一頁、畫完再瞬間換上，整頁不會閃（使用者 2026-10-12）。
   // 外面沒回 tz-nav-ok（直接開這一頁、或不是首頁）就照舊換頁。
