@@ -235,6 +235,7 @@ T = {
   # 03 行事曆／時間軸
   '03 · 行事曆／時間軸': ('03 · Calendar / Timeline', '03 · カレンダー／タイムライン'),
   '一拖一拉就能安排、調整行程': ('Drag to plan and rearrange events', 'ドラッグするだけで予定を組んだり動かしたり'),
+  '還沒決定時間的地方，拖進時段就排好': ("Drag an unscheduled place onto a time and it's planned", '未定の予定は時間帯へドラッグするだけ'),
   '<p><b>行事曆模式</b>：你的行程就是一個行事曆事件，除了瀏覽直覺，安排行程時也最好用——一拖一拉就能排好行程，要改也只要拖曳就能換位置；規劃階段還不確定誰先誰後的行程，可以很快地調整。</p>':
       ("<p><b>Calendar view</b>: every event sits on a calendar, just like an appointment. It's easy to read, and it's the easiest way to plan — drag to place an event, drag again to move it. Still not sure what comes first? Rearranging takes seconds.</p>",
        '<p><b>カレンダー表示</b>：予定はそのままカレンダーの予定として並びます。見やすいだけでなく、組み立てるときにもいちばん便利。ドラッグで置いて、変えたいときもドラッグで動かすだけ。順番がまだ決まらない予定も、さっと入れ替えられます。</p>'),
