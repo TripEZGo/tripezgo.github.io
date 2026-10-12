@@ -34,6 +34,37 @@
 <meta name="twitter:description" content="授權範圍、付費項目與訂閱、免責聲明、責任限制與準據法。">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-zh.png">
 <link rel="stylesheet" href="/assets/css/site.css">
+<!-- embed:start — tools/embed.mjs 產生，不要手改 -->
+<script>
+(function () {
+  if (!/[?&]mode=embed(?:&|$)/.test(location.search)) return;
+  var d = document.documentElement;
+  d.classList.add('embed');
+  var robots = document.createElement('meta'); robots.name = 'robots'; robots.content = 'noindex';
+  document.head.appendChild(robots);
+  // 同站連結補 mode=embed；只有 # 的錨點、外站、mailto 不動
+  function tag(a) {
+    var raw = a.getAttribute('href');
+    if (!raw || raw.charAt(0) === '#') return;
+    var u; try { u = new URL(raw, location.href); } catch (e) { return; }
+    if (u.origin !== location.origin || u.searchParams.get('mode') === 'embed') return;
+    u.searchParams.set('mode', 'embed');
+    a.setAttribute('href', u.pathname + u.search + u.hash);
+  }
+  function all() { Array.prototype.forEach.call(document.querySelectorAll('a[href]'), tag); }
+  document.addEventListener('DOMContentLoaded', all);
+  // 之後才由程式加進來的連結：點下去那一刻再補
+  document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href]'); if (a) tag(a); }, true);
+})();
+</script>
+<style>
+  html.embed .site-header, html.embed .skip-link, html.embed .hero, html.embed .site-footer, html.embed .fab-dl,
+  html.embed .plans-cta, html.embed .nav-menu, html.embed .fab-qr, html.embed a[href*="apps.apple.com"] { display: none !important; }
+  html.embed { scroll-padding-top: 16px; }
+  html.embed .hero + .section { padding-top: clamp(24px, 4vw, 40px); }
+  html.embed .legal { padding-top: clamp(24px, 4vw, 40px); }
+</style>
+<!-- embed:end -->
 </head>
 <body>
 <a class="skip-link" href="#main">跳到主要內容</a>
@@ -65,7 +96,7 @@
     <header class="legal-header">
       <p class="eyebrow">法律文件</p>
       <h1>使用者條款</h1>
-      <p class="legal-meta">適用於 TripEZGo iOS App 與 tripezgo.com　·　生效日期：2026 年 8 月 16 日　·　最後更新：2026 年 8 月 16 日</p>
+      <p class="legal-meta">適用於 TripEZGo iOS App 與 tripezgo.com　·　生效日期：2026 年 8 月 16 日　·　最後更新：2026 年 10 月 12 日</p>
     </header>
 
     <nav class="toc" aria-label="目錄">
@@ -90,6 +121,7 @@
         <li><a href="#t17">其他約定</a></li>
         <li><a href="#t18">條款變更</a></li>
         <li><a href="#t19">聯絡方式</a></li>
+        <li><a href="#t20">資料來源</a></li>
       </ol>
     </nav>
 
@@ -204,6 +236,15 @@
     <h2 id="t19">19. 聯絡方式</h2>
     <p>對本條款有任何疑問，歡迎來信：<a href="mailto:contact@tripezgo.com">contact@tripezgo.com</a></p>
     <p>另可參閱<a href="/privacy.html">隱私權政策</a>。</p>
+
+    <h2 id="t20">20. 資料來源</h2>
+    <p>沒有網路、或地圖服務暫時沒有回應時，旅程地點搜尋會改用 App 內建的地點資料。這份資料來自下面幾個來源，經過挑選與整理：只收城市、一級行政區、國家與有名的島嶼、地區、景點。</p>
+    <h3>地名、座標與時區</h3>
+    <p><a href="https://www.geonames.org/" rel="noopener" target="_blank">GeoNames</a>（geonames.org），以 <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">CC BY 4.0</a> 授權。</p>
+    <h3>各國的時區</h3>
+    <p><a href="https://www.iana.org/time-zones" rel="noopener" target="_blank">IANA</a> 時區資料庫（zone.tab），公有領域。</p>
+    <h3>漢字異體對照</h3>
+    <p>Unicode Unihan 資料庫，© Unicode, Inc.，以 <a href="https://www.unicode.org/license.txt" rel="noopener" target="_blank">Unicode License v3</a> 授權；<a href="https://github.com/BYVoid/OpenCC" rel="noopener" target="_blank">OpenCC</a> 的日本新字體表，以 <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener" target="_blank">Apache License 2.0</a> 授權。</p>
 
   </div>
 </main>

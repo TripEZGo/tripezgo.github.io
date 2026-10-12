@@ -27,6 +27,37 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icon-32.png">
 <link rel="apple-touch-icon" href="/assets/img/icon-180.png">
 <link rel="stylesheet" href="/assets/css/site.css">
+<!-- embed:start — tools/embed.mjs 產生，不要手改 -->
+<script>
+(function () {
+  if (!/[?&]mode=embed(?:&|$)/.test(location.search)) return;
+  var d = document.documentElement;
+  d.classList.add('embed');
+  var robots = document.createElement('meta'); robots.name = 'robots'; robots.content = 'noindex';
+  document.head.appendChild(robots);
+  // 同站連結補 mode=embed；只有 # 的錨點、外站、mailto 不動
+  function tag(a) {
+    var raw = a.getAttribute('href');
+    if (!raw || raw.charAt(0) === '#') return;
+    var u; try { u = new URL(raw, location.href); } catch (e) { return; }
+    if (u.origin !== location.origin || u.searchParams.get('mode') === 'embed') return;
+    u.searchParams.set('mode', 'embed');
+    a.setAttribute('href', u.pathname + u.search + u.hash);
+  }
+  function all() { Array.prototype.forEach.call(document.querySelectorAll('a[href]'), tag); }
+  document.addEventListener('DOMContentLoaded', all);
+  // 之後才由程式加進來的連結：點下去那一刻再補
+  document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href]'); if (a) tag(a); }, true);
+})();
+</script>
+<style>
+  html.embed .site-header, html.embed .skip-link, html.embed .hero, html.embed .site-footer, html.embed .fab-dl,
+  html.embed .plans-cta, html.embed .nav-menu, html.embed .fab-qr, html.embed a[href*="apps.apple.com"] { display: none !important; }
+  html.embed { scroll-padding-top: 16px; }
+  html.embed .hero + .section { padding-top: clamp(24px, 4vw, 40px); }
+  html.embed .legal { padding-top: clamp(24px, 4vw, 40px); }
+</style>
+<!-- embed:end -->
 <!-- 這一頁是 tools/gen-contact.mjs 產生的，不要手改。 -->
 <style>
   main { max-width: 760px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 5vw, 56px); }
@@ -75,7 +106,7 @@
 <main id="main">
   <h1>お問い合わせ</h1>
   <p class="lede">不具合、機能のご要望、お支払い、協業のご提案はこちらから。ご入力のメールアドレスへ返信します。</p>
-  <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSclH9b9F8471nM0xbYbe3exfXjFMSQGT9H5DRlkmXVRGJJkpw/viewform?hl=ja" target="_blank" rel="noopener">お問い合わせフォームを開く<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSclH9b9F8471nM0xbYbe3exfXjFMSQGT9H5DRlkmXVRGJJkpw/viewform?usp=pp_url&amp;hl=ja&amp;entry.986219665=%E6%97%A5%E6%9C%AC%E8%AA%9E" target="_blank" rel="noopener">お問い合わせフォームを開く<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
   <p class="fallback">メールでのお問い合わせ： <a href="mailto:contact@tripezgo.com">contact@tripezgo.com</a></p>
 </main>
 <footer class="site-footer">

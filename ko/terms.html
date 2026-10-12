@@ -34,6 +34,37 @@
 <meta name="twitter:description" content="이용 허락의 범위, 유료 기능과 구독, 보증의 부인, 책임의 제한 및 준거법.">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-ko.png">
 <link rel="stylesheet" href="/assets/css/site.css">
+<!-- embed:start — tools/embed.mjs 產生，不要手改 -->
+<script>
+(function () {
+  if (!/[?&]mode=embed(?:&|$)/.test(location.search)) return;
+  var d = document.documentElement;
+  d.classList.add('embed');
+  var robots = document.createElement('meta'); robots.name = 'robots'; robots.content = 'noindex';
+  document.head.appendChild(robots);
+  // 同站連結補 mode=embed；只有 # 的錨點、外站、mailto 不動
+  function tag(a) {
+    var raw = a.getAttribute('href');
+    if (!raw || raw.charAt(0) === '#') return;
+    var u; try { u = new URL(raw, location.href); } catch (e) { return; }
+    if (u.origin !== location.origin || u.searchParams.get('mode') === 'embed') return;
+    u.searchParams.set('mode', 'embed');
+    a.setAttribute('href', u.pathname + u.search + u.hash);
+  }
+  function all() { Array.prototype.forEach.call(document.querySelectorAll('a[href]'), tag); }
+  document.addEventListener('DOMContentLoaded', all);
+  // 之後才由程式加進來的連結：點下去那一刻再補
+  document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href]'); if (a) tag(a); }, true);
+})();
+</script>
+<style>
+  html.embed .site-header, html.embed .skip-link, html.embed .hero, html.embed .site-footer, html.embed .fab-dl,
+  html.embed .plans-cta, html.embed .nav-menu, html.embed .fab-qr, html.embed a[href*="apps.apple.com"] { display: none !important; }
+  html.embed { scroll-padding-top: 16px; }
+  html.embed .hero + .section { padding-top: clamp(24px, 4vw, 40px); }
+  html.embed .legal { padding-top: clamp(24px, 4vw, 40px); }
+</style>
+<!-- embed:end -->
 </head>
 <body>
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -65,7 +96,7 @@
     <header class="legal-header">
       <p class="eyebrow">법적 고지</p>
       <h1>이용약관</h1>
-      <p class="legal-meta">적용 대상: TripEZGo iOS 앱 및 tripezgo.com　·　시행일: 2026년 8월 16일　·　최종 수정일: 2026년 8월 16일</p>
+      <p class="legal-meta">적용 대상: TripEZGo iOS 앱 및 tripezgo.com　·　시행일: 2026년 8월 16일　·　최종 수정일: 2026년 10월 12일</p>
       <p class="legal-meta">이 문서는 영문판을 번역한 것입니다. 번역문과 <a href="/en/terms.html" hreflang="en" lang="en">영문판</a>의 내용이 서로 다른 경우 영문판이 우선합니다.</p>
     </header>
 
@@ -91,6 +122,7 @@
         <li><a href="#t17">일반 조항</a></li>
         <li><a href="#t18">본 약관의 변경</a></li>
         <li><a href="#t19">문의처</a></li>
+        <li><a href="#t20">데이터 출처</a></li>
       </ol>
     </nav>
 
@@ -205,6 +237,15 @@
     <h2 id="t19">19. 문의처</h2>
     <p>본 약관에 관한 질문은 <a href="mailto:contact@tripezgo.com">contact@tripezgo.com</a>으로 보내 주십시오.</p>
     <p><a href="/ko/privacy.html">개인정보 처리방침</a>도 함께 참조하십시오.</p>
+
+    <h2 id="t20">20. 데이터 출처</h2>
+    <p>인터넷에 연결되어 있지 않거나 지도 서비스가 응답하지 않을 때, 여행 장소 검색은 앱에 내장된 장소 데이터를 사용합니다. 이 데이터는 아래 출처에서 골라 정리한 것입니다(도시, 1급 행정구역, 국가, 유명한 섬·지역·명소만).</p>
+    <h3>지명, 좌표, 시간대</h3>
+    <p><a href="https://www.geonames.org/" rel="noopener" target="_blank">GeoNames</a>(geonames.org), <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">CC BY 4.0</a> 라이선스.</p>
+    <h3>국가별 시간대</h3>
+    <p><a href="https://www.iana.org/time-zones" rel="noopener" target="_blank">IANA</a> 시간대 데이터베이스(zone.tab), 퍼블릭 도메인.</p>
+    <h3>한자 이체자 대응</h3>
+    <p>Unicode Unihan 데이터베이스(© Unicode, Inc., <a href="https://www.unicode.org/license.txt" rel="noopener" target="_blank">Unicode License v3</a>), <a href="https://github.com/BYVoid/OpenCC" rel="noopener" target="_blank">OpenCC</a>의 일본 신자체 표(<a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener" target="_blank">Apache License 2.0</a>).</p>
 
   </div>
 </main>

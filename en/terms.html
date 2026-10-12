@@ -34,6 +34,37 @@
 <meta name="twitter:description" content="Licence scope, paid features and subscriptions, disclaimers, limitation of liability and governing law.">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-en.png">
 <link rel="stylesheet" href="/assets/css/site.css">
+<!-- embed:start — tools/embed.mjs 產生，不要手改 -->
+<script>
+(function () {
+  if (!/[?&]mode=embed(?:&|$)/.test(location.search)) return;
+  var d = document.documentElement;
+  d.classList.add('embed');
+  var robots = document.createElement('meta'); robots.name = 'robots'; robots.content = 'noindex';
+  document.head.appendChild(robots);
+  // 同站連結補 mode=embed；只有 # 的錨點、外站、mailto 不動
+  function tag(a) {
+    var raw = a.getAttribute('href');
+    if (!raw || raw.charAt(0) === '#') return;
+    var u; try { u = new URL(raw, location.href); } catch (e) { return; }
+    if (u.origin !== location.origin || u.searchParams.get('mode') === 'embed') return;
+    u.searchParams.set('mode', 'embed');
+    a.setAttribute('href', u.pathname + u.search + u.hash);
+  }
+  function all() { Array.prototype.forEach.call(document.querySelectorAll('a[href]'), tag); }
+  document.addEventListener('DOMContentLoaded', all);
+  // 之後才由程式加進來的連結：點下去那一刻再補
+  document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href]'); if (a) tag(a); }, true);
+})();
+</script>
+<style>
+  html.embed .site-header, html.embed .skip-link, html.embed .hero, html.embed .site-footer, html.embed .fab-dl,
+  html.embed .plans-cta, html.embed .nav-menu, html.embed .fab-qr, html.embed a[href*="apps.apple.com"] { display: none !important; }
+  html.embed { scroll-padding-top: 16px; }
+  html.embed .hero + .section { padding-top: clamp(24px, 4vw, 40px); }
+  html.embed .legal { padding-top: clamp(24px, 4vw, 40px); }
+</style>
+<!-- embed:end -->
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -65,7 +96,7 @@
     <header class="legal-header">
       <p class="eyebrow">Legal</p>
       <h1>Terms of Use</h1>
-      <p class="legal-meta">Applies to the TripEZGo iOS app and tripezgo.com　·　Effective: 16 August 2026　·　Last updated: 16 August 2026</p>
+      <p class="legal-meta">Applies to the TripEZGo iOS app and tripezgo.com　·　Effective: 16 August 2026　·　Last updated: 12 October 2026</p>
     </header>
 
     <nav class="toc" aria-label="Table of contents">
@@ -90,6 +121,7 @@
         <li><a href="#t17">General</a></li>
         <li><a href="#t18">Changes to these Terms</a></li>
         <li><a href="#t19">Contact</a></li>
+        <li><a href="#t20">Data Sources</a></li>
       </ol>
     </nav>
 
@@ -204,6 +236,15 @@
     <h2 id="t19">19. Contact</h2>
     <p>Questions about these Terms are welcome at <a href="mailto:contact@tripezgo.com">contact@tripezgo.com</a>.</p>
     <p>See also the <a href="/en/privacy.html">Privacy Policy</a>.</p>
+
+    <h2 id="t20">20. Data Sources</h2>
+    <p>When you're offline or the map service isn't responding, trip place search uses a place list built into the app. It comes from the sources below, selected and adapted: cities, top-level regions, countries, and well-known islands, areas and landmarks.</p>
+    <h3>Place names, coordinates and time zones</h3>
+    <p><a href="https://www.geonames.org/" rel="noopener" target="_blank">GeoNames</a> (geonames.org), licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">CC BY 4.0</a>.</p>
+    <h3>Time zones by country</h3>
+    <p><a href="https://www.iana.org/time-zones" rel="noopener" target="_blank">IANA</a> Time Zone Database (zone.tab), public domain.</p>
+    <h3>Han character variants</h3>
+    <p>Unicode Unihan Database, © Unicode, Inc., under the <a href="https://www.unicode.org/license.txt" rel="noopener" target="_blank">Unicode License v3</a>; the Japanese shinjitai table from <a href="https://github.com/BYVoid/OpenCC" rel="noopener" target="_blank">OpenCC</a>, under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener" target="_blank">Apache License 2.0</a>.</p>
 
   </div>
 </main>
