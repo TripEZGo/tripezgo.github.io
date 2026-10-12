@@ -95,6 +95,8 @@
 <script type="module">
 import { fmt, params, lang, t, loadTrip, loadCategories, chrome, svg, swatchClass, toMin, ready, interactive, go } from './chrome.js';
 import { applyState } from './demo-state.js';
+import { applyPlaced } from './pending-state.js';
+import { loadZoom, attachPinch } from './zoom.js';
 
 // EventTypeIcons.swift（Maki，15 格，even-odd 填色）——只收這份範本用得到的類型
 const MAKI = {
@@ -151,7 +153,8 @@ const maki = (k, cls = 'maki') => `<svg class="${cls}" viewBox="0 0 15 15"><path
 const d = document.getElementById('d');
 const trip = await loadTrip();
 await loadCategories();
-if (interactive) applyState(trip);   // 跟行事曆共用同一份（demo-state.js）：拖過的時刻、取消、刪除、班次
+// 跟行事曆共用同一份（demo-state.js）：拖過的時刻、取消、刪除、班次；待排拖進時段的那幾則（pending-state.js）
+if (interactive) { applyPlaced(trip); applyState(trip); }
 const dayNo = +(params.get('day') || 2);
 const todayNo = +(params.get('today') || 1);
 const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
@@ -200,7 +203,7 @@ d.appendChild(grid);
 
 // ── 量膠囊（TimelineAxis.Room：DayView.measuredRoom 量的是八個字的名字＋一句停留時間） ──
 function nodeHTML(e, cls) {
-  return `<div class="node ${cls}"${interactive && e.key ? ` data-key="${e.key}" data-tap` : ''}><div class="halo"><div class="npill">${MAKI[e.category] ? maki(e.category, '') : ''}<span>${fmt(e.title)}</span></div></div>
+  return `<div class="node ${cls}"${interactive && e.key && !e.placed ? ` data-key="${e.key}" data-tap` : ''}><div class="halo"><div class="npill">${MAKI[e.category] ? maki(e.category, '') : ''}<span>${fmt(e.title)}</span></div></div>
     ${e.e2 > e.s ? `<div class="stayt">${dur(e.e2 - e.s)}</div>` : ''}</div>`;
 }
 function measure(html) {
@@ -223,97 +226,107 @@ const segs = minutes.slice(1).map((u, i) => {
 });
 const needed = Math.max(...segs.filter(g => g.min > 0).map(g => minSpan(g.kind) / g.min));
 const scale = Math.min(Math.max(needed, BASE), BASE * MAX_SCALE);
-let yy = TOP_INSET + DOT_MIN_Y, openingY = null, closingY = null;
-if (opening) { openingY = yy; yy += Math.ceil(minSpanAny); }
-const stopY = new Map([[minutes[0], yy]]);
-segs.forEach((g, i) => {
-  const span = Math.min(Math.max(g.min * scale, minSpan(g.kind)), minSpan(g.kind) * MAX_SPAN);
-  yy += Math.ceil(span);
-  stopY.set(minutes[i + 1], yy);
-});
-if (closing) { yy += Math.ceil(minSpanAny); closingY = yy; }
-const Y = m => stopY.get(m);
+// TimelineAxis.make(zoom:)：先照 1 倍排好（每一段撐得下膠囊、長空檔收起來），再把每一段的距離乘上「行事曆高度」的倍率
+// （2026-10-11 起時間軸也吃它，be815dfb5）。截圖模式永遠 1 倍；互動模式可以雙指縮放（zoom.js）。
+function layout(zoom) {
+  zoom = Math.max(zoom, 1 / 1.15);
+  let yy = TOP_INSET + DOT_MIN_Y, openingY = null, closingY = null;
+  if (opening) { openingY = yy; yy += Math.ceil(minSpanAny * zoom); }
+  const stopY = new Map([[minutes[0], yy]]);
+  segs.forEach((g, i) => {
+    const span = Math.min(Math.max(g.min * scale, minSpan(g.kind)), minSpan(g.kind) * MAX_SPAN);
+    yy += Math.ceil(span * zoom);
+    stopY.set(minutes[i + 1], yy);
+  });
+  if (closing) { yy += Math.ceil(minSpanAny * zoom); closingY = yy; }
+  const Y = m => stopY.get(m);
 
-// 捲動：App 的 reveal 把第一個停點放在可視區頂端下 24pt
-const scroll = Y(minutes[0]) - 24;
-content.style.top = -scroll + 'px';
+  // 捲動：App 的 reveal 把第一個停點放在可視區頂端下 24pt
+  const scroll = Y(minutes[0]) - 24;
+  if (!interactive) content.style.top = -scroll + 'px';
 
-// ── 刻度：線＋時刻（時刻之間至少空 18pt 才畫下一個） ──
-let html = '', lastBottom = -1e9;
-const clock = m => `${String(Math.floor(m / 60) % 24).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
-for (const m of minutes) {
-  const y = Y(m), top = y - 8;
-  html += `<div class="rule" style="top:${y}px"></div>`;
-  if (top >= lastBottom + 18) { html += `<div class="stamp" lang="en" style="top:${top}px">${clock(m)}</div>`; lastBottom = top + 16; }
-}
+  // ── 刻度：線＋時刻（時刻之間至少空 18pt 才畫下一個） ──
+  let html = '', lastBottom = -1e9;
+  const clock = m => `${String(Math.floor(m / 60) % 24).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+  for (const m of minutes) {
+    const y = Y(m), top = y - 8;
+    html += `<div class="rule" style="top:${y}px"></div>`;
+    if (top >= lastBottom + 18) { html += `<div class="stamp" lang="en" style="top:${top}px">${clock(m)}</div>`; lastBottom = top + 16; }
+  }
 
-// ── 路程（RouteLinksView）：設過的是 muted 實線，沒設的是 border 色 [4,4] 虛線 ──
-const legs = [];
-if (opening && evs[0]) legs.push({ from: openingY, to: Y(evs[0].s), leg: evs[0].leg?.mode ? evs[0].leg : null, gap: evs[0].s });
-evs.slice(1).forEach((e, i) => {
-  const p = evs[i];
-  legs.push({ from: Y(p.e2), to: Y(e.s), leg: e.leg?.mode ? e.leg : null, gap: e.s - p.e2, toKey: e.key });
-});
-const last = evs[evs.length - 1];
-if (closing && last) legs.push({ from: Y(last.e2), to: closingY, leg: last.closingLeg?.mode ? last.closingLeg : null, gap: 1440 - last.e2 });
-const H = yy + 72;
-let paths = '';
-for (const l of legs) {
-  // 量過：虛線的相位從下游那一端起算（截圖上第一段實線貼著 07:30 那顆點的外圈）
-  paths += `<path d="M${CX} ${l.to}V${l.from}" stroke="${l.leg ? 'var(--muted)' : 'var(--border)'}"${l.leg ? '' : ' stroke-dasharray="4 4"'}/>`;
-}
-html += `<svg class="links" width="402" height="${H}" fill="none" stroke-width="2" stroke-linecap="round">${paths}</svg>`;
+  // ── 路程（RouteLinksView）：設過的是 muted 實線，沒設的是 border 色 [4,4] 虛線 ──
+  const legs = [];
+  if (opening && evs[0]) legs.push({ from: openingY, to: Y(evs[0].s), leg: evs[0].leg?.mode ? evs[0].leg : null, gap: evs[0].s });
+  evs.slice(1).forEach((e, i) => {
+    const p = evs[i];
+    legs.push({ from: Y(p.e2), to: Y(e.s), leg: e.leg?.mode ? e.leg : null, gap: e.s - p.e2, toKey: e.key });
+  });
+  const last = evs[evs.length - 1];
+  if (closing && last) legs.push({ from: Y(last.e2), to: closingY, leg: last.closingLeg?.mode ? last.closingLeg : null, gap: 1440 - last.e2 });
+  const H = yy + 72;
+  let paths = '';
+  for (const l of legs) {
+    // 量過：虛線的相位從下游那一端起算（截圖上第一段實線貼著 07:30 那顆點的外圈）
+    paths += `<path d="M${CX} ${l.to}V${l.from}" stroke="${l.leg ? 'var(--muted)' : 'var(--border)'}"${l.leg ? '' : ' stroke-dasharray="4 4"'}/>`;
+  }
+  html += `<svg class="links" width="402" height="${H}" fill="none" stroke-width="2" stroke-linecap="round">${paths}</svg>`;
 
-// ── 停留、點、書擋 ──
-for (const e of evs) {
-  const sw = swatchClass(e.category), a = Y(e.s), b = Y(e.e2);
-  if (b - a >= 14) html += `<div class="stay ${sw}" style="left:${CX}px;top:${a}px;height:${b - a}px"></div>`;
-}
-for (const e of evs) {
-  const sw = swatchClass(e.category), a = Y(e.s), b = Y(e.e2);
-  html += `<div class="dot ${sw}" style="left:${CX}px;top:${a}px"><i></i></div>`;
-  if (b - a >= 14) html += `<div class="dot end ${sw}" style="left:${CX}px;top:${b}px"><i></i></div>`;
-}
-if (opening) html += `<div class="bookend ${swatchClass(opening.category)}" style="left:${CX}px;top:${openingY}px"><i></i></div>`;
-if (closing) html += `<div class="bookend ${swatchClass(closing.category)}" style="left:${CX}px;top:${closingY}px"><i></i></div>`;
-content.innerHTML = html;
+  // ── 停留、點、書擋 ──
+  for (const e of evs) {
+    const sw = swatchClass(e.category), a = Y(e.s), b = Y(e.e2);
+    if (b - a >= 14) html += `<div class="stay ${sw}" style="left:${CX}px;top:${a}px;height:${b - a}px"></div>`;
+  }
+  for (const e of evs) {
+    const sw = swatchClass(e.category), a = Y(e.s), b = Y(e.e2);
+    html += `<div class="dot ${sw}" style="left:${CX}px;top:${a}px"><i></i></div>`;
+    if (b - a >= 14) html += `<div class="dot end ${sw}" style="left:${CX}px;top:${b}px"><i></i></div>`;
+  }
+  if (opening) html += `<div class="bookend ${swatchClass(opening.category)}" style="left:${CX}px;top:${openingY}px"><i></i></div>`;
+  if (closing) html += `<div class="bookend ${swatchClass(closing.category)}" style="left:${CX}px;top:${closingY}px"><i></i></div>`;
+  content.innerHTML = html;
 
-// ── 名稱膠囊：停留那一段的正中，最寬到整欄減兩邊 8 ──
-const colW = 402 - 56;
-for (const e of evs) {
-  const a = Y(e.s), b = Y(e.e2);
-  if (b - a < minSpan('stay')) continue;
-  content.insertAdjacentHTML('beforeend', nodeHTML(e, swatchClass(e.category)));
-  const el = content.lastElementChild;
-  el.style.left = CX + 'px'; el.style.maxWidth = (colW - 16) + 'px';
-  el.style.top = ((a + b) / 2 - el.getBoundingClientRect().height / 2) + 'px';
-}
+  // ── 名稱膠囊：停留那一段的正中，最寬到整欄減兩邊 8 ──
+  const colW = 402 - 56;
+  for (const e of evs) {
+    const a = Y(e.s), b = Y(e.e2);
+    if (b - a < minSpan('stay')) continue;
+    content.insertAdjacentHTML('beforeend', nodeHTML(e, swatchClass(e.category)));
+    const el = content.lastElementChild;
+    el.style.left = CX + 'px'; el.style.maxWidth = (colW - 16) + 'px';
+    el.style.top = ((a + b) / 2 - el.getBoundingClientRect().height / 2) + 'px';
+  }
 
-// ── 路程膠囊：RouteText.legPill，標在兩顆點的正中 ──
-function legText(l) {
-  const lg = l.leg;
-  if (!lg) return l.gap <= 0 ? s.noGap : dur(l.gap);
-  const run = lg.runs && lg.runs[lg.selectedRunIndex || 0];
-  if (run) return [run.name, run.departure, dur(toMin(run.arrival) - toMin(run.departure))].join(s.sep);
-  const name = s.mode[lg.mode] || lg.mode, tm = lg.durationMinutes || 0;
-  if (!tm) return l.gap > 0 ? `${name} · ${dur(l.gap)}` : name;
-  const diff = tm - l.gap;
-  if (!diff || Math.abs(diff) > 180) return `${name} ${dur(tm)}`;
-  return s.paren(`${name} ${dur(tm)}`, `${diff > 0 ? '+' : '−'}${dur(Math.abs(diff))}`);
+  // ── 路程膠囊：RouteText.legPill，標在兩顆點的正中 ──
+  function legText(l) {
+    const lg = l.leg;
+    if (!lg) return l.gap <= 0 ? s.noGap : dur(l.gap);
+    const run = lg.runs && lg.runs[lg.selectedRunIndex || 0];
+    if (run) return [run.name, run.departure, dur(toMin(run.arrival) - toMin(run.departure))].join(s.sep);
+    const name = s.mode[lg.mode] || lg.mode, tm = lg.durationMinutes || 0;
+    if (!tm) return l.gap > 0 ? `${name} · ${dur(l.gap)}` : name;
+    const diff = tm - l.gap;
+    if (!diff || Math.abs(diff) > 180) return `${name} ${dur(tm)}`;
+    return s.paren(`${name} ${dur(tm)}`, `${diff > 0 ? '+' : '−'}${dur(Math.abs(diff))}`);
+  }
+  function legIcon(lg) {
+    if (!lg) return line('clock', 1.8);
+    if (lg.mode === 'transit' && lg.transitKind && MAKI[lg.transitKind]) return maki(lg.transitKind);
+    return line({ walking: 'walking', transit: 'transit', other: 'ellipsis' }[lg.mode] || 'clock', 1.8);
+  }
+  for (const l of legs) {
+    if (l.to - l.from < legPillHeight + 2 * DOT) continue;
+    const alt = l.leg && l.leg.runs && l.leg.runs.length > 1;
+    content.insertAdjacentHTML('beforeend', `<div class="lpill${l.leg ? '' : ' unset'}"${interactive && l.leg && l.toKey ? ` data-leg="${l.toKey}" data-tap` : ''}><div>${legIcon(l.leg)}<span>${fmt(legText(l))}</span>${alt ? line('swap', 1.8, 'swap') : ''}</div></div>`);
+    const el = content.lastElementChild;
+    el.style.left = CX + 'px'; el.style.maxWidth = (colW - 16) + 'px';
+    el.style.top = ((l.from + l.to) / 2 - el.getBoundingClientRect().height / 2) + 'px';
+  }
+  if (interactive) content.style.height = H + 'px';
+  return { scroll, H, stops: minutes.map(m => [m, Y(m)]) };
 }
-function legIcon(lg) {
-  if (!lg) return line('clock', 1.8);
-  if (lg.mode === 'transit' && lg.transitKind && MAKI[lg.transitKind]) return maki(lg.transitKind);
-  return line({ walking: 'walking', transit: 'transit', other: 'ellipsis' }[lg.mode] || 'clock', 1.8);
-}
-for (const l of legs) {
-  if (l.to - l.from < legPillHeight + 2 * DOT) continue;
-  const alt = l.leg && l.leg.runs && l.leg.runs.length > 1;
-  content.insertAdjacentHTML('beforeend', `<div class="lpill${l.leg ? '' : ' unset'}"${interactive && l.leg && l.toKey ? ` data-leg="${l.toKey}" data-tap` : ''}><div>${legIcon(l.leg)}<span>${fmt(legText(l))}</span>${alt ? line('swap', 1.8, 'swap') : ''}</div></div>`);
-  const el = content.lastElementChild;
-  el.style.left = CX + 'px'; el.style.maxWidth = (colW - 16) + 'px';
-  el.style.top = ((l.from + l.to) / 2 - el.getBoundingClientRect().height / 2) + 'px';
-}
+let Z = interactive ? loadZoom() : 1;
+let L = layout(Z);
+const { scroll, H } = L;
 
 d.insertAdjacentHTML('beforeend', `<div class="fab">${svg('plus')}</div>`);
 chrome(d, { tab: 1 });
@@ -323,7 +336,34 @@ if (interactive) {
   document.querySelectorAll('.chip').forEach((c, i) => c.addEventListener('click', () => { if (i + 1 !== dayNo) go('timeline', { day: i + 1 }); }));
   // 捲動：內容比可視區高時可以上下捲（App 的時間軸是一張 collection view）
   grid.style.overflowY = 'auto'; grid.style.scrollbarWidth = 'none';
-  if (scroll >= 0) { content.style.top = '0px'; content.style.height = H + 'px'; grid.scrollTop = scroll; }
+  if (scroll >= 0) grid.scrollTop = scroll; else content.style.top = -scroll + 'px';
+  grid.style.touchAction = 'pan-x pan-y';   // 兩指留給縮放
+  // ── 雙指縮放（DayView.zoomTimeline）：**錨點用分鐘記**——這把尺是分段的，y 的比例換回去不是同一刻 ──
+  const minuteAt = cy => {
+    const st = L.stops;
+    if (cy <= st[0][1]) return { pre: cy - st[0][1] };
+    for (let i = 1; i < st.length; i++) if (cy <= st[i][1]) {
+      const [m0, y0] = st[i - 1], [m1, y1] = st[i];
+      return { m: m0 + (y1 > y0 ? (cy - y0) / (y1 - y0) : 0) * (m1 - m0) };
+    }
+    return { post: cy - st[st.length - 1][1] };
+  };
+  const yAt = a => {
+    const st = L.stops;
+    if (a.pre != null) return st[0][1] + a.pre;
+    if (a.post != null) return st[st.length - 1][1] + a.post;
+    for (let i = 1; i < st.length; i++) if (a.m <= st[i][0]) {
+      const [m0, y0] = st[i - 1], [m1, y1] = st[i];
+      return y0 + (m1 > m0 ? (a.m - m0) / (m1 - m0) : 0) * (y1 - y0);
+    }
+    return st[st.length - 1][1];
+  };
+  let anchor = null;
+  attachPinch(grid, d, {
+    get: () => Z,
+    begin(viewY) { anchor = minuteAt(grid.scrollTop + viewY); },
+    set(f, viewY) { Z = f; L = layout(f); grid.scrollTop = yAt(anchor) - viewY; },
+  });
   grid.addEventListener('click', e => {
     const n = e.target.closest('[data-key]'); if (n) return go('event', { event: n.dataset.key, day: dayNo });
     const l = e.target.closest('[data-leg]'); if (l) return go('leg', { event: l.dataset.leg, day: dayNo });

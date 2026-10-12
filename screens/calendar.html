@@ -100,6 +100,58 @@
   /* RouteLegCell：沒設路程＝白底虛線、500、muted；間隔不足＝整顆琥珀（TripMapLegLabelView.warningFill／Edge，tzWarningInk） */
   .leg-pill.unset { background: var(--card); border-style: dashed; color: var(--muted); font-weight: 500; }
   .leg-pill.over { background: rgb(249,234,214); border-color: rgb(228,188,132); color: var(--amber200); }
+
+  /* ── 00:00 之上那一疊（DayView.topStack：時區說明 → 待排區 → 「開始」書擋 → 00:00）。只在互動模式畫：
+        截圖停在 07:00，這一疊在畫面外。時區說明：手機與主要時區同為日本時間（基準圖用日本時區啟動），不出現。 ── */
+  .top { position: absolute; left: 0; right: 0; top: 0; }
+  /* 待排區（PendingBandView，1.3.0 優化卡第 7 項；TripCalendarMetrics.pending*）：padding 4 0 8；左邊「待排」那一欄
+     跟刻度同寬 44、間距 8；小標 xs、組名 600 muted-on-sunken、間距 6、底下 4；這一天那一組換行、底下 10；
+     未指定日那一列橫滑、伸到螢幕邊、右緣淡出 28；卡 padding 4 8、圓角 8、虛線 4/3、sm 字 */
+  .pz { display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 8px; padding: 4px 0 8px; }
+  .pz-label { text-align: right; padding-top: 1px; font: 400 var(--t-xs)/16px var(--font); color: var(--muted); white-space: nowrap; }
+  .pz-body { min-width: 0; }
+  .pz-sub { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; padding-right: 20px;
+    font: 400 var(--t-xs)/16px var(--font); color: var(--muted); white-space: nowrap; }
+  .pz-sub b { font-weight: 600; color: var(--muted-on-sunken); }
+  .pz-sub .hint { margin-left: auto; }
+  .pz-flow { display: flex; flex-wrap: wrap; gap: 4px; padding-right: 20px; margin-bottom: 10px; }
+  .pz-flow:last-child { margin-bottom: 0; }
+  .pz-railwrap { position: relative; }
+  .pz-railwrap::after { content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: 28px; pointer-events: none;
+    background: linear-gradient(to right, rgba(255,255,255,0), var(--page)); }
+  .pz-rail { display: flex; gap: 4px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .pz-rail::-webkit-scrollbar { display: none; }
+  .pz-end { flex: none; width: 16px; }   /* contentInset.right 20（減掉卡間距 4） */
+  .pz-card { position: relative; flex: none; max-width: 100%; padding: 4px 8px; border-radius: 8px; background: var(--card);
+    font: 400 var(--t-sm)/15.5px var(--font); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; touch-action: pan-x pan-y; }
+  .pz-card .dash { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--border); stroke-dasharray: 4 3; pointer-events: none; }
+  .pz-card .dash rect { width: calc(100% - 1px); height: calc(100% - 1px); }
+  .pz-card.loose { background: var(--sunken); color: var(--muted-on-sunken); }   /* 未指定日（U13） */
+  .pz-card.lifted .dash { stroke: var(--accent); stroke-dasharray: none; }       /* 拿起來：描邊換成實線強調色 */
+  /* 落點的影子（CalendarGhostView .pending）：強調色 16% 混白、1.5 實線強調色、圓角 8、內距 4 10；
+     名字 sm 600 accent-ink＋「放開就排在 13:00 – 14:00」 */
+  .ghost { position: absolute; left: 56px; right: 20px; z-index: 7; border-radius: 8px; padding: 4px 10px; overflow: hidden;
+    background: color-mix(in oklch, var(--accent) 16%, #fff); box-shadow: inset 0 0 0 1.5px var(--accent); pointer-events: none; }
+  .ghost > b { display: block; font: 600 var(--t-sm)/16px var(--font); color: var(--accent-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ghost > span { display: block; font: 400 var(--t-xs)/16px var(--font); color: var(--accent-ink); white-space: nowrap; }
+  /* 書擋列（BookendRowView）：最矮 44、上下 7、左 4 右 20、間距 9；標籤 pill：內距 2 8、間距 5、圖示 12／2.2、xs 600 色票色 */
+  .bk { display: flex; align-items: center; gap: 9px; min-height: 44px; padding: 7px 20px 7px 4px; }
+  .bk-tag { flex: none; display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px; border-radius: 99px;
+    border: 1px solid var(--sw-chip-stroke); background: var(--sw-fill); color: var(--sw-base); font: 600 var(--t-xs)/14px var(--font); }
+  .bk-tag svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .bk-name { flex: 1; min-width: 0; font: 400 var(--t-sm)/16px var(--font); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bk-day { flex: none; font: 400 var(--t-xs)/14px var(--font); color: var(--muted); }
+  .bk.cx .bk-name { color: var(--muted); text-decoration: line-through; }
+  .bottom { position: absolute; left: 0; right: 0; }
+  /* 放大之後的半點／十五分刻度（CalendarGridView：字 12×7.5/9、12×7/9；字色 tzMutedFaint／tzMutedFainter；
+     線 halfHourDash 3/3、quarterHourDash 1/1，色 tzBorderSoftHalf／Quarter） */
+  .hour.half span { font-size: 10px; color: var(--muted-faint); }
+  .hour.q span { font-size: 9.33px; color: color-mix(in srgb, var(--n100) 48%, var(--n0)); }
+  .hour.half::after, .hour.q::after { border-top: 0; height: 1px; }
+  .hour.half::after { background: repeating-linear-gradient(to right, color-mix(in srgb, var(--border-soft) 70%, #fff) 0 3px, transparent 3px 6px); }
+  .hour.q::after { background: repeating-linear-gradient(to right, color-mix(in srgb, var(--border-soft) 60%, #fff) 0 1px, transparent 1px 2px); }
+  .grid.scroll { touch-action: pan-x pan-y; }   /* 兩指留給縮放，不讓瀏覽器把整頁放大 */
 </style>
 </head>
 <body>
@@ -107,11 +159,14 @@
 <script type="module">
 import { fmt, params, lang, t, loadTrip, loadCategories, categoryName, chrome, svg, swatchClass, duration, toMin, ready, interactive, go } from './chrome.js';
 import { applyState, patchEvent, clock } from './demo-state.js';
+import { applyPlaced, placePending, pendingLength } from './pending-state.js';
+import { loadZoom, attachPinch } from './zoom.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
 await loadCategories();
-if (interactive) applyState(trip);   // 在詳情／路程頁改過的東西（demo-state.js）
+// 在詳情／路程頁改過的東西（demo-state.js）；待排拖進時段的那幾則先搬進日程（pending-state.js），時刻覆寫才套得上
+if (interactive) { applyPlaced(trip); applyState(trip); }
 let dayNo = +(params.get('day') || 2);
 const todayNo = +(params.get('today') || 1);
 const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
@@ -153,7 +208,7 @@ d.insertAdjacentHTML('beforeend', `<div class="allday" id="allday">${allDayHTML(
 const alldayEl = document.getElementById('allday');
 
 // 時間軸
-const H = 66;
+let H = 66;
 const grid = document.createElement('div');
 grid.className = 'grid';
 d.appendChild(grid);
@@ -161,8 +216,11 @@ const placeGrid = () => { grid.style.top = alldayEl.getBoundingClientRect().bott
 placeGrid();
 const firstLine = 33.5;                // 第一條可見時刻線距離時間軸頂端（照截圖：07:00 在 310.3）
 // 截圖：最上面那一條是 topHour。互動：整天 00:00–24:00 畫出來、捲到 topHour（位置跟截圖一樣）
+// 互動模式：00:00 之上多一疊（時區說明／待排區／開始書擋，DayView.topStack），00:00 在那一疊底下 topInset 10 處。
+let OFF = 0;
+const TOP_INSET = 10;   // TripCalendarMetrics.topInset
 const Y0 = interactive ? 0 : topHour * 60;
-const y = min => firstLine + (min - Y0) / 60 * H;
+const y = min => interactive ? OFF + min / 60 * H : firstLine + (min - Y0) / 60 * H;
 const M = 3; // blockMarginVMax
 
 let evs = [];
@@ -222,7 +280,8 @@ if (!interactive) {
        ＞下一則開始，其餘比 路程時間 ＞ 間隔；整顆轉琥珀＋警告記號（RouteLegCell，色票 TripMapLegLabelView.warningFill／Edge）。
        行事曆模式放不下膠囊就只畫線。
      - 已取消：留在原處、轉灰、每一行劃線、色票拿掉（EventBlockCell `if event.isCancelled`），墊在最底下。 */
-  const SNAP = 15, HOLD = 420, SLOP = 10, PPM = H / 60;
+  const SNAP = 15, HOLD = 420, SLOP = 10;
+  const ppm = () => H / 60;   // 一分鐘幾 pt（H 跟著行事曆高度那一個倍率變）
   const S = {
     'zh-Hant-TW': { paren: (a, b) => `${a}（${b}）`, noGap: '無間隔', mode: { walking: '步行', driving: '開車', cycling: '騎車', transit: '大眾運輸', other: '其他' } },
     en: { paren: (a, b) => `${a} (${b})`, noGap: 'No gap', mode: { walking: 'Walking', driving: 'Driving', cycling: 'Cycling', transit: 'Transit', other: 'Other' } },
@@ -249,7 +308,7 @@ if (!interactive) {
   /** 一群互相重疊的行程分欄（OverlapLayout 的簡化版，同 demos/calendar.js） */
   const columns = () => {
     const s = [...evs].sort((a, b) => a.s - b.s || a.e2 - b.e2);
-    const drawnEnd = e => Math.max(e.e2, e.s + 18 / PPM);
+    const drawnEnd = e => Math.max(e.e2, e.s + 18 / ppm());
     const out = new Map();
     let cluster = [], clusterEnd = -1;
     const flush = () => {
@@ -290,7 +349,12 @@ if (!interactive) {
 
   function render(focusKey) {
     let html = '';
-    for (let h = 0; h <= 24; h++) html += `<div class="hour" style="top:${y(h * 60)}px"><span>${String(h).padStart(2, '0')}:00</span></div>`;
+    // 刻度（CalendarTicks）：1 倍只有整點；1.5 倍起加 :30、3 倍起再加 :15／:45——字小一階、淡一階，線換虛線／點線
+    const step = zoom >= 3 ? 15 : zoom >= 1.5 ? 30 : 60;
+    for (let m = 0; m <= 1440; m += step) {
+      const kind = m % 60 === 0 ? '' : m % 30 === 0 ? ' half' : ' q';
+      html += `<div class="hour${kind}" style="top:${y(m)}px"><span>${clock(m)}</span></div>`;
+    }
     // 路線與路程膠囊（已取消的不在路線上）
     const route = evs.filter(e => !e.isCancelled).sort((a, b) => a.s - b.s || a.e2 - b.e2);
     route.forEach((to, i) => {
@@ -318,7 +382,12 @@ if (!interactive) {
       if (picked) html += blockHTML({ ...e, s: drag.s0, e2: drag.e0 }, cols, ' origin', false);
       html += blockHTML(e, cols, picked ? ' picked' : '', true);
     }
-    grid.querySelector('.cv').innerHTML = html;
+    // 「結束」書擋：24:00 之下（DayView.bottomStack：軸底＋刻度字半高＋bottomStackTopGap 24）
+    const cl = closingOf(dayNo);
+    if (cl) html += `<div class="bottom" style="top:${y(1440) + 8 + 24}px">${bkRow(cl, P.closing, GLYPH.closing)}</div>`;
+    const cv = grid.querySelector('.cv');
+    cv.innerHTML = html;
+    cv.style.height = (y(1440) + 140) + 'px';
     if (focusKey) grid.querySelector(`.ev[data-key="${focusKey}"]:not(.origin)`)?.focus({ preventScroll: true });
   }
 
@@ -339,10 +408,12 @@ if (!interactive) {
         ${hgt > 52 ? `<div class="m">${fmt(meta)}</div>` : ''}</div>`;
   }
 
-  grid.innerHTML = `<div class="cv" style="height:${y(1440) + 140}px"></div>`;
+  // 「行事曆高度」：雙指縮放的倍率乘在每小時高度上（CalendarScale.zoomed(by:)），跟時間軸共用（zoom.js）
+  let zoom = loadZoom();
+  H = 66 * zoom;
+  grid.innerHTML = '<div class="cv"></div><div class="top"></div>';
   grid.classList.add('scroll');
-  render();
-  grid.scrollTop = topHour * H;
+  const topEl = grid.querySelector('.top');
 
   d.insertAdjacentHTML('beforeend', `<div class="fab" data-tap>${svg('plus')}</div><div class="scrim"></div>`);
   chrome(d, { tab: 1 });
@@ -351,7 +422,172 @@ if (!interactive) {
     e.src.start = clock(e.s); e.src.end = clock(e.e2);   // 換日再換回來時讀的是範本那一份
     patchEvent(e.key, { start: e.src.start, end: e.src.end });
   };
-  const open = key => go('event', { event: key, day: dayNo });
+  // 從待排排進來的那幾則：行程詳情頁（event.html）只讀範本的日程，打不開它們
+  const open = key => { if (evs.find(e => e.key === key)?.placed) return; go('event', { event: key, day: dayNo }); };
+
+  // ── 00:00 之上那一疊與 24:00 之下的書擋 ─────────────────────────────────────────────────
+  // App 字串（Scripts/i18n/maps/UI.json）：pendingZoneLabel／Today／Loose／Hint、sectionCount、pendingDropAt、
+  // bookendOpening／Closing、allDay（書擋那一列尾端固定寫「全日」）
+  const P = {
+    'zh-Hant-TW': { label: '待排', today: '這一天', loose: '未指定日', hint: '拖到下面排時間', count: n => `${n} 項`,
+      drop: r => `放開就排在 ${r}`, opening: '開始', closing: '結束', allDay: '全日' },
+    en: { label: 'Later', today: 'This day', loose: 'Any day', hint: 'Drag onto a time below', count: n => `${n}`,
+      drop: r => `Release to schedule at ${r}`, opening: 'opening', closing: 'closing', allDay: 'All-day' },
+    ja: { label: '未定', today: 'この日', loose: '日付未定', hint: '下の時間帯へドラッグ', count: n => `${n} 件`,
+      drop: r => `離すと ${r} に入ります`, opening: '最初', closing: '最後', allDay: '終日' },
+  }[lang] || null;
+  // DesignIcon.dayOpening／dayClosing（24 格，2.2）：箭頭撞到軸的頂端／底端那一條線
+  const GLYPH = {
+    opening: '<path d="M5 4h14M12 20V8.5M7.5 13 12 8.5l4.5 4.5"/>',
+    closing: '<path d="M5 20h14M12 4v11.5M7.5 11l4.5 4.5 4.5-4.5"/>',
+  };
+  const pinned = kind => n => trip.allDayEvents.find(a => a.fromDay <= n && n <= a.toDay && (a[kind] || []).includes(n));
+  const openingOf = pinned('openingDays'), closingOf = pinned('closingDays');
+  const bkRow = (a, word, glyph) => `<div class="bk ${swatchClass(a.category)}${a.isCancelled ? ' cx' : ''}" data-bk="${a.key}" data-tap>
+    <span class="bk-tag"><svg viewBox="0 0 24 24">${glyph}</svg>${word}</span><span class="bk-name">${fmt(a.title)}</span><span class="bk-day">${P.allDay}</span></div>`;
+  const pendCard = (u, loose) => `<div class="pz-card${loose ? ' loose' : ''}" data-pend="${u.key}"><svg class="dash"><rect x=".5" y=".5" rx="7.5"/></svg>${fmt(`${u.title} · ${duration(pendingLength(u))}`)}</div>`;
+
+  /** 待排區（PendingBandView.render）＋「開始」書擋。量出這一疊多高，00:00 就在它底下 10（updateBookendInset）。 */
+  function renderTop() {
+    const today = [];                         // 指定了這一天的待排（TripCalendarDay.pending）：範本沒有
+    const loose = trip.unscheduledEvents;     // 整趟還沒決定哪一天的（loosePending）：每一天都再出現一次
+    let pz = '';
+    if (today.length || loose.length) {
+      let body = '';
+      if (today.length) body += `<div class="pz-sub"><b>${P.today}</b><span>${P.count(today.length)}</span><span class="hint">${P.hint}</span></div>
+        <div class="pz-flow">${today.map(u => pendCard(u, false)).join('')}</div>`;
+      if (loose.length) body += `<div class="pz-sub"><b>${P.loose}</b><span>${P.count(loose.length)}</span>${today.length ? '' : `<span class="hint">${P.hint}</span>`}</div>
+        <div class="pz-railwrap"><div class="pz-rail">${loose.map(u => pendCard(u, true)).join('')}<i class="pz-end"></i></div></div>`;
+      pz = `<div class="pz"><div class="pz-label">${P.label}</div><div class="pz-body">${body}</div></div>`;
+    }
+    const op = openingOf(dayNo);
+    const railX = topEl.querySelector('.pz-rail')?.scrollLeft || 0;
+    topEl.innerHTML = pz + (op ? bkRow(op, P.opening, GLYPH.opening) : '');
+    const rail = topEl.querySelector('.pz-rail'); if (rail) rail.scrollLeft = railX;
+    const before = OFF;
+    OFF = topEl.offsetHeight + TOP_INSET;
+    return OFF - before;
+  }
+  topEl.addEventListener('click', ev => { const b = ev.target.closest('[data-bk]'); if (b) open(b.dataset.bk); });
+  grid.addEventListener('click', ev => { const b = ev.target.closest('.bottom [data-bk]'); if (b) open(b.dataset.bk); });
+
+  // ── 待排區：按住一張拖進時段，放開就排好（DayView.beginPendingDrag／applyPendingPosition／endPendingDrag）──
+  // - 同格子上那一支：按住 0.42 秒、晃動 10pt 以內才拿起來（滑鼠直接拖）；拿起來的那一張描邊換成實線強調色、留在原處，
+  //   未指定日那一列不再橫滑。
+  // - 影子：手指在格子上（不在待排區上、不在 00:00 之上）才畫；位置＝以手指為中心、長度＝預計長度，開始貼齊 15 分
+  //   （CalendarGeometry.placedTimes），夾在 00:00–24:00。拖到上下緣自動捲（往上捲要先往下拖過一段，mayScrollUp）。
+  // - 放開：在格子上才算排（schedulePending：這一天、開始 … 開始＋預計長度）；拖回待排區或拖出去＝取消。
+  //   排好的那一則從每一天的未指定日、總覽的待排行程消失（pending-state.js）。
+  let pd = null;
+  const ghostEl = document.createElement('div'); ghostEl.className = 'ghost'; ghostEl.hidden = true;
+  grid.appendChild(ghostEl);
+  topEl.addEventListener('pointerdown', ev => {
+    const c = ev.target.closest('.pz-card'); if (!c || ev.button > 0 || pd) return;
+    const item = trip.unscheduledEvents.find(u => u.key === c.dataset.pend); if (!item) return;
+    pd = { item, card: c, id: ev.pointerId, x0: ev.clientX, y0: ev.clientY, fx: ev.clientX, fy: ev.clientY,
+      active: false, touch: ev.pointerType !== 'mouse', start: null, mayUp: false };
+    if (pd.touch) pd.timer = setTimeout(() => { if (pd && !pd.active) liftPending(); }, HOLD);
+  });
+  function liftPending() {
+    pd.active = true;
+    pd.card.classList.add('lifted');
+    const rail = topEl.querySelector('.pz-rail'); if (rail) rail.style.overflowX = 'hidden';
+    try { navigator.vibrate?.(8); } catch { /* 不支援 */ }
+    placeGhost();
+  }
+  function placeGhost() {
+    const g = grid.getBoundingClientRect(), bottom = Math.min(g.bottom, 760);
+    const band = topEl.querySelector('.pz')?.getBoundingClientRect();
+    const overBand = band && pd.fx >= band.left && pd.fx <= band.right && pd.fy >= band.top && pd.fy <= band.bottom;
+    const cy = pd.fy - g.top + grid.scrollTop;   // 手指在捲動內容裡的高度
+    if (pd.fy - g.top > 36) pd.mayUp = true;
+    if (overBand || pd.fy < g.top || pd.fy > bottom || pd.fx < g.left || pd.fx > g.right || cy < OFF - TOP_INSET) {
+      pd.start = null; ghostEl.hidden = true; return;
+    }
+    const len = pendingLength(pd.item);
+    const head = cy - len * ppm() / 2;
+    const [st] = movedTimes(0, len, (head - y(0)) / ppm());
+    if (pd.start != null && st !== pd.start) try { navigator.vibrate?.(4); } catch { /* 不支援 */ }
+    pd.start = st;
+    const end = st + len, shown = Math.min(end, 1440);
+    ghostEl.innerHTML = `<b>${fmt(pd.item.title)}</b><span>${fmt(P.drop(`${clock(st)} – ${clock(end)}`))}</span>`;
+    ghostEl.style.top = y(st) + 'px';
+    ghostEl.style.height = Math.max((shown - st) * ppm(), 40) + 'px';
+    ghostEl.hidden = false;
+  }
+  let pdEdge = null;
+  function pendingEdge() {
+    clearInterval(pdEdge); pdEdge = null;
+    if (!pd || !pd.active) return;
+    const g = grid.getBoundingClientRect(), bottom = Math.min(g.bottom, 760);
+    const v = pd.fy > bottom - 36 ? 8 : (pd.mayUp && pd.fy < g.top + 36 ? -8 : 0);
+    if (v) pdEdge = setInterval(() => { grid.scrollTop += v; placeGhost(); }, 16);
+  }
+  addEventListener('pointermove', ev => {
+    if (!pd || ev.pointerId !== pd.id) return;
+    pd.fx = ev.clientX; pd.fy = ev.clientY;
+    if (!pd.active) {
+      const far = Math.hypot(ev.clientX - pd.x0, ev.clientY - pd.y0);
+      if (pd.touch) { if (far > SLOP) { clearTimeout(pd.timer); pd = null; } return; }
+      if (far < 3) return;
+      liftPending();
+    }
+    placeGhost();
+    pendingEdge();
+  });
+  function endPending(commit) {
+    if (!pd) return;
+    clearTimeout(pd.timer); clearInterval(pdEdge); pdEdge = null;
+    const { active, start, item } = pd;
+    pd = null;
+    ghostEl.hidden = true;
+    if (!active) return;                       // 只是點一下：待排的那一則打不開（event.html 不讀待排），什麼都不做
+    if (!commit || start == null) { renderTop(); return; }
+    const len = pendingLength(item);
+    placePending(item.key, dayNo, start, start + len);
+    trip.unscheduledEvents = trip.unscheduledEvents.filter(u => u !== item);
+    trip.days.find(x => x.day === dayNo).events.push({ ...item, start: clock(start), end: clock(start + len), placed: true });
+    loadDay();
+    const delta = renderTop();
+    grid.scrollTop += delta;                   // 待排區變矮了：00:00 往上移，畫面上的時段不動
+    render();
+  }
+  addEventListener('pointerup', ev => { if (pd && ev.pointerId === pd.id) endPending(true); });
+  addEventListener('pointercancel', ev => { if (pd && ev.pointerId === pd.id) endPending(false); });
+  // 按住期間（還在 10pt 內）與拿起來之後，頁面不跟著捲；超出 10pt 又還沒拿起來＝捲動（未指定日那一列橫滑或整頁上下捲）
+  topEl.addEventListener('touchmove', ev => {
+    if (!pd) return;
+    const tch = ev.touches[0];
+    if (pd.active || Math.hypot(tch.clientX - pd.x0, tch.clientY - pd.y0) <= SLOP) ev.preventDefault();
+  }, { passive: false });
+  topEl.addEventListener('contextmenu', ev => { if (ev.target.closest('.pz-card')) ev.preventDefault(); });
+
+  renderTop();
+  render();
+  grid.scrollTop = y(topHour * 60) - firstLine;   // 畫面跟截圖一樣：最上面那一條是 topHour
+  // 自動示範（stories-plan.js）：捲回起始位置——捲動容器的 scrollBy 量不到「剛好回到 07:00」那一格（待排區高度隨語言變）
+  window.__auto = { ...(window.__auto || {}), calendarHome: () => new Promise(r => {
+    grid.scrollTo({ top: y(topHour * 60) - firstLine, behavior: 'smooth' }); setTimeout(r, 450); }) };
+
+  // ── 雙指縮放（TripCalendarView.handlePinch → DayView.setZoom）：中點那一分鐘不動；00:00 之上那一疊不縮放，
+  //    24:00 之下跟著軸底走（CalendarZoomAnchor.contentY）。拖曳已經拿起來時不開始。
+  let anchor = null;
+  attachPinch(grid, d, {
+    get: () => zoom,
+    canBegin: () => !(drag && drag.active) && !(pd && pd.active),
+    begin(viewY) {
+      if (drag && !drag.active) { clearTimeout(drag.timer); drag = null; }
+      if (pd && !pd.active) { clearTimeout(pd.timer); pd = null; }
+      const cy = grid.scrollTop + viewY;
+      anchor = { cy, min: (cy - y(0)) / ppm(), below: cy - y(1440) };
+    },
+    set(f, viewY) {
+      zoom = f; H = 66 * f;
+      render();
+      const cy = anchor.min <= 0 ? anchor.cy : anchor.min >= 1440 ? y(1440) + anchor.below : y(anchor.min);
+      grid.scrollTop = cy - viewY;
+    },
+  });
 
   // ── 換日 ──
   function setDay(n) {
@@ -365,9 +601,10 @@ if (!interactive) {
     alldayEl.innerHTML = allDayHTML();
     placeGrid();
     loadDay();
+    renderTop();
     render();
     const first = Math.min(...evs.map(e => e.s), 24 * 60);
-    grid.scrollTop = Math.floor((first === 1440 ? topHour * 60 : first) / 60) * H;
+    grid.scrollTop = y(Math.floor((first === 1440 ? topHour * 60 : first) / 60) * 60) - firstLine;
     const q = new URLSearchParams(location.search); q.set('day', n);
     try { history.replaceState(null, '', `?${q}`); } catch { /* 沙箱 iframe 不給改網址也沒關係 */ }
   }
@@ -397,7 +634,7 @@ if (!interactive) {
     if (!drag || !drag.active) return;
     const e = evs.find(x => x.key === drag.key);
     const dy = lastY - drag.y0 + (grid.scrollTop - drag.sc0);
-    const [s, en] = movedTimes(drag.s0, drag.e0, dy / PPM);
+    const [s, en] = movedTimes(drag.s0, drag.e0, dy / ppm());
     if (s !== e.s) { e.s = s; e.e2 = en; render(); }
   }
   // 拖到可視區上下緣時跟著捲（App 的 UICollectionView 拖曳也會）

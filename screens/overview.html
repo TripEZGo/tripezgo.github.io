@@ -105,6 +105,28 @@
   .box.ring { border: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='10.25' fill='none' stroke='%23dbd5cd' stroke-width='1.5' stroke-dasharray='3 3'/%3E%3C/svg%3E"); }
   .tin { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 400 var(--t-sm)/16px var(--font); color: var(--ink); padding: 0; }
   .tin::placeholder { color: rgba(60, 60, 67, .3); }
+  /* ── 1.3.0 總覽／行事曆優化卡（App main c7ad2496a；設計稿 overview-calendar-polish）── */
+  /* 待排行程：「日程行程」底下的可收合子 section，跟「日程之外的行程」同一階（OverviewHeaderView.configure：
+     .unscheduled 走日期那一階的字），件數用警示色、0 項退回灰（OverviewSections.unscheduledSection isWarning: count > 0） */
+  .hdr.grp { min-height: 44px; }
+  .hdr .tag.warn { border-color: var(--amber100); color: var(--amber200); }
+  .act.unsch { margin-bottom: 6px; }   /* TripOverviewMetrics.unscheduledAddMarginBottom */
+  .hidden-note { padding: 9px 4px; font: 400 var(--t-xs)/16px var(--font); color: var(--muted); }
+  /* 「總覽」那一區（OverviewBriefCells.swift）：標題 16/700/−0.01em（NoteTextStyle .heading），margin 4 4 6；
+     內文框上內距 4、左右 4，最高視窗 1/4（briefShareOfWindow），超出淡出 24（NoteBriefMetrics.fadeHeight）＋右下「閱讀更多 ›」；
+     收尾線 1pt --border，線上 10、線下 8（briefPaddingBottom／briefMarginBottom） */
+  .hdr .bedit { font: 600 var(--t-xs)/14px var(--font); color: var(--muted-on-sunken); white-space: nowrap; }
+  .brief { position: relative; padding-bottom: 10px; margin-bottom: 8px; }
+  .brief::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--border); }
+  .btitle { margin: 4px 4px 6px; font: 700 var(--t-lg)/19px var(--font); letter-spacing: -.16px; color: var(--ink); overflow-wrap: anywhere; }
+  .bbody { position: relative; margin-top: 4px; padding: 0 4px; overflow: hidden; }
+  .bbody p { font: 400 var(--t-base)/27.7px var(--font); letter-spacing: -.24px; color: var(--ink); margin-bottom: 12px; }   /* NoteEditorMetrics.bodyStyle .base、bodyLeading 1.65（UIKit lineSpacing 加在字型行高上，同 note.html 量到的 27.7）、bodySpacingAfter 12 */
+  .bbody.clip::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 24px; background: linear-gradient(rgba(255,255,255,0), var(--page)); }
+  .bmore { display: flex; justify-content: flex-end; }
+  .bmore[hidden] { display: none; }
+  .bmore span { display: inline-flex; align-items: center; gap: 3px; min-height: 44px; padding: 0 4px;
+    font: 600 var(--t-xs)/14px var(--font); color: var(--muted-on-sunken); }
+  .bmore svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
   /* 分段控制的滑塊：第一格量自截圖（右邊讓 4.67），另兩格照同一個間隙推 */
   .seg div.on[data-pos="1"] { margin: 0 2.33px; }
   .seg div.on[data-pos="2"] { margin: 0 0 0 4.67px; }
@@ -114,6 +136,7 @@
 <div class="device" id="d"></div>
 <script type="module">
 import { fmt, params, lang, t, loadTrip, chrome, swatchClass, toMin, ready, interactive, go, ICON } from './chrome.js';
+import { applyPlaced } from './pending-state.js';
 
 // EventTypeIcons.swift（Maki，15 格，even-odd 填色）——只收這份範本用得到的類型
 const MAKI = {
@@ -142,16 +165,17 @@ const MAKI = {
 
 // App 字串（Scripts/i18n/maps）：UI.json tabTrip／tabFiles／tabTodos、sectionCount、durationMinutes／durationHours／
 // durationHoursMinutes、runFieldSeparator、gap、noGap；Overview.json rowAllDay；Domain.json legMode*、bookendOpening／Closing
+// rowAllDayOpening（Overview.json，1.3.0 優化卡第 2 項）：被釘成這一天開始的全日行程合成一列「全日 · 開始」
 const S = {
-  'zh-Hant-TW': { tabs: ['行程', '附件', '待辦清單'], count: n => `${n} 項`, allDay: '全日',
+  'zh-Hant-TW': { tabs: ['行程', '附件', '待辦清單'], count: n => `${n} 項`, allDay: '全日', allDayOpening: '全日 · 開始',
     min: m => `${m} 分`, hr: h => `${h} 小時`, hm: (h, m) => `${h} 小時 ${m} 分`, sep: '　',
     gap: x => `間隔 ${x}`, noGap: '無間隔', opening: '開始', closing: '結束',
     mode: { walking: '步行', driving: '開車', cycling: '騎車', transit: '大眾運輸', other: '其他' } },
-  en: { tabs: ['Itinerary', 'Files', 'To-Dos'], count: n => `${n}`, allDay: 'All-day',
+  en: { tabs: ['Itinerary', 'Files', 'To-Dos'], count: n => `${n}`, allDay: 'All-day', allDayOpening: 'All-day · opening',
     min: m => `${m} min`, hr: h => `${h} h`, hm: (h, m) => `${h} h ${m} min`, sep: ' · ',
     gap: x => `${x} gap`, noGap: 'No gap', opening: 'opening', closing: 'closing',
     mode: { walking: 'Walking', driving: 'Driving', cycling: 'Cycling', transit: 'Transit', other: 'Other' } },
-  ja: { tabs: ['日程', '添付', 'やることリスト'], count: n => `${n} 件`, allDay: '終日',
+  ja: { tabs: ['日程', '添付', 'やることリスト'], count: n => `${n} 件`, allDay: '終日', allDayOpening: '終日 · 最初',
     min: m => `${m} 分`, hr: h => `${h} 時間`, hm: (h, m) => `${h} 時間 ${m} 分`, sep: '　',
     gap: x => `間隔 ${x}`, noGap: '間隔なし', opening: '最初', closing: '最後',
     mode: { walking: '徒歩', driving: '車', cycling: '自転車', transit: '公共交通', other: 'その他' } },
@@ -177,6 +201,7 @@ const maki = k => `<svg class="maki" viewBox="0 0 15 15"><path d="${MAKI[k] || '
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
+if (interactive) applyPlaced(trip);   // 在行事曆把待排拖進時段的那幾則（pending-state.js）
 const todayNo = +(params.get('today') || 1);
 const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
 const nowMin = toMin(params.get('now') || '20:45');
@@ -224,8 +249,11 @@ function dayRows(n) {
   })).sort((a, b) => a.s - b.s);
   const isDone = end => n < todayNo || (n === todayNo && end <= nowMin);
   let html = '', count = 0;
-  for (const a of allDay) { html += eventRow(s.allDay, a.title, a.category, n < todayNo, a.key); count++; }
-  for (const a of allDay.filter(a => (a.openingDays || []).includes(n))) { html += eventRow(s.opening, a.title, a.category, n < todayNo, a.key); count++; }
+  // 被釘成這一天開始的那一則只有一列「全日 · 開始」，站在開始的位置（OverviewViewModel.overviewEvents：
+  // rows(allDay 去掉 opening) + bookends(.opening)；1.3.0 優化卡第 2 項）。「結束」不合併（U6），照舊兩列。
+  const opens = a => (a.openingDays || []).includes(n);
+  for (const a of allDay.filter(a => !opens(a))) { html += eventRow(s.allDay, a.title, a.category, n < todayNo, a.key); count++; }
+  for (const a of allDay.filter(opens)) { html += eventRow(s.allDayOpening, a.title, a.category, n < todayNo, a.key); count++; }
   // 已取消的行程不當路程的端點（OverviewSections.rows(for:)：live = cluster.filter { !$0.isCancelled }）
   const live = timed.filter(e => !e.isCancelled);
   timed.forEach((e, i) => {
@@ -233,7 +261,8 @@ function dayRows(n) {
     const named = timed.find(x => x.key === e.leg?.fromKey);
     const up = (named && !named.isCancelled ? named : null) || prev || timed[i - 1];
     if (e.leg?.mode && !e.isCancelled) html += legRow(e.leg, up ? Math.max(0, e.s - up.e2) : null, e.key, e.key);
-    html += eventRow(`${clock(e.s)} – ${clock(e.e2)}`, e.title, e.category, isDone(e.e2), e.key, e.isCancelled);
+    // 從待排排進來的那幾則：行程詳情頁（event.html）只讀範本的日程，打不開它們，所以這一列不帶 data-ev
+    html += eventRow(`${clock(e.s)} – ${clock(e.e2)}`, e.title, e.category, isDone(e.e2), e.placed ? null : e.key, e.isCancelled);
     count++;
   });
   const last = live[live.length - 1];
@@ -264,9 +293,15 @@ d.insertAdjacentHTML('beforeend', `<div class="table">${table}</div>`);
    照 App 的 TripOverviewView／OverviewSections／OverviewContentGroups：
    - 三段閱讀並排在一條橫向軌道上，分段控制與左右滑做同一件事（TripOverviewView 檔頭：「Three lists side by
      side」）；每一段各自留著捲動位置。這裡用 CSS scroll-snap 當那條軌道。
-   - 旅程：待排行程（恆展開、沒有 chevron、最後一列「＋ 新增行程」）→「日程行程 · N 項 · 時區」→ 每一天。
-     **已過去的日子預設收合，其餘展開**（OverviewSections.header：isExpanded = toggled[kind] ?? !isPast），點標題切換；
-     收合狀態**每一段各記各的**（TripOverviewView.toggled[segment]，C8-1）。一打開停在今天（landOnTodayIfNeeded，只有旅程那一段）。
+   - 旅程（OverviewSections.itinerarySections，App 1.3.0）：「總覽」那一區 →「日程行程 · N 項 · 時區」→ **待排行程**
+     （日程行程底下的可收合子 section，預設收合、件數琥珀、0 項灰；展開後最後一列「＋ 新增行程」，底下多 6）→ 每一天
+     → 沒安排的日子那一行小字（hiddenDaysSection）。
+     旅程進行中**只開今天**（OverviewSections.opensByDefault：todayNumber 那一天；有進行中行程的那一天也開——範本沒有），
+     點標題切換；收合狀態**每一段各記各的**（TripOverviewView.toggled[segment]，C8-1）。一打開停在今天
+     （landOnTodayIfNeeded，只有旅程那一段）——所以一打開的樣子跟截圖一樣，總覽與待排在上面，要往上捲才看得到。
+   - 「總覽」那一區（OverviewSections.briefSection／OverviewBriefCell）：範本沒有總覽筆記，這裡拿範本自己的 summary 當內文、
+     旅程名稱當標題（TripOverviewNoteUseCase：新的總覽筆記以旅程名稱為標題，c816e748c）。內文最高視窗 1/4，超出淡出＋右下
+     「閱讀更多 ›」（631e4cfae）；沒被截就不放那一顆。底下一條自己的收尾線（04fd5d343）。
    - 附件：重要附件（trip.links，最後一列虛線「新增附件」）→「日程附件 · N 項 · 時區」→ 只列有附件的日子。
      第二行 = 網域 · 所屬行程（AttachmentRowText.meta，www. 拿掉）；路程的附件寫「上一站 → 這一站」，右邊那顆開的是路程
      （OverviewContentGroups.detail、TripOverviewView `cell.onGoToEvent`）。所屬行程已取消時劃線。
@@ -277,11 +312,14 @@ d.insertAdjacentHTML('beforeend', `<div class="table">${table}</div>`);
 async function buildPager() {
   const U = {
     'zh-Hant-TW': { unscheduled: '待排行程', planEvents: '日程行程', planFiles: '日程附件', planTodos: '日程待辦',
-      keyFiles: '重要附件', keyTodos: '重要事項', addEvent: '新增行程', addFile: '新增附件', addTodo: '新增待辦', rowUnscheduled: '未定' },
+      keyFiles: '重要附件', keyTodos: '重要事項', addEvent: '新增行程', addFile: '新增附件', addTodo: '新增待辦', rowUnscheduled: '未定',
+      brief: '總覽', edit: '編輯', more: '閱讀更多', hidden: x => `第 ${x} 天沒有安排，不列。`, hiddenSep: '、' },
     en: { unscheduled: 'Unscheduled', planEvents: 'Scheduled events', planFiles: 'Files for the day', planTodos: 'To-dos for the day',
-      keyFiles: 'Key Files', keyTodos: 'Key To-Dos', addEvent: 'Add event', addFile: 'Add attachment', addTodo: 'Add to-do', rowUnscheduled: 'Unscheduled' },
+      keyFiles: 'Key Files', keyTodos: 'Key To-Dos', addEvent: 'Add event', addFile: 'Add attachment', addTodo: 'Add to-do', rowUnscheduled: 'Unscheduled',
+      brief: 'Overview', edit: 'Edit', more: 'Read more', hidden: x => `Nothing planned on day ${x} — not listed.`, hiddenSep: ', ' },
     ja: { unscheduled: '未定の予定', planEvents: '日程の予定', planFiles: '日程の添付', planTodos: '日程のやること',
-      keyFiles: '重要なファイル', keyTodos: '重要なやること', addEvent: '予定を追加', addFile: '添付を追加', addTodo: 'やることを追加', rowUnscheduled: '未定' },
+      keyFiles: '重要なファイル', keyTodos: '重要なやること', addEvent: '予定を追加', addFile: '添付を追加', addTodo: 'やることを追加', rowUnscheduled: '未定',
+      brief: '概要', edit: '編集', more: '続きを読む', hidden: x => `${x}日目は予定がないため表示していません。`, hiddenSep: '、' },
   }[lang] || {};
   // PrimaryTimeZone.name：系統的短名字；短名字只是縮寫（JST）時退回完整名字
   const zoneName = (() => {
@@ -319,7 +357,8 @@ async function buildPager() {
   const allTimed = trip.days.flatMap(x => x.events.map(e => ({ ...e, day: x.day })));
   const byKey = Object.fromEntries([...allTimed, ...trip.allDayEvents.map(a => ({ ...a, day: a.fromDay }))].map(e => [e.key, e]));
   const isPast = n => n < todayNo;
-  const isOpen = (tab, n) => st.toggled[tab][n] ?? !isPast(n);
+  // 旅程那一段：進行中只開今天（opensByDefault）；附件與待辦照舊只收過去的（Q3）。待排那一組 key 'u'，預設收合。
+  const isOpen = (tab, n) => st.toggled[tab][n] ?? (n === 'u' ? false : tab === 0 ? n === todayNo : !isPast(n));
   const dayFace = n => { const dt = dateOf(n); return { title: n === todayNo ? t.today : t.day(n),
     sub: `${t.shortDate(dt.getMonth() + 1, dt.getDate())} ${t.weekday[dt.getDay()]}` }; };
 
@@ -330,19 +369,45 @@ async function buildPager() {
       <svg viewBox="0 0 24 24">${open ? LINE.chevronDown : LINE.chevronRight}</svg></div>`; };
   const keyHdr = (title, tag, zone) => `<div class="hdr key"><div class="tc"><b>${fmt(title)}</b></div>
       ${tag !== null ? `<div class="tag">${tag}</div>` : ''}<div class="sp"></div>${zone ? `<div class="zone">${fmt(zone)}</div>` : ''}</div>`;
-  const action = (label, icon) => `<div class="act" data-tap><svg class="dash"><rect x=".5" y=".5" rx="8"/></svg>${di(icon)}<span>${label}</span></div>`;
+  const action = (label, icon, cls = '') => `<div class="act${cls}" data-tap><svg class="dash"><rect x=".5" y=".5" rx="8"/></svg>${di(icon)}<span>${label}</span></div>`;
   const goEv = (icon, attr) => `<div class="goev" ${attr} data-tap>${icon}</div>`;
   const makiIc = k => MAKI[k] ? `<svg class="mk" viewBox="0 0 15 15"><path d="${MAKI[k]}"/></svg>` : di('calendar');
 
   // ── 行程 ──
+  // 待排行程的標頭：日期那一階的字、沒有下行，件數琥珀（0 項灰），可收合（OverviewSections.unscheduledSection）
+  const groupHdr = (key, title, n) => { const open = isOpen(0, key);
+    return `<div class="hdr grp" data-group="${key}" data-tap><div class="tc"><b>${fmt(title)}</b></div>
+      <div class="tag${n > 0 ? ' warn' : ''}">${s.count(n)}</div><div class="sp"></div>
+      <svg viewBox="0 0 24 24">${open ? LINE.chevronDown : LINE.chevronRight}</svg></div>`; };
+  const chev = '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>';
+  function brief() {
+    // 標題列右上「編輯」（Header.showsEdit）；內文的截斷在畫好之後量（clipBrief）
+    return `<section class="brief"><div class="hdr key"><div class="tc"><b>${fmt(U.brief)}</b></div><div class="sp"></div>
+      <span class="bedit">${fmt(U.edit)}</span></div>
+      <div class="btitle">${fmt(trip.title)}</div>
+      <div class="bbody"><p>${fmt(trip.summary)}</p></div>
+      <div class="bmore" hidden><span>${fmt(U.more)}${chev}</span></div></section>`;
+  }
   function itinerary() {
     const un = trip.unscheduledEvents;
-    let h = `<section>${keyHdr(U.unscheduled, s.count(un.length))}${un.map(u =>
-      eventRow(U.rowUnscheduled, u.title, u.category, false)).join('')}${action(U.addEvent, 'plus')}</section>`;
     const per = []; for (let n = 1; n <= trip.dayCount; n++) per.push([n, dayRows(n)]);
+    let h = brief();
     h += `<section>${keyHdr(U.planEvents, s.count(per.reduce((a, [, x]) => a + x.count, 0)), zoneName)}</section>`;
-    for (const [n, x] of per) h += `<section>${dayHdr(0, n, s.count(x.count))}${isOpen(0, n) ? x.html : ''}</section>`;
+    h += `<section>${groupHdr('u', U.unscheduled, un.length)}${isOpen(0, 'u') ? un.map(u =>
+      eventRow(U.rowUnscheduled, u.title, u.category, false)).join('') + action(U.addEvent, 'plus', ' unsch') : ''}</section>`;
+    // 沒安排的日子整組不出現，今天例外；最底下一行小字說哪幾天（Q23，設計 B5）
+    const shown = per.filter(([n, x]) => x.count || n === todayNo), hidden = per.filter(([n, x]) => !x.count && n !== todayNo).map(([n]) => n);
+    for (const [n, x] of shown) h += `<section>${dayHdr(0, n, s.count(x.count))}${isOpen(0, n) ? x.html : ''}</section>`;
+    if (hidden.length) h += `<section><div class="hidden-note">${fmt(U.hidden(hidden.join(U.hiddenSep)))}</div></section>`;
     return h;
+  }
+  // 內文最高視窗高度的 1/4（874 × 0.25），超出才截、淡出、放「閱讀更多」（NoteBriefPreview.onClippingChange）
+  function clipBrief(root) {
+    const body = root.querySelector('.bbody'); if (!body) return;
+    const cap = 874 * 0.25, clipped = body.scrollHeight > cap + 0.5;
+    body.style.maxHeight = cap + 'px';
+    body.classList.toggle('clip', clipped);
+    root.querySelector('.bmore').hidden = !clipped;
   }
 
   // ── 附件 ──
@@ -401,7 +466,7 @@ async function buildPager() {
   const BUILD = [itinerary, files, todos];
   d.insertAdjacentHTML('beforeend', `<div class="pager">${BUILD.map((_, i) => `<div class="page" data-page="${i}"></div>`).join('')}</div>`);
   const pager = d.querySelector('.pager'), pages = [...d.querySelectorAll('.page')], segs = [...d.querySelectorAll('.seg div')];
-  const draw = i => { const y = pages[i].scrollTop; pages[i].innerHTML = BUILD[i](); pages[i].scrollTop = y; };
+  const draw = i => { const y = pages[i].scrollTop; pages[i].innerHTML = BUILD[i](); if (i === 0) clipBrief(pages[0]); pages[i].scrollTop = y; };
   BUILD.forEach((_, i) => draw(i));
   const mark = i => segs.forEach((x, j) => { x.classList.toggle('on', j === i); x.dataset.pos = j; });
   const land = () => { const h = pages[0].querySelector(`[data-day="${todayNo}"]`); if (h) pages[0].scrollTop = h.parentElement.offsetTop; };
@@ -426,6 +491,8 @@ async function buildPager() {
     if (g) { if (g.dataset.leg) go('leg', `event=${g.dataset.leg}`); else go('event', `event=${g.dataset.ev}`); return; }
     const hd = e.target.closest('[data-day]');
     if (hd) { const n = +hd.dataset.day; st.toggled[tab][n] = !isOpen(tab, n); save(); draw(tab); return; }
+    const gp = e.target.closest('[data-group]');
+    if (gp) { const k = gp.dataset.group; st.toggled[tab][k] = !isOpen(tab, k); save(); draw(tab); return; }
     const td = e.target.closest('[data-todo]');
     if (td) { const id = td.dataset.todo; st.done[id] = !st.done[id]; if (!st.done[id]) delete st.done[id]; save(); draw(tab); return; }
     const lg = e.target.closest('[data-leg]');

@@ -3,26 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=402">
-<title>小工具・筆記</title>
+<title>資料・筆記</title>
 <!--
-  小工具分頁・筆記清單（App：Modules/Notes/…/NotesViewController.swift ＋ UI/…/NoteList/）。
-  參數：?lang=zh-Hant-TW|en|ja
-  抬頭與四格切換同 fx／scan／shop（SubTabContainer）；搜尋列、標籤鈕、列照 NoteListMetrics.swift ＋ screens/ref/zh/tools.png。
+  資料分頁・筆記清單（App：Modules/Notes/…/NotesViewController.swift ＋ UI/…/NoteList/）。
+  參數：?lang=zh-Hant-TW|en|ja &menu=1（點了右上工具鈕那一刻：「工具」挑一個的紙開著）
+  抬頭「資料」＋右上工具鈕＋兩格切換同 shop（tools.js libraryHead；1.3.0 起，設計稿 ui-card-v130 第 1–3 節）；
+  搜尋列、標籤鈕、列照 NoteListMetrics.swift ＋ screens/ref/zh/tools.png。
   內容：範本 data/sanyo.<lang>.json 的 notes（一則）；摘要是內文接起來、提及寫成「@行程標題」，一行截斷。
-  互動模式：點列開筆記內頁（note.html），搜尋列打字就篩（標題＋內文）。
+  互動模式：點列開筆記內頁（note.html），搜尋列打字就篩（標題＋內文）；工具鈕開挑一個的紙 → 掃描（scan.html）／匯率換算（fx.html）。
 -->
 <link rel="stylesheet" href="screen.css">
 <style>
-  @font-face { font-family: "TZTitleCJK"; src: local("PingFangTC-Semibold"), local("PingFang TC Semibold"); font-weight: 600;
-    unicode-range: U+3000-30FF, U+3400-9FFF, U+FF00-FFEF; size-adjust: 95%; }
-  .wg-title { position: absolute; left: 20px; top: 75.4px; font: 600 var(--t-xxl)/34px var(--font); letter-spacing: -.56px; }
-  html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
-  .seg { position: absolute; left: 20px; width: 362px; top: 119.67px; height: 45px; border-radius: 22.5px; background: #eeeeef; }
-  .seg-pill { position: absolute; top: 2.33px; height: 40.33px; width: 86.7px; border-radius: 20.2px; background: #fff;
-    box-shadow: 0 0 0 .5px rgba(0,0,0,.03), 0 2px 6px rgba(0,0,0,.04); }
-  .seg-t { position: absolute; top: 0; height: 45px; width: 86.7px; display: grid; place-items: center;
-    font: 400 var(--t-sm)/16px var(--font); color: #73675b; white-space: nowrap; }
-  .seg-t.on { font-weight: 700; color: var(--ink); }
   .ic { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
 
   /* 上緣 14（NotesViewController.subTabTopInset）；左右 20、控制列間距 8（NoteListMetrics） */
@@ -49,15 +40,16 @@
 <div class="device" id="d"></div>
 <script type="module">
 import { lang, loadTrip, chrome, ready, fmt, interactive, go } from './chrome.js';
+import { libraryHead, subTabs } from './tools.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
 
-// App 的字（Widgets.json widgets.tab.title／subtab.*、UI.json ui.search.notes）
+// App 的字（UI.json ui.search.notes；抬頭與分格的字在 tools.js LIB）
 const s = {
-  'zh-Hant-TW': { title: '小工具', subs: ['筆記', '掃描', '匯率換算', '購物清單'], search: '搜尋筆記' },
-  en: { title: 'Tools', subs: ['Notes', 'Scan', 'Currency', 'Shopping'], search: 'Search notes' },
-  ja: { title: 'ツール', subs: ['メモ', 'スキャン', '為替', '買い物'], search: 'メモを検索' },
+  'zh-Hant-TW': { search: '搜尋筆記' },
+  en: { search: 'Search notes' },
+  ja: { search: 'メモを検索' },
 }[lang];
 
 // DesignIcon.swift：search、tag、plus
@@ -69,9 +61,6 @@ const IC = {
 const ic = n => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
 
 const TAB = 0;
-d.insertAdjacentHTML('beforeend', `<div class="wg-title">${s.title}</div>
-  <div class="seg"><div class="seg-pill" style="left:${2 + TAB * 90.3}px"></div>
-  ${s.subs.map((x, i) => `<div class="seg-t${i === TAB ? ' on' : ''}" style="left:${2 + i * 90.3}px">${x}</div>`).join('')}</div>`);
 
 // 提及 {@key} 解成「@行程標題」（摘要是純文字，不上色）
 const titles = {};
@@ -89,10 +78,10 @@ d.insertAdjacentHTML('beforeend', `
   <div class="fab">${ic('plus')}</div>`);
 
 chrome(d, { tab: 3 });
+libraryHead(d, TAB);   // 畫在分頁列之後：menu=1 的紙要蓋在分頁列上
 ready();
 
 if (interactive) {
-  const { subTabs } = await import('./tools.js');
   subTabs(d, TAB);
   d.insertAdjacentHTML('beforeend', '<style>.row { cursor: pointer; } .row:active { background: var(--surface); }</style>');
   d.querySelector('.list').addEventListener('click', (e) => { if (e.target.closest('.row')) go('note'); });

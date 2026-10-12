@@ -18,14 +18,14 @@ export async function loadTrip() {
 // App 的 UI 字串（照 App 各語系的 xcstrings 抄，只收畫面上用得到的）
 const STRINGS = {
   'zh-Hant-TW': {
-    tabs: ['總覽', '旅程', '地圖', '小工具', '設定'],
+    tabs: ['總覽', '旅程', '地圖', '資料', '設定'],   // 第 4 格：1.3.0 起「資料」（Widgets.json widgets.tab.title；原「小工具」）
     today: '今天', day: n => `第 ${n} 天`, allDay: '全日',
     weekday: ['週日', '週一', '週二', '週三', '週四', '週五', '週六'],
     monthDay: (m, d) => `${m}月${d}日`, shortDate: (m, d) => `${m}/${d}`,
     minutes: m => `${m} 分`, hours: h => `${h} 小時`, hm: (h, m) => `${h} 小時 ${m} 分`,
   },
   en: {
-    tabs: ['Overview', 'Trip', 'Map', 'Tools', 'Settings'],
+    tabs: ['Overview', 'Trip', 'Map', 'Library', 'Settings'],
     today: 'Today', day: n => `Day ${n}`, allDay: 'All day',
     weekday: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     monthDay: (m, d) => `${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m-1]} ${d}`,
@@ -33,7 +33,7 @@ const STRINGS = {
     minutes: m => `${m} min`, hours: h => `${h} h`, hm: (h, m) => `${h} h ${m} min`,
   },
   ja: {
-    tabs: ['概要', '旅行', 'マップ', 'ツール', '設定'],
+    tabs: ['概要', '旅行', 'マップ', '資料', '設定'],
     today: '今日', day: n => `${n} 日目`, allDay: '終日',
     weekday: ['日', '月', '火', '水', '木', '金', '土'],
     monthDay: (m, d) => `${m}月${d}日`, shortDate: (m, d) => `${m}/${d}`,
@@ -109,8 +109,8 @@ export function go(page, query = '') {
   }
   location.href = url;
 }
-/** 分頁列每一格對到哪個畫面（設定分頁還沒有複刻，點了不動） */
-export const TAB_PAGES = ['overview', 'calendar', 'map', 'shop', null];
+/** 分頁列每一格對到哪個畫面（設定分頁還沒有複刻，點了不動）。「資料」落在筆記那一格（LibraryViewModel.initialIndex：第一次進來是筆記） */
+export const TAB_PAGES = ['overview', 'calendar', 'map', 'notes', null];
 
 export function chrome(device, { tab = null, dark = false } = {}) {
   if (interactive) {
@@ -125,7 +125,7 @@ export function chrome(device, { tab = null, dark = false } = {}) {
     <div class="sb${dark ? ' on-dark' : ''}"><div class="sb-time">9:41</div><div class="sb-island"></div>${SB_ICONS}</div>
     <div class="home${dark ? ' on-dark' : ''}"></div>`);
   if (tab !== null) {
-    const icons = ['overview', 'calendar', 'map', 'notes', 'settings'];
+    const icons = ['overview', 'calendar', 'map', 'notes', 'settings'];   // 「資料」沿用折角紙（WidgetsTabCoordinator：.tz(title:, icon: .notes)，U2）
     device.insertAdjacentHTML('beforeend', `<nav class="tabbar">${icons.map((ic, i) =>
       `<div class="tab${i === tab ? ' on' : ''}" data-tab="${i}">${svg(ic)}<span>${t.tabs[i]}</span></div>`).join('')}</nav>`);
     if (interactive) device.querySelector('.tabbar').addEventListener('click', (e) => {

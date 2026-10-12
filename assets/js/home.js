@@ -332,6 +332,7 @@ const SCREEN_OF = {
   'map-store': ['map-store', ''], 'map-nav': ['map-nav', ''], members: ['members', ''],
   'share-location': ['share-location', ''], lock: ['lock', ''], widget: ['widget', ''],
   note: ['note', ''], fx: ['fx', ''], shop: ['shop', ''], scan: ['scan', ''],
+  notes: ['notes', ''], toolbox: ['notes', 'menu=1'], 'scan-history': ['scan', 'hist=1'], 'fx-nokbd': ['fx', 'kbd=0'],
   'map-live': ['map-live', 'pan=0'], 'map-route': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09'], 'map-mates': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09&focus=mates'], 'share-ig': ['share-ig', ''], 'apple-calendar': ['apple-calendar', ''], siri: ['siri', ''],
 };
 const SCREEN_LANG = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja' }[L2];
@@ -366,8 +367,8 @@ function fitPlay() {
 }
 const DIRECT = new Set(['lock']);
 // autoplay.js＋stories*.js 的內容雜湊（tools/stamp-home.mjs 蓋）：帶進 iframe 網址，改了腳本手機不會用到快取裡的舊版
-const AUTO_V = '1c81411c47';
-const NO_AUTO = new Set(['note', 'members', 'lock', 'widget', 'apple-calendar', 'scan', 'fx', 'siri']);   // 沒有東西可演的、或使用者自己拖比較好的
+const AUTO_V = 'ecb8ca0be5';
+const NO_AUTO = new Set(['note', 'members', 'lock', 'widget', 'apple-calendar', 'scan', 'fx', 'fx-nokbd', 'siri']);   // 沒有東西可演的、或使用者自己拖比較好的
 addEventListener('message', (e) => {
   if (e.data?.type === 'tz-esc' && playDlg?.open) { playDlg.close(); return; }
   if (e.data?.type === 'tz-auto-hello') { for (const f of phones) if (f._fr?.contentWindow === e.source) f._auto?.apply(); return; }

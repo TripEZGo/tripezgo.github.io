@@ -164,8 +164,8 @@ T = {
   '匯率換算：台幣與日圓互換，下方是最近的換算紀錄': ('Currency: converting between two currencies, with recent conversions below', '為替換算：2つの通貨を換算し、下に最近の換算履歴'),
   '購物清單：待購、已購、不買了的件數，商品依分類排成照片格': ('Shopping list: counts of to-buy, bought and skipped items, with items in a photo grid by category',
                                                     '買い物リスト：購入予定・購入済み・やめたの件数と、カテゴリ別の写真グリッド'),
-  'QR Code 掃描：掃過的網址與文字留在紀錄裡，旅伴也看得到': ('QR code scanner: scanned links and text kept in a history your companions can see too',
-                                                     'QR コードスキャン：読み取った URL やテキストが履歴に残り、旅の仲間も見られる'),
+  'QR Code 掃描：打開就是鏡頭，對準就掃到，紀錄旅伴也看得到': ('QR code scanner: opens straight to the camera, scans on sight, and keeps a history your companions can see',
+                                                     'QR コードスキャン：開くとすぐカメラ。かざすだけで読み取り、履歴は旅の仲間も見られる'),
   # ── 2026-10-11 照手稿重排之後新增的字串 ──
   # 用詞：路程 leg／移動、全日 all-day／終日、待排 unscheduled／未定、標記 marker／マーカー、
   # 步行導航 walking directions／徒歩ナビ、位置共享 location sharing／位置の共有（App 字串表）。

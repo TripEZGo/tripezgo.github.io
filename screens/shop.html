@@ -3,29 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=402">
-<title>小工具・購物清單</title>
+<title>資料・購物清單</title>
 <!--
-  小工具分頁・購物清單（App：Modules/Widgets/…/Shopping/ShoppingViewController.swift ＋ UI/…/Shopping/ShoppingWallView.swift）。
-  參數：?lang=zh-Hant-TW|en|ja
-  抬頭與四格切換照 SubTabContainer.swift ＋ screens/ref/zh/shop.png 量；狀態格、分類籌碼、購物牆照兩支 Swift 的 Metrics。
+  資料分頁・購物清單（App：Modules/Widgets/…/Shopping/ShoppingViewController.swift ＋ UI/…/Shopping/ShoppingWallView.swift）。
+  參數：?lang=zh-Hant-TW|en|ja &menu=1（點了右上工具鈕那一刻：「工具」挑一個的紙開著）
+  抬頭「資料」＋右上工具鈕＋兩格切換同 notes（tools.js libraryHead；1.3.0 起，設計稿 ui-card-v130 第 1–3 節）；
+  狀態格、分類籌碼、購物牆照兩支 Swift 的 Metrics。
   參數另有 &scroll=0（購物牆往上捲幾 pt；釘住的狀態格與籌碼不動——已購買／不買了排在最後，要捲才看得到）。
   基準圖是空的，這一頁畫十項（6 待購買／3 已購買／1 不買了）——品名、價格、封面是範例（ITEMS），
   封面是 screens/img/shop-*.svg 的中性插圖，不是商品照。
 -->
 <link rel="stylesheet" href="screen.css">
 <style>
-  /* ── 抬頭＋四格切換（SubTabContainer：上 12+2、左右 20、標題 xxl semibold -0.02em、切換列上 4+6、下 6）── */
-  /* 抬頭的中日文字：UIKit 畫出來比 Chromium 的 PingFang 小一號（量 ref：字高 24 對 25.7、寬 76 對 80）——只縮 CJK 那一段 */
-  @font-face { font-family: "TZTitleCJK"; src: local("PingFangTC-Semibold"), local("PingFang TC Semibold"); font-weight: 600;
-    unicode-range: U+3000-30FF, U+3400-9FFF, U+FF00-FFEF; size-adjust: 95%; }
-  .wg-title { position: absolute; left: 20px; top: 75.4px; font: 600 var(--t-xxl)/34px var(--font); letter-spacing: -.56px; }
-  html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
-  .seg { position: absolute; left: 20px; width: 362px; top: 119.67px; height: 45px; border-radius: 22.5px; background: #eeeeef; }
-  .seg-pill { position: absolute; top: 2.33px; height: 40.33px; width: 86.7px; border-radius: 20.2px; background: #fff;
-    box-shadow: 0 0 0 .5px rgba(0,0,0,.03), 0 2px 6px rgba(0,0,0,.04); }
-  .seg-t { position: absolute; top: 0; height: 45px; width: 86.7px; display: grid; place-items: center;
-    font: 400 var(--t-sm)/16px var(--font); color: #73675b; white-space: nowrap; }
-  .seg-t.on { font-weight: 700; color: var(--ink); }
   .ic { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
 
   /* 釘住那一段：上 14、左右 20 */
@@ -84,24 +73,25 @@
 <div class="device" id="d"></div>
 <script type="module">
 import { lang, params, chrome, ready, fmt, interactive, go, t as T, svg, swatchClass } from './chrome.js';
+import { libraryHead } from './tools.js';
 
 const d = document.getElementById('d');
 
 // App 的字（Scripts/i18n/maps/Widgets.json、Domain.json、UI.json）
 const s = {
-  'zh-Hant-TW': { title: '小工具', subs: ['筆記', '掃描', '匯率換算', '購物清單'], all: '全部',
+  'zh-Hant-TW': { all: '全部',
     stat: ['待購買', '已購買', '不買了'], flag: '目前行程', sep: '　·　', yen: '¥',
     cats: { drug: '藥妝', cloth: '衣服', souv: '紀念品', food: '食品', lux: '精品', goods: '雜貨' },
     empty: '無項目', quotes: '價格比較', best: p => `最低 ${p}`, quoteAdd: '新增比價', events: '關聯行程', approx: v => `約 ${v}`,
     unTitle: '退回待購買？', unMsg: '你填的購買價格會一起清掉。', unOk: '退回待購買', cancel: '取消',
     paidTitle: '購買價格', paidLabel: '價格', paidHint: p => `參考價格是 ${p}。`, paidSave: '標成已購買', locale: 'zh-TW' },
-  en: { title: 'Tools', subs: ['Notes', 'Scan', 'Currency', 'Shopping'], all: 'All',
+  en: { all: 'All',
     stat: ['To buy', 'Bought', 'Skipped'], flag: 'On itinerary', sep: ' · ', yen: '¥',
     cats: { drug: 'Drugstore', cloth: 'Clothing', souv: 'Souvenirs', food: 'Food', lux: 'Luxury', goods: 'Daily Goods' },
     empty: 'No items', quotes: 'Price check', best: p => `Lowest ${p}`, quoteAdd: 'Add a price', events: 'Linked events', approx: v => `About ${v}`,
     unTitle: 'Back to to-buy?', unMsg: 'The purchase price you entered will be cleared too.', unOk: 'Back to to-buy', cancel: 'Cancel',
     paidTitle: 'Price paid', paidLabel: 'Price', paidHint: p => `Reference price is ${p}.`, paidSave: 'Mark as bought', locale: 'en-US' },
-  ja: { title: 'ツール', subs: ['メモ', 'スキャン', '為替', '買い物'], all: 'すべて',
+  ja: { all: 'すべて',
     stat: ['購入予定', '購入済み', 'やめた'], flag: '予定あり', sep: '　·　', yen: '￥',
     cats: { drug: 'ドラッグストア', cloth: '衣類', souv: 'お土産', food: '食品', lux: 'ブランド品', goods: '雑貨' },
     empty: '項目なし', quotes: '価格の比較', best: p => `最安 ${p}`, quoteAdd: '価格を追加', events: '関連する予定', approx: v => `約 ${v}`,
@@ -139,13 +129,10 @@ const IC = {
 };
 const ic = n => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
 
-// 抬頭＋四格切換
-const TAB = 3;
-d.insertAdjacentHTML('beforeend', `<div class="wg-title">${s.title}</div>
-  <div class="seg"><div class="seg-pill" style="left:${2 + TAB * 90.3}px"></div>
-  ${s.subs.map((x, i) => `<div class="seg-t${i === TAB ? ' on' : ''}" style="left:${2 + i * 90.3}px">${x}</div>`).join('')}</div>`);
+// 抬頭＋兩格切換＋工具鈕（tools.js libraryHead）：購物清單是第 2 格
+const TAB = 1;
 
-// ── 狀態：截圖模式就是 ITEMS 原樣；互動模式從 sessionStorage 接回來（跨小工具四格切換還在） ──
+// ── 狀態：截圖模式就是 ITEMS 原樣；互動模式從 sessionStorage 接回來（跨資料分頁兩格切換、開過工具紙都還在） ──
 const STATUSES = ['pending', 'bought', 'skipped'];
 const cats = ['drug', 'cloth', 'souv', 'food', 'lux', 'goods'];
 const state = { status: ITEMS.map(i => i.status), paid: ITEMS.map(() => null), statusFilter: [...STATUSES], catFilter: [] };
@@ -195,6 +182,7 @@ d.insertAdjacentHTML('beforeend', `<div class="wall-clip" style="top:${headBotto
   <div class="fab">${ic('plus')}</div><div class="scrim"></div>`);
 
 chrome(d, { tab: 3 });
+libraryHead(d, TAB);   // 畫在分頁列之後：menu=1 的紙要蓋在分頁列上
 await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; })));
 ready();
 

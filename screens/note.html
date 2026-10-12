@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=402">
 <title>筆記內頁</title>
 <!--
-  小工具 › 筆記 › 一則筆記的閱讀頁（App：Modules/Notes/…/NoteReaderViewController.swift ＋ UI/…/NoteEditor/）。
+  資料 › 筆記 › 一則筆記的閱讀頁（App：Modules/Notes/…/NoteReaderViewController.swift ＋ UI/…/NoteEditor/）。
   參數：?lang=zh-Hant-TW|en|ja
   導覽列（系統玻璃鈕）與浮動分享鈕照 screens/ref/zh/note.png 量；內文照 NoteEditorMetrics.swift。
   內容：範本 data/sanyo.<lang>.json 的 notes[0]（標題＋四段＋三個 @提及），再多兩樣範本裡沒有的——
@@ -26,7 +26,7 @@
 
   /* ── 內文（NoteEditorMetrics）：左右 20；標題 xl heavy、-0.02em、之後 4；內文 base、段後 12；提及 semibold accentInk ── */
   .doc { position: absolute; left: 20px; right: 20px; top: 127.4px; }
-  /* 標題的中日文：UIKit 畫得比 Chromium 的 PingFang 小一號（同小工具抬頭；量 ref：寬 182.7 對 192） */
+  /* 標題的中日文：UIKit 畫得比 Chromium 的 PingFang 小一號（同資料分頁抬頭；量 ref：寬 182.7 對 192） */
   @font-face { font-family: "TZNoteTitleCJK"; src: local("PingFangTC-Semibold"), local("PingFang TC Semibold"); font-weight: 600;
     unicode-range: U+3000-30FF, U+3400-9FFF, U+FF00-FFEF; size-adjust: 95%; }
   .n-title { font: 800 var(--t-xl)/28px var(--font); letter-spacing: -.44px; margin-bottom: 8px; }

@@ -22,6 +22,7 @@ export const SHOTS = [
   ['calendar', 'calendar', 'day=2'],
   ['timeline', 'timeline', 'day=2'], ['overview', 'overview', ''], ['overview-files', 'overview', 'tab=files'], ['overview-todos', 'overview', 'tab=todos'],
   ['notes', 'notes', ''], ['note', 'note', ''], ['scan', 'scan', ''], ['fx', 'fx', ''], ['shop', 'shop', ''],
+  ['toolbox', 'notes', 'menu=1'], ['scan-history', 'scan', 'hist=1'], ['fx-nokbd', 'fx', 'kbd=0'],
   ['event', 'event', ''], ['event-extra', 'event', 'extra=1'], ['event-airport', 'event', 'event=d1-airport&extra=1'], ['leg', 'leg', ''],
   ['map-live', 'map-live', ''], ['map-route', 'map-live', 'nav=0&today=2&start=2026-10-09'], ['map-mates', 'map-live', 'nav=0&today=2&start=2026-10-09&focus=mates'], ['map', 'map', ''], ['map-place', 'map-place', ''], ['map-store', 'map-store', ''], ['map-nav', 'map-nav', ''],
   ['share-ig', 'share-ig', ''], ['apple-calendar', 'apple-calendar', ''], ['siri', 'siri', ''],

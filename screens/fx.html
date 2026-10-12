@@ -3,37 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=402">
-<title>小工具・匯率換算</title>
+<title>資料・匯率換算</title>
 <!--
-  小工具分頁・匯率換算（App：Modules/Widgets/…/Exchange/ExchangeViewController.swift）。
+  資料 › 工具 › 匯率換算 modal（App：Modules/Widgets/…/Exchange/ExchangeSheet.swift ＋ ExchangeViewController.swift；
+  設計稿 ui-card-v130.html 第 5 節）。1.3.0 起它不是一格，是一張 large 的紙：UINavigationController＋標題「匯率換算」＋右上 ✕
+  （SheetCloseButton）＋抓桿。開啟的那一刻左格是第一回應者、現值整段選起來（U10）、數字鍵盤上來。
   參數：?lang=zh-Hant-TW|en|ja
-  抬頭與四格切換照 SubTabContainer.swift ＋ screens/ref/zh/fx.png 量；換算格、對調鈕、匯率行、最近換算照 ExchangeViewController.Metrics。
-  基準圖沒有「最近換算」（還沒算過），這一頁多畫五筆——金額是範例，寫在底下的 RECENT，匯率 4.96 照基準圖。
+        &kbd=0（收鍵盤之後的樣子：沒有 focus、沒有鍵盤）
+        &ad=1（免費版：紙底一條原生廣告橫幅，鍵盤起來時被蓋住（U3、U4）；預設不畫——官網其他畫面也都不畫廣告，內容是範例）
+        &from=notes|shop（互動模式：✕ 回到哪一格；預設筆記）
+  紙的外框照 event.html 量好的 large detent（頂 62、圓角 12、抓桿 36×5，後面那一層整片灰）；導覽列標題 17 semibold、
+  sheet 頂下 16、高 44；換算格、對調鈕、匯率行、最近換算照 ExchangeViewController.Metrics（內容從安全區＋14 起）。
+  「最近換算」五筆是範例（RECENT），匯率 4.96 照先前的基準圖。
 -->
 <link rel="stylesheet" href="screen.css">
 <style>
-  /* ── 抬頭＋四格切換（SubTabContainer：上 12+2、左右 20、標題 xxl semibold -0.02em、切換列上 4+6、下 6）── */
-  /* 抬頭的中日文字：UIKit 畫出來比 Chromium 的 PingFang 小一號（量 ref：字高 24 對 25.7、寬 76 對 80）——只縮 CJK 那一段 */
-  @font-face { font-family: "TZTitleCJK"; src: local("PingFangTC-Semibold"), local("PingFang TC Semibold"); font-weight: 600;
-    unicode-range: U+3000-30FF, U+3400-9FFF, U+FF00-FFEF; size-adjust: 95%; }
-  .wg-title { position: absolute; left: 20px; top: 75.4px; font: 600 var(--t-xxl)/34px var(--font); letter-spacing: -.56px; }
-  html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
-  .seg { position: absolute; left: 20px; width: 362px; top: 119.67px; height: 45px; border-radius: 22.5px; background: #eeeeef; }
-  .seg-pill { position: absolute; top: 2.33px; height: 40.33px; width: 86.7px; border-radius: 20.2px; background: #fff;
-    box-shadow: 0 0 0 .5px rgba(0,0,0,.03), 0 2px 6px rgba(0,0,0,.04); }
-  .seg-t { position: absolute; top: 0; height: 45px; width: 86.7px; display: grid; place-items: center;
-    font: 400 var(--t-sm)/16px var(--font); color: #73675b; white-space: nowrap; }
-  .seg-t.on { font-weight: 700; color: var(--ink); }
+  .device { background: #ccc; }   /* large detent：後面那一層整片被系統壓成灰（同 event.html） */
   .ic { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+  .xs { position: absolute; left: 0; right: 0; top: 62px; bottom: 0; background: var(--page); border-radius: 12px 12px 0 0; overflow: hidden; }
+  .xs .grabber { position: absolute; left: 183px; top: 5px; width: 36px; height: 5px; border-radius: 2.5px; background: #c1c1c3; }
+  .xs .tz-x { left: 350px; top: 20px; }
 
-  /* 釘住那一段：上 14、左右 20 */
-  .head { position: absolute; left: 20px; right: 20px; top: 184px; }
+  /* 釘住那一段：安全區（導覽列底 60）＋14、左右 20 */
+  .head { position: absolute; left: 20px; right: 20px; top: 74px; }
   /* 換算格：surface 底、圓角 8、上下 10 左右 12、間距 2；金額 xl semibold 等寬數字、最矮 34；對調鈕 36 圓、間距 8 */
   .pair { display: flex; align-items: center; gap: 8px; }
-  .cell { flex: 1; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 9px 11px; }
+  .cell { position: relative; flex: 1; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 9px 11px; }
+  /* focus（setFocused）：框換墨色＋外面一圈 2pt 淡主色（accent 35%） */
+  .cell.focus { border-color: var(--ink); box-shadow: 0 0 0 2px rgba(47,145,142,.35); }
   .cur { display: flex; align-items: center; gap: 4px; height: 14.3px; font: 700 var(--t-xs)/14.3px var(--font); letter-spacing: .72px; color: var(--muted); }
   .cur svg { width: 10px; height: 10px; stroke-width: 1.8; }
   .amt { margin-top: 2px; height: 34px; display: flex; align-items: center; font: 600 var(--t-xl)/26px var(--font); color: var(--ink); white-space: nowrap; overflow: hidden; }
+  .amt:has(.sel) { overflow: visible; }
+  /* 全選現值（U10）：系統 UITextField 的選取底色（tint 淡色）＋兩端把手 */
+  .sel { position: relative; background: rgba(47,145,142,.24); border-radius: 1px; }
+  .sel::before, .sel::after { content: ""; position: absolute; width: 2px; top: -2px; bottom: -2px; background: var(--accent); }
+  .sel::before { left: -1px; } .sel::after { right: -1px; }
+  .sel i { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+  .sel i:first-child { left: -3.5px; top: -8px; } .sel i:last-child { right: -3.5px; bottom: -8px; }
   .swap { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--card); display: grid; place-items: center; flex: none; color: var(--ink); }
   .swap svg { width: 17px; height: 17px; stroke-width: 2; }
   /* 匯率行：上 12、xs 等寬數字 muted */
@@ -42,32 +49,61 @@
   .hist-head { margin-top: 22px; height: 44px; display: flex; align-items: center; justify-content: space-between;
     font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); }
   .hist-head b { font-weight: 600; color: var(--muted-on-sunken); }
-  .hist { margin-top: 4px; }
-  .hr { position: relative; min-height: 44px; padding: 6px 0; display: flex; align-items: baseline; gap: 10px;
-    font: 400 var(--t-sm)/15.5px var(--font); }
-  .hr { align-items: center; }
+  .hist { position: absolute; left: 20px; right: 20px; overflow: hidden; }
+  .hr { position: relative; min-height: 44px; padding: 6px 0; display: flex; align-items: center; gap: 10px; font: 400 var(--t-sm)/15.5px var(--font); }
   .hr span:first-child { flex: 1; color: var(--ink); }
   .hr span:last-child { color: var(--muted); }
   .hr + .hr::before { content: ""; position: absolute; left: 0; right: 0; top: -1px; border-top: 1px solid var(--border-soft); }
   /* 等寬數字（tzMonoDigits）：中日文頁的 -apple-system 會拿 PingFang 畫數字，tnum 就不見了——指名 system-ui（SF） */
   .mono { font-family: system-ui, -apple-system, sans-serif; font-variant-numeric: tabular-nums; }
+
+  /* 廣告（ad=1）：AdSlotStyle.banner（NativeAdBannerView）——殼 tzSurface、1px 框、圓角 8、內距 12；
+     圖示 40｜「廣告」xs muted＋標題 sm semibold／副標 xs muted／廣告主 xs｜行動呼籲 xs semibold accentInk；右上 AdChoices。
+     釘在紙底：上 12、左右 20、下 8（安全區之上），不接鍵盤（U4） */
+  .adb { position: absolute; left: 20px; right: 20px; bottom: 42px; display: flex; align-items: center; gap: 10px; padding: 12px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+  .adb .aic { flex: none; width: 40px; height: 40px; border-radius: 4px; background: linear-gradient(135deg, #e9a535, #c14b3c); }
+  .adb .tx { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .adb .tl { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .adb .bd { flex: none; font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); }
+  .adb .hd { font: 600 var(--t-sm)/15.5px var(--font); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .adb .by, .adb .who { font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .adb .who { color: var(--muted-on-sunken); }
+  .adb .cta { flex: none; font: 600 var(--t-xs)/14.3px var(--font); color: var(--accent-ink); padding-right: 14px; }
+  .adb .ac { position: absolute; right: 4px; top: 4px; width: 14px; height: 14px; border-radius: 3px; background: rgba(124,111,99,.25); color: var(--muted-on-sunken);
+    font: 600 9px/14px var(--font); text-align: center; }
+
+  /* 系統數字鍵盤（iOS 26 decimalPad）＋ App 的 KeyboardDoneBar（surface 94%、頂一條 border、右邊「完成」accentInk sm semibold） */
+  .kb { position: absolute; left: 0; right: 0; bottom: 0; z-index: 45; }
+  .kb.off { transform: translateY(100%); }
+  .kb-bar { height: 44px; background: rgba(251,248,244,.94); border-top: 1px solid var(--border); display: flex; justify-content: flex-end; align-items: center; padding: 0 16px; }
+  .kb-bar span { font: 600 var(--t-sm)/16px var(--font); color: var(--accent-ink); padding: 8px 4px; }
+  .kb-keys { background: #d4d6dc; padding: 6px 6px 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .kb-keys span { height: 47px; border-radius: 8px; background: #fff; box-shadow: 0 1px 0 rgba(0,0,0,.3); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; font: 400 25px/26px -apple-system, system-ui, sans-serif; color: #000; }
+  .kb-keys span small { font: 600 10px/11px -apple-system, system-ui, sans-serif; letter-spacing: 2px; }
+  .kb-keys span.fn { background: transparent; box-shadow: none; }
+  .kb-keys span.fn svg { width: 26px; height: 22px; fill: none; stroke: #000; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, chrome, ready, interactive } from './chrome.js';
+import { lang, params, chrome, ready, interactive, go } from './chrome.js';
+import { LIB, closeX, libStyle } from './tools.js';
 
 const d = document.getElementById('d');
+const kbd = params.get('kbd') !== '0';
+const ad = params.get('ad') === '1';
 
-// App 的字（Scripts/i18n/maps/Widgets.json；「完成」是 UI.json ui.done）
+// App 的字（Scripts/i18n/maps/Widgets.json；標題是 widgets.tools.exchange；「完成」是 UI.json ui.done）
 const s = {
-  'zh-Hant-TW': { title: '小工具', subs: ['筆記', '掃描', '匯率換算', '購物清單'], recent: '最近換算', clear: '清除',
-    sep: '　·　', date: '2026年10月9日', locale: 'zh-TW', done: '完成' },
-  en: { title: 'Tools', subs: ['Notes', 'Scan', 'Currency', 'Shopping'], recent: 'Recent', clear: 'Clear',
-    sep: ' · ', date: 'Oct 9, 2026', locale: 'en-US', done: 'Done' },
-  ja: { title: 'ツール', subs: ['メモ', 'スキャン', '為替', '買い物'], recent: '最近の換算', clear: '消去',
-    sep: '　·　', date: '2026年10月9日', locale: 'ja-JP', done: '完了' },
+  'zh-Hant-TW': { recent: '最近換算', clear: '清除', sep: '　·　', date: '2026年10月9日', locale: 'zh-TW', done: '完成',
+    adBadge: '廣告', adHd: '瀨戶內海巴士通票・線上購買', adBy: '三天無限搭乘，手機出示即可', adWho: '範例廣告主', adCta: '購買' },
+  en: { recent: 'Recent', clear: 'Clear', sep: ' · ', date: 'Oct 9, 2026', locale: 'en-US', done: 'Done',
+    adBadge: 'Ad', adHd: 'Setouchi bus pass — buy online', adBy: 'Unlimited rides for 3 days, show it on your phone', adWho: 'Sample advertiser', adCta: 'Buy' },
+  ja: { recent: '最近の換算', clear: '消去', sep: '　·　', date: '2026年10月9日', locale: 'ja-JP', done: '完了',
+    adBadge: '広告', adHd: '瀬戸内バス周遊パス・オンライン購入', adBy: '3 日間乗り放題、スマホを見せるだけ', adWho: 'サンプル広告主', adCta: '購入' },
 }[lang];
 
 const IC = {
@@ -76,12 +112,6 @@ const IC = {
 };
 const ic = n => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
 
-// 抬頭＋四格切換
-const TAB = 2;
-d.insertAdjacentHTML('beforeend', `<div class="wg-title">${s.title}</div>
-  <div class="seg"><div class="seg-pill" style="left:${2 + TAB * 90.3}px"></div>
-  ${s.subs.map((x, i) => `<div class="seg-t${i === TAB ? ' on' : ''}" style="left:${2 + i * 90.3}px">${x}</div>`).join('')}</div>`);
-
 // 數字照 ExchangeViewModel.format：≥1000 不留小數、≥1 兩位、<1 四位
 const RATE = 4.96;
 const RATES = { TWD: 1, JPY: RATE };   // 1 TWD = 4.96 JPY（基準圖那一天）
@@ -89,9 +119,12 @@ const convert = (v, from, to) => v / RATES[from] * RATES[to];
 const num = v => v.toLocaleString(s.locale, { maximumFractionDigits: Math.abs(v) >= 1000 ? 0 : Math.abs(v) >= 1 ? 2 : 4 });
 const money = (v, c) => `${num(v)} ${c}`;
 
-// 狀態（ExchangeViewModel）：打的是哪一格（editing）＋他打的那串字（typed）；另一格是算出來的
+// 狀態（ExchangeViewModel）：打的是哪一格（editing）＋他打的那串字（typed）；另一格是算出來的。
+// 開啟的那一刻（ExchangeViewModel.focusOnOpen）：左格 focus、現值整段選起來（selectAll）
 const fx = { source: 'TWD', target: 'JPY', editing: 'source', typed: '1000',
   recent: [[1000, 'TWD'], [12800, 'JPY'], [3300, 'JPY'], [500, 'TWD'], [1980, 'JPY']].map(([v, c]) => ({ amount: v, from: c, to: c === 'TWD' ? 'JPY' : 'TWD' })) };
+let focus = kbd ? 'source' : null;
+let selectAll = kbd;
 let saved = null;
 if (interactive) {
   const { remember } = await import('./tools.js');
@@ -102,74 +135,83 @@ if (interactive) {
 const parse = str => { const n = Number(String(str).replace(/,/g, '')); return str === '' || !Number.isFinite(n) || n < 0 ? null : n; };
 const mirrored = () => { const n = parse(fx.typed); return n === null ? null : fx.editing === 'source' ? convert(n, fx.source, fx.target) : convert(n, fx.target, fx.source); };
 const amountText = side => fx.editing === side ? fx.typed : (mirrored() === null ? '' : num(mirrored()));
+const amountHTML = side => focus === side && selectAll && amountText(side) ? `<span class="sel"><i></i>${amountText(side)}<i></i></span>` : amountText(side);
 const rateLine = () => `1 ${fx.source} = ${num(convert(1, fx.source, fx.target))} ${fx.target}${s.sep}${s.date}`;
 const histHTML = () => fx.recent.map((c, i) => `<div class="hr mono" data-r="${i}"><span>${money(c.amount, c.from)}</span><span>${money(convert(c.amount, c.from, c.to), c.to)}</span></div>`).join('');
 
-d.insertAdjacentHTML('beforeend', `<div class="head">
-  <div class="pair">
-    <div class="cell" data-side="source"><div class="cur mono">${fx.source}${ic('chevronDown')}</div><div class="amt mono">${amountText('source')}</div></div>
-    <div class="swap">${ic('swapArrows')}</div>
-    <div class="cell" data-side="target"><div class="cur mono">${fx.target}${ic('chevronDown')}</div><div class="amt mono">${amountText('target')}</div></div>
+libStyle();
+d.insertAdjacentHTML('beforeend', `<div class="xs" id="xs" role="dialog" aria-label="${LIB.fx}">
+  <div class="grabber"></div><div class="tz-navt">${LIB.fx}</div>${closeX()}
+  <div class="head">
+    <div class="pair">
+      <div class="cell${focus === 'source' ? ' focus' : ''}" data-side="source"><div class="cur mono">${fx.source}${ic('chevronDown')}</div><div class="amt mono">${amountHTML('source')}</div></div>
+      <div class="swap">${ic('swapArrows')}</div>
+      <div class="cell${focus === 'target' ? ' focus' : ''}" data-side="target"><div class="cur mono">${fx.target}${ic('chevronDown')}</div><div class="amt mono">${amountHTML('target')}</div></div>
+    </div>
+    <div class="rate mono">${rateLine()}</div>
+    <div class="hist-head"><span>${s.recent}</span><b>${s.clear}</b></div>
   </div>
-  <div class="rate mono">${rateLine()}</div>
-  <div class="hist-head"><span>${s.recent}</span><b>${s.clear}</b></div>
   <div class="hist">${histHTML()}</div>
-</div>`);
+  ${ad ? `<div class="adb"><span class="aic"></span><div class="tx"><div class="tl"><span class="bd">${s.adBadge}</span><span class="hd">${s.adHd}</span></div>
+    <div class="by">${s.adBy}</div><div class="who">${s.adWho}</div></div><span class="cta">${s.adCta}</span><span class="ac">i</span></div>` : ''}
+</div>
+<div class="kb${kbd ? '' : ' off'}"><div class="kb-bar"><span data-done>${s.done}</span></div><div class="kb-keys">
+  ${[['1', ''], ['2', 'ABC'], ['3', 'DEF'], ['4', 'GHI'], ['5', 'JKL'], ['6', 'MNO'], ['7', 'PQRS'], ['8', 'TUV'], ['9', 'WXYZ']].map(([k, l]) => `<span data-k="${k}">${k}${l ? `<small>${l}</small>` : ''}</span>`).join('')}
+  <span class="fn" data-k=".">.</span><span data-k="0">0</span>
+  <span class="fn" data-k="del"><svg viewBox="0 0 26 22"><path d="M8 3h15a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H8l-7-8z"/><path d="m12 7.5 7 7M19 7.5l-7 7"/></svg></span>
+</div></div>`);
 
-chrome(d, { tab: 3 });
+// 捲動區：釘住那一段的底＋4 起，到廣告上緣（付費版到紙底）
+const xs = document.getElementById('xs');
+const hist = xs.querySelector('.hist');
+const layoutHist = () => {
+  const top = xs.querySelector('.head').offsetTop + xs.querySelector('.head').offsetHeight + 4;
+  hist.style.top = `${top}px`;
+  const adEl = xs.querySelector('.adb');
+  hist.style.bottom = adEl ? `${xs.offsetHeight - adEl.offsetTop + 12}px` : '0px';
+};
+layoutHist();
+
+chrome(d, { tab: null });
 ready();
 
 /* ── 互動模式 ─────────────────────────────────────────────────────────────
    規則出處（App repo …/Modules/Widgets/Sources/Widgets/Exchange/）：
+   - ExchangeViewController.viewDidAppear → CurrencyCell.focus(selectingAll:)：開啟就讓左格成為第一回應者並全選現值（U10）——
+     打第一個字就取代，退格整段清掉；點那一格＝游標放到最後（不再全選）
    - ExchangeViewModel.setAmount(_:on:)：兩格都打得動，打哪一格另一格就是算出來的（format 過、帶千分位）
-   - ExchangeViewController.CurrencyCell：數字鍵盤（.decimalPad）＋鍵盤上一條「完成」（addsKeyboardDoneBar）；
-     正在打的那一格框線變墨色（setFocused）；離開那一格（editingDidEnd）才 rememberAmount()——不是每一鍵都記
+   - CurrencyCell：數字鍵盤（.decimalPad）＋鍵盤上一條「完成」（addsKeyboardDoneBar）；正在打的那一格框線墨色＋focus ring；
+     離開那一格（editingDidEnd）才 rememberAmount()——不是每一鍵都記
    - rememberAmount()：金額 > 0 才記；ExchangeRateStore：最新的排前面、同一組（幣別＋金額）只留一筆、留 10 筆
    - swap()：先收鍵盤、記一筆，兩種幣對調，帶過去的是右格算出來的那個金額（plain，不帶千分位）
    - use(_:)：點最近那一筆，幣別與金額一起帶回上面；clearRecent()：整份清掉，抬頭跟著收起來
-   - 全 app 點空白收鍵盤（keyboard-dismiss-everywhere）——點畫面其他地方＝完成 */
+   - ExchangeSheet：✕ 或往下拉收紙（收的時候有打到一半的照 editingDidEnd 記一筆）；回到開它的那一格（from）
+   - 全 app 點空白／捲動收鍵盤（keyboard-dismiss-everywhere）；廣告不接鍵盤，收鍵盤才看得到（U4） */
 if (interactive) {
-  const { subTabs } = await import('./tools.js');
-  subTabs(d, TAB);
   d.insertAdjacentHTML('beforeend', `<style>
-    .cell, .swap, .hr, .hist-head b { cursor: pointer; }
-    .cell.focus { border-color: var(--ink); }
-    .cell.focus .amt::after { content: ""; width: 2px; height: 26px; margin-left: 1px; background: var(--accent); animation: tzblink 1s steps(1) infinite; }
+    .cell, .swap, .hr, .hist-head b, .kb-bar span, .kb-keys span { cursor: pointer; }
+    .cell.focus .amt:not(:has(.sel))::after { content: ""; width: 2px; height: 26px; margin-left: 1px; background: var(--accent); animation: tzblink 1s steps(1) infinite; }
     @keyframes tzblink { 50% { opacity: 0; } }
     .swap { transition: transform .25s; } .swap.spin { transform: rotate(180deg); }
     .hr { transition: background .3s; } .hr.flash { background: var(--surface); }
-    .hist { max-height: 470px; overflow-y: auto; scrollbar-width: none; } .hist::-webkit-scrollbar { display: none; }
-    /* 系統數字鍵盤（iOS 26 decimalPad）＋ App 的 KeyboardDoneBar（surface 94%、頂一條 border、右邊「完成」accentInk sm semibold） */
-    .kb { position: absolute; left: 0; right: 0; bottom: 0; z-index: 45; transform: translateY(100%); transition: transform .3s cubic-bezier(.2,.8,.2,1); }
-    .kb.on { transform: none; }
-    .kb-bar { height: 44px; background: rgba(251,248,244,.94); border-top: 1px solid var(--border); display: flex; justify-content: flex-end; align-items: center; padding: 0 16px; }
-    .kb-bar span { font: 600 var(--t-sm)/16px var(--font); color: var(--accent-ink); padding: 8px 4px; cursor: pointer; }
-    .kb-keys { background: #d4d6dc; padding: 6px 6px 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-    .kb-keys span { height: 47px; border-radius: 8px; background: #fff; box-shadow: 0 1px 0 rgba(0,0,0,.3); display: flex; flex-direction: column;
-      align-items: center; justify-content: center; font: 400 25px/26px -apple-system, system-ui, sans-serif; color: #000; cursor: pointer; }
-    .kb-keys span small { font: 600 10px/11px -apple-system, system-ui, sans-serif; letter-spacing: 2px; }
-    .kb-keys span.fn { background: transparent; box-shadow: none; }
+    .hist { overflow-y: auto; scrollbar-width: none; } .hist::-webkit-scrollbar { display: none; }
+    .kb { transition: transform .3s cubic-bezier(.2,.8,.2,1); }
     .kb-keys span:active { background: #b4b7be; }
-    .kb-keys span.fn svg { width: 26px; height: 22px; fill: none; stroke: #000; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
-  </style>
-  <div class="kb"><div class="kb-bar"><span data-done>${s.done}</span></div><div class="kb-keys">
-    ${[['1', ''], ['2', 'ABC'], ['3', 'DEF'], ['4', 'GHI'], ['5', 'JKL'], ['6', 'MNO'], ['7', 'PQRS'], ['8', 'TUV'], ['9', 'WXYZ']].map(([k, l]) => `<span data-k="${k}">${k}${l ? `<small>${l}</small>` : ''}</span>`).join('')}
-    <span class="fn" data-k=".">.</span><span data-k="0">0</span>
-    <span class="fn" data-k="del"><svg viewBox="0 0 26 22"><path d="M8 3h15a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H8l-7-8z"/><path d="m12 7.5 7 7M19 7.5l-7 7"/></svg></span>
-  </div></div>`);
+    .xs { transition: transform .34s cubic-bezier(.2,.8,.2,1); touch-action: pan-y; } .xs.drag { transition: none; } .xs.gone { transform: translateY(100%); }
+  </style>`);
 
   const cells = { source: d.querySelector('[data-side="source"]'), target: d.querySelector('[data-side="target"]') };
   const kb = d.querySelector('.kb');
-  let focus = null;
   const persist = () => saved.set(fx);
   const render = () => {
     for (const side of ['source', 'target']) {
       cells[side].querySelector('.cur').innerHTML = `${fx[side]}${ic('chevronDown')}`;
-      cells[side].querySelector('.amt').textContent = amountText(side);
+      cells[side].querySelector('.amt').innerHTML = amountHTML(side);
       cells[side].classList.toggle('focus', focus === side);
     }
+    kb.classList.toggle('off', !focus);
     d.querySelector('.rate').textContent = rateLine();
-    d.querySelector('.hist').innerHTML = histHTML();
+    hist.innerHTML = histHTML();
     d.querySelector('.hist-head').style.visibility = fx.recent.length ? '' : 'hidden';   // 一筆都沒有就整區收起來
     persist();
   };
@@ -186,12 +228,13 @@ if (interactive) {
   const startEditing = (side) => {
     if (focus && focus !== side) { remember(); }
     if (fx.editing !== side) { const m = mirrored(); fx.editing = side; fx.typed = m === null ? '' : plain(m); }
-    focus = side; kb.classList.add('on'); render();
+    focus = side; selectAll = false; render();
   };
-  const endEditing = () => { if (!focus) return; focus = null; kb.classList.remove('on'); remember(); render(); };
+  const endEditing = () => { if (!focus) return; focus = null; selectAll = false; remember(); render(); };
   const key = (k) => {
     if (!focus) return;
-    let v = fx.typed;
+    let v = selectAll ? '' : fx.typed;   // 全選中：打第一個字就取代、退格整段清掉
+    selectAll = false;
     if (k === 'del') v = v.slice(0, -1);
     else if (k === '.') { if (!v.includes('.')) v = (v || '0') + '.'; }
     else if (v.replace('.', '').length < 12) v = v === '0' ? k : v + k;
@@ -208,23 +251,23 @@ if (interactive) {
     if (!focus) return;
     if (/^[0-9.]$/.test(e.key)) key(e.key);
     else if (e.key === 'Backspace') key('del');
-    else if (e.key === 'Enter' || e.key === 'Escape') endEditing();
+    else if (e.key === 'Enter') endEditing();
     else return;
     e.preventDefault();
   });
   d.querySelector('.swap').addEventListener('click', (e) => {
     e.stopPropagation();
-    if (focus) { focus = null; kb.classList.remove('on'); }   // 按 ⇄ 先收鍵盤（endEditing → rememberAmount）
+    if (focus) { focus = null; selectAll = false; }   // 按 ⇄ 先收鍵盤（endEditing → rememberAmount）
     remember();
     const n = parse(fx.typed);
     const targetValue = n === null ? null : fx.editing === 'target' ? n : mirrored();
     [fx.source, fx.target] = [fx.target, fx.source];
     fx.editing = 'source';
     if (targetValue !== null) fx.typed = plain(targetValue);
-    const sw = d.querySelector('.swap'); sw.classList.toggle('spin');
+    d.querySelector('.swap').classList.toggle('spin');
     render();
   });
-  d.querySelector('.hist').addEventListener('click', (e) => {
+  hist.addEventListener('click', (e) => {
     e.stopPropagation();
     const r = e.target.closest('[data-r]'); if (!r) return;
     if (focus) endEditing();
@@ -232,11 +275,41 @@ if (interactive) {
     fx.source = c.from; fx.target = c.to; fx.editing = 'source'; fx.typed = plain(c.amount);
     render();
   });
+  hist.addEventListener('scroll', () => endEditing(), { passive: true });   // 捲動收鍵盤（dismissesKeyboardOnScroll）
   d.querySelector('.hist-head b').addEventListener('click', (e) => { e.stopPropagation(); if (focus) endEditing(); fx.recent = []; render(); });
-  d.addEventListener('click', () => endEditing());   // 點空白收鍵盤
+  xs.addEventListener('click', () => endEditing());   // 點空白收鍵盤
+
+  // 收紙：✕、或從抓桿／導覽列往下拉
+  const back = params.get('from') || 'notes';
+  let leaving = false;
+  const dismiss = () => {
+    if (leaving) return; leaving = true;
+    endEditing();
+    xs.classList.remove('drag'); xs.style.transform = ''; xs.classList.add('gone'); kb.classList.add('off');
+    setTimeout(() => go(back), 300);
+  };
+  xs.querySelector('.tz-x').addEventListener('click', (e) => { e.stopPropagation(); dismiss(); });
+  let y0 = null, dy = 0, t0 = 0;
+  xs.addEventListener('pointerdown', (e) => {
+    const y = e.clientY - xs.getBoundingClientRect().top;
+    if (y > 60 || e.target.closest('.tz-x')) return;
+    y0 = e.clientY; dy = 0; t0 = performance.now(); xs.classList.add('drag'); xs.setPointerCapture(e.pointerId);
+  });
+  xs.addEventListener('pointermove', (e) => { if (y0 === null) return; dy = Math.max(0, e.clientY - y0); xs.style.transform = `translateY(${dy}px)`; });
+  const end = () => {
+    if (y0 === null) return;
+    const fast = dy / Math.max(1, performance.now() - t0) > .5;
+    y0 = null; xs.classList.remove('drag');
+    if (dy > 110 || (fast && dy > 30)) dismiss(); else xs.style.transform = '';
+  };
+  xs.addEventListener('pointerup', end); xs.addEventListener('pointercancel', end);
+
   if (saved.get()) render();
-  // 首頁自動示範一輪的最後一步：回到截圖那個樣子（狀態存在 sessionStorage，不歸零下一輪會接著長）
-  window.__auto = { reset: () => { focus = null; kb.classList.remove('on'); d.querySelector('.swap').classList.remove('spin'); Object.assign(fx, JSON.parse(window.__fx0)); render(); } };
+  // 首頁自動示範一輪的最後一步：回到開啟那一刻（狀態存在 sessionStorage，不歸零下一輪會接著長）
+  window.__auto = { reset: () => {
+    focus = kbd ? 'source' : null; selectAll = kbd;
+    d.querySelector('.swap').classList.remove('spin'); Object.assign(fx, JSON.parse(window.__fx0)); render();
+  } };
 }
 </script>
 </body>
