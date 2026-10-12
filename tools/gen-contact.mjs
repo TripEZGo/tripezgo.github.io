@@ -10,6 +10,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { siteCssHref } from './stamp-css.mjs';
 import { EMBED_HEAD } from './embed.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -77,7 +78,7 @@ ${alts}
 <meta name="theme-color" content="#17120f" media="(prefers-color-scheme: dark)">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icon-32.png">
 <link rel="apple-touch-icon" href="/assets/img/icon-180.png">
-<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="${siteCssHref()}">
 ${EMBED_HEAD}<!-- 這一頁是 tools/gen-contact.mjs 產生的，不要手改。 -->
 <style>
   main { max-width: 760px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 5vw, 56px); }

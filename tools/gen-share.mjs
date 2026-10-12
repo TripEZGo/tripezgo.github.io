@@ -11,6 +11,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { S } from '../share/strings.js';
+import { siteCssHref } from './stamp-css.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -60,6 +61,7 @@ export function render(page) {
   let html = readFileSync(join(root, 'tools/share-template.html'), 'utf8')
     .replace('{{htmlLang}}', page.htmlLang)
     .replace('{{gisLang}}', page.gisLang)
+    .replace('href="/assets/css/site.css"', `href="${siteCssHref()}"`)   // 樣式表帶版本號（tools/stamp-css.mjs）
     .replace('{{title}}', esc(t.title))
     .replace('{{description}}', esc(t.lede))
     .replace('{{seo}}', seoHead(page, t))

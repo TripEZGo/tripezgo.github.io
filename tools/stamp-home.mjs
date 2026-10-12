@@ -17,6 +17,8 @@ const swap = (p, re, to) => {
   writeFileSync(new URL(p, root), s.replace(re, to));
 };
 
+// 樣式表鏈（chrome.css → site.css → home.css／子頁）先蓋版本號，下面算 home.css 的雜湊才是最後的內容
+execFileSync('node', [new URL('tools/stamp-css.mjs', root).pathname], { stdio: 'ignore' });
 const av = hash('screens/autoplay.js', 'screens/stories.js', 'screens/stories-plan.js', 'screens/stories-map.js', 'screens/stories-tools.js');
 swap('assets/js/home.js', /const AUTO_V = '[^']*';/, `const AUTO_V = '${av}';`);
 swap('index.html', /href="\/assets\/css\/home\.css[^"]*"/, `href="/assets/css/home.css?v=${hash('assets/css/home.css')}"`);
