@@ -6,21 +6,21 @@
 const FOOTER = {
   zh: {
     home: '/', label: 'TripEZGo 首頁', tag: '旅行規劃、旅途所需一次搞定。', width: '32ch', nav: '頁尾導覽',
-    links: [['/privacy.html', '隱私權政策'], ['/terms.html', '使用者條款'], ['mailto:zhgchgli@gmail.com', '聯絡我們'],
+    links: [['/privacy.html', '隱私權政策'], ['/terms.html', '使用者條款'], ['/#about', '關於'], ['https://docs.google.com/forms/d/e/1FAIpQLSclH9b9F8471nM0xbYbe3exfXjFMSQGT9H5DRlkmXVRGJJkpw/viewform', '聯絡我們'],
       ['/en/', 'English', 'en'], ['/ja/', '日本語', 'ja'], ['/ko/', '한국어', 'ko']],
-    made: 'Made for iPhone & iPad · 支援 6 種語言',
+    made: 'Powered by <a href="https://zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a>',   // 寫死的 HTML（作者連結），不是使用者資料
   },
   en: {
     home: '/en/', label: 'TripEZGo home', tag: 'Plan the trip, carry what it needs — all in one app.', width: '34ch', nav: 'Footer',
-    links: [['/en/privacy.html', 'Privacy Policy'], ['/en/terms.html', 'Terms of Use'], ['mailto:zhgchgli@gmail.com', 'Contact'],
+    links: [['/en/privacy.html', 'Privacy Policy'], ['/en/terms.html', 'Terms of Use'], ['/en/#about', 'About'], ['https://docs.google.com/forms/d/e/1FAIpQLSclH9b9F8471nM0xbYbe3exfXjFMSQGT9H5DRlkmXVRGJJkpw/viewform', 'Contact'],
       ['/', '繁體中文', 'zh-Hant'], ['/ja/', '日本語', 'ja'], ['/ko/', '한국어', 'ko']],
-    made: 'Made for iPhone & iPad · Available in 6 languages',
+    made: 'Powered by <a href="https://en.zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a>',   // 寫死的 HTML（作者連結），不是使用者資料
   },
   ja: {
     home: '/ja/', label: 'TripEZGo ホーム', tag: '旅の計画も、旅先で要るものも、これひとつで。', width: '32ch', nav: 'フッター',
-    links: [['/ja/privacy.html', 'プライバシーポリシー'], ['/ja/terms.html', '利用規約'], ['mailto:zhgchgli@gmail.com', 'お問い合わせ'],
+    links: [['/ja/privacy.html', 'プライバシーポリシー'], ['/ja/terms.html', '利用規約'], ['/ja/#about', 'このアプリについて'], ['https://docs.google.com/forms/d/e/1FAIpQLSclH9b9F8471nM0xbYbe3exfXjFMSQGT9H5DRlkmXVRGJJkpw/viewform', 'お問い合わせ'],
       ['/', '繁體中文', 'zh-Hant'], ['/en/', 'English', 'en'], ['/ko/', '한국어', 'ko']],
-    made: 'Made for iPhone & iPad · 6 言語に対応',
+    made: 'Powered by <a href="https://jp.zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a>',   // 寫死的 HTML（作者連結），不是使用者資料
   },
 };
 
@@ -37,9 +37,10 @@ export function brandHtml(lang) {
 export function footerHtml(lang) {
   const f = FOOTER[lang] || FOOTER.zh;
   const links = f.links.map(([href, text, hl]) => '<a href="' + href + '"'
-    + (hl ? ' hreflang="' + hl + '" lang="' + hl + '"' : '') + '>' + esc(text) + '</a>').join('');
+    + (hl ? ' hreflang="' + hl + '" lang="' + hl + '"' : '')
+    + (href.startsWith('http') ? ' target="_blank" rel="noopener"' : '') + '>' + esc(text) + '</a>').join('');   // 聯絡表單等站外連結開新視窗
   return '<div class="wrap"><div class="footer-top"><div>' + brandHtml(lang)
     + '<p style="margin:12px 0 0;max-width:' + f.width + '">' + esc(f.tag) + '</p></div>'
     + '<nav class="footer-links" aria-label="' + esc(f.nav) + '">' + links + '</nav></div>'
-    + '<div class="footer-bottom"><span>© 2026 TripEZGo</span><span>' + esc(f.made) + '</span></div></div>';
+    + '<div class="footer-bottom"><span>© 2026 TripEZGo</span><span>' + f.made + '</span></div></div>';
 }

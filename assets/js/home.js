@@ -552,3 +552,33 @@ phones.forEach((f) => { (SCREEN_OF[f.dataset.screen][0] === 'map-live' ? mio : p
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); } });
   }
 }
+
+/* ── 背景故事的「我的遊記」：tools/journals.mjs 從部落格 sitemap 產的 assets/data/journals.json（使用者 2026-10-12）。
+   橫向捲動、最新的在前；韓文頁用英文版（部落格沒有韓文）。 ── */
+{
+  const box = document.querySelector('[data-journals]');
+  if (box) {
+    const key = { zh: 'zh', en: 'en', ja: 'ja', ko: 'en' }[LANG] || 'zh';
+    const fmt = new Intl.DateTimeFormat({ zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[LANG] || 'zh-Hant-TW', { year: 'numeric', month: 'short' });
+    const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const day = new Date().toISOString().slice(0, 10);   // 一天換一次網址：CI 每天重產，快取最多舊一天
+    fetch(`/assets/data/journals.json?d=${day}`).then((r) => (r.ok ? r.json() : [])).then((items) => {
+      const cards = items.map((it) => it[key] || it.en || it.zh).map((p, i) => ({ ...p, date: items[i].date, image: items[i].image }))
+        .filter((p) => p && p.url && p.title);
+      if (!cards.length) { box.previousElementSibling?.matches('h3') && (box.previousElementSibling.hidden = true); box.hidden = true; return; }
+      box.innerHTML = `<ul class="jr-row">${cards.map((p) => `<li><a class="jr-card" href="${esc(p.url)}" target="_blank" rel="noopener">
+        <img src="${esc(p.image)}" alt="" loading="lazy" decoding="async"><span class="jr-date">${esc(fmt.format(new Date(p.date)))}</span>
+        <span class="jr-title">${esc(p.title)}</span></a></li>`).join('')}</ul>`;
+    }).catch(() => { box.hidden = true; });
+  }
+}
+
+/* 手機版漢堡選單：點了某一項、點外面或按 Esc 就收起來 */
+{
+  const nav = document.querySelector('.nav-menu');
+  if (nav) {
+    nav.addEventListener('click', (e) => { if (e.target.closest('.nav-list a')) nav.open = false; });
+    document.addEventListener('click', (e) => { if (nav.open && !nav.contains(e.target)) nav.open = false; });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.open) { nav.open = false; nav.querySelector('summary').focus(); } });
+  }
+}

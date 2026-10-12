@@ -40,6 +40,7 @@ T = {
   # chrome
   '跳到主要內容': ('Skip to main content', 'メインコンテンツへ移動', '메인 콘텐츠로 건너뛰기'),
   '隱私': ('Privacy', 'プライバシー', '개인정보'),
+  '選單': ('Menu', 'メニュー', '메뉴'),
   '功能': ('Features', '機能', '기능'),
   '方案': ('Pricing', '料金', '요금제'),
   'TripEZGo 首頁': ('TripEZGo home', 'TripEZGo ホーム', 'TripEZGo 홈'),
@@ -49,16 +50,16 @@ T = {
   '使用者條款': ('Terms of Use', '利用規約', '이용약관'),
   '聯絡我們': ('Contact', 'お問い合わせ', '문의하기'),
   '旅行規劃、旅途所需一次搞定。': ('Plan the trip, carry what it needs — all in one app.', '旅の計画も、旅先で要るものも、これひとつで。', '여행 계획부터 여행길에 필요한 것까지, 앱 하나로.'),
-  'Made for iPhone &amp; iPad · 支援 6 種語言': ('Made for iPhone &amp; iPad · Available in 6 languages', 'Made for iPhone &amp; iPad · 6 言語に対応', 'Made for iPhone &amp; iPad · 6개 언어 지원'),
+  '<span>Powered by <a href="https://zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a></span>': ('<span>Powered by <a href="https://en.zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a></span>', '<span>Powered by <a href="https://jp.zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a></span>', '<span>Powered by <a href="https://en.zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a></span>'),
   # hero
-  'iPhone 與 iPad 旅行規劃': ('Trip planning for iPhone and iPad', 'iPhone・iPad の旅行プランナー', 'iPhone·iPad 여행 플래너'),
+  'iPhone 與 iPad 旅行規劃': ('Travel planner for iPhone and iPad', 'iPhone・iPad の旅行プランナー', 'iPhone·iPad 여행 플래너'),
   '旅行規劃、旅途所需': ('Plan the trip, carry what it needs —', '旅の計画も、旅先で要るものも、', '여행 계획부터 여행길에 필요한 것까지,'),
   '一次搞定': ('all in one app', 'これひとつで', '앱 하나로'),
   '行事曆排行程、旅伴一起編，出發後也跟著你走。': ('Plan the days on a calendar, edit with your travel companions — and take it all with you when you go.',
                                               'カレンダーで予定を組んで、旅の仲間と一緒に編集。出発したあとも、そのまま持ち歩けます。',
                                               '캘린더로 일정을 짜고 동행과 함께 편집하고, 출발한 뒤에도 그대로 들고 다니세요.'),
   '在 App Store 下載': ('Download on the App Store', 'App Store でダウンロード', 'App Store에서 다운로드'),
-  '看看它怎麼運作': ('See how it works', '使い方を見る', '어떻게 쓰는지 보기'),
+  '功能介紹': ('Features', '機能紹介', '기능 소개'),
   '免註冊': ('No sign-up', '登録不要', '회원가입 없음'),
   '離線可用': ('Works offline', 'オフラインで使える', '오프라인 사용 가능'),
   '免費下載': ('Free to download', '無料でダウンロード', '무료 다운로드'),
@@ -288,7 +289,7 @@ T = {
        '<p><b>タイムライン表示</b>：タイムラインで見るほうがしっくりくるなら、切り替えもできます。何時何分にどこへ行くか、どれだけいるか、移動にどれだけかかるかがひと目でわかります。</p>',
        '<p><b>타임라인 보기</b>: 타임라인으로 보는 게 익숙하다면 전환하세요. 몇 시 몇 분에 어디로 가는지, 얼마나 머무는지, 이동은 얼마나 걸리는지 한눈에 보입니다.</p>'),
   # 04 總覽
-  '整趟行程按日分組': ('The whole trip, grouped by day', '旅行全体を日ごとに', '여행 전체를 날짜별로 묶어서'),
+  '整趟行程表按日分組': ('Your whole itinerary, grouped by day', '旅行全体を日ごとに', '여행 전체를 날짜별로 묶어서'),
   '每一天的附件集中在一起': ("Each day's files in one place", 'その日の添付をひとまとめに', '하루치 첨부를 한곳에'),
   '哪一天、哪個行程還有待辦，一看就知道': ('See at a glance which day, and which event, still has to-dos', 'どの日のどの予定にやることが残っているか、ひと目でわかる', '어느 날 어느 일정에 할 일이 남았는지 한눈에'),
   '總覽模式讓你一頁掌握整趟行程安排；除此之外，這裡也會依照每一天分組整理行程的附件與待辦事項，在這邊就能快速打開每個行程的附件，或是知道哪一天的哪一個行程還有待辦。':
@@ -442,7 +443,25 @@ T = {
        'だから TripEZGo は「無料でしっかり使えて、有料ならもっと便利に」が基本です。無料版と Premium の違いはこれだけ：広告なし、旅行の数（無料版は同時に 3 件まで。超えたら古い旅行を先に削除）、旅行ごとの旅の仲間（無料版は 3 人）、ライブアクティビティ、Apple／Google カレンダー連携。Premium には週・月・年のサブスクリプションと、買い切りがあります。',
        '그래서 TripEZGo는 ‘무료로도 충분히, Premium이면 더 편하게’를 기본으로 합니다. 무료 버전과 Premium의 차이는 이것뿐입니다: 광고 없음, 여행 수(무료 버전은 동시에 3개까지, 넘으면 오래된 여행을 먼저 삭제), 여행마다 동행(무료 버전은 3명), 라이브 액티비티, Apple/Google 캘린더 연동. Premium은 주간·월간·연간 구독과 평생 구매로 제공됩니다.'),
   # 開發背景
-  '開發背景': ('Behind the app', '開発の背景', '개발 배경'),
+  '背景故事': ('Backstory', '開発ストーリー', '개발 이야기'),
+  # ── 關於（使用者 2026-10-12：背景故事、開發團隊、產品藍圖） ──
+  '關於': ('About', 'このアプリについて', '소개'),
+  '誰做的，': ('Who makes it,', 'つくっている人と、', '누가 만들고,'),
+  '接下來做什麼': ("and what's next", 'これからのこと', '앞으로 무엇을 할지'),
+  '開發團隊': ('Team', '開発チーム', '개발팀'),
+  '產品藍圖': ('Roadmap', 'ロードマップ', '로드맵'),
+  '我的遊記': ('My travel journals', '旅行記', '나의 여행기'),
+  '第一次獨旅': ('First solo trip', '初めての一人旅', '첫 혼자 여행'),
+  '<span><a href="https://zhgchg.li/posts/7b8a0563c157/" target="_blank" rel="noopener">名古屋一日快閃</a>，從此開始一個人規劃、一個人出發</span>': ('<span><a href="https://zhgchg.li/posts/7b8a0563c157/" target="_blank" rel="noopener">A one-day dash to Nagoya</a> — and from then on, planning alone and setting off alone</span>', '<span><a href="https://zhgchg.li/posts/7b8a0563c157/" target="_blank" rel="noopener">名古屋日帰り弾丸旅</a>。ここから、一人で計画して一人で出発する旅が始まる</span>', '<span><a href="https://zhgchg.li/posts/7b8a0563c157/" target="_blank" rel="noopener">나고야 당일치기</a>. 그 뒤로 혼자 계획하고 혼자 떠나는 여행이 시작됐어요</span>'),
+  '創意發想與設計': ('Idea and design', '構想とデザイン', '아이디어와 디자인'),
+  '把自己獨旅時的需求整理成一套行程規劃 App 的設計稿': ('Turning what solo trips kept needing into designs for a trip planner', '一人旅で欲しかったものを、旅程アプリのデザインにまとめる', '혼자 여행하며 필요했던 것을 여행 계획 앱 디자인으로 정리'),
+  '開始開發': ('Development begins', '開発スタート', '개발 시작'),
+  '1.0.0 首版完成': ('1.0.0 finished', '1.0.0 完成', '1.0.0 완성'),
+  '行事曆排行程、時間軸排交通、總覽、地圖、旅伴共編與位置共享、即時動態與 Widget': ('Events on a calendar, travel on a timeline, Overview, Map, co-editing and location sharing with travel companions, Live Activities and widgets', 'カレンダーで予定、タイムラインで移動、概要、地図、旅の仲間との共同編集と位置情報の共有、ライブアクティビティとウィジェット', '캘린더로 일정, 타임라인으로 이동, 한눈에 보기, 지도, 동행과 공동 편집·위치 공유, 라이브 액티비티와 위젯'),
+  '1.0.0 上架 App Store': ('1.0.0 on the App Store', '1.0.0 App Store で公開', '1.0.0 App Store 출시'),
+  '從其他 App 分享進來、智慧預選行程類型、待排拖進時段、資料與工具（QR Code 掃描、匯率換算）、讓 AI 幫你排行程、多人同時編輯不互相蓋掉': ('Share in from other apps, smart event-type preselect, drag unscheduled events onto a time, Library and Tools (QR scanner, currency converter), let AI plan your trip, simultaneous edits that no longer overwrite each other', 'ほかのアプリから共有して取り込み、予定タイプの自動選択、未定の予定を時間帯へドラッグ、資料とツール（QR スキャン・為替換算）、AI に旅程を組んでもらう、同時に編集しても上書きされない', '다른 앱에서 공유해 가져오기, 일정 유형 자동 선택, 미정 일정을 시간대로 끌어다 놓기, 자료와 도구(QR 코드 스캔·환율 변환), AI에게 일정 맡기기, 동시에 편집해도 서로 덮어쓰지 않음'),
+  '規劃中': ('Planned', '予定', '계획 중'),
+  '重新優化 UI／UX、新增記帳與分帳、優化 Android 客戶端': ('A UI/UX overhaul, expense tracking and bill splitting, a better Android app', 'UI/UX の全面見直し、支出の記録と割り勘、Android 版の改善', 'UI/UX 전면 개선, 가계부와 정산 기능, Android 앱 개선'),
   '一個常常獨旅的 iOS 工程師，為什麼自己做了一個旅遊規劃 App': ('Why an iOS engineer who often travels solo built his own trip planner',
                                                    'ひとり旅の多い iOS エンジニアが、旅行プランナーを自分で作った理由',
                                                    '혼자 여행을 자주 다니는 iOS 엔지니어가 여행 계획 앱을 직접 만든 이유'),
@@ -501,12 +520,12 @@ T = {
 }
 
 HEAD = {
-    'en': dict(title='TripEZGo — Plan the trip, carry what it needs, all in one app',
-               desc="TripEZGo is a trip planner for iPhone and iPad. Events on a calendar and a timeline, with tickets, files and to-dos attached; a map of each day's route and Japan's convenience stores and department stores; co-edit with companions and share your location on the road; your next stop on the Lock Screen. Your data stays on your device and in your own iCloud."),
-    'ja': dict(title='TripEZGo — 旅の計画も、旅先で要るものも、これひとつで',
-               desc='TripEZGo は iPhone・iPad の旅行プランナー。予定はカレンダーとタイムラインに、チケット・添付・やることは予定に。マップで1日のルートと日本のコンビニ・百貨店をチェックし、旅の仲間と共同編集、旅先では現在地を共有。次の行き先はロック画面に。データはあなたの端末と iCloud だけに。'),
-    'ko': dict(title='TripEZGo — 여행 계획부터 여행길에 필요한 것까지, 앱 하나로',
-               desc='TripEZGo는 iPhone·iPad 여행 플래너입니다. 일정은 캘린더와 타임라인에, 승차권·첨부·할 일은 일정에. 지도로 하루 동선과 일본 편의점·백화점을 확인하고, 동행과 공동 편집하며 여행길에서는 위치를 공유하세요. 다음 목적지는 잠금 화면에. 데이터는 내 기기와 내 iCloud에만 저장됩니다.'),
+    'en': dict(title="TripEZGo — Travel Planner & Itinerary App for iPhone and iPad",
+               desc="Travel planner and itinerary app for iPhone and iPad: plan days on a calendar, map each route and co-edit with travel companions. No sign-up, works offline. Free."),
+    'ja': dict(title="TripEZGo — 旅行計画・旅程表アプリ｜カレンダーで予定、旅の仲間と共同編集",
+               desc="iPhone・iPad の旅行計画アプリ。カレンダーで旅程表を作り、移動はタイムラインで、旅の仲間と共同編集。登録不要・オフライン対応、無料でダウンロード。"),
+    'ko': dict(title="TripEZGo — 여행 플래너 앱｜캘린더로 일정, 동행과 공동 편집",
+               desc="iPhone·iPad 여행 플래너 앱. 캘린더로 일정을 짜고 이동은 타임라인으로, 동행과 함께 편집하세요. 회원가입 없이 오프라인에서도, 무료로 다운로드."),
 }
 
 def build(lang):
@@ -553,6 +572,7 @@ def build(lang):
     body = body.replace('/assets/img/shots/v2/zh/', f'/assets/img/shots/v2/{lang}/')
     body = body.replace('href="/privacy.html"', f'href="/{lang}/privacy.html"').replace('href="/terms.html"', f'href="/{lang}/terms.html"')
     body = body.replace('class="brand" href="/"', f'class="brand" href="/{lang}/"')
+    body = body.replace('href="/#about"', f'href="/{lang}/#about"')   # 頁尾的「關於」：寫成絕對路徑，分享頁照抄頁尾也指得對
     for pid, urls in POSTS.items():
         body = body.replace(f'https://zhgchg.li/posts/{pid}/', urls[1 if lang == 'ja' else 0])
     # 頁首的語言下拉：上面顯示這一頁的語言，選單裡放另外三種——繁中排第一，其餘照母版的順序。

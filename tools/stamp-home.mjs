@@ -22,5 +22,6 @@ swap('assets/js/home.js', /const AUTO_V = '[^']*';/, `const AUTO_V = '${av}';`);
 swap('index.html', /href="\/assets\/css\/home\.css[^"]*"/, `href="/assets/css/home.css?v=${hash('assets/css/home.css')}"`);
 swap('index.html', /src="\/assets\/js\/home\.js[^"]*"/, `src="/assets/js/home.js?v=${hash('assets/js/home.js')}"`);
 execFileSync('python3', [new URL('tools/home-i18n.py', root).pathname], { stdio: 'ignore' });
+execFileSync('python3', [new URL('tools/seo.py', root).pathname], { stdio: 'ignore' });   // canonical／hreflang／og／twitter／JSON-LD
 execFileSync('node', [new URL('tools/stamp-screens.mjs', root).pathname], { stdio: 'inherit' });   // screens/ 的 import map 與樣式表版本號
 console.log('stamped: av', av);

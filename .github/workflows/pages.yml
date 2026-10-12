@@ -5,6 +5,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+  # 每天重產一次「我的遊記」（tools/journals.mjs），部落格的新遊記隔天就上官網
+  schedule:
+    - cron: '0 20 * * *'
 
 permissions:
   contents: read
@@ -27,6 +30,9 @@ jobs:
 
       # 純靜態網站，沒有建置步驟——repo 根目錄就是要發布的內容。
       # 只做一件事：把每個 HTML 檔的內部連結拿出來對一次，斷掉就讓 build 紅。
+      - name: Build travel journals
+        run: node tools/journals.mjs
+
       - name: Check internal links
         run: |
           set -euo pipefail

@@ -28,7 +28,8 @@ test('every language has every page', () => {
 test('each page\'s language menu shows its own language and links to the same page in the other three', () => {
   for (const lang of Object.keys(SITE_LANGS)) for (const page of PAGES) {
     const html = read(fileOf(lang, page));
-    const menu = html.slice(html.indexOf('<details class="lang-menu">'), html.indexOf('</details>'));
+    const at = html.indexOf('<details class="lang-menu">');   // 頁首另有漢堡選單的 <details>，從語言選單開頭往後找它自己的結尾
+    const menu = html.slice(at, html.indexOf('</details>', at));
     assert.match(menu, new RegExp(`<summary>${SITE_LANGS[lang].name}</summary>`), fileOf(lang, page));
     const links = [...menu.matchAll(/<a class="lang" href="([^"]+)" hreflang="([^"]+)" lang="([^"]+)">([^<]+)<\/a>/g)];
     const others = Object.keys(SITE_LANGS).filter((l) => l !== lang);

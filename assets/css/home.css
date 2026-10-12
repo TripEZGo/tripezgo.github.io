@@ -339,11 +339,11 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
 .story-title { font-size:clamp(20px, 2.6vw, 26px); font-weight:700; line-height:1.3; letter-spacing:var(--tracking-display); }
 .story-toggle { font-size:var(--text-sm); font-weight:600; color:var(--accent-ink); }
 .story[open] .story-toggle { display:none; }
-.story-body { padding:0 clamp(20px, 3vw, 32px) clamp(24px, 3vw, 36px); max-width:46em; color:var(--muted); }
+.story-body { padding:0 clamp(20px, 3vw, 32px) clamp(24px, 3vw, 36px); color:var(--muted); }   /* 內部寬度 100%（使用者 2026-10-12） */
 .story-body h3 { color:var(--fg); margin:28px 0 10px; font-size:var(--text-lg); }
 .story-body p { margin:0 0 14px; }
 .story-body b { color:var(--fg); }
-.story-fig { margin:8px 0 16px; }
+.story-fig { margin:8px 0 16px; max-width:760px; }   /* 故事改滿寬後，截圖還是維持原本的大小，不然直式那張會比一個螢幕還高 */
 .story-fig img { width:100%; height:auto; border-radius:var(--radius-md); border:1px solid var(--border-soft); }
 
 /* ─── 這一輪新增、還沒有真實截圖的版位：虛線框＋「新」標記 ─────────── */
@@ -803,3 +803,40 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
 /* 頁面鎖住左右：手機上不准左右拖動整頁（使用者 2026-10-12）。外框裡的 iframe 是 402 寬再縮放、手機側鍵畫在外框外，
    版面框會比螢幕多出一點點，iOS Safari 就讓整頁左右晃。clip 不會變成捲動容器，position: sticky 照常 */
 html, body { overflow-x: clip; overscroll-behavior-x: none; }
+
+/* ─── 關於：開發團隊＋產品藍圖（使用者 2026-10-12） ─── */
+.about-grid { display:grid; gap:clamp(16px, 2.4vw, 24px); margin-bottom:clamp(20px, 3vw, 32px); }
+@media (min-width:880px) { .about-grid { grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr); } }
+.about-card { border:1px solid var(--border-soft); border-radius:var(--radius-lg); background:var(--surface); padding:clamp(20px, 3vw, 32px); }
+.about-card h3 { margin:0 0 12px; font-size:var(--text-lg); }
+.about-card p { margin:0 0 10px; color:var(--muted); }
+.about-card p:last-child { margin-bottom:0; }
+.roadmap { list-style:none; margin:0; padding:0; display:grid; gap:0; }
+.roadmap li { display:grid; grid-template-columns:5.5em minmax(0, 1fr); gap:12px; position:relative; padding:0 0 16px; }
+.roadmap li:last-child { padding-bottom:0; }
+.roadmap li::before { content:""; position:absolute; left:calc(5.5em + 1px); top:6px; width:9px; height:9px; margin-left:-4px; border-radius:50%; background:var(--accent); }
+.roadmap li::after { content:""; position:absolute; left:calc(5.5em + 1px); top:18px; bottom:-2px; width:1px; background:var(--border); }
+.roadmap li:last-child::after { display:none; }
+.roadmap li.is-next::before { background:var(--surface); box-shadow:inset 0 0 0 2px var(--accent); }
+.rm-when { font-variant-numeric:tabular-nums; color:var(--muted); font-size:var(--text-sm, 14px); padding-top:1px; }
+.rm-what { display:grid; gap:2px; padding-left:16px; }
+.rm-what > span { color:var(--muted); font-size:var(--text-sm, 14px); }
+.member { display:flex; gap:16px; align-items:center; }
+.member-photo { width:88px; height:88px; flex:none; border-radius:50%; object-fit:cover; background:var(--border-soft); }
+.member-info { display:grid; gap:2px; }
+.about-card .member-info p { margin:0; }
+.about-card .member-name { color:var(--text); font-weight:700; font-size:var(--text-lg); }
+.about-card .member-role { color:var(--accent-ink, var(--accent)); font-weight:600; }
+.about-card .member-title { font-size:var(--text-sm, 14px); }
+.member-link { margin-top:4px; font-size:var(--text-sm, 14px); }
+
+/* 我的遊記：每列 4 張、往下排，不左右捲（使用者 2026-10-12）；手機 2 張、平板 3 張 */
+.journals { margin:8px 0 0; }
+.jr-row { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:clamp(14px, 2vw, 22px); }
+@media (min-width:700px) { .jr-row { grid-template-columns:repeat(3, minmax(0, 1fr)); } }
+@media (min-width:1000px) { .jr-row { grid-template-columns:repeat(4, minmax(0, 1fr)); } }
+.jr-card { display:grid; gap:6px; color:inherit; text-decoration:none; }
+.jr-card img { width:100%; aspect-ratio:16 / 10; object-fit:cover; border-radius:var(--radius-md, 12px); background:var(--border-soft); }
+.jr-date { font-size:var(--text-xs, 12px); color:var(--muted); }
+.jr-title { font-weight:600; line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.jr-card:hover .jr-title { color:var(--accent-ink, var(--accent)); }

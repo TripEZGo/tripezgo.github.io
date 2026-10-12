@@ -142,6 +142,25 @@
   .site-nav .hide-sm { display: none; }
 }
 
+/* 手機版頁首的漢堡選單：寬螢幕時頁首直接列出隱私／功能／方案／關於，這顆藏起來（使用者 2026-10-12） */
+.nav-menu { position: relative; display: none; }
+.nav-menu > summary { list-style: none; cursor: pointer; display: grid; place-items: center; width: 36px; height: 32px;
+  border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+.nav-menu > summary::-webkit-details-marker { display: none; }
+.nav-menu > summary:hover, .nav-menu[open] > summary { border-color: var(--accent); color: var(--accent-ink); }
+.burger, .burger::before, .burger::after { display: block; width: 14px; height: 1.5px; background: currentColor; border-radius: 1px; }
+.burger { position: relative; }
+.burger::before, .burger::after { content: ""; position: absolute; left: 0; }
+.burger::before { top: -4.5px; } .burger::after { top: 4.5px; }
+.nav-menu[open] .burger { background: transparent; }
+.nav-menu[open] .burger::before { top: 0; transform: rotate(45deg); }
+.nav-menu[open] .burger::after { top: 0; transform: rotate(-45deg); }
+.nav-list { position: absolute; right: 0; top: calc(100% + 6px); z-index: 60; min-width: 150px; display: grid; padding: 6px;
+  background: var(--page); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-md); }
+.site-nav .nav-list a { padding: 10px 12px; border-radius: var(--radius-sm); color: var(--fg); font-size: var(--text-sm); }
+.site-nav .nav-list a:hover { background: var(--sunken); }
+@media (max-width: 640px) { .nav-menu { display: block; } }
+
 /* 頁首頁尾的寬度跟首頁一樣：公開頁自己的 .wrap 比較窄（920px），這裡蓋回去。 */
 .site-header > .wrap, .site-footer > .wrap { max-width: var(--wrap); padding: 0 var(--gutter); }
 

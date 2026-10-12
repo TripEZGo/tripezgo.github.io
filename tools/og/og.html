@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- 分享預覽圖（og:image，1200×630）：tools/og/make.mjs 用 ?lang= 截圖成 assets/img/og-<lang>.png。
+     左邊：標誌、slogan、一句說明；右邊：一支 iPhone 放行事曆截圖（assets/img/shots/v2/<lang>/calendar.webp），下緣出血。 -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --paper:#fbf8f4; --ink:#241d17; --teal:#2f918e; --muted:#7c6f63; }
+  html, body { margin:0; }
+  body { width:1200px; height:630px; overflow:hidden; background:var(--paper); position:relative;
+    font-family:"PingFang TC","Hiragino Sans","Apple SD Gothic Neo",-apple-system,"Noto Sans TC",sans-serif; color:var(--ink); }
+  body[data-lang="ja"] { font-family:"Hiragino Sans","Noto Sans JP",sans-serif; }
+  body[data-lang="ko"] { font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif; word-break:keep-all; }
+  body[data-lang="en"] { font-family:-apple-system,"SF Pro Display","Inter",sans-serif; }
+  body::before { content:""; position:absolute; width:900px; height:900px; right:-260px; top:-120px; border-radius:50%;
+    background:radial-gradient(closest-side, rgba(92,198,195,.22), transparent); }
+  .copy { position:absolute; left:72px; top:0; bottom:0; width:640px; display:flex; flex-direction:column; justify-content:center; gap:22px; }
+  .brand { display:flex; align-items:center; gap:14px; color:var(--teal); }
+  .brand .mark { width:58px; height:54px; background:currentColor; -webkit-mask:url(../../assets/img/tripezgo-mark.svg) center/contain no-repeat; }
+  .brand .word { width:176px; height:31px; background:var(--ink); -webkit-mask:url(../../assets/img/tripezgo-wordmark.svg) center/contain no-repeat; }
+  h1 { margin:0; font-size:60px; line-height:1.18; font-weight:700; letter-spacing:-.01em; }
+  h1 em { font-style:normal; color:var(--teal); white-space:nowrap; }
+  body[data-lang="en"] h1 { font-size:58px; letter-spacing:-.025em; }
+  body[data-lang="ko"] h1 { font-size:54px; }
+  body[data-lang="ja"] h1 { font-size:54px; }
+  p { margin:0; font-size:26px; line-height:1.5; color:var(--muted); font-weight:500; }
+  .phone { position:absolute; right:84px; top:70px; width:300px; height:652px; border-radius:46px; background:#0b0b0c;
+    padding:10px; box-sizing:border-box; box-shadow:0 0 0 2px #3a3a3c, 0 30px 60px -20px rgba(36,29,23,.45); }
+  .phone img { width:100%; height:auto; border-radius:37px; display:block; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div class="brand"><span class="mark"></span><span class="word"></span></div>
+    <h1 id="h1"></h1>
+    <p id="sub"></p>
+  </div>
+  <div class="phone"><img id="shot" alt=""></div>
+<script>
+  // 標題的 [ ] 是青綠色那一段
+  const COPY = {
+    zh: ['旅行規劃、旅途所需<br>[一次搞定]', '行事曆排行程、旅伴一起編，出發後也跟著你走。'],
+    en: ['Plan the trip, carry what it needs — [all in one app]', 'Plan on a calendar, edit with your travel companions, and take it with you.'],
+    ja: ['旅の計画も、<br>旅先で要るものも、<br>[これひとつで]', 'カレンダーで予定を組んで、旅の仲間と一緒に編集。出発したあとも、そのまま。'],
+    ko: ['여행 계획부터 여행길에 필요한 것까지, [앱 하나로]', '캘린더로 일정을 짜고 동행과 함께 편집하고, 출발한 뒤에도 그대로.'],
+  };
+  const lang = new URLSearchParams(location.search).get('lang') || 'zh';
+  document.body.dataset.lang = lang;
+  document.getElementById('h1').innerHTML = COPY[lang][0].replace(/\[([^\]]+)\]/, '<em>$1</em>');
+  document.getElementById('sub').textContent = COPY[lang][1];
+  const img = document.getElementById('shot');
+  img.onload = () => document.fonts.ready.then(() => { document.documentElement.dataset.ready = '1'; });
+  img.src = `../../assets/img/shots/v2/${lang}/calendar.webp`;
+</script>
+</body>
+</html>

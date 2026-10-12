@@ -31,12 +31,28 @@ function slice(html, start, end) {
   return html.slice(a, b + end.length);
 }
 
+const LOCALE = { zh: 'zh_TW', en: 'en_US', ja: 'ja_JP', ko: 'ko_KR' };
+/** canonical、hreflang、og、twitter（SEO 補齊，2026-10-12）：og 圖用該語的首頁那張 */
+function seoHead(page, t) {
+  const url = `https://tripezgo.com${page.home}share/`, img = `https://tripezgo.com/assets/img/og-${page.key}.png`;
+  return [`<link rel="canonical" href="${url}" />`,
+    ...PAGES.map((p) => `<link rel="alternate" hreflang="${p.htmlLang}" href="https://tripezgo.com${p.home}share/" />`),
+    '<link rel="alternate" hreflang="x-default" href="https://tripezgo.com/share/" />',
+    '<meta property="og:type" content="website" />', '<meta property="og:site_name" content="TripEZGo" />',
+    `<meta property="og:locale" content="${LOCALE[page.key]}" />`,
+    `<meta property="og:title" content="${esc(t.title)}" />`, `<meta property="og:description" content="${esc(t.lede)}" />`,
+    `<meta property="og:url" content="${url}" />`, `<meta property="og:image" content="${img}" />`,
+    '<meta property="og:image:width" content="1200" />', '<meta property="og:image:height" content="630" />',
+    '<meta name="twitter:card" content="summary_large_image" />', `<meta name="twitter:title" content="${esc(t.title)}" />`,
+    `<meta name="twitter:description" content="${esc(t.lede)}" />`, `<meta name="twitter:image" content="${img}" />`].join('\n');
+}
+
 /** 一個語言的頁面 HTML。 */
 export function render(page) {
   const t = S[page.key];
   const home = readFileSync(join(root, page.home.slice(1), 'index.html'), 'utf8');
   const header = slice(home, '<header class="site-header">', '</header>')
-    .replace(/class="hide-sm" href="#/g, `class="hide-sm" href="${page.home}#`)
+    .replace(/href="#/g, `href="${page.home}#`)
     .replace(/class="lang" href="(\/(?:en\/|ja\/|ko\/)?)"/g, (_, href) => `class="lang" href="${SHARE_PATH[href]}"`);
   const footer = slice(home, '<footer class="site-footer">', '</footer>');
   const skipLink = slice(home, '<a class="skip-link"', '</a>');
@@ -46,6 +62,7 @@ export function render(page) {
     .replace('{{gisLang}}', page.gisLang)
     .replace('{{title}}', esc(t.title))
     .replace('{{description}}', esc(t.lede))
+    .replace('{{seo}}', seoHead(page, t))
     .replace('{{skipLink}}', skipLink)
     .replace('{{header}}', header)
     .replace('{{footer}}', footer);
