@@ -7,3 +7,5 @@ playwright-report/
 screens/out/
 # 本機 MapKit token（tools/mapkit-dev-token.mjs 產生，私鑰簽的）——永遠不進 repo
 screens/.mapkit-dev-token.js
+# 商城截圖的原始畫面（node tools/store/make.mjs 產生）
+tools/store/raw/

@@ -1,0 +1,461 @@
+<!doctype html>
+<!--
+  TripEZGo · App Store 商城截圖（1.3.0，2026-10-12：畫面改由官網 screens/ 的 HTML 直接產，iPhone 10 張×中英日）
+  原稿：Open Design appstore-2026/screenshots.html；產生：node tools/store/make.mjs <輸出目錄>
+  四種語言（zh-Hant / ja / en / ko）× 兩個裝置欄位 × 八張 ＝ 64 個 frame。
+    · iPhone 6.9"  1320×2868 px   原始畫面 raw/<lang>/iphone/NN.png（1206×2622）
+    · iPad 13"     2064×2752 px   原始畫面 raw/<lang>/ipad/NN.png  （2064×2752）
+  1 CSS px ＝ 1 輸出 px，frame 本身不做任何 transform 縮放。
+
+  ── 匯出 ───────────────────────────────────────────────────────────
+  screenshots.html?only={device}-{lang}-{n}，例：?only=iphone-ja-03
+    · 只建出那一個 frame，放在 (0,0)；body margin 0、overflow hidden、底色＝紙色。
+    · 視窗設成 frame 尺寸（1320×2868 或 2064×2752），DPR 1。
+    · 標題排好（含字體載入後的重排）才會設 <html data-ready="true">，
+      匯出腳本請等這個屬性，再等圖片載完（非 only 模式圖片是 lazy）。
+  沒有參數時是審稿用的總覽：依語言、裝置分組，每組八張橫排。
+
+  ── 版型的決定（沿用 appstore-screenshots.html 的四條，並補上這版的）───────
+
+  ① 標題在上、裝置在下。搜尋結果只露前三張縮圖，能讀的只有標題——標題是主角，
+     截圖是證據。所以標題大而粗：iPhone 118px、iPad 128px 起跳，
+     中日韓用 700（PingFang 會落到 Semibold，不合成假粗體）。
+  ② 整台裝置收在畫布內，不切邊。狀態列與分頁列都要看得到——分頁列是
+     「這是一個有結構的 App」最快的證據。裝置以「下緣」定位，底邊留白固定：
+       iPhone：畫面 980（×2622/1206 ≈ 2131），邊框 22 → 機身 1024×2175，
+               佔畫布寬 77.6%，下緣留 80，機頂 y≈613。
+       iPad  ：畫面 1560×2080（原圖正好 3:4），邊框 28 → 機身 1616×2136，
+               佔畫布寬 78.3%，下緣留 88，機頂 y＝528。
+     陰影的外擴量都小於下緣留白，連陰影都不出界。
+  ③ 一張一個青綠。#2f918e 只用在主標裡的一個關鍵詞；副標一律 taupe。
+  ④ 原始畫面只縮放、不裁切、不重繪。iPhone 圖用 width/height 屬性保留
+     原生比例（height:auto），iPad 圖 1560×2080 與原圖同為 3:4。
+     這版 iPad 用的是真的 iPad 全螢幕擷取，所以不再有舊版的 letterbox。
+  ⑤ 機身沿用舊檔：iPhone 是深色漸層殼＋內緣亮線（動態島已烤在截圖裡，不再畫）；
+     iPad 是四邊等寬窄邊框、小圓角、長邊（直放時右側）鏡頭點與上緣兩條按鍵。
+  ⑥ 背景：紙色 #fbf8f4 底，機身後方一團極淡的 --brand-teal 光暈，
+     奇數張偏左、偶數張偏右——八張並排時形成左右交替的節奏，但每一張單看都是安靜的。
+  ⑦ 斷行：
+     · 中日文由人決定斷點（文案裡的 | 只在 iPhone 斷、^ 兩種裝置都斷），
+       沒有斷點的句子必須一行放完——排不下就縮字，不讓一兩個字掉到下一行。
+     · 英韓用 text-wrap: balance，最多 2 行；韓文加 word-break: keep-all。
+     · 關鍵詞 <em> 不斷行。
+     · 行數超過上限或橫向溢出時，主標每次縮 2px（下限 iPhone 84 / iPad 88），
+       副標同理（下限 36）。字不改，只改大小。
+  ⑧ 標題塊垂直置中（2026-09 修正）。
+     標題塊＝品牌列（只有第 1 張）＋主標＋副標，由 fit() 放在
+     [安全上緣, 機頂 − 最小間距] 這段空間的正中央：
+       iPhone：安全上緣 48，最小間距 90 → 可用 48 … 523（機頂 613）
+       iPad  ：安全上緣 40，最小間距 100 → 可用 40 … 428（機頂 528）
+     一行＋一行的短句不再貼頂、下面空一大塊；兩行＋兩行的長句也保證
+     副標底到機頂 ≥ 90 / 100。塊比可用空間高時才縮主標。
+     機身尺寸與位置不因標題移動。
+  ⑨ 第 1 張有品牌列（原稿 icon ＋ TripEZGo，iPad 版縮成 60px 讓出高度）；
+     第 8 張右上角有「Premium」小標籤（四語同字）。標籤不另外壓低標題——
+     fit() 量主標與副標每一行的字形框，只有真的碰到標籤（外擴 16px）時，
+     才把安全上緣改成標籤下緣 + 16 再置中一次。
+  ⑩ fit() 的驗收（寫進每個 frame 的 data-fit="ok|fail" 與 data-gap）：
+     行數 ≤ 上限、沒有橫向溢出、副標底到機頂 ≥ 最小間距、
+     標題塊不高於安全上緣、不碰 Premium 標籤。
+  ⑪ 字體：每個 frame 有自己的 lang 與 data-lang，字體堆疊用 data-lang 綁，
+     韓文、日文不會落到中文字體；Noto Sans TC/JP/KR 與 Inter 從 Google Fonts
+     載入當後援（系統有 PingFang / Hiragino / Apple SD Gothic Neo / SF 時不會用到）。
+-->
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TripEZGo — App Store 商城截圖 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+JP:wght@500;700&family=Noto+Sans+KR:wght@500;700&family=Noto+Sans+TC:wght@500;700&display=swap" />
+<script>
+  /* 在 <head> 讀參數，讓 only 模式在第一次繪製前就套上樣式 */
+  (function () {
+    var m = /[?&]only=([a-z]+-[A-Za-z-]+-\d{2})/.exec(location.search);
+    if (m) {
+      window.ONLY = decodeURIComponent(m[1]);
+      document.documentElement.classList.add('only');
+    }
+  })();
+</script>
+<style>
+  :root {
+    --paper: #fbf8f4;
+    --card:  #ffffff;
+    --ink:   #241d17;
+    --machi: #2f918e;
+    --taupe: #7c6f63;
+    --line:  #dbd5cd;
+    --brand-teal: #5cc6c3;
+
+    /* 機身、亮邊與陰影全部由色票推導（與舊檔同一組算式） */
+    --shell-lit:  color-mix(in srgb, var(--ink) 78%, var(--paper));
+    --shell-edge: color-mix(in srgb, var(--card) 8%, transparent);
+    --shell-drop: color-mix(in srgb, var(--ink) 40%, transparent);
+    --halo:       color-mix(in srgb, var(--brand-teal) 20%, transparent);
+
+    --f-zh: "PingFang TC", "Noto Sans TC", sans-serif;
+    --f-ja: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    --f-ko: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    --f-en: "SF Pro Display", -apple-system, "Inter", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: color-mix(in srgb, var(--line) 70%, var(--paper)); font-family: var(--f-zh); color: var(--ink); }
+
+  /* ── 審稿總覽 ─────────────────────────────────────────────── */
+  .board { padding: 80px; }
+  .group-head {
+    margin: 0 0 32px; font-size: 44px; font-weight: 700; letter-spacing: -0.01em;
+  }
+  .group-head small { font-size: 28px; font-weight: 500; color: var(--taupe); margin-left: 16px; }
+  .group { display: flex; gap: 48px; margin-bottom: 120px; width: max-content; }
+
+  /* ── only 模式：一張 frame 貼齊 (0,0) ─────────────────────── */
+  html.only, html.only body { background: var(--paper); overflow: hidden; }
+  html.only .board { padding: 0; }
+  html.only .group { gap: 0; margin: 0; }
+
+  /* ── frame ──────────────────────────────────────────────── */
+  .shot {
+    position: relative; flex: none; overflow: hidden;
+    background: var(--paper);
+    width: 1320px; height: 2868px;
+    --side: 100px; --cap-top: 116px; --title: 118px; --sub: 46px; --sub-gap: 28px;
+    --screen: 980px; --bezel: 22px; --r: 132px; --dev-bottom: 80px;
+    --halo-size: 1560px; --halo-top: 560px; --halo-dx: 340px;
+  }
+  .shot[data-device="ipad"] {
+    width: 2064px; height: 2752px;
+    --side: 140px; --cap-top: 88px; --title: 128px; --sub: 56px; --sub-gap: 22px;
+    --screen: 1560px; --bezel: 28px; --r: 28px; --dev-bottom: 88px;
+    --halo-size: 2300px; --halo-top: 420px; --halo-dx: 520px;
+  }
+  /* 字體堆疊依語言綁定 */
+  .shot[data-lang="zh-Hant"] { font-family: var(--f-zh); }
+  .shot[data-lang="ja"]      { font-family: var(--f-ja); }
+  .shot[data-lang="ko"]      { font-family: var(--f-ko); }
+  .shot[data-lang="en"]      { font-family: var(--f-en); }
+
+  /* 光暈：奇數張偏左、偶數張偏右 */
+  .shot::before {
+    content: ''; position: absolute; z-index: 0;
+    width: var(--halo-size); height: var(--halo-size); border-radius: 50%;
+    top: var(--halo-top);
+    left: calc(50% - var(--halo-size) / 2 - var(--halo-dx));
+    background: radial-gradient(closest-side, var(--halo), transparent);
+  }
+  .shot.even::before { left: calc(50% - var(--halo-size) / 2 + var(--halo-dx)); }
+
+  /* ── 標題區 ─────────────────────────────────────────────── */
+  /* 標題塊（品牌列＋主標＋副標）的 top 由 fit() 算：在「安全上緣」到
+     「機頂 − 最小間距」之間垂直置中。這裡的 top 只是 JS 執行前的暫定值。 */
+  .cap {
+    position: absolute; z-index: 2; top: var(--cap-top);
+    left: var(--side); right: var(--side);
+    text-align: center;
+  }
+
+  .title {
+    margin: 0;
+    font-size: var(--title); font-weight: 700; line-height: 1.12;
+    letter-spacing: 0; color: var(--ink);
+    text-wrap: balance;
+  }
+  .shot[data-lang="en"] .title { letter-spacing: -0.025em; line-height: 1.08; }
+  .title em { font-style: normal; color: var(--machi); white-space: nowrap; }
+  .sub {
+    margin: var(--sub-gap) auto 0;
+    font-size: var(--sub); font-weight: 500; line-height: 1.4;
+    color: var(--taupe);
+    text-wrap: balance;
+  }
+  .shot[data-lang="en"] .sub { letter-spacing: -0.005em; }
+  .shot[data-lang="ko"] .title,
+  .shot[data-lang="ko"] .sub { word-break: keep-all; }
+
+  /* 第 1 張的品牌列 */
+  .brand {
+    display: flex; align-items: center; justify-content: center; gap: 20px;
+    margin-bottom: 36px; height: 68px;
+  }
+  .brand img {
+    width: 68px; height: 68px; border-radius: 15px; display: block;
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  .brand span {
+    font-family: var(--f-en); font-size: 40px; font-weight: 700;
+    letter-spacing: -0.01em; color: var(--ink);
+  }
+  .shot[data-device="ipad"] .brand { height: 60px; margin-bottom: 24px; gap: 18px; }
+  .shot[data-device="ipad"] .brand img { width: 60px; height: 60px; border-radius: 13px; }
+  .shot[data-device="ipad"] .brand span { font-size: 38px; }
+
+  /* 第 8 張的 Premium 標籤 */
+  .tag {
+    position: absolute; z-index: 3; top: 48px; right: 56px;
+    height: 56px; padding: 0 26px; border-radius: 28px;
+    display: flex; align-items: center;
+    font-family: var(--f-en); font-size: 28px; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--ink); background: var(--card);
+    border: 2px solid var(--line);
+  }
+  .shot[data-device="ipad"] .tag { top: 48px; right: 64px; height: 60px; padding: 0 28px; border-radius: 30px; font-size: 30px; }
+
+  /* ── 機身 ───────────────────────────────────────────────── */
+  .device {
+    position: absolute; z-index: 1; left: 50%; bottom: var(--dev-bottom);
+    transform: translateX(-50%);
+    padding: var(--bezel);
+    border-radius: calc(var(--r) + var(--bezel));
+    background: linear-gradient(158deg, var(--shell-lit) 0%, var(--ink) 55%, var(--ink) 100%);
+    box-shadow:
+      0 0 0 2px var(--shell-edge) inset,
+      0 28px 56px -28px var(--shell-drop),
+      0 4px 14px -6px var(--shell-drop);
+  }
+  .device img.screen {
+    display: block; width: var(--screen); height: auto;
+    border-radius: var(--r); background: var(--card);
+  }
+  /* iPad：鏡頭在長邊（直放時右側），電源與音量在上緣 */
+  .shot[data-device="ipad"] .device::after {
+    content: ''; position: absolute; right: calc(var(--bezel) / 2); top: 50%;
+    transform: translate(50%, -50%);
+    width: 8px; height: 8px; border-radius: 50%;
+    background: color-mix(in srgb, var(--ink) 55%, var(--card));
+  }
+  .device .rail {
+    position: absolute; top: -6px; height: 8px; border-radius: 3px;
+    background: color-mix(in srgb, var(--ink) 55%, var(--paper));
+  }
+  .device .rail.pwr { right: 13%; width: 6%; }
+  .device .rail.vol { right: 24%; width: 10%; }
+</style>
+</head>
+<body>
+<main class="board" id="board" data-od-id="screenshot-board"></main>
+
+<script>
+  /* 文案：主標 [關鍵詞] 用青綠；| 只在 iPhone 斷行；^ 兩種裝置都斷行 */
+  var COPY = {
+    'zh-Hant': [
+      ['行事曆排行程，|[時間軸]排交通', '一拖一拉就能排，還沒定時間的拖進時段就好'],
+      ['該帶的，都[掛在行程上]', '票券、附件、待辦，出發前逐項打勾'],
+      ['錯過這班車，|[下一班]已經排好', '步行、開車、大眾運輸，自動估算時間'],
+      ['整趟旅程，[一頁]看完', '行程、附件、待辦按日分組，一看就知道'],
+      ['下一站在哪，|[地圖]告訴你', '每日路線、日本超商藥妝、步行導航'],
+      ['看到想去的，|[分享]進來就存好', 'Google 地圖、Instagram、Threads 一鍵存進旅程'],
+      ['[資料與工具]都帶著', '筆記、購物清單、QR Code 掃描、匯率換算'],
+      ['[旅伴共編]，|一起排同一趟', '傳邀請連結或掃 QR Code 就能加入'],
+      ['旅途中|[位置共享]', '走散了，也知道彼此在哪'],
+      ['[即時動態]、|Widget', '不用解鎖，下一站就在鎖定畫面']
+    ],
+    'ja': [
+      ['予定はカレンダー、^移動は[タイムライン]', 'ドラッグで組み替え、未定の予定も時間帯へ'],
+      ['必要なものは|[予定にまとめて]', 'チケット・添付・ToDo、出発前にチェック'],
+      ['乗り遅れても|[次の便]はもう決まってる', '徒歩・車・公共交通機関、所要時間を自動で見積もり'],
+      ['旅行全体を[1ページ]で', '予定・添付・ToDo を日ごとにまとめて'],
+      ['次の行き先は|[地図]が教えてくれる', '1日のルート、コンビニ・ドラッグストア、徒歩ナビ'],
+      ['見つけた場所は|[共有]で保存', 'Google マップ・Instagram・Threads から取り込み'],
+      ['[資料とツール]を^いつも手元に', 'メモ・買い物リスト・QR スキャン・為替換算'],
+      ['[旅の仲間]と|同じ旅程を', '招待リンクか QR コードで参加'],
+      ['旅行中は|[現在地]を共有', 'はぐれても、お互いの居場所が分かる'],
+      ['[ライブアクティビティ]と^ウィジェット', 'ロック画面に次の行き先、ロック解除いらず']
+    ],
+    'en': [
+      ['Plan the day, |[plan the travel]', 'Drag to plan, and drop unscheduled events onto a time'],
+      ['Everything [on the event]', 'Tickets, files and to-dos, ticked off before you go'],
+      ['Miss this train? |[The next one] is ready', 'Walk, drive or transit, with times estimated for you'],
+      ['The whole trip on [one page]', 'Events, files and to-dos grouped by day'],
+      ['The map knows |[your next stop]', 'Daily routes, shops in Japan and walking directions'],
+      ['Seen it? [Share it in]', 'Save places from Google Maps, Instagram and Threads'],
+      ['[Library and tools], |all with you', 'Notes, shopping list, QR scanner and currency'],
+      ['Plan it [together]', 'An invite link or a QR code, and companions are in'],
+      ['See where [everyone] is', 'Share locations with your companions during the trip'],
+      ['[Live Activities] |and widgets', 'Your next stop on the Lock Screen, no unlock needed']
+    ]
+  };
+  var N = 10, PREMIUM = 9;   /* 第 10 張（即時動態）掛 Premium 標籤 */
+  var LANGS = ['zh-Hant', 'ja', 'en'];
+  var LANG_NAME = { 'zh-Hant': '繁體中文', 'ja': '日本語', 'en': 'English', 'ko': '한국어' };
+  var DEVICES = {
+    iphone: { name: 'iPhone 6.9 吋', size: '1320×2868', iw: 1206, ih: 2622,
+              title: 118, titleMin: 84, sub: 46, safeTop: 48, gap: 90 },
+    ipad:   { name: 'iPad 13 吋',    size: '2064×2752', iw: 2064, ih: 2752,
+              title: 128, titleMin: 88, sub: 56, safeTop: 40, gap: 100 }
+  };
+  var ICON = '../../assets/img/icon-512.png';
+
+  function esc(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  /* 回傳 { html, segs }：segs 是這台裝置上手動斷出的行數 */
+  function titleHTML(src, device) {
+    var s = src.replace(/\|/g, device === 'iphone' ? '\n' : '').replace(/\^/g, '\n');
+    var segs = s.split('\n').length;
+    var html = esc(s)
+      .replace(/\[([^\]]+)\]/g, '<em>$1</em>')
+      .replace(/\n/g, '<br>');
+    return { html: html, segs: segs };
+  }
+
+  function buildShot(lang, device, i, lazy) {
+    var n = ('0' + (i + 1)).slice(-2);
+    var D = DEVICES[device];
+    var c = COPY[lang][i];
+    var t = titleHTML(c[0], device);
+    var cjk = (lang === 'zh-Hant' || lang === 'ja');
+    /* 有手動斷點：行數就是段數；沒有：中日一行放完，英韓最多兩行 */
+    var maxT = t.segs > 1 ? t.segs : (cjk ? 1 : 2);
+    var maxS = cjk ? 1 : 2;
+
+    var sec = document.createElement('section');
+    sec.className = 'shot n' + n + ((i + 1) % 2 === 0 ? ' even' : '');
+    sec.id = device + '-' + lang + '-' + n;
+    sec.lang = lang;
+    sec.dataset.lang = lang;
+    sec.dataset.device = device;
+    sec.dataset.n = n;
+    sec.setAttribute('data-od-id', sec.id);
+
+    var h = '';
+    if (i === PREMIUM) h += '<div class="tag" data-od-id="' + sec.id + '-premium">Premium</div>';
+    h += '<div class="cap">';
+    if (i === 0) {
+      h += '<div class="brand" data-od-id="' + sec.id + '-brand">'
+         + '<img src="' + ICON + '" width="512" height="512" alt="">'
+         + '<span lang="en">TripEZGo</span></div>';
+    }
+    h += '<h2 class="title" data-lines="' + maxT + '" data-od-id="' + sec.id + '-title">' + t.html + '</h2>';
+    h += '<p class="sub" data-lines="' + maxS + '" data-od-id="' + sec.id + '-sub">' + esc(c[1]) + '</p>';
+    h += '</div>';
+    h += '<div class="device" data-od-id="' + sec.id + '-device">';
+    if (device === 'ipad') h += '<i class="rail pwr"></i><i class="rail vol"></i>';
+    h += '<img class="screen" src="raw/' + lang + '/' + n + '.png"'
+       + ' width="' + D.iw + '" height="' + D.ih + '"'
+       + (lazy ? ' loading="lazy"' : '') + ' decoding="async"'
+       + ' alt="TripEZGo ' + LANG_NAME[lang] + ' ' + D.name + ' ' + n + '">';
+    h += '</div>';
+    sec.innerHTML = h;
+    return sec;
+  }
+
+  /* 排版與驗收：
+     1. 副標、主標依行數與橫向溢出縮字（字不改，只改大小）。
+     2. 標題塊在 [safeTop, 機頂 − gap] 之間垂直置中；塊太高放不下就再縮主標。
+     3. 第 8 張若標題或副標的字形框碰到 Premium 標籤（外擴 16px），
+        安全上緣改成標籤下緣 + 16，重新置中。
+     所有量測都換回未縮放的 CSS px（k），總覽頁被 zoom 時也成立。 */
+  function fit(sec) {
+    var D = DEVICES[sec.dataset.device];
+    var cap = sec.querySelector('.cap');
+    var t = sec.querySelector('.title');
+    var s = sec.querySelector('.sub');
+    var dev = sec.querySelector('.device');
+    var tag = sec.querySelector('.tag');
+    var box = sec.getBoundingClientRect();
+    var k = box.width / sec.offsetWidth || 1;
+
+    function lines(el) {
+      var lh = parseFloat(getComputedStyle(el).lineHeight);
+      return Math.round(el.getBoundingClientRect().height / k / lh);
+    }
+    function over(el) { return el.scrollWidth > el.clientWidth + 1; }
+    function rel(r) {
+      return { l: (r.left - box.left) / k, r: (r.right - box.left) / k,
+               t: (r.top - box.top) / k,  b: (r.bottom - box.top) / k };
+    }
+    function hitsTag() {
+      if (!tag) return false;
+      var g = rel(tag.getBoundingClientRect()), m = 16;
+      return [t, s].some(function (el) {
+        var rg = document.createRange();
+        rg.selectNodeContents(el);
+        return [].slice.call(rg.getClientRects()).some(function (q) {
+          var a = rel(q);
+          return a.r > g.l - m && a.l < g.r + m && a.b > g.t - m && a.t < g.b + m;
+        });
+      });
+    }
+
+    var devTop = dev.offsetTop;
+    var bottom = devTop - D.gap;
+    var ts = D.title, ss = D.sub;
+    t.style.fontSize = ts + 'px';
+    s.style.fontSize = ss + 'px';
+    while ((lines(s) > +s.dataset.lines || over(s)) && ss > 36) {
+      ss -= 2; s.style.fontSize = ss + 'px';
+    }
+
+    function layout(top) {
+      while ((lines(t) > +t.dataset.lines || over(t) || cap.offsetHeight > bottom - top)
+             && ts > D.titleMin) {
+        ts -= 2; t.style.fontSize = ts + 'px';
+      }
+      cap.style.top = Math.round(top + Math.max(0, (bottom - top - cap.offsetHeight) / 2)) + 'px';
+    }
+    var safe = D.safeTop;
+    layout(safe);
+    if (hitsTag()) {
+      safe = tag.offsetTop + tag.offsetHeight + 16;
+      layout(safe);
+    }
+
+    var gapBelow = devTop - (cap.offsetTop + cap.offsetHeight);
+    sec.dataset.gap = Math.round(gapBelow);
+    sec.dataset.fit = (lines(t) <= +t.dataset.lines && !over(t) &&
+                       lines(s) <= +s.dataset.lines && !over(s) &&
+                       gapBelow >= D.gap - 0.5 && cap.offsetTop >= safe - 0.5 &&
+                       !hitsTag()) ? 'ok' : 'fail';
+  }
+  function fitAll() {
+    var list = document.querySelectorAll('.shot');
+    for (var j = 0; j < list.length; j++) fit(list[j]);
+  }
+
+  (function build() {
+    var board = document.getElementById('board');
+    if (window.ONLY) {
+      var p = window.ONLY.split('-');
+      var device = p[0], n = p[p.length - 1], lang = p.slice(1, -1).join('-');
+      var i = parseInt(n, 10) - 1;
+      if (!DEVICES[device] || !COPY[lang] || !(i >= 0 && i < N)) {
+        document.documentElement.classList.remove('only');
+        board.textContent = '找不到 frame：' + window.ONLY;
+        return;
+      }
+      var g = document.createElement('div');
+      g.className = 'group';
+      g.appendChild(buildShot(lang, device, i, false));
+      board.appendChild(g);
+      return;
+    }
+    LANGS.forEach(function (lang) {
+      ['iphone'].forEach(function (device) {
+        var head = document.createElement('h3');
+        head.className = 'group-head';
+        head.innerHTML = LANG_NAME[lang] + ' · ' + DEVICES[device].name
+          + '<small>' + DEVICES[device].size + ' × ' + N + '</small>';
+        board.appendChild(head);
+        var g = document.createElement('div');
+        g.className = 'group';
+        g.setAttribute('data-od-id', 'group-' + device + '-' + lang);
+        for (var i = 0; i < N; i++) g.appendChild(buildShot(lang, device, i, true));
+        board.appendChild(g);
+      });
+    });
+  })();
+
+  fitAll();
+  /* 後援字體（Noto / Inter）若有下載，字寬會變——載完再量一次才算完成 */
+  var ready = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+  ready.then(function () {
+    fitAll();
+    document.documentElement.dataset.ready = 'true';
+  });
+  if (document.fonts) document.fonts.addEventListener('loadingdone', fitAll);
+</script>
+</body>
+</html>
