@@ -5,9 +5,7 @@ export const STORIES = {
   // 行事曆先往上捲到 00:00 之上（App 1.3.0：待排區「未指定日」那一列＋「開始」書擋，在捲動內容裡）再捲回來
   // → 時間軸 → 往下捲 → 換到第 3 天 → 回第 2 天 → 切回行事曆（第 2 天＝起始畫面）。
   calendar: [
-    { page: 'calendar', scroll: '.grid', by: -640 },
-    { wait: 1200 },
-    { page: 'calendar', call: 'calendarHome' },
+    // 第一步不先往上捲去看待排區（使用者 2026-10-12），直接切時間軸
     { page: 'calendar', tap: '#mode' },
     { page: 'timeline', scroll: '.grid', by: 260 },
     { page: 'timeline', tap: '.chip:nth-child(3)' },
