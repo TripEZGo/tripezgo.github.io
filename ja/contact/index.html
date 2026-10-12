@@ -32,8 +32,10 @@
   main { max-width: 760px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 5vw, 56px); }
   h1 { font-size: var(--text-2xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); margin: 0 0 10px; }
   .lede { color: var(--muted); margin: 0 0 20px; }
-  .form-frame { position: relative; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
-  .form-frame iframe { display: block; width: 100%; border: 0; }
+  .cta { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; border-radius: var(--radius-pill);
+    background: var(--accent); color: var(--accent-on); font-weight: 600; text-decoration: none; }
+  .cta:hover { background: var(--accent-ink); color: var(--accent-on); }
+  .cta svg { width: 16px; height: 16px; }
   .fallback { margin: 14px 0 0; font-size: var(--text-sm); color: var(--muted); }
 </style>
 </head>
@@ -73,10 +75,8 @@
 <main id="main">
   <h1>お問い合わせ</h1>
   <p class="lede">不具合、機能のご要望、お支払い、協業のご提案はこちらから。ご入力のメールアドレスへ返信します。</p>
-  <div class="form-frame">
-    <iframe id="contact-form" src="https://docs.google.com/forms/d/e/1FAIpQLSclH9b9F8471nM0xbYbe3exfXjFMSQGT9H5DRlkmXVRGJJkpw/viewform?embedded=true&hl=ja" title="TripEZGo お問い合わせフォーム" width="640" height="1778" loading="eager">読み込み中…</iframe>
-  </div>
-  <p class="fallback">フォームが表示されない場合は、メールでどうぞ： <a href="mailto:contact@tripezgo.com">contact@tripezgo.com</a></p>
+  <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSclH9b9F8471nM0xbYbe3exfXjFMSQGT9H5DRlkmXVRGJJkpw/viewform?hl=ja" target="_blank" rel="noopener">お問い合わせフォームを開く<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <p class="fallback">メールでのお問い合わせ： <a href="mailto:contact@tripezgo.com">contact@tripezgo.com</a></p>
 </main>
 <footer class="site-footer">
   <div class="wrap">
@@ -104,23 +104,6 @@
     </div>
   </div>
 </footer>
-<script>
-  // 寬：跟著內容欄（CSS width:100%）。高：視窗扣掉頁首與留白，最少 560；轉向、縮放都重算。
-  (function () {
-    var f = document.getElementById('contact-form');
-    function fit() {
-      var vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-      var header = document.querySelector('.site-header');
-      var h = Math.max(560, Math.round(vh - (header ? header.offsetHeight : 0) - 32));
-      f.style.height = h + 'px';
-      f.width = Math.round(f.getBoundingClientRect().width);
-      f.height = h;
-    }
-    fit();
-    window.addEventListener('resize', fit);
-    if (window.visualViewport) window.visualViewport.addEventListener('resize', fit);
-  })();
-</script>
 <script>
   // 手機版漢堡選單：點外面或按 Esc 收起來（首頁由 home.js 處理，這一頁沒有載 home.js）
   (function () {
