@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=402">
+<title>從地圖 App 分享進來</title>
+<!--
+  整合・分享進來：地圖 App 的地點頁 → 分享 → 系統分享選單 → TripEZGo 分享延伸 → 存好了 → 回到地點頁。
+  參數：?lang=zh-Hant-TW|en|ja &interactive=1（首頁外框裡一路點下去）
+        &step=post|sheet|ext|done（截圖模式停在哪一步；預設 post＝地點頁）
+
+  ① 地點頁：一個「看起來像 Google 地圖地點資訊頁」的畫面——上半是地圖、下半是地點紙（名稱、評分、類別、營業、
+     路線／儲存／分享、分頁、地址、營業時間、網站）。**不畫任何一家的 logo 與商標字樣**（同 share-ig 的貼文）。
+     地圖是手畫的示意（宮島西側海岸、大鳥居、嚴島神社、紅葉谷），不是任何一家的圖磚。
+     地點：宮島水族館（みやじマリン），範例旅程第 2 天宮島那一段的旁邊；地址照 MapKit 對同一個地方的回答
+     （MKLocalSearch 2026-10-12：10-3 Miyajimacho, Hatsukaichi, Hiroshima 739-0534；34.2952712, 132.3154709）。
+     評分與評論數是示意值。
+  ②③④ 系統分享選單、分享延伸（1.3.0 分享紙 v2）、存好了：share-ext.js（出處寫在那支檔頭）、share-ext.css。
+     這一則是 Google 地圖地點頁分享出來的短網址（maps.app.goo.gl/…?g_st=ic，docs/App/Design/share-extension-geocoding.md）：
+     - 展開後是 /maps/place/<名稱>/…!3d…!4d… ⇒ SharedLink.place(from:)：名稱＋座標，**沒有地址**（地址只有 Apple 地圖的 address= 有）；
+     - 地圖連結不帶 og 圖片與 og 描述（db19837d6）⇒ 沒有附件那一格、描述只剩網址；
+     - 行程：「資訊」標題＝地點名（不掛「自網頁」），地點卡＋「自網址」；
+     - 類型：讀之前亮「景點」，讀完照標題預選——地點名三語丟進行程類型模型都是 aquarium（≥ 0.999，過 0.96 門檻），
+       所以晶片換成「水族館」，來源是模型、不寫「依地點」（ADR-0031；量法：Scripts/event-type-model 的模型＋TitleFeatures，Mac 上跑）。
+     - 地點卡的小地圖：照 SharePlaceCard.liveSnapshot 用 MKMapSnapshotter 拍（600 公尺見方、370×84、淺色、各語系），
+       存成 img/share-gmap-snap.webp、img/en/…、img/ja/…。
+-->
+<link rel="stylesheet" href="screen.css">
+<link rel="stylesheet" href="share-ext.css">
+<style>
+  /* ── ① 地圖 App 的地點頁（虛構的地圖 App；長相像、沒有商標） ── */
+  .gm { background: #f2efe9; color: #1f1f1f; }
+  .gm-map { position: absolute; left: 0; top: 0; width: 402px; height: 520px; display: block; }
+  .gm-search { position: absolute; left: 12px; right: 12px; top: 58px; height: 50px; border-radius: 25px; background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.18), 0 4px 12px rgba(0,0,0,.08); display: flex; align-items: center; gap: 12px; padding: 0 14px; }
+  .gm-search svg { flex: none; width: 22px; height: 22px; stroke-width: 2; color: #444746; }
+  .gm-search b { flex: 1; min-width: 0; font: 400 17px/22px var(--font); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .gm-sheet { position: absolute; left: 0; right: 0; top: 392px; bottom: 0; background: #fff; border-radius: 24px 24px 0 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,.12); padding: 26px 0 0; }
+  .gm-sheet::before { content: ""; position: absolute; left: 50%; top: 8px; width: 36px; height: 4px; margin-left: -18px; border-radius: 2px; background: #c4c7c5; }
+  .gm-h { padding: 0 20px; }
+  .gm-h h1 { font: 400 24px/30px var(--font); letter-spacing: -.2px; }
+  .gm-rate { margin-top: 4px; display: flex; align-items: center; gap: 4px; font: 400 14px/20px var(--font); color: #444746; }
+  .gm-rate b { font-weight: 400; color: #1f1f1f; }
+  .gm-stars { display: flex; gap: 1px; }
+  .gm-stars svg { width: 13px; height: 13px; }
+  .gm-sub { margin-top: 2px; font: 400 14px/20px var(--font); color: #444746; }
+  .gm-sub .open { color: #188038; }
+  .gm-acts { margin-top: 14px; display: flex; gap: 8px; padding: 0 20px; overflow: hidden; }
+  .gm-btn { flex: none; height: 36px; padding: 0 14px 0 12px; border-radius: 18px; display: flex; align-items: center; gap: 7px;
+    font: 500 14px/20px var(--font); background: #e3edfb; color: #0b4fae; }
+  .gm-btn svg { width: 18px; height: 18px; stroke-width: 2; }
+  .gm-btn.main { background: #1d63c9; color: #fff; }
+  .gm-tabs { margin-top: 16px; display: flex; border-bottom: 1px solid #e3e3e3; padding: 0 8px; }
+  .gm-tabs span { flex: 1; text-align: center; padding: 12px 0 11px; font: 500 14px/20px var(--font); color: #444746; }
+  .gm-tabs span.on { color: #0b4fae; box-shadow: inset 0 -3px 0 #0b4fae; }
+  .gm-row { display: flex; align-items: center; gap: 20px; min-height: 52px; padding: 6px 20px; font: 400 15px/20px var(--font); }
+  .gm-row svg { flex: none; width: 22px; height: 22px; stroke-width: 1.8; color: #1d63c9; }
+  .gm-row + .gm-row { border-top: 1px solid #f0f0f0; }
+  .gm-row .open { color: #188038; }
+  .gm-thumb { width: 52px; height: 52px; border-radius: 10px; overflow: hidden; flex: none; display: block; }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module">
+import { fmt, lang, chrome, ready, loadTrip, loadCategories } from './chrome.js';
+import { mountShare } from './share-ext.js';
+
+const d = document.getElementById('d');
+const trip = await loadTrip();
+await loadCategories();
+
+// 地圖 App 分享出來的短網址（形狀照 share-extension-geocoding.md 量到的那幾條；代碼是示意字）
+const URL_ = 'https://maps.app.goo.gl/Vq3mX8tKpR2sJ7nE6?g_st=ic';
+const HOST = 'maps.app.goo.gl';
+const COORD = '34.29527, 132.31547';
+const SNAP = { 'zh-Hant-TW': 'img/share-gmap-snap.webp', en: 'img/en/share-gmap-snap.webp', ja: 'img/ja/share-gmap-snap.webp' }[lang];
+
+const s = {
+  'zh-Hant-TW': {
+    name: '宮島水族館', rating: '4.3', reviews: '(6,152)', kind: '水族館', area: '宮島町',
+    open: '營業中', closes: '17:00 打烊', hours: '營業中 · 09:00–17:00',
+    acts: ['路線', '儲存', '分享'], tabs: ['總覽', '評論', '簡介'],
+    address: '739-0534 廣島縣廿日市市宮島町 10-3', web: 'miyajima-aqua.jp',
+    map: { shrine: '嚴島神社', torii: '大鳥居', park: '紅葉谷公園', pier: '宮島棧橋' },
+  },
+  en: {
+    name: 'Miyajima Public Aquarium', rating: '4.3', reviews: '(6,152)', kind: 'Aquarium', area: 'Miyajimacho',
+    open: 'Open', closes: 'Closes 5 PM', hours: 'Open · 9 AM–5 PM',
+    acts: ['Directions', 'Save', 'Share'], tabs: ['Overview', 'Reviews', 'About'],
+    address: '10-3 Miyajimacho, Hatsukaichi, Hiroshima 739-0534', web: 'miyajima-aqua.jp',
+    map: { shrine: 'Itsukushima Shrine', torii: 'Great Torii', park: 'Momijidani Park', pier: 'Miyajima Pier' },
+  },
+  ja: {
+    name: '宮島水族館 みやじマリン', rating: '4.3', reviews: '(6,152)', kind: '水族館', area: '宮島町',
+    open: '営業中', closes: '営業終了: 17:00', hours: '営業中 · 9:00～17:00',
+    acts: ['ルート', '保存', '共有'], tabs: ['概要', 'クチコミ', '基本情報'],
+    address: '〒739-0534 広島県廿日市市宮島町10-3', web: 'miyajima-aqua.jp',
+    map: { shrine: '厳島神社', torii: '大鳥居', park: '紅葉谷公園', pier: '宮島桟橋' },
+  },
+}[lang];
+
+// 地圖 App 的線條圖示（第三方介面，不是 App 的 DesignIcon）
+const G = {
+  back: '<path d="M15 4.5 7.5 12l7.5 7.5"/>',
+  x: '<path d="M6 6l12 12M18 6 6 18"/>',
+  route: '<path d="M12 2.8 21.2 12 12 21.2 2.8 12z"/><path d="M9.5 14v-2.5a1.5 1.5 0 0 1 1.5-1.5h4M13 7.8l2.2 2.2-2.2 2.2"/>',
+  save: '<path d="M18 21l-6-4.5L6 21V4.5A1.5 1.5 0 0 1 7.5 3h9A1.5 1.5 0 0 1 18 4.5z"/>',
+  share: '<path d="M12 15V3.5M7.5 7.5 12 3l4.5 4.5M5 12.5v6A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5v-6"/>',
+  pin: '<path d="M12 21.5c4.5-4.6 7-8.3 7-11.5a7 7 0 0 0-14 0c0 3.2 2.5 6.9 7 11.5z"/><circle cx="12" cy="10" r="2.5"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/>',
+};
+const g = (n, cls = '') => `<svg class="i ${cls}" viewBox="0 0 24 24">${G[n]}</svg>`;
+const star = (fill) => `<svg viewBox="0 0 24 24"><path d="m12 2.6 2.9 6 6.5.8-4.8 4.5 1.2 6.5L12 17.3l-5.8 3.1 1.2-6.5L2.6 9.4l6.5-.8z" fill="${fill}"/></svg>`;
+const stars = `<span class="gm-stars">${[1, 1, 1, 1].map(() => star('#f2b01e')).join('')}${star('url(#half)')}</span>`;
+
+// 手畫的示意地圖（宮島西側：海、海岸線、大鳥居、嚴島神社一帶的街、紅葉谷的山）。
+// 中心那顆紅圖釘是這一頁的地點；其餘只是讓它看起來像一張地圖。
+function mapSVG(w, h, { labels = true, pinAt = [196, 236], vb = '0 -60 402 520' } = {}) {
+  const [px, py] = pinAt;
+  const lab = (x, y, t, c = '#5f6368', wt = 500, sz = 11, a = 'start') => labels ? `<text x="${x}" y="${y}" fill="${c}" font-size="${sz}" font-weight="${wt}" text-anchor="${a}" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">${fmt(t)}</text>` : '';
+  return `<svg class="gm-map" viewBox="${vb}" width="${w}" height="${h}" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="font-family:var(--font)">
+    <defs><linearGradient id="half"><stop offset="50%" stop-color="#f2b01e"/><stop offset="50%" stop-color="#dadce0"/></linearGradient></defs>
+    <rect y="-60" width="402" height="580" fill="#f2efe9"/>
+    <path d="M0 -60H402V96C372 112 346 104 322 122C300 140 280 132 262 150C238 174 214 168 188 186C160 206 128 200 100 222C70 246 38 246 0 266Z" fill="#a9d3f5"/>
+    <path d="M402 214C372 226 350 260 336 298C320 340 330 380 360 404C380 420 402 418 402 418Z" fill="#c9e7c0"/>
+    <path d="M0 360C34 344 74 352 106 380C142 410 168 452 214 470C262 488 320 470 360 488C380 497 402 512 402 520H0Z" fill="#c9e7c0"/>
+    <path d="M128 300C150 290 174 296 186 312C196 328 186 350 164 354C140 358 120 344 116 328C114 316 118 306 128 300Z" fill="#d6edcf"/>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 290C40 272 74 268 104 248C134 228 160 232 190 214C222 194 246 196 270 176C292 158 316 162 338 146C360 130 380 132 402 122" stroke="#e1ddd5" stroke-width="11"/>
+      <path d="M0 290C40 272 74 268 104 248C134 228 160 232 190 214C222 194 246 196 270 176C292 158 316 162 338 146C360 130 380 132 402 122" stroke="#fff" stroke-width="8"/>
+      <path d="M262 182C270 214 280 240 298 262M300 160C312 190 322 214 340 236M226 200C232 226 236 250 250 278M298 262C320 252 334 244 340 236M250 278C268 274 284 270 298 262" stroke="#e1ddd5" stroke-width="7"/>
+      <path d="M262 182C270 214 280 240 298 262M300 160C312 190 322 214 340 236M226 200C232 226 236 250 250 278M298 262C320 252 334 244 340 236M250 278C268 274 284 270 298 262" stroke="#fff" stroke-width="5"/>
+      <path d="M340 236C352 270 348 310 330 344" stroke="#fff" stroke-width="4" stroke-dasharray="1 0"/>
+      <path d="M356 106 382 84" stroke="#e1ddd5" stroke-width="9"/><path d="M356 106 382 84" stroke="#fff" stroke-width="6"/>
+    </g>
+    <g transform="translate(286 104)" fill="#d4513d"><rect x="-9" y="-6" width="18" height="2.6" rx="1"/><rect x="-7" y="-2" width="14" height="1.8"/><rect x="-6" y="-4" width="2" height="12"/><rect x="4" y="-4" width="2" height="12"/></g>
+    <circle cx="338" cy="252" r="5" fill="#7b8794" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="384" cy="88" r="5" fill="#7b8794" stroke="#fff" stroke-width="1.5"/>
+    ${lab(268, 90, s.map.torii)}${lab(338, 270, s.map.shrine, '#5f6368', 500, 11, 'middle')}${lab(392, 72, s.map.pier, '#5f6368', 500, 11, 'end')}
+    ${lab(378, 330, s.map.park, '#3d7a3a', 500, 11, 'end')}
+    <g transform="translate(${px} ${py})"><path d="M0 0C-3-9-13-14-13-24a13 13 0 0 1 26 0C13-14 3-9 0 0z" fill="#e2483b" stroke="#b3261e" stroke-width="1"/><circle cx="0" cy="-24" r="4.6" fill="#8a1c14"/></g>
+    ${lab(px + 16, py - 18, s.name, '#b3261e', 600, 13)}
+  </svg>`;
+}
+
+d.insertAdjacentHTML('beforeend', `
+  <div class="layer gm" id="gm">
+    ${mapSVG(402, 520)}
+    <div class="gm-search">${g('back')}<b>${fmt(s.name)}</b>${g('x')}</div>
+    <div class="gm-sheet">
+      <div class="gm-h">
+        <h1>${fmt(s.name)}</h1>
+        <div class="gm-rate"><b>${s.rating}</b>${stars}<span>${s.reviews}</span></div>
+        <div class="gm-sub">${s.kind} · ${s.area}</div>
+        <div class="gm-sub"><span class="open">${s.open}</span> · ${s.closes}</div>
+      </div>
+      <div class="gm-acts">
+        <span class="gm-btn main">${g('route')}${s.acts[0]}</span>
+        <span class="gm-btn">${g('save')}${s.acts[1]}</span>
+        <span class="gm-btn" data-act="share" data-tap>${g('share')}${s.acts[2]}</span>
+      </div>
+      <div class="gm-tabs">${s.tabs.map((t, i) => `<span class="${i ? '' : 'on'}">${t}</span>`).join('')}</div>
+      <div class="gm-row">${g('pin')}<span>${fmt(s.address)}</span></div>
+      <div class="gm-row">${g('clock')}<span><span class="open">${s.open}</span> · ${s.hours.split(' · ')[1]}</span></div>
+      <div class="gm-row">${g('globe')}<span>${s.web}</span></div>
+    </div>
+  </div>`);
+
+const thumb = `<span class="ss-thumb">${mapSVG(52, 52, { labels: false, vb: '126 166 140 140' }).replace('class="gm-map"', 'class="gm-thumb"')}</span>`;
+
+const flow = mountShare(d, document.getElementById('gm'), {
+  host: HOST, url: URL_,
+  sheetTitle: s.name, sheetThumb: thumb,
+  ogTitle: '', ogDesc: '', image: null,
+  place: { name: s.name, coord: COORD, snap: SNAP },
+  model: 'aquarium', tripName: trip.title,
+});
+
+chrome(d);
+const sb = d.querySelector('.sb');
+const setDark = on => sb.classList.toggle('on-dark', on);
+setDark(flow.step === 'ext' || flow.step === 'done');
+flow.wire(setDark);
+
+ready();
+</script>
+</body>
+</html>

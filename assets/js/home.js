@@ -333,7 +333,7 @@ const SCREEN_OF = {
   'share-location': ['share-location', ''], lock: ['lock', ''], widget: ['widget', ''],
   note: ['note', ''], fx: ['fx', ''], shop: ['shop', ''], scan: ['scan', ''],
   notes: ['notes', ''], toolbox: ['notes', 'menu=1'], 'scan-history': ['scan', 'hist=1'], 'fx-nokbd': ['fx', 'kbd=0'],
-  'map-live': ['map-live', 'pan=0'], 'map-route': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09'], 'map-mates': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09&focus=mates'], 'share-ig': ['share-ig', ''], 'apple-calendar': ['apple-calendar', ''], siri: ['siri', ''],
+  'map-live': ['map-live', 'pan=0'], 'map-route': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09'], 'map-mates': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09&focus=mates'], 'share-ig': ['share-ig', ''], 'share-gmap': ['share-gmap', ''], 'apple-calendar': ['apple-calendar', ''], siri: ['siri', ''],
 };
 const SCREEN_LANG = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja' }[L2];
 const [ZOOM, CLOSE, PLAYHINT] = pick({ zh: ['放大，自己玩玩看', '關閉', '親自玩玩看'], en: ['Open full screen and try it', 'Close', 'Try it yourself'], ja: ['拡大して自分で試す', '閉じる', '実際に触ってみよう'] });
@@ -367,7 +367,7 @@ function fitPlay() {
 }
 const DIRECT = new Set(['lock']);
 // autoplay.js＋stories*.js 的內容雜湊（tools/stamp-home.mjs 蓋）：帶進 iframe 網址，改了腳本手機不會用到快取裡的舊版
-const AUTO_V = 'ecb8ca0be5';
+const AUTO_V = '583d9f76cc';
 const NO_AUTO = new Set(['note', 'members', 'lock', 'widget', 'apple-calendar', 'scan', 'fx', 'fx-nokbd', 'siri']);   // 沒有東西可演的、或使用者自己拖比較好的
 addEventListener('message', (e) => {
   if (e.data?.type === 'tz-esc' && playDlg?.open) { playDlg.close(); return; }

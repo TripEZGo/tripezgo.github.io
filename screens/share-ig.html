@@ -10,39 +10,18 @@
         &step=post|sheet|ext|done（截圖模式停在哪一步；預設 post）
 
   ① 貼文：一個「看起來像社群 App」的畫面，**沒有任何一家的商標與名稱**（screens/PLAN.md 的注意事項）。
-     照片沿用 img/note-photo.svg（宮島大鳥居的中性插圖）。網域 HOST 是虛構的示意字。
-  ② 系統分享選單：iOS 26 的系統元件，照記憶中的版面畫——**沒有 ref/ 可量**（2026-10-11 iCloud1 上
-     Safari／相簿都開不起來，量不到）。TripEZGo 那一格用 img/app-icon-180.png。
-  ③ 分享延伸：照 App 的 TripEZGoShare target（/Users/zhgchgli/Projects/tripezgo/App/iOS）：
-     - 分享進來的是一則貼文的網址：`SharedLink.isMapLink` 不成立 ⇒ 只抓 og（`SharedItemLoader.enrich`），
-       **沒有座標** ⇒ `availableDestinations` 只有 筆記、購物（標記要「有座標＋有旅程」才出現），順序照那一支：
-       note → shopping（files 只有分享進來的是檔案才有）。
-     - 預設去處：`SharedItemRoute.destination(for:)`——沒檔案、沒座標、頁面沒價格 ⇒ `.note`。
-     - 版面順序（`buildForm`）：預覽卡、提示列、「存進哪一趟」、「存成」、筆記／購物那一段、「歸檔」。
-       抬頭 `share.title.note`，右上 `share.action.save`（`.done` 樣式）。筆記名稱預設是 og:title
-       （`SharedNoteUseCase`：card.title 優先）。私人筆記開關只在共編的旅程上畫（這一趟沒共編，不畫）。
-       歸檔那一列固定一顆 `share` 籤（`SharedNoteUseCase.sharedTag`）。
-     - 補完之前：預覽卡是骨架、提示列說「正在解析網址資訊」、儲存鍵停用（`viewDidLoad`／`prepare`）。
-       互動模式停 0.9 秒示意，真實時間看網路。
-     - 數字照 `ShareMetrics.swift`、`ShareGroup.swift`、`ShareRow.swift`、`SharePreviewCard.swift`、
-       `PriceFieldView`、`FilterChipMetrics`；導覽列 `UINavigationBarAppearance.tzSheet`（標題 16 semibold）。
-  ④ 存好了：`ShareResultViewController`——導覽列收起、綠勾、`share.done.note`、內文是
-     `share.text.quoted` 包住的名字＋`share.filing.summary`（旅程 · 標籤 share）；**兩秒自己關上**
-     （`successLinger = .seconds(2)`），`completeRequest` 連同系統分享選單一起收掉，回到貼文。
-  字：Scripts/i18n/maps/TripEZGoShare.json（share.*）、Domain.json（domain.shoppingcategory.*）。
-  系統分享選單的字是 iOS 自己的字，照各語系的系統用詞寫。
+     照片沿用 img/note-photo.svg（宮島大鳥居的中性插圖）。網域 HOST 是虛構的示意字——所以它是一般網站：
+     og 標題照帶（不走 Instagram／Threads 那條「標題留空必填」，TitlelessSites 只認那三個網域）。
+  ②③④ 系統分享選單、分享延伸（1.3.0 分享紙 v2）、存好了：share-ext.js（出處寫在那支檔頭）、share-ext.css。
+     這一則：一般網頁、沒有座標 ⇒ 行程「不指定地點」、標記要選地點；og 圖片帶成附件／筆記內容第一張。
+     類型：og 標題三語丟進行程類型模型都沒到 0.96（zh transport .20／en sight .92／ja bar .19），沒有地點 ⇒「其他」，標記不選。
+     自動示範：讀完之後切到「筆記」分段再存——同一份解析結果換一種存法。
 -->
 <link rel="stylesheet" href="screen.css">
+<link rel="stylesheet" href="share-ext.css">
 <style>
-  :root { --sys-blue: #0a84ff; --sys-sec: #8a8a8e; --sys-group: #f2f2f7; --sys-sep: rgba(60,60,67,.18);
-    --success-ink: var(--green200); --muted-on-sunken-c: color-mix(in srgb, var(--n100) 90%, var(--n400)); }
-  .device { background: #000; }
-  .layer { position: absolute; inset: 0; overflow: hidden; }
-  svg.i { display: block; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
-
   /* ── ① 社群貼文（虛構的社群 App） ── */
-  .post { background: #fff; color: #000; transform-origin: 50% 0; transition: transform .35s ease, border-radius .35s ease, filter .35s ease; }
-  .post.back { transform: scale(.92); border-radius: 38px; filter: brightness(.6); }
+  .post { background: #fff; color: #000; }
   .pnav { position: absolute; left: 0; right: 0; top: 54px; height: 44px; display: flex; align-items: center; justify-content: center;
     font: 600 17px/22px var(--font); }
   .pnav .bk { position: absolute; left: 10px; top: 10px; width: 24px; height: 24px; }
@@ -69,185 +48,43 @@
     display: flex; justify-content: space-around; padding-top: 12px; }
   .ptab svg { width: 26px; height: 26px; stroke-width: 1.8; }
   .ptab .me { width: 26px; height: 26px; border-radius: 50%; background: #5f8f8c; }
-
-  /* ── ② 系統分享選單（iOS 26，浮在下緣的玻璃紙） ── */
-  .dim { position: absolute; inset: 0; background: rgba(0,0,0,.22); opacity: 0; transition: opacity .3s; pointer-events: none; }
-  .dim.on { opacity: 1; pointer-events: auto; }
-  .ss { position: absolute; left: 8px; right: 8px; bottom: 8px; height: 556px; border-radius: 38px; background: rgba(247,247,250,.97);
-    box-shadow: 0 10px 40px rgba(0,0,0,.18); transform: translateY(110%); transition: transform .38s cubic-bezier(.2,.9,.25,1); overflow: hidden; }
-  .ss.on { transform: none; }
-  .ss.back { transform: scale(.94); filter: brightness(.6); }
-  .ss-head { position: absolute; left: 18px; right: 18px; top: 18px; height: 52px; display: flex; align-items: center; gap: 12px; }
-  .ss-thumb { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; flex: none; }
-  .ss-tt { flex: 1; min-width: 0; padding-right: 44px; }
-  .ss-tt b { display: block; font: 600 15px/19px var(--font); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .ss-tt span { display: block; font: 400 13px/17px var(--font); color: var(--sys-sec); }
-  .ss-x { position: absolute; right: 14px; top: 14px; width: 36px; height: 36px; border-radius: 50%; background: rgba(120,120,128,.14);
-    display: grid; place-items: center; color: #3c3c43; }
-  .ss-x svg { width: 15px; height: 15px; stroke-width: 2.4; }
-  .ss-row { position: absolute; left: 0; right: 0; display: flex; gap: 0; padding: 0 6px; overflow: hidden; }
-  .ss-cell { flex: none; width: 82px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-  .ss-cell span { font: 400 11px/13px var(--font); color: #1c1c1e; text-align: center; width: 76px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .people { top: 90px; }
-  .av { position: relative; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center;
-    color: #fff; font: 600 22px/1 var(--font); background: linear-gradient(#a8adb7, #858a94); }
-  .av .badge { position: absolute; right: -3px; bottom: -3px; width: 24px; height: 24px; border-radius: 7px; border: 2px solid #f7f7fa; }
-  .ss-sep { position: absolute; left: 18px; right: 18px; top: 189px; border-top: .5px solid var(--sys-sep); }
-  .apps { top: 204px; }
-  .app { width: 62px; height: 62px; border-radius: 14px; display: grid; place-items: center; overflow: hidden; }
-  .app svg { width: 34px; height: 34px; }
-  .app img { width: 62px; height: 62px; display: block; }
-  .ss-list { position: absolute; left: 14px; right: 14px; background: #fff; border-radius: 24px; overflow: hidden; }
-  .ss-li { position: relative; height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px;
-    font: 400 17px/22px var(--font); color: #000; }
-  .ss-li + .ss-li::before { content: ""; position: absolute; left: 18px; right: 0; top: 0; border-top: .5px solid var(--sys-sep); }
-  .ss-li svg { width: 22px; height: 22px; stroke-width: 1.7; color: #000; }
-  .ss-li.blue { color: var(--sys-blue); }
-
-  /* ── ③ 分享延伸：UINavigationController（tzSheet 外觀）＋ ShareFormViewController ── */
-  .ext { position: absolute; left: 0; right: 0; top: 60px; bottom: 0; background: var(--page); border-radius: 38px 38px 0 0;
-    transform: translateY(105%); transition: transform .4s cubic-bezier(.2,.9,.25,1); overflow: hidden; color: var(--ink); }
-  .ext.on { transform: none; }
-  .xnav { position: absolute; left: 0; right: 0; top: 0; height: 64px; background: var(--page); z-index: 2; }
-  .xnav .ttl { position: absolute; left: 110px; right: 110px; top: 21px; text-align: center; font: 600 var(--t-lg)/22px var(--font);
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .xbtn { position: absolute; top: 10px; height: 44px; padding: 0 16px; border-radius: 22px; display: grid; place-items: center;
-    font: 500 17px/22px var(--font); background: #fff; color: var(--accent-ink);
-    box-shadow: 0 0 0 .5px rgba(0,0,0,.05), 0 4px 18px rgba(0,0,0,.09); }
-  .xbtn.l { left: 16px; }
-  .xbtn.r { right: 16px; background: var(--accent-ink); color: #fff; font-weight: 600; }
-  .xbtn.r.off { background: color-mix(in srgb, var(--accent-ink) 35%, #fff); }
-  .xbody { position: absolute; left: 0; right: 0; top: 64px; bottom: 0; overflow: hidden; padding: 14px 16px 4px; }
-  .is-interactive .xbody { overflow-y: auto; scrollbar-width: none; }
-
-  /* SharePreviewCard：surface 底、圓角 12、內距 11、縮圖 74、間距 12 */
-  .pv { display: flex; gap: 12px; padding: 11px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
-  .pv-th { flex: none; width: 74px; height: 74px; border-radius: 8px; border: 1px solid var(--border); background: var(--sunken); overflow: hidden;
-    display: grid; place-items: center; color: var(--muted); }
-  .pv-th img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .pv-th svg { width: 22px; height: 22px; stroke-width: 1.8; }
-  .pv-tx { flex: 1; min-width: 0; }
-  .pv-t { font: 600 var(--t-sm)/16px var(--font); }
-  .pv-d { margin-top: 3px; font: 400 var(--t-xs)/15px var(--font); color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical; overflow: hidden; }
-  .pv-h { margin-top: 5px; font: 400 var(--t-xs)/15px var(--font); color: var(--muted-on-sunken); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .sk { height: 11px; border-radius: 4px; background: var(--sunken); }
-  .sk + .sk { margin-top: 7px; height: 9px; } .sk:nth-child(3) { margin-top: 5px; }
-  /* ShareNoticeView：卡片底、圓角 8、上下 8、左右 11、圖示 14 */
-  .nt { margin-top: 9px; display: flex; gap: 8px; padding: 8px 11px; background: var(--card); border: 1px solid var(--border); border-radius: 8px;
-    font: 400 var(--t-xs)/15px var(--font); color: var(--muted); }
-  .nt svg { flex: none; width: 14px; height: 14px; margin-top: 1px; stroke-width: 1.8; }
-
-  /* ShareSectionTitle（12 等寬、大寫、字距）＋ ShareGroupView（卡片、圓角 12、描邊） */
-  .st { margin: 18px 0 7px; font: 400 var(--t-xs)/15px var(--font); color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
-  .pv + .st { margin-top: 9px; }
-  .grp { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-  .row { position: relative; min-height: 46px; display: flex; align-items: center; gap: 11px; padding: 9px 13px; font: 400 var(--t-base)/19px var(--font); }
-  .row + .row::before { content: ""; position: absolute; left: 13px; right: 0; top: 0; border-top: 1px solid var(--border-soft); }
-  .grp.sp .row + .row::before { top: -1px; }
-  .row .lab { flex: none; }
-  .row .val { flex: 1; min-width: 0; text-align: right; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .row .chev { flex: none; width: 13px; height: 13px; color: var(--muted); stroke-width: 2.2; }
-  .row .nm { flex: 1; }
-  .row.sel .nm { font-weight: 600; }
-  .row .tick { flex: none; width: 17px; height: 17px; color: var(--accent-ink); stroke-width: 2.4; visibility: hidden; }
-  .row.sel .tick { visibility: visible; }
-  .field { min-height: 46px; padding: 9px 13px; display: flex; align-items: center; font: 400 var(--t-base)/19px var(--font); }
-  .field input { width: 100%; border: 0; outline: 0; background: none; font: inherit; color: var(--ink); padding: 0; }
-  .field span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .tagv { flex: 1; min-width: 0; display: flex; justify-content: flex-end; }
-  .chipx { padding: 4px 10px; border-radius: 99px; background: var(--accent-ink); color: #fff; font: 400 var(--t-xs)/15px var(--font); }
-  /* 購物那一段：FilterChipRail（高 44、左右 14、圓角 12、間距 8）＋ PriceFieldView */
-  .rail { display: flex; gap: 8px; overflow: hidden; padding: 0 13px; }
-  .is-interactive .rail { overflow-x: auto; scrollbar-width: none; }
-  .fc { flex: none; height: 44px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--sunken);
-    display: grid; place-items: center; font: 400 var(--t-sm)/16px var(--font); color: var(--ink); }
-  .fc.on { background: var(--ink); border-color: var(--ink); color: var(--card); font-weight: 700; }
-  .price { margin: 0 13px 0; display: flex; border-radius: 8px; overflow: hidden; background: var(--surface); border: 1px solid var(--border); }
-  .cur { flex: none; width: 88px; display: grid; place-items: center; background: var(--sunken); border-right: 1px solid var(--border);
-    font: 700 var(--t-xs)/15px var(--font); letter-spacing: .7px; color: var(--muted); }
-  .amt { flex: 1; min-height: 44px; padding: 10px 12px; font: 600 18px/24px var(--font); color: var(--muted); }
-  .shopgrp { padding-bottom: 9px; display: flex; flex-direction: column; gap: 9px; }
-
-  /* ④ ShareResultView：上 26、徽章 50（success 13%）、勾 25、標題 16 bold、內文 13 */
-  .res { position: absolute; left: 18px; right: 18px; top: 26px; text-align: center; }
-  .badge50 { width: 50px; height: 50px; border-radius: 50%; margin: 0 auto; display: grid; place-items: center;
-    background: color-mix(in srgb, var(--success) 13%, transparent); color: var(--success-ink); }
-  .badge50 svg { width: 25px; height: 25px; stroke-width: 2.2; }
-  .res h2 { margin-top: 13px; font: 700 var(--t-lg)/21px var(--font); }
-  .res p { margin-top: 8px; font: 400 var(--t-sm)/18px var(--font); color: var(--muted); white-space: pre-line; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { fmt, lang, params, interactive, chrome, ready, loadTrip } from './chrome.js';
+import { fmt, lang, chrome, ready, loadTrip, loadCategories } from './chrome.js';
+import { mountShare } from './share-ext.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
+await loadCategories();
 const place = trip.days.find(x => x.day === 2).events.find(e => e.key === 'd2-itsukushima').title;
 
 // 虛構的社群 App 網域（示意字，不是任何一家的服務）
 const HOST = 'photos.example';
+const URL_ = `https://${HOST}/p/C9mTz2kQx4/`;
 const HANDLE = 'mika.trip';
 
-const S = {
+const s = {
   'zh-Hant-TW': {
     postNav: '貼文', likes: '1,284 個讚', when: '2 天前',
     ogTitle: '退潮時走到大鳥居腳下', ogDesc: '比想像中還要大。下午三點前後的光最好拍，記得先查潮汐表。',
     tags: ['#宮島', '#嚴島神社'],
-    // iOS 系統分享選單
-    people: ['阿哲', '小雯', '媽媽', '旅行群組'], airdrop: 'AirDrop', messages: '訊息', mail: '郵件', notes: '備忘錄',
-    copy: '拷貝', readingList: '加入閱讀列表', quickNote: '加入快速備忘錄', editActions: '編輯動作⋯',
-    // App：TripEZGoShare.json
-    titleNote: '存到筆記', titleShopping: '存到購物清單', cancel: '取消', save: '儲存',
-    resolving: '正在解析網址資訊', secTrip: '存進哪一趟', fieldTrip: '旅程', secDest: '存成',
-    newNote: '建立新筆記', shopDest: '新增購物項目', secNote: '筆記', secShop: '商品', secFiling: '歸檔', fieldTag: '標籤',
-    noteName: '筆記名稱', itemName: '商品名稱',
-    doneNote: '已存到筆記', doneShopping: '已加進購物清單',
-    quoted: s => `「${s}」`, filing: (a, b) => `${a} · 標籤 ${b}`,
-    cats: ['藥妝', '衣服', '紀念品', '食品', '精品', '3C 電器', '雜貨', '其他'], currency: 'JPY',
   },
   en: {
     postNav: 'Post', likes: '1,284 likes', when: '2 days ago',
     ogTitle: 'Walking out to the great torii at low tide', ogDesc: 'Much bigger up close. The light is best around 3 pm — check the tide table first.',
     tags: ['#Miyajima', '#Itsukushima'],
-    people: ['Alex', 'Mia', 'Mom', 'Trip crew'], airdrop: 'AirDrop', messages: 'Messages', mail: 'Mail', notes: 'Notes',
-    copy: 'Copy', readingList: 'Add to Reading List', quickNote: 'Add to Quick Note', editActions: 'Edit Actions…',
-    titleNote: 'Save to Notes', titleShopping: 'Save to Shopping', cancel: 'Cancel', save: 'Save',
-    resolving: 'Reading the link…', secTrip: 'Save to trip', fieldTrip: 'Trip', secDest: 'Save as',
-    newNote: 'New Note', shopDest: 'New shopping item', secNote: 'Note', secShop: 'Item', secFiling: 'Filing', fieldTag: 'Tag',
-    noteName: 'Note name', itemName: 'Item name',
-    doneNote: 'Saved to Notes', doneShopping: 'Added to your shopping list',
-    quoted: s => `“${s}”`, filing: (a, b) => `${a} · Tag ${b}`,
-    cats: ['Drugstore', 'Clothing', 'Souvenirs', 'Food', 'Luxury', 'Electronics', 'Daily Goods', 'Other'], currency: 'JPY',
   },
   ja: {
     postNav: '投稿', likes: '「いいね！」1,284件', when: '2日前',
     ogTitle: '干潮で大鳥居の足元まで', ogDesc: '近くで見ると想像以上に大きい。15時ごろの光がいちばん。潮見表を先にチェック。',
     tags: ['#宮島', '#厳島神社'],
-    people: ['拓海', '美咲', '母', '旅行グループ'], airdrop: 'AirDrop', messages: 'メッセージ', mail: 'メール', notes: 'メモ',
-    copy: 'コピー', readingList: 'リーディングリストに追加', quickNote: 'クイックメモに追加', editActions: 'アクションを編集…',
-    titleNote: 'メモに保存', titleShopping: '買い物リストに保存', cancel: 'キャンセル', save: '保存',
-    resolving: 'URL の情報を読み込み中', secTrip: '保存先の旅程', fieldTrip: '旅程', secDest: '保存先',
-    newNote: '新規メモ', shopDest: '買い物リストに追加', secNote: 'メモ', secShop: '商品', secFiling: '整理', fieldTag: 'タグ',
-    noteName: 'メモの名前', itemName: '商品名',
-    doneNote: 'メモに保存しました', doneShopping: '買い物リストに追加しました',
-    quoted: s => `「${s}」`, filing: (a, b) => `${a} · タグ ${b}`,
-    cats: ['ドラッグストア', '衣類', 'お土産', '食品', 'ブランド品', '家電・電子機器', '雑貨', 'その他'], currency: 'JPY',
   },
 }[lang] || null;
-const s = S;
 
-// DesignIcon.swift 的幾枚（check／chevronRight／photo／clock）
-const DI = {
-  check: '<path d="M5 13l5 5 9-11"/>',
-  chevronRight: '<path d="M9 5l7 7-7 7"/>',
-  photo: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M4 17l5.5-5.5 4 4 2.5-2.5 4 4"/>',
-  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3 1.8"/>',
-};
-const di = (n, cls = '') => `<svg class="i ${cls}" viewBox="0 0 24 24">${DI[n]}</svg>`;
-// 社群 App 與系統選單的線條圖示（第三方／系統介面，不是 App 的 DesignIcon）
+// 社群 App 的線條圖示（第三方介面，不是 App 的 DesignIcon）
 const G = {
   back: '<path d="M15 4.5 7.5 12l7.5 7.5"/>',
   more: '<circle cx="5" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="19" cy="12" r="1.3" fill="currentColor"/>',
@@ -259,18 +96,11 @@ const G = {
   search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20.5 20.5"/>',
   add: '<rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M12 8v8M8 12h8"/>',
   reels: '<rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M3.5 8.5h17M8.5 3.5l3 5M14 3.5l3 5M10.5 12v5l4.2-2.5z"/>',
-  x: '<path d="M6 6l12 12M18 6 6 18"/>',
-  copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/>',
-  glasses: '<circle cx="6.5" cy="14.5" r="3.5"/><circle cx="17.5" cy="14.5" r="3.5"/><path d="M10 14.5c1.3-1 2.7-1 4 0M3 14l1.5-6h2M21 14l-1.5-6h-2"/>',
-  qnote: '<path d="M5 4h14v11l-5 5H5z"/><path d="M14 20v-5h5M8.5 9h7M8.5 12.5h4"/>',
 };
 const g = (n, cls = '') => `<svg class="i ${cls}" viewBox="0 0 24 24">${G[n]}</svg>`;
-const esc = v => String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 
-const tripName = trip.title;
 const caption = `<b>${HANDLE}</b> ${fmt(s.ogTitle)}${lang === 'en' ? '. ' : '。'}${fmt(s.ogDesc)} ${s.tags.map(t => `<span class="tag">${t}</span>`).join(' ')}`;
 
-// ── 畫面 ──
 d.insertAdjacentHTML('beforeend', `
   <div class="layer post" id="post">
     <div class="pnav">${g('back', 'bk')}${s.postNav}</div>
@@ -282,147 +112,21 @@ d.insertAdjacentHTML('beforeend', `
     <div class="cap">${caption}</div>
     <div class="when">${s.when}</div>
     <div class="ptab">${g('home')}${g('search')}${g('add')}${g('reels')}<span class="me"></span></div>
-  </div>
-  <div class="dim" id="dim"></div>
-  <div class="ss" id="ss"></div>
-  <div class="ext" id="ext"></div>`);
+  </div>`);
 
-const $ = id => document.getElementById(id);
-
-function shareSheet() {
-  const badge = '<svg class="badge" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#34c759"/><path d="M12 6.5c-3.6 0-6.5 2.3-6.5 5.1 0 1.6.9 3 2.4 3.9l-.6 2.2 2.6-1.4c.7.2 1.4.3 2.1.3 3.6 0 6.5-2.3 6.5-5S15.6 6.5 12 6.5z" fill="#fff"/></svg>';
-  const tones = ['#7ba6c9,#4f7fa8', '#d9a07a,#b8764f', '#a7b98a,#7d9161', '#b49ad0,#8a6fae'];
-  const people = s.people.map((n, i) => `<div class="ss-cell"><div class="av" style="background:linear-gradient(${tones[i]})">${[...n][0].toUpperCase()}${badge}</div><span>${n}</span></div>`).join('');
-  const app = (bg, inner, name, attrs = '') => `<div class="ss-cell"${attrs}><div class="app" style="background:${bg}">${inner}</div><span>${name}</span></div>`;
-  const apps = [
-    app('linear-gradient(#f4f4f6,#e4e4e8)', '<svg viewBox="0 0 24 24" class="i" style="stroke:#0a84ff;stroke-width:1.6"><circle cx="12" cy="12" r="2"/><path d="M8.2 15.8a5.4 5.4 0 1 1 7.6 0M5.4 18.6a9.4 9.4 0 1 1 13.2 0"/></svg>', s.airdrop),
-    app('linear-gradient(#65e073,#2fbf48)', '<svg viewBox="0 0 24 24"><path d="M12 4C6.8 4 3 7.2 3 11.1c0 2.3 1.3 4.3 3.4 5.6l-.9 3.3 3.8-2c.9.2 1.8.3 2.7.3 5.2 0 9-3.2 9-7.2S17.2 4 12 4z" fill="#fff"/></svg>', s.messages),
-    app('#fff', '<img src="img/app-icon-180.png" alt="">', 'TripEZGo', ' data-act="tripezgo" data-tap'),
-    app('linear-gradient(#4fb1ff,#1a73f0)', '<svg viewBox="0 0 24 24" class="i" style="stroke:#fff;stroke-width:1.7"><rect x="3.5" y="6" width="17" height="12" rx="2"/><path d="M4 7l8 6 8-6"/></svg>', s.mail),
-    app('linear-gradient(#fff 0 30%,#fbfbfb 30%)', '<svg viewBox="0 0 24 24" class="i" style="stroke:#c9c9cc;stroke-width:1.2"><path d="M3 11h18M3 15h18M3 19h18"/><rect x="0" y="0" width="24" height="7" fill="#f7c843" stroke="none"/></svg>', s.notes),
-  ].join('');
-  const li = (label, icon, cls = '') => `<div class="ss-li ${cls}">${label}${icon ? g(icon) : ''}</div>`;
-  return `
-    <div class="ss-head"><img class="ss-thumb" src="img/note-photo.svg" alt="">
-      <div class="ss-tt"><b>${fmt(s.ogTitle)}</b><span>${HOST}</span></div></div>
-    <div class="ss-x" data-act="close-ss" data-tap>${g('x')}</div>
-    <div class="ss-row people">${people}</div>
-    <div class="ss-sep"></div>
-    <div class="ss-row apps">${apps}</div>
-    <div class="ss-list" style="top:318px">${li(s.copy, 'copy')}${li(s.readingList, 'glasses')}${li(s.quickNote, 'qnote')}</div>
-    <div class="ss-list" style="top:484px">${li(s.editActions, '', 'blue')}</div>`;
-}
-
-// ── 分享延伸 ──
-const st = { dest: 'note', resolving: false, saved: false, name: s.ogTitle, shopName: s.ogTitle, cats: new Set() };
-
-function extForm() {
-  const isNote = st.dest === 'note';
-  const preview = st.resolving
-    ? `<div class="pv"><div class="pv-th">${di('photo')}</div><div class="pv-tx" style="padding-top:2px"><div class="sk" style="width:78%"></div><div class="sk" style="width:96%"></div><div class="sk" style="width:54%"></div></div></div>
-       <div class="nt">${di('clock')}<span>${s.resolving}</span></div>`
-    : `<div class="pv"><div class="pv-th"><img src="img/note-photo.svg" alt=""></div><div class="pv-tx">
-         <div class="pv-t">${fmt(s.ogTitle)}</div><div class="pv-d">${fmt(s.ogDesc)} ${s.tags.join(' ')}</div><div class="pv-h">${HOST}</div></div></div>`;
-  const opt = (k, label) => `<div class="row${st.dest === k ? ' sel' : ''}" data-dest="${k}" data-tap><span class="nm">${label}</span>${di('check', 'tick')}</div>`;
-  const noteSec = `
-    <div class="st">${s.secNote}</div>
-    <div class="grp"><div class="field"><input type="text" data-name value="${esc(st.name)}" placeholder="${esc(s.noteName)}" ${interactive ? '' : 'readonly'}></div></div>
-    <div class="st">${s.secFiling}</div>
-    <div class="grp"><div class="row"><span class="lab">${s.fieldTag}</span><span class="tagv"><span class="chipx">share</span></span>${di('chevronRight', 'chev')}</div></div>`;
-  const shopSec = `
-    <div class="st">${s.secShop}</div>
-    <div class="grp shopgrp">
-      <div class="field" style="border-bottom:1px solid var(--border-soft)"><input type="text" data-shop value="${esc(st.shopName)}" placeholder="${esc(s.itemName)}"></div>
-      <div class="rail">${s.cats.map((c, i) => `<div class="fc${st.cats.has(i) ? ' on' : ''}" data-cat="${i}" data-tap>${c}</div>`).join('')}</div>
-      <div class="price"><div class="cur">${s.currency}</div><div class="amt">0</div></div>
-    </div>`;
-  return `
-    <div class="xnav"><div class="xbtn l" data-act="cancel" data-tap>${s.cancel}</div>
-      <div class="ttl">${isNote ? s.titleNote : s.titleShopping}</div>
-      <div class="xbtn r${st.resolving ? ' off' : ''}" data-act="save" data-tap>${s.save}</div></div>
-    <div class="xbody">
-      ${preview}
-      <div class="st">${s.secTrip}</div>
-      <div class="grp"><div class="row"><span class="lab">${s.fieldTrip}</span><span class="val">${fmt(tripName)}</span>${di('chevronRight', 'chev')}</div></div>
-      <div class="st">${s.secDest}</div>
-      <div class="grp">${opt('note', s.newNote)}${opt('shopping', s.shopDest)}</div>
-      ${isNote ? noteSec : shopSec}
-    </div>`;
-}
-
-function extDone() {
-  const what = st.dest === 'note' ? (st.name.trim() || s.ogTitle) : (st.shopName.trim() || s.ogTitle);
-  const body = st.dest === 'note' ? `${s.quoted(what)}\n${s.filing(tripName, 'share')}` : `${s.quoted(what)}\n${tripName}`;
-  return `<div class="res"><div class="badge50">${di('check')}</div>
-    <h2>${st.dest === 'note' ? s.doneNote : s.doneShopping}</h2><p>${fmt(body)}</p></div>`;
-}
-
-// ── 狀態 ──
-function show(step) {
-  const post = $('post'), dim = $('dim'), ss = $('ss'), ext = $('ext');
-  if (step === 'post') {
-    post.classList.remove('back'); dim.classList.remove('on'); ss.classList.remove('on', 'back'); ext.classList.remove('on');
-    return;
-  }
-  if (!ss.innerHTML) ss.innerHTML = shareSheet();
-  if (step === 'sheet') {
-    post.classList.remove('back'); dim.classList.add('on'); ss.classList.add('on'); ss.classList.remove('back'); ext.classList.remove('on');
-    return;
-  }
-  // ext / done：延伸那一張蓋上來，底下的貼文與分享選單往後退
-  post.classList.add('back'); dim.classList.add('on'); ss.classList.add('on', 'back');
-  ext.innerHTML = step === 'done' ? extDone() : extForm();
-  ext.classList.add('on');
-}
-
-const step = interactive ? 'post' : (params.get('step') || 'post');
-if (!interactive && step !== 'post') {
-  // 截圖模式：沒有轉場
-  for (const el of [$('post'), $('dim'), $('ss'), $('ext')]) el.style.transition = 'none';
-}
-show(step);
+const flow = mountShare(d, document.getElementById('post'), {
+  host: HOST, url: URL_,
+  sheetTitle: s.ogTitle, sheetThumb: '<img class="ss-thumb" src="img/note-photo.svg" alt="">',
+  ogTitle: s.ogTitle, ogDesc: `${s.ogDesc} ${s.tags.join(' ')}`,
+  image: { src: 'img/note-photo.svg', caption: 'og-image.jpg · 186 KB' },
+  place: null, model: null, tripName: trip.title,
+});
 
 chrome(d);
 const sb = d.querySelector('.sb');
 const setDark = on => sb.classList.toggle('on-dark', on);
-setDark(step === 'ext' || step === 'done');
-
-if (interactive) {
-  let timer = null;
-  const close = () => { clearTimeout(timer); setDark(false); show('post'); setTimeout(() => { $('ss').innerHTML = ''; }, 420); };
-  d.addEventListener('click', (e) => {
-    const a = e.target.closest('[data-act]');
-    const dest = e.target.closest('[data-dest]');
-    const cat = e.target.closest('[data-cat]');
-    if (dest) {
-      // ShareFormViewController.pick：選了就照他的（forcedDestination）
-      if (dest.dataset.dest !== st.dest) { st.dest = dest.dataset.dest; show('ext'); }
-      return;
-    }
-    if (cat) { const i = +cat.dataset.cat; st.cats.has(i) ? st.cats.delete(i) : st.cats.add(i); cat.classList.toggle('on'); return; }
-    if (!a) { if (e.target === $('dim') && !$('ext').classList.contains('on')) close(); return; }
-    const act = a.dataset.act;
-    if (act === 'share') show('sheet');
-    else if (act === 'close-ss') close();
-    else if (act === 'tripezgo') {
-      // 每一次打開都是一張新的單（ShareViewController 每次新建）
-      Object.assign(st, { dest: 'note', resolving: true, name: s.ogTitle, shopName: s.ogTitle, cats: new Set() });
-      setDark(true); show('ext');
-      timer = setTimeout(() => { st.resolving = false; show('ext'); }, 900);
-    } else if (act === 'cancel') close();
-    else if (act === 'save') {
-      if (st.resolving) return; // 補完之前儲存鍵是停用的
-      show('done');
-      // ShareResultViewController.successLinger：兩秒自己關上，completeRequest 連分享選單一起收
-      timer = setTimeout(() => { close(); }, 2000);
-    }
-  });
-  d.addEventListener('input', (e) => {
-    if (e.target.matches('[data-name]')) st.name = e.target.value;
-    if (e.target.matches('[data-shop]')) st.shopName = e.target.value;
-  });
-  d.addEventListener('keydown', (e) => { if (e.key === 'Enter' && e.target.matches('input')) { e.preventDefault(); e.target.blur(); } });
-}
+setDark(flow.step === 'ext' || flow.step === 'done');
+flow.wire(setDark);
 
 ready();
 </script>

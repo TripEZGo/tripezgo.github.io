@@ -63,12 +63,22 @@ export const STORIES = {
     { tap: '.tz-alert .destr' },
     { tap: '.tz-dim.on' },
   ],
-  // IG 分享：分享 → 分享選單 → TripEZGo → 等補完 → 儲存 → 成功（兩秒自己收回貼文）
+  // IG 分享：分享 → 分享選單 → TripEZGo → 等讀完網址（儲存才亮）→ 切到「筆記」分段 → 儲存 → 成功（兩秒自己收回貼文）
   'share-ig': [
     { tap: '[data-act="share"]' },
     { tap: '[data-act="tripezgo"]' },
     { wait: 900 },
-    { tap: '.xbtn.r:not(.off)[data-act="save"]' },
+    { tap: '.seg.kinds [data-kind="note"]' },
+    { tap: '.xsave:not(.off)[data-act="save"]' },
+    { wait: 2600 },
+  ],
+  // 地圖 App 分享：地點頁「分享」→ 分享選單 → TripEZGo → 等讀完（地點卡帶進來、類型從「景點」預選成「水族館」）→ 儲存成行程 →
+  // 成功（兩秒自己收回地點頁，回到起始）
+  'share-gmap': [
+    { tap: '[data-act="share"]' },
+    { tap: '[data-act="tripezgo"]' },
+    { wait: 1100 },
+    { tap: '.xsave:not(.off)[data-act="save"]' },
     { wait: 2600 },
   ],
   // Apple 行事曆：靜態畫面，當天往下捲一點再捲回來

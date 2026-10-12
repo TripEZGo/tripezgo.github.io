@@ -28,8 +28,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/css/home.css?v=f06a64598b">
-<script type="module" src="/assets/js/home.js?v=8fd6158087"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=676e744f09">
+<script type="module" src="/assets/js/home.js?v=f453294ef8"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -285,31 +285,41 @@
   <section class="section" id="tools">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Tools</p>
+        <p class="eyebrow">Library & tools</p>
         <h2>What you need on the road, <span class="nb">all in one place</span></h2>
         <p class="lede">Plenty of travel tools built in — one app for all of it.</p>
       </div>
-      <div class="tools">
-        <article class="tool">
-          <figure class="ph shot"><img src="/assets/img/shots/v2/en/note.webp" width="720" height="1565" alt="Notes: text and photos, @ links to events, and Japanese phrases that can be read aloud" loading="lazy"></figure>
-          <h3>Notes</h3>
-          <p>Text and photos — and it reads phrases aloud when you don't speak the language</p>
-        </article>
-        <article class="tool">
-          <figure class="ph shot"><img src="/assets/img/shots/v2/en/scan.webp" width="720" height="1565" alt="QR code scanner: opens straight to the camera, scans on sight, and keeps a history your companions can see" loading="lazy"></figure>
-          <h3>QR code scanner</h3>
-          <p>Open, scan, and it's saved — your companions see it too</p>
-        </article>
-        <article class="tool">
-          <figure class="ph shot"><img src="/assets/img/shots/v2/en/fx-nokbd.webp" width="720" height="1565" alt="Currency: converting between two currencies, with recent conversions below" loading="lazy"></figure>
-          <h3>Currency</h3>
-          <p>Uses today's rate, and works offline</p>
-        </article>
-        <article class="tool">
-          <figure class="ph shot"><img src="/assets/img/shots/v2/en/shop.webp" width="720" height="1565" alt="Shopping list: counts of to-buy, bought and skipped items, with items in a photo grid by category" loading="lazy"></figure>
-          <h3>Shopping list</h3>
-          <p>See what's left to buy, and compare prices to get the cheapest</p>
-        </article>
+            <div class="tool-groups">
+        <div class="tool-group">
+          <h3 class="tg-h">Library</h3>
+          <div class="tools">
+            <article class="tool">
+              <figure class="ph shot"><img src="/assets/img/shots/v2/en/note.webp" width="720" height="1565" alt="Notes: text and photos, @ links to events, and Japanese phrases that can be read aloud" loading="lazy"></figure>
+              <h4>Notes</h4>
+              <p>Text and photos — and it reads phrases aloud when you don't speak the language</p>
+            </article>
+            <article class="tool">
+              <figure class="ph shot"><img src="/assets/img/shots/v2/en/shop.webp" width="720" height="1565" alt="Shopping list: counts of to-buy, bought and skipped items, with items in a photo grid by category" loading="lazy"></figure>
+              <h4>Shopping list</h4>
+              <p>See what's left to buy, and compare prices to get the cheapest</p>
+            </article>
+          </div>
+        </div>
+        <div class="tool-group">
+          <h3 class="tg-h">Tools</h3>
+          <div class="tools">
+            <article class="tool">
+              <figure class="ph shot"><img src="/assets/img/shots/v2/en/scan.webp" width="720" height="1565" alt="QR code scanner: opens straight to the camera, scans on sight, and keeps a history your companions can see" loading="lazy"></figure>
+              <h4>QR code scanner</h4>
+              <p>Open, scan, and it's saved — your companions see it too</p>
+            </article>
+            <article class="tool">
+              <figure class="ph shot"><img src="/assets/img/shots/v2/en/fx-nokbd.webp" width="720" height="1565" alt="Currency: converting between two currencies, with recent conversions below" loading="lazy"></figure>
+              <h4>Currency</h4>
+              <p>Uses today's rate, and works offline</p>
+            </article>
+          </div>
+        </div>
       </div>
       <details class="more"><summary>Read more</summary><div class="more-body">
 <ul>
@@ -328,9 +338,12 @@
         <p class="eyebrow">Integrations</p>
         <h2>Works with the other apps <span class="nb">on your iPhone</span></h2>
       </div>
-      <div class="tools is-three">
-        <article class="tool">
-          <figure class="ph shot"><img src="/assets/img/shots/v2/en/share-ig.webp" width="720" height="1565" alt="Sharing in: tap Share on a post in a social app, pick TripEZGo, and it's saved as a note" loading="lazy"></figure>
+      <div class="tools is-three has-wide">
+        <article class="tool is-wide">
+                    <div class="share-pair">
+            <figure class="ph shot"><img src="/assets/img/shots/v2/en/share-ig.webp" width="720" height="1565" alt="Sharing in: tap Share on a post in a social app, pick TripEZGo, and it's saved as a note" loading="lazy"></figure>
+            <figure class="ph shot"><img src="/assets/img/shots/v2/en/share-gmap.webp" width="720" height="1565" alt="Share in: tap Share on a place in your maps app, pick TripEZGo, and the place, its coordinates and its type land in a new event" loading="lazy"></figure>
+          </div>
           <h3>Share in from other apps</h3>
           <p>Found a place in Google Maps, Instagram or Threads? Share it and it's saved</p>
         </article>
@@ -389,7 +402,7 @@
           <tr><th scope="row">Files, to-dos, legs and backup departures</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">Co-editing and location sharing</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">Widgets, Siri</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
-          <tr><th scope="row">Tools (notes, currency, shopping list)</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">Library & tools (notes, shopping list, scanner, currency)</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">iCloud sync and backup</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">Import and export</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">AI agent integration</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>

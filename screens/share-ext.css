@@ -1,0 +1,206 @@
+/* 從別的 App 分享進來：share-ig.html、share-gmap.html 共用的兩層——
+   ② iOS 系統分享選單、③ TripEZGo 分享延伸（1.3.0 分享紙 v2）＋ ④ 存好了。
+   ① 底下那個別人的 App 各頁自己畫。出處寫在 share-ext.js 檔頭。 */
+
+:root { --sys-blue: #0a84ff; --sys-sec: #8a8a8e; --sys-sep: rgba(60,60,67,.18);
+  --success-ink: var(--green200);
+  --mono: ui-monospace, "SF Mono", Menlo, monospace; }
+.device { background: #000; }
+.layer { position: absolute; inset: 0; overflow: hidden; }
+svg.i { display: block; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+.host-app { transform-origin: 50% 0; transition: transform .35s ease, border-radius .35s ease, filter .35s ease; }
+.host-app.back { transform: scale(.92); border-radius: 38px; filter: brightness(.6); }
+
+/* ── ② 系統分享選單（iOS 26，浮在下緣的玻璃紙；照記憶中的版面畫，沒有 ref/ 可量） ── */
+.dim { position: absolute; inset: 0; background: rgba(0,0,0,.22); opacity: 0; transition: opacity .3s; pointer-events: none; }
+.dim.on { opacity: 1; pointer-events: auto; }
+.ss { position: absolute; left: 8px; right: 8px; bottom: 8px; height: 556px; border-radius: 38px; background: rgba(247,247,250,.97);
+  box-shadow: 0 10px 40px rgba(0,0,0,.18); transform: translateY(110%); transition: transform .38s cubic-bezier(.2,.9,.25,1); overflow: hidden; }
+.ss.on { transform: none; }
+.ss.back { transform: scale(.94); filter: brightness(.6); }
+.ss-head { position: absolute; left: 18px; right: 18px; top: 18px; height: 52px; display: flex; align-items: center; gap: 12px; }
+.ss-thumb { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; flex: none; overflow: hidden; }
+.ss-tt { flex: 1; min-width: 0; padding-right: 44px; }
+.ss-tt b { display: block; font: 600 15px/19px var(--font); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ss-tt span { display: block; font: 400 13px/17px var(--font); color: var(--sys-sec); }
+.ss-x { position: absolute; right: 14px; top: 14px; width: 36px; height: 36px; border-radius: 50%; background: rgba(120,120,128,.14);
+  display: grid; place-items: center; color: #3c3c43; }
+.ss-x svg { width: 15px; height: 15px; stroke-width: 2.4; }
+.ss-row { position: absolute; left: 0; right: 0; display: flex; gap: 0; padding: 0 6px; overflow: hidden; }
+.ss-cell { flex: none; width: 82px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.ss-cell span { font: 400 11px/13px var(--font); color: #1c1c1e; text-align: center; width: 76px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.people { top: 90px; }
+.av { position: relative; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center;
+  color: #fff; font: 600 22px/1 var(--font); background: linear-gradient(#a8adb7, #858a94); }
+.av .badge { position: absolute; right: -3px; bottom: -3px; width: 24px; height: 24px; border-radius: 7px; border: 2px solid #f7f7fa; }
+.ss-sep { position: absolute; left: 18px; right: 18px; top: 189px; border-top: .5px solid var(--sys-sep); }
+.apps { top: 204px; }
+.app { width: 62px; height: 62px; border-radius: 14px; display: grid; place-items: center; overflow: hidden; }
+.app svg { width: 34px; height: 34px; }
+.app img { width: 62px; height: 62px; display: block; }
+.ss-list { position: absolute; left: 14px; right: 14px; background: #fff; border-radius: 24px; overflow: hidden; }
+.ss-li { position: relative; height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px;
+  font: 400 17px/22px var(--font); color: #000; }
+.ss-li + .ss-li::before { content: ""; position: absolute; left: 18px; right: 0; top: 0; border-top: .5px solid var(--sys-sep); }
+.ss-li svg { width: 22px; height: 22px; stroke-width: 1.7; color: #000; }
+.ss-li.blue { color: var(--sys-blue); }
+
+/* ── ③ 分享延伸：UINavigationController（tzSheet 外觀）＋ ShareFormViewController ── */
+.ext { position: absolute; left: 0; right: 0; top: 60px; bottom: 0; background: var(--page); border-radius: 38px 38px 0 0;
+  transform: translateY(105%); transition: transform .4s cubic-bezier(.2,.9,.25,1); overflow: hidden; color: var(--ink); }
+.ext.on { transform: none; }
+.xnav { position: absolute; left: 0; right: 0; top: 0; height: 64px; background: var(--page); z-index: 2; }
+.xnav .ttl { position: absolute; left: 110px; right: 110px; top: 21px; text-align: center; font: 600 var(--t-lg)/22px var(--font);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* 左：一般的 UIBarButtonItem（iOS 26 墊一層共用的玻璃底）。 */
+.xbtn { position: absolute; top: 10px; height: 44px; padding: 0 16px; border-radius: 22px; display: grid; place-items: center;
+  font: 500 17px/22px var(--font); background: #fff; color: var(--accent-ink);
+  box-shadow: 0 0 0 .5px rgba(0,0,0,.05), 0 4px 18px rgba(0,0,0,.09); left: 16px; }
+/* 右：SheetNavTextAction——一行強調色的字（16 semibold），不是 `.done` 的藍色膠囊；`hidesSharedBackground` 關掉玻璃底。
+   停用時 muted 50%（1.3.0 走查 20b／21a，aca36629c）。 */
+.xsave { position: absolute; top: 10px; right: 16px; height: 44px; padding: 0 6px; display: grid; place-items: center;
+  font: 600 var(--t-lg)/22px var(--font); color: var(--accent-ink); }
+.xsave.off { color: color-mix(in srgb, var(--muted) 50%, transparent); }
+.xbody { position: absolute; left: 0; right: 0; top: 64px; bottom: 0; overflow: hidden;
+  padding: 10px 16px 22px; display: flex; flex-direction: column; gap: 14px; }
+.is-interactive .xbody { overflow-y: auto; scrollbar-width: none; }
+.xbody::-webkit-scrollbar { display: none; }
+.xbody > * { flex: none; }
+
+/* ShareSourceView（.src）：surface 底、邊、圓角 8、min 30、內距 5/10、間距 7、圖示 13；分段前多空 10（不是 14） */
+.src { display: flex; align-items: center; gap: 7px; min-height: 30px; padding: 5px 10px; margin-bottom: -4px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--muted); }
+.src svg { flex: none; width: 13px; height: 13px; stroke-width: 1.8; }
+.src .h { flex: 1; min-width: 0; font: 400 var(--t-xs)/15px var(--mono); color: var(--muted-on-sunken);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.src .m { flex: 1; min-width: 0; font: 400 var(--t-xs)/15px var(--font); color: var(--muted); }
+
+/* UISegmentedControl（iOS 26 系統元件；字 13、選中 semibold——tzApplyFormTypography）。
+   高度照系統，沒有 ref/ 可量：照總覽那一條的長相畫成 36 高。 */
+.seg { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; height: 36px; padding: 2px;
+  border-radius: 18px; background: #eeeeef; }
+.seg span { display: grid; place-items: center; border-radius: 16px; font: 400 var(--t-sm)/16px var(--font); color: var(--ink);
+  white-space: nowrap; overflow: hidden; }
+.seg span.on { background: #fff; font-weight: 600; box-shadow: 0 0 0 .5px rgba(0,0,0,.04), 0 2px 6px rgba(0,0,0,.08); }
+
+/* ShareFieldBlock：欄名 13 semibold；小標 12 bold accent-ink、邊 accent 45%、圓角 6、左右 4；「必填」12 semibold danger-ink；
+   欄名與內容間 6；底下提示 12 muted */
+.blk { display: flex; flex-direction: column; gap: 6px; }
+.lbl { display: flex; align-items: center; gap: 6px; font: 600 var(--t-sm)/16px var(--font); color: var(--ink); }
+.lbl .auto { font: 700 var(--t-xs)/15px var(--font); color: var(--accent-ink); padding: 0 4px; border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); }
+.lbl .req { font: 600 var(--t-xs)/15px var(--font); color: var(--red200); }
+.hint { font: 400 var(--t-xs)/16px var(--font); color: var(--muted); }
+.err { font: 400 var(--t-xs)/16px var(--font); color: var(--red200); }
+
+/* FormTextField／FormTextView：page 底、邊、圓角 8、min 44（多行 76）、內距 10/12、字 15 */
+.inp { min-height: 44px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--page);
+  font: 400 var(--t-base)/22px var(--font); color: var(--ink); width: 100%; outline: 0; display: block;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.inp.ph, .inp::placeholder { color: var(--muted); }
+.inp.bad { border-color: var(--danger); }
+input.inp { height: 44px; }
+.area { min-height: 76px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--page);
+  font: 400 var(--t-base)/21px var(--font); color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; outline: 0; }
+.area.ph { color: var(--muted); }
+/* ShareTextArea.styleLinks：網址那幾段等寬 13、muted-on-sunken */
+.area .u { font: 400 var(--t-sm)/21px var(--mono); color: var(--muted-on-sunken); }
+
+/* TypeTitleRow：[類型晶片][標題]，間距 8。ChipControl：膠囊、min 44、左右 16、圖示 16、間距 6、字 13 bold、
+   底＝類型色 20% 疊 surface（chipFill）、邊＝45% 疊 border（chipStroke）；沒選（標記）是虛線、page 底、13 semibold muted */
+.info { display: flex; align-items: center; gap: 8px; }
+.info .inp { flex: 1; min-width: 0; }
+.chip { flex: none; display: inline-flex; align-items: center; gap: 6px; height: 44px; padding: 0 16px; border-radius: 22px;
+  border: 1px solid var(--sw-chip-stroke); background: var(--sw-chip-fill); font: 700 var(--t-sm)/16px var(--font); color: var(--ink);
+  transition: background-color .25s, border-color .25s; }
+.chip svg { width: 16px; height: 16px; fill: var(--sw-base); }
+.chip.none { background: var(--page); border: 1px dashed var(--border); color: var(--muted); font-weight: 600; }
+
+/* ShareSkeletonField：page 底、邊、圓角 8；長條 10 高、圓角 4、間距 6、左右 12 */
+.skf { display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 10px 12px; min-height: 44px;
+  border: 1px solid var(--border); border-radius: 8px; background: var(--page); }
+.skf.tall { min-height: 76px; }
+.skf i { display: block; height: 10px; border-radius: 4px; background: var(--sunken); }
+.info .skf { flex: 1; }
+
+/* ShareTimeSection：分段＋8＋那一框（page 底、邊、圓角 8）；每列 min 44、欄名 12 muted、值 15、時區 12 accent-ink */
+.tbox { margin-top: 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--page); overflow: hidden; }
+.trow { display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 10px; }
+.trow + .trow { border-top: 1px solid var(--border-soft); }
+.trow .k { flex: none; font: 400 var(--t-xs)/15px var(--font); color: var(--muted); }
+.trow .v { flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px; padding: 10px 2px 10px 12px; font: 400 var(--t-base)/20px var(--font); }
+.trow .v .pop { margin-left: auto; width: 14px; height: 14px; color: var(--muted); stroke-width: 2; }
+.trow .tm { font: 600 var(--t-base)/20px var(--font); font-variant-numeric: tabular-nums; }
+.trow .z { flex: none; font: 400 var(--t-xs)/15px var(--font); color: var(--accent-ink); }
+
+/* ShareDashedNote（.noplace）：13 muted、內距 10/12、虛線 4-3、圓角 8 */
+.dash { position: relative; padding: 10px 12px; font: 400 var(--t-sm)/18px var(--font); color: var(--muted); border-radius: 8px;
+  border: 1px dashed var(--border); }
+.dash.act { display: flex; align-items: center; min-height: 44px; padding-top: 0; padding-bottom: 0; }
+.dash .undo { margin-left: auto; font: 600 var(--t-sm)/18px var(--font); color: var(--accent-ink); }
+
+/* SharePlaceCard：page 底、邊、圓角 12；小地圖 84（MKMapSnapshotter，600 公尺見方）＋中央圖釘 20；
+   內文上 8 下 9、左 12；名稱 13 semibold、座標 12 等寬數字 muted-on-sunken、行距 1；× 24 */
+.pc { position: relative; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--page); }
+.pc-map { position: relative; height: 84px; background: var(--surface) center / cover no-repeat; }
+.pin { position: absolute; left: 50%; top: 50%; width: 20px; height: 20px; margin: -10px 0 0 -10px; background: var(--accent-ink);
+  border-radius: 50% 50% 50% 0; transform: rotate(-45deg); }
+.pin::after { content: ""; position: absolute; left: 6px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--card); }
+.pc-body { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px 9px; }
+.pc-tx { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.pc-tx b { font: 600 var(--t-sm)/17px var(--font); }
+.pc-tx span { font: 400 var(--t-xs)/15px var(--font); font-variant-numeric: tabular-nums; color: var(--muted-on-sunken); }
+.cx { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border);
+  display: grid; place-items: center; color: var(--muted); }
+.cx svg { width: 11px; height: 11px; stroke-width: 2.4; }
+
+/* SharePickPlaceRow：sunken 底、圓角 8、min 44、放大鏡 16、間距 8、字 15；必選沒選時一圈 danger */
+.pick { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border-radius: 8px; background: var(--sunken);
+  font: 400 var(--t-base)/20px var(--font); color: var(--muted); }
+.pick.bad { box-shadow: inset 0 0 0 1px var(--danger); }
+.pick svg { flex: none; width: 16px; height: 16px; stroke-width: 1.8; }
+.pick .kw { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pick .kw b { color: var(--ink); font-weight: 600; }
+.pick .chev { width: 13px; height: 13px; stroke-width: 2.2; }
+
+/* ShareImageSlot：圓角 8、邊、sunken 底；原比例（最高 264；下載中 132）；左下「檔名 · 大小」等寬 12 白字、黑 45%、圓角 5、內距 1/6、離邊 6；
+   右上 × 24 白 92% 無邊 */
+.ogi { position: relative; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--sunken); }
+.ogi img { display: block; width: 100%; max-height: 264px; object-fit: cover; }
+.ogi.loading { height: 132px; }
+.ogi .cap { position: absolute; left: 6px; bottom: 6px; padding: 1px 6px; border-radius: 5px; background: rgba(0,0,0,.45);
+  font: 400 var(--t-xs)/15px var(--mono); color: #fff; }
+.ogi .cx { position: absolute; right: 6px; top: 6px; background: rgba(255,255,255,.92); border: 0; }
+
+/* ShareNoteBody：page 底、邊、圓角 8、內距 9；圖與文字間 8；文字框不畫邊 */
+.nb { border: 1px solid var(--border); border-radius: 8px; background: var(--page); padding: 9px; display: flex; flex-direction: column; gap: 8px; }
+.nb .area { border: 0; padding: 1px 3px; min-height: 0; background: none; }
+
+/* ShareGroupView／ShareTextValueRow／ShareTagRow：card 底、圓角 12、邊；列 min 46、左右 13、上下 9、間距 11 */
+.grp { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.row { position: relative; min-height: 46px; display: flex; align-items: center; gap: 11px; padding: 9px 13px; font: 400 var(--t-base)/19px var(--font); }
+.row + .row::before { content: ""; position: absolute; left: 13px; right: 0; top: 0; border-top: 1px solid var(--border-soft); }
+.row .lab { flex: none; }
+.row .val { flex: 1; min-width: 0; text-align: right; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.row .chev { flex: none; width: 13px; height: 13px; color: var(--muted); stroke-width: 2.2; }
+.tagv { flex: 1; min-width: 0; display: flex; justify-content: flex-end; }
+.chipx { padding: 4px 10px; border-radius: 99px; background: var(--accent-ink); color: #fff; font: 400 var(--t-xs)/15px var(--mono); }
+
+/* 購物：FilterChipRail（高 44、左右 14、圓角 12、間距 8）＋ PriceFieldView（幣別鎖住） */
+.rail { display: flex; gap: 8px; overflow: hidden; margin: 0 -16px; padding: 0 16px; }
+.is-interactive .rail { overflow-x: auto; scrollbar-width: none; }
+.fc { flex: none; height: 44px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--sunken);
+  display: grid; place-items: center; font: 400 var(--t-sm)/16px var(--font); color: var(--ink); }
+.fc.on { background: var(--ink); border-color: var(--ink); color: var(--card); font-weight: 700; }
+.price { display: flex; border-radius: 8px; overflow: hidden; background: var(--page); border: 1px solid var(--border); }
+.price .cur { flex: none; width: 88px; display: grid; place-items: center; background: var(--sunken); border-right: 1px solid var(--border);
+  font: 700 var(--t-xs)/15px var(--font); letter-spacing: .7px; color: var(--muted); }
+.price .amt { flex: 1; min-height: 44px; padding: 10px 12px; font: 600 18px/24px var(--font); color: var(--muted); }
+
+/* ④ ShareResultView：上 26、左右 18、徽章 50（success 13%）、勾 25、標題 16 bold、內文 13 */
+.res { position: absolute; left: 18px; right: 18px; top: 26px; text-align: center; }
+.badge50 { width: 50px; height: 50px; border-radius: 50%; margin: 0 auto; display: grid; place-items: center;
+  background: color-mix(in srgb, var(--success) 13%, transparent); color: var(--success-ink); }
+.badge50 svg { width: 25px; height: 25px; stroke-width: 2.2; }
+.res h2 { margin-top: 13px; font: 700 var(--t-lg)/21px var(--font); }
+.res p { margin-top: 8px; font: 400 var(--t-sm)/18px var(--font); color: var(--muted); white-space: pre-line; }
