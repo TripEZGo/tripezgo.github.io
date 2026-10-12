@@ -125,4 +125,48 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://tripezgo.com/ja/terms.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/terms.html"/>
   </url>
+  <url>
+    <loc>https://tripezgo.com/contact/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tripezgo.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tripezgo.com/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tripezgo.com/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tripezgo.com/contact/"/>
+  </url>
+  <url>
+    <loc>https://tripezgo.com/en/contact/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tripezgo.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tripezgo.com/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tripezgo.com/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tripezgo.com/contact/"/>
+  </url>
+  <url>
+    <loc>https://tripezgo.com/ja/contact/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tripezgo.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tripezgo.com/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tripezgo.com/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tripezgo.com/contact/"/>
+  </url>
+  <url>
+    <loc>https://tripezgo.com/ko/contact/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tripezgo.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tripezgo.com/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tripezgo.com/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tripezgo.com/contact/"/>
+  </url>
 </urlset>

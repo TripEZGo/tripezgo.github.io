@@ -572,7 +572,8 @@ def build(lang):
     body = body.replace('/assets/img/shots/v2/zh/', f'/assets/img/shots/v2/{lang}/')
     body = body.replace('href="/privacy.html"', f'href="/{lang}/privacy.html"').replace('href="/terms.html"', f'href="/{lang}/terms.html"')
     body = body.replace('class="brand" href="/"', f'class="brand" href="/{lang}/"')
-    body = body.replace('href="/#about"', f'href="/{lang}/#about"')   # 頁尾的「關於」：寫成絕對路徑，分享頁照抄頁尾也指得對
+    body = body.replace('href="/#about"', f'href="/{lang}/#about"')
+    body = body.replace('href="/contact/"', f'href="/{lang}/contact/"')   # 頁尾「聯絡我們」→ 各語的聯絡頁   # 頁尾的「關於」：寫成絕對路徑，分享頁照抄頁尾也指得對
     for pid, urls in POSTS.items():
         body = body.replace(f'https://zhgchg.li/posts/{pid}/', urls[1 if lang == 'ja' else 0])
     # 頁首的語言下拉：上面顯示這一頁的語言，選單裡放另外三種——繁中排第一，其餘照母版的順序。
