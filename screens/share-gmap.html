@@ -23,7 +23,8 @@
      - 類型：讀之前亮「景點」，讀完照標題預選——地點名三語丟進行程類型模型都是 aquarium（≥ 0.999，過 0.96 門檻），
        所以晶片換成「水族館」，來源是模型、不寫「依地點」（ADR-0031；量法：Scripts/event-type-model 的模型＋TitleFeatures，Mac 上跑）。
      - 地點卡的小地圖：照 SharePlaceCard.liveSnapshot 用 MKMapSnapshotter 拍（600 公尺見方、370×84、淺色、各語系），
-       存成 img/share-gmap-snap.webp、img/en/…、img/ja/…。
+       存成 img/share-gmap-snap.webp、img/en/…、img/ja/…。ko（只給商城截圖）那一張是 MapKit JS（language: 'ko'）在
+       Chromium @3x 拍的同一塊 600 公尺（水族館那一顆 POI 濾掉，免得跟圖釘疊在一起）——Mac 上的 MKMapSnapshotter 只出得了 1x。
 -->
 <link rel="stylesheet" href="screen.css">
 <link rel="stylesheet" href="share-ext.css">
@@ -59,12 +60,20 @@
   .gm-row + .gm-row { border-top: 1px solid #f0f0f0; }
   .gm-row .open { color: #188038; }
   .gm-thumb { width: 52px; height: 52px; border-radius: 10px; overflow: hidden; flex: none; display: block; }
+
+  /* ── iPad（?device=ipad）：別人的 App 在 iPad 上的樣子沒有出處可抄（虛構的地圖 App），畫成地圖鋪滿、
+        地點資訊是左邊一張浮動面板（同一份內容）；它只是暗層底下的背景。 ── */
+  .ipad .gm-map { width: 1032px; height: 1376px; }
+  .ipad .gm-search { left: 20px; right: auto; width: 400px; top: 40px; }
+  .ipad .gm-sheet { left: 20px; right: auto; width: 400px; top: 104px; bottom: 20px; border-radius: 24px; padding-top: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,.16); }
+  .ipad .gm-sheet::before { display: none; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { fmt, lang, chrome, ready, loadTrip, loadCategories } from './chrome.js';
+import { fmt, lang, chrome, ready, loadTrip, loadCategories, ipad } from './chrome.js';
 import { mountShare } from './share-ext.js';
 
 const d = document.getElementById('d');
@@ -75,7 +84,7 @@ await loadCategories();
 const URL_ = 'https://maps.app.goo.gl/Vq3mX8tKpR2sJ7nE6?g_st=ic';
 const HOST = 'maps.app.goo.gl';
 const COORD = '34.29527, 132.31547';
-const SNAP = { 'zh-Hant-TW': 'img/share-gmap-snap.webp', en: 'img/en/share-gmap-snap.webp', ja: 'img/ja/share-gmap-snap.webp' }[lang];
+const SNAP = { 'zh-Hant-TW': 'img/share-gmap-snap.webp', en: 'img/en/share-gmap-snap.webp', ja: 'img/ja/share-gmap-snap.webp', ko: 'img/ko/share-gmap-snap.webp' }[lang];
 
 const s = {
   'zh-Hant-TW': {
@@ -98,6 +107,15 @@ const s = {
     acts: ['ルート', '保存', '共有'], tabs: ['概要', 'クチコミ', '基本情報'],
     address: '〒739-0534 広島県廿日市市宮島町10-3', web: 'miyajima-aqua.jp',
     map: { shrine: '厳島神社', torii: '大鳥居', park: '紅葉谷公園', pier: '宮島桟橋' },
+  },
+  // ko：地點名照 App 韓文範本（「미야지마 수족관」，MapKit JS ko 回的是「미야지마수족관(미야지마린)」）；
+  // 神社、鳥居、棧橋的叫法也照範本（이쓰쿠시마 신사、큰 도리이、선착장）。其餘是地圖 App 的韓文介面用詞（自寫）
+  ko: {
+    name: '미야지마 수족관', rating: '4.3', reviews: '(6,152)', kind: '수족관', area: '미야지마초',
+    open: '영업 중', closes: '오후 5:00에 영업 종료', hours: '영업 중 · 오전 9:00~오후 5:00',
+    acts: ['경로', '저장', '공유'], tabs: ['개요', '리뷰', '정보'],
+    address: '739-0534 히로시마현 하쓰카이치시 미야지마초 10-3', web: 'miyajima-aqua.jp',
+    map: { shrine: '이쓰쿠시마 신사', torii: '큰 도리이', park: '모미지다니 공원', pier: '미야지마 선착장' },
   },
 }[lang];
 
@@ -181,9 +199,17 @@ const flow = mountShare(d, document.getElementById('gm'), {
 
 chrome(d);
 const sb = d.querySelector('.sb');
-const setDark = on => sb.classList.toggle('on-dark', on);
+// iPad：分享延伸是置中的 form sheet，底下那個 App 不縮到黑底後面——狀態列維持深色字
+const setDark = on => sb.classList.toggle('on-dark', on && !ipad);
 setDark(flow.step === 'ext' || flow.step === 'done');
 flow.wire(setDark);
+if (ipad) {
+  // iPad：系統分享選單是掛在分享鈕下面的 popover（share-ext.css 的 iPad 段）——照這個 App 的分享鈕擺：水平置中對齊鈕、鈕下 12
+  const b = d.querySelector('[data-act="share"]').getBoundingClientRect(), dr = d.getBoundingClientRect();
+  const ss = document.getElementById('ss');
+  ss.style.left = Math.max(20, b.left - dr.left + b.width / 2 - 187) + 'px';
+  ss.style.top = (b.bottom - dr.top + 12) + 'px';
+}
 
 ready();
 </script>

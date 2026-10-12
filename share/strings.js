@@ -1,8 +1,8 @@
-/* 分享活動頁的三語字典（網站有中、英、日三語，2026-10-10 使用者裁定先做這三語）。
+/* 分享活動頁的字典（2026-10-10 使用者裁定先做中、英、日三語；2026-10-12 網站加韓文，跟著加 ko）。
  * 頁面上每一段字都從這裡來：HTML 裡的 data-t（純文字）／data-t-html（含 <strong>、連結，只放這裡寫死的字）。
  * {n}、{d} 由 app.js 代入。不提評分或評論（App Review Guidelines 3.2.2／5.6.3）。 */
 
-export const LANGS = { 'zh-Hant': 'zh', en: 'en', ja: 'ja' };
+export const LANGS = { 'zh-Hant': 'zh', en: 'en', ja: 'ja', ko: 'ko' };
 
 /** <html lang> → 字典的鍵；認不得就用中文。 */
 export function langKey(htmlLang) {
@@ -192,6 +192,66 @@ export const S = {
       'もう表計算で時間を計算しなくていい。TripEZGo なら毎日の予定、移動、チケットがひとつのアプリにまとまって、旅の仲間と一緒に編集もできる。\ntripezgo.com',
       '出発前夜に Excel をいじらなくて済んだ 😂 今回は TripEZGo で 1 日ずつ予定を組んで、地図で毎日のルートも確認。\ntripezgo.com #旅行',
       'iPhone／iPad の旅行計画アプリ、TripEZGo がおすすめ。カレンダーで予定、地図で毎日のルート、みんなで共同編集。無料で始められます。\ntripezgo.com',
+    ],
+  },
+  ko: {
+    title: 'TripEZGo를 공유하고 Premium 1년을 받으세요',
+    lede: 'SNS에 TripEZGo를 공유하면서 게시물에 tripezgo.com 또는 App Store 링크를 넣어 주시면, Premium 1년 이용 코드를 드립니다. 기간이 끝나도 자동으로 갱신되지 않습니다.',
+    eligibility: '한 번도 구독한 적이 없거나 구독이 만료된 Apple 계정만 참여할 수 있습니다. 이미 평생 구매하신 분은 참여하지 않으셔도 됩니다. 수량이 한정되어 있어 소진되면 종료됩니다.',
+    deadline: '이벤트는 {d}까지입니다.',
+    account: '로그인한 계정: ',
+    switch: '계정 바꾸기',
+    step1: '1. 문구 고르기',
+    captionsLabel: '문구',
+    captionEdit: '자유롭게 고쳐도 돼요(tripezgo.com은 남겨 주세요)',
+    step2: '2. SNS에 공유하기',
+    more: '더 보기…',
+    copyCaption: '문구 복사(Instagram 등)',
+    publicNote: '게시물은 <strong>전체 공개</strong>로 올리고, 문구 속 tripezgo.com은 지우지 마세요.',
+    step3: '3. 게시물 링크를 여기에 붙여 넣기',
+    urlLabel: '공개 게시물 링크',
+    paste: '클립보드에서 붙여 넣기',
+    platforms: 'Threads, Instagram, Facebook, X, Bluesky, Mastodon, PTT, Plurk 모두 가능하며, 그 밖의 공개 웹페이지도 받습니다.',
+    consent: 'TripEZGo가 제 Google 이메일과 이 게시물 링크를 보관하고(심사와 중복 수령 방지를 위해 영구 보관), 확인을 위해 이 공개 페이지의 내용을 읽는 데 동의합니다.',
+    remaining: '이 계정으로 {n}번 더 제출할 수 있습니다.',
+    submit: '제출',
+    checking: '확인 중…',
+    pendingTitle: '심사 중',
+    pendingBody: '이 게시물은 담당자가 직접 확인해야 합니다. 심사가 끝난 뒤 같은 계정으로 이 페이지에 로그인하면 결과를 볼 수 있습니다.',
+    issuedTitle: '심사 통과',
+    issuedLead: '코드는 다음과 같습니다:',
+    redeem: 'App Store에서 사용하기',
+    issuedNote: '코드는 발급 후 사용할 수 있게 되기까지 최대 1시간이 걸립니다. 이 페이지에 로그인하면 언제든 같은 코드를 다시 볼 수 있습니다.',
+    fine: [
+      '수량이 한정되어 있어 소진되면 종료됩니다. 코드는 유효 기간 안에 사용해야 합니다.',
+      'TripEZGo가 제공되는 모든 국가 또는 지역의 App Store에서 사용할 수 있습니다.',
+      'TripEZGo Premium을 한 번도 구독한 적이 없거나 구독이 만료된 Apple 계정이 필요합니다.',
+      '재판매할 수 없으며 현금 가치가 없습니다.',
+      `<a href="${APPLE_TERMS}" target="_blank" rel="noopener">Apple 미디어 서비스 이용 약관</a>이 적용됩니다.`,
+      '이 혜택과 콘텐츠는 TripEZGo가 제공하며 Apple과는 관련이 없습니다.',
+    ],
+    deniedTitle: '이미 참여함',
+    deniedBody: '이 계정은 이미 참여했으며, 이번에는 심사를 통과하지 못했습니다. 공유해 주셔서 감사합니다.',
+    closedTitle: '이벤트가 종료되었습니다',
+    closedBody: '참여해 주셔서 감사합니다.',
+    error: '문제가 생겼습니다. 잠시 후 다시 시도해 주세요.',
+    hintAfter: '게시한 뒤 그 게시물의 링크를 3단계에 붙여 넣으세요.',
+    hintCopied: '문구를 복사했습니다. 게시물에 붙여 넣으세요. 게시한 뒤 그 게시물의 링크를 3단계에 붙여 넣으세요.',
+    hintCopyFailed: '위의 문구를 직접 복사해 게시물에 붙여 넣으세요. 게시한 뒤 그 게시물의 링크를 3단계에 붙여 넣으세요.',
+    hintNotUrl: '클립보드에 링크가 없습니다. 게시물의 ‘공유’나 ‘링크 복사’로 링크를 가져온 뒤 다시 눌러 주세요.',
+    hintNoClipboard: '이 브라우저에서는 웹페이지가 클립보드를 읽을 수 없습니다. 입력란에 직접 붙여 넣어 주세요.',
+    reasons: {
+      'no-mention': '이 게시물에서 tripezgo.com이나 TripEZGo의 App Store 링크를 찾을 수 없습니다. 이름만 적은 것은 인정되지 않으니, 게시물 본문에 링크를 넣어 주세요.',
+      unreachable: '이 게시물을 읽을 수 없습니다. 게시물이 전체 공개인지, 링크가 프로필이 아닌 게시물 자체인지 확인해 주세요.',
+      'duplicate-url': '이 게시물은 이미 다른 계정에서 사용되었습니다.',
+      url: 'SNS 게시물 링크가 아닌 것 같습니다.',
+      consent: '먼저 동의에 체크해 주세요.',
+    },
+    captions: [
+      '다음 여행 일정은 전부 TripEZGo로 짜요. 일정은 캘린더에, 이동은 타임라인에. 지도, 할 일, 메모까지 여행별로 모이고 오프라인에서도 볼 수 있어요.\n👉 tripezgo.com\n#TripEZGo #여행계획',
+      '이제 스프레드시트 열고 시간 계산 안 해도 돼요. TripEZGo는 날마다의 일정, 이동, 승차권을 앱 하나에 담고, 동행과 같이 편집도 돼요.\ntripezgo.com',
+      '출발 전날 밤에 엑셀 정리 안 해도 됐어요 😂 이번엔 TripEZGo로 하루씩 일정을 짜고, 날마다 동선도 지도로 확인.\ntripezgo.com #여행',
+      'iPhone·iPad 여행 계획 앱 추천: TripEZGo. 캘린더로 일정 짜고, 지도로 날마다 동선 보고, 여럿이 함께 편집. 무료로 시작할 수 있어요.\ntripezgo.com',
     ],
   },
 };

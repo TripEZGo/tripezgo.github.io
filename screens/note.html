@@ -78,6 +78,7 @@ const EXTRA = {
   'zh-Hant-TW': { navTitle: '筆記', phrase: ['點餐時說：', 'お好み焼きを一つください', '。'] },
   en: { navTitle: 'Note', phrase: ['To order, say ', 'お好み焼きを一つください', '.'] },
   ja: { navTitle: 'メモ', phrase: ['広島弁で「とてもおいしい」は ', 'ぶち うまい', '。'] },
+  ko: { navTitle: '메모', phrase: ['주문할 때는 이렇게: ', 'お好み焼きを一つください', '.'] },   // navTitle＝widgets.subtab.notes；句子自寫
 }[lang];
 
 const ps = note.paragraphs.map(p => `<p class="p">${para(p)}</p>`);
@@ -110,6 +111,7 @@ if (interactive) {
     'zh-Hant-TW': { unsupported: '這台裝置不支援語音朗讀。\n你加上的發音都還在，換一台裝置或更新系統之後就能唸。', ok: '好' },
     en: { unsupported: 'This device can’t read text aloud.\nThe pronunciations you added are all still there — another device, or a system update, will speak them.', ok: 'OK' },
     ja: { unsupported: 'この端末は読み上げに対応していません。\n追加した読みはすべて残っているので、ほかの端末や OS の更新後には読み上げられます。', ok: 'OK' },
+    ko: { unsupported: '이 기기는 음성 읽기를 지원하지 않습니다.\n추가한 발음은 모두 그대로 남아 있으니, 다른 기기나 시스템 업데이트 후에는 읽어줍니다.', ok: '확인' },
   }[lang];
   const { alert } = await import('./tools.js');
   d.insertAdjacentHTML('beforeend', `<style>

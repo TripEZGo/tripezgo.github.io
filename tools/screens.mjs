@@ -3,7 +3,8 @@
 //   node tools/screens.mjs render calendar "day=2" [--lang=en]   → screens/out/<lang>/calendar.png（1206×2622）
 //   node tools/screens.mjs compare calendar "day=2"              → screens/out/compare-calendar.png
 //                                                                    左：HTML　中：模擬器（screens/ref/zh/）　右：50% 疊圖
-//   node tools/screens.mjs all                                     → 依 SHOTS 清單出三語全部截圖
+//   node tools/screens.mjs all                                     → 依 SHOTS 清單出四語全部截圖（screens/out/<lang>）
+//   node tools/screens.mjs render calendar "day=2&device=ipad"     → screens/out/<lang>/ipad-calendar.png（2064×2752，iPad 13 吋）
 //
 // 基準圖要重拍：模擬器 iPhone 17 Pro、狀態列 9:41、日本時區啟動（SIMCTL_CHILD_TZ=Asia/Tokyo），
 // 存成 screens/ref/<lang>/<name>.png。App 改了 UI 就重拍、重跑 compare，看哪幾張要跟著改。
@@ -15,7 +16,7 @@ import { chromium } from 'playwright';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const screens = path.join(root, 'screens');
-const LANGS = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja' };
+const LANGS = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' };   // ko：只給商城截圖（tools/store），官網沒有韓文——只寫進 screens/out/ko
 
 // 官網用到的畫面：[檔名, 頁面, 參數]
 export const SHOTS = [
@@ -50,7 +51,22 @@ async function routeSite(page) {
     route.fulfill({ status: 200, contentType: TYPES[path.extname(p)] || 'application/octet-stream', body: fs.readFileSync(p) });
   });
 }
-async function shoot(page, port, name, query, lang) {
+// iPad（query 帶 device=ipad）：13 吋直放 1032×1376pt，DPR 2 → 2064×2752（App Store iPad 13 吋的尺寸）。
+// 另開一頁：DPR 開頁時就定了，不能跟 iPhone（402×874 @3x）共用。輸出檔名加 ipad- 前綴，跟 iPhone 那一張並存。
+const isIpad = q => new URLSearchParams(q || '').get('device') === 'ipad';
+const outName = (name, q) => `${isIpad(q) ? 'ipad-' : ''}${name}.png`;
+let ipadPage = null;
+async function pageFor(query) {
+  if (!isIpad(query)) return page;
+  if (!ipadPage) {
+    ipadPage = await browser.newPage({ viewport: { width: 1032, height: 1376 }, deviceScaleFactor: 2 });
+    ipadPage.on('pageerror', e => console.error('page error:', e.message));
+    ipadPage.on('console', m => m.type() === 'error' && console.error('console:', m.text()));
+  }
+  return ipadPage;
+}
+async function shoot(_page, port, name, query, lang) {
+  const page = await pageFor(query);
   if (!page._routed) { await routeSite(page); page._routed = true; }
   const url = `https://tripezgo.com/screens/${name}.html?lang=${LANGS[lang]}&${query || ''}`;
   await page.goto(url);
@@ -71,22 +87,25 @@ try {
   if (cmd === 'render' || cmd === 'compare') {
     const png = await shoot(page, port, name, query, lang);
     const out = path.join(screens, 'out', lang);
+    const file0 = outName(name, query);
     fs.mkdirSync(out, { recursive: true });
-    fs.writeFileSync(path.join(out, `${name}.png`), png);
-    console.log('wrote', path.join(out, `${name}.png`));
+    fs.writeFileSync(path.join(out, file0), png);
+    console.log('wrote', path.join(out, file0));
     if (cmd === 'compare') {
-      const ref = path.join(screens, 'ref', lang, `${name}.png`);
+      // iPad 的基準圖放 screens/ref/<lang>/ipad-<name>.png（真機 @2x 擷取）；畫面縮成一半寬並排
+      const ref = path.join(screens, 'ref', lang, file0);
+      const [w, h] = isIpad(query) ? [516, 688] : [402, 874];
       const b64 = f => 'data:image/png;base64,' + fs.readFileSync(f).toString('base64');
-      const cmp = await browser.newPage({ viewport: { width: 1206 + 20, height: 874 }, deviceScaleFactor: 2 });
+      const cmp = await browser.newPage({ viewport: { width: w * 3 + 20, height: h }, deviceScaleFactor: 2 });
       await cmp.setContent(`<body style="margin:0;display:flex;gap:10px;background:#333">
-        <img src="${b64(path.join(out, `${name}.png`))}" width="402">
-        <img src="${b64(ref)}" width="402">
-        <div style="position:relative;width:402px;height:874px">
-          <img src="${b64(ref)}" width="402" style="position:absolute;inset:0">
-          <img src="${b64(path.join(out, `${name}.png`))}" width="402" style="position:absolute;inset:0;opacity:.5;mix-blend-mode:difference">
+        <img src="${b64(path.join(out, file0))}" width="${w}">
+        <img src="${b64(ref)}" width="${w}">
+        <div style="position:relative;width:${w}px;height:${h}px">
+          <img src="${b64(ref)}" width="${w}" style="position:absolute;inset:0">
+          <img src="${b64(path.join(out, file0))}" width="${w}" style="position:absolute;inset:0;opacity:.5;mix-blend-mode:difference">
         </div></body>`);
       await cmp.waitForTimeout(200);
-      const file = path.join(screens, 'out', `compare-${name}.png`);
+      const file = path.join(screens, 'out', `compare-${file0}`);
       await cmp.screenshot({ path: file });
       console.log('wrote', file);
     }
@@ -99,7 +118,7 @@ try {
       console.log(l, file);
     }
   } else {
-    console.log('usage: node tools/screens.mjs render|compare <name> [query] [--lang=zh|en|ja] | all');
+    console.log('usage: node tools/screens.mjs render|compare <name> [query] [--lang=zh|en|ja|ko] | all');
   }
 } finally {
   await browser.close();

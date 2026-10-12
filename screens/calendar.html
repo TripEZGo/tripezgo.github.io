@@ -152,12 +152,29 @@
   .hour.half::after { background: repeating-linear-gradient(to right, color-mix(in srgb, var(--border-soft) 70%, #fff) 0 3px, transparent 3px 6px); }
   .hour.q::after { background: repeating-linear-gradient(to right, color-mix(in srgb, var(--border-soft) 60%, #fff) 0 1px, transparent 1px 2px); }
   .grid.scroll { touch-action: pan-x pan-y; }   /* 兩指留給縮放，不讓瀏覽器把整頁放大 */
+
+  /* ── iPad（?device=ipad，chrome.js DEV）：同一套版面拉寬到 1032，頁首往下 34（擷取 01 量：日期小字中線 115、
+        抬頭 141.5、日期籤 172（第 2 天時第一籤 x 16——模擬器量）、全日第一列 228、整點列距 66，跟 iPhone 各 +34）。
+        路線軸：iPhone 227.5＝畫布 56…382 的中點 ＋8.5（routeAxisInset 8 ＋半條線），iPad 同一條式子 → 542.5（擷取 01 量到 543）。
+        短行程的色條（line 形）：iPhone 123＝畫布寬 326 − 203（留給名稱），iPad 956 − 203 ＝ 753（擷取 01 渡輪那一條 56→808）。
+        「＋」：FloatingActionButton.pinAboveTheSystemBar——模擬器量到 52pt 圓在 964／1292（安全區底 1356 之上 12）；這裡的圓是 50（iPhone 照 ref 量的），中心對齊。
+        沒有分頁列，就沒有分頁列上那一層淡出（scrim）。 ── */
+  .ipad .head { top: 108px; width: auto; right: 76px; }
+  .ipad .head-act { left: 976px; top: 104px; }
+  .ipad .chips { top: 172px; }
+  .ipad .chips.scroller { padding-left: 16px; }
+  .ipad .allday { top: 220px; }
+  .ipad .route { left: 542.5px; }
+  .ipad .leg { left: 543.5px; }
+  .ipad .ev.line { --bar: 753px !important; }
+  .ipad .fab { left: 965px; top: 1293px; }
+  .ipad .scrim { display: none; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { fmt, params, lang, t, loadTrip, loadCategories, categoryName, chrome, svg, swatchClass, duration, toMin, ready, interactive, go } from './chrome.js';
+import { fmt, params, lang, t, loadTrip, loadCategories, categoryName, chrome, svg, swatchClass, duration, toMin, ready, interactive, go, ipad } from './chrome.js';
 import { applyState, patchEvent, clock } from './demo-state.js';
 import { applyPlaced, placePending, pendingLength } from './pending-state.js';
 import { loadZoom, attachPinch } from './zoom.js';
@@ -189,13 +206,14 @@ const chips = Array.from({ length: trip.dayCount }, (_, i) => {
 }).join('');
 d.insertAdjacentHTML('beforeend', `<div class="chips" id="chips">${chips}</div>`);
 const chipsEl = document.getElementById('chips');
-const firstX = 28 - (dayNo > 1 ? 24 : 0);
+// iPad：六籤放得下、不捲，停在 contentInset 16（TripCalendarView：contentInset.left Spacing.x4；擷取 01 第一籤左緣 16.5）
+const firstX = ipad ? 16 : 28 - (dayNo > 1 ? 24 : 0);
 if (!interactive) chipsEl.style.left = firstX + 'px';
 else {
   // 互動：整排可以橫向捲（DayChipCell 是一排 collection view）。內容的位置跟截圖一樣：左邊留 28、捲 24
   chipsEl.classList.add('scroller');
   chipsEl.insertAdjacentHTML('beforeend', '<div class="chip-end"></div>');
-  chipsEl.scrollLeft = 28 - firstX;
+  chipsEl.scrollLeft = ipad ? 0 : 28 - firstX;
 }
 
 // 全日
@@ -286,6 +304,8 @@ if (!interactive) {
     'zh-Hant-TW': { paren: (a, b) => `${a}（${b}）`, noGap: '無間隔', mode: { walking: '步行', driving: '開車', cycling: '騎車', transit: '大眾運輸', other: '其他' } },
     en: { paren: (a, b) => `${a} (${b})`, noGap: 'No gap', mode: { walking: 'Walking', driving: 'Driving', cycling: 'Cycling', transit: 'Transit', other: 'Other' } },
     ja: { paren: (a, b) => `${a}（${b}）`, noGap: '間隔なし', mode: { walking: '徒歩', driving: '車', cycling: '自転車', transit: '公共交通', other: 'その他' } },
+    // ko：ui.text.parenthesised（%1$@(%2$@)，沒有空白）、ui.nogap、domain.legmode.*
+    ko: { paren: (a, b) => `${a}(${b})`, noGap: '간격 없음', mode: { walking: '도보', driving: '자동차', cycling: '자전거', transit: '대중교통', other: '기타' } },
   }[lang] || null;
   const L = S || { paren: (a, b) => `${a}（${b}）`, noGap: '無間隔', mode: { walking: '步行', driving: '開車', cycling: '騎車', transit: '大眾運輸', other: '其他' } };
   // DesignIcon.swift（24 格）——chrome.js 沒有的幾枚
@@ -395,7 +415,7 @@ if (!interactive) {
     const top = y(e.s), bot = y(e.e2), hgt = bot - top;
     const sw = swatchClass(e.category) + (e.isCancelled ? ' cx' : '') + extra;
     const { col = 0, n = 1 } = cols.get(e.key) || {};
-    const w = 326 / n;
+    const w = (ipad ? 956 : 326) / n;   // 畫布寬：裝置寬 − 56 − 20
     const pos = n > 1 ? `;left:${56 + col * w + (col ? 2 : 0)}px;right:auto;width:${w - (n > 1 ? 2 : 0)}px` : '';
     const attrs = live ? ` data-key="${e.key}" tabindex="0" role="button"` : ' aria-hidden="true"';
     const times = `${clock(e.s)} – ${clock(e.e2)}`;
@@ -435,6 +455,9 @@ if (!interactive) {
       drop: r => `Release to schedule at ${r}`, opening: 'opening', closing: 'closing', allDay: 'All-day' },
     ja: { label: '未定', today: 'この日', loose: '日付未定', hint: '下の時間帯へドラッグ', count: n => `${n} 件`,
       drop: r => `離すと ${r} に入ります`, opening: '最初', closing: '最後', allDay: '終日' },
+    // ko：ui.pending.zone.*、ui.section.count、ui.pending.drop.at、ui.bookend.*、ui.allday
+    ko: { label: '미정', today: '이날', loose: '날짜 미정', hint: '아래 시간대로 끌어다 놓기', count: n => `${n}개`,
+      drop: r => `놓으면 ${r}에 배치돼요`, opening: '처음', closing: '마지막', allDay: '종일' },
   }[lang] || null;
   // DesignIcon.dayOpening／dayClosing（24 格，2.2）：箭頭撞到軸的頂端／底端那一條線
   const GLYPH = {

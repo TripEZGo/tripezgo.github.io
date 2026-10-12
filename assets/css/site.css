@@ -17,6 +17,15 @@ html[lang^="ja"] {
   line-break: strict;
 }
 
+/* 韓文頁：PingFang TC 沒有諺文，系統退字落到哪一套不一定；指定 Apple SD Gothic Neo 等韓文字型。
+   韓文以空格分詞，預設會在詞中間斷行——keep-all 讓它只在空格斷，太長的字串（網址）再交給 overflow-wrap。 */
+html[lang^="ko"] {
+  --font-body: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+               "맑은 고딕", "Helvetica Neue", Arial, sans-serif;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html {

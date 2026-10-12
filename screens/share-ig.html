@@ -82,6 +82,12 @@ const s = {
     ogTitle: '干潮で大鳥居の足元まで', ogDesc: '近くで見ると想像以上に大きい。15時ごろの光がいちばん。潮見表を先にチェック。',
     tags: ['#宮島', '#厳島神社'],
   },
+  // ko：虛構社群 App 的介面字與貼文都是自寫的（不是 App 字串）
+  ko: {
+    postNav: '게시물', likes: '좋아요 1,284개', when: '2일 전',
+    ogTitle: '썰물 때 큰 도리이 발밑까지', ogDesc: '가까이서 보면 생각보다 훨씬 커요. 오후 3시쯤 빛이 가장 좋으니 조석표를 먼저 확인하세요.',
+    tags: ['#미야지마', '#이쓰쿠시마신사'],
+  },
 }[lang] || null;
 
 // 社群 App 的線條圖示（第三方介面，不是 App 的 DesignIcon）
@@ -99,7 +105,7 @@ const G = {
 };
 const g = (n, cls = '') => `<svg class="i ${cls}" viewBox="0 0 24 24">${G[n]}</svg>`;
 
-const caption = `<b>${HANDLE}</b> ${fmt(s.ogTitle)}${lang === 'en' ? '. ' : '。'}${fmt(s.ogDesc)} ${s.tags.map(t => `<span class="tag">${t}</span>`).join(' ')}`;
+const caption = `<b>${HANDLE}</b> ${fmt(s.ogTitle)}${lang === 'en' || lang === 'ko' ? '. ' : '。'}${fmt(s.ogDesc)} ${s.tags.map(t => `<span class="tag">${t}</span>`).join(' ')}`;
 
 d.insertAdjacentHTML('beforeend', `
   <div class="layer post" id="post">

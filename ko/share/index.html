@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>TripEZGo를 공유하고 Premium 1년을 받으세요</title>
+<meta name="description" content="SNS에 TripEZGo를 공유하면서 게시물에 tripezgo.com 또는 App Store 링크를 넣어 주시면, Premium 1년 이용 코드를 드립니다. 기간이 끝나도 자동으로 갱신되지 않습니다." />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#17120f" media="(prefers-color-scheme: dark)" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icon-32.png" />
+<link rel="apple-touch-icon" href="/assets/img/icon-180.png" />
+<link rel="stylesheet" href="/assets/css/site.css" />
+<!-- 這一頁是 tools/gen-share.mjs 從 tools/share-template.html 產生的，不要手改；改模板或 share/strings.js 後重跑。
+     頁首頁尾從同語言的首頁抽出來，樣式載 site.css（裡面 @import chrome.css）；只載 chrome.css 的話
+     .wrap 沒有置中，頁首頁尾會貼左邊（2026-10-10 使用者抓到）。
+     流程（App repo .scratch/share-reward/，grill Q34–Q38）：貼公開貼文網址 → Google 登入 → 當場檢查。 -->
+<style>
+  main { max-width: 640px; margin: 0 auto; padding: clamp(32px, 6vw, 64px) var(--gutter); }
+  h1 { font-size: var(--text-2xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); margin: 0 0 12px; }
+  .lede { color: var(--muted); margin: 0 0 24px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; }
+  .card h2 { font-size: var(--text-xl); margin: 0 0 8px; }
+  h2.step { font-size: var(--text-lg); margin: 24px 0 10px; }
+  .captions { display: grid; gap: 8px; margin-bottom: 12px; }
+  .caption-option { display: flex; gap: 10px; align-items: flex-start; padding: 12px; border: 1px solid var(--border);
+                    border-radius: var(--radius-md); background: var(--bg); cursor: pointer; font-size: var(--text-sm); white-space: pre-line; }
+  .caption-option:has(input:checked) { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  textarea { box-sizing: border-box; width: 100%; font: inherit; font-size: var(--text-sm); padding: 12px 14px; border: 1px solid var(--border);
+             border-radius: var(--radius-md); background: var(--bg); color: var(--fg); resize: vertical; }
+  textarea:focus { outline: none; box-shadow: var(--focus-ring); }
+  .share-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+  button.chip { font: inherit; font-size: var(--text-sm); font-weight: 600; padding: 8px 14px; border-radius: var(--radius-pill);
+                border: 1px solid var(--border); background: var(--bg); color: var(--fg); cursor: pointer; }
+  button.chip:hover { border-color: var(--accent); }
+  .url-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .url-row input { flex: 1 1 220px; min-width: 0; }
+  .url-row button.chip { flex: none; }
+  label.field { display: block; font-weight: 600; margin-bottom: 6px; }
+  input[type=url] { box-sizing: border-box; width: 100%; font: inherit; padding: 12px 14px; border: 1px solid var(--border); border-radius: var(--radius-md);
+                    background: var(--bg); color: var(--fg); }
+  input[type=url]:focus { outline: none; box-shadow: var(--focus-ring); }
+  label.consent { display: flex; gap: 8px; align-items: flex-start; font-size: var(--text-sm); color: var(--muted); margin: 16px 0; }
+  .notice { color: var(--danger); margin: 0 0 12px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  button.primary, a.primary { display: inline-block; font: inherit; font-weight: 600; border: 0; border-radius: var(--radius-pill);
+                              padding: 12px 24px; background: var(--accent); color: var(--accent-on); text-decoration: none; cursor: pointer; }
+  button.primary:disabled { opacity: .4; cursor: default; }
+  .account { font-size: var(--text-sm); color: var(--muted); margin: 0 0 16px; }
+  .account strong { color: var(--fg); word-break: break-all; }
+  .linkish { background: none; border: 0; padding: 0; font: inherit; color: var(--accent-ink); cursor: pointer; text-decoration: underline; }
+  .muted { color: var(--muted); font-size: var(--text-sm); }
+  .code { font: 600 var(--text-xl)/1.4 var(--font-mono); letter-spacing: 1px; word-break: break-all; text-align: center;
+          padding: 14px; border: 1px dashed var(--border); border-radius: var(--radius-md); margin: 12px 0 16px; background: var(--bg); }
+  ul.fine { padding-left: 20px; font-size: var(--text-xs); color: var(--muted); margin: 16px 0 0; }
+  [hidden] { display: none !important; }
+</style>
+<script src="https://accounts.google.com/gsi/client?hl=ko" async></script>
+<script type="module" src="/share/app.js"></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">메인 콘텐츠로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/ko/" aria-label="TripEZGo 홈">
+      <span class="m m-mark" role="img" aria-hidden="true"></span>
+      <span class="m m-word" role="img" aria-hidden="true"></span>
+    </a>
+    <nav class="site-nav" aria-label="메인">
+      <a class="hide-sm" href="/ko/#privacy">개인정보</a>
+      <a class="hide-sm" href="/ko/#features">기능</a>
+      <a class="hide-sm" href="/ko/#plans">요금제</a>
+      <details class="lang-menu">
+        <summary>한국어</summary>
+        <div class="lang-list">
+          <a class="lang" href="/share/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a class="lang" href="/en/share/" hreflang="en" lang="en">English</a>
+          <a class="lang" href="/ja/share/" hreflang="ja" lang="ja">日本語</a>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <h1 data-t="title">TripEZGo를 공유하고 Premium 1년을 받으세요</h1>
+  <p class="lede" data-t="lede">SNS에 TripEZGo를 공유하면서 게시물에 tripezgo.com 또는 App Store 링크를 넣어 주시면, Premium 1년 이용 코드를 드립니다. 기간이 끝나도 자동으로 갱신되지 않습니다.</p>
+
+  <section class="card" id="form">
+    <p class="account" id="account" hidden><span data-t="account">로그인한 계정: </span><strong id="email"></strong>　<button class="linkish" id="switch" data-t="switch">계정 바꾸기</button></p>
+    <p class="notice" id="notice" hidden></p>
+    <p class="muted"><span data-t="eligibility">한 번도 구독한 적이 없거나 구독이 만료된 Apple 계정만 참여할 수 있습니다. 이미 평생 구매하신 분은 참여하지 않으셔도 됩니다. 수량이 한정되어 있어 소진되면 종료됩니다.</span> <span id="deadline-line" hidden></span></p>
+
+    <h2 class="step" data-t="step1">1. 문구 고르기</h2>
+    <div class="captions" id="captions" role="radiogroup"></div>
+    <label class="field" for="caption" data-t="captionEdit">자유롭게 고쳐도 돼요(tripezgo.com은 남겨 주세요)</label>
+    <textarea id="caption" rows="5"></textarea>
+
+    <h2 class="step" data-t="step2">2. SNS에 공유하기</h2>
+    <div class="share-buttons">
+      <button class="chip" data-share="threads">Threads</button>
+      <button class="chip" data-share="x">X</button>
+      <button class="chip" data-share="facebook">Facebook</button>
+      <button class="chip" data-share="bluesky">Bluesky</button>
+      <button class="chip" data-share="plurk">Plurk</button>
+      <button class="chip" data-share="native" id="native-share" data-t="more" hidden>더 보기…</button>
+      <button class="chip" data-share="copy" data-t="copyCaption">문구 복사(Instagram 등)</button>
+    </div>
+    <p class="muted" id="share-hint" hidden></p>
+    <p class="muted" data-t-html="publicNote">게시물은 <strong>전체 공개</strong>로 올리고, 문구 속 tripezgo.com은 지우지 마세요.</p>
+
+    <h2 class="step" data-t="step3">3. 게시물 링크를 여기에 붙여 넣기</h2>
+    <label class="field" for="url" data-t="urlLabel">공개 게시물 링크</label>
+    <div class="url-row">
+      <input id="url" type="url" inputmode="url" autocomplete="off" placeholder="https://www.threads.net/@you/post/…" />
+      <button class="chip" id="paste" data-t="paste">클립보드에서 붙여 넣기</button>
+    </div>
+    <p class="muted" data-t="platforms">Threads, Instagram, Facebook, X, Bluesky, Mastodon, PTT, Plurk 모두 가능하며, 그 밖의 공개 웹페이지도 받습니다.</p>
+    <label class="consent"><input id="consent" type="checkbox" /> <span data-t="consent">TripEZGo가 제 Google 이메일과 이 게시물 링크를 보관하고(심사와 중복 수령 방지를 위해 영구 보관), 확인을 위해 이 공개 페이지의 내용을 읽는 데 동의합니다.</span></label>
+    <p class="muted" id="remaining-line" hidden></p>
+    <div class="actions">
+      <div id="signin"></div>
+      <button class="primary" id="submit" data-t="submit" hidden disabled>제출</button>
+    </div>
+  </section>
+
+  <section class="card" data-view="loading" hidden><p class="muted" data-t="checking">확인 중…</p></section>
+
+  <section class="card" data-view="pending-review" hidden>
+    <p class="account"><span data-t="account">로그인한 계정: </span><strong data-field="email"></strong></p>
+    <h2 data-t="pendingTitle">심사 중</h2>
+    <p data-t="pendingBody">이 게시물은 담당자가 직접 확인해야 합니다. 심사가 끝난 뒤 같은 계정으로 이 페이지에 로그인하면 결과를 볼 수 있습니다.</p>
+  </section>
+
+  <section class="card" data-view="issued" hidden>
+    <p class="account"><span data-t="account">로그인한 계정: </span><strong data-field="email"></strong></p>
+    <h2 data-t="issuedTitle">심사 통과</h2>
+    <p data-t="issuedLead">코드는 다음과 같습니다:</p>
+    <div class="code" data-field="code"></div>
+    <a class="primary" data-field="redeem" data-t="redeem" target="_blank" rel="noopener">App Store에서 사용하기</a>
+    <p class="muted" data-t="issuedNote">코드는 발급 후 사용할 수 있게 되기까지 최대 1시간이 걸립니다. 이 페이지에 로그인하면 언제든 같은 코드를 다시 볼 수 있습니다.</p>
+    <ul class="fine" id="fine">
+      <li>수량이 한정되어 있어 소진되면 종료됩니다. 코드는 유효 기간 안에 사용해야 합니다.</li>
+      <li>TripEZGo가 제공되는 모든 국가 또는 지역의 App Store에서 사용할 수 있습니다.</li>
+      <li>TripEZGo Premium을 한 번도 구독한 적이 없거나 구독이 만료된 Apple 계정이 필요합니다.</li>
+      <li>재판매할 수 없으며 현금 가치가 없습니다.</li>
+      <li><a href="https://www.apple.com/legal/internet-services/itunes/" target="_blank" rel="noopener">Apple 미디어 서비스 이용 약관</a>이 적용됩니다.</li>
+      <li>이 혜택과 콘텐츠는 TripEZGo가 제공하며 Apple과는 관련이 없습니다.</li>
+    </ul>
+  </section>
+
+  <section class="card" data-view="denied" hidden>
+    <p class="account"><span data-t="account">로그인한 계정: </span><strong data-field="email"></strong></p>
+    <h2 data-t="deniedTitle">이미 참여함</h2>
+    <p data-t="deniedBody">이 계정은 이미 참여했으며, 이번에는 심사를 통과하지 못했습니다. 공유해 주셔서 감사합니다.</p>
+  </section>
+
+  <section class="card" data-view="closed" hidden>
+    <h2 data-t="closedTitle">이벤트가 종료되었습니다</h2>
+    <p data-t="closedBody">참여해 주셔서 감사합니다.</p>
+  </section>
+
+  <section class="card" data-view="error" hidden><p data-t="error">문제가 생겼습니다. 잠시 후 다시 시도해 주세요.</p></section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/ko/" aria-label="TripEZGo 홈">
+          <span class="m m-mark" role="img" aria-hidden="true"></span>
+          <span class="m m-word" role="img" aria-hidden="true"></span>
+        </a>
+        <p style="margin:12px 0 0;max-width:32ch">여행 계획부터 여행길에 필요한 것까지, 앱 하나로.</p>
+      </div>
+      <nav class="footer-links" aria-label="바닥글">
+        <a href="/ko/privacy.html">개인정보 처리방침</a>
+        <a href="/ko/terms.html">이용약관</a>
+        <a href="mailto:zhgchgli@gmail.com">문의하기</a>
+        <a href="/en/" hreflang="en" lang="en">English</a>
+        <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+        <a href="/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TripEZGo</span>
+      <span>Made for iPhone &amp; iPad · 6개 언어 지원</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -17,6 +17,7 @@
   /* 字型：同 event.html——BlinkMacSystemFont 是 SF，漢字走 CoreText 的 cascade（跟 UIKit 同一條路） */
   .device { --font: BlinkMacSystemFont, "PingFang TC", sans-serif; text-autospace: normal; }
   html[lang="ja"] .device { --font: BlinkMacSystemFont, "Hiragino Sans", sans-serif; }
+  html[lang="ko"] .device { --font: BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; }
   html[lang="zh-Hant-TW"] .md { font-family: "PingFang TC"; }
   html[lang="ja"] .md { font-family: "Hiragino Sans"; }
   .halt { font-feature-settings: "halt"; }
@@ -89,12 +90,22 @@
   /* 晶片那一排可以橫向捲（LegRunChipsRow 是一排捲動列）——第一次碰到才開，初始畫面跟截圖一樣 */
   .chips.sx { overflow-x: auto; scrollbar-width: none; margin-right: -20px; padding-right: 20px; }
   .chips.sx::-webkit-scrollbar { display: none; }
+
+  /* ── iPad（?device=ipad）：這張是 .pageSheet、detents [.medium(), .large()]、抓桿、圓角 Radius.lg 12
+        （TripLegSheetViewController.applyViewingSheet）。iPad Pro 13 吋模擬器（iPadOS 26.2）點開第 2 天那顆班次膠囊量到：
+        medium 是貼著下緣的浮動紙 x 48–984（寬 936）、y 606–1323.5（高 717.5、下緣離螢幕底 52.5）、圓角約 12、抓桿距頂 5；
+        底下壓暗 20%（白底 → 204）。內容不縮放（iPhone 那張 ×0.9602 是 iPhone 的浮動紙）。內容底留 20（安全區）。 ── */
+  .ipad .bg { width: 1032px; height: 1376px; }
+  .ipad .sheet { left: 48px; top: 606px; width: 936px; height: 717.5px; transform: none; border-radius: 12px; }
+  .ipad .grabber { left: 450px; }
+  .ipad .scroll { bottom: 20px; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { params, lang, loadTrip, chrome, duration, toMin, ready, interactive, go } from './chrome.js';
+import { params, lang, loadTrip, chrome, duration, toMin, ready, interactive, go, ipad } from './chrome.js';
+const SHEET_W = ipad ? 936 : 402, SC = ipad ? 1 : .9602;   // sheet 內容的寬與系統縮放（iPad 見 <style> 的 iPad 段）
 import { applyState, patchEvent, sid } from './demo-state.js';
 
 // App 的字串（Scripts/i18n/maps：UI.legTitle／openRouteInMaps，Trips.legEndsAt／legStartsAt／runWait／runEarly）
@@ -102,6 +113,7 @@ const S = {
   'zh-Hant-TW': { title: '路程', open: '在地圖開啟路線', ends: t => `結束 ${t}`, starts: t => `開始 ${t}`, wait: d => `候車 ${d}`, early: d => `早到 ${d}` },
   en: { title: 'Leg', open: 'Open the route in Maps', ends: t => `Ends ${t}`, starts: t => `Starts ${t}`, wait: d => `${d} wait`, early: d => `${d} early` },
   ja: { title: '移動', open: 'ルートをマップで開く', ends: t => `${t} 終了`, starts: t => `${t} 開始`, wait: d => `待ち時間 ${d}`, early: d => `${d} 早く到着` },
+  ko: { title: '이동', open: '지도에서 경로 열기', ends: t => `${t} 종료`, starts: t => `${t} 시작`, wait: d => `대기 ${d}`, early: d => `${d} 일찍 도착` },
 }[lang] || null;
 // 互動模式才用得到的（Trips.runBeforePrevious／runLeavesImmediately／runAfterNext／runJustInTime、legGap、Domain.legMode*）
 const S2 = {
@@ -111,6 +123,8 @@ const S2 = {
     mode: { walking: 'Walking', driving: 'Driving', cycling: 'Cycling', transit: 'Transit', other: 'Other' } },
   ja: { before: d => `この便は前の目的地が終わる ${d} 前に出ます`, now: '終わってすぐ発車', after: d => `次の目的地の開始より ${d} 遅れて到着`, just: 'ちょうど間に合う', gap: d => `間隔 ${d}`, noGap: '間隔なし',
     mode: { walking: '徒歩', driving: '車', cycling: '自転車', transit: '公共交通', other: 'その他' } },
+  ko: { before: d => `이 편은 앞 목적지가 끝나기 ${d} 전에 출발합니다`, now: '끝나자마자 출발', after: d => `다음 목적지 시작보다 ${d} 늦게 도착`, just: '딱 맞습니다', gap: d => `간격 ${d}`, noGap: '간격 없음',
+    mode: { walking: '도보', driving: '자동차', cycling: '자전거', transit: '대중교통', other: '기타' } },
 };
 const L = S || { title: '路程', open: '在地圖開啟路線', ends: t => `結束 ${t}`, starts: t => `開始 ${t}`, wait: d => `候車 ${d}`, early: d => `早到 ${d}` };
 
@@ -179,13 +193,14 @@ function planHTML() {
 
 // 背景：行事曆（同一天），整片壓暗 20%
 const q = new URLSearchParams({ lang, day: dayNo, ...(params.get('start') ? { start: params.get('start') } : {}), ...(interactive ? { interactive: 1, sid } : {}) });
+if (ipad) q.set('device', 'ipad');
 d.insertAdjacentHTML('beforeend', `<iframe class="bg" id="bg" src="calendar.html?${q}"></iframe><div class="dim" id="dim"></div>`);
 
 d.insertAdjacentHTML('beforeend', `
 <div class="sheet" id="sheet">
   <div class="grabber"></div>
   <div class="navtitle">${esc(L.title).replace(/([\u3000-\u30ff\u3400-\u9fff\uff00-\uffef]+)/g, '<span class="cjk">$1</span>')}</div>
-  <div class="glass" style="left:286px;width:100px">
+  <div class="glass" style="left:${SHEET_W - 116}px;width:100px">
     <div class="slot" style="left:1px">${ic('pencil')}</div>
     <div class="slot" style="left:55px">${ic('trash')}</div>
   </div>
@@ -242,7 +257,7 @@ if (interactive) {
   });
   const close = () => {
     sheet.style.transition = 'transform .24s ease-in';
-    sheet.style.transform = 'translateY(480px) scale(.9602)';
+    sheet.style.transform = 'translateY(480px) scale(' + SC + ')';
     document.getElementById('dim').style.opacity = '0';
     setTimeout(backTo, 220);
   };
@@ -259,7 +274,7 @@ if (interactive) {
     const dy = e.clientY - st.y0;
     if (!st.on) { if (dy < -8) { st = null; return; } if (dy < 8) return; st.on = true; try { sheet.setPointerCapture(st.id); } catch { /* 已放開 */ } sheet.style.transition = 'none'; }
     st.dy = Math.max(0, dy - 8);
-    sheet.style.transform = `translateY(${st.dy}px) scale(.9602)`;
+    sheet.style.transform = `translateY(${st.dy}px) scale(${SC})`;
   });
   const up = () => {
     if (!st) return; const s0 = st; st = null; if (!s0.on) return;
@@ -275,6 +290,7 @@ chrome(d);
 // 等背景那一頁也畫完才拍
 const bg = document.getElementById('bg');
 await new Promise(res => { const tick = () => bg.contentDocument && bg.contentDocument.body && bg.contentDocument.body.dataset.ready === '1' ? res() : setTimeout(tick, 50); tick(); });
+if (ipad) bg.contentDocument.querySelector('.sb')?.remove();   // iPad：狀態列是系統的，不在暗層底下（同 event.html）
 ready();
 </script>
 </body>

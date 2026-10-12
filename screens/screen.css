@@ -40,6 +40,9 @@
   --font: -apple-system, "SF Pro Text", "PingFang TC", "Hiragino Sans", sans-serif;
 }
 html[lang="ja"] { --font: -apple-system, "SF Pro Text", "Hiragino Sans", sans-serif; }
+/* 韓文：-apple-system 在 lang=ko 底下整段解析成 Apple SD Gothic Neo（數字、西文跟著變）；UIKit 是西文 SF、諺文走 CoreText 的
+   cascade（Apple SD Gothic Neo）——BlinkMacSystemFont 就是這一條（Chromium CSS.getPlatformFontsForNode 量過：.SF NS＋Apple SD Gothic Neo） */
+html[lang="ko"] { --font: BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; }
 
 /* 行程類型的色票（EventTypeSwatch.swift）在 chrome.js 裡照 App 的 OKLCh.mix 算好再塞進來。 */
 
@@ -92,3 +95,30 @@ body { width: 402px; height: 874px; overflow: hidden; }
 @view-transition { navigation: auto; }
 html.is-interactive, html.is-interactive body { background:#fff; }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration:.22s; }
+
+/* ==========================================================================
+   iPad 13 吋直放（?device=ipad → html.ipad，chrome.js 的 DEV）：1032×1376pt，商城 iPad 截圖用。
+   系統外框照 iPad Pro 13 吋（M5）模擬器、iPadOS 26.2 量（axe frame），字面照真機擷取 Open Design appstore-2026/raw/…/ipad：
+   - 狀態列：時刻左緣 25.8、中線 16；日期在時刻後 ~10pt；電池右緣 1006（模擬器 978.5＋27.5）。
+   - 頂端分頁列：每格 66×36、y 36（「總覽」351–417 … 「設定」615–681）→ 膠囊 top 32、高 44、內距 4、每格左右 16；
+     字 17 medium，選中＝灰底＋accentInk（同 iPhone 的選中色）。沒有圖示。
+   - 主畫面橫條（鎖定畫面）：358.5–673.5、y 1363、高 5.5。App 畫面右下角是視窗縮放把手（.resize-grip）。
+   iPhone（不帶 device）不吃這一段任何一條。
+   ========================================================================== */
+html.ipad body { width: 1032px; height: 1376px; }
+html.ipad .device { width: 1032px; height: 1376px; }
+.ipad .sb { height: 24px; }
+.ipad .sb-time { left: 25.8px; top: 7px; width: auto; text-align: left; font: 600 14px/18px -apple-system, sans-serif; letter-spacing: 0; }
+.ipad .sb-date { position: absolute; top: 7px; left: 88.6px; font: 600 14px/18px -apple-system, var(--font); }
+html.ipad[lang="ja"] .sb-date { left: 64px; }
+.ipad .sb-icons { left: auto; right: 26px; top: 10px; }
+.ipad .home { left: 358.5px; width: 315px; bottom: 7.5px; height: 5.5px; }
+.resize-grip { position: absolute; left: 1002px; top: 1346px; width: 26px; height: 26px; z-index: 50; pointer-events: none;
+  fill: none; stroke: #808080; stroke-width: 2.5; stroke-linecap: round; }
+.ipad .tabbar { left: 50%; right: auto; top: 32px; height: 44px; transform: translateX(-50%); display: flex; padding: 4px;
+  border-radius: 22px; grid-template-columns: none; }
+.ipad .tab { flex-direction: row; height: 36px; padding: 0 16px; border-radius: 18px; gap: 0;
+  font: 500 17px/22px var(--font); white-space: nowrap; }
+.ipad .tab svg { display: none; }
+.ipad .tab.on { font-weight: 600; }
+.ipad .tab-dot { display: none; }

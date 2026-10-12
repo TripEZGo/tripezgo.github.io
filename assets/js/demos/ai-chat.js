@@ -12,7 +12,7 @@
 //   - **同一個 Wi-Fi**：ailink.step.wifi、ailink.nowifi.body——電腦上的 AI 只能透過同一個 Wi-Fi 找到手機，
 //     行動網路與個人熱點都不行。
 //   - 交通方式的字：Domain.json domain.legmode.*；時長：_shared.js duration（domain.duration.*）。
-// 對話內容、京都的行程與 AI 的回覆是網站自己寫的三語範例（範本旅程裡沒有）。全程 ≤ 4 秒；減少動態時直接畫完。
+// 對話內容、京都的行程與 AI 的回覆是網站自己寫的四語範例（範本旅程裡沒有）。全程 ≤ 4 秒；減少動態時直接畫完。
 import { esc, duration, reduced } from './_shared.js';
 
 const S = {
@@ -37,16 +37,23 @@ const S = {
     act: { addEvent: '予定を追加', updEvent: '予定を変更', addLeg: '移動を追加', updLeg: '移動を変更' },
     modes: { walking: '徒歩', transit: '公共交通' },
   },
+  ko: {
+    connected: '연결됨 · Claude Code', wifi: '컴퓨터와 이 휴대폰을 <b>같은 Wi-Fi</b>에 연결하세요',
+    pick: 'AI에게 물어보기', again: '다시 재생', trip: '교토 4일', day: '2일차', log: (n) => `${n}건`,
+    empty: '이날은 아직 일정이 없습니다',
+    act: { addEvent: '일정 추가', updEvent: '일정 수정', addLeg: '이동 추가', updLeg: '이동 수정' },
+    modes: { walking: '도보', transit: '대중교통' },
+  },
 };
 
 // 京都第 2 天的行程（三語）。id 是這一天的那一則，leg 是「進這一則的那段路」。
 const PLACES = {
-  inari: { zh: '伏見稻荷大社', en: 'Fushimi Inari Taisha', ja: '伏見稲荷大社' },
-  kiyo: { zh: '清水寺', en: 'Kiyomizu-dera', ja: '清水寺' },
-  lunch: { zh: '午餐：二年坂 湯豆腐', en: 'Lunch: yudofu on Ninenzaka', ja: '昼食：二年坂で湯豆腐' },
-  gion: { zh: '祇園白川 散步', en: 'Stroll along Gion Shirakawa', ja: '祇園白川を散歩' },
-  dinner: { zh: '晚餐：先斗町 京料理', en: 'Dinner: Kyoto cuisine in Pontocho', ja: '夕食：先斗町で京料理' },
-  sanju: { zh: '三十三間堂', en: 'Sanjūsangen-dō', ja: '三十三間堂' },
+  inari: { zh: '伏見稻荷大社', en: 'Fushimi Inari Taisha', ja: '伏見稲荷大社', ko: '후시미 이나리 신사' },
+  kiyo: { zh: '清水寺', en: 'Kiyomizu-dera', ja: '清水寺', ko: '기요미즈데라' },
+  lunch: { zh: '午餐：二年坂 湯豆腐', en: 'Lunch: yudofu on Ninenzaka', ja: '昼食：二年坂で湯豆腐', ko: '점심: 니넨자카 유두부' },
+  gion: { zh: '祇園白川 散步', en: 'Stroll along Gion Shirakawa', ja: '祇園白川を散歩', ko: '기온 시라카와 산책' },
+  dinner: { zh: '晚餐：先斗町 京料理', en: 'Dinner: Kyoto cuisine in Pontocho', ja: '夕食：先斗町で京料理', ko: '저녁: 폰토초 교토 요리' },
+  sanju: { zh: '三十三間堂', en: 'Sanjūsangen-dō', ja: '三十三間堂', ko: '산주산겐도' },
 };
 const BASE = [
   { id: 'a', p: 'inari', s: '08:00', e: '09:30' },
@@ -57,7 +64,7 @@ const BASE = [
 // 三句話：每一句有起點（那一天原本的樣子）、工具呼叫的順序與每一步對那一天做了什麼、最後的回覆。
 const PROMPTS = [
   {
-    ask: { zh: '幫我排京都第二天', en: 'Plan day 2 of my Kyoto trip', ja: '京都の 2 日目を組んで' },
+    ask: { zh: '幫我排京都第二天', en: 'Plan day 2 of my Kyoto trip', ja: '京都の 2 日目を組んで', ko: '교토 둘째 날 일정 짜 줘' },
     start: [],
     steps: [
       ['get_trip'],
@@ -70,10 +77,11 @@ const PROMPTS = [
       zh: '第 2 天排好了：一早去伏見稻荷避開人潮，搭京阪到清水寺，中午在二年坂吃湯豆腐。兩段路程也接上了，打開 App 就看得到。',
       en: 'Day 2 is set: Fushimi Inari early to beat the crowds, the Keihan line over to Kiyomizu-dera, then yudofu on Ninenzaka for lunch. Both legs are in — open the app to see it.',
       ja: '2 日目を組みました。朝いちばんに伏見稲荷で混雑を避け、京阪で清水寺へ、お昼は二年坂で湯豆腐。移動も 2 区間つないであります。アプリで確認できます。',
+      ko: '2일차를 짰어요. 아침 일찍 후시미 이나리에서 붐비기 전에 둘러보고, 게이한선으로 기요미즈데라에 간 뒤 점심은 니넨자카에서 유두부. 이동 두 구간도 이어 두었으니 앱에서 확인해 보세요.',
     },
   },
   {
-    ask: { zh: '下午加一段祇園散步，晚餐找附近的', en: 'Add a Gion walk this afternoon, and dinner nearby', ja: '午後に祇園の散歩、夕食も近くで' },
+    ask: { zh: '下午加一段祇園散步，晚餐找附近的', en: 'Add a Gion walk this afternoon, and dinner nearby', ja: '午後に祇園の散歩、夕食も近くで', ko: '오후에 기온 산책을 넣고, 저녁은 근처에서' },
     start: BASE,
     steps: [
       ['list_events'],
@@ -85,10 +93,11 @@ const PROMPTS = [
       zh: '加好了：吃完午餐走 20 分到祇園白川，傍晚再走 10 分到先斗町吃晚餐。中間空著的時間可以回飯店休息。',
       en: 'Done: a 20-minute walk from lunch to Gion Shirakawa, then 10 minutes on foot to Pontocho for dinner. The gap in between is free time.',
       ja: '追加しました。昼食のあと徒歩 20 分で祇園白川へ、夕方は徒歩 10 分で先斗町の夕食へ。あいだの時間はホテルで休めます。',
+      ko: '추가했어요. 점심 후 걸어서 20분이면 기온 시라카와, 저녁에는 걸어서 10분 거리의 폰토초에서 식사. 사이의 빈 시간에는 호텔에서 쉬어도 돼요.',
     },
   },
   {
-    ask: { zh: '早上下雨的話，伏見稻荷換成室內的', en: 'If it rains, swap Fushimi Inari for somewhere indoors', ja: '朝が雨なら、伏見稲荷を屋内に変えて' },
+    ask: { zh: '早上下雨的話，伏見稻荷換成室內的', en: 'If it rains, swap Fushimi Inari for somewhere indoors', ja: '朝が雨なら、伏見稲荷を屋内に変えて', ko: '아침에 비가 오면 후시미 이나리를 실내로 바꿔 줘' },
     start: BASE,
     steps: [
       ['list_events'],
@@ -99,6 +108,7 @@ const PROMPTS = [
       zh: '換成三十三間堂了：整座在室內，八點半開門，下雨也不怕；走到清水寺只要 20 分，後面的行程都不用動。',
       en: 'Swapped in Sanjūsangen-dō: it’s all indoors and opens at 8:30, so rain won’t matter, and it’s a 20-minute walk to Kiyomizu-dera — nothing after it has to move.',
       ja: '三十三間堂に変えました。すべて屋内で 8:30 開門、雨でも安心です。清水寺まで徒歩 20 分なので、そのあとの予定はそのままです。',
+      ko: '산주산겐도로 바꿨어요. 전부 실내이고 8시 30분에 문을 열어서 비가 와도 걱정 없어요. 기요미즈데라까지 걸어서 20분이라 뒤의 일정은 그대로입니다.',
     },
   },
 ];

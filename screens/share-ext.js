@@ -30,7 +30,7 @@
 //    completeRequest 連系統分享選單一起收掉。
 import { fmt, lang, interactive, params, swatchClass, categoryName } from './chrome.js';
 
-const LANG = { 'zh-Hant-TW': 'zh', en: 'en', ja: 'ja' }[lang] || 'zh';
+const LANG = { 'zh-Hant-TW': 'zh', en: 'en', ja: 'ja', ko: 'ko' }[lang] || 'zh';
 
 // ── App 字串（ShareForm.json／TripEZGoShare.json／Domain.json） ──
 export const F = {
@@ -97,6 +97,29 @@ export const F = {
     quoted: s => `「${s}」`, zone: '東京',
     shopCats: ['ドラッグストア', '衣類', 'お土産', '食品', 'ブランド品', '家電・電子機器', '雑貨', 'その他'],
   },
+  // ko：ShareForm.json／TripEZGoShare.json／Domain.json 的 ko 欄。zone（時刻列右邊的城市）字串表只有
+  // domain.zone.city.tokyo「도쿄·서울·오키나와」，取第一段
+  ko: {
+    titleEvent: '일정 추가', titleShopping: '쇼핑 목록에 저장', titleNote: '메모에 저장', titleMarker: '지도에 마커 추가',
+    cancel: '취소', save: '저장', kinds: ['일정', '쇼핑', '메모', '마커'],
+    info: '정보', time: '시간', place: '장소', desc: '설명', attach: '첨부 파일', trip: '저장할 여행', tripRow: '여행',
+    itemName: '상품명', cats: '카테고리', itemImage: '상품 이미지', price: '참고 가격',
+    priceHint: '페이지에 가격과 통화가 있을 때만 채워집니다. 없으면 비워 두고, 통화는 이 여행에서 환전하는 통화입니다.',
+    title: '제목', content: '내용', filing: '정리', tag: '태그',
+    fromPage: '페이지에서', fromPlace: '장소 기준', fromLink: '링크에서', required: '필수', requiredChoice: '필수',
+    reading: 'URL 정보를 확인하는 중',
+    modes: ['시간', '종일', '미정'], dayCaption: '날짜', start: '시작', end: '종료', unspecified: '지정 안 함', day: n => `${n}일차`,
+    pendingHint: '아직 시간이 없어요. 날짜를 정하면 그날 맨 위에 보이고, 정하지 않으면 「미정 일정」에 남아요.',
+    allDayHintUndated: '이 여행의 날만 고를 수 있어요.',
+    noPlace: '장소 없음 · 링크에 좌표가 없어요. 장소는 앱에서 추가하세요.', noPlaceShort: '장소 없음',
+    pickLead: '장소 선택 · “', pickTail: '” 검색', pick: '장소 선택',
+    needsPlace: '마커는 장소가 있어야 저장돼요. 링크에 좌표가 없으니 장소를 골라 주세요.',
+    titlePh: '제목', descPh: '설명', itemPh: '이름 없는 상품', typeNone: '유형',
+    imageRemoved: '페이지 이미지 저장 안 함', restore: '되돌리기',
+    doneEvent: '일정에 추가했습니다', doneShopping: '쇼핑 목록에 추가했습니다', doneNote: '메모에 저장했습니다', doneMarker: '지도에 추가했습니다',
+    quoted: s => `‘${s}’`, zone: '도쿄',
+    shopCats: ['드러그스토어', '의류', '기념품', '식품', '명품', '전자제품', '생활용품', '기타'],
+  },
 }[LANG];
 
 // iOS 系統分享選單的字（系統用詞）
@@ -107,6 +130,8 @@ const SYS = {
     copy: 'Copy', readingList: 'Add to Reading List', quickNote: 'Add to Quick Note', editActions: 'Edit Actions…' },
   ja: { people: ['拓海', '美咲', '母', '旅行グループ'], airdrop: 'AirDrop', messages: 'メッセージ', mail: 'メール', notes: 'メモ',
     copy: 'コピー', readingList: 'リーディングリストに追加', quickNote: 'クイックメモに追加', editActions: 'アクションを編集…' },
+  ko: { people: ['현우', '지우', '엄마', '여행 모임'], airdrop: 'AirDrop', messages: '메시지', mail: '메일', notes: '메모',
+    copy: '복사', readingList: '읽기 목록에 추가', quickNote: '빠른 메모에 추가', editActions: '동작 편집…' },
 }[LANG];
 
 // ── 圖示 ──

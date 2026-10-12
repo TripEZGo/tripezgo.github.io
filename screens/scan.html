@@ -138,11 +138,16 @@ const S = {
     history: 'スキャン履歴', count: n => `${n} 件`, clear: '消去', tag: '共同編集中・旅の仲間全員に表示', me: '自分', yesterday: t => `昨日 ${t}`,
     paper: '宮島フェリー時刻表', empty: 'まだ何もスキャンしていません。\nスキャンした URL やテキストはここに残り、\n旅行中いつでも見られます。',
     adBadge: '広告', adHd: '瀬戸内バス周遊パス・オンライン購入', adBy: '3 日間乗り放題、スマホを見せるだけ', adWho: 'サンプル広告主', adCta: '購入' },
+  // ko：Widgets.json widgets.scanner.*／widgets.scan.*、UI.json ui.ad.badge。paper 與廣告那幾格（範例廣告）是自寫的
+  ko: { scanTitle: 'QR 코드 스캔', hint: 'QR 코드를 틀 안에 맞추면 읽는 즉시 자동으로 멈춥니다', torch: '손전등', photos: '사진에서',
+    history: '스캔 기록', count: n => `${n}건`, clear: '지우기', tag: '공동 편집 중 · 모든 동행이 볼 수 있음', me: '나', yesterday: t => `어제 ${t}`,
+    paper: '미야지마 페리 시간표', empty: '아직 스캔한 항목이 없습니다.\n스캔한 링크와 텍스트는 여기에 남아\n여행 내내 찾아볼 수 있습니다.',
+    adBadge: '광고', adHd: '세토우치 버스 패스 · 온라인 구매', adBy: '3일간 무제한 승차, 휴대폰으로 보여 주기만 하면 돼요', adWho: '샘플 광고주', adCta: '구매' },
 }[lang];
 const s = S;
 
 // 範例紀錄（範本裡沒有掃描紀錄）。網址那一種：網域粗、後面那一截等寬灰（ScanHistoryRow.Content.url）。
-const MATE = { 'zh-Hant-TW': ['小美', '小'], en: ['Mia', 'M'], ja: ['美咲', '美'] }[lang] || ['小美', '小'];
+const MATE = { 'zh-Hant-TW': ['小美', '小'], en: ['Mia', 'M'], ja: ['美咲', '美'], ko: ['지우', '지'] }[lang] || ['小美', '小'];
 const SAMPLE = {
   'zh-Hant-TW': [
     { url: ['www.jr-odekake.net', '/railroad/eticket/'], who: 'me', time: '10:12' },
@@ -161,6 +166,12 @@ const SAMPLE = {
     { text: 'Wi-Fi：MIYAJIMA-FREE　パスワード torii2026（宮島口桟橋 2 階）', who: 'mate', time: '09:47' },
     { url: ['hiroshima-okonomimura.jp', '/menu/?lang=ja'], who: 'mate', time: '昨日 21:40' },
     { url: ['www.miyajima-matsudai.co.jp', '/timetable/'], who: 'me', time: '昨日 19:05' },
+  ],
+  ko: [   // 範例紀錄（自寫）
+    { url: ['www.jr-odekake.net', '/railroad/eticket/'], who: 'me', time: '10:12' },
+    { text: 'Wi-Fi: MIYAJIMA-FREE  비밀번호 torii2026(미야지마구치 선착장 2층)', who: 'mate', time: '09:47' },
+    { url: ['hiroshima-okonomimura.jp', '/menu/?lang=ko'], who: 'mate', time: S.yesterday('21:40') },
+    { url: ['www.miyajima-matsudai.co.jp', '/timetable/'], who: 'me', time: S.yesterday('19:05') },
   ],
 }[lang];
 
@@ -192,7 +203,7 @@ const qr = (seedN = 7) => {
 d.insertAdjacentHTML('beforeend', `<div class="cam" id="cam">
     <div class="scene"></div><div class="paper"><span class="qr">${qr()}</span><b>${s.paper}</b></div>
     <div class="dimmed"></div><div class="vf"><i></i><i></i><i></i><i></i></div>
-    <div class="x" role="button" aria-label="${{ 'zh-Hant-TW': '關閉', en: 'Close', ja: '閉じる' }[lang]}" data-tap>${ic('close')}</div>
+    <div class="x" role="button" aria-label="${{ 'zh-Hant-TW': '關閉', en: 'Close', ja: '閉じる', ko: '닫기' }[lang]}" data-tap>${ic('close')}</div>
     <div class="tt">${s.scanTitle}</div><div class="hint">${s.hint}</div>
     <div class="bts"><div data-btn="torch"><b>${ic('torch')}</b>${s.torch}</div><div data-btn="photos"><b>${ic('photo')}</b>${s.photos}</div></div>
   </div>
@@ -276,6 +287,11 @@ if (interactive) {
       movedText: (dt, w) => `${dt} に${w}が同じテキストをスキャンしています。その履歴をいちばん上に移動しました。`, meta: (w, t) => `${w} がスキャン · ${t}`, today: t => `今日 ${t}`,
       clearTitle: 'スキャン履歴をすべて消去しますか？', clearShared: 'この旅程の旅の仲間全員から履歴が消えます。元に戻せません。', clearSolo: 'この旅行のスキャン履歴がすべて消えます。元に戻せません。',
       cancel: 'キャンセル', locale: 'ja-JP' },
+    ko: { result: '스캔 결과', url: '링크', textCount: n => `텍스트 · ${n}자`, open: '열기', copy: '복사', share: '공유', you: '본인',
+      saved: n => `‘${n}’ 스캔 기록에 저장했습니다`, movedUrl: (dt, w) => `${dt}에 ${w} 님이 같은 링크를 스캔했습니다. 그 기록을 맨 위로 옮겼습니다.`,
+      movedText: (dt, w) => `${dt}에 ${w} 님이 같은 텍스트를 스캔했습니다. 그 기록을 맨 위로 옮겼습니다.`, meta: (w, t) => `${w} 님이 스캔 · ${t}`, today: t => `오늘 ${t}`,
+      clearTitle: '스캔 기록을 모두 지울까요?', clearShared: '이 여행의 모든 동행이 이 기록을 볼 수 없게 됩니다. 되돌릴 수 없습니다.', clearSolo: '이 여행의 스캔 기록이 모두 지워집니다. 되돌릴 수 없습니다.',
+      cancel: '취소', locale: 'ko-KR' },
   }[lang];
   const IC2 = {
     copy: '<rect x="9" y="9" width="11" height="12" rx="2"/><path d="M5 15V7a2 2 0 0 1 2-2h8"/>',
@@ -302,7 +318,7 @@ if (interactive) {
   const SCANS = [
     'https://www.itsukushimajinja.jp/',
     seed[1].content,
-    { 'zh-Hant-TW': '置物櫃 27 號　密碼 4512', en: 'Locker #27  PIN 4512', ja: 'ロッカー 27 番　暗証番号 4512' }[lang],
+    { 'zh-Hant-TW': '置物櫃 27 號　密碼 4512', en: 'Locker #27  PIN 4512', ja: 'ロッカー 27 番　暗証番号 4512', ko: '보관함 27번  비밀번호 4512' }[lang],
     seed[2].content,
   ];
 

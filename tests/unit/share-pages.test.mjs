@@ -7,7 +7,7 @@ import { PAGES, render } from '../../tools/gen-share.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '../..');
 
-test('the three share pages are up to date with the template, the strings and the homepages (run node tools/gen-share.mjs)', () => {
+test('every share page is up to date with the template, the strings and the homepages (run node tools/gen-share.mjs)', () => {
   for (const page of PAGES) assert.equal(readFileSync(join(root, page.out), 'utf8'), render(page), page.out);
 });
 
@@ -26,7 +26,8 @@ test('the language buttons in the header move between share pages, not back to t
     const html = readFileSync(join(root, page.out), 'utf8');
     const header = html.slice(html.indexOf('<header class="site-header">'), html.indexOf('</header>'));
     const langLinks = [...header.matchAll(/class="lang" href="([^"]+)"/g)].map((m) => m[1]);
-    assert.equal(langLinks.length, 2, page.out);
-    for (const href of langLinks) assert.match(href, /^\/(en\/|ja\/)?share\/$/, page.out);
+    assert.equal(langLinks.length, PAGES.length - 1, page.out);
+    for (const href of langLinks) assert.match(href, /^\/(en\/|ja\/|ko\/)?share\/$/, page.out);
+    assert.deepEqual(new Set([...langLinks, page.home + 'share/']), new Set(PAGES.map((p) => p.home + 'share/')), page.out);
   }
 });

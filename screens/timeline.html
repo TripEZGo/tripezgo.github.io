@@ -135,6 +135,9 @@ const S = {
   ja: { min: m => `${m} 分`, hr: h => `${h} 時間`, hm: (h, m) => `${h} 時間 ${m} 分`, sep: '　',
     paren: (a, b) => `${a}（${b}）`, noGap: '間隔なし',
     mode: { walking: '徒歩', driving: '車', cycling: '自転車', transit: '公共交通', other: 'その他' } },
+  ko: { min: m => `${m}분`, hr: h => `${h}시간`, hm: (h, m) => `${h}시간 ${m}분`, sep: ' · ',
+    paren: (a, b) => `${a}(${b})`, noGap: '간격 없음',
+    mode: { walking: '도보', driving: '자동차', cycling: '자전거', transit: '대중교통', other: '기타' } },
 };
 const s = S[lang] || S['zh-Hant-TW'];
 const dur = m => m < 60 ? s.min(m) : (m % 60 ? s.hm(Math.floor(m / 60), m % 60) : s.hr(m / 60));

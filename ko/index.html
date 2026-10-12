@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TripEZGo — 여행 계획부터 여행길에 필요한 것까지, 앱 하나로</title>
+<meta name="description" content="TripEZGo는 iPhone·iPad 여행 플래너입니다. 일정은 캘린더와 타임라인에, 승차권·첨부·할 일은 일정에. 지도로 하루 동선과 일본 편의점·백화점을 확인하고, 동행과 공동 편집하며 여행길에서는 위치를 공유하세요. 다음 목적지는 잠금 화면에. 데이터는 내 기기와 내 iCloud에만 저장됩니다.">
+<meta name="theme-color" content="#fbf8f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17120f" media="(prefers-color-scheme: dark)">
+<meta name="apple-itunes-app" content="app-id=6801536372">
+<link rel="canonical" href="https://tripezgo.com/ko/">
+<link rel="alternate" hreflang="zh-Hant" href="https://tripezgo.com/">
+<link rel="alternate" hreflang="en" href="https://tripezgo.com/en/">
+<link rel="alternate" hreflang="ja" href="https://tripezgo.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/">
+<link rel="alternate" hreflang="x-default" href="https://tripezgo.com/">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/img/icon-512.png">
+<link rel="apple-touch-icon" href="/assets/img/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TripEZGo">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:title" content="TripEZGo — 여행 계획부터 여행길에 필요한 것까지, 앱 하나로">
+<meta property="og:description" content="TripEZGo는 iPhone·iPad 여행 플래너입니다. 일정은 캘린더와 타임라인에, 승차권·첨부·할 일은 일정에. 지도로 하루 동선과 일본 편의점·백화점을 확인하고, 동행과 공동 편집하며 여행길에서는 위치를 공유하세요. 다음 목적지는 잠금 화면에. 데이터는 내 기기와 내 iCloud에만 저장됩니다.">
+<meta property="og:url" content="https://tripezgo.com/ko/">
+<meta property="og:image" content="https://tripezgo.com/assets/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/css/home.css?v=676e744f09">
+<script type="module" src="/assets/js/home.js?v=0c0b909751"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TripEZGo",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "iOS, iPadOS",
+  "downloadUrl": "https://apps.apple.com/app/id6801536372",
+  "description": "TripEZGo는 iPhone·iPad 여행 플래너입니다. 일정은 캘린더와 타임라인에, 승차권·첨부·할 일은 일정에. 지도로 하루 동선과 일본 편의점·백화점을 확인하고, 동행과 공동 편집하며 여행길에서는 위치를 공유하세요. 다음 목적지는 잠금 화면에. 데이터는 내 기기와 내 iCloud에만 저장됩니다.",
+  "url": "https://tripezgo.com/ko/",
+  "inLanguage": ["ko", "zh-Hant-TW", "zh-Hant-HK", "ja", "en"],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TWD" }
+}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.5 5.2h3"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 13 5 5 9-11"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="m21 16-5-5-9 9"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9.5h18M7.5 14.5h4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M3.4 19.6a5.8 5.8 0 0 1 11.2 0"/><path d="M16.4 5.4a3.4 3.4 0 0 1 0 5.2"/><path d="M17.6 14.4a5.8 5.8 0 0 1 3 5.2"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="m20 11.5-8 8a5 5 0 0 1-7.1-7.1l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7l-8.4 8.4a1.7 1.7 0 0 1-2.4-2.4l7.7-7.7"/></symbol>
+  <symbol id="i-todo" viewBox="0 0 24 24"><path d="m4 7 1.6 1.6L8.4 5.8M4 15.5l1.6 1.6 2.8-2.8M11.5 7.5H20M11.5 16H20"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="13" rx="3"/><path d="M6 10h12M9 13.2h.01M15 13.2h.01M8.5 16 6.5 20.5M15.5 16l2 4.5"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8.5h15l-3.5-3.5M20 15.5H5l3.5 3.5"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h7.5a3 3 0 0 0 0-6h-7a3 3 0 0 1 0-6H16"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24"><path d="M12 3.5 19 20l-7-3.8L5 20l7-16.5z"/></symbol>
+  <symbol id="i-island" viewBox="0 0 24 24"><rect x="3" y="8.5" width="18" height="7" rx="3.5"/><path d="M15 12h2.5"/></symbol>
+  <symbol id="i-widget" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15L6 16z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M4 10.5v3M8 7.5v9M12 4.5v15M16 7.5v9M20 10.5v3"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.8 7.8 0 0 1 0 11"/></symbol>
+  <symbol id="i-fx" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 10h7l-2-2M15.5 14h-7l2 2"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4.5h2.2L7.4 15h10.4l2-7.5H6.3"/><circle cx="9" cy="19.2" r="1.3"/><circle cx="16.8" cy="19.2" r="1.3"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2.5v2.5H14zM20 14v6h-3.5M14 20h.01"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3v4.5M15 3v4.5M6.5 7.5h11V11a5.5 5.5 0 0 1-11 0V7.5zM12 16.5V21"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 10a4.3 4.3 0 0 1-.4 8.5H7z"/></symbol>
+  <symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="m3 3 18 18M10.6 6.1A9.6 9.6 0 0 1 12 6c5 0 8.5 4.5 9.5 6a16 16 0 0 1-2.8 3.3M6.6 6.6C4.4 8 3 10.4 2.5 12c1 1.5 4.5 6 9.5 6a9.6 9.6 0 0 0 4.4-1M9.9 9.9a3 3 0 0 0 4.2 4.2"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 8.5-8.5M16.5 6.5l2.5 2.5M14 9l2 2"/></symbol>
+  <symbol id="i-shift" viewBox="0 0 24 24"><path d="M7 4v16l-3-3M17 20V4l3 3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">메인 콘텐츠로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/ko/" aria-label="TripEZGo 홈">
+      <span class="m m-mark" role="img" aria-hidden="true"></span>
+      <span class="m m-word" role="img" aria-hidden="true"></span>
+    </a>
+    <nav class="site-nav" aria-label="메인">
+      <a class="hide-sm" href="#privacy">개인정보</a>
+      <a class="hide-sm" href="#features">기능</a>
+      <a class="hide-sm" href="#plans">요금제</a>
+      <details class="lang-menu">
+        <summary>한국어</summary>
+        <div class="lang-list">
+          <a class="lang" href="/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a class="lang" href="/en/" hreflang="en" lang="en">English</a>
+          <a class="lang" href="/ja/" hreflang="ja" lang="ja">日本語</a>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">iPhone·iPad 여행 플래너</p>
+        <h1>여행 계획부터 여행길에 필요한 것까지,<br><em>앱 하나로</em></h1>
+        <p class="lede">캘린더로 일정을 짜고 동행과 함께 편집하고, 출발한 뒤에도 그대로 들고 다니세요.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372" target="_blank" rel="noopener">App Store에서 다운로드</a>
+          <a class="btn btn-ghost" href="#features">어떻게 쓰는지 보기</a>
+        </div>
+        <ul class="hero-tags">
+          <li><svg class="i"><use href="#i-check"/></svg>회원가입 없음</li>
+          <li><svg class="i"><use href="#i-check"/></svg>오프라인 사용 가능</li>
+          <li><svg class="i"><use href="#i-check"/></svg>무료 다운로드</li>
+        </ul>
+      </div>
+      <div class="trio">
+        <figure class="ph ph-side shot"><img src="/assets/img/shots/v2/ko/map-place.webp" width="720" height="1565" alt="지도: 미야지마에서의 2일차. 일정이 도보 동선으로 이어지고, 이쓰쿠시마 신사 카드에 도보 길 안내 버튼" loading="lazy"></figure>
+        <figure class="ph ph-main shot"><img src="/assets/img/shots/v2/ko/calendar.webp" width="720" height="1565" alt="캘린더: 산요 6일 여행의 2일차. 일정이 시간순으로 놓이고, 아침 식사와 페리 사이에 JR 산요 본선 열차 편" fetchpriority="high"></figure>
+        <figure class="ph ph-side shot"><img src="/assets/img/shots/v2/ko/overview.webp" width="720" height="1565" alt="한눈에 보기: 오늘 일정이 시간순으로 나열되고, 일정 사이에 도보 시간과 간격" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt privacy-band" id="privacy">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">개인정보와 안전</p>
+        <h2>내 여행은 <span class="nb">내 iPhone과</span> <span class="nb">내 iCloud에만</span></h2>
+        <p class="lede">계정은 필요 없어요. 저희는 서버가 없어 여러분의 일정을 볼 수 없습니다. 백업·동기화·공유는 모두 iCloud로, 인터넷이 없어도 편집할 수 있어요.</p>
+        <details class="more"><summary>자세히 보기</summary><div class="more-body">
+<p><b>개인정보와 데이터 보안이 우선</b>: AI가 일상이 된 지금, 데이터 보안과 개인정보는 그 어느 때보다 중요합니다. TripEZGo는 자체 서버 없이 만들어서, 여러분의 여행 데이터를 보관할 곳이 저희 쪽에는 없습니다. 데이터는 여러분의 기기, 또는 Apple iCloud(백업과 기기 간 동기화)에만 저장됩니다. 여럿이 여행을 공동 편집할 때도 iCloud 공유를 사용합니다.</p>
+<p>여행 데이터는 첨부 파일과 사진까지 모두 내 iPhone이나 내 iCloud에만 있습니다. 백업 파일을 직접 내보내고 가져올 수도 있고, iCloud 백업·동기화에 맡길 수도 있어요.</p>
+<p><b>오프라인에서도 편집</b>: 모든 데이터가 iPhone 안에 있으니, 인터넷이 없어도 보고 편집할 수 있습니다. iCloud 백업·동기화나 공유를 켜 두었다면, 다시 연결되는 대로 동기화됩니다.</p>
+          </div></details>
+        <a class="more-link" href="/ko/privacy.html">개인정보 처리방침 전문 읽기 →</a>
+      </div>
+      <div class="feature-media">
+        <div class="flow" data-demo="flow" role="group" aria-label="데이터 흐름: 데이터는 이 iPhone에 있습니다. iCloud 백업·동기화를 켜면 내 Apple iCloud로 전송되고 iPad와도 동기화되며, 여행 공동 편집까지 켜면 iCloud 공유로 동행 세 명에게 전달됩니다">
+          <noscript><p>데이터는 이 iPhone에 저장되고, 내 Apple iCloud로 백업·동기화됩니다. 여행 공동 편집도 iCloud 공유로 이루어집니다.</p></noscript>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="wrap">
+      <article class="feature">
+        <div>
+          <p class="eyebrow">01 · 일정 짜기</p>
+          <h3>챙길 것은, <em>모두 일정에 달아 두세요</em></h3>
+          <p>승차권, 예약, 할 일이 일정과 함께. 현장에서는 탭 한 번이면 열려요.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-pin"/></svg><span>장소 검색, Google 지도 링크를 붙여 넣기만 해도</span></li><li><svg class="i"><use href="#i-clip"/></svg><span>사진, 파일, 전자 승차권 링크</span></li><li><svg class="i"><use href="#i-clock"/></svg><span>출발·도착 시간대가 다른 일정, 종일·미정 일정</span></li><li><svg class="i"><use href="#i-todo"/></svg><span>출발 전에 하나씩 체크하는 할 일</span></li></ul>
+          <details class="more"><summary>자세히 보기</summary><div class="more-body">
+<p>일정에 필요한 정보는 빠짐없이 챙겼어요. 일정마다 설정할 수 있는 것:</p>
+<ul>
+<li><b>장소</b>: 이름이나 주소로 검색하거나, Google 지도 링크나 주소를 그대로 붙여 넣으세요</li>
+<li><b>유형/제목</b>: 장소를 입력하면 자동으로 채워지고, 유형도 추측해 줍니다</li>
+<li><b>첨부</b>: 사진(사진 앱에서), 파일(파일 앱에서), 링크(전자 승차권 등) 저장</li>
+<li><b>시간</b>: 출발과 도착 시간대가 다른 일정(타이베이에서 이륙해 오키나와에 착륙 등), 종일 일정(호텔 숙박 등), 미정 일정(시간이 아직 정해지지 않은 것)</li>
+<li><b>할 일</b>: “잊지 말고 예약하기” 같은 것</li>
+</ul>
+<p>만든 일정은 ‘취소’(남겨 두고 취소선 표시), ‘삭제’(완전히 지우기), ‘뒤로/앞으로’(이 일정과 이후 일정을 함께 X시간 Y분 옮기기)를 할 수 있어요.</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/ko/event-airport.webp" width="720" height="1565" alt="일정 상세: 타오위안 공항 체크인. 할 일 목록과 첨부(웹 링크, PDF 전자 탑승권, 여권 사진)" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="feature is-flipped">
+        <div>
+          <p class="eyebrow">02 · 이동</p>
+          <h3>이번 열차를 놓쳐도, <em>다음 편이 이미 잡혀 있어요</em></h3>
+          <p>일정과 일정 사이가 곧 이동. 시간이 모자라면 먼저 알려 줍니다.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-route"/></svg><span>도보·자동차·대중교통, 걸리는 시간은 자동으로 계산</span></li><li><svg class="i"><use href="#i-bell"/></svg><span>이동 시간이 빈 시간보다 길면 미리 경고</span></li><li><svg class="i"><use href="#i-train"/></svg><span>여러 편을 저장하고, 여행 중에는 가장 가까운 편을 알림</span></li></ul>
+          
+          <details class="more"><summary>자세히 보기</summary><div class="more-body">
+<p>일정과 일정 사이에는 이동을 설정할 수 있습니다. 이동은 곧 교통수단이에요. 도보·자동차·대중교통 중에서 고르면 두 지점 사이의 예상 소요 시간이 나옵니다. 일정 사이 간격이 이동에 걸리는 시간보다 짧으면 경고가 나타나요(예를 들어 일정 사이가 30분뿐인데 자동차로 실제 1시간이 걸리는 경우).</p>
+<p>특히 공을 들인 것은 대중교통입니다. 여러 편을 미리 입력해 두면, 여행 중에는 지금과 가장 가까운 편을 알려 줍니다. 일찍 도착했든 놓쳤든, 그 자리에서 바로 다음 열차나 버스로 바꿀 수 있어요.</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/ko/leg.webp" width="720" height="1565" alt="이동: 세 개의 편이 나란히 놓이고, 선택한 편에 출발·도착·대기 시간 표시" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="feature">
+        <div>
+          <p class="eyebrow">03 · 캘린더/타임라인</p>
+          <h3>오늘의 동선, <em>한눈에</em></h3>
+          <p>일정, 빈 시간, 이동 시간을 하나의 시간 축에.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-shift"/></svg><span>끌어다 놓기만 하면 일정을 짜고 바꿀 수 있어요</span></li><li><svg class="i"><use href="#i-plus"/></svg><span>시간을 못 정한 곳은 시간대로 끌어다 놓으면 끝</span></li><li><svg class="i"><use href="#i-clock"/></svg><span>머무는 시간과 빈 시간</span></li><li><svg class="i"><use href="#i-swap"/></svg><span>캘린더와 타임라인을 언제든 전환</span></li></ul>
+          <details class="more"><summary>자세히 보기</summary><div class="more-body">
+<p><b>캘린더 보기</b>: 일정이 캘린더의 일정으로 그대로 놓입니다. 보기 편할 뿐 아니라 일정을 짤 때도 가장 편해요. 끌어다 놓으면 일정이 생기고, 바꾸고 싶을 때도 끌어서 옮기기만 하면 됩니다. 순서를 아직 못 정한 일정도 금세 바꿀 수 있어요.</p>
+<p><b>타임라인 보기</b>: 타임라인으로 보는 게 익숙하다면 전환하세요. 몇 시 몇 분에 어디로 가는지, 얼마나 머무는지, 이동은 얼마나 걸리는지 한눈에 보입니다.</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/ko/calendar.webp" width="720" height="1565" alt="캘린더: 산요 6일 여행의 2일차. 일정이 시간순으로 놓이고, 아침 식사와 페리 사이에 JR 산요 본선 열차 편" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="feature is-flipped">
+        <div>
+          <p class="eyebrow">04 · 한눈에 보기</p>
+          <h3>여행 전체를 <em>한 페이지에</em></h3>
+          <p>일정, 첨부, 할 일. 찾는 것은 탭 한 번이면 나와요.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-calendar"/></svg><span>여행 전체를 날짜별로 묶어서</span></li><li><svg class="i"><use href="#i-clip"/></svg><span>하루치 첨부를 한곳에</span></li><li><svg class="i"><use href="#i-todo"/></svg><span>어느 날 어느 일정에 할 일이 남았는지 한눈에</span></li></ul>
+          <details class="more"><summary>자세히 보기</summary><div class="more-body">
+<p>한눈에 보기에서는 여행 전체 일정을 한 페이지로 파악할 수 있습니다. 일정의 첨부와 할 일도 날짜별로 정리되어 있어서, 여기서 바로 각 일정의 첨부를 열거나 어느 날 어느 일정에 할 일이 남았는지 확인할 수 있어요.</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/ko/overview.webp" width="720" height="1565" alt="한눈에 보기: 오늘 일정이 시간순으로 나열되고, 일정 사이에 도보 시간과 간격" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="feature">
+        <div>
+          <p class="eyebrow">05 · 지도</p>
+          <h3>다음은 어디로? <em>지도가 알려 줍니다</em></h3>
+          <p>하루의 일정이 동선으로 이어지고, 가는 길의 가게도 표시돼요.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-route"/></svg><span>날마다의 동선과 이동</span></li><li><svg class="i"><use href="#i-pin"/></svg><span>가고 싶은 곳에 마커</span></li><li><svg class="i"><use href="#i-bag"/></svg><span>일본 편의점·백화점·드럭스토어 정보</span></li><li><svg class="i"><use href="#i-nav"/></svg><span>도보 길 안내</span></li></ul>
+          <details class="more"><summary>자세히 보기</summary><div class="more-body">
+<p>일정에 장소를 정해 두면, 그날 일정끼리의 위치 관계와 동선을 지도에서 바로 파악할 수 있습니다.</p>
+<p>일정 말고도 가고 싶은 곳에 마커를 추가할 수 있어서, 여행 중에 근처에 또 뭐가 있는지 언제든 볼 수 있어요. 여러 편의점·백화점 정보도 내장되어 있어, 근처에 있는지 지도를 열자마자 알 수 있습니다.</p>
+<p>도보 길 안내도 지원: 근처에 가 보고 싶은 곳을 발견했는데 가는 길을 모르겠다면? 길 안내를 시작하면 바로 알 수 있어요.</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <div class="duo">
+            <figure class="ph shot"><img src="/assets/img/shots/v2/ko/map-route.webp" width="720" height="1565" alt="지도를 열었을 때의 기본 화면: 오늘 일정이 순서대로 번호가 매겨져 동선으로 이어지고, 옆에 사용자 마커와 근처 편의점" loading="lazy"></figure>
+            <figure class="ph shot"><img src="/assets/img/shots/v2/ko/map-live.webp" width="720" height="1565" alt="지도: 2일차, 원폭 돔까지 도보 길 안내 중. 가는 길의 편의점과 동행 위치 표시" loading="lazy"></figure>
+          </div>
+        </div>
+      </article>
+      <article class="feature is-flipped">
+        <div>
+          <p class="eyebrow">06 · 공동 편집, 위치 공유</p>
+          <h3>함께 짜고, <em>함께 떠나요</em></h3>
+          <p>동행과 일정·메모·첨부를 공동 편집. 여행길에서는 위치를 공유해, 서로 떨어져도 찾을 수 있어요.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-users"/></svg><span>동행을 초대해 같은 여행을 함께 짜기</span></li><li><svg class="i"><use href="#i-pin"/></svg><span>여행 중 서로의 위치 확인</span></li><li><svg class="i"><use href="#i-eyeoff"/></svg><span>메모·첨부·할 일·쇼핑 목록은 공유할지 고를 수 있음</span></li></ul>
+          <details class="more"><summary>자세히 보기</summary><div class="more-body">
+<p>여행을 공유해 공동 편집하면, 동행과 함께 이번 여행을 완성할 수 있습니다. 여행 중에는 동행이 위치 공유를 켜서 서로의 안전을 챙기고, 떨어져도 서로를 찾을 수 있어요.</p>
+<p>메모·첨부·할 일·쇼핑 목록은 각각 공동 편집으로 공유할지 정할 수 있습니다.</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <div class="duo">
+            <figure class="ph shot"><img src="/assets/img/shots/v2/ko/members.webp" width="720" height="1565" alt="여행 공동 편집: 공유 스위치, 초대 링크와 QR 코드, 아래에 동행 목록" loading="lazy"></figure>
+            <figure class="ph shot"><img src="/assets/img/shots/v2/ko/map-mates.webp" width="720" height="1565" alt="위치 공유: 동행의 위치가 지도에 표시되고, 회색은 1시간 넘게 업데이트가 없는 사람" loading="lazy"></figure>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="glance">
+    <div class="wrap">
+      <article class="feature">
+        <div>
+          <p class="eyebrow">앱을 열지 않아도</p>
+          <h3>잠금을 풀지 않아도, <em>다음 목적지는 잠금 화면에</em></h3>
+          <p>지금 어디에 있는지, 얼마나 더 머물 수 있는지, 다음 목적지까지 어떻게 가는지.</p>
+          <ul class="points"><li><svg class="i"><use href="#i-island"/></svg><span>라이브 액티비티: 잠금 화면과 Dynamic Island에서 진행 중인 일정을 언제든</span></li><li><svg class="i"><use href="#i-bell"/></svg><span>알림: 출발 전, 일정 시작 전, 할 일이 남아 있을 때 알려 줌</span></li><li><svg class="i"><use href="#i-widget"/></svg><span>위젯: 홈 화면과 잠금 화면에 오늘 일정, 할 일은 그 자리에서 체크</span></li></ul>
+          <details class="more"><summary>자세히 보기</summary><div class="more-body">
+<p>다양한 위젯으로 필요한 정보를 홈 화면이나 잠금 화면에 두고 바로 확인하고 열 수 있어요.</p>
+<p>여행 중에는 라이브 액티비티 덕분에 iPhone 잠금을 풀지 않아도, 슬쩍 보기만 하면 지금 일정에 머무를 시간, 이동 정보, 다음 일정을 알 수 있습니다.</p>
+<p>여행 시작 전, 일정 시작 전, 할 일이 남아 있을 때 알림으로 알려 드려요.</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <div class="duo">
+            <figure class="ph shot"><img src="/assets/img/shots/v2/ko/lock.webp" width="720" height="1565" alt="잠금 화면: 라이브 액티비티에 진행 중인 이쓰쿠시마 신사와 남은 시간, 다음 목적지. 그 아래 TripEZGo 알림" loading="lazy"></figure>
+            <figure class="ph shot"><img src="/assets/img/shots/v2/ko/widget.webp" width="720" height="1565" alt="홈 화면 위젯: 오늘 일정과 환율 변환" loading="lazy"></figure>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="tools">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">자료와 도구</p>
+        <h2>여행길에 필요한 것은, <span class="nb">모두 여기에</span></h2>
+        <p class="lede">여행에 쓸모 있는 도구를 내장해, 앱 하나로 모두 해결.</p>
+      </div>
+            <div class="tool-groups">
+        <div class="tool-group">
+          <h3 class="tg-h">자료</h3>
+          <div class="tools">
+            <article class="tool">
+              <figure class="ph shot"><img src="/assets/img/shots/v2/ko/note.webp" width="720" height="1565" alt="메모: 사진과 글, @로 일정에 연결하고, 일본어 문장은 읽어 주기도" loading="lazy"></figure>
+              <h4>메모</h4>
+              <p>사진도 글도 기록하고, 현지 말을 못 해도 읽어 줘요</p>
+            </article>
+            <article class="tool">
+              <figure class="ph shot"><img src="/assets/img/shots/v2/ko/shop.webp" width="720" height="1565" alt="쇼핑 목록: 살 것·구매함·안 사기 개수와 카테고리별 사진 그리드" loading="lazy"></figure>
+              <h4>쇼핑 목록</h4>
+              <p>아직 안 산 것이 한눈에, 가격을 비교해 가장 싸게</p>
+            </article>
+          </div>
+        </div>
+        <div class="tool-group">
+          <h3 class="tg-h">도구</h3>
+          <div class="tools">
+            <article class="tool">
+              <figure class="ph shot"><img src="/assets/img/shots/v2/ko/scan.webp" width="720" height="1565" alt="QR 코드 스캔: 열자마자 카메라, 비추기만 하면 스캔, 기록은 동행도 볼 수 있음" loading="lazy"></figure>
+              <h4>QR 코드 스캔</h4>
+              <p>열고 스캔하면 기록이 남고, 동행도 볼 수 있어요</p>
+            </article>
+            <article class="tool">
+              <figure class="ph shot"><img src="/assets/img/shots/v2/ko/fx-nokbd.webp" width="720" height="1565" alt="환율 변환: 두 통화를 변환하고, 아래에 최근 변환 기록" loading="lazy"></figure>
+              <h4>환율 변환</h4>
+              <p>그날의 환율로, 인터넷이 없어도 계산</p>
+            </article>
+          </div>
+        </div>
+      </div>
+      <details class="more"><summary>자세히 보기</summary><div class="more-body">
+<ul>
+<li><b>메모</b>: 사진과 글을 자유롭게 편집하고, 읽어 주기도 지원해요. 현지 말을 못 해도 그대로 상대에게 들려줄 수 있습니다.</li>
+<li><b>환율 변환</b>: 그날의 환율로, 인터넷이 없어도 변환할 수 있어요.</li>
+<li><b>쇼핑 목록</b>: 사고 싶은 것을 여기에 모아 두면 아직 안 산 것이 한눈에 보여요. 가게마다 가격도 기록해 가장 싼 곳에서 살 수 있습니다.</li>
+<li><b>QR 코드 스캔</b>: 열고 스캔하기만 하면 기록이 남고, 동행도 바로 볼 수 있어요.</li>
+</ul>
+          </div></details>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="more">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">연동</p>
+        <h2>iPhone의 다른 앱과 <span class="nb">연결됩니다</span></h2>
+      </div>
+      <div class="tools is-three has-wide">
+        <article class="tool is-wide">
+                    <div class="share-pair">
+            <figure class="ph shot"><img src="/assets/img/shots/v2/ko/share-ig.webp" width="720" height="1565" alt="공유해 가져오기: SNS 앱의 게시물에서 공유를 누르고 TripEZGo를 고르면 메모로 저장" loading="lazy"></figure>
+            <figure class="ph shot"><img src="/assets/img/shots/v2/ko/share-gmap.webp" width="720" height="1565" alt="공유해 가져오기: 지도 앱의 장소 페이지에서 공유를 누르고 TripEZGo를 고르면, 장소·좌표·유형이 그대로 새 일정에 들어갑니다" loading="lazy"></figure>
+          </div>
+          <h3>다른 앱에서 공유해 가져오기</h3>
+          <p>Google 지도, Instagram, Threads에서 본 곳을 공유만 하면 저장</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/ko/apple-calendar.webp" width="720" height="1565" alt="Apple 캘린더의 하루 보기: TripEZGo에서 동기화된 2일차 일정" loading="lazy"></figure>
+          <h3>Apple/Google 캘린더 연동</h3>
+          <p>일정을 내 캘린더에 바로 동기화</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/ko/siri.webp" width="720" height="1565" alt="Siri에게 “다음 일정이 뭐야?”: 지금은 이쓰쿠시마 신사, 다음은 11:30부터 모미지다니 공원" loading="lazy"></figure>
+          <h3>Siri와 Apple Intelligence</h3>
+          <p>“다음 일정이 뭐야?”라고 물으면 앱을 열지 않아도 답을 알려 줘요</p>
+        </article>
+      </div>
+      <details class="more"><summary>자세히 보기</summary><div class="more-body">
+<p><b>다른 앱에서 공유해 가져오기</b>: 가 보고 싶은 곳을 발견했나요? 동료가 추천한 명소는요? Google 지도, Instagram, Threads 같은 앱에서 공유를 누르고 TripEZGo를 고르면 바로 저장됩니다.</p>
+<p><b>Apple/Google 캘린더 연동</b>: 일정을 내 캘린더에 바로 동기화할 수 있어요.</p>
+<p><b>Siri와 Apple Intelligence</b>: Siri나 Apple Intelligence에게 일정을 물어보고 빠르게 확인할 수 있어요.</p>
+<p><b>공개 공유</b>: 여행을 누구나 볼 수 있게 공개해 전 세계 여행자와 일정을 나눌 수 있습니다. 공개되는 것은 일정 제목, 장소, 시간뿐이며, 일정 설명·첨부·할 일 목록은 공개되지 않습니다.</p>
+          </div></details>
+    </div>
+  </section>
+
+  <section class="section" id="ai">
+    <div class="wrap">
+      <div class="ai-band">
+        <div>
+          <h2>AI에게 <span class="nb">일정을 맡기세요</span></h2>
+          <p>MCP 내장. AI 에이전트를 연결하고 “교토 둘째 날 일정 짜 줘”라고 말하면 일정이 들어옵니다.</p>
+          <details class="more"><summary>자세히 보기</summary><div class="more-body">
+<p>iPhone과 컴퓨터가 같은 Wi-Fi에 연결되어 있으면, MCP로 TripEZGo 앱에 접속해 AI 에이전트에게 여행 일정을 맡길 수 있습니다.</p>
+          </div></details>
+        </div>
+        <div class="demo-slot" data-lazy-demo="ai-chat"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="plans">
+    <div class="wrap">
+      <div class="section-head plans-head">
+        <p class="eyebrow">요금제</p>
+        <h2>무료로 시작하고, <span class="nb">필요할 때 업그레이드</span></h2>
+        <p class="lede">무료로도 충분히, Premium이면 더 편하게.</p>
+      </div>
+      <table class="compare">
+        <colgroup><col><col class="c-plan"><col class="c-prem"></colgroup>
+        <thead>
+          <tr><th scope="col" style="text-align:start">기능</th><th scope="col">무료 버전</th><th scope="col" class="prem">Premium</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">여행 수</th><td>3개<small>휴지통 포함</small></td><td class="prem">무제한</td></tr>
+          <tr><th scope="row">여행마다 동행</th><td>3명</td><td class="prem">무제한</td></tr>
+          <tr class="split"><th scope="row">광고</th><td>있음</td><td class="prem">광고 없음</td></tr>
+          <tr><th scope="row">캘린더/타임라인, 지도, 한눈에 보기</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">첨부, 할 일, 이동과 대체 편</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">동행과 공동 편집, 위치 공유</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">위젯, Siri</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">자료와 도구(메모, 쇼핑 목록, 스캔, 환율 변환)</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">iCloud 동기화와 백업</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">가져오기·내보내기</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">AI 에이전트 연동</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">라이브 액티비티</th><td><span class="no" aria-label="미포함">—</span></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">Apple/Google 캘린더 연동</th><td><span class="no" aria-label="미포함">—</span></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+        </tbody>
+      </table>
+      <p class="plans-note">Premium은 주간·월간·연간 자동 갱신 구독 또는 한 번 구매로 이용할 수 있으며, App Store의 구독 설정에서 언제든 해지할 수 있습니다.</p>
+      <div class="plans-more">
+      <details class="more"><summary>왜 유료인가요</summary><div class="more-body">
+<p>가격을 정하는 일이 가장 고민스러웠습니다. 자유여행을 하는 사람들에게 정말 도움이 되고 싶어서 만든 도구지만, 현실적으로 계속 이어 가려면 수익도 필요합니다.</p>
+<p>현재 드는 비용: AI에 매달 200달러, Apple Developer Program에 매년 99달러, 그리고 매주 30시간 정도의 개인 개발 시간.</p>
+<p>그래서 TripEZGo는 ‘무료로도 충분히, Premium이면 더 편하게’를 기본으로 합니다. 무료 버전과 Premium의 차이는 이것뿐입니다: 광고 없음, 여행 수(무료 버전은 동시에 3개까지, 넘으면 오래된 여행을 먼저 삭제), 여행마다 동행(무료 버전은 3명), 라이브 액티비티, Apple/Google 캘린더 연동. Premium은 주간·월간·연간 구독과 평생 구매로 제공됩니다.</p>
+          </div></details>
+      </div>
+      <div class="hero-actions plans-cta">
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372" target="_blank" rel="noopener">App Store에서 다운로드</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="story">
+    <div class="wrap">
+      <details class="story">
+        <summary>
+          <span class="eyebrow">개발 배경</span>
+          <span class="story-title">혼자 여행을 자주 다니는 iOS 엔지니어가 여행 계획 앱을 직접 만든 이유</span>
+          <span class="story-toggle">이야기 펼치기</span>
+        </summary>
+        <div class="story-body">
+<h3>시작</h3>
+<p>예전 자유여행에는 늘 든든한 동행이 있어서, 저는 주로 계획은 맡기고 따라다니는 P형이었습니다. 그러다 2023년 9월, 인생 첫 혼자 여행으로 <a href="https://en.zhgchg.li/posts/travel-journals/nagoya-one-day-quick-trip-peach-aviation-flight-experience-and-travel-tips-7b8a0563c157/" target="_blank" rel="noopener">나고야 당일치기</a>를 다녀온 뒤 혼자 여행의 스위치가 켜져 버렸어요. 흔히 말하듯, 0번 아니면 셀 수 없이 많이, 둘 중 하나더라고요.</p>
+<p>그 뒤로도 여러 번 떠났습니다. <a href="https://en.zhgchg.li/posts/travel-journals/kyushu-10-day-solo-travel-guide-explore-fukuoka-nagasaki-kumamoto-efficiently-d78e0b15a08a/" target="_blank" rel="noopener">규슈 10일 혼자 여행</a>, <a href="https://en.zhgchg.li/posts/travel-journals/sanyo-region-travel-guide-6-day-hiroshima-okayama-itinerary-for-freedom-seekers-31b9b3a63abc/" target="_blank" rel="noopener">산요 지방 히로시마·오카야마 6일 혼자 여행</a>, <a href="https://en.zhgchg.li/posts/travel-journals/san-in-kansai-7-day-solo-trip-explore-izumo-matsue-tottori-himeji-osaka-kobe-aacd5f5cacd1/" target="_blank" rel="noopener">산인 지방 시마네·돗토리＋히메지·고베 7일 혼자 여행</a>, 주부 지방 나고야·이세·미에 10일 혼자 여행…… 등등.</p>
+<p>출발 전 일정 짜기도, 여행 중 챙기기도, 자유여행과 혼자 여행은 모든 걸 스스로 해야 합니다. 이런 것들을 기록하고 따라갈 도구가 필요했어요. 여러 방법을 써 봤지만 제게 딱 맞는 건 하나도 없었습니다. <b>AI가 대세인 데다 저 자신이 iOS 개발자이니, 그렇다면 직접 만들면 되지 않을까?</b></p>
+
+<h3>Apple 메모/Obsidian/Notion/Google 문서</h3>
+<figure class="story-fig"><img src="/assets/img/story/notes-app.webp" width="1200" height="857" alt="Apple 메모로 짠 산인·간사이 여행: 하루에 메모 하나씩, 지도 스크린숏과 열차 편, 환승 시간을 붙여 넣음" loading="lazy"></figure>
+<p>처음 여행을 계획할 때 쓰던 도구입니다. 장점은 간단하고 쓰기 쉽다는 것. 열면 바로 서식 있는 텍스트 편집기라서, 일정 제목, 이미지, 첨부 파일을 자유롭게 넣을 수 있어요.</p>
+<p>단점도 바로 그 ‘자유로움’입니다. 정해진 형식이 없어서 여행 전체의 흐름을 한눈에 보기 어렵고, 일정이 길어지면 스크롤하며 찾기가 괴롭고, 여행 중에도 지금 일정으로 바로 갈 수 없습니다. 일정이 바뀌면 더 번거롭고요. 알림, 캘린더, 일정 지도, 위젯 같은 기능도 없습니다.</p>
+<p>써 보니, 가고 싶은 곳을 모으거나 대략적인 흐름을 짜는 단계에서는 꽤 편해서 대강의 일정을 빠르게 적어 둘 수 있었어요. 하지만 세부 일정을 짜거나 여행 중에 확인하기에는 불편했습니다.</p>
+
+<h3>Apple 캘린더/Google 캘린더</h3>
+<figure class="story-fig"><img src="/assets/img/story/calendar-app.webp" width="1200" height="1264" alt="Apple 캘린더의 주 보기: 오키나와 자유여행의 날마다의 일정과 이동이 한 칸 한 칸 일정으로 놓임" loading="lazy"></figure>
+<p>가장 최근의 <a href="https://en.zhgchg.li/posts/okinawa-summer-5-day-self-drive-tour-snorkeling-aquarium-entertainment-highlights-2cbc121a1b7c/" target="_blank" rel="noopener">오키나와 자유여행</a>에서는 Apple/Google 캘린더로 일정을 짰습니다. 장점은 계획하기가 아주 편하다는 것. 끌어다 놓기만 하면 일정이 생기고, 시간을 바꿀 때도 끌기만 하면 됩니다. 여행 전체가 한눈에 보여서 어디에 빈 시간이 있는지, 어디에 너무 오래 머무는지 바로 알 수 있어요. 여행 중에도 알림을 설정하면 이 일정에 얼마나 머무는지, 다음 일정은 무엇인지 바로 알 수 있고, 갑작스러운 변경도 쉽습니다. 알림과 위젯도 지원하고요.</p>
+<p>단점은 정보가 흩어진다는 것. 할 일, 첨부, 메모를 모아 볼 개요도, 지도 보기도 없습니다. 캘린더는 어디까지나 ‘일정’ 하나하나가 주인공이고, 일정끼리는 서로 독립적이니까요. 하지만 여행 계획에는 일정을 넘나드는 정보도 있습니다. 예를 들어 승차권, 기념품 목록, 메모. 또는 A 일정을 마치고도 시간이 넉넉할 때, 다른 날 일정 중 가는 길에 있어서 오늘로 옮길 만한 게 뭔지 알고 싶어지죠.</p>
+
+<h3>다른 여행 계획 앱</h3>
+<p>대형 이커머스 그룹이 만든 여행 계획 앱도 몇 가지 써 봤습니다. 일정을 한눈에 보는 개요, 장소로 바로 일정 추가, 시간 자동 배치, 지도 기능처럼 저마다 돋보이는 기능이 있었어요. 하지만 써 보니 모두 SNS와 커머스 서비스 쪽에 더 가깝게 느껴졌습니다. 회사 입장에서는 제품이 수익을 내야 하니 당연하겠지요.</p>
+<p>그래서 TripEZGo가 탄생했습니다. 여행 계획부터 여행길에 필요한 것까지, 앱 하나로.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+</main>
+<aside class="fab-dl" hidden>
+  <figure class="fab-qr"><img src="/assets/img/appstore-qr.svg" width="120" height="120" alt="App Store 다운로드 QR 코드"><figcaption>iPhone으로 스캔해 다운로드</figcaption></figure>
+  <a class="btn btn-primary" href="https://apps.apple.com/app/id6801536372" target="_blank" rel="noopener">지금 앱 다운로드</a>
+</aside>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/ko/" aria-label="TripEZGo 홈">
+          <span class="m m-mark" role="img" aria-hidden="true"></span>
+          <span class="m m-word" role="img" aria-hidden="true"></span>
+        </a>
+        <p style="margin:12px 0 0;max-width:32ch">여행 계획부터 여행길에 필요한 것까지, 앱 하나로.</p>
+      </div>
+      <nav class="footer-links" aria-label="바닥글">
+        <a href="/ko/privacy.html">개인정보 처리방침</a>
+        <a href="/ko/terms.html">이용약관</a>
+        <a href="mailto:zhgchgli@gmail.com">문의하기</a>
+        <a href="/en/" hreflang="en" lang="en">English</a>
+        <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+        <a href="/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TripEZGo</span>
+      <span>Made for iPhone &amp; iPad · 6개 언어 지원</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

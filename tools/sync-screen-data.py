@@ -9,7 +9,7 @@ import json, os, shutil, sys
 app = os.path.expanduser(sys.argv[1] if len(sys.argv) > 1 else '~/Projects/tripezgo')
 here = os.path.join(os.path.dirname(__file__), '..', 'screens', 'data')
 tpl = os.path.join(app, 'App/iOS/Modules/TripEZGoData/Sources/TripEZGoData/TripTemplateResources')
-LANGS = ['zh-Hant-TW', 'en', 'ja']
+LANGS = ['zh-Hant-TW', 'en', 'ja', 'ko']   # ko 只給商城截圖（screens/）；首頁沒有韓文
 
 for l in LANGS:
     shutil.copy(os.path.join(tpl, l, 'jp-sanyo-hiroshima-okayama-6d.json'), os.path.join(here, f'sanyo.{l}.json'))
@@ -27,5 +27,6 @@ site = os.path.join(os.path.dirname(__file__), '..', 'assets', 'data')
 for l, k in (('zh-Hant-TW', 'zh'), ('en', 'en'), ('ja', 'ja')):
     d = json.load(open(os.path.join(here, f'sanyo.{l}.json'), encoding='utf-8'))
     json.dump(d, open(os.path.join(site, f'sanyo-{k}.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
-json.dump(cats, open(os.path.join(site, 'categories.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+site_cats = {l: cats[l] for l in ('zh-Hant-TW', 'en', 'ja')}   # 首頁那份不放 ko
+json.dump(site_cats, open(os.path.join(site, 'categories.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
 print('synced', LANGS, len(cats['en']), 'categories')

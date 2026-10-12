@@ -13,7 +13,7 @@
 // - alert：UIAlertController(.alert)。購物「退回待購買？」用（ShoppingCardViewController.confirmUnbought）。
 // - sheet：由下而上的頁面紙（.pageSheet，大 detent）——抓桿、往下拖或點後面那一層收掉。
 // 外觀照 event.html 已量好的系統 sheet（頂 62、圓角 12、抓桿 36×5）。
-import { go, lang, interactive, params } from './chrome.js';
+import { go, lang, interactive, params, ipad } from './chrome.js';
 
 /** 兩格（LibraryViewModel.Subtab：notes、shopping），順序就是分格的順序 */
 export const SUB_PAGES = ['notes', 'shop'];
@@ -26,6 +26,8 @@ export const LIB = {
     scan: 'Scan a QR Code', scanSub: 'Links, text, or a trip invite', fx: 'Currency Converter', fxSub: 'Convert between two currencies — type in either amount', close: 'Close' },
   ja: { title: '資料', subs: ['メモ', '買い物'], tools: 'ツール',
     scan: 'QR コードをスキャン', scanSub: 'URL、テキスト、旅行の共同編集の招待', fx: '通貨換算', fxSub: '2 つの通貨を相互に換算。どちらの金額も入力できます', close: '閉じる' },
+  ko: { title: '자료', subs: ['메모', '쇼핑'], tools: '도구',
+    scan: 'QR 코드 스캔', scanSub: '링크, 텍스트 또는 여행 공동 편집 초대', fx: '환율 변환', fxSub: '두 통화를 서로 환산하고, 양쪽 금액 모두 입력할 수 있습니다', close: '닫기' },
 }[lang] || null;
 const L = LIB || {};
 
@@ -40,7 +42,8 @@ const icon = (n, w) => `<svg viewBox="0 0 24 24" aria-hidden="true" style="strok
 
 // 兩格切換的幾何（iOS 26 UISegmentedControl，系統元件）：四格時量到的白色那顆寬 86.7、間距 3.6、左右各 2——
 // 兩格照同一組數字：寬 (360 − 2 − 3.6) ÷ 2 = 177.2、一格一步 180.8
-const SEG_W = 177.2, SEG_STEP = 180.8;
+// iPad：軌道 992 寬（左右照舊 20），同一條式子 → (990 − 2 − 3.6) ÷ 2 ＝ 492.2、一步 495.8
+const SEG_W = ipad ? 492.2 : 177.2, SEG_STEP = ipad ? 495.8 : 180.8;
 const segLeft = i => 2 + i * SEG_STEP;
 
 /* 抬頭（SubTabContainer：上 12+2、左右 20、標題 xxl semibold −0.02em；切換列上 4+6、高 ≥44）＋
@@ -84,6 +87,10 @@ html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
 /* 導覽列標題（系統，17 semibold；sheet 頂下 16、高 44） */
 .tz-navt { position: absolute; left: 70px; right: 70px; top: 16px; height: 44px; display: grid; place-items: center;
   font: 600 17px/22px var(--font); color: #000; white-space: nowrap; overflow: hidden; }
+/* iPad（?device=ipad）：抬頭往下 34、拉寬（擷取 05：標題中線 127、切換列 155–197，跟 iPhone 各 +34） */
+.ipad .wg-title { top: 109.4px; }
+.ipad .head-tool { left: 976px; top: 104px; }
+.ipad .seg { top: 153.67px; width: 992px; }
 `;
 let libStyled = false;
 export function libStyle() {

@@ -127,12 +127,48 @@
   .nt-less { align-self: flex-end; height: 26px; padding: 0 12px; border-radius: 13px; font: 600 13px/26px var(--font); color: #000;
     background: rgba(246,244,242,.66); -webkit-backdrop-filter: blur(30px); backdrop-filter: blur(30px); }
   .is-interactive .nt-card, .is-interactive .nt-less { cursor: pointer; }
+
+  /* ── iPad（?device=ipad）鎖定畫面：照 iPad Pro 13 吋（M5）模擬器、iPadOS 26.2 量（axe frame＋截圖），1.3.0 (213)——
+        狀態列：左邊沒有時刻（模擬器只有「Carrier」）、右邊 Wi‑Fi／電池照一般狀態列（電池右緣 1006）。
+        日期 y 91–128.5（字面約 23pt）；大時刻是 iOS 26 的「動態」玻璃字：字面 y 142.5–607.5、寬約 540（「9:41」），
+        又窄又高——這裡用 300px 的字再垂直拉 2.19 倍近似，顏色是半透明白（玻璃材質畫不出來）。沒有手電筒與相機。
+        即時動態卡：x 266、寬 500、高 160（平台上限；TripActivityCard 的 ViewThatFits 因此落在 .withoutSubtitle：
+        沒有副標、進度條沒有兩端時刻、上下內距 10、分隔線上下 7）、不放大。模擬器上卡片底下有一則系統通知、
+        之下是小工具；這一張不畫通知，卡片底停在通知那一則的底（1159）。
+        小工具（accessoryRectangular＋accessoryCircular，TripEZGoWidget/Views/LockCards.swift）：直放時在畫面下方一排——
+        長方形 330／1178.8、166.4×76.2，圓形 600.5／1178.8、76.2。主畫面橫條 358.5–673.5、y 1363。 ── */
+  .ipad .sb-time, .ipad .sb-date { display: none; }
+  .ipad .clock { top: 91px; }
+  .ipad .date { font: 600 23px/37.5px -apple-system, "SF Pro Display", var(--font); opacity: .9; }
+  .ipad .time { position: absolute; left: 0; right: 0; top: -50.3px; margin: 0; font: 500 300px/1 -apple-system, "SF Pro Display", sans-serif;
+    letter-spacing: -6px; transform: scaleY(2.19); transform-origin: 50% 0; color: rgba(255,255,255,.5);
+    text-shadow: 0 0 1px rgba(255,255,255,.7), 0 2px 30px rgba(0,30,60,.12); }
+  .ipad .qa { display: none; }
+  .ipad .lk-col { left: 266px; right: auto; width: 500px; bottom: 217px; max-height: none; }
+  .ipad .la { height: 160px; padding: 10px 16px; }
+  .ipad .la-sub, .ipad .la-ends { display: none; }
+  .ipad .la-rule { margin-top: 7px; }
+  .ipad .la-next { margin-top: 7px; }
+  .ipad .nt { display: none; }
+  .lw { position: absolute; left: 330px; top: 1178.8px; display: flex; align-items: center; gap: 104.1px; color: #fff; }
+  .lw-rect { width: 166.4px; height: 76.2px; display: flex; flex-direction: column; justify-content: center; gap: 1px; }
+  .lw-rect b, .lw-rect span, .lw-rect i { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-style: normal; }
+  .lw-rect i { font: 700 11px/13px var(--font); letter-spacing: .66px; text-transform: uppercase; color: rgba(255,255,255,.72); }
+  .lw-rect b { font: 700 15px/18px var(--font); color: rgba(255,255,255,.96); }
+  .lw-rect span { font: 400 12px/14.5px var(--font); color: rgba(255,255,255,.72); }
+  .lw-circ { position: relative; width: 76px; height: 76px; }
+  .lw-circ .bgc { position: absolute; inset: 2.5px; border-radius: 50%; background: rgba(255,255,255,.16);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+  .lw-circ svg { position: absolute; inset: 0; width: 76px; height: 76px; transform: rotate(-90deg); }
+  .lw-circ .c { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .lw-circ .c i { font: 400 9px/11px var(--font); font-style: normal; letter-spacing: .54px; color: rgba(255,255,255,.72); }
+  .lw-circ .c b { font: 700 16px/19px ui-monospace, "SF Mono", Menlo, monospace; color: rgba(255,255,255,.96); }
 </style>
 </head>
 <body>
 <div class="device" id="d"><div class="dim"></div></div>
 <script type="module">
-import { fmt, lang, params, loadTrip, chrome, toMin, ready, interactive, duration, loadCategories, categoryName } from './chrome.js';
+import { fmt, lang, params, loadTrip, chrome, toMin, ready, interactive, duration, loadCategories, categoryName, ipad } from './chrome.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
@@ -149,6 +185,9 @@ const S = {
     date: dt => `${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][dt.getDay()]}, ${['January','February','March','April','May','June','July','August','September','October','November','December'][dt.getMonth()]} ${dt.getDate()}` },
   ja: { day: n => `${n}日目`, live: '進行中', remain: '残り', next: x => `次 · ${x}`,
     date: dt => `${dt.getMonth() + 1}月${dt.getDate()}日 ${'日月火水木金土'[dt.getDay()]}曜日` },
+  // ko：LiveActivity.json＋domain.itinerary.daylabel；日期照 DateFormatter MMMMEEEEd 在 ko（「10월 11일 일요일」）
+  ko: { day: n => `${n}일차`, live: '진행 중', remain: '남은 시간', next: x => `다음 · ${x}`,
+    date: dt => `${dt.getMonth() + 1}월 ${dt.getDate()}일 ${'일월화수목금토'[dt.getDay()]}요일` },
 }[lang];
 
 // TripActivityContent.live：現在進行中的那一則、下一則
@@ -216,6 +255,14 @@ const NT = {
     todoT: (x, n) => `次の予定「${x}」に未完了の ToDo が ${n} 件あります`, item: x => `・${x}`, more: n => `…ほか ${n} 件`, merged: n => ` · ToDo 残り ${n} 件`,
     depT: (r, a) => `${r} は ${a} 発`, arrT: (r, a) => `${r} は ${a} 着`, runB: (e, x) => `${e} へ · ${x}`, unnamed: '乗車予定の便',
     ago: m => m < 1 ? '今' : m < 60 ? `${m}分前` : m < 1440 ? `${Math.floor(m / 60)}時間前` : `${Math.floor(m / 1440)}日前`, less: '表示を減らす' },
+  // ko：UI.json ui.reminder.*／ui.remaining.todos／ui.digest.count／ui.nextup.*／ui.todoreminder.*／ui.run.*（逐字；
+  // 跟 App 一樣直接接在後面，不補空白——TripReminderText.join）。ago／less 是 iOS 系統字，字串表沒有
+  ko: { lead7: '여행이 곧 시작됩니다', body7: x => `${x}, 준비는 다 되셨나요?`, lead3: n => `할 일이 ${n}건 남았습니다`, body3: x => `출발 전에 ${x}의 할 일을 정리해두세요`,
+    lead1: '내일 출발합니다', body1: '내일 출발합니다. 오늘은 일찍 쉬세요.', left: n => `할 일이 ${n}건 남았습니다.`,
+    digest: (n, r) => `오늘 일정 ${n}개, ${r}`, nextT: x => `다음: ${x}`, nextB: (a, x) => `${a} 시작 · ${x}`,
+    todoT: (x, n) => `다음 일정 ${x}에 할 일이 ${n}개 남았습니다`, item: x => `・${x}`, more: n => `…외 ${n}개`, merged: n => ` · 할 일 ${n}개 남음`,
+    depT: (r, a) => `${r} ${a} 출발`, arrT: (r, a) => `${r} ${a} 도착`, runB: (e, x) => `${e}(으)로 · ${x}`, unnamed: '탑승 예정 편',
+    ago: m => m < 1 ? '지금' : m < 60 ? `${m}분 전` : m < 1440 ? `${Math.floor(m / 60)}시간 전` : `${Math.floor(m / 1440)}일 전`, less: '간략히 보기' },
 }[lang] || null;
 const N = NT || {};
 const hm = m => `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
@@ -279,6 +326,27 @@ function drawNotes(t) {
 drawNotes(nowMin + 12 / 60);
 
 chrome(d, { dark: true });
+if (ipad) {
+  // iPad 鎖定畫面：狀態列的時刻就是鎖定畫面的時刻（擷取 08 左上）
+  d.querySelector('.sb-time').textContent = `${+hh}:${mm}`;
+  // 鎖定畫面小工具（LockCopy.copy 的 .during(day) × .live 那一支）：
+  //   上排 lockLiveRemainPrefix＋remaining(now→結束)（大寫）、主值＝進行中那一則、副行 lockNextStopDetail(下一則開始, 標題)；
+  //   圓圈：unit "DAY"、number＝第幾天、環＝day ÷ dayCount。字串照 Scripts/i18n/maps/TripEZGoWidget.json。
+  const W = {
+    'zh-Hant-TW': { remain: '進行中 · 還有 ', next: (a, b) => `下一站 ${a} ${b}` },
+    en: { remain: 'Now · in ', next: (a, b) => `Next ${a} ${b}` },
+    ja: { remain: '進行中 · 残り ', next: (a, b) => `次の目的地 ${a} ${b}` },
+  }[lang] || { remain: '進行中 · 還有 ', next: (a, b) => `下一站 ${a} ${b}` };
+  const frac = dayNo / trip.dayCount, R = 35.5, CIRC = 2 * Math.PI * R;
+  d.insertAdjacentHTML('beforeend', `<div class="lw">
+    <div class="lw-rect"><i>${fmt(W.remain + duration(Math.max(0, toMin(cur.end) - nowMin)))}</i><b>${fmt(cur.title)}</b>
+      <span>${next ? fmt(W.next(next.start, next.title)) : ''}</span></div>
+    <div class="lw-circ"><div class="bgc"></div><svg viewBox="0 0 76 76">
+      <circle cx="38" cy="38" r="${R}" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="5"/>
+      <circle cx="38" cy="38" r="${R}" fill="none" stroke="rgba(255,255,255,.96)" stroke-width="5" stroke-linecap="round"
+        stroke-dasharray="${(CIRC * frac).toFixed(2)} ${CIRC.toFixed(2)}"/></svg>
+      <div class="c"><i>DAY</i><b>${dayNo}</b></div></div></div>`);
+}
 ready();
 
 /* ── 互動模式：時間往前走，即時動態跟著換（截圖模式不跑這一段） ─────────────────────────────
@@ -321,6 +389,16 @@ if (interactive) {
       headingTo: x => `${x} へ移動中`, waiting: '待機中', untilDeparture: '後に出発', runWindow: (a, b, c) => `${a} → ${b} · ${c}`,
       mode: { walking: '徒歩', driving: '車', cycling: '自転車', other: 'その他', transit: '公共交通', idle: '空き時間' },
       scrub: '時刻' },
+    // ko：LiveActivity.json＋Domain.json legmode 的 ko 欄；scrub（首頁示意用的撥時間條，不是 App 的字）自寫
+    ko: { live: '진행 중', remaining: '남은 시간', nextStop: x => `다음 · ${x}`, upcoming: '곧 시작', untilStart: '후 시작',
+      now: '지금', startsAt: x => `${x} 시작`, beforeLeaving: x => `출발 전 · ${x}`, moving: '이동 중', untilArrival: '후 도착',
+      leavesAt: x => `${x} 출발`, arrivesAt: x => `${x} 도착`, destination: x => `목적지 · ${x}`, tooTight: '늦어요',
+      legTravel: x => `이동 ${x}`, runTravel: (k, x) => `${k} · 소요 ${x}`, nextRun: x => `다음 편 ${x}`,
+      lateBy: x => `다음 일정보다 ${x} 늦게 도착`, noMoreRuns: '오늘은 다른 편이 없습니다', done: '오늘 일정 완료', doneTitle: '오늘 일정을 모두 마쳤습니다',
+      doneCounts: (a, b) => `일정 ${a}개 · 이동 ${b}구간`, tomorrowFirstLabel: '내일 첫 목적지', tomorrowFirst: x => `내일 · ${x}`,
+      headingTo: x => `${x}(으)로 이동 중`, waiting: '대기 중', untilDeparture: '후 출발', runWindow: (a, b, c) => `${a} → ${b} · ${c}`,
+      mode: { walking: '도보', driving: '자동차', cycling: '자전거', other: '기타', transit: '대중교통', idle: '여유 시간' },
+      scrub: '시각' },
   };
   const S2 = LS[lang] || LS['zh-Hant-TW'];
 

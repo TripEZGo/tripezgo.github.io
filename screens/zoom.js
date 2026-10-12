@@ -28,7 +28,7 @@ export const loadZoom = () => nearest(+(loadState().zoom || 1));
 const saveZoom = f => patchState({ zoom: f });
 
 // UI.json calendarZoomValue「%@ 倍」
-const factorText = f => ({ en: `${f}×` }[lang] || `${f} 倍`);
+const factorText = f => ({ en: `${f}×`, ko: `${f}배` }[lang] || `${f} 倍`);
 
 /**
  * 接上雙指縮放。

@@ -35,6 +35,7 @@
   :root { --cal: 204, 115, 225; --sys-sec: #8a8a8e; --line: #e7e7e8; }
   .device { --cf: -apple-system, "SF Pro Text", "PingFang TC", "Hiragino Sans", sans-serif; background: #fff; color: #000; font-family: var(--cf); }
   html[lang="ja"] .device { --cf: -apple-system, "SF Pro Text", "Hiragino Sans", sans-serif; }
+  html[lang="ko"] .device { --cf: BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; }
   svg.i { display: block; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
 
   .glass { position: absolute; height: 44px; border-radius: 22px; background: rgba(255,255,255,.96);
@@ -126,6 +127,14 @@ const S = {
     hour: h => [`${h}:00`, ''],
     range: (a, b) => `${a}～${b}`, today: '今日',
   },
+  // ko：domain.calendar.*、domain.legmode.* 的 ko 欄；其餘是 iOS 行事曆的系統用詞（自寫：月、星期、表頭、하루 종일、오전／오후、정오、오늘）
+  ko: {
+    cancelled: t => `취소됨 · ${t}`, leg: (a, b) => `${a} → ${b}`, legFallback: '이동',
+    modes: { walking: '도보', driving: '자동차', cycling: '자전거', transit: '대중교통', other: '기타' },
+    month: '10월', wk: ['일', '월', '화', '수', '목', '금', '토'], head: '2026년 10월 11일 일요일', allDay: '하루 종일',
+    hour: h => h === 12 ? ['정오', ''] : [`<small style="margin:0 1px 0 0">${h < 12 ? '오전' : '오후'}</small> ${((h + 11) % 12) + 1}시`, ''],
+    range: (a, b) => `${a}~${b}`, today: '오늘',
+  },
 }[lang];
 
 // 行事曆色：系統配的（App 不指定），示意用紫。底色＝14% 疊在白上，標題＝×0.5，副標＝×0.75（照量到的藍推回去）
@@ -169,6 +178,7 @@ const fmtT = m => {
   const h = Math.floor(m / 60), mm = String(m % 60).padStart(2, '0');
   if (lang === 'ja') return `${h}:${mm}`;
   const h12 = ((h + 11) % 12) + 1;
+  if (lang === 'ko') return `${h < 12 ? '오전' : '오후'} ${h12}:${mm}`;   // DateFormatter jm（ko_KR）＝「오전 9:05」
   return lang === 'en' ? `${h12}:${mm}` : `${h < 12 ? '上午' : '下午'}${h12}:${mm}`;
 };
 const ampm = m => (lang === 'en' ? `<small style="font-size:10.5px">${m < 720 ? 'AM' : 'PM'}</small>` : '');

@@ -5,7 +5,7 @@
 //
 // 地圖本身畫不出來：地圖區是從基準圖截下來的 img/map*.jpg（y=128 以下），上面這一層介面照 App 原始碼畫，
 // 位置跟基準圖裡烤進去的那一份重疊。地圖標籤是系統依語系畫的，所以底圖每個語系各截一份：
-// 繁中 img/map*.jpg，英日 img/en/、img/ja/（ref/en、ref/ja 截的）。
+// 繁中 img/map*.jpg，英日 img/en/、img/ja/（ref/en、ref/ja 截的）。韓文沒有模擬器基準圖，借英文那一份（標籤是拉丁字）。
 //
 // 三顆浮動鈕裡「回到我的位置」是 MKUserTrackingButton（系統元件），沒有畫，用底圖裡那一顆。
 import { fmt, params, lang, t, loadTrip, loadCategories, categoryName, chrome, swatchClass, ready, ICON } from './chrome.js';
@@ -31,10 +31,14 @@ const S = {
   ja: { all: 'すべて', search: 'ランドマークや住所を検索', live: '現在地を共有', openEvent: '予定の詳細を開く',
     openInMaps: 'マップで開く', open24: '24 時間営業', note: 'データ更新日 2026/10/10。実際とは異なる場合があります。',
     straight: '直進', dist: '360', unit: 'm', left: '710 m', mins: '9 分', status: (a, b) => `徒歩ナビ · 残り ${a} · ${b}`, headingTo: s => `${s} へ移動中`, openDest: '目的地を開く' },
+  // ko：同 map-live.js 的 ko（UI.json、Map.json 的 ko 欄；日期照 DateFormatter yMd「2026. 10. 10.」）
+  ko: { all: '전체', search: '랜드마크나 주소 검색', live: '내 위치 공유', openEvent: '일정 상세 열기',
+    openInMaps: '지도에서 열기', open24: '24시간 영업', note: '2026. 10. 10. 기준 데이터입니다. 실제와 다를 수 있습니다.',
+    straight: '계속 직진', dist: '360', unit: 'm', left: '710 m', mins: '9분', status: (a, b) => `도보 내비 · ${a} · ${b} 남음`, headingTo: s => `${s}(으)로 이동 중`, openDest: '목적지 열기' },
 }[lang] || {};
 // chrome.js 的日文與 App 不一樣的兩處（App：「%lld 日目」有空格；分頁叫「旅行」「マップ」）——先在這一頁蓋掉
 const dayLabel = n => lang === 'ja' ? `${n} 日目` : t.day(n);
-const TABS_JA = ['概要', '旅行', 'マップ', 'ツール', '設定'];
+const TABS_JA = ['概要', '旅行', 'マップ', '資料', '設定'];   // 1.3.0：ツール → 資料
 
 // 範本裡沒有的那一家店（地圖上點到的 7-ELEVEN）。店名與地址是 MapKit 給的日文原名，三語同一份。
 const STORE = { name: '7-ELEVEN 広島若草町', address: '広島県広島市東区若草町１８−４６' };
@@ -54,7 +58,7 @@ const SW = { plus: 2, close: 2, turnStraight: 2, nearby: 1.8, walking: 1.8, mapP
 const icon = n => `<svg viewBox="0 0 24 24" aria-hidden="true"><g stroke-width="${SW[n] ?? 1.8}">${IC[n]}</g></svg>`;
 
 // 底圖
-d.insertAdjacentHTML('beforeend', `<div class="map" style="background-image:url(img/${{ en: 'en/', ja: 'ja/' }[lang] || ''}${card === 'none' ? 'map' : 'map-' + card}.jpg)"></div>`);
+d.insertAdjacentHTML('beforeend', `<div class="map" style="background-image:url(img/${{ en: 'en/', ja: 'ja/', ko: 'en/' }[lang] || ''}${card === 'none' ? 'map' : 'map-' + card}.jpg)"></div>`);
 
 // 頁首（同旅程分頁，但右邊沒有切換鈕，標題吃滿到右邊 20）
 d.insertAdjacentHTML('beforeend', `

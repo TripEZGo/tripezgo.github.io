@@ -174,6 +174,16 @@ const S = {
     remainingOpen: n => `未完了があと ${n} 件`, nearest: x => ` · 直近 ${x}`, allDone: '今日の分はすべて終わりました', act: x => `完了：${x}`,
     note: 'メモ',
     sample: { amount: '￥1,580', result: 'NT$332.12', rate: '￥100 ≈ NT$21.02' } },
+  // ko：TripEZGoWidget.json 的 ko 欄。find（主畫面的 Spotlight「搜尋」）是 iOS 系統字，自寫「검색」；
+  // 金額照 NumberFormatter ko_KR（JPY→「JP¥」、TWD→「NT$」）
+  ko: { live: '진행 중', day: n => `${n}일차`, remain: '남은 시간 ', ends: x => ` · ${x} 종료`,
+    fx: '환율 계산', tap: '탭하여 환산', find: '검색',
+    tripOngoing: '여행 중', dayCountTotal: n => `총 ${n}일`, returnsOn: (a, n) => `귀국 ${a} · ${n}일 남음`,
+    filesToday: '오늘의 파일', moreFiles: n => `파일 ${n}개 더`,
+    todosToday: '오늘 할 일', open: n => `미완료 · ${n}건`, done: '완료', leftToday: n => `오늘 ${n}건 남음`, noEvent: '일정에 묶지 않음',
+    remainingOpen: n => `미완료 ${n}건 남음`, nearest: x => ` · 가장 가까운 ${x}`, allDone: '오늘 할 일을 모두 마쳤습니다', act: x => `완료: ${x}`,
+    note: '메모',
+    sample: { amount: 'JP¥1,580', result: 'NT$332.12', rate: 'JP¥100 ≈ NT$21.02' } },
 }[lang];
 
 // TripWidgetAgenda：現在那一則＋ remaining（下一則開始之後的每一站）的前兩站
@@ -185,7 +195,9 @@ const brand = '<circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><
 // WidgetHead：字標＋（旅程那一支才有的）綠點＋大寫標籤＋右邊等寬的那一格
 const head = (label, trailing, live = false) => `<div class="wh"><span class="mark"><svg viewBox="0 0 24 24">${brand}</svg></span>
   ${live ? '<i class="live"></i>' : ''}<b>${label}</b>${trailing ? `<span>${trailing}</span>` : ''}</div>`;
-const md = `${date.getMonth() + 1}/${date.getDate()}`;
+// Md 範本：中英日是「10/11」，ko 是「10. 11.」
+const mdOf = dt => lang === 'ko' ? `${dt.getMonth() + 1}. ${dt.getDate()}.` : `${dt.getMonth() + 1}/${dt.getDate()}`;
+const md = mdOf(date);
 
 // ── 旅程（TripsCards.live，小）：環＝第幾天／共幾天，底下「回程 M/d · 還有 N 天」 ──
 const dayCount = trip.dayCount;
@@ -196,13 +208,14 @@ const tripsSmall = `${head(S.tripOngoing, null, true)}
     <circle class="on" cx="31" cy="31" r="${ringR}" stroke-dasharray="${(ringC * dayNo / dayCount).toFixed(2)} ${ringC.toFixed(2)}" transform="rotate(-90 31 31)"/>
     <text x="31" y="31">${dayNo}</text></svg>
     <div><b>${S.day(dayNo)}</b><span>${S.dayCountTotal(dayCount)}</span></div></div>
-  <div class="foot">${S.returnsOn(`${end.getMonth() + 1}/${end.getDate()}`, dayCount - dayNo)}</div>`;
+  <div class="foot">${S.returnsOn(mdOf(end), dayCount - dayNo)}</div>`;
 
 // ── 檔案（FilesCards，小）：今天畫得到的行程上的附件，最多 3 列，其餘寫「還有 N 個檔案」 ──
 // 範本的連結匯入成「連結」附件；JR Pass 那兩份（PDF、照片）是 event.html extra=1 同一組行銷用樣本。
 const EXTRA = { 'zh-Hant-TW': [['JR Pass 電子票券.pdf', 'pdf'], ['兌換收據.jpg', 'image']],
   en: [['JR Pass e-ticket.pdf', 'pdf'], ['Exchange receipt.jpg', 'image']],
-  ja: [['JR Pass 電子チケット.pdf', 'pdf'], ['引換レシート.jpg', 'image']] }[lang] || [];
+  ja: [['JR Pass 電子チケット.pdf', 'pdf'], ['引換レシート.jpg', 'image']],
+  ko: [['JR Pass 전자 티켓.pdf', 'pdf'], ['교환 영수증.jpg', 'image']] }[lang] || [];
 const FILE_ICON = {
   pdf: '<path d="M14 3H6v18h12V7zM14 3v4h4M9 13h6M9 17h6"/>',
   image: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M4 17l5.5-5.5L14 16l2.5-2.5L20 17"/>',

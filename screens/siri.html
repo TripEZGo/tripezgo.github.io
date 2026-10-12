@@ -110,6 +110,17 @@ const S = {
     summary: (a, b) => `${a}。今日は ${b}。`, summaryCurrent: (a, b, c) => `${a}。今日は ${b}、いまは${c}です。`,
     summaryNext: (a, b, c, e) => `${a}。今日は ${b}、次は${c}、${e} に始まります。`, fallback: '今日はまだ予定がありますが、次がどれかわかりません。',
     date: dt => `${dt.getMonth() + 1}月${dt.getDate()}日 ${'日月火水木金土'[dt.getDay()]}曜日` },
+  // ko：短語照 App 的 ko.lproj/AppShortcuts.strings（帶 ${applicationName}，順序同 TripIntents：next 兩句、today 兩句）；
+  // 回答照 LiveActivity.json liveactivity.spoken.*；日期照 DateFormatter MMMMEEEEd（ko）
+  ko: {
+    phrases: ['${applicationName} 다음 일정', '${applicationName}에게 다음에 어디로 가는지 묻기', '${applicationName} 오늘 일정', '${applicationName}에게 오늘 일정 묻기'],
+    noTrip: '지금 진행 중인 여행이 없습니다.', next: (a, b) => `다음은 ${a}이고, ${b}에 시작합니다.`, currentLast: a => `지금은 ${a}이고, 오늘 남은 일정은 없습니다.`,
+    currentAndNext: (a, b, c) => `지금은 ${a}이고, 다음은 ${b}, ${c}에 시작합니다.`, allDone: '오늘 일정을 모두 마쳤습니다.',
+    tomorrow: (a, b) => `오늘은 끝났습니다. 내일 첫 일정은 ${a}이고, ${b}에 시작합니다.`, countsWithLegs: (a, b) => `일정 ${a}개, 이동 ${b}구간`,
+    counts: a => `일정 ${a}개`, day: (a, b) => `${b}일 중 ${a}일차`, summaryDone: (a, b) => `${a}. 오늘은 ${b}, 모두 마쳤습니다.`,
+    summary: (a, b) => `${a}. 오늘은 ${b}.`, summaryCurrent: (a, b, c) => `${a}. 오늘은 ${b}, 지금은 ${c}입니다.`,
+    summaryNext: (a, b, c, e) => `${a}. 오늘은 ${b}, 다음은 ${c}, ${e}에 시작합니다.`, fallback: '오늘 남은 일정이 있지만, 다음이 무엇인지 알 수 없습니다.',
+    date: dt => `${dt.getMonth() + 1}월 ${dt.getDate()}일 ${'일월화수목금토'[dt.getDay()]}요일` },
 }[lang] || null;
 const L = S;
 const phrase = i => L.phrases[i].replace('${applicationName}', APP);

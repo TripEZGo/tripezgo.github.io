@@ -67,12 +67,18 @@
     background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 30px); }
   /* 金額：中日文頁的 -apple-system 會拿 PingFang 畫數字；tzMonoDigits 要 SF 的等寬數字 */
   .mono { font-family: system-ui, -apple-system, sans-serif; font-variant-numeric: tabular-nums; }
+
+  /* ── iPad（?device=ipad）：釘住那一段往下 34（擷取 05：狀態格 218 起）、左右照舊 20；購物牆照 App 一律兩欄
+        （ShoppingWallMetrics.columns＝2，沒有依寬度加欄），每欄拉寬；「＋」貼安全區底之上 16（模擬器量：964／1288）；沒有分頁列就沒有那層淡出。 ── */
+  .ipad .head { top: 218px; }
+  .ipad .fab { top: 1288px; }
+  .ipad .scrim { display: none; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, params, chrome, ready, fmt, interactive, go, t as T, svg, swatchClass } from './chrome.js';
+import { lang, params, chrome, ready, fmt, interactive, go, t as T, svg, swatchClass, ipad } from './chrome.js';
 import { libraryHead } from './tools.js';
 
 const d = document.getElementById('d');
@@ -81,41 +87,49 @@ const d = document.getElementById('d');
 const s = {
   'zh-Hant-TW': { all: '全部',
     stat: ['待購買', '已購買', '不買了'], flag: '目前行程', sep: '　·　', yen: '¥',
-    cats: { drug: '藥妝', cloth: '衣服', souv: '紀念品', food: '食品', lux: '精品', goods: '雜貨' },
+    cats: { drug: '藥妝', cloth: '衣服', souv: '紀念品', food: '食品', lux: '精品', goods: '雜貨', elec: '3C 電器', other: '其他' },
     empty: '無項目', quotes: '價格比較', best: p => `最低 ${p}`, quoteAdd: '新增比價', events: '關聯行程', approx: v => `約 ${v}`,
     unTitle: '退回待購買？', unMsg: '你填的購買價格會一起清掉。', unOk: '退回待購買', cancel: '取消',
     paidTitle: '購買價格', paidLabel: '價格', paidHint: p => `參考價格是 ${p}。`, paidSave: '標成已購買', locale: 'zh-TW' },
   en: { all: 'All',
     stat: ['To buy', 'Bought', 'Skipped'], flag: 'On itinerary', sep: ' · ', yen: '¥',
-    cats: { drug: 'Drugstore', cloth: 'Clothing', souv: 'Souvenirs', food: 'Food', lux: 'Luxury', goods: 'Daily Goods' },
+    cats: { drug: 'Drugstore', cloth: 'Clothing', souv: 'Souvenirs', food: 'Food', lux: 'Luxury', goods: 'Daily Goods', elec: 'Electronics', other: 'Other' },
     empty: 'No items', quotes: 'Price check', best: p => `Lowest ${p}`, quoteAdd: 'Add a price', events: 'Linked events', approx: v => `About ${v}`,
     unTitle: 'Back to to-buy?', unMsg: 'The purchase price you entered will be cleared too.', unOk: 'Back to to-buy', cancel: 'Cancel',
     paidTitle: 'Price paid', paidLabel: 'Price', paidHint: p => `Reference price is ${p}.`, paidSave: 'Mark as bought', locale: 'en-US' },
   ja: { all: 'すべて',
     stat: ['購入予定', '購入済み', 'やめた'], flag: '予定あり', sep: '　·　', yen: '￥',
-    cats: { drug: 'ドラッグストア', cloth: '衣類', souv: 'お土産', food: '食品', lux: 'ブランド品', goods: '雑貨' },
+    cats: { drug: 'ドラッグストア', cloth: '衣類', souv: 'お土産', food: '食品', lux: 'ブランド品', goods: '雑貨', elec: '家電・電子機器', other: 'その他' },
     empty: '項目なし', quotes: '価格の比較', best: p => `最安 ${p}`, quoteAdd: '価格を追加', events: '関連する予定', approx: v => `約 ${v}`,
     unTitle: '未購入に戻しますか？', unMsg: '入力した購入価格も消えます。', unOk: '未購入に戻す', cancel: 'キャンセル',
     paidTitle: '購入価格', paidLabel: '価格', paidHint: p => `参考価格は ${p}。`, paidSave: '購入済みにする', locale: 'ja-JP' },
+  // ko：Widgets.json widgets.shopping.*、Domain.json 購物分類的 ko 欄。sep 照 ko 的「%1$@ · %2$@」；
+  // yen 照 NumberFormatter（ko_KR、JPY）＝「JP¥1,600」
+  ko: { all: '전체',
+    stat: ['살 것', '구매함', '안 사기'], flag: '일정 있음', sep: ' · ', yen: 'JP¥',
+    cats: { drug: '드러그스토어', cloth: '의류', souv: '기념품', food: '식품', lux: '명품', goods: '생활용품', elec: '전자제품', other: '기타' },
+    empty: '항목 없음', quotes: '가격 비교', best: p => `최저 ${p}`, quoteAdd: '가격 추가', events: '연결된 일정', approx: v => `약 ${v}`,
+    unTitle: '구매 예정으로 되돌릴까요?', unMsg: '입력한 구매 가격도 함께 지워집니다.', unOk: '구매 예정으로', cancel: '취소',
+    paidTitle: '구매 가격', paidLabel: '가격', paidHint: p => `참고 가격은 ${p}.`, paidSave: '구매함으로 표시', locale: 'ko-KR' },
 }[lang];
 
 // 範例項目（範本裡沒有購物清單）。img 的高寬比跟 svg 的 viewBox 一致。
 // quotes（價格比較）與 event（關聯行程，範本裡的行程 key）只在互動模式的卡片上看得到。
-const N = (zh, en, ja) => ({ 'zh-Hant-TW': zh, en, ja }[lang]);
+const N = (zh, en, ja, ko) => ({ 'zh-Hant-TW': zh, en, ja, ko }[lang]);   // ko 的品名、店名是自寫的（範本裡沒有購物清單）
 const ITEMS = [
-  { img: 'manju', r: 1, name: N('紅葉饅頭 12 入', 'Momiji manju, box of 12', 'もみじ饅頭 12 個入'), cat: 'souv', price: 1600, status: 'pending', linked: true,
-    event: 'd2-omotesando', quotes: [[N('山田屋 宮島本店', 'Yamadaya, Miyajima', 'やまだ屋 宮島本店'), 1600], [N('ekie 廣島站', 'ekie, Hiroshima Sta.', 'ekie 広島駅'), 1650]] },
-  { img: 'brush', r: .75, name: N('熊野筆 腮紅刷', 'Kumano blush brush', '熊野筆 チークブラシ'), cat: 'lux', price: 4800, status: 'pending',
-    quotes: [[N('筆之里工房', 'Fude-no-Sato Kobo', '筆の里工房'), 4620], [N('ekie 廣島站', 'ekie, Hiroshima Sta.', 'ekie 広島駅'), 4800], [N('晃祐堂 熊野本店', 'Koyudo, Kumano', '晃祐堂 熊野本店'), 4950]] },
-  { img: 'drops', r: 1, name: N('眼藥水', 'Eye drops', '目薬'), cat: 'drug', price: 698, status: 'pending',
-    quotes: [[N('唐吉訶德 廣島本通店', 'Don Quijote Hondori', 'ドン・キホーテ 広島本通店'), 658], [N('大國藥妝 本通店', 'Daikoku Drug Hondori', 'ダイコクドラッグ 本通店'), 698], [N('松本清 廣島站前店', 'Matsukiyo, Hiroshima Sta.', 'マツモトキヨシ 広島駅前店'), 715]] },
-  { img: 'soy', r: 1, name: N('牡蠣醬油', 'Oyster soy sauce', 'かき醤油'), cat: 'food', price: 540, status: 'pending' },
-  { img: 'shamoji', r: .75, name: N('宮島杓子', 'Miyajima rice paddle', '宮島しゃもじ'), cat: 'souv', price: 880, status: 'pending' },
-  { img: 'tote', r: 1, name: N('倉敷帆布托特包', 'Kurashiki canvas tote', '倉敷帆布トート'), cat: 'goods', price: 6380, status: 'pending' },
-  { img: 'lemon', r: .75, name: N('瀨戶田檸檬蛋糕', 'Setoda lemon cakes', '瀬戸田レモンケーキ'), cat: 'food', price: 1296, status: 'bought' },
-  { img: 'denim', r: 1, name: N('兒島丹寧外套', 'Kojima denim jacket', '児島デニムジャケット'), cat: 'cloth', price: 16500, status: 'bought' },
-  { img: 'sunscreen', r: 1, name: N('防曬乳', 'Sunscreen', '日焼け止め'), cat: 'drug', price: 1078, status: 'bought' },
-  { img: 'sauce', r: 1, name: N('御好燒醬', 'Okonomi sauce', 'お好みソース'), cat: 'food', price: 430, status: 'skipped' },
+  { img: 'manju', r: 1, name: N('紅葉饅頭 12 入', 'Momiji manju, box of 12', 'もみじ饅頭 12 個入', '모미지 만주 12개입'), cat: 'souv', price: 1600, status: 'pending', linked: true,
+    event: 'd2-omotesando', quotes: [[N('山田屋 宮島本店', 'Yamadaya, Miyajima', 'やまだ屋 宮島本店', '야마다야 미야지마 본점'), 1600], [N('ekie 廣島站', 'ekie, Hiroshima Sta.', 'ekie 広島駅', 'ekie 히로시마역'), 1650]] },
+  { img: 'brush', r: .75, name: N('熊野筆 腮紅刷', 'Kumano blush brush', '熊野筆 チークブラシ', '구마노 붓 블러셔 브러시'), cat: 'lux', price: 4800, status: 'pending',
+    quotes: [[N('筆之里工房', 'Fude-no-Sato Kobo', '筆の里工房', '후데노사토 공방'), 4620], [N('ekie 廣島站', 'ekie, Hiroshima Sta.', 'ekie 広島駅', 'ekie 히로시마역'), 4800], [N('晃祐堂 熊野本店', 'Koyudo, Kumano', '晃祐堂 熊野本店', '고유도 구마노 본점'), 4950]] },
+  { img: 'drops', r: 1, name: N('眼藥水', 'Eye drops', '目薬', '안약'), cat: 'drug', price: 698, status: 'pending',
+    quotes: [[N('唐吉訶德 廣島本通店', 'Don Quijote Hondori', 'ドン・キホーテ 広島本通店', '돈키호테 히로시마 혼도리점'), 658], [N('大國藥妝 本通店', 'Daikoku Drug Hondori', 'ダイコクドラッグ 本通店', '다이코쿠 드러그 혼도리점'), 698], [N('松本清 廣島站前店', 'Matsukiyo, Hiroshima Sta.', 'マツモトキヨシ 広島駅前店', '마츠모토키요시 히로시마역앞점'), 715]] },
+  { img: 'soy', r: 1, name: N('牡蠣醬油', 'Oyster soy sauce', 'かき醤油', '굴 간장'), cat: 'food', price: 540, status: 'pending' },
+  { img: 'shamoji', r: .75, name: N('宮島杓子', 'Miyajima rice paddle', '宮島しゃもじ', '미야지마 주걱'), cat: 'souv', price: 880, status: 'pending' },
+  { img: 'tote', r: 1, name: N('倉敷帆布托特包', 'Kurashiki canvas tote', '倉敷帆布トート', '구라시키 범포 토트백'), cat: 'goods', price: 6380, status: 'pending' },
+  { img: 'lemon', r: .75, name: N('瀨戶田檸檬蛋糕', 'Setoda lemon cakes', '瀬戸田レモンケーキ', '세토다 레몬 케이크'), cat: 'food', price: 1296, status: 'bought' },
+  { img: 'denim', r: 1, name: N('兒島丹寧外套', 'Kojima denim jacket', '児島デニムジャケット', '고지마 데님 재킷'), cat: 'cloth', price: 16500, status: 'bought' },
+  { img: 'sunscreen', r: 1, name: N('防曬乳', 'Sunscreen', '日焼け止め', '선크림'), cat: 'drug', price: 1078, status: 'bought' },
+  { img: 'sauce', r: 1, name: N('御好燒醬', 'Okonomi sauce', 'お好みソース', '오코노미 소스'), cat: 'food', price: 430, status: 'skipped' },
 ];
 
 const IC = {
@@ -134,7 +148,9 @@ const TAB = 1;
 
 // ── 狀態：截圖模式就是 ITEMS 原樣；互動模式從 sessionStorage 接回來（跨資料分頁兩格切換、開過工具紙都還在） ──
 const STATUSES = ['pending', 'bought', 'skipped'];
-const cats = ['drug', 'cloth', 'souv', 'food', 'lux', 'goods'];
+// App 的分類共八個（Domain.json shoppingCategory：藥妝、衣服、紀念品、食品、精品、3C 電器、雜貨、其他）。iPhone 那一排
+// 在第六顆之後就出畫面了，照舊只畫到雜貨；iPad 一排放得下全部（模擬器量：全部 20 … 其他 550–604），照 App 的順序畫齊。
+const cats = ipad ? ['drug', 'cloth', 'souv', 'food', 'lux', 'elec', 'goods', 'other'] : ['drug', 'cloth', 'souv', 'food', 'lux', 'goods'];
 const state = { status: ITEMS.map(i => i.status), paid: ITEMS.map(() => null), statusFilter: [...STATUSES], catFilter: [] };
 let saved = null;
 if (interactive) {

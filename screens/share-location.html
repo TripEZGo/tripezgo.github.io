@@ -169,11 +169,15 @@ const S = {
   ja: { all: 'すべて', search: 'ランドマークや住所を検索', on: '位置を共有中', me: '私', open: 'マップで開く',
     updated: '3 分前に更新',
     whenInUse: '相手の位置情報の許可は「App の使用中」までです。iOS が TripEZGo を終了させると、最後に更新された位置が表示され続けます。' },
+  // ko：同上幾份字串表的 ko 欄；「3분 전」是 RelativeDateTimeFormatter(.full) 在 ko 的輸出
+  ko: { all: '전체', search: '랜드마크나 주소 검색', on: '위치 공유 중', me: '나', open: '지도에서 열기',
+    updated: '3분 전 업데이트',
+    whenInUse: '상대는 앱 사용 중에만 위치를 허용했습니다. iOS가 TripEZGo를 종료하면 마지막으로 업데이트된 위치가 계속 보입니다.' },
 }[lang];
 
 // 樣本：三位旅伴（名字、顏色同 members.html），座標是畫面上的點（底圖是截圖，不是真的地圖）
 const SAMPLE = {
-  'zh-Hant-TW': ['小雯', '凱文', '美琪'], en: ['Mia', 'Ken', 'Sara'], ja: ['美咲', '健太', 'さくら'],
+  'zh-Hant-TW': ['小雯', '凱文', '美琪'], en: ['Mia', 'Ken', 'Sara'], ja: ['美咲', '健太', 'さくら'], ko: ['지우', '민준', '서연'],
 }[lang];
 const MATES = [
   { name: SAMPLE[0], colour: 'eat', x: 247, y: 548, sel: true, dashed: true },
@@ -235,7 +239,7 @@ d.insertAdjacentHTML('beforeend', `<div class="fab locate" id="fab-loc" style="t
      關掉之後藥丸變回「分享我的位置」（LiveShareChip：卡片底、灰字灰點）。
    - 點自己的藍點：名牌出現、再點收掉（TripMapView.showMyNameBubble）。 */
 if (interactive) {
-  const LOC = { 'zh-Hant-TW': 'zh-TW', en: 'en', ja: 'ja' }[lang];
+  const LOC = { 'zh-Hant-TW': 'zh-TW', en: 'en', ja: 'ja', ko: 'ko' }[lang];
   const M = {
     'zh-Hant-TW': { updated: x => `更新於 ${x}`, off: '分享我的位置', sheet: '分享我的位置', sw: '分享給旅伴', swDetail: '旅伴在地圖上看得到你現在的位置',
       source: '位置來源', providing: '正在提供', thisDevice: n => `${n}（本裝置）`, section: '正在分享的人', you: '你', now: '正在分享',
@@ -246,6 +250,9 @@ if (interactive) {
     ja: { updated: x => `${x}に更新`, off: '現在地を共有', sheet: '現在地を共有', sw: '旅の仲間に共有', swDetail: '旅の仲間があなたの現在地を地図で見られます',
       source: '位置の提供元', providing: '提供中', thisDevice: n => `${n}（このデバイス）`, section: '共有中の人', you: 'あなた', now: '共有中',
       turningOn: 'オンにしています…', turningOff: 'オフにしています…' },
+    ko: { updated: x => `${x} 업데이트`, off: '내 위치 공유', sheet: '내 위치 공유', sw: '동행에게 공유', swDetail: '동행이 지도에서 내 위치를 봅니다',
+      source: '위치 제공', providing: '제공 중', thisDevice: n => `${n}(이 기기)`, section: '지금 공유 중', you: '나', now: '공유 중',
+      turningOn: '켜는 중…', turningOff: '끄는 중…' },
   }[lang];
   // 樣本：幾分鐘前更新、在哪（給「在地圖開啟」）、是不是只在 App 使用期間（虛線）
   const AGE = [3, 14, 57];

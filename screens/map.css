@@ -124,3 +124,15 @@ html[lang="ja"] .c-note { letter-spacing: -.32px; }
 html[lang="ja"] .n-man { line-height: 18.09px; position: relative; top: 1px; }
 /* 描述那一段（UITextView）的字面比同樣行高的 UILabel 低約 1pt——三語基準圖都一樣 */
 .c-notes { position: relative; top: .7px; }
+
+/* ── iPad（?device=ipad，chrome.js DEV）：擷取 03／04 量——頁首、日期列、搜尋、分享藥丸、地圖上緣都是 iPhone ＋34
+   （日期小字 115、抬頭 141.5、地圖從 162、日期列 172、搜尋 220–264、藥丸 268）；左右照舊 20、浮動鈕右 16；
+   卡片與浮動鈕的底貼安全區底之上 16（模擬器量：浮動鈕 y 1160／1224／1288、底 1340＝1376 − 20 − 16）。抬頭不再截斷。 ── */
+.ipad .head { top: 108px; width: auto; right: 20px; }
+.ipad .map { top: 162px; width: 1032px; height: 1214px; }
+.ipad .chips { top: 172px; }
+.ipad .search { top: 220px; }
+.ipad .live { top: 268px; }
+.ipad .fab { left: 964px; }
+.ipad .card { bottom: 36px; }
+.ipad .sb-loc { left: auto; right: 112px; top: 9.5px; }

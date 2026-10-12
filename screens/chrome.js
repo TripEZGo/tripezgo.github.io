@@ -1,13 +1,27 @@
 // 共用：讀網址參數、載入範本旅程、畫系統外框（狀態列、分頁列、主畫面橫條）、icon。
 //
-// 網址參數：?lang=zh-Hant-TW|en|ja（預設繁中）。每支畫面另外自己讀需要的參數（例如 day）。
+// 網址參數：?lang=zh-Hant-TW|en|ja|ko（預設繁中；ko 只給商城截圖用，官網沒有韓文）。每支畫面另外自己讀需要的參數（例如 day）。
 // 資料：screens/data/sanyo.<lang>.json，是 App 內建範本 jp-sanyo-hiroshima-okayama-6d 的原檔
 // （App/iOS/Modules/TripEZGoData/Sources/TripEZGoData/TripTemplateResources），不要手改——
 // 範本改了就重新複製一份過來。
 
 export const params = new URLSearchParams(location.search);
 export const lang = params.get('lang') || 'zh-Hant-TW';
-const htmlLang = { 'zh-Hant-TW': 'zh-Hant-TW', en: 'en', ja: 'ja' }[lang] || 'zh-Hant-TW';
+
+/* ── iPad（?device=ipad）：13 吋直放 1032×1376pt，商城 iPad 截圖用（tools/store/make.mjs）。
+   不帶 device 就是 iPhone，所有 iPhone 的數字一格都不動——iPad 的樣子全部掛在 html.ipad 底下。
+   版型照 2026-10-12 在 iPad Pro 13 吋（M5）模擬器、iPadOS 26.2 上跑 1.3.0 (213) 量的（axe describe-ui 的 frame；
+   截圖與數字在報告裡），對照 Open Design appstore-2026/raw/<lang>/ipad/01–08.png（1.0.0 真機擷取）：
+   - 狀態列 24pt：左「9:41 AM  日期」、右 Wi‑Fi／電池；分頁列是頂端置中的膠囊（每格 66×36、y 36，純文字）。
+   - 頁首比 iPhone 低 34pt（日期小字 y 108、抬頭 124.5、右上鈕 976／104、日期籤 172）——DEV.top。
+   - 下緣沒有分頁列，安全區底在 1356（＝1376 − 20）：行事曆「＋」1292（之上 12）、地圖與購物的浮動鈕底 1340（之上 16）——
+     DEV.bottom 是安全區底到螢幕底。DEV.legal 是地圖 Apple 標誌那一條離螢幕底（iPad 量到「法律資訊」底 1330）。
+   - 右下角有 iPadOS 26 的視窗縮放把手（灰色四分之一圓弧，1004–1027 × 1348–1371），App 畫面都看得到。
+   - App 本身沒有 iPad 專屬版型（App/iOS 找不到 horizontalSizeClass／userInterfaceIdiom 的分支），內容就是同一套版面拉寬。 */
+export const ipad = params.get('device') === 'ipad';
+export const DEV = ipad ? { w: 1032, h: 1376, top: 34, bottom: 20, legal: 46 } : { w: 402, h: 874, top: 0, bottom: 83, legal: 96 };
+if (ipad) document.documentElement.classList.add('ipad');
+const htmlLang = { 'zh-Hant-TW': 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[lang] || 'zh-Hant-TW';
 document.documentElement.lang = htmlLang;
 
 export async function loadTrip() {
@@ -38,6 +52,15 @@ const STRINGS = {
     weekday: ['日', '月', '火', '水', '木', '金', '土'],
     monthDay: (m, d) => `${m}月${d}日`, shortDate: (m, d) => `${m}/${d}`,
     minutes: m => `${m} 分`, hours: h => `${h} 時間`, hm: (h, m) => `${h} 時間 ${m} 分`,
+  },
+  // 韓文：字照 App 字串表（overview/trips/map/widgets/settings.tab.title、ui.day.today、domain.itinerary.daylabel、
+  // ui.allday、ui.duration.*）；日期照 DateFormatter 在 ko 的模板結果（TripTextFormatter：EEE→「토」、Md→「10. 10.」、MMMd→「10월 10일」）
+  ko: {
+    tabs: ['한눈에 보기', '여행', '지도', '자료', '설정'],
+    today: '오늘', day: n => `${n}일차`, allDay: '종일',
+    weekday: ['일', '월', '화', '수', '목', '금', '토'],
+    monthDay: (m, d) => `${m}월 ${d}일`, shortDate: (m, d) => `${m}. ${d}.`,
+    minutes: m => `${m}분`, hours: h => `${h}시간`, hm: (h, m) => `${h}시간 ${m}분`,
   },
 };
 export const t = STRINGS[lang] || STRINGS['zh-Hant-TW'];
@@ -93,6 +116,7 @@ if (interactive) document.documentElement.classList.add('is-interactive');
 export function go(page, query = '') {
   const q = new URLSearchParams(query);
   q.set('lang', lang); if (interactive) q.set('interactive', '1');
+  if (ipad) q.set('device', 'ipad');
   if (interactive && params.get('auto')) q.set('auto', params.get('auto'));   // 換頁後自動示範要接著跑
   if (interactive && params.get('av')) q.set('av', params.get('av'));          // 腳本的版本號也帶著
   if (interactive && params.get('ext')) q.set('ext', params.get('ext'));
@@ -121,7 +145,15 @@ export function chrome(device, { tab = null, dark = false } = {}) {
       addEventListener('keydown', (e) => { if (e.key === 'Escape') parent.postMessage({ type: 'tz-esc' }, '*'); });
     }
   }
-  device.insertAdjacentHTML('beforeend', `
+  if (ipad) {
+    // iPad 狀態列：時刻＋日期（擷取 01 繁中「9:41 AM  9月29日 週二」、en「9:41 AM  Tue Sep 29」、ja「9:41  9月29日 (火)」）。
+    // 日期固定是範本旅程的「今天」2026-10-10（週六）——各畫面預設 start=2026-10-10、today=1。沒有動態島。
+    // 主畫面橫條只在系統畫面（dark：鎖定畫面等）畫；App 畫面的擷取 01–07 底下都沒有。
+    const sbDate = { 'zh-Hant-TW': '10月10日 週六', en: 'Sat Oct 10', ja: '10月10日 (土)' }[lang] || '10月10日 週六';
+    device.insertAdjacentHTML('beforeend', `
+    <div class="sb${dark ? ' on-dark' : ''}"><div class="sb-time">${lang === 'ja' ? '9:41' : '9:41 AM'}</div><div class="sb-date">${sbDate}</div>${SB_ICONS}</div>
+    ${dark ? '<div class="home on-dark"></div>' : '<svg class="resize-grip" viewBox="0 0 26 26" aria-hidden="true"><path d="M23.5 2.5A21 21 0 0 1 2.5 23.5"/></svg>'}`);
+  } else device.insertAdjacentHTML('beforeend', `
     <div class="sb${dark ? ' on-dark' : ''}"><div class="sb-time">9:41</div><div class="sb-island"></div>${SB_ICONS}</div>
     <div class="home${dark ? ' on-dark' : ''}"></div>`);
   if (tab !== null) {

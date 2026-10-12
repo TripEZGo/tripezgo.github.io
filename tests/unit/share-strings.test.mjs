@@ -4,8 +4,8 @@ import { S, langKey } from '../../share/strings.js';
 
 const shape = (v) => (Array.isArray(v) ? `array:${v.length}` : typeof v === 'object' ? 'object' : typeof v);
 
-test('English and Japanese have every key Chinese has, of the same shape, and nothing extra', () => {
-  for (const lang of ['en', 'ja']) {
+test('English, Japanese and Korean have every key Chinese has, of the same shape, and nothing extra', () => {
+  for (const lang of ['en', 'ja', 'ko']) {
     assert.deepEqual(Object.keys(S[lang]).sort(), Object.keys(S.zh).sort(), lang);
     assert.deepEqual(Object.keys(S[lang].reasons).sort(), Object.keys(S.zh.reasons).sort(), lang + ' reasons');
     for (const key of Object.keys(S.zh)) {
@@ -33,6 +33,7 @@ test('the page language picks the dictionary, and anything unknown falls back to
   assert.equal(langKey('zh-Hant'), 'zh');
   assert.equal(langKey('en'), 'en');
   assert.equal(langKey('ja'), 'ja');
+  assert.equal(langKey('ko'), 'ko');
   assert.equal(langKey('fr'), 'zh');
 });
 

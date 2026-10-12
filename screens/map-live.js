@@ -28,7 +28,7 @@
 // - 旅伴：LiveMateAnnotation.swift、MapPlaceCard.configure(_ mate:)、ShopCardSection.configure(mateNamed:)；
 //   一小時沒更新（LivePosition.coldAfter）整顆灰、照樣點得開；「更新於 X」是 RelativeDateTimeFormatter(.full)。
 //   名字與顏色同 share-location.html 的樣本。自己那一顆是系統藍點，不當旅伴畫。
-import { fmt, params, lang, t, loadTrip, loadCategories, categoryName, chrome, swatchClass, ready, ICON, interactive, toMin, duration } from './chrome.js';
+import { fmt, params, lang, t, loadTrip, loadCategories, categoryName, chrome, swatchClass, ready, ICON, interactive, toMin, duration, DEV } from './chrome.js';
 // trip/config.js（MapKit token）與 trip/icons.js（類型圖示）在 screens/ 外面：截圖工具只服務 screens/，所以動態載入，
 // 拿不到就走底圖那一條。
 let CONFIG, MAKI, MAKI_OF_TYPE, DEFAULT_ICON_ID;
@@ -74,14 +74,26 @@ const S = {
     signage: {},
     unit: { m: 'm', km: 'km' },
     poster: { man: '直進', dist: '360', unit: 'm', status: '徒歩ナビ · 残り 710 m · 9 分', dest: '広島若草町 へ移動中' } },
+  // ko：同上幾份字串表的 ko 欄。資料日期照 DateFormatter yMd／yM 在 ko 的寫法（「2026. 10. 10.」「2026. 10.」）；
+  // 單位照 MeasurementFormatter（ko：m／km；狀態列跟 App 一樣用空白接起來，MapViewController.navigation）
+  ko: { all: '전체', search: '랜드마크나 주소 검색', live: '내 위치 공유', liveOn: '위치 공유 중', openEvent: '일정 상세 열기', openInMaps: '지도에서 열기',
+    open24: '24시간 영업', open: x => `영업 중 · ${x} 마감`, openNow: '영업 중', soon: x => `곧 마감 · ${x}`, closed: x => `휴무 · ${x} 영업 시작`,
+    closedNow: '영업 종료', unknown: '영업시간 정보 없음', note: s => `${s} 기준 데이터입니다. 실제와 다를 수 있습니다.`, noteDate: '2026. 10. 10.',
+    updated: s => `${s} 업데이트`, wiu: '상대는 앱 사용 중에만 위치를 허용했습니다. iOS가 TripEZGo를 종료하면 마지막으로 업데이트된 위치가 계속 보입니다.',
+    man: { straight: '계속 직진', slightLeft: '왼쪽으로', left: '좌회전', slightRight: '오른쪽으로', right: '우회전', uTurn: '유턴', arrive: '도착' },
+    then: u => `${u} 앞`, status: (a, b) => `도보 내비 · ${a} · ${b} 남음`, headingTo: s => `${s}(으)로 이동 중`, openDest: '목적지 열기',
+    endTitle: '도보 내비게이션을 종료할까요?', endMsg: '지도의 경로와 내비게이션이 모두 종료됩니다.', cancel: '취소', endConfirm: '내비게이션 종료',
+    signage: { donki: '돈키호테', matsukiyo: '마츠모토키요시', daikoku: '다이코쿠 드러그' },
+    unit: { m: 'm', km: 'km' },
+    poster: { man: '계속 직진', dist: '360', unit: 'm', status: '도보 내비 · 710 m · 9분 남음', dest: '広島若草町(으)로 이동 중' } },
 }[lang] || {};
-const LOCALE = { 'zh-Hant-TW': 'zh-TW', en: 'en-US', ja: 'ja' }[lang] || 'zh-TW';
+const LOCALE = { 'zh-Hant-TW': 'zh-TW', en: 'en-US', ja: 'ja', ko: 'ko-KR' }[lang] || 'zh-TW';
 const IMPERIAL = lang === 'en';   // 基準圖的英文是 en-US（英制），同 map.js
 const dayLabel = n => lang === 'ja' ? `${n} 日目` : t.day(n);
-const TABS_JA = ['概要', '旅行', 'マップ', 'ツール', '設定'];
+const TABS_JA = ['概要', '旅行', 'マップ', '資料', '設定'];   // 1.3.0：ツール → 資料
 
 // ── 旅伴樣本（同 share-location.html：名字、顏色）。位置在第 2 天下午的和平公園一帶，更新時間是相對於畫面上的 9:41 ──
-const MATE_NAMES = { 'zh-Hant-TW': ['小雯', '凱文', '美琪'], en: ['Mia', 'Ken', 'Sara'], ja: ['美咲', '健太', 'さくら'] }[lang] || ['小雯', '凱文', '美琪'];
+const MATE_NAMES = { 'zh-Hant-TW': ['小雯', '凱文', '美琪'], en: ['Mia', 'Ken', 'Sara'], ja: ['美咲', '健太', 'さくら'], ko: ['지우', '민준', '서연'] }[lang] || ['小雯', '凱文', '美琪'];
 const MATES = [
   { id: 'm0', name: MATE_NAMES[0], colour: 'eat', at: [34.39505, 132.45300], ageMin: 2, wiu: true },
   { id: 'm1', name: MATE_NAMES[1], colour: 'stay', at: [34.39290, 132.45380], ageMin: 14 },
@@ -203,7 +215,7 @@ function shopState(hours) {
 // 手動更新的那幾份只寫到月（MapViewModel+Shops.drawable：text.monthYear）；每天更新的寫到日——同 map.js 寫成畫面上的「今天」
 function monthYear(iso) {
   const dt = new Date(iso), y = dt.getUTCFullYear(), m = dt.getUTCMonth() + 1;
-  return lang === 'en' ? `${m}/${y}` : `${y}/${m}`;
+  return lang === 'en' ? `${m}/${y}` : lang === 'ko' ? `${y}. ${m}.` : `${y}/${m}`;   // ko：DateFormatter yM＝「y. M.」
 }
 const SHOPS = shopData.stores.map((s, i) => {
   const st = shopState(s.hours);
@@ -238,7 +250,7 @@ const chipHtml = () => [`<div class="chip all${day == null ? ' on' : ''}" data-d
 d.insertAdjacentHTML('beforeend', `<div class="chips" id="chips">${chipHtml()}</div>
   <div class="search">${S.search}</div>
   <div class="live${LIVE_ON ? ' on' : ''}"><i></i>${LIVE_ON ? S.liveOn : S.live}</div>
-  <div class="fab on" style="top:242px">${icon('infoFill')}</div>
+  <div class="fab on" style="top:${242 + DEV.top}px">${icon('infoFill')}</div>
   <div id="cardSlot"></div><div id="fabSlot"></div>`);
 ['chips', 'search', 'live'].forEach(c => jaWrap(d.querySelector(c === 'chips' ? '#chips' : '.' + c)));
 chrome(d, { tab: 2 });
@@ -339,9 +351,9 @@ function setCard(html) {
       `<div class="fab loc" style="top:${locTop}px">${icon('locate')}</div>
       <div class="deck-toggle" style="top:${top - 26.6}px">${icon('chevDown')}</div>`);
   } else {
-    fabSlot.innerHTML = `<div class="fab" style="top:595px">${icon('plus')}</div>
-      <div class="fab" style="top:659px">${icon('nearby')}</div>
-      <div class="fab loc" style="top:723px">${icon('locate')}</div>`;
+    fabSlot.innerHTML = `<div class="fab" style="top:${DEV.h - DEV.bottom - 196}px">${icon('plus')}</div>
+      <div class="fab" style="top:${DEV.h - DEV.bottom - 132}px">${icon('nearby')}</div>
+      <div class="fab loc" style="top:${DEV.h - DEV.bottom - 68}px">${icon('locate')}</div>`;
   }
   // 日文與英文的字距處理同 map.js
   jaWrap(document.getElementById('card'));
@@ -362,7 +374,7 @@ function setNavChrome(on) {
 function poster() {
   isPoster = true;
   mkEl.className = 'map';
-  mkEl.style.backgroundImage = `url(img/${{ en: 'en/', ja: 'ja/' }[lang] || ''}map-nav.jpg)`;
+  mkEl.style.backgroundImage = `url(img/${{ en: 'en/', ja: 'ja/', ko: 'en/' }[lang] || ''}map-nav.jpg)`;   // ko 沒有模擬器底圖，借英文那一份
   const P = S.poster;
   setCard(navCardHtml({ man: 'straight', manText: P.man, dist: P.dist, unit: P.unit, status: P.status, dest: P.dest, progress: 0 }));
   setNavChrome(true);
@@ -389,7 +401,7 @@ async function loadMapKit(timeoutMs = 9000) {
       const mk = window.mapkit;
       mk.addEventListener('configuration-change', e => { if (e.status === 'Initialized') { clearTimeout(timer); resolve(mk); } });
       mk.addEventListener('error', e => { clearTimeout(timer); reject(new Error(e.status || 'mapkit error')); });
-      mk.init({ authorizationCallback: done => done(CONFIG.mapkitToken), language: { 'zh-Hant-TW': 'zh-Hant', en: 'en', ja: 'ja' }[lang] || 'zh-Hant' });
+      mk.init({ authorizationCallback: done => done(CONFIG.mapkitToken), language: { 'zh-Hant-TW': 'zh-Hant', en: 'en', ja: 'ja', ko: 'ko' }[lang] || 'zh-Hant' });
     };
     document.head.appendChild(el);
   });
@@ -408,7 +420,7 @@ async function live(mk) {
     isRotationEnabled: false, isScrollEnabled: interactive && params.get('pan') !== '0', isZoomEnabled: interactive && params.get('pan') !== '0',
     colorScheme: mk.Map.ColorSchemes.Light,
     // Apple 標誌與法律資訊放在分頁列上面（基準圖也是）：底邊讓出分頁列那一段
-    padding: new mk.Padding(0, 0, 96, 0),
+    padding: new mk.Padding(0, 0, DEV.legal, 0),
   });
   const css = getComputedStyle(document.documentElement);
   const ACCENT_INK = css.getPropertyValue('--teal300').trim() || '#1d7370';
@@ -661,9 +673,9 @@ async function live(mk) {
   function fitPadding() {
     // walkingRouteFitPadding 48；上面讓過日期列＋搜尋＋藥丸，下面讓過卡片
     const card = document.getElementById('card');
-    const cardTop = card ? card.getBoundingClientRect().top - d.getBoundingClientRect().top : 874 - 99;
+    const cardTop = card ? card.getBoundingClientRect().top - d.getBoundingClientRect().top : DEV.h - DEV.bottom - 16;
     // 首頁放大需求（2026-10-12）：留白收小、鏡頭拉近——上面只讓過日期列＋搜尋＋藥丸，左右 20
-    return new mk.Padding(265 - 128 + 14, 20 + 30, 874 - cardTop + 16, 20);
+    return new mk.Padding(265 - 128 + 14, 20 + 30, DEV.h - cardTop + 16, 20);
   }
   async function startNav(target) {
     const route = await walkingDirections(ME, target.at);
@@ -689,7 +701,7 @@ async function live(mk) {
     } else {
       // 載入時那一趟：首頁近一級，以藍點為不動點（自己一定在畫面裡），再往左挪開右邊那一列浮動鈕
       frame([walkOverlay, meAnn], { padding: fitPadding() }, [ME], false);
-      if (ZOOM_IN) { const mr = mkEl.getBoundingClientRect(), at = map.convertCoordinateToPointOnPage(C(ME)); centerAt(ME, at.x - mr.left > 260 ? 250 : at.x - mr.left, at.y - mr.top); }
+      if (ZOOM_IN) { const mr = mkEl.getBoundingClientRect(), at = map.convertCoordinateToPointOnPage(C(ME)); centerAt(ME, at.x - mr.left > DEV.w - 142 ? DEV.w - 152 : at.x - mr.left, at.y - mr.top); }
     }
     placeChevrons();
     return true;

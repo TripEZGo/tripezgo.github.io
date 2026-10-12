@@ -9,8 +9,10 @@
 // 這裡的字只是示意的標籤；用詞照 App 的字串表（旅伴、共編、待辦、即時動態）。
 import { DATA } from './home-data.js';
 
-const LANG = document.documentElement.lang.startsWith('ja') ? 'ja' : document.documentElement.lang.startsWith('en') ? 'en' : 'zh';
-const D = DATA[LANG];
+const LANG = document.documentElement.lang.startsWith('ja') ? 'ja' : document.documentElement.lang.startsWith('en') ? 'en'
+  : document.documentElement.lang.startsWith('ko') ? 'ko' : 'zh';
+// offline／runs／live／widget 這四個示意沒有韓文（首頁目前也沒放）；韓文頁萬一用到就用英文
+const D = DATA[LANG] ?? DATA.en;
 const T = {
   zh: {
     net: '網路', on: '開', off: '關', offlineBadge: '離線中', thisPhone: '這台 iPhone', all: '全部資料',
@@ -54,7 +56,7 @@ const T = {
     moving: '移動中', arrive: '到着', dayDone: '今日の予定はすべて終わりました', notYet: '最初の予定',
     today: '今日', todo: 'やることリスト', ofTodos: (a, b) => `${a}/${b}`, drag: '時刻を動かしてみる',
   },
-}[LANG];
+}[LANG in DATA ? LANG : 'en'];
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const toMin = s => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
@@ -225,6 +227,10 @@ function flow(el) {
           mates: ['ミカ', 'ケン', 'ユキ'],
           sync: 'iCloud でバックアップと同期', syncSub: 'iPhone と iPad を同期', share: '共同編集', shareSub: '旅の仲間と一緒に予定を編集', shareLocked: '先に iCloud 同期をオンに',
           off: 'データはこの iPhone の中だけにあります。', synced: 'iPhone と iPad があなたの iCloud で同期。', shared: 'iCloud で同期し、旅の仲間 3 人と共同編集。' },
+    ko: { head: '데이터 흐름', account: '내 Apple 계정', me: '내 iPhone', ipad: '내 iPad', cloud: 'Apple iCloud', cloudOn: '백업 및 동기화', cloudOff: '꺼짐',
+          mates: ['지민', '현우', 'Yuki'],
+          sync: 'iCloud 백업 및 동기화', syncSub: 'iPhone과 iPad 동기화', share: '공동 편집', shareSub: '동행과 함께 일정 편집', shareLocked: '먼저 iCloud 동기화를 켜세요',
+          off: '데이터는 이 iPhone에만 있습니다.', synced: 'iPhone과 iPad가 내 iCloud로 동기화됩니다.', shared: 'iCloud로 동기화하고, 동행 3명과 공동 편집 중.' },
   }[LANG] ;
   const ico = {
     phone: '<svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/><path d="M10.5 5.2h3"/></svg>',
@@ -335,8 +341,9 @@ const SCREEN_OF = {
   notes: ['notes', ''], toolbox: ['notes', 'menu=1'], 'scan-history': ['scan', 'hist=1'], 'fx-nokbd': ['fx', 'kbd=0'],
   'map-live': ['map-live', 'pan=0'], 'map-route': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09'], 'map-mates': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09&focus=mates'], 'share-ig': ['share-ig', ''], 'share-gmap': ['share-gmap', ''], 'apple-calendar': ['apple-calendar', ''], siri: ['siri', ''],
 };
-const SCREEN_LANG = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja' }[L2];
-const [ZOOM, CLOSE, PLAYHINT] = pick({ zh: ['放大，自己玩玩看', '關閉', '親自玩玩看'], en: ['Open full screen and try it', 'Close', 'Try it yourself'], ja: ['拡大して自分で試す', '閉じる', '実際に触ってみよう'] });
+const SCREEN_LANG = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[L2];
+const [ZOOM, CLOSE, PLAYHINT] = pick({ zh: ['放大，自己玩玩看', '關閉', '親自玩玩看'], en: ['Open full screen and try it', 'Close', 'Try it yourself'], ja: ['拡大して自分で試す', '閉じる', '実際に触ってみよう'],
+  ko: ['크게 열어 직접 써 보기', '닫기', '직접 써 보세요'] });
 // 全螢幕試玩：一個 <dialog>，裡面一支放大的手機（同一個畫面，互動但不自動播放）
 let playDlg;
 function openPlay(page, q, title) {

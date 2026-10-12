@@ -24,6 +24,7 @@
   html[lang="zh-Hant-TW"] .md { font-family: "PingFang TC"; }
   html[lang="ja"] .md { font-family: "Hiragino Sans"; }
   html[lang="ja"] .device { --font: BlinkMacSystemFont, "Hiragino Sans", sans-serif; }  /* large detent：後面那一層整片被系統壓成灰，看不到行事曆 */
+  html[lang="ko"] .device { --font: BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; }
 
   /* ── 系統：sheet（large detent），照 ref 量：頂 62、圓角 12、抓桿 36×5 距頂 5 ── */
   .sheet { position: absolute; left: 0; right: 0; top: 62px; bottom: 0; background: var(--page);
@@ -155,12 +156,24 @@
   .web .pg { padding: 24px 20px; display: flex; flex-direction: column; gap: 10px; }
   .web .pg i { display: block; height: 10px; border-radius: 5px; background: #ececee; }
   .web .pg i.h { height: 22px; width: 80%; background: #dedee2; margin-bottom: 10px; }
+
+  /* ── iPad（?device=ipad）：這張是 .pageSheet、detents [.large()]、抓桿、preferredCornerRadius Radius.lg 12
+        （TripEventDetailContainer.configureSheet）。iPad Pro 13 吋模擬器（iPadOS 26.2）點開嚴島神社量到：浮動紙
+        x 48–984（寬 936）、y 42–1323.5（上緣 42、下緣離螢幕底 52.5）、圓角約 12；底下那一頁留著、整片壓暗——
+        白底被壓成 194 → 黑 24%（medium 的路程紙是 20%）。狀態列不在暗層底下。底下是同一天的行事曆（iPad 版）。 ── */
+  .bg { position: absolute; inset: 0; width: 1032px; height: 1376px; border: 0; }
+  .dim { position: absolute; inset: 0; background: rgba(0,0,0,.24); }
+  .ipad .sheet { left: 48px; right: auto; width: 936px; top: 42px; bottom: 52.5px; border-radius: 12px;
+    box-shadow: 0 0 40px rgba(0,0,0,.12); }
+  .ipad .grabber { left: 450px; }
+  .ipad .glass.r { left: 700px; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { params, lang, t, loadTrip, loadCategories, categoryName, chrome, ready, interactive, go, duration } from './chrome.js';
+import { params, lang, t, loadTrip, loadCategories, categoryName, chrome, ready, interactive, go, duration, ipad } from './chrome.js';
+const SHEET_W = ipad ? 936 : 402;   // sheet 寬（iPad 見 <style> 的 iPad 段）
 import { applyState, loadState, patchEvent, doneTodos, shiftFrom, toMin, clock } from './demo-state.js';
 
 // App 的字串（Scripts/i18n/maps：Trips.detailAllDay、UI.daySpan／todoListTitle／addTodo／filesLabel）
@@ -171,6 +184,9 @@ const S = {
     todos: 'To-Do List', addTodo: 'Add to-do', files: 'Files', locale: 'en-US', hideDone: 'Hide finished', showDone: 'Show finished' },
   ja: { allDay: s => `終日 · ${s}`, span: (a, b) => a === b ? `${a}日目` : `${a}〜${b} 日目`,
     todos: 'やることリスト', addTodo: 'やることを追加', files: '添付', locale: 'ja-JP', hideDone: '完了したものを隠す', showDone: '完了したものを表示' },
+  // ko：trips.detail.allday、domain.itinerary.daylabel、ui.day.span、ui.todolist.title、ui.add.todo、ui.files.label、ui.hide/showcompleted
+  ko: { allDay: s => `종일 · ${s}`, span: (a, b) => a === b ? `${a}일차` : `${a}~${b}일차`,
+    todos: '할 일 목록', addTodo: '할 일 추가', files: '첨부', locale: 'ko-KR', hideDone: '완료한 것 숨기기', showDone: '완료한 것 보기' },
 }[lang] || null;
 const L = S || { allDay: s => `全日 · ${s}`, span: (a, b) => `第 ${a}–${b} 天`, todos: '待辦清單', addTodo: '新增待辦', files: '附件', locale: 'zh-TW', hideDone: '收起已完成', showDone: '顯示已完成' };
 
@@ -180,11 +196,13 @@ const EXTRA_BY_EVENT = {
     'zh-Hant-TW': [['JR Pass 電子票券.pdf', 'pdf'], ['兌換收據.jpg', 'image']],
     en: [['JR Pass e-ticket.pdf', 'pdf'], ['Exchange receipt.jpg', 'image']],
     ja: [['JR Pass 電子チケット.pdf', 'pdf'], ['引換レシート.jpg', 'image']],
+    ko: [['JR Pass 전자 티켓.pdf', 'pdf'], ['교환 영수증.jpg', 'image']],
   },
   'd1-airport': {
     'zh-Hant-TW': [['虎航 電子登機證.pdf', 'pdf'], ['護照資料頁.jpg', 'image']],
     en: [['Tigerair boarding pass.pdf', 'pdf'], ['Passport photo page.jpg', 'image']],
     ja: [['タイガーエア 搭乗券.pdf', 'pdf'], ['パスポート顔写真ページ.jpg', 'image']],
+    ko: [['타이거에어 탑승권.pdf', 'pdf'], ['여권 정보면.jpg', 'image']],
   },
 };
 const EXTRA = (EXTRA_BY_EVENT[params.get('event') || 'jr-pass'] || EXTRA_BY_EVENT['jr-pass'])[lang] || [];
@@ -273,7 +291,7 @@ function navHTML() {
     <div class="slot" style="left:121px" data-act="edit"${tp}>${ic('pencil')}</div>
     <div class="slot" style="left:174.7px" data-act="delete"${tp}>${ic('trash')}</div>
   </div>`
-    : `<div class="glass" style="left:286px;width:100px"><div class="slot" style="left:1px" data-act="edit"${tp}>${ic('pencil')}</div>
+    : `<div class="glass" style="left:${SHEET_W - 116}px;width:100px"><div class="slot" style="left:1px" data-act="edit"${tp}>${ic('pencil')}</div>
       <div class="slot" style="left:55px" data-act="delete"${tp}>${ic('trash')}</div></div>`;
   return left + right;
 }
@@ -366,6 +384,16 @@ if (interactive) {
       clamped: (n, e) => `。うち ${n} 件はこの日の${e}までしかずれていません`, blocked: (n, e) => `。ほかの ${n} 件はすでに${e}に接していて動きません`,
       stuck: e => `すでにこの日の${e}に接しているため、ずらせません`,
       pinSet: (dd, k) => `${dd}の${k}の予定にしました`, pinUnset: (dd, k) => `${dd}の${k}の予定を解除しました`, opening: '最初', closing: '最後' },
+    // ko：UI.json ui.shift.*／ui.delete.event.*／ui.action.*、Trips.json trips.shift.*／trips.bookend.*、Domain.json bookend。
+    // hours（撥輪上「時」那一欄的字）字串表沒有，自寫「시간」
+    ko: { shiftTitle: '뒤로／앞으로', later: '뒤로', earlier: '앞으로', scope: '이후 일정도 함께 이동합니다.', apply: '적용',
+      delAsk: '일정을 삭제할까요?', delMsg: '삭제하면 되돌릴 수 없고, 첨부와 앞뒤 이동 설정도 함께 사라집니다.\n계획만 바뀐 것이라면 ‘안 가기로 함’으로 기록을 남길 수 있습니다.',
+      del: '일정 삭제', back: '돌아가기', hideDone: '완료한 것 숨기기', showDone: '완료한 것 보기', hours: '시간', mins: '분', close: '닫기',
+      cancel: '안 가기로 함', uncancel: '그래도 가기로', shift: '뒤로 또는 앞으로', edit: '일정 편집',
+      shifted: (later, n, len) => `${n}개를 ${len} ${later ? '뒤로' : '앞으로'} 옮겼습니다`, edge: later => later ? '맨 뒤' : '맨 앞',
+      clamped: (n, e) => `, 그중 ${n}개는 이 날의 ${e}까지만 옮겨졌습니다`, blocked: (n, e) => `, 다른 ${n}개는 이미 ${e}에 붙어 있어 움직이지 않습니다`,
+      stuck: e => `이미 이 날의 ${e}에 붙어 있어 더 옮길 수 없습니다`,
+      pinSet: (dd, k) => `${dd}의 ${k} 일정으로 지정했습니다`, pinUnset: (dd, k) => `${dd}의 ${k} 일정 지정을 해제했습니다`, opening: '처음', closing: '마지막' },
   }[lang] || null;
   const W = X || {};
   const sheet = document.getElementById('sheet');
@@ -615,6 +643,15 @@ if (interactive) {
 }
 
 chrome(d);
+if (ipad) {
+  // iPad：sheet 底下是同一天的行事曆（iPhone 的 large detent 把後面整片壓成灰，看不到——那邊不畫）
+  const q = new URLSearchParams({ lang, day: backDay, device: 'ipad', ...(params.get('start') ? { start: params.get('start') } : {}) });
+  d.insertAdjacentHTML('afterbegin', `<iframe class="bg" id="bg" src="calendar.html?${q}"></iframe><div class="dim"></div>`);
+  const bg = document.getElementById('bg');
+  await new Promise(res => { const tick = () => bg.contentDocument?.body?.dataset.ready === '1' ? res() : setTimeout(tick, 50); tick(); });
+  // 狀態列是系統的，不在暗層底下：底下那一頁的拿掉，留這一頁畫的那一條
+  bg.contentDocument.querySelector('.sb')?.remove();
+}
 ready();
 </script>
 </body>

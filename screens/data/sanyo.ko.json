@@ -1,0 +1,1811 @@
+{
+  "formatVersion": 2,
+  "templateID": "jp-sanyo-hiroshima-okayama-6d",
+  "revision": 2,
+  "contentLocale": "ko",
+  "title": "산요 6일｜히로시마·미야지마·오노미치·구라시키·오카야마",
+  "subtitle": "오카야마 인/아웃, 히로시마를 거점으로 JR 패스 한 장",
+  "summary": "11월의 혼자 여행. 타이거에어로 오카야마 인/아웃, 앞의 세 밤은 히로시마역 근처를 거점으로 삼아 하루는 미야지마 이쓰쿠시마 신사, 하루는 오노미치 센코지와 도모노우라, 하루는 구레 야마토 뮤지엄과 히로시마 시내를 돌고, 마지막 이틀은 구라시키와 오카야마로 옮깁니다. 이동은 전부 '오카야마·히로시마·야마구치 에리어 패스'로 해결되고 JR 미야지마 페리까지 포함됩니다. 원문에는 순서만 적혀 있어 여기 시각은 현지 시간표로 추정한 값입니다. 그대로 따라가도 되지만 구간마다 출발 전에 한 번 더 확인하세요.",
+  "destination": "일본 히로시마현・오카야마현",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 6,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "sourceURL": "https://blog.zhgchg.li/31b9b3a63abc",
+  "sourceTitle": "[여행기] 2023 산요 지방 히로시마·오카야마 6일 자유여행",
+  "tags": [
+    "혼자 여행",
+    "세계유산",
+    "JR 패스",
+    "가을",
+    "세토내해"
+  ],
+  "todos": [
+    "'오카야마·히로시마·야마구치 에리어 패스'를 살 것 — 오카야마↔히로시마 편도만 해도 ¥6,460, 미야지마·오노미치·구레를 더하면 금방 본전",
+    "수령 기기는 왼쪽 아래 노란색 'QRコードの読取り'를 누른 뒤 QR을 스캔. 블로그에 나오는 파란 버튼은 신형 기기에서 계속 QR 무효라고 뜸",
+    "개찰구에 넣는 건 패스 본권. 지정권은 좌석과 시각 안내일 뿐 개찰을 통과하지 못함",
+    "타이거에어는 기내 음식 반입 불가(피치는 규정 없음) — 탑승 전에 먹고 들어갈 것",
+    "육류는 일본에 반입 불가. 대만에서 산 닭튀김 한 봉지가 오카야마 공항에서 그 자리에서 폐기됨",
+    "11월 히로시마는 밤에 4도 안팎. 두꺼운 외투를 챙길 것",
+    "미야지마 방문세 ¥100은 별도(JR 패스 미포함). 선착장에 안내 직원이 있음",
+    "오카야마 공항 보안검색에서 부츠는 벗어야 함. 벗기 쉬운 신발로 갈아신을 것",
+    "호텔 세탁기는 경쟁이 심함. 밤에 돌아오면 먼저 빈자리를 확인",
+    "iPhone 지갑에 Suica를 미리 발급. 시내 버스도 편의점도 태그로 해결"
+  ],
+  "links": [
+    {
+      "url": "https://www.westjr.co.jp/global/tc/ticket/pass/okayama_hiroshima_yamaguchi/",
+      "title": "JR 서일본 오카야마·히로시마·야마구치 에리어 패스"
+    },
+    {
+      "url": "https://vjw-lp.digital.go.jp/zh-hant/",
+      "title": "Visit Japan Web 입국 수속"
+    },
+    {
+      "url": "https://www.jnto.go.jp/safety-tips/tchi/index.html",
+      "title": "Safety tips 일본 재난 정보"
+    },
+    {
+      "url": "https://dive-hiroshima.com/",
+      "title": "히로시마현 공식 관광 사이트 Dive! Hiroshima"
+    }
+  ],
+  "allDayEvents": [
+    {
+      "key": "stay-toyoko",
+      "title": "도요코인 히로시마역 스타디움 앞(3박)",
+      "fromDay": 1,
+      "toDay": 4,
+      "category": "hotel",
+      "colour": "taupe",
+      "place": {
+        "name": "도요코인 히로시마역 스타디움 앞 (히로시마현 히로시마시)",
+        "latitude": 34.393721,
+        "longitude": 132.481499
+      },
+      "notes": "싱글 금연실이고, 이번 세 곳 중 가성비가 가장 좋았습니다(1박 약 NT$1,537). 히로시마역에서 걸어가면 지도보다 멉니다 — 공사 구간에 건널목까지 있어 혼자 짐을 끌면 18분은 잡아야 합니다. MAZDA 스타디움 바깥이라 경기가 없는 날은 거리가 아주 조용하니, 늦게 돌아온다면 감안하세요.",
+      "openingDays": [
+        2,
+        3,
+        4
+      ],
+      "closingDays": [
+        1,
+        2,
+        3
+      ],
+      "todos": [
+        "예약 확인 메일은 여권과 같은 칸에. 체크인 때 보여줘야 함"
+      ],
+      "links": [
+        {
+          "url": "https://www.toyoko-inn.com/china/search/detail/00202/",
+          "title": "도요코인 히로시마역 스타디움 앞 공식 사이트"
+        }
+      ]
+    },
+    {
+      "key": "stay-apa",
+      "title": "아파호텔 히로시마역앞 오하시(1박)",
+      "fromDay": 4,
+      "toDay": 5,
+      "category": "hotel",
+      "colour": "taupe",
+      "place": {
+        "name": "아파호텔 히로시마역앞 오하시 (히로시마현 히로시마시)",
+        "latitude": 34.395364,
+        "longitude": 132.471991
+      },
+      "notes": "도요코인이 넷째 밤만 예약되지 않아 싱글로 이곳에. 히로시마역에서는 더 가깝지만 큰길과 다리를 건너야 해서 실제로는 도보 10분. 도요코인에서 15분이라 혼자 짐을 옮겨도 그리 부담스럽지 않습니다.",
+      "openingDays": [
+        5
+      ],
+      "closingDays": [
+        4
+      ]
+    },
+    {
+      "key": "stay-livemax",
+      "title": "호텔 리브맥스 오카야마 구라시키역앞(1박)",
+      "fromDay": 5,
+      "toDay": 6,
+      "category": "hotel",
+      "colour": "taupe",
+      "place": {
+        "name": "호텔 리브맥스 오카야마 구라시키역앞 (오카야마현 구라시키시)",
+        "latitude": 34.602529,
+        "longitude": 133.768515
+      },
+      "notes": "오카야마 시내에는 혼자 묵기에 납득할 만한 가격의 방이 없어 JR 노선을 따라 구라시키까지. 구라시키역에서 도보 5분이고, 구라시키에서도 오카야마 공항행 버스가 있어 다음 날 혼자 비행기를 맞추러 오카야마로 되돌아갈 필요가 없습니다.",
+      "openingDays": [
+        6
+      ],
+      "closingDays": [
+        5
+      ]
+    },
+    {
+      "key": "jr-pass",
+      "title": "오카야마·히로시마·야마구치 에리어 패스(5일)",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "train",
+      "colour": "green",
+      "notes": "¥17,000. 산요 신칸센 오카야마↔히로시마, 미야지마구치까지의 JR 산요 본선, JR 미야지마 페리까지 포함됩니다. 혼자면 일정을 즉흥으로 바꾸게 되는데, 이 패스가 있으면 '한 정거장 더 들르기'마다 요금을 다시 계산하지 않아도 됩니다 — 오카야마↔히로시마 왕복만 ¥12,920. 6일째 귀로는 리무진 버스라 쓸 일이 없습니다.",
+      "todos": [
+        "신칸센 지정석은 출발 전에 온라인으로 확보. 성수기 자유석은 서서 가게 됨",
+        "첫 사용일에 미도리노마도구치나 수령 기기에서 실물 티켓을 받을 것"
+      ],
+      "links": [
+        {
+          "url": "https://www.westjr.co.jp/global/tc/ticket/pass/okayama_hiroshima_yamaguchi/",
+          "title": "JR 서일본 오카야마·히로시마·야마구치 에리어 패스"
+        }
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-okunoshima",
+      "title": "오쿠노시마(토끼섬)",
+      "durationMinutes": 300,
+      "category": "sight",
+      "colour": "green",
+      "place": {
+        "name": "오쿠노시마·토끼섬 (히로시마현 다케하라시)",
+        "latitude": 34.309121,
+        "longitude": 132.993759
+      },
+      "notes": "출발 전부터 후보에 있었지만 이동이 너무 멀어 넣지 못했습니다. 다다노우미항에서 페리를 타야 하고 왕복에 체류까지 최소 반나절. 혼자면 시간이 전부 내 것이지만, 반나절은 반나절입니다. 다음에는 오노미치와 같은 날로 묶을 생각입니다."
+    },
+    {
+      "key": "u-daishoin",
+      "title": "미야지마 다이쇼인",
+      "durationMinutes": 45,
+      "category": "temple",
+      "colour": "none",
+      "place": {
+        "name": "다이쇼인 (히로시마현 하쓰카이치시)",
+        "latitude": 34.291729,
+        "longitude": 132.318578
+      },
+      "notes": "이쓰쿠시마 신사에서 산 쪽으로 5분, 미야지마에서 가장 오래된 절입니다. 경사가 완만하고 사람도 적어 혼자 천천히 걷기 좋습니다. 이번에는 로프웨이에 시간을 다 써서 다음으로 미뤘습니다."
+    },
+    {
+      "key": "u-onomichi-u2",
+      "title": "ONOMICHI U2 해안 창고",
+      "durationMinutes": 90,
+      "category": "cafe",
+      "colour": "amber",
+      "place": {
+        "name": "ONOMICHI U2 (히로시마현 오노미치시)",
+        "latitude": 34.401959,
+        "longitude": 133.189908
+      },
+      "notes": "해운 창고를 개조한 복합시설로 베이커리와 자전거 여행자용 호텔이 들어 있습니다. 오노미치역에서 도보 10분이라, 혼자 돌아가는 열차를 기다리는 시간에 끼워 넣기 좋습니다."
+    },
+    {
+      "key": "u-kibitsuhiko",
+      "title": "기비쓰히코 신사",
+      "durationMinutes": 45,
+      "category": "temple",
+      "colour": "none",
+      "place": {
+        "name": "기비쓰히코 신사 (오카야마현 오카야마시)",
+        "latitude": 34.676572,
+        "longitude": 133.863513
+      },
+      "notes": "기비쓰 신사에서 한 정거장. 모모타로 전설의 나머지 절반입니다. 비행기 시간에 쫓긴 날이라 넣지 못했습니다 — 혼자면 짐을 봐줄 사람이 없어 돌아가는 비용이 생각보다 큽니다."
+    }
+  ],
+  "markers": [
+    {
+      "key": "m-mazda-stadium",
+      "name": "MAZDA Zoom-Zoom 스타디움 히로시마 (히로시마현 히로시마시)",
+      "latitude": 34.391912,
+      "longitude": 132.48462,
+      "category": "sight",
+      "notes": "호텔 바로 옆이 구장입니다. 경기가 있는 날은 이 일대 분위기가 완전히 달라지고, 혼자라면 오히려 한 장짜리 표를 구하기 쉽습니다."
+    },
+    {
+      "key": "m-hondori",
+      "name": "혼도리 상점가 (히로시마현 히로시마시)",
+      "latitude": 34.39382,
+      "longitude": 132.456974,
+      "category": "shopping",
+      "notes": "히로시마 시내에서 가장 붐비는 아케이드 상점가. 드러그스토어도 기념품도 한 번에 해결됩니다. 산 만큼 전부 직접 들고 다니니 짐 무게는 스스로 계산할 것."
+    },
+    {
+      "key": "m-okonomimura",
+      "name": "오코노미무라 (히로시마현 히로시마시)",
+      "latitude": 34.391289,
+      "longitude": 132.461894,
+      "category": "dining",
+      "notes": "건물 한 채가 통째로 오코노미야키 가게이고, 어디나 철판 앞 카운터석 — 혼자가 가장 앉기 편합니다. 에키마에히로바가 붐비면 이쪽으로."
+    },
+    {
+      "key": "m-orizuru",
+      "name": "오리즈루 타워 (히로시마현 히로시마시)",
+      "latitude": 34.39567,
+      "longitude": 132.454686,
+      "category": "viewpoint",
+      "notes": "옥상 전망대에서 원폭 돔과 시내 전경이 보이고, 맑은 날에는 미야지마의 미센산까지 보입니다. 혼자면 누구의 체력에도 맞출 필요 없이 원하는 만큼 야경을 볼 수 있습니다."
+    },
+    {
+      "key": "m-misen",
+      "name": "미센산 (히로시마현 하쓰카이치시)",
+      "latitude": 34.279592,
+      "longitude": 132.319611,
+      "category": "mountain",
+      "notes": "미야지마 최고봉. 시시이와 전망대에서 다시 30분 걸어 올라갑니다. 산길을 혼자 걷게 되니 내려오는 로프웨이 막차만은 미리 적어 두세요."
+    },
+    {
+      "key": "m-senjokaku",
+      "name": "센조카쿠·호코쿠 신사 (히로시마현 하쓰카이치시)",
+      "latitude": 34.297304,
+      "longitude": 132.320269,
+      "category": "temple",
+      "notes": "이쓰쿠시마 신사 옆의 큰 전각과 오층탑. 마룻바닥을 맨발로 걸으면 시원하고, 한산할 때 가장자리에 앉아 멍하니 있는 건 혼자라서 가능한 일입니다."
+    },
+    {
+      "key": "m-miyajima-aquarium",
+      "name": "미야지마 수족관 (히로시마현 하쓰카이치시)",
+      "latitude": 34.295476,
+      "longitude": 132.315651,
+      "category": "aquarium",
+      "notes": "미야지마의 유일한 수족관으로, 혼자면 한 시간쯤이면 봅니다. 이번에는 로프웨이와 신사에 시간을 다 써서 건너뛰었습니다."
+    },
+    {
+      "key": "m-tennei-ji",
+      "name": "덴네이지 삼중탑 (히로시마현 오노미치시)",
+      "latitude": 34.409566,
+      "longitude": 133.200793,
+      "category": "temple",
+      "notes": "고양이 골목에서 오노미치 수도를 내려다보는, 가장 유명한 그 구도가 여기입니다. 혼자면 셔터를 부탁할 사람이 없으니 삼각대나 셀카봉이 확실합니다."
+    },
+    {
+      "key": "m-senkoji-park",
+      "name": "센코지 공원 전망대 (히로시마현 오노미치시)",
+      "latitude": 34.409818,
+      "longitude": 133.196308,
+      "category": "viewpoint",
+      "notes": "로프웨이 정상역 옆 전망대. 오노미치 수도와 건너편 무카이시마가 한눈에 들어옵니다. 벤치가 많아 혼자 아무리 오래 있어도 재촉하는 사람이 없습니다."
+    },
+    {
+      "key": "m-iou-ji",
+      "name": "이오지 (히로시마현 후쿠야마시)",
+      "latitude": 34.383183,
+      "longitude": 133.37681,
+      "category": "temple",
+      "notes": "도모노우라의 높은 곳. 돌계단을 조금 오르면 항구 전체가 내려다보입니다. 관광객이 거의 없어, 혼자 오른다면 해 지는 시간은 스스로 챙겨야 합니다."
+    },
+    {
+      "key": "m-alley",
+      "name": "아레이 카라스코지마 잠수함 부두 (히로시마현 구레시)",
+      "latitude": 34.225681,
+      "longitude": 132.549211,
+      "category": "harbor",
+      "notes": "잠수함이 정박한 모습을 가까이서 볼 수 있는 일본 유일의 공원. 야마토 뮤지엄에서 도보 25분 — 편도 30분이니 혼자 일정에 넣을지는 미리 정해 두는 편이 낫습니다."
+    },
+    {
+      "key": "m-ohara",
+      "name": "오하라 미술관 (오카야마현 구라시키시)",
+      "latitude": 34.596032,
+      "longitude": 133.770439,
+      "category": "artgallery",
+      "notes": "일본 최초의 서양미술관. 엘 그레코도 모네도 여기에 있습니다. 혼자면 한 작품 앞에 얼마든지 서 있을 수 있으니, 그럴 값어치가 있는 곳입니다."
+    },
+    {
+      "key": "m-mingeikan",
+      "name": "구라시키 민예관 (오카야마현 구라시키시)",
+      "latitude": 34.595482,
+      "longitude": 133.771504,
+      "category": "museum",
+      "notes": "쌀 창고를 개조한 곳. 흰 벽과 나마코 벽 자체가 전시물입니다. 규모가 크지 않아 혼자면 40분이면 돕니다."
+    },
+    {
+      "key": "m-ivy-square",
+      "name": "구라시키 아이비 스퀘어 (오카야마현 구라시키시)",
+      "latitude": 34.594597,
+      "longitude": 133.773391,
+      "category": "sight",
+      "notes": "다이쇼 시대 방적 공장을 개조. 붉은 벽돌과 담쟁이, 해 질 무렵 사진이 가장 좋습니다. 부지가 넓고 사람이 많지 않아 혼자 한 바퀴 도는 기분이 좋습니다."
+    },
+    {
+      "key": "m-yumeji",
+      "name": "유메지 향토미술관 (오카야마현 오카야마시)",
+      "latitude": 34.670712,
+      "longitude": 133.934643,
+      "category": "artgallery",
+      "notes": "고라쿠엔 맞은편, 다케히사 유메지의 향토미술관입니다. 고라쿠엔에서 도보 5분이라 혼자 한 곳 더 붙이기에 적당합니다."
+    },
+    {
+      "key": "m-pref-museum",
+      "name": "오카야마 현립미술관 (오카야마현 오카야마시)",
+      "latitude": 34.667669,
+      "longitude": 133.929811,
+      "category": "artgallery",
+      "notes": "고라쿠엔에서 시내로 돌아오는 길. 혼자 비를 만났을 때 가장 가까운 대안입니다."
+    },
+    {
+      "key": "m-omotecho",
+      "name": "오모테초 상점가 (오카야마현 오카야마시)",
+      "latitude": 34.658174,
+      "longitude": 133.930313,
+      "category": "shopping",
+      "notes": "오카야마 시내의 오래된 상점가. 오카야마성에서 걸어서 15분쯤이고, 밤까지 여는 가게가 많아 혼자 먹을 곳도 고를 수 있습니다."
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-example",
+      "title": "예시: 첫 이틀 동선",
+      "paragraphs": [
+        "오후에 먼저 {@d1-jrpass}, 그다음 신칸센으로 히로시마로 이동.",
+        "저녁은 {@d1-okonomiyaki}. 줄이 길어서 일찍 가는 게 좋아요.",
+        "다음 날 아침에는 {@d2-itsukushima}. 만조 때 오토리이가 가장 예뻐요.",
+        "메모에서 @를 입력하면 일정이나 쇼핑 항목을 연결할 수 있고, 탭하면 바로 열립니다."
+      ]
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "오카야마 도착, 히로시마로 이동",
+      "events": [
+        {
+          "key": "d1-airport",
+          "title": "타오위안 공항 T1 체크인·출국",
+          "start": "08:50",
+          "end": "11:10",
+          "timeZoneID": "Asia/Taipei",
+          "category": "airport",
+          "colour": "teal",
+          "place": {
+            "name": "타오위안 국제공항 제1터미널 (대만 타오위안시)",
+            "latitude": 25.082083,
+            "longitude": 121.237757
+          },
+          "notes": "타이거에어는 카운터가 열리면 줄이 금방 빠지므로 혼자면 두 시간으로 충분하고도 남습니다. 면세구역 안은 먹을 곳이 적고 기내 반입도 안 되니, 보안검색 전에 한 끼 해결해 두세요.",
+          "todos": [
+            "Visit Japan Web QR은 스크린샷으로 저장. 도착 직후 인터넷이 안 될 수 있음",
+            "위탁 수하물 20 KG. 카운터 옆 저울에서 직접 한 번 달아볼 것"
+          ],
+          "links": [
+            {
+              "url": "https://vjw-lp.digital.go.jp/zh-hant/",
+              "title": "Visit Japan Web 입국 수속"
+            }
+          ]
+        },
+        {
+          "key": "d1-flight-tpe-okj",
+          "title": "타이거에어 IT250 타오위안 → 오카야마",
+          "start": "11:10",
+          "end": "14:11",
+          "startTimeZoneID": "Asia/Taipei",
+          "endTimeZoneID": "Asia/Tokyo",
+          "category": "flight",
+          "colour": "teal",
+          "place": {
+            "name": "타오위안 국제공항 제1터미널 (대만 타오위안시)",
+            "latitude": 25.082083,
+            "longitude": 121.237757
+          },
+          "notes": "가는 편은 11:10 출발 14:11 도착. 이 노선에서 가장 좋은 시간대로, 도착 후 오후를 통째로 쓸 수 있습니다. 실제 비행은 약 2시간, 시차가 1시간이라 시간표로만 3시간 차이로 보일 뿐. 좌석 지정이 없으니 혼자면 통로 쪽이 드나들기 편합니다."
+        },
+        {
+          "key": "d1-immigration",
+          "title": "오카야마 공항 입국·수하물 수령",
+          "start": "14:11",
+          "end": "14:40",
+          "category": "airport",
+          "colour": "none",
+          "place": {
+            "name": "오카야마 모모타로 공항 (오카야마현 오카야마시)",
+            "latitude": 34.756973,
+            "longitude": 133.853869
+          },
+          "notes": "공항이 작아서 혼자면 입국부터 도착 로비까지 30분이면 충분합니다. 나오면 바로 오른쪽에 리무진 버스 발권기가 있고 IC 카드도 됩니다."
+        },
+        {
+          "key": "d1-jrpass",
+          "title": "오카야마역에서 JR 패스 수령",
+          "start": "15:35",
+          "end": "15:55",
+          "category": "station",
+          "colour": "green",
+          "place": {
+            "name": "오카야마역 (오카야마현 오카야마시)",
+            "latitude": 34.665409,
+            "longitude": 133.917825
+          },
+          "notes": "수령 기기는 중앙 출구 근처. 붐비는 시간에는 10분쯤 줄을 섭니다. 1인 지정석은 잡기 쉬우니 내일 미야지마와 모레 오노미치 두 구간도 이때 함께 확보해 두세요.",
+          "leg": {
+            "fromKey": "d1-immigration",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "note": "오카야마 공항 리무진 버스로 오카야마역 서쪽 출구까지. 30분, 예약 불필요. 오카덴과 주테쓰가 번갈아 운행",
+            "routeURL": "https://okayama-kido.co.jp/bus/kuukou.html",
+            "runs": [
+              {
+                "name": "리무진 버스 (오카덴)",
+                "departure": "14:40",
+                "arrival": "15:10"
+              },
+              {
+                "name": "리무진 버스 (주테쓰)",
+                "departure": "15:00",
+                "arrival": "15:30"
+              },
+              {
+                "name": "리무진 버스 (오카덴)",
+                "departure": "15:20",
+                "arrival": "15:50"
+              }
+            ],
+            "selectedRunIndex": 1,
+            "links": [
+              {
+                "url": "https://okayama-kido.co.jp/bus/kuukou.html",
+                "title": "오카야마 공항 리무진 버스 시간표"
+              }
+            ]
+          },
+          "todos": [
+            "수령할 때 산요 본선 종이 시간표를 받아 둘 것. 오프라인에서도 볼 수 있음"
+          ]
+        },
+        {
+          "key": "d1-checkin",
+          "title": "도요코인 체크인, 짐 내려놓기",
+          "start": "17:10",
+          "end": "17:45",
+          "category": "hotel",
+          "colour": "taupe",
+          "place": {
+            "name": "도요코인 히로시마역 스타디움 앞 (히로시마현 히로시마시)",
+            "latitude": 34.393721,
+            "longitude": 132.481499
+          },
+          "notes": "체크인은 16:00부터. 싱글은 넓지 않지만 있을 건 다 있습니다. 프런트에서 무료 세탁권을 받을 수 있고, 혼자 여행은 옷이 적으니 중간에 한 번만 빨면 6일이 갑니다.",
+          "leg": {
+            "fromKey": "d1-jrpass",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 53,
+            "note": "산요 신칸센 오카야마 → 히로시마. 노조미 35분, 사쿠라 38분, 고다마 65분. 역에서 호텔까지 다시 도보 18분",
+            "routeURL": "https://www.jr-odekake.net/",
+            "runs": [
+              {
+                "name": "노조미",
+                "departure": "16:06",
+                "arrival": "16:41"
+              },
+              {
+                "name": "사쿠라",
+                "departure": "16:11",
+                "arrival": "16:49"
+              },
+              {
+                "name": "고다마",
+                "departure": "16:26",
+                "arrival": "17:31"
+              }
+            ],
+            "selectedRunIndex": 0
+          }
+        },
+        {
+          "key": "d1-okonomiyaki",
+          "title": "저녁: 히로시마 오코노미 모노가타리 에키마에히로바",
+          "start": "18:20",
+          "end": "19:40",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "히로시마 오코노미 모노가타리 에키마에히로바 (히로시마현 히로시마시)",
+            "latitude": 34.396944,
+            "longitude": 132.473056
+          },
+          "notes": "한 층에 오코노미야키 가게가 십여 곳, 전부 철판 앞 카운터석이라 혼자 앉아도 전혀 어색하지 않습니다. 면은 소바나 우동 중에 고르고, 굴을 넣는 게 히로시마다운 정답입니다.",
+          "leg": {
+            "fromKey": "d1-checkin",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "note": "큰길을 따라 역 방향으로 되돌아감"
+          },
+          "todos": [
+            "입구의 대기 현황판을 먼저 확인. 인기 가게는 저녁 7시대에 줄을 섬"
+          ]
+        },
+        {
+          "key": "d1-ekie",
+          "title": "ekie 쇼핑, 다음 날 아침 식사 준비",
+          "start": "19:50",
+          "end": "20:40",
+          "category": "shopping",
+          "colour": "none",
+          "place": {
+            "name": "ekie 히로시마역 쇼핑몰 (히로시마현 히로시마시)",
+            "latitude": 34.397815,
+            "longitude": 132.476495
+          },
+          "notes": "히로시마역과 바로 연결된 쇼핑몰. 기념품 층은 21:00, 슈퍼는 22:00까지. 내일은 일찍 나가야 하고 혼자면 아침거리를 대신 사다 줄 사람도 없으니, 밤에 미리 챙겨 둡니다.",
+          "leg": {
+            "fromKey": "d1-okonomiyaki",
+            "mode": "walking",
+            "durationMinutes": 6
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 18,
+            "note": "도요코인까지 걸어서 돌아감. 밤에는 4도이니 외투를 챙길 것"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "미야지마에서 하루, 저녁에 원폭 돔",
+      "events": [
+        {
+          "key": "d2-breakfast",
+          "title": "호텔 무료 조식",
+          "start": "07:30",
+          "end": "08:05",
+          "category": "dining",
+          "colour": "taupe",
+          "place": {
+            "name": "도요코인 히로시마역 스타디움 앞 (히로시마현 히로시마시)",
+            "latitude": 34.393721,
+            "longitude": 132.481499
+          },
+          "notes": "도요코인 조식은 07:00부터. 주먹밥, 된장국, 빵. 붐빌 때는 자리를 기다리지만 혼자면 대개 금방 끼어들 수 있습니다. 든든히 먹고 출발하세요 — 미야지마 가는 날은 중간에 채우기 어렵습니다."
+        },
+        {
+          "key": "d2-ferry",
+          "title": "JR 미야지마 페리 미야지마구치 → 미야지마",
+          "start": "09:10",
+          "end": "09:20",
+          "category": "ferry",
+          "colour": "teal",
+          "place": {
+            "name": "미야지마 선착장 (히로시마현 하쓰카이치시)",
+            "latitude": 34.302095,
+            "longitude": 132.322247
+          },
+          "notes": "10분 항로이고 패스에 포함됩니다. 09:10–16:10 사이 편은 큰 도리이 앞을 돌아가는 항로라 갑판 오른쪽이 가장 잘 보입니다. 혼자면 타자마자 우현으로 가면 자리 잡기 쉽습니다.",
+          "leg": {
+            "fromKey": "d2-breakfast",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 46,
+            "note": "호텔에서 히로시마역까지 도보 18분, JR 산요 본선으로 미야지마구치까지 28분. 길을 건너면 페리 선착장",
+            "runs": [
+              {
+                "name": "산요 본선 이와쿠니행",
+                "departure": "08:12",
+                "arrival": "08:40"
+              },
+              {
+                "name": "산요 본선 오노우라행",
+                "departure": "08:27",
+                "arrival": "08:55"
+              },
+              {
+                "name": "산요 본선 이와쿠니행",
+                "departure": "08:42",
+                "arrival": "09:10"
+              }
+            ],
+            "selectedRunIndex": 1
+          },
+          "todos": [
+            "미야지마 방문세 ¥100은 선착장에서 별도 결제. 현금·IC 카드 모두 가능"
+          ]
+        },
+        {
+          "key": "d2-omotesando",
+          "title": "오모테산도 상점가에서 먹으며 걷기",
+          "start": "09:30",
+          "end": "10:05",
+          "category": "market",
+          "colour": "amber",
+          "place": {
+            "name": "미야지마 오모테산도 상점가 (히로시마현 하쓰카이치시)",
+            "latitude": 34.299556,
+            "longitude": 132.321961
+          },
+          "notes": "선착장에서 신사까지 온통 가게입니다. 구운 굴, 튀긴 모미지 만주, 붕장어 빵. 혼자면 여러 가지를 다 먹지 못하니 두세 곳으로 좁히는 게 정답. 기념품은 돌아올 때 사야 하루 종일 들고 다니지 않습니다.",
+          "leg": {
+            "fromKey": "d2-ferry",
+            "mode": "walking",
+            "durationMinutes": 5
+          }
+        },
+        {
+          "key": "d2-itsukushima",
+          "title": "이쓰쿠시마 신사",
+          "start": "10:15",
+          "end": "11:15",
+          "category": "temple",
+          "colour": "red",
+          "place": {
+            "name": "이쓰쿠시마 신사 (히로시마현 하쓰카이치시)",
+            "latitude": 34.296534,
+            "longitude": 132.319005
+          },
+          "notes": "세계유산. 큰 도리이는 물때에 달렸습니다 — 만조에는 바다에 떠 있고, 간조에는 도리이 발밑까지 걸어갈 수 있습니다. 완전히 다른 장면이니 출발 전에 그날 조석표를 확인하세요. 회랑은 일방통행이라 들어가면 되돌아 나올 수 없는데, 혼자면 오히려 자기 속도로 갈 수 있습니다.",
+          "leg": {
+            "fromKey": "d2-omotesando",
+            "mode": "walking",
+            "durationMinutes": 6,
+            "note": "해안을 따라 걷다 보면 센조카쿠와 오층탑을 먼저 지남"
+          },
+          "links": [
+            {
+              "url": "https://www.itsukushimajinja.jp/",
+              "title": "이쓰쿠시마 신사 공식 사이트(조석표 포함)"
+            }
+          ]
+        },
+        {
+          "key": "d2-momijidani",
+          "title": "모미지다니 공원",
+          "start": "11:30",
+          "end": "12:00",
+          "category": "park",
+          "colour": "green",
+          "place": {
+            "name": "모미지다니 공원 (히로시마현 하쓰카이치시)",
+            "latitude": 34.293809,
+            "longitude": 132.325038
+          },
+          "notes": "11월 중순이 단풍 절정이고 계곡 전체가 단풍나무입니다. 안쪽 끝까지 걸으면 로프웨이 모미지다니역이고 입구에서 무료 셔틀도 있으니, 혼자 걷다 지치면 그냥 타면 됩니다.",
+          "leg": {
+            "fromKey": "d2-itsukushima",
+            "mode": "walking",
+            "durationMinutes": 12
+          }
+        },
+        {
+          "key": "d2-ropeway",
+          "title": "미야지마 로프웨이 → 시시이와 전망대",
+          "start": "12:25",
+          "end": "13:25",
+          "category": "cablecar",
+          "colour": "green",
+          "place": {
+            "name": "시시이와 전망대 (히로시마현 하쓰카이치시)",
+            "latitude": 34.278782,
+            "longitude": 132.325421
+          },
+          "notes": "두 구간이라 중간에 갈아탑니다. 전망대에서는 세토내해와 흩어진 섬들이 한눈에. 여기서 30분 더 오르면 미센산 정상이지만 이번에는 가지 않았습니다. 하산 막차가 이르니 혼자 오른다면 17:00이라는 숫자를 먼저 외워 두세요.",
+          "leg": {
+            "fromKey": "d2-momijidani",
+            "mode": "other",
+            "durationMinutes": 20,
+            "note": "모미지다니역에서 순환식으로 가야타니까지, 교주식으로 갈아타고 시시이와까지",
+            "routeURL": "https://miyajima-ropeway.info/"
+          }
+        },
+        {
+          "key": "d2-oyster",
+          "title": "점심: 가키야",
+          "start": "14:00",
+          "end": "15:00",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "가키야 (히로시마현 하쓰카이치시)",
+            "latitude": 34.298559,
+            "longitude": 132.321705
+          },
+          "notes": "오모테산도에서 가장 유명한 굴 전문점. 구운 굴, 굴 튀김, 굴밥까지 있습니다. 점심에는 반드시 줄을 서니, 혼자면 이름을 먼저 적고 근처를 돌다 오면 딱 차례가 되는 흐름이 잘 통합니다.",
+          "leg": {
+            "fromKey": "d2-ropeway",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "note": "로프웨이로 내려와 왔던 길로 오모테산도까지"
+          }
+        },
+        {
+          "key": "d2-genbaku-dome",
+          "title": "원폭 돔",
+          "start": "16:40",
+          "end": "17:20",
+          "category": "sight",
+          "colour": "red",
+          "place": {
+            "name": "원폭 돔 (히로시마현 히로시마시)",
+            "latitude": 34.395466,
+            "longitude": 132.453524
+          },
+          "notes": "내부는 비공개라 바깥을 한 바퀴 돕니다. 해 질 무렵의 빛이 잔해에 닿으면 낮과는 완전히 다른 인상입니다. 옆에 영어·일본어 무료 자원봉사 해설이 있는데, 혼자 들으면 오히려 더 많이 물어보게 됩니다.",
+          "leg": {
+            "fromKey": "d2-oyster",
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 85,
+            "note": "페리로 미야지마구치, JR로 히로시마, 노면전차로 원폭돔앞까지",
+            "runs": [
+              {
+                "name": "JR 미야지마 페리",
+                "departure": "15:10",
+                "arrival": "15:20"
+              },
+              {
+                "name": "미야지마 마쓰다이 기선",
+                "departure": "15:25",
+                "arrival": "15:35"
+              },
+              {
+                "name": "JR 미야지마 페리",
+                "departure": "15:40",
+                "arrival": "15:50"
+              }
+            ],
+            "selectedRunIndex": 1
+          }
+        },
+        {
+          "key": "d2-peace-park",
+          "title": "평화기념공원, 평화의 등불",
+          "start": "17:30",
+          "end": "18:05",
+          "category": "park",
+          "colour": "green",
+          "place": {
+            "name": "히로시마 평화기념공원 (히로시마현 히로시마시)",
+            "latitude": 34.393171,
+            "longitude": 132.452301
+          },
+          "notes": "돔에서 아이오이바시를 건너면 바로 공원입니다. 위령비·평화의 등불·원폭의 아이 상이 일직선으로 놓여 있고, 위령비 앞에 서면 돔이 정확히 그 가운데에 들어옵니다 — 이 구간은 혼자 천천히 걷는 게 가장 좋습니다.",
+          "leg": {
+            "fromKey": "d2-genbaku-dome",
+            "mode": "walking",
+            "durationMinutes": 5
+          }
+        },
+        {
+          "key": "d2-orizuru",
+          "title": "오리즈루 타워 전망대",
+          "start": "18:15",
+          "end": "18:55",
+          "category": "viewpoint",
+          "colour": "none",
+          "place": {
+            "name": "오리즈루 타워 (히로시마현 히로시마시)",
+            "latitude": 34.39567,
+            "longitude": 132.454686
+          },
+          "notes": "저녁에 야경을 보러 갈 예정이었지만 미야지마를 하루 종일 걷고 나니 체력이 남지 않아 취소했습니다. 혼자 여행은 상의할 사람이 없는 만큼, 그만두는 것도 스스로 정하면 됩니다. 입장료 ¥2,200, 다음에는 꼭.",
+          "isCancelled": true,
+          "leg": {
+            "fromKey": "d2-peace-park",
+            "mode": "walking",
+            "durationMinutes": 8
+          },
+          "links": [
+            {
+              "url": "https://www.orizurutower.jp/",
+              "title": "오리즈루 타워 공식 사이트"
+            }
+          ]
+        },
+        {
+          "key": "d2-yakiniku",
+          "title": "저녁: 숯불구이 빈(야키니쿠 도시락 포장)",
+          "start": "19:00",
+          "end": "20:00",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "숯불구이 빈 엔코바시점 (히로시마현 히로시마시)",
+            "latitude": 34.395374,
+            "longitude": 132.478677
+          },
+          "notes": "엔코바시초의 노포. 저녁에는 포장용 야키니쿠 도시락이 있고 매장 가격의 절반쯤입니다. 혼자 고깃집에 들어가는 건 원래 신경이 쓰이니, 호텔로 가져가 맥주와 함께가 정답이었습니다.",
+          "leg": {
+            "fromKey": "d2-peace-park",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "note": "노면전차로 히로시마역까지, 역을 나와 엔코바시초 방향으로"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 14,
+            "note": "도시락을 들고 호텔까지 걸어감"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "오노미치 센코지, 후쿠야마, 도모노우라",
+      "events": [
+        {
+          "key": "d3-ropeway",
+          "title": "센코지산 로프웨이로 올라가기",
+          "start": "10:05",
+          "end": "10:25",
+          "category": "cablecar",
+          "colour": "teal",
+          "place": {
+            "name": "센코지산 로프웨이 (히로시마현 오노미치시)",
+            "latitude": 34.410631,
+            "longitude": 133.199562
+          },
+          "notes": "편도 3분이면 정상, ¥500. 올라갈 때 로프웨이, 내려올 때 도보를 권합니다. 내리막길에 센코지·고양이 골목·전망 포인트가 이어져 있어, 반대로 가면 전부 오르막이 됩니다. 혼자면 누구의 걸음에도 맞출 필요 없이 천천히 내려올 수 있습니다.",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 95,
+            "note": "신칸센 고다마로 히로시마에서 미하라까지 25분, 산요 본선으로 갈아타 오노미치까지 20분, 거기서 로프웨이 산기슭역까지 도보 15분. 미하라 환승은 5분뿐일 때도",
+            "runs": [
+              {
+                "name": "고다마 오카야마행",
+                "departure": "08:14",
+                "arrival": "08:39"
+              },
+              {
+                "name": "고다마 신오사카행",
+                "departure": "08:44",
+                "arrival": "09:09"
+              },
+              {
+                "name": "고다마 오카야마행",
+                "departure": "09:14",
+                "arrival": "09:39"
+              }
+            ],
+            "selectedRunIndex": 1
+          }
+        },
+        {
+          "key": "d3-senkoji",
+          "title": "센코지, 정상 전망대",
+          "start": "10:40",
+          "end": "11:35",
+          "category": "temple",
+          "colour": "red",
+          "place": {
+            "name": "센코지 (히로시마현 오노미치시)",
+            "latitude": 34.410365,
+            "longitude": 133.198685
+          },
+          "notes": "다이도 원년(806년) 창건. 붉은 본당이 절벽에 붙어 있습니다. 오노미치 수도를 내려다보기에 가장 좋은 자리이고, 건너편 무카이시마와 오가는 페리까지 또렷하게 보입니다.",
+          "leg": {
+            "fromKey": "d3-ropeway",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "note": "로프웨이 정상역에서 산책로를 따라 내려옴. 도중에 전망대"
+          }
+        },
+        {
+          "key": "d3-cat-alley",
+          "title": "고양이 골목",
+          "start": "11:50",
+          "end": "12:25",
+          "category": "sight",
+          "colour": "green",
+          "place": {
+            "name": "고양이 골목 (히로시마현 오노미치시)",
+            "latitude": 34.410557,
+            "longitude": 133.200455
+          },
+          "notes": "길을 따라 손으로 그린 '후쿠이시네코' 100여 개가 숨어 있어, 고양이를 보는 것보다 찾는 데 시간이 갑니다. 돌계단이 좁고 가팔라 혼자 짐을 끌고는 올라올 수 없으니, 역에 맡기고 오르세요.",
+          "leg": {
+            "fromKey": "d3-senkoji",
+            "mode": "walking",
+            "durationMinutes": 12
+          }
+        },
+        {
+          "key": "d3-cafe",
+          "title": "부케 다르브르 카페",
+          "start": "12:35",
+          "end": "13:00",
+          "category": "cafe",
+          "colour": "amber",
+          "place": {
+            "name": "부케 다르브르 카페 (히로시마현 오노미치시)",
+            "latitude": 34.410267,
+            "longitude": 133.199893
+          },
+          "notes": "고양이 골목 중간의 고민가 카페. 테라스가 오노미치 수도를 정면으로 마주합니다. 카운터와 1인석이 모두 있고, 언덕을 다 오른 뒤의 한 잔은 이 구간에서 가장 편한 40분이었습니다.",
+          "leg": {
+            "fromKey": "d3-cat-alley",
+            "mode": "walking",
+            "durationMinutes": 3
+          }
+        },
+        {
+          "key": "d3-ramen",
+          "title": "점심: 오노미치 라멘",
+          "start": "13:20",
+          "end": "13:50",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "오노미치 혼도리 상점가 (히로시마현 오노미치시)",
+            "latitude": 34.406467,
+            "longitude": 133.197693
+          },
+          "notes": "세토내해 잔멸치 육수에 간장, 위에는 등지방 한 겹, 면은 납작한 직면입니다. 상점가의 노포들은 대개 카운터 중심이라 혼자면 기다리지 않고 앉습니다. 한산한 집도 대개 실패하지 않습니다.",
+          "leg": {
+            "fromKey": "d3-cafe",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "note": "고양이 골목을 내려와 혼도리 상점가로"
+          }
+        },
+        {
+          "key": "d3-fukuyama-castle",
+          "title": "후쿠야마성(역 북쪽에서 원경)",
+          "start": "14:30",
+          "end": "15:05",
+          "category": "castle",
+          "colour": "none",
+          "place": {
+            "name": "후쿠야마성 (히로시마현 후쿠야마시)",
+            "latitude": 34.490996,
+            "longitude": 133.361146
+          },
+          "notes": "오노미치에서 돌아오는 길에 시간이 남았고, 혼자라 그 자리에서 후쿠야마에 내렸습니다. 천수각이 역 북쪽 출구에 바로 붙어 있어 들어가지 않아도 사진은 찍힙니다 — 실제로 멀리서 한 장 찍고 이동했습니다. 입장하려면 ¥500.\n\n**이 구간만 간격이 부족합니다**: 고른 14:20 편은 14:40 도착이라, 계획했던 14:30보다 10분 늦습니다. 그래서 이 경로 칸이 호박색으로 바뀝니다. 한 편 앞선 14:00을 타면 맞출 수 있지만, 라멘을 먹고 역까지 계속 걸어야 합니다.",
+          "leg": {
+            "fromKey": "d3-ramen",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "note": "산요 본선으로 오노미치에서 후쿠야마까지 20분. 배차가 생각보다 뜸해 한 대를 놓치면 20분 이상 기다립니다. 원문에서도 시간을 잘못 재서 승강장에서 30분을 기다렸습니다",
+            "runs": [
+              {
+                "name": "산요 본선 후쿠야마행",
+                "departure": "14:00",
+                "arrival": "14:20"
+              },
+              {
+                "name": "산요 본선 오카야마행",
+                "departure": "14:20",
+                "arrival": "14:40"
+              },
+              {
+                "name": "산요 본선 후쿠야마행",
+                "departure": "14:47",
+                "arrival": "15:07"
+              }
+            ],
+            "selectedRunIndex": 1
+          }
+        },
+        {
+          "key": "d3-tomonoura",
+          "title": "도모노우라 항구 산책",
+          "start": "16:00",
+          "end": "16:30",
+          "category": "sight",
+          "colour": "green",
+          "place": {
+            "name": "도모노우라 (히로시마현 후쿠야마시)",
+            "latitude": 34.380877,
+            "longitude": 133.380327
+          },
+          "notes": "〈벼랑 위의 포뇨〉의 배경이자 일본 최초의 근대 항만, 사카모토 료마가 담판을 벌인 마을입니다. 후쿠야마역 남쪽 출구에 도모노우라행 버스 안내가 아주 분명하게 나와 있어 혼자여도 헤맬 일이 없고, 종점까지 가면 됩니다.",
+          "leg": {
+            "fromKey": "d3-fukuyama-castle",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 32,
+            "note": "도모테쓰 버스로 후쿠야마역 남쪽 출구에서 종점 도모항까지 32분. 20~30분 간격",
+            "routeURL": "https://tomotetsu.co.jp/bus/",
+            "runs": [
+              {
+                "name": "도모테쓰 버스 도모항선",
+                "departure": "15:00",
+                "arrival": "15:32"
+              },
+              {
+                "name": "도모테쓰 버스 도모항선",
+                "departure": "15:20",
+                "arrival": "15:52"
+              },
+              {
+                "name": "도모테쓰 버스 도모항선",
+                "departure": "15:50",
+                "arrival": "16:22"
+              }
+            ],
+            "selectedRunIndex": 1
+          }
+        },
+        {
+          "key": "d3-sensuijima",
+          "title": "센스이지마",
+          "start": "16:45",
+          "end": "17:35",
+          "category": "sight",
+          "colour": "green",
+          "place": {
+            "name": "센스이지마 (히로시마현 후쿠야마시)",
+            "latitude": 34.383117,
+            "longitude": 133.397853
+          },
+          "notes": "시영 도선장에서 '헤이세이 이로하마루'로 5분. 배 자체가 사카모토 료마의 이로하마루를 본떴습니다. 섬은 오색암 해안이고 한 바퀴 40분쯤. 막배가 이르니 혼자라면 건너가기 전에 돌아오는 시각을 반드시 확인하세요 — 놓치면 상의할 사람도 없습니다.",
+          "leg": {
+            "fromKey": "d3-tomonoura",
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 10,
+            "note": "후쿠야마 시영 도선장까지 되돌아가 '헤이세이 이로하마루'로 5분. 막배가 이르니 건너기 전에 돌아오는 시각을 확인",
+            "runs": [
+              {
+                "name": "헤이세이 이로하마루",
+                "departure": "16:30",
+                "arrival": "16:35"
+              },
+              {
+                "name": "헤이세이 이로하마루",
+                "departure": "16:50",
+                "arrival": "16:55"
+              },
+              {
+                "name": "헤이세이 이로하마루",
+                "departure": "17:10",
+                "arrival": "17:15"
+              }
+            ],
+            "selectedRunIndex": 0,
+            "links": [
+              {
+                "url": "https://www.tomonoura.co.jp/",
+                "title": "도모노우라 관광 정보(도선 시각 포함)"
+              }
+            ]
+          }
+        },
+        {
+          "key": "d3-joyato",
+          "title": "도모노우라 조야토 등대",
+          "start": "17:45",
+          "end": "18:25",
+          "category": "sight",
+          "colour": "red",
+          "place": {
+            "name": "도모노우라 조야토 등대 (히로시마현 후쿠야마시)",
+            "latitude": 34.382436,
+            "longitude": 133.380783
+          },
+          "notes": "항구에 선 1859년의 석등롱이 도모노우라의 상징입니다. 해 질 무렵 불이 들어온 뒤의 바다와 어우러진 풍경은, 즉흥으로 정한 일정인데도 그날 최고의 시간이 되었습니다.",
+          "leg": {
+            "fromKey": "d3-sensuijima",
+            "mode": "walking",
+            "durationMinutes": 8
+          }
+        },
+        {
+          "key": "d3-dinner",
+          "title": "저녁: 숯불구이 빈(포장)",
+          "start": "20:30",
+          "end": "21:20",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "숯불구이 빈 엔코바시점 (히로시마현 히로시마시)",
+            "latitude": 34.395374,
+            "longitude": 132.478677
+          },
+          "notes": "히로시마에 돌아오니 8시가 넘었고, 다시 포장 도시락을 샀습니다. 도모노우라에서 히로시마까지 두 시간이고 돌아오는 버스는 갈 때보다 배차가 뜸해, 혼자 바닷가 마을에서 막차를 놓치면 정말 방법이 없습니다. 떠나기 전에 확인하세요.",
+          "leg": {
+            "fromKey": "d3-joyato",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 120,
+            "note": "도모테쓰 버스로 후쿠야마역까지 32분, 거기서 JR로 히로시마. 돌아오는 배차가 갈 때보다 뜸하니 떠나기 전에 막차를 확인",
+            "routeURL": "https://tomotetsu.co.jp/bus/",
+            "runs": [
+              {
+                "name": "도모테쓰 버스 후쿠야마역행",
+                "departure": "18:30",
+                "arrival": "19:02"
+              },
+              {
+                "name": "도모테쓰 버스 후쿠야마역행",
+                "departure": "19:00",
+                "arrival": "19:32"
+              },
+              {
+                "name": "도모테쓰 버스 후쿠야마역행",
+                "departure": "19:30",
+                "arrival": "20:02"
+              }
+            ],
+            "selectedRunIndex": 0
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 14,
+            "note": "호텔까지 걸어서 돌아감"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "구레 야마토 뮤지엄과 히로시마 시내",
+      "events": [
+        {
+          "key": "d4-move-hotel",
+          "title": "도요코인 체크아웃, 아파에 짐 맡기기",
+          "start": "08:30",
+          "end": "09:10",
+          "category": "hotel",
+          "colour": "taupe",
+          "place": {
+            "name": "아파호텔 히로시마역앞 오하시 (히로시마현 히로시마시)",
+            "latitude": 34.395364,
+            "longitude": 132.471991
+          },
+          "notes": "오늘 밤부터 아파입니다. 두 호텔은 걸어서 15분. 혼자 짐을 옮기니 먼저 가져가 맡기는 게 가장 편하고, 프런트는 오후 체크인을 기다리지 않고 받아줍니다.",
+          "todos": [
+            "체크아웃 전에 서랍과 콘센트를 확인. 충전기를 벽에 두고 오기 쉬움"
+          ]
+        },
+        {
+          "key": "d4-yamato",
+          "title": "야마토 뮤지엄",
+          "start": "10:05",
+          "end": "12:00",
+          "category": "museum",
+          "colour": "red",
+          "place": {
+            "name": "야마토 뮤지엄·구레시 해사역사과학관 (히로시마현 구레시)",
+            "latitude": 34.241185,
+            "longitude": 132.55588
+          },
+          "notes": "관 내부의 1/10 전함 야마토는 길이 26미터. 한 바퀴 도는 것만으로 입장료 값을 합니다. 입장료 ¥500. 2층에는 제로센과 인간어뢰 '가이텐'도 같은 층에 있습니다. 혼자면 원하는 만큼 멈춰 서 있을 수 있습니다.",
+          "leg": {
+            "fromKey": "d4-move-hotel",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "note": "JR 구레선. 쾌속 '아키지 라이너' 33분, 보통 43분. 구레역에서 보행 데크로 바로 연결되어 길을 건널 필요 없음",
+            "runs": [
+              {
+                "name": "쾌속 아키지 라이너",
+                "departure": "09:22",
+                "arrival": "09:55"
+              },
+              {
+                "name": "구레선 보통",
+                "departure": "09:40",
+                "arrival": "10:23"
+              },
+              {
+                "name": "쾌속 아키지 라이너",
+                "departure": "09:52",
+                "arrival": "10:25"
+              }
+            ],
+            "selectedRunIndex": 0
+          },
+          "links": [
+            {
+              "url": "https://yamato-museum.com/",
+              "title": "야마토 뮤지엄 공식 사이트"
+            }
+          ]
+        },
+        {
+          "key": "d4-jmsdf",
+          "title": "데쓰노쿠지라관(해상자위대 구레 사료관)",
+          "start": "12:05",
+          "end": "13:00",
+          "category": "museum",
+          "colour": "green",
+          "place": {
+            "name": "데쓰노쿠지라관·해상자위대 구레 사료관 (히로시마현 구레시)",
+            "latitude": 34.242162,
+            "longitude": 132.555321
+          },
+          "notes": "무료이고, 실제 잠수함 '아키시오' 내부에 들어갈 수 있습니다 — 그 함정이 그대로 입구 앞 육상에 놓여 있습니다. 함내가 좁아 혼자가 오히려 수월하게 지나갑니다. 소해정 전시는 1층, 잠수함 내부는 맨 위층입니다.",
+          "leg": {
+            "fromKey": "d4-yamato",
+            "mode": "walking",
+            "durationMinutes": 3
+          }
+        },
+        {
+          "key": "d4-kure-lunch",
+          "title": "점심: 구레 냉면",
+          "start": "13:15",
+          "end": "14:05",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "구레 렌가도리 상점가 (히로시마현 구레시)",
+            "latitude": 34.246508,
+            "longitude": 132.566174
+          },
+          "notes": "구레의 명물은 냉면입니다. 소스가 단 편이고 면은 납작해서 한국식 냉면과는 완전히 다른 음식입니다. 렌가도리 상점가의 노포 여럿이 이 메뉴를 내는데, 점심에도 혼자면 거의 기다리지 않고 들어갑니다.",
+          "leg": {
+            "fromKey": "d4-jmsdf",
+            "mode": "walking",
+            "durationMinutes": 12
+          }
+        },
+        {
+          "key": "d4-shukkeien",
+          "title": "슈케이엔",
+          "start": "15:30",
+          "end": "16:30",
+          "category": "park",
+          "colour": "green",
+          "place": {
+            "name": "슈케이엔 (히로시마현 히로시마시)",
+            "latitude": 34.400338,
+            "longitude": 132.467449
+          },
+          "notes": "1620년에 조성된 회유식 정원. 가운데에 크고 작은 섬 열 개가 있고 한 바퀴 40분쯤입니다. 입장료 ¥260, 옆 현립미술관과의 공통권이 더 저렴합니다. 11월 중순은 단풍이 한창이라 혼자 천천히 돌기 좋습니다.",
+          "leg": {
+            "fromKey": "d4-kure-lunch",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 70,
+            "note": "구레선으로 히로시마까지 33분, 역에서 노면전차로 두 정거장",
+            "runs": [
+              {
+                "name": "쾌속 아키지 라이너",
+                "departure": "14:19",
+                "arrival": "14:52"
+              },
+              {
+                "name": "구레선 보통",
+                "departure": "14:36",
+                "arrival": "15:19"
+              },
+              {
+                "name": "쾌속 아키지 라이너",
+                "departure": "14:49",
+                "arrival": "15:22"
+              }
+            ],
+            "selectedRunIndex": 0
+          }
+        },
+        {
+          "key": "d4-hiroshima-castle",
+          "title": "히로시마성",
+          "start": "16:45",
+          "end": "17:35",
+          "category": "castle",
+          "colour": "green",
+          "place": {
+            "name": "히로시마성 (히로시마현 히로시마시)",
+            "latitude": 34.402146,
+            "longitude": 132.45954
+          },
+          "notes": "재건된 천수각이고 내부는 역사박물관입니다. 입장료 ¥370. 슈케이엔에서 도보 12분, 해자를 따라 걷기 좋은 저녁 코스입니다. 천수각은 18:00에 닫으니 혼자 짜더라도 순서를 바꿀 수는 없습니다.",
+          "leg": {
+            "fromKey": "d4-shukkeien",
+            "mode": "walking",
+            "durationMinutes": 12
+          }
+        },
+        {
+          "key": "d4-peace-museum",
+          "title": "히로시마 평화기념자료관",
+          "start": "18:00",
+          "end": "19:30",
+          "category": "museum",
+          "colour": "red",
+          "place": {
+            "name": "히로시마 평화기념자료관 (히로시마현 히로시마시)",
+            "latitude": 34.391812,
+            "longitude": 132.452105
+          },
+          "notes": "관람료 ¥200, 본관과 동관이 이어져 있습니다. 8월은 19:00까지 연장하지만 나머지 달은 대개 18:00에 닫으니 출발 전에 그달의 시간을 꼭 확인하세요. 90분은 잡을 가치가 있고, 혼자 다 보고 나면 대개 조용한 길을 좀 걸어야 돌아옵니다.",
+          "leg": {
+            "fromKey": "d4-hiroshima-castle",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "note": "노면전차로 원폭돔앞까지, 평화기념공원을 가로질러 감"
+          },
+          "todos": [
+            "그날의 폐관 시각과 마지막 입장 시각을 공식 사이트에서 확인할 것"
+          ],
+          "links": [
+            {
+              "url": "https://hpmmuseum.jp/",
+              "title": "히로시마 평화기념자료관 공식 사이트"
+            }
+          ]
+        },
+        {
+          "key": "d4-station-bento",
+          "title": "ekie 기념품과 에키벤",
+          "start": "20:10",
+          "end": "21:00",
+          "category": "souvenir",
+          "colour": "amber",
+          "place": {
+            "name": "ekie 히로시마역 쇼핑몰 (히로시마현 히로시마시)",
+            "latitude": 34.397815,
+            "longitude": 132.476495
+          },
+          "notes": "모미지 만주, 굴 간장, 구마노 붓이 모두 이 층에 있습니다. 내일은 하루 종일 이동이니 히로시마 명물 붕장어 도시락도 하나. 혼자 기념품을 살 때는 기억할 것 — 결국 전부 직접 들고 비행기까지 갑니다.",
+          "leg": {
+            "fromKey": "d4-peace-museum",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "note": "노면전차로 히로시마역까지"
+          },
+          "todos": [
+            "기념품 가게는 대개 21:00에 닫음. 마지막에 떠올리면 늦음"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "구라시키 미관지구, 오카야마 고라쿠엔 야간 조명",
+      "events": [
+        {
+          "key": "d5-checkout",
+          "title": "아파 체크아웃, 짐 찾기",
+          "start": "08:40",
+          "end": "09:10",
+          "category": "hotel",
+          "colour": "taupe",
+          "place": {
+            "name": "아파호텔 히로시마역앞 오하시 (히로시마현 히로시마시)",
+            "latitude": 34.395364,
+            "longitude": 132.471991
+          },
+          "notes": "아파 체크아웃은 11:00이라 서두를 필요가 없습니다. 혼자면 짐을 봐줄 사람도 없으니 그대로 끌고 역으로 가는 게 가장 편합니다 — 오늘은 하루 종일 이동입니다."
+        },
+        {
+          "key": "d5-luggage",
+          "title": "구라시키역에 짐 맡기기",
+          "start": "10:30",
+          "end": "10:50",
+          "category": "station",
+          "colour": "none",
+          "place": {
+            "name": "구라시키역 (오카야마현 구라시키시)",
+            "latitude": 34.601086,
+            "longitude": 133.766219
+          },
+          "notes": "역에 코인로커가 있지만 큰 칸은 금방 찹니다. 오늘 밤 호텔이 역에서 5분이라 혼자라면 그대로 프런트에 맡기는 편이 확실합니다.",
+          "leg": {
+            "fromKey": "d5-checkout",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 75,
+            "note": "산요 신칸센으로 히로시마에서 오카야마까지 35분, 산요 본선으로 갈아타 구라시키까지 16분. 구라시키는 보통 정차역이니 쾌속을 타서 지나치지 않도록",
+            "runs": [
+              {
+                "name": "노조미",
+                "departure": "09:23",
+                "arrival": "09:58"
+              },
+              {
+                "name": "사쿠라",
+                "departure": "09:40",
+                "arrival": "10:19"
+              },
+              {
+                "name": "노조미",
+                "departure": "10:23",
+                "arrival": "10:58"
+              }
+            ],
+            "selectedRunIndex": 0
+          },
+          "todos": [
+            "로커는 ¥100 동전만 받음. 편의점에서 미리 바꿔둘 것"
+          ]
+        },
+        {
+          "key": "d5-achi",
+          "title": "아치 신사",
+          "start": "11:20",
+          "end": "11:55",
+          "category": "temple",
+          "colour": "green",
+          "place": {
+            "name": "아치 신사 (오카야마현 구라시키시)",
+            "latitude": 34.597529,
+            "longitude": 133.773443
+          },
+          "notes": "미관지구 옆 작은 언덕 위의 신사. 돌계단이 조금 가파르지만 오르면 흰 벽의 옛 거리가 한눈에 들어옵니다. 경내의 '아치 등나무'는 수령 500년이라고 합니다. 관광객이 적어 혼자 오르면 조용합니다.",
+          "leg": {
+            "fromKey": "d5-luggage",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "note": "구라시키역에서 구라시키 중앙로를 따라 걸음. 도중에 상점가"
+          }
+        },
+        {
+          "key": "d5-bikan",
+          "title": "구라시키 미관지구",
+          "start": "12:05",
+          "end": "12:50",
+          "category": "sight",
+          "colour": "red",
+          "place": {
+            "name": "구라시키 미관지구 (오카야마현 구라시키시)",
+            "latitude": 34.596525,
+            "longitude": 133.772586
+          },
+          "notes": "흰 벽 창고와 나마코 벽, 버드나무가 구라시키강을 끼고 있고, 에도 시대 쌀 창고 거리가 그대로 남아 있습니다. 강배 유람은 20분 ¥500이고 혼자도 탈 수 있습니다. 표는 관광안내소에서.",
+          "leg": {
+            "fromKey": "d5-achi",
+            "mode": "walking",
+            "durationMinutes": 6
+          }
+        },
+        {
+          "key": "d5-miyake",
+          "title": "점심: 미야케 상점 카레",
+          "start": "13:00",
+          "end": "13:50",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "미야케 상점 (오카야마현 구라시키시)",
+            "latitude": 34.596325,
+            "longitude": 133.772286
+          },
+          "notes": "오래된 마치야를 개조한 카페로, 간판 메뉴는 카레와 제철 과일 파르페입니다. 점심에는 반드시 줄을 서니, 혼자라면 이름을 먼저 적어두고 미술관을 돌다 오면 딱 차례가 됩니다.",
+          "leg": {
+            "fromKey": "d5-bikan",
+            "mode": "walking",
+            "durationMinutes": 3
+          }
+        },
+        {
+          "key": "d5-ohara",
+          "title": "오하라 미술관",
+          "start": "14:00",
+          "end": "15:00",
+          "category": "artgallery",
+          "colour": "green",
+          "place": {
+            "name": "오하라 미술관 (오카야마현 구라시키시)",
+            "latitude": 34.596032,
+            "longitude": 133.770439
+          },
+          "notes": "1930년 개관, 일본 최초의 서양미술관입니다. 본관에 엘 그레코의 〈수태고지〉와 모네의 〈수련〉이 있습니다. 입장료 ¥2,000, 월요일 휴관이니 일정을 짜기 전에 확인하세요. 혼자면 재촉하는 사람은 없지만, 한 시간으로는 한 바퀴가 고작입니다.",
+          "leg": {
+            "fromKey": "d5-miyake",
+            "mode": "walking",
+            "durationMinutes": 5
+          },
+          "links": [
+            {
+              "url": "https://www.ohara.or.jp/",
+              "title": "오하라 미술관 공식 사이트"
+            }
+          ]
+        },
+        {
+          "key": "d5-parfait",
+          "title": "파라 구다모노 고마치 과일 파르페",
+          "start": "15:10",
+          "end": "15:50",
+          "category": "dessert",
+          "colour": "amber",
+          "place": {
+            "name": "파라 구다모노 고마치 (오카야마현 구라시키시)",
+            "latitude": 34.594943,
+            "longitude": 133.771231
+          },
+          "notes": "오카야마는 과일 왕국이라 백도와 머스캣 파르페가 이 지역의 기본입니다. 싸지는 않지만 양이 넉넉해 혼자 하나면 간식으로 딱 좋습니다.",
+          "leg": {
+            "fromKey": "d5-ohara",
+            "mode": "walking",
+            "durationMinutes": 5
+          }
+        },
+        {
+          "key": "d5-outlet",
+          "title": "미쓰이 아울렛파크 구라시키",
+          "start": "16:15",
+          "end": "17:00",
+          "category": "shopping",
+          "colour": "none",
+          "place": {
+            "name": "미쓰이 아울렛파크 구라시키 (오카야마현 구라시키시)",
+            "latitude": 34.60371,
+            "longitude": 133.762007
+          },
+          "notes": "미관지구 뒤에 넣어 두었지만 옛 거리를 다 돌고 나니 오후 4시. 시간을 다 써서 취소했습니다 — 혼자 걷다 멈추기를 반복하면 생각보다 더디게 갑니다. 구라시키역 북쪽 출구 바로 앞이니 다음에는 도착한 날에 넣는 편이 좋겠습니다.",
+          "isCancelled": true,
+          "leg": {
+            "fromKey": "d5-parfait",
+            "mode": "walking",
+            "durationMinutes": 20
+          }
+        },
+        {
+          "key": "d5-korakuen",
+          "title": "오카야마 고라쿠엔 가을 야간 조명",
+          "start": "17:40",
+          "end": "18:45",
+          "category": "park",
+          "colour": "red",
+          "place": {
+            "name": "오카야마 고라쿠엔 (오카야마현 오카야마시)",
+            "latitude": 34.66633,
+            "longitude": 133.937395
+          },
+          "notes": "일본 3대 정원 중 하나. 가을 '환상정원' 기간에는 21:30까지 연장 개원하고 조명이 들어와, 낮과는 완전히 다른 모습입니다. 기간 중에는 입장료가 별도이니 그해 일정을 출발 전에 확인하세요. 혼자 밤에 걸어도 사람이 많지 않아 아주 조용합니다.",
+          "leg": {
+            "fromKey": "d5-parfait",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "note": "산요 본선으로 구라시키에서 오카야마까지 16분, 역에서 노면전차로 시로시타, 거기서 도보 10분",
+            "runs": [
+              {
+                "name": "산요 본선 보통 오카야마행",
+                "departure": "16:04",
+                "arrival": "16:20"
+              },
+              {
+                "name": "쾌속 선라이너",
+                "departure": "16:23",
+                "arrival": "16:38"
+              },
+              {
+                "name": "산요 본선 보통 오카야마행",
+                "departure": "16:44",
+                "arrival": "17:00"
+              }
+            ],
+            "selectedRunIndex": 1
+          },
+          "links": [
+            {
+              "url": "https://okayama-korakuen.jp/",
+              "title": "오카야마 고라쿠엔 공식 사이트"
+            }
+          ]
+        },
+        {
+          "key": "d5-okayama-castle",
+          "title": "오카야마성 야경",
+          "start": "18:55",
+          "end": "19:45",
+          "category": "castle",
+          "colour": "green",
+          "place": {
+            "name": "오카야마성 (오카야마현 오카야마시)",
+            "latitude": 34.665176,
+            "longitude": 133.936045
+          },
+          "notes": "검은 외벽의 천수각이라 '까마귀성'이라 불리고, 아사히강을 사이에 두고 고라쿠엔과 마주 봅니다. 조명이 들어온 시간에는 쓰키미바시 쪽에서 보는 게 가장 예쁩니다. 다리 위는 사람이 적어 혼자 휴대폰을 들어도 길을 막지 않습니다.",
+          "leg": {
+            "fromKey": "d5-korakuen",
+            "mode": "walking",
+            "durationMinutes": 8,
+            "note": "고라쿠엔에서 쓰키미바시로 아사히강을 건너면 바로"
+          }
+        },
+        {
+          "key": "d5-dinner",
+          "title": "저녁: 잇푸도 라멘, 걸어서 오카야마역으로",
+          "start": "20:15",
+          "end": "21:15",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "잇푸도 오카야마점 (오카야마현 오카야마시)",
+            "latitude": 34.665336,
+            "longitude": 133.92547
+          },
+          "notes": "하루 종일 걸었으니 따뜻한 한 그릇으로 마무리 — 라멘집 카운터는 혼자에게 가장 친절한 자리입니다. 오카야마성에서 시내를 지나 역까지 약 25분, 도중에 오모테초 상점가를 지납니다.",
+          "leg": {
+            "fromKey": "d5-okayama-castle",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "note": "아사히강을 따라 시내로 돌아가 오모테초 상점가를 지남"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "note": "산요 본선으로 오카야마에서 구라시키까지 16분. 막차가 늦어 서두를 필요가 없고, 내려서 도보 5분이면 호텔",
+            "runs": [
+              {
+                "name": "산요 본선 구라시키 방면",
+                "departure": "21:24",
+                "arrival": "21:40"
+              },
+              {
+                "name": "산요 본선 구라시키 방면",
+                "departure": "21:47",
+                "arrival": "22:03"
+              },
+              {
+                "name": "산요 본선 구라시키 방면",
+                "departure": "22:07",
+                "arrival": "22:23"
+              }
+            ],
+            "selectedRunIndex": 0
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "기비쓰 신사, 오후에 귀국",
+      "events": [
+        {
+          "key": "d6-checkout",
+          "title": "체크아웃, 짐은 오카야마역 로커에",
+          "start": "07:40",
+          "end": "08:25",
+          "category": "train",
+          "colour": "teal",
+          "place": {
+            "name": "구라시키역 (오카야마현 구라시키시)",
+            "latitude": 34.601086,
+            "longitude": 133.766219
+          },
+          "notes": "오후 비행기에 맞춰야 하고 혼자면 짐을 봐줄 사람도 없으니, 먼저 산요 본선으로 오카야마까지 가서 로커에 넣고 기비쓰로 갑니다. 모모타로선은 단선 구간이라 한 시간에 두 편, 놓치면 30분 이상 기다립니다."
+        },
+        {
+          "key": "d6-kibitsu",
+          "title": "기비쓰 신사",
+          "start": "09:05",
+          "end": "10:30",
+          "category": "temple",
+          "colour": "red",
+          "place": {
+            "name": "기비쓰 신사 (오카야마현 오카야마시)",
+            "latitude": 34.670682,
+            "longitude": 133.850611
+          },
+          "notes": "모모타로 전설이 시작된 곳이고 본전은 국보입니다. 가장 유명한 것은 360미터 회랑으로, 산세를 따라 길게 이어집니다. 아침 한산한 시간이면 통째로 혼자 걸을 수 있어, 혼자 여행에서 이 구간이 가장 값어치가 있습니다.",
+          "leg": {
+            "fromKey": "d6-checkout",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "note": "오카야마역에서 JR 모모타로선(기비선)으로 갈아타 기비쓰까지 18분, 내려서 도보 10분. 한 시간에 두 편",
+            "runs": [
+              {
+                "name": "모모타로선 보통 소자행",
+                "departure": "08:11",
+                "arrival": "08:27"
+              },
+              {
+                "name": "모모타로선 보통 소자행",
+                "departure": "08:36",
+                "arrival": "08:54"
+              },
+              {
+                "name": "모모타로선 보통 소자행",
+                "departure": "09:29",
+                "arrival": "09:47"
+              }
+            ],
+            "selectedRunIndex": 1
+          }
+        },
+        {
+          "key": "d6-aeon",
+          "title": "이온몰 오카야마 기념품·점심",
+          "start": "11:15",
+          "end": "12:35",
+          "category": "shopping",
+          "colour": "amber",
+          "place": {
+            "name": "이온몰 오카야마 (오카야마현 오카야마시)",
+            "latitude": 34.66202,
+            "longitude": 133.917354
+          },
+          "notes": "오카야마역과 데크로 바로 이어져 비가 와도 밖으로 나갈 일이 없습니다. 기념품, 드러그스토어, 푸드코트가 한곳에 있어 남은 엔화 잔돈까지 여기서 다 씁니다. 혼자면 산 만큼 직접 들어야 하니 과하게 사지 마세요.",
+          "leg": {
+            "fromKey": "d6-kibitsu",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "note": "모모타로선으로 오카야마역까지 18분, 데크를 건너면 바로 몰",
+            "runs": [
+              {
+                "name": "모모타로선 보통 오카야마행",
+                "departure": "10:42",
+                "arrival": "11:00"
+              },
+              {
+                "name": "모모타로선 보통 오카야마행",
+                "departure": "11:12",
+                "arrival": "11:30"
+              },
+              {
+                "name": "모모타로선 보통 오카야마행",
+                "departure": "11:42",
+                "arrival": "12:00"
+              }
+            ],
+            "selectedRunIndex": 0
+          },
+          "todos": [
+            "육류 제품은 대만으로 못 가져감. 고기만두나 조림은 기념품으로 사지 말 것"
+          ]
+        },
+        {
+          "key": "d6-airport",
+          "title": "오카야마 공항 체크인·출국",
+          "start": "13:25",
+          "end": "15:25",
+          "category": "airport",
+          "colour": "none",
+          "place": {
+            "name": "오카야마 모모타로 공항 (오카야마현 오카야마시)",
+            "latitude": 34.756973,
+            "longitude": 133.853869
+          },
+          "notes": "공항이 작아 혼자면 체크인도 보안검색도 금방 끝납니다. 면세점 구색이 넉넉하지 않으니 살 것은 시내에서 미리 사두세요. 2층에는 비행기를 볼 수 있는 전망 데크가 있어 대기 시간도 혼자 지루하지 않습니다.",
+          "leg": {
+            "fromKey": "d6-aeon",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "note": "리무진 버스로 오카야마역 서쪽 출구에서 오카야마 모모타로 공항까지. 30분, ¥780. 출발 두 시간 전 편이 안전합니다",
+            "routeURL": "https://okayama-kido.co.jp/bus/kuukou.html",
+            "runs": [
+              {
+                "name": "리무진 버스 (오카덴)",
+                "departure": "12:50",
+                "arrival": "13:20"
+              },
+              {
+                "name": "리무진 버스 (주테쓰)",
+                "departure": "13:10",
+                "arrival": "13:40"
+              },
+              {
+                "name": "리무진 버스 (오카덴)",
+                "departure": "13:30",
+                "arrival": "14:00"
+              }
+            ],
+            "selectedRunIndex": 0
+          },
+          "todos": [
+            "보안검색에서 부츠는 벗어야 함. 미리 벗기 쉬운 신발로 갈아신을 것",
+            "면세 서류와 영수증은 출국 전에 정리해 둘 것"
+          ]
+        },
+        {
+          "key": "d6-flight-okj-tpe",
+          "title": "타이거에어 IT251 오카야마 → 타오위안",
+          "start": "15:25",
+          "end": "17:35",
+          "startTimeZoneID": "Asia/Tokyo",
+          "endTimeZoneID": "Asia/Taipei",
+          "category": "flight",
+          "colour": "teal",
+          "place": {
+            "name": "오카야마 모모타로 공항 (오카야마현 오카야마시)",
+            "latitude": 34.756973,
+            "longitude": 133.853869
+          },
+          "notes": "15:25 출발 17:35 도착. 타이베이에 돌아와도 아직 밝고, 다음 날 하루 쉬고 출근하기에 딱 좋은 흐름입니다. 혼자 여행의 마무리는 깔끔해서, 누구와 일정을 맞출 필요도 없습니다."
+        }
+      ]
+    }
+  ]
+}

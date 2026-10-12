@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-// 分享活動頁的三語版本：/share/（中）、/en/share/、/ja/share/。
+// 分享活動頁的各語言版本：/share/（中）、/en/share/、/ja/share/、/ko/share/。
 //
-//   node tools/gen-share.mjs          # 重寫三個 index.html
+//   node tools/gen-share.mjs          # 重寫每一語的 index.html
 //
-// 模板是 tools/share-template.html，字在 share/strings.js。頁首頁尾從同語言的首頁（/、/en/、/ja/）抽出來，
+// 模板是 tools/share-template.html，字在 share/strings.js。頁首頁尾從同語言的首頁（/、/en/、/ja/、/ko/）抽出來，
 // 所以首頁的頁首頁尾改了，重跑一次就跟上；tests/unit/share-pages.test.mjs 會在沒重跑時變紅。
 // 頁首那排的錨點（#why…）改成指回首頁；語言鈕改成指到另一語的分享頁。頁尾照抄首頁。
 
@@ -18,8 +18,9 @@ export const PAGES = [
   { key: 'zh', htmlLang: 'zh-Hant', gisLang: 'zh-TW', home: '/', out: 'share/index.html' },
   { key: 'en', htmlLang: 'en', gisLang: 'en', home: '/en/', out: 'en/share/index.html' },
   { key: 'ja', htmlLang: 'ja', gisLang: 'ja', home: '/ja/', out: 'ja/share/index.html' },
+  { key: 'ko', htmlLang: 'ko', gisLang: 'ko', home: '/ko/', out: 'ko/share/index.html' },
 ];
-const SHARE_PATH = { '/': '/share/', '/en/': '/en/share/', '/ja/': '/ja/share/' };
+const SHARE_PATH = Object.fromEntries(PAGES.map((p) => [p.home, p.home + 'share/']));
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -36,7 +37,7 @@ export function render(page) {
   const home = readFileSync(join(root, page.home.slice(1), 'index.html'), 'utf8');
   const header = slice(home, '<header class="site-header">', '</header>')
     .replace(/class="hide-sm" href="#/g, `class="hide-sm" href="${page.home}#`)
-    .replace(/class="lang" href="(\/(?:en\/|ja\/)?)"/g, (_, href) => `class="lang" href="${SHARE_PATH[href]}"`);
+    .replace(/class="lang" href="(\/(?:en\/|ja\/|ko\/)?)"/g, (_, href) => `class="lang" href="${SHARE_PATH[href]}"`);
   const footer = slice(home, '<footer class="site-footer">', '</footer>');
   const skipLink = slice(home, '<a class="skip-link"', '</a>');
 

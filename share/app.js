@@ -5,10 +5,10 @@ import { requestBody, viewFor, looksLikeUrl } from './core.js';
 import { shareTarget } from './captions.js';
 import { S, langKey } from './strings.js';
 
-// 頁面的語言由 /share/、/en/share/、/ja/share/ 的 <html lang> 決定；靜態的字產生頁面時就填好了（tools/gen-share.mjs），
+// 頁面的語言由 /share/、/en/share/、/ja/share/、/ko/share/ 的 <html lang> 決定；靜態的字產生頁面時就填好了（tools/gen-share.mjs），
 // 這裡只管會變的字。
 const t = S[langKey(document.documentElement.lang)];
-const GIS_LOCALE = { zh: 'zh_TW', en: 'en', ja: 'ja' }[langKey(document.documentElement.lang)];
+const GIS_LOCALE = { zh: 'zh_TW', en: 'en', ja: 'ja', ko: 'ko' }[langKey(document.documentElement.lang)];
 
 let idToken = '';
 let email = '';

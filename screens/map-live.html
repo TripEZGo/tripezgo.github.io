@@ -133,6 +133,11 @@
   .is-interactive [data-tap] { cursor: pointer; }
   /* 第一次取景完成才露出地圖（map-live.js 設 data-framed；不用 class，MapKit 會蓋掉容器的 class） */
   #mk { opacity:0; transition:opacity .3s; } #mk[data-framed], #mk[data-mode="poster"] { opacity:1; }
+  /* iPad（?device=ipad）：地圖從 162（128＋34）鋪到底；Apple 標誌那一條離底 46（模擬器量：「法律資訊」底 1330；map-live.js 的 padding 同一個數 DEV.legal） */
+  .ipad .mk { top: 162px; width: 1032px; height: 1214px; }
+  .ipad .mk .mk-controls-container .mk-bottom-left-controls-container,
+  .ipad .mk .mk-controls-container .mk-bottom-right-controls-container { bottom: 46px !important; }
+  .ipad .deck-toggle { left: 505px; }
 </style>
 </head>
 <body>

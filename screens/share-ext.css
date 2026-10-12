@@ -204,3 +204,17 @@ input.inp { height: 44px; }
 .badge50 svg { width: 25px; height: 25px; stroke-width: 2.2; }
 .res h2 { margin-top: 13px; font: 700 var(--t-lg)/21px var(--font); }
 .res p { margin-top: 8px; font: 400 var(--t-sm)/18px var(--font); color: var(--muted); white-space: pre-line; }
+
+/* ── iPad（?device=ipad）：iPad Pro 13 吋模擬器（iPadOS 26.2）從 Safari 分享給 TripEZGo 量到——
+   系統分享選單是掛在分享鈕下的 popover（約 374×384、圓角約 32），**點了延伸之後它留著**，跟底下那個 App 一起被壓暗
+   （白 → 196，黑 23%）；延伸本身（TripEZGoShare/ShareViewController 沒設呈現方式，系統給的）是置中的 form sheet：
+   x 226–806（寬 580）、y 368–1008（高 640）、圓角約 32。底下那個 App 不縮到黑底後面。
+   popover 的位置由 share-gmap.html 依那個 App 的分享鈕算。 */
+.ipad .host-app.back { transform: none; border-radius: 0; filter: none; }
+.ipad .ss { right: auto; bottom: auto; width: 374px; height: 384px; border-radius: 32px; }
+.ipad .ss.back { transform: none; filter: brightness(.77); }
+.ipad .ss:not(.on) { visibility: hidden; }
+.ipad .ss.on { transform: none; }
+.ipad .dim { background: rgba(0,0,0,.23); }
+.ipad .ext { left: 226px; right: auto; width: 580px; top: 368px; bottom: auto; height: 640px; border-radius: 32px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.18); }
