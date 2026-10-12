@@ -799,3 +799,7 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
 @media (min-width:700px) { .tools.is-three.has-wide { grid-template-columns:repeat(2, minmax(0, 1fr)); } .tools.has-wide > .is-wide { grid-column:1 / -1; } }
 @media (min-width:900px) { .tools.is-three.has-wide { grid-template-columns:repeat(4, minmax(0, 1fr)); } .tools.has-wide > .is-wide { grid-column:span 2; } }
 @media (max-width:479px) { .share-pair { grid-template-columns:minmax(0, 1fr); } }   /* 手機上兩支並排太小，上下疊 */
+
+/* 頁面鎖住左右：手機上不准左右拖動整頁（使用者 2026-10-12）。外框裡的 iframe 是 402 寬再縮放、手機側鍵畫在外框外，
+   版面框會比螢幕多出一點點，iOS Safari 就讓整頁左右晃。clip 不會變成捲動容器，position: sticky 照常 */
+html, body { overflow-x: clip; overscroll-behavior-x: none; }

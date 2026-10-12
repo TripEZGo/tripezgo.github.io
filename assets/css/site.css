@@ -261,3 +261,7 @@ h3 { font-size: var(--text-xl); margin: 0 0 10px; font-weight: 600; }
 @media (min-width: 780px) { .pains.plans { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .plan h3 { font-size: var(--text-xl); }
 .plans-cta { justify-content: center; margin-top: clamp(28px, 4vw, 40px); }
+
+/* 頁面鎖住左右：手機上不准左右拖動整頁（使用者 2026-10-12）。外框裡的 iframe 是 402 寬再縮放、手機側鍵畫在外框外，
+   版面框會比螢幕多出一點點，iOS Safari 就讓整頁左右晃。clip 不會變成捲動容器，position: sticky 照常 */
+html, body { overflow-x: clip; overscroll-behavior-x: none; }
