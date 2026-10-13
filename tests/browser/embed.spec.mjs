@@ -9,8 +9,9 @@ test.beforeEach(async ({ page }) => {
   await page.route(/^https?:\/\/(?!localhost)/, (r) => r.abort());
 });
 
-async function expectAllHidden(page) {
-  for (const sel of HIDDEN) {
+async function expectAllHidden(page, home) {
+  // 首頁的頁首留著當章節定位列，只藏品牌和語言選單
+  for (const sel of home ? [...HIDDEN.filter((s) => s !== '.site-header'), '.site-header .brand', '.site-header .lang-menu'] : HIDDEN) {
     const loc = page.locator(sel);
     for (let i = 0; i < (await loc.count()); i++) await expect(loc.nth(i), sel).toBeHidden();
   }
@@ -21,11 +22,11 @@ for (const lang of LANGS) {
     test(`embed hides chrome and download buttons: ${lang}${path}`, async ({ page }) => {
       await page.goto(`${lang}${path}?mode=embed`);
       await expect(page.locator('html')).toHaveClass(/\bembed\b/);
-      await expectAllHidden(page);
+      await expectAllHidden(page, path === '');
       // 首頁的浮動下載鈕要捲動後才出現：捲到底再看一次
       await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
       await page.waitForTimeout(300);
-      await expectAllHidden(page);
+      await expectAllHidden(page, path === '');
       await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
       await expect(page.locator('link[rel="canonical"]')).not.toHaveAttribute('href', /mode=embed/);
     });
@@ -54,14 +55,29 @@ for (const lang of LANGS) {
   }
 }
 
-test('embed home: the first visible block starts near the top, no hole where the header and hero were', async ({ page }) => {
+test('embed home: section jump bar sits on top, each chip lands its section just below it', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' }); // 不等平滑捲動
   for (const width of [390, 1280]) {
     await page.setViewportSize({ width, height: 900 });
-    await page.goto('/?mode=embed');
-    const top = await page.locator('main > section:visible').first().evaluate((el) => el.getBoundingClientRect().top);
-    expect(top).toBeLessThanOrEqual(1);
-    const h2 = await page.locator('#privacy h2').evaluate((el) => el.getBoundingClientRect().top);
-    expect(h2).toBeLessThan(140);
+    for (const lang of LANGS) {
+      await page.goto(`${lang}?mode=embed`);
+      const chips = page.locator('.site-header .site-nav > a[href^="#"]');
+      await expect(chips).toHaveCount(4);
+      for (let i = 0; i < 4; i++) await expect(chips.nth(i)).toBeVisible();
+      const bar = await page.locator('.site-header').evaluate((el) => el.getBoundingClientRect());
+      expect(bar.top).toBeLessThanOrEqual(1);
+      expect(bar.height).toBeLessThan(70);
+      const first = await page.locator('main > section:visible').first().evaluate((el) => el.getBoundingClientRect().top);
+      expect(first).toBeLessThanOrEqual(bar.bottom + 1);
+      for (const id of ['plans', 'about', 'privacy']) {
+        await page.locator(`.site-header .site-nav > a[href="#${id}"]`).click();
+        await page.waitForTimeout(100);
+        expect(await page.locator('.site-header').evaluate((el) => el.getBoundingClientRect().top), id).toBeLessThanOrEqual(1);
+        const top = await page.locator(`#${id}`).evaluate((el) => el.getBoundingClientRect().top);
+        const max = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight - scrollY);
+        if (max > 1) expect(top, `${lang} ${width} #${id}`).toBeGreaterThanOrEqual(bar.height - 2);
+      }
+    }
   }
 });
 

@@ -59,6 +59,16 @@
   html.embed body { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
   html.embed .hero + .section { padding-top: clamp(24px, 4vw, 40px); }
   html.embed .legal { padding-top: clamp(24px, 4vw, 40px); }
+  /* 首頁的章節定位按鈕（使用者 2026-10-13）：頁首只留同頁錨點（隱私／功能／方案／關於），做成置頂的一排膠囊；
+     只有首頁的導覽是 # 開頭，隱私、條款、聯絡頁的頁首照舊整個藏掉。 */
+  html.embed .site-header:has(.site-nav > a[href^="#"]) { display: block !important; }
+  html.embed:has(.site-nav > a[href^="#"]) { scroll-padding-top: 64px; }
+  html.embed .site-header .brand, html.embed .site-header .lang-menu { display: none; }
+  html.embed .site-header .wrap { min-height: 52px; justify-content: center; }
+  html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 6px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
+  html.embed .site-nav::-webkit-scrollbar { display: none; }
+  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 6px 11px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+  html.embed .site-nav > a.hide-sm:hover, html.embed .site-nav > a.hide-sm:active { border-color: var(--accent); color: var(--accent-ink); }
 </style>
 <!-- embed:end -->
 <!-- 這一頁是 tools/gen-contact.mjs 產生的，不要手改。 -->
