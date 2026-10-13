@@ -518,6 +518,8 @@ T = {
   '接下來': ('Up next', 'これから', '다음 계획'),
   'UI／UX Rebranding': ('UI/UX rebranding', 'UI/UX のリブランディング', 'UI/UX 리브랜딩'),
   '記帳與分帳': ('Expense tracking and bill splitting', '支出の記録と割り勘', '가계부와 정산'),
+  'Apple 天氣整合': ('Apple Weather integration', 'Apple 天気との連携', 'Apple 날씨 연동'),
+  '筆記與附件翻譯': ('Translate notes and files', 'メモと添付の翻訳', '메모와 첨부 번역'),
   'Android 客戶端（純享版）': ('Android app (viewer edition)', 'Android 版（閲覧版）', 'Android 앱(뷰어판)'),
   '查看旅伴分享給你的行程': ('See the trips companions share with you', '旅の仲間が共有した旅行を見る', '동행이 공유한 여행 보기'),
   # ── 關於（使用者 2026-10-12：背景故事、開發團隊；藍圖 2026-10-13 搬出去自成一區） ──
