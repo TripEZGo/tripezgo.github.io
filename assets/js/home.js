@@ -582,3 +582,55 @@ phones.forEach((f) => { (SCREEN_OF[f.dataset.screen][0] === 'map-live' ? mio : p
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.open) { nav.open = false; nav.querySelector('summary').focus(); } });
   }
 }
+
+/* 藍圖：橫向時間軸（使用者 2026-10-13）。載入時只捲外框、把「進行中」那張置中，不帶動整頁（不用 scrollIntoView）；
+   桌機有左右箭頭與滑鼠拖曳，手機直接滑 */
+{
+  const root = document.getElementById('roadmap');
+  const sc = root?.querySelector('.rm-scroller');
+  if (sc) {
+    const frame = root.querySelector('.rm-frame');
+    const prev = root.querySelector('.rm-btn[data-dir="-1"]'), next = root.querySelector('.rm-btn[data-dir="1"]');
+    const smooth = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    const centerOf = (el) => { const s = sc.getBoundingClientRect(), r = el.getBoundingClientRect(); return sc.scrollLeft + (r.left - s.left) - (s.width - r.width) / 2; };
+    const sync = () => {
+      const max = sc.scrollWidth - sc.clientWidth, atStart = sc.scrollLeft <= 2, atEnd = sc.scrollLeft >= max - 2;
+      frame.toggleAttribute('data-at-start', atStart); frame.toggleAttribute('data-at-end', atEnd);
+      prev.disabled = atStart; next.disabled = atEnd;
+    };
+    // 字型、版面晚到會讓卡片位置變；使用者還沒動過外框之前，每次都重新置中
+    let touched = false;
+    const now = root.querySelector('.rm-item.is-now');
+    const center = () => { if (now && !touched) { sc.style.scrollSnapType = 'none'; sc.scrollLeft = centerOf(now); sc.style.scrollSnapType = ''; } sync(); };
+    center();
+    document.fonts?.ready.then(center);
+    addEventListener('load', center);
+    ['pointerdown', 'wheel', 'touchstart', 'keydown'].forEach((t) => sc.addEventListener(t, () => { touched = true; }, { passive: true }));
+    sc.addEventListener('scroll', sync, { passive: true });
+    new ResizeObserver(() => { center(); }).observe(sc);
+    // 箭頭：一次走一個里程碑（相鄰兩張只錯開半張，不能用卡寬當步長）
+    const items = [...sc.querySelectorAll('.rm-item')];
+    const nearest = () => items.reduce((a, b) => (Math.abs(centerOf(a) - sc.scrollLeft) <= Math.abs(centerOf(b) - sc.scrollLeft) ? a : b));
+    [prev, next].forEach((b) => b.addEventListener('click', () => {
+      touched = true;
+      const i = Math.max(0, Math.min(items.length - 1, items.indexOf(nearest()) + Number(b.dataset.dir)));
+      sc.scrollTo({ left: centerOf(items[i]), behavior: smooth });
+    }));
+    let x0 = 0, left0 = 0, dragging = false;
+    sc.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse' || e.button !== 0) return; dragging = true; x0 = e.clientX; left0 = sc.scrollLeft; });
+    addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - x0;
+      if (Math.abs(dx) > 3) sc.classList.add('is-dragging');
+      if (sc.classList.contains('is-dragging')) sc.scrollLeft = left0 - dx;
+    });
+    addEventListener('pointerup', () => {
+      if (!dragging) return;
+      dragging = false;
+      if (!sc.classList.contains('is-dragging')) return;
+      const target = nearest();
+      sc.classList.remove('is-dragging');
+      sc.scrollTo({ left: centerOf(target), behavior: smooth });
+    });
+  }
+}

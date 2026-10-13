@@ -34,8 +34,8 @@
 <meta name="twitter:title" content="TripEZGo — Travel Planner & Itinerary App for iPhone and iPad">
 <meta name="twitter:description" content="Travel planner and itinerary app for iPhone and iPad: plan days on a calendar, map each route and co-edit with travel companions. No sign-up, works offline. Free.">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-en.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=3fb11654ec">
-<script type="module" src="/assets/js/home.js?v=0feda6593b"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=00d82861b5">
+<script type="module" src="/assets/js/home.js?v=5c106c3b06"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -103,9 +103,9 @@
   html.embed:has(.site-nav > a[href^="#"]) { scroll-padding-top: 64px; }
   html.embed .site-header .brand, html.embed .site-header .lang-menu { display: none; }
   html.embed .site-header .wrap { min-height: 52px; justify-content: center; }
-  html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 6px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
+  html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
   html.embed .site-nav::-webkit-scrollbar { display: none; }
-  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 6px 11px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
   html.embed .site-nav > a.hide-sm:hover, html.embed .site-nav > a.hide-sm:active { border-color: var(--accent); color: var(--accent-ink); }
 </style>
 <!-- embed:end -->
@@ -155,6 +155,7 @@
     <nav class="site-nav" aria-label="Main">
       <a class="hide-sm" href="#privacy">Privacy</a>
       <a class="hide-sm" href="#features">Features</a>
+      <a class="hide-sm" href="#roadmap">Roadmap</a>
       <a class="hide-sm" href="#plans">Pricing</a>
       <a class="hide-sm" href="#about">About</a>
       <details class="nav-menu">
@@ -162,6 +163,7 @@
         <div class="nav-list">
           <a href="#privacy">Privacy</a>
           <a href="#features">Features</a>
+          <a href="#roadmap">Roadmap</a>
           <a href="#plans">Pricing</a>
           <a href="#about">About</a>
         </div>
@@ -458,6 +460,257 @@
     </div>
   </section>
 
+    <section class="section" id="roadmap">
+    <div class="wrap">
+      <div class="rm-head">
+        <div class="section-head">
+          <p class="eyebrow">Roadmap</p>
+          <h2 id="rm-title">From one design <span class="nb">to the next stop</span></h2>
+          <p class="lede">What’s done, what’s in progress and what’s next — all on one route.</p>
+        </div>
+        <div class="rm-nav">
+          <button class="rm-btn" type="button" data-dir="-1" aria-label="Previous milestone" aria-controls="rm-scroller"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6l-6 6 6 6"/></svg></button>
+          <button class="rm-btn" type="button" data-dir="1" aria-label="Next milestone" aria-controls="rm-scroller"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="rm-frame">
+        <div class="rm-scroller" id="rm-scroller" tabindex="0" role="region" aria-labelledby="rm-title">
+        <ol class="rm-track">
+          <li class="rm-item is-done" style="--i:1">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-06-01">2026.06.01</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">Idea and design</h3>
+                <p class="rm-desc">Turning what solo trips kept needing into designs for a trip planner</p>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:2">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-02">2026.08.02–08.04</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">Groundwork</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-02">08.02</time><span>Planning the architecture with AI</span></li>
+                  <li><time datetime="2026-08-04">08.04</time><span>Development begins</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:3">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-05">2026.08.05–08.07</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">The calendar core</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-05">08.05</time><span>Timeline calendar</span></li>
+                  <li><time datetime="2026-08-06">08.06</time><span>Drag to reschedule, long-press to add</span></li>
+                  <li><time datetime="2026-08-06">08.06</time><span>Travel legs between events</span></li>
+                  <li><time datetime="2026-08-06">08.06</time><span>Event files</span></li>
+                  <li><time datetime="2026-08-07">08.07</time><span>Overview, Map, Notes</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:4">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-08">2026.08.08–08.11</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">Cloud and system integration</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-08">08.08</time><span>iCloud sync and backup</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>Live Activity, widgets</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>Apple Calendar integration</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>Share in from other apps</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>Trip templates, pre-trip reminders</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:5">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-12">2026.08.12–08.16</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">The full experience takes shape</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-12">08.12</time><span>Japanese travel phrases</span></li>
+                  <li><time datetime="2026-08-13">08.13</time><span>Map markers, hand-off to map apps</span></li>
+                  <li><time datetime="2026-08-14">08.14</time><span>Siri and Spotlight</span></li>
+                  <li><time datetime="2026-08-14">08.14</time><span>Dark mode</span></li>
+                  <li><time datetime="2026-08-16">08.16</time><span>Website goes live</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:6">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-17">2026.08.17–08.20</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">Smarter scheduling</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-17">08.17</time><span>Unscheduled events</span></li>
+                  <li><time datetime="2026-08-17">08.17</time><span>Daily start and end points</span></li>
+                  <li><time datetime="2026-08-18">08.18</time><span>Shift earlier / later</span></li>
+                  <li><time datetime="2026-08-19">08.19</time><span>Multiple route options</span></li>
+                  <li><time datetime="2026-08-20">08.20</time><span>Transit departures</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:7">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-21">2026.08.21–08.26</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">Going global, going on the road</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-21">08.21</time><span>Six languages</span></li>
+                  <li><time datetime="2026-08-22">08.22</time><span>“On the move” Live Activity</span></li>
+                  <li><time datetime="2026-08-25">08.25</time><span>Events past midnight</span></li>
+                  <li><time datetime="2026-08-25">08.25</time><span>Walking directions</span></li>
+                  <li><time datetime="2026-08-26">08.26</time><span>Japan shopping map data</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:8">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-27">2026.08.27</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">1.0.0 beta</h3>
+                <p class="rm-desc">First TestFlight build</p>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:9">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-29">2026.08.29–09.05</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">Together with companions</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-29">08.29</time><span>Co-editing with companions</span></li>
+                  <li><time datetime="2026-09-03">09.03</time><span>Shopping list, currency converter</span></li>
+                  <li><time datetime="2026-09-04">09.04</time><span>Google Calendar integration</span></li>
+                  <li><time datetime="2026-09-04">09.04</time><span>Invite links</span></li>
+                  <li><time datetime="2026-09-05">09.05</time><span>Private notes</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:10">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-09-08">2026.09.08–09.16</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">Together on the road</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-09-08">09.08</time><span>Location sharing with companions</span></li>
+                  <li><time datetime="2026-09-08">09.08</time><span>Arrival alerts, Lock Screen navigation</span></li>
+                  <li><time datetime="2026-09-10">09.10</time><span>Real-time sync</span></li>
+                  <li><time datetime="2026-09-12">09.12</time><span>Read-only trips</span></li>
+                  <li><time datetime="2026-09-16">09.16</time><span>iOS 16.2 support</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:11">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-09-18">2026.09.18–09.29</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">Sprint to launch</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-09-18">09.18</time><span>Pick a trip for each widget</span></li>
+                  <li><time datetime="2026-09-19">09.19</time><span>Export / import a single trip</span></li>
+                  <li><time datetime="2026-09-25">09.25</time><span>Public trip links</span></li>
+                  <li><time datetime="2026-09-29">09.29</time><span>Submitted for review</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:12">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-10-09">2026.10.09</time><span class="rm-badge">Done</span></div>
+                <h3 class="rm-title">1.0.0 on the App Store</h3>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-soon" style="--i:13">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-10">2026.10</time><span class="rm-badge">Coming soon</span></div>
+                <h3 class="rm-title">1.3.0</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-10-01">10.01</time><span>Trip time zones, pick the place first</span></li>
+                  <li><time datetime="2026-10-06">10.06</time><span>Offline place-name database</span></li>
+                  <li><time datetime="2026-10-07">10.07</time><span>Calendar zoom, QR scanner</span></li>
+                  <li><time datetime="2026-10-08">10.08</time><span>@-mentions in notes</span></li>
+                  <li><time datetime="2026-10-09">10.09</time><span>Connect an AI on your computer</span></li>
+                  <li><time datetime="2026-10-10">10.10</time><span>Simultaneous edits no longer overwrite each other</span></li>
+                  <li><time datetime="2026-10-12">10.12</time><span>Redesigned sharing, smart event-type preselect</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-now" style="--i:14" aria-current="step">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-10">2026.10</time><span class="rm-badge">In progress</span></div>
+                <h3 class="rm-title">1.4.0</h3>
+                <ul class="rm-log is-plain">
+                  <li><span><b>Collect travel inspiration from any app</b><small>Save it now; turn it into an event, note, shopping item or map marker later</small></span></li>
+                  <li><span><b>Let your iPhone read your bookings</b><small>Flights, train tickets, hotel confirmations — on-device AI turns them into events</small></span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-planned" style="--i:15">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><span class="rm-when">No date yet</span><span class="rm-badge">Planned</span></div>
+                <h3 class="rm-title">Up next</h3>
+                <ul class="rm-log is-plain">
+                  <li><span><b>UI/UX rebranding</b></span></li>
+                  <li><span><b>Expense tracking and bill splitting</b></span></li>
+                  <li><span><b>Android app (viewer edition)</b><small>See the trips companions share with you</small></span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+        </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-alt" id="plans">
     <div class="wrap">
       <div class="section-head plans-head">
@@ -504,7 +757,7 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">About</p>
-        <h2>Who makes it, <span class="nb">and what's next</span></h2>
+        <h2>Who makes it, <span class="nb">and why</span></h2>
       </div>
       <div class="about-grid">
         <article class="about-card" id="team">
@@ -518,18 +771,6 @@
               <a class="member-link" href="https://zhgchg.li/" target="_blank" rel="noopener">zhgchg.li</a>
             </div>
           </div>
-        </article>
-        <article class="about-card" id="roadmap">
-          <h3>Roadmap</h3>
-          <ol class="roadmap">
-            <li><span class="rm-when">2023.09</span><span class="rm-what"><b>First solo trip</b><span><a href="https://en.zhgchg.li/posts/travel-journals/nagoya-one-day-quick-trip-peach-aviation-flight-experience-and-travel-tips-7b8a0563c157/" target="_blank" rel="noopener">A one-day dash to Nagoya</a> — and from then on, planning alone and setting off alone</span></span></li>
-            <li><span class="rm-when">2026.06.01</span><span class="rm-what"><b>Idea and design</b><span>Turning what solo trips kept needing into designs for a trip planner</span></span></li>
-            <li><span class="rm-when">2026.08.04</span><span class="rm-what"><b>Development begins</b></span></li>
-            <li><span class="rm-when">2026.08.27</span><span class="rm-what"><b>1.0.0 finished</b><span>Events on a calendar, travel on a timeline, Overview, Map, co-editing and location sharing with travel companions, Live Activities and widgets</span></span></li>
-            <li><span class="rm-when">2026.10</span><span class="rm-what"><b>1.0.0 on the App Store</b></span></li>
-            <li><span class="rm-when">2026.10</span><span class="rm-what"><b>1.3.0</b><span>Share in from other apps, smart event-type preselect, drag unscheduled events onto a time, Library and Tools (QR scanner, currency converter), let AI plan your trip, simultaneous edits that no longer overwrite each other</span></span></li>
-            <li class="is-next"><span class="rm-when">2026 Q4</span><span class="rm-what"><b>Planned</b><span>A UI/UX overhaul, expense tracking and bill splitting, a better Android app</span></span></li>
-          </ol>
         </article>
       </div>
       <details class="story" id="story">

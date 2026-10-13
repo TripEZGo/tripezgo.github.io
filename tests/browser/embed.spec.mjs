@@ -62,14 +62,14 @@ test('embed home: section jump bar sits on top, each chip lands its section just
     for (const lang of LANGS) {
       await page.goto(`${lang}?mode=embed`);
       const chips = page.locator('.site-header .site-nav > a[href^="#"]');
-      await expect(chips).toHaveCount(4);
-      for (let i = 0; i < 4; i++) await expect(chips.nth(i)).toBeVisible();
+      await expect(chips).toHaveCount(5);
+      for (let i = 0; i < 5; i++) await expect(chips.nth(i)).toBeVisible();
       const bar = await page.locator('.site-header').evaluate((el) => el.getBoundingClientRect());
       expect(bar.top).toBeLessThanOrEqual(1);
       expect(bar.height).toBeLessThan(70);
       const first = await page.locator('main > section:visible').first().evaluate((el) => el.getBoundingClientRect().top);
       expect(first).toBeLessThanOrEqual(bar.bottom + 1);
-      for (const id of ['plans', 'about', 'privacy']) {
+      for (const id of ['roadmap', 'plans', 'about', 'privacy']) {
         await page.locator(`.site-header .site-nav > a[href="#${id}"]`).click();
         await page.waitForTimeout(100);
         expect(await page.locator('.site-header').evaluate((el) => el.getBoundingClientRect().top), id).toBeLessThanOrEqual(1);

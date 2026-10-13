@@ -34,8 +34,8 @@
 <meta name="twitter:title" content="TripEZGo — 여행 플래너 앱｜캘린더로 일정, 동행과 공동 편집">
 <meta name="twitter:description" content="iPhone·iPad 여행 플래너 앱. 캘린더로 일정을 짜고 이동은 타임라인으로, 동행과 함께 편집하세요. 회원가입 없이 오프라인에서도, 무료로 다운로드.">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-ko.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=3fb11654ec">
-<script type="module" src="/assets/js/home.js?v=0feda6593b"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=00d82861b5">
+<script type="module" src="/assets/js/home.js?v=5c106c3b06"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -103,9 +103,9 @@
   html.embed:has(.site-nav > a[href^="#"]) { scroll-padding-top: 64px; }
   html.embed .site-header .brand, html.embed .site-header .lang-menu { display: none; }
   html.embed .site-header .wrap { min-height: 52px; justify-content: center; }
-  html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 6px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
+  html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
   html.embed .site-nav::-webkit-scrollbar { display: none; }
-  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 6px 11px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
   html.embed .site-nav > a.hide-sm:hover, html.embed .site-nav > a.hide-sm:active { border-color: var(--accent); color: var(--accent-ink); }
 </style>
 <!-- embed:end -->
@@ -155,6 +155,7 @@
     <nav class="site-nav" aria-label="메인">
       <a class="hide-sm" href="#privacy">개인정보</a>
       <a class="hide-sm" href="#features">기능</a>
+      <a class="hide-sm" href="#roadmap">로드맵</a>
       <a class="hide-sm" href="#plans">요금제</a>
       <a class="hide-sm" href="#about">소개</a>
       <details class="nav-menu">
@@ -162,6 +163,7 @@
         <div class="nav-list">
           <a href="#privacy">개인정보</a>
           <a href="#features">기능</a>
+          <a href="#roadmap">로드맵</a>
           <a href="#plans">요금제</a>
           <a href="#about">소개</a>
         </div>
@@ -458,6 +460,257 @@
     </div>
   </section>
 
+    <section class="section" id="roadmap">
+    <div class="wrap">
+      <div class="rm-head">
+        <div class="section-head">
+          <p class="eyebrow">로드맵</p>
+          <h2 id="rm-title">한 장의 디자인에서 <span class="nb">다음 정거장까지</span></h2>
+          <p class="lede">끝낸 것, 하고 있는 것, 앞으로 할 것이 모두 이 노선 위에 있어요.</p>
+        </div>
+        <div class="rm-nav">
+          <button class="rm-btn" type="button" data-dir="-1" aria-label="이전 마일스톤" aria-controls="rm-scroller"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6l-6 6 6 6"/></svg></button>
+          <button class="rm-btn" type="button" data-dir="1" aria-label="다음 마일스톤" aria-controls="rm-scroller"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="rm-frame">
+        <div class="rm-scroller" id="rm-scroller" tabindex="0" role="region" aria-labelledby="rm-title">
+        <ol class="rm-track">
+          <li class="rm-item is-done" style="--i:1">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-06-01">2026.06.01</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">아이디어와 디자인</h3>
+                <p class="rm-desc">혼자 여행하며 필요했던 것을 여행 계획 앱 디자인으로 정리</p>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:2">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-02">2026.08.02–08.04</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">구상과 기반</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-02">08.02</time><span>AI와 함께 구조 설계</span></li>
+                  <li><time datetime="2026-08-04">08.04</time><span>개발 시작</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:3">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-05">2026.08.05–08.07</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">캘린더의 핵심</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-05">08.05</time><span>타임라인 캘린더</span></li>
+                  <li><time datetime="2026-08-06">08.06</time><span>끌어서 시간 변경, 길게 눌러 추가</span></li>
+                  <li><time datetime="2026-08-06">08.06</time><span>이동(교통)</span></li>
+                  <li><time datetime="2026-08-06">08.06</time><span>일정 첨부</span></li>
+                  <li><time datetime="2026-08-07">08.07</time><span>한눈에 보기, 지도, 메모</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:4">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-08">2026.08.08–08.11</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">클라우드와 시스템 연동</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-08">08.08</time><span>iCloud 동기화와 백업</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>라이브 액티비티, 위젯</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>Apple 캘린더 연동</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>다른 앱에서 공유해 가져오기</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>여행 템플릿, 출발 전 알림</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:5">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-12">2026.08.12–08.16</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">전체 경험이 갖춰지다</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-12">08.12</time><span>일본어 여행 회화</span></li>
+                  <li><time datetime="2026-08-13">08.13</time><span>지도 마커, 외부 내비게이션</span></li>
+                  <li><time datetime="2026-08-14">08.14</time><span>Siri와 Spotlight</span></li>
+                  <li><time datetime="2026-08-14">08.14</time><span>다크 모드</span></li>
+                  <li><time datetime="2026-08-16">08.16</time><span>공식 웹사이트 오픈</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:6">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-17">2026.08.17–08.20</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">더 유연한 일정 관리</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-17">08.17</time><span>미정 일정</span></li>
+                  <li><time datetime="2026-08-17">08.17</time><span>매일의 출발점과 도착점</span></li>
+                  <li><time datetime="2026-08-18">08.18</time><span>앞당기기/미루기</span></li>
+                  <li><time datetime="2026-08-19">08.19</time><span>여러 이동 방안</span></li>
+                  <li><time datetime="2026-08-20">08.20</time><span>대중교통 시간표</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:7">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-21">2026.08.21–08.26</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">세계로, 여행길 위로</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-21">08.21</time><span>6개 언어</span></li>
+                  <li><time datetime="2026-08-22">08.22</time><span>라이브 액티비티 ‘이동 중’</span></li>
+                  <li><time datetime="2026-08-25">08.25</time><span>자정을 넘기는 일정</span></li>
+                  <li><time datetime="2026-08-25">08.25</time><span>도보 내비게이션</span></li>
+                  <li><time datetime="2026-08-26">08.26</time><span>일본 쇼핑 지도 데이터</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:8">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-27">2026.08.27</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">1.0.0 내부 테스트</h3>
+                <p class="rm-desc">첫 TestFlight 빌드</p>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:9">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-29">2026.08.29–09.05</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">동행과 함께</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-29">08.29</time><span>동행과 공동 편집</span></li>
+                  <li><time datetime="2026-09-03">09.03</time><span>쇼핑 목록, 환율 변환</span></li>
+                  <li><time datetime="2026-09-04">09.04</time><span>Google 캘린더 연동</span></li>
+                  <li><time datetime="2026-09-04">09.04</time><span>초대 링크</span></li>
+                  <li><time datetime="2026-09-05">09.05</time><span>비공개 메모</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:10">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-09-08">2026.09.08–09.16</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">여행 중에도 함께</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-09-08">09.08</time><span>동행과 위치 공유</span></li>
+                  <li><time datetime="2026-09-08">09.08</time><span>도착 알림, 잠금 화면 내비게이션</span></li>
+                  <li><time datetime="2026-09-10">09.10</time><span>실시간 동기화</span></li>
+                  <li><time datetime="2026-09-12">09.12</time><span>읽기 전용 여행</span></li>
+                  <li><time datetime="2026-09-16">09.16</time><span>iOS 16.2 지원</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:11">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-09-18">2026.09.18–09.29</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">출시 막바지</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-09-18">09.18</time><span>위젯에서 여행 선택</span></li>
+                  <li><time datetime="2026-09-19">09.19</time><span>여행별 내보내기/가져오기</span></li>
+                  <li><time datetime="2026-09-25">09.25</time><span>여행 공개 링크</span></li>
+                  <li><time datetime="2026-09-29">09.29</time><span>심사 제출</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:12">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-10-09">2026.10.09</time><span class="rm-badge">완료</span></div>
+                <h3 class="rm-title">1.0.0 App Store 출시</h3>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-soon" style="--i:13">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-10">2026.10</time><span class="rm-badge">곧 출시</span></div>
+                <h3 class="rm-title">1.3.0</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-10-01">10.01</time><span>여행 시간대, 장소부터 고르는 일정 입력</span></li>
+                  <li><time datetime="2026-10-06">10.06</time><span>오프라인 지명 데이터베이스</span></li>
+                  <li><time datetime="2026-10-07">10.07</time><span>캘린더 확대/축소, QR 코드 스캔</span></li>
+                  <li><time datetime="2026-10-08">10.08</time><span>메모에서 @ 멘션</span></li>
+                  <li><time datetime="2026-10-09">10.09</time><span>컴퓨터의 AI와 연결</span></li>
+                  <li><time datetime="2026-10-10">10.10</time><span>동시에 편집해도 서로 덮어쓰지 않음</span></li>
+                  <li><time datetime="2026-10-12">10.12</time><span>공유 개편, 일정 유형 자동 선택</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-now" style="--i:14" aria-current="step">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-10">2026.10</time><span class="rm-badge">진행 중</span></div>
+                <h3 class="rm-title">1.4.0</h3>
+                <ul class="rm-log is-plain">
+                  <li><span><b>어떤 앱에서든 여행 영감 모으기</b><small>먼저 저장하고, 나중에 일정·메모·쇼핑·지도 마커로</small></span></li>
+                  <li><span><b>iPhone이 예약 내용을 읽어 줘요</b><small>항공권·승차권·숙소 확인 메일을 기기 속 AI가 일정으로 정리</small></span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-planned" style="--i:15">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><span class="rm-when">일정 미정</span><span class="rm-badge">계획 중</span></div>
+                <h3 class="rm-title">다음 계획</h3>
+                <ul class="rm-log is-plain">
+                  <li><span><b>UI/UX 리브랜딩</b></span></li>
+                  <li><span><b>가계부와 정산</b></span></li>
+                  <li><span><b>Android 앱(뷰어판)</b><small>동행이 공유한 여행 보기</small></span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+        </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-alt" id="plans">
     <div class="wrap">
       <div class="section-head plans-head">
@@ -504,7 +757,7 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">소개</p>
-        <h2>누가 만들고, <span class="nb">앞으로 무엇을 할지</span></h2>
+        <h2>누가 만들고, <span class="nb">왜 만들었는지</span></h2>
       </div>
       <div class="about-grid">
         <article class="about-card" id="team">
@@ -518,18 +771,6 @@
               <a class="member-link" href="https://zhgchg.li/" target="_blank" rel="noopener">zhgchg.li</a>
             </div>
           </div>
-        </article>
-        <article class="about-card" id="roadmap">
-          <h3>로드맵</h3>
-          <ol class="roadmap">
-            <li><span class="rm-when">2023.09</span><span class="rm-what"><b>첫 혼자 여행</b><span><a href="https://en.zhgchg.li/posts/travel-journals/nagoya-one-day-quick-trip-peach-aviation-flight-experience-and-travel-tips-7b8a0563c157/" target="_blank" rel="noopener">나고야 당일치기</a>. 그 뒤로 혼자 계획하고 혼자 떠나는 여행이 시작됐어요</span></span></li>
-            <li><span class="rm-when">2026.06.01</span><span class="rm-what"><b>아이디어와 디자인</b><span>혼자 여행하며 필요했던 것을 여행 계획 앱 디자인으로 정리</span></span></li>
-            <li><span class="rm-when">2026.08.04</span><span class="rm-what"><b>개발 시작</b></span></li>
-            <li><span class="rm-when">2026.08.27</span><span class="rm-what"><b>1.0.0 완성</b><span>캘린더로 일정, 타임라인으로 이동, 한눈에 보기, 지도, 동행과 공동 편집·위치 공유, 라이브 액티비티와 위젯</span></span></li>
-            <li><span class="rm-when">2026.10</span><span class="rm-what"><b>1.0.0 App Store 출시</b></span></li>
-            <li><span class="rm-when">2026.10</span><span class="rm-what"><b>1.3.0</b><span>다른 앱에서 공유해 가져오기, 일정 유형 자동 선택, 미정 일정을 시간대로 끌어다 놓기, 자료와 도구(QR 코드 스캔·환율 변환), AI에게 일정 맡기기, 동시에 편집해도 서로 덮어쓰지 않음</span></span></li>
-            <li class="is-next"><span class="rm-when">2026 Q4</span><span class="rm-what"><b>계획 중</b><span>UI/UX 전면 개선, 가계부와 정산 기능, Android 앱 개선</span></span></li>
-          </ol>
         </article>
       </div>
       <details class="story" id="story">

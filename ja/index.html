@@ -34,8 +34,8 @@
 <meta name="twitter:title" content="TripEZGo — 旅行計画・旅程表アプリ｜カレンダーで予定、旅の仲間と共同編集">
 <meta name="twitter:description" content="iPhone・iPad の旅行計画アプリ。カレンダーで旅程表を作り、移動はタイムラインで、旅の仲間と共同編集。登録不要・オフライン対応、無料でダウンロード。">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-ja.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=3fb11654ec">
-<script type="module" src="/assets/js/home.js?v=0feda6593b"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=00d82861b5">
+<script type="module" src="/assets/js/home.js?v=5c106c3b06"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -103,9 +103,9 @@
   html.embed:has(.site-nav > a[href^="#"]) { scroll-padding-top: 64px; }
   html.embed .site-header .brand, html.embed .site-header .lang-menu { display: none; }
   html.embed .site-header .wrap { min-height: 52px; justify-content: center; }
-  html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 6px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
+  html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
   html.embed .site-nav::-webkit-scrollbar { display: none; }
-  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 6px 11px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
   html.embed .site-nav > a.hide-sm:hover, html.embed .site-nav > a.hide-sm:active { border-color: var(--accent); color: var(--accent-ink); }
 </style>
 <!-- embed:end -->
@@ -155,6 +155,7 @@
     <nav class="site-nav" aria-label="メイン">
       <a class="hide-sm" href="#privacy">プライバシー</a>
       <a class="hide-sm" href="#features">機能</a>
+      <a class="hide-sm" href="#roadmap">ロードマップ</a>
       <a class="hide-sm" href="#plans">料金</a>
       <a class="hide-sm" href="#about">このアプリについて</a>
       <details class="nav-menu">
@@ -162,6 +163,7 @@
         <div class="nav-list">
           <a href="#privacy">プライバシー</a>
           <a href="#features">機能</a>
+          <a href="#roadmap">ロードマップ</a>
           <a href="#plans">料金</a>
           <a href="#about">このアプリについて</a>
         </div>
@@ -458,6 +460,257 @@
     </div>
   </section>
 
+    <section class="section" id="roadmap">
+    <div class="wrap">
+      <div class="rm-head">
+        <div class="section-head">
+          <p class="eyebrow">ロードマップ</p>
+          <h2 id="rm-title">一枚のデザインから、<span class="nb">次の駅へ</span></h2>
+          <p class="lede">終わったこと、進めていること、これからのこと。ぜんぶこの路線の上に。</p>
+        </div>
+        <div class="rm-nav">
+          <button class="rm-btn" type="button" data-dir="-1" aria-label="前のマイルストーン" aria-controls="rm-scroller"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6l-6 6 6 6"/></svg></button>
+          <button class="rm-btn" type="button" data-dir="1" aria-label="次のマイルストーン" aria-controls="rm-scroller"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="rm-frame">
+        <div class="rm-scroller" id="rm-scroller" tabindex="0" role="region" aria-labelledby="rm-title">
+        <ol class="rm-track">
+          <li class="rm-item is-done" style="--i:1">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-06-01">2026.06.01</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">構想とデザイン</h3>
+                <p class="rm-desc">一人旅で欲しかったものを、旅程アプリのデザインにまとめる</p>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:2">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-02">2026.08.02–08.04</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">構想と土台</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-02">08.02</time><span>AI と一緒に設計を計画</span></li>
+                  <li><time datetime="2026-08-04">08.04</time><span>開発スタート</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:3">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-05">2026.08.05–08.07</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">カレンダーの核</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-05">08.05</time><span>タイムラインカレンダー</span></li>
+                  <li><time datetime="2026-08-06">08.06</time><span>ドラッグで時間変更、長押しで追加</span></li>
+                  <li><time datetime="2026-08-06">08.06</time><span>移動（交通）</span></li>
+                  <li><time datetime="2026-08-06">08.06</time><span>予定の添付</span></li>
+                  <li><time datetime="2026-08-07">08.07</time><span>概要・地図・メモ</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:4">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-08">2026.08.08–08.11</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">クラウドとシステム連携</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-08">08.08</time><span>iCloud 同期とバックアップ</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>ライブアクティビティ・ウィジェット</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>Apple カレンダー連携</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>ほかのアプリから共有</span></li>
+                  <li><time datetime="2026-08-09">08.09</time><span>旅行テンプレート・出発前リマインダー</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:5">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-12">2026.08.12–08.16</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">体験がひととおり揃う</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-12">08.12</time><span>日本語の旅行フレーズ</span></li>
+                  <li><time datetime="2026-08-13">08.13</time><span>地図マーカー・外部ナビ</span></li>
+                  <li><time datetime="2026-08-14">08.14</time><span>Siri と Spotlight</span></li>
+                  <li><time datetime="2026-08-14">08.14</time><span>ダークモード</span></li>
+                  <li><time datetime="2026-08-16">08.16</time><span>公式サイト公開</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:6">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-17">2026.08.17–08.20</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">スケジュールをもっと柔軟に</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-17">08.17</time><span>未定の予定</span></li>
+                  <li><time datetime="2026-08-17">08.17</time><span>毎日の起点と終点</span></li>
+                  <li><time datetime="2026-08-18">08.18</time><span>前倒し／後ろ倒し</span></li>
+                  <li><time datetime="2026-08-19">08.19</time><span>複数の移動プラン</span></li>
+                  <li><time datetime="2026-08-20">08.20</time><span>公共交通の便</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:7">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-21">2026.08.21–08.26</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">世界へ、そして旅の途中へ</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-21">08.21</time><span>6 言語に対応</span></li>
+                  <li><time datetime="2026-08-22">08.22</time><span>ライブアクティビティ「移動中」</span></li>
+                  <li><time datetime="2026-08-25">08.25</time><span>日付をまたぐ予定</span></li>
+                  <li><time datetime="2026-08-25">08.25</time><span>徒歩ナビ</span></li>
+                  <li><time datetime="2026-08-26">08.26</time><span>日本の買い物スポットデータ</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:8">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-27">2026.08.27</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">1.0.0 社内テスト</h3>
+                <p class="rm-desc">最初の TestFlight ビルド</p>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:9">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-08-29">2026.08.29–09.05</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">旅の仲間と一緒に</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-08-29">08.29</time><span>旅の仲間と共同編集</span></li>
+                  <li><time datetime="2026-09-03">09.03</time><span>買い物リスト・為替換算</span></li>
+                  <li><time datetime="2026-09-04">09.04</time><span>Google カレンダー連携</span></li>
+                  <li><time datetime="2026-09-04">09.04</time><span>招待リンク</span></li>
+                  <li><time datetime="2026-09-05">09.05</time><span>プライベートメモ</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:10">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-09-08">2026.09.08–09.16</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">旅の途中も一緒に</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-09-08">09.08</time><span>旅の仲間と位置情報を共有</span></li>
+                  <li><time datetime="2026-09-08">09.08</time><span>到着通知・ロック画面ナビ</span></li>
+                  <li><time datetime="2026-09-10">09.10</time><span>リアルタイム同期</span></li>
+                  <li><time datetime="2026-09-12">09.12</time><span>閲覧専用の旅行</span></li>
+                  <li><time datetime="2026-09-16">09.16</time><span>iOS 16.2 に対応</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:11">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-09-18">2026.09.18–09.29</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">リリースへのラストスパート</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-09-18">09.18</time><span>ウィジェットで旅行を選択</span></li>
+                  <li><time datetime="2026-09-19">09.19</time><span>旅行ごとの書き出し・読み込み</span></li>
+                  <li><time datetime="2026-09-25">09.25</time><span>旅行の公開リンク</span></li>
+                  <li><time datetime="2026-09-29">09.29</time><span>審査に提出</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-done" style="--i:12">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-10-09">2026.10.09</time><span class="rm-badge">完了</span></div>
+                <h3 class="rm-title">1.0.0 App Store で公開</h3>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-soon" style="--i:13">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-10">2026.10</time><span class="rm-badge">まもなく公開</span></div>
+                <h3 class="rm-title">1.3.0</h3>
+                <ul class="rm-log">
+                  <li><time datetime="2026-10-01">10.01</time><span>旅行のタイムゾーン、場所から予定を作成</span></li>
+                  <li><time datetime="2026-10-06">10.06</time><span>オフライン地名データベース</span></li>
+                  <li><time datetime="2026-10-07">10.07</time><span>カレンダーのズーム・QR スキャン</span></li>
+                  <li><time datetime="2026-10-08">10.08</time><span>メモで @ メンション</span></li>
+                  <li><time datetime="2026-10-09">10.09</time><span>パソコンの AI と連携</span></li>
+                  <li><time datetime="2026-10-10">10.10</time><span>同時に編集しても上書きされない</span></li>
+                  <li><time datetime="2026-10-12">10.12</time><span>共有をリニューアル、予定タイプの自動選択</span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-now" style="--i:14" aria-current="step">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><time class="rm-when" datetime="2026-10">2026.10</time><span class="rm-badge">開発中</span></div>
+                <h3 class="rm-title">1.4.0</h3>
+                <ul class="rm-log is-plain">
+                  <li><span><b>どのアプリからでも旅のアイデアを集める</b><small>まず保存して、あとで予定・メモ・買い物・地図マーカーに</small></span></li>
+                  <li><span><b>iPhone が予約内容を読み取る</b><small>航空券・乗車券・宿の確認メールを、端末上の AI が予定に整理</small></span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+          <li class="rm-item is-planned" style="--i:15">
+            <div class="rm-node" aria-hidden="true"><span class="rm-dot"></span></div>
+            <div class="rm-arm">
+              <span class="rm-stem" aria-hidden="true"></span>
+              <article class="rm-card">
+                <div class="rm-meta"><span class="rm-when">時期未定</span><span class="rm-badge">予定</span></div>
+                <h3 class="rm-title">これから</h3>
+                <ul class="rm-log is-plain">
+                  <li><span><b>UI/UX のリブランディング</b></span></li>
+                  <li><span><b>支出の記録と割り勘</b></span></li>
+                  <li><span><b>Android 版（閲覧版）</b><small>旅の仲間が共有した旅行を見る</small></span></li>
+                </ul>
+              </article>
+            </div>
+          </li>
+        </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-alt" id="plans">
     <div class="wrap">
       <div class="section-head plans-head">
@@ -504,7 +757,7 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">このアプリについて</p>
-        <h2>つくっている人と、<span class="nb">これからのこと</span></h2>
+        <h2>つくっている人と、<span class="nb">なぜ作ったのか</span></h2>
       </div>
       <div class="about-grid">
         <article class="about-card" id="team">
@@ -518,18 +771,6 @@
               <a class="member-link" href="https://zhgchg.li/" target="_blank" rel="noopener">zhgchg.li</a>
             </div>
           </div>
-        </article>
-        <article class="about-card" id="roadmap">
-          <h3>ロードマップ</h3>
-          <ol class="roadmap">
-            <li><span class="rm-when">2023.09</span><span class="rm-what"><b>初めての一人旅</b><span><a href="https://jp.zhgchg.li/posts/z-%E5%BA%A6%E6%97%85%E8%A1%8C%E9%81%8A%E8%A8%98/%E5%90%8D%E5%8F%A4%E5%B1%8B%E4%B8%80%E6%97%A5%E5%BF%AB%E9%96%83%E8%87%AA%E7%94%B1%E8%A1%8C-%E6%A8%82%E6%A1%83%E8%88%AA%E7%A9%BA%E6%A9%9F%E7%A5%A8%E6%94%BB%E7%95%A5%E3%81%A8%E8%A6%B3%E5%85%89%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%E7%B4%B9%E4%BB%8B-7b8a0563c157/" target="_blank" rel="noopener">名古屋日帰り弾丸旅</a>。ここから、一人で計画して一人で出発する旅が始まる</span></span></li>
-            <li><span class="rm-when">2026.06.01</span><span class="rm-what"><b>構想とデザイン</b><span>一人旅で欲しかったものを、旅程アプリのデザインにまとめる</span></span></li>
-            <li><span class="rm-when">2026.08.04</span><span class="rm-what"><b>開発スタート</b></span></li>
-            <li><span class="rm-when">2026.08.27</span><span class="rm-what"><b>1.0.0 完成</b><span>カレンダーで予定、タイムラインで移動、概要、地図、旅の仲間との共同編集と位置情報の共有、ライブアクティビティとウィジェット</span></span></li>
-            <li><span class="rm-when">2026.10</span><span class="rm-what"><b>1.0.0 App Store で公開</b></span></li>
-            <li><span class="rm-when">2026.10</span><span class="rm-what"><b>1.3.0</b><span>ほかのアプリから共有して取り込み、予定タイプの自動選択、未定の予定を時間帯へドラッグ、資料とツール（QR スキャン・為替換算）、AI に旅程を組んでもらう、同時に編集しても上書きされない</span></span></li>
-            <li class="is-next"><span class="rm-when">2026 Q4</span><span class="rm-what"><b>予定</b><span>UI/UX の全面見直し、支出の記録と割り勘、Android 版の改善</span></span></li>
-          </ol>
         </article>
       </div>
       <details class="story" id="story">
