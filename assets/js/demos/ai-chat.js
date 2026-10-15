@@ -12,7 +12,7 @@
 //   - **同一個 Wi-Fi**：ailink.step.wifi、ailink.nowifi.body——電腦上的 AI 只能透過同一個 Wi-Fi 找到手機，
 //     行動網路與個人熱點都不行。
 //   - 交通方式的字：Domain.json domain.legmode.*；時長：_shared.js duration（domain.duration.*）。
-// 對話內容、京都的行程與 AI 的回覆是網站自己寫的四語範例（範本旅程裡沒有）。全程 ≤ 4 秒；減少動態時直接畫完。
+// 對話內容、京都的行程與 AI 的回覆是網站自己寫的四語範例（範本旅程裡沒有）。點了才播，全程 ≤ 4 秒；減少動態時直接畫完。
 import { esc, duration, reduced } from './_shared.js';
 
 const S = {
@@ -177,8 +177,7 @@ export default function (el, ctx) {
     log.insertAdjacentHTML('beforeend', `<div class="d-ai-chat__tools"><span class="d-ai-chat__chip" data-tool="${name}" data-n="1"><svg class="i"><use href="#i-check"/></svg><code>${name}</code><small></small></span></div>`);
   };
 
-  // typed：第一次捲進畫面時自動送出，訊息一個字一個字打出來（像有人在問）
-  const play = (i, typed = false) => {
+  const play = (i) => {
     timers.forEach(clearTimeout); timers = [];
     const P = PROMPTS[i];
     current = i; running = !reduced;
@@ -186,13 +185,10 @@ export default function (el, ctx) {
     log.innerHTML = `<p class="d-ai-chat__me"></p>`;
     drawDay(); drawPrompts();
     const at = (ms, fn) => (reduced ? fn() : timers.push(setTimeout(fn, ms)));
-    const me = log.firstElementChild, chars = Array.from(P.ask[L]);
-    const cps = L === 'en' ? 30 : 70, t0 = typed && !reduced ? chars.length * cps + 300 : 0;
-    if (t0) chars.forEach((_, k) => at(k * cps, () => { me.textContent = chars.slice(0, k + 1).join(''); }));
-    else me.textContent = P.ask[L];
+    log.firstElementChild.textContent = P.ask[L];
     const step = Math.min(320, 2500 / P.steps.length);
-    P.steps.forEach(([tool, , fx], k) => at(t0 + 450 + k * step, () => { chipFor(tool); apply(fx); }));
-    at(t0 + 450 + P.steps.length * step + 250, () => {
+    P.steps.forEach(([tool, , fx], k) => at(450 + k * step, () => { chipFor(tool); apply(fx); }));
+    at(450 + P.steps.length * step + 250, () => {
       log.insertAdjacentHTML('beforeend', `<p class="d-ai-chat__ai">${esc(P.reply[L])}</p>`);
       running = false; drawPrompts();
       promptsEl.querySelector('button')?.focus({ preventScroll: true });
@@ -203,15 +199,6 @@ export default function (el, ctx) {
     const b = e.target.closest('button[data-i]');
     if (b && !b.disabled) play(+b.dataset.i);
   });
-  // 一開始：那一天是空的，三句話等你挑
+  // 一開始：那一天是空的，三句話等你挑。不自動播：播的時候對話與行程會長高，把正在讀的內容往下推（使用者 2026-10-15）
   day = []; drawDay(); drawPrompts();
-  // 整個元件捲進畫面上方四分之三時，停 500ms 再自動送出第一句；只播一次，不重播（使用者 2026-10-12）。
-  // 一露出就播的話，人還沒捲到、還沒在看，四秒就播完了——看起來像沒播。
-  let armed = null;
-  const io = new IntersectionObserver(([e]) => {
-    clearTimeout(armed);
-    if (!e.isIntersecting || e.intersectionRatio < 0.99) return;
-    armed = setTimeout(() => { io.disconnect(); if (current === null) play(0, true); }, 500);
-  }, { threshold: [0, 0.99], rootMargin: '0px 0px -25% 0px' });
-  io.observe(root);
 }
