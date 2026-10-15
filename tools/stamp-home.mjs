@@ -2,11 +2,12 @@
  *
  * tripezgo.com 前面的 Cloudflare 把 CSS／JS 快取 4 小時、網址不帶版本，手機會一直用舊檔（2026-10-12）。
  * 1. screens/autoplay.js＋stories*.js 的內容雜湊 → home.js 的 AUTO_V（iframe 網址帶 av=，一路帶到 stories-*.js）
+ *    assets/js|css/demos/ 的內容雜湊 → home.js 的 DEMO_V（懶載入的示範模組與樣式帶 ?v=）
  * 2. home.css、home.js 的內容雜湊 → index.html 的 ?v=
  * 3. 重產 en／ja／ko 首頁（tools/home-i18n.py 照母版帶這兩行）
  * 4. screens/*.html 的 import map 與樣式表版本號（tools/stamp-screens.mjs） */
 import { createHash } from 'node:crypto';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 
 const root = new URL('../', import.meta.url);
@@ -21,6 +22,8 @@ const swap = (p, re, to) => {
 execFileSync('node', [new URL('tools/stamp-css.mjs', root).pathname], { stdio: 'ignore' });
 const av = hash('screens/autoplay.js', 'screens/stories.js', 'screens/stories-plan.js', 'screens/stories-map.js', 'screens/stories-tools.js');
 swap('assets/js/home.js', /const AUTO_V = '[^']*';/, `const AUTO_V = '${av}';`);
+const demos = ['assets/js/demos/', 'assets/css/demos/'].flatMap((d) => readdirSync(new URL(d, root)).sort().map((f) => d + f));
+swap('assets/js/home.js', /const DEMO_V = '[^']*';/, `const DEMO_V = '${hash(...demos)}';`);
 swap('index.html', /href="\/assets\/css\/home\.css[^"]*"/, `href="/assets/css/home.css?v=${hash('assets/css/home.css')}"`);
 swap('index.html', /src="\/assets\/js\/home\.js[^"]*"/, `src="/assets/js/home.js?v=${hash('assets/js/home.js')}"`);
 execFileSync('python3', [new URL('tools/home-i18n.py', root).pathname], { stdio: 'ignore' });

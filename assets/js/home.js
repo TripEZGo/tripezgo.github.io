@@ -313,12 +313,14 @@ document.querySelectorAll('[data-demo]').forEach(el => DEMOS[el.dataset.demo]?.(
    → 載入 assets/js/demos/<name>.js（default export (el, ctx)）與 assets/css/demos/<name>.css。
    沒有 JS 就是空的，截圖照樣在另一側。 */
 import { loadTrip, loadCats, LANG as L2, pick } from './demos/_shared.js';
+// 示範模組與樣式的版本號（tools/stamp-home.mjs 依 demos/ 內容雜湊蓋上）：Cloudflare 快取 4 小時，不帶版本手機會一直跑舊的
+const DEMO_V = '6a8979d247';
 const mount = async (el) => {
   const name = el.dataset.lazyDemo;
   el.innerHTML = '<div class="ms-loading"></div>';
-  const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = `/assets/css/demos/${name}.css`; document.head.append(css);
+  const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = `/assets/css/demos/${name}.css?v=${DEMO_V}`; document.head.append(css);
   try {
-    const [mod, trip, cats] = await Promise.all([import(`./demos/${name}.js`), loadTrip(), loadCats()]);
+    const [mod, trip, cats] = await Promise.all([import(`./demos/${name}.js?v=${DEMO_V}`), loadTrip(), loadCats()]);
     el.innerHTML = '';
     mod.default(el, { lang: L2, trip, cats, pick });
   } catch (e) { el.innerHTML = ''; el.hidden = true; console.warn('demo', name, e); }
