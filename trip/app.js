@@ -615,7 +615,17 @@ function footHtml() {
 let author = 'entry';
 let busy = false;
 
+/* 被別的網站的 iframe 包著（使用者裁定 2026-10-20：公開旅程可以被嵌入，但嵌入的那一份**唯讀**）：
+ * 不登入、不停止分享、不讀 sessionStorage 裡的作者 token——這些動作跟作者的 session 綁在一起，
+ * 放在別人的頁面裡就是 clickjacking 的靶子。取而代之的是一條連結，在 tripezgo.com 本站開同一趟行程。
+ * 跨網域讀 window.top 會丟例外，丟了也當作被包著。 */
+const FRAMED = (() => { try { return window.top !== window.self; } catch (e) { return true; } })();
+
 function authorHtml() {
+  if (FRAMED) {
+    return '<a class="linkbtn" data-testid="open-on-site" href="' + esc(location.origin + location.pathname + location.hash)
+      + '" target="_blank" rel="noopener">' + esc(s().openOnSite) + '</a>';
+  }
   const card = (testid, k, t, w, row) => '<div class="acard" data-testid="' + testid + '"><p class="k">' + esc(k) + '</p>'
     + '<p class="t">' + esc(t) + '</p><p class="w">' + esc(w) + '</p><div class="row">' + row + '</div></div>';
   if (author === 'signin' || author === 'checking') {
@@ -732,6 +742,7 @@ async function stopSharing() {
 }
 
 function onAuthorClick(action) {
+  if (FRAMED) return;
   if (action === 'go') { signIn(); return; }
   if (action === 'stop') { stopSharing(); return; }
   if (action === 'signout' || action === 'switch') {
@@ -859,7 +870,7 @@ async function load() {
   }
   author = 'entry';
   draw();
-  if (state === 'normal' && session.get(TOKEN(D.env))) checkAuthor();
+  if (!FRAMED && state === 'normal' && session.get(TOKEN(D.env))) checkAuthor();
 }
 
 /** Android 讀者端的登入也回到這一頁（兩把 API token 的 Sign in Callback 都指著 /trip/）。
@@ -885,8 +896,8 @@ function handOffToAndroid() {
 }
 
 lang = pickLanguage();
-if (!handOffToAndroid()) {
-  restoreAfterSignIn();
+if (FRAMED || !handOffToAndroid()) {
+  if (!FRAMED) restoreAfterSignIn();
   window.addEventListener('hashchange', load);
   load();
 }
