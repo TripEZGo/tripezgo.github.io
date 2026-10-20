@@ -170,8 +170,11 @@ test('join/：Android 帶了不合格的片段不會叫起 App，改走 /open/ �
 test('對照組：同一個 token 在最上層會被用（出現作者卡片），所以被嵌入時沒用它是真的沒用', async ({ page }) => {
   await useConfig(page);
   const ck = await fakeCloudKit(page, { stores: { production: { [dated.recordName]: recordOf(dated) } }, users: { 'tok-1': AUTHOR } });
-  await page.addInitScript(() => sessionStorage.setItem('tez.auth.token.production', 'tok-1'));
-  await page.goto(pathOf(dated));
+  /* 最上層、自己發起的登入：有新鮮的 nonce 才收 token（S13） */
+  await page.addInitScript(() => {
+    sessionStorage.setItem('tez.auth.nonce', JSON.stringify({ n: 'b'.repeat(32), at: Date.now() }));
+  });
+  await page.goto('/trip/?ckWebAuthToken=tok-1' + new URL(dated.url).hash);
   await expect(page.getByTestId('author-stop')).toBeVisible();
   expect(ck.calls.some((c) => c.path === 'users/current')).toBe(true);
 });

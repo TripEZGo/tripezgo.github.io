@@ -616,7 +616,7 @@ let author = 'entry';
 let busy = false;
 
 /* 被別的網站的 iframe 包著（使用者裁定 2026-10-20：公開旅程可以被嵌入，但嵌入的那一份**唯讀**）：
- * 不登入、不停止分享、不讀 sessionStorage 裡的作者 token——這些動作跟作者的 session 綁在一起，
+ * 不登入、不停止分享、不收登入回來的作者 token——這些動作跟作者的 session 綁在一起，
  * 放在別人的頁面裡就是 clickjacking 的靶子。取而代之的是一條連結，在 tripezgo.com 本站開同一趟行程。
  * 跨網域讀 window.top 會丟例外，丟了也當作被包著。 */
 const FRAMED = (() => { try { return window.top !== window.self; } catch (e) { return true; } })();
@@ -653,19 +653,30 @@ function confirmHtml() {
     + '<button class="btn2 btn-danger" type="button" data-author="stop" data-testid="stop-go"' + (busy ? ' disabled' : '') + '>' + esc(s().stop) + '</button></div></div>';
 }
 
-/* web-auth token 放 sessionStorage：這一個分頁、這一趟登入。**每用一次就換一把**——下一把在
- * response header `x-apple-cloudkit-web-auth-token`（spike 量到的；body 裡沒有），舊的立刻作廢。 */
+/* web-auth token **只放記憶體**（S13）：它碰得到作者整個 iCloud container，所以不進 sessionStorage、
+ * localStorage 或 cookie，重新整理就沒了＝登出。**每用一次就換一把**——下一把在
+ * response header `x-apple-cloudkit-web-auth-token`（spike 量到的；body 裡沒有），舊的立刻作廢。
+ * sessionStorage 只放登入的一次性 nonce 與跳轉前要記得的 # 片段／環境名，這些都不是金鑰。 */
 const session = {
   get(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
   set(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { /* 存不了就等於沒登入 */ } },
   remove(k) { try { sessionStorage.removeItem(k); } catch (e) { /* 同上 */ } },
 };
-const TOKEN = (env) => 'tez.auth.token.' + env.name;
+let webToken = null;
+const NONCE_KEY = 'tez.auth.nonce';
+const NONCE_TTL = 10 * 60 * 1000;
+
+/** 丟掉 token（登出）。順手清掉舊版可能留在 sessionStorage 的 `tez.auth.token.*`。 */
+function dropToken() {
+  webToken = null;
+  try {
+    for (const k of Object.keys(sessionStorage)) if (k.startsWith('tez.auth.token.')) sessionStorage.removeItem(k);
+  } catch (e) { /* 同上 */ }
+}
 
 async function authed(path, body) {
-  const env = D.env;
-  const r = await client.call(env, path, body, session.get(TOKEN(env)));
-  if (r.nextWebAuthToken) session.set(TOKEN(env), r.nextWebAuthToken);
+  const r = await client.call(D.env, path, body, webToken);
+  if (r.nextWebAuthToken) webToken = r.nextWebAuthToken;
   return r;
 }
 
@@ -684,10 +695,12 @@ async function checkAuthor() {
   const me = r.json && r.json.userRecordName;
   if (!me) {
     /* token 過期或被用掉了：當成沒登入，再登一次。 */
-    session.remove(TOKEN(D.env));
+    dropToken();
     author = 'signin';
   } else {
     author = me === D.record.created.userRecordName ? 'owner' : 'notowner';
+    /* 不是建立者：這把 token 沒有用處，不留著。 */
+    if (author === 'notowner') dropToken();
   }
   draw();
   const cardEl = document.querySelector('.acard');
@@ -700,8 +713,12 @@ async function signIn() {
   busy = true;
   draw();
   session.set('tez.auth.hash', location.hash);
-  session.set('tez.auth.env', D.env.name);
-  session.remove(TOKEN(D.env));
+  dropToken();
+  /* 一次性 nonce：只收「這個分頁剛剛自己發起」的登入回來。Apple 的 redirect 只會原樣帶回 callback 網址
+   * （Sign in Callback 是 API token 上設定的固定值，帶不了 state），所以 nonce 沒辦法跟 token 一起繞一圈
+   * 回來核對；能做的是「有一筆還沒過期、還沒用掉的 nonce」＝進行中旗標，回來時驗過就刪。 */
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  session.set(NONCE_KEY, JSON.stringify({ n: Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join(''), at: Date.now() }));
   let r = null;
   try {
     r = await client.call(D.env, 'users/current');
@@ -728,15 +745,16 @@ async function stopSharing() {
   } catch (err) {
     result = null;
   }
+  /* 用一次就登出：成功或失敗都立刻丟掉 token，要再試就重新登入。 */
+  dropToken();
   busy = false;
   if (result && result.deleted) {
-    session.remove(TOKEN(D.env));
     state = 'stopped';
     author = 'entry';
     draw();
     return;
   }
-  author = result && result.serverErrorCode === 'AUTHENTICATION_REQUIRED' ? 'signin' : 'owner';
+  author = 'signin';
   draw();
   toast(s().stopFailed);
 }
@@ -746,7 +764,7 @@ function onAuthorClick(action) {
   if (action === 'go') { signIn(); return; }
   if (action === 'stop') { stopSharing(); return; }
   if (action === 'signout' || action === 'switch') {
-    session.remove(TOKEN(D.env));
+    dropToken();
     author = action === 'switch' ? 'signin' : 'entry';
     draw();
     return;
@@ -761,8 +779,14 @@ function restoreAfterSignIn() {
   const params = new URLSearchParams(location.search);
   const token = params.get('ckWebAuthToken');
   if (!token) return;
-  const env = session.get('tez.auth.env');
-  if (env) session.set('tez.auth.token.' + env, token);
+  /* 只收自己發起的：nonce 在、沒過期才算數，驗過就刪（用過即焚）；其他一律丟掉，維持登出。 */
+  let ok = false;
+  try {
+    const n = JSON.parse(session.get(NONCE_KEY) || 'null');
+    ok = !!(n && typeof n.n === 'string' && n.n.length >= 32 && Date.now() - n.at >= 0 && Date.now() - n.at < NONCE_TTL);
+  } catch (e) { ok = false; }
+  session.remove(NONCE_KEY);
+  if (ok) webToken = token;
   const hash = location.hash || session.get('tez.auth.hash') || '';
   session.remove('tez.auth.hash');
   history.replaceState(null, '', location.pathname + hash);
@@ -870,7 +894,7 @@ async function load() {
   }
   author = 'entry';
   draw();
-  if (!FRAMED && state === 'normal' && session.get(TOKEN(D.env))) checkAuthor();
+  if (!FRAMED && state === 'normal' && webToken) checkAuthor();
 }
 
 /** Android 讀者端的登入也回到這一頁（兩把 API token 的 Sign in Callback 都指著 /trip/）。

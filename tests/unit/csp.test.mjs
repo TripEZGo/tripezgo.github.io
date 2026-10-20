@@ -82,7 +82,7 @@ test('trip/：被嵌入時的「在 tripezgo.com 開啟」三種語言都有字�
   const app = read('trip/app.js');
   assert.match(app, /function authorHtml\(\) \{\n  if \(FRAMED\)/);
   assert.match(app, /function onAuthorClick\(action\) \{\n  if \(FRAMED\) return;/);
-  assert.match(app, /if \(!FRAMED && state === 'normal' && session\.get/);
+  assert.match(app, /if \(!FRAMED && state === 'normal' && webToken/);
   assert.match(app, /if \(FRAMED \|\| !handOffToAndroid\(\)\)/);
   assert.match(app, /if \(!FRAMED\) restoreAfterSignIn\(\)/);
 });

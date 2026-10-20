@@ -72,7 +72,6 @@ test('跳轉前把 # 片段存進 sessionStorage', async ({ page }) => {
   /* 回到同一個 origin（還沒帶 token 回來）看它存了什麼 */
   await page.goto('/404.html');
   expect(await page.evaluate(() => sessionStorage.getItem('tez.auth.hash'))).toBe(new URL(dated.url).hash);
-  expect(await page.evaluate(() => sessionStorage.getItem('tez.auth.env'))).toBe('production');
 });
 
 test('停止分享：確認視窗裡才是紅色實心；返回不刪；確認之後刪掉、換成「已停止分享」', async ({ page }) => {
@@ -138,7 +137,7 @@ test('token 失效：回到登入卡，不假裝登入了', async ({ page }) => 
   await expect(page.getByTestId('author-owner')).toHaveCount(0);
 });
 
-test('停止失敗：留在建立者卡片、toast 說沒成功', async ({ page }) => {
+test('停止失敗：token 也立刻丟掉，回到登入卡、toast 說沒成功', async ({ page }) => {
   await openAs(page, { token: 'tok-author' });
   await signIn(page);
   await page.route('https://api.apple-cloudkit.com/**/records/modify**', (route) =>
@@ -149,5 +148,92 @@ test('停止失敗：留在建立者卡片、toast 說沒成功', async ({ page 
   await page.getByTestId('author-stop').click();
   await page.getByTestId('stop-go').click();
   await expect(page.locator('#toast')).toContainText('沒有停止成功，請再試一次');
+  /* 用一次就登出：失敗也不留著 token，要再試得重新登入 */
+  await expect(page.getByTestId('author-signin')).toBeVisible();
+  await expect(page.getByTestId('author-stop')).toHaveCount(0);
+});
+
+/* ── 一次性 token（S13）：不落地、用完登出、只收自己發起的登入 ── */
+
+/** 登入回來的網址：token 在查詢字串、# 片段已被 Apple 丟掉，這裡保留它只為了讓頁面打得開。 */
+const withToken = (c, token) => '/trip/?ckWebAuthToken=' + token + new URL(c.url).hash;
+
+/** 所有 storage 裡有沒有出現這把 token（登入時那把或輪替後的）。 */
+async function storedTokens(page) {
+  return page.evaluate(() => {
+    const all = [];
+    for (const st of [sessionStorage, localStorage]) for (let i = 0; i < st.length; i++) all.push(st.key(i) + '=' + st.getItem(st.key(i)));
+    return all.concat(document.cookie.split(';')).filter((x) => /tok-|rotated-/.test(x));
+  });
+}
+
+test('token 只放記憶體：登入後 sessionStorage／localStorage／cookie 都找不到它', async ({ page }) => {
+  await openAs(page, { token: 'tok-author' });
+  await signIn(page);
   await expect(page.getByTestId('author-owner')).toBeVisible();
+  expect(await storedTokens(page)).toEqual([]);
+  expect(await page.evaluate(() => Object.keys(sessionStorage).filter((k) => k.startsWith('tez.auth.token')))).toEqual([]);
+});
+
+test('停止成功：登出（token 丟掉），之後的請求不再帶 token', async ({ page }) => {
+  const { ck } = await openAs(page, { token: 'tok-author' });
+  await signIn(page);
+  await page.getByTestId('author-stop').click();
+  await page.getByTestId('stop-go').click();
+  await expect(page.getByTestId('stopped')).toBeVisible();
+  expect(await storedTokens(page)).toEqual([]);
+  const before = ck.calls.length;
+  await page.reload();
+  await expect(page.getByTestId('gone')).toBeVisible();
+  expect(ck.calls.slice(before).filter((c) => c.webAuthToken)).toEqual([]);
+});
+
+test('登入前先發一次性 nonce 存 sessionStorage；回來驗過就刪', async ({ page }) => {
+  await useConfig(page);
+  await fakeCloudKit(page, { stores: { production: { [dated.recordName]: recordOf(dated) } } });
+  await page.route('https://idmsa.apple.com/**', (route) =>
+    route.fulfill({ status: 200, contentType: 'text/html', body: '<p>apple sign-in</p>' }));
+  await page.goto(pathOf(dated));
+  await signIn(page);
+  await page.waitForURL(/idmsa\.apple\.com/);
+  await page.goto('/404.html');
+  const n = JSON.parse(await page.evaluate(() => sessionStorage.getItem('tez.auth.nonce')));
+  expect(n.n).toMatch(/^[0-9a-f]{32}$/);
+  expect(typeof n.at).toBe('number');
+});
+
+test('登入回來之後 nonce 已刪；同一個分頁拿同一把 token 再灌一次會被丟掉（重放）', async ({ page }) => {
+  const { ck } = await openAs(page, { token: 'tok-author' });
+  await signIn(page);
+  await expect(page.getByTestId('author-owner')).toBeVisible();
+  expect(await page.evaluate(() => sessionStorage.getItem('tez.auth.nonce'))).toBeNull();
+  const before = ck.calls.length;
+  await page.goto(withToken(dated, 'tok-author'));
+  await expect(page.locator('h1')).toHaveText('沖繩・慢活潛水');
+  await expect(page.getByTestId('author-entry')).toBeVisible();
+  expect(ck.calls.slice(before).filter((c) => c.path === 'users/current')).toEqual([]);
+});
+
+test('不是這個頁面發起的登入（沒有 nonce）：token 丟掉、網址洗乾淨、維持未登入', async ({ page }) => {
+  await useConfig(page);
+  const ck = await fakeCloudKit(page, { stores: { production: { [dated.recordName]: recordOf(dated) } }, users: { 'tok-author': AUTHOR } });
+  await page.goto(withToken(dated, 'tok-author'));
+  await expect(page.locator('h1')).toHaveText('沖繩・慢活潛水');
+  await expect(page.getByTestId('author-entry')).toBeVisible();
+  expect(new URL(page.url()).search).toBe('');
+  expect(ck.calls.filter((c) => c.webAuthToken)).toEqual([]);
+  expect(await storedTokens(page)).toEqual([]);
+});
+
+test('nonce 過期（超過 10 分鐘）：token 丟掉，維持未登入', async ({ page }) => {
+  await useConfig(page);
+  const ck = await fakeCloudKit(page, { stores: { production: { [dated.recordName]: recordOf(dated) } }, users: { 'tok-author': AUTHOR } });
+  await page.addInitScript(() => {
+    if (!sessionStorage.getItem('tez.auth.nonce')) {
+      sessionStorage.setItem('tez.auth.nonce', JSON.stringify({ n: 'a'.repeat(32), at: Date.now() - 11 * 60 * 1000 }));
+    }
+  });
+  await page.goto(withToken(dated, 'tok-author'));
+  await expect(page.getByTestId('author-entry')).toBeVisible();
+  expect(ck.calls.filter((c) => c.webAuthToken)).toEqual([]);
 });
