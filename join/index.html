@@ -2,6 +2,8 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-mo32Hc1dffzSbZ9a16d48FmqxpvwhTWS02VLRkReVw4='; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TripEZGo</title>
 <meta name="robots" content="noindex">
@@ -17,10 +19,14 @@
  * 驗證）叫起 App；沒裝 App 時 Chrome 走 S.browser_fallback_url 去 Play 商店。
  * 原本的片段（#<base64url>）留在 intent:// 的資料網址上：Intent.parseUri 從最後一個 # 切
  * （#Intent;…;end），前面那一個 # 跟著資料網址交給 App（App/Android lib/domain/cloud/trip_invite_link.dart）。
- * App repo：App/Android/web-handoff/join-index.html.patch。 */
+ * App repo：App/Android/web-handoff/join-index.html.patch。
+ *
+ * **片段先驗過才交給 intent://**（安全稽核 I5）：格式跟 /open/ 認 join 連結的那條 regex 的 # 以後那一段一模一樣
+ * （/open/index.html 的 JOIN）。不合的（含任何會讓 intent:// 字串多出 `;` 或 `#Intent` 的字元）一律不叫 App，
+ * 走下面共用的 /open/，那一頁會顯示「這條連結不完整」。兩邊要改一起改——tests/unit/csp.test.mjs 比對兩條一不一致。 */
 (function () {
   var page = 'https://www.tripezgo.com/join/' + location.hash;
-  if (/Android/i.test(navigator.userAgent) && location.hash.length > 1) {
+  if (/Android/i.test(navigator.userAgent) && /^#(s=)?[A-Za-z0-9_-]+={0,2}$/.test(location.hash)) {
     var play = 'https://play.google.com/store/apps/details?id=com.tripezgo.android';
     location.replace(
       'intent://www.tripezgo.com/join/' + location.hash +

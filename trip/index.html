@@ -2,6 +2,22 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8" />
+<!-- 安全稽核 L16。GitHub Pages 設不了回應標頭，所以用 meta：
+     - CSP：這一頁只跑自己的 JS（import map 那一段行內 script 與下面的防 framing 靠雜湊放行，雜湊由 tools/stamp-csp.mjs 蓋）、
+       只對 CloudKit Web Services 打 fetch、地圖用 MapKit JS（腳本 cdn.apple-mapkit.com、圖磚與 API 在 *.apple-mapkit.com／*.ls.apple.com）。
+       style-src 要 'unsafe-inline'：樣式有一整塊 <style> 與大量 style="…"（時間軸的 top／height 是算出來的），沒法逐條列雜湊。
+       img-src 的 data: 是封面圖（jpeg base64 直接放在旅程裡）；blob: 是 MapKit 的圖磚。meta CSP 設不了 frame-ancestors，防 framing 靠下面那段 JS。
+     - referrer：公開連結的 # 本來就不會進 Referer，但沒有理由讓外站（Google 地圖、作者部落格）知道使用者是從哪一頁來的。 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.apple-mapkit.com 'sha256-47La3JxaySjXuMgkffEaOqev3HOum+sf9e7PKZuuF/Q=' 'sha256-fI2AnC7munK8jR6izKMeLCSk8jM9NN3GXk10vbzYwuI='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.apple-mapkit.com; font-src 'self' data:; connect-src https://api.apple-cloudkit.com https://*.apple-mapkit.com https://*.ls.apple.com; worker-src blob:; child-src blob:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<script>
+/* 防 framing：這一頁的 sessionStorage 放著登入 token，不能被別人的頁面包在 iframe 裡誘導點擊（clickjacking）。
+ * 先藏起來、再試著把最上層換成自己——跨網域的 iframe 通常不准換，那就一直藏著，頁面等於不存在。 */
+if (window.top !== window.self) {
+  document.documentElement.style.display = 'none';
+  try { window.top.location.replace(window.self.location.href); } catch (err) { /* 換不了就維持藏著 */ }
+}
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <!-- 公開頁一律不進搜尋引擎：連結本身就是鑰匙，被收錄等於把鑰匙貼在公告欄上。 -->
 <meta name="robots" content="noindex, nofollow, noarchive" />

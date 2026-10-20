@@ -15,6 +15,7 @@
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { stampCsp } from './stamp-csp.mjs';
 
 const root = new URL('../', import.meta.url);
 const dir = new URL('trip/', root);
@@ -42,7 +43,8 @@ export function stampedHtml(html) {
     const re = new RegExp('href="' + css.replace(/[.]/g, '\\.') + '(\\?v=[0-9a-f]+)?"', 'g');
     out = out.replace(re, 'href="' + versioned(css) + '"');
   }
-  return out;
+  /* import map 是行內 script：CSP 靠它的雜湊放行，內容一變雜湊就要跟著變。 */
+  return stampCsp(out);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
