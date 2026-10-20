@@ -93,8 +93,11 @@ python3 -m http.server 4000
 
 ## 部署
 
-`main` 有 push 就由 `.github/workflows/pages.yml` 部署整個根目錄到 GitHub Pages。
-Workflow 在上傳前會把所有 HTML 的站內連結對一次，斷掉就讓 build 失敗。
+`main` 有 push 就由 `.github/workflows/pages.yml` 部署到 GitHub Pages。**發佈的是白名單，不是整個根目錄**：
+`tools/stage-pages.mjs` 把 `PUBLISH` 裡的項目複製到 `_site/`，上傳的是 `_site/`。根目錄新增項目時要在
+`PUBLISH`（發佈）或 `KEEP_OUT`（不發佈）選一邊，沒分類 workflow 會紅（`tests/unit/stage-pages.test.mjs` 同樣會紅）。
+Workflow 在上傳前會把 `_site/` 裡所有 HTML 的站內連結對一次，斷掉或指到沒發佈的東西就讓 build 失敗。
+Workflow 的 action 全部釘完整 commit SHA（後面註解寫版本）；升版時查新 tag 的 SHA 再換，不要改回 tag。
 
 GitHub repo 的 `Settings → Pages → Source` 要選 **GitHub Actions**。
 

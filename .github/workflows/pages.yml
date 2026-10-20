@@ -9,10 +9,9 @@ on:
   schedule:
     - cron: '0 20 * * *'
 
+# 預設只讀；發佈要的兩個寫入權限只給 deploy 這一個 job。
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -20,20 +19,31 @@ concurrency:
 
 jobs:
   deploy:
+    permissions:
+      contents: read
+      pages: write      # actions/deploy-pages 發佈
+      id-token: write   # actions/deploy-pages 向 Pages 證明這次部署來自這個 workflow
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
 
-      # 純靜態網站，沒有建置步驟——repo 根目錄就是要發布的內容。
-      # 只做一件事：把每個 HTML 檔的內部連結拿出來對一次，斷掉就讓 build 紅。
+      # 純靜態網站，沒有建置步驟。只做三件事：重產遊記、把「要發佈的」複製到 _site/、
+      # 把 _site 裡每個 HTML 檔的內部連結對一次（斷掉或指到沒發佈的東西就讓 build 紅）。
       - name: Build travel journals
         run: node tools/journals.mjs
 
+      # 白名單在 tools/stage-pages.mjs（安全稽核 I6）：根目錄有沒分類的新項目會在這裡紅。
+      - name: Stage published files
+        run: node tools/stage-pages.mjs _site
+
       - name: Check internal links
+        working-directory: _site
         run: |
           set -euo pipefail
           fail=0
@@ -54,10 +64,10 @@ jobs:
           [ "$fail" -eq 0 ]
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
-          path: .
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
