@@ -909,3 +909,7 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; }
 .rm-log b { font-weight:600; }
 .rm-log small { display:block; color:var(--muted); font-size:13px; }
 @media (prefers-reduced-motion:reduce) { .is-now .rm-dot::after { animation:none; } .rm-btn, .rm-frame::before, .rm-frame::after { transition:none; } }
+/* 整合只剩兩張（行事曆整合、Siri；「分享進來」併進 02 靈感）：置中兩欄，不拉成四欄 */
+@media (min-width:560px) { .tools.is-two { grid-template-columns:repeat(2, minmax(0, 300px)); justify-content:center; } }
+/* 標題只有關鍵詞上色、同一行接著寫完（02 靈感：「靈感」一次收齊） */
+.feature h3 em.mix { color:inherit; } .feature h3 em.mix span { color:var(--accent-ink); }

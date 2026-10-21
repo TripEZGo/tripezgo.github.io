@@ -71,7 +71,7 @@ T = {
   '閱讀完整隱私權政策 →': ('Read the full privacy policy →', 'プライバシーポリシー全文を読む →', '개인정보 처리방침 전문 읽기 →'),
   '筆記': ('Notes', 'メモ', '메모'),
   # 01 安排行程
-  '01 · 安排行程': ('01 · Plan events', '01 · 予定を組む', '01 · 일정 짜기'),
+  '04 · 安排行程': ('04 · Plan events', '04 · 予定を組む', '04 · 일정 짜기'),
   '該帶的，': ('Everything you need,', '持っていくものは、', '챙길 것은,'),
   '都掛在行程上': ('attached to the event', '予定にまとめて', '모두 일정에 달아 두세요'),
   '車票、訂位、待辦跟著行程走，到現場點了就開。': ('Tickets, bookings and to-dos stay with the event. When you get there, one tap opens them.',
@@ -98,7 +98,7 @@ T = {
   '日本超商、百貨藥妝圖資': ('Japanese convenience stores, department stores and drugstores', '日本のコンビニ・百貨店・ドラッグストア', '일본 편의점·백화점·드럭스토어 정보'),
   '支援步行導航': ('Walking directions', '徒歩ナビ', '도보 길 안내'),
   # 04 總覽
-  '04 · 總覽模式': ('04 · Overview', '04 · 概要', '04 · 한눈에 보기'),
+  '06 · 總覽模式': ('06 · Overview', '06 · 概要', '06 · 한눈에 보기'),
   '整趟旅程，': ('The whole trip,', '旅行まるごと、', '여행 전체를'),
   '一頁看完': ('on one page', '1ページで', '한 페이지에'),
   '行程、附件、待辦，要找的東西點一下就到。': ('Events, files and to-dos — whatever you need is one tap away.',
@@ -124,9 +124,6 @@ T = {
   '都帶著': ('all in one place', 'ぜんぶここに', '모두 여기에'),
   '匯率換算': ('Currency', '為替換算', '환율 변환'),
   '購物清單': ('Shopping list', '買い物リスト', '쇼핑 목록'),
-  '分享進來：在地圖 App 的地點頁按分享，選 TripEZGo，地點、座標和類型一起帶進新行程': ('Share in: tap Share on a place in your maps app, pick TripEZGo, and the place, its coordinates and its type land in a new event',
-      '共有で取り込み：マップアプリの場所ページで共有から TripEZGo を選ぶと、場所・座標・種類がそのまま新しい予定に入ります',
-      '공유해 가져오기: 지도 앱의 장소 페이지에서 공유를 누르고 TripEZGo를 고르면, 장소·좌표·유형이 그대로 새 일정에 들어갑니다'),
   '資料': ('Library', '資料', '자료'),
   '工具': ('Tools', 'ツール', '도구'),
   '資料與工具': ('Library & tools', '資料とツール', '자료와 도구'),
@@ -259,7 +256,7 @@ T = {
        '予定の詳細：桃園空港でのチェックイン。やることリストと添付（Web リンク、PDF の電子搭乗券、パスポートの写真）',
        '일정 상세: 타오위안 공항 체크인. 할 일 목록과 첨부(웹 링크, PDF 전자 탑승권, 여권 사진)'),
   # 02 路程
-  '02 · 路程': ('02 · Legs', '02 · 移動', '02 · 이동'),
+  '05 · 路程': ('05 · Legs', '05 · 移動', '05 · 이동'),
   '錯過這班車，': ('Miss this train?', '乗り遅れても、', '이번 열차를 놓쳐도,'),
   '下一班已經排好': ('The next one is already lined up', '次の便はもう用意済み', '다음 편이 이미 잡혀 있어요'),
   '兩個行程之間就是一段路程，時間不夠會先提醒你。': ("Between two events there's a leg — and if there isn't enough time, you'll hear about it first.",
@@ -277,7 +274,7 @@ T = {
        '特に力を入れたのが公共交通です。便を前もって何本か登録しておけば、旅先ではいまにいちばん近い便をお知らせ。早く着いても、乗り遅れても、その場で次の電車やバスに切り替えられます。',
        '특히 공을 들인 것은 대중교통입니다. 여러 편을 미리 입력해 두면, 여행 중에는 지금과 가장 가까운 편을 알려 줍니다. 일찍 도착했든 놓쳤든, 그 자리에서 바로 다음 열차나 버스로 바꿀 수 있어요.'),
   # 03 行事曆／時間軸
-  '03 · 行事曆／時間軸': ('03 · Calendar / Timeline', '03 · カレンダー／タイムライン', '03 · 캘린더/타임라인'),
+  '01 · 行事曆／時間軸': ('01 · Calendar / Timeline', '01 · カレンダー／タイムライン', '01 · 캘린더/타임라인'),
   '一拖一拉就能安排、調整行程': ('Drag to plan and rearrange events', 'ドラッグするだけで予定を組んだり動かしたり', '끌어다 놓기만 하면 일정을 짜고 바꿀 수 있어요'),
   '還沒決定時間的地方，拖進時段就排好': ("Drag an unscheduled place onto a time and it's planned", '未定の予定は時間帯へドラッグするだけ', '시간을 못 정한 곳은 시간대로 끌어다 놓으면 끝'),
   '<p><b>行事曆模式</b>：你的行程就是一個行事曆事件，除了瀏覽直覺，安排行程時也最好用——一拖一拉就能排好行程，要改也只要拖曳就能換位置；規劃階段還不確定誰先誰後的行程，可以很快地調整。</p>':
@@ -297,7 +294,7 @@ T = {
        '概要では、旅行全体の予定を1ページで見渡せます。予定の添付ややることも日ごとにまとめてあるので、ここから各予定の添付をすぐ開いたり、どの日のどの予定にやることが残っているかを確かめたりできます。',
        '한눈에 보기에서는 여행 전체 일정을 한 페이지로 파악할 수 있습니다. 일정의 첨부와 할 일도 날짜별로 정리되어 있어서, 여기서 바로 각 일정의 첨부를 열거나 어느 날 어느 일정에 할 일이 남았는지 확인할 수 있어요.'),
   # 05 地圖
-  '05 · 地圖模式': ('05 · Map', '05 · マップ', '05 · 지도'),
+  '03 · 地圖模式': ('03 · Map', '03 · マップ', '03 · 지도'),
   '你每天安排的行程，只要設定好地點，就能在地圖上快速掌握行程彼此之間的位置關係與路線。':
       ("Give your events a place, and the map shows how each day's events sit in relation to one another, and the route between them.",
        '予定に場所を設定しておけば、1日の予定どうしの位置関係とルートが、マップでさっとつかめます。',
@@ -319,7 +316,7 @@ T = {
        'マップ：2日目、原爆ドームへ徒歩ナビ中。道沿いにコンビニと旅の仲間の位置',
        '지도: 2일차, 원폭 돔까지 도보 길 안내 중. 가는 길의 편의점과 동행 위치 표시'),
   # 06 旅伴共編、位置共享
-  '06 · 旅伴共編、位置共享': ('06 · Co-editing and location sharing', '06 · 共同編集・位置の共有', '06 · 공동 편집, 위치 공유'),
+  '07 · 旅伴共編、位置共享': ('07 · Co-editing and location sharing', '07 · 共同編集・位置の共有', '07 · 공동 편집, 위치 공유'),
   '邀請旅伴一起安排同一趟': ('Invite companions to plan the same trip with you', '旅の仲間を招待して、同じ旅行を一緒に組む', '동행을 초대해 같은 여행을 함께 짜기'),
   '旅途中互相看到位置': ("See each other's location on the road", '旅先でお互いの位置がわかる', '여행 중 서로의 위치 확인'),
   '筆記、附件、待辦、待購清單可以選擇要不要共享': ('Choose whether notes, files, to-dos and the shopping list are shared', 'メモ・添付・やること・買い物リストは、共有するかどうかを選べる', '메모·첨부·할 일·쇼핑 목록은 공유할지 고를 수 있음'),
@@ -380,17 +377,44 @@ T = {
       ("<li><b>QR code scanner</b>: open it, scan, and it's saved to a history your companions can see too.</li>",
        '<li><b>QR コードスキャン</b>：開いて読み取るだけで履歴に残り、旅の仲間もそのまま見られます。</li>',
        '<li><b>QR 코드 스캔</b>: 열고 스캔하기만 하면 기록이 남고, 동행도 바로 볼 수 있어요.</li>'),
+  # 藍圖 08.09 那一列還在用（整合區那張卡已併進 02 靈感）
+  '從其他 App 分享進來': ('Share in from other apps', 'ほかのアプリから共有', '다른 앱에서 공유해 가져오기'),
+  # 02 靈感（1.4.0；原「整合 › 從其他 App 分享進來」併進來。用詞照 App 字串表：Inspiration／インスピレーション／영감、未關聯 Not added／未関連／미연결、新增關聯 Add to…／関連を追加／연결 추가）
+  '02 · 靈感': ('02 · Inspiration', '02 · インスピレーション', '02 · 영감'),
+  '在哪看到都能存，': ('Saved from anywhere,', 'どこで見ても保存できる、', '어디서 봐도 저장되는 '),
+  '靈感': ('inspiration', 'インスピレーション', '영감'),
+  '一次收齊': (' all in one place', 'をひとつに', '을 한곳에'),
+  'Safari、地圖、社群、相簿分享進來，一鍵變成行程。': ('Share in from Safari, maps, social apps and Photos — then turn it into an event in one tap.',
+                                           'Safari・地図・SNS・写真アプリから共有して、ワンタップで予定に。',
+                                           'Safari, 지도, SNS, 사진에서 공유해 오면, 한 번에 일정이 돼요.'),
+  '網頁、地圖、貼文、照片，分享給 TripEZGo 就先存起來': ("Web pages, places, posts and photos — share them to TripEZGo and they're saved",
+                                         'Web ページ・場所・投稿・写真を TripEZGo に共有するだけで、まず保存',
+                                         '웹페이지, 장소, 게시물, 사진을 TripEZGo로 공유하면 우선 저장'),
+  '標題、預覽圖自動補上，不用整理': ('Title and preview image fill in on their own — no tidying', 'タイトルとプレビュー画像は自動で補完。整理いらず', '제목과 미리보기 이미지가 자동으로 채워져 정리할 필요 없음'),
+  '未讀、未關聯，一眼分得清': ('Unread and not-yet-added items are easy to tell apart', '未読・未関連がひと目でわかる', '읽지 않음·미연결이 한눈에 구분'),
+  '想排的時候，一鍵變成行程、筆記、購物清單、附件或地圖標記': ("When you're ready, add it to an event, a note, the shopping list, an attachment or a map pin in one tap",
+                                              '決まったらワンタップで、予定・メモ・買い物リスト・添付・マップのマーカーに',
+                                              '정해지면 한 번에 일정·메모·쇼핑 목록·첨부·지도 마커로'),
+  '靈感：在網頁按分享、選 TripEZGo，存進「資料 › 靈感」，再關聯成行事曆上的行程':
+      ('Inspiration: tap Share on a web page, pick TripEZGo, save it to Library › Inspiration, then add it to the calendar as an event',
+       'インスピレーション：Web ページで共有をタップして TripEZGo を選び、「資料 › インスピレーション」に保存。そこからカレンダーの予定に関連づけ',
+       '영감: 웹페이지에서 공유를 누르고 TripEZGo를 고른 뒤 ‘자료 › 영감’에 저장하고, 캘린더의 일정으로 연결'),
+  '<p><b>從其他 App 分享進來</b>：看到想去的地方？同事推薦的景點？直接在 Safari、Google 地圖、Instagram、Threads 等 App 裡點分享、選 TripEZGo，就能先存進「資料 › 靈感」。</p>':
+      ("<p><b>Share in from other apps</b>: found somewhere you want to go, or a spot a coworker recommended? Tap Share in Safari, Google Maps, Instagram, Threads or another app, pick TripEZGo, and it's saved to Library › Inspiration first.</p>",
+       '<p><b>ほかのアプリから共有</b>：行きたい場所を見つけた？同僚のおすすめスポット？Safari や Google マップ、Instagram、Threads などのアプリで共有をタップして TripEZGo を選べば、まず「資料 › インスピレーション」に保存できます。</p>',
+       '<p><b>다른 앱에서 공유해 가져오기</b>: 가 보고 싶은 곳을 발견했나요? 동료가 추천한 명소는요? Safari, Google 지도, Instagram, Threads 같은 앱에서 공유를 누르고 TripEZGo를 고르면 먼저 ‘자료 › 영감’에 저장됩니다.</p>'),
+  '<p><b>先存起來，再決定</b>：不用當下就決定要排進哪一天。標題與預覽圖會自己補上，還沒看過的標未讀，還沒用到的可以只看「未關聯」。</p>':
+      ("<p><b>Save first, decide later</b>: no need to pick a day on the spot. The title and preview image fill in by themselves, anything you haven't opened is marked unread, and you can filter to just what's “Not added”.</p>",
+       '<p><b>まず保存、決めるのはあとで</b>：その場でどの日に入れるか決めなくて大丈夫。タイトルとプレビュー画像は自動で補われ、まだ見ていないものには未読の印、まだ使っていないものだけ「未関連」で絞り込めます。</p>',
+       '<p><b>먼저 저장하고, 나중에 정하기</b>: 그 자리에서 어느 날에 넣을지 정하지 않아도 돼요. 제목과 미리보기 이미지는 저절로 채워지고, 아직 안 본 것은 읽지 않음으로 표시되며, 아직 쓰지 않은 것만 ‘미연결’로 모아 볼 수 있어요.</p>'),
+  '<p><b>一鍵關聯</b>：想排的時候按「新增關聯」，這則靈感可以變成行事曆上的行程、筆記、購物清單、行程附件或地圖標記。</p>':
+      ("<p><b>Add in one tap</b>: when you're ready, tap “Add to…” and the inspiration becomes an event on your calendar, a note, a shopping-list item, an event attachment or a map pin.</p>",
+       '<p><b>ワンタップで関連づけ</b>：決まったら「関連を追加」を押すと、そのインスピレーションを予定、メモ、買い物リスト、予定の添付ファイル、マップのマーカーにできます。</p>',
+       '<p><b>한 번에 연결</b>: 정해지면 ‘연결 추가’를 눌러 이 영감을 캘린더의 일정, 메모, 쇼핑 목록, 일정 첨부 파일, 지도 마커로 만들 수 있어요.</p>'),
   # 整合
   '整合': ('Integrations', '連携', '연동'),
   '跟 iPhone 上的其他 App，': ('Works with the other apps', 'iPhone のほかのアプリと、', 'iPhone의 다른 앱과'),
   '接在一起': ('on your iPhone', 'つながる', '연결됩니다'),
-  '從其他 App 分享進來': ('Share in from other apps', 'ほかのアプリから共有', '다른 앱에서 공유해 가져오기'),
-  'Google 地圖、Instagram、Threads 看到的地方，分享一下就存進來': ("Found a place in Google Maps, Instagram or Threads? Share it and it's saved",
-                                                       'Google マップや Instagram、Threads で見つけた場所を、共有するだけで保存',
-                                                       'Google 지도, Instagram, Threads에서 본 곳을 공유만 하면 저장'),
-  '分享進來：在社群 App 的貼文按分享，選 TripEZGo，就存成筆記': ("Sharing in: tap Share on a post in a social app, pick TripEZGo, and it's saved as a note",
-                                                   '共有で取り込み：SNS アプリの投稿で共有をタップして TripEZGo を選ぶと、メモとして保存',
-                                                   '공유해 가져오기: SNS 앱의 게시물에서 공유를 누르고 TripEZGo를 고르면 메모로 저장'),
   '行程直接同步到你的行事曆': ('Your events sync straight to your calendar', '予定をそのままカレンダーに同期', '일정을 내 캘린더에 바로 동기화'),
   'Apple 行事曆的單日檢視：TripEZGo 同步進去的第 2 天行程': ("Apple Calendar's day view: day 2's events, synced in from TripEZGo",
                                                   'Apple カレンダーの日表示：TripEZGo から同期された2日目の予定',
@@ -405,10 +429,6 @@ T = {
       ("Asking Siri “What's my next event?”: Itsukushima Shrine now, then Momijidani Park at 11:30",
        'Siri に「次の予定は何？」：今は厳島神社、次は紅葉谷公園で 11:30 から',
        'Siri에게 “다음 일정이 뭐야?”: 지금은 이쓰쿠시마 신사, 다음은 11:30부터 모미지다니 공원'),
-  '<p><b>從其他 App 分享進來</b>：看到想去的地方？同事推薦的景點？直接在 Google 地圖、Instagram、Threads 等 App 裡點分享、選 TripEZGo，就能把資料存進來。</p>':
-      ("<p><b>Share in from other apps</b>: found somewhere you want to go, or a spot a coworker recommended? Tap Share in Google Maps, Instagram, Threads or another app, pick TripEZGo, and it's saved.</p>",
-       '<p><b>ほかのアプリから共有</b>：行きたい場所を見つけた？同僚のおすすめスポット？Google マップや Instagram、Threads などのアプリで共有をタップして TripEZGo を選べば、そのまま保存できます。</p>',
-       '<p><b>다른 앱에서 공유해 가져오기</b>: 가 보고 싶은 곳을 발견했나요? 동료가 추천한 명소는요? Google 지도, Instagram, Threads 같은 앱에서 공유를 누르고 TripEZGo를 고르면 바로 저장됩니다.</p>'),
   '<p><b>Apple／Google 行事曆整合</b>：可以把行程直接同步到你的行事曆上。</p>':
       ('<p><b>Apple / Google Calendar integration</b>: sync your events straight to your calendar.</p>',
        '<p><b>Apple／Google カレンダー連携</b>：予定をそのままカレンダーに同期できます。</p>',
