@@ -1,6 +1,6 @@
 /* App 內的功能示範（ADR-0050）：把官網 screens/ 的畫面打包成一個「離線、自給自足」的資料夾，給 App 的 WKWebView 載入。
  *
- *   node tools/app-demos.mjs                          → 輸出到 App 的 UI 模組資源 FeatureDemos/（預設路徑見 DEFAULT_OUT）
+ *   node tools/app-demos.mjs                          → 輸出到 App target 資源 App/iOS/FeatureDemos/（預設路徑見 DEFAULT_OUT）
  *   node tools/app-demos.mjs --out /tmp/x             → 輸出到別處（驗證、開發用）
  *   node tools/app-demos.mjs --only pw-no-ads,glance  → 只打包這幾個示範（開發時比較快；少一個的頁面不會報錯）
  *
@@ -21,7 +21,7 @@ import { build } from 'esbuild';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SCREENS = path.join(root, 'screens');
-const DEFAULT_OUT = '/Users/zhgchgli/Projects/tripezgo/.claude/worktrees/fix-security-140/App/iOS/Modules/UI/Sources/UI/Resources/FeatureDemos';
+const DEFAULT_OUT = '/Users/zhgchgli/Projects/tripezgo/.claude/worktrees/fix-security-140/App/iOS/FeatureDemos';
 const BUDGET = 8 * 1024 * 1024;
 const LANGS = ['zh-Hant-TW', 'en', 'ja'];
 

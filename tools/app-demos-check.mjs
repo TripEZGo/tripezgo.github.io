@@ -15,7 +15,7 @@ import { chromium } from 'playwright';
 
 const argv = process.argv.slice(2);
 const opt = (n, d) => { const i = argv.indexOf(`--${n}`); return i >= 0 ? argv[i + 1] : d; };
-const DIR = path.resolve(opt('dir', '/Users/zhgchgli/Projects/tripezgo/.claude/worktrees/fix-security-140/App/iOS/Modules/UI/Sources/UI/Resources/FeatureDemos'));
+const DIR = path.resolve(opt('dir', '/Users/zhgchgli/Projects/tripezgo/.claude/worktrees/fix-security-140/App/iOS/FeatureDemos'));
 const SHOTS = path.resolve(opt('shots', '/tmp/app-demos-shots'));
 const manifest = JSON.parse(fs.readFileSync(path.join(DIR, 'manifest.json'), 'utf8'));
 const IDS = opt('ids') ? opt('ids').split(',') : manifest.demos;
