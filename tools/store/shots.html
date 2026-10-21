@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  TripEZGo · App Store 商城截圖（1.3.0，2026-10-12：畫面改由官網 screens/ 的 HTML 直接產，iPhone＋iPad 各 10 張×中英日；iPad 畫面同樣出自 screens/ 的 ?device=ipad）
+  TripEZGo · App Store 商城截圖（1.4.0 起順序：行事曆、靈感、地圖、行程、路程、總覽、資料、共編、位置、即時動態（分享那格併進靈感）；1.3.0，2026-10-12：畫面改由官網 screens/ 的 HTML 直接產，iPhone＋iPad 各 10 張×中英日；iPad 畫面同樣出自 screens/ 的 ?device=ipad）
   原稿：Open Design appstore-2026/screenshots.html；產生：node tools/store/make.mjs <輸出目錄>
   語言（目前 zh-Hant / ja / en；ko 另外補）× 兩個裝置欄位 × 十張。
     · iPhone 6.9"  1320×2868 px   原始畫面 raw/<lang>/iphone/NN.png（1206×2622）
@@ -242,11 +242,11 @@
   var COPY = {
     'zh-Hant': [
       ['行事曆排行程，|[時間軸]排交通', '一拖一拉就能排，還沒定時間的拖進時段就好'],
-      ['該帶的，都[掛在行程上]', '票券、附件、待辦，出發前逐項打勾'],
-      ['錯過這班車，|[下一班]已經排好', '步行、開車、大眾運輸，自動估算時間'],
-      ['整趟旅程，[一頁]看完', '行程、附件、待辦按日分組，一看就知道'],
+      ['在哪看到都能存，|[靈感]一次收齊', 'Safari、地圖、社群、相簿分享進來，一鍵變成行程'],
       ['下一站在哪，|[地圖]告訴你', '每日路線、日本超商藥妝、步行導航'],
-      ['看到想去的，|[分享]進來就存好', 'Google 地圖、Instagram、Threads 一鍵存進旅程'],
+      ['該帶的，都[掛在行程上]', '票券、附件、待辦，出發前逐項打勾'],
+      ['下一站怎麼去，|用[路程]排好', '步行、開車、大眾運輸，自動估算時間'],
+      ['整趟旅程，[一頁]看完', '行程、附件、待辦按日分組，一看就知道'],
       ['[資料與工具]都帶著', '筆記、購物清單、QR Code 掃描、匯率換算'],
       ['[旅伴共編]，|一起排同一趟', '傳邀請連結或掃 QR Code 就能加入'],
       ['旅途中|[位置共享]', '走散了，也知道彼此在哪'],
@@ -254,11 +254,11 @@
     ],
     'ja': [
       ['予定はカレンダー、^移動は[タイムライン]', 'ドラッグで組み替え、未定の予定も時間帯へ'],
-      ['必要なものは|[予定にまとめて]', 'チケット・添付・ToDo、出発前にチェック'],
-      ['乗り遅れても|[次の便]はもう決まってる', '徒歩・車・公共交通機関、所要時間を自動で見積もり'],
-      ['旅行全体を[1ページ]で', '予定・添付・ToDo を日ごとにまとめて'],
+      ['どこで見ても、|[インスピレーション]に保存', 'Safari・地図・SNS・写真から共有して、ワンタップで予定に'],
       ['次の行き先は|[地図]が教えてくれる', '1日のルート、コンビニ・ドラッグストア、徒歩ナビ'],
-      ['見つけた場所は|[共有]で保存', 'Google マップ・Instagram・Threads から取り込み'],
+      ['必要なものは|[予定にまとめて]', 'チケット・添付・ToDo、出発前にチェック'],
+      ['次の行き方は、|[移動]で組んでおく', '徒歩・車・公共交通機関、所要時間を自動で見積もり'],
+      ['旅行全体を[1ページ]で', '予定・添付・ToDo を日ごとにまとめて'],
       ['[資料とツール]を^いつも手元に', 'メモ・買い物リスト・QR スキャン・為替換算'],
       ['[旅の仲間]と|同じ旅程を', '招待リンクか QR コードで参加'],
       ['旅行中は|[現在地]を共有', 'はぐれても、お互いの居場所が分かる'],
@@ -266,11 +266,11 @@
     ],
     'en': [
       ['Plan the day, |[plan the travel]', 'Drag to plan, and drop unscheduled events onto a time'],
-      ['Everything [on the event]', 'Tickets, files and to-dos, ticked off before you go'],
-      ['Miss this train? |[The next one] is ready', 'Walk, drive or transit, with times estimated for you'],
-      ['The whole trip on [one page]', 'Events, files and to-dos grouped by day'],
+      ['Saved from anywhere, |[inspiration] in one place', 'Share in from Safari, maps, social apps and Photos, then turn it into an event in one tap'],
       ['The map knows |[your next stop]', 'Daily routes, shops in Japan and walking directions'],
-      ['Seen it? [Share it in]', 'Save places from Google Maps, Instagram and Threads'],
+      ['Everything [on the event]', 'Tickets, files and to-dos, ticked off before you go'],
+      ['Getting to the next stop? |Plan it with [legs]', 'Walk, drive or transit, with times estimated for you'],
+      ['The whole trip on [one page]', 'Events, files and to-dos grouped by day'],
       ['[Library and tools], |all with you', 'Notes, shopping list, QR scanner and currency'],
       ['Plan it [together]', 'An invite link or a QR code, and companions are in'],
       ['See where [everyone] is', 'Share locations with your companions during the trip'],
@@ -280,11 +280,11 @@
        라이브 액티비티——即時動態一律照 App 字串表寫「라이브 액티비티」（使用者 2026-10-12 裁定統一）） */
     'ko': [
       ['일정은 캘린더, |이동은 [타임라인]', '끌어서 짜고, 미정 일정은 시간대로 끌어다 놓으면 끝'],
-      ['챙길 것은 |[일정에 달아 두기]', '승차권, 첨부, 할 일을 출발 전에 하나씩 체크'],
-      ['이번 편을 놓쳐도 |[다음 편]이 준비돼 있어요', '도보, 자동차, 대중교통 이동 시간을 자동으로 가늠'],
-      ['여행 전체를 |[한 페이지]로', '일정, 첨부, 할 일을 날짜별로 묶어 한눈에'],
+      ['어디서 봐도 저장돼요, |[영감]을 한곳에', 'Safari, 지도, SNS, 사진에서 공유해 오면 한 번에 일정으로'],
       ['다음 목적지는 |[지도]가 알려 줘요', '하루 동선, 일본 편의점·드러그스토어, 도보 길 안내'],
-      ['가고 싶은 곳은 |[공유]만 하면 저장', 'Google 지도, Instagram, Threads에서 바로 여행에 저장'],
+      ['챙길 것은 |[일정에 달아 두기]', '승차권, 첨부, 할 일을 출발 전에 하나씩 체크'],
+      ['다음 장소까지 가는 길은, |[이동]으로 정리', '도보, 자동차, 대중교통 이동 시간을 자동으로 가늠'],
+      ['여행 전체를 |[한 페이지]로', '일정, 첨부, 할 일을 날짜별로 묶어 한눈에'],
       ['[자료와 도구]를 |늘 곁에', '메모, 쇼핑 목록, QR 코드 스캔, 환율 변환'],
       ['[동행]과 |같은 여행을 공동 편집', '초대 링크나 QR 코드로 바로 참여'],
       ['여행 중에는 |[위치 공유]', '흩어져도 서로 어디 있는지 알 수 있어요'],

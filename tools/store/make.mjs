@@ -22,11 +22,11 @@ if (!outDir) { console.log('usage: node tools/store/make.mjs <輸出目錄>'); p
 // [輸出檔名, screens 頁, query]：順序＝商店上的順序（第 10 張掛 Premium，見 shots.html）。iPad 同序、同名，query 多帶 device=ipad
 const SLOTS = [
   ['calendar', 'calendar', 'day=2'],
+  ['inspiration', 'inspiration', ''],
+  ['map', 'map-live', ''],
   ['event', 'event', 'event=d1-airport&extra=1'],
   ['leg', 'leg', ''],
   ['overview', 'overview', ''],
-  ['map', 'map-live', ''],
-  ['share', 'share-gmap', 'step=ext'],
   ['library-tools', 'shop', ''],
   ['collaboration', 'members', ''],
   ['location-sharing', 'map-live', 'nav=0&today=2&start=2026-10-09&focus=mates'],
@@ -73,6 +73,9 @@ try {
     for (const l of Object.keys(LOCALES)) {
       const dest = path.join(outDir, LOCALES[l]);
       fs.mkdirSync(dest, { recursive: true });
+      // 順序換過（1.4.0：分享那格併進靈感）：舊的 NN-名稱.png 不清掉就會跟新的並存，一起被傳上去
+      const stale = D.prefix ? /^ipad-\d\d-[\w-]+\.png$/ : /^\d\d-[\w-]+\.png$/;
+      for (const f of fs.readdirSync(dest)) if (stale.test(f)) fs.rmSync(path.join(dest, f));
       for (const [i, [name]] of SLOTS.entries()) {
         const n = String(i + 1).padStart(2, '0');
         await page.goto(pathToFileURL(path.join(here, 'shots.html')).href + `?only=${dev}-${TEMPLATE_LANG[l]}-${n}`);
