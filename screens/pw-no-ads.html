@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=402">
+<title>付費牆示範・去廣告</title>
+<!--
+  總覽的行程清單，夾著原生廣告列——打包進 App 的付費牆「去廣告」示範（ADR-0050，tools/app-demos.mjs）。
+  版面沿用 screens/overview.html（OverviewEventCell）；廣告列照 App 的 NativeAdRowView（Modules/Ads）：
+  前導欄放「廣告」兩個字（AdMob 政策要的標示）、廣告主圖示 22、標題 sm 半粗體兩行、內文 xs、廣告主 xs、尾端行動呼籲 xs 半粗體 accentInk。
+  字串：UI.json ui.ad.badge；廣告內容是虛構的樣本。
+  參數：?lang= &theme=dark &still=1（靜止那一幀＝廣告還在）。自動示範 auto=pw-no-ads：呼叫 __auto.remove()，廣告列一則一則收掉。
+-->
+<link rel="stylesheet" href="screen.css">
+<style>
+  .head { position: absolute; left: 20px; top: 74px; width: 314px; }
+  .greet { font-size: var(--t-xs); line-height: 14px; color: var(--muted); letter-spacing: .24px; }
+  .title { margin-top: 2px; font: 600 var(--t-xxl)/34px var(--font); letter-spacing: -.59px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* HeadIconButton：44pt、圖示 23、墨色、沒有底 */
+  .head-act { position: absolute; left: 346px; top: 70px; width: 44px; height: 44px;
+    display: grid; place-items: center; color: var(--ink); }
+  .head-act svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.8;
+    stroke-linecap: round; stroke-linejoin: round; }
+
+  /* UISegmentedControl（iOS 26，系統元件；照截圖量）：軌道 20–382 × 134–179，滑塊內縮 2 */
+  .seg { position: absolute; left: 20px; top: 134px; width: 362px; height: 45px; border-radius: 22.5px;
+    background: var(--sys-seg-bg); display: grid; grid-template-columns: repeat(3, 1fr); padding: 2px; }
+  .seg div { display: grid; place-items: center; font: 400 var(--t-sm)/16px var(--font); color: var(--muted-on-sunken);
+    border-radius: 20.5px; white-space: nowrap; overflow: hidden; }
+  .seg div.on { background: var(--sys-seg-pill); color: var(--ink); font-weight: 700; margin-right: 4.67px;
+    box-shadow: 0 0 0 .5px rgba(0,0,0,.02); }
+
+  /* 表格：左右各 20（版面邊距），列再內縮 rowPaddingH 4。分隔線 1pt、borderSoft，左右各縮 4 */
+  .table { position: absolute; left: 20px; width: 362px; top: 183px; bottom: 83px; overflow: hidden; }
+  .hdr { display: flex; align-items: center; gap: 8px; padding: 10px 4px 7.67px; }
+  .hdr .tc { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+  .hdr .tc b { font: 700 var(--t-xs)/14px var(--font); color: var(--muted); letter-spacing: .72px; white-space: nowrap; }
+  .hdr .tc span { font: 600 var(--t-xs)/14px var(--font); color: var(--muted); white-space: nowrap; }
+  .hdr .tag { border: 1px solid var(--border); border-radius: 99px; padding: 1px 8px;
+    font: 600 var(--t-xs)/14.33px var(--font); color: var(--muted); white-space: nowrap; }
+  .hdr .sp { flex: 1; }
+  .hdr svg { width: 14px; height: 14px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .row, .leg { position: relative; display: flex; align-items: center; margin: 0; }
+  .row::after, .leg::after { content: ""; position: absolute; left: 4px; right: 4px; bottom: 0; height: 1px; background: var(--border-soft); }
+  /* OverviewEventCell：上下 9、最矮 44；時間欄 100、間距 10；色點 8、間距 6；類型圖示 16 */
+  .row { min-height: 45px; padding: 9px 4px 10px; gap: 10px; }
+  .row .lead { flex: none; width: 100px; font: 400 var(--t-xs)/14.33px var(--font); color: var(--muted); white-space: nowrap;
+    position: relative; top: 1px; } /* 照截圖：UIKit 的 monospacedDigitSystemFont 字距較寬、基線低 1pt */
+  .row .lead[lang=en] { letter-spacing: .6px; }
+  .row .name { flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px; }
+  .row .name i { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--sw-base); }
+  .row .name span { font: 600 var(--t-sm)/15.67px var(--font); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row.done .name span { color: var(--muted); }
+  .row svg { flex: none; width: 16px; height: 16px; fill: var(--muted); fill-rule: evenodd; }
+  /* OverviewLegCell：上下 6、最矮 34；從 114 起（時間欄＋間距＋內距）；圖示 14、間距 6 */
+  .leg { min-height: 35px; padding: 6px 4px 7px 114px; gap: 6px; }
+  .leg svg { flex: none; width: 14px; height: 14px; }
+  .leg svg.maki { fill: var(--muted); fill-rule: evenodd; }
+  .leg svg.line { fill: none; stroke: var(--muted); stroke-linecap: round; stroke-linejoin: round; }
+  .leg span { font: 400 var(--t-xs)/14.33px var(--font); color: var(--muted); white-space: pre; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  /* NativeAdRowView：上下 9、前導欄放標示（只佔字寬那一欄，沿用事件列的 100 寬讓兩者標題對齊）、圖示 22、行動呼籲在尾端 */
+  .ad { position: relative; display: flex; align-items: center; gap: 10px; padding: 9px 4px; overflow: hidden; max-height: 120px;
+    transition: max-height .5s cubic-bezier(.4,0,.2,1), opacity .35s, padding .5s cubic-bezier(.4,0,.2,1); }
+  .ad::after { content: ""; position: absolute; left: 4px; right: 4px; bottom: 0; height: 1px; background: var(--border-soft); }
+  .ad .lead { flex: none; width: 100px; font: 400 var(--t-xs)/14.33px var(--font); color: var(--muted); }
+  .ad .mid { flex: 1; min-width: 0; display: flex; gap: 8px; align-items: flex-start; }
+  .ad .ico { flex: none; width: 22px; height: 22px; border-radius: 6px; background: var(--accent-ink); display: grid; place-items: center; }
+  .ad .ico svg { width: 14px; height: 14px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .ad .tx { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .ad .hl { font: 600 var(--t-sm)/15.67px var(--font); color: var(--ink); }
+  .ad .bd { font: 400 var(--t-xs)/14.33px var(--font); color: var(--muted); }
+  .ad .adv { font: 400 var(--t-xs)/14.33px var(--font); color: var(--muted-on-sunken); }
+  .ad .cta { flex: none; font: 600 var(--t-xs)/14.33px var(--font); color: var(--accent-ink); }
+  .ad.gone { max-height: 0; opacity: 0; padding-top: 0; padding-bottom: 0; }
+  .ad.gone::after { opacity: 0; }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module">
+import { fmt, params, lang, t, loadTrip, chrome, swatchClass, toMin, ready, interactive, still, loadCategories } from './chrome.js';
+import { MAKI, MAKI_OF_TYPE } from '../trip/icons.js';
+
+const S = {
+  'zh-Hant-TW': { tabs: ['行程', '附件', '待辦清單'], count: n => `${n} 項`, badge: '廣告', cta: '查看',
+    ads: [['櫻花旅宿・廣島車站前', '住兩晚第二晚 8 折，可免費取消', 'Sakura Stay'], ['宮島限定御守與和菓子禮盒', '當日現做，島上直送到府', 'Miyajima Gift']] },
+  en: { tabs: ['Itinerary', 'Files', 'To-Dos'], count: n => `${n}`, badge: 'Ad', cta: 'View',
+    ads: [['Sakura Stay, by Hiroshima Station', 'Second night 20% off, free cancellation', 'Sakura Stay'], ['Miyajima charms and sweets gift box', 'Made fresh, shipped straight from the island', 'Miyajima Gift']] },
+  ja: { tabs: ['日程', '添付', 'やることリスト'], count: n => `${n} 件`, badge: '広告', cta: '見る',
+    ads: [['さくらステイ・広島駅前', '2 泊目が 20% オフ、無料キャンセル可', 'Sakura Stay'], ['宮島のお守りと和菓子ギフトセット', '作りたてを島から直送', 'Miyajima Gift']] },
+};
+const s = S[lang] || S['zh-Hant-TW'];
+const DAY = 2, START = 2, SHOWN = 8;   // 第 2 天，列 2 起 8 列
+const clock = m => `${String(Math.floor(m / 60) % 24).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+const maki = k => { const id = MAKI_OF_TYPE[k]; return MAKI[id] ? `<svg class="maki" viewBox="0 0 15 15"><path d="${MAKI[id]}"/></svg>` : ''; };
+const house = '<path d="M4 11 12 4l8 7v9H4zM10 20v-6h4v6"/>';
+
+const d = document.getElementById('d');
+const trip = await loadTrip();
+await loadCategories();
+const start = new Date('2026-10-10T00:00:00'), today = new Date(start.getTime() + (DAY - 1) * 864e5);
+const day = trip.days.find(x => x.day === DAY);
+const events = day.events.filter(e => e.start && e.end && !e.isCancelled).slice(START - 1, START - 1 + SHOWN);
+const evRow = e => `<div class="row"><div class="lead" lang="en">${clock(toMin(e.start))} – ${clock(toMin(e.end))}</div>
+  <div class="name ${swatchClass(e.category)}"><i></i><span>${fmt(e.title)}</span></div>${maki(e.category)}</div>`;
+const adRow = ([hl, bd, adv]) => `<div class="ad"><div class="lead">${s.badge}</div>
+  <div class="mid"><div class="ico"><svg viewBox="0 0 24 24">${house}</svg></div>
+    <div class="tx"><div class="hl">${fmt(hl)}</div><div class="bd">${fmt(bd)}</div><div class="adv">${adv}</div></div></div>
+  <div class="cta">${s.cta}</div></div>`;
+
+// 廣告夾在第 2、5 列後面（總覽那一格：每幾列一則）
+const rows = events.map((e, i) => evRow(e) + (i === 1 ? adRow(s.ads[0]) : i === 5 ? adRow(s.ads[1]) : '')).join('');
+d.insertAdjacentHTML('beforeend', `
+  <div class="head"><div class="greet">${t.monthDay(today.getMonth() + 1, today.getDate())} · ${t.weekday[today.getDay()]}</div>
+  <div class="title">${fmt(trip.title)}</div></div>
+  <div class="seg">${s.tabs.map((x, i) => `<div class="${i ? '' : 'on'}">${x}</div>`).join('')}</div>
+  <div class="table"><div class="hdr"><div class="tc"><b>${t.today}</b>
+    <span>${t.shortDate(today.getMonth() + 1, today.getDate())} ${t.weekday[today.getDay()]}</span></div>
+    <div class="tag">${s.count(day.events.length)}</div><div class="sp"></div>
+    <svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></div>${rows}</div>`);
+
+chrome(d, { tab: 0 });
+ready();
+
+// 示範：去廣告之後，廣告列一則一則收掉，清單把位置補上
+if (interactive && !still) {
+  window.__auto = { remove() { d.querySelectorAll('.ad').forEach((el, i) => setTimeout(() => el.classList.add('gone'), i * 450)); } };
+}
+</script>
+</body>
+</html>
