@@ -39,6 +39,32 @@
   --t-xs: 12px; --t-sm: 13px; --t-base: 15px; --t-lg: 16px; --t-xl: 22px; --t-xxl: 28px;
   --font: -apple-system, "SF Pro Text", "PingFang TC", "Hiragino Sans", sans-serif;
 }
+/* 深色（?theme=dark，chrome.js 設 html[data-theme]）：只換 Palette.swift 的原生色（TZColor.*.dark 那一半），
+   --sunken／--border-soft／--muted-* 等衍生色是 color-mix 配方，自己跟著變。深底是暖的（#17120f），不是純黑。
+   OnDeep（深底上的前景）兩式同色：寫 #fff，不用 --card。 */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --n0: #17120f; --n10: #221c17; --n40: #382f27; --n100: #a2958a; --n400: #f3ede5;
+  --teal100: #5cc6c3; --teal300: #7ad7d4;
+  --green100: #5cb87a; --green200: #7ecb96;
+  --amber100: #eeb455; --amber200: #f3c67c;
+  --red100: #ef7565; --red200: #f4907f;
+  --on-accent: #12211f;      /* SemanticColors.tzOnAccent：深色下主色是亮青綠，白字只剩 2:1，改暖黑 */
+  --shadow-rgb: 0,0,0;       /* tzShadow：深色純黑 */
+  --glass: rgba(34,28,23,.94); --glass-on: rgba(255,255,255,.1); --glass-edge: rgba(255,255,255,.06);
+  --scrim: rgba(0,0,0,.55); --tab-ink: var(--ink);
+  --sys-label: #fff; --sys-label-2: rgba(235,235,245,.72); --sys-red: #ff6a5e;
+  --sys-seg-bg: rgba(118,118,128,.24); --sys-seg-pill: #636366; --sys-seg-ink: #ddd3c9; --sys-grab: rgba(235,235,245,.3);
+  --sys-alert-bg: rgba(44,40,38,.97); --sys-alert-btn: rgba(120,120,128,.32); --sys-alert-btn-on: rgba(120,120,128,.48);
+  --sys-dim: rgba(0,0,0,.45); --sys-dim-on: rgba(0,0,0,.55); --sys-fill: rgba(120,120,128,.32);
+}
+:root {
+  /* 系統控制項（UIKit 原生的分段、警示、抓把；App 不畫它們，系統依明暗給）——各畫面一律用這幾個，不要再寫死 #fff／#000 */
+  --sys-label: #000; --sys-label-2: #3c3c43; --sys-red: #e5372b;
+  --sys-seg-bg: #eeeeef; --sys-seg-pill: #fff; --sys-seg-ink: #73675b; --sys-grab: #c1c1c3;
+  --sys-alert-bg: rgba(255,255,255,.97); --sys-alert-btn: rgba(120,120,128,.14); --sys-alert-btn-on: rgba(120,120,128,.26);
+  --sys-dim: rgba(0,0,0,.2); --sys-dim-on: rgba(0,0,0,.28); --sys-fill: rgba(120,120,128,.16);
+  --tab-ink: #1a1a1a; --on-accent: #fff; --shadow-rgb: 36,29,23; --glass: rgba(255,255,255,.94); --glass-on: rgba(0,0,0,.08); --glass-edge: rgba(0,0,0,.04); --scrim: rgba(31,25,20,.4); }
 html[lang="ja"] { --font: -apple-system, "SF Pro Text", "Hiragino Sans", sans-serif; }
 /* 韓文：-apple-system 在 lang=ko 底下整段解析成 Apple SD Gothic Neo（數字、西文跟著變）；UIKit 是西文 SF、諺文走 CoreText 的
    cascade（Apple SD Gothic Neo）——BlinkMacSystemFont 就是這一條（Chromium CSS.getPlatformFontsForNode 量過：.SF NS＋Apple SD Gothic Neo） */
@@ -48,6 +74,11 @@ html[lang="ko"] { --font: BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { background: #888; }
+html.embed, html.embed body { background: var(--page); }
+/* 打包進 App 的示範：真機自己有狀態列、動態島、主畫面橫條 */
+.embed .sb, .embed .home { display: none; }
+/* still=1（減少動態）：整頁不動 */
+.still *, .still *::before, .still *::after { animation: none !important; transition: none !important; caret-color: transparent; }
 body { width: 402px; height: 874px; overflow: hidden; }
 
 .device {
@@ -72,14 +103,14 @@ body { width: 402px; height: 874px; overflow: hidden; }
 
 /* ── 分頁列（iOS 26 浮動玻璃分頁列，系統元件；照截圖量） ── */
 .tabbar { position: absolute; left: 21px; right: 21px; top: 791px; height: 62px; z-index: 40;
-  border-radius: 31px; background: rgba(255,255,255,.94);
-  box-shadow: 0 0 0 .5px rgba(0,0,0,.04), 0 8px 30px rgba(0,0,0,.08);
+  border-radius: 31px; background: var(--glass);
+  box-shadow: 0 0 0 .5px var(--glass-edge), 0 8px 30px rgba(0,0,0,.08);
   display: grid; grid-template-columns: repeat(5, 1fr); padding: 4px 4px; }
 .tab { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 1px; color: #1a1a1a; font: 500 10px/12px var(--font); border-radius: 27px; }
+  gap: 1px; color: var(--tab-ink); font: 500 10px/12px var(--font); border-radius: 27px; }
 .tab svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7;
   stroke-linecap: round; stroke-linejoin: round; }
-.tab.on { background: rgba(0,0,0,.08); color: var(--accent-ink); }
+.tab.on { background: var(--glass-on); color: var(--accent-ink); }
 .tab.on svg { stroke-width: 2; }
 
 /* 「–」「→」：見 chrome.js 的 fmt()。-apple-system 在中文頁會被解析成 PingFang，指名西文字型才畫得出窄的那一個 */
@@ -93,7 +124,7 @@ body { width: 402px; height: 874px; overflow: hidden; }
 
 /* 互動模式換頁（go()）：底色跟 App 一樣白，不露出截圖用的灰底；同源跨頁淡入淡出，不閃 */
 @view-transition { navigation: auto; }
-html.is-interactive, html.is-interactive body { background:#fff; }
+html.is-interactive, html.is-interactive body { background:var(--page); }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration:.22s; }
 
 /* ==========================================================================

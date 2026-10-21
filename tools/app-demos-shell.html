@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TripEZGo demo</title>
+<!--
+  App 內的功能示範（ADR-0050）。這一頁由 tools/app-demos.mjs 產生，不要手改。
+  網址：demo.html?demo=<id>&lang=<zh-Hant|en|ja>&theme=<light|dark>&still=<0|1>
+  只畫手機螢幕裡的內容（沒有外框、沒有狀態列），照視窗大小等比縮放；自動播放、循環；still=1 顯示靜止的一幀。
+  沒有任何網路請求、不用 JS 橋：畫面是同一個資料夾裡的 screens/*.html（iframe），殼只負責縮放、換頁、重播。
+  外部（App）要暫停／繼續可以呼叫 window.tzDemo.pause() / .play()（evaluateJavaScript）。
+-->
+<style>
+  :root { --page: #fff; --border: #dbd5cd; --surface: #fbf8f4; color-scheme: light; }
+  html[data-theme="dark"] { --page: #17120f; --border: #382f27; --surface: #221c17; color-scheme: dark; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: var(--page); }
+  #stage { position: fixed; left: 0; top: 0; width: 402px; height: 874px; transform-origin: 0 0; overflow: hidden; background: var(--page); }
+  iframe { position: absolute; border: 0; width: 402px; height: 874px; background: var(--page); pointer-events: none; transform-origin: 0 0; }
+  iframe.next { opacity: 0; }
+  /* 三格局部畫面（plan-trio）：每一格是一個裁切視窗 */
+  .panel { position: absolute; left: 16px; width: 370px; overflow: hidden; border-radius: 18px; border: 1px solid var(--border); background: var(--page); box-sizing: border-box; }
+  .panel iframe { left: 0; top: 0; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+(function () {
+  var DEMOS = /*DEMOS*/{}/*END*/;
+  var q = new URLSearchParams(location.search);
+  var id = q.get('demo'), spec = DEMOS[id];
+  var LANGS = { 'zh-Hant': 'zh-Hant-TW', 'zh-Hant-TW': 'zh-Hant-TW', en: 'en', ja: 'ja' };
+  var lang = LANGS[q.get('lang')] || 'en';
+  var theme = q.get('theme') === 'dark' ? 'dark' : 'light';
+  var still = q.get('still') === '1';
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.lang = lang;
+  var stage = document.getElementById('stage');
+  if (!spec) { document.body.textContent = 'unknown demo: ' + id; return; }
+
+  // 等比縮放：寬 402、高 874 的畫面塞進視窗（以寬為主，太高就以高為主），置中
+  function fit() {
+    var w = innerWidth, h = innerHeight, s = Math.min(w / 402, h / 874);
+    stage.style.transform = 'translate(' + ((w - 402 * s) / 2) + 'px,' + ((h - 874 * s) / 2) + 'px) scale(' + s + ')';
+  }
+  addEventListener('resize', fit); fit();
+
+  var seq = 0, panels = [];
+  function urlOf(p) {
+    var u = 'screens/' + (still && p.still ? p.still.page : p.page) + '.html?lang=' + lang + '&theme=' + theme + '&embed=1';
+    var extra = (still && p.still ? p.still.q : p.q) || '';
+    if (!still) u += '&interactive=1' + (p.auto ? '&auto=' + p.auto : '');
+    else u += '&still=1';
+    return u + (extra ? '&' + extra : '');
+  }
+  function make(p, name, host) {
+    var fr = document.createElement('iframe');
+    fr.name = name; fr.src = urlOf(p); fr.setAttribute('tabindex', '-1'); fr.setAttribute('aria-hidden', 'true');
+    if (p.scale) fr.style.transform = 'scale(' + p.scale + ')';
+    if (p.crop) fr.style.top = (-p.crop * (p.scale || 1)) + 'px';
+    host.appendChild(fr);
+    return fr;
+  }
+  function addPanel(p, i) {
+    var host = stage;
+    if (p.box) {   // 局部畫面的裁切視窗
+      host = document.createElement('div'); host.className = 'panel';
+      host.style.top = p.box[0] + 'px'; host.style.height = p.box[1] + 'px';
+      stage.appendChild(host);
+    }
+    var st = { p: p, host: host, name: 'tzdd' + (id.replace(/[^a-z0-9]/g, '')) + i + 'r' + (++seq), fr: null };
+    st.fr = make(p, st.name, host);
+    panels.push(st);
+  }
+  (spec.panels || [spec]).forEach(addPanel);
+
+  var paused = false;
+  function ctl(st) { try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: paused ? 'pause' : 'play' }, '*'); } catch (e) {} }
+  function find(src) { for (var i = 0; i < panels.length; i++) { if (panels[i].fr.contentWindow === src) return panels[i]; } return null; }
+
+  // 換頁（畫面裡 go()）：新的一頁在背景載好、畫完再換上，不閃
+  function swap(st, nf, delay) {
+    var done = false;
+    function go() { if (done) return; done = true; requestAnimationFrame(function () { requestAnimationFrame(function () {
+      nf.classList.remove('next'); var old = st.fr; st.fr = nf; ctl(st); setTimeout(function () { old.remove(); }, 60); }); }); }
+    nf._ready = go; setTimeout(go, delay);
+  }
+  addEventListener('message', function (e) {
+    var d = e.data || {}, st;
+    if (d.type === 'tz-auto-hello') { if ((st = find(e.source))) ctl(st); return; }
+    if (d.type === 'tz-ready') { for (var i = 0; i < panels.length; i++) { var n = panels[i].host.querySelector('iframe.next'); if (n && n.contentWindow === e.source && n._ready) n._ready(); } return; }
+    if (d.type === 'tz-nav') {
+      if (!(st = find(e.source))) return;
+      var u = String(d.url || ''); if (u.indexOf('screens/') < 0) return;
+      e.source.postMessage({ type: 'tz-nav-ok' }, '*');
+      var nf = document.createElement('iframe'); nf.className = 'next';
+      nf.name = st.fr.name;                       // 同一個 name：示範進度與畫面狀態（sessionStorage）接得上
+      if (st.p.scale) nf.style.transform = 'scale(' + st.p.scale + ')';
+      if (st.p.crop) nf.style.top = (-st.p.crop * (st.p.scale || 1)) + 'px';
+      nf.src = u; nf.setAttribute('aria-hidden', 'true'); nf.setAttribute('tabindex', '-1');
+      st.host.appendChild(nf); swap(st, nf, 1800);
+      return;
+    }
+    if (d.type === 'tz-auto-loop') {              // 一輪播完：背景開一份新的（新的 name＝乾淨的狀態），畫好再蓋過去
+      if (!(st = find(e.source))) return;
+      st.name = st.name.replace(/r\d+$/, '') + 'r' + (++seq);
+      var lf = document.createElement('iframe'); lf.className = 'next'; lf.name = st.name; lf.src = urlOf(st.p);
+      if (st.p.scale) lf.style.transform = 'scale(' + st.p.scale + ')';
+      if (st.p.crop) lf.style.top = (-st.p.crop * (st.p.scale || 1)) + 'px';
+      lf.setAttribute('aria-hidden', 'true'); lf.setAttribute('tabindex', '-1');
+      st.host.appendChild(lf); swap(st, lf, 2500);
+      return;
+    }
+  });
+
+  // 外部控制（App 捲出畫面時暫停）
+  window.tzDemo = {
+    pause: function () { paused = true; panels.forEach(ctl); },
+    play: function () { paused = false; panels.forEach(ctl); },
+  };
+  document.addEventListener('visibilitychange', function () { document.hidden ? window.tzDemo.pause() : window.tzDemo.play(); });
+})();
+</script>
+</body>
+</html>

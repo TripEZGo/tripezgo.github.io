@@ -7,6 +7,14 @@
 
 export const params = new URLSearchParams(location.search);
 export const lang = params.get('lang') || 'zh-Hant-TW';
+// 深色（App 的深色色票：screens/screen.css 的 html[data-theme="dark"]）。官網預設淺色；打包進 App 的示範（tools/app-demos.mjs）帶 theme=dark
+export const theme = params.get('theme') === 'dark' ? 'dark' : 'light';
+document.documentElement.dataset.theme = theme;
+// 打包進 App 的示範（embed=1）：只畫手機螢幕裡的內容——不畫狀態列／動態島／主畫面橫條（真機自己有），still=1 不播動畫（減少動態）
+export const embed = params.get('embed') === '1';
+export const still = params.get('still') === '1';
+if (embed) document.documentElement.classList.add('embed');
+if (still) document.documentElement.classList.add('still');
 
 /* ── iPad（?device=ipad）：13 吋直放 1032×1376pt，商城 iPad 截圖用（tools/store/make.mjs）。
    不帶 device 就是 iPhone，所有 iPhone 的數字一格都不動——iPad 的樣子全部掛在 html.ipad 底下。
@@ -120,6 +128,7 @@ export function go(page, query = '') {
   if (interactive && params.get('auto')) q.set('auto', params.get('auto'));   // 換頁後自動示範要接著跑
   if (interactive && params.get('av')) q.set('av', params.get('av'));          // 腳本的版本號也帶著
   if (interactive && params.get('ext')) q.set('ext', params.get('ext'));
+  for (const k of ['theme', 'embed', 'still']) if (params.get(k)) q.set(k, params.get(k));   // 深色、打包進 App 的示範：換頁也要帶著
   const url = new URL(`./${page}.html?${q}`, location.href).href;
   // 在首頁的外框裡：請外面在背景載好新的一頁、畫完再瞬間換上，整頁不會閃（使用者 2026-10-12）。
   // 外面沒回 tz-nav-ok（直接開這一頁、或不是首頁）就照舊換頁。
@@ -171,6 +180,7 @@ export function chrome(device, { tab = null, dark = false } = {}) {
 export function ready() {
   document.fonts.ready.then(() => {
     document.body.dataset.ready = '1';
+    if (embed && parent !== window) parent.postMessage({ type: 'tz-ready' }, '*');   // 打包進 App 的示範：殼（demo.html）等這一則才把新的一頁換上來
     // 首頁外框帶 auto=<故事> 才自動操作（screens/autoplay.js）；截圖工具不帶
     if (interactive && params.get('auto')) import('./autoplay.js' + (params.get('av') ? '?v=' + params.get('av') : ''));   // av：home.js 蓋的版本號
   });
@@ -236,13 +246,23 @@ const RECIPES = {
   see: [0.498, 0.058, 150], seeNature: [0.556, 0.051, 150], stay: [0.428, 0.074, 264], stayLodge: [0.486, 0.065, 264],
   move: [0.524, 0.062, 322], moveLocal: [0.582, 0.055, 322], misc: [0.545, 0.022, 65],
 };
+// 色票配方：淺色／深色各一組（EventTypeSwatch.swift 的 light／dark Recipe）；底與邊混的是當下那一式的 --surface／--border，
+// 染色濃度淺色 16%、深色 22%（wash）。兩組都寫進 CSS，html[data-theme="dark"] 換掉。
+const RECIPES_DARK = {
+  eat: [0.716, 0.057, 30], eatLight: [0.764, 0.050, 30], shop: [0.815, 0.052, 74], shopMarket: [0.863, 0.046, 74],
+  see: [0.756, 0.038, 150], seeNature: [0.804, 0.034, 150], stay: [0.695, 0.049, 264], stayLodge: [0.743, 0.043, 264],
+  move: [0.779, 0.041, 322], moveLocal: [0.827, 0.036, 322], misc: [0.640, 0.018, 65],
+};
 {
-  const surface = hexToOklch('#fbf8f4'), border = hexToOklch('#dbd5cd');
-  const css = Object.entries(RECIPES).map(([k, [l, c, h]]) => {
+  const sets = [
+    ['', RECIPES, hexToOklch('#fbf8f4'), hexToOklch('#dbd5cd'), 0.16],
+    ['html[data-theme="dark"] ', RECIPES_DARK, hexToOklch('#221c17'), hexToOklch('#382f27'), 0.22],
+  ];
+  const css = sets.flatMap(([pre, rec, surface, border, wash]) => Object.entries(rec).map(([k, [l, c, h]]) => {
     const base = { l, c, h: h * Math.PI / 180 };
-    return `.sw-${k}{--sw-base:${oklchToCss(base)};--sw-fill:${oklchToCss(mix(base, .16, surface))};` +
+    return `${pre}.sw-${k}{--sw-base:${oklchToCss(base)};--sw-fill:${oklchToCss(mix(base, wash, surface))};` +
       `--sw-stroke:${oklchToCss(mix(base, .30, border))};--sw-chip-stroke:${oklchToCss(mix(base, .45, border))}}`;
-  }).join('\n');
+  })).join('\n');
   document.head.insertAdjacentHTML('beforeend', `<style>${css}</style>`);
 }
 

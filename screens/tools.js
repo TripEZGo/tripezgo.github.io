@@ -57,20 +57,20 @@ const LIB_CSS = `
 html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
 .head-tool { position: absolute; left: 346px; top: 70px; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: var(--ink); z-index: 2; }
 .head-tool svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
-.seg { position: absolute; left: 20px; width: 362px; top: 119.67px; height: 45px; border-radius: 22.5px; background: #eeeeef; }
-.seg-pill { position: absolute; top: 2.33px; height: 40.33px; width: ${SEG_W}px; border-radius: 20.2px; background: #fff;
+.seg { position: absolute; left: 20px; width: 362px; top: 119.67px; height: 45px; border-radius: 22.5px; background: var(--sys-seg-bg); }
+.seg-pill { position: absolute; top: 2.33px; height: 40.33px; width: ${SEG_W}px; border-radius: 20.2px; background: var(--sys-seg-pill);
   box-shadow: 0 0 0 .5px rgba(0,0,0,.03), 0 2px 6px rgba(0,0,0,.04); }
 .seg-t { position: absolute; top: 0; height: 45px; width: ${SEG_W}px; display: grid; place-items: center;
-  font: 400 var(--t-sm)/16px var(--font); color: #73675b; white-space: nowrap; }
+  font: 400 var(--t-sm)/16px var(--font); color: var(--sys-seg-ink); white-space: nowrap; }
 .seg-t.on { font-weight: 700; color: var(--ink); }
 .is-interactive .head-tool { cursor: pointer; } .is-interactive .head-tool:active { background: var(--surface); }
 /* 「工具」挑一個的紙（MenuSheetViewController）：custom detent＝貼內容高、iOS 26 浮動紙四邊內縮 8、圓角 Radius.lg 12、抓桿；
    內容 安全區上緣＋16、左右 20；抬頭 base semibold、之後 12；一列 上下 12 左右 4、最矮 56、圖示 20（muted）、間距 12、
    標題 base ink＋副標 xs muted（間 1）；兩列之間一條 border-soft，從 32 起畫 */
-.tz-menu-dim { position: absolute; inset: 0; z-index: 44; background: rgba(0,0,0,.2); }
+.tz-menu-dim { position: absolute; inset: 0; z-index: 44; background: var(--sys-dim); }
 .tz-menu { position: absolute; left: 8px; right: 8px; bottom: 8px; z-index: 45; background: var(--page); border-radius: 12px;
   box-shadow: 0 0 30px rgba(0,0,0,.1); padding: 20px 20px 26px; }
-.tz-menu .tz-grab { position: absolute; left: 50%; margin-left: -18px; top: 5px; width: 36px; height: 5px; border-radius: 2.5px; background: #c1c1c3; }
+.tz-menu .tz-grab { position: absolute; left: 50%; margin-left: -18px; top: 5px; width: 36px; height: 5px; border-radius: 2.5px; background: var(--sys-grab); }
 .tz-menu h3 { font: 600 var(--t-base)/18px var(--font); color: var(--ink); margin-bottom: 12px; }
 .tz-menu .tz-mrow { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 12px 4px; }
 .tz-menu .tz-mrow { position: relative; }
@@ -87,7 +87,7 @@ html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
 .is-interactive .tz-x { cursor: pointer; }
 /* 導覽列標題（系統，17 semibold；sheet 頂下 16、高 44） */
 .tz-navt { position: absolute; left: 70px; right: 70px; top: 16px; height: 44px; display: grid; place-items: center;
-  font: 600 17px/22px var(--font); color: #000; white-space: nowrap; overflow: hidden; }
+  font: 600 17px/22px var(--font); color: var(--sys-label); white-space: nowrap; overflow: hidden; }
 /* iPad（?device=ipad）：抬頭往下 34、拉寬（擷取 05：標題中線 127、切換列 155–197，跟 iPhone 各 +34） */
 .ipad .wg-title { top: 109.4px; }
 .ipad .head-tool { left: 976px; top: 104px; }
@@ -153,26 +153,26 @@ const CSS = `
 .is-interactive .seg-t { cursor: pointer; }
 .is-interactive .seg-pill { transition: left .28s cubic-bezier(.3,.7,.2,1); }
 .tz-dim { position: absolute; inset: 0; z-index: 44; background: rgba(0,0,0,0); transition: background .3s; }
-.tz-dim.on { background: rgba(0,0,0,.28); }
+.tz-dim.on { background: var(--sys-dim-on); }
 .tz-sheet { position: absolute; left: 0; right: 0; top: 62px; bottom: 0; z-index: 45; background: var(--page);
   border-radius: 12px 12px 0 0; overflow: hidden; transform: translateY(100%); transition: transform .34s cubic-bezier(.2,.8,.2,1);
   box-shadow: 0 -2px 18px rgba(0,0,0,.08); touch-action: none; }
 .tz-sheet.on { transform: none; }
 .tz-sheet.drag { transition: none; }
-.tz-sheet .tz-grab { position: absolute; left: 183px; top: 5px; width: 36px; height: 5px; border-radius: 2.5px; background: #c1c1c3; z-index: 3; }
+.tz-sheet .tz-grab { position: absolute; left: 183px; top: 5px; width: 36px; height: 5px; border-radius: 2.5px; background: var(--sys-grab); z-index: 3; }
 .tz-alert-wrap { position: absolute; inset: 0; z-index: 48; display: grid; place-items: center; background: rgba(0,0,0,0); transition: background .2s; }
-.tz-alert-wrap.on { background: rgba(0,0,0,.2); }
-.tz-alert { width: 300px; border-radius: 34px; background: rgba(255,255,255,.97); padding: 22px 18px 16px; text-align: center;
+.tz-alert-wrap.on { background: var(--sys-dim); }
+.tz-alert { width: 300px; border-radius: 34px; background: var(--sys-alert-bg); padding: 22px 18px 16px; text-align: center;
   box-shadow: 0 10px 40px rgba(0,0,0,.18); transform: scale(1.12); opacity: 0; transition: transform .22s, opacity .2s; }
 .tz-alert-wrap.on .tz-alert { transform: none; opacity: 1; }
-.tz-alert b { display: block; font: 600 17px/22px var(--font); color: #000; }
-.tz-alert p { margin-top: 6px; font: 400 15px/20px var(--font); color: #3c3c43; }
+.tz-alert b { display: block; font: 600 17px/22px var(--font); color: var(--sys-label); }
+.tz-alert p { margin-top: 6px; font: 400 15px/20px var(--font); color: var(--sys-label-2); }
 .tz-alert .acts { margin-top: 18px; display: flex; gap: 10px; }
-.tz-alert .acts span { flex: 1; height: 48px; border-radius: 24px; background: rgba(120,120,128,.14); display: grid; place-items: center;
-  font: 500 17px/20px var(--font); color: #000; cursor: pointer; padding: 0 8px; }
+.tz-alert .acts span { flex: 1; height: 48px; border-radius: 24px; background: var(--sys-alert-btn); display: grid; place-items: center;
+  font: 500 17px/20px var(--font); color: var(--sys-label); cursor: pointer; padding: 0 8px; }
 .tz-alert .acts span.pref { font-weight: 600; }
-.tz-alert .acts span.destr { color: #e5372b; }
-.tz-alert .acts span:active { background: rgba(120,120,128,.26); }
+.tz-alert .acts span.destr { color: var(--sys-red); }
+.tz-alert .acts span:active { background: var(--sys-alert-btn-on); }
 `;
 let styled = false;
 export function style() {

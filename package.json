@@ -10,6 +10,7 @@
     "golden:check": "node tools/check-golden.mjs"
   },
   "devDependencies": {
-    "@playwright/test": "^1.63.0"
+    "@playwright/test": "^1.63.0",
+    "esbuild": "^0.28.2"
   }
 }
