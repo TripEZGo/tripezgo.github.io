@@ -134,12 +134,16 @@
   .nt-hr { margin: 9px 0 6px; height: 1px; background: var(--border); }
   .nt-p { font: 400 13px/17px var(--font); letter-spacing: .26px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .nt-p + .nt-p { margin-top: 2px; }
+  /* 深色（ADR-0050）：桌布壓暗；Widget 卡片是 containerBackground(tzCard)，色票自己跟著走 */
+  html[data-theme="dark"] .dim { background: linear-gradient(180deg, rgba(0,0,0,.42), rgba(0,0,0,.30) 30%, rgba(0,0,0,.30) 70%, rgba(0,0,0,.44)); }
+  html[data-theme="dark"] .w { box-shadow: 0 2px 14px rgba(0,0,0,.35); }
+  html[data-theme="dark"] .mark svg { stroke: var(--on-accent); }
 </style>
 </head>
 <body>
 <div class="device" id="d"><div class="dim"></div></div>
 <script type="module">
-import { fmt, lang, params, loadTrip, loadCategories, categoryName, chrome, toMin, duration, ready, interactive } from './chrome.js';
+import { fmt, lang, params, loadTrip, loadCategories, categoryName, chrome, toMin, duration, ready, interactive, go } from './chrome.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
@@ -310,6 +314,7 @@ ready();
    App：TodosCards.swift、WidgetPieces.swift、ToggleTodoIntent.swift、ExchangeCards.swift、NoteCards.swift（小：
    標題 15 粗、兩段各一行）；筆記內容＝範本裡那一則，@ 提及照 App 換成行程名稱。 */
 if (interactive) {
+  window.__auto = { ...(window.__auto || {}), next: () => go('siri') };   // demo-glance：Widget → Siri
   // 第 2 頁
   const p2 = document.createElement('div'); p2.className = 'pg'; p2.style.transform = 'translateX(402px)'; pager.append(p2);
   const note = (trip.notes || [])[0];

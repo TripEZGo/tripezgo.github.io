@@ -75,10 +75,10 @@
 
   .fab { position: absolute; left: 335px; top: 728px; width: 50px; height: 50px; border-radius: 50%;
     background: var(--accent); display: grid; place-items: center; z-index: 30;
-    box-shadow: 0 0 0 1px rgba(255,255,255,.9), 0 6px 16px rgba(31,25,20,.18); }
-  .fab svg { width: 24px; height: 24px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; }
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--page) 90%, transparent), 0 6px 16px rgba(var(--shadow-rgb),.18); }
+  .fab svg { width: 24px; height: 24px; fill: none; stroke: var(--on-accent); stroke-width: 2.2; stroke-linecap: round; }
   .scrim { position: absolute; left: 0; right: 0; top: 760px; bottom: 0; z-index: 20;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 30px); }
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--page) 0%, transparent), var(--page) 30px); }
 
   /* ── 互動模式（interactive=1）才用得到的樣子；截圖模式一格都不碰 ── */
   .grid.scroll { overflow-y: auto; scrollbar-width: none; overscroll-behavior: contain; }
@@ -96,13 +96,14 @@
   .ev.cx .t, .ev.cx .m, .ad.cx { color: var(--muted); text-decoration: line-through; }
   .ad.cx { background: var(--surface); border-color: var(--border); }
   /* 拿起來：描邊 2pt（editingOutlineWidth），顏色跟這一則的色票（已取消的是 muted）；原處 0.42 透明 */
-  .ev.picked { z-index: 6; box-shadow: 0 0 0 2px var(--sw-base), 0 10px 24px rgba(31,25,20,.18); }
+  .ev.picked { z-index: 6; box-shadow: 0 0 0 2px var(--sw-base), 0 10px 24px rgba(var(--shadow-rgb),.18); }
   .ev.cx.picked { box-shadow: 0 0 0 2px var(--muted), 0 10px 24px rgba(31,25,20,.18); }
   .ev.line.picked { box-shadow: none; outline: 2px solid var(--sw-base); outline-offset: 1px; }
   .ev.origin { opacity: .42; pointer-events: none; }
   /* RouteLegCell：沒設路程＝白底虛線、500、muted；間隔不足＝整顆琥珀（TripMapLegLabelView.warningFill／Edge，tzWarningInk） */
   .leg-pill.unset { background: var(--card); border-style: dashed; color: var(--muted); font-weight: 500; }
   .leg-pill.over { background: rgb(249,234,214); border-color: rgb(228,188,132); color: var(--amber200); }
+  html[data-theme="dark"] .leg-pill.over { background: color-mix(in srgb, var(--amber100) 18%, var(--page)); border-color: color-mix(in srgb, var(--amber100) 45%, var(--border)); }
 
   /* ── 00:00 之上那一疊（DayView.topStack：時區說明 → 待排區 → 「開始」書擋 → 00:00）。只在互動模式畫：
         截圖停在 07:00，這一疊在畫面外。時區說明：手機與主要時區同為日本時間（基準圖用日本時區啟動），不出現。 ── */
@@ -121,7 +122,7 @@
   .pz-flow:last-child { margin-bottom: 0; }
   .pz-railwrap { position: relative; }
   .pz-railwrap::after { content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: 28px; pointer-events: none;
-    background: linear-gradient(to right, rgba(255,255,255,0), var(--page)); }
+    background: linear-gradient(to right, color-mix(in srgb, var(--page) 0%, transparent), var(--page)); }
   .pz-rail { display: flex; gap: 4px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; overscroll-behavior-x: contain; }
   .pz-rail::-webkit-scrollbar { display: none; }
   .pz-end { flex: none; width: 16px; }   /* contentInset.right 20（減掉卡間距 4） */
@@ -135,7 +136,7 @@
   /* 落點的影子（CalendarGhostView .pending）：強調色 16% 混白、1.5 實線強調色、圓角 8、內距 4 10；
      名字 sm 600 accent-ink＋「放開就排在 13:00 – 14:00」 */
   .ghost { position: absolute; left: 56px; right: 20px; z-index: 7; border-radius: 8px; padding: 4px 10px; overflow: hidden;
-    background: color-mix(in oklch, var(--accent) 16%, #fff); box-shadow: inset 0 0 0 1.5px var(--accent); pointer-events: none; }
+    background: color-mix(in oklch, var(--accent) 16%, var(--page)); box-shadow: inset 0 0 0 1.5px var(--accent); pointer-events: none; }
   .ghost > b { display: block; font: 600 var(--t-sm)/16px var(--font); color: var(--accent-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .ghost > span { display: block; font: 400 var(--t-xs)/16px var(--font); color: var(--accent-ink); white-space: nowrap; }
   /* 書擋列（BookendRowView）：最矮 44、上下 7、左 4 右 20、間距 9；標籤 pill：內距 2 8、間距 5、圖示 12／2.2、xs 600 色票色 */
@@ -152,8 +153,8 @@
   .hour.half span { font-size: 10px; color: var(--muted-faint); }
   .hour.q span { font-size: 9.33px; color: color-mix(in srgb, var(--n100) 48%, var(--n0)); }
   .hour.half::after, .hour.q::after { border-top: 0; height: 1px; }
-  .hour.half::after { background: repeating-linear-gradient(to right, color-mix(in srgb, var(--border-soft) 70%, #fff) 0 3px, transparent 3px 6px); }
-  .hour.q::after { background: repeating-linear-gradient(to right, color-mix(in srgb, var(--border-soft) 60%, #fff) 0 1px, transparent 1px 2px); }
+  .hour.half::after { background: repeating-linear-gradient(to right, color-mix(in srgb, var(--border-soft) 70%, var(--page)) 0 3px, transparent 3px 6px); }
+  .hour.q::after { background: repeating-linear-gradient(to right, color-mix(in srgb, var(--border-soft) 60%, var(--page)) 0 1px, transparent 1px 2px); }
   .grid.scroll { touch-action: pan-x pan-y; }   /* 兩指留給縮放，不讓瀏覽器把整頁放大 */
 
   /* ── iPad（?device=ipad，chrome.js DEV）：同一套版面拉寬到 1032，頁首往下 34（擷取 01 量：日期小字中線 115、

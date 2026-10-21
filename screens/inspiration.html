@@ -70,7 +70,7 @@
   .fab { position: absolute; right: 16px; top: 723px; width: 52px; height: 52px; border-radius: 50%; background: var(--card); z-index: 30;
     border: 1px solid var(--border); box-shadow: 0 6px 18px -8px rgba(31,25,20,.22), 0 4px 14px rgba(31,25,20,.06); display: grid; place-items: center; color: var(--ink); }
   .fab svg { width: 22px; height: 22px; stroke-width: 2; }
-  .scrim { position: absolute; left: 0; right: 0; top: 760px; bottom: 0; z-index: 20; background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 30px); }
+  .scrim { position: absolute; left: 0; right: 0; top: 760px; bottom: 0; z-index: 20; background: linear-gradient(to bottom, color-mix(in srgb, var(--page) 0%, transparent), var(--page) 30px); }
   .empty { padding: 48px 20px; text-align: center; color: var(--muted); font: 400 var(--t-sm)/18px var(--font); }
 
   /* iPad：抬頭往下 34（同 tools.js）、清單照舊兩側 20；沒有分頁列就沒有那層淡出 */
@@ -78,8 +78,9 @@
 
   /* ── ② 檢視紙：sheet 外觀照 event.html 量好的（頂 62、圓角 12、抓桿 36×5、玻璃導覽鈕高 44 距頂 16） ── */
   .gl { position: absolute; top: 16px; right: 16px; width: 100px; height: 44px; border-radius: 22px; background: #fdfdfd; box-shadow: 0 4px 22px rgba(0,0,0,.07); z-index: 3; }
+  html[data-theme="dark"] .gl { background: var(--surface); box-shadow: 0 0 0 1px var(--border); }
   .gl .slot { position: absolute; top: 0; width: 44px; height: 44px; display: grid; place-items: center; }
-  .gl svg { width: 24px; height: 24px; stroke-width: 1.8; color: #191919; }
+  .gl svg { width: 24px; height: 24px; stroke-width: 1.8; color: var(--ink); }
   .gl .slot.del svg { color: var(--red200); }
   .dv { position: absolute; left: 0; right: 0; top: 68px; bottom: 0; overflow: hidden; }
   .dv .in { position: absolute; left: 20px; right: 20px; top: 0; }
@@ -102,8 +103,8 @@
   .arow { display: flex; align-items: center; gap: 12px; padding: 8px 16px; min-height: 52px; border: 1px solid var(--border); border-radius: 12px; background: var(--page); }
   .arow svg { width: 20px; height: 20px; flex: none; color: var(--muted-on-sunken); stroke-width: 1.8; }
   .arow b { display: block; font: 400 var(--t-base)/18px var(--font); } .arow span span { display: block; font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); }
-  .dfoot { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 14px 20px 34px; background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 22%); }
-  .primary { min-height: 48px; border-radius: 8px; background: var(--accent-ink); color: #fff; display: grid; place-items: center; font: 600 var(--t-base)/18px var(--font); }
+  .dfoot { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 14px 20px 34px; background: linear-gradient(to bottom, color-mix(in srgb, var(--page) 0%, transparent), var(--page) 22%); }
+  .primary { min-height: 48px; border-radius: 8px; background: var(--accent-ink); color: var(--on-accent); display: grid; place-items: center; font: 600 var(--t-base)/18px var(--font); }
   /* 關聯那張紙疊在檢視紙上面（z 比 tz-sheet 的 45 高） */
   .m2.tz-menu-dim { z-index: 46; } .m2.tz-menu { z-index: 47; }
   .tz-menu .tz-mrow.off { opacity: .42; }

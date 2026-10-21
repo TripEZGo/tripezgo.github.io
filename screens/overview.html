@@ -26,10 +26,10 @@
 
   /* UISegmentedControl（iOS 26，系統元件；照截圖量）：軌道 20–382 × 134–179，滑塊內縮 2 */
   .seg { position: absolute; left: 20px; top: 134px; width: 362px; height: 45px; border-radius: 22.5px;
-    background: #eeeeef; display: grid; grid-template-columns: repeat(3, 1fr); padding: 2px; }
+    background: var(--sys-seg-bg); display: grid; grid-template-columns: repeat(3, 1fr); padding: 2px; }
   .seg div { display: grid; place-items: center; font: 400 var(--t-sm)/16px var(--font); color: var(--muted-on-sunken);
     border-radius: 20.5px; white-space: nowrap; overflow: hidden; }
-  .seg div.on { background: #fff; color: var(--ink); font-weight: 700; margin-right: 4.67px;
+  .seg div.on { background: var(--sys-seg-pill); color: var(--ink); font-weight: 700; margin-right: 4.67px;
     box-shadow: 0 0 0 .5px rgba(0,0,0,.02); }
 
   /* 表格：左右各 20（版面邊距），列再內縮 rowPaddingH 4。分隔線 1pt、borderSoft，左右各縮 4 */
@@ -99,13 +99,15 @@
   /* OverviewTodoCell：上下 9、最矮 44；勾選框 22、框線 1.5、勾 13；分隔線從 34 起 */
   .trow { min-height: 44px; padding: 9px 4px; }
   .box { flex: none; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--border); display: grid; place-items: center; }
-  .box .di { width: 13px; height: 13px; color: #fff; }
+  .box .di { width: 13px; height: 13px; color: var(--on-accent); }
   .trow.done .box { background: var(--accent-ink); border-color: var(--accent-ink); }
   .tt b { font: 400 var(--t-sm)/16px var(--font); color: var(--ink); }
   .trow.done .tt b { color: var(--muted); text-decoration: line-through; }
   .box.ring { border: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='10.25' fill='none' stroke='%23dbd5cd' stroke-width='1.5' stroke-dasharray='3 3'/%3E%3C/svg%3E"); }
   .tin { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 400 var(--t-sm)/16px var(--font); color: var(--ink); padding: 0; }
   .tin::placeholder { color: rgba(60, 60, 67, .3); }
+  html[data-theme="dark"] .tin::placeholder { color: rgba(235, 235, 245, .3); }
+  html[data-theme="dark"] .box.ring { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='10.25' fill='none' stroke='%23382f27' stroke-width='1.5' stroke-dasharray='3 3'/%3E%3C/svg%3E"); }
   /* ── 1.3.0 總覽／行事曆優化卡（App main c7ad2496a；設計稿 overview-calendar-polish）── */
   /* 待排行程：「日程行程」底下的可收合子 section，跟「日程之外的行程」同一階（OverviewHeaderView.configure：
      .unscheduled 走日期那一階的字），件數用警示色、0 項退回灰（OverviewSections.unscheduledSection isWarning: count > 0） */
@@ -122,7 +124,7 @@
   .btitle { margin: 4px 4px 6px; font: 700 var(--t-lg)/19px var(--font); letter-spacing: -.16px; color: var(--ink); overflow-wrap: anywhere; }
   .bbody { position: relative; margin-top: 4px; padding: 0 4px; overflow: hidden; }
   .bbody p { font: 400 var(--t-base)/27.7px var(--font); letter-spacing: -.24px; color: var(--ink); margin-bottom: 12px; }   /* NoteEditorMetrics.bodyStyle .base、bodyLeading 1.65（UIKit lineSpacing 加在字型行高上，同 note.html 量到的 27.7）、bodySpacingAfter 12 */
-  .bbody.clip::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 24px; background: linear-gradient(rgba(255,255,255,0), var(--page)); }
+  .bbody.clip::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 24px; background: linear-gradient(color-mix(in srgb, var(--page) 0%, transparent), var(--page)); }
   .bmore { display: flex; justify-content: flex-end; }
   .bmore[hidden] { display: none; }
   .bmore span { display: inline-flex; align-items: center; gap: 3px; min-height: 44px; padding: 0 4px;

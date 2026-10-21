@@ -195,11 +195,17 @@ function mix(a, w, b) {
   else { let dd = b.h - a.h; while (dd > Math.PI) dd -= 2 * Math.PI; while (dd < -Math.PI) dd += 2 * Math.PI; h = a.h + dd * (1 - w); }
   return { l: a.l * w + b.l * (1 - w), c: a.c * w + b.c * (1 - w), h };
 }
-const SURFACE = hexToOklch('#fbf8f4');
+const RECIPES_DARK = {   // EventTypeSwatch.dark
+  eat: [0.716, 0.057, 30], eatLight: [0.764, 0.050, 30], shop: [0.815, 0.052, 74], shopMarket: [0.863, 0.046, 74],
+  see: [0.756, 0.038, 150], seeNature: [0.804, 0.034, 150], stay: [0.695, 0.049, 264], stayLodge: [0.743, 0.043, 264],
+  move: [0.779, 0.041, 322], moveLocal: [0.827, 0.036, 322], misc: [0.640, 0.018, 65],
+};
+const DARK = document.documentElement.dataset.theme === 'dark';
+const SURFACE = hexToOklch(DARK ? '#221c17' : '#fbf8f4');
 export const chipFill = key => {
   const fam = swatchClass(key).slice(3);
-  const [l, c, h] = RECIPES[fam] || RECIPES.misc;
-  return oklchToCss(mix({ l, c, h: h * Math.PI / 180 }, 0.20, SURFACE));
+  const [l, c, h] = (DARK ? RECIPES_DARK : RECIPES)[fam] || (DARK ? RECIPES_DARK : RECIPES).misc;
+  return oklchToCss(mix({ l, c, h: h * Math.PI / 180 }, DARK ? 0.26 : 0.20, SURFACE));
 };
 
 const typeChip = key => key

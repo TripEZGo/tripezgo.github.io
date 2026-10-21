@@ -74,6 +74,12 @@
   .ipad .head { top: 218px; }
   .ipad .fab { top: 1288px; }
   .ipad .scrim { display: none; }
+  /* 深色（ADR-0050） */
+  html[data-theme="dark"] .bought .badge, html[data-theme="dark"] .flag, html[data-theme="dark"] .seg2 .primary, html[data-theme="dark"] .pd .go { color: var(--on-accent); }
+  html[data-theme="dark"] .skipped .badge { background: rgba(243,237,229,.7); color: var(--page); }
+  html[data-theme="dark"] .scrim { background: linear-gradient(to bottom, rgba(23,18,15,0), var(--page) 30px); }
+  html[data-theme="dark"] .sc-nav .t { color: var(--ink); }
+  html[data-theme="dark"] .sc-nav .g { background: var(--card); box-shadow: 0 0 0 .5px rgba(255,255,255,.06), 0 4px 22px rgba(0,0,0,.4); }
 </style>
 </head>
 <body>

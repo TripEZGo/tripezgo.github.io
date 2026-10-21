@@ -31,14 +31,15 @@
   .sheet { position: absolute; left: 0; right: 0; top: 62px; bottom: 0; background: var(--page);
     border-radius: 12px 12px 0 0; overflow: hidden;
     text-autospace: normal; /* UIKit（iOS 17+）在漢字與西文／數字之間自動留一點空 */ }
-  .grabber { position: absolute; left: 183px; top: 5px; width: 36px; height: 5px; border-radius: 2.5px; background: #c1c1c3; }
+  .grabber { position: absolute; left: 183px; top: 5px; width: 36px; height: 5px; border-radius: 2.5px; background: var(--sys-grab); }
 
   /* ── 系統：iOS 26 玻璃導覽鈕（照 ref 量：高 44、距 sheet 頂 16） ── */
   .glass { position: absolute; top: 16px; height: 44px; border-radius: 22px; background: #fdfdfd;
     box-shadow: 0 4px 22px rgba(0,0,0,.07); display: flex; align-items: center; }
+  html[data-theme="dark"] .glass { background: var(--surface); box-shadow: 0 0 0 1px var(--border); }
   .glass.l { left: 16px; width: 44px; justify-content: center; }
   .glass.r { left: 166px; width: 220px; }
-  .glass svg { width: 24px; height: 24px; fill: none; stroke: #191919; stroke-width: 1.8;  /* 導覽列鈕是 template 圖，系統染成 label 色 */
+  .glass svg { width: 24px; height: 24px; fill: none; stroke: var(--ink); stroke-width: 1.8;  /* 導覽列鈕是 template 圖，系統染成 label 色 */
     stroke-linecap: round; stroke-linejoin: round; }
   .glass .slot { position: absolute; top: 0; width: 44px; height: 44px; display: grid; place-items: center; }
   /* BookendPinButton：36 的圓，底 surface、邊 border，字形 16、線寬 2 */
@@ -62,7 +63,8 @@
   .sec-head { display: flex; align-items: baseline; gap: 10px; padding: 20px 20px 6px; }
   .sec-head b { flex: 1; font: 700 var(--t-sm)/15.5px var(--font); color: var(--ink); }
   .count { display: flex; align-items: center; gap: 6px; font: 700 var(--t-xs)/14.3px var(--font); color: var(--muted); }
-  .count.due { color: rgb(168,73,45); }               /* tzDanger 在 OKLCH 裡混 22% ink（TodoCountView） */
+  .count.due { color: rgb(168,73,45); }
+  html[data-theme="dark"] .count.due { color: var(--red200); }               /* tzDanger 在 OKLCH 裡混 22% ink（TodoCountView） */
   .count i { width: 8px; height: 8px; border-radius: 50%; background: var(--danger); }
   /* 待辦列：圓框 22（命中區 44、左 4）、字 13、列高至少 48、上下 8、間距 10 */
   .todo { position: relative; display: flex; align-items: center; min-height: 48px; padding: 8px 20px 8px 0; margin-left: 20px; }
@@ -72,7 +74,8 @@
   .todo .box i { width: 22px; height: 22px; border-radius: 50%; border: 1.6px solid var(--border); }
   .todo .box svg { width: 22px; height: 22px; }
   .todo span { font: 400 var(--t-sm)/15.5px var(--font); color: var(--ink); }
-  .todo.composer span { color: rgba(60,60,67,.3); }  /* UITextField 的 placeholder（系統色） */
+  .todo.composer span { color: rgba(60,60,67,.3); }
+  html[data-theme="dark"] .todo.composer span { color: rgba(235,235,245,.3); }  /* UITextField 的 placeholder（系統色） */
   /* 附件列：EventFileCell —— 圖示 16、間距 8、列高至少 44、上下 4、箭頭 15 */
   .file { display: flex; align-items: center; gap: 8px; min-height: 44px; margin: 4px 20px; }
   .file svg { flex: none; width: 16px; height: 16px; fill: none; stroke: var(--muted); stroke-width: 1.8;
@@ -85,19 +88,19 @@
   /* ── 互動模式（interactive=1）才用得到的樣子 ── */
   .h1.cx { color: var(--muted); text-decoration: line-through; }   /* EventFactsView.headingText：已取消＝muted＋劃線 */
   .pin.on { background: var(--accent); border-color: var(--accent); }   /* BookendPinButton：啟用＝實心 */
-  .pin.on svg { stroke: #fff; }
+  .pin.on svg { stroke: var(--on-accent); }
   .sec-tog { flex: none; font: 600 var(--t-xs)/14.3px var(--font); color: var(--muted-on-sunken); }
   .count.ok { color: var(--muted-on-sunken); }   /* TodoCountView：全部做完＝mutedOnSunken、沒有點 */
   .todo .box i { display: grid; place-items: center; }
   .todo.done .box i { background: var(--ink); border-color: var(--ink); }   /* TodoCheckButton：勾了＝ink 實心＋白勾 13 */
-  .todo.done .box i svg { width: 13px; height: 13px; fill: none; stroke: #fff; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+  .todo.done .box i svg { width: 13px; height: 13px; fill: none; stroke: var(--on-accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
   .todo.done span { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--border); }
   .is-interactive .sheet { transition: transform .32s cubic-bezier(.2,.8,.2,1), filter .32s; transform-origin: 50% 0; touch-action: pan-y; }
   .sheet.back { transform: translateY(6px) scale(.94); filter: brightness(.9); }
   .dragzone { position: absolute; left: 0; right: 0; top: 0; height: 72px; touch-action: none; }
   .above { position: absolute; left: 0; right: 0; top: 0; height: 62px; }
   /* 子 sheet（延後／提前、附件預覽）：iOS 26 的浮動紙，四邊內縮 8，圓角 Radius.lg 12（preferredCornerRadius） */
-  .dim2 { position: absolute; inset: 0; background: rgba(0,0,0,.2); opacity: 0; transition: opacity .3s; z-index: 60; }
+  .dim2 { position: absolute; inset: 0; background: var(--sys-dim); opacity: 0; transition: opacity .3s; z-index: 60; }
   .dim2.on { opacity: 1; }
   .ssheet { position: absolute; left: 8px; right: 8px; bottom: 8px; background: var(--card); border-radius: 12px; z-index: 61;
     box-shadow: 0 0 30px rgba(0,0,0,.1); transform: translateY(105%); transition: transform .34s cubic-bezier(.2,.8,.2,1); overflow: hidden; }
@@ -105,7 +108,7 @@
   .ssheet.full { top: 70px; left: 0; right: 0; bottom: 0; border-radius: 12px 12px 0 0; background: var(--page); }
   .ssheet .grabber { left: 50%; margin-left: -18px; }
   .subnav { height: 44px; margin-top: 16px; display: flex; align-items: center; justify-content: center; padding: 0 64px;
-    font: 600 17px/22px var(--font); color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    font: 600 17px/22px var(--font); color: var(--sys-label); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .subnav span { overflow: hidden; text-overflow: ellipsis; }
   .subbody { padding: 16px 20px 0; display: flex; flex-direction: column; gap: 16px; }
   /* ShiftEventSheet：兩顆晶片置中（ChipControl：高 44、左右 16、膠囊；選中 ink 底、白字粗體）、倒數輪、一句範圍提示、分隔線、套用 */
@@ -115,28 +118,28 @@
   .schip.on { background: var(--ink); border-color: var(--ink); color: var(--page); font-weight: 700; }
   .wheel { position: relative; height: 216px; display: flex; justify-content: center;
     -webkit-mask-image: linear-gradient(transparent, #000 34%, #000 66%, transparent); mask-image: linear-gradient(transparent, #000 34%, #000 66%, transparent); }
-  .wheel .band { position: absolute; left: 0; right: 0; top: 92px; height: 32px; border-radius: 8px; background: rgba(118,118,128,.12); }
+  .wheel .band { position: absolute; left: 0; right: 0; top: 92px; height: 32px; border-radius: 8px; background: var(--sys-fill); }
   .wcol { position: relative; width: 64px; height: 216px; overflow-y: scroll; scroll-snap-type: y mandatory; scrollbar-width: none;
     padding: 92px 0; overscroll-behavior: contain; touch-action: pan-y; }
   .wcol::-webkit-scrollbar { display: none; }
-  .wr { height: 32px; line-height: 32px; text-align: right; padding-right: 8px; scroll-snap-align: center; font: 400 21px/32px -apple-system, BlinkMacSystemFont, sans-serif; color: #000; }
-  .wlab { position: relative; width: 64px; height: 32px; top: 92px; font: 600 17px/32px var(--font); color: #000; padding-left: 2px; white-space: nowrap; }
+  .wr { height: 32px; line-height: 32px; text-align: right; padding-right: 8px; scroll-snap-align: center; font: 400 21px/32px -apple-system, BlinkMacSystemFont, sans-serif; color: var(--sys-label); }
+  .wlab { position: relative; width: 64px; height: 32px; top: 92px; font: 600 17px/32px var(--font); color: var(--sys-label); padding-left: 2px; white-space: nowrap; }
   .hint { font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); }
   .sep { height: 1px; background: var(--border-soft); margin-top: 12px; }
-  .primary { margin: 12px 20px 22px; min-height: 48px; border-radius: 8px; background: var(--accent-ink); color: #fff;
+  .primary { margin: 12px 20px 22px; min-height: 48px; border-radius: 8px; background: var(--accent-ink); color: var(--on-accent);
     display: grid; place-items: center; font: 600 var(--t-base)/18px var(--font); }
   /* 系統 alert（UIAlertController .alert，iOS 26）：刪除行程？ */
   .alert { position: absolute; left: 50%; top: 50%; width: 300px; transform: translate(-50%,-50%) scale(1.06); opacity: 0; z-index: 71;
-    background: rgba(255,255,255,.97); border-radius: 34px; padding: 22px 18px 16px; text-align: center; transition: opacity .2s, transform .2s;
+    background: var(--sys-alert-bg); border-radius: 34px; padding: 22px 18px 16px; text-align: center; transition: opacity .2s, transform .2s;
     box-shadow: 0 10px 40px rgba(0,0,0,.18); }
   .alert.on { opacity: 1; transform: translate(-50%,-50%); }
-  .alert b { display: block; font: 600 17px/22px var(--font); color: #000; }
-  .alert p { margin-top: 6px; font: 400 14px/19px var(--font); color: rgba(60,60,67,.85); white-space: pre-line; }
+  .alert b { display: block; font: 600 17px/22px var(--font); color: var(--sys-label); }
+  .alert p { margin-top: 6px; font: 400 14px/19px var(--font); color: var(--sys-label-2); white-space: pre-line; }
   .abtns { display: flex; gap: 10px; margin-top: 18px; }
-  .abtn { flex: 1; height: 48px; border-radius: 24px; background: rgba(120,120,128,.14); display: grid; place-items: center;
-    font: 400 17px/22px var(--font); color: #000; }
+  .abtn { flex: 1; height: 48px; border-radius: 24px; background: var(--sys-alert-btn); display: grid; place-items: center;
+    font: 400 17px/22px var(--font); color: var(--sys-label); }
   .abtn.pref { font-weight: 600; }
-  .abtn.red { color: #ff383c; }
+  .abtn.red { color: var(--sys-red); }
   /* ToastView（.success）：深底膠囊、白字 13、勾 18 tzSuccess */
   .toast { position: absolute; left: 50%; bottom: 52px; max-width: 354px; transform: translate(-50%, 14px); opacity: 0; z-index: 80;
     display: flex; align-items: center; gap: 9px; padding: 11px 16px 11px 13px; border-radius: 22px; background: var(--n500); color: #fff;

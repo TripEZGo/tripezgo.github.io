@@ -20,7 +20,7 @@
   /* HeadIconButton.setToggle(lit: true)：圖示 23、tzAccentInk，底是 tzOnTint（teal100 14% 混白）的 44pt 圓 */
   .head-act { position: absolute; left: 346px; top: 70px; width: 44px; height: 44px; border-radius: 50%;
     display: grid; place-items: center; color: var(--accent-ink);
-    background: color-mix(in srgb, var(--teal100) 14%, #fff); }
+    background: color-mix(in srgb, var(--teal100) 14%, var(--page)); }
   .head-act svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.8;
     stroke-linecap: round; stroke-linejoin: round; }
 
@@ -87,8 +87,8 @@
 
   .fab { position: absolute; left: 335px; top: 728px; width: 50px; height: 50px; border-radius: 50%;
     background: var(--accent); display: grid; place-items: center; z-index: 30;
-    box-shadow: 0 0 0 1px rgba(255,255,255,.9), 0 6px 16px rgba(31,25,20,.18); }
-  .fab svg { width: 24px; height: 24px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; }
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--page) 90%, transparent), 0 6px 16px rgba(var(--shadow-rgb),.18); }
+  .fab svg { width: 24px; height: 24px; fill: none; stroke: var(--on-accent); stroke-width: 2.2; stroke-linecap: round; }
 </style>
 </head>
 <body>

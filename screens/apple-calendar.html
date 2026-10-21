@@ -92,12 +92,23 @@
   .inbox { left: 248px; width: 125px; justify-content: space-around; }
   .inbox svg { width: 24px; height: 24px; stroke-width: 1.8; }
   .fade { position: absolute; left: 0; right: 0; bottom: 0; height: 110px; background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.9) 70%); z-index: 4; }
+  /* 深色（ADR-0050）：系統行事曆的深色——純黑底、白字、事件底是行事曆色 ~28% 疊黑 */
+  html[data-theme="dark"] { --sys-sec: #98989d; --line: #2c2c2e; }
+  html[data-theme="dark"] .device { background: #000; color: #fff; }
+  html[data-theme="dark"] .glass { background: rgba(44,44,46,.96); box-shadow: 0 0 0 .5px rgba(255,255,255,.08), 0 6px 24px rgba(0,0,0,.5); }
+  html[data-theme="dark"] .wk span { color: #fff; } html[data-theme="dark"] .wk span.we { color: var(--sys-sec); }
+  html[data-theme="dark"] .dt span.sel { background: #fff; color: #000; }
+  html[data-theme="dark"] .rule { border-top-color: #2c2c2e; }
+  html[data-theme="dark"] .hr span { color: #a1a1a6; }
+  html[data-theme="dark"] .ad .ic svg { stroke: #000; }
+  html[data-theme="dark"] .bar { background: rgba(44,44,46,.94); box-shadow: 0 0 0 .5px rgba(255,255,255,.08), 0 8px 30px rgba(0,0,0,.5); }
+  html[data-theme="dark"] .fade { background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.9) 70%); }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { fmt, lang, params, chrome, ready, loadTrip, toMin } from './chrome.js';
+import { fmt, lang, params, chrome, ready, loadTrip, toMin, theme } from './chrome.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
@@ -142,9 +153,15 @@ const S = {
 const CAL = [204, 115, 225];
 const mixW = (c, a) => c.map(v => Math.round(255 * (1 - a) + v * a)).join(',');
 d.style.setProperty('--cal', CAL.join(','));
+if (theme === 'dark') {   // 深色：底＝行事曆色 30% 疊黑，標題＝往白推 55%，副標＝往白推 35%
+  d.style.setProperty('--fill', CAL.map(v => Math.round(v * .3)).join(','));
+  d.style.setProperty('--ink', CAL.map(v => Math.round(v + (255 - v) * .55)).join(','));
+  d.style.setProperty('--sub', CAL.map(v => Math.round(v + (255 - v) * .35)).join(','));
+} else {
 d.style.setProperty('--fill', mixW(CAL, .14));
 d.style.setProperty('--ink', CAL.map(v => Math.round(v * .5)).join(','));
 d.style.setProperty('--sub', CAL.map(v => Math.round(v * .75)).join(','));
+}
 
 // Leg.travelMinutes：idle 不是路；選了班次用那一班的時長，其次才是填的分鐘
 function travelMinutes(leg) {

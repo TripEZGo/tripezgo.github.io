@@ -85,6 +85,17 @@
   .kb-keys span small { font: 600 10px/11px -apple-system, system-ui, sans-serif; letter-spacing: 2px; }
   .kb-keys span.fn { background: transparent; box-shadow: none; }
   .kb-keys span.fn svg { width: 26px; height: 22px; fill: none; stroke: #000; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+  /* 深色（ADR-0050）：後面那一層被系統壓暗；數字鍵盤是系統的深色鍵盤 */
+  html[data-theme="dark"] .device { background: #0b0908; }
+  html[data-theme="dark"] .xs .grabber { background: var(--sys-grab); }
+  html[data-theme="dark"] .cell.focus { box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 45%, transparent); }
+  html[data-theme="dark"] .sel { background: color-mix(in srgb, var(--accent) 32%, transparent); }
+  html[data-theme="dark"] .kb-bar { background: rgba(34,28,23,.94); }
+  html[data-theme="dark"] .kb-keys { background: #1c1c1e; }
+  html[data-theme="dark"] .kb-keys span { background: #4a4a4d; box-shadow: 0 1px 0 rgba(0,0,0,.5); color: #fff; }
+  html[data-theme="dark"] .kb-keys span.fn { background: transparent; box-shadow: none; }
+  html[data-theme="dark"] .kb-keys span.fn svg { stroke: #fff; }
+  html[data-theme="dark"] .kb-keys span:active { background: #6a6a6d; }
 </style>
 </head>
 <body>

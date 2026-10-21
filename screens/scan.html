@@ -112,6 +112,11 @@
   /* 空狀態（EmptyCell）：上 32、左右 16；scan 圖示 40／1.4 muted-faint、間 12；sm muted 置中 */
   .empty { padding: 32px 16px 0; text-align: center; white-space: pre-line; font: 400 var(--t-sm)/20px var(--font); color: var(--muted); }
   .empty svg { display: block; width: 40px; height: 40px; margin: 0 auto 12px; stroke-width: 1.4; color: var(--muted-faint); }
+  /* 深色（ADR-0050）：相機畫面本來就是深的；結果紙與紀錄紙跟著色票 */
+  html[data-theme="dark"] .tag, html[data-theme="dark"] .ty.url, html[data-theme="dark"] .rs-kind .url { background: color-mix(in srgb, var(--accent) 18%, var(--card)); }
+  html[data-theme="dark"] .row.flash { background: color-mix(in srgb, var(--accent) 18%, var(--card)); }
+  html[data-theme="dark"] .rs-open, html[data-theme="dark"] .seg2 .primary { color: var(--on-accent); }
+  html[data-theme="dark"] .rs-note.ok { color: var(--success-ink); } html[data-theme="dark"] .rs-note.warn { color: var(--warning-ink); }
 </style>
 </head>
 <body>

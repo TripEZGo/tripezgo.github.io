@@ -67,6 +67,9 @@
     background: rgba(255,255,255,.22); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
     box-shadow: inset 0 0 0 .5px rgba(255,255,255,.4); white-space: nowrap; }
   .sugg button.on { background: rgba(255,255,255,.42); }
+  /* 深色（ADR-0050）：Siri 回答卡是深色玻璃 */
+  html[data-theme="dark"] .scrim { background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.45) 45%, rgba(0,0,0,.62)); }
+  html[data-theme="dark"] .card { color: #fff; background: rgba(40,38,36,.78); box-shadow: inset 0 0 0 .5px rgba(255,255,255,.14), 0 10px 40px rgba(0,0,0,.45); }
 </style>
 </head>
 <body>

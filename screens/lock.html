@@ -164,12 +164,19 @@
   .lw-circ .c { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
   .lw-circ .c i { font: 400 9px/11px var(--font); font-style: normal; letter-spacing: .54px; color: rgba(255,255,255,.72); }
   .lw-circ .c b { font: 700 16px/19px ui-monospace, "SF Mono", Menlo, monospace; color: rgba(255,255,255,.96); }
+  /* 深色（ADR-0050）：系統把桌布壓暗，通知卡變深色玻璃；即時動態卡本來就是深底（ActivityTheme 兩式同色） */
+  html[data-theme="dark"] .dim { background: linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.34) 38%, rgba(0,0,0,.30) 60%, rgba(0,0,0,.46) 100%); }
+  html[data-theme="dark"] .nt-card { color: #fff; background: rgba(48,46,44,.62); }
+  html[data-theme="dark"] .nt-h span { color: rgba(255,255,255,.55); }
+  html[data-theme="dark"] .nt-plate { background: rgba(48,46,44,.46); }
+  html[data-theme="dark"] .nt-plate + .nt-plate { background: rgba(48,46,44,.32); }
+  html[data-theme="dark"] .nt-less { color: #fff; background: rgba(48,46,44,.62); }
 </style>
 </head>
 <body>
 <div class="device" id="d"><div class="dim"></div></div>
 <script type="module">
-import { fmt, lang, params, loadTrip, chrome, toMin, ready, interactive, duration, loadCategories, categoryName, ipad } from './chrome.js';
+import { fmt, lang, params, loadTrip, chrome, toMin, ready, interactive, duration, loadCategories, categoryName, ipad, go } from './chrome.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
@@ -583,6 +590,8 @@ if (interactive) {
     e.preventDefault();
   });
   const used = () => {};
+  // 打包進 App 的「不用打開 App」示範（stories-demo-library.js 的 demo-glance）：鎖定畫面 → Widget → Siri
+  window.__auto = { ...(window.__auto || {}), next: () => go('widget') };
 
   // 抬頭的「更新」：AdvanceTripActivityIntent——把卡片拉回此刻，不開 App
   const refresh = la.querySelector('.la-refresh');
