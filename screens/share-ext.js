@@ -29,6 +29,7 @@
 //    包住的名字＋換行＋旅程名（ShareViewController 的 summary：[圖片沒存進去?, tripName]）；successLinger 兩秒自己關上，
 //    completeRequest 連系統分享選單一起收掉。
 import { fmt, lang, interactive, params, swatchClass, categoryName } from './chrome.js';
+import { IS } from './inspiration-strings.js';
 
 const LANG = { 'zh-Hant-TW': 'zh', en: 'en', ja: 'ja', ko: 'ko' }[lang] || 'zh';
 
@@ -195,7 +196,7 @@ function mix(a, w, b) {
   return { l: a.l * w + b.l * (1 - w), c: a.c * w + b.c * (1 - w), h };
 }
 const SURFACE = hexToOklch('#fbf8f4');
-const chipFill = key => {
+export const chipFill = key => {
   const fam = swatchClass(key).slice(3);
   const [l, c, h] = RECIPES[fam] || RECIPES.misc;
   return oklchToCss(mix({ l, c, h: h * Math.PI / 180 }, 0.20, SURFACE));
@@ -280,6 +281,7 @@ export function mountShare(d, hostEl, cfg) {
   const title = () => st.typedTitle ?? suggestedTitle().text;
   const desc = () => st.typedDesc[st.target] ?? suggestedDesc().text;
   const canSave = () => {
+    if (cfg.inspiration) return !st.reading;
     if (st.reading) return false;
     const missing = !title().trim();
     if ((st.target === 'event' || st.target === 'marker') && missing) return false;
@@ -385,7 +387,27 @@ export function mountShare(d, hostEl, cfg) {
     return '';
   }
 
+  // 1.4.0 分享紙「存成靈感」（ShareSheetViewController，設計 X 線 A1–A3、A5、A7）：左上圓形 ✕（SheetCloseButton）、標題、
+  // 分享進來的東西本身（ShareSourceBox：網址等寬、照字斷行，不抓 og、沒有骨架）、「旅程」一列（日曆圖示＋旅程名＋›）、
+  // 「類型」一列（✦ 自動＋›）；儲存是釘在底部的大主按鈕。結果卡同 ④（share.done.inspiration）。
+  function inspirationForm() {
+    const X = IS[{ zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[LANG]];
+    const cal = '<svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>';
+    const link = '<svg class="i" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+    const spark = '<svg class="i" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/></svg>';
+    return `
+      <div class="xnav"><div class="xclose" data-act="cancel" data-tap>${di('close')}</div>
+        <div class="ttl">${X['shareform.title.inspiration']}</div></div>
+      <div class="xbody">
+        <div class="srcbox">${link}<span>${esc(cfg.url)}</span></div>
+        ${block(X['shareform.label.trip'], `<div class="grp"><div class="row"><span class="ricon">${cal}</span><span class="lab">${fmt(cfg.tripName)}</span>${di('chevronRight', 'chev')}</div></div>`)}
+        ${block(X['shareform.label.eventtype'], `<div class="grp"><div class="row"><span class="ricon">${spark}</span><span class="lab">${X['ui.typepicker.auto']}</span>${di('chevronRight', 'chev')}</div></div>`)}
+      </div>
+      <div class="xfoot"><div class="primary" data-act="save" data-tap>${X['shareform.action.save']}</div></div>`;
+  }
+
   function extForm() {
+    if (cfg.inspiration) return inspirationForm();
     const ttl = { event: F.titleEvent, shopping: F.titleShopping, note: F.titleNote, marker: F.titleMarker }[st.target];
     const src = st.reading
       ? `<div class="src">${di('clock')}<span class="m">${F.reading}</span></div>`
@@ -402,6 +424,10 @@ export function mountShare(d, hostEl, cfg) {
   }
 
   function extDone() {
+    if (cfg.inspiration) {
+      const X = IS[{ zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[LANG]];
+      return `<div class="res"><div class="badge50">${di('check')}</div><h2>${X['share.done.inspiration']}</h2><p>${fmt(`${F.quoted(cfg.ogTitle)}\n${cfg.tripName}`)}</p></div>`;
+    }
     const what = title().trim() || cfg.host;
     const head = { event: F.doneEvent, shopping: F.doneShopping, note: F.doneNote, marker: F.doneMarker }[st.target];
     return `<div class="res"><div class="badge50">${di('check')}</div><h2>${head}</h2><p>${fmt(`${F.quoted(what)}\n${cfg.tripName}`)}</p></div>`;
@@ -460,6 +486,7 @@ export function mountShare(d, hostEl, cfg) {
         if (act === 'share') show('sheet');
         else if (act === 'close-ss') close();
         else if (act === 'tripezgo') {
+          if (cfg.inspiration) { fresh(); setDark(true); show('ext'); return; }   // 靈感：不抓 og、沒有讀取中那一段（ADR-0037）
           // 每一次打開都是一張新的紙（ShareViewController 每次新建）：先畫表單、儲存停用，讀完網址才填進去
           fresh(); st.reading = true;
           setDark(true); show('ext');

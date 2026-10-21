@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=fbb6add764","/screens/chrome.js":"/screens/chrome.js?v=0519a5a223","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=aca7152ade","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=c19c6dceae","/screens/map.js":"/screens/map.js?v=869d04c645","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=c5192029e2","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=90d3ba5bb7","/screens/stories.js":"/screens/stories.js?v=a3a9f06442","/screens/tools.js":"/screens/tools.js?v=5f942d6b3d","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=88863cd89f","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=4d070ed56b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<meta name="viewport" content="width=402">
+<title>資料・靈感</title>
+<!--
+  資料分頁・靈感（1.4.0；App：Modules/Widgets/…/Inspiration/ ＋ UI/…/Components/Share/Inspiration*Parts.swift）。
+  參數：?lang=zh-Hant-TW|en|ja|ko（zh-Hans 的字備好了，畫面還沒開）
+        &step=list|detail|link（截圖停在哪一步：清單｜一則的檢視紙｜檢視紙上開著「新增關聯」那張紙）　&filter=unlinked（「未關聯」開著）
+        &device=ipad（只畫清單）
+  抬頭「資料」＋三格切換（靈感｜筆記｜購物清單，LibraryViewModel.Subtab 的順序）同 notes／shop（tools.js libraryHead）。
+
+  ① 清單（InspirationListViewController）：沒有自己的抬頭；先是篩選列（FilterChipRail：類型 ⇅｜細線｜✓ 未關聯｜地點・圖片・連結・文字，
+     選中＝墨底），再來是清單——新的在上；一列＝縮圖 44（og 圖／照片／地圖，沒有圖就是分類圖示；多張照片右下角一枚張數）＋
+     標題（未讀：列首 6pt 主色點＋粗體）＋「來源 · 時間」（認得的站寫人話、認不得的寫網域）＋分類小標（凹底）＋類型小標（細框＋族色點），
+     已關聯的那一列右邊一顆淡主色圓底的勾。右下 ＋（FloatingActionButton，同筆記、購物清單）。
+     字：Widgets.json／Domain.json（screens/inspiration-strings.js，tools/gen-inspiration-strings.py 產）。
+  ② 檢視紙（InspirationDetailViewController：present 的 pageSheet，沒有左上關閉鈕、只靠往下拉）：右上 ✎ 與紅色垃圾桶（這裡畫成
+     檢視行程那一套玻璃鈕）；第一列同高 210 的圖（左上小標）→ 原始連結（等寬、主色墨）→ 類型晶片＋標題 → 描述（surface 底細框）→
+     「關聯」（空的寫「無」）；底部釘著「新增關聯」主按鈕。
+  ③ 「新增關聯」那張紙（MenuSheetViewController 原樣）：行程｜筆記｜購物清單｜行程附件｜地圖標記，每列圖示＋標題＋一句說明；
+     沒有地點、照片的靈感，地圖標記那一列灰掉、說明寫「這則沒有地點」。
+  互動模式：點一列開檢視紙（往下拉或點後面收掉）→「新增關聯」→ 挑「行程」就接到行事曆（calendar.html?added=1，帶著剛加的那一則）。
+  行程那一端的預填（時間先找好空檔）與新增行程表單不在這裡畫。
+-->
+<link rel="stylesheet" href="screen.css?v=3d6bdc16dc">
+<style>
+  .ic { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* 篩選列：上緣 14（安全區 62＋抬頭那一段＝184）、滿版、晶片從清單的邊距 20 開始；晶片同購物清單那一條（高 44、圓角 12、間距 8） */
+  .rail { position: absolute; left: 0; right: 0; top: 184px; display: flex; gap: 8px; padding: 0 20px; overflow: hidden; white-space: nowrap; }
+  .is-interactive .rail { overflow-x: auto; scrollbar-width: none; } .rail::-webkit-scrollbar { display: none; }
+  .chip { flex: none; height: 44px; padding: 0 13px; border-radius: 12px; border: 1px solid var(--border); background: var(--sunken);
+    display: flex; align-items: center; gap: 6px; font: 400 var(--t-sm)/16px var(--font); color: var(--ink); }
+  .chip svg { width: 16px; height: 16px; stroke-width: 1.8; flex: none; }
+  .chip.on { background: var(--ink); border-color: var(--ink); color: var(--card); font-weight: 700; }
+  .chip .tr { width: 14px; height: 14px; color: var(--muted); stroke-width: 2; } .chip.on .tr { color: var(--card); }
+  .fsep { flex: none; align-self: center; width: 1px; height: 22px; background: var(--border); margin: 0 1px; }
+  .is-interactive .chip { cursor: pointer; }
+
+  /* 清單：每一列 上下 12、左右 20、縮圖 44、間距 12；線在整列底下、從邊距開始 */
+  .list { position: absolute; left: 0; right: 0; top: 230px; }
+  .row { position: relative; display: flex; align-items: flex-start; gap: 12px; padding: 12px 20px; }
+  .row::after { content: ""; position: absolute; left: 20px; right: 20px; bottom: 0; border-bottom: 1px solid var(--border-soft); }
+  .is-interactive .row { cursor: pointer; } .is-interactive .row:active { background: var(--surface); }
+  .row[hidden] { display: none; }
+  .dot { position: absolute; left: 7px; top: 21px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-ink); }
+  .th { position: relative; flex: none; width: 44px; height: 44px; border-radius: 8px; border: 1px solid var(--border-soft); background: var(--sunken);
+    overflow: hidden; display: grid; place-items: center; color: var(--muted); }
+  .th img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .th svg { width: 18px; height: 18px; stroke-width: 1.4; }
+  .th .n { position: absolute; right: 3px; bottom: 3px; padding: 0 4px; border-radius: 5px; background: rgba(0,0,0,.5); color: #fff;
+    font: 700 var(--t-xs)/14.3px var(--font); }
+  .tx { flex: 1; min-width: 0; }
+  .tx b { display: block; font: 500 var(--t-base)/18px var(--font); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .unread .tx b { font-weight: 700; }
+  .meta { margin-top: 2px; font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .meta i { font-style: normal; font-weight: 600; color: var(--muted-on-sunken); }
+  .tags { display: flex; gap: 4px; margin-top: 5px; overflow: hidden; white-space: nowrap; }
+  .tag { flex: none; display: inline-flex; align-items: center; gap: 4px; padding: 2px 7px; border-radius: 99px; font: 600 var(--t-xs)/14.3px var(--font); }
+  .tag.c { background: var(--sunken); color: var(--muted-on-sunken); }
+  .tag.c svg { width: 11px; height: 11px; stroke-width: 1.8; }
+  .tag.t { border: 1px solid var(--border); color: var(--ink); padding: 1px 7px; } .tag.t i { width: 6px; height: 6px; border-radius: 50%; background: var(--sw-base); }
+  .lk { flex: none; align-self: center; width: 24px; height: 24px; border-radius: 50%; margin-left: -4px;
+    background: color-mix(in srgb, var(--accent) 14%, var(--card)); color: var(--accent-ink); display: grid; place-items: center; }
+  .lk svg { width: 14px; height: 14px; stroke-width: 2.6; }
+
+  .fab { position: absolute; right: 16px; top: 723px; width: 52px; height: 52px; border-radius: 50%; background: var(--card); z-index: 30;
+    border: 1px solid var(--border); box-shadow: 0 6px 18px -8px rgba(31,25,20,.22), 0 4px 14px rgba(31,25,20,.06); display: grid; place-items: center; color: var(--ink); }
+  .fab svg { width: 22px; height: 22px; stroke-width: 2; }
+  .scrim { position: absolute; left: 0; right: 0; top: 760px; bottom: 0; z-index: 20; background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 30px); }
+  .empty { padding: 48px 20px; text-align: center; color: var(--muted); font: 400 var(--t-sm)/18px var(--font); }
+
+  /* iPad：抬頭往下 34（同 tools.js）、清單照舊兩側 20；沒有分頁列就沒有那層淡出 */
+  .ipad .rail { top: 218px; } .ipad .list { top: 264px; } .ipad .fab { top: 1288px; } .ipad .scrim { display: none; }
+
+  /* ── ② 檢視紙：sheet 外觀照 event.html 量好的（頂 62、圓角 12、抓桿 36×5、玻璃導覽鈕高 44 距頂 16） ── */
+  .gl { position: absolute; top: 16px; right: 16px; width: 100px; height: 44px; border-radius: 22px; background: #fdfdfd; box-shadow: 0 4px 22px rgba(0,0,0,.07); z-index: 3; }
+  .gl .slot { position: absolute; top: 0; width: 44px; height: 44px; display: grid; place-items: center; }
+  .gl svg { width: 24px; height: 24px; stroke-width: 1.8; color: #191919; }
+  .gl .slot.del svg { color: var(--red200); }
+  .dv { position: absolute; left: 0; right: 0; top: 68px; bottom: 0; overflow: hidden; }
+  .dv .in { position: absolute; left: 20px; right: 20px; top: 0; }
+  .media { position: relative; height: 210px; border-radius: 12px; overflow: hidden; background: var(--sunken); }
+  .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .media .kind { position: absolute; left: 12px; top: 12px; display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 99px;
+    background: rgba(0,0,0,.55); color: #fff; font: 600 var(--t-xs)/14.3px var(--font); }
+  .media .kind svg { width: 12px; height: 12px; stroke-width: 2; }
+  .olink { margin-top: 8px; display: flex; align-items: center; gap: 8px; color: var(--accent-ink); }
+  .olink svg { width: 14px; height: 14px; flex: none; stroke-width: 1.9; color: var(--muted); }
+  .olink span { min-width: 0; font: 400 var(--t-xs)/16px system-ui, ui-monospace, "SF Mono", monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ttl { margin-top: 12px; display: flex; align-items: center; gap: 8px; }
+  .tchip { flex: none; display: inline-flex; align-items: center; gap: 6px; height: 44px; padding: 0 14px; border-radius: 22px;
+    border: 1px solid var(--sw-chip-stroke); background: var(--sw-chip-fill); font: 700 var(--t-sm)/16px var(--font); color: var(--ink); }
+  .tchip svg { width: 16px; height: 16px; fill: var(--sw-base); }
+  .ttl h2 { flex: 1; min-width: 0; font: 700 var(--t-lg)/21px var(--font); }
+  .descb { margin-top: 12px; padding: 12px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border-soft); font: 400 var(--t-sm)/18px var(--font); }
+  .shd { margin: 20px 0 8px; font: 700 var(--t-sm)/16px var(--font); color: var(--muted-on-sunken); }
+  .anone { padding: 16px; border-radius: 12px; border: 1px dashed var(--border); color: var(--muted); font: 400 var(--t-sm)/18px var(--font); }
+  .arow { display: flex; align-items: center; gap: 12px; padding: 8px 16px; min-height: 52px; border: 1px solid var(--border); border-radius: 12px; background: var(--page); }
+  .arow svg { width: 20px; height: 20px; flex: none; color: var(--muted-on-sunken); stroke-width: 1.8; }
+  .arow b { display: block; font: 400 var(--t-base)/18px var(--font); } .arow span span { display: block; font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); }
+  .dfoot { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 14px 20px 34px; background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 22%); }
+  .primary { min-height: 48px; border-radius: 8px; background: var(--accent-ink); color: #fff; display: grid; place-items: center; font: 600 var(--t-base)/18px var(--font); }
+  /* 關聯那張紙疊在檢視紙上面（z 比 tz-sheet 的 45 高） */
+  .m2.tz-menu-dim { z-index: 46; } .m2.tz-menu { z-index: 47; }
+  .tz-menu .tz-mrow.off { opacity: .42; }
+  .tz-menu .tz-mrow svg.k { stroke: var(--muted); }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module">
+import { lang, params, chrome, ready, fmt, interactive, go, svg, swatchClass, categoryName, loadCategories } from './chrome.js';
+import { libraryHead, subTabs, libStyle, sheet } from './tools.js';
+import { IS } from './inspiration-strings.js';
+import { N, OLD_ITEMS, HOST } from './inspiration-data.js';
+
+const d = document.getElementById('d');
+await loadCategories();
+const S = IS[lang] || IS['zh-Hant-TW'];
+const T = k => S[`widgets.inspiration.${k}`];
+
+// DesignIcon.swift 的轉寫（24 格）
+const IC = {
+  mapPin: '<path d="M12 21C16.5 16.5 19 13 19 10A7 7 0 0 0 5 10C5 13 7.5 16.5 12 21z"/><circle cx="12" cy="10" r="2.6"/>',
+  photo: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M4 17l5.5-5.5L14 16l2.5-2.5L20 17"/>',
+  notes: '<path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z M14 3v5h5M8.5 12.5h7M8.5 16.5h5"/>',
+  link: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+  check: '<path d="M5 13l5 5 9-11"/>', plus: '<path d="M12 5v14M5 12h14"/>', picker: '<path d="m8 10 4-4 4 4M8 14l4 4 4-4"/>',
+  pencil: '<path d="M17 3Q21 3 21 7L7.5 20.5 2 22l1.5-5.5z"/>', trash: '<path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/>',
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/>',
+  shoppingBag: '<path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/>',
+  paperclip: '<path d="M21 12l-8.5 8.5Q7 22 5.5 13.5L14 5Q20.5 6.5 19 10l-8.5 8.5Q8.5 19.5 7.5 15.5L16 7"/>',
+  chevronRight: '<path d="M9 5l7 7-7 7"/>',
+};
+const ic = (n, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
+const CAT_ICON = { place: 'mapPin', image: 'photo', link: 'link', text: 'notes' };
+
+// ── 資料：剛分享進來的那一則在最上面（未讀），後面是原本就有的 ──
+const NEW_ITEM = { key: 'new', title: N.title, source: null, host: HOST, when: { k: 'now' }, cats: ['link'], type: 'cafe', thumb: 'img/insp-cafe.svg', unread: true,
+  desc: N.desc, link: `${HOST}/cafe`, fromWeb: true };
+const ITEMS = [NEW_ITEM, ...OLD_ITEMS.map((o, i) => ({ key: `o${i}`, ...o }))];
+
+// 時間（InspirationListViewModel.timeText）：不到一分鐘「現在」、當天「N 小時前」（RelativeDateTimeFormatter）、昨天「昨天 21:08」、更早「10/7」（Md）
+const REL = {
+  'zh-Hant-TW': { now: '現在', hours: n => `${n} 小時前`, md: (m, dd) => `${m}/${dd}` },
+  en: { now: 'now', hours: n => `${n} hours ago`, md: (m, dd) => `${m}/${dd}` },
+  ja: { now: '今', hours: n => `${n} 時間前`, md: (m, dd) => `${m}/${dd}` },
+  ko: { now: '지금', hours: n => `${n}시간 전`, md: (m, dd) => `${m}. ${dd}.` },
+}[lang] || null;
+const R = REL || { now: '現在', hours: n => `${n} 小時前`, md: (m, dd) => `${m}/${dd}` };
+const when = w => w.k === 'now' ? R.now : w.k === 'hours' ? R.hours(w.n) : w.k === 'yesterday' ? S['widgets.inspiration.yesterday'].replace('%@', w.t) : R.md(w.m, w.d);
+const sourceName = it => it.source ? S[`domain.inspiration.source.${it.source}`] : null;
+const host = it => it.source ? null : it.fromWeb ? HOST : (it.link ? it.link.split('/')[0] : null);
+
+const row = (it, i) => `<div class="row${it.unread ? ' unread' : ''}" data-i="${i}" data-linked="${it.linked ? 1 : 0}" data-cats="${it.cats.join(' ')}">
+  ${it.unread ? '<span class="dot"></span>' : ''}
+  <div class="th">${it.thumb ? `<img src="${it.thumb}" alt="">` : ic(CAT_ICON[it.cats[0]])}${it.n > 1 ? `<span class="n">${it.n}</span>` : ''}</div>
+  <div class="tx"><b>${fmt(it.title)}</b>
+    <div class="meta">${sourceName(it) ? `<i>${sourceName(it)}</i> · ` : host(it) ? `${host(it)} · ` : ''}${fmt(when(it.when))}</div>
+    <div class="tags">${it.cats.map(c => `<span class="tag c">${ic(CAT_ICON[c])}${S[`widgets.inspiration.category.${c}`]}</span>`).join('')}<span class="tag t ${swatchClass(it.type)}"><i></i>${categoryName(it.type)}</span></div></div>
+  ${it.linked ? `<span class="lk">${ic('check')}</span>` : ''}</div>`;
+
+const only = params.get('filter') === 'unlinked';
+const state = { unlinked: only, cats: new Set() };
+const chips = () => `<div class="chip" data-f="type">${T('filter.type')}${ic('picker', 'tr')}</div><span class="fsep"></span>
+  <div class="chip${state.unlinked ? ' on' : ''}" data-f="unlinked">${ic('check')}${T('side.unlinked')}</div>
+  ${['place', 'image', 'link', 'text'].map(c => `<div class="chip${state.cats.has(c) ? ' on' : ''}" data-f="${c}">${ic(CAT_ICON[c])}${S[`widgets.inspiration.category.${c}`]}</div>`).join('')}`;
+const visible = () => ITEMS.map((it, i) => i).filter(i => !(state.unlinked && ITEMS[i].linked) && (!state.cats.size || ITEMS[i].cats.some(c => state.cats.has(c))));
+const listHTML = () => visible().map(i => row(ITEMS[i], i)).join('') || `<div class="empty">${T('none.unlinked') ?? ''}</div>`;
+
+d.insertAdjacentHTML('beforeend', `<div class="rail" id="rail">${chips()}</div><div class="list" id="list">${listHTML()}</div>
+  <div class="fab">${ic('plus')}</div><div class="scrim"></div>`);
+chrome(d, { tab: 3 });
+libraryHead(d, 0);
+
+// ── ② 檢視紙、③ 新增關聯 ──
+const detailHTML = it => {
+  const isMap = it.thumb?.includes('gmap-snap');
+  const kind = isMap ? [S['widgets.inspiration.category.place'], 'mapPin'] : it.n > 1 ? [`1 / ${it.n}`, 'photo'] : [S['widgets.inspiration.detail.webimage'], 'photo'];
+  return `<div class="gl"><div class="slot" style="left:1px">${ic('pencil')}</div><div class="slot del" style="left:55px">${ic('trash')}</div></div>
+    <div class="dv"><div class="in">
+      <div class="media">${it.thumb ? `<img src="${it.thumb}" alt="">` : ''}<span class="kind">${ic(kind[1])}${kind[0]}</span></div>
+      ${it.link ? `<div class="olink">${ic('link')}<span>${it.link}</span></div>` : ''}
+      <div class="ttl"><span class="tchip ${swatchClass(it.type)}">${typeGlyph(it.type)}${categoryName(it.type)}</span><h2>${fmt(it.title)}</h2></div>
+      <div class="descb">${fmt(it.desc)}</div>
+      <div class="shd">${S['widgets.inspiration.detail.relations']}</div>
+      ${it.linked ? `<div class="arow">${ic('calendar')}<span><b>${S['widgets.inspiration.destination.event']}</b><span>${fmt(it.title)}</span></span></div>` : `<div class="anone">${S['widgets.inspiration.detail.norelations']}</div>`}
+    </div></div>
+    <div class="dfoot"><div class="primary" data-act="link" data-tap>${S['widgets.inspiration.link.title']}</div></div>`;
+};
+// 類型晶片的圖示：App 的 EventTypeIcons（Maki），網站 trip/icons.js 是同一份的產物
+const { MAKI, MAKI_OF_TYPE, DEFAULT_ICON_ID } = await import('../trip/icons.js');
+function typeGlyph(key) { return `<svg viewBox="0 0 15 15" aria-hidden="true"><path fill-rule="evenodd" d="${MAKI[MAKI_OF_TYPE[key] || DEFAULT_ICON_ID] || MAKI.marker}"/></svg>`; }
+// 類型晶片的底（EventTypeSwatch.chipFill）：用 share-ext.js 同一份算法
+const { chipFill } = await import('./share-ext.js').catch(() => ({}));
+
+function linkMenu(it, { instant = false } = {}) {
+  libStyle();
+  const noPlace = !it.place && !it.thumb?.includes('gmap-snap');
+  const rows = [
+    ['calendar', S['widgets.inspiration.destination.event'], S['widgets.inspiration.addto.event.subtitle'], 'event'],
+    ['notes', S['widgets.inspiration.destination.note'], S['widgets.inspiration.addto.note.subtitle'], 'note'],
+    ['shoppingBag', S['widgets.inspiration.destination.shopping'], S['widgets.inspiration.addto.shopping.subtitle'], 'shopping'],
+    ['paperclip', S['widgets.inspiration.destination.attachment'], S['widgets.inspiration.addto.attachment.link.subtitle'], 'attachment'],
+    ['mapPin', S['widgets.inspiration.destination.marker'], noPlace ? S['widgets.inspiration.addto.marker.noplace'] : (it.desc), 'marker', noPlace],
+  ];
+  const dim = document.createElement('div'), el = document.createElement('div');
+  dim.className = 'tz-menu-dim m2'; el.className = 'tz-menu m2';
+  el.setAttribute('role', 'dialog'); el.setAttribute('aria-label', S['widgets.inspiration.link.title']);
+  el.innerHTML = `<div class="tz-grab"></div><h3>${S['widgets.inspiration.link.title']}</h3>${rows.map(([i, t, s, k, off]) =>
+    `<div class="tz-mrow${off ? ' off' : ''}" data-dest="${k}"${off ? '' : ' data-tap'}>${ic(i, 'k')}<span><b>${fmt(t)}</b><span>${fmt(s)}</span></span></div>`).join('')}`;
+  if (!instant) { dim.classList.add('off'); el.classList.add('off'); }
+  d.append(dim, el);
+  if (!instant) requestAnimationFrame(() => requestAnimationFrame(() => { dim.classList.remove('off'); el.classList.remove('off'); }));
+  if (!interactive) return;
+  const close = (then) => { dim.classList.add('off'); el.classList.add('off'); setTimeout(() => { dim.remove(); el.remove(); then?.(); }, 340); };
+  dim.addEventListener('click', () => close());
+  el.addEventListener('click', (e) => {
+    const k = e.target.closest('[data-dest]:not(.off)')?.dataset.dest; if (!k) return;
+    // 行程：開一張填好的新增行程（時間先找好空檔）——存好之後落在行事曆那一天。表單不畫，直接接到結果。
+    if (k === 'event') close(() => go('calendar', 'day=2&top=14&added=1'));
+    else close();
+  });
+}
+
+function openDetail(it, { instant = false, withMenu = false } = {}) {
+  const { el, close } = sheet(d, detailHTML(it));
+  if (instant) {
+    const dim = d.querySelector('.tz-dim');
+    for (const e of [el, dim]) e.style.transition = 'none';
+    el.classList.add('on'); dim.classList.add('on');
+  }
+  // 類型晶片底色（chipFill 要等 swatch 的 CSS 變數：用 share-ext 同一組算法；拿不到就用 sw-fill）
+  if (chipFill) el.querySelector('.tchip')?.style.setProperty('--sw-chip-fill', chipFill(it.type));
+  el.querySelector('[data-act="link"]')?.addEventListener('click', () => linkMenu(it));
+  if (withMenu) linkMenu(it, { instant: true });
+  return close;
+}
+
+// ── 狀態切換（截圖模式的 step、互動模式的點擊） ──
+const step = interactive ? 'list' : (params.get('step') || 'list');
+if (step === 'detail' || step === 'link') openDetail(NEW_ITEM, { instant: true, withMenu: step === 'link' });
+
+ready();
+
+if (interactive) {
+  subTabs(d, 0);
+  const rail = document.getElementById('rail'), list = document.getElementById('list');
+  rail.addEventListener('click', (e) => {
+    const f = e.target.closest('[data-f]')?.dataset.f; if (!f || f === 'type') return;
+    if (f === 'unlinked') state.unlinked = !state.unlinked; else state.cats.has(f) ? state.cats.delete(f) : state.cats.add(f);
+    const sl = rail.scrollLeft; rail.innerHTML = chips(); rail.scrollLeft = sl;
+    list.innerHTML = listHTML();
+  });
+  list.addEventListener('click', (e) => {
+    const r = e.target.closest('.row'); if (!r) return;
+    openDetail(ITEMS[+r.dataset.i]);
+  });
+}
+</script>
+</body>
+</html>

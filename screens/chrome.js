@@ -133,8 +133,8 @@ export function go(page, query = '') {
   }
   location.href = url;
 }
-/** 分頁列每一格對到哪個畫面（設定分頁還沒有複刻，點了不動）。「資料」落在筆記那一格（LibraryViewModel.initialIndex：第一次進來是筆記） */
-export const TAB_PAGES = ['overview', 'calendar', 'map', 'notes', null];
+/** 分頁列每一格對到哪個畫面（設定分頁還沒有複刻，點了不動）。「資料」落在靈感那一格（LibraryViewModel.initialIndex：1.4.0 起第一次進來是靈感） */
+export const TAB_PAGES = ['overview', 'calendar', 'map', 'inspiration', null];
 
 export function chrome(device, { tab = null, dark = false } = {}) {
   if (interactive) {

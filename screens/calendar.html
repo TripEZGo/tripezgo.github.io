@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=fbb6add764","/screens/chrome.js":"/screens/chrome.js?v=45de5953fe","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/map-live.js":"/screens/map-live.js?v=c19c6dceae","/screens/map.js":"/screens/map.js?v=869d04c645","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=3737c0a307","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=b5b2ff1190","/screens/stories.js":"/screens/stories.js?v=a3a9f06442","/screens/tools.js":"/screens/tools.js?v=a8a0bea2ff","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=54f181498b","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=4d070ed56b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=9929832e15"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=fbb6add764","/screens/chrome.js":"/screens/chrome.js?v=0519a5a223","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=aca7152ade","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=c19c6dceae","/screens/map.js":"/screens/map.js?v=869d04c645","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=c5192029e2","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=90d3ba5bb7","/screens/stories.js":"/screens/stories.js?v=a3a9f06442","/screens/tools.js":"/screens/tools.js?v=5f942d6b3d","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=88863cd89f","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=4d070ed56b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>行事曆模式</title>
 <!--
@@ -58,6 +58,8 @@
   .ev .t { margin-top: -1px; }
   .ev .t { font: 600 var(--t-sm)/17px var(--font); color: var(--ink); }
   .ev .m { font: 400 var(--t-xs)/16px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ev.fresh { animation: fresh 1.6s ease-out 2; }
+  @keyframes fresh { 0%,100% { box-shadow: 0 0 0 0 transparent; } 40% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 55%, transparent); } }
   .ev.line { border: 0; background: none; overflow: visible; padding: 0; }
   .ev.line::before { width: var(--bar); top: 1px; bottom: 1px; }
   .ev.line .t { position: absolute; left: calc(var(--bar) + 8px); top: -1px; white-space: nowrap; background: var(--card); padding-right: 2px; }
@@ -185,6 +187,8 @@ const trip = await loadTrip();
 await loadCategories();
 // 在詳情／路程頁改過的東西（demo-state.js）；待排拖進時段的那幾則先搬進日程（pending-state.js），時刻覆寫才套得上
 if (interactive) { applyPlaced(trip); applyState(trip); }
+// 靈感「新增關聯 › 行程」之後（inspiration.html 接過來，?added=1）：剛加的那一則在第 2 天晚餐之後，描邊閃一下。預設不帶就一格不動。
+if (params.get('added') === '1') { const { ADDED_EVENT } = await import('./inspiration-data.js'); trip.days.find(x => x.day === 2).events.push({ ...ADDED_EVENT }); }
 let dayNo = +(params.get('day') || 2);
 const todayNo = +(params.get('today') || 1);
 const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
@@ -424,7 +428,7 @@ if (!interactive) {
       return `<div class="ev line ${sw}"${attrs} style="top:${top}px;height:${hgt}px;--bar:${n > 1 ? Math.min(123, w - 10) : 123}px${pos}"><div class="t">${fmt(e.title)}</div></div>`;
     }
     const meta = [categoryName(e.category), e.place && e.place.name].filter(Boolean).join(' · ');
-    return `<div class="ev ${sw}"${attrs} style="top:${top + M}px;height:${hgt - 2 * M}px${pos}">
+    return `<div class="ev ${sw}${e.fresh ? ' fresh' : ''}"${attrs} style="top:${top + M}px;height:${hgt - 2 * M}px${pos}">
         <div class="t">${fmt(e.title)}</div><div class="m">${fmt(times)} · ${duration(e.e2 - e.s)}</div>
         ${hgt > 52 ? `<div class="m">${fmt(meta)}</div>` : ''}</div>`;
   }

@@ -63,6 +63,22 @@ export const STORIES = {
     { tap: '.tz-alert .destr' },
     { tap: '.tz-dim.on' },
   ],
+  // 02・靈感（1.4.0，首頁 02 區塊）：網頁 → 分享 → 選單挑 TripEZGo → 存成靈感（儲存）→ 成功（兩秒自己收回網頁）→ 接到 App 的「資料 › 靈感」
+  // （跨頁：share-web 的 __auto.openApp 換頁）→ 點最上面那一則 → 檢視紙上「新增關聯」→ 挑「行程」→ 行事曆上多了一則（第 2 天晚上，描邊閃兩下）。
+  // 一輪結束由首頁重新載入起始網址（網頁），所以不必把狀態收回原樣。
+  'inspiration-flow': [
+    { page: 'share-web', tap: '[data-act="share"]' },
+    { page: 'share-web', tap: '[data-act="tripezgo"]' },
+    { page: 'share-web', wait: 600 },
+    { page: 'share-web', tap: '.xfoot .primary' },
+    { page: 'share-web', wait: 2500 },
+    { page: 'share-web', call: 'openApp' },
+    { page: 'inspiration', wait: 700 },
+    { page: 'inspiration', tap: '.row[data-i="0"]' },
+    { page: 'inspiration', tap: '[data-act="link"]' },
+    { page: 'inspiration', tap: '[data-dest="event"]' },
+    { page: 'calendar', wait: 3200 },
+  ],
   // IG 分享：分享 → 分享選單 → TripEZGo → 等讀完網址（儲存才亮）→ 切到「筆記」分段 → 儲存 → 成功（兩秒自己收回貼文）
   'share-ig': [
     { tap: '[data-act="share"]' },

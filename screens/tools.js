@@ -14,19 +14,20 @@
 // - sheet：由下而上的頁面紙（.pageSheet，大 detent）——抓桿、往下拖或點後面那一層收掉。
 // 外觀照 event.html 已量好的系統 sheet（頂 62、圓角 12、抓桿 36×5）。
 import { go, lang, interactive, params, ipad } from './chrome.js';
+import { IS } from './inspiration-strings.js';
 
-/** 兩格（LibraryViewModel.Subtab：notes、shopping），順序就是分格的順序 */
-export const SUB_PAGES = ['notes', 'shop'];
+/** 三格（LibraryViewModel.Subtab：inspiration、notes、shopping，1.4.0 起靈感在第一格），順序就是分格的順序 */
+export const SUB_PAGES = ['inspiration', 'notes', 'shop'];
 
 // App 的字（Scripts/i18n/maps/Widgets.json：widgets.tab.title、subtab.*、tools.*、scan.card.*）
 export const LIB = {
-  'zh-Hant-TW': { title: '資料', subs: ['筆記', '購物清單'], tools: '工具',
+  'zh-Hant-TW': { title: '資料', subs: [IS['zh-Hant-TW']['widgets.subtab.inspiration'], '筆記', '購物清單'], tools: '工具',
     scan: '掃描 QR Code', scanSub: '網址、文字，或旅程的共編邀請', fx: '匯率換算', fxSub: '兩種貨幣互換，兩邊的金額都能打', close: '關閉' },
-  en: { title: 'Library', subs: ['Notes', 'Shopping'], tools: 'Tools',
+  en: { title: 'Library', subs: [IS.en['widgets.subtab.inspiration'], 'Notes', 'Shopping'], tools: 'Tools',
     scan: 'Scan a QR Code', scanSub: 'Links, text, or a trip invite', fx: 'Currency Converter', fxSub: 'Convert between two currencies — type in either amount', close: 'Close' },
-  ja: { title: '資料', subs: ['メモ', '買い物'], tools: 'ツール',
+  ja: { title: '資料', subs: [IS.ja['widgets.subtab.inspiration'], 'メモ', '買い物'], tools: 'ツール',
     scan: 'QR コードをスキャン', scanSub: 'URL、テキスト、旅行の共同編集の招待', fx: '通貨換算', fxSub: '2 つの通貨を相互に換算。どちらの金額も入力できます', close: '閉じる' },
-  ko: { title: '자료', subs: ['메모', '쇼핑'], tools: '도구',
+  ko: { title: '자료', subs: [IS.ko['widgets.subtab.inspiration'], '메모', '쇼핑'], tools: '도구',
     scan: 'QR 코드 스캔', scanSub: '링크, 텍스트 또는 여행 공동 편집 초대', fx: '환율 변환', fxSub: '두 통화를 서로 환산하고, 양쪽 금액 모두 입력할 수 있습니다', close: '닫기' },
 }[lang] || null;
 const L = LIB || {};
@@ -40,10 +41,10 @@ export const LIB_ICON = {
 };
 const icon = (n, w) => `<svg viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:${w}">${LIB_ICON[n]}</svg>`;
 
-// 兩格切換的幾何（iOS 26 UISegmentedControl，系統元件）：四格時量到的白色那顆寬 86.7、間距 3.6、左右各 2——
-// 兩格照同一組數字：寬 (360 − 2 − 3.6) ÷ 2 = 177.2、一格一步 180.8
-// iPad：軌道 992 寬（左右照舊 20），同一條式子 → (990 − 2 − 3.6) ÷ 2 ＝ 492.2、一步 495.8
-const SEG_W = ipad ? 492.2 : 177.2, SEG_STEP = ipad ? 495.8 : 180.8;
+// 分格切換的幾何（iOS 26 UISegmentedControl，系統元件）：四格時量到的白色那顆寬 86.7、間距 3.6、左右各 2——
+// 三格（1.4.0 起）照同一組數字：寬 (362 − 4 − 2 × 3.6) ÷ 3 ＝ 116.93、一格一步 120.53
+// iPad：軌道 992 寬（左右照舊 20），同一條式子 → (992 − 4 − 7.2) ÷ 3 ＝ 326.93、一步 330.53
+const SEG_W = ipad ? 326.93 : 116.93, SEG_STEP = ipad ? 330.53 : 120.53;
 const segLeft = i => 2 + i * SEG_STEP;
 
 /* 抬頭（SubTabContainer：上 12+2、左右 20、標題 xxl semibold −0.02em；切換列上 4+6、高 ≥44）＋
@@ -99,7 +100,7 @@ export function libStyle() {
 }
 export const closeX = (cls = '') => `<div class="tz-x ${cls}" role="button" aria-label="${L.close}" data-tap>${icon('close', 2.2)}</div>`;
 
-/** 抬頭「資料」＋右上工具鈕＋兩格切換（current＝0 筆記／1 購物清單）。截圖模式也畫。 */
+/** 抬頭「資料」＋右上工具鈕＋兩格切換（current＝0 靈感／1 筆記／2 購物清單）。截圖模式也畫。 */
 export function libraryHead(device, current) {
   libStyle();
   device.insertAdjacentHTML('beforeend', `<div class="wg-title">${L.title}</div>
