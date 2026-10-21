@@ -98,7 +98,7 @@ const NAV_ROUTES = Object.fromEntries(places.map((p, i) => [p.id, i ? routeBy(pl
 // ── 旅伴樣本（名字與顏色同 share-location.html；位置擺在表參道到嚴島神社之間，圖上的點） ──
 const MATE_NAMES = { 'zh-Hant-TW': ['小雯', '凱文', '美琪'], en: ['Mia', 'Ken', 'Sara'], ja: ['美咲', '健太', 'さくら'] }[lang] || ['Mia', 'Ken', 'Sara'];
 const MATES = [
-  { id: 'm0', name: MATE_NAMES[0], colour: 'eat', px: [150, 330], ageMin: 2, wiu: true },
+  { id: 'm0', name: MATE_NAMES[0], colour: 'eat', px: [380, 318], ageMin: 2, wiu: true },
   { id: 'm1', name: MATE_NAMES[1], colour: 'stay', px: [130, 520], ageMin: 14 },
   { id: 'm2', name: MATE_NAMES[2], colour: 'shop', px: [410, 440], ageMin: 75 },   // 超過一小時 → 灰
 ];
@@ -106,7 +106,7 @@ const COLD_MIN = 60;   // LivePosition.coldAfter
 const rtf = new Intl.RelativeTimeFormat(LOCALE, { numeric: 'always', style: 'long' });
 const ago = (m) => (m < 60 ? rtf.format(-m, 'minute') : rtf.format(-Math.floor(m / 60), 'hour'));
 const ME_AT = MATES_MODE ? null : [34.29945, 132.32215];   // 剛走完表參道，面向嚴島神社
-const ME_PX = MATES_MODE ? [235, 300] : toPx(ME_AT);
+const ME_PX = MATES_MODE ? [300, 350] : toPx(ME_AT);   // 引導頁（ADR-0050）：旅伴示範的自己與旅伴都擺在陸地上（原本 小雯 與藍點落在海裡）
 
 // ── 介面層（同 map-live.js） ──
 d.insertAdjacentHTML('beforeend', `<div class="mk" id="mk"><div class="layer" id="layer"><img src="${IMG}" width="${W}" height="${H}" alt="" draggable="false">
@@ -369,7 +369,7 @@ function walkStart(from, animate) {
     nav.card = navCard(nav, ll);
     if (document.getElementById('card')?.dataset.kind === 'nav') setCard(navCardHtml(nav.card));
   };
-  if (!animate) { at(from, true); return; }
+  if (!animate || new URLSearchParams(location.search).get('nowalk') === '1') { at(from, true); return; }   // 引導頁（ADR-0050）：nowalk=1 → 只畫起點那一幀，不開計時器
   const t0 = performance.now(), SPAN = 9000, MAXF = 0.5;   // 走到一半就停（示範在那之前就按結束）
   let last = 0;
   const tick = (now) => {
@@ -427,3 +427,8 @@ if (interactive && !still) {
     } else if (act === 'walk' && sel?.kind === 'place') startNav(byId[sel.id]);
   });
 }
+
+// 引導頁（ADR-0050）：距離膠囊（legpill）壓在地圖邊緣、被切掉一半（鏡頭移動後常在左上角露出「…公尺」的半截）→ 沒有完整落在地圖可視範圍內的就先藏起來
+setInterval(() => { for (const p of pills) { const r = p.getBoundingClientRect(); p.style.visibility = (r.left < 4 || r.right > 398 || r.top < 136 || r.bottom > 860) ? 'hidden' : 'visible'; } }, 120);   // legpill 半截
+
+{ const st = document.createElement('style'); st.textContent = '.legpill { visibility: hidden; }'; document.head.append(st); }   // 引導頁（ADR-0050）：第一幀先全藏，量過在可視範圍內才顯示（不會在左上角閃出半截膠囊）

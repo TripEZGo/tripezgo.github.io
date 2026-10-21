@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=fbb6add764","/screens/chrome.js":"/screens/chrome.js?v=0519a5a223","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=c19c6dceae","/screens/map.js":"/screens/map.js?v=869d04c645","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=c5192029e2","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=d06106b7f5","/screens/stories.js":"/screens/stories.js?v=a3a9f06442","/screens/tools.js":"/screens/tools.js?v=5f942d6b3d","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=88863cd89f","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=4d070ed56b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<meta name="viewport" content="width=402">
+<title>從社群分享進來</title>
+<!--
+  整合・分享進來：一則社群貼文 → 系統分享選單 → TripEZGo 分享延伸 → 存好了 → 回到貼文。
+  參數：?lang=zh-Hant-TW|en|ja &interactive=1（首頁外框裡一路點下去）
+        &step=post|sheet|ext|done（截圖模式停在哪一步；預設 post）
+
+  ① 貼文：一個「看起來像社群 App」的畫面，**沒有任何一家的商標與名稱**（screens/PLAN.md 的注意事項）。
+     照片沿用 img/note-photo.svg（宮島大鳥居的中性插圖）。網域 HOST 是虛構的示意字——所以它是一般網站：
+     og 標題照帶（不走 Instagram／Threads 那條「標題留空必填」，TitlelessSites 只認那三個網域）。
+  ②③④ 系統分享選單、分享延伸（1.3.0 分享紙 v2）、存好了：share-ext.js（出處寫在那支檔頭）、share-ext.css。
+     這一則：一般網頁、沒有座標 ⇒ 行程「不指定地點」、標記要選地點；og 圖片帶成附件／筆記內容第一張。
+     類型：og 標題三語丟進行程類型模型都沒到 0.96（zh transport .20／en sight .92／ja bar .19），沒有地點 ⇒「其他」，標記不選。
+     自動示範：讀完之後切到「筆記」分段再存——同一份解析結果換一種存法。
+-->
+<link rel="stylesheet" href="screen.css?v=3d6bdc16dc">
+<link rel="stylesheet" href="share-ext.css?v=b20b084655">
+<style>
+  /* ── ① 社群貼文（虛構的社群 App） ── */
+  .post { background: #fff; color: #000; }
+  .pnav { position: absolute; left: 0; right: 0; top: 54px; height: 44px; display: flex; align-items: center; justify-content: center;
+    font: 600 17px/22px var(--font); }
+  .pnav .bk { position: absolute; left: 10px; top: 10px; width: 24px; height: 24px; }
+  .phead { position: absolute; left: 0; right: 0; top: 104px; height: 48px; display: flex; align-items: center; padding: 0 12px; gap: 10px; }
+  .ring { width: 36px; height: 36px; border-radius: 50%; padding: 2px; background: conic-gradient(from 200deg, #f5b24a, #e8664a, #c8508f, #f5b24a); }
+  .ring i { display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%; border: 2px solid #fff;
+    background: #5f8f8c; color: #fff; font: 700 13px/1 var(--font); font-style: normal; }
+  .who { flex: 1; min-width: 0; }
+  .who b { display: block; font: 600 14px/17px var(--font); }
+  .who span { display: block; font: 400 12px/15px var(--font); color: #262626; }
+  .phead .more { width: 22px; height: 22px; }
+  .photo { position: absolute; left: 0; top: 152px; width: 402px; height: 470px; object-fit: cover; object-position: 50% 40%; display: block; }
+  .acts { position: absolute; left: 0; right: 0; top: 622px; height: 46px; display: flex; align-items: center; padding: 0 12px; gap: 16px; }
+  .acts svg { width: 26px; height: 26px; stroke-width: 1.8; }
+  .acts .sp { flex: 1; }
+  .acts [data-act="share"] { margin-left: -2px; }
+  .likes { position: absolute; left: 14px; top: 668px; font: 600 14px/18px var(--font); }
+  .cap { position: absolute; left: 14px; right: 14px; top: 690px; font: 400 14px/19px var(--font); display: -webkit-box;
+    -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .cap b { font-weight: 600; }
+  .cap .tag { color: #00376b; }
+  .when { position: absolute; left: 14px; top: 752px; font: 400 12px/15px var(--font); color: #737373; }
+  .ptab { position: absolute; left: 0; right: 0; bottom: 0; height: 84px; border-top: .5px solid #dbdbdb; background: #fff;
+    display: flex; justify-content: space-around; padding-top: 12px; }
+  .ptab svg { width: 26px; height: 26px; stroke-width: 1.8; }
+  .ptab .me { width: 26px; height: 26px; border-radius: 50%; background: #5f8f8c; }
+  /* ── 深色（?theme=dark）：照 Instagram 自己的深色外觀：近黑底、白字、深灰分隔線、淺色圖示；貼文照片不動 ── */
+  html[data-theme="dark"] .post { background: #000; color: #fff; }
+  html[data-theme="dark"] .ring i { border-color: #000; }
+  html[data-theme="dark"] .who span { color: #a8a8a8; }
+  html[data-theme="dark"] .cap .tag { color: #e0f1ff; }
+  html[data-theme="dark"] .when { color: #a8a8a8; }
+  html[data-theme="dark"] .ptab { background: #000; border-top-color: #262626; }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module">
+import { fmt, lang, chrome, ready, loadTrip, loadCategories, go } from './chrome.js';
+import { mountShare } from './share-ext.js';
+
+const d = document.getElementById('d');
+const trip = await loadTrip();
+await loadCategories();
+const place = trip.days.find(x => x.day === 2).events.find(e => e.key === 'd2-itsukushima').title;
+
+// 虛構的社群 App 網域（示意字，不是任何一家的服務）
+const HOST = 'photos.example';
+const URL_ = `https://${HOST}/p/C9mTz2kQx4/`;
+const HANDLE = 'mika.trip';
+
+const s = {
+  'zh-Hant-TW': {
+    postNav: '貼文', likes: '1,284 個讚', when: '2 天前',
+    ogTitle: '退潮時走到大鳥居腳下', ogDesc: '比想像中還要大。下午三點前後的光最好拍，記得先查潮汐表。',
+    tags: ['#宮島', '#嚴島神社'],
+  },
+  en: {
+    postNav: 'Post', likes: '1,284 likes', when: '2 days ago',
+    ogTitle: 'Walking out to the great torii at low tide', ogDesc: 'Much bigger up close. The light is best around 3 pm — check the tide table first.',
+    tags: ['#Miyajima', '#Itsukushima'],
+  },
+  ja: {
+    postNav: '投稿', likes: '「いいね！」1,284件', when: '2日前',
+    ogTitle: '干潮で大鳥居の足元まで', ogDesc: '近くで見ると想像以上に大きい。15時ごろの光がいちばん。潮見表を先にチェック。',
+    tags: ['#宮島', '#厳島神社'],
+  },
+  // ko：虛構社群 App 的介面字與貼文都是自寫的（不是 App 字串）
+  ko: {
+    postNav: '게시물', likes: '좋아요 1,284개', when: '2일 전',
+    ogTitle: '썰물 때 큰 도리이 발밑까지', ogDesc: '가까이서 보면 생각보다 훨씬 커요. 오후 3시쯤 빛이 가장 좋으니 조석표를 먼저 확인하세요.',
+    tags: ['#미야지마', '#이쓰쿠시마신사'],
+  },
+}[lang] || null;
+
+// 社群 App 的線條圖示（第三方介面，不是 App 的 DesignIcon）
+const G = {
+  back: '<path d="M15 4.5 7.5 12l7.5 7.5"/>',
+  more: '<circle cx="5" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="19" cy="12" r="1.3" fill="currentColor"/>',
+  heart: '<path d="M12 20.5s-7.5-4.6-9-9.6C2 7.4 4.3 4.5 7.4 4.5c2 0 3.6 1.1 4.6 2.7 1-1.6 2.6-2.7 4.6-2.7 3.1 0 5.4 2.9 4.4 6.4-1.5 5-9 9.6-9 9.6z"/>',
+  comment: '<path d="M20.6 16.3A9 9 0 1 0 17.4 19.7L21 21z"/>',
+  plane: '<path d="M21.5 3 9.6 10.7M21.5 3l-7.3 18-4.6-10.3L2.5 6.8z"/>',
+  bookmark: '<path d="M19 21l-7-5.5L5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1z"/>',
+  home: '<path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1h-5v-6h-5v6h-5a1 1 0 0 1-1-1z"/>',
+  search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20.5 20.5"/>',
+  add: '<rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M12 8v8M8 12h8"/>',
+  reels: '<rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M3.5 8.5h17M8.5 3.5l3 5M14 3.5l3 5M10.5 12v5l4.2-2.5z"/>',
+};
+const g = (n, cls = '') => `<svg class="i ${cls}" viewBox="0 0 24 24">${G[n]}</svg>`;
+
+const caption = `<b>${HANDLE}</b> ${fmt(s.ogTitle)}${lang === 'en' || lang === 'ko' ? '. ' : '。'}${fmt(s.ogDesc)} ${s.tags.map(t => `<span class="tag">${t}</span>`).join(' ')}`;
+
+d.insertAdjacentHTML('beforeend', `
+  <div class="layer post" id="post">
+    <div class="pnav">${g('back', 'bk')}${s.postNav}</div>
+    <div class="phead"><div class="ring"><i>M</i></div>
+      <div class="who"><b>${HANDLE}</b><span>${fmt(place)}</span></div>${g('more', 'more')}</div>
+    <img class="photo" src="img/note-photo.svg" alt="">
+    <div class="acts">${g('heart')}${g('comment')}<span data-act="share" data-tap>${g('plane')}</span><span class="sp"></span>${g('bookmark')}</div>
+    <div class="likes">${s.likes}</div>
+    <div class="cap">${caption}</div>
+    <div class="when">${s.when}</div>
+    <div class="ptab">${g('home')}${g('search')}${g('add')}${g('reels')}<span class="me"></span></div>
+  </div>`);
+
+const flow = mountShare(d, document.getElementById('post'), {
+  host: HOST, url: URL_, inspiration: true,
+  sheetTitle: s.ogTitle, sheetThumb: '<img class="ss-thumb" src="img/note-photo.svg" alt="">',
+  ogTitle: s.ogTitle, ogDesc: '',
+  image: null,
+  place: null, model: null, tripName: trip.title,
+});
+window.__auto = { next: () => go('share-gmi', '') };
+
+chrome(d);
+const sb = d.querySelector('.sb');
+const setDark = on => sb.classList.toggle('on-dark', on);
+setDark(flow.step === 'ext' || flow.step === 'done');
+flow.wire(setDark);
+
+ready();
+</script>
+</body>
+</html>

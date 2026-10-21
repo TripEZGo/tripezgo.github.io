@@ -79,6 +79,27 @@ export const STORIES = {
     { page: 'inspiration', tap: '[data-dest="event"]' },
     { page: 'event', wait: 3200 },
   ],
+  'insp-chain': [
+    { page: 'share-igi', tap: '[data-act="share"]' },
+    { page: 'share-igi', tap: '[data-act="tripezgo"]' },
+    { page: 'share-igi', wait: 600 },
+    { page: 'share-igi', tap: '.xfoot .primary' },
+    { page: 'share-igi', wait: 2600 },   // 已存成靈感 → 兩秒後自己收回來源頁
+    { page: 'share-igi', call: 'next' },
+    { page: 'share-gmi', wait: 700 },
+    { page: 'share-gmi', tap: '[data-act="share"]' },
+    { page: 'share-gmi', tap: '[data-act="tripezgo"]' },
+    { page: 'share-gmi', wait: 600 },
+    { page: 'share-gmi', tap: '.xfoot .primary' },
+    { page: 'share-gmi', wait: 2600 },   // 已存成靈感 → 兩秒後自己收回來源頁（正常速度）
+    { page: 'share-gmi', call: 'openApp' },
+    { page: 'inspiration', wait: 900 },
+    { page: 'inspiration', tap: '.row[data-i="0"]' },
+    { page: 'inspiration', tap: '[data-act="link"]', hide: true },
+    { page: 'inspiration', wait: 300 },   // 引導頁（ADR-0050）：等「新增關聯」選單滑到定位，手指才落在「行程」那一列（滑動中量位置會落到最下面的「地圖標記」）
+    { page: 'inspiration', tap: '[data-dest="event"]' },
+    { page: 'event', wait: 3200 },
+  ],
   // IG 分享：分享 → 分享選單 → TripEZGo → 等讀完網址（儲存才亮）→ 切到「筆記」分段 → 儲存 → 成功（兩秒自己收回貼文）
   'share-ig': [
     { tap: '[data-act="share"]' },

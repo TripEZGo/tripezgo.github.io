@@ -117,7 +117,7 @@
 import { lang, params, chrome, ready, fmt, interactive, go, svg, swatchClass, categoryName, loadCategories } from './chrome.js';
 import { libraryHead, subTabs, libStyle, sheet } from './tools.js';
 import { IS } from './inspiration-strings.js';
-import { N, OLD_ITEMS, HOST } from './inspiration-data.js';
+import { N, GM, OLD_ITEMS, HOST } from './inspiration-data.js';
 
 const d = document.getElementById('d');
 await loadCategories();
@@ -141,9 +141,10 @@ const ic = (n, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" aria-hid
 const CAT_ICON = { place: 'mapPin', image: 'photo', link: 'link', text: 'notes' };
 
 // ── 資料：剛分享進來的那一則在最上面（未讀），後面是原本就有的 ──
-const NEW_ITEM = { key: 'new', title: N.title, source: null, host: HOST, when: { k: 'now' }, cats: ['link'], type: 'cafe', thumb: 'img/insp-cafe.svg', unread: true,
-  desc: N.desc, link: `${HOST}/cafe`, fromWeb: true };
-const ITEMS = [NEW_ITEM, ...OLD_ITEMS.map((o, i) => ({ key: `o${i}`, ...o }))];
+const NEW_ITEM = { key: 'new', title: N.title, source: 'instagram', when: { k: 'hours', n: 0 }, cats: ['image', 'link'], type: 'sight', thumb: 'img/note-photo.svg', unread: true,
+  desc: N.desc, link: 'photos.example/p/C9mTz2kQx4', n: 4, fromWeb: true };
+const GM_ITEM = { key: 'gm', title: GM.title, source: 'googlemaps', when: { k: 'now' }, cats: ['place'], type: 'aquarium', thumb: 'img/share-gmap-snap.webp', unread: true, desc: GM.desc, place: true, fromWeb: true };
+const ITEMS = [GM_ITEM, NEW_ITEM, ...OLD_ITEMS.map((o, i) => ({ key: `o${i}`, ...o }))];
 
 // 時間（InspirationListViewModel.timeText）：不到一分鐘「現在」、當天「N 小時前」（RelativeDateTimeFormatter）、昨天「昨天 21:08」、更早「10/7」（Md）
 const REL = {

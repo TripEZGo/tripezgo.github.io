@@ -3,8 +3,8 @@
 // 網頁是虛構的（沒有任何一家的商標與名稱），網域用 .example。
 import { lang } from './chrome.js';
 
-export const HOST = 'hiroshima-notes.example';
-export const URL_ = `https://${HOST}/cafe`;
+export const HOST = 'photos.example';
+export const URL_ = `https://${HOST}/p/C9mTz2kQx4/`;
 
 // 新進來的那一則：網頁 → 分享 → 靈感 → 關聯成行程。行程那一端：第 2 天晚餐（19:00–20:00）之後的空檔，類型 cafe。
 const NEW = {
@@ -29,10 +29,11 @@ const NEW = {
     desc: '사십 년째 이어온 킷사텐. 두툼한 토스트와 진한 커피, 밤 11시까지 영업.', place: '가미야초 카페',
   },
 }[lang] || null;
-export const N = NEW;
+export const N = NEW ? { ...NEW, title: '退潮時走到大鳥居腳下', desc: '比想像中還要大。下午三點前後的光最好拍，記得先查潮汐表。 #宮島 #嚴島神社', place: '嚴島神社' } : null;
+export const GM = { title: '宮島水族館', desc: '10-3 Miyajimacho, Hatsukaichi, Hiroshima', place: '宮島水族館', url: 'https://maps.example/place/miyajima-aquarium' };
 
 // 行事曆上的結果（calendar.html?added=1）：第 2 天 20:15–21:15（前一則燒肉 19:00–20:00），類型 cafe
-export const ADDED_EVENT = { key: 'new-from-inspiration', title: NEW?.title, start: '20:15', end: '21:15', category: 'cafe', place: { name: NEW?.place }, fresh: true };
+export const ADDED_EVENT = { key: 'new-from-inspiration', title: GM.title, start: '20:15', end: '21:15', category: 'aquarium', place: { name: GM.place }, fresh: true };
 
 // 清單裡原本就有的幾則（照新到舊）。source：App 認得的站（Domain.json domain.inspiration.source.*）或 null（寫網域 host）；
 // when：{ k: 'hours', n } | { k: 'yesterday', t } | { k: 'date', m, d }；cats：分類小標；type：行程類型 key；thumb：縮圖（null＝沒有圖，畫分類圖示）
@@ -106,4 +107,4 @@ const OLD = {
     { title: '로프웨이 시간표', source: null, when: { k: 'date', m: 9, d: 30 }, cats: ['text'], type: 'cablecar', thumb: null, desc: '미야지마 로프웨이는 15분 간격, 막차 17:00.' },
   ],
 }[lang] || [];
-export const OLD_ITEMS = OLD;
+export const OLD_ITEMS = OLD.filter(x => !N || (x.title !== N.title && x.title !== GM.title));

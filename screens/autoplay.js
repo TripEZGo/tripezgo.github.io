@@ -39,6 +39,13 @@ const stepProgress = (i) => progress({ from: cum[i] / total, to: (i < steps.leng
 // 一開始是停著的：首頁確認這支手機捲進畫面（35% 以上）才送 play 過來；捲出去送 pause
 let paused = true, waiters = [];
 const untilPlaying = () => paused ? new Promise((r) => waiters.push(r)) : Promise.resolve();
+// 外框帶 anims 的暫停：畫面裡正在跑的 CSS 動畫與轉場也停住、繼續時只放開剛才被停住的（引導頁長按暫停，ADR-0050）。
+// 跨來源的外框碰不到這一頁的 document，所以由這一頁自己做。
+let heldAnims = [];
+function holdAnimations(on) {
+  if (!on) { heldAnims.forEach((a) => { try { a.play(); } catch {} }); heldAnims = []; return; }
+  for (const a of document.getAnimations()) if (a.playState === 'running') { a.pause(); heldAnims.push(a); }
+}
 function setPaused(p, tell = true) {
   paused = p;
   progress(p ? { hold: true } : {});
@@ -48,6 +55,7 @@ function setPaused(p, tell = true) {
 addEventListener('message', (e) => {
   if (e.data?.type !== 'tz-auto-ctl') return;
   setPaused(e.data.cmd === 'pause', false);
+  holdAnimations(e.data.cmd === 'pause' && e.data.anims === true);   // anims：引導頁長按暫停才帶；首頁自己的暫停不凍動畫
 });
 // 準備好了：跟首頁要一次現在該播還是該停（首頁在 iframe load 時送的那一則可能早於這裡）
 parent.postMessage({ type: 'tz-auto-hello' }, '*');
@@ -96,7 +104,12 @@ function reveal(el) {
   }
 }
 const centre = (el) => { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; };
-async function moveDot(x, y) { dot.style.left = x + 'px'; dot.style.top = y + 'px'; dot.classList.add('on'); await sleep(420); }
+let jumpNext = false;   // 引導頁（ADR-0050）：手指被 hide 收起後，下次出現直接出現在目標上（不從舊位置滑過來）
+async function moveDot(x, y) {
+  if (jumpNext && !dot.classList.contains('on')) { dot.style.transition = 'none'; dot.style.left = x + 'px'; dot.style.top = y + 'px'; void dot.offsetWidth; dot.style.transition = ''; jumpNext = false; }
+  else { dot.style.left = x + 'px'; dot.style.top = y + 'px'; }
+  dot.classList.add('on'); await sleep(420);
+}
 
 async function find(sel) {
   for (let t = 0; t < 20; t++) { const el = document.querySelector(sel); if (el) return el; await sleep(100); }
@@ -118,7 +131,7 @@ async function run(step) {
   if (step.tap) {
     dot.classList.add('down'); flash('tap'); pe('pointerdown', x, y, el); await sleep(130);
     pe('pointerup', x, y, el); dot.classList.remove('down');
-    el.click(); await sleep(250); return;
+    el.click(); await sleep(250); if (step.hide) { dot.classList.remove('on'); jumpNext = true; } return;   // 引導頁（ADR-0050）：hide＝點完先收起手指（選單蓋住按鈕時，手指不要停在選單的某一列上）
   }
   if (step.press) {
     dot.style.setProperty('--hold', (step.hold || 600) + 'ms'); dot.classList.add('down', 'hold'); pe('pointerdown', x, y, el); await sleep(step.hold || 600);
