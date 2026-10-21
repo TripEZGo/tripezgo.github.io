@@ -17,7 +17,7 @@ for (const lang of LANGS) {
     await expect(page.locator('#roadmap')).toHaveCount(1);
     await expect(page.locator('.rm-item.is-now')).toHaveCount(1);
     await expect(page.locator('.rm-item[aria-current="step"]')).toHaveCount(1);
-    await expect(page.locator('.rm-item.is-planned')).toHaveCount(2);   // 1.5.0，加上時程未定的那一張
+    await expect(page.locator('.rm-item.is-planned')).toHaveCount(3);   // 1.5.0、1.6.0，加上時程未定的那一張
     await expect(page.locator('.rm-item').last()).toHaveClass(/is-planned/);
     await expect(page.locator('.site-header .site-nav > a[href="#roadmap"]')).toHaveCount(1);
   });

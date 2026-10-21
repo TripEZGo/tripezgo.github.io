@@ -539,7 +539,7 @@ T = {
   'UI／UX Rebranding': ('UI/UX rebranding', 'UI/UX のリブランディング', 'UI/UX 리브랜딩'),
   '記帳與分帳': ('Expense tracking and bill splitting', '支出の記録と割り勘', '가계부와 정산'),
   'Apple 天氣整合': ('Apple Weather integration', 'Apple 天気との連携', 'Apple 날씨 연동'),
-  '筆記與附件翻譯': ('Translate notes and files', 'メモと添付の翻訳', '메모와 첨부 번역'),
+  '筆記與附件翻譯': ('Translate notes and attachments', 'メモと添付の翻訳', '메모와 첨부 번역'),
   '1.3.0 上架': ('1.3.0 released', '1.3.0 リリース', '1.3.0 출시'),
   '整個 App 更聰明': ('A smarter app, everywhere', 'アプリ全体をもっと賢く', '앱 전체를 더 똑똑하게'),
   '每個功能都加進智慧建議，少填一點、少點幾下': ('Smart suggestions in every feature, so you type and tap less', 'すべての機能にスマートな提案を。入力もタップも少なく', '모든 기능에 스마트 제안을 더해 입력도 탭도 줄여요'),
