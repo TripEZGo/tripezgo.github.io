@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=402">
+<title>地圖示範</title>
+<!--
+  地圖分頁，離線版（ADR-0050，打包進 App 的歡迎頁「地圖」「旅伴」示範；程式在 map-static.js）。
+  畫面與樣式照 map-live.html（圖釘、旅伴、藍點、卡片、導航卡、距離膠囊），差別只有底圖：事先用真的 MapKit 截好的靜態圖
+  （img/mapdemo-<lang>-<theme>.webp），沒有 MapKit、沒有網路。
+  參數：?lang=zh-Hant-TW|en|ja &theme=dark &embed=1 &still=1 &interactive=1 &auto=<故事> &focus=mates
+-->
+<link rel="stylesheet" href="screen.css">
+<link rel="stylesheet" href="map.css">
+<style>
+  /* 地圖區：跟 map.css 的 .map 同一塊（y=128 往下）；底圖在 .layer 裡，鏡頭＝移動、縮放這一層 */
+  .mk { position: absolute; left: 0; top: 128px; width: 402px; height: 746px; overflow: hidden; background: var(--sunken); }
+  .layer { position: absolute; left: 0; top: 0; transform-origin: 0 0; will-change: transform; }
+  .layer img { display: block; user-select: none; -webkit-user-drag: none; }
+  .layer svg { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+  .pins { position: absolute; inset: 0; }
+  .pins > .pin, .pins > .mate, .pins > .me, .pins > .legpill { position: absolute; }
+  .pins > .pin { margin: -34px 0 0 -14px; }
+  .pins > .mate { margin: -15px 0 0 -15px; }
+  .pins > .me { margin: -11px 0 0 -11px; }
+  .pins > .legpill { transform: translate(-50%, -50%); }
+  .pins > .me { z-index: 3; } .pins > .mate { z-index: 2; } .pins > .pin.sel { z-index: 2; }
+  /* 第一幀之後鏡頭才緩動（.anim）：圖層與圖釘同一條曲線、同一個時間，疊得起來 */
+  .mk.anim .layer { transition: transform .9s cubic-bezier(.4,0,.2,1); }
+  .mk.anim .pins > * { transition: left .9s cubic-bezier(.4,0,.2,1), top .9s cubic-bezier(.4,0,.2,1); }
+  .mk.anim .pins > .me.walking { transition: none; }
+  .head, .chips, .search, .live, .fab, .card, .deck-toggle { z-index: 6; }
+  .chips { z-index: 7; }
+  .card { z-index: 8; }
+  .tabbar { z-index: 9; }
+  /* ── 行程圖釘：TripMapPinView（MKMarkerAnnotationView）— 圓頭＋短尖尾、頭裡是類型圖示，
+        單日時右上角掛站號（badgeSize 18、一半掛在外面、1.5 白邊、等寬數字） ── */
+  .pin { position: relative; width: 28px; height: 34px; color: var(--sw-base); }
+  .pin > svg.balloon { position: absolute; inset: 0; width: 28px; height: 34px; overflow: visible;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,.28)); }
+  .pin > svg.balloon path { fill: currentColor; }
+  .pin > svg.glyph { position: absolute; left: 6.5px; top: 6.5px; width: 15px; height: 15px; fill: #fff; }
+  .pin.grey { color: var(--muted); }
+  .pin.cancelled { opacity: .55; }
+  .pin .badge { position: absolute; left: 20.7px; top: -10.3px; width: 18px; height: 18px; border-radius: 50%;
+    background: var(--ink); box-shadow: 0 0 0 1.5px #fff; color: #fff; display: grid; place-items: center;
+    font: 600 12px/1 -apple-system, sans-serif; font-variant-numeric: tabular-nums; }
+  .pin .lbl { position: absolute; left: 50%; top: calc(100% + 3px); transform: translateX(-50%); white-space: nowrap;
+    font: 600 11px/13px var(--font); color: var(--ink);
+    text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 3px #fff; pointer-events: none; }
+  .pin.sel .lbl { display: none; }
+  .pin .ring { position: absolute; left: -3px; top: -3px; width: 34px; height: 34px; border-radius: 50%;
+    border: 2px solid var(--accent-ink); display: none; }
+  .pin.grey .ring { border-color: var(--ink); }
+  .pin.sel { transform: scale(1.3); transform-origin: 50% 100%; }
+  .pin.sel .ring { display: block; }
+
+  /* ── 商家圖釘：TripMapShopPinView — 36×26 圓角 8 的磚、2pt 頁面色白緣、裡面整張店面；
+        底下 10×7 的尖（未選中 #7c6f63）；選中＝底與尖翻成品牌色、放大 1.28 ── */
+  .shop { position: relative; width: 36px; height: 33px; filter: drop-shadow(0 2px 2px rgba(36,29,23,.2)); }
+  .shop .brick { position: absolute; left: 0; top: 0; width: 36px; height: 26px; border-radius: 8px;
+    border: 2px solid var(--page); background: var(--page); overflow: hidden; }
+  .shop .brick svg { display: block; width: 32px; height: 22px; }
+  .shop .tail { position: absolute; left: 13px; top: 25px; width: 10px; height: 8px; }
+  .shop .tail path { fill: #7c6f63; }
+  .shop.sel { transform: scale(1.28); transform-origin: 50% 100%; }
+  .shop.sel .brick { background: var(--brand); }
+  .shop.sel .tail path { fill: var(--brand); }
+
+  /* ── 旅伴：LiveMateAnnotationView — 外圈 30 頁面色、頭 26、2pt 他的顏色（虛線＝只在使用 App 期間）、
+        粗體縮寫；一小時沒更新整顆灰；選中放大 1.28＋外環＋頭上名牌 ── */
+  .mate { position: relative; width: 30px; height: 30px; border-radius: 50%; background: var(--page);
+    box-shadow: 0 1px 5px rgba(36,29,23,.3); display: grid; place-items: center; color: var(--sw-base); }
+  .mate.stale { color: var(--muted-on-sunken); }
+  .mate .h { width: 26px; height: 26px; border-radius: 50%; border: 2px solid currentColor;
+    display: grid; place-items: center; font: 700 var(--t-xs)/1 var(--font); }
+  .mate.dashed .h { border: 0; position: relative; }
+  .mate.dashed .h::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Ccircle cx='13' cy='13' r='12' fill='none' stroke='black' stroke-width='2' stroke-dasharray='3 2'/%3E%3C/svg%3E") center / 100% 100%; }
+  .mate .pr { position: absolute; inset: 1px; border-radius: 50%; border: 2px solid currentColor; display: none; }
+  .mate .bub { position: absolute; left: 50%; bottom: calc(100% + 5px); transform: translateX(-50%); display: none;
+    padding: 3px 9px; border-radius: 99px; background: var(--ink); color: var(--page); white-space: nowrap;
+    font: 600 var(--t-xs)/14px var(--font); }
+  .mate.sel { transform: scale(1.28); }
+  .mate.sel .pr, .mate.sel .bub { display: block; }
+
+  /* 自己：系統的藍點（MKUserLocationView 是系統畫的，這裡照基準圖畫一顆同樣的） */
+  .me { position: relative; width: 22px; height: 22px; border-radius: 50%; background: #fff; isolation: isolate;
+    box-shadow: 0 1px 4px rgba(0,0,0,.28), 0 0 0 14px rgba(0,122,255,.12); }
+  .me::after { content: ""; position: absolute; inset: 3.5px; border-radius: 50%; background: #007aff; }
+  /* 朝向扇（HeadingConeView）：畫面上的尺寸、不跟縮放走、壓在藍點底下、不吃點擊 */
+  .me .cone { position: absolute; left: -31px; top: -31px; width: 84px; height: 84px; z-index: -1; pointer-events: none; overflow: visible; }
+
+  /* 線上的箭頭（WalkingRouteRenderer 的魚骨）與距離膠囊（TripMapLegLabel：accentInk 底、白字 xs semibold、內距 4/8） */
+  .chev { width: 10px; height: 10px; }
+  .chev svg { display: block; width: 100%; height: 100%; overflow: visible; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .legpill { padding: 4px 8px; border-radius: 99px; background: var(--accent-ink); color: #fff; white-space: nowrap;
+    font: 600 var(--t-xs)/14px var(--font); }
+
+  /* 商家卡：營業狀態的顏色（ShopCardSection.tint） */
+  .c-status.soon { color: var(--amber200); } .c-status.soon i { background: var(--amber200); }
+  .c-status.closed, .c-status.is-mate { color: var(--muted-on-sunken); } .c-status.closed i, .c-status.is-mate i { background: var(--muted-on-sunken); }
+  .c-status.is-mate { color: var(--muted); }
+  .c-status.unknown { color: var(--muted-on-sunken); }
+  .c-status.unknown i { background: none; box-shadow: inset 0 0 0 1.5px var(--muted-on-sunken); }
+  .c-art svg { display: block; width: 100%; height: 100%; }
+  .c-art.mate-ic { width: 23px; height: 23px; }
+  .c-title.two { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .n-bar { position: relative; overflow: hidden; }
+  .n-bar b { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent-ink); border-radius: 2px; }
+
+  /* 收合那一疊的 ⌄（MapDeckToggle：沒有底板、22pt） */
+  .deck-toggle { position: absolute; left: 190px; width: 22px; height: 22px; color: var(--ink); }
+  .deck-toggle svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .fab.loc svg { width: 22px; height: 22px; }
+
+  /* 分享我的位置「開著」：LiveShareChip.paint() — 底 tzAccentInk、沒有框（框色 clear，寬度照舊）、字與點 tzOnAccent。
+     點呼吸：BreathingDot（1.8 秒一次，不透明 1 ↔ 0.35）；流光：比藥丸寬兩倍的一層漸層（onAccent 0 → .34 → 0，
+     停在 30/50/70%），2.6 秒一趟、前 60% 掃完。兩支動畫只在互動模式跑（截圖是靜止的一幀），減少動態效果時也停。 */
+  .live.on { background: var(--accent-ink); border-color: transparent; color: #fff; overflow: hidden; }
+  .live.on i { background: #fff; }
+  .is-interactive .live.on i { animation: live-beat .9s ease-in-out infinite alternate; }
+  .is-interactive .live.on::after { content: ""; position: absolute; top: 0; bottom: 0; left: -100%; width: 300%; pointer-events: none;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.34) 50%, rgba(255,255,255,0) 70%);
+    animation: live-sweep 2.6s ease-in-out infinite; }
+  @keyframes live-beat { from { opacity: 1; } to { opacity: .35; } }
+  @keyframes live-sweep { 0% { transform: translateX(-33.333%); } 60%, 100% { transform: translateX(66.667%); } }
+  @media (prefers-reduced-motion: reduce) { .is-interactive .live.on i, .is-interactive .live.on::after { animation: none; } .is-interactive .live.on::after { display: none; } }
+
+  /* 互動模式才有的：結束導航的確認（UIAlertController 的樣子） */
+  .alert-scrim { position: absolute; inset: 0; z-index: 40; background: rgba(0,0,0,.2); display: grid; place-items: center; }
+  .alert { width: 270px; border-radius: 14px; background: rgba(242,242,247,.96); text-align: center; overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,.18); }
+  .alert-b { padding: 19px 16px 18px; }
+  .alert-t { font: 600 17px/22px var(--font); color: #000; }
+  .alert-m { margin-top: 3px; font: 400 13px/17px var(--font); color: #000; }
+  .alert-row { display: flex; border-top: .5px solid rgba(60,60,67,.29); }
+  .alert-row button { flex: 1; height: 44px; border: 0; background: none; font: 400 17px/22px var(--font); color: #007aff; }
+  .alert-row button + button { border-left: .5px solid rgba(60,60,67,.29); }
+  .alert-row button.destructive { color: #ff3b30; }
+  .alert-row button.preferred { font-weight: 600; }
+  .is-interactive [data-tap] { cursor: pointer; }
+  .is-interactive .pin, .is-interactive .mate { cursor: pointer; }
+  /* 深色（ADR-0050）：map.css／map-live 的幾個白底寫死的地方 */
+  html[data-theme="dark"] .live:not(.on) { background: var(--card); }
+  html[data-theme="dark"] .search { color: rgba(235,235,245,.3); }
+  html[data-theme="dark"] .n-bar { background: var(--border); }
+  html[data-theme="dark"] .pin .lbl { color: #fff; text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 3px #000, 0 0 3px #000; }
+  html[data-theme="dark"] .pin .badge { color: var(--page); box-shadow: 0 0 0 1.5px var(--page); }
+  html[data-theme="dark"] .pin > svg.glyph { fill: var(--page); }
+  html[data-theme="dark"] .pin .ring { border-color: #fff; }
+  html[data-theme="dark"] .tab-dot { box-shadow: 0 0 0 1.6px var(--card); }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module" src="map-static.js"></script>
+</body>
+</html>

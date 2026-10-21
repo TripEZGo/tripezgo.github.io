@@ -88,6 +88,7 @@
   .edge { position: absolute; left: 0; right: 0; top: 0; height: 118px; z-index: 4; pointer-events: none; opacity: 0; transition: opacity .15s;
     background: linear-gradient(#fff 55%, rgba(255,255,255,0)); }
   .edge.on { opacity: 1; }
+  html[data-theme="dark"] .edge { background: linear-gradient(var(--page) 55%, rgba(23,18,15,0)); }
   .scroller .col { position: relative; top: 132px; left: 0; right: 0; margin: 0 20px 170px; }
   /* 正在開啟分享（SettingsRow ＋ 不定長的進度條） */
   .busy { padding: 12px 16px; }
@@ -162,7 +163,7 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { fmt, lang, t, chrome, swatchClass, ready, interactive, ipad } from './chrome.js';
+import { fmt, lang, t, chrome, swatchClass, ready, interactive, ipad, go } from './chrome.js';
 
 const d = document.getElementById('d');
 
@@ -375,6 +376,8 @@ d.insertAdjacentHTML('beforeend', `
   <div class="col">${colHTML()}</div>`);
 
 if (interactive) {
+  // 打包進 App 的「旅伴」示範（stories-demo-map.js 的 demo-mates）：旅伴清單 → 位置共享的地圖
+  window.__auto = { ...(window.__auto || {}), next: () => go('map-demo', 'focus=mates') };
   const { alert } = await import('./tools.js');
   const col = d.querySelector('.col');
   // 欄可以往下捲（底下還有「分享待辦清單／分享附件」那兩顆範疇開關）；導覽列浮在上面

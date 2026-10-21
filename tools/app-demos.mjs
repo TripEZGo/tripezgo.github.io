@@ -42,7 +42,7 @@ export const DEMOS = {
   },
   inspiration: { page: 'share-web', auto: 'inspiration-flow', pages: ['share-web', 'inspiration', 'event'], still: { page: 'inspiration' } },
   map: { page: 'map-demo', auto: 'demo-map', pages: ['map-demo'] },
-  mates: { page: 'members', auto: 'demo-mates', pages: ['members', 'share-location', 'map-demo'] },
+  mates: { page: 'members', auto: 'demo-mates', pages: ['members', 'map-demo'] },
   overview: { page: 'overview', auto: 'overview', pages: ['overview'] },
   glance: { page: 'lock', auto: 'demo-glance', pages: ['lock', 'widget', 'siri'] },
   library: { page: 'notes', auto: 'demo-library', pages: ['notes', 'note', 'scan', 'fx', 'shop'] },
@@ -171,12 +171,12 @@ for (const f of [...want].sort()) { if (fs.existsSync(path.join(imgDir, f))) cop
 
 // 資料：每個語言一支 classic script，把 JSON／SVG 文字放進 window.__TZ_FILES（鍵＝原本 fetch 的相對路徑）
 const sharedFiles = {};
-for (const f of ['data/categories.json', 'data/shops-sanyo.json']) if (exists(f)) sharedFiles[f] = read(f);
+for (const f of ['data/categories.json', 'data/shops-sanyo.json', 'data/mapdemo.json', 'data/mapdemo-routes.json']) if (exists(f)) sharedFiles[f] = read(f);
 if (exists('img/members-qr.svg')) sharedFiles['img/members-qr.svg'] = read('img/members-qr.svg');
 for (const lang of LANGS) {
   const files = { ...sharedFiles, [`data/sanyo.${lang}.json`]: JSON.stringify(JSON.parse(read(`data/sanyo.${lang}.json`))) };
   if (sharedFiles['data/categories.json']) files['data/categories.json'] = JSON.stringify(JSON.parse(sharedFiles['data/categories.json']));
-  if (sharedFiles['data/shops-sanyo.json']) files['data/shops-sanyo.json'] = JSON.stringify(JSON.parse(sharedFiles['data/shops-sanyo.json']));
+  for (const f of ['data/shops-sanyo.json', 'data/mapdemo.json', 'data/mapdemo-routes.json']) if (sharedFiles[f]) files[f] = JSON.stringify(JSON.parse(sharedFiles[f]));
   write(`screens/data/files.${lang}.js`, `Object.assign(window.__TZ_FILES,${JSON.stringify(files).replace(/<\/script/gi, '<\\/script')});`);
 }
 
