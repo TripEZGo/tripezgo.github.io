@@ -37,7 +37,7 @@ export const DEMOS = {
     panels: [
       { page: 'calendar', q: 'day=2', auto: 'demo-plan-calendar', box: [20, 270], scale: PANEL.scale, crop: 64 },
       { page: 'event-new', auto: 'demo-plan-event', box: [302, 270], scale: PANEL.scale, crop: 0 },
-      { page: 'leg', auto: 'leg', box: [584, 270], scale: PANEL.scale, crop: 330 },
+      { page: 'leg', auto: 'leg', box: [584, 270], scale: PANEL.scale, crop: 405 },
     ],
   },
   inspiration: { page: 'share-web', auto: 'inspiration-flow', pages: ['share-web', 'inspiration', 'event'], still: { page: 'inspiration' } },
