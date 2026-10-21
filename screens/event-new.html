@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=402">
+<title>新增行程</title>
+<!--
+  新增行程表單（App：Modules/UI/…/TripEventDetail/TripEventEditViewController.swift，「新增行程／編輯行程」同一張）。
+  打包進 App 的歡迎頁（ADR-0050）「安排行程」那一格用：頂端「指定地點｜不指定地點」→ 地點（搜尋欄＋地圖鈕、建議清單，選定後換成地點卡）
+  → 資訊（類型晶片＋標題同一列）→ 時間（有時間｜全日｜待排、開始、結束）→ 釘底的「加入行程」。
+  版面沿用分享延伸那一套表單元件（share-ext.css：欄名、輸入框、晶片、分段、時間框、地點卡），因為 App 的分享表單與這張共用同一組元件。
+  字串照 App 字串表：Trips.json（trips.event.add／add.submit）、UI.json（ui.event.*）、ShareForm.json（分段、開始／結束）。
+  參數：?lang= &theme= &embed=1 &still=1（still：直接畫選好地點、填好標題的那一幀）
+  故事：stories-demo-plan.js 的 demo-plan-event。
+-->
+<link rel="stylesheet" href="screen.css?v=3d6bdc16dc">
+<link rel="stylesheet" href="share-ext.css?v=b20b084655">
+<style>
+  .nv { position: absolute; left: 0; right: 0; top: 0; height: 64px; z-index: 3; background: var(--page); }
+  .nv .ttl { position: absolute; left: 110px; right: 110px; top: 21px; text-align: center; font: 600 var(--t-lg)/22px var(--font); white-space: nowrap; }
+  .xbody { top: 64px; bottom: 96px; overflow-y: auto; scrollbar-width: none; scroll-behavior: smooth; padding-bottom: 28px; }
+  .xbody > * { flex: none; }
+  .foot { position: absolute; left: 0; right: 0; bottom: 0; height: 96px; padding: 14px 20px 0; background: var(--page); z-index: 3; }
+  .foot .primary { transition: background .25s; }
+  .foot .primary.done { background: var(--success); color: var(--on-accent); }
+  .foot .primary svg { width: 18px; height: 18px; stroke-width: 2.4; margin-right: 6px; display: inline-block; vertical-align: -3px; }
+  .foot .primary { display: block; text-align: center; line-height: 48px; }
+  /* 地點：搜尋欄（設計 V1 .search）＋地圖鈕 44×44 */
+  .prow { display: flex; gap: 8px; }
+  .prow .inp { flex: 1; min-width: 0; padding-left: 38px; background: var(--page) no-repeat; position: relative; }
+  .sbox { position: relative; flex: 1; min-width: 0; }
+  .sbox > svg { position: absolute; left: 12px; top: 14px; width: 16px; height: 16px; stroke-width: 1.8; color: var(--muted); z-index: 1; }
+  .sbox .inp { width: 100%; }
+  .sbox.on .inp { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .mapbtn { flex: none; width: 44px; height: 44px; border-radius: 8px; border: 1px solid var(--border); background: var(--page); display: grid; place-items: center; color: var(--accent-ink); }
+  .mapbtn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .sugg { margin-top: 8px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); overflow: hidden; }
+  .srow { position: relative; display: flex; align-items: center; gap: 11px; min-height: 52px; padding: 8px 13px; }
+  .srow + .srow::before { content: ""; position: absolute; left: 13px; right: 0; top: 0; border-top: 1px solid var(--border-soft); }
+  .srow svg { flex: none; width: 18px; height: 18px; fill: none; stroke: var(--muted-on-sunken); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .srow .t { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+  .srow b { font: 600 var(--t-sm)/17px var(--font); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .srow span { font: 400 var(--t-xs)/15px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .srow.hit { background: var(--sunken); }
+  html[data-theme="dark"] .pc-map { filter: invert(.9) hue-rotate(180deg) brightness(.9) saturate(.8); }
+  .trow.hit { background: var(--sunken); }
+  [hidden] { display: none !important; }
+  .chip svg { fill: var(--sw-base); }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module">
+import { lang, theme, still, chrome, ready, interactive, svg, swatchClass, categoryName, loadCategories, fmt } from './chrome.js';
+import { F, di, chipFill } from './share-ext.js';
+const { MAKI, MAKI_OF_TYPE, DEFAULT_ICON_ID } = await import('../trip/icons.js');
+
+await loadCategories();
+const L = { 'zh-Hant-TW': 0, en: 1, ja: 2 }[lang] ?? 1;
+// UI.json（ui.event.placemode.*、ui.event.place.placeholder、ui.event.name.placeholder）、Trips.json（trips.event.add.submit）
+const S = {
+  modeWith: ['指定地點', 'With a Place', '場所を指定'][L], modeWithout: ['不指定地點', 'No Place', '場所なし'][L],
+  placePh: ['例如：那霸市・國際通', 'e.g. Naha · Kokusai Street', '例：那覇市・国際通り'][L],
+  namePh: ['標題：伏見稻荷大社', 'Title: Fushimi Inari Taisha', 'タイトル：伏見稲荷大社'][L],
+  submit: ['加入行程', 'Add Event', '予定に入れる'][L],
+  query: ['宮島水', 'Miyajima', '宮島水'][L],
+};
+// 搜尋結果（地點名與座標同分享延伸那一則：宮島水族館，34.29527, 132.31547）
+const PLACES = [
+  { name: ['宮島水族館', 'Miyajima Public Aquarium', '宮島水族館 みやじマリン'][L], sub: ['廣島縣廿日市市宮島町', 'Miyajimacho, Hatsukaichi, Hiroshima', '広島県廿日市市宮島町'][L], type: 'aquarium' },
+  { name: ['宮島口棧橋', 'Miyajimaguchi Pier', '宮島口桟橋'][L], sub: ['廣島縣廿日市市宮島口', 'Miyajimaguchi, Hatsukaichi, Hiroshima', '広島県廿日市市宮島口'][L] },
+  { name: ['宮島歷史民俗資料館', 'Miyajima History and Folklore Museum', '宮島歴史民俗資料館'][L], sub: ['廣島縣廿日市市宮島町', 'Miyajimacho, Hatsukaichi, Hiroshima', '広島県廿日市市宮島町'][L] },
+];
+const SNAP = { 'zh-Hant-TW': 'img/share-gmap-snap.webp', en: 'img/en/share-gmap-snap.webp', ja: 'img/ja/share-gmap-snap.webp' }[lang] || 'img/en/share-gmap-snap.webp';
+const COORD = '34.29527, 132.31547';
+const glyph = k => `<svg viewBox="0 0 15 15" aria-hidden="true"><path fill-rule="evenodd" d="${MAKI[MAKI_OF_TYPE[k] || DEFAULT_ICON_ID] || MAKI.marker}"/></svg>`;
+const chipHtml = k => `<span class="chip ${swatchClass(k)}" style="--sw-chip-fill:${chipFill(k)}">${glyph(k)}${categoryName(k)}</span>`;
+const pin = '<svg viewBox="0 0 24 24"><path d="M12 21C16.5 16.5 19 13 19 10A7 7 0 0 0 5 10C5 13 7.5 16.5 12 21z"/><circle cx="12" cy="10" r="2.6"/></svg>';
+const clock = m => `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+
+const d = document.getElementById('d');
+d.innerHTML = `
+  <div class="nv"><span class="xbtn">${F.cancel}</span><div class="ttl">${F.titleEvent}</div></div>
+  <div class="xbody" id="body">
+    <div class="seg"><span class="on">${S.modeWith}</span><span>${S.modeWithout}</span></div>
+    <div class="blk"><div class="lbl">${F.place}</div>
+      <div id="card" hidden></div>
+      <div id="prow"><div class="prow"><div class="sbox" id="sbox">${di('search')}<input class="inp" id="q" type="text" placeholder="${S.placePh}" autocomplete="off"></div>
+        <span class="mapbtn">${svg('map')}</span></div>
+        <div class="sugg" id="sugg" hidden>${PLACES.map((p, i) => `<div class="srow" data-i="${i}" data-tap>${pin}<div class="t"><b>${fmt(p.name)}</b><span>${p.sub}</span></div></div>`).join('')}</div></div>
+    </div>
+    <div class="blk"><div class="lbl">${F.info}<span class="auto" id="badge" hidden>${F.fromPlace}</span></div>
+      <div class="info"><span id="chipwrap">${chipHtml('sight')}</span><input class="inp" id="title" type="text" placeholder="${S.namePh}" autocomplete="off"></div></div>
+    <div class="blk"><div class="lbl">${F.time}</div>
+      <div><div class="seg">${F.modes.map((m, i) => `<span class="${i === 0 ? 'on' : ''}">${m}</span>`).join('')}</div>
+        <div class="tbox">
+          <div class="trow"><span class="k">${F.dayCaption}</span><span class="v">${F.day(2)}${di('picker', 'pop')}</span></div>
+          <div class="trow" id="rs"><span class="v" style="padding-left:2px"><span class="k">${F.start}</span><span class="tm" id="ts">09:00</span></span><span class="z">${F.zone}</span></div>
+          <div class="trow"><span class="v" style="padding-left:2px"><span class="k">${F.end}</span><span class="tm" id="te">10:00</span></span><span class="z">${F.zone}</span></div>
+        </div></div></div>
+  </div>
+  <div class="foot"><div class="primary" id="go">${S.submit}</div></div>`;
+chrome(d);
+
+const $ = (id) => document.getElementById(id);
+function choose(i) {
+  const p = PLACES[i];
+  $('sugg').hidden = true; $('prow').hidden = true;
+  $('card').hidden = false;
+  $('card').innerHTML = `<div class="pc"><div class="pc-map" style="background-image:url(${SNAP})"><span class="pin"></span></div>
+    <div class="pc-body"><div class="pc-tx"><b>${fmt(p.name)}</b><span>${COORD}</span></div><span class="cx">${di('close')}</span></div></div>`;
+  $('title').value = p.name;
+  $('chipwrap').innerHTML = chipHtml(p.type || 'sight');
+  $('badge').hidden = false;
+}
+if (interactive) {
+  $('q').addEventListener('click', () => $('sbox').classList.add('on'));
+  $('q').addEventListener('input', () => { $('sugg').hidden = !$('q').value; });
+  $('sugg').addEventListener('click', (e) => { const r = e.target.closest('.srow'); if (r) choose(+r.dataset.i); });
+  $('rs').addEventListener('click', () => {
+    $('rs').classList.add('hit'); $('ts').textContent = '10:30'; $('te').textContent = '11:30';
+    setTimeout(() => $('rs').classList.remove('hit'), 450);
+  });
+  $('go').addEventListener('click', () => {
+    $('go').classList.add('done'); $('go').innerHTML = `${di('check')}${F.doneEvent}`;
+  });
+}
+// 自動示範（autoplay.js 的 { call: 'typeQuery' }）：搜尋欄一個字一個字打
+window.__auto = {
+  async typeQuery() {
+    const q = $('q'); $('sbox').classList.add('on');
+    for (const ch of S.query) { q.value += ch; q.dispatchEvent(new Event('input', { bubbles: true })); await new Promise((r) => setTimeout(r, 130)); }
+  },
+};
+if (still) { choose(0); $('ts').textContent = '10:30'; $('te').textContent = '11:30'; }
+ready();
+</script>
+</body>
+</html>

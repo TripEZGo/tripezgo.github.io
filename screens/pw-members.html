@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=402">
+<title>付費牆示範・旅伴不限人數</title>
+<!--
+  旅程共編頁的旅伴清單（App：Settings 模組 SettingsMembersEditor、MemberRowView；畫面骨架照 screens/members.html）
+  ——打包進 App 的付費牆「旅伴不限人數」示範（ADR-0050，tools/app-demos.mjs）。免費版一趟旅程最多 3 位旅伴
+  （ui.feature.unlimitedmembers.detail、settings.members.limit.reached）；這裡旅伴一位一位透過連結加進來，越過 3 位、清單一路長下去。
+  字串：UI.json／Settings.json 的 members*（逐字，同 members.html）。
+  參數：?lang= &theme=dark &still=1（靜止那一幀＝全部加入後）。自動示範 auto=pw-members：呼叫 __auto.join() 四次。
+-->
+<link rel="stylesheet" href="screen.css">
+<style>
+  /* 導覽列（iOS 26 系統元件）：返回鈕是一顆 44 高的玻璃膠囊 */
+  .nav-back { position: absolute; left: 16px; top: 62px; height: 44px; padding: 0 18px 0 11px; border-radius: 22px;
+    background: var(--glass); box-shadow: 0 0 0 .5px var(--glass-edge), 0 6px 24px rgba(0,0,0,.08);
+    display: flex; align-items: center; gap: 4px; font: 600 17px/22px var(--font); color: var(--tab-ink); z-index: 5; }
+  .nav-back svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  .nav-title { position: absolute; left: 110px; right: 110px; top: 74px; text-align: center;
+    font: 600 17px/22px var(--font); color: var(--sys-label); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* 欄：左右 20、段距 22 */
+  .col { position: absolute; left: 20px; right: 20px; top: 132px; display: flex; flex-direction: column; gap: 22px; }
+  .sec-title { font: 600 var(--t-xs)/14px var(--font); color: var(--muted); margin-bottom: -14px; }
+  .link-card { display: flex; flex-direction: column; gap: 8px; }
+  .url { padding: 11px 12px; background: var(--sunken); border: 1px solid var(--border); border-radius: 8px;
+    font: 400 var(--t-sm)/16px var(--font); color: var(--muted-on-sunken); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .acts { display: flex; gap: 8px; }
+  .btn { flex: 1 1 0; min-height: 44px; padding: 0 8px; display: grid; place-items: center; background: var(--card);
+    border: 1px solid var(--border); border-radius: 8px; font: 600 var(--t-sm)/16px var(--font); color: var(--accent-ink); }
+  .btn.off { color: var(--red200); }
+  /* MemberRowView：內距 8/16、頭像 34、間距 12、名字 15＋副標 12 */
+  .list { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--page); }
+  .mb { position: relative; display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 8px 16px; overflow: hidden; }
+  .mb + .mb { border-top: 1px solid var(--border-soft); }
+  .av { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--sw-base); color: var(--page); font: 700 var(--t-sm)/1 var(--font); }
+  .mb-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+  .mb-name { font-size: var(--t-base); line-height: 18px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mb-sub { font-size: var(--t-xs); line-height: 14px; color: var(--muted); }
+  .mb-tag { flex: none; font-size: var(--t-xs); color: var(--muted); }
+  .mb-del { flex: none; min-height: 44px; padding: 0 4px; display: grid; place-items: center; font: 600 var(--t-sm)/16px var(--font); color: var(--red200); }
+  .mb.new { animation: pw-in .5s cubic-bezier(.2,.8,.2,1) both; }
+  .mb.new .av { animation: pw-pop .6s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes pw-in { from { max-height: 0; min-height: 0; padding-top: 0; padding-bottom: 0; opacity: 0; } to { max-height: 70px; opacity: 1; } }
+  @keyframes pw-pop { 0% { transform: scale(.4); } 70% { transform: scale(1.12); } 100% { transform: scale(1); } }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module">
+import { fmt, lang, chrome, ready, still } from './chrome.js';
+
+const d = document.getElementById('d');
+// App 字串（UI.json／Settings.json 的 members*；逐字，同 members.html）
+const SS = {
+  'zh-Hant-TW': { back: '設定', title: '旅程共編', invite: '邀請', members: '旅伴', owner: '作者', thisDevice: '這台裝置', viaLink: '透過連結', collaborator: '共編', remove: '移除',
+    linkShare: '分享連結', linkOff: '停用連結', names: ['阿哲', '小雯', '凱文', '美琪', '志明', '怡君', '俊傑'] },
+  en: { back: 'Settings', title: 'Trip Sharing', invite: 'Invite', members: 'Companions', owner: 'Owner', thisDevice: 'This device', viaLink: 'Joined by link', collaborator: 'Co-editing', remove: 'Remove',
+    linkShare: 'Share link', linkOff: 'Turn Off Link', names: ['Alex', 'Mia', 'Ken', 'Sara', 'Leo', 'Nina', 'Jake'] },
+  ja: { back: '設定', title: '旅程の共同編集', invite: '招待', members: '旅の仲間', owner: '作成者', thisDevice: 'このデバイス', viaLink: 'リンクから参加', collaborator: '共同編集', remove: '削除',
+    linkShare: 'リンクを共有', linkOff: 'リンクを停止', names: ['拓海', '美咲', '健太', 'さくら', '大輔', '葵', '翔'] },
+};
+const s = SS[lang] || SS.en;
+const COLOURS = ['seeNature', 'eat', 'stay', 'shop', 'move', 'see', 'shopMarket'];   // SharedTripMemberDefaults.colours の順
+const URL_TEXT = 'https://www.tripezgo.com/join/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wYjdYcTJtTmNSNHRZdko4a1B6M2FMdzllI3R6PUs3TTJROVhBNEZIVDhXUE4';
+const INITIAL = 3;   // 作者＋兩位旅伴（免費版上限是 3 位旅伴）
+let count = INITIAL;
+const row = (i, cls = '') => {
+  const kind = i === 0 ? 'owner' : i === 2 ? 'co' : 'link';
+  const sub = { owner: s.thisDevice, link: s.viaLink, co: s.collaborator }[kind];
+  const right = kind === 'owner' ? `<span class="mb-tag">${s.owner}</span>` : `<span class="mb-del">${s.remove}</span>`;
+  return `<div class="mb${cls}"><div class="av sw-${COLOURS[i]}">${[...s.names[i]][0].toUpperCase()}</div>
+    <div class="mb-main"><div class="mb-name">${fmt(s.names[i])}</div><div class="mb-sub">${sub}</div></div>${right}</div>`;
+};
+const draw = (newest = -1) => [...Array(count).keys()].map((i) => row(i, i === newest ? ' new' : '')).join('');
+
+d.insertAdjacentHTML('beforeend', `
+  <div class="nav-back"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>${fmt(s.back)}</div>
+  <div class="nav-title">${fmt(s.title)}</div>
+  <div class="col">
+    <div class="sec-title">${s.invite}</div>
+    <div class="link-card"><div class="url">${URL_TEXT}</div>
+      <div class="acts"><div class="btn">${s.linkShare}</div><div class="btn off">${s.linkOff}</div></div></div>
+    <div class="sec-title">${s.members}</div>
+    <div class="list" id="list"></div>
+  </div>`);
+const list = document.getElementById('list');
+if (still) count = s.names.length;
+list.innerHTML = draw();
+// 旅伴透過連結一位一位加進來（App 裡是對方在自己的 App 按「加入」；這裡只畫結果）
+window.__auto = { join() { if (count < s.names.length) { count++; list.innerHTML = draw(count - 1); } } };
+
+chrome(d, {});
+ready();
+</script>
+</body>
+</html>

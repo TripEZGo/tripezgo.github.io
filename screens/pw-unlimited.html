@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=402">
+<title>付費牆示範・旅程不限數量</title>
+<!--
+  旅程選擇頁（App：UI/DesignSystem/Components/TripPicker/TripPickerView.swift、TripRowCell.swift、TripPickerMetrics.swift）
+  ——打包進 App 的付費牆「旅程不限數量」示範（ADR-0050，tools/app-demos.mjs）。免費版同時最多保留 3 趟
+  （ui.feature.unlimited.detail、TripQuotaUseCase）；這裡一趟一趟新增，越過 3 趟、清單一路長下去。
+  字串：UI.json ui.picker.head.*、ui.newtrip、ui.picker.joincoedit、ui.status.*、ui.section.count；Trips.json trips.picker.*。
+  參數：?lang= &theme=dark &still=1（靜止那一幀＝新增完的樣子）。自動示範 auto=pw-unlimited：按「新增旅程」三次。
+-->
+<link rel="stylesheet" href="screen.css">
+<style>
+  /* 抬頭：headTop 12（安全區 62 之下）、標題 xxl semibold、lede xs muted；垃圾桶 44pt 在右 */
+  .head { position: absolute; left: 20px; top: 74px; width: 314px; }
+  .title { font: 600 var(--t-xxl)/34px var(--font); letter-spacing: -.59px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lede { margin-top: 6px; font: 400 var(--t-xs)/14px var(--font); color: var(--muted); letter-spacing: .24px; }
+  .head-act { position: absolute; left: 346px; top: 70px; width: 44px; height: 44px; display: grid; place-items: center; color: var(--ink); }
+  .head-act svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .scroll { position: absolute; left: 0; right: 0; top: 146px; bottom: 0; overflow: hidden; padding: 0 20px; }
+  /* 新增旅程那一格：主按鈕（accentInk 底、圓角 8、上下 14、字 base semibold、＋18 間距 8）＋加入共編（外框鈕，字 sm semibold） */
+  .newtrip { display: flex; gap: 8px; margin-top: 8px; }
+  .pbtn { flex: 1 1 auto; min-height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 20px;
+    border-radius: 8px; background: var(--accent-ink); color: var(--on-accent); font: 600 var(--t-base)/20px var(--font); white-space: nowrap; }
+  .pbtn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .jbtn { flex: none; min-height: 48px; display: flex; align-items: center; gap: 6px; padding: 14px; border-radius: 8px; background: var(--card);
+    border: 1px solid var(--border); color: var(--accent-ink); font: 600 var(--t-sm)/16px var(--font); white-space: nowrap; }
+  .jbtn svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .is-interactive .pbtn:active { filter: brightness(.92); }
+  /* 分區標題：上 26、下 2、字 xs muted＋件數（等寬數字） */
+  .sec { padding-top: 26px; padding-bottom: 2px; display: flex; align-items: baseline; gap: 8px; font: 400 var(--t-xs)/14px var(--font); color: var(--muted); }
+  .sec b { font-weight: 400; font-variant-numeric: tabular-nums; }
+  /* TripRowCell：最矮 64、上下 10、頭像 40（外框 1pt、surface 底、xs muted）、間距 12、標題 base medium、副標 sm muted、› 18；分隔線從 52 起 */
+  .row { position: relative; display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 10px 0; overflow: hidden; }
+  .row + .row::before { content: ""; position: absolute; left: 52px; right: 0; top: 0; height: 1px; background: var(--border-soft); }
+  .av { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); display: grid; place-items: center;
+    font: 400 var(--t-xs)/14px var(--font); color: var(--muted); letter-spacing: .5px; }
+  .tx { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .tx b { font: 500 var(--t-base)/20px var(--font); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tx span { font: 400 var(--t-sm)/16px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row > svg { flex: none; width: 18px; height: 18px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .row.new { animation: pw-in .5s cubic-bezier(.2,.8,.2,1) both; }
+  .row.new .av { animation: pw-glow 1.2s ease-out both; }
+  @keyframes pw-in { from { max-height: 0; min-height: 0; padding-top: 0; padding-bottom: 0; opacity: 0; } to { max-height: 90px; opacity: 1; } }
+  @keyframes pw-glow { from { border-color: var(--accent); background: var(--accent-soft, rgba(47,145,142,.14)); } to { border-color: var(--border); background: var(--surface); } }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module">
+import { fmt, lang, chrome, svg, ready, interactive, still, ICON } from './chrome.js';
+
+const d = document.getElementById('d');
+// 字串：UI.json／Trips.json 逐字
+const SS = {
+  'zh-Hant-TW': { title: '我的旅程', lede: '接著上次的旅程，或建立新的一趟', newTrip: '新增旅程', join: '加入共編',
+    planning: '籌劃中', ready: '準備出發', past: '回憶', undecided: '日期未定',
+    upcoming: (r, n) => `${r} · 還有 ${n} 天出發`, memory: r => `回憶 · ${r}`,
+    trips: [['沖繩四日', 'OKA', 0], ['山陽 6 日｜廣島、宮島…', 'HIJ', 1], ['京都賞楓', 'KIX', 2]],
+    added: [['東京賞櫻', 'TYO'], ['北海道泡湯', 'CTS'], ['首爾美食行', 'ICN']] },
+  en: { title: 'My Trips', lede: 'Pick up the last trip, or start a new one', newTrip: 'New Trip', join: 'Join a Trip',
+    planning: 'Planning', ready: 'Ready to go', past: 'Memory', undecided: 'Dates undecided',
+    upcoming: (r, n) => `${r} · leaves in ${n} days`, memory: r => `Memory · ${r}`,
+    trips: [['Four days in Okinawa', 'OKA', 0], ["San'yō in 6 Days", 'HIJ', 1], ['Kyoto in autumn', 'KIX', 2]],
+    added: [['Tokyo cherry blossoms', 'TYO'], ['Hokkaido hot springs', 'CTS'], ['Seoul food trip', 'ICN']] },
+  ja: { title: 'あなたの旅程', lede: '前回の旅行の続きから、または新しく 1 つ作る', newTrip: '新しい旅行', join: '共同編集に参加',
+    planning: '計画中', ready: '出発準備', past: '思い出', undecided: '日付未定',
+    upcoming: (r, n) => `${r} · 出発まであと ${n} 日`, memory: r => `思い出 · ${r}`,
+    trips: [['沖縄 4 日間', 'OKA', 0], ['山陽 6 日間｜広島・宮島…', 'HIJ', 1], ['京都の紅葉', 'KIX', 2]],
+    added: [['東京お花見', 'TYO'], ['北海道の温泉', 'CTS'], ['ソウルグルメ旅', 'ICN']] },
+};
+const s = SS[lang] || SS.en;
+
+const members = '<circle cx="9" cy="8" r="3.4"/><path d="M3.4 19.6a5.8 5.8 0 0 1 11.2 0M16.4 5.4a3.4 3.4 0 0 1 0 5.2M17.6 14.4a5.8 5.8 0 0 1 3 5.2"/>';
+const chev = '<path d="M9 5l7 7-7 7"/>';
+const trash = '<path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/>';
+
+// 一列：detail 由種類決定
+const detailOf = (k) => k === 0 ? s.undecided : k === 1 ? s.upcoming('12/3–12/8', 40) : s.memory('4/2–4/5');
+const rowHTML = (name, code, detail, cls = '') =>
+  `<div class="row${cls}"><div class="av">${code}</div><div class="tx"><b>${fmt(name)}</b><span>${fmt(detail)}</span></div><svg viewBox="0 0 24 24">${chev}</svg></div>`;
+
+const planning = s.trips.filter((t) => t[2] === 0).map(([n, c, k]) => [n, c, detailOf(k)]);
+const readyTrips = s.trips.filter((t) => t[2] === 1).map(([n, c, k]) => [n, c, detailOf(k)]);
+const past = s.trips.filter((t) => t[2] === 2).map(([n, c, k]) => [n, c, detailOf(k)]);
+let added = 0;
+const draw = () => {
+  const sec = (title, rows) => `<div class="sec">${title}<b>${rows.length}</b></div><div data-sec>${rows.map(([n, c, dt]) => rowHTML(n, c, dt)).join('')}</div>`;
+  return sec(s.planning, planning) + sec(s.ready, readyTrips) + sec(s.past, past);
+};
+d.insertAdjacentHTML('beforeend', `
+  <div class="head"><div class="title">${fmt(s.title)}</div><div class="lede">${fmt(s.lede)}</div></div>
+  <div class="head-act"><svg viewBox="0 0 24 24">${trash}</svg></div>
+  <div class="scroll"><div class="newtrip"><div class="pbtn" id="new"><svg viewBox="0 0 24 24">${ICON.plus}</svg>${fmt(s.newTrip)}</div>
+    <div class="jbtn"><svg viewBox="0 0 24 24">${members}</svg>${fmt(s.join)}</div></div><div id="list"></div></div>`);
+const list = document.getElementById('list');
+const render = (newest = -1) => {
+  list.innerHTML = draw();
+  if (newest >= 0) list.querySelector('[data-sec] .row').classList.add('new');   // 新的一趟在「籌劃中」最上面
+};
+
+// 新增旅程：照 App，新的一趟「日期未定」落在籌劃中、排最上面
+const addOne = () => {
+  if (added >= s.added.length) return;
+  const [n, c] = s.added[added++];
+  planning.unshift([n, c, s.undecided]);
+  render(0);
+};
+document.getElementById('new').addEventListener('click', () => { if (!still) addOne(); });
+if (still) { while (added < s.added.length) { const [n, c] = s.added[added++]; planning.unshift([n, c, s.undecided]); } }
+render();
+
+chrome(d, {});
+ready();
+</script>
+</body>
+</html>
