@@ -113,12 +113,14 @@ async function runOne(id, lang, theme) {
       if (!same(held, await page.screenshot())) row.problems.push('once：停住之後又變了（沒有守住最後一幀）');
       // 點一下：從頭重播（畫面要變）
       await page.mouse.click(W / 2, H / 2);
-      await page.waitForTimeout(3500);
-      const r1 = await page.screenshot();
-      if (same(held, r1)) row.problems.push('once：播完後點一下沒有重播');
+      // 每 250ms 看一次：短的示範（步驟之間只隔 0.5s）1 秒多就又播完了，只看 3.5 秒後那一張會誤判成沒重播
+      let replayed = false;
+      for (let k = 0; k < 14 && !replayed; k++) { await page.waitForTimeout(250); replayed = !same(held, await page.screenshot()); }
+      await page.waitForTimeout(500);
+      if (!replayed) row.problems.push('once：播完後點一下沒有重播');
       else {
         // 長按暫停：按住期間畫面不變，放開後繼續
-        await page.mouse.move(W / 2, H / 2); await page.mouse.down(); await page.waitForTimeout(900);
+        await page.mouse.move(W / 2, H / 2); await page.mouse.down(); await page.waitForTimeout(1700);   // 暫停只擋「下一步」：正在做的那一步（手指滑過去＋點＋換頁，最久約 0.8 秒）會做完，所以等它做完再比
         const p1 = await page.screenshot(); await page.waitForTimeout(1800); const p2 = await page.screenshot();
         if (!same(p1, p2)) row.problems.push('once：長按期間畫面還在動（沒有暫停）');
         await page.mouse.up(); await page.waitForTimeout(2500);

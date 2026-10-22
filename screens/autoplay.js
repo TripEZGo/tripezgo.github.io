@@ -25,11 +25,17 @@ const GAP = 500;
 const params = new URLSearchParams(location.search);
 const story = params.get('auto');
 const steps = STORIES[story] || [];
+// fast=1（App 內的示範，殼 tools/app-demos-shell.html 帶；首頁不帶，照舊）：出現就開始播、每一步之間一律 500ms。
+// 開場不等、開頭只有 wait 的步驟跳過；其餘 wait 都收成 500ms，只有標了 keep:true 的（等動畫跑完／等讀完網址）照原值。
+const FAST = params.get('fast') === '1';
+const wms = (s) => FAST && !s.keep ? Math.min(s.wait, GAP) : s.wait;
+let lead = 0;
+if (FAST) while (lead < steps.length && steps[lead].wait && !steps[lead].tap && !steps[lead].call && !steps[lead].press && !steps[lead].drag && !steps[lead].swipe && !steps[lead].type && !steps[lead].scroll) lead++;
 const KEY = `tz-auto:${window.name || story}`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // 進度回報給首頁（外框底下的進度條，使用者 2026-10-12）。照每一步「大概要多久」算，條才會跟著動畫等速走：
 // 每一步開始時送 from→to 跟這一步的毫秒數，首頁那邊用線性動畫補；暫停時送 hold，條停在原地。
-const est = (s) => (s.wait ?? 0) + (s.call || s.wait ? 0 : 420) + (s.tap ? 380 : 0) + (s.press ? s.hold || 600 : 0)
+const est = (s) => (s.wait ? wms(s) : 0) + (s.call || s.wait ? 0 : 420) + (s.tap ? 380 : 0) + (s.press ? s.hold || 600 : 0)
   + (s.drag || s.swipe ? (s.swipe ? 0 : s.hold ?? 450) + (s.ms || (s.swipe ? 350 : 650)) : 0)
   + (s.type ? 120 * s.text.length : 0) + (s.scroll ? 450 : 0) + GAP;
 const END = 1500, cum = steps.reduce((a, s) => (a.push(a.at(-1) + est(s)), a), [0]), total = cum.at(-1) + END;
@@ -41,7 +47,7 @@ let paused = true, waiters = [];
 const untilPlaying = () => paused ? new Promise((r) => waiters.push(r)) : Promise.resolve();
 // 外框帶 anims 的暫停：畫面裡正在跑的 CSS 動畫與轉場也停住、繼續時只放開剛才被停住的（引導頁長按暫停，ADR-0050）。
 // 跨來源的外框碰不到這一頁的 document，所以由這一頁自己做。
-let heldAnims = [];
+let heldAnims = [], animsHold = false;
 function holdAnimations(on) {
   if (!on) { heldAnims.forEach((a) => { try { a.play(); } catch {} }); heldAnims = []; return; }
   for (const a of document.getAnimations()) if (a.playState === 'running') { a.pause(); heldAnims.push(a); }
@@ -55,7 +61,8 @@ function setPaused(p, tell = true) {
 addEventListener('message', (e) => {
   if (e.data?.type !== 'tz-auto-ctl') return;
   setPaused(e.data.cmd === 'pause', false);
-  holdAnimations(e.data.cmd === 'pause' && e.data.anims === true);   // anims：引導頁長按暫停才帶；首頁自己的暫停不凍動畫
+  animsHold = e.data.cmd === 'pause' && e.data.anims === true;
+  holdAnimations(animsHold);   // anims：引導頁長按暫停才帶；首頁自己的暫停不凍動畫
 });
 // 準備好了：跟首頁要一次現在該播還是該停（首頁在 iframe load 時送的那一則可能早於這裡）
 parent.postMessage({ type: 'tz-auto-hello' }, '*');
@@ -108,7 +115,7 @@ let jumpNext = false;   // 引導頁（ADR-0050）：手指被 hide 收起後，
 async function moveDot(x, y) {
   if (jumpNext && !dot.classList.contains('on')) { dot.style.transition = 'none'; dot.style.left = x + 'px'; dot.style.top = y + 'px'; void dot.offsetWidth; dot.style.transition = ''; jumpNext = false; }
   else { dot.style.left = x + 'px'; dot.style.top = y + 'px'; }
-  dot.classList.add('on'); await sleep(420);
+  dot.classList.add('on'); await sleep(FAST && params.get('nohand') === '1' ? 0 : 420);   // 手指游標藏起來（付費牆）就不必等它滑過去
 }
 
 async function find(sel) {
@@ -120,7 +127,7 @@ const pe = (type, x, y, el, extra = {}) => el.dispatchEvent(new PointerEvent(typ
   clientX: x, clientY: y, buttons: type === 'pointerup' ? 0 : 1, ...extra }));
 
 async function run(step) {
-  if (step.wait) return sleep(step.wait);
+  if (step.wait) return sleep(wms(step));
   if (step.call) return window.__auto?.[step.call]?.();
   const el = await find(step.tap || step.press || step.drag || step.swipe || step.type || step.scroll);
   if (!el) return;
@@ -168,8 +175,9 @@ const here = () => location.pathname.split('/').pop().replace(/\.html$/, '');
 async function main() {
   if (!steps.length) return;
   let st = load();
-  if (!st || st.start == null) { st = { start: location.href, i: 0 }; save(st); }
-  await sleep(GAP);                               // 開場跟每一步一樣只停 500ms（使用者 2026-10-12）
+  if (!st || st.start == null) { st = { start: location.href, i: lead }; save(st); }
+  if (paused && animsHold) holdAnimations(true);   // 停在第一幀等播放：頁面剛畫好才起跑的動畫也一起停住
+  if (!FAST || st.i !== lead) await sleep(GAP);                               // 開場跟每一步一樣只停 500ms（使用者 2026-10-12）
   while (true) {
     for (; st.i < steps.length; ) {
       await untilPlaying();
@@ -192,5 +200,5 @@ async function main() {
   }
 }
 // 畫面畫好（ready）再開始
-const go = () => (document.body.dataset.ready === '1' ? main() : setTimeout(go, 150));
+const go = () => (document.body.dataset.ready === '1' ? main() : setTimeout(go, FAST ? 20 : 150));
 go();
