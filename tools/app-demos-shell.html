@@ -107,7 +107,7 @@
   stage.appendChild(st.fr);
 
   function ctl(anims) {
-    try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: (paused || userPaused) ? 'pause' : 'play', anims: anims === true && userPaused }, '*'); } catch (e) {}
+    try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: (paused || userPaused || finished) ? 'pause' : 'play', anims: anims === true && (userPaused || finished) }, '*'); } catch (e) {}
   }
   // 換頁／換一份：新的一頁在背景載好、畫完再換上，不閃
   function swap(nf, delay) {
@@ -123,7 +123,7 @@
   /* ---------- once：一段一段播、播完停住 ---------- */
   var gen = 0;
   function whenFree(fn) { (function t() { if (userPaused) setTimeout(t, 150); else fn(); })(); }
-  function advance() { if (fi < flows.length - 1) nextFlow(); else finished = true; }   // 還有下一段就換過去，沒有了就停在最後一幀
+  function advance() { if (fi < flows.length - 1) nextFlow(); else { finished = true; ctl(true); } }   // 還有下一段就換過去，沒有了就停在最後一幀（連畫面裡還在跑的 CSS 動畫一起定住，點一下重播時放開）
   function nextFlow() {
     fi = (fi + 1) % flows.length; st.p = flows[fi];
     st.name = st.name.replace(/r\d+$/, '') + 'r' + (++seq);

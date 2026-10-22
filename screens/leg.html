@@ -194,7 +194,7 @@ function planHTML() {
 }
 
 // 背景：行事曆（同一天），整片壓暗 20%
-const q = new URLSearchParams({ lang, day: dayNo, ...(params.get('start') ? { start: params.get('start') } : {}), ...(interactive ? { interactive: 1, sid } : {}) });
+const q = new URLSearchParams({ lang, day: dayNo, ...(params.get('start') ? { start: params.get('start') } : {}), ...(interactive ? { interactive: 1, sid } : {}), ...(params.get('embed') === '1' ? { embed: 1 } : {}) });
 if (ipad) q.set('device', 'ipad');
 for (const k of ['theme', 'embed', 'still']) if (params.get(k)) q.set(k, params.get(k));   // 深色、打包進 App 的示範
 d.insertAdjacentHTML('beforeend', `<iframe class="bg" id="bg" src="calendar.html?${q}"></iframe><div class="dim" id="dim"></div>`);
@@ -292,8 +292,14 @@ if (interactive) {
 chrome(d);
 // 等背景那一頁也畫完才拍
 const bg = document.getElementById('bg');
-await new Promise(res => { const tick = () => bg.contentDocument && bg.contentDocument.body && bg.contentDocument.body.dataset.ready === '1' ? res() : setTimeout(tick, 50); tick(); });
-if (ipad) bg.contentDocument.querySelector('.sb')?.remove();   // iPad：狀態列是系統的，不在暗層底下（同 event.html）
+// 背景那一頁可能是不同來源（file:// 的每個檔案各算一個來源、沙箱 iframe）：讀不到它的 DOM 就改等它的 tz-ready 訊息（超過 3 秒也放行）
+await new Promise(res => {
+  let done = false; const fin = () => { if (!done) { done = true; res(); } };
+  addEventListener('message', (e) => { if (e.source === bg.contentWindow && e.data && e.data.type === 'tz-ready') fin(); });
+  setTimeout(fin, 3000);
+  const tick = () => { let ok = false; try { ok = bg.contentDocument && bg.contentDocument.body && bg.contentDocument.body.dataset.ready === '1'; } catch {} ok ? fin() : done || setTimeout(tick, 50); }; tick();
+});
+if (ipad) { try { bg.contentDocument.querySelector('.sb')?.remove(); } catch {} }   // iPad：狀態列是系統的，不在暗層底下（同 event.html）
 ready();
 </script>
 </body>

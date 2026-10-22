@@ -350,7 +350,10 @@ if (interactive && !still) {
     timeEl.textContent = `${Math.floor(m / 60)}:${String(m % 60).padStart(2, '0')}`;
   };
   // 倒數與進度條每秒自己走（Text(timerInterval:)）
-  setInterval(() => { if (!document.hidden) { tSec += 1; draw(); } }, 1000);
+  // 外層殼暫停（長按、播完停在最後一幀）時，倒數也停住（tz-auto-ctl：pause／play）
+  let held = false;
+  addEventListener('message', (e) => { const d = e.data || {}; if (d.type === 'tz-auto-ctl') held = d.cmd === 'pause'; });
+  setInterval(() => { if (!document.hidden && !held) { tSec += 1; draw(); } }, 1000);
   // 示範用：跳到下一個有看頭的時刻（進行中 → 即將開始 → 移動中 → 下一個行程進行中）
   const STOPS = ['10:04:40', '10:07:30', '10:12:20', '10:15:30'];
   let k = 0;

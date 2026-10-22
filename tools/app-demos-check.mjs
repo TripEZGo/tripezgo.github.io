@@ -96,14 +96,14 @@ async function runOne(id, lang, theme) {
     row.shot = `${tag}.b.png`;
   } else {
     if (same(a, b)) row.problems.push('播放中 0.8s 與 4.5s 的截圖一樣（動畫沒跑？）');
-    // 等它播完並停住：連續 3 張（每 1.2 秒一張）相同＝停在最後一幀
+    // 等它播完並停住：連續 5 張（每 1.2 秒一張，比任何一段靜態停留都長）相同＝停在最後一幀
     let held = null, last = b, streak = 0;
     const t0 = Date.now();
     while (Date.now() - t0 < T_MAX) {
       await page.waitForTimeout(1200);
       const c = await page.screenshot();
       streak = same(c, last) ? streak + 1 : 0; last = c;
-      if (streak >= 3) { held = c; break; }
+      if (streak >= 5) { held = c; break; }
     }
     if (!held) row.problems.push(`once：${T_MAX / 1000} 秒內沒有停在最後一幀`);
     else {
