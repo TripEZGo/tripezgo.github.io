@@ -5,7 +5,8 @@
  *   node tools/app-demos.mjs --only pw-no-ads,glance  → 只打包這幾個示範（開發時比較快；少一個的頁面不會報錯）
  *
  * 規則（跟 App 端的合約，不要改）
- *   - 入口 demo.html?demo=<id>&lang=<zh-Hant|en|ja>&theme=<light|dark>&still=<0|1>，只畫手機螢幕內容，照視窗寬縮放。
+ *   - 入口 demo.html?demo=<id>&lang=<zh-Hant|en|ja>&theme=<light|dark>&still=<0|1>[&mode=<loop|once>&crop=<none|safe|box>&nohand=<0|1>]，
+ *     只畫手機螢幕內容（402×874 原尺寸等比縮放放進視窗，沒有外框）。mode／crop／nohand 沒帶就用示範自己的預設（見 DEMOS 與 manifest.json）。
  *   - 資料夾自給自足、只用相對路徑、沒有任何網路網址：資料（範本旅程 JSON）、圖、字（用系統字）、地圖（靜態圖）全在裡面。
  *   - 可以直接用 file:// 開（Chromium、WKWebView 的 loadFileURL）：所以**沒有 ES module 的外部檔、沒有 fetch 本機檔**——
  *     每一頁的 JS 用 esbuild 打成一包、內嵌在 HTML（內嵌的 <script type=module> 在 file:// 沒問題），
@@ -29,29 +30,30 @@ const LANGS = ['zh-Hant-TW', 'en', 'ja'];
 // page／auto：iframe 載哪一頁、跑哪一支故事（screens/stories*.js 的 key）；q：該頁的網址參數；
 // pages：這個示範的故事會換到的每一頁（沒列到就不會打包進去）；still：減少動態時畫哪一幀（預設＝同一頁、不帶 auto）。
 // panels：多格局部畫面（box＝[top,height]，scale＝縮放、crop＝iframe 內往上裁掉多少 px——都是 402×874 座標系）。
-const PANEL = { x: 16, w: 370, scale: 370 / 402 };
+// 引導頁（ADR-0050，2026-10-22 稿）：每支都是 mode=once（播一次、停在最後一幀、點一下重播、長按暫停）＋ crop=safe（從 safe area 頂端開始畫）。
+//   flows：依序播的幾段 { page, q, auto }＝播故事；{ page, q, still: true, ms }＝靜態停 ms 毫秒；slide＝換進來時往上滑入。
+//   still：「減少動態」畫的那一幀（預設＝第一段同一頁、不帶 auto）。flat：不是手機畫面，iframe 就是整個視窗（隱私流向圖）。
+// 付費牆：mode=once＋crop=box（每支各一塊固定裁切框 box＝[x, y, w, h]，402×874 座標）＋ nohand（不畫手勢游標）。
+//   pw-calendar 是靜態畫面（Apple 行事曆單日檢視），沒有動畫。
+const ONB = { mode: 'once', crop: 'safe' };
+const PW = { mode: 'once', crop: 'box', nohand: true };
 export const DEMOS = {
-  // 歡迎頁
-  'plan-trio': {
-    pages: ['calendar', 'timeline', 'event-new', 'leg'],
-    panels: [
-      { page: 'calendar', q: 'day=2', auto: 'demo-plan-calendar', box: [20, 270], scale: PANEL.scale, crop: 64 },
-      { page: 'event-new', auto: 'demo-plan-event', box: [302, 270], scale: PANEL.scale, crop: 0 },
-      { page: 'leg', auto: 'leg', box: [584, 270], scale: PANEL.scale, crop: 405 },
-    ],
-  },
-  inspiration: { page: 'share-web', auto: 'inspiration-flow', pages: ['share-web', 'inspiration', 'event'], still: { page: 'inspiration' } },
-  map: { page: 'map-demo', auto: 'demo-map', pages: ['map-demo'] },
-  mates: { page: 'members', auto: 'demo-mates', pages: ['members', 'map-demo'] },
-  overview: { page: 'overview', auto: 'overview', pages: ['overview'] },
-  glance: { page: 'lock', auto: 'demo-glance', pages: ['lock', 'widget', 'siri'] },
-  library: { page: 'notes', auto: 'demo-library', pages: ['notes', 'note', 'scan', 'fx', 'shop'] },
+  // 引導頁
+  plan: { ...ONB, flows: [{ page: 'calendar', q: 'day=2', auto: 'demo-plan-calendar' }, { page: 'event', q: 'extra=1', still: true, ms: 4500 }, { page: 'leg', auto: 'leg' }],
+    pages: ['calendar', 'timeline', 'event', 'leg'] },
+  share: { ...ONB, flows: [{ page: 'share-igi', auto: 'insp-chain' }], pages: ['share-igi', 'share-gmi', 'inspiration', 'event'] },
+  map: { ...ONB, flows: [{ page: 'map-demo', q: 'nowalk=1', auto: 'map-pin-walk' }], pages: ['map-demo'] },
+  mates: { ...ONB, flows: [{ page: 'map-demo', q: 'focus=mates', auto: 'mates-map' }], pages: ['map-demo'] },
+  overview: { ...ONB, flows: [{ page: 'overview', auto: 'overview' }], pages: ['overview'] },
+  glance: { ...ONB, flows: [{ page: 'lock', still: true, ms: 3500 }, { page: 'widget', still: true, ms: 4500, slide: true }], pages: ['lock', 'widget'] },
+  library: { ...ONB, flows: [{ page: 'notes', auto: 'lib-scan-fx' }], pages: ['notes', 'scan', 'fx'] },
+  privacy: { mode: 'once', flat: true, flows: [{ page: 'privacy-flow' }], pages: ['privacy-flow'] },
   // 付費牆
-  'pw-calendar': { page: 'apple-calendar', auto: 'apple-calendar', pages: ['apple-calendar'] },
-  'pw-live-activity': { page: 'pw-live', auto: 'pw-live', pages: ['pw-live'] },
-  'pw-unlimited': { page: 'pw-unlimited', auto: 'pw-unlimited', pages: ['pw-unlimited'] },
-  'pw-no-ads': { page: 'pw-no-ads', auto: 'pw-no-ads', pages: ['pw-no-ads'] },
-  'pw-members': { page: 'pw-members', auto: 'pw-members', pages: ['pw-members'] },
+  'pw-no-ads': { ...PW, box: [0, 183, 402, 362], flows: [{ page: 'pw-no-ads', auto: 'pw-no-ads' }], pages: ['pw-no-ads'] },
+  'pw-live-activity': { ...PW, box: [0, 418, 402, 260], flows: [{ page: 'pw-live', q: 'bare=1', auto: 'pw-live' }], pages: ['pw-live'] },
+  'pw-unlimited': { ...PW, box: [0, 140, 402, 350], flows: [{ page: 'pw-unlimited', auto: 'pw-unlimited' }], pages: ['pw-unlimited'] },
+  'pw-members': { ...PW, box: [0, 125, 402, 350], flows: [{ page: 'pw-members', auto: 'pw-members' }], pages: ['pw-members'] },
+  'pw-calendar': { ...PW, box: [0, 186, 402, 334], flows: [{ page: 'apple-calendar', still: true, ms: 1e9 }], pages: ['apple-calendar'] },
 };
 
 const argv = process.argv.slice(2);
@@ -99,7 +101,15 @@ async function bundle(js, resolveDir, label) {
 }
 
 // ── 每頁的固定前置：資料載入（classic script，file:// 可用）＋ fetch 墊片 ──
-const PRELUDE = `<script>(function(){var q=new URLSearchParams(location.search),l=q.get('lang')||'zh-Hant-TW';if(['zh-Hant-TW','en','ja'].indexOf(l)<0)l='en';
+const SHIM = `<script>/* sessionStorage 不能用時（沙箱 iframe 沒有 allow-same-origin、隱私模式）的後備。畫面換頁會整頁重新載入，故事進度（tz-auto:*）與示範狀態都存在 sessionStorage；存不住就會在換頁後卡住。後備：存在記憶體，每次寫入用 postMessage {type:'tz-ss'} 回報外層殼，換頁時由殼放進新頁網址的 #ss=。完全不碰別的 frame 的 DOM／window 屬性。 */
+(function(){try{sessionStorage.setItem('__tz','1');sessionStorage.removeItem('__tz');return}catch(e){}
+var m={};try{var h=location.hash;if(h.indexOf('#ss=')===0)m=JSON.parse(decodeURIComponent(h.slice(4)))||{}}catch(e){m={}}
+function sync(){try{parent.postMessage({type:'tz-ss',name:window.name,data:m},'*')}catch(e){}}
+var s={getItem:function(k){return Object.prototype.hasOwnProperty.call(m,k)?m[k]:null},setItem:function(k,v){m[k]=String(v);sync()},removeItem:function(k){delete m[k];sync()},clear:function(){m={};sync()},key:function(i){return Object.keys(m)[i]||null}};
+Object.defineProperty(s,'length',{get:function(){return Object.keys(m).length}});
+try{Object.defineProperty(window,'sessionStorage',{value:s,configurable:true})}catch(e){}})();</script>
+`;
+const PRELUDE = SHIM + `<script>(function(){var q=new URLSearchParams(location.search),l=q.get('lang')||'zh-Hant-TW';if(['zh-Hant-TW','en','ja'].indexOf(l)<0)l='en';
 window.__TZ_FILES={};document.write('<script src="data/files.'+l+'.js"><\\/script>');
 var f=window.fetch;window.fetch=function(u){var k=String(u).replace(/^(\\.\\/)+/,'').split('?')[0];var v=window.__TZ_FILES[k];
 if(v!==undefined)return Promise.resolve(new Response(v,{status:200,headers:{'content-type':/\\.json$/.test(k)?'application/json':'image/svg+xml'}}));
@@ -118,13 +128,15 @@ async function buildPage(name) {
   });
   // 模組 script：內嵌的與 src 的都打成一包
   const mods = [...html.matchAll(/<script type="module"(?: src="([^"]+)")?>([\s\S]*?)<\/script>/g)];
-  if (mods.length !== 1) throw new Error(`${name}.html 有 ${mods.length} 個 module script`);
-  const [whole, src, inline] = mods[0];
-  const entry = src ? `import './${src.replace(/^\.\//, '')}';` : inline;
-  const js = await bundle(entry, SCREENS, `${name}.html`);
-  usedText.push(js);
-  html = html.replace(whole, () => `<script type="module">${js}</script>`);
-  html = html.replace(/<meta charset="utf-8">\n?/i, (m) => `${m}${PRELUDE}\n`);
+  if (mods.length > 1) throw new Error(`${name}.html 有 ${mods.length} 個 module script`);
+  if (mods.length === 1) {
+    const [whole, src, inline] = mods[0];
+    const entry = src ? `import './${src.replace(/^\.\//, '')}';` : inline;
+    const js = await bundle(entry, SCREENS, `${name}.html`);
+    usedText.push(js);
+    html = html.replace(whole, () => `<script type="module">${js}</script>`);
+    html = html.replace(/<meta charset="utf-8">\n?/i, (m) => `${m}${PRELUDE}\n`);
+  }   // 沒有 module script 的頁（隱私流向圖：純 HTML＋classic script）不需要資料墊片與 sessionStorage 後備
   write(`screens/${name}.html`, html);
   usedText.push(html);
 }
@@ -143,7 +155,7 @@ fs.mkdirSync(OUT, { recursive: true });
 const pages = new Set();
 for (const id of ids) {
   const d = DEMOS[id];
-  for (const p of [...(d.pages || []), d.page, ...(d.panels || []).map((x) => x.page)]) if (p) pages.add(p);
+  for (const p of [...(d.pages || []), ...(d.flows || []).map((x) => x.page)]) if (p) pages.add(p);
 }
 const missing = [];
 for (const p of [...pages].sort()) {
@@ -181,15 +193,17 @@ for (const lang of LANGS) {
 }
 
 // 殼與清單
-const spec = Object.fromEntries(ids.filter((id) => !(DEMOS[id].page && missing.includes(DEMOS[id].page)) ).map((id) => {
-  const d = DEMOS[id];
-  const strip = (p) => ({ page: p.page, q: p.q, auto: p.auto, still: p.still, box: p.box, scale: p.scale, crop: p.crop });
-  return [id, d.panels ? { panels: d.panels.map(strip) } : strip(d)];
+const spec = Object.fromEntries(ids.filter((id) => !(DEMOS[id].flows || []).some((f) => missing.includes(f.page))).map((id) => {
+  const { pages: _pages, ...d } = DEMOS[id];
+  return [id, d];
 }));
+// kind：once＝播一次停在最後一幀；static＝靜態畫面（沒有動畫）；ambient＝一直在動、不會「播完」（隱私流向圖的虛線）
+const kinds = Object.fromEntries(Object.entries(spec).map(([id, d]) => [id, d.flat ? 'ambient' : d.flows.every((f) => f.still === true) && d.flows.length === 1 ? 'static' : 'once']));
 write('demo.html', fs.readFileSync(path.join(root, 'tools/app-demos-shell.html'), 'utf8').replace(/\/\*DEMOS\*\/\{\}\/\*END\*\//, () => JSON.stringify(spec)));
 write('manifest.json', JSON.stringify({
-  adr: 'ADR-0050', entry: 'demo.html?demo=<id>&lang=<zh-Hant|en|ja>&theme=<light|dark>&still=<0|1>',
-  demos: Object.keys(spec), langs: ['zh-Hant', 'en', 'ja'], themes: ['light', 'dark'],
+  adr: 'ADR-0050', entry: 'demo.html?demo=<id>&lang=<zh-Hant|en|ja>&theme=<light|dark>&still=<0|1>[&mode=<loop|once>&crop=<none|safe|box>&nohand=<0|1>]',
+  demos: Object.keys(spec), kinds, langs: ['zh-Hant', 'en', 'ja'], themes: ['light', 'dark'],
+  defaults: Object.fromEntries(Object.entries(spec).map(([id, d]) => [id, { mode: d.mode || 'loop', crop: d.crop || 'none', nohand: !!d.nohand }])),
 }, null, 2) + '\n');
 
 let bytes = 0; const files = [];
