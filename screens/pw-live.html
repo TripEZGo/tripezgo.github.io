@@ -9,7 +9,7 @@
   卡片、字串、狀態判斷全部沿用 screens/lock.html（App：TripEZGoWidget/Views/TripActivityCard.swift、ActivityPieces.swift、
   Modules/LiveActivity/…/TripActivityContent.swift；字串 Scripts/i18n/maps/LiveActivity.json），差別只有：
   沒有通知、沒有撥時間的拉桿，時間自己往前走——進行中 → 即將開始 → 移動中（步行路程倒數）→ 下一個行程進行中。
-  參數：?lang= &theme=dark &still=1（靜止那一幀＝10:03 進行中）。自動示範 auto=pw-live：呼叫 __auto.advance() 跳到下一個時刻。
+  參數：?lang= &theme=dark &still=1（靜止那一幀＝10:03 進行中）&bare=1（只畫卡片本身，不要桌布、時鐘、狀態列）&nohand=1。自動示範 auto=pw-live：呼叫 __auto.advance() 跳到下一個時刻。
 -->
 <link rel="stylesheet" href="screen.css">
 <style>
@@ -105,7 +105,13 @@
   .lk-col .la { position: relative; left: auto; right: auto; bottom: auto; flex: none; }
   .nt { display: none; }
   html[data-theme="dark"] .dim { background: linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.34) 38%, rgba(0,0,0,.30) 60%, rgba(0,0,0,.46) 100%); }
+  /* ?bare=1（導購頁卡片用）：只留即時動態卡本身，不要桌布、時鐘、狀態列、快捷鈕；卡片放在頁面底色上，狀態照常往前走 */
+  html.bare .device { background: none !important; }
+  html.bare .dim, html.bare .clock, html.bare .qa, html.bare .sb, html.bare .home, html.bare .lk-scrub { display: none !important; }
+  html.bare .lk-col { top: 440px; bottom: auto; max-height: none; overflow: visible; }
+  html.bare .lk-col > :first-child { margin-top: 0; }
 </style>
+<script>if (/[?&]bare=1/.test(location.search)) document.documentElement.classList.add('bare');</script>
 </head>
 <body>
 <div class="device" id="d"><div class="dim"></div></div>

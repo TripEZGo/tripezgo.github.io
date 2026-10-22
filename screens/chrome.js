@@ -120,6 +120,8 @@ const SB_ICONS = `
    截圖工具（tools/screens.mjs）不帶，畫面維持靜態、輸出不變——**互動只能在 interactive 為真時掛上**。 */
 export const interactive = params.get('interactive') === '1';
 if (interactive) document.documentElement.classList.add('is-interactive');
+// ?nohand=1（導購頁示範）：不顯示手勢游標與點擊漣漪（screen.css 的 html.nohand）
+if (params.get('nohand') === '1') document.documentElement.classList.add('nohand');
 /** 換到另一個畫面（同語言、同互動模式）。給分頁列、點行程開詳情等用。 */
 export function go(page, query = '') {
   const q = new URLSearchParams(query);

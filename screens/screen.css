@@ -153,3 +153,6 @@ html.ipad[lang="ja"] .sb-date { left: 64px; }
 .ipad .tab svg { display: none; }
 .ipad .tab.on { font-weight: 600; }
 .ipad .tab-dot { display: none; }
+
+/* 導購頁示範（?nohand=1）：不顯示手勢游標與點擊漣漪 */
+html.nohand .auto-hand, html.nohand .auto-trail { display: none !important; }

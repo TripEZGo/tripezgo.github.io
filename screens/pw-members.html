@@ -9,6 +9,7 @@
   ——打包進 App 的付費牆「旅伴不限人數」示範（ADR-0050，tools/app-demos.mjs）。免費版一趟旅程最多 3 位旅伴
   （ui.feature.unlimitedmembers.detail、settings.members.limit.reached）；這裡旅伴一位一位透過連結加進來，越過 3 位、清單一路長下去。
   字串：UI.json／Settings.json 的 members*（逐字，同 members.html）。
+  （2026-10-22 稿：拿掉邀請區，作者固定在最上，新加入的旅伴插在作者正下方，最新的永遠看得到；標題旁有「3 / 3 → 4 位 · 不限」計數。）
   參數：?lang= &theme=dark &still=1（靜止那一幀＝全部加入後）。自動示範 auto=pw-members：呼叫 __auto.join() 四次。
 -->
 <link rel="stylesheet" href="screen.css">
@@ -74,23 +75,26 @@ const row = (i, cls = '') => {
   return `<div class="mb${cls}"><div class="av sw-${COLOURS[i]}">${[...s.names[i]][0].toUpperCase()}</div>
     <div class="mb-main"><div class="mb-name">${fmt(s.names[i])}</div><div class="mb-sub">${sub}</div></div>${right}</div>`;
 };
-const draw = (newest = -1) => [...Array(count).keys()].map((i) => row(i, i === newest ? ' new' : '')).join('');
+// 作者固定在最上；新加入的旅伴插在作者正下方（最新的永遠看得到）
+const draw = (newest = -1) => [0, ...[...Array(count).keys()].slice(1).reverse()].map((i) => row(i, i === newest ? ' new' : '')).join('');
 
 d.insertAdjacentHTML('beforeend', `
   <div class="nav-back"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>${fmt(s.back)}</div>
   <div class="nav-title">${fmt(s.title)}</div>
   <div class="col">
-    <div class="sec-title">${s.invite}</div>
-    <div class="link-card"><div class="url">${URL_TEXT}</div>
-      <div class="acts"><div class="btn">${s.linkShare}</div><div class="btn off">${s.linkOff}</div></div></div>
-    <div class="sec-title">${s.members}</div>
+    <div class="sec-title" id="cnt"></div>
     <div class="list" id="list"></div>
   </div>`);
 const list = document.getElementById('list');
 if (still) count = s.names.length;
 list.innerHTML = draw();
 // 旅伴透過連結一位一位加進來（App 裡是對方在自己的 App 按「加入」；這裡只畫結果）
-window.__auto = { join() { if (count < s.names.length) { count++; list.innerHTML = draw(count - 1); } } };
+// 標題旁的計數：3 / 3（免費版上限）→ 繼續加入後「N 位 · 不限」
+const upd = () => {
+  document.getElementById('cnt').textContent = s.members + ' · ' + (count <= 3 ? count + ' / 3' : lang === 'zh-Hant-TW' ? count + ' 位 · 不限' : lang === 'ja' ? count + ' 人 · 無制限' : count + ' · Unlimited');
+};
+upd();
+window.__auto = { join() { if (count < s.names.length) { count++; list.innerHTML = draw(count - 1); upd(); } } };
 
 chrome(d, {});
 ready();

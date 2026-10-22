@@ -9,6 +9,7 @@
   ——打包進 App 的付費牆「旅程不限數量」示範（ADR-0050，tools/app-demos.mjs）。免費版同時最多保留 3 趟
   （ui.feature.unlimited.detail、TripQuotaUseCase）；這裡一趟一趟新增，越過 3 趟、清單一路長下去。
   字串：UI.json ui.picker.head.*、ui.newtrip、ui.picker.joincoedit、ui.status.*、ui.section.count；Trips.json trips.picker.*。
+  （2026-10-22 稿：連續新增 6 趟，並在「新增旅程」下方顯示旅程數指示。）
   參數：?lang= &theme=dark &still=1（靜止那一幀＝新增完的樣子）。自動示範 auto=pw-unlimited：按「新增旅程」三次。
 -->
 <link rel="stylesheet" href="screen.css">
@@ -59,17 +60,17 @@ const SS = {
     planning: '籌劃中', ready: '準備出發', past: '回憶', undecided: '日期未定',
     upcoming: (r, n) => `${r} · 還有 ${n} 天出發`, memory: r => `回憶 · ${r}`,
     trips: [['沖繩四日', 'OKA', 0], ['山陽 6 日｜廣島、宮島…', 'HIJ', 1], ['京都賞楓', 'KIX', 2]],
-    added: [['東京賞櫻', 'TYO'], ['北海道泡湯', 'CTS'], ['首爾美食行', 'ICN']] },
+    added: [['東京賞櫻', 'TYO'], ['北海道泡湯', 'CTS'], ['首爾美食行', 'ICN'], ['大阪美食行', 'KIX'], ['台南小旅行', 'TNN'], ['沖繩潛水', 'OKA']] },
   en: { title: 'My Trips', lede: 'Pick up the last trip, or start a new one', newTrip: 'New Trip', join: 'Join a Trip',
     planning: 'Planning', ready: 'Ready to go', past: 'Memory', undecided: 'Dates undecided',
     upcoming: (r, n) => `${r} · leaves in ${n} days`, memory: r => `Memory · ${r}`,
     trips: [['Four days in Okinawa', 'OKA', 0], ["San'yō in 6 Days", 'HIJ', 1], ['Kyoto in autumn', 'KIX', 2]],
-    added: [['Tokyo cherry blossoms', 'TYO'], ['Hokkaido hot springs', 'CTS'], ['Seoul food trip', 'ICN']] },
+    added: [['Tokyo cherry blossoms', 'TYO'], ['Hokkaido hot springs', 'CTS'], ['Seoul food trip', 'ICN'], ['Osaka food trip', 'KIX'], ['Tainan getaway', 'TNN'], ['Okinawa diving', 'OKA']] },
   ja: { title: 'あなたの旅程', lede: '前回の旅行の続きから、または新しく 1 つ作る', newTrip: '新しい旅行', join: '共同編集に参加',
     planning: '計画中', ready: '出発準備', past: '思い出', undecided: '日付未定',
     upcoming: (r, n) => `${r} · 出発まであと ${n} 日`, memory: r => `思い出 · ${r}`,
     trips: [['沖縄 4 日間', 'OKA', 0], ['山陽 6 日間｜広島・宮島…', 'HIJ', 1], ['京都の紅葉', 'KIX', 2]],
-    added: [['東京お花見', 'TYO'], ['北海道の温泉', 'CTS'], ['ソウルグルメ旅', 'ICN']] },
+    added: [['東京お花見', 'TYO'], ['北海道の温泉', 'CTS'], ['ソウルグルメ旅', 'ICN'], ['大阪グルメ旅', 'KIX'], ['台南さんぽ', 'TNN'], ['沖縄ダイビング', 'OKA']] },
 };
 const s = SS[lang] || SS.en;
 
@@ -94,10 +95,16 @@ d.insertAdjacentHTML('beforeend', `
   <div class="head"><div class="title">${fmt(s.title)}</div><div class="lede">${fmt(s.lede)}</div></div>
   <div class="head-act"><svg viewBox="0 0 24 24">${trash}</svg></div>
   <div class="scroll"><div class="newtrip"><div class="pbtn" id="new"><svg viewBox="0 0 24 24">${ICON.plus}</svg>${fmt(s.newTrip)}</div>
-    <div class="jbtn"><svg viewBox="0 0 24 24">${members}</svg>${fmt(s.join)}</div></div><div id="list"></div></div>`);
+    <div class="jbtn"><svg viewBox="0 0 24 24">${members}</svg>${fmt(s.join)}</div></div><div id="cnt" style="margin-top:10px;font:600 13px/16px var(--font);color:var(--muted)"></div><div id="list"></div></div>`);
 const list = document.getElementById('list');
 const render = (newest = -1) => {
   list.innerHTML = draw();
+  // 旅程數指示：3 / 3（免費版上限）→ 繼續新增後「N 趟 · 不限」；新增的一趟落在籌劃中最上面，永遠看得到
+  const n = planning.length + readyTrips.length + past.length, cnt = document.getElementById('cnt');
+  cnt.textContent = lang === 'zh-Hant-TW' ? (n <= 3 ? `旅程 ${n} / 3（免費版上限）` : `旅程 ${n} 趟 · 不限`)
+    : lang === 'ja' ? (n <= 3 ? `旅程 ${n} / 3（無料版の上限）` : `旅程 ${n} 件 · 無制限`)
+    : (n <= 3 ? `Trips ${n} / 3 (free limit)` : `Trips ${n} · Unlimited`);
+  cnt.style.color = n <= 3 ? 'var(--muted)' : 'var(--accent-ink)';
   if (newest >= 0) list.querySelector('[data-sec] .row').classList.add('new');   // 新的一趟在「籌劃中」最上面
 };
 

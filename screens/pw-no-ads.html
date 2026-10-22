@@ -9,6 +9,7 @@
   版面沿用 screens/overview.html（OverviewEventCell）；廣告列照 App 的 NativeAdRowView（Modules/Ads）：
   前導欄放「廣告」兩個字（AdMob 政策要的標示）、廣告主圖示 22、標題 sm 半粗體兩行、內文 xs、廣告主 xs、尾端行動呼籲 xs 半粗體 accentInk。
   字串：UI.json ui.ad.badge；廣告內容是虛構的樣本。
+  （2026-10-22 稿：改成第 2 天全部 10 筆＋第 3 天前 7 筆，廣告落在第 2 天第 1、4 筆之後，收掉後畫面仍是滿的）
   參數：?lang= &theme=dark &still=1（靜止那一幀＝廣告還在）。自動示範 auto=pw-no-ads：呼叫 __auto.remove()，廣告列一則一則收掉。
 -->
 <link rel="stylesheet" href="screen.css">
@@ -91,7 +92,7 @@ const S = {
     ads: [['さくらステイ・広島駅前', '2 泊目が 20% オフ、無料キャンセル可', 'Sakura Stay'], ['宮島のお守りと和菓子ギフトセット', '作りたてを島から直送', 'Miyajima Gift']] },
 };
 const s = S[lang] || S['zh-Hant-TW'];
-const DAY = 2, START = 2, SHOWN = 8;   // 第 2 天，列 2 起 8 列
+const DAY = 2, START = 1, SHOWN = 10;   // 第 2 天全部 10 筆，接著第 3 天前 7 筆（收掉廣告後畫面仍是滿的）
 const clock = m => `${String(Math.floor(m / 60) % 24).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
 const maki = k => { const id = MAKI_OF_TYPE[k]; return MAKI[id] ? `<svg class="maki" viewBox="0 0 15 15"><path d="${MAKI[id]}"/></svg>` : ''; };
 const house = '<path d="M4 11 12 4l8 7v9H4zM10 20v-6h4v6"/>';
@@ -109,8 +110,13 @@ const adRow = ([hl, bd, adv]) => `<div class="ad"><div class="lead">${s.badge}</
     <div class="tx"><div class="hl">${fmt(hl)}</div><div class="bd">${fmt(bd)}</div><div class="adv">${adv}</div></div></div>
   <div class="cta">${s.cta}</div></div>`;
 
-// 廣告夾在第 2、5 列後面（總覽那一格：每幾列一則）
-const rows = events.map((e, i) => evRow(e) + (i === 1 ? adRow(s.ads[0]) : i === 5 ? adRow(s.ads[1]) : '')).join('');
+// 第 3 天的標題列＋前 7 筆；廣告夾在第 2 天的第 1、4 筆後面（總覽那一格：每幾列一則）
+const day3 = trip.days.find(x => x.day === 3);
+const events3 = day3.events.filter(e => e.start && e.end && !e.isCancelled).slice(0, 7);
+const date3 = new Date(today.getTime() + 864e5);
+const hdr3 = `<div class="hdr"><div class="tc"><b>${t.day(3)}</b><span>${t.shortDate(date3.getMonth() + 1, date3.getDate())} ${t.weekday[date3.getDay()]}</span></div>
+  <div class="tag">${s.count(day3.events.length)}</div><div class="sp"></div><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></div>`;
+const rows = events.map((e, i) => evRow(e) + (i === 0 ? adRow(s.ads[0]) : i === 3 ? adRow(s.ads[1]) : '')).join('') + hdr3 + events3.map(evRow).join('');
 d.insertAdjacentHTML('beforeend', `
   <div class="head"><div class="greet">${t.monthDay(today.getMonth() + 1, today.getDate())} · ${t.weekday[today.getDay()]}</div>
   <div class="title">${fmt(trip.title)}</div></div>
