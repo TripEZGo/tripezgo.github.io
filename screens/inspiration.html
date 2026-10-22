@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=fbb6add764","/screens/chrome.js":"/screens/chrome.js?v=0519a5a223","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=c19c6dceae","/screens/map.js":"/screens/map.js?v=869d04c645","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=c5192029e2","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=d06106b7f5","/screens/stories.js":"/screens/stories.js?v=a3a9f06442","/screens/tools.js":"/screens/tools.js?v=5f942d6b3d","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=88863cd89f","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=4d070ed56b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=1272523877","/screens/chrome.js":"/screens/chrome.js?v=d8903df139","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=c19c6dceae","/screens/map-static.js":"/screens/map-static.js?v=53639b3fa6","/screens/map.js":"/screens/map.js?v=869d04c645","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=ed2a74f4e4","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c9f72ab98c","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=7c18baa77a","/screens/stories.js":"/screens/stories.js?v=9712cb2d48","/screens/tools.js":"/screens/tools.js?v=9c5b5cb850","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=88863cd89f","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=4d070ed56b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>資料・靈感</title>
 <!--
@@ -25,7 +25,7 @@
   互動模式：點一列開檢視紙（往下拉或點後面收掉）→「新增關聯」→ 挑「行程」就接到行事曆（calendar.html?added=1，帶著剛加的那一則）。
   行程那一端的預填（時間先找好空檔）與新增行程表單不在這裡畫。
 -->
-<link rel="stylesheet" href="screen.css?v=3d6bdc16dc">
+<link rel="stylesheet" href="screen.css?v=9d16cf0705">
 <style>
   .ic { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
 
@@ -117,7 +117,9 @@
 import { lang, params, chrome, ready, fmt, interactive, go, svg, swatchClass, categoryName, loadCategories } from './chrome.js';
 import { libraryHead, subTabs, libStyle, sheet } from './tools.js';
 import { IS } from './inspiration-strings.js';
-import { N, GM, OLD_ITEMS, HOST } from './inspiration-data.js';
+import { N, OLD_ITEMS, HOST } from './inspiration-data.js';
+// chain=1（引導頁「分享」示範）：用它自己的資料，首頁的靈感示範不會看到
+const CHAIN = params.get('chain') === '1' ? await import('./inspiration-chain.js') : null;
 
 const d = document.getElementById('d');
 await loadCategories();
@@ -141,10 +143,14 @@ const ic = (n, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" aria-hid
 const CAT_ICON = { place: 'mapPin', image: 'photo', link: 'link', text: 'notes' };
 
 // ── 資料：剛分享進來的那一則在最上面（未讀），後面是原本就有的 ──
-const NEW_ITEM = { key: 'new', title: N.title, source: 'instagram', when: { k: 'hours', n: 0 }, cats: ['image', 'link'], type: 'sight', thumb: 'img/note-photo.svg', unread: true,
-  desc: N.desc, link: 'photos.example/p/C9mTz2kQx4', n: 4, fromWeb: true };
-const GM_ITEM = { key: 'gm', title: GM.title, source: 'googlemaps', when: { k: 'now' }, cats: ['place'], type: 'aquarium', thumb: 'img/share-gmap-snap.webp', unread: true, desc: GM.desc, place: true, fromWeb: true };
-const ITEMS = [GM_ITEM, NEW_ITEM, ...OLD_ITEMS.map((o, i) => ({ key: `o${i}`, ...o }))];
+const NEW_ITEM = CHAIN
+  ? { key: 'new', title: CHAIN.IG.title, source: 'instagram', when: { k: 'hours', n: 0 }, cats: ['image', 'link'], type: 'sight', thumb: 'img/note-photo.svg', unread: true,
+      desc: CHAIN.IG.desc, link: CHAIN.IG.link, n: 4, fromWeb: true }
+  : { key: 'new', title: N.title, source: null, host: HOST, when: { k: 'now' }, cats: ['link'], type: 'cafe', thumb: 'img/insp-cafe.svg', unread: true,
+      desc: N.desc, link: `${HOST}/cafe`, fromWeb: true };
+const GM_ITEM = CHAIN && { key: 'gm', title: CHAIN.GM.title, source: 'googlemaps', when: { k: 'now' }, cats: ['place'], type: 'aquarium', thumb: 'img/share-gmap-snap.webp', unread: true, desc: CHAIN.GM.desc, place: true, fromWeb: true };
+const OLD = CHAIN ? OLD_ITEMS.filter(x => x.title !== CHAIN.IG.title && !(x.source === 'googlemaps' && x.type === 'aquarium')) : OLD_ITEMS;   // 清單裡原本那張水族館卡就是這一則（剛存的取代它）
+const ITEMS = [...(CHAIN ? [GM_ITEM] : []), NEW_ITEM, ...OLD.map((o, i) => ({ key: `o${i}`, ...o }))];
 
 // 時間（InspirationListViewModel.timeText）：不到一分鐘「現在」、當天「N 小時前」（RelativeDateTimeFormatter）、昨天「昨天 21:08」、更早「10/7」（Md）
 const REL = {
@@ -224,7 +230,7 @@ function linkMenu(it, { instant = false } = {}) {
   el.addEventListener('click', (e) => {
     const k = e.target.closest('[data-dest]:not(.off)')?.dataset.dest; if (!k) return;
     // 行程：開一張填好的新增行程（時間先找好空檔）——存好之後直接開那一則的檢視行程（使用者裁定 2026-10-21；App 本身存好是回這一頁）。表單不畫。
-    if (k === 'event') close(() => go('event', 'event=new-from-inspiration&day=2&added=1'));
+    if (k === 'event') close(() => go('event', `event=new-from-inspiration&day=2&added=1${CHAIN ? '&chain=1' : ''}`));
     else close();
   });
 }
