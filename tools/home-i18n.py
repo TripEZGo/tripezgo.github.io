@@ -458,10 +458,10 @@ T = {
       ('What it costs right now: US$200 a month for AI, US$99 a year for the Apple Developer Program, plus about 30 hours a week of my own time building it.',
        '今かかっているコスト：AI に月 200 ドル、Apple Developer Program に年 99 ドル、それに週およそ 30 時間の個人開発の時間。',
        '현재 드는 비용: AI에 매달 200달러, Apple Developer Program에 매년 99달러, 그리고 매주 30시간 정도의 개인 개발 시간.'),
-  '所以 TripEZGo 還是以「免費就能用、付費更好用」為出發點，免費版與 Premium 只有這幾項差異：無廣告、旅程數（免費版同時保留 3 趟，超過要先刪掉舊的）、每趟旅伴（免費版 3 位）、即時動態、Apple／Google 行事曆整合。Premium 提供週訂閱、月訂閱、年訂閱與終身買斷。':
-      ('So TripEZGo starts from “free to use, better with Premium.” Free and Premium differ in just these ways: no ads, the number of trips (Free keeps 3 at a time — delete an old one to make room), companions per trip (3 on Free), Live Activity, and Apple / Google Calendar integration. Premium comes as a weekly, monthly or yearly subscription, or a lifetime purchase.',
-       'だから TripEZGo は「無料でしっかり使えて、有料ならもっと便利に」が基本です。無料版と Premium の違いはこれだけ：広告なし、旅行の数（無料版は同時に 3 件まで。超えたら古い旅行を先に削除）、旅行ごとの旅の仲間（無料版は 3 人）、ライブアクティビティ、Apple／Google カレンダー連携。Premium には週・月・年のサブスクリプションと、買い切りがあります。',
-       '그래서 TripEZGo는 ‘무료로도 충분히, Premium이면 더 편하게’를 기본으로 합니다. 무료 버전과 Premium의 차이는 이것뿐입니다: 광고 없음, 여행 수(무료 버전은 동시에 3개까지, 넘으면 오래된 여행을 먼저 삭제), 여행마다 동행(무료 버전은 3명), 라이브 액티비티, Apple/Google 캘린더 연동. Premium은 주간·월간·연간 구독과 평생 구매로 제공됩니다.'),
+  '所以 TripEZGo 還是以「免費就能用、付費更好用」為出發點，免費版與 Premium 只有這幾項差異：無廣告、旅程數（免費版同時只能擁有 3 趟，包含垃圾桶）、每趟旅伴（免費版 3 位）、即時動態、Apple／Google 行事曆整合。Premium 提供週訂閱、月訂閱、年訂閱與終身買斷。':
+      ('So TripEZGo starts from “free to use, better with Premium.” Free and Premium differ in just these ways: no ads, the number of trips (Free can only own 3 trips at a time, trash included), companions per trip (3 on Free), Live Activity, and Apple / Google Calendar integration. Premium comes as a weekly, monthly or yearly subscription, or a lifetime purchase.',
+       'だから TripEZGo は「無料でしっかり使えて、有料ならもっと便利に」が基本です。無料版と Premium の違いはこれだけ：広告なし、旅行の数（無料版は同時に所有できるのは 3 件まで。ゴミ箱の中も含みます）、旅行ごとの旅の仲間（無料版は 3 人）、ライブアクティビティ、Apple／Google カレンダー連携。Premium には週・月・年のサブスクリプションと、買い切りがあります。',
+       '그래서 TripEZGo는 ‘무료로도 충분히, Premium이면 더 편하게’를 기본으로 합니다. 무료 버전과 Premium의 차이는 이것뿐입니다: 광고 없음, 여행 수(무료 버전은 동시에 3개까지만 보유 가능, 휴지통 포함), 여행마다 동행(무료 버전은 3명), 라이브 액티비티, Apple/Google 캘린더 연동. Premium은 주간·월간·연간 구독과 평생 구매로 제공됩니다.'),
   # 開發背景
   '背景故事': ('Backstory', '開発ストーリー', '개발 이야기'),
   # ── 藍圖（使用者 2026-10-13：橫向時間軸，從「關於」搬出來） ──
