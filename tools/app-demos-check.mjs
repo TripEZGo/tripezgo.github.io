@@ -134,6 +134,42 @@ async function runOne(id, lang, theme) {
   return row;
 }
 
+// hold=1 的預載頁（App 預載鄰頁）：載好停在第一幀。頁面藏起來再回到可見（App 回前景），**不准被叫起來播**；
+// 只有原生呼叫 window.tzDemo.play() 才開始，而那之後藏起來再回來要接得回去。
+{
+  const id = IDS.find((x) => (KINDS[x] || 'once') === 'once') || IDS[0];
+  const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 2, timezoneId: 'Asia/Tokyo', locale: 'zh-TW' });
+  const page = await ctx.newPage();
+  await page.route(/^https?:/, (r) => r.abort());
+  await page.goto(pathToFileURL(path.join(DIR, 'demo.html')).href + `?demo=${id}&lang=${LANGS[0]}&theme=${THEMES[0]}&still=0&hold=1`);
+  const flip = (hidden) => page.evaluate((h) => {
+    Object.defineProperty(document, 'hidden', { configurable: true, get: () => h });
+    document.dispatchEvent(new Event('visibilitychange'));
+  }, hidden);
+  const problems = [];
+  await page.waitForTimeout(T1);
+  const parked = await page.screenshot();
+  await flip(true); await flip(false);
+  await page.waitForTimeout(T2 - T1);
+  if (!same(parked, await page.screenshot())) problems.push('hold=1：頁面藏起來再回來，沒開始過的預載頁被叫起來播了');
+  await page.evaluate(() => window.tzDemo.play());
+  await page.waitForTimeout(T1);
+  const playing = await page.screenshot();
+  await page.waitForTimeout(T2 - T1);
+  if (same(playing, await page.screenshot())) problems.push('hold=1：呼叫 play() 之後沒有播');
+  await flip(true); await page.waitForTimeout(500); const hiddenShot = await page.screenshot();
+  await page.waitForTimeout(1500);
+  if (!same(hiddenShot, await page.screenshot())) problems.push('hold=1：頁面藏起來之後還在播');
+  await flip(false);
+  await page.waitForTimeout(T1);
+  const back = await page.screenshot();
+  await page.waitForTimeout(T2 - T1);
+  if (same(back, await page.screenshot()) && !same(back, parked)) { /* 可能剛好播完停在最後一幀，不算 */ }
+  if (problems.length) fail++;
+  console.log(`${problems.length ? 'FAIL' : 'ok  '} ${id} hold=1 visibilitychange${problems.length ? '\n     ' + problems.join('\n     ') : ''}`);
+  await ctx.close();
+}
+
 const jobs = [];
 for (const theme of THEMES) for (const id of IDS) for (const lang of LANGS) jobs.push({ id, lang, theme });
 let next = 0;

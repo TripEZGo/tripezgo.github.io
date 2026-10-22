@@ -198,7 +198,13 @@
     play: function () { paused = false; ctl(); },
     restart: function () { paused = false; userPaused = false; if (once && !still) restart(); else ctl(); },
   };
-  document.addEventListener('visibilitychange', function () { document.hidden ? window.tzDemo.pause() : window.tzDemo.play(); });
+  // App 回到前景：**只接回「藏起來之前在播」的那一份**。預載的鄰頁（hold=1）從沒開始過、還停在第一幀，
+  // 不能因為頁面重新可見就被叫起來播（那是原生翻到它時才呼叫 play() 的事）；App 自己 pause() 過的也一樣不自動恢復。
+  var resumeOnVisible = false;
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { resumeOnVisible = !paused; window.tzDemo.pause(); }
+    else { var r = resumeOnVisible; resumeOnVisible = false; if (r) window.tzDemo.play(); }
+  });
 })();
 </script>
 </body>
