@@ -113,14 +113,12 @@ async function runOne(id, lang, theme) {
       if (!same(held, await page.screenshot())) row.problems.push('once：停住之後又變了（沒有守住最後一幀）');
       // 點一下：從頭重播（畫面要變）
       await page.mouse.click(W / 2, H / 2);
-      // 每 250ms 看一次：短的示範（步驟之間只隔 0.5s）1 秒多就又播完了，只看 3.5 秒後那一張會誤判成沒重播
-      let replayed = false;
-      for (let k = 0; k < 14 && !replayed; k++) { await page.waitForTimeout(250); replayed = !same(held, await page.screenshot()); }
-      await page.waitForTimeout(500);
-      if (!replayed) row.problems.push('once：播完後點一下沒有重播');
+      await page.waitForTimeout(3500);
+      const r1 = await page.screenshot();
+      if (same(held, r1)) row.problems.push('once：播完後點一下沒有重播');
       else {
         // 長按暫停：按住期間畫面不變，放開後繼續
-        await page.mouse.move(W / 2, H / 2); await page.mouse.down(); await page.waitForTimeout(1700);   // 暫停只擋「下一步」：正在做的那一步（手指滑過去＋點＋換頁，最久約 0.8 秒）會做完，所以等它做完再比
+        await page.mouse.move(W / 2, H / 2); await page.mouse.down(); await page.waitForTimeout(900);
         const p1 = await page.screenshot(); await page.waitForTimeout(1800); const p2 = await page.screenshot();
         if (!same(p1, p2)) row.problems.push('once：長按期間畫面還在動（沒有暫停）');
         await page.mouse.up(); await page.waitForTimeout(2500);
@@ -132,42 +130,6 @@ async function runOne(id, lang, theme) {
   for (const e of errs) row.problems.push(e);
   await ctx.close();
   return row;
-}
-
-// hold=1 的預載頁（App 預載鄰頁）：載好停在第一幀。頁面藏起來再回到可見（App 回前景），**不准被叫起來播**；
-// 只有原生呼叫 window.tzDemo.play() 才開始，而那之後藏起來再回來要接得回去。
-{
-  const id = IDS.find((x) => (KINDS[x] || 'once') === 'once') || IDS[0];
-  const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 2, timezoneId: 'Asia/Tokyo', locale: 'zh-TW' });
-  const page = await ctx.newPage();
-  await page.route(/^https?:/, (r) => r.abort());
-  await page.goto(pathToFileURL(path.join(DIR, 'demo.html')).href + `?demo=${id}&lang=${LANGS[0]}&theme=${THEMES[0]}&still=0&hold=1`);
-  const flip = (hidden) => page.evaluate((h) => {
-    Object.defineProperty(document, 'hidden', { configurable: true, get: () => h });
-    document.dispatchEvent(new Event('visibilitychange'));
-  }, hidden);
-  const problems = [];
-  await page.waitForTimeout(T1);
-  const parked = await page.screenshot();
-  await flip(true); await flip(false);
-  await page.waitForTimeout(T2 - T1);
-  if (!same(parked, await page.screenshot())) problems.push('hold=1：頁面藏起來再回來，沒開始過的預載頁被叫起來播了');
-  await page.evaluate(() => window.tzDemo.play());
-  await page.waitForTimeout(T1);
-  const playing = await page.screenshot();
-  await page.waitForTimeout(T2 - T1);
-  if (same(playing, await page.screenshot())) problems.push('hold=1：呼叫 play() 之後沒有播');
-  await flip(true); await page.waitForTimeout(500); const hiddenShot = await page.screenshot();
-  await page.waitForTimeout(1500);
-  if (!same(hiddenShot, await page.screenshot())) problems.push('hold=1：頁面藏起來之後還在播');
-  await flip(false);
-  await page.waitForTimeout(T1);
-  const back = await page.screenshot();
-  await page.waitForTimeout(T2 - T1);
-  if (same(back, await page.screenshot()) && !same(back, parked)) { /* 可能剛好播完停在最後一幀，不算 */ }
-  if (problems.length) fail++;
-  console.log(`${problems.length ? 'FAIL' : 'ok  '} ${id} hold=1 visibilitychange${problems.length ? '\n     ' + problems.join('\n     ') : ''}`);
-  await ctx.close();
 }
 
 const jobs = [];

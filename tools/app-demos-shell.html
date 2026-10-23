@@ -10,7 +10,6 @@
   網址：demo.html?demo=<id>&lang=<zh-Hant|en|ja>&theme=<light|dark>&still=<0|1>&mode=<loop|once>&crop=<none|safe|box>&nohand=<0|1>
   （mode、crop、nohand 沒帶就用該示範自己的預設：引導頁的示範＝once＋safe，付費牆的示範＝once＋box＋nohand；見 manifest.json 的 demos。）
 
-  hold=1                  載好後先停在第一幀（paused 起手），等 window.tzDemo.play()（App 預載鄰頁、避免載入途中就開始播）。
   mode
     loop（預設，付費牆）  自動播放、播完在背景開一份新的接上去（循環）；不吃點擊（畫面不接手勢）。
     once（引導頁）        每一段播一次，播完停在最後一幀，不循環；播完後點一下從頭重播；長按暫停（連畫面裡正在跑的動畫與
@@ -60,7 +59,6 @@
   var once = (q.get('mode') || spec0().mode || 'loop') === 'once';
   var cropMode = q.get('crop') || spec0().crop || 'none';
   var safe = cropMode === 'safe', boxed = cropMode === 'box';
-  var hold = q.get('hold') === '1';   // App 預載的鄰頁：載好、停在第一幀，等原生 play() 才開始
   var nohand = q.has('nohand') ? q.get('nohand') === '1' : !!spec0().nohand;
   document.documentElement.dataset.theme = theme;
   document.documentElement.lang = lang;
@@ -86,7 +84,7 @@
   }
   addEventListener('resize', fit); fit();
 
-  var seq = 0, paused = hold && once && !still, userPaused = false, finished = false, lastProg = Date.now();
+  var seq = 0, paused = false, userPaused = false, finished = false, lastProg = Date.now();
   var ssSnap = {};   // 畫面頁後備儲存（sessionStorage 不能用時）回報的最新快照，key＝frame 名稱
 
   function urlOf(p) {
@@ -94,7 +92,7 @@
     var pg = still && spec.still ? spec.still : p;
     var u = 'screens/' + pg.page + '.html?lang=' + lang + '&theme=' + theme + '&embed=1' + (nohand ? '&nohand=1' : '');
     if (useStill) u += '&still=1';
-    else u += '&interactive=1' + (p.auto ? '&auto=' + p.auto + (once ? '&fast=1' : '') : '');   // fast：App 內出現就播、步驟間一律 500ms（screens/autoplay.js）
+    else u += '&interactive=1' + (p.auto ? '&auto=' + p.auto : '');
     return u + (pg.q ? '&' + pg.q : '');
   }
   function newFrame(p, name, hidden) {
@@ -109,7 +107,7 @@
   stage.appendChild(st.fr);
 
   function ctl(anims) {
-    try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: (paused || userPaused || finished) ? 'pause' : 'play', anims: (anims === true && (userPaused || finished)) || paused }, '*'); } catch (e) {}
+    try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: (paused || userPaused || finished) ? 'pause' : 'play', anims: anims === true && (userPaused || finished) }, '*'); } catch (e) {}
   }
   // 換頁／換一份：新的一頁在背景載好、畫完再換上，不閃
   function swap(nf, delay) {
@@ -198,13 +196,7 @@
     play: function () { paused = false; ctl(); },
     restart: function () { paused = false; userPaused = false; if (once && !still) restart(); else ctl(); },
   };
-  // App 回到前景：**只接回「藏起來之前在播」的那一份**。預載的鄰頁（hold=1）從沒開始過、還停在第一幀，
-  // 不能因為頁面重新可見就被叫起來播（那是原生翻到它時才呼叫 play() 的事）；App 自己 pause() 過的也一樣不自動恢復。
-  var resumeOnVisible = false;
-  document.addEventListener('visibilitychange', function () {
-    if (document.hidden) { resumeOnVisible = !paused; window.tzDemo.pause(); }
-    else { var r = resumeOnVisible; resumeOnVisible = false; if (r) window.tzDemo.play(); }
-  });
+  document.addEventListener('visibilitychange', function () { document.hidden ? window.tzDemo.pause() : window.tzDemo.play(); });
 })();
 </script>
 </body>
