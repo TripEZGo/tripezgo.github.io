@@ -45,7 +45,8 @@ const icon = (n, w) => `<svg viewBox="0 0 24 24" aria-hidden="true" style="strok
 // 三格（1.4.0 起）照同一組數字：寬 (362 − 4 − 2 × 3.6) ÷ 3 ＝ 116.93、一格一步 120.53
 // iPad：軌道 992 寬（左右照舊 20），同一條式子 → (992 − 4 − 7.2) ÷ 3 ＝ 326.93、一步 330.53
 const SEG_W = ipad ? 326.93 : 116.93, SEG_STEP = ipad ? 330.53 : 120.53;
-const segLeft = i => 2 + i * SEG_STEP;
+let segGeo = null;   // 依內容分配時每一格的 {left,width}；等寬放得下就維持 null
+const segLeft = i => segGeo ? segGeo[i].left : 2 + i * SEG_STEP;
 
 /* 抬頭（SubTabContainer：上 12+2、左右 20、標題 xxl semibold −0.02em；切換列上 4+6、高 ≥44）＋
    右上工具鈕（HeadIconButton：44 命中、23 圖示、墨色、無底；top＝安全區 62＋12−4、trailing＝20−8，同總覽的分享鈕 346／70） */
@@ -108,6 +109,7 @@ export function libraryHead(device, current) {
     <div class="head-tool" role="button" aria-label="${L.tools}" data-tap>${icon('toolbox', 1.8)}</div>
     <div class="seg"><div class="seg-pill" style="left:${segLeft(current)}px"></div>
     ${L.subs.map((x, i) => `<div class="seg-t${i === current ? ' on' : ''}" style="left:${segLeft(i)}px"><span>${x}</span></div>`).join('')}</div>`);
+  fitSegments(device, current);
   // 截圖：帶 menu=1 就畫成「點了工具鈕」那一刻（紙開著）
   if (params.get('menu') === '1') toolsMenu(device, { from: SUB_PAGES[current], instant: true });
   if (interactive) device.querySelector('.head-tool').addEventListener('click', () => toolsMenu(device, { from: SUB_PAGES[current] }));
@@ -181,6 +183,32 @@ export function style() {
   document.head.insertAdjacentHTML('beforeend', `<style>${CSS}</style>`);
 }
 
+/**
+ * UISegmentedControl 預設等寬；等寬塞不下最長的格名時，App 的 ContentFittingSegmentedControl 改開
+ * apportionsSegmentWidthsByContent（依內容分配），所以日文「インスピレーション」不再被截。
+ * 這裡一樣：先照等寬畫，量到有格名被截了才改成依內容分配（各格 = 自己的字寬＋左右 8 ＋ 平分剩下的空位）。
+ */
+function fitSegments(device, current) {
+  segGeo = null;
+  const cells = [...device.querySelectorAll('.seg-t')];
+  if (!cells.some(c => c.firstElementChild.scrollWidth > c.firstElementChild.clientWidth)) return;
+  const track = device.querySelector('.seg').clientWidth - 4;   // 左右各 2 的內縮
+  const gap = SEG_STEP - SEG_W;
+  const natural = cells.map(c => {
+    const span = c.firstElementChild;
+    span.style.maxWidth = 'none';
+    const w = span.offsetWidth;
+    span.style.maxWidth = '';
+    return w + 16;
+  });
+  const spare = (track - gap * (cells.length - 1) - natural.reduce((a, b) => a + b, 0)) / cells.length;
+  let x = 2;
+  segGeo = natural.map(n => { const g = { left: x, width: n + Math.max(0, spare) }; x += g.width + gap; return g; });
+  cells.forEach((c, i) => { c.style.left = `${segGeo[i].left}px`; c.style.width = `${segGeo[i].width}px`; });
+  const pill = device.querySelector('.seg-pill');
+  pill.style.left = `${segGeo[current].left}px`; pill.style.width = `${segGeo[current].width}px`;
+}
+
 /** 抬頭那條兩格切換：點了白色那顆滑過去，滑完換到那一格的畫面。 */
 export function subTabs(device, current) {
   style();
@@ -190,6 +218,7 @@ export function subTabs(device, current) {
     el.addEventListener('click', () => {
       if (i === current) return;
       pill.style.left = `${segLeft(i)}px`;
+      if (segGeo) pill.style.width = `${segGeo[i].width}px`;
       device.querySelectorAll('.seg-t').forEach((t, k) => t.classList.toggle('on', k === i));
       setTimeout(() => go(SUB_PAGES[i]), 220);
     });
