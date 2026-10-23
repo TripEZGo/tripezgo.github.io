@@ -61,7 +61,8 @@ html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
 .seg-pill { position: absolute; top: 2.33px; height: 40.33px; width: ${SEG_W}px; border-radius: 20.2px; background: var(--sys-seg-pill);
   box-shadow: 0 0 0 .5px rgba(0,0,0,.03), 0 2px 6px rgba(0,0,0,.04); }
 .seg-t { position: absolute; top: 0; height: 45px; width: ${SEG_W}px; display: grid; place-items: center;
-  font: 400 var(--t-sm)/16px var(--font); color: var(--sys-seg-ink); white-space: nowrap; }
+  font: 400 var(--t-sm)/16px var(--font); color: var(--sys-seg-ink); white-space: nowrap; box-sizing: border-box; padding: 0 8px; }
+.seg-t > span { min-width: 0; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }   /* UISegmentedControl：塞不下的格名收成 … */
 .seg-t.on { font-weight: 700; color: var(--ink); }
 .is-interactive .head-tool { cursor: pointer; } .is-interactive .head-tool:active { background: var(--surface); }
 /* 「工具」挑一個的紙（MenuSheetViewController）：custom detent＝貼內容高、iOS 26 浮動紙四邊內縮 8、圓角 Radius.lg 12、抓桿；
@@ -106,7 +107,7 @@ export function libraryHead(device, current) {
   device.insertAdjacentHTML('beforeend', `<div class="wg-title">${L.title}</div>
     <div class="head-tool" role="button" aria-label="${L.tools}" data-tap>${icon('toolbox', 1.8)}</div>
     <div class="seg"><div class="seg-pill" style="left:${segLeft(current)}px"></div>
-    ${L.subs.map((x, i) => `<div class="seg-t${i === current ? ' on' : ''}" style="left:${segLeft(i)}px">${x}</div>`).join('')}</div>`);
+    ${L.subs.map((x, i) => `<div class="seg-t${i === current ? ' on' : ''}" style="left:${segLeft(i)}px"><span>${x}</span></div>`).join('')}</div>`);
   // 截圖：帶 menu=1 就畫成「點了工具鈕」那一刻（紙開著）
   if (params.get('menu') === '1') toolsMenu(device, { from: SUB_PAGES[current], instant: true });
   if (interactive) device.querySelector('.head-tool').addEventListener('click', () => toolsMenu(device, { from: SUB_PAGES[current] }));

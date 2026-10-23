@@ -37,10 +37,12 @@
   /* 全日：AllDayBandView — 上 8、下 6、列高 36、間距 4、左右 10、邊條 4 */
   .allday { position: absolute; top: 186px; left: 0; right: 0; padding: 8px 20px 6px 52px;
     border-bottom: 1px solid var(--border-soft); background: var(--card); }
-  .allday-label { position: absolute; left: 20px; top: 13px; font-size: var(--t-xs); line-height: 20px; color: var(--muted); }
+  .allday-label { position: absolute; left: 0; width: 44px; text-align: right; white-space: nowrap; top: 13px; font-size: var(--t-xs); line-height: 20px; color: var(--muted); }
   .ad { position: relative; height: 36px; border: 1px solid var(--sw-stroke); border-radius: 8px;
-    background: var(--sw-fill); overflow: hidden; display: flex; align-items: center; padding: 0 22px 0 14px;
+    background: var(--sw-fill); overflow: hidden; display: flex; align-items: center; padding: 0 10px 0 14px;
     font: 600 var(--t-sm)/18px var(--font); color: var(--ink); white-space: nowrap; }
+  .ad.has-todo { padding-right: 22px; }   /* allDayTodoDotClearance */
+  .ad .nm { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; }
   .ad + .ad { margin-top: 4px; }
   .ad::before, .ev::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--sw-base); }
   .todo-dot { position: absolute; right: 7px; top: 6px; width: 11px; height: 11px; border-radius: 50%;
@@ -62,7 +64,8 @@
   @keyframes fresh { 0%,100% { box-shadow: 0 0 0 0 transparent; } 40% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 55%, transparent); } }
   .ev.line { border: 0; background: none; overflow: visible; padding: 0; }
   .ev.line::before { width: var(--bar); top: 1px; bottom: 1px; }
-  .ev.line .t { position: absolute; left: calc(var(--bar) + 8px); top: -1px; white-space: nowrap; background: var(--card); padding-right: 2px; }
+  .ev.line .t { position: absolute; left: calc(var(--bar) + 8px); top: -1px; white-space: nowrap; background: var(--card); padding-right: 2px;
+    max-width: calc(100% - var(--bar) - 8px - 10px); overflow: hidden; text-overflow: ellipsis; }   /* 線形：標題收在右緣內 10pt（blockPaddingH），超過就 … */
 
   /* 路程膠囊：RouteLegCell — 高 24、白底一圈蓋住路線 */
   .leg { position: absolute; left: 228.5px; transform: translateX(-50%); }
@@ -226,7 +229,7 @@ else {
 const allDayHTML = () => {
   const allDay = trip.allDayEvents.filter(a => a.fromDay <= dayNo && dayNo <= a.toDay);
   return `<div class="allday-label">${t.allDay}</div>
-  ${allDay.map(a => `<div class="ad ${swatchClass(a.category)}${a.isCancelled ? ' cx' : ''}" data-key="${a.key}"${tap}>${fmt(a.title)}${(a.todos || []).length ? '<span class="todo-dot"></span>' : ''}</div>`).join('')}`;
+  ${allDay.map(a => `<div class="ad ${swatchClass(a.category)}${a.isCancelled ? ' cx' : ''}${(a.todos || []).length ? ' has-todo' : ''}" data-key="${a.key}"${tap}><span class="nm">${fmt(a.title)}</span>${(a.todos || []).length ? '<span class="todo-dot"></span>' : ''}</div>`).join('')}`;
 };
 d.insertAdjacentHTML('beforeend', `<div class="allday" id="allday">${allDayHTML()}</div>`);
 const alldayEl = document.getElementById('allday');
