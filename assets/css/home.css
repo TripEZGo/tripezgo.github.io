@@ -718,7 +718,7 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
 .pf-setting { display: flex; align-items: center; gap: 10px; padding: 10px 12px 10px 14px; min-height: 60px; min-width: 0; }
 .pf-setting + .pf-setting { border-left: 1px solid var(--border-soft); }
 .pf-setting label { flex: 1; min-width: 0; cursor: pointer; }
-.pf-setting b { display: block; font-size: 15px; font-weight: 600; line-height: 1.35; white-space: nowrap; }
+.pf-setting b { display: block; font-size: 15px; font-weight: 600; line-height: 1.35; text-wrap: balance; word-break: keep-all; }
 .pf-setting span { display: block; margin-top: 1px; font-size: 13px; color: var(--muted); line-height: 1.45; }
 .pf-setting.is-locked label { cursor: not-allowed; }
 .pf-setting.is-locked b { color: var(--muted); }

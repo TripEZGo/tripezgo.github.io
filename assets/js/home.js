@@ -225,7 +225,7 @@ function flow(el) {
           off: 'Your data stays on this iPhone.', synced: 'iPhone and iPad sync through your iCloud.', shared: 'Synced through iCloud, co-edited with 3 companions.' },
     ja: { head: 'データの流れ', account: 'あなたの Apple アカウント', me: 'あなたの iPhone', ipad: 'あなたの iPad', cloud: 'Apple iCloud', cloudOn: 'バックアップと同期', cloudOff: 'オフ',
           mates: ['ミカ', 'ケン', 'ユキ'],
-          sync: 'iCloud でバックアップと同期', syncSub: 'iPhone と iPad を同期', share: '共同編集', shareSub: '旅の仲間と一緒に予定を編集', shareLocked: '先に iCloud 同期をオンに',
+          sync: 'iCloud バックアップ<wbr>と同期', syncSub: 'iPhone と iPad を同期', share: '共同編集', shareSub: '旅の仲間と一緒に予定を編集', shareLocked: '先に iCloud 同期をオンに',
           off: 'データはこの iPhone の中だけにあります。', synced: 'iPhone と iPad があなたの iCloud で同期。', shared: 'iCloud で同期し、旅の仲間 3 人と共同編集。' },
     ko: { head: '데이터 흐름', account: '내 Apple 계정', me: '내 iPhone', ipad: '내 iPad', cloud: 'Apple iCloud', cloudOn: '백업 및 동기화', cloudOff: '꺼짐',
           mates: ['지민', '현우', 'Yuki'],
