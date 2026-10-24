@@ -921,7 +921,7 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; }
 /* ─── 限時活動：分享到社群，免費兌換一年 Premium（assets/js/promo.js；設計稿 Open Design site-home-v2.html #promo）───
    第一屏一顆醒目入口＋Hero 與隱私之間一張 accent-wash 卡：左邊標題、價格、倒數，右邊三步驟。
    兩者都先 hidden，promo.js 確認活動還沒結束才打開。 */
-.promo[hidden], .promo-jump[hidden] { display:none !important; }
+.promo[hidden], .promo-jump[hidden], .promo .chip[hidden] { display:none !important; }
 .promo-jump {
   display:inline-flex; align-items:center; gap:10px; max-width:100%;
   margin:0 0 22px; padding:6px 16px 6px 6px; border-radius:var(--radius-pill);

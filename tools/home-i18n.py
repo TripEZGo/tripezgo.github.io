@@ -636,6 +636,7 @@ T = {
   '換一個': ('Try another', '別の文章にする', '다른 문구'),
   '分享到社群': ('Share on social media', 'SNS でシェア', 'SNS에 공유'),
   '貼文設成公開，記得留著 tripezgo.com。': ('Make the post public and keep tripezgo.com in it.', '投稿は公開にして、tripezgo.com は消さずに残してください。', '게시물은 공개로 설정하고 tripezgo.com은 지우지 마세요.'),
+  '其他': ('Other', 'その他', '기타'),
   '完成兌換': ('Redeem', '引き換える', '교환하기'),
   '前往 App Store 兌換': ('Redeem on the App Store', 'App Store で引き換える', 'App Store에서 교환'),
   '分享之後就能兌換。': ('You can redeem once you’ve shared.', 'シェアしたら引き換えられます。', '공유하면 교환할 수 있어요.'),

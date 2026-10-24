@@ -273,6 +273,16 @@ function start() {
       shared = true; alert(T.igSaved);
     }
   });
+  // 其他：系統分享表（share extension），帶著當下那則文案；瀏覽器沒有 navigator.share 就不顯示
+  const more = root.querySelector('[data-act="more"]');
+  if (navigator.share) {
+    more.hidden = false;
+    more.addEventListener('click', (e) => {
+      if (!allowed(2, e)) return;
+      more.classList.add('is-done');
+      navigator.share({ text }).then(() => { shared = true; advance(3); }).catch(() => {});
+    });
+  }
   const back = () => { if (shared && document.visibilityState === 'visible') advance(3); };
   document.addEventListener('visibilitychange', back);
   window.addEventListener('focus', back);
