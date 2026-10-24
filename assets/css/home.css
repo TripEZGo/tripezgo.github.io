@@ -930,7 +930,8 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; }
   box-shadow:0 10px 24px -12px color-mix(in srgb, var(--accent-ink) 80%, transparent);
   transition:transform .12s ease, background-color .12s ease;
 }
-.promo-jump:hover { color:var(--accent-on); background:color-mix(in srgb, var(--accent-ink) 82%, var(--fg)); transform:translateY(-1px); }
+/* hover 只給滑鼠：手機上第一下會先被當成 hover（iPhone Safari 要點兩下） */
+@media (hover:hover) { .promo-jump:hover { color:var(--accent-on); background:color-mix(in srgb, var(--accent-ink) 82%, var(--fg)); transform:translateY(-1px); } }
 .promo-jump-tag {
   flex:none; padding:3px 10px; border-radius:var(--radius-pill);
   background:var(--accent-on); color:var(--accent-ink); font-size:var(--text-xs); font-weight:700;
@@ -986,7 +987,8 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; }
   border-radius:var(--radius-pill); border:1px solid var(--border); background:var(--page);
   color:var(--fg); font:inherit; font-size:var(--text-sm); font-weight:600; text-decoration:none; cursor:pointer;
 }
-.promo .chip:hover { border-color:var(--accent); background:var(--accent-wash); color:var(--fg); }
+@media (hover:hover) { .promo .chip:hover { border-color:var(--accent); background:var(--accent-wash); color:var(--fg); } }
+.promo .chip, .promo .btn-redeem, .promo-jump { touch-action:manipulation; -webkit-tap-highlight-color:transparent; }
 .promo .chip .i { width:16px; height:16px; color:var(--accent-ink); }
 .promo .chip.is-done { border-color:var(--accent-ink); color:var(--accent-ink); }
 .promo .redeem-row { margin-top:12px; }
@@ -994,5 +996,4 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; }
 .promo .btn-redeem[aria-disabled="true"] { opacity:.45; cursor:not-allowed; pointer-events:auto; }
 .promo .btn-redeem[aria-disabled="true"]:hover { transform:none; background:var(--accent-ink); }
 .promo .step-body > p.redeem-hint { font-size:12.5px; }
-.promo .step-body > p.ig-note { margin-top:10px; font-size:12.5px; }
 @media (prefers-reduced-motion:reduce) { .promo-jump-go { animation:none; } .promo .step { transition:none; } }

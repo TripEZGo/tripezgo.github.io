@@ -216,27 +216,42 @@ function start() {
     copyBtn.classList.remove('is-done'); copyLabel.textContent = T.copy;
     if (stage === 2) { stage = 1; render(); }
   });
-  copyBtn.addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(text); copyLabel.textContent = T.copied; }
-    catch { copyLabel.textContent = T.copyFailed; }
-    copyBtn.classList.add('is-done');
-    advance(2);
+  // 複製：先在同一個手勢裡同步複製（隱藏 textarea＋execCommand），按下去當下就變「已複製」；
+  // iPhone Safari 等 navigator.clipboard 的 Promise 時第一下看起來沒反應（使用者 2026-10-24），這條只在同步複製失敗時才走。
+  const copied = (ok) => { copyLabel.textContent = ok ? T.copied : T.copyFailed; copyBtn.classList.add('is-done'); advance(2); };
+  copyBtn.addEventListener('click', () => {
+    const ta = Object.assign(document.createElement('textarea'), { value: text, readOnly: true });
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;font-size:16px';   // 16px：iOS 不會因為選取而放大頁面
+    document.body.append(ta); ta.select(); ta.setSelectionRange(0, text.length);
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch {}
+    ta.remove(); getSelection()?.removeAllRanges();
+    if (ok || !navigator.clipboard) return copied(ok);
+    navigator.clipboard.writeText(text).then(() => copied(true), () => copied(false));
   });
   // 按過分享、而且從社群那一頁回來（分頁重新可見或視窗重新取得焦點）才算完成第 2 步
   root.querySelectorAll('a[data-net]').forEach((a) => {
     a.addEventListener('click', (e) => { if (allowed(2, e)) { a.href = shareUrl(a.dataset.net); a.classList.add('is-done'); shared = true; } });
   });
-  // Instagram：網頁不能直接發限時動態，改成把限時動態圖（assets/img/story-<lang>.png，tools/og/story.html 產生）
-  // 交給系統分享表，在手機上選 Instagram 就會進限時動態；不能分享檔案的瀏覽器（桌機）就下載圖片並說明怎麼發。
-  // 圖片進來就先抓好：iOS Safari 要在按下去的同一個手勢裡呼叫 navigator.share，按了才去抓會被擋。
+  // Instagram：網頁沒辦法把圖交給 instagram-stories:// —— 官方那條要 Facebook App ID 加 UIPasteboard 自訂型別／Android Intent，
+  // 只有原生 App 做得到（developers.facebook.com/docs/instagram-platform/sharing-to-stories）。
+  // 手機上改成：把限時動態圖（assets/img/story-<lang>.png，tools/og/story.html 產生）放進剪貼簿，再用 instagram://story-camera
+  // 直接打開 Instagram 的限時動態相機，圖在剪貼簿裡可以貼上；剪貼簿寫不進圖片就退回系統分享表。
+  // 桌機打不開 Instagram，下載圖片並說明怎麼發。
+  // 圖片進來就先抓好：剪貼簿與分享表都要在按下去的同一個手勢裡呼叫，按了才去抓會被擋。
   const ig = root.querySelector('[data-net="instagram"]');
   let story = null;
   fetch(`/assets/img/story-${LANG}.png`).then((r) => r.blob()).then((b) => { story = new File([b], 'tripezgo-story.png', { type: 'image/png' }); }).catch(() => {});
+  const shareSheet = () => navigator.share({ files: [story] }).then(() => { shared = true; advance(3); }).catch(() => {});
   ig.addEventListener('click', (e) => {
     if (!allowed(2, e) || !story) return;
     ig.classList.add('is-done');
-    if (navigator.canShare?.({ files: [story] })) {
-      navigator.share({ files: [story] }).then(() => { shared = true; advance(3); }).catch(() => {});
+    if (matchMedia('(pointer: coarse)').matches && navigator.clipboard?.write && window.ClipboardItem) {
+      navigator.clipboard.write([new ClipboardItem({ 'image/png': story })])
+        .then(() => { shared = true; location.href = 'instagram://story-camera'; })
+        .catch(() => { if (navigator.canShare?.({ files: [story] })) shareSheet(); });
+    } else if (navigator.canShare?.({ files: [story] })) {
+      shareSheet();
     } else {
       const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(story), download: story.name });
       a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);

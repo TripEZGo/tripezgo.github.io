@@ -47,7 +47,11 @@
   .feats span { padding:12px 24px; border-radius:999px; background:#fff; border:2px solid #dbd5cd;
     font-size:30px; font-weight:600; line-height:1.2; white-space:nowrap; }
   body[data-lang="en"] .feats span, body[data-lang="ja"] .feats span { font-size:28px; padding:11px 22px; }
-  .url { display:flex; flex-direction:column; align-items:center; gap:14px; }
+  /* 網址列：左邊 tripezgo.com 的 QR code（assets/img/site-qr.svg），右邊網址膠囊＋下載說明 */
+  .url-row { display:flex; align-items:center; gap:36px; }
+  .qr { flex:none; width:190px; height:190px; padding:18px; border-radius:28px; background:#fff; border:2px solid #dbd5cd; box-sizing:border-box; }
+  .qr i { display:block; width:100%; height:100%; background:var(--ink); -webkit-mask:url(../../assets/img/site-qr.svg) center/contain no-repeat; }
+  .url { display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
   .url b { display:inline-block; padding:20px 52px; border-radius:999px; background:var(--teal-ink); color:#fff;
     font-family:-apple-system,"SF Pro Display","Inter",sans-serif; font-size:52px; letter-spacing:.01em; }
   .url small { font-size:28px; color:var(--muted); font-weight:500; }
@@ -66,7 +70,10 @@
   </div>
   <div class="bottom">
     <div class="feats" id="feats"></div>
-    <div class="url"><b>tripezgo.com</b><small id="dl"></small></div>
+    <div class="url-row">
+      <div class="qr"><i></i></div>
+      <div class="url"><b>tripezgo.com</b><small id="dl"></small></div>
+    </div>
   </div>
 <script>
   // 標題的 [ ] 是青綠色那一段；十大特色照廣告片的十個章節（官網首頁的順序）
