@@ -188,12 +188,17 @@ function start() {
   let pick = Math.floor(Math.random() * T.captions.length), text = T.captions[pick];
   captionEl.textContent = text;
   // 網址在按下去那一刻才組，才會帶到當下顯示的那則
+  // 各家的分享網址（使用者 2026-10-24 在 iPhone 上實測後改）：
+  //   LINE   social-plugins.line.me/lineit/share 會跳轉錯誤 → 官方的 line.me/R/share?text=，直接進 LINE App
+  //   X      x.com/intent 在 iPhone 上只開網頁 → 手機先用 twitter://post 開 App，1.5 秒後還在這頁（沒裝 App）才退回網頁
+  //   Facebook  sharer.php 被 Facebook App 接走後什麼都不做 → 手機改用系統分享表（Facebook 只收網址，文案第 1 步已經複製了）
   const shareUrl = (net) => ({
     threads: 'https://www.threads.com/intent/post?text=' + encodeURIComponent(text),
     facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(SITE),
     x: 'https://x.com/intent/post?text=' + encodeURIComponent(text),
-    line: 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(SITE) + '&text=' + encodeURIComponent(text),
+    line: 'https://line.me/R/share?text=' + encodeURIComponent(text),
   })[net];
+  const mobile = () => matchMedia('(pointer: coarse)').matches;
 
   // stage 是現在該做的那一步
   const steps = [...root.querySelectorAll('.step')];
@@ -231,14 +236,28 @@ function start() {
   });
   // 按過分享、而且從社群那一頁回來（分頁重新可見或視窗重新取得焦點）才算完成第 2 步
   root.querySelectorAll('a[data-net]').forEach((a) => {
-    a.addEventListener('click', (e) => { if (allowed(2, e)) { a.href = shareUrl(a.dataset.net); a.classList.add('is-done'); shared = true; } });
+    a.addEventListener('click', (e) => {
+      if (!allowed(2, e)) return;
+      const net = a.dataset.net;
+      a.classList.add('is-done');
+      if (mobile() && net === 'x') {
+        e.preventDefault(); shared = true;
+        location.href = 'twitter://post?message=' + encodeURIComponent(text);
+        setTimeout(() => { if (document.visibilityState === 'visible') location.href = shareUrl('x'); }, 1500);
+      } else if (mobile() && net === 'facebook' && navigator.share) {
+        e.preventDefault();
+        navigator.share({ url: SITE, text }).then(() => { shared = true; advance(3); }).catch(() => {});
+      } else {
+        a.href = shareUrl(net); shared = true;
+      }
+    });
   });
   // Instagram：網頁沒辦法把圖交給 instagram-stories:// —— 官方那條要 Facebook App ID 加 UIPasteboard 自訂型別／Android Intent，
   // 只有原生 App 做得到（developers.facebook.com/docs/instagram-platform/sharing-to-stories）。
-  // 手機上改成：把限時動態圖（assets/img/story-<lang>.png，tools/og/story.html 產生）放進剪貼簿，再用 instagram://story-camera
-  // 直接打開 Instagram 的限時動態相機，圖在剪貼簿裡可以貼上；剪貼簿寫不進圖片就退回系統分享表。
-  // 桌機打不開 Instagram，下載圖片並說明怎麼發。
-  // 圖片進來就先抓好：剪貼簿與分享表都要在按下去的同一個手勢裡呼叫，按了才去抓會被擋。
+  // instagram://story-camera 只開得了相機、帶不進圖（使用者 2026-10-24 實測「打開後沒有圖」），所以手機一律走系統分享表：
+  // 把限時動態圖（assets/img/story-<lang>.png，tools/og/story.html 產生）交給它，選 Instagram →「限時動態」圖就在上面。
+  // 桌機下載圖片並說明怎麼發。
+  // 圖片進來就先抓好：分享表要在按下去的同一個手勢裡呼叫，按了才去抓會被擋。
   const ig = root.querySelector('[data-net="instagram"]');
   let story = null;
   fetch(`/assets/img/story-${LANG}.png`).then((r) => r.blob()).then((b) => { story = new File([b], 'tripezgo-story.png', { type: 'image/png' }); }).catch(() => {});
@@ -246,11 +265,7 @@ function start() {
   ig.addEventListener('click', (e) => {
     if (!allowed(2, e) || !story) return;
     ig.classList.add('is-done');
-    if (matchMedia('(pointer: coarse)').matches && navigator.clipboard?.write && window.ClipboardItem) {
-      navigator.clipboard.write([new ClipboardItem({ 'image/png': story })])
-        .then(() => { shared = true; location.href = 'instagram://story-camera'; })
-        .catch(() => { if (navigator.canShare?.({ files: [story] })) shareSheet(); });
-    } else if (navigator.canShare?.({ files: [story] })) {
+    if (navigator.canShare?.({ files: [story] })) {
       shareSheet();
     } else {
       const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(story), download: story.name });
