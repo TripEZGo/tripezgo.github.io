@@ -136,3 +136,14 @@ html[lang="ja"] .n-man { line-height: 18.09px; position: relative; top: 1px; }
 .ipad .fab { left: 964px; }
 .ipad .card { bottom: 36px; }
 .ipad .sb-loc { left: auto; right: 112px; top: 9.5px; }
+
+/* ── iPhone Duo（?device=duo，951×669）：沒有狀態列——頁首頂到上緣（日期小字中線 19、抬頭 45.6）、地圖從 66 起一路鋪滿整個寬度（垂直列壓在它上面）；
+   日期列 76、搜尋 124–168、藥丸 172（都是 iPhone −62）；內容右緣讓出垂直列（846.5）、浮動鈕 52 在 799–851；
+   卡片與浮動鈕的底貼安全區底（34）之上 16（量：浮動鈕 y 439／503／567）。 ── */
+.duo .head { top: 12px; width: auto; right: 105px; }
+.duo .map { top: 66px; width: 951px; height: 603px; }
+.duo .chips { top: 76px; }
+.duo .search { top: 124px; right: 104px; }
+.duo .live { top: 172px; }
+.duo .fab { left: 799px; }
+.duo .card { right: 104px; bottom: 50px; }

@@ -5,6 +5,7 @@
   語言（目前 zh-Hant / ja / en；ko 另外補）× 兩個裝置欄位 × 十張。
     · iPhone 6.9"  1320×2868 px   原始畫面 raw/<lang>/iphone/NN.png（1206×2622）
     · iPad 13"     2064×2752 px   原始畫面 raw/<lang>/ipad/NN.png  （2064×2752）
+    · iPhone Duo   2853×2007 px   原始畫面 raw/<lang>/duo/NN.png   （2853×2007，橫放；screens/ 的 ?device=duo）
   1 CSS px ＝ 1 輸出 px，frame 本身不做任何 transform 縮放。
 
   ── 匯出 ───────────────────────────────────────────────────────────
@@ -126,6 +127,14 @@
     --screen: 980px; --bezel: 22px; --r: 132px; --dev-bottom: 80px;
     --halo-size: 1560px; --halo-top: 560px; --halo-dx: 340px;
   }
+  /* iPhone Duo 內側螢幕橫放（951×669pt @3x ＝ 2853×2007）：標題在上、橫放的機身在下（標題只在 ^ 斷行，同 iPad）。
+     畫面 2000×1407（原圖 2853×2007 縮 0.701，同為 1.4216:1），邊框 22 → 機身 2044×1451，佔畫布寬 71.6%，下緣留 64，機頂 y＝492。 */
+  .shot[data-device="duo"] {
+    width: 2853px; height: 2007px;
+    --side: 160px; --cap-top: 56px; --title: 112px; --sub: 52px; --sub-gap: 18px;
+    --screen: 2000px; --bezel: 22px; --r: 30px; --dev-bottom: 64px;
+    --halo-size: 2200px; --halo-top: 460px; --halo-dx: 640px;
+  }
   .shot[data-device="ipad"] {
     width: 2064px; height: 2752px;
     --side: 140px; --cap-top: 88px; --title: 128px; --sub: 56px; --sub-gap: 22px;
@@ -188,6 +197,9 @@
     font-family: var(--f-en); font-size: 40px; font-weight: 700;
     letter-spacing: -0.01em; color: var(--ink);
   }
+  .shot[data-device="duo"] .brand { height: 56px; margin-bottom: 18px; gap: 16px; }
+  .shot[data-device="duo"] .brand img { width: 56px; height: 56px; border-radius: 12px; }
+  .shot[data-device="duo"] .brand span { font-size: 34px; }
   .shot[data-device="ipad"] .brand { height: 60px; margin-bottom: 24px; gap: 18px; }
   .shot[data-device="ipad"] .brand img { width: 60px; height: 60px; border-radius: 13px; }
   .shot[data-device="ipad"] .brand span { font-size: 38px; }
@@ -201,6 +213,7 @@
     color: var(--ink); background: var(--card);
     border: 2px solid var(--line);
   }
+  .shot[data-device="duo"] .tag { top: 44px; right: 64px; height: 56px; padding: 0 26px; border-radius: 28px; font-size: 28px; }
   .shot[data-device="ipad"] .tag { top: 48px; right: 64px; height: 60px; padding: 0 28px; border-radius: 30px; font-size: 30px; }
 
   /* ── 機身 ───────────────────────────────────────────────── */
@@ -224,6 +237,13 @@
     content: ''; position: absolute; right: calc(var(--bezel) / 2); top: 50%;
     transform: translate(50%, -50%);
     width: 8px; height: 8px; border-radius: 50%;
+    background: color-mix(in srgb, var(--ink) 55%, var(--card));
+  }
+  /* Duo：橫放，鏡頭在左側長邊 */
+  .shot[data-device="duo"] .device::after {
+    content: ''; position: absolute; left: calc(var(--bezel) / 2); top: 50%;
+    transform: translate(-50%, -50%);
+    width: 7px; height: 7px; border-radius: 50%;
     background: color-mix(in srgb, var(--ink) 55%, var(--card));
   }
   .device .rail {
@@ -298,7 +318,9 @@
     iphone: { name: 'iPhone 6.9 吋', size: '1320×2868', iw: 1206, ih: 2622,
               title: 118, titleMin: 84, sub: 46, safeTop: 48, gap: 90 },
     ipad:   { name: 'iPad 13 吋',    size: '2064×2752', iw: 2064, ih: 2752,
-              title: 128, titleMin: 88, sub: 56, safeTop: 40, gap: 100 }
+              title: 128, titleMin: 88, sub: 56, safeTop: 40, gap: 100 },
+    duo:    { name: 'iPhone Duo 內側螢幕（橫放）', size: '2853×2007', iw: 2853, ih: 2007,
+              title: 112, titleMin: 76, sub: 52, safeTop: 44, gap: 64 }
   };
   var ICON = '../../assets/img/icon-512.png';
 
@@ -447,7 +469,7 @@
       return;
     }
     LANGS.forEach(function (lang) {
-      ['iphone', 'ipad'].forEach(function (device) {
+      ['iphone', 'ipad', 'duo'].forEach(function (device) {
         var head = document.createElement('h3');
         head.className = 'group-head';
         head.innerHTML = LANG_NAME[lang] + ' · ' + DEVICES[device].name

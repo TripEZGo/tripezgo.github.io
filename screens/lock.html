@@ -151,6 +151,14 @@
   .ipad .la-rule { margin-top: 7px; }
   .ipad .la-next { margin-top: 7px; }
   .ipad .nt { display: none; }
+  /* ── iPhone Duo（?device=duo）橫放鎖定畫面（真 App 量，951×669）：沒有垂直列；日期（字面中線 51）與大時刻（數字中線 116.5）置中在最上面，
+        連線符號在右上（中心 903／77）、主畫面橫條 353–598／y 656–661；沒有手電筒與相機。
+        真 App 的鎖定畫面這一刻沒有即時動態——這裡接在時刻下面放 iPhone 那張卡（寬 362、置中），通知跟在卡下面。 ── */
+  .duo .clock { top: 37px; }
+  .duo .time { margin-top: -3px; }
+  .duo .qa { display: none; }
+  .duo .lk-col { left: 294.5px; right: auto; width: 362px; top: 196px; bottom: auto; max-height: 392px; }
+  .duo .lk-col > :first-child { margin-top: 0; }
   .lw { position: absolute; left: 330px; top: 1178.8px; display: flex; align-items: center; gap: 104.1px; color: #fff; }
   .lw-rect { width: 166.4px; height: 76.2px; display: flex; flex-direction: column; justify-content: center; gap: 1px; }
   .lw-rect b, .lw-rect span, .lw-rect i { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-style: normal; }

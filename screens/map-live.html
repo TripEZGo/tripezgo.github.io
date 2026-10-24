@@ -139,6 +139,11 @@
   .ipad .mk .mk-controls-container .mk-bottom-left-controls-container,
   .ipad .mk .mk-controls-container .mk-bottom-right-controls-container { bottom: 46px !important; }
   .ipad .deck-toggle { left: 505px; }
+  /* iPhone Duo（?device=duo）：地圖從 66 鋪滿整個寬度，在垂直列底下也畫；Apple 標誌那一條離底 60（安全區底 34＋26，同 iPad 的算法；map-live.js 的 padding 同一個數 DEV.legal） */
+  .duo .mk { top: 66px; width: 951px; height: 603px; }
+  .duo .mk .mk-controls-container .mk-bottom-left-controls-container,
+  .duo .mk .mk-controls-container .mk-bottom-right-controls-container { bottom: 60px !important; }
+  .duo .deck-toggle { left: 422.5px; }
 </style>
 </head>
 <body>

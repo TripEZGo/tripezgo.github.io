@@ -362,9 +362,10 @@ function setCard(html) {
 // 導航中：狀態列 9:41 後面一枚定位箭頭、地圖分頁的 icon 掛一顆點（同 map.js）
 function setNavChrome(on) {
   const sb = d.querySelector('.sb');
+  d.querySelector('.tab-dot')?.remove();
+  if (!sb) { if (on) d.querySelectorAll('.tab')[2].insertAdjacentHTML('beforeend', '<i class="tab-dot"></i>'); return; }   // Duo：沒有狀態列（時刻在垂直列裡，沒有定位箭頭）
   sb.classList.toggle('locating', on);
   sb.querySelector('.sb-loc')?.remove();
-  d.querySelector('.tab-dot')?.remove();
   if (!on) return;
   d.querySelector('.sb-time').insertAdjacentHTML('afterend', `<svg class="sb-loc" viewBox="0 0 13 13" aria-hidden="true"><path d="M1.2 5.6 11.8 1.2 7.4 11.8 6.4 6.6Z"/></svg>`);
   d.querySelectorAll('.tab')[2].insertAdjacentHTML('beforeend', '<i class="tab-dot"></i>');
@@ -675,7 +676,7 @@ async function live(mk) {
     const card = document.getElementById('card');
     const cardTop = card ? card.getBoundingClientRect().top - d.getBoundingClientRect().top : DEV.h - DEV.bottom - 16;
     // 首頁放大需求（2026-10-12）：留白收小、鏡頭拉近——上面只讓過日期列＋搜尋＋藥丸，左右 20
-    return new mk.Padding(265 - 128 + 14, 20 + 30, DEV.h - cardTop + 16, 20);
+    return new mk.Padding(265 - 128 + 14, 20 + 30 + (DEV.bar || 0), DEV.h - cardTop + 16, 20);
   }
   async function startNav(target) {
     const route = await walkingDirections(ME, target.at);
@@ -740,7 +741,7 @@ async function live(mk) {
   }
   // focus=mates：鏡頭框旅伴與自己，拉近看。近一級之後三位擺不進同一幀（相距約 650 公尺），從第一位（小雯）開始
   function frameMates() {
-    frame([...Object.values(mateAnn).map(x => x.ann), meAnn], { padding: new mk.Padding(175, 36, 130, 36), minimumSpan: new mk.CoordinateSpan(0.0025, 0.0025) }, MATES.map(m => m.at), false);
+    frame([...Object.values(mateAnn).map(x => x.ann), meAnn], { padding: new mk.Padding(175, 36 + (DEV.bar || 0), 130, 36), minimumSpan: new mk.CoordinateSpan(0.0025, 0.0025) }, MATES.map(m => m.at), false);
     if (ZOOM_IN) centerOn(MATES[0].at, false);
   }
 

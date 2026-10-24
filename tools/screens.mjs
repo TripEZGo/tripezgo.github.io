@@ -4,6 +4,7 @@
 //   node tools/screens.mjs compare calendar "day=2"              → screens/out/compare-calendar.png
 //                                                                    左：HTML　中：模擬器（screens/ref/zh/）　右：50% 疊圖
 //   node tools/screens.mjs all                                     → 依 SHOTS 清單出四語全部截圖（screens/out/<lang>）
+//   node tools/screens.mjs render calendar "day=2&device=duo"      → screens/out/<lang>/duo-calendar.png（2853×2007，iPhone Duo 內側螢幕橫放 951×669pt）
 //   node tools/screens.mjs render calendar "day=2&device=ipad"     → screens/out/<lang>/ipad-calendar.png（2064×2752，iPad 13 吋）
 //
 // 基準圖要重拍：模擬器 iPhone 17 Pro、狀態列 9:41、日本時區啟動（SIMCTL_CHILD_TZ=Asia/Tokyo），
@@ -54,9 +55,19 @@ async function routeSite(page) {
 // iPad（query 帶 device=ipad）：13 吋直放 1032×1376pt，DPR 2 → 2064×2752（App Store iPad 13 吋的尺寸）。
 // 另開一頁：DPR 開頁時就定了，不能跟 iPhone（402×874 @3x）共用。輸出檔名加 ipad- 前綴，跟 iPhone 那一張並存。
 const isIpad = q => new URLSearchParams(q || '').get('device') === 'ipad';
-const outName = (name, q) => `${isIpad(q) ? 'ipad-' : ''}${name}.png`;
-let ipadPage = null;
+// iPhone Duo 內側螢幕橫放（device=duo）：951×669pt，DPR 3 → 2853×2007。輸出檔名加 duo- 前綴
+const isDuo = q => new URLSearchParams(q || '').get('device') === 'duo';
+const outName = (name, q) => `${isIpad(q) ? 'ipad-' : isDuo(q) ? 'duo-' : ''}${name}.png`;
+let ipadPage = null, duoPage = null;
 async function pageFor(query) {
+  if (isDuo(query)) {
+    if (!duoPage) {
+      duoPage = await browser.newPage({ viewport: { width: 951, height: 669 }, deviceScaleFactor: 3 });
+      duoPage.on('pageerror', e => console.error('page error:', e.message));
+      duoPage.on('console', m => m.type() === 'error' && console.error('console:', m.text()));
+    }
+    return duoPage;
+  }
   if (!isIpad(query)) return page;
   if (!ipadPage) {
     ipadPage = await browser.newPage({ viewport: { width: 1032, height: 1376 }, deviceScaleFactor: 2 });
@@ -94,7 +105,7 @@ try {
     if (cmd === 'compare') {
       // iPad 的基準圖放 screens/ref/<lang>/ipad-<name>.png（真機 @2x 擷取）；畫面縮成一半寬並排
       const ref = path.join(screens, 'ref', lang, file0);
-      const [w, h] = isIpad(query) ? [516, 688] : [402, 874];
+      const [w, h] = isIpad(query) ? [516, 688] : isDuo(query) ? [476, 335] : [402, 874];
       const b64 = f => 'data:image/png;base64,' + fs.readFileSync(f).toString('base64');
       const cmp = await browser.newPage({ viewport: { width: w * 3 + 20, height: h }, deviceScaleFactor: 2 });
       await cmp.setContent(`<body style="margin:0;display:flex;gap:10px;background:#333">
