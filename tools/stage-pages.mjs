@@ -20,7 +20,7 @@ import { fileURLToPath } from 'node:url';
 /** 網站實際在送的東西（2026-10-20 從 repo 與頁面引用盤點：首頁的 iPhone 示範是 iframe 載 /screens/，所以 screens/ 在內）。 */
 export const PUBLISH = [
   '.nojekyll', '.well-known', '404.html', 'CNAME', 'android-auth', 'app-ads.txt', 'assets', 'contact',
-  'en', 'index.html', 'ja', 'join', 'ko', 'open', 'privacy.html', 'robots.txt', 'screens', 'share',
+  'en', 'index.html', 'ja', 'join', 'ko', 'open', 'privacy.html', 'robots.txt', 'screens',
   'sitemap.xml', 'terms.html', 'trip',
 ];
 /** 刻意不發佈：開發用或專案文件。`.git`、`node_modules` 等工具產物不用列，下面的 IGNORED 直接略過。 */

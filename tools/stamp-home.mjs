@@ -28,7 +28,6 @@ swap('index.html', /href="\/assets\/css\/home\.css[^"]*"/, `href="/assets/css/ho
 swap('index.html', /src="\/assets\/js\/home\.js[^"]*"/, `src="/assets/js/home.js?v=${hash('assets/js/home.js')}"`);
 execFileSync('python3', [new URL('tools/home-i18n.py', root).pathname], { stdio: 'ignore' });
 execFileSync('python3', [new URL('tools/seo.py', root).pathname], { stdio: 'ignore' });
-execFileSync('node', [new URL('tools/gen-share.mjs', root).pathname], { stdio: 'ignore' });     // 分享頁、聯絡頁的頁首頁尾從首頁抽
 execFileSync('node', [new URL('tools/gen-contact.mjs', root).pathname], { stdio: 'ignore' });   // canonical／hreflang／og／twitter／JSON-LD
 execFileSync('node', [new URL('tools/embed.mjs', root).pathname], { stdio: 'ignore' });        // ?mode=embed 那段 inline head（首頁、隱私、條款）
 execFileSync('node', [new URL('tools/stamp-screens.mjs', root).pathname], { stdio: 'inherit' });   // screens/ 的 import map 與樣式表版本號

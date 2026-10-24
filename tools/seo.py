@@ -7,7 +7,6 @@
   · og:image 用該語的 /assets/img/og-<lang>.png（tools/og/make.mjs 產），附寬高與 alt
   · twitter:card／title／description／image（照 og 的值）
   · 首頁的 JSON-LD：inLanguage 四語、author、image
-分享頁×4 的 head 由 tools/gen-share.mjs 自己產（tests 比對整頁），不在這裡改。
 """
 import json, os, re
 

@@ -17,7 +17,7 @@ const SITE_LANGS = {
   ko: { prefix: '/ko/', name: '한국어' },
 };
 /** 每一語都有一份的頁（相對於語言前綴） */
-const PAGES = ['index.html', 'privacy.html', 'terms.html', 'share/index.html'];
+const PAGES = ['index.html', 'privacy.html', 'terms.html'];
 const fileOf = (lang, page) => SITE_LANGS[lang].prefix.slice(1) + page;
 const urlOf = (lang, page) => SITE_LANGS[lang].prefix + page.replace(/index\.html$/, '');
 
