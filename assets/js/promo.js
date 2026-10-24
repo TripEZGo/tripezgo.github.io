@@ -22,6 +22,7 @@ const T = {
     need1: '請先完成步驟 1：複製文案。',
     need2: '請先完成步驟 2：分享到社群，分享完回到這一頁就能兌換。',
     ready: '謝謝你的分享！按上面的按鈕到 App Store 兌換。',
+    igSaved: '已下載限時動態圖片。用手機打開 Instagram 發到限時動態，記得加上 tripezgo.com 的連結貼紙；發完回到這一頁就能兌換。',
     captions: [
       '最近出去玩，行程都排在 TripEZGo\n・行事曆＋時間軸，每天怎麼走一眼看完\n・社群、地圖看到的靈感一鍵收進來\n・每天的行程在地圖上連成路線\n・車票、訂位、待辦都掛在行程上\n・兩站之間的路程，時間不夠先提醒\n・整趟旅程一頁看完\n・旅伴一起編，路上還能分享位置\n・鎖定畫面就看得到下一站\n・筆記、QR Code、匯率換算都帶著\n・不用帳號，資料只在手機和 iCloud，沒網路也能用\ntripezgo.com\n#TripEZGo #旅行規劃',
       '排行程終於不用開 Excel 了\nTripEZGo 把每天的行程排在行事曆和時間軸上，地圖直接畫出路線；車票、訂位、待辦掛在行程裡，路上鎖定畫面就看得到下一站。\n旅伴可以一起編，不用註冊、沒網路也能用。\ntripezgo.com\n#TripEZGo #旅行規劃',
@@ -57,6 +58,7 @@ const T = {
     need1: 'Finish step 1 first: copy the caption.',
     need2: 'Finish step 2 first: share it on social media, then come back to this page to redeem.',
     ready: 'Thanks for sharing! Tap the button above to redeem on the App Store.',
+    igSaved: 'The Story image has been downloaded. Post it to your Instagram Story from your phone and add a link sticker for tripezgo.com, then come back to this page to redeem.',
     captions: [
       'All my trips are planned in TripEZGo now\n• Calendar + timeline: each day at a glance\n• Save ideas from social media and maps in one tap\n• Each day’s plans joined into a route on the map\n• Tickets, bookings and to-dos attached to each plan\n• Travel between stops, with a heads-up when time is tight\n• The whole trip on one page\n• Co-edit with your travel companions and share your location on the road\n• Your next stop right on the Lock Screen\n• Notes, QR code scanner, currency converter built in\n• No account, your data stays on your phone and in iCloud, works offline\ntripezgo.com\n#TripEZGo #TravelPlanning',
       'Finally, no more planning trips in a spreadsheet\nTripEZGo lays out each day on a calendar and a timeline and draws the route on a map. Tickets, bookings and to-dos live on each plan, and the Lock Screen shows your next stop.\nCo-edit with your travel companions. No sign-up, works offline.\ntripezgo.com\n#TripEZGo #TravelPlanning',
@@ -92,6 +94,7 @@ const T = {
     need1: '先にステップ 1 の「文章をコピー」を済ませてください。',
     need2: '先にステップ 2 を済ませてください。SNS でシェアして、このページに戻ると引き換えできます。',
     ready: 'シェアありがとうございます！上のボタンから App Store で引き換えてください。',
+    igSaved: 'ストーリーズ用の画像をダウンロードしました。スマホの Instagram でストーリーズに投稿して、tripezgo.com のリンクスタンプを付けてください。投稿したらこのページに戻ると引き換えできます。',
     captions: [
       '最近の旅行は、予定をぜんぶ TripEZGo で組んでいます\n・カレンダー＋タイムラインで毎日の流れがひと目でわかる\n・SNS やマップで見つけた場所をワンタップで保存\n・毎日の予定がマップ上でルートにつながる\n・切符・予約・やることを予定にまとめて\n・予定と予定のあいだの移動、時間が足りないと先に知らせてくれる\n・旅全体を 1 ページで\n・旅の仲間と共同編集、旅先では位置も共有\n・次の行き先はロック画面で\n・メモ・QR コード・為替換算もそろってる\n・アカウント不要、データはスマホと iCloud だけ、オフラインでも使える\ntripezgo.com\n#TripEZGo #旅行計画',
       'もう Excel で旅程表を作らなくていい\nTripEZGo なら毎日の予定をカレンダーとタイムラインに並べて、ルートはマップに表示。切符や予約、やることは予定にまとめて、旅先ではロック画面で次の行き先がわかります。\n旅の仲間と一緒に編集できて、登録不要、オフラインでも使えます。\ntripezgo.com\n#TripEZGo #旅行計画',
@@ -127,6 +130,7 @@ const T = {
     need1: '먼저 1단계 ‘문구 복사’를 끝내 주세요.',
     need2: '먼저 2단계를 끝내 주세요. SNS에 공유한 뒤 이 페이지로 돌아오면 교환할 수 있어요.',
     ready: '공유해 주셔서 고마워요! 위 버튼을 눌러 App Store에서 교환하세요.',
+    igSaved: '스토리용 이미지를 다운로드했어요. 휴대폰의 Instagram에서 스토리에 올리고 tripezgo.com 링크 스티커를 붙여 주세요. 올린 뒤 이 페이지로 돌아오면 교환할 수 있어요.',
     captions: [
       '요즘 여행 일정은 전부 TripEZGo로 짜요\n・캘린더＋타임라인으로 하루 동선이 한눈에\n・SNS나 지도에서 본 곳을 한 번에 저장\n・날마다의 일정이 지도 위 경로로 이어져요\n・승차권·예약·할 일을 일정에 붙여 두기\n・일정 사이 이동, 시간이 모자라면 미리 알려 줘요\n・여행 전체를 한 페이지로\n・동행과 공동 편집, 여행 중에는 위치도 공유\n・다음 목적지는 잠금 화면에서\n・메모·QR 코드·환율 계산까지\n・계정 없이, 데이터는 내 폰과 iCloud에만, 오프라인에서도 OK\ntripezgo.com\n#TripEZGo #여행계획',
       '이제 엑셀로 여행 일정 짜지 않아도 돼요\nTripEZGo는 날마다의 일정을 캘린더와 타임라인에 놓고 지도에 경로를 그려 줘요. 승차권·예약·할 일은 일정에 붙여 두고, 여행 중에는 잠금 화면에서 다음 목적지를 확인해요.\n동행과 함께 편집하고, 회원가입 없이 오프라인에서도 써요.\ntripezgo.com\n#TripEZGo #여행계획',
@@ -219,8 +223,25 @@ function start() {
     advance(2);
   });
   // 按過分享、而且從社群那一頁回來（分頁重新可見或視窗重新取得焦點）才算完成第 2 步
-  root.querySelectorAll('[data-net]').forEach((a) => {
+  root.querySelectorAll('a[data-net]').forEach((a) => {
     a.addEventListener('click', (e) => { if (allowed(2, e)) { a.href = shareUrl(a.dataset.net); a.classList.add('is-done'); shared = true; } });
+  });
+  // Instagram：網頁不能直接發限時動態，改成把限時動態圖（assets/img/story-<lang>.png，tools/og/story.html 產生）
+  // 交給系統分享表，在手機上選 Instagram 就會進限時動態；不能分享檔案的瀏覽器（桌機）就下載圖片並說明怎麼發。
+  // 圖片進來就先抓好：iOS Safari 要在按下去的同一個手勢裡呼叫 navigator.share，按了才去抓會被擋。
+  const ig = root.querySelector('[data-net="instagram"]');
+  let story = null;
+  fetch(`/assets/img/story-${LANG}.png`).then((r) => r.blob()).then((b) => { story = new File([b], 'tripezgo-story.png', { type: 'image/png' }); }).catch(() => {});
+  ig.addEventListener('click', (e) => {
+    if (!allowed(2, e) || !story) return;
+    ig.classList.add('is-done');
+    if (navigator.canShare?.({ files: [story] })) {
+      navigator.share({ files: [story] }).then(() => { shared = true; advance(3); }).catch(() => {});
+    } else {
+      const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(story), download: story.name });
+      a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      shared = true; alert(T.igSaved);
+    }
   });
   const back = () => { if (shared && document.visibilityState === 'visible') advance(3); };
   document.addEventListener('visibilitychange', back);

@@ -994,4 +994,5 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; }
 .promo .btn-redeem[aria-disabled="true"] { opacity:.45; cursor:not-allowed; pointer-events:auto; }
 .promo .btn-redeem[aria-disabled="true"]:hover { transform:none; background:var(--accent-ink); }
 .promo .step-body > p.redeem-hint { font-size:12.5px; }
+.promo .step-body > p.ig-note { margin-top:10px; font-size:12.5px; }
 @media (prefers-reduced-motion:reduce) { .promo-jump-go { animation:none; } .promo .step { transition:none; } }

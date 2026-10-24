@@ -1,4 +1,5 @@
 // 分享預覽圖：node tools/og/make.mjs → assets/img/og-<zh|en|ja|ko>.png（1200×630）
+// 　　　　　＋限時動態廣告圖 assets/img/story-<zh|en|ja|ko>.png（1080×1920，tools/og/story.html；首頁限時活動的 Instagram 鈕用）
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
@@ -23,6 +24,13 @@ for (const lang of ['zh', 'en', 'ja', 'ko']) {
   await p.waitForSelector('html[data-ready="1"]');
   await p.screenshot({ path: path.join(root, `assets/img/og-${lang}.png`) });
   console.log('og', lang);
+}
+const sp = await b.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
+for (const lang of ['zh', 'en', 'ja', 'ko']) {
+  await sp.goto(base.replace('og.html', 'story.html') + `?lang=${lang}`);
+  await sp.waitForSelector('html[data-ready="1"]');
+  await sp.screenshot({ path: path.join(root, `assets/img/story-${lang}.png`) });
+  console.log('story', lang);
 }
 await b.close();
 srv.close();
