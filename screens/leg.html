@@ -101,13 +101,20 @@
   .ipad .sheet { left: 48px; top: 606px; width: 936px; height: 717.5px; transform: none; border-radius: 12px; }
   .ipad .grabber { left: 450px; }
   .ipad .scroll { bottom: 20px; }
+  /* ── iPhone Duo（?device=duo，951×669）：regular 寬度，一樣是 .pageSheet 浮動紙，置中的卡：x 148.3–802.3（寬 653.5）、y 276–660.3（高 384.3；這裡範本的路程多一段說明、內容比真 App 那一則高，頂拉高到 172 才不會被切、
+        下緣離螢幕底 8.7）、圓角 12（真 App 量）；底下壓暗 20%（白 → 204）。內容不縮放。 ── */
+  .duo .bg { width: 951px; height: 669px; }
+  .duo .sheet { left: 148.5px; top: 172px; width: 653.5px; height: 488.3px; transform: none; border-radius: 12px; }
+  .duo .grabber { left: 308.75px; }
+  .duo .scroll { bottom: 20px; }
+  .duo .duo-glyph::before { display: none; }   /* 暗層底下沒有那顆霧面膠囊（真 App：跟暗掉的底同色） */
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { params, lang, loadTrip, chrome, duration, toMin, ready, interactive, go, ipad } from './chrome.js';
-const SHEET_W = ipad ? 936 : 402, SC = ipad ? 1 : .9602;   // sheet 內容的寬與系統縮放（iPad 見 <style> 的 iPad 段）
+import { params, lang, loadTrip, chrome, duration, toMin, ready, interactive, go, ipad, duo } from './chrome.js';
+const SHEET_W = ipad ? 936 : duo ? 653.5 : 402, SC = ipad || duo ? 1 : .9602;   // sheet 內容的寬與系統縮放（iPad 見 <style> 的 iPad 段）
 import { applyState, patchEvent, sid } from './demo-state.js';
 
 // App 的字串（Scripts/i18n/maps：UI.legTitle／openRouteInMaps，Trips.legEndsAt／legStartsAt／runWait／runEarly）
@@ -196,6 +203,7 @@ function planHTML() {
 // 背景：行事曆（同一天），整片壓暗 20%
 const q = new URLSearchParams({ lang, day: dayNo, ...(params.get('start') ? { start: params.get('start') } : {}), ...(interactive ? { interactive: 1, sid } : {}), ...(params.get('embed') === '1' ? { embed: 1 } : {}) });
 if (ipad) q.set('device', 'ipad');
+if (duo) q.set('device', 'duo');
 for (const k of ['theme', 'embed', 'still']) if (params.get(k)) q.set(k, params.get(k));   // 深色、打包進 App 的示範
 d.insertAdjacentHTML('beforeend', `<iframe class="bg" id="bg" src="calendar.html?${q}"></iframe><div class="dim" id="dim"></div>`);
 
@@ -299,7 +307,8 @@ await new Promise(res => {
   setTimeout(fin, 3000);
   const tick = () => { let ok = false; try { ok = bg.contentDocument && bg.contentDocument.body && bg.contentDocument.body.dataset.ready === '1'; } catch {} ok ? fin() : done || setTimeout(tick, 50); }; tick();
 });
-if (ipad) { try { bg.contentDocument.querySelector('.sb')?.remove(); } catch {} }   // iPad：狀態列是系統的，不在暗層底下（同 event.html）
+if (ipad) { try { bg.contentDocument.querySelector('.sb')?.remove(); } catch {} }
+if (duo) { try { bg.contentDocument.querySelector('.duo-time')?.remove(); bg.contentDocument.querySelector('.duo-glyph')?.remove(); } catch {} }   // Duo：時刻與連線符號是系統的，不在暗層底下（膠囊在）   // iPad：狀態列是系統的，不在暗層底下（同 event.html）
 ready();
 </script>
 </body>

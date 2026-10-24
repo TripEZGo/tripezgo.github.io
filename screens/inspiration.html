@@ -75,6 +75,10 @@
 
   /* iPad：抬頭往下 34（同 tools.js）、清單照舊兩側 20；沒有分頁列就沒有那層淡出 */
   .ipad .rail { top: 218px; } .ipad .list { top: 264px; } .ipad .fab { top: 1288px; } .ipad .scrim { display: none; }
+  /* Duo（?device=duo，951×669）：篩選列上緣 122.7、清單 169（跟 iPhone 同一段距離）；清單是滿版的 table——分隔線一路畫到 931（垂直列底下），
+     列內容讓出垂直列（右內距 104）；「＋」中心 825／593（真 App 量） */
+  .duo .rail { top: 122.7px; } .duo .list { top: 169px; } .duo .row { padding-right: 104px; }
+  .duo .fab { right: 100px; top: 567px; } .duo .scrim { display: none; }
 
   /* ── ② 檢視紙：sheet 外觀照 event.html 量好的（頂 62、圓角 12、抓桿 36×5、玻璃導覽鈕高 44 距頂 16） ── */
   .gl { position: absolute; top: 16px; right: 16px; width: 100px; height: 44px; border-radius: 22px; background: #fdfdfd; box-shadow: 0 4px 22px rgba(0,0,0,.07); z-index: 3; }
@@ -114,7 +118,7 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, params, chrome, ready, fmt, interactive, go, svg, swatchClass, categoryName, loadCategories } from './chrome.js';
+import { lang, params, chrome, ready, fmt, interactive, go, svg, swatchClass, categoryName, loadCategories, duo } from './chrome.js';
 import { libraryHead, subTabs, libStyle, sheet } from './tools.js';
 import { IS } from './inspiration-strings.js';
 import { N, OLD_ITEMS, HOST } from './inspiration-data.js';

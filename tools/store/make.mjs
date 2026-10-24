@@ -38,6 +38,8 @@ const TEMPLATE_LANG = { zh: 'zh-Hant', en: 'en', ja: 'ja', ko: 'ko' };  // shots
 const DEVICES = {
   iphone: { query: '', prefix: '', viewport: { width: 1320, height: 2868 } },
   ipad: { query: 'device=ipad', prefix: 'ipad-', viewport: { width: 2064, height: 2752 } },
+  // iPhone Duo 內側螢幕橫放：951×669pt @3x ＝ 2853×2007（screens/ 的 ?device=duo）；商城檔名加 duo- 前綴
+  duo: { query: 'device=duo', prefix: 'duo-', viewport: { width: 2853, height: 2007 } },
 };
 
 // 地圖那幾格要連 MapKit 的圖磚，偶爾等不到 data-ready（15 秒）——同一格最多再試兩次
@@ -74,7 +76,7 @@ try {
       const dest = path.join(outDir, LOCALES[l]);
       fs.mkdirSync(dest, { recursive: true });
       // 順序換過（1.4.0：分享那格併進靈感）：舊的 NN-名稱.png 不清掉就會跟新的並存，一起被傳上去
-      const stale = D.prefix ? /^ipad-\d\d-[\w-]+\.png$/ : /^\d\d-[\w-]+\.png$/;
+      const stale = new RegExp(`^${D.prefix}\\d\\d-[\\w-]+\\.png$`);   // 只清這個裝置自己的前綴：'' → NN-名稱.png、ipad-、duo-
       for (const f of fs.readdirSync(dest)) if (stale.test(f)) fs.rmSync(path.join(dest, f));
       for (const [i, [name]] of SLOTS.entries()) {
         const n = String(i + 1).padStart(2, '0');

@@ -74,6 +74,12 @@
   .ipad .head { top: 218px; }
   .ipad .fab { top: 1288px; }
   .ipad .scrim { display: none; }
+  /* ── iPhone Duo（?device=duo，951×669）：釘住那一段上緣 122.4（跟 iPhone 同一段距離、少掉狀態列）、右緣讓出垂直列（846.5）；
+        八個分類一排放得下（同 iPad）；購物牆兩欄、右緣同樣讓出；「＋」中心 825／593。 ── */
+  .duo .head { top: 122.4px; right: 104px; }
+  .duo .wall { right: 104px; }
+  .duo .fab { right: 100px; top: 567px; }
+  .duo .scrim { display: none; }
   /* 深色（ADR-0050） */
   html[data-theme="dark"] .bought .badge, html[data-theme="dark"] .flag, html[data-theme="dark"] .seg2 .primary, html[data-theme="dark"] .pd .go { color: var(--on-accent); }
   html[data-theme="dark"] .skipped .badge { background: rgba(243,237,229,.7); color: var(--page); }
@@ -85,7 +91,7 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, params, chrome, ready, fmt, interactive, go, t as T, svg, swatchClass, ipad } from './chrome.js';
+import { lang, params, chrome, ready, fmt, interactive, go, t as T, svg, swatchClass, ipad, duo } from './chrome.js';
 import { libraryHead } from './tools.js';
 
 const d = document.getElementById('d');
@@ -157,7 +163,7 @@ const TAB = 2;
 const STATUSES = ['pending', 'bought', 'skipped'];
 // App 的分類共八個（Domain.json shoppingCategory：藥妝、衣服、紀念品、食品、精品、3C 電器、雜貨、其他）。iPhone 那一排
 // 在第六顆之後就出畫面了，照舊只畫到雜貨；iPad 一排放得下全部（模擬器量：全部 20 … 其他 550–604），照 App 的順序畫齊。
-const cats = ipad ? ['drug', 'cloth', 'souv', 'food', 'lux', 'elec', 'goods', 'other'] : ['drug', 'cloth', 'souv', 'food', 'lux', 'goods'];
+const cats = ipad || duo ? ['drug', 'cloth', 'souv', 'food', 'lux', 'elec', 'goods', 'other'] : ['drug', 'cloth', 'souv', 'food', 'lux', 'goods'];
 const state = { status: ITEMS.map(i => i.status), paid: ITEMS.map(() => null), statusFilter: [...STATUSES], catFilter: [] };
 let saved = null;
 if (interactive) {
@@ -231,6 +237,7 @@ if (interactive) {
     .chips { overflow-x: auto; scrollbar-width: none; margin-right: -20px; padding-right: 20px; } .chips::-webkit-scrollbar { display: none; }
     .wall-clip { overflow-y: auto; scrollbar-width: none; } .wall-clip::-webkit-scrollbar { display: none; }
     .wall { position: relative; top: 0 !important; left: 0; right: 0; margin: 0 20px; padding-bottom: 120px; }
+    .duo .wall { margin-right: 104px; }
     .wall-empty { width: 100%; padding-top: 80px; text-align: center; font: 400 var(--t-sm)/18px var(--font); color: var(--muted); }
     .card { transition: transform .12s; } .card:active { transform: scale(.97); }
     /* 卡片（ShoppingCardViewController.Metrics）：左右 20、上 10、圖下 14、品名下 8、分類上 12、段落上 20 */

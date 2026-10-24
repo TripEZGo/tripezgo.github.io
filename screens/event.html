@@ -171,13 +171,21 @@
     box-shadow: 0 0 40px rgba(0,0,0,.12); }
   .ipad .grabber { left: 450px; }
   .ipad .glass.r { left: 700px; }
+  /* ── iPhone Duo（?device=duo，951×669）：regular 寬度，.pageSheet 浮動紙 large detent，置中的卡 x 149–802（寬 653）、頂 8、一路到螢幕底（真 App 量）；
+        底下的行事曆壓暗 20%（白 → 204）；時刻與連線符號是系統的，不在暗層底下。 ── */
+  .duo .bg { width: 951px; height: 669px; }
+  .duo .dim { background: rgba(0,0,0,.2); }
+  .duo .sheet { left: 149px; right: auto; width: 653px; top: 8px; bottom: 0; border-radius: 12px 12px 0 0; box-shadow: 0 0 40px rgba(0,0,0,.12); }
+  .duo .grabber { left: 308px; }
+  .duo .glass.r { left: 417px; }
+  .duo .duo-glyph::before { display: none; }   /* 暗層底下沒有那顆霧面膠囊（真 App：跟暗掉的底同色） */
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { params, lang, t, loadTrip, loadCategories, categoryName, chrome, ready, interactive, go, duration, ipad } from './chrome.js';
-const SHEET_W = ipad ? 936 : 402;   // sheet 寬（iPad 見 <style> 的 iPad 段）
+import { params, lang, t, loadTrip, loadCategories, categoryName, chrome, ready, interactive, go, duration, ipad, duo } from './chrome.js';
+const SHEET_W = ipad ? 936 : duo ? 653 : 402;   // sheet 寬（iPad 見 <style> 的 iPad 段）
 import { applyState, loadState, patchEvent, doneTodos, shiftFrom, toMin, clock } from './demo-state.js';
 
 // App 的字串（Scripts/i18n/maps：Trips.detailAllDay、UI.daySpan／todoListTitle／addTodo／filesLabel）
@@ -657,14 +665,15 @@ if (interactive) {
 }
 
 chrome(d);
-if (ipad) {
+if (ipad || duo) {
   // iPad：sheet 底下是同一天的行事曆（iPhone 的 large detent 把後面整片壓成灰，看不到——那邊不畫）
-  const q = new URLSearchParams({ lang, day: backDay, device: 'ipad', ...(params.get('start') ? { start: params.get('start') } : {}) });
+  const q = new URLSearchParams({ lang, day: backDay, device: ipad ? 'ipad' : 'duo', ...(params.get('start') ? { start: params.get('start') } : {}) });
   d.insertAdjacentHTML('afterbegin', `<iframe class="bg" id="bg" src="calendar.html?${q}"></iframe><div class="dim"></div>`);
   const bg = document.getElementById('bg');
   await new Promise(res => { const tick = () => bg.contentDocument?.body?.dataset.ready === '1' ? res() : setTimeout(tick, 50); tick(); });
   // 狀態列是系統的，不在暗層底下：底下那一頁的拿掉，留這一頁畫的那一條
   bg.contentDocument.querySelector('.sb')?.remove();
+  bg.contentDocument.querySelector('.duo-time')?.remove(); bg.contentDocument.querySelector('.duo-glyph')?.remove();   // Duo：時刻與連線符號同樣是系統的
 }
 ready();
 </script>

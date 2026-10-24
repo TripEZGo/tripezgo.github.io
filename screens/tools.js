@@ -13,7 +13,7 @@
 // - alert：UIAlertController(.alert)。購物「退回待購買？」用（ShoppingCardViewController.confirmUnbought）。
 // - sheet：由下而上的頁面紙（.pageSheet，大 detent）——抓桿、往下拖或點後面那一層收掉。
 // 外觀照 event.html 已量好的系統 sheet（頂 62、圓角 12、抓桿 36×5）。
-import { go, lang, interactive, params, ipad } from './chrome.js';
+import { go, lang, interactive, params, ipad, duo } from './chrome.js';
 import { IS } from './inspiration-strings.js';
 
 /** 三格（LibraryViewModel.Subtab：inspiration、notes、shopping，1.4.0 起靈感在第一格），順序就是分格的順序 */
@@ -44,7 +44,8 @@ const icon = (n, w) => `<svg viewBox="0 0 24 24" aria-hidden="true" style="strok
 // 分格切換的幾何（iOS 26 UISegmentedControl，系統元件）：四格時量到的白色那顆寬 86.7、間距 3.6、左右各 2——
 // 三格（1.4.0 起）照同一組數字：寬 (362 − 4 − 2 × 3.6) ÷ 3 ＝ 116.93、一格一步 120.53
 // iPad：軌道 992 寬（左右照舊 20），同一條式子 → (992 − 4 − 7.2) ÷ 3 ＝ 326.93、一步 330.53
-const SEG_W = ipad ? 326.93 : 116.93, SEG_STEP = ipad ? 330.53 : 120.53;
+// Duo：軌道 827 寬（x 20–847，右側垂直列 84pt 讓出去）→ (827 − 4 − 7.2) ÷ 3 ＝ 271.93、一步 275.53
+const SEG_W = ipad ? 326.93 : duo ? 271.93 : 116.93, SEG_STEP = ipad ? 330.53 : duo ? 275.53 : 120.53;
 const segLeft = i => 2 + i * SEG_STEP;
 
 /* 抬頭（SubTabContainer：上 12+2、左右 20、標題 xxl semibold −0.02em；切換列上 4+6、高 ≥44）＋
@@ -92,6 +93,10 @@ html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
 .ipad .wg-title { top: 109.4px; }
 .ipad .head-tool { left: 976px; top: 104px; }
 .ipad .seg { top: 153.67px; width: 992px; }
+/* Duo（?device=duo）：沒有狀態列，抬頭比 iPhone 高 ~61.5（真 App 量：標題中線 31、切換列 58–102、工具鈕中心 833／30），右邊讓出垂直列 */
+.duo .wg-title { top: 13.9px; right: 150px; }
+.duo .head-tool { left: 811px; top: 8px; }
+.duo .seg { top: 57.4px; width: 827px; }
 `;
 let libStyled = false;
 export function libStyle() {

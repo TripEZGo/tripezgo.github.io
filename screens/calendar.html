@@ -173,12 +173,29 @@
   .ipad .ev.line { --bar: 753px !important; }
   .ipad .fab { left: 965px; top: 1293px; }
   .ipad .scrim { display: none; }
+
+  /* ── iPhone Duo 內側螢幕橫放（?device=duo → html.duo，951×669）：右側 84pt 是垂直列（chrome.js／screen.css），內容在 x 0–867。
+        頁首直接頂到上緣（沒有狀態列）：日期小字中線 19、抬頭 45.6、日期籤上緣 76（高 44）、全日第一列 132.5——量自真 App 截圖。
+        釘右緣的東西都從 867 往左退同樣的距離：右上鈕中心 833、全日帶與時間軸的線伸到 867、行程塊右緣 846.5、「＋」中心 825。
+        路線軸：畫布 56…847（寬 791）的中點＋8.5 ＝ 460（量到 461）；短行程色條 492（渡輪那一條 56→548）。 ── */
+  .duo .head { top: 12px; width: auto; right: 146px; }
+  .duo .head-act { left: 811px; top: 8px; }
+  .duo .chips { top: 76px; }
+  .duo .chips.scroller { padding-left: 16px; }
+  .duo .allday { top: 124px; right: 84px; }
+  .duo .grid { right: 84px; }
+  .duo .allday-label { left: 0; width: 44px; text-align: right; white-space: nowrap; }   /* 「All-day」靠右貼齊刻度欄（真 App：x 4–44） */
+  .duo .route { left: 460px; }
+  .duo .leg { left: 461px; }
+  .duo .ev.line { --bar: 492px !important; }
+  .duo .fab { left: 800px; top: 572px; }
+  .duo .scrim { display: none; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { fmt, params, lang, t, loadTrip, loadCategories, categoryName, chrome, svg, swatchClass, duration, toMin, ready, interactive, go, ipad } from './chrome.js';
+import { fmt, params, lang, t, loadTrip, loadCategories, categoryName, chrome, svg, swatchClass, duration, toMin, ready, interactive, go, ipad, duo } from './chrome.js';
 import { applyState, patchEvent, clock } from './demo-state.js';
 import { applyPlaced, placePending, pendingLength } from './pending-state.js';
 import { loadZoom, attachPinch } from './zoom.js';
@@ -213,13 +230,13 @@ const chips = Array.from({ length: trip.dayCount }, (_, i) => {
 d.insertAdjacentHTML('beforeend', `<div class="chips" id="chips">${chips}</div>`);
 const chipsEl = document.getElementById('chips');
 // iPad：六籤放得下、不捲，停在 contentInset 16（TripCalendarView：contentInset.left Spacing.x4；擷取 01 第一籤左緣 16.5）
-const firstX = ipad ? 16 : 28 - (dayNo > 1 ? 24 : 0);
+const firstX = ipad || duo ? 16 : 28 - (dayNo > 1 ? 24 : 0);
 if (!interactive) chipsEl.style.left = firstX + 'px';
 else {
   // 互動：整排可以橫向捲（DayChipCell 是一排 collection view）。內容的位置跟截圖一樣：左邊留 28、捲 24
   chipsEl.classList.add('scroller');
   chipsEl.insertAdjacentHTML('beforeend', '<div class="chip-end"></div>');
-  chipsEl.scrollLeft = ipad ? 0 : 28 - firstX;
+  chipsEl.scrollLeft = ipad || duo ? 0 : 28 - firstX;
 }
 
 // 全日
@@ -238,7 +255,7 @@ grid.className = 'grid';
 d.appendChild(grid);
 const placeGrid = () => { grid.style.top = alldayEl.getBoundingClientRect().bottom + 'px'; };
 placeGrid();
-const firstLine = 33.5;                // 第一條可見時刻線距離時間軸頂端（照截圖：07:00 在 310.3）
+const firstLine = duo ? 17 : 33.5;                // 第一條可見時刻線距離時間軸頂端（照截圖：07:00 在 310.3）
 // 截圖：最上面那一條是 topHour。互動：整天 00:00–24:00 畫出來、捲到 topHour（位置跟截圖一樣）
 // 互動模式：00:00 之上多一疊（時區說明／待排區／開始書擋，DayView.topStack），00:00 在那一疊底下 topInset 10 處。
 let OFF = 0;
@@ -421,7 +438,7 @@ if (!interactive) {
     const top = y(e.s), bot = y(e.e2), hgt = bot - top;
     const sw = swatchClass(e.category) + (e.isCancelled ? ' cx' : '') + extra;
     const { col = 0, n = 1 } = cols.get(e.key) || {};
-    const w = (ipad ? 956 : 326) / n;   // 畫布寬：裝置寬 − 56 − 20
+    const w = (ipad ? 956 : duo ? 791 : 326) / n;   // 畫布寬：裝置寬 − 56 − 20
     const pos = n > 1 ? `;left:${56 + col * w + (col ? 2 : 0)}px;right:auto;width:${w - (n > 1 ? 2 : 0)}px` : '';
     const attrs = live ? ` data-key="${e.key}" tabindex="0" role="button"` : ' aria-hidden="true"';
     const times = `${clock(e.s)} – ${clock(e.e2)}`;

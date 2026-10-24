@@ -156,3 +156,41 @@ html.ipad[lang="ja"] .sb-date { left: 64px; }
 
 /* 導購頁示範（?nohand=1）：不顯示手勢游標與點擊漣漪 */
 html.nohand .auto-hand, html.nohand .auto-trail { display: none !important; }
+
+/* ==========================================================================
+   iPhone Duo 內側螢幕橫放（?device=duo → html.duo，chrome.js 的 DEV）：951×669pt，@3x ＝ 2853×2007。
+   右側垂直列 x 867–951：時刻（中心 903／39）、連線符號（903／77）、玻璃分頁列膠囊 x 878.5–927.5、y 382–642（五格中心 y 412…612，
+   不標字，選中＝灰底 43×49＋主色）、返回鈕（圓形 49pt，中心 903／147.5，只在推進導航堆疊的頁）。
+   量自 2026-10-24 在 iOS 27.1 模擬器跑真 App 的截圖；沒有狀態列、動態島、主畫面橫條、底部分頁列。
+   iPhone／iPad 不吃這一段任何一條。
+   ========================================================================== */
+html.duo body { width: 951px; height: 669px; }
+html.duo .device { width: 951px; height: 669px; }
+.duo .sb { display: none; }
+.duo-time { position: absolute; left: 867px; width: 84px; top: 28px; text-align: center; z-index: 51; pointer-events: none;
+  font: 600 17px/22px -apple-system, sans-serif; letter-spacing: 0; color: #000; }
+.duo-glyph { position: absolute; left: 881px; top: 55px; width: 44px; height: 44px; z-index: 50; pointer-events: none; color: #000; }
+.duo-glyph svg { display: block; }
+/* 地圖壓過來的時候，連線符號後面有一顆霧面膠囊（x 876–930、y 22–105，上緣淡出）；白底上看不出來 */
+.duo-glyph::before { content: ""; position: absolute; left: -5px; top: -33px; width: 54px; height: 83px; border-radius: 27px; z-index: -1;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.5) 45%);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 40%); mask-image: linear-gradient(to bottom, transparent, #000 40%); }
+.duo-glyph.on-dark::before { display: none; }
+.duo-glyph .dots { color: #b8b8b8; }
+.duo-glyph.on-dark { color: rgba(255,255,255,.92); }
+.duo-glyph.on-dark .dots { color: rgba(255,255,255,.4); }
+.duo .home { left: 353px; width: 245px; bottom: 8.3px; height: 4.7px; }
+.duo-back { position: absolute; left: 878.5px; top: 123px; width: 49px; height: 49px; border-radius: 50%; z-index: 50;
+  display: flex; align-items: center; justify-content: center; color: #000;
+  background: rgba(255,255,255,.7); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  box-shadow: 0 0 0 .5px rgba(0,0,0,.14), 0 4px 14px rgba(0,0,0,.07); }
+.duo-back svg { width: 24px; height: 24px; margin-left: -2px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.duo .tabbar { left: 878.5px; right: auto; width: 49px; top: 382px; height: 260px; display: flex; flex-direction: column; gap: 1px; padding: 5.5px 3px;
+  border-radius: 24.5px; grid-template-columns: none; background: rgba(255,255,255,.72);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6); backdrop-filter: blur(24px) saturate(1.6);
+  box-shadow: 0 0 0 .5px rgba(0,0,0,.16), 0 8px 30px rgba(0,0,0,.08); }
+.duo .tab { flex: none; height: 49px; width: 43px; border-radius: 21.5px; }
+.duo .tab span { display: none; }
+.duo .tab svg { width: 24px; height: 24px; stroke-width: 1.8; }
+.duo .tab.on { background: rgba(0,0,0,.09); }

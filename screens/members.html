@@ -158,12 +158,19 @@
   .ipad .sw-row { min-height: 54.5px; }
   .ipad .link-card { margin-top: -4px; }
   .ipad .qr { padding-top: 10px; padding-bottom: 10px; }
+  /* ── iPhone Duo（?device=duo，951×669）：返回鈕是垂直列裡的圓（chrome.js 的 .duo-back，中心 903／147.5），頁上不畫；
+        標題靠左貼邊距 20、中線 48.5（真 App「Trip Sharing」x 20、y 48.5），欄從 97 起（真 App 第一行字上緣 96）、右緣 846.5。 ── */
+  .duo .nav-back { display: none; }
+  .duo .nav-title { left: 20px; right: 150px; top: 37.5px; text-align: left; }
+  .duo .col { top: 97px; right: 104px; }
+  .duo .scroller .col { top: 97px; }
+  .duo .scroller .col { margin-right: 104px; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { fmt, lang, t, chrome, swatchClass, ready, interactive, ipad, go } from './chrome.js';
+import { fmt, lang, t, chrome, swatchClass, ready, interactive, ipad, duo, go } from './chrome.js';
 
 const d = document.getElementById('d');
 
@@ -483,7 +490,7 @@ if (interactive) {
   }
 }
 
-chrome(d, ipad ? { tab: 4 } : {});   // iPad：頂端分頁列一直在，設定那一格亮著（擷取 06）
+chrome(d, ipad ? { tab: 4 } : duo ? { back: true } : {});   // iPad：頂端分頁列一直在，設定那一格亮著（擷取 06）
 ready();
 </script>
 </body>

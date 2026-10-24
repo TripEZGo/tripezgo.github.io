@@ -27,8 +27,19 @@ if (still) document.documentElement.classList.add('still');
    - 右下角有 iPadOS 26 的視窗縮放把手（灰色四分之一圓弧，1004–1027 × 1348–1371），App 畫面都看得到。
    - App 本身沒有 iPad 專屬版型（App/iOS 找不到 horizontalSizeClass／userInterfaceIdiom 的分支），內容就是同一套版面拉寬。 */
 export const ipad = params.get('device') === 'ipad';
-export const DEV = ipad ? { w: 1032, h: 1376, top: 34, bottom: 20, legal: 46 } : { w: 402, h: 874, top: 0, bottom: 83, legal: 96 };
+export const duo = params.get('device') === 'duo';
+export const DEV = ipad ? { w: 1032, h: 1376, top: 34, bottom: 20, legal: 46 } : duo ? { w: 951, h: 669, top: -62, bottom: 34, legal: 60, bar: 84 } : { w: 402, h: 874, top: 0, bottom: 83, legal: 96 };
 if (ipad) document.documentElement.classList.add('ipad');
+/* ── iPhone Duo 內側螢幕橫放（?device=duo）：951×669pt，@3x ＝ 2853×2007，商城 Duo 截圖用（tools/store/make.mjs）。
+   2026-10-24 在 iOS 27.1 模擬器量真 App（參考圖 2853×2007）：
+   - 右側一條垂直列 x 867–951（84pt）：時刻（半粗 17pt，中心 x 903、y 39）、連線符號（圓弧環＋Wi‑Fi＋四顆灰點，中心 x 903、y 77）、
+     再往下是垂直的玻璃分頁列膠囊 x 879–927、y 382–642，五個 icon 中心 y 412／462／512／562／612，沒有標字，選中的有灰色圓角底（43×49）＋主色。
+     推進導航堆疊的頁（成員／分享）把返回鈕畫成圓形放在列裡。
+   - 沒有狀態列、動態島、主畫面橫條、底部分頁列。內容避開那條列：凡是 iPhone／iPad 釘右緣的東西，都在 x=867 往左退同樣的距離；
+     滿版底色與地圖照舊鋪滿整個寬度（垂直列壓在上面）。
+   - 寬度類別是 regular：紙是置中的卡片（沿用 iPad 的做法）。
+   不帶 device 的 iPhone 與 device=ipad 一格都不動——Duo 的樣子全部掛在 html.duo 底下。 */
+if (duo) document.documentElement.classList.add('duo');
 const htmlLang = { 'zh-Hant-TW': 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[lang] || 'zh-Hant-TW';
 document.documentElement.lang = htmlLang;
 
@@ -115,6 +126,12 @@ const SB_ICONS = `
   <path d="M78 5v3.6c.7-.3 1.2-1 1.2-1.8S78.7 5.3 78 5z" fill-opacity=".4"/>
 </svg>`;
 
+// Duo 垂直列裡的連線符號：圓弧環（下方留缺口）＋Wi‑Fi 波＋四顆小灰點（量自 2026-10-24 的真 App 截圖，約 40pt 寬）
+const DUO_GLYPH = `<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-linecap="round">
+  <path d="M6.65 31.97A18.3 18.3 0 1 1 37.35 31.97" stroke-width="3.4"/>
+  <path d="M15.8 20.6a9.2 9.2 0 0 1 12.4 0M18.5 24a5.4 5.4 0 0 1 7 0" stroke-width="2.3"/><path d="M22 29l-2.2-2.5a3.1 3.1 0 0 1 4.4 0z" fill="currentColor" stroke="none"/>
+  <g class="dots" fill="currentColor" stroke="none"><circle cx="12.3" cy="37.8" r="1.9"/><circle cx="18.5" cy="40.7" r="1.9"/><circle cx="25.7" cy="40.7" r="1.9"/><circle cx="31.8" cy="37.8" r="1.9"/></g></svg>`;
+
 /* ── 互動模式 ──────────────────────────────────────────────────────────
    首頁把這些畫面放進 iPhone 外框（iframe），網址帶 interactive=1。
    截圖工具（tools/screens.mjs）不帶，畫面維持靜態、輸出不變——**互動只能在 interactive 為真時掛上**。 */
@@ -127,6 +144,7 @@ export function go(page, query = '') {
   const q = new URLSearchParams(query);
   q.set('lang', lang); if (interactive) q.set('interactive', '1');
   if (ipad) q.set('device', 'ipad');
+  if (duo) q.set('device', 'duo');
   if (interactive && params.get('auto')) q.set('auto', params.get('auto'));   // 換頁後自動示範要接著跑
   if (interactive && params.get('av')) q.set('av', params.get('av'));          // 腳本的版本號也帶著
   if (interactive && params.get('ext')) q.set('ext', params.get('ext'));
@@ -147,7 +165,7 @@ export function go(page, query = '') {
 /** 分頁列每一格對到哪個畫面（設定分頁還沒有複刻，點了不動）。「資料」落在靈感那一格（LibraryViewModel.initialIndex：1.4.0 起第一次進來是靈感） */
 export const TAB_PAGES = ['overview', 'calendar', 'map', 'inspiration', null];
 
-export function chrome(device, { tab = null, dark = false } = {}) {
+export function chrome(device, { tab = null, dark = false, back = false } = {}) {
   if (interactive) {
     document.documentElement.classList.add('is-interactive');
     // 首頁全螢幕試玩時焦點在這裡：Esc 交給外面關視窗
@@ -156,7 +174,13 @@ export function chrome(device, { tab = null, dark = false } = {}) {
       addEventListener('keydown', (e) => { if (e.key === 'Escape') parent.postMessage({ type: 'tz-esc' }, '*'); });
     }
   }
-  if (ipad) {
+  if (duo) {
+    // Duo：右側垂直列（時刻、連線符號、玻璃分頁列膠囊／返回鈕）；沒有狀態列、動態島、主畫面橫條（鎖定畫面 dark 才有橫條與右上的連線符號）。
+    device.insertAdjacentHTML('beforeend', dark
+      ? `<div class="duo-glyph on-dark">${DUO_GLYPH}</div><div class="home on-dark"></div>`
+      : `<div class="duo-time">9:41</div><div class="duo-glyph">${DUO_GLYPH}</div>`);
+    if (back) device.insertAdjacentHTML('beforeend', `<div class="duo-back"><svg viewBox="0 0 24 24"><path d="M15 4.5 7.5 12l7.5 7.5"/></svg></div>`);
+  } else if (ipad) {
     // iPad 狀態列：時刻＋日期（擷取 01 繁中「9:41 AM  9月29日 週二」、en「9:41 AM  Tue Sep 29」、ja「9:41  9月29日 (火)」）。
     // 日期固定是範本旅程的「今天」2026-10-10（週六）——各畫面預設 start=2026-10-10、today=1。沒有動態島。
     // 主畫面橫條只在系統畫面（dark：鎖定畫面等）畫；App 畫面的擷取 01–07 底下都沒有。
