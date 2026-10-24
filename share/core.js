@@ -22,7 +22,7 @@ export function viewFor(res) {
     case 'ready': return { view: 'ready', email, remaining: res.remaining, deadline: res.deadline };
     case 'rejected':
       return { view: 'ready', email, reason: res.reason, remaining: res.remaining, deadline: res.deadline };
-    case 'issued': return { view: 'issued', email, code: res.code, redeemUrl: res.redeemUrl };
+    case 'issued': return { view: 'issued', email, code: res.code, redeemUrl: res.redeemUrl, plan: res.plan === 'once' ? 'once' : 'renew' };
     default: return { view: res.state, email };
   }
 }

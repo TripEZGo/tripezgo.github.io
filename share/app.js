@@ -52,6 +52,8 @@ function show(next) {
     const card = document.querySelector('[data-view="issued"]');
     card.querySelector('[data-field="code"]').textContent = next.code;
     card.querySelector('[data-field="redeem"]').href = next.redeemUrl;
+    // 兩種碼的說明不一樣：自動續訂的要講怎麼取消，不續訂的講到期回免費版（使用者 2026-10-24）
+    card.querySelector('[data-field="plan"]').textContent = next.plan === 'once' ? t.planOnce : t.planRenew;
   }
   refreshSubmit();
 }

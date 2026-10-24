@@ -43,3 +43,10 @@ test('the six App Store offer-code disclosures are there in every language (Sche
     assert.match(S[lang].fine[4], /apple\.com\/legal\/internet-services\/itunes/, lang);
   }
 });
+
+test('every language explains both kinds of code: the renewing one says how to cancel, the other that it does not renew', () => {
+  for (const [lang, dict] of Object.entries(S)) {
+    assert.ok(dict.planRenew && dict.planOnce, lang);
+    assert.notEqual(dict.planRenew, dict.planOnce, lang);
+  }
+});

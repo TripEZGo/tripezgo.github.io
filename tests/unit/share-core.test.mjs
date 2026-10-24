@@ -49,6 +49,13 @@ test('an issued answer shows the code and the redeem link', () => {
   assert.equal(v.redeemUrl, 'https://apps.apple.com/redeem?code=ABC');
 });
 
+// 兩種碼（使用者 2026-10-24）：一般參加的是免費一年、之後自動續訂；通關密語的是一年、不自動續訂。頁面要照碼的種類講清楚。
+test('an issued answer says which kind of code it is, and an answer without a kind is the renewing one', () => {
+  assert.equal(viewFor({ email: EMAIL, state: 'issued', code: 'A', redeemUrl: 'u', plan: 'once' }).plan, 'once');
+  assert.equal(viewFor({ email: EMAIL, state: 'issued', code: 'A', redeemUrl: 'u', plan: 'renew' }).plan, 'renew');
+  assert.equal(viewFor({ email: EMAIL, state: 'issued', code: 'A', redeemUrl: 'u' }).plan, 'renew');
+});
+
 test('waiting, taken part and closed each have their own view', () => {
   assert.equal(viewFor({ email: EMAIL, state: 'pending-review' }).view, 'pending-review');
   assert.equal(viewFor({ email: EMAIL, state: 'denied' }).view, 'denied');

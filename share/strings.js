@@ -14,7 +14,7 @@ const APPLE_TERMS = 'https://www.apple.com/legal/internet-services/itunes/';
 export const S = {
   zh: {
     title: '分享 TripEZGo，送你一年 Premium',
-    lede: '在社群分享 TripEZGo，貼文附上 tripezgo.com 或 App Store 連結，就送你一組兌換碼：Premium 一年，到期不自動續訂。',
+    lede: '在社群分享 TripEZGo，貼文附上 tripezgo.com 或 App Store 連結，就送你一組兌換碼：Premium 第一年免費，之後依年訂閱價格自動續訂，隨時可以取消。',
     eligibility: '限從沒訂閱過、或訂閱已到期的 Apple 帳號；已經買斷的朋友不必參加。數量有限，送完為止。',
     deadline: '活動到 {d}。',
     account: '目前登入：',
@@ -40,6 +40,8 @@ export const S = {
     issuedLead: '這是你的兌換碼：',
     redeem: '前往 App Store 兌換',
     issuedNote: '兌換碼建立後最多要 1 小時才能兌換；之後登入這一頁，隨時看得到同一組碼。',
+    planRenew: 'Premium 第一年免費。一年後會以當時的年訂閱價格自動續訂；不想續訂，請在免費期結束至少 24 小時前，到 iPhone「設定 › Apple 帳號 › 訂閱項目」取消。',
+    planOnce: 'Premium 一年，到期不會自動續訂，也不會收費；到期後回到免費版。',
     fine: [
       '數量有限，送完為止；兌換碼須在有效期限內兌換。',
       '可在販售 TripEZGo 的所有 App Store 國家或地區兌換。',
@@ -75,7 +77,7 @@ export const S = {
 
   en: {
     title: 'Share TripEZGo, get a year of Premium',
-    lede: 'Share TripEZGo on social media with a link to tripezgo.com or the App Store, and we’ll send you a code for one year of Premium. It does not renew automatically.',
+    lede: 'Share TripEZGo on social media with a link to tripezgo.com or the App Store, and we’ll send you a code for your first year of Premium free. After that it renews at the yearly price unless you cancel.',
     eligibility: 'For Apple Accounts that have never subscribed, or whose subscription has expired; if you bought Premium outright you don’t need this. While codes last.',
     deadline: 'Ends {d}.',
     account: 'Signed in as ',
@@ -101,6 +103,8 @@ export const S = {
     issuedLead: 'Here is your code:',
     redeem: 'Redeem on the App Store',
     issuedNote: 'A new code can take up to an hour before it can be redeemed. Sign in to this page any time to see the same code again.',
+    planRenew: 'Your first year of Premium is free. After that it renews automatically at the yearly subscription price. To stop it, cancel at least 24 hours before the free year ends, in Settings › Apple Account › Subscriptions on your iPhone.',
+    planOnce: 'One year of Premium. It does not renew and you will not be charged; when it ends you are back on the free plan.',
     fine: [
       'While supplies last; redeem the code before it expires.',
       'Redeemable in every App Store country or region where TripEZGo is available.',
@@ -136,7 +140,7 @@ export const S = {
 
   ja: {
     title: 'TripEZGo をシェアして、Premium を 1 年分プレゼント',
-    lede: 'SNS で TripEZGo を紹介して、tripezgo.com か App Store のリンクを投稿に入れてくれた方に、Premium 1 年分のコードをお送りします。自動更新はされません。',
+    lede: 'SNS で TripEZGo を紹介して、tripezgo.com か App Store のリンクを投稿に入れてくれた方に、Premium が 1 年間無料になるコードをお送りします。その後は年額プランで自動更新され、いつでも解約できます。',
     eligibility: '一度もサブスクリプションを登録したことがない、または期限が切れた Apple アカウントが対象です。買い切りで購入済みの方は参加不要です。なくなり次第終了します。',
     deadline: '{d} まで。',
     account: 'ログイン中：',
@@ -162,6 +166,8 @@ export const S = {
     issuedLead: 'あなたのコードはこちら：',
     redeem: 'App Store で引き換える',
     issuedNote: 'コードは発行から引き換え可能になるまで最大 1 時間かかります。このページにログインすれば、いつでも同じコードを確認できます。',
+    planRenew: 'Premium の最初の 1 年間は無料です。その後は年額プランの料金で自動更新されます。更新しない場合は、無料期間が終わる 24 時間前までに iPhone の「設定 › Apple アカウント › サブスクリプション」で解約してください。',
+    planOnce: 'Premium 1 年分です。自動更新はされず、料金もかかりません。期間が終わると無料プランに戻ります。',
     fine: [
       'なくなり次第終了します。有効期限内に引き換えてください。',
       'TripEZGo を配信しているすべての国または地域の App Store で引き換えられます。',
@@ -196,7 +202,7 @@ export const S = {
   },
   ko: {
     title: 'TripEZGo를 공유하고 Premium 1년을 받으세요',
-    lede: 'SNS에 TripEZGo를 공유하면서 게시물에 tripezgo.com 또는 App Store 링크를 넣어 주시면, Premium 1년 이용 코드를 드립니다. 기간이 끝나도 자동으로 갱신되지 않습니다.',
+    lede: 'SNS에 TripEZGo를 공유하면서 게시물에 tripezgo.com 또는 App Store 링크를 넣어 주시면, Premium 첫 1년 무료 코드를 드립니다. 이후에는 연간 구독 요금으로 자동 갱신되며 언제든 해지할 수 있습니다.',
     eligibility: '한 번도 구독한 적이 없거나 구독이 만료된 Apple 계정만 참여할 수 있습니다. 이미 평생 구매하신 분은 참여하지 않으셔도 됩니다. 수량이 한정되어 있어 소진되면 종료됩니다.',
     deadline: '이벤트는 {d}까지입니다.',
     account: '로그인한 계정: ',
@@ -222,6 +228,8 @@ export const S = {
     issuedLead: '코드는 다음과 같습니다:',
     redeem: 'App Store에서 사용하기',
     issuedNote: '코드는 발급 후 사용할 수 있게 되기까지 최대 1시간이 걸립니다. 이 페이지에 로그인하면 언제든 같은 코드를 다시 볼 수 있습니다.',
+    planRenew: 'Premium 첫 1년은 무료입니다. 이후에는 연간 구독 요금으로 자동 갱신됩니다. 갱신을 원하지 않으면 무료 기간이 끝나기 최소 24시간 전에 iPhone의 "설정 › Apple 계정 › 구독"에서 해지하세요.',
+    planOnce: 'Premium 1년 이용권입니다. 자동 갱신되지 않고 요금도 청구되지 않으며, 기간이 끝나면 무료 버전으로 돌아갑니다.',
     fine: [
       '수량이 한정되어 있어 소진되면 종료됩니다. 코드는 유효 기간 안에 사용해야 합니다.',
       'TripEZGo가 제공되는 모든 국가 또는 지역의 App Store에서 사용할 수 있습니다.',
