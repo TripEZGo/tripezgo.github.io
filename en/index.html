@@ -34,8 +34,9 @@
 <meta name="twitter:title" content="TripEZGo — Travel Planner & Itinerary App for iPhone and iPad">
 <meta name="twitter:description" content="Travel planner and itinerary app for iPhone and iPad: plan days on a calendar, map each route and co-edit with travel companions. No sign-up, works offline. Free.">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-en.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=5c148151b2">
-<script type="module" src="/assets/js/home.js?v=04866cb5a0"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=80f2395759">
+<script type="module" src="/assets/js/home.js?v=98d4b33830"></script>
+<script type="module" src="/assets/js/promo.js?v=37e8eb0566"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -90,7 +91,8 @@
 </script>
 <style>
   html.embed .site-header, html.embed .skip-link, html.embed .hero, html.embed .site-footer, html.embed .fab-dl,
-  html.embed .plans-cta, html.embed .nav-menu, html.embed .fab-qr, html.embed a[href*="apps.apple.com"] { display: none !important; }
+  html.embed .plans-cta, html.embed .nav-menu, html.embed .fab-qr, html.embed a[href*="apps.apple.com"],
+  html.embed .promo, html.embed .promo-jump { display: none !important; }
   html.embed { scroll-padding-top: 16px; }
   /* viewport-fit=cover 的頁（聯絡我們）在 App 的 WebView 裡會鋪到導覽列與分頁列底下；平常頁首替它讓位，
      embed 藏掉頁首後就要自己讓出安全區域。沒有 cover 的頁 env() 是 0，不受影響。 */
@@ -185,6 +187,11 @@
   <section class="hero">
     <div class="wrap">
       <div>
+                <a class="promo-jump" href="#promo" hidden>
+          <span class="promo-jump-tag">Limited-time offer</span>
+          <span>Share on social media, get a year of Premium free</span>
+          <span class="promo-jump-go" aria-hidden="true">→</span>
+        </a>
         <p class="eyebrow">Travel planner for iPhone and iPad</p>
         <h1>Plan the trip, carry what it needs —<br><em>all in one app</em></h1>
         <p class="lede">Plan the days on a calendar, edit with your travel companions — and take it all with you when you go.</p>
@@ -202,6 +209,55 @@
         <figure class="ph ph-side shot"><img src="/assets/img/shots/v2/en/map-place.webp" width="720" height="1565" alt="Map: day 2 on Miyajima, with events joined into a walking route and Itsukushima Shrine's card showing a walking-directions button" loading="lazy"></figure>
         <figure class="ph ph-main shot"><img src="/assets/img/shots/v2/en/calendar.webp" width="720" height="1565" alt="Calendar: day 2 of the six-day San'yō trip, events laid out by time, with the JR San'yō Line departure between breakfast and the ferry" fetchpriority="high"></figure>
         <figure class="ph ph-side shot"><img src="/assets/img/shots/v2/en/overview.webp" width="720" height="1565" alt="Overview: today's events listed by time, with walking time and gaps between them" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+    <section class="section promo" id="promo" hidden>
+    <div class="wrap">
+      <div class="promo-card">
+        <div>
+          <p class="eyebrow">Limited-time offer</p>
+          <h2>Share on social media,<br><em>get a year of Premium free</em></h2>
+          <p class="lede">Share TripEZGo with your friends and get a year of Premium: no ads, unlimited trips and travel companions, Live Activity and calendar integration, all unlocked.</p>
+          <div class="price">
+            <s>$39.99</s><span class="arrow" aria-hidden="true">→</span><strong>$0</strong>
+          </div>
+          <span class="deadline"><svg class="i"><use href="#i-clock"/></svg><span>Ends in</span><span class="cd"></span></span>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <h3>Copy this caption</h3>
+            <div class="step-body">
+              <p class="caption"></p>
+              <div class="chips">
+                <button class="chip" type="button" data-act="copy"><svg class="i"><use href="#i-clip"/></svg><span>Copy caption</span></button>
+                <button class="chip" type="button" data-act="shuffle"><svg class="i"><use href="#i-swap"/></svg><span>Try another</span></button>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <h3>Share on social media</h3>
+            <div class="step-body">
+              <p>Make the post public and keep tripezgo.com in it.</p>
+              <div class="chips">
+                <a class="chip" data-net="threads" href="#" target="_blank" rel="noopener">Threads</a>
+                <a class="chip" data-net="facebook" href="#" target="_blank" rel="noopener">Facebook</a>
+                <a class="chip" data-net="x" href="#" target="_blank" rel="noopener">X</a>
+                <a class="chip" data-net="line" href="#" target="_blank" rel="noopener">LINE</a>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <h3>Redeem</h3>
+            <div class="step-body">
+              <div class="redeem-row">
+                <a class="btn btn-primary btn-redeem" aria-disabled="true" href="https://apps.apple.com/redeem?id=6801536372&amp;code=TRIPEZGO2026" target="_blank" rel="noopener">Redeem on the App Store</a>
+              </div>
+              <p class="redeem-hint">You can redeem once you’ve shared.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>

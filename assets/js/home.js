@@ -532,7 +532,7 @@ phones.forEach((f) => { (SCREEN_OF[f.dataset.screen][0] === 'map-live' ? mio : p
 {
   const fab = document.querySelector('.fab-dl');
   const hero = document.querySelector('.hero');
-  const ends = [...document.querySelectorAll('main .btn-primary[href*="apps.apple.com"]')].filter((a) => !a.closest('.hero'));
+  const ends = [...document.querySelectorAll('main .btn-primary[href*="apps.apple.com"]')].filter((a) => !a.closest('.hero, .promo'));   // 活動的兌換鈕不是下載鈕
   if (fab && hero) {
     fab.hidden = false;
     let past = false; const seen = new Set();

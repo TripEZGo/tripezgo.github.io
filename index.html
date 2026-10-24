@@ -34,8 +34,9 @@
 <meta name="twitter:title" content="TripEZGo — 旅行規劃 App｜行事曆排行程、旅伴共編">
 <meta name="twitter:description" content="TripEZGo 是 iPhone、iPad 的旅行規劃 App：行事曆排行程、時間軸排交通，跟旅伴一起共編，自由行的行程表、票券與待辦都在一起。免註冊、離線可用，免費下載。">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-zh.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=5c148151b2">
-<script type="module" src="/assets/js/home.js?v=04866cb5a0"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=80f2395759">
+<script type="module" src="/assets/js/home.js?v=98d4b33830"></script>
+<script type="module" src="/assets/js/promo.js?v=37e8eb0566"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -90,7 +91,8 @@
 </script>
 <style>
   html.embed .site-header, html.embed .skip-link, html.embed .hero, html.embed .site-footer, html.embed .fab-dl,
-  html.embed .plans-cta, html.embed .nav-menu, html.embed .fab-qr, html.embed a[href*="apps.apple.com"] { display: none !important; }
+  html.embed .plans-cta, html.embed .nav-menu, html.embed .fab-qr, html.embed a[href*="apps.apple.com"],
+  html.embed .promo, html.embed .promo-jump { display: none !important; }
   html.embed { scroll-padding-top: 16px; }
   /* viewport-fit=cover 的頁（聯絡我們）在 App 的 WebView 裡會鋪到導覽列與分頁列底下；平常頁首替它讓位，
      embed 藏掉頁首後就要自己讓出安全區域。沒有 cover 的頁 env() 是 0，不受影響。 */
@@ -186,6 +188,12 @@
   <section class="hero">
     <div class="wrap">
       <div>
+        <!-- 限時活動的醒目入口：assets/js/promo.js 確認活動還沒結束才打開，點了捲到 #promo -->
+        <a class="promo-jump" href="#promo" hidden>
+          <span class="promo-jump-tag">限時活動</span>
+          <span>分享到社群，免費兌換一年 Premium</span>
+          <span class="promo-jump-go" aria-hidden="true">→</span>
+        </a>
         <p class="eyebrow">iPhone 與 iPad 旅行規劃</p>
         <h1>旅行規劃、旅途所需<br><em>一次搞定</em></h1>
         <p class="lede">行事曆排行程、旅伴一起編，出發後也跟著你走。</p>
@@ -203,6 +211,57 @@
         <figure class="ph ph-side shot"><img src="/assets/img/shots/v2/zh/map-place.webp" width="720" height="1565" alt="地圖模式：第 2 天在宮島，行程依序連成步行路線，嚴島神社的卡片上有步行導航鈕" loading="lazy"></figure>
         <figure class="ph ph-main shot"><img src="/assets/img/shots/v2/zh/calendar.webp" width="720" height="1565" alt="行事曆模式：山陽 6 日的第 2 天，行程沿時間排開，早餐與渡輪之間標著 JR 山陽本線的班次" fetchpriority="high"></figure>
         <figure class="ph ph-side shot"><img src="/assets/img/shots/v2/zh/overview.webp" width="720" height="1565" alt="總覽：今天的行程依時間列出，行程之間標著步行時間與間隔" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 限時活動：分享到社群，免費兌換一年 Premium。字與倒數、三步驟的解鎖在 assets/js/promo.js；活動結束（或沒有 JS）整段不出現。
+       價格是各語主要市場的 App Store 年訂閱價（2026-10-24 量：台灣 NT$1,290、美國 $39.99、日本 ¥6,000、韓國 ₩66,000）。 -->
+  <section class="section promo" id="promo" hidden>
+    <div class="wrap">
+      <div class="promo-card">
+        <div>
+          <p class="eyebrow">限時活動</p>
+          <h2>分享到社群，<br><em>免費兌換一年 Premium</em></h2>
+          <p class="lede">把 TripEZGo 分享給朋友，就送你一年 Premium：無廣告、旅程與旅伴不限、即時動態、行事曆整合全部打開。</p>
+          <div class="price">
+            <s>NT$1,290</s><span class="arrow" aria-hidden="true">→</span><strong>NT$0</strong>
+          </div>
+          <span class="deadline"><svg class="i"><use href="#i-clock"/></svg><span>兌換倒數</span><span class="cd"></span></span>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <h3>複製這段文案</h3>
+            <div class="step-body">
+              <p class="caption"></p>
+              <div class="chips">
+                <button class="chip" type="button" data-act="copy"><svg class="i"><use href="#i-clip"/></svg><span>複製文案</span></button>
+                <button class="chip" type="button" data-act="shuffle"><svg class="i"><use href="#i-swap"/></svg><span>換一個</span></button>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <h3>分享到社群</h3>
+            <div class="step-body">
+              <p>貼文設成公開，記得留著 tripezgo.com。</p>
+              <div class="chips">
+                <a class="chip" data-net="threads" href="#" target="_blank" rel="noopener">Threads</a>
+                <a class="chip" data-net="facebook" href="#" target="_blank" rel="noopener">Facebook</a>
+                <a class="chip" data-net="x" href="#" target="_blank" rel="noopener">X</a>
+                <a class="chip" data-net="line" href="#" target="_blank" rel="noopener">LINE</a>
+              </div>
+            </div>
+          </li>
+          <li class="step">
+            <h3>完成兌換</h3>
+            <div class="step-body">
+              <div class="redeem-row">
+                <a class="btn btn-primary btn-redeem" aria-disabled="true" href="https://apps.apple.com/redeem?id=6801536372&amp;code=TRIPEZGO2026" target="_blank" rel="noopener">前往 App Store 兌換</a>
+              </div>
+              <p class="redeem-hint">分享之後就能兌換。</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>

@@ -618,6 +618,27 @@ T = {
   '所以就有了 TripEZGo——旅行規劃、旅途所需一次搞定。': ("And so there's TripEZGo — plan the trip, carry what it needs, all in one app.",
                                               'そうして生まれたのが TripEZGo。旅の計画も、旅先で要るものも、これひとつで。',
                                               '그래서 TripEZGo가 탄생했습니다. 여행 계획부터 여행길에 필요한 것까지, 앱 하나로.'),
+  # 限時活動（assets/js/promo.js 放會變的字與 26 則文案；這裡是頁面上固定的字）
+  '限時活動': ('Limited-time offer', '期間限定', '기간 한정'),
+  '分享到社群，免費兌換一年 Premium': ('Share on social media, get a year of Premium free', 'SNS でシェアして、Premium 1 年分を無料で', 'SNS에 공유하고 Premium 1년 무료로 받기'),
+  '分享到社群，': ('Share on social media,', 'SNS でシェアして、', 'SNS에 공유하고'),
+  '免費兌換一年 Premium': ('get a year of Premium free', 'Premium 1 年分を無料で', 'Premium 1년 무료로'),
+  '把 TripEZGo 分享給朋友，就送你一年 Premium：無廣告、旅程與旅伴不限、即時動態、行事曆整合全部打開。':
+      ('Share TripEZGo with your friends and get a year of Premium: no ads, unlimited trips and travel companions, Live Activity and calendar integration, all unlocked.',
+       'TripEZGo を友だちにシェアすると、Premium を 1 年分プレゼント。広告なし、旅程と旅の仲間は無制限、ライブアクティビティ、カレンダー連携がすべて使えます。',
+       'TripEZGo를 친구에게 공유하면 Premium 1년을 드려요. 광고 없음, 여행과 동행 무제한, 라이브 액티비티, 캘린더 연동이 모두 열려요.'),
+  # 各語主要市場的 App Store 年訂閱價（2026-10-24 量：美國、日本、韓國）
+  'NT$1,290': ('$39.99', '¥6,000', '₩66,000'),
+  'NT$0': ('$0', '¥0', '₩0'),
+  '兌換倒數': ('Ends in', '引き換え終了まで', '교환 마감까지'),
+  '複製這段文案': ('Copy this caption', 'この文章をコピー', '이 문구 복사'),
+  '複製文案': ('Copy caption', '文章をコピー', '문구 복사'),
+  '換一個': ('Try another', '別の文章にする', '다른 문구'),
+  '分享到社群': ('Share on social media', 'SNS でシェア', 'SNS에 공유'),
+  '貼文設成公開，記得留著 tripezgo.com。': ('Make the post public and keep tripezgo.com in it.', '投稿は公開にして、tripezgo.com は消さずに残してください。', '게시물은 공개로 설정하고 tripezgo.com은 지우지 마세요.'),
+  '完成兌換': ('Redeem', '引き換える', '교환하기'),
+  '前往 App Store 兌換': ('Redeem on the App Store', 'App Store で引き換える', 'App Store에서 교환'),
+  '分享之後就能兌換。': ('You can redeem once you’ve shared.', 'シェアしたら引き換えられます。', '공유하면 교환할 수 있어요.'),
 }
 
 HEAD = {
