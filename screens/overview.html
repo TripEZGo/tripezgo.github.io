@@ -142,6 +142,14 @@
   .ipad .table { top: 217px; width: 992px; bottom: 0; }
   .ipad .pager { top: 217px; width: 1032px; bottom: 0; }
   .ipad .page { flex-basis: 1032px; }
+  /* ── iPhone Duo（?device=duo，951×669）：沒有狀態列——頁首頂到上緣（日期小字 19、抬頭 45.6、右上鈕中心 833／30）、分段控制 72.3–116.5、
+        表格從 121 起一路到底；右緣讓出垂直列（846.5）：表格與分段控制都是 x 20–847（寬 827）。量自真 App 截圖。 ── */
+  .duo .head { top: 12px; width: auto; right: 146px; }
+  .duo .head-act { left: 811px; top: 8px; }
+  .duo .seg { top: 72.3px; width: 827px; }
+  .duo .table { top: 121px; width: 827px; bottom: 0; }
+  .duo .pager { top: 121px; width: 951px; bottom: 0; }
+  .duo .page { flex-basis: 951px; }
 </style>
 </head>
 <body>
