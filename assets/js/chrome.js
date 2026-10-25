@@ -24,6 +24,9 @@ const FOOTER = {
   },
 };
 
+// 社群連結（使用者 2026-10-25）；圖示是 Simple Icons（CC0），樣式在 chrome.css 的 .footer-social
+const SOCIAL = '<p class="footer-social"><a href="https://www.instagram.com/tripezgo/" target="_blank" rel="noopener"><span class="m m-ig" aria-hidden="true"></span>Instagram</a><a href="https://www.threads.com/@tripezgo" target="_blank" rel="noopener"><span class="m m-th" aria-hidden="true"></span>Threads</a></p>';
+
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const marks = '<span class="m m-mark" role="img" aria-hidden="true"></span><span class="m m-word" role="img" aria-hidden="true"></span>';
 
@@ -40,7 +43,7 @@ export function footerHtml(lang) {
     + (hl ? ' hreflang="' + hl + '" lang="' + hl + '"' : '')
     + (href.startsWith('http') ? ' target="_blank" rel="noopener"' : '') + '>' + esc(text) + '</a>').join('');   // 聯絡表單等站外連結開新視窗
   return '<div class="wrap"><div class="footer-top"><div>' + brandHtml(lang)
-    + '<p style="margin:12px 0 0;max-width:' + f.width + '">' + esc(f.tag) + '</p></div>'
+    + '<p style="margin:12px 0 0;max-width:' + f.width + '">' + esc(f.tag) + '</p>' + SOCIAL + '</div>'
     + '<nav class="footer-links" aria-label="' + esc(f.nav) + '">' + links + '</nav></div>'
     + '<div class="footer-bottom"><span>© 2026 TripEZGo</span><span>' + f.made + '</span></div></div>';
 }
