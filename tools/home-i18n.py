@@ -640,6 +640,15 @@ T = {
   '完成兌換': ('Redeem', '引き換える', '교환하기'),
   '前往 App Store 兌換': ('Redeem on the App Store', 'App Store で引き換える', 'App Store에서 교환'),
   '分享之後就能兌換。': ('You can redeem once you’ve shared.', 'シェアしたら引き換えられます。', '공유하면 교환할 수 있어요.'),
+  # 第 4 步：App 裡的字照 Scripts/i18n/maps（UI.json ui.row.subscription、ui.purchase.restore；Settings.json settings.tab.title）
+  '兌換方式': ('How to redeem', '引き換え方法', '교환 방법'),
+  '點擊兌換連結': ('Tap the redeem link', '引き換えリンクをタップ', '교환 링크를 탭하세요'),
+  '在 App Store 完成兌換': ('Finish redeeming on the App Store', 'App Store で引き換えを完了', 'App Store에서 교환을 완료하세요'),
+  '回到 TripEZGo App › 設定 › 訂閱管理 › 最底部「恢復購買」':
+      ('Back in the TripEZGo app, go to Settings › Manage subscription and tap “Restore Purchases” at the very bottom',
+       'TripEZGo アプリに戻り、設定 › サブスクリプションの管理 › いちばん下の「購入を復元」をタップ',
+       'TripEZGo 앱으로 돌아가 설정 › 구독 관리 › 맨 아래 「구매 복원」을 탭하세요'),
+  '啟用完成。': ('Premium is now active.', 'これで有効になります。', '활성화 완료.'),
 }
 
 HEAD = {

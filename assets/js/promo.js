@@ -270,5 +270,6 @@ function start() {
   const back = () => { if (shared && document.visibilityState === 'visible') advance(3); };
   document.addEventListener('visibilitychange', back);
   window.addEventListener('focus', back);
-  redeem.addEventListener('click', (e) => allowed(3, e));
+  // 按了兌換：第 4 步（回 App 恢復購買）亮起來
+  redeem.addEventListener('click', (e) => { if (allowed(3, e)) advance(4); });
 }

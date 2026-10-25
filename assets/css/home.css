@@ -996,4 +996,5 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; }
 .promo .btn-redeem[aria-disabled="true"] { opacity:.45; cursor:not-allowed; pointer-events:auto; }
 .promo .btn-redeem[aria-disabled="true"]:hover { transform:none; background:var(--accent-ink); }
 .promo .step-body > p.redeem-hint { font-size:12.5px; }
+.promo .howto { margin:4px 0 0; padding-inline-start:1.3em; display:grid; gap:2px; font-size:var(--text-sm); color:var(--muted); line-height:1.6; }
 @media (prefers-reduced-motion:reduce) { .promo-jump-go { animation:none; } .promo .step { transition:none; } }
