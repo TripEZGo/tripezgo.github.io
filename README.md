@@ -51,8 +51,9 @@ npm test                  # node 單元測試＋Playwright 瀏覽器測試
 npm run golden:check      # 黃金檔副本 vs App repo 那一份（預設找 ../tripezgo，可給路徑）
 ```
 
-- `tests/fixtures/golden-v1.json` 是 App repo `docs/public-link/golden-v1.json` 的副本——App 的程式碼
+- `tests/fixtures/golden-v1.json`、`golden-v2.json` 是 App repo `docs/public-link/golden-v{1,2}.json` 的副本——App 的程式碼
   加密、簽章、產純文字的那一份。解密與三語純文字都跟它逐字對。App 那一份變了就複製過來。
+  v2（App 1.5.0）＝每一天各帶旅程時區（`trip.dayZones`）、`v: 2`；v1 的舊連結照舊讀，兩版都留。
 - 瀏覽器測試把 CloudKit 在 HTTP 邊界上假掉（`page.route` 攔 `api.apple-cloudkit.com`）。
 - `.github/workflows/test.yml` 在 push 時跑同一套，**不擋部署**。
 

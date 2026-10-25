@@ -11,7 +11,9 @@
  *   - 純文字：`Domain/UseCase/TripItineraryTextUseCase.swift`、`TripShare.swift`
  */
 
-export const FORMAT_VERSION = 1;
+/** 認得的格式版本。2＝每一天各帶旅程時區（`trip.dayZones`，App 1.5.0）；1 照舊。
+ *  ⚠️ 每日清理（tools/cleanup）也讀這一份——App 發 2 之前，這裡要先上線。 */
+export const FORMAT_VERSIONS = [1, 2];
 export const NONCE_BYTES = 12;
 export const TAG_BYTES = 16;
 export const KEY_BYTES = 32;
@@ -99,7 +101,7 @@ export class OpenFailure extends Error {
 
 /** 解開——同 App 的 `PublishedCopyEnvelope.open`。**不驗簽章**：那是清理工具的事。 */
 export async function openSealed(sealed, key) {
-  if (sealed.formatVersion !== FORMAT_VERSION) throw new OpenFailure('unknownFormat');
+  if (!FORMAT_VERSIONS.includes(sealed.formatVersion)) throw new OpenFailure('unknownFormat');
   const payload = sealed.payload;
   if (!payload || payload.length < NONCE_BYTES + TAG_BYTES) throw new OpenFailure('cannotDecrypt');
   let plain;
@@ -147,7 +149,7 @@ const isStringOrNull = (s) => s === null || s === undefined || typeof s === 'str
 const has = (o, k) => o[k] !== undefined && o[k] !== null;
 
 export function validateCopy(json) {
-  if (!json || typeof json !== 'object' || json.v !== FORMAT_VERSION) return null;
+  if (!json || typeof json !== 'object' || !FORMAT_VERSIONS.includes(json.v)) return null;
   if (typeof json.at !== 'string' || isNaN(Date.parse(json.at))) return null;
   const trip = json.trip;
   if (!trip || typeof trip.name !== 'string' || !isInt(trip.days) || trip.days < 1) return null;
@@ -156,6 +158,14 @@ export function validateCopy(json) {
    * 只是不畫副時刻；型別不對就跟 App 的 JSONDecoder 一樣整份讀不懂。 */
   if (!isStringOrNull(trip.tz)) return null;
   const tz = has(trip, 'tz') && isZone(trip.tz) ? trip.tz : null;
+  /* 每一天的旅程時區（格式 v2，2026-10-26，App 的 `trip.dayZones`）：第 i 格＝第 i+1 天。沒有這一格的（v1）
+   * 整趟用 `tz`；型別不對整份讀不懂（同 App 的 JSONDecoder）；長度對不上天數、或有瀏覽器不認得的識別碼，
+   * 整格丟掉退回 `tz`——位置對著天，少一格或錯一格會把某一天換算到別的時區。 */
+  let dayZones = null;
+  if (has(trip, 'dayZones')) {
+    if (!Array.isArray(trip.dayZones) || !trip.dayZones.every((z) => typeof z === 'string')) return null;
+    if (trip.dayZones.length === trip.days && trip.dayZones.every(isZone)) dayZones = trip.dayZones.slice();
+  }
   let start = null;
   if (has(trip, 'start')) {
     const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(trip.start);
@@ -207,8 +217,17 @@ export function validateCopy(json) {
     days: trip.days,
     cover: trip.cover || null,
     tz,
+    dayZones,
     items,
   };
+}
+
+/** 第 `n` 天（1 起算）的旅程時區：v2 那一天自己的，v1 或讀不懂的整趟用 `tz`；超出天數的讀最後一天（時間表多問的「旅程隔天」）。
+ *  → IANA 識別碼或 `null`（舊連結沒有旅程時區：不畫副時刻）。 */
+export function zoneOfDay(copy, n) {
+  const zones = copy.dayZones;
+  if (!zones || !zones.length) return copy.tz;
+  return zones[Math.min(Math.max(n, 1), zones.length) - 1] || copy.tz;
 }
 
 /* ═══ 旅程時區與觀看者的時刻（使用者裁定 2026-10-05） ══════════════
@@ -362,8 +381,24 @@ export function phonePlan(days, span) {
 
 /** 說明讀的時差：畫出來的範圍裡第一段不為 0 的（`zoneDifference` 吃的一段）；畫出來的全部偏移相同回 `null`。 */
 export function phoneNoteShifts(days, span) {
-  const d = visibleDeltas(days, span).flat().find((x) => x !== 0);
-  return d ? [{ fromMinute: 0, deltaMinutes: d }] : null;
+  const note = phoneNote(days, span);
+  return note ? note.shifts : null;
+}
+
+/** 同 `phoneNoteShifts`，再多告訴說明是讀哪一天的：`{ shifts, day }`（`day` 從 0 起算），沒有回 `null`。
+ *  每一天的旅程時區不同時（v2），說明寫的時區名字要是**那一天**的。 */
+export function phoneNote(days, span) {
+  /* 順序同 `visibleDeltas`（那一天的、再接畫過 24:00 讀隔天的），但要記下時差是**哪一天**的——
+   * 畫過 24:00 的那一段讀的是隔天，說明的時區名字也要是隔天的。 */
+  for (let i = 0; i < days.length - 1; i++) {
+    const today = deltasWithin(days[i], span.lo, Math.min(span.hi, MINUTES_PER_DAY)).find((x) => x !== 0);
+    if (today) return { shifts: [{ fromMinute: 0, deltaMinutes: today }], day: i };
+    if (span.hi > MINUTES_PER_DAY) {
+      const next = deltasWithin(days[i + 1], 0, span.hi - MINUTES_PER_DAY).find((x) => x !== 0);
+      if (next) return { shifts: [{ fromMinute: 0, deltaMinutes: next }], day: i + 1 };
+    }
+  }
+  return null;
 }
 
 const ZONE_LOCALE = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja' };

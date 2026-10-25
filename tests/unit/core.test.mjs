@@ -101,10 +101,10 @@ test('金鑰不對就是解不開', async () => {
   await assert.rejects(openSealed(sealedFromRecord(recordOf(c)), new Uint8Array(32)), OpenFailure);
 });
 
-test('格式版本不認得就不解', async () => {
+test('格式版本不認得就不解（認得 1 與 2；3 是未來的）', async () => {
   const c = golden.cases[0];
   const record = recordOf(c);
-  record.fields.formatVersion.value = 2;
+  record.fields.formatVersion.value = 3;
   await assert.rejects(
     openSealed(sealedFromRecord(record), parseFragment(new URL(c.url).hash).key),
     (e) => e.kind === 'unknownFormat'

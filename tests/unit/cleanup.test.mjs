@@ -38,7 +38,7 @@ function fixtures() {
   const moved = record('d'.repeat(32), f(golden0));
   const malformed = record('e'.repeat(32), { ...f(golden0), payload: { value: base64Encode(new Uint8Array(20)), type: 'BYTES' } });
   const notBase64 = record('f'.repeat(32), { ...f(golden0), payload: { value: '%%%', type: 'BYTES' } });
-  const unknownVersion = record('0'.repeat(32), { ...f(golden0), formatVersion: { value: 2, type: 'INT64' } });
+  const unknownVersion = record('0'.repeat(32), { ...f(golden0), formatVersion: { value: 3, type: 'INT64' } });
   const noVersion = record('1'.repeat(32), { payload: f(golden0).payload });
   return { valid, alsoValid, unsigned, tampered, moved, malformed, notBase64, unknownVersion, noVersion };
 }

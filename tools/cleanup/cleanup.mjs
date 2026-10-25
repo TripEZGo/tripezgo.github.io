@@ -7,11 +7,11 @@
  * （簽章金鑰內嵌在 App 裡），這一支認得出哪些不是。
  *
  * ## 刪的條件（任一）
- *   - 格式版本不認得（缺、不是數字、不是這一版認得的 1）
+ *   - 格式版本不認得（缺、不是數字、不是這一版認得的 1 或 2）
  *   - payload 壞格式（缺、不是 base64、短於 nonce 12 bytes＋tag 16 bytes）
  *   - 沒有簽章
  *   - HMAC-SHA256(key, UTF-8(recordName) ‖ SHA-256(payload)) 在目前接受的**任一把**金鑰下都驗不過
- * ⚠️ App 升格式版本（formatVersion 2）之前，先讓這裡認得新版本並上線——否則新版 App 寫的每一筆都會被刪。
+ * ⚠️ App 升格式版本之前，先讓這裡認得新版本並上線——否則新版 App 寫的每一筆都會被刪。（2：每一天各帶旅程時區，App 1.5.0；這裡 2026-10-26 起認得 1 與 2。）
  *
  * ## 為什麼只碰 Production（寫死，不吃參數）
  * Development 裡是模擬器與 Xcode debug build 的測試資料；清掉它會讓開發中的連結在測試途中消失。
@@ -31,7 +31,7 @@ import { createPrivateKey, createHash, sign } from 'node:crypto';
 import { appendFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { base64Decode, FORMAT_VERSION, isSigned, NONCE_BYTES, sealedFromRecord, TAG_BYTES } from '../../trip/core.js';
+import { base64Decode, FORMAT_VERSIONS, isSigned, NONCE_BYTES, sealedFromRecord, TAG_BYTES } from '../../trip/core.js';
 
 export const CONTAINER = 'iCloud.com.zhgchgli.tripezgo';
 export const ENVIRONMENT = 'production';
@@ -58,7 +58,7 @@ export async function verdict(record, signingKeys) {
   const fields = record.fields || {};
   const version = fields.formatVersion && fields.formatVersion.value;
   if (typeof version !== 'number') return 'unknown-format（沒有 formatVersion）';
-  if (version !== FORMAT_VERSION) return 'unknown-format（formatVersion ' + version + '）';
+  if (!FORMAT_VERSIONS.includes(version)) return 'unknown-format（formatVersion ' + version + '）';
   const raw = fields.payload && fields.payload.value;
   if (typeof raw !== 'string' || !base64Decode(raw)) return 'malformed-payload（沒有 payload 或不是 base64）';
   const sealed = sealedFromRecord(record);

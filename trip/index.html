@@ -8,7 +8,7 @@
        style-src 要 'unsafe-inline'：樣式有一整塊 <style> 與大量 style="…"（時間軸的 top／height 是算出來的），沒法逐條列雜湊。
        img-src 的 data: 是封面圖（jpeg base64 直接放在旅程裡）；blob: 是 MapKit 的圖磚。meta CSP 設不了 frame-ancestors，防 framing 靠下面那段 JS。
      - referrer：公開連結的 # 本來就不會進 Referer，但沒有理由讓外站（Google 地圖、作者部落格）知道使用者是從哪一頁來的。 -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.apple-mapkit.com 'sha256-bbV22sgmibTJ6Cg5tcp+7Mc6KpEfgFyf+KeBJlfNqcE='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.apple-mapkit.com; font-src 'self' data:; connect-src https://api.apple-cloudkit.com https://*.apple-mapkit.com https://*.ls.apple.com; worker-src blob:; child-src blob:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.apple-mapkit.com 'sha256-YPNUhd+SOFEn95iAPm+7tVVUSnXRC1KbaVGMYaiUx94='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.apple-mapkit.com; font-src 'self' data:; connect-src https://api.apple-cloudkit.com https://*.apple-mapkit.com https://*.ls.apple.com; worker-src blob:; child-src blob:; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <!-- 公開頁一律不進搜尋引擎：連結本身就是鑰匙，被收錄等於把鑰匙貼在公告欄上。 -->
@@ -522,17 +522,17 @@
 <!-- stamp-trip:start -->
 <script type="importmap">{
  "imports": {
-  "/trip/app.js": "/trip/app.js?v=88863cd89f",
+  "/trip/app.js": "/trip/app.js?v=8d1c8f56db",
   "/trip/cloudkit.js": "/trip/cloudkit.js?v=da0e9f9ebd",
   "/trip/config.js": "/trip/config.js?v=d7fac2d1c8",
-  "/trip/core.js": "/trip/core.js?v=4d070ed56b",
+  "/trip/core.js": "/trip/core.js?v=65e7d5c425",
   "/trip/icons.js": "/trip/icons.js?v=179e1f6e03",
   "/trip/looks.js": "/trip/looks.js?v=d145355228",
   "/trip/strings.js": "/trip/strings.js?v=ae8e95791f",
   "/assets/js/chrome.js": "/assets/js/chrome.js?v=6a4f95a234"
  }
 }</script>
-<script type="module" src="/trip/app.js?v=88863cd89f"></script>
+<script type="module" src="/trip/app.js?v=8d1c8f56db"></script>
 <!-- stamp-trip:end -->
 </body>
 </html>

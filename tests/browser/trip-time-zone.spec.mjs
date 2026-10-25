@@ -72,6 +72,32 @@ test.describe('瀏覽器在台北、旅程在東京', () => {
   });
 });
 
+/* 格式 v2（App 1.5.0，場景 E2）：每一天各帶旅程時區。黃金檔 dated 是三天；第 1、2 天台北、第 3 天東京，
+ * 瀏覽器在台北：只有東京那天有差。 */
+test.describe('每一天各帶時區（v2）：第 1、2 天台北、第 3 天東京，瀏覽器在台北', () => {
+  const twoZones = () => variant((p) => {
+    p.v = 2;
+    p.trip.tz = 'Asia/Taipei';
+    p.trip.dayZones = ['Asia/Taipei', 'Asia/Taipei', 'Asia/Tokyo'];
+  });
+
+  test('說明讀東京那一天的時差；時差會變，所以每一天畫在自己的欄內，台北那兩天不位移、東京那天 −1 小時', async ({ page }) => {
+    await open(page, await twoZones());
+    await expect(page.getByTestId('zone-note').locator('b')).toHaveText(['日本時間', '+1 小時']);
+    await expect(page.getByTestId('zone-note')).toContainText('部分日子不同');
+    const firstOf = (n) => page.getByTestId('day-' + n).getByTestId('phone-clock').first();
+    await expect(firstOf(1)).toHaveText('09:00'); /* 台北 09:00 ＝ 台北 09:00 */
+    await expect(firstOf(2)).toHaveText('09:00');
+    await expect(firstOf(3)).toHaveText('08:00'); /* 東京 09:00 ＝ 台北 08:00 */
+  });
+
+  test('沒有 dayZones 的 v1：整趟用 tz（東京），共用時間欄的第一個是 08:00', async ({ page }) => {
+    await open(page, dated);
+    await expect(page.getByTestId('phone-clock').first()).toHaveText('08:00');
+    await expect(page.getByTestId('zone-note')).not.toContainText('部分日子不同');
+  });
+});
+
 test.describe('瀏覽器也在東京', () => {
   test.use({ timezoneId: 'Asia/Tokyo' });
 

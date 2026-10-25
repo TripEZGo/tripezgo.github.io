@@ -11,7 +11,7 @@
  */
 import { CONFIG } from './config.js';
 import { createClient } from './cloudkit.js';
-import { base64UrlEncode, blockRange, clock, dayOffsetMark, daysOf, ITINERARY, laneLayout, linkURL, mapDayOf, openSealed, OpenFailure, parseFragment, phoneNoteShifts, phonePlan, phoneReading, phoneReadingOn, phoneShifts, plainText, sealedFromRecord, zoneDifference, zoneName, zoneOffset } from './core.js';
+import { base64UrlEncode, blockRange, clock, dayOffsetMark, daysOf, ITINERARY, laneLayout, linkURL, mapDayOf, openSealed, OpenFailure, parseFragment, phoneNote, phonePlan, phoneReading, phoneReadingOn, phoneShifts, plainText, sealedFromRecord, zoneDifference, zoneName, zoneOffset, zoneOfDay } from './core.js';
 import { SWATCH_DARK, SWATCH_LIGHT } from './icons.js';
 import { iconOf, iconPath, swatchOf } from './looks.js';
 import { LANGS, S } from './strings.js';
@@ -125,10 +125,11 @@ function prepare(copy, found) {
   days.forEach((d) => d.timed.forEach((x) => { x.id = copy.items.indexOf(x.item); }));
   /* 每一天觀看者的時刻（null ＝那一天偏移相同、或舊連結沒有旅程時區：不畫）。日期未定的旅程沒有日子可問，
    * 用旅程時區的今天（同 App）。**多問一格旅程隔天的**：時間表畫過 24:00 的那一段是隔天（review F1）。 */
-  const dates = days.map((d) => d.date || todayIn(copy.tz));
+  const dates = days.map((d, i) => d.date || todayIn(zoneOfDay(copy, i + 1)));
   const last = dates[dates.length - 1];
   dates.push(last && !days[days.length - 1].date ? last : nextDay(last));
-  const phone = dates.map((date) => phoneShifts(copy.tz, VIEWER_ZONE, date));
+  /* 每一天用**那一天**的旅程時區（v2 的 `dayZones`；v1 整趟一個）；最後多的那一格（旅程隔天）讀最後一天的。 */
+  const phone = dates.map((date, i) => phoneShifts(zoneOfDay(copy, i + 1), VIEWER_ZONE, date));
   return { copy, days, allday: ads, adLanes: lanes, record: found.record, env: found.env, phone };
 }
 
@@ -248,7 +249,7 @@ function dayPhoneHtml(r, i) {
 function zoneNoteHtml() {
   const shifts = plan.note;
   if (!shifts) return '<p class="tl-tz" data-testid="zone-note" hidden></p>';
-  const name = zoneName(D.copy.tz, lang), diff = zoneDifference(shifts, s());
+  const name = zoneName(zoneOfDay(D.copy, plan.noteDay + 1), lang), diff = zoneDifference(shifts, s());
   const parts = s().tzNote.split('%s');
   return '<p class="tl-tz" data-testid="zone-note">' + esc(parts[0]) + '<b>' + esc(name) + '</b>' + esc(parts[1])
     + '<b>' + esc(diff) + '</b>' + esc(parts[2] || '') + (plan.perDay ? esc(s().tzVaries) : '') + '</p>';
@@ -259,7 +260,8 @@ function timelineHtml() {
   const r = timeSpan(), gh = (r.hi - r.lo) * PPM;
   /* 刻度：放大之後改成每 15 分一條（間距夠寬才畫，避免擠在一起）。 */
   const step = PPM >= 3 ? 15 : 30;
-  plan = { ...phonePlan(D.phone, r), note: phoneNoteShifts(D.phone, r) };
+  const note = phoneNote(D.phone, r);
+  plan = { ...phonePlan(D.phone, r), note: note && note.shifts, noteDay: note ? note.day : 0 };
   const hours = hoursHtml(r, step);
   const cols = D.days.map((d, di) => {
     const boxes = d.timed.map((x) => {
