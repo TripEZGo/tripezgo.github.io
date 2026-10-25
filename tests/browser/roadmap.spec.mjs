@@ -15,7 +15,7 @@ for (const lang of LANGS) {
     expect(ids.indexOf('roadmap')).toBe(ids.indexOf('plans') - 1);
     expect(ids.indexOf('roadmap')).toBeGreaterThan(ids.indexOf('features'));
     await expect(page.locator('#roadmap')).toHaveCount(1);
-    await expect(page.locator('.rm-item.is-now')).toHaveCount(1);
+    await expect(page.locator('.rm-item.is-now')).toHaveCount(0);   // 1.4.1 上架後沒有開工中的版本，停在最新上架那張
     await expect(page.locator('.rm-item[aria-current="step"]')).toHaveCount(1);
     await expect(page.locator('.rm-item.is-planned')).toHaveCount(3);   // 1.5.0、1.6.0，加上時程未定的那一張
     await expect(page.locator('.rm-item').last()).toHaveClass(/is-planned/);
@@ -24,7 +24,7 @@ for (const lang of LANGS) {
 }
 
 for (const width of [390, 1280]) {
-  test(`on load the in-progress card is centred inside the frame, the page itself does not scroll sideways: ${width}px`, async ({ page }) => {
+  test(`on load the current card is centred inside the frame, the page itself does not scroll sideways: ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     for (const lang of LANGS) {
       await page.goto(lang);
@@ -33,7 +33,7 @@ for (const width of [390, 1280]) {
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
       const off = await page.evaluate(() => {
         const s = document.querySelector('.rm-scroller').getBoundingClientRect();
-        const c = document.querySelector('.rm-item.is-now').getBoundingClientRect();
+        const c = document.querySelector('.rm-item[aria-current="step"]').getBoundingClientRect();
         return Math.abs((c.left + c.width / 2) - (s.left + s.width / 2));
       });
       expect(off, lang).toBeLessThan(4);

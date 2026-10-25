@@ -602,8 +602,8 @@ phones.forEach((f) => { (SCREEN_OF[f.dataset.screen][0] === 'map-live' ? mio : p
     };
     // 字型、版面晚到會讓卡片位置變；使用者還沒動過外框之前，每次都重新置中
     let touched = false;
-    // 沒有「進行中」的時候（例如只剩一張即將推出的修正版），改以「即將推出」那張置中，不然一打開停在最舊那一端
-    const now = root.querySelector('.rm-item.is-now') || root.querySelector('.rm-item.is-soon');
+    // 沒有「進行中」的時候（例如只剩一張即將推出的修正版），改以「即將推出」那張置中；兩者都沒有就停在標了 aria-current 的那張（通常是最新上架的），不然一打開停在最舊那一端
+    const now = root.querySelector('.rm-item.is-now') || root.querySelector('.rm-item.is-soon') || root.querySelector('.rm-item[aria-current="step"]');
     const center = () => { if (now && !touched) { sc.style.scrollSnapType = 'none'; sc.scrollLeft = centerOf(now); sc.style.scrollSnapType = ''; } sync(); };
     center();
     document.fonts?.ready.then(center);
