@@ -998,3 +998,30 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; }
 .promo .step-body > p.redeem-hint { font-size:12.5px; }
 .promo .howto { margin:4px 0 0; padding-inline-start:1.3em; display:grid; gap:2px; font-size:var(--text-sm); color:var(--muted); line-height:1.6; }
 @media (prefers-reduced-motion:reduce) { .promo-jump-go { animation:none; } .promo .step { transition:none; } }
+
+/* ─── 開發紀錄：關於之後（使用者 2026-10-25）──────────────────────── */
+.story + .story { margin-top:clamp(16px, 2.4vw, 24px); }
+.dl-stats {
+  list-style:none; margin:20px 0 0; padding:0; display:grid; grid-template-columns:repeat(6, minmax(0, 1fr));
+  border-top:2px solid var(--fg);
+}
+.dl-stats li { display:grid; align-content:start; gap:4px; padding:18px 16px 4px; border-left:1px solid var(--border-soft); min-width:0; }
+.dl-stats li:first-child { border-left:0; padding-left:0; }
+.dl-stats b { font-family:var(--font-mono); font-size:clamp(26px, 3vw, 38px); font-weight:600; line-height:1.1; letter-spacing:-.02em; font-variant-numeric:tabular-nums; color:var(--fg); }
+.dl-stats b i { font-style:normal; font-family:var(--font-body); font-size:.5em; font-weight:600; color:var(--muted); margin-left:2px; }
+.dl-stats li:nth-child(5) b { color:var(--accent-ink); }
+.dl-stats span { font-weight:700; color:var(--fg); }
+.dl-stats small { font-size:var(--text-sm); color:var(--muted); line-height:1.5; }
+@media (max-width:900px) {
+  .dl-stats { grid-template-columns:repeat(3, minmax(0, 1fr)); }
+  .dl-stats li:nth-child(4) { border-left:0; padding-left:0; }
+}
+@media (max-width:520px) {
+  .dl-stats { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .dl-stats li:nth-child(n) { border-left:1px solid var(--border-soft); padding-left:16px; }
+  .dl-stats li:nth-child(odd) { border-left:0; padding-left:0; }
+}
+.dl-cloud { margin:clamp(24px, 3.6vw, 40px) 0 0; }
+.dl-cloud canvas { display:block; margin:0 auto; width:100%; height:clamp(380px, 52vw, 600px); }
+@media (max-width:640px) { .dl-cloud canvas { height:115vw; } }
+.dl-cloud figcaption { margin-top:12px; font-size:var(--text-sm); color:var(--muted); }

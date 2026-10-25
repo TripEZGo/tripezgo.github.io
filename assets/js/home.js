@@ -637,3 +637,43 @@ phones.forEach((f) => { (SCREEN_OF[f.dataset.screen][0] === 'map-live' ? mio : p
     });
   }
 }
+
+/* 開發紀錄的標籤雲（使用者 2026-10-25）：資料是 assets/data/devlog.json（四語，[字, 大小]），
+   排版用 wordcloud2.js（assets/js/vendor，MIT）。快到這一段才載；換寬度、換深淺色就重畫。 */
+{
+  const fig = document.querySelector('[data-devlog]');
+  const cv = fig?.querySelector('canvas');
+  if (cv) {
+    const v = new URL(import.meta.url).searchParams.get('v') || '';
+    const lib = () => new Promise((ok, no) => {
+      if (window.WordCloud) return ok();
+      const s = document.createElement('script'); s.src = `/assets/js/vendor/wordcloud2.js?v=${v}`; s.onload = ok; s.onerror = no; document.head.append(s);
+    });
+    let list = null, drawnW = 0, drawnFig = 0;
+    const draw = () => {
+      if (!list || !window.WordCloud?.isSupported) return;
+      cv.style.width = cv.style.height = '';   // 先量樣式表給的大小
+      const w = cv.clientWidth, h = cv.clientHeight, dpr = Math.min(devicePixelRatio || 1, 2), g = Math.round(7 * dpr);
+      if (!w || !h) return;
+      // 畫布切成格子整數倍：wordcloud2 的最後一列格子若超出畫布，那一列的字下緣會被切掉
+      drawnW = w; drawnFig = fig.clientWidth; cv.width = Math.floor((w * dpr) / g) * g; cv.height = Math.floor((h * dpr) / g) * g;
+      cv.style.width = `${cv.width / dpr}px`; cv.style.height = `${cv.height / dpr}px`;
+      const css = getComputedStyle(document.documentElement), tok = (n) => css.getPropertyValue(n).trim();
+      const ink = tok('--fg'), teal = tok('--accent-ink'), soft = tok('--accent'), muted = tok('--muted'), bg = getComputedStyle(fig.closest('.section')).backgroundColor;
+      const k = Math.max(0.3, Math.min(1, w / 1040)) * dpr;   // 手機上照寬度縮，不然大字排不下、下緣被切
+      WordCloud(cv, {
+        list, gridSize: g, fontFamily: css.getPropertyValue('--font-body'),
+        fontWeight: (_, s) => (s >= 30 ? '700' : '500'), weightFactor: (s) => s * k,
+        color: (word, s) => (s >= 40 ? ink : s >= 28 ? teal : s >= 18 ? soft : word.length % 2 ? muted : teal),
+        rotateRatio: 0.18, rotationSteps: 2, minRotation: -Math.PI / 2, maxRotation: -Math.PI / 2,
+        backgroundColor: bg, shuffle: false, drawOutOfBound: false, shrinkToFit: true, ellipticity: Math.min(1.2, h / w),
+      });
+    };
+    const start = () => Promise.all([lib(), fetch(`/assets/data/devlog.json?v=${v}`).then((r) => r.json())])
+      .then(([, data]) => { list = data[LANG] || data.en; return document.fonts?.ready; }).then(draw).catch(() => { fig.hidden = true; });
+    new IntersectionObserver((es, io) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); start(); } }, { rootMargin: '600px' }).observe(fig);
+    let t = 0;
+    new ResizeObserver(() => { clearTimeout(t); t = setTimeout(() => { if (fig.clientWidth !== drawnFig) draw(); }, 200); }).observe(fig);
+    matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+  }
+}
