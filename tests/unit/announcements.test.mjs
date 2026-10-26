@@ -32,6 +32,26 @@ test('新的在前；沒 date（或寫壞）的排在後面；同一天照 gist 
   assert.equal(build(doc).zh.find((a) => a.id === 'bad').date, null);
 });
 
+test('兩份 gist（App、官網專用）合併後依日期排序；同一天 App 的在前；id 撞到留 App 那則；任何一份壞掉就整份回 null', () => {
+  const app = { announcements: [
+    { id: 'app-1020', date: '2026-10-20', title: t('App 10/20', 'App 10/20') },
+    { id: 'same', date: '2026-10-25', title: t('App 版', 'App') },
+    { id: 'app-1001', date: '2026-10-01', title: t('App 10/01', 'App 10/01') },
+  ] };
+  const web = { announcements: [
+    { id: 'web-1022', date: '2026-10-22', title: t('官網 10/22', 'Web 10/22') },
+    { id: 'web-1020', date: '2026-10-20', title: t('官網 10/20', 'Web 10/20') },
+    { id: 'same', date: '2026-10-30', title: t('官網版', 'Web') },
+    { id: 'web-nodate', title: t('官網無日期', 'Web no date') },
+  ] };
+  const out = build(app, web);
+  assert.deepEqual(out.zh.map((a) => a.id), ['same', 'web-1022', 'app-1020', 'web-1020', 'app-1001', 'web-nodate']);
+  assert.equal(out.zh[0].title, 'App 版');
+  assert.deepEqual(build(app, { announcements: [] }), build(app));
+  assert.equal(build(app, {}), null);
+  assert.equal(build(), null);
+});
+
 test('日期只收 yyyy-MM-dd，不存在的日期也不收', () => {
   assert.equal(day('2026-11-01'), '2026-11-01');
   for (const bad of ['2026-11-1', '2026-11-01T00:00:00Z', '2026-02-29', 20261101, null]) assert.equal(day(bad), null, String(bad));
@@ -76,7 +96,7 @@ test('/announcements/ 四頁跟產生器、快照與首頁同步（改了首頁�
 });
 
 test('快照裡沒有 gist 的網址（secret gist 永不公開）', () => {
-  for (const p of ['assets/data/announcements.json', 'tools/announcements.mjs', '.github/workflows/pages.yml', 'index.html']) {
+  for (const p of ['assets/data/announcements.json', 'tools/announcements.mjs', '.github/workflows/pages.yml', 'index.html', 'README.md']) {
     assert.ok(!/gist\.github(usercontent)?\.com\/[\w-]+\/[0-9a-f]{20,}/.test(read(p)), p);
   }
 });

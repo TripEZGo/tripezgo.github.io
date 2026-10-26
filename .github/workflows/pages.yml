@@ -38,11 +38,13 @@ jobs:
       - name: Build travel journals
         run: node tools/journals.mjs
 
-      # 公告：App 的公告 gist（secret，網址只放在 Actions secret）→ assets/data/announcements.json 與 /announcements/×4。
-      # 沒設 secret 或抓不到就沿用 repo 裡的快照，不擋部署。gist 改了要馬上上：手動跑一次這個 workflow。
+      # 公告：App 的公告 gist＋官網專用的公告 gist（都是 secret，網址只放在 Actions secret），合併、依日期排序
+      # → assets/data/announcements.json 與 /announcements/×4。抓不到就沿用 repo 裡的快照，不擋部署。
+      # gist 改了要馬上上：手動跑一次這個 workflow。
       - name: Build announcements
         env:
           TEZ_ANNOUNCEMENTS_URL: ${{ secrets.TEZ_ANNOUNCEMENTS_URL }}
+          TEZ_WEB_ANNOUNCEMENTS_URL: ${{ secrets.TEZ_WEB_ANNOUNCEMENTS_URL }}
         run: node tools/announcements.mjs
 
       # 白名單在 tools/stage-pages.mjs（安全稽核 I6）：根目錄有沒分類的新項目會在這裡紅。

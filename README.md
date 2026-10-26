@@ -85,15 +85,21 @@ server-to-server key 以建立它的開發者身分存取、連同身上的 secu
 
 ## 公告 `announcements/`
 
-首頁藍圖前的「公告」區塊與「所有公告」頁 `/announcements/`（四語各一頁）。內容是 App 的公告——App repo
-`RemoteDocumentSource` 那份 **secret gist** 的 `ios-announcements.json`（ADR-0038），規則照 App 的 `Announcement.swift`。
+首頁藍圖前的「公告」區塊與「所有公告」頁 `/announcements/`（四語各一頁）。內容是兩份 **secret gist** 合併、依日期排序：
+
+- App 的公告：App repo `RemoteDocumentSource` 那份的 `ios-announcements.json`（ADR-0038）——App 裡看得到的，官網也列
+- 官網專用的公告：zhgchgli0718 帳號下描述為「TripEZGo 官網公告」的 gist 的 `web-announcements.json`（網址不寫在這裡：repo 是公開的），
+  格式跟 App 那份一樣（`promote` 不用寫）——只在官網出現，App 看不到
+
+規則照 App 的 `Announcement.swift`。同一天 App 的排前面；兩份 id 撞到只留 App 那則。
 設計稿：Open Design `site-announcements.html`、`site-announcements-page.html`。
 
 - `tools/announcements.mjs` 抓 gist → `assets/data/announcements.json`（四語各一份、新的在前），再寫出四頁 `/announcements/`。
   首頁由 `home.js` 讀 JSON 畫最新 5 則；沒有公告整段不出現。
-- **gist 網址不進 repo、也不進官網**：只放在 Actions secret `TEZ_ANNOUNCEMENTS_URL`。部署（push、每天的排程）時抓一次；
-  gist 改了想馬上上，手動跑一次 *Deploy to GitHub Pages*。沒設 secret、抓不到、或文件沒有 `announcements` 陣列，都沿用 repo 裡的快照。
-- 本機更新快照：`TEZ_ANNOUNCEMENTS_URL=<gist raw 網址> node tools/announcements.mjs`；改了首頁的頁首頁尾，
+- **raw 網址不進 repo、也不進官網**：只放在 Actions secret `TEZ_ANNOUNCEMENTS_URL`（App）與 `TEZ_WEB_ANNOUNCEMENTS_URL`（官網）。
+  部署（push、每天的排程）時抓一次；gist 改了想馬上上，手動跑一次 *Deploy to GitHub Pages*。
+  沒設的那一份當作沒有公告；有設的任何一份抓不到、或文件沒有 `announcements` 陣列，整份沿用 repo 裡的快照。
+- 本機更新快照：`TEZ_ANNOUNCEMENTS_URL=<App 的 raw 網址> TEZ_WEB_ANNOUNCEMENTS_URL=<官網的 raw 網址> node tools/announcements.mjs`；改了首頁的頁首頁尾，
   `node tools/stamp-home.mjs` 會順手跑 `--offline` 重產四頁。
 
 ## 本機預覽

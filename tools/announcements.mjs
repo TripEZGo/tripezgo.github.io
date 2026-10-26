@@ -1,10 +1,15 @@
-/* 首頁的「公告」：App 的公告 gist（ios-announcements.json，App repo ADR-0038）→ assets/data/announcements.json。
+/* 首頁的「公告」：兩份 gist 合併、依日期排序 → assets/data/announcements.json（使用者 2026-10-26）。
  *
- *   TEZ_ANNOUNCEMENTS_URL=https://gist.github.com/<owner>/<id>/raw/ios-announcements.json node tools/announcements.mjs
+ *   - App 的公告 gist（ios-announcements.json，App repo ADR-0038）：App 裡看得到的那幾則，官網也列
+ *   - 官網專用的公告 gist（web-announcements.json，格式一樣）：只在 tripezgo.com 出現，App 看不到
  *
- * 那份 gist 是 secret（永不公開），所以網址不寫進 repo、也不寫進官網：GitHub Actions 部署前用 secret 跑一次
- * （.github/workflows/pages.yml，含每天一次的排程），官網只讀同站這份 JSON。repo 裡那份是最後一次在本機跑的快照；
- * 沒給網址、抓不到、或抓到的文件沒有 `announcements` 欄（gist 編輯到一半），都照舊用它，不擋部署。
+ *   TEZ_ANNOUNCEMENTS_URL=<App 那份的 raw 網址> TEZ_WEB_ANNOUNCEMENTS_URL=<官網那份的 raw 網址> node tools/announcements.mjs
+ *
+ * 兩份 gist 都是 secret（永不公開），所以網址不寫進 repo、也不寫進官網：GitHub Actions 部署前用 secret 跑一次
+ * （.github/workflows/pages.yml，含每天一次的排程），官網只讀同站這份 JSON。repo 裡那份是最後一次在本機跑的快照。
+ * 沒設網址的那一份當作沒有公告（印警告）；有設的任何一份抓不到、或抓到的文件沒有 `announcements` 欄（gist 編輯到一半），
+ * 整份照舊用快照——只用其中一份重產會讓另一份的公告憑空消失。都不擋部署。
+ * 兩份裡 id 相同的，只留 App 那份的（先列的贏）。
  *
  * 規則照 App（Domain/Model/Announcement.swift）：沒 id 的不收；date 只收 yyyy-MM-dd；圖與連結只收 https；
  * 依語系逐欄挑字（zh-Hant-TW → zh-Hant → zh → en），標題與內文都挑不到的那則不列，按鈕文字挑不到就沒有按鈕；
@@ -49,13 +54,14 @@ export function siteLink(u, lang = 'zh') {
   return { url: (u.pathname === '/' ? HOME[lang] : u.pathname) + u.search + u.hash, external: false };
 }
 
-/** gist 那份文件 → 每種語言各一份清單；`announcements` 不是陣列就是壞文件，回 null（呼叫端沿用快照）。 */
-export function build(doc) {
-  const list = doc?.announcements;
-  if (!Array.isArray(list)) return null;
-  const items = list
+/** 幾份 gist 文件 → 合併、每種語言各一份清單；任何一份的 `announcements` 不是陣列就是壞文件，回 null（呼叫端沿用快照）。
+ *  先列的文件排在前面：同一天照文件順序，id 重複的留先列的那則。 */
+export function build(...docs) {
+  if (!docs.length || !docs.every((doc) => Array.isArray(doc?.announcements))) return null;
+  const seen = new Set();
+  const items = docs.flatMap((doc) => doc.announcements)
     .map((a, offset) => ({ a: dict(a), offset }))
-    .filter(({ a }) => str(a.id))
+    .filter(({ a }) => str(a.id) && !seen.has(a.id) && seen.add(a.id))
     .map(({ a, offset }) => ({ a, offset, date: day(a.date) }))
     .sort((l, r) => (l.date && r.date ? (l.date !== r.date ? r.date.localeCompare(l.date) : l.offset - r.offset)
       : l.date ? -1 : r.date ? 1 : l.offset - r.offset));
@@ -72,6 +78,12 @@ export function build(doc) {
   }
   return out;
 }
+
+// 合併的順序：App 的在前（同一天、或 id 撞到時它贏）
+export const SOURCES = [
+  { env: 'TEZ_ANNOUNCEMENTS_URL', name: 'App ' },
+  { env: 'TEZ_WEB_ANNOUNCEMENTS_URL', name: '官網' },
+];
 
 async function get(url) {
   for (let k = 0; ; k++) {
@@ -232,14 +244,20 @@ export function writePages(data) {
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const snapshot = () => (fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : null);
-  const url = process.env.TEZ_ANNOUNCEMENTS_URL;
   if (process.argv.includes('--offline')) {
     writePages(snapshot());
   } else {
     try {
-      if (!url) throw new Error('沒設 TEZ_ANNOUNCEMENTS_URL');
-      const data = build(await get(url));
-      if (!data) throw new Error('文件裡沒有 announcements 陣列');
+      const docs = [];
+      for (const { env, name } of SOURCES) {
+        const url = process.env[env];
+        if (!url) { console.warn(`announcements: 沒設 ${env}，${name}的公告這次當作沒有`); continue; }
+        const doc = await get(url).catch((e) => { throw new Error(`${name}的 gist 抓不到（${e.message}）`); });
+        if (!Array.isArray(doc?.announcements)) throw new Error(`${name}的 gist 裡沒有 announcements 陣列`);
+        docs.push(doc);
+      }
+      if (!docs.length) throw new Error('兩份 gist 的網址都沒設');
+      const data = build(...docs);
       fs.mkdirSync(path.dirname(OUT), { recursive: true });
       fs.writeFileSync(OUT, JSON.stringify(data, null, 1) + '\n');
       console.log(`announcements: ${data.zh.length} 則 → ${path.relative(root, OUT)}`);
