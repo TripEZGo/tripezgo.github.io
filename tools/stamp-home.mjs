@@ -4,7 +4,7 @@
  * 1. screens/autoplay.js＋stories*.js 的內容雜湊 → home.js 的 AUTO_V（iframe 網址帶 av=，一路帶到 stories-*.js）
  *    assets/js|css/demos/ 的內容雜湊 → home.js 的 DEMO_V（懶載入的示範模組與樣式帶 ?v=）
  * 2. home.css、home.js、promo.js 的內容雜湊 → index.html 的 ?v=
- * 3. 重產 en／ja／ko 首頁（tools/home-i18n.py 照母版帶這兩行）
+ * 3. 重產 en／ja／ko 首頁（tools/home-i18n.py 照母版帶這兩行）、聯絡頁與公告頁（頁首頁尾從首頁抽）
  * 4. screens/*.html 的 import map 與樣式表版本號（tools/stamp-screens.mjs） */
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
@@ -30,6 +30,7 @@ swap('index.html', /src="\/assets\/js\/promo\.js[^"]*"/, `src="/assets/js/promo.
 execFileSync('python3', [new URL('tools/home-i18n.py', root).pathname], { stdio: 'ignore' });
 execFileSync('python3', [new URL('tools/seo.py', root).pathname], { stdio: 'ignore' });
 execFileSync('node', [new URL('tools/gen-contact.mjs', root).pathname], { stdio: 'ignore' });   // canonical／hreflang／og／twitter／JSON-LD
+execFileSync('node', [new URL('tools/announcements.mjs', root).pathname, '--offline'], { stdio: 'ignore' });   // /announcements/×4：頁首頁尾從首頁抽
 execFileSync('node', [new URL('tools/embed.mjs', root).pathname], { stdio: 'ignore' });        // ?mode=embed 那段 inline head（首頁、隱私、條款）
 execFileSync('node', [new URL('tools/stamp-screens.mjs', root).pathname], { stdio: 'inherit' });   // screens/ 的 import map 與樣式表版本號
 console.log('stamped: av', av);

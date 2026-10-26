@@ -169,4 +169,48 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tripezgo.com/contact/"/>
   </url>
+  <url>
+    <loc>https://tripezgo.com/announcements/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tripezgo.com/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tripezgo.com/en/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tripezgo.com/ja/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tripezgo.com/announcements/"/>
+  </url>
+  <url>
+    <loc>https://tripezgo.com/en/announcements/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tripezgo.com/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tripezgo.com/en/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tripezgo.com/ja/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tripezgo.com/announcements/"/>
+  </url>
+  <url>
+    <loc>https://tripezgo.com/ja/announcements/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tripezgo.com/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tripezgo.com/en/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tripezgo.com/ja/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tripezgo.com/announcements/"/>
+  </url>
+  <url>
+    <loc>https://tripezgo.com/ko/announcements/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tripezgo.com/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tripezgo.com/en/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tripezgo.com/ja/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/announcements/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tripezgo.com/announcements/"/>
+  </url>
 </urlset>

@@ -575,6 +575,50 @@ phones.forEach((f) => { (SCREEN_OF[f.dataset.screen][0] === 'map-live' ? mio : p
   }
 }
 
+/* ── 公告：tools/announcements.mjs 部署時從 App 的公告 gist 產的 assets/data/announcements.json（使用者 2026-10-26）。
+   最新一則畫成大卡，其他每則一行、點開看內文；最多 5 則，全部的在 /announcements/。沒有公告整段維持 hidden。 ── */
+{
+  const box = document.querySelector('[data-announcements]');
+  const sec = box?.closest('section');
+  if (box) {
+    const NEW = { zh: '新', en: 'New', ja: '新着', ko: 'NEW' }[LANG];
+    const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const fresh = (d) => d && (Date.now() - Date.parse(d + 'T00:00:00Z')) / 864e5 <= 14;   // 跟 /announcements/ 同一條：14 天內標「新」
+    const target = (b) => (b.external ? ' target="_blank" rel="noopener"' : '');
+    // 同一頁的連結只留錨點（/en/#promo → #promo），不重新載入；其他站內連結在 App 的 WebView（mode=embed）裡要帶著 embed——
+    // tools/embed.mjs 只在 DOMContentLoaded 補一次，這裡是之後才畫的
+    const href = (b) => {
+      if (b.external) return b.url;
+      const u = new URL(b.url, location.href);
+      if (u.pathname === location.pathname) return u.hash || '#';
+      if (document.documentElement.classList.contains('embed')) u.searchParams.set('mode', 'embed');
+      return u.pathname + u.search + u.hash;
+    };
+    const day = new Date().toISOString().slice(0, 10);   // 一天換一次網址：CI 每天重產，快取最多舊一天
+    fetch(`/assets/data/announcements.json?d=${day}`).then((r) => (r.ok ? r.json() : {})).then((data) => {
+      const [first, ...rest] = (data[LANG] || []).slice(0, 5);
+      if (!first) return;
+      const date = (a) => (a.date ? `<time datetime="${a.date}">${a.date}</time>` : '');
+      box.innerHTML = `<article class="ann-feature${first.image ? ' has-img' : ''}">
+        ${first.image ? `<figure><img src="${esc(first.image)}" alt="" loading="lazy" decoding="async"></figure>` : ''}
+        <div class="ann-body">
+          <div class="ann-meta">${date(first)}${fresh(first.date) ? `<span class="ann-new">${NEW}</span>` : ''}</div>
+          ${first.title ? `<h3>${esc(first.title)}</h3>` : ''}
+          ${first.body ? `<p class="ann-text">${esc(first.body)}</p>` : ''}
+          ${first.button ? `<a class="btn btn-primary" href="${esc(href(first.button))}"${target(first.button)}>${esc(first.button.title)}</a>` : ''}
+        </div></article>`
+        + (rest.length ? `<ul class="ann-list">${rest.map((a) => `<li><details class="ann-item">
+          <summary><span class="ann-date">${date(a)}</span><span class="ann-title">${esc(a.title || a.body)}</span><svg class="i chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+          <div class="ann-more">
+            ${a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy" decoding="async">` : ''}
+            ${a.title && a.body ? `<p class="ann-text">${esc(a.body)}</p>` : ''}
+            ${a.button ? `<a class="ann-link" href="${esc(href(a.button))}"${target(a.button)}>${esc(a.button.title)}<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>` : ''}
+          </div></details></li>`).join('')}</ul>` : '');
+      sec.hidden = false;
+    }).catch(() => {});
+  }
+}
+
 /* 手機版漢堡選單：點了某一項、點外面或按 Esc 就收起來 */
 {
   const nav = document.querySelector('.nav-menu');

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>모든 공지 — TripEZGo</title>
+<meta name="description" content="새 기능, 이벤트, 중요한 안내. 앱의 「설정 › 앱 정보 › 공지」에서도 같은 내용을 볼 수 있어요.">
+<link rel="canonical" href="https://tripezgo.com/ko/announcements/">
+<link rel="alternate" hreflang="zh-Hant" href="https://tripezgo.com/announcements/">
+<link rel="alternate" hreflang="en" href="https://tripezgo.com/en/announcements/">
+<link rel="alternate" hreflang="ja" href="https://tripezgo.com/ja/announcements/">
+<link rel="alternate" hreflang="ko" href="https://tripezgo.com/ko/announcements/">
+<link rel="alternate" hreflang="x-default" href="https://tripezgo.com/announcements/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TripEZGo">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="모든 공지 — TripEZGo">
+<meta property="og:description" content="새 기능, 이벤트, 중요한 안내. 앱의 「설정 › 앱 정보 › 공지」에서도 같은 내용을 볼 수 있어요.">
+<meta property="og:url" content="https://tripezgo.com/ko/announcements/">
+<meta property="og:image" content="https://tripezgo.com/assets/img/og-ko.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tripezgo.com/assets/img/og-ko.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17120f" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/icon-180.png">
+<link rel="stylesheet" href="/assets/css/site.css?v=43ec84801f">
+<!-- embed:start — tools/embed.mjs 產生，不要手改 -->
+<script>
+(function () {
+  if (!/[?&]mode=embed(?:&|$)/.test(location.search)) return;
+  var d = document.documentElement;
+  d.classList.add('embed');
+  var robots = document.createElement('meta'); robots.name = 'robots'; robots.content = 'noindex';
+  document.head.appendChild(robots);
+  // 同站連結補 mode=embed；只有 # 的錨點、外站、mailto 不動
+  function tag(a) {
+    var raw = a.getAttribute('href');
+    if (!raw || raw.charAt(0) === '#') return;
+    var u; try { u = new URL(raw, location.href); } catch (e) { return; }
+    if (u.origin !== location.origin || u.searchParams.get('mode') === 'embed') return;
+    u.searchParams.set('mode', 'embed');
+    a.setAttribute('href', u.pathname + u.search + u.hash);
+  }
+  function all() { Array.prototype.forEach.call(document.querySelectorAll('a[href]'), tag); }
+  document.addEventListener('DOMContentLoaded', all);
+  // 之後才由程式加進來的連結：點下去那一刻再補
+  document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href]'); if (a) tag(a); }, true);
+})();
+</script>
+<style>
+  html.embed .site-header, html.embed .skip-link, html.embed .hero, html.embed .site-footer, html.embed .fab-dl,
+  html.embed .plans-cta, html.embed .nav-menu, html.embed .fab-qr, html.embed a[href*="apps.apple.com"],
+  html.embed .promo, html.embed .promo-jump { display: none !important; }
+  html.embed { scroll-padding-top: 16px; }
+  /* viewport-fit=cover 的頁（聯絡我們）在 App 的 WebView 裡會鋪到導覽列與分頁列底下；平常頁首替它讓位，
+     embed 藏掉頁首後就要自己讓出安全區域。沒有 cover 的頁 env() 是 0，不受影響。 */
+  html.embed body { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  html.embed .hero + .section { padding-top: clamp(24px, 4vw, 40px); }
+  html.embed .legal { padding-top: clamp(24px, 4vw, 40px); }
+  /* 首頁的章節定位按鈕（使用者 2026-10-13）：頁首只留同頁錨點（隱私／功能／方案／關於），做成置頂的一排膠囊；
+     只有首頁的導覽是 # 開頭，隱私、條款、聯絡頁的頁首照舊整個藏掉。 */
+  html.embed .site-header:has(.site-nav > a[href^="#"]) { display: block !important; }
+  html.embed:has(.site-nav > a[href^="#"]) { scroll-padding-top: 64px; }
+  html.embed .site-header .brand, html.embed .site-header .lang-menu { display: none; }
+  html.embed .site-header .wrap { min-height: 52px; justify-content: center; }
+  html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
+  html.embed .site-nav::-webkit-scrollbar { display: none; }
+  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+  html.embed .site-nav > a.hide-sm:hover, html.embed .site-nav > a.hide-sm:active { border-color: var(--accent); color: var(--accent-ink); }
+</style>
+<!-- embed:end -->
+<!-- 這一頁是 tools/announcements.mjs 產生的，不要手改。 -->
+<style>
+  .an-page { max-width: 860px; margin: 0 auto; padding: clamp(40px, 7vw, 88px) var(--gutter) clamp(64px, 9vw, 120px); container-type: inline-size; }
+  .an-page h1 { margin: 0 0 12px; }
+  .an-page .lede { font-size: var(--text-base); }
+  .site-nav a[aria-current="page"] { color: var(--fg); font-weight: 600; }
+  /* 左邊一條線串起每一則；日期在線的左邊（窄的時候移到卡片上方） */
+  .an-tl { list-style: none; margin: clamp(32px, 5vw, 56px) 0 0; padding: 0; position: relative; }
+  .an-tl::before { content: ""; position: absolute; left: 132px; top: 10px; bottom: 10px; width: 2px; background: var(--border-soft); border-radius: 2px; }
+  .an-entry { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 0 34px; position: relative; scroll-margin-top: 96px; }
+  .an-entry + .an-entry { margin-top: 28px; }
+  .an-entry::before { content: ""; position: absolute; left: 127px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--page); border: 2px solid var(--accent); }
+  .an-entry:first-child::before { background: var(--accent); }
+  .an-when { text-align: right; padding-top: 2px; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .an-when time { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .an-new[hidden] { display: none; }
+  .an-new { font-weight: 700; font-size: 11px; line-height: 1.6; padding: 1px 8px; border-radius: var(--radius-pill); background: var(--accent-wash); color: var(--accent-ink);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border-soft)); }
+  .an-card { background: var(--page); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 1px 2px rgba(var(--shadow-rgb), .05); }
+  .an-entry:target .an-card { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+  .an-card figure { margin: 0; aspect-ratio: 16/9; background: var(--sunken); }
+  .an-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .an-body { padding: clamp(18px, 3vw, 26px); display: grid; gap: 10px; }
+  .an-card h2 { font-size: clamp(19px, 2.4vw, var(--text-xl)); margin: 0; }
+  .an-card p { margin: 0; color: var(--muted); white-space: pre-line; overflow-wrap: anywhere; }
+  .an-card .btn { justify-self: start; min-height: 42px; padding: 10px 20px; font-size: var(--text-sm); margin-top: 4px; }
+  .an-empty { margin: 40px 0 0; padding: 40px 24px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius-lg); }
+  @container (max-width: 600px) {
+    .an-tl::before { left: 5px; }
+    .an-entry { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-left: 28px; }
+    .an-entry::before { left: 0; top: 6px; }
+    .an-when { flex-direction: row; align-items: center; text-align: left; padding: 0; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">메인 콘텐츠로 건너뛰기</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/ko/" aria-label="TripEZGo 홈">
+      <span class="m m-mark" role="img" aria-hidden="true"></span>
+      <span class="m m-word" role="img" aria-hidden="true"></span>
+    </a>
+    <nav class="site-nav" aria-label="메인">
+      <a class="hide-sm" href="/ko/#privacy">기능</a>
+      <a class="hide-sm" href="/ko/announcements/" aria-current="page">공지</a>
+      <a class="hide-sm" href="/ko/#roadmap">로드맵</a>
+      <a class="hide-sm" href="/ko/#plans">요금제</a>
+      <a class="hide-sm" href="/ko/#about">소개</a>
+      <details class="nav-menu">
+        <summary aria-label="메뉴"><span class="burger" aria-hidden="true"></span></summary>
+        <div class="nav-list">
+          <a href="/ko/#privacy">기능</a>
+          <a href="/ko/announcements/" aria-current="page">공지</a>
+          <a href="/ko/#roadmap">로드맵</a>
+          <a href="/ko/#plans">요금제</a>
+          <a href="/ko/#about">소개</a>
+        </div>
+      </details>
+      <details class="lang-menu">
+        <summary>한국어</summary>
+        <div class="lang-list">
+          <a class="lang" href="/announcements/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a class="lang" href="/en/announcements/" hreflang="en" lang="en">English</a>
+          <a class="lang" href="/ja/announcements/" hreflang="ja" lang="ja">日本語</a>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main" class="an-page">
+  <p class="eyebrow">공지</p>
+  <h1>모든 공지</h1>
+  <p class="lede">새 기능, 이벤트, 중요한 안내. 앱의 「설정 › 앱 정보 › 공지」에서도 같은 내용을 볼 수 있어요.</p>
+  <ol class="an-tl">
+    <li class="an-entry" id="2026-10-25-share-premium">
+      <div class="an-when"><time datetime="2026-10-25">2026-10-25</time><span class="an-new" hidden>NEW</span></div>
+      <article class="an-card">
+        <figure><img src="https://tripezgo.com/assets/img/announce/share-premium-2026.png" alt="" loading="lazy" decoding="async"></figure>
+        <div class="an-body">
+          <h2>기간 한정: SNS에 공유하고 Premium 1년 무료로 받기</h2>
+          <p>TripEZGo를 친구에게 공유하면 Premium 1년을 드려요. 광고 없음, 여행과 동행 무제한, 라이브 액티비티, 캘린더 연동이 모두 열려요.
+₩66,000 → ₩0, 12월 31일까지 교환할 수 있어요.</p>
+          <a class="btn btn-primary" href="/ko/#promo">이벤트 참여하기</a>
+        </div>
+      </article>
+    </li>
+    <li class="an-entry" id="2026-10-20-inspiration">
+      <div class="an-when"><time datetime="2026-10-20">2026-10-20</time><span class="an-new" hidden>NEW</span></div>
+      <article class="an-card">
+        
+        <div class="an-body">
+          <h2>1.4.0 새 기능: 공유한 항목은 먼저 영감에 저장</h2>
+          <p>다른 앱에서 공유를 누르고 TripEZGo를 고르면 먼저 「자료 › 영감」에 저장되고, 일정·메모·쇼핑 목록 중 어디에 넣을지는 나중에 정할 수 있어요.
+홈 화면 위젯도 새로워져서 앱을 열지 않아도 다음 일정을 볼 수 있어요.</p>
+          <a class="btn btn-primary" href="/ko/">새 기능 보기</a>
+        </div>
+      </article>
+    </li>
+  </ol>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="/ko/" aria-label="TripEZGo 홈">
+          <span class="m m-mark" role="img" aria-hidden="true"></span>
+          <span class="m m-word" role="img" aria-hidden="true"></span>
+        </a>
+        <p style="margin:12px 0 0;max-width:32ch">여행 계획부터 여행길에 필요한 것까지, 앱 하나로.</p>
+        <p class="footer-social"><a href="https://www.instagram.com/tripezgo/" target="_blank" rel="noopener"><span class="m m-ig" aria-hidden="true"></span>Instagram</a><a href="https://www.threads.com/@tripezgo" target="_blank" rel="noopener"><span class="m m-th" aria-hidden="true"></span>Threads</a></p>
+      </div>
+      <nav class="footer-links" aria-label="바닥글">
+        <a href="/ko/announcements/">공지</a>
+        <a href="/ko/#about">소개</a>
+        <a href="/ko/privacy.html">개인정보 처리방침</a>
+        <a href="/ko/terms.html">이용약관</a>
+        <a href="/ko/contact/">문의하기</a>
+        <a href="/en/" hreflang="en" lang="en">English</a>
+        <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
+        <a href="/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TripEZGo</span>
+      <span>Powered by <a href="https://en.zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+  // 14 天內標「新」，跟首頁 home.js 同一條；在瀏覽器算，頁面本身不隨日期變
+  document.querySelectorAll('.an-new').forEach(function (el) {
+    var d = el.parentNode.querySelector('time');
+    if (d && (Date.now() - Date.parse(d.getAttribute('datetime') + 'T00:00:00Z')) / 864e5 <= 14) el.hidden = false;
+  });
+  // 手機版漢堡選單：點外面或按 Esc 收起來（首頁由 home.js 處理，這一頁沒有載 home.js）
+  (function () {
+    var nav = document.querySelector('.nav-menu'); if (!nav) return;
+    document.addEventListener('click', function (e) { if (nav.open && !nav.contains(e.target)) nav.open = false; });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.open) nav.open = false; });
+  })();
+</script>
+</body>
+</html>

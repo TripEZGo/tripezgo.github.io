@@ -5,7 +5,7 @@ on:
     branches:
       - main
   workflow_dispatch:
-  # 每天重產一次「我的遊記」（tools/journals.mjs），部落格的新遊記隔天就上官網
+  # 每天重產一次「我的遊記」（tools/journals.mjs）與公告（tools/announcements.mjs），部落格的新遊記、gist 的新公告隔天就上官網
   schedule:
     - cron: '0 20 * * *'
 
@@ -33,10 +33,17 @@ jobs:
         with:
           persist-credentials: false
 
-      # 純靜態網站，沒有建置步驟。只做三件事：重產遊記、把「要發佈的」複製到 _site/、
+      # 純靜態網站，沒有建置步驟。只做四件事：重產遊記與公告、把「要發佈的」複製到 _site/、
       # 把 _site 裡每個 HTML 檔的內部連結對一次（斷掉或指到沒發佈的東西就讓 build 紅）。
       - name: Build travel journals
         run: node tools/journals.mjs
+
+      # 公告：App 的公告 gist（secret，網址只放在 Actions secret）→ assets/data/announcements.json 與 /announcements/×4。
+      # 沒設 secret 或抓不到就沿用 repo 裡的快照，不擋部署。gist 改了要馬上上：手動跑一次這個 workflow。
+      - name: Build announcements
+        env:
+          TEZ_ANNOUNCEMENTS_URL: ${{ secrets.TEZ_ANNOUNCEMENTS_URL }}
+        run: node tools/announcements.mjs
 
       # 白名單在 tools/stage-pages.mjs（安全稽核 I6）：根目錄有沒分類的新項目會在這裡紅。
       - name: Stage published files

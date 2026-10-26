@@ -1025,3 +1025,53 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; }
 .dl-cloud canvas { display:block; margin:0 auto; width:100%; height:clamp(380px, 52vw, 600px); }
 @media (max-width:640px) { .dl-cloud canvas { height:115vw; } }
 .dl-cloud figcaption { margin-top:12px; font-size:var(--text-sm); color:var(--muted); }
+
+/* ─── 公告（使用者 2026-10-26；設計稿 Open Design site-announcements.html）──────────────
+   資料是 assets/data/announcements.json（tools/announcements.mjs 部署時從 App 的公告 gist 產）；home.js 畫最新 5 則，
+   沒有公告整段維持 hidden。最新一則是大卡（有圖時寬螢幕圖在左），其他每則一行、點開看內文。 */
+.ann[hidden] { display:none !important; }
+.ann { container-type:inline-size; }
+.ann-head { display:flex; align-items:end; justify-content:space-between; gap:16px; margin-bottom:clamp(20px, 3vw, 32px); }
+.ann-head h2 { margin:0; }
+.ann-all { display:inline-flex; align-items:center; gap:6px; font-size:var(--text-sm); font-weight:600; color:var(--accent-ink); text-decoration:none; white-space:nowrap; padding-bottom:4px; }
+.ann-all .i { width:16px; height:16px; }
+.ann-feature {
+  display:grid; overflow:hidden; background:var(--page); border:1px solid var(--border-soft);
+  border-radius:calc(var(--radius-lg) + 6px); box-shadow:var(--shadow-md);
+}
+@container (min-width:860px) { .ann-feature.has-img { grid-template-columns:minmax(0, 1.05fr) minmax(0, 1fr); } }
+.ann-feature figure { margin:0; background:var(--sunken); aspect-ratio:16/9; }
+.ann-feature img { display:block; width:100%; height:100%; object-fit:cover; }
+.ann-feature .ann-body { padding:clamp(20px, 3.4vw, 36px); display:flex; flex-direction:column; gap:12px; min-width:0; }
+.ann-meta { display:flex; align-items:center; gap:10px; font-size:var(--text-xs); color:var(--muted); font-family:var(--font-mono); letter-spacing:.04em; }
+.ann-new, .an-new {
+  font-family:var(--font-body); font-weight:700; letter-spacing:0; font-size:11px; line-height:1.6; padding:1px 8px; border-radius:var(--radius-pill);
+  background:var(--accent-wash); color:var(--accent-ink); border:1px solid color-mix(in srgb, var(--accent) 30%, var(--border-soft));
+}
+.ann-feature h3 { font-size:clamp(20px, 2.4vw, var(--text-2xl)); margin:0; }
+.ann-text { margin:0; color:var(--muted); white-space:pre-line; overflow-wrap:anywhere; }
+.ann-feature .btn { align-self:flex-start; margin-top:6px; }
+.ann-list { list-style:none; margin:16px 0 0; padding:0; border:1px solid var(--border-soft); border-radius:var(--radius-lg); background:var(--page); overflow:hidden; }
+.ann-list li + li { border-top:1px solid var(--border-soft); }
+.ann-item summary {
+  list-style:none; cursor:pointer; display:grid; grid-template-columns:auto minmax(0, 1fr) auto; align-items:center; gap:14px;
+  padding:14px clamp(16px, 2.4vw, 22px); min-height:56px;
+}
+.ann-item summary::-webkit-details-marker { display:none; }
+@media (hover:hover) { .ann-item summary:hover { background:var(--surface); } }
+.ann-item .ann-date { font-family:var(--font-mono); font-size:var(--text-xs); color:var(--muted); font-variant-numeric:tabular-nums; }
+.ann-item .ann-title { font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.ann-item[open] .ann-title { white-space:normal; }
+.ann-item .chev { width:16px; height:16px; color:var(--muted); transition:transform .15s ease; }
+.ann-item[open] .chev { transform:rotate(180deg); }
+.ann-item .ann-more { padding:0 clamp(16px, 2.4vw, 22px) 18px; display:grid; gap:12px; }
+.ann-item .ann-more img { width:100%; max-width:420px; border-radius:var(--radius-md); aspect-ratio:16/9; object-fit:cover; background:var(--sunken); }
+.ann-item .ann-text { font-size:var(--text-sm); line-height:1.7; }
+.ann-link { display:inline-flex; align-items:center; gap:6px; font-size:var(--text-sm); font-weight:600; color:var(--accent-ink); text-decoration:none; justify-self:start; }
+.ann-link .i { width:16px; height:16px; }
+@container (max-width:560px) {
+  .ann-item summary { grid-template-columns:minmax(0, 1fr) auto; gap:2px 12px; }
+  .ann-item .ann-date, .ann-item .ann-title { grid-column:1; }
+  .ann-item .chev { grid-column:2; grid-row:1 / span 2; }
+}
+@media (prefers-reduced-motion:reduce) { .ann-item .chev { transition:none; } }

@@ -6,6 +6,7 @@ TripEZGo iOS App 的官方網站。純靜態 HTML + CSS，沒有建置步驟，�
 
 ```
 index.html            首頁（繁體中文）
+announcements/        所有公告（tools/announcements.mjs 產生，四語各一頁）
 privacy.html          隱私權政策（繁體中文）
 terms.html            使用者條款（繁體中文）
 en/index.html         首頁（English）
@@ -81,6 +82,19 @@ container 共用的 public 額度）。每一筆刪了什麼、為什麼，寫�
 
 server-to-server key 以建立它的開發者身分存取、連同身上的 security role：開發者的 user record
 要掛上自訂角色 `Moderator`（Write），才刪得動別人建的 record（2026-09-25 spike 量過）。
+
+## 公告 `announcements/`
+
+首頁藍圖前的「公告」區塊與「所有公告」頁 `/announcements/`（四語各一頁）。內容是 App 的公告——App repo
+`RemoteDocumentSource` 那份 **secret gist** 的 `ios-announcements.json`（ADR-0038），規則照 App 的 `Announcement.swift`。
+設計稿：Open Design `site-announcements.html`、`site-announcements-page.html`。
+
+- `tools/announcements.mjs` 抓 gist → `assets/data/announcements.json`（四語各一份、新的在前），再寫出四頁 `/announcements/`。
+  首頁由 `home.js` 讀 JSON 畫最新 5 則；沒有公告整段不出現。
+- **gist 網址不進 repo、也不進官網**：只放在 Actions secret `TEZ_ANNOUNCEMENTS_URL`。部署（push、每天的排程）時抓一次；
+  gist 改了想馬上上，手動跑一次 *Deploy to GitHub Pages*。沒設 secret、抓不到、或文件沒有 `announcements` 陣列，都沿用 repo 裡的快照。
+- 本機更新快照：`TEZ_ANNOUNCEMENTS_URL=<gist raw 網址> node tools/announcements.mjs`；改了首頁的頁首頁尾，
+  `node tools/stamp-home.mjs` 會順手跑 `--offline` 重產四頁。
 
 ## 本機預覽
 

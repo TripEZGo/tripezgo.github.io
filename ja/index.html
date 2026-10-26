@@ -34,8 +34,8 @@
 <meta name="twitter:title" content="TripEZGo — 旅行計画・旅程表アプリ｜カレンダーで予定、旅の仲間と共同編集">
 <meta name="twitter:description" content="iPhone・iPad の旅行計画アプリ。カレンダーで旅程表を作り、移動はタイムラインで、旅の仲間と共同編集。登録不要・オフライン対応、無料でダウンロード。">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-ja.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=b1759357ca">
-<script type="module" src="/assets/js/home.js?v=4d90e653bb"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=9e38f63778">
+<script type="module" src="/assets/js/home.js?v=fc1d22aad1"></script>
 <script type="module" src="/assets/js/promo.js?v=0169a2ed7b"></script>
 <script type="application/ld+json">
 {
@@ -144,6 +144,8 @@
   <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 8.5-8.5M16.5 6.5l2.5 2.5M14 9l2 2"/></symbol>
   <symbol id="i-shift" viewBox="0 0 24 24"><path d="M7 4v16l-3-3M17 20V4l3 3"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
 </svg>
 
 <a class="skip-link" href="#main">メインコンテンツへ移動</a>
@@ -155,16 +157,16 @@
       <span class="m m-word" role="img" aria-hidden="true"></span>
     </a>
     <nav class="site-nav" aria-label="メイン">
-      <a class="hide-sm" href="#privacy">プライバシー</a>
-      <a class="hide-sm" href="#features">機能</a>
+      <a class="hide-sm" href="#privacy">機能</a>
+      <a class="hide-sm" href="#announcements">お知らせ</a>
       <a class="hide-sm" href="#roadmap">ロードマップ</a>
       <a class="hide-sm" href="#plans">料金</a>
       <a class="hide-sm" href="#about">このアプリについて</a>
       <details class="nav-menu">
         <summary aria-label="メニュー"><span class="burger" aria-hidden="true"></span></summary>
         <div class="nav-list">
-          <a href="#privacy">プライバシー</a>
-          <a href="#features">機能</a>
+          <a href="#privacy">機能</a>
+          <a href="#announcements">お知らせ</a>
           <a href="#roadmap">ロードマップ</a>
           <a href="#plans">料金</a>
           <a href="#about">このアプリについて</a>
@@ -532,6 +534,19 @@
         </div>
         <div class="demo-slot" data-lazy-demo="ai-chat"></div>
       </div>
+    </div>
+  </section>
+
+    <section class="section ann" id="announcements" aria-labelledby="ann-title" hidden>
+    <div class="wrap">
+      <div class="ann-head">
+        <div>
+          <p class="eyebrow">お知らせ</p>
+          <h2 id="ann-title">最近のお知らせ</h2>
+        </div>
+        <a class="ann-all" href="/ja/announcements/">すべてのお知らせ<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div data-announcements></div>
     </div>
   </section>
 
@@ -996,6 +1011,7 @@
         <p class="footer-social"><a href="https://www.instagram.com/tripezgo/" target="_blank" rel="noopener"><span class="m m-ig" aria-hidden="true"></span>Instagram</a><a href="https://www.threads.com/@tripezgo" target="_blank" rel="noopener"><span class="m m-th" aria-hidden="true"></span>Threads</a></p>
       </div>
       <nav class="footer-links" aria-label="フッター">
+        <a href="/ja/announcements/">お知らせ</a>
         <a href="/ja/#about">このアプリについて</a>
         <a href="/ja/privacy.html">プライバシーポリシー</a>
         <a href="/ja/terms.html">利用規約</a>

@@ -1,0 +1,106 @@
+{
+ "zh": [
+  {
+   "id": "2026-10-25-share-premium",
+   "date": "2026-10-25",
+   "title": "限時活動：分享到社群，免費兌換一年 Premium",
+   "body": "把 TripEZGo 分享給朋友，就送你一年 Premium：無廣告、旅程與旅伴不限、即時動態、行事曆整合全部打開。\nNT$1,290 → NT$0，兌換到 12/31 為止。",
+   "image": "https://tripezgo.com/assets/img/announce/share-premium-2026.png",
+   "button": {
+    "title": "參加活動",
+    "url": "/#promo",
+    "external": false
+   }
+  },
+  {
+   "id": "2026-10-20-inspiration",
+   "date": "2026-10-20",
+   "title": "1.4.0 新功能：分享進來先存成靈感",
+   "body": "在其他 App 按分享、選 TripEZGo，東西會先存進「資料 › 靈感」，之後再決定要加到行程、筆記還是購物清單。\n桌面小工具也改版了，不用打開 App 就看得到下一個行程。",
+   "image": null,
+   "button": {
+    "title": "看看新功能",
+    "url": "/",
+    "external": false
+   }
+  }
+ ],
+ "en": [
+  {
+   "id": "2026-10-25-share-premium",
+   "date": "2026-10-25",
+   "title": "Limited-time offer: share on social media, get a year of Premium free",
+   "body": "Share TripEZGo with your friends and get a year of Premium: no ads, unlimited trips and travel companions, Live Activity and calendar integration, all unlocked.\n$39.99 → $0. Redeem by December 31.",
+   "image": "https://tripezgo.com/assets/img/announce/share-premium-2026.png",
+   "button": {
+    "title": "Join the offer",
+    "url": "/en/#promo",
+    "external": false
+   }
+  },
+  {
+   "id": "2026-10-20-inspiration",
+   "date": "2026-10-20",
+   "title": "New in 1.4.0: shares land in Inspiration first",
+   "body": "Tap Share in any app and pick TripEZGo: it's saved to Library › Inspiration first, and you decide later whether it goes to your itinerary, notes or shopping list.\nThe Home Screen widgets are new too — see your next event without opening the app.",
+   "image": null,
+   "button": {
+    "title": "See what's new",
+    "url": "/en/",
+    "external": false
+   }
+  }
+ ],
+ "ja": [
+  {
+   "id": "2026-10-25-share-premium",
+   "date": "2026-10-25",
+   "title": "期間限定：SNS でシェアして、Premium 1 年分を無料で",
+   "body": "TripEZGo を友だちにシェアすると、Premium を 1 年分プレゼント。広告なし、旅程と旅の仲間は無制限、ライブアクティビティ、カレンダー連携がすべて使えます。\n¥6,000 → ¥0。引き換えは 12 月 31 日まで。",
+   "image": "https://tripezgo.com/assets/img/announce/share-premium-2026.png",
+   "button": {
+    "title": "キャンペーンに参加",
+    "url": "/ja/#promo",
+    "external": false
+   }
+  },
+  {
+   "id": "2026-10-20-inspiration",
+   "date": "2026-10-20",
+   "title": "1.4.0 の新機能：共有したものはまずインスピレーションに保存",
+   "body": "ほかのアプリで共有して TripEZGo を選ぶと、まず「資料 › インスピレーション」に保存されます。予定・メモ・買い物リストのどれに加えるかは、あとで決められます。\nホーム画面のウィジェットも新しくなり、アプリを開かずに次の予定を確認できます。",
+   "image": null,
+   "button": {
+    "title": "新機能を見る",
+    "url": "/ja/",
+    "external": false
+   }
+  }
+ ],
+ "ko": [
+  {
+   "id": "2026-10-25-share-premium",
+   "date": "2026-10-25",
+   "title": "기간 한정: SNS에 공유하고 Premium 1년 무료로 받기",
+   "body": "TripEZGo를 친구에게 공유하면 Premium 1년을 드려요. 광고 없음, 여행과 동행 무제한, 라이브 액티비티, 캘린더 연동이 모두 열려요.\n₩66,000 → ₩0, 12월 31일까지 교환할 수 있어요.",
+   "image": "https://tripezgo.com/assets/img/announce/share-premium-2026.png",
+   "button": {
+    "title": "이벤트 참여하기",
+    "url": "/ko/#promo",
+    "external": false
+   }
+  },
+  {
+   "id": "2026-10-20-inspiration",
+   "date": "2026-10-20",
+   "title": "1.4.0 새 기능: 공유한 항목은 먼저 영감에 저장",
+   "body": "다른 앱에서 공유를 누르고 TripEZGo를 고르면 먼저 「자료 › 영감」에 저장되고, 일정·메모·쇼핑 목록 중 어디에 넣을지는 나중에 정할 수 있어요.\n홈 화면 위젯도 새로워져서 앱을 열지 않아도 다음 일정을 볼 수 있어요.",
+   "image": null,
+   "button": {
+    "title": "새 기능 보기",
+    "url": "/ko/",
+    "external": false
+   }
+  }
+ ]
+}

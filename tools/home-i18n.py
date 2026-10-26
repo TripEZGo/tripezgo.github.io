@@ -657,6 +657,10 @@ T = {
       ('Product refinements worked over again and again in those messages; the biggest words are the topics that came up most.',
        '会話の中で何度も磨いた改善点。大きな文字ほど、よく話題にのぼったテーマです。',
        '대화에서 거듭 다듬은 제품 개선 사항. 글자가 클수록 자주 나온 주제예요.'),
+  # 公告（使用者 2026-10-26；內容在 assets/data/announcements.json，這裡是區塊的固定字；用詞照 App 的 Scripts/i18n/maps）
+  '公告': ('Announcements', 'お知らせ', '공지'),
+  '最近的公告': ('Latest announcements', '最近のお知らせ', '최근 공지'),
+  '所有公告': ('All announcements', 'すべてのお知らせ', '모든 공지'),
   # 限時活動（assets/js/promo.js 放會變的字與 26 則文案；這裡是頁面上固定的字）
   '限時活動': ('Limited-time offer', '期間限定', '기간 한정'),
   '分享到社群，免費兌換一年 Premium': ('Share on social media, get a year of Premium free', 'SNS でシェアして、Premium 1 年分を無料で', 'SNS에 공유하고 Premium 1년 무료로 받기'),
@@ -744,7 +748,8 @@ def build(lang):
     body = body.replace('href="/privacy.html"', f'href="/{lang}/privacy.html"').replace('href="/terms.html"', f'href="/{lang}/terms.html"')
     body = body.replace('class="brand" href="/"', f'class="brand" href="/{lang}/"')
     body = body.replace('href="/#about"', f'href="/{lang}/#about"')
-    body = body.replace('href="/contact/"', f'href="/{lang}/contact/"')   # 頁尾「聯絡我們」→ 各語的聯絡頁   # 頁尾的「關於」：寫成絕對路徑，分享頁照抄頁尾也指得對
+    body = body.replace('href="/contact/"', f'href="/{lang}/contact/"')
+    body = body.replace('href="/announcements/"', f'href="/{lang}/announcements/"')   # 區塊的「所有公告」與頁尾 → 各語的公告頁   # 頁尾「聯絡我們」→ 各語的聯絡頁   # 頁尾的「關於」：寫成絕對路徑，分享頁照抄頁尾也指得對
     for pid, urls in POSTS.items():
         body = body.replace(f'https://zhgchg.li/posts/{pid}/', urls[1 if lang == 'ja' else 0])
     # 頁首的語言下拉：上面顯示這一頁的語言，選單裡放另外三種——繁中排第一，其餘照母版的順序。
