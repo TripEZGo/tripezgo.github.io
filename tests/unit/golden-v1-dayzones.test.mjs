@@ -1,6 +1,8 @@
-/* 格式 v2（App 1.5.0，場景 E2）：每一天各帶旅程時區。
- * 黃金檔 tests/fixtures/golden-v2.json 由 App 的 `PublicLinkGoldenV2Tests` 產出：第 1、2 天台北、第 3 天東京。
- * v1 的舊連結照舊讀（golden-v1，見 core.test.mjs／zone.test.mjs）。 */
+/* 格式 v1 帶選填的 `trip.dayZones`（App 1.5.0，場景 E2）：每一天各帶旅程時區。
+ * 黃金檔 tests/fixtures/golden-v1-dayzones.json 由 App 的 `PublicLinkGoldenV1DayZonesTests` 產出：第 1、2 天台北、第 3 天東京。
+ * 舊版 App（1.4.x）的解碼會忽略 dayZones、照 `tz`（第 1 天）讀，所以版本不升。
+ * 沒有 dayZones 的舊連結照舊讀（golden-v1，見 core.test.mjs／zone.test.mjs）。
+ * `v: 2` 一度設計過又撤回；官網可能已發出過，所以仍認得（見最後幾條）。 */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -11,7 +13,7 @@ import {
 import { compareGolden } from '../../tools/check-golden.mjs';
 import { verdict } from '../../tools/cleanup/cleanup.mjs';
 
-const golden = JSON.parse(readFileSync(new URL('../fixtures/golden-v2.json', import.meta.url), 'utf8'));
+const golden = JSON.parse(readFileSync(new URL('../fixtures/golden-v1-dayzones.json', import.meta.url), 'utf8'));
 const v1 = JSON.parse(readFileSync(new URL('../fixtures/golden-v1.json', import.meta.url), 'utf8'));
 const signingKey = base64Decode(golden.signingKey);
 const c = golden.cases.find((x) => x.name === 'two-zones');
@@ -26,8 +28,8 @@ const recordOf = (x) => ({
 });
 const day = (y, m, d) => ({ y, m, d });
 
-test('黃金檔 v2 副本跟 App repo 那一份一致（App repo 不在就略過）', (t) => {
-  const result = compareGolden(undefined, 'v2');
+test('黃金檔 v1-dayzones 副本跟 App repo 那一份一致（App repo 不在就略過）', (t) => {
+  const result = compareGolden(undefined, 'v1-dayzones');
   if (result.status === 'skipped') {
     t.skip(result.reason);
     return;
@@ -37,11 +39,11 @@ test('黃金檔 v2 副本跟 App repo 那一份一致（App repo 不在就略過
 
 test('認得的格式版本是 1 與 2', () => {
   assert.deepEqual(FORMAT_VERSIONS, [1, 2]);
-  assert.equal(c.record.formatVersion, 2);
-  assert.equal(c.plaintext.v, 2);
+  assert.equal(c.record.formatVersion, 1, '新 App 一律寫 1：舊版 App 讀得懂');
+  assert.equal(c.plaintext.v, 1);
 });
 
-test('v2：解得開、驗得過簽章，公開版本跟明文同一份', async () => {
+test('v1＋dayZones：解得開、驗得過簽章，公開版本跟明文同一份', async () => {
   const link = parseFragment(new URL(c.url).hash);
   const sealed = sealedFromRecord(recordOf(c));
   assert.equal(await isSigned(sealed, c.recordName, [signingKey]), true);
@@ -50,15 +52,32 @@ test('v2：解得開、驗得過簽章，公開版本跟明文同一份', async 
 });
 
 for (const lang of ['zh', 'en', 'ja']) {
-  test(`v2：純文字（${lang}）與 App 逐字相同`, async () => {
+  test(`v1＋dayZones：純文字（${lang}）與 App 逐字相同`, async () => {
     const link = parseFragment(new URL(c.url).hash);
     const copy = await openSealed(sealedFromRecord(recordOf(c)), link.key);
     assert.equal(plainText(copy, lang), c.plainText[lang]);
   });
 }
 
-test('v2：每日清理認得格式版本 2，不把新 App 寫的每一筆當成不認得的格式刪掉', async () => {
+test('v1＋dayZones：每日清理照舊認得，也仍認得曾經發出過的 2', async () => {
   assert.equal(await verdict(recordOf(c), [signingKey]), null);
+  const v2 = structuredClone(c);
+  v2.record.formatVersion = 2;
+  assert.equal(String(await verdict(recordOf(v2), [signingKey])).startsWith('unknown-format'), false);
+});
+
+test('撤回的 v: 2 仍照讀：帶 dayZones 的 v 2 明文讀得進來，每一天用自己的時區', () => {
+  const v2 = structuredClone(c.plaintext);
+  v2.v = 2;
+  const copy = validateCopy(v2);
+  assert.ok(copy);
+  assert.deepEqual(copy.dayZones, ['Asia/Taipei', 'Asia/Taipei', 'Asia/Tokyo']);
+});
+
+test('舊版 App 的嚴格度：只讀它認得的鍵——多出來的 dayZones 不影響第 1 天的 tz', () => {
+  const copy = validateCopy(c.plaintext);
+  assert.equal(copy.tz, 'Asia/Taipei');
+  assert.equal(c.plaintext.trip.tz, 'Asia/Taipei');
 });
 
 test('E2：dayZones 讀進來，tz 是第 1 天，place 是不重複的地點串', () => {

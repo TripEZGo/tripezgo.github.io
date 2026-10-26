@@ -11,8 +11,9 @@
  *   - 純文字：`Domain/UseCase/TripItineraryTextUseCase.swift`、`TripShare.swift`
  */
 
-/** 認得的格式版本。2＝每一天各帶旅程時區（`trip.dayZones`，App 1.5.0）；1 照舊。
- *  ⚠️ 每日清理（tools/cleanup）也讀這一份——App 發 2 之前，這裡要先上線。 */
+/** 認得的格式版本。App 一律寫 1；每一天各帶旅程時區是 v1 裡選填的 `trip.dayZones`（App 1.5.0）。
+ *  2 一度設計成「帶 dayZones 的」又撤回（App 已有 1.4.x 使用者，舊版讀不懂 2），但官網可能已發出過，所以仍認得。
+ *  ⚠️ 每日清理（tools/cleanup）也讀這一份。 */
 export const FORMAT_VERSIONS = [1, 2];
 export const NONCE_BYTES = 12;
 export const TAG_BYTES = 16;
@@ -158,7 +159,7 @@ export function validateCopy(json) {
    * 只是不畫副時刻；型別不對就跟 App 的 JSONDecoder 一樣整份讀不懂。 */
   if (!isStringOrNull(trip.tz)) return null;
   const tz = has(trip, 'tz') && isZone(trip.tz) ? trip.tz : null;
-  /* 每一天的旅程時區（格式 v2，2026-10-26，App 的 `trip.dayZones`）：第 i 格＝第 i+1 天。沒有這一格的（v1）
+  /* 每一天的旅程時區（v1 選填的 `trip.dayZones`，2026-10-26；撤回的 v2 也帶它）：第 i 格＝第 i+1 天。沒有這一格的（v1）
    * 整趟用 `tz`；型別不對整份讀不懂（同 App 的 JSONDecoder）；長度對不上天數、或有瀏覽器不認得的識別碼，
    * 整格丟掉退回 `tz`——位置對著天，少一格或錯一格會把某一天換算到別的時區。 */
   let dayZones = null;
@@ -222,7 +223,7 @@ export function validateCopy(json) {
   };
 }
 
-/** 第 `n` 天（1 起算）的旅程時區：v2 那一天自己的，v1 或讀不懂的整趟用 `tz`；超出天數的讀最後一天（時間表多問的「旅程隔天」）。
+/** 第 `n` 天（1 起算）的旅程時區：有 `dayZones` 的用那一天自己的，沒有或讀不懂的整趟用 `tz`；超出天數的讀最後一天（時間表多問的「旅程隔天」）。
  *  → IANA 識別碼或 `null`（舊連結沒有旅程時區：不畫副時刻）。 */
 export function zoneOfDay(copy, n) {
   const zones = copy.dayZones;
