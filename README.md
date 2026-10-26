@@ -57,7 +57,7 @@ npm run golden:check      # 黃金檔副本 vs App repo 那一份（預設找 ..
   v1-dayzones（App 1.5.0）＝仍是 `v: 1`，多一個選填的 `trip.dayZones`（每一天各帶旅程時區；舊版 App 的解碼會忽略它、照 `tz`＝第 1 天讀）；
   沒有 `dayZones` 的舊連結照舊讀，兩份都留。`v: 2` 一度設計過又撤回，網站仍認得（官網可能發出過），App 不再寫。
 - 瀏覽器測試把 CloudKit 在 HTTP 邊界上假掉（`page.route` 攔 `api.apple-cloudkit.com`）。
-- `.github/workflows/test.yml` 在 push 時跑同一套，**不擋部署**。
+- `.github/workflows/test.yml` 在 push 時只跑 `npm run test:unit`，**不擋部署**。瀏覽器測試（Playwright）**禁止在 GitHub CI 跑**（使用者 2026-10-26），只在本機跑。
 
 ### 每日清理 `tools/cleanup/`
 

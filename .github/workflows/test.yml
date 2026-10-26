@@ -1,8 +1,8 @@
 name: Test
 
-# 公開連結頁（trip/）與每日清理（tools/cleanup/）的測試。
-# **獨立於部署**：pages.yml 照舊只做連結檢查＋發布，不等這一支——瀏覽器測試要下載 Chromium，
-# 網路一抖就紅，不值得拿它擋住整站上線。紅了看這裡、回頭修。
+# 單元測試（node --test，不上網、幾秒跑完）。**獨立於部署**：pages.yml 不等這一支。
+# **瀏覽器測試（Playwright）禁止在 GitHub CI 跑**（使用者 2026-10-26）：每次要下載 Chromium 與系統套件，
+# 慢的時候一跑十幾分鐘、還會卡住。只在本機跑：npm run test:browser。
 on:
   push:
     branches: [main]
@@ -26,5 +26,3 @@ jobs:
       - run: npm ci
       # App repo 不在 CI 上：黃金檔一致性那一條會略過並印出原因，其他照跑。
       - run: npm run test:unit
-      - run: npx playwright install --with-deps chromium
-      - run: npm run test:browser
