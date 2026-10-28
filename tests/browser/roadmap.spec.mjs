@@ -15,9 +15,8 @@ for (const lang of LANGS) {
     expect(ids.indexOf('roadmap')).toBe(ids.indexOf('plans') - 1);
     expect(ids.indexOf('roadmap')).toBeGreaterThan(ids.indexOf('features'));
     await expect(page.locator('#roadmap')).toHaveCount(1);
-    await expect(page.locator('.rm-item.is-now')).toHaveCount(1);   // 1.5.1 進行中（同時只標一張）
+    await expect(page.locator('.rm-item.is-now')).toHaveCount(0);   // 1.5.1 上架後沒有開工中的版本，停在最新上架那張
     await expect(page.locator('.rm-item[aria-current="step"]')).toHaveCount(1);
-    await expect(page.locator('.rm-item.is-now[aria-current="step"]')).toHaveCount(1);
     await expect(page.locator('.rm-item.is-planned')).toHaveCount(4);   // 1.6.0、1.7.0、1.8.0，加上時程未定的那一張
     await expect(page.locator('.rm-item').last()).toHaveClass(/is-planned/);
     await expect(page.locator('.site-header .site-nav > a[href="#roadmap"]')).toHaveCount(1);
