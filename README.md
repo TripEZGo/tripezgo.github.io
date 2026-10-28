@@ -15,6 +15,7 @@ en/terms.html         Terms of Use
 404.html
 assets/css/site.css   全站唯一一份樣式，色票沿用 TripEZGo 品牌識別 token
 assets/img/           標誌、App 截圖（webp）、功能插圖（明暗各一份）、OG 圖
+covers/               App 的封面池圖片（長邊 ≤ 2048 的 JPEG，檔名帶 sha256 前 8 碼）；清單在 secret gist，由 App repo 的 `Scripts/covers/` 產生與更新
 CNAME                 tripezgo.com
 .nojekyll             關掉 GitHub Pages 的 Jekyll 處理
 robots.txt / sitemap.xml

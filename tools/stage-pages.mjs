@@ -19,7 +19,7 @@ import { fileURLToPath } from 'node:url';
 
 /** 網站實際在送的東西（2026-10-20 從 repo 與頁面引用盤點：首頁的 iPhone 示範是 iframe 載 /screens/，所以 screens/ 在內）。 */
 export const PUBLISH = [
-  '.nojekyll', '.well-known', '404.html', 'CNAME', 'android-auth', 'announcements', 'app-ads.txt', 'assets', 'contact',
+  '.nojekyll', '.well-known', '404.html', 'CNAME', 'android-auth', 'announcements', 'app-ads.txt', 'assets', 'contact', 'covers',
   'en', 'index.html', 'ja', 'join', 'ko', 'open', 'privacy.html', 'robots.txt', 'screens',
   'sitemap.xml', 'terms.html', 'trip',
 ];
