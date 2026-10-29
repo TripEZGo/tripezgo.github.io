@@ -27,6 +27,8 @@ const story = params.get('auto');
 const steps = STORIES[story] || [];
 const KEY = `tz-auto:${window.name || story}`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+let stepNo = 0;
+let atStop = false;   // 停在某一頁的結尾：只有 step:true 的 play 才放得走（一般的 play 可能是殼先前送出、這時才到的）
 // 進度回報給首頁（外框底下的進度條，使用者 2026-10-12）。照每一步「大概要多久」算，條才會跟著動畫等速走：
 // 每一步開始時送 from→to 跟這一步的毫秒數，首頁那邊用線性動畫補；暫停時送 hold，條停在原地。
 const est = (s) => (s.wait ?? 0) + (s.call || s.wait ? 0 : 420) + (s.tap ? 380 : 0) + (s.press ? s.hold || 600 : 0)
@@ -54,6 +56,7 @@ function setPaused(p, tell = true) {
 }
 addEventListener('message', (e) => {
   if (e.data?.type !== 'tz-auto-ctl') return;
+  if (e.data.cmd === 'play' && atStop) { if (!e.data.step) return; atStop = false; }
   setPaused(e.data.cmd === 'pause', false);
   holdAnimations(e.data.cmd === 'pause' && e.data.anims === true);   // anims：引導頁長按暫停才帶；首頁自己的暫停不凍動畫
 });
@@ -86,6 +89,14 @@ css.textContent = `
 .auto-hand.hold .auto-ring::before{animation:auto-hold var(--hold,.6s) linear forwards}
 @keyframes auto-ripple{0%{transform:scale(.2);opacity:1}100%{transform:scale(1.25);opacity:0}}
 @keyframes auto-hold{0%{transform:scale(.2);opacity:.9}100%{transform:scale(1);opacity:.9}}
+.auto-badge{position:fixed;z-index:99997;width:34px;height:34px;margin:-34px 0 0 -17px;border-radius:50%;background:#1d7370;color:#fff;
+  font:700 17px/34px system-ui,-apple-system,sans-serif;text-align:center;pointer-events:none;opacity:0;transform:scale(.6);
+  transition:opacity .2s,transform .2s;box-shadow:0 3px 8px rgba(0,0,0,.25)}
+.auto-badge.on{opacity:1;transform:none;animation:auto-bob 1.2s ease-in-out infinite}
+.auto-badge::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid rgba(47,145,142,.7);animation:auto-pulse 1.2s ease-out infinite}
+@keyframes auto-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes auto-pulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.7);opacity:0}}
+@media (prefers-reduced-motion: reduce){.auto-badge.on,.auto-badge::after{animation:none}}
 .auto-trail{position:fixed;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:rgba(47,145,142,.5);
   pointer-events:none;z-index:99998;animation:auto-trail .5s ease-out forwards}
 @keyframes auto-trail{to{opacity:0;transform:scale(.3)}}`;
@@ -119,7 +130,39 @@ const pe = (type, x, y, el, extra = {}) => el.dispatchEvent(new PointerEvent(typ
   bubbles: true, cancelable: true, composed: true, pointerId: 7, pointerType: 'touch', isPrimary: true,
   clientX: x, clientY: y, buttons: type === 'pointerup' ? 0 : 1, ...extra }));
 
+const CAM_MS = 400;
+function camTo(sel, k) {
+  const dv = document.getElementById('d'); if (!dv) return;
+  dv.style.transformOrigin = '0 0';
+  dv.style.transition = `transform ${CAM_MS}ms cubic-bezier(.3,.7,.3,1)`;
+  if (!sel) { dv.style.transform = ''; return; }
+  const el = document.querySelector(sel); if (!el) return;
+  const W = dv.offsetWidth, H = dv.offsetHeight;
+  const prev = dv.style.transform; dv.style.transition = 'none'; dv.style.transform = ''; void dv.offsetWidth;   // 量未放大時的位置
+  const r = el.getBoundingClientRect(), dr = dv.getBoundingClientRect();
+  dv.style.transform = prev; void dv.offsetWidth; dv.style.transition = `transform ${CAM_MS}ms cubic-bezier(.3,.7,.3,1)`;
+  const fx = r.left - dr.left + r.width / 2, fy = r.top - dr.top + r.height / 2;
+  const top = new URLSearchParams(location.search).get('embed') ? 54 : 0;   // crop=safe：看得到的範圍從狀態列底下開始
+  const cx = W / 2, cy = top + (H - top) / 2;
+  const tx = Math.min(0, Math.max(W - W * k, cx - k * fx)), ty = Math.min(-top * (k - 1) * 0, Math.max(H - H * k, cy - k * fy));
+  dv.style.transform = `translate(${tx}px,${ty}px) scale(${k})`;
+}
+const badgeEl = document.createElement('div');
+badgeEl.className = 'auto-badge';
+function badgeAt(sel, n) {
+  if (!sel) { badgeEl.classList.remove('on'); return; }
+  const el = document.querySelector(sel); if (!el) return;
+  const r = el.getBoundingClientRect();
+  badgeEl.textContent = n;
+  badgeEl.style.left = (r.left + r.width / 2) + 'px';
+  badgeEl.style.top = Math.max(26, r.top - 4) + 'px';
+  document.documentElement.append(badgeEl);
+  requestAnimationFrame(() => badgeEl.classList.add('on'));
+}
 async function run(step) {
+  if (step.stop) { stepNo = step.n; parent.postMessage({ type: 'tz-auto-stop', n: step.n }, '*'); atStop = true; setPaused(true); return; }
+  if (step.cam !== undefined) { camTo(step.cam || null, step.k || 2); return sleep(CAM_MS + 60); }
+  if (step.badge !== undefined) { badgeAt(step.badge || null, step.n); return sleep(step.badge ? 250 : 120); }
   if (step.wait) return sleep(step.wait);
   if (step.call) return window.__auto?.[step.call]?.();
   const el = await find(step.tap || step.press || step.drag || step.swipe || step.type || step.scroll);
@@ -178,7 +221,7 @@ async function main() {
       stepProgress(st.i);
       st.i += 1; save(st);                        // 先記下一步：這一步若換頁，新頁接著做
       await run(step);
-      await sleep(GAP);
+      await sleep(step.cam !== undefined || step.badge !== undefined || step.stop ? 0 : GAP);   // 鏡頭、號碼、停：不另外停 GAP（一頁一頁點著看時才不拖）
     }
     // 一輪結束：多停一下
     stepProgress(steps.length); await sleep(END); await untilPlaying();

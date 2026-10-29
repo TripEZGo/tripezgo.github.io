@@ -91,6 +91,47 @@ async function runOne(id, lang, theme) {
     await page.waitForTimeout(3000);
     if (!same(b, await page.screenshot())) row.problems.push('static：靜態畫面卻在動（再過 3 秒又變了）');
     row.shot = `${tag}.b.png`;
+  } else if (kind === 'step') {
+    // step（靈感空狀態）：不自動播——停在第 1 步（0.8s 與 4.5s 一樣）；每點一下播一頁，「N / 總數」每次往前一格；
+    // 最後一步播完之後再點＝回到「1 / 總數」。字幕（#cap）每一步都不是空的。
+    if (!same(a, b)) row.problems.push('step：沒有點就在動（不該自動播放）');
+    const pgText = () => page.locator('#pg').innerText();
+    // 步驟只靠 pg 的數字判斷：頁面裡有自己循環的小動畫，截圖不穩；故事一播會在幾秒內把 N 往前推
+    const stillAtOne = async (ms) => { await page.waitForTimeout(ms); return /^1\s*\//.test(await pgText()); };
+    // App 翻回這一頁時呼叫 restart()：重來之後要停在第 1 步等點，不能自己播（背景載入的那一份會先停下來）
+    await page.evaluate(() => window.tzDemo.restart());
+    if (!(await stillAtOne(9000))) row.problems.push('step：restart() 之後自己播了');
+    // 原生（App）在畫面上時會呼叫 play()；停在某一頁等點的故事不能被它放走
+    await page.evaluate(() => window.tzDemo.pause()); await page.evaluate(() => window.tzDemo.play());
+    if (!(await stillAtOne(7000))) row.problems.push('step：外部 play() 把停在等點的那一頁放走了');
+    const total = await page.evaluate(() => +(document.getElementById('pg').textContent.match(/\/\s*(\d+)/) || [0, 0])[1]);
+    let n = 1;
+    for (let tap = 0; tap < total + 6 && n < total; tap++) {
+      const before = await pgText();
+      await page.mouse.click(W / 2, H / 2);
+      let moved = false;
+      for (let t = 0; t < 60; t++) { await page.waitForTimeout(250); if ((await pgText()) !== before) { moved = true; break; } }
+      if (!moved) { row.problems.push(`step：第 ${tap + 1} 次點擊後 10 秒內沒有走到下一步（停在 ${before}）`); break; }
+      n = +(await pgText()).match(/^(\d+)/)[1];
+      if (!(await page.locator('#cap').innerText()).trim()) row.problems.push(`step：第 ${n} 步沒有字幕`);
+    }
+    if (n !== total) row.problems.push(`step：沒有走到最後一步（${n} / ${total}）`);
+    else {
+      // 最後一步：點一下播最後一頁、播完提示變成「從頭」；再點回到第 1 步
+      await page.mouse.click(W / 2, H / 2);
+      for (let t = 0; t < 80 && !/^1\s*\//.test(await pgText()); t++) {
+        await page.waitForTimeout(250);
+        if (t % 20 === 19) await page.mouse.click(W / 2, H / 2);
+      }
+      if (!/^1\s*\//.test(await pgText())) row.problems.push('step：最後一步之後再點沒有回到第 1 步');
+      else {
+        // 重來之後要停在第 1 步等點，不能自己又播下去
+        await page.waitForTimeout(3500);
+        const r1 = await page.screenshot(); await page.waitForTimeout(1500);
+        if (!/^1\s*\//.test(await pgText()) || !same(r1, await page.screenshot())) row.problems.push('step：回到第 1 步之後自己又播了');
+      }
+    }
+    row.shot = `${tag}.b.png`;
   } else if (kind === 'ambient') {
     if (same(a, b)) row.problems.push('ambient：0.8s 與 4.5s 的截圖一樣（虛線沒在流動？）');
     row.shot = `${tag}.b.png`;
