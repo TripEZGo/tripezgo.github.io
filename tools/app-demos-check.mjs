@@ -96,10 +96,14 @@ async function runOne(id, lang, theme) {
     // 最後一步播完之後再點＝回到「1 / 總數」。字幕（#cap）每一步都不是空的。
     if (!same(a, b)) row.problems.push('step：沒有點就在動（不該自動播放）');
     const pgText = () => page.locator('#pg').innerText();
+    // 步驟只靠 pg 的數字判斷：頁面裡有自己循環的小動畫，截圖不穩；故事一播會在幾秒內把 N 往前推
+    const stillAtOne = async (ms) => { await page.waitForTimeout(ms); return /^1\s*\//.test(await pgText()); };
+    // App 翻回這一頁時呼叫 restart()：重來之後要停在第 1 步等點，不能自己播（背景載入的那一份會先停下來）
+    await page.evaluate(() => window.tzDemo.restart());
+    if (!(await stillAtOne(9000))) row.problems.push('step：restart() 之後自己播了');
     // 原生（App）在畫面上時會呼叫 play()；停在某一頁等點的故事不能被它放走
     await page.evaluate(() => window.tzDemo.pause()); await page.evaluate(() => window.tzDemo.play());
-    await page.waitForTimeout(1500);
-    if (!same(a, await page.screenshot())) row.problems.push('step：外部 play() 把停在等點的那一頁放走了');
+    if (!(await stillAtOne(7000))) row.problems.push('step：外部 play() 把停在等點的那一頁放走了');
     const total = await page.evaluate(() => +(document.getElementById('pg').textContent.match(/\/\s*(\d+)/) || [0, 0])[1]);
     let n = 1;
     for (let tap = 0; tap < total + 6 && n < total; tap++) {
@@ -120,6 +124,12 @@ async function runOne(id, lang, theme) {
         if (t % 20 === 19) await page.mouse.click(W / 2, H / 2);
       }
       if (!/^1\s*\//.test(await pgText())) row.problems.push('step：最後一步之後再點沒有回到第 1 步');
+      else {
+        // 重來之後要停在第 1 步等點，不能自己又播下去
+        await page.waitForTimeout(3500);
+        const r1 = await page.screenshot(); await page.waitForTimeout(1500);
+        if (!/^1\s*\//.test(await pgText()) || !same(r1, await page.screenshot())) row.problems.push('step：回到第 1 步之後自己又播了');
+      }
     }
     row.shot = `${tag}.b.png`;
   } else if (kind === 'ambient') {
