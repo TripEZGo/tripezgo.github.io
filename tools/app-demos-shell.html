@@ -207,7 +207,12 @@
     var d = e.data || {};
     if (d.type === 'tz-auto-progress' || d.type === 'tz-auto-hello' || d.type === 'tz-nav' || d.type === 'tz-auto-loop') lastProg = Date.now();
     if (d.type === 'tz-ss') { if (d.name) ssSnap[d.name] = d.data; return; }
-    if (d.type === 'tz-auto-stop') { if (st.fr.contentWindow === e.source) { stepNo = d.n; parked = true; showStep(d.n, 0); tellParent(d.n); } return; }
+    if (d.type === 'tz-auto-stop') {
+      // 換上來之前（背景載入中）的那一份也會自己先停在第 1 步：先記下「停著」，換上來時才不會被當成在播而放走
+      var pending = stage.querySelector('iframe.next');
+      if (st.fr.contentWindow === e.source || (pending && pending.contentWindow === e.source)) { stepNo = d.n; parked = true; showStep(d.n, 0); tellParent(d.n); }
+      return;
+    }
     if (d.type === 'tz-auto-hello') { if (st.fr.contentWindow === e.source) ctl(); return; }
     if (d.type === 'tz-ready') { var n = stage.querySelector('iframe.next'); if (n && n.contentWindow === e.source && n._ready) n._ready(); return; }
     if (d.type === 'tz-nav') {
