@@ -96,6 +96,10 @@ async function runOne(id, lang, theme) {
     // 最後一步播完之後再點＝回到「1 / 總數」。字幕（#cap）每一步都不是空的。
     if (!same(a, b)) row.problems.push('step：沒有點就在動（不該自動播放）');
     const pgText = () => page.locator('#pg').innerText();
+    // 原生（App）在畫面上時會呼叫 play()；停在某一頁等點的故事不能被它放走
+    await page.evaluate(() => window.tzDemo.pause()); await page.evaluate(() => window.tzDemo.play());
+    await page.waitForTimeout(1500);
+    if (!same(a, await page.screenshot())) row.problems.push('step：外部 play() 把停在等點的那一頁放走了');
     const total = await page.evaluate(() => +(document.getElementById('pg').textContent.match(/\/\s*(\d+)/) || [0, 0])[1]);
     let n = 1;
     for (let tap = 0; tap < total + 6 && n < total; tap++) {

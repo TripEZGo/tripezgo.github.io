@@ -81,7 +81,7 @@
   if (!spec) { document.body.textContent = 'unknown demo: ' + id; return; }
   if (spec.flat) document.body.classList.add('flat');
   var view = document.getElementById('view'), capEl = document.getElementById('cap'), pgEl = document.getElementById('pg');
-  var stepUI = !!spec.step;
+  var stepUI = q.has('step') ? q.get('step') === '1' : !!spec.step;   // step=1：一頁一頁點著看（靈感空狀態）；沒帶就用示範自己的預設
   if (stepUI) document.body.classList.add('step');
   var CAPS = (spec.caps && (spec.caps[lang] || spec.caps.en)) || [], HINTS = (spec.hints && (spec.hints[lang] || spec.hints.en)) || ['', '', ''];
   var curN = 1;
@@ -157,7 +157,7 @@
   else { st.fr = newFrame(st.p, st.name, false); stage.appendChild(st.fr); }
 
   function ctl(anims) {
-    try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: (paused || userPaused || finished) ? 'pause' : 'play', anims: anims === true && (userPaused || finished) }, '*'); } catch (e) {}
+    try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: (paused || userPaused || finished || parked) ? 'pause' : 'play', anims: anims === true && (userPaused || finished) }, '*'); } catch (e) {}
   }
   // 換頁／換一份：新的一頁在背景載好、畫完再換上，不閃
   function swap(nf, delay) {
@@ -176,6 +176,7 @@
   function advance() { if (fi < flows.length - 1) nextFlow(); else { finished = true; ctl(true); if (stepUI) showStep(curN, 1); } }   // 還有下一段就換過去，沒有了就停在最後一幀（連畫面裡還在跑的 CSS 動畫一起定住，點一下重播時放開）
   function nextFlow() {
     fi = (fi + 1) % flows.length; st.p = flows[fi];
+    parked = false;
     st.name = st.name.replace(/r\d+$/, '') + 'r' + (++seq);
     delete ssSnap[st.name];
     var lf = newFrame(st.p, st.name, true);
@@ -183,13 +184,15 @@
     stage.appendChild(lf);
     swap(lf, st.p.still === true ? 600 : 1800);
   }
-  function restart() { finished = false; if (stepUI) showStep(1, 0); fi = flows.length - 1; nextFlow(); }   // 從頭重播
+  function stepForward() { parked = false; try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: 'play' }, '*'); } catch (e) {} }   // 點一下（或 VoiceOver 的點兩下）：播下一頁
+  function restart() { parked = false; finished = false; if (stepUI) showStep(1, 0); fi = flows.length - 1; nextFlow(); }   // 從頭重播
   function arm() {                      // still 的那一段停 ms 毫秒再換
     var g = ++gen;
     if (once && st.p.still === true && !still) setTimeout(function () { whenFree(function () { if (g === gen) advance(); }); }, st.p.ms || 3000);
   }
   /* step（靈感空狀態，D145）：故事自己停在每一頁的結尾（tz-auto-stop），點一下才播下一頁 */
-  var stepMode = !!spec0().step, stepNo = 0;
+  var stepMode = stepUI, stepNo = 0;
+  var parked = false;   // 故事停在某一頁的結尾、等下一次點（外部的 play() 不能把它放走）
   function tellParent(n) { try { parent.postMessage({ type: 'tz-demo-step', n: n, of: spec0().steps || 0 }, '*'); } catch (e) {} }
   /* watchdog：故事超過 20 秒沒有任何進度訊息（卡住）→ 重播這一段 */
   if (once && !still && !stepMode) setInterval(function () {
@@ -202,7 +205,7 @@
     var d = e.data || {};
     if (d.type === 'tz-auto-progress' || d.type === 'tz-auto-hello' || d.type === 'tz-nav' || d.type === 'tz-auto-loop') lastProg = Date.now();
     if (d.type === 'tz-ss') { if (d.name) ssSnap[d.name] = d.data; return; }
-    if (d.type === 'tz-auto-stop') { if (st.fr.contentWindow === e.source) { stepNo = d.n; showStep(d.n, 0); tellParent(d.n); } return; }
+    if (d.type === 'tz-auto-stop') { if (st.fr.contentWindow === e.source) { stepNo = d.n; parked = true; showStep(d.n, 0); tellParent(d.n); } return; }
     if (d.type === 'tz-auto-hello') { if (st.fr.contentWindow === e.source) ctl(); return; }
     if (d.type === 'tz-ready') { var n = stage.querySelector('iframe.next'); if (n && n.contentWindow === e.source && n._ready) n._ready(); return; }
     if (d.type === 'tz-nav') {
@@ -236,7 +239,7 @@
       clearTimeout(timer); timer = null;
       if (held) { held = false; setHeld(false); return; }
       if (ev && ev.type === 'pointerup' && finished) restart();   // 播完後點一下：從頭重播
-      else if (ev && ev.type === 'pointerup' && stepMode) { try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: 'play' }, '*'); } catch (e) {} }
+      else if (ev && ev.type === 'pointerup' && stepMode) stepForward();
     }
     hit.addEventListener('pointerdown', down);
     hit.addEventListener('pointerup', up);
@@ -249,6 +252,7 @@
   window.tzDemo = {
     pause: function () { paused = true; ctl(); },
     play: function () { paused = false; ctl(); },
+    step: function () { if (!stepMode || userPaused || paused) return; if (finished) restart(); else stepForward(); },   // 原生（VoiceOver 啟動）叫它播下一頁
     restart: function () { paused = false; userPaused = false; if (once && !still) restart(); else ctl(); },
   };
   document.addEventListener('visibilitychange', function () { document.hidden ? window.tzDemo.pause() : window.tzDemo.play(); });

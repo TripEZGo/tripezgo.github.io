@@ -5,7 +5,7 @@
  *   node tools/app-demos.mjs --only pw-no-ads,glance  → 只打包這幾個示範（開發時比較快；少一個的頁面不會報錯）
  *
  * 規則（跟 App 端的合約，不要改）
- *   - 入口 demo.html?demo=<id>&lang=<zh-Hant|en|ja>&theme=<light|dark>&still=<0|1>[&mode=<loop|once>&crop=<none|safe|box>&nohand=<0|1>]，
+ *   - 入口 demo.html?demo=<id>&lang=<zh-Hant|en|ja>&theme=<light|dark>&still=<0|1>[&mode=<loop|once>&crop=<none|safe|box>&nohand=<0|1>&step=<0|1>]，
  *     只畫手機螢幕內容（402×874 原尺寸等比縮放放進視窗，沒有外框）。mode／crop／nohand 沒帶就用示範自己的預設（見 DEMOS 與 manifest.json）。
  *   - 資料夾自給自足、只用相對路徑、沒有任何網路網址：資料（範本旅程 JSON）、圖、字（用系統字）、地圖（靜態圖）全在裡面。
  *   - 可以直接用 file:// 開（Chromium、WKWebView 的 loadFileURL）：所以**沒有 ES module 的外部檔、沒有 fetch 本機檔**——
@@ -215,9 +215,9 @@ const spec = Object.fromEntries(ids.filter((id) => !(DEMOS[id].flows || []).some
 const kinds = Object.fromEntries(Object.entries(spec).map(([id, d]) => [id, d.flat ? 'ambient' : d.step ? 'step' : d.flows.every((f) => f.still === true) && d.flows.length === 1 ? 'static' : 'once']));
 write('demo.html', fs.readFileSync(path.join(root, 'tools/app-demos-shell.html'), 'utf8').replace(/\/\*DEMOS\*\/\{\}\/\*END\*\//, () => JSON.stringify(spec)));
 write('manifest.json', JSON.stringify({
-  adr: 'ADR-0050', entry: 'demo.html?demo=<id>&lang=<zh-Hant|en|ja>&theme=<light|dark>&still=<0|1>[&mode=<loop|once>&crop=<none|safe|box>&nohand=<0|1>]',
+  adr: 'ADR-0050', entry: 'demo.html?demo=<id>&lang=<zh-Hant|en|ja>&theme=<light|dark>&still=<0|1>[&mode=<loop|once>&crop=<none|safe|box>&nohand=<0|1>&step=<0|1>]',
   demos: Object.keys(spec), kinds, langs: ['zh-Hant', 'en', 'ja'], themes: ['light', 'dark'],
-  defaults: Object.fromEntries(Object.entries(spec).map(([id, d]) => [id, { mode: d.mode || 'loop', crop: d.crop || 'none', nohand: !!d.nohand }])),
+  defaults: Object.fromEntries(Object.entries(spec).map(([id, d]) => [id, { mode: d.mode || 'loop', crop: d.crop || 'none', nohand: !!d.nohand, step: !!d.step }])),
 }, null, 2) + '\n');
 
 let bytes = 0; const files = [];
