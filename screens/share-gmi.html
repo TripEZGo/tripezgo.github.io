@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=1272523877","/screens/chrome.js":"/screens/chrome.js?v=db01bc3efc","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=b97ef8d7da","/screens/map-static.js":"/screens/map-static.js?v=53639b3fa6","/screens/map.js":"/screens/map.js?v=869d04c645","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=ed2a74f4e4","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c9f72ab98c","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=7c18baa77a","/screens/stories.js":"/screens/stories.js?v=9712cb2d48","/screens/tools.js":"/screens/tools.js?v=713ad53506","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=a02282f2a8","/screens/chrome.js":"/screens/chrome.js?v=db01bc3efc","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=b97ef8d7da","/screens/map-static.js":"/screens/map-static.js?v=53639b3fa6","/screens/map.js":"/screens/map.js?v=869d04c645","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c9f72ab98c","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=a3f79a85d4","/screens/stories.js":"/screens/stories.js?v=9712cb2d48","/screens/tools.js":"/screens/tools.js?v=713ad53506","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>從地圖 App 分享進來</title>
 <!--
@@ -28,7 +28,7 @@
        Chromium @3x 拍的同一塊 600 公尺（水族館那一顆 POI 濾掉，免得跟圖釘疊在一起）——Mac 上的 MKMapSnapshotter 只出得了 1x。
 -->
 <link rel="stylesheet" href="screen.css?v=7e1e128cfb">
-<link rel="stylesheet" href="share-ext.css?v=8eaaa2d53b">
+<link rel="stylesheet" href="share-ext.css?v=5bde9fb502">
 <style>
   /* ── ① 地圖 App 的地點頁（虛構的地圖 App；長相像、沒有商標） ── */
   .gm { background: #f2efe9; color: #1f1f1f; }
@@ -213,6 +213,8 @@ const flow = mountShare(d, document.getElementById('gm'), {
   ogTitle: s.name, ogDesc: '', image: null,   // ADR-0050：靈感的「已存成靈感」卡要顯示被存的標題（原本 Google 地圖來源沒有 og 標題＝空的「」）
   place: { name: s.name, coord: COORD, snap: SNAP },
   model: 'aquarium', tripName: trip.title,
+  setup: ['1', '2'].includes(new URLSearchParams(location.search).get('setup')),
+  setupDone: new URLSearchParams(location.search).get('setup') === '2',   // 靜止畫面：分享列已經多了 TripEZGo（步驟 9）
 });
 window.__auto = { openApp: () => go('inspiration', 'chain=1') };
 

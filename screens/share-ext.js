@@ -126,13 +126,21 @@ export const F = {
 // iOS 系統分享選單的字（系統用詞）
 const SYS = {
   zh: { people: ['阿哲', '小雯', '媽媽', '旅行群組'], airdrop: 'AirDrop', messages: '訊息', mail: '郵件', notes: '備忘錄',
-    copy: '拷貝', readingList: '加入閱讀列表', quickNote: '加入快速備忘錄', editActions: '編輯動作⋯' },
+    copy: '拷貝', readingList: '加入閱讀列表', quickNote: '加入快速備忘錄', editActions: '編輯動作⋯',
+    more: '更多', apps: 'App', edit: '編輯', favorites: '喜好項目', suggestions: '建議',
+    extra: ['提醒事項', '行事曆', '檔案', '照片', '地圖', '音樂', '天氣'] },
   en: { people: ['Alex', 'Mia', 'Mom', 'Trip crew'], airdrop: 'AirDrop', messages: 'Messages', mail: 'Mail', notes: 'Notes',
-    copy: 'Copy', readingList: 'Add to Reading List', quickNote: 'Add to Quick Note', editActions: 'Edit Actions…' },
+    copy: 'Copy', readingList: 'Add to Reading List', quickNote: 'Add to Quick Note', editActions: 'Edit Actions…',
+    more: 'More', apps: 'Apps', edit: 'Edit', favorites: 'Favorites', suggestions: 'Suggestions',
+    extra: ['Reminders', 'Calendar', 'Files', 'Photos', 'Maps', 'Music', 'Weather'] },
   ja: { people: ['拓海', '美咲', '母', '旅行グループ'], airdrop: 'AirDrop', messages: 'メッセージ', mail: 'メール', notes: 'メモ',
-    copy: 'コピー', readingList: 'リーディングリストに追加', quickNote: 'クイックメモに追加', editActions: 'アクションを編集…' },
+    copy: 'コピー', readingList: 'リーディングリストに追加', quickNote: 'クイックメモに追加', editActions: 'アクションを編集…',
+    more: 'その他', apps: 'App', edit: '編集', favorites: 'よく使う項目', suggestions: '候補',
+    extra: ['リマインダー', 'カレンダー', 'ファイル', '写真', 'マップ', 'ミュージック', '天気'] },
   ko: { people: ['현우', '지우', '엄마', '여행 모임'], airdrop: 'AirDrop', messages: '메시지', mail: '메일', notes: '메모',
-    copy: '복사', readingList: '읽기 목록에 추가', quickNote: '빠른 메모에 추가', editActions: '동작 편집…' },
+    copy: '복사', readingList: '읽기 목록에 추가', quickNote: '빠른 메모에 추가', editActions: '동작 편집…',
+    more: '더 보기', apps: '앱', edit: '편집', favorites: '즐겨찾기', suggestions: '제안',
+    extra: ['미리 알림', '캘린더', '파일', '사진', '지도', '음악', '날씨'] },
 }[LANG];
 
 // ── 圖示 ──
@@ -218,12 +226,17 @@ function shareSheet(cfg) {
   const tones = ['#7ba6c9,#4f7fa8', '#d9a07a,#b8764f', '#a7b98a,#7d9161', '#b49ad0,#8a6fae'];
   const people = SYS.people.map((n, i) => `<div class="ss-cell"><div class="av" style="background:linear-gradient(${tones[i]})">${[...n][0].toUpperCase()}${badge}</div><span>${n}</span></div>`).join('');
   const app = (bg, inner, name, attrs = '') => `<div class="ss-cell"${attrs}><div class="app" style="background:${bg}">${inner}</div><span>${name}</span></div>`;
+  const tz = app('#fff', '<img src="img/app-icon-180.png" alt="">', 'TripEZGo', ' data-act="tripezgo" data-tap');
+  const plain = (n, i) => app(['linear-gradient(#ffb341,#ff8a00)', 'linear-gradient(#ff6b6b,#e8443a)', 'linear-gradient(#5ac8fa,#2a8bf2)', 'linear-gradient(#ffd54a,#f5a623)', 'linear-gradient(#7ed37e,#3fb24f)', 'linear-gradient(#ff5e86,#e5245a)', 'linear-gradient(#6fb7ff,#2f7de1)'][i % 7], '', n);
+  const moreCell = `<div class="ss-cell" data-act="more" data-tap><div class="app" style="background:rgba(120,120,128,.14)"><svg viewBox="0 0 24 24" style="width:30px;height:30px"><circle cx="6" cy="12" r="1.8" fill="#3c3c43"/><circle cx="12" cy="12" r="1.8" fill="#3c3c43"/><circle cx="18" cy="12" r="1.8" fill="#3c3c43"/></svg></div><span>${SYS.more}</span></div>`;
   const apps = [
     app('linear-gradient(#f4f4f6,#e4e4e8)', '<svg viewBox="0 0 24 24" class="i" style="stroke:#0a84ff;stroke-width:1.6"><circle cx="12" cy="12" r="2"/><path d="M8.2 15.8a5.4 5.4 0 1 1 7.6 0M5.4 18.6a9.4 9.4 0 1 1 13.2 0"/></svg>', SYS.airdrop),
     app('linear-gradient(#65e073,#2fbf48)', '<svg viewBox="0 0 24 24"><path d="M12 4C6.8 4 3 7.2 3 11.1c0 2.3 1.3 4.3 3.4 5.6l-.9 3.3 3.8-2c.9.2 1.8.3 2.7.3 5.2 0 9-3.2 9-7.2S17.2 4 12 4z" fill="#fff"/></svg>', SYS.messages),
-    app('#fff', '<img src="img/app-icon-180.png" alt="">', 'TripEZGo', ' data-act="tripezgo" data-tap'),
+    (cfg.setup && !cfg.setupDone) ? '' : tz,
     app('linear-gradient(#4fb1ff,#1a73f0)', '<svg viewBox="0 0 24 24" class="i" style="stroke:#fff;stroke-width:1.7"><rect x="3.5" y="6" width="17" height="12" rx="2"/><path d="M4 7l8 6 8-6"/></svg>', SYS.mail),
     app('linear-gradient(#fff 0 30%,#fbfbfb 30%)', '<svg viewBox="0 0 24 24" class="i" style="stroke:#c9c9cc;stroke-width:1.2"><path d="M3 11h18M3 15h18M3 19h18"/><rect x="0" y="0" width="24" height="7" fill="#f7c843" stroke="none"/></svg>', SYS.notes),
+    ...(cfg.setup ? SYS.extra.slice(0, 3).map(plain) : []),
+    cfg.setup ? moreCell : '',
   ].join('');
   const li = (label, icon, cls = '') => `<div class="ss-li ${cls}">${label}${icon ? g(icon) : ''}</div>`;
   return `
@@ -234,7 +247,31 @@ function shareSheet(cfg) {
     <div class="ss-sep"></div>
     <div class="ss-row apps">${apps}</div>
     <div class="ss-list" style="top:318px">${li(SYS.copy, 'copy')}${li(SYS.readingList, 'glasses')}${li(SYS.quickNote, 'qnote')}</div>
-    <div class="ss-list" style="top:484px">${li(SYS.editActions, '', 'blue')}</div>`;
+    <div class="ss-list" style="top:484px">${li(SYS.editActions, '', 'blue')}</div>
+    ${cfg.setup ? '<div class="apl" id="apl"></div>' : ''}`;
+}
+
+// iOS 分享選單「更多」那一頁（App 清單＋編輯）。照記憶中的 iOS 26 版面畫，沒有 ref/ 可量（同分享選單那一層）。
+function appList(st) {
+  const icon = (bg, inner = '') => `<span class="apl-ic" style="background:${bg}">${inner}</span>`;
+  const tzIc = '<span class="apl-ic" style="background:#fff"><img src="img/app-icon-180.png" alt=""></span>';
+  const favs = [[SYS.messages, 'linear-gradient(#65e073,#2fbf48)'], [SYS.mail, 'linear-gradient(#4fb1ff,#1a73f0)'], [SYS.notes, 'linear-gradient(#fff 0 30%,#f7c843 30%)']];
+  const grip = '<span class="apl-grip"><i></i><i></i><i></i></span>';
+  const minus = '<span class="apl-mi">−</span>';
+  const favRows = (st.added ? [`<div class="apl-row">${st.edit ? minus : ''}${tzIc}<b>TripEZGo</b>${st.edit ? grip : ''}</div>`] : [])
+    .concat(favs.map(([n, bg]) => `<div class="apl-row">${st.edit ? minus : ''}${icon(bg)}<b>${n}</b>${st.edit ? grip : ''}</div>`));
+  const sw = (on, attrs = '') => `<span class="apl-sw${on ? ' on' : ''}"${attrs}></span>`;
+  const sugBg = ['linear-gradient(#ffb341,#ff8a00)', 'linear-gradient(#ff6b6b,#e8443a)', 'linear-gradient(#5ac8fa,#2a8bf2)', 'linear-gradient(#ffd54a,#f5a623)', 'linear-gradient(#7ed37e,#3fb24f)', 'linear-gradient(#ff5e86,#e5245a)', 'linear-gradient(#6fb7ff,#2f7de1)'];
+  const sugRows = SYS.extra.map((n, i) => `<div class="apl-row">${st.edit ? '<span class="apl-pl off">+</span>' : ''}${icon(sugBg[i])}<b>${n}</b>${st.edit ? sw(true) : ''}</div>`)
+    .concat(st.added ? [] : [`<div class="apl-row">${st.edit ? `<span class="apl-pl${st.on ? '' : ' off'}" data-act="apl-add" data-tap>+</span>` : ''}${tzIc}<b>TripEZGo</b>${st.edit ? sw(st.on, ' data-act="apl-toggle" data-tap') : ''}</div>`]);
+  return `<div class="apl-nav"><span></span><span class="apl-t">${SYS.apps}</span>${st.edit
+      ? '<span class="apl-done" data-act="apl-done" data-tap><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg></span>'
+      : `<span class="apl-edit" data-act="apl-edit" data-tap>${SYS.edit}</span>`}</div>
+    <div class="apl-body">
+      <div class="apl-sec">${SYS.favorites}</div><div class="apl-grp">${favRows.join('')}</div>
+      <div class="apl-sec">${SYS.suggestions}</div><div class="apl-grp">${sugRows.join('')}</div>
+      <div style="height:40px"></div>
+    </div>`;
 }
 
 /**
@@ -465,6 +502,14 @@ export function mountShare(d, hostEl, cfg) {
     preselect();
   }
   show(step);
+  // 靜止畫面（減少動態）：?apl=view|edit|on 直接停在「更多」的 App 清單（view＝剛打開、edit＝編輯中、on＝TripEZGo 開關打開）
+  const aplMode = !interactive && cfg.setup ? params.get('apl') : null;
+  if (aplMode) {
+    const apl = $('apl'); apl.style.transition = 'none';
+    apl.innerHTML = appList({ edit: aplMode !== 'view', on: aplMode === 'on', added: false });
+    apl.classList.add('on');
+    const bd = apl.querySelector('.apl-body'); if (bd && aplMode === 'on') bd.scrollTop = bd.scrollHeight;   // TripEZGo 那一列在最底
+  }
 
   return {
     step,
@@ -489,6 +534,23 @@ export function mountShare(d, hostEl, cfg) {
         if (cat) { const i = +cat.dataset.cat; st.cats.has(i) ? st.cats.delete(i) : st.cats.add(i); cat.classList.toggle('on'); return; }
         if (!a) { if (e.target === $('dim') && !$('ext').classList.contains('on')) close(); return; }
         const act = a.dataset.act;
+        if (act === 'more' || act === 'apl-edit' || act === 'apl-toggle' || act === 'apl-add' || act === 'apl-done') {
+          const apl = $('apl'); if (!apl) return;
+          const ls = st.apl || (st.apl = { edit: false, on: false, added: false });
+          if (act === 'more') { apl.innerHTML = appList(ls); requestAnimationFrame(() => apl.classList.add('on')); return; }
+          if (act === 'apl-edit') ls.edit = true;
+          if (act === 'apl-toggle') ls.on = !ls.on;
+          if (act === 'apl-add') { if (!ls.on) return; ls.added = true; }
+          if (act === 'apl-done') {
+            ls.edit = false; apl.classList.remove('on'); cfg.setupDone = ls.added;
+            setTimeout(() => { $('ss').innerHTML = shareSheet(cfg); }, 380);
+            return;
+          }
+          const body = apl.querySelector('.apl-body'), top = body ? body.scrollTop : 0;
+          apl.innerHTML = appList(ls);
+          const nb = apl.querySelector('.apl-body'); if (nb) nb.scrollTop = top;
+          return;
+        }
         if (act === 'share') show('sheet');
         else if (act === 'close-ss') close();
         else if (act === 'tripezgo') {
@@ -514,6 +576,10 @@ export function mountShare(d, hostEl, cfg) {
           st.placeRemoved = true; show('ext');
         }
       });
+      let drag = null;
+      d.addEventListener('pointerdown', (e) => { const row = e.target.closest?.('.ss-row.apps'); if (row && cfg.setup) drag = { row, x: e.clientX, left: row.scrollLeft }; });
+      d.addEventListener('pointermove', (e) => { if (drag) drag.row.scrollLeft = drag.left - (e.clientX - drag.x); });
+      d.addEventListener('pointerup', () => { drag = null; });
       d.addEventListener('input', (e) => {
         const k = e.target.dataset?.in; if (!k) return;
         const v = e.target.isContentEditable ? e.target.innerText : e.target.value;

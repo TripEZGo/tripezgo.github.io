@@ -29,20 +29,35 @@
   外部（App）要控制可以呼叫 window.tzDemo.pause() / .play() / .restart()（evaluateJavaScript，原生 → 頁面，單向）。
 -->
 <style>
-  :root { --page: #fff; --border: #dbd5cd; --surface: #fbf8f4; color-scheme: light; }
-  html[data-theme="dark"] { --page: #17120f; --border: #382f27; --surface: #221c17; color-scheme: dark; }
+  :root { --page: #fff; --border: #dbd5cd; --surface: #fbf8f4; --ink: #3b342d; --muted: #8a8076; color-scheme: light; }
+  html[data-theme="dark"] { --page: #17120f; --border: #382f27; --surface: #221c17; --ink: #e6ded4; --muted: #9a9086; color-scheme: dark; }
   html, body { margin: 0; height: 100%; overflow: hidden; background: var(--page); }
+  #view { display: contents; }
   #stage { position: fixed; left: 0; top: 0; width: 402px; height: 874px; transform-origin: 0 0; overflow: hidden; background: var(--page); }
   iframe { position: absolute; border: 0; width: 402px; height: 874px; background: var(--page); pointer-events: none; transform-origin: 0 0; }
   iframe.next { opacity: 0; }
   /* 不是手機畫面的那一種（隱私流向圖）：iframe 就是整個視窗，不縮放 */
   body.flat #stage { width: 100%; height: 100%; transform: none !important; }
   body.flat iframe { width: 100%; height: 100%; }
+  /* step（靈感空狀態，D145）：上面一行字幕、中間是手機畫面、下面「N / 12 · 提示」——都畫在殼裡（沒有 JS 橋） */
+  #cap, #pg { display: none; }
+  body.step { display: flex; flex-direction: column; }
+  body.step #view { display: block; position: relative; flex: 1; min-height: 0; overflow: hidden; }
+  body.step #stage { position: absolute; }
+  body.step #cap, body.step #pg { display: block; flex: none; text-align: center; font: 13px/1.35 -apple-system, system-ui, sans-serif; color: var(--ink); padding: 0 6px; }
+  body.step #cap { padding-bottom: 6px; min-height: 2.7em; display: flex; align-items: flex-end; justify-content: center; }
+  body.step #pg { padding-top: 6px; font-size: 12px; font-variant-numeric: tabular-nums; }
+  #pg i { font-style: normal; color: var(--muted); }
+  #strip { position: absolute; inset: 0; display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  #strip::-webkit-scrollbar { display: none; }
+  .sl { flex: none; width: 100%; height: 100%; scroll-snap-align: center; scroll-snap-stop: always; position: relative; overflow: hidden; }
   #hit { position: fixed; inset: 0; z-index: 20; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 </style>
 </head>
 <body>
-<div id="stage"></div>
+<div id="cap"></div>
+<div id="view"><div id="stage"></div></div>
+<div id="pg"></div>
 <script>
 (function () {
   /* DEMOS：page／q／auto＝iframe 載哪一頁、帶什麼參數、跑哪一支故事；flows＝once 模式依序播的幾段
@@ -65,6 +80,17 @@
   var stage = document.getElementById('stage');
   if (!spec) { document.body.textContent = 'unknown demo: ' + id; return; }
   if (spec.flat) document.body.classList.add('flat');
+  var view = document.getElementById('view'), capEl = document.getElementById('cap'), pgEl = document.getElementById('pg');
+  var stepUI = !!spec.step;
+  if (stepUI) document.body.classList.add('step');
+  var CAPS = (spec.caps && (spec.caps[lang] || spec.caps.en)) || [], HINTS = (spec.hints && (spec.hints[lang] || spec.hints.en)) || ['', '', ''];
+  var curN = 1;
+  function showStep(n, mode) {     // mode：0＝下一步、1＝最後一步之後（點了從頭）、2＝減少動態（左右滑）
+    if (!stepUI) return;
+    curN = n; capEl.textContent = CAPS[n - 1] || '';
+    pgEl.innerHTML = n + ' / ' + (spec.steps || 0) + (HINTS[mode] ? ' <i>· ' + HINTS[mode] + '</i>' : '');
+  }
+  if (stepUI) showStep(1, still ? 2 : 0);
 
   var flows = spec.flows || [spec], fi = 0;
 
@@ -72,7 +98,7 @@
   var SAFE_TOP = 54;
   function fit() {
     if (spec.flat) return;
-    var W = innerWidth, H = innerHeight, k = boxed && spec.box ? spec.box : null;
+    var W = stepUI ? view.clientWidth : innerWidth, H = stepUI ? view.clientHeight : innerHeight, k = boxed && spec.box ? spec.box : null;
     if (k) {            // 固定裁切框：只露出 [x, y, w, h] 這一塊，等比縮放放進視窗置中
       var sb = Math.min(W / k[2], H / k[3]);
       stage.style.clipPath = 'inset(' + k[1] + 'px ' + (402 - k[0] - k[2]) + 'px ' + (874 - k[1] - k[3]) + 'px ' + k[0] + 'px)';
@@ -83,6 +109,7 @@
     stage.style.transform = 'translate(' + ((W - 402 * s) / 2) + 'px,' + ((H - h * s) / 2 - top * s) + 'px) scale(' + s + ')';
   }
   addEventListener('resize', fit); fit();
+  if (stepUI && window.ResizeObserver) new ResizeObserver(function () { fit(); fitStrip(); }).observe(view);   // 字幕折行會改變畫面可用高度
 
   var seq = 0, paused = false, userPaused = false, finished = false, lastProg = Date.now();
   var ssSnap = {};   // 畫面頁後備儲存（sessionStorage 不能用時）回報的最新快照，key＝frame 名稱
@@ -102,9 +129,32 @@
     return fr;
   }
   // 視窗名稱必須是 tzd＋小寫英數：畫面裡的 App 殼靠它接上示範進度（不符會被改名、進度就斷了）
+  /* 減少動態＋有 stills：幾張關鍵靜止畫面排成一排，左右滑（scroll-snap）；字幕與「N / 12」跟著當前那一張。 */
+  var strip = null, slides = [];
+  function fitStrip() {
+    if (!strip) return;
+    var W = strip.clientWidth, H = strip.clientHeight, top = safe ? SAFE_TOP : 0, h = 874 - top, k = Math.min(W / 402, H / h);
+    slides.forEach(function (fr) { fr.style.transform = 'translate(' + ((W - 402 * k) / 2) + 'px,' + ((H - h * k) / 2 - top * k) + 'px) scale(' + k + ')'; });
+  }
+  function onStripScroll() { var i = Math.round(strip.scrollLeft / Math.max(1, strip.clientWidth)), f = spec.stills.frames[i]; if (f) showStep(f.n, 2); }
+  function buildStrip() {
+    stage.style.display = 'none';
+    strip = document.createElement('div'); strip.id = 'strip'; view.appendChild(strip);
+    spec.stills.frames.forEach(function (f, i) {
+      var sl = document.createElement('div'); sl.className = 'sl';
+      var fr = document.createElement('iframe');
+      fr.src = 'screens/' + (f.page || spec.stills.page) + '.html?lang=' + lang + '&theme=' + theme + '&embed=1&still=1' + (nohand ? '&nohand=1' : '') + '&' + f.q;
+      fr.name = 'tzd' + id.replace(/[^a-z0-9]/g, '') + 's' + i; fr.setAttribute('tabindex', '-1'); fr.setAttribute('aria-hidden', 'true');
+      sl.appendChild(fr); strip.appendChild(sl); slides.push(fr);
+    });
+    strip.addEventListener('scroll', onStripScroll, { passive: true });
+    fitStrip(); addEventListener('resize', fitStrip);
+    showStep(spec.stills.frames[0].n, 2);
+  }
+
   var st = { p: flows[0], name: 'tzd' + id.replace(/[^a-z0-9]/g, '') + 'r' + (++seq), fr: null };
-  st.fr = newFrame(st.p, st.name, false);
-  stage.appendChild(st.fr);
+  if (still && spec.stills) { buildStrip(); st.fr = slides[0]; }
+  else { st.fr = newFrame(st.p, st.name, false); stage.appendChild(st.fr); }
 
   function ctl(anims) {
     try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: (paused || userPaused || finished) ? 'pause' : 'play', anims: anims === true && (userPaused || finished) }, '*'); } catch (e) {}
@@ -123,7 +173,7 @@
   /* ---------- once：一段一段播、播完停住 ---------- */
   var gen = 0;
   function whenFree(fn) { (function t() { if (userPaused) setTimeout(t, 150); else fn(); })(); }
-  function advance() { if (fi < flows.length - 1) nextFlow(); else { finished = true; ctl(true); } }   // 還有下一段就換過去，沒有了就停在最後一幀（連畫面裡還在跑的 CSS 動畫一起定住，點一下重播時放開）
+  function advance() { if (fi < flows.length - 1) nextFlow(); else { finished = true; ctl(true); if (stepUI) showStep(curN, 1); } }   // 還有下一段就換過去，沒有了就停在最後一幀（連畫面裡還在跑的 CSS 動畫一起定住，點一下重播時放開）
   function nextFlow() {
     fi = (fi + 1) % flows.length; st.p = flows[fi];
     st.name = st.name.replace(/r\d+$/, '') + 'r' + (++seq);
@@ -133,13 +183,16 @@
     stage.appendChild(lf);
     swap(lf, st.p.still === true ? 600 : 1800);
   }
-  function restart() { finished = false; fi = flows.length - 1; nextFlow(); }   // 從頭重播
+  function restart() { finished = false; if (stepUI) showStep(1, 0); fi = flows.length - 1; nextFlow(); }   // 從頭重播
   function arm() {                      // still 的那一段停 ms 毫秒再換
     var g = ++gen;
     if (once && st.p.still === true && !still) setTimeout(function () { whenFree(function () { if (g === gen) advance(); }); }, st.p.ms || 3000);
   }
+  /* step（靈感空狀態，D145）：故事自己停在每一頁的結尾（tz-auto-stop），點一下才播下一頁 */
+  var stepMode = !!spec0().step, stepNo = 0;
+  function tellParent(n) { try { parent.postMessage({ type: 'tz-demo-step', n: n, of: spec0().steps || 0 }, '*'); } catch (e) {} }
   /* watchdog：故事超過 20 秒沒有任何進度訊息（卡住）→ 重播這一段 */
-  if (once && !still) setInterval(function () {
+  if (once && !still && !stepMode) setInterval(function () {
     if (paused || userPaused || finished || st.p.still === true || !st.p.auto) return;
     if (Date.now() - lastProg > 20000) { lastProg = Date.now(); fi = (fi + flows.length - 1) % flows.length; nextFlow(); }
   }, 2000);
@@ -149,6 +202,7 @@
     var d = e.data || {};
     if (d.type === 'tz-auto-progress' || d.type === 'tz-auto-hello' || d.type === 'tz-nav' || d.type === 'tz-auto-loop') lastProg = Date.now();
     if (d.type === 'tz-ss') { if (d.name) ssSnap[d.name] = d.data; return; }
+    if (d.type === 'tz-auto-stop') { if (st.fr.contentWindow === e.source) { stepNo = d.n; showStep(d.n, 0); tellParent(d.n); } return; }
     if (d.type === 'tz-auto-hello') { if (st.fr.contentWindow === e.source) ctl(); return; }
     if (d.type === 'tz-ready') { var n = stage.querySelector('iframe.next'); if (n && n.contentWindow === e.source && n._ready) n._ready(); return; }
     if (d.type === 'tz-nav') {
@@ -182,6 +236,7 @@
       clearTimeout(timer); timer = null;
       if (held) { held = false; setHeld(false); return; }
       if (ev && ev.type === 'pointerup' && finished) restart();   // 播完後點一下：從頭重播
+      else if (ev && ev.type === 'pointerup' && stepMode) { try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: 'play' }, '*'); } catch (e) {} }
     }
     hit.addEventListener('pointerdown', down);
     hit.addEventListener('pointerup', up);
