@@ -184,7 +184,7 @@
     stage.appendChild(lf);
     swap(lf, st.p.still === true ? 600 : 1800);
   }
-  function stepForward() { parked = false; try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: 'play' }, '*'); } catch (e) {} }   // 點一下（或 VoiceOver 的點兩下）：播下一頁
+  function stepForward() { parked = false; try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: 'play', step: true }, '*'); } catch (e) {} }   // 點一下（或 VoiceOver 的點兩下）：播下一頁
   function restart() { parked = false; finished = false; if (stepUI) showStep(1, 0); fi = flows.length - 1; nextFlow(); }   // 從頭重播
   function arm() {                      // still 的那一段停 ms 毫秒再換
     var g = ++gen;
