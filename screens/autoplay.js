@@ -34,6 +34,7 @@ if (FAST) while (lead < steps.length && steps[lead].wait && !steps[lead].tap && 
 const KEY = `tz-auto:${window.name || story}`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let stepNo = 0;
+let atStop = false;   // 停在某一頁的結尾：只有 step:true 的 play 才放得走（一般的 play 可能是殼先前送出、這時才到的）
 // 進度回報給首頁（外框底下的進度條，使用者 2026-10-12）。照每一步「大概要多久」算，條才會跟著動畫等速走：
 // 每一步開始時送 from→to 跟這一步的毫秒數，首頁那邊用線性動畫補；暫停時送 hold，條停在原地。
 const est = (s) => (s.wait ? wms(s) : 0) + (s.call || s.wait ? 0 : 420) + (s.tap ? 380 : 0) + (s.press ? s.hold || 600 : 0)
@@ -61,6 +62,7 @@ function setPaused(p, tell = true) {
 }
 addEventListener('message', (e) => {
   if (e.data?.type !== 'tz-auto-ctl') return;
+  if (e.data.cmd === 'play' && atStop) { if (!e.data.step) return; atStop = false; }
   setPaused(e.data.cmd === 'pause', false);
   animsHold = e.data.cmd === 'pause' && e.data.anims === true;
   holdAnimations(animsHold);   // anims：引導頁長按暫停才帶；首頁自己的暫停不凍動畫
@@ -165,7 +167,7 @@ function badgeAt(sel, n) {
   requestAnimationFrame(() => badgeEl.classList.add('on'));
 }
 async function run(step) {
-  if (step.stop) { stepNo = step.n; parent.postMessage({ type: 'tz-auto-stop', n: step.n }, '*'); setPaused(true); return; }
+  if (step.stop) { stepNo = step.n; parent.postMessage({ type: 'tz-auto-stop', n: step.n }, '*'); atStop = true; setPaused(true); return; }
   if (step.cam !== undefined) { camTo(step.cam || null, step.k || 2); return sleep(CAM_MS + 60); }
   if (step.badge !== undefined) { badgeAt(step.badge || null, step.n); return sleep(step.badge ? 250 : 120); }
   if (step.wait) return sleep(wms(step));
