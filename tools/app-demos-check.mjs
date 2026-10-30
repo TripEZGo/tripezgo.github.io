@@ -92,44 +92,47 @@ async function runOne(id, lang, theme) {
     if (!same(b, await page.screenshot())) row.problems.push('static：靜態畫面卻在動（再過 3 秒又變了）');
     row.shot = `${tag}.b.png`;
   } else if (kind === 'step') {
-    // step（靈感空狀態）：不自動播——停在第 1 步（0.8s 與 4.5s 一樣）；每點一下播一頁，「N / 總數」每次往前一格；
-    // 最後一步播完之後再點＝回到「1 / 總數」。字幕（#cap）每一步都不是空的。
-    if (!same(a, b)) row.problems.push('step：沒有點就在動（不該自動播放）');
-    const pgText = () => page.locator('#pg').innerText();
-    // 步驟只靠 pg 的數字判斷：頁面裡有自己循環的小動畫，截圖不穩；故事一播會在幾秒內把 N 往前推
-    const stillAtOne = async (ms) => { await page.waitForTimeout(ms); return /^1\s*\//.test(await pgText()); };
+    // step（靈感空狀態，2026-10-30 方案 A）：不自動播——停在第 1 格（0.8s 與 4.5s 一樣）；每一格畫面上有一支箭頭（#ag.on）；
+    // 殼本身沒有任何字；每點一下往前一格、點點（tzDemo.state().n）一路走到總數；最後一格 ›（↻）再點回第 1 步；點點可以跳步、‹ 回上一步。
+    const state = () => page.evaluate(() => window.tzDemo.state());
+    const arrowOn = () => page.evaluate(() => !!document.getElementById('ag')?.classList.contains('on') && !!document.querySelector('#ag .ah'));
+    const waitStop = async (ms = 20000) => { for (let t = 0; t < ms / 100; t++) { if (await arrowOn()) { await page.waitForTimeout(150); return true; } await page.waitForTimeout(100); } return false; };
+    if (!(await waitStop())) row.problems.push('step：第 1 格沒有箭頭');
+    if ((await state()).n !== 1) row.problems.push('step：沒有點就走了（不該自動播放）');   // 箭頭自己會浮動，所以不比截圖，看點點
+    if ((await page.evaluate(() => document.body.innerText.trim())) !== '') row.problems.push('step：殼上有字（方案 A 沒有任何說明文字）');
     // App 翻回這一頁時呼叫 restart()：重來之後要停在第 1 步等點，不能自己播（背景載入的那一份會先停下來）
     await page.evaluate(() => window.tzDemo.restart());
-    if (!(await stillAtOne(9000))) row.problems.push('step：restart() 之後自己播了');
-    // 原生（App）在畫面上時會呼叫 play()；停在某一頁等點的故事不能被它放走
+    await page.waitForTimeout(4000);
+    if ((await state()).n !== 1) row.problems.push('step：restart() 之後自己播了');
+    // 原生（App）在畫面上時會呼叫 play()；停在某一格等點的故事不能被它放走
     await page.evaluate(() => window.tzDemo.pause()); await page.evaluate(() => window.tzDemo.play());
-    if (!(await stillAtOne(7000))) row.problems.push('step：外部 play() 把停在等點的那一頁放走了');
-    const total = await page.evaluate(() => +(document.getElementById('pg').textContent.match(/\/\s*(\d+)/) || [0, 0])[1]);
+    await page.waitForTimeout(5000);
+    if ((await state()).n !== 1) row.problems.push('step：外部 play() 把停在等點的那一格放走了');
+    await waitStop();
+    const total = (await state()).of;
     let n = 1;
     for (let tap = 0; tap < total + 6 && n < total; tap++) {
-      const before = await pgText();
+      const before = n;
       await page.mouse.click(W / 2, H / 2);
       let moved = false;
-      for (let t = 0; t < 60; t++) { await page.waitForTimeout(250); if ((await pgText()) !== before) { moved = true; break; } }
-      if (!moved) { row.problems.push(`step：第 ${tap + 1} 次點擊後 10 秒內沒有走到下一步（停在 ${before}）`); break; }
-      n = +(await pgText()).match(/^(\d+)/)[1];
-      if (!(await page.locator('#cap').innerText()).trim()) row.problems.push(`step：第 ${n} 步沒有字幕`);
+      for (let t = 0; t < 80; t++) { await page.waitForTimeout(250); const m = (await state()).n; if (m !== before && (await arrowOn())) { moved = true; break; } }
+      await waitStop(8000);
+      n = (await state()).n;
+      if (!moved && n === before && tap < total - 1 && !(before === 12)) { row.problems.push(`step：第 ${tap + 1} 次點擊後沒有走到下一步（停在 ${before}）`); break; }
+      if (!(await arrowOn())) row.problems.push(`step：第 ${n} 步沒有箭頭`);
     }
     if (n !== total) row.problems.push(`step：沒有走到最後一步（${n} / ${total}）`);
     else {
-      // 最後一步：點一下播最後一頁、播完提示變成「從頭」；再點回到第 1 步
-      await page.mouse.click(W / 2, H / 2);
-      for (let t = 0; t < 80 && !/^1\s*\//.test(await pgText()); t++) {
-        await page.waitForTimeout(250);
-        if (t % 20 === 19) await page.mouse.click(W / 2, H / 2);
-      }
-      if (!/^1\s*\//.test(await pgText())) row.problems.push('step：最後一步之後再點沒有回到第 1 步');
-      else {
-        // 重來之後要停在第 1 步等點，不能自己又播下去
-        await page.waitForTimeout(3500);
-        const r1 = await page.screenshot(); await page.waitForTimeout(1500);
-        if (!/^1\s*\//.test(await pgText()) || !same(r1, await page.screenshot())) row.problems.push('step：回到第 1 步之後自己又播了');
-      }
+      // 最後一步：›（↻）回到第 1 步，之後停著
+      await page.click('#next');
+      await waitStop();
+      if ((await state()).n !== 1) row.problems.push('step：最後一步之後再點沒有回到第 1 步');
+      await page.waitForTimeout(3500);
+      if ((await state()).n !== 1) row.problems.push('step：回到第 1 步之後自己又播了');
+      await page.click(`#dots i[data-n="${Math.min(12, total)}"]`); await waitStop();
+      if ((await state()).n !== Math.min(12, total)) row.problems.push('step：點點沒有跳到那一步');
+      await page.click('#prev'); await waitStop();
+      if ((await state()).n !== Math.min(12, total) - 1) row.problems.push('step：‹ 沒有回上一步');
     }
     row.shot = `${tag}.b.png`;
   } else if (kind === 'ambient') {

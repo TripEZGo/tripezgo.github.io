@@ -149,6 +149,7 @@ export function go(page, query = '') {
   if (interactive && params.get('auto')) q.set('auto', params.get('auto'));   // 換頁後自動示範要接著跑
   if (interactive && params.get('av')) q.set('av', params.get('av'));          // 腳本的版本號也帶著
   if (interactive && params.get('ext')) q.set('ext', params.get('ext'));
+  if (interactive && params.get('ff') && !window.__ffDone) q.set('ff', params.get('ff'));          // 一頁一頁點著看（share-setup）：快轉到某一步，換頁也要接著快轉
   for (const k of ['theme', 'embed', 'still']) if (params.get(k)) q.set(k, params.get(k));   // 深色、打包進 App 的示範：換頁也要帶著
   const url = new URL(`./${page}.html?${q}`, location.href).href;
   // 在首頁的外框裡：請外面在背景載好新的一頁、畫完再瞬間換上，整頁不會閃（使用者 2026-10-12）。

@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=60346b1ce2","/screens/chrome.js":"/screens/chrome.js?v=3eb5321d85","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=17414c4484","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=1b2258c1c3","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>新增行程</title>
 <!--
@@ -26,6 +26,9 @@
   .foot .primary.done { background: var(--success); color: var(--on-accent); }
   .foot .primary svg { width: 18px; height: 18px; stroke-width: 2.4; margin-right: 6px; display: inline-block; vertical-align: -3px; }
   .foot .primary { display: block; text-align: center; line-height: 48px; }
+  /* chain=1（靈感空狀態 share-setup 示範的新增行程那一步）：釘底的「加入行程」是填色的主按鈕（App 的 PrimaryButton） */
+  html.chain .foot .primary { background: var(--accent-ink); color: var(--on-accent); border-radius: 8px; font: 600 var(--t-base)/48px var(--font); }
+  html.chain .foot .primary.done { background: var(--success); }
   /* 地點：搜尋欄（設計 V1 .search）＋地圖鈕 44×44 */
   .prow { display: flex; gap: 8px; }
   .prow .inp { flex: 1; min-width: 0; padding-left: 38px; background: var(--page) no-repeat; position: relative; }
@@ -53,12 +56,14 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, theme, still, chrome, ready, interactive, svg, swatchClass, categoryName, loadCategories, fmt } from './chrome.js';
+import { lang, theme, still, params, go, chrome, ready, interactive, svg, swatchClass, categoryName, loadCategories, fmt } from './chrome.js';
 import { F, di, chipFill } from './share-ext.js';
 const { MAKI, MAKI_OF_TYPE, DEFAULT_ICON_ID } = await import('../trip/icons.js');
 
 await loadCategories();
-const L = { 'zh-Hant-TW': 0, en: 1, ja: 2 }[lang] ?? 1;
+const CHAIN = params.get('chain') === '1' ? await import('./inspiration-chain.js') : null;
+if (CHAIN) document.documentElement.classList.add('chain');
+const L ={ 'zh-Hant-TW': 0, en: 1, ja: 2 }[lang] ?? 1;
 // UI.json（ui.event.placemode.*、ui.event.place.placeholder、ui.event.name.placeholder）、Trips.json（trips.event.add.submit）
 const S = {
   modeWith: ['指定地點', 'With a Place', '場所を指定'][L], modeWithout: ['不指定地點', 'No Place', '場所なし'][L],
@@ -125,6 +130,8 @@ if (interactive) {
   });
   $('go').addEventListener('click', () => {
     $('go').classList.add('done'); $('go').innerHTML = `${di('check')}${F.doneEvent}`;
+    // chain=1：存好就開那一則的檢視行程（同 inspiration.html 原本「新增關聯 → 行程」直接開的那一頁）
+    if (CHAIN) setTimeout(() => go('event', 'event=new-from-inspiration&day=2&added=1&chain=1'), 500);
   });
 }
 // 自動示範（autoplay.js 的 { call: 'typeQuery' }）：搜尋欄一個字一個字打
@@ -134,7 +141,13 @@ window.__auto = {
     for (const ch of S.query) { q.value += ch; q.dispatchEvent(new Event('input', { bubbles: true })); await new Promise((r) => setTimeout(r, 130)); }
   },
 };
-if (still) { choose(0); $('ts').textContent = '10:30'; $('te').textContent = '11:30'; }
+if (CHAIN) {
+  // 從靈感「新增關聯 → 行程」帶進來的那張表單（靈感空狀態 share-setup 示範）：地點卡、標題、類型、時間都由那則靈感（Google 地圖「宮島水族館」）帶好
+  PLACES[0].name = CHAIN.GM.place;
+  choose(0);
+  $('title').value = CHAIN.GM.title;
+  $('ts').textContent = CHAIN.CHAIN_EVENT.start; $('te').textContent = CHAIN.CHAIN_EVENT.end;
+} else if (still) { choose(0); $('ts').textContent = '10:30'; $('te').textContent = '11:30'; }
 ready();
 </script>
 </body>

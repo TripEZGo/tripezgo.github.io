@@ -45,20 +45,13 @@ export const DEMOS = {
   plan: { ...ONB, flows: [{ page: 'calendar', q: 'day=2', auto: 'demo-plan-calendar' }, { page: 'event', q: 'extra=1', still: true, ms: 4500 }, { page: 'leg', auto: 'leg' }],
     pages: ['calendar', 'timeline', 'event', 'leg'] },
   share: { ...ONB, flows: [{ page: 'share-igi', auto: 'insp-chain' }], pages: ['share-igi', 'share-gmi', 'inspiration', 'event'] },
-  // 靈感空狀態（1.6.0 D145）：一頁一頁點著看（step）；最後一頁再點＝從第 1 頁重來。
-  //   字幕與「N / 12」由殼自己畫（caps／hint；沒有 JS 橋）。減少動態（still=1）：stills＝幾張關鍵靜止畫面（n＝對應第幾步），左右滑，字幕照步驟。
-  'share-setup': { ...ONB, step: true, steps: 12,
+  // 靈感空狀態（1.6.0 D145，2026-10-30 方案 A）：一頁一頁點著看（step），沒有任何說明文字。
+  //   steps＝點點的顆數；frames＝每個停住的畫面（'12b'＝第 12 步點完「新增關聯」之後、選單裡的第二個箭頭；格的順序與 stories-tools.js 的 stop 一致）。
+  //   箭頭由殼畫（網頁把目標矩形用 tz-auto-stop 送過來）；減少動態：沒有手指與轉場、箭頭不動，點下一步直接快轉到下一格（見 app-demos-shell.html）。
+  'share-setup': { ...ONB, step: true, steps: 14,
+    frames: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '12b', '13', '14'],
     flows: [{ page: 'share-gmi', q: 'setup=1', auto: 'insp-gmaps-setup' }],
-    stills: { page: 'share-gmi', frames: [
-      { n: 1, q: 'setup=1' }, { n: 3, q: 'setup=1&step=sheet' }, { n: 6, q: 'setup=1&step=sheet&apl=on' },
-      { n: 9, q: 'setup=2&step=sheet' }, { n: 10, q: 'setup=1&step=ext' }, { n: 11, page: 'inspiration', q: 'chain=1' }] },
-    hints: { 'zh-Hant-TW': ['點一下看下一步', '點一下從頭看', '左右滑看關鍵步驟'], en: ['Tap for the next step', 'Tap to start over', 'Swipe for key steps'], ja: ['タップで次へ', 'タップで最初から', 'スワイプで主な手順'] },   // [下一步, 最後一步之後, 減少動態]
-    caps: {
-      'zh-Hant-TW': ['在地圖 App 按「分享」', '把 App 那一列往左滑到底', '點「更多」', '點右上角「編輯」', '往下滑到最底', '打開 TripEZGo', '點綠色 ＋，加到喜好項目', '點右上角 ✓ 完成', '分享列多了 TripEZGo，點它', '按「儲存」，存成靈感', '回到 TripEZGo，點這一則靈感', '新增關聯 → 行程'],
-      en: ['Tap Share in Maps', 'Swipe the app row all the way left', 'Tap More', 'Tap Edit at the top right', 'Scroll down to the bottom', 'Turn on TripEZGo', 'Tap the green + to add it to Favorites', 'Tap ✓ Done at the top right', 'TripEZGo is now in the share row. Tap it', 'Tap Save to save it as an inspiration', 'Back in TripEZGo, tap that inspiration', 'Add Link → Event'],
-      ja: ['マップで「共有」をタップ', 'Appの列を左端までスワイプ', '「その他」をタップ', '右上の「編集」をタップ', '一番下までスクロール', 'TripEZGoをオンにする', '緑の＋をタップして「よく使う項目」に追加', '右上の✓（完了）をタップ', '共有列にTripEZGoが追加された。タップする', '「保存」をタップしてインスピレーションに保存', 'TripEZGoに戻り、このインスピレーションをタップ', '「関連を追加」→ 行程'],
-    },
-    pages: ['share-gmi', 'inspiration', 'event'] },
+    pages: ['share-gmi', 'inspiration', 'event-new', 'event'] },
   map: { ...ONB, flows: [{ page: 'map-demo', q: 'nowalk=1', auto: 'map-pin-walk' }], pages: ['map-demo'] },
   mates: { ...ONB, flows: [{ page: 'map-demo', q: 'focus=mates', auto: 'mates-map' }], pages: ['map-demo'] },
   overview: { ...ONB, flows: [{ page: 'overview', auto: 'overview' }], pages: ['overview'] },

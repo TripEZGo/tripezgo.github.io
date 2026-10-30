@@ -18,6 +18,11 @@
 //   { scroll: sel, by: 200 }             捲動容器
 //   { wait: ms }                         多停一下
 //   { call: 'name' }                     呼叫頁面掛在 window.__auto[name] 的函式（真的沒辦法用點的時候才用）
+//   { stop: true, n: 3, b: 1, at: sel, dir: 'down', ring: 0|1, ax, ay, len }
+//                                        一頁一頁點著看（App 的靈感空狀態 share-setup）：停在這一格等外面叫下一步。at＝下一步要點的元素：
+//                                        停住時量它的矩形，連同箭頭怎麼畫（dir 指向、ring 圈不圈、ax/ay 尖端座標、len 箭身）用 tz-auto-stop 送給殼，
+//                                        箭頭由殼畫。b：同一步的第二個箭頭（點完選單才出現的那一個）。
+// 網址帶 ff=<格>（'5'、'12b'）：快轉——不畫手指、不等轉場，一路做到那一格的 stop 才停（點點跳步、上一步、減少動態都是這樣到的）。
 // 所有選擇器都在這支 iframe 的 document 裡找；找不到就等最多 2 秒，再找不到跳過這一步。
 const { STORIES, INPLACE } = await import('./stories.js' + new URL(import.meta.url).search);   // 版本號一路帶下去
 
@@ -26,6 +31,8 @@ const params = new URLSearchParams(location.search);
 const story = params.get('auto');
 const steps = STORIES[story] || [];
 const KEY = `tz-auto:${window.name || story}`;
+const FF = params.get('ff');
+let fast = !!FF;   // 快轉中：到了 FF 那一格的 stop 才變回 false
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let stepNo = 0;
 let atStop = false;   // 停在某一頁的結尾：只有 step:true 的 play 才放得走（一般的 play 可能是殼先前送出、這時才到的）
@@ -39,7 +46,7 @@ const progress = (data) => parent.postMessage({ type: 'tz-auto-progress', ...dat
 const stepProgress = (i) => progress({ from: cum[i] / total, to: (i < steps.length ? cum[i + 1] : total) / total, ms: i < steps.length ? est(steps[i]) : END });
 
 // 一開始是停著的：首頁確認這支手機捲進畫面（35% 以上）才送 play 過來；捲出去送 pause
-let paused = true, waiters = [];
+let paused = !FF, waiters = [];   // 快轉的那一份不等殼說「播」（殼只在它停到目標那一格才換上來）
 const untilPlaying = () => paused ? new Promise((r) => waiters.push(r)) : Promise.resolve();
 // 外框帶 anims 的暫停：畫面裡正在跑的 CSS 動畫與轉場也停住、繼續時只放開剛才被停住的（引導頁長按暫停，ADR-0050）。
 // 跨來源的外框碰不到這一頁的 document，所以由這一頁自己做。
@@ -159,8 +166,27 @@ function badgeAt(sel, n) {
   document.documentElement.append(badgeEl);
   requestAnimationFrame(() => badgeEl.classList.add('on'));
 }
+const rectOf = (el) => { const r = el.getBoundingClientRect(); return { x: +r.left.toFixed(1), y: +r.top.toFixed(1), w: +r.width.toFixed(1), h: +r.height.toFixed(1) }; };
+// 停住那一刻下一步要點的元素：等它出現、等位置不再動（面板還在滑進來時量到的是半路上的位置），再量。
+async function arrowFor(step) {
+  if (!step.at) return null;
+  let el = null;
+  for (let t = 0; t < 30 && !el; t++) { el = document.querySelector(step.at); if (!el) await sleep(100); }
+  if (!el) return null;
+  let last = '', same = 0;
+  for (let t = 0; t < 40 && same < 3; t++) { const k = JSON.stringify(rectOf(el)); same = k === last ? same + 1 : 0; last = k; await sleep(60); }
+  return { rect: rectOf(el), dir: step.dir, ring: step.ring !== 0, ax: step.ax, ay: step.ay, len: step.len };
+}
 async function run(step) {
-  if (step.stop) { stepNo = step.n; parent.postMessage({ type: 'tz-auto-stop', n: step.n }, '*'); atStop = true; setPaused(true); return; }
+  if (step.stop) {
+    const id = String(step.n) + (step.b ? 'b' : '');
+    if (fast && id !== FF) return;   // 快轉途中經過的格：不停
+    const arrow = await arrowFor(step);
+    fast = false; window.__ffDone = true; stepNo = step.n;   // __ffDone：go() 之後換頁就不再帶 ff 了
+    dot.classList.remove('on'); jumpNext = true;   // 手指收起，下一步它直接出現在目標上
+    parent.postMessage({ type: 'tz-auto-stop', n: step.n, id, arrow }, '*'); atStop = true; setPaused(true); return;
+  }
+  if (fast) return runFast(step);
   if (step.cam !== undefined) { camTo(step.cam || null, step.k || 2); return sleep(CAM_MS + 60); }
   if (step.badge !== undefined) { badgeAt(step.badge || null, step.n); return sleep(step.badge ? 250 : 120); }
   if (step.wait) return sleep(step.wait);
@@ -204,6 +230,27 @@ async function run(step) {
   }
 }
 
+// 快轉（ff）：同樣的事件、沒有手指與漣漪、等待縮短。只做到「該有的狀態都到了」——轉場有沒有播完由殼等（目標那一格停住後再多等一下才換上來）。
+async function runFastStep(step) {
+  if (step.cam !== undefined || step.badge !== undefined) return;
+  if (step.wait) return sleep(Math.min(300, step.wait * 0.5));
+  if (step.call) return window.__auto?.[step.call]?.();
+  const el = await find(step.tap || step.press || step.drag || step.swipe || step.type || step.scroll);
+  if (!el) return;
+  reveal(el);
+  const [x, y] = centre(el);
+  if (step.scroll) { el.scrollBy({ top: step.by, behavior: 'instant' }); return sleep(60); }
+  if (step.tap) { pe('pointerdown', x, y, el); pe('pointerup', x, y, el); el.click(); return sleep(80); }
+  if (step.drag || step.swipe) {
+    pe('pointerdown', x, y, el);
+    const n = 6, dx = step.dx || 0, dy = step.dy || 0;
+    for (let i = 1; i <= n; i++) { const px = x + dx * i / n, py = y + dy * i / n; pe('pointermove', px, py, document.elementFromPoint(px, py) || el); await sleep(16); }
+    pe('pointerup', x + dx, y + dy, document.elementFromPoint(x + dx, y + dy) || el);
+    return sleep(60);
+  }
+}
+const runFast = runFastStep;
+
 function load() { try { return JSON.parse(sessionStorage.getItem(KEY)) || null; } catch { return null; } }
 function save(s) { try { sessionStorage.setItem(KEY, JSON.stringify(s)); } catch {} }
 const here = () => location.pathname.split('/').pop().replace(/\.html$/, '');
@@ -212,7 +259,7 @@ async function main() {
   if (!steps.length) return;
   let st = load();
   if (!st || st.start == null) { st = { start: location.href, i: 0 }; save(st); }
-  await sleep(GAP);                               // 開場跟每一步一樣只停 500ms（使用者 2026-10-12）
+  await sleep(fast ? 100 : GAP);                  // 開場跟每一步一樣只停 500ms（使用者 2026-10-12）
   while (true) {
     for (; st.i < steps.length; ) {
       await untilPlaying();
@@ -221,7 +268,7 @@ async function main() {
       stepProgress(st.i);
       st.i += 1; save(st);                        // 先記下一步：這一步若換頁，新頁接著做
       await run(step);
-      await sleep(step.cam !== undefined || step.badge !== undefined || step.stop ? 0 : GAP);   // 鏡頭、號碼、停：不另外停 GAP（一頁一頁點著看時才不拖）
+      await sleep(fast || step.cam !== undefined || step.badge !== undefined || step.stop ? 0 : GAP);   // 鏡頭、號碼、停：不另外停 GAP（一頁一頁點著看時才不拖）
     }
     // 一輪結束：多停一下
     stepProgress(steps.length); await sleep(END); await untilPlaying();
