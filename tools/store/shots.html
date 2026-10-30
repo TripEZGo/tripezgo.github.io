@@ -257,7 +257,7 @@
      iPhone：畫面 600、邊框 16 → 機身 632；iPad：畫面 880、邊框 20 → 機身 920；Duo：畫面 1260、邊框 18 → 機身 1296 */
   .shot.pair { --side: 100px; }
   .shot.pair .pair-row { position: absolute; z-index: 1; left: 50%; bottom: var(--dev-bottom); transform: translateX(-50%); display: flex; align-items: flex-end; }
-  .shot.pair .pair-row .device { position: relative; transform: none; }   /* relative：iPad 機身上緣的 .rail 要相對機身定位 */
+  .shot.pair .pair-row .device { position: relative; left: auto; bottom: auto; transform: none; }   /* relative：iPad 機身上緣的 .rail 要相對機身定位 */
   .shot[data-device="iphone"].pair { --title: 138px; --sub: 56px; --sub-gap: 34px; --halo-top: 900px; }
   .shot[data-device="iphone"].pair .pair-row { gap: 24px; }
   .shot[data-device="iphone"].pair .pair-row .device { padding: 16px; border-radius: 82px; }
