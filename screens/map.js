@@ -63,7 +63,7 @@ d.insertAdjacentHTML('beforeend', `<div class="map" style="background-image:url(
 // 頁首（同旅程分頁，但右邊沒有切換鈕，標題吃滿到右邊 20）
 d.insertAdjacentHTML('beforeend', `
   <div class="head"><div class="greet">${`${t.monthDay(today.getMonth() + 1, today.getDate())} · ${t.weekday[today.getDay()]}`.replace(/[0-9]+/g, m => lang === 'ja' ? m : `<span lang="en">${m}</span>`)}</div>
-  <div class="title">${fmt(trip.title).replace(/[\u3000-\u9fff\uff00-\uffef]+/g, m => `<span class="cjk">${m}</span>`)}</div></div>`);
+  <div class="title" data-fit>${fmt(trip.title).replace(/[\u3000-\u9fff\uff00-\uffef]+/g, m => `<span class="cjk">${m}</span>`)}</div></div>`);
 
 // 日期篩選列：「全部」＋每一天
 const chips = [`<div class="chip all"><b>${S.all}</b></div>`].concat(Array.from({ length: trip.dayCount }, (_, i) => {
@@ -150,13 +150,13 @@ if (lang === 'ja') {
 if (lang === 'en') d.querySelectorAll('.c-detail, .n-status').forEach(el => {
   el.innerHTML = el.innerHTML.replace(/ · /g, '<span class="mdot"> · </span>');
 });
-chrome(d, { tab: 2 });
+chrome(d, { tab: 3 });
 if (lang === 'ja') d.querySelectorAll('.tab span').forEach((el, i) => { el.textContent = TABS_JA[i]; });
 if (card === 'nav') {
   // 導航中：狀態列 9:41 後面多一枚定位箭頭（系統的 location.fill，照基準圖量），地圖分頁的 icon 掛一顆點
   d.querySelector('.sb').classList.add('locating');
   d.querySelector('.sb-time').insertAdjacentHTML('afterend', `<svg class="sb-loc" viewBox="0 0 13 13" aria-hidden="true">
     <path d="M1.2 5.6 11.8 1.2 7.4 11.8 6.4 6.6Z"/></svg>`);
-  d.querySelectorAll('.tab')[2].insertAdjacentHTML('beforeend', '<i class="tab-dot"></i>');
+  d.querySelectorAll('.tab')[3].insertAdjacentHTML('beforeend', '<i class="tab-dot"></i>');
 }
 ready();

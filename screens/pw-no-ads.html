@@ -120,14 +120,14 @@ const hdr3 = `<div class="hdr"><div class="tc"><b>${t.day(3)}</b><span>${t.short
 const rows = events.map((e, i) => evRow(e) + (i === 0 ? adRow(s.ads[0]) : i === 3 ? adRow(s.ads[1]) : '')).join('') + hdr3 + events3.map(evRow).join('');
 d.insertAdjacentHTML('beforeend', `
   <div class="head"><div class="greet">${t.monthDay(today.getMonth() + 1, today.getDate())} · ${t.weekday[today.getDay()]}</div>
-  <div class="title">${fmt(trip.title)}</div></div>
+  <div class="title" data-fit>${fmt(trip.title)}</div></div>
   <div class="seg">${s.tabs.map((x, i) => `<div class="${i ? '' : 'on'}">${x}</div>`).join('')}</div>
   <div class="table"><div class="hdr"><div class="tc"><b>${t.today}</b>
     <span>${t.shortDate(today.getMonth() + 1, today.getDate())} ${t.weekday[today.getDay()]}</span></div>
     <div class="tag">${s.count(day.events.length)}</div><div class="sp"></div>
     <svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></div>${rows}</div>`);
 
-chrome(d, { tab: 0 });
+chrome(d, { tab: 1 });
 ready();
 
 // 示範：去廣告之後，廣告列一則一則收掉，清單把位置補上

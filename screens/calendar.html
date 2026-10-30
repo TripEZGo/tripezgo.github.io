@@ -218,7 +218,7 @@ const tap = interactive ? ' data-tap' : '';
 // 頁首
 d.insertAdjacentHTML('beforeend', `
   <div class="head"><div class="greet">${t.monthDay(today.getMonth() + 1, today.getDate())} · ${t.weekday[today.getDay()]}</div>
-  <div class="title">${fmt(trip.title)}</div></div>
+  <div class="title" data-fit>${fmt(trip.title)}</div></div>
   <div class="head-act" id="mode"${tap}>${svg('readingTimeline')}</div>`);
 
 // 日期籤：把選中那一籤捲進畫面（App 捲到「選中那一籤的前一籤露出一點」——照截圖，第 2 天時往左捲 24）
@@ -305,7 +305,7 @@ function renderStatic() {
 if (!interactive) {
   renderStatic();
   d.insertAdjacentHTML('beforeend', `<div class="fab">${svg('plus')}</div><div class="scrim"></div>`);
-  chrome(d, { tab: 1 });
+  chrome(d, { tab: 2 });
   ready();
 } else {
   /* ── 互動模式 ─────────────────────────────────────────────────────────────
@@ -459,7 +459,7 @@ if (!interactive) {
   const topEl = grid.querySelector('.top');
 
   d.insertAdjacentHTML('beforeend', `<div class="fab" data-tap>${svg('plus')}</div><div class="scrim"></div>`);
-  chrome(d, { tab: 1 });
+  chrome(d, { tab: 2 });
 
   const save = e => {
     e.src.start = clock(e.s); e.src.end = clock(e.e2);   // 換日再換回來時讀的是範本那一份

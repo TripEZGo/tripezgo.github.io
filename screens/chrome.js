@@ -51,14 +51,14 @@ export async function loadTrip() {
 // App 的 UI 字串（照 App 各語系的 xcstrings 抄，只收畫面上用得到的）
 const STRINGS = {
   'zh-Hant-TW': {
-    tabs: ['總覽', '旅程', '地圖', '資料', '設定'],   // 第 4 格：1.3.0 起「資料」（Widgets.json widgets.tab.title；原「小工具」）
+    tabs: ['主頁', '總覽', '旅程', '地圖', '資料'],   // 1.6.0 起五格：主頁、總覽、旅程、地圖、資料（設定搬進主頁右上；xcstrings home／overview／trips／map／widgets.tab.title）
     today: '今天', day: n => `第 ${n} 天`, allDay: '全日',
     weekday: ['週日', '週一', '週二', '週三', '週四', '週五', '週六'],
     monthDay: (m, d) => `${m}月${d}日`, shortDate: (m, d) => `${m}/${d}`,
     minutes: m => `${m} 分`, hours: h => `${h} 小時`, hm: (h, m) => `${h} 小時 ${m} 分`,
   },
   en: {
-    tabs: ['Overview', 'Trip', 'Map', 'Library', 'Settings'],
+    tabs: ['Home', 'Overview', 'Trip', 'Map', 'Library'],
     today: 'Today', day: n => `Day ${n}`, allDay: 'All day',
     weekday: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     monthDay: (m, d) => `${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m-1]} ${d}`,
@@ -66,7 +66,7 @@ const STRINGS = {
     minutes: m => `${m} min`, hours: h => `${h} h`, hm: (h, m) => `${h} h ${m} min`,
   },
   ja: {
-    tabs: ['概要', '旅行', 'マップ', '資料', '設定'],
+    tabs: ['ホーム', '概要', '旅行', 'マップ', '資料'],
     today: '今日', day: n => `${n} 日目`, allDay: '終日',
     weekday: ['日', '月', '火', '水', '木', '金', '土'],
     monthDay: (m, d) => `${m}月${d}日`, shortDate: (m, d) => `${m}/${d}`,
@@ -75,7 +75,7 @@ const STRINGS = {
   // 韓文：字照 App 字串表（overview/trips/map/widgets/settings.tab.title、ui.day.today、domain.itinerary.daylabel、
   // ui.allday、ui.duration.*）；日期照 DateFormatter 在 ko 的模板結果（TripTextFormatter：EEE→「토」、Md→「10. 10.」、MMMd→「10월 10일」）
   ko: {
-    tabs: ['한눈에 보기', '여행', '지도', '자료', '설정'],
+    tabs: ['홈', '한눈에 보기', '여행', '지도', '자료'],
     today: '오늘', day: n => `${n}일차`, allDay: '종일',
     weekday: ['일', '월', '화', '수', '목', '금', '토'],
     monthDay: (m, d) => `${m}월 ${d}일`, shortDate: (m, d) => `${m}. ${d}.`,
@@ -97,6 +97,7 @@ export const ICON = {
   calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/>',
   map: '<path d="M9 3.5 3.5 5.5v15L9 18.5l6 2 5.5-2v-15L15 5.5z M9 3.5v15M15 5.5v15"/>',
   notes: '<path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z M14 3v5h5M8.5 12.5h7M8.5 16.5h5"/>',
+  home: '<path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/>',   // DesignIcon.home（設計稿 z-home-160 第 7 節）
   settings: '<circle cx="12" cy="12" r="3.2"/><path d="M19.4 13.5a7.6 7.6 0 0 0 0-3l1.8-1.4-1.9-3.2-2.1.9a7.6 7.6 0 0 0-2.6-1.5L14.2 3h-3.7l-.4 2.3a7.6 7.6 0 0 0-2.6 1.5l-2.1-.9L3.5 9.1l1.8 1.4a7.6 7.6 0 0 0 0 3l-1.8 1.4 1.9 3.2 2.1-.9a7.6 7.6 0 0 0 2.6 1.5l.4 2.3h3.7l.4-2.3a7.6 7.6 0 0 0 2.6-1.5l2.1.9 1.9-3.2z"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
   readingTimeline: '<path d="M8 3.6v1.7M8 9.5v5M8 18.7v1.7M12.4 7.4H20M12.4 16.6h4.8"/><circle cx="8" cy="7.4" r="2.1"/><circle cx="8" cy="16.6" r="2.1"/>',
@@ -162,8 +163,8 @@ export function go(page, query = '') {
   }
   location.href = url;
 }
-/** 分頁列每一格對到哪個畫面（設定分頁還沒有複刻，點了不動）。「資料」落在靈感那一格（LibraryViewModel.initialIndex：1.4.0 起第一次進來是靈感） */
-export const TAB_PAGES = ['overview', 'calendar', 'map', 'inspiration', null];
+/** 分頁列每一格對到哪個畫面（1.6.0 起設定不在分頁列上）。「資料」落在靈感那一格（LibraryViewModel.initialIndex：1.4.0 起第一次進來是靈感） */
+export const TAB_PAGES = ['home', 'overview', 'calendar', 'map', 'inspiration'];
 
 export function chrome(device, { tab = null, dark = false, back = false } = {}) {
   if (interactive) {
@@ -192,19 +193,32 @@ export function chrome(device, { tab = null, dark = false, back = false } = {}) 
     <div class="sb${dark ? ' on-dark' : ''}"><div class="sb-time">9:41</div><div class="sb-island"></div>${SB_ICONS}</div>
     <div class="home${dark ? ' on-dark' : ''}"></div>`);
   if (tab !== null) {
-    const icons = ['overview', 'calendar', 'map', 'notes', 'settings'];   // 「資料」沿用折角紙（WidgetsTabCoordinator：.tz(title:, icon: .notes)，U2）
+    const icons = ['home', 'overview', 'calendar', 'map', 'notes'];   // 1.6.0：主頁 .home（HomeCoordinator）；「資料」沿用折角紙（WidgetsTabCoordinator：.tz(title:, icon: .notes)，U2）
     device.insertAdjacentHTML('beforeend', `<nav class="tabbar">${icons.map((ic, i) =>
       `<div class="tab${i === tab ? ' on' : ''}" data-tab="${i}">${svg(ic)}<span>${t.tabs[i]}</span></div>`).join('')}</nav>`);
     if (interactive) device.querySelector('.tabbar').addEventListener('click', (e) => {
       const el = e.target.closest('[data-tab]'); if (!el) return;
-      const i = +el.dataset.tab; if (i !== tab && TAB_PAGES[i]) go(TAB_PAGES[i], i === 1 ? 'day=2' : '');
+      const i = +el.dataset.tab; if (i !== tab && TAB_PAGES[i]) go(TAB_PAGES[i], i === 2 ? 'day=2' : '');
     });
+  }
+}
+
+// 抬頭上的旅程名：放不下先縮字、最小六成，再放不下才截尾（TripHeadView：adjustsFontSizeToFitWidth＋minimumScaleFactor 0.6，使用者裁定 2026-10-27）。
+// 縮多少由系統量——這裡用「放得下為止」逼近（每格 1%），只有 [data-fit] 的元素。
+function fitTitles() {
+  for (const el of document.querySelectorAll('[data-fit]')) {
+    const base = parseFloat(getComputedStyle(el).fontSize);
+    for (let k = 1; k >= 0.6 - 1e-9; k -= 0.01) {
+      el.style.fontSize = `${base * k}px`;
+      if (el.scrollWidth <= el.clientWidth + 0.5) break;
+    }
   }
 }
 
 // 截圖工具等這個旗標：字型、資料都畫完了才拍
 export function ready() {
   document.fonts.ready.then(() => {
+    fitTitles();
     document.body.dataset.ready = '1';
     if (embed && parent !== window) parent.postMessage({ type: 'tz-ready' }, '*');   // 打包進 App 的示範：殼（demo.html）等這一則才把新的一頁換上來
     // 首頁外框帶 auto=<故事> 才自動操作（screens/autoplay.js）；截圖工具不帶

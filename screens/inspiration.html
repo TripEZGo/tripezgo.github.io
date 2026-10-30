@@ -186,7 +186,7 @@ const listHTML = () => visible().map(i => row(ITEMS[i], i)).join('') || `<div cl
 
 d.insertAdjacentHTML('beforeend', `<div class="rail" id="rail">${chips()}</div><div class="list" id="list">${listHTML()}</div>
   <div class="fab">${ic('plus')}</div><div class="scrim"></div>`);
-chrome(d, { tab: 3 });
+chrome(d, { tab: 4 });
 libraryHead(d, 0);
 
 // ── ② 檢視紙、③ 新增關聯 ──

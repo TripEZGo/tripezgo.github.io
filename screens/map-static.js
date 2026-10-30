@@ -112,7 +112,7 @@ const ME_PX = MATES_MODE ? [300, 350] : toPx(ME_AT);   // 引導頁（ADR-0050�
 d.insertAdjacentHTML('beforeend', `<div class="mk" id="mk"><div class="layer" id="layer"><img src="${IMG}" width="${W}" height="${H}" alt="" draggable="false">
     <svg id="lines" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true"></svg></div><div class="pins" id="pins"></div></div>
   <div class="head"><div class="greet">${`${t.monthDay(today.getMonth() + 1, today.getDate())} · ${t.weekday[today.getDay()]}`.replace(/[0-9]+/g, (m) => (lang === 'ja' ? m : `<span lang="en">${m}</span>`))}</div>
-  <div class="title">${fmt(trip.title).replace(/[　-鿿＀-￯]+/g, (m) => `<span class="cjk">${m}</span>`)}</div></div>`);
+  <div class="title" data-fit>${fmt(trip.title).replace(/[　-鿿＀-￯]+/g, (m) => `<span class="cjk">${m}</span>`)}</div></div>`);
 const chipHtml = () => [`<div class="chip all"><b>${L.all}</b></div>`].concat(Array.from({ length: trip.dayCount }, (_, i) => {
   const n = i + 1, dt = dateOf(n), isToday = n === todayNo;
   return `<div class="chip${isToday ? ' on' : ''}"><b>${isToday ? '<i></i>' : ''}${isToday ? t.today : dayLabel(n)}</b><span>${t.shortDate(dt.getMonth() + 1, dt.getDate())} ${t.weekday[dt.getDay()]}</span></div>`;
@@ -135,7 +135,7 @@ function jaWrap(root) {
   }
 }
 ['chips', 'search', 'live'].forEach((c) => jaWrap(d.querySelector(c === 'chips' ? '#chips' : '.' + c)));
-chrome(d, { tab: 2 });
+chrome(d, { tab: 3 });
 if (lang === 'ja') d.querySelectorAll('.tab span').forEach((el, i) => { el.textContent = TABS_JA[i]; });
 
 // ── 鏡頭：cam = 圖上哪一點在地圖區正中（cx, cy）、放大倍率 z。底圖是 2x 的圖，z 在 0.75–1.5 之間都清楚 ──
@@ -286,7 +286,7 @@ function setNavChrome(on) {
   sb.classList.toggle('locating', on); sb.querySelector('.sb-loc')?.remove(); d.querySelector('.tab-dot')?.remove();
   if (!on) return;
   d.querySelector('.sb-time').insertAdjacentHTML('afterend', '<svg class="sb-loc" viewBox="0 0 13 13" aria-hidden="true"><path d="M1.2 5.6 11.8 1.2 7.4 11.8 6.4 6.6Z"/></svg>');
-  d.querySelectorAll('.tab')[2].insertAdjacentHTML('beforeend', '<i class="tab-dot"></i>');
+  d.querySelectorAll('.tab')[3].insertAdjacentHTML('beforeend', '<i class="tab-dot"></i>');
 }
 function paintSelection() {
   for (const el of [...Object.values(placeEls), ...Object.values(mateEls)]) el.classList.remove('sel');

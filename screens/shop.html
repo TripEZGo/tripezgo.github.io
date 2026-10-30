@@ -210,7 +210,7 @@ const scroll = +(params.get('scroll') || 0);
 d.insertAdjacentHTML('beforeend', `<div class="wall-clip" style="top:${headBottom + 12}px"><div class="wall" style="top:${-scroll}px">${wallHTML()}</div></div>
   <div class="fab">${ic('plus')}</div><div class="scrim"></div>`);
 
-chrome(d, { tab: 3 });
+chrome(d, { tab: 4 });
 libraryHead(d, TAB);   // 畫在分頁列之後：menu=1 的紙要蓋在分頁列上
 await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; })));
 ready();

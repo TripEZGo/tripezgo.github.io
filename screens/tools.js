@@ -21,13 +21,13 @@ export const SUB_PAGES = ['inspiration', 'notes', 'shop'];
 
 // App 的字（Scripts/i18n/maps/Widgets.json：widgets.tab.title、subtab.*、tools.*、scan.card.*）
 export const LIB = {
-  'zh-Hant-TW': { title: '資料', subs: [IS['zh-Hant-TW']['widgets.subtab.inspiration'], '筆記', '購物清單'], tools: '工具',
+  'zh-Hant-TW': { title: '資料', subs: [IS['zh-Hant-TW']['widgets.subtab.inspiration'], '筆記', '購物清單'], tools: '工具', bell: '通知',
     scan: '掃描 QR Code', scanSub: '網址、文字，或旅程的共編邀請', fx: '匯率換算', fxSub: '兩種貨幣互換，兩邊的金額都能打', close: '關閉' },
-  en: { title: 'Library', subs: [IS.en['widgets.subtab.inspiration'], 'Notes', 'Shopping'], tools: 'Tools',
+  en: { title: 'Library', subs: [IS.en['widgets.subtab.inspiration'], 'Notes', 'Shopping'], tools: 'Tools', bell: 'Notifications',
     scan: 'Scan a QR Code', scanSub: 'Links, text, or a trip invite', fx: 'Currency Converter', fxSub: 'Convert between two currencies — type in either amount', close: 'Close' },
-  ja: { title: '資料', subs: [IS.ja['widgets.subtab.inspiration'], 'メモ', '買い物'], tools: 'ツール',
+  ja: { title: '資料', subs: [IS.ja['widgets.subtab.inspiration'], 'メモ', '買い物'], tools: 'ツール', bell: '通知',
     scan: 'QR コードをスキャン', scanSub: 'URL、テキスト、旅行の共同編集の招待', fx: '通貨換算', fxSub: '2 つの通貨を相互に換算。どちらの金額も入力できます', close: '閉じる' },
-  ko: { title: '자료', subs: [IS.ko['widgets.subtab.inspiration'], '메모', '쇼핑'], tools: '도구',
+  ko: { title: '자료', subs: [IS.ko['widgets.subtab.inspiration'], '메모', '쇼핑'], tools: '도구', bell: '알림',
     scan: 'QR 코드 스캔', scanSub: '링크, 텍스트 또는 여행 공동 편집 초대', fx: '환율 변환', fxSub: '두 통화를 서로 환산하고, 양쪽 금액 모두 입력할 수 있습니다', close: '닫기' },
 }[lang] || null;
 const L = LIB || {};
@@ -38,6 +38,8 @@ export const LIB_ICON = {
   scan: '<path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><rect x="7.5" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="13" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="7.5" y="13" width="3.5" height="3.5" rx=".6"/><path d="M13 13h1.5v1.5M16.5 16.5H15"/>',
   swapArrows: '<path d="M7 4v16l-3-3M17 20V4l3 3"/>',
   close: '<path d="M6 6l12 12M18 6 6 18"/>',
+  // 1.6.0：抬頭右上換成鈴鐺（DesignIcon.bell，筆畫 1.8；掃描與匯率換算搬去主頁小工具）
+  bell: '<path d="M18 9.6a6 6 0 1 0-12 0c0 5.1-2 6.4-2 6.4h16s-2-1.3-2-6.4z"/><path d="M13.7 19.3a2 2 0 0 1-3.4 0"/>',
 };
 const icon = (n, w) => `<svg viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:${w}">${LIB_ICON[n]}</svg>`;
 
@@ -64,6 +66,9 @@ html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
 .seg-t { position: absolute; top: 0; height: 45px; width: ${SEG_W}px; display: grid; place-items: center;
   font: 400 var(--t-sm)/16px var(--font); color: var(--sys-seg-ink); white-space: nowrap; }
 .seg-t.on { font-weight: 700; color: var(--ink); }
+.head-tool .bell-dot { position: absolute; left: 28.5px; top: 4.5px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-ink);
+  box-shadow: 0 0 0 1.5px var(--page); }
+html.no-bell .bell-dot { display: none; }
 .is-interactive .head-tool { cursor: pointer; } .is-interactive .head-tool:active { background: var(--surface); }
 /* 「工具」挑一個的紙（MenuSheetViewController）：custom detent＝貼內容高、iOS 26 浮動紙四邊內縮 8、圓角 Radius.lg 12、抓桿；
    內容 安全區上緣＋16、左右 20；抬頭 base semibold、之後 12；一列 上下 12 左右 4、最矮 56、圖示 20（muted）、間距 12、
@@ -108,13 +113,12 @@ export const closeX = (cls = '') => `<div class="tz-x ${cls}" role="button" aria
 /** 抬頭「資料」＋右上工具鈕＋兩格切換（current＝0 靈感／1 筆記／2 購物清單）。截圖模式也畫。 */
 export function libraryHead(device, current) {
   libStyle();
+  if (params.get('bell') === '0') document.documentElement.classList.add('no-bell');
   device.insertAdjacentHTML('beforeend', `<div class="wg-title">${L.title}</div>
-    <div class="head-tool" role="button" aria-label="${L.tools}" data-tap>${icon('toolbox', 1.8)}</div>
+    <div class="head-tool" role="button" aria-label="${L.bell}" data-tap>${icon('bell', 1.8)}<i class="bell-dot"></i></div>
     <div class="seg"><div class="seg-pill" style="left:${segLeft(current)}px"></div>
     ${L.subs.map((x, i) => `<div class="seg-t${i === current ? ' on' : ''}" style="left:${segLeft(i)}px">${x}</div>`).join('')}</div>`);
-  // 截圖：帶 menu=1 就畫成「點了工具鈕」那一刻（紙開著）
-  if (params.get('menu') === '1') toolsMenu(device, { from: SUB_PAGES[current], instant: true });
-  if (interactive) device.querySelector('.head-tool').addEventListener('click', () => toolsMenu(device, { from: SUB_PAGES[current] }));
+  // 鈴鐺：1.6.0 起點了 push 通知頁（尚未複刻，互動模式點了不動）；右上亮著的主色點＝有未讀公告（bell=0 關掉）
 }
 
 /**

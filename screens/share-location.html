@@ -190,7 +190,7 @@ const ME = { x: 186, y: 470 };
 // 頁首
 d.insertAdjacentHTML('beforeend', `
   <div class="head"><div class="greet">${t.monthDay(today.getMonth() + 1, today.getDate())} · ${t.weekday[today.getDay()]}</div>
-  <div class="title">${fmt(trip.title)}</div></div>`);
+  <div class="title" data-fit>${fmt(trip.title)}</div></div>`);
 
 // 日期籤：全部 ＋ 每一天
 const chips = [`<div class="chip all"><b>${S.all}</b></div>`].concat(Array.from({ length: trip.dayCount }, (_, i) => {
@@ -368,7 +368,7 @@ if (interactive) {
   placeFabs();
 }
 
-chrome(d, { tab: 2 });
+chrome(d, { tab: 3 });
 ready();
 </script>
 </body>

@@ -168,7 +168,7 @@ const today = dateOf(todayNo);
 // 頁首
 d.insertAdjacentHTML('beforeend', `
   <div class="head"><div class="greet">${t.monthDay(today.getMonth() + 1, today.getDate())} · ${t.weekday[today.getDay()]}</div>
-  <div class="title">${fmt(trip.title)}</div></div>
+  <div class="title" data-fit>${fmt(trip.title)}</div></div>
   <div class="head-act">${svg('readingCalendar')}</div>`);
 
 const chips = Array.from({ length: trip.dayCount }, (_, i) => {
@@ -333,7 +333,7 @@ let L = layout(Z);
 const { scroll, H } = L;
 
 d.insertAdjacentHTML('beforeend', `<div class="fab">${svg('plus')}</div>`);
-chrome(d, { tab: 1 });
+chrome(d, { tab: 2 });
 // 互動：抬頭那顆切回行事曆、日期籤換日、點名稱膠囊或圓點開詳情、點路程膠囊開路程（RouteNodeCell／RouteDotCell／RouteLegCell 的點擊）
 if (interactive) {
   document.querySelector('.head-act').addEventListener('click', () => go('calendar', { day: dayNo }));

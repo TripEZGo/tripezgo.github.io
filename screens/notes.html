@@ -79,7 +79,7 @@ d.insertAdjacentHTML('beforeend', `
   <div class="list">${notes.map((n, i) => `<div class="row" data-n="${i}"><b>${fmt(n.title)}</b><span>${fmt(n.summary)}</span></div>`).join('')}</div>
   <div class="fab">${ic('plus')}</div>`);
 
-chrome(d, { tab: 3 });
+chrome(d, { tab: 4 });
 libraryHead(d, TAB);   // 畫在分頁列之後：menu=1 的紙要蓋在分頁列上
 ready();
 
