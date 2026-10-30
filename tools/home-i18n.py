@@ -126,8 +126,17 @@ T = {
   '購物清單': ('Shopping list', '買い物リスト', '쇼핑 목록'),
   '資料': ('Library', '資料', '자료'),
   '工具': ('Tools', 'ツール', '도구'),
-  '資料與工具': ('Library & tools', '資料とツール', '자료와 도구'),
-  '資料與工具（筆記、購物清單、掃描、匯率換算）': ('Library & tools (notes, shopping list, scanner, currency)', '資料とツール（メモ・買い物リスト・スキャン・為替）', '자료와 도구(메모, 쇼핑 목록, 스캔, 환율 변환)'),
+  '資料與小工具': ('Library & Home widgets', '資料とホームのウィジェット', '자료와 홈 위젯'),
+  '資料分頁收著靈感、筆記、購物清單；QR Code 掃描與匯率換算，放在主頁上隨手就用。': ('The Library holds your inspiration, notes and shopping list; the QR code scanner and currency converter sit on Home, one tap away.', '資料タブにはインスピレーション・メモ・買い物リストを。QR コードスキャンと為替換算はホームのウィジェットに置いて、すぐ使えます。', '자료 탭에는 영감·메모·쇼핑 목록을 담고, QR 코드 스캔과 환율 변환은 홈 위젯으로 두어 바로 쓸 수 있어요.'),
+  '主頁小工具': ('Home widgets', 'ホームのウィジェット', '홈 위젯'),
+  '靈感收集': ('Collect inspiration', 'インスピレーションを集める', '영감 모으기'),
+  '分享進來先存著，想排再變成行程': ('Share it in to save it now; turn it into an event when you plan', '共有して先に保存。予定に組むときに予定へ変換', '공유로 먼저 저장하고, 일정에 넣을 때 일정으로 바꿔요'),
+  '靈感：從其他 App 分享進來的網頁、地圖與貼文，標著未讀與未關聯，資料分頁右上是通知鈴鐺': ('Inspiration: pages, maps and posts shared in from other apps, marked unread and not added, with the notification bell at the top right of the Library', 'インスピレーション：ほかのアプリから共有されたページ・地図・投稿。未読と未関連の印つきで、資料タブの右上は通知のベル', '영감: 다른 앱에서 공유해 온 웹페이지·지도·게시물. 읽지 않음·미연결 표시가 붙고, 자료 탭 오른쪽 위는 알림 벨'),
+  '資料與小工具（靈感、筆記、購物清單、QR Code 掃描、匯率換算）': ('Library & Home widgets (inspiration, notes, shopping list, QR code scanner, currency)', '資料とホームのウィジェット（インスピレーション・メモ・買い物リスト・QR コードスキャン・為替換算）', '자료와 홈 위젯(영감, 메모, 쇼핑 목록, QR 코드 스캔, 환율 변환)'),
+  '<li><b>靈感</b>：從 Safari、地圖、社群分享進來的內容先存在這裡，想排的時候再一鍵變成行程、筆記或購物清單。</li>':
+      ("<li><b>Inspiration</b>: whatever you share in from Safari, maps or social apps lands here first; when you're ready to plan, turn it into an event, a note or a shopping item in one tap.</li>",
+       '<li><b>インスピレーション</b>：Safari・地図・SNS から共有したものはまずここに保存。組みたくなったら、ワンタップで予定・メモ・買い物リストに変えられます。</li>',
+       '<li><b>영감</b>: Safari·지도·SNS에서 공유한 것은 먼저 여기에 저장돼요. 계획할 때 한 번에 일정·메모·쇼핑 목록으로 바꿀 수 있습니다.</li>'),
   'QR Code 掃描': ('QR code scanner', 'QR コードスキャン', 'QR 코드 스캔'),
   # AI
   '讓 AI': ('Let AI', 'AI に', 'AI에게'),
@@ -376,18 +385,18 @@ T = {
       ("<li><b>Notes</b>: rich text-and-photo editing, plus read-aloud — don't speak the language? Let your phone say it for you.</li>",
        '<li><b>メモ</b>：写真も文字も自由に編集でき、読み上げにも対応。現地の言葉が話せなくても、そのまま相手に聞かせられます。</li>',
        '<li><b>메모</b>: 사진과 글을 자유롭게 편집하고, 읽어 주기도 지원해요. 현지 말을 못 해도 그대로 상대에게 들려줄 수 있습니다.</li>'),
-  '<li><b>匯率換算</b>：使用當日匯率，沒網路也能換算。</li>':
-      ("<li><b>Currency</b>: uses today's rate, and converts even without a connection.</li>",
-       '<li><b>為替換算</b>：その日のレートで、通信がなくても換算できます。</li>',
-       '<li><b>환율 변환</b>: 그날의 환율로, 인터넷이 없어도 변환할 수 있어요.</li>'),
+  '<li><b>匯率換算</b>：主頁上的小工具，使用當日匯率，沒網路也能換算。</li>':
+      ("<li><b>Currency</b>: a Home widget that uses today's rate, and converts even without a connection.</li>",
+       '<li><b>為替換算</b>：ホームのウィジェット。その日のレートで、通信がなくても換算できます。</li>',
+       '<li><b>환율 변환</b>: 홈 위젯이에요. 그날의 환율로, 인터넷이 없어도 변환할 수 있어요.</li>'),
   '<li><b>待購清單</b>：想買什麼都記在這裡，還有什麼沒買一看就知道；也可以記下各家價格，讓你買到最便宜的。</li>':
       ("<li><b>Shopping list</b>: write down everything you want to buy and see at a glance what's still left. Note each shop's price too, so you get the cheapest one.</li>",
        '<li><b>買い物リスト</b>：買いたいものをここにまとめておけば、まだ買っていないものがひと目でわかります。お店ごとの値段も記録できるので、いちばん安いところで買えます。</li>',
        '<li><b>쇼핑 목록</b>: 사고 싶은 것을 여기에 모아 두면 아직 안 산 것이 한눈에 보여요. 가게마다 가격도 기록해 가장 싼 곳에서 살 수 있습니다.</li>'),
-  '<li><b>QR Code 掃描</b>：一開一掃並留下紀錄，旅伴也能直接看到。</li>':
-      ("<li><b>QR code scanner</b>: open it, scan, and it's saved to a history your companions can see too.</li>",
-       '<li><b>QR コードスキャン</b>：開いて読み取るだけで履歴に残り、旅の仲間もそのまま見られます。</li>',
-       '<li><b>QR 코드 스캔</b>: 열고 스캔하기만 하면 기록이 남고, 동행도 바로 볼 수 있어요.</li>'),
+  '<li><b>QR Code 掃描</b>：主頁上的小工具，一開一掃並留下紀錄，旅伴也能直接看到。</li>':
+      ("<li><b>QR code scanner</b>: a Home widget — open it, scan, and it's saved to a history your companions can see too.</li>",
+       '<li><b>QR コードスキャン</b>：ホームのウィジェット。開いて読み取るだけで履歴に残り、旅の仲間もそのまま見られます。</li>',
+       '<li><b>QR 코드 스캔</b>: 홈 위젯이에요. 열고 스캔하기만 하면 기록이 남고, 동행도 바로 볼 수 있어요.</li>'),
   # 藍圖 08.09 那一列還在用（整合區那張卡已併進 02 靈感）
   '從其他 App 分享進來': ('Share in from other apps', 'ほかのアプリから共有', '다른 앱에서 공유해 가져오기'),
   # 02 靈感（1.4.0；原「整合 › 從其他 App 分享進來」併進來。用詞照 App 字串表：Inspiration／インスピレーション／영감、未關聯 Not added／未関連／미연결、新增關聯 Add to…／関連を追加／연결 추가）
@@ -469,10 +478,10 @@ T = {
       ('What it costs right now: US$200 a month for AI, US$99 a year for the Apple Developer Program, plus about 30 hours a week of my own time building it.',
        '今かかっているコスト：AI に月 200 ドル、Apple Developer Program に年 99 ドル、それに週およそ 30 時間の個人開発の時間。',
        '현재 드는 비용: AI에 매달 200달러, Apple Developer Program에 매년 99달러, 그리고 매주 30시간 정도의 개인 개발 시간.'),
-  '所以 TripEZGo 還是以「免費就能用、付費更好用」為出發點，免費版與 Premium 只有這幾項差異：無廣告、旅程數（免費版同時只能擁有 3 趟，包含垃圾桶）、每趟旅伴（免費版 3 位）、主頁小工具頁數（免費版 1 頁，即將推出）、即時動態、Apple／Google 行事曆整合。Premium 提供週訂閱、月訂閱、年訂閱與終身買斷。':
-      ('So TripEZGo starts from “free to use, better with Premium.” Free and Premium differ in just these ways: no ads, the number of trips (Free can only own 3 trips at a time, trash included), companions per trip (3 on Free), Home widget pages (1 on Free, coming soon), Live Activity, and Apple / Google Calendar integration. Premium comes as a weekly, monthly or yearly subscription, or a lifetime purchase.',
-       'だから TripEZGo は「無料でしっかり使えて、有料ならもっと便利に」が基本です。無料版と Premium の違いはこれだけ：広告なし、旅行の数（無料版は同時に所有できるのは 3 件まで。ゴミ箱の中も含みます）、旅行ごとの旅の仲間（無料版は 3 人）、ホームのウィジェットのページ数（無料版は 1 ページ、近日公開）、ライブアクティビティ、Apple／Google カレンダー連携。Premium には週・月・年のサブスクリプションと、買い切りがあります。',
-       '그래서 TripEZGo는 ‘무료로도 충분히, Premium이면 더 편하게’를 기본으로 합니다. 무료 버전과 Premium의 차이는 이것뿐입니다: 광고 없음, 여행 수(무료 버전은 동시에 3개까지만 보유 가능, 휴지통 포함), 여행마다 동행(무료 버전은 3명), 홈 위젯 페이지 수(무료 버전은 1페이지, 곧 출시), 라이브 액티비티, Apple/Google 캘린더 연동. Premium은 주간·월간·연간 구독과 평생 구매로 제공됩니다.'),
+  '所以 TripEZGo 還是以「免費就能用、付費更好用」為出發點，免費版與 Premium 只有這幾項差異：無廣告、旅程數（免費版同時只能擁有 3 趟，包含垃圾桶）、每趟旅伴（免費版 3 位）、主頁小工具頁數（免費版 1 頁）、即時動態、Apple／Google 行事曆整合。Premium 提供週訂閱、月訂閱、年訂閱與終身買斷。':
+      ('So TripEZGo starts from “free to use, better with Premium.” Free and Premium differ in just these ways: no ads, the number of trips (Free can only own 3 trips at a time, trash included), companions per trip (3 on Free), Home widget pages (1 on Free), Live Activity, and Apple / Google Calendar integration. Premium comes as a weekly, monthly or yearly subscription, or a lifetime purchase.',
+       'だから TripEZGo は「無料でしっかり使えて、有料ならもっと便利に」が基本です。無料版と Premium の違いはこれだけ：広告なし、旅行の数（無料版は同時に所有できるのは 3 件まで。ゴミ箱の中も含みます）、旅行ごとの旅の仲間（無料版は 3 人）、ホームのウィジェットのページ数（無料版は 1 ページ）、ライブアクティビティ、Apple／Google カレンダー連携。Premium には週・月・年のサブスクリプションと、買い切りがあります。',
+       '그래서 TripEZGo는 ‘무료로도 충분히, Premium이면 더 편하게’를 기본으로 합니다. 무료 버전과 Premium의 차이는 이것뿐입니다: 광고 없음, 여행 수(무료 버전은 동시에 3개까지만 보유 가능, 휴지통 포함), 여행마다 동행(무료 버전은 3명), 홈 위젯 페이지 수(무료 버전은 1페이지), 라이브 액티비티, Apple/Google 캘린더 연동. Premium은 주간·월간·연간 구독과 평생 구매로 제공됩니다.'),
   # 開發背景
   '背景故事': ('Backstory', '開発ストーリー', '개발 이야기'),
   # ── 藍圖（使用者 2026-10-13：橫向時間軸，從「關於」搬出來） ──
@@ -556,6 +565,7 @@ T = {
   '新增行程、App 頁面 UI/UX 優化': ('Smoother adding of events and UI/UX improvements across the app', '予定の追加とアプリ全体の UI/UX を改善', '일정 추가와 앱 화면 UI/UX 개선'),
   '筆記增加章節功能': ('Chapters in notes', 'ノートに章立て機能を追加', '노트에 챕터 기능 추가'),
   '1.5.0 上架': ('1.5.0 released', '1.5.0 リリース', '1.5.0 출시'),
+  '1.6.0 上架': ('1.6.0 released', '1.6.0 リリース', '1.6.0 출시'),
   '1.5.1 上架': ('1.5.1 released', '1.5.1 リリース', '1.5.1 출시'),
   '效能優化與功能修正': ('Performance improvements and bug fixes', 'パフォーマンスの改善と不具合の修正', '성능 개선 및 버그 수정'),
   '1.4.1 上架': ('1.4.1 released', '1.4.1 リリース', '1.4.1 출시'),
