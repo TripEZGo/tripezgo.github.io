@@ -39,6 +39,8 @@ const ONB = { mode: 'once', crop: 'safe' };
 const PW = { mode: 'once', crop: 'box', nohand: true };
 export const DEMOS = {
   // 引導頁
+  // 主頁（1.6.0）：接在引導頁最前面。封面 zoom → 拉遠露出小工具畫布 → 長按進編輯、拖一張換位置 → 完成 → zoom 到即時動態
+  home: { ...ONB, flows: [{ page: 'home', auto: 'demo-home' }], pages: ['home'] },
   plan: { ...ONB, flows: [{ page: 'calendar', q: 'day=2', auto: 'demo-plan-calendar' }, { page: 'event', q: 'extra=1', still: true, ms: 4500 }, { page: 'leg', auto: 'leg' }],
     pages: ['calendar', 'timeline', 'event', 'leg'] },
   share: { ...ONB, flows: [{ page: 'share-igi', auto: 'insp-chain' }], pages: ['share-igi', 'share-gmi', 'inspiration', 'event'] },
@@ -67,6 +69,9 @@ export const DEMOS = {
   'pw-live-activity': { ...PW, box: [0, 418, 402, 260], flows: [{ page: 'pw-live', q: 'bare=1', auto: 'pw-live' }], pages: ['pw-live'] },
   'pw-unlimited': { ...PW, box: [0, 140, 402, 350], flows: [{ page: 'pw-unlimited', auto: 'pw-unlimited' }], pages: ['pw-unlimited'] },
   'pw-members': { ...PW, box: [0, 125, 402, 350], flows: [{ page: 'pw-members', auto: 'pw-members' }], pages: ['pw-members'] },
+  // 主頁小工具不限頁數（1.6.0）：第 1 頁 → 第 2 頁（毛玻璃）→ 毛玻璃溶掉 → 第 3 頁 → 回第 1 頁；loop
+  'pw-home-pages': { ...PW, mode: 'loop', box: [0, 272, 402, 500],
+    flows: [{ page: 'home', q: 'veil=1&layout=agenda:m,todo:s,fx:s|overview:m,scan:s,fx:s|todo:m,scan:s,fx:s', auto: 'demo-pw-home' }], pages: ['home'] },
   'pw-calendar': { ...PW, box: [0, 186, 402, 334], flows: [{ page: 'apple-calendar', still: true, ms: 1e9 }], pages: ['apple-calendar'] },
 };
 
@@ -87,7 +92,7 @@ const PATCHES = {
     "await import('./stories.js' + new URL(import.meta.url).search)", "await import('./stories.js')"]],
   'stories.js': [[
     /const V = new URL\(import\.meta\.url\)\.search;\n\/\/ demo-[^\n]*\nconst \[[^\n]*\] = await Promise\.all\(\[[^\n]*\n/,
-    "import { STORIES as A } from './stories-plan.js';\nimport { STORIES as B } from './stories-map.js';\nimport { STORIES as C } from './stories-tools.js';\nimport { STORIES as D } from './stories-demo-plan.js';\nimport { STORIES as E } from './stories-demo-map.js';\nimport { STORIES as F } from './stories-demo-library.js';\nimport { STORIES as G } from './stories-demo-paywall.js';\n"]],
+    "import { STORIES as A } from './stories-plan.js';\nimport { STORIES as B } from './stories-map.js';\nimport { STORIES as C } from './stories-tools.js';\nimport { STORIES as D } from './stories-demo-plan.js';\nimport { STORIES as E } from './stories-demo-map.js';\nimport { STORIES as F } from './stories-demo-library.js';\nimport { STORIES as G } from './stories-demo-paywall.js';\nimport { STORIES as H } from './stories-demo-home.js';\n"]],
 };
 const patchPlugin = {
   name: 'tz-patch',
@@ -178,6 +183,8 @@ for (const p of [...pages].sort()) {
 }
 
 // 圖：JS／HTML／CSS 裡寫到的 img/ 路徑；有 ${…} 樣板的（shop-${it.img}.svg、img/${lang}/…）展開成整個前綴
+// 主頁（1.6.0）的封面照片在 covers/，不在 screens/img/：home.html 寫的是 ../covers/…，照同樣的相對位置帶進去
+if (pages.has('home')) copy('covers/itsukushima-torii.42b883d9.jpg', path.join(root, 'covers/itsukushima-torii.42b883d9.jpg'));
 const imgDir = path.join(SCREENS, 'img');
 const allImgs = [];
 (function walk(d) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p) : allImgs.push(path.relative(imgDir, p)); } })(imgDir);

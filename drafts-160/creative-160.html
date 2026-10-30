@@ -1,0 +1,148 @@
+<!doctype html>
+<!--
+  【1.6.0 CP5 草稿】App repo Scripts/store-creative/creative.html 的複本（App repo 沒動）。差別只有這幾處：
+    · ?variant=A（預設）：右邊延伸區那支「總覽」iPhone 換成主頁（drafts-160/png/raw-home.png，來自 screens/home.html）；主標、安全區照舊。
+    · ?variant=B：安全區那支「行事曆」iPhone 換成主頁，主標換成佔位句（「旅程一打開，[主頁]就看得到」，佔位）——主頁進到頁首／搜尋結果都裁得到。
+    · ?site= 沒帶就用 ../（本檔在官網 repo 的 drafts-160/ 底下）；主頁圖固定讀 png/raw-home.png。
+  產生：node drafts-160/creative-160.mjs
+  （以下是原檔說明）
+  TripEZGo · App Store 創意素材（creative asset，iOS／iPadOS 27 起的商品頁頁首＋搜尋結果，2026-10-12）
+  產生：node Scripts/store-creative/creative.mjs <輸出目錄> [--site=<官網 repo>]   → <輸出目錄>/<語系>.png（5244×2950，不透明 PNG）
+  畫面與 icon 來自官網 repo（預設跟 App repo 同層的 tripezgo.github.io）：screens/out/<語言>/*.png、assets/img/icon-512.png，由 ?site=<file URL> 傳進來。
+
+  規格（App Store Connect 參考資料 appAssetLibraryRefData 量過）：
+    · 通用素材 universal 16:9 5244×2950、只收 .png、不得有 alpha——同一張可放頁首也可放搜尋結果。
+    · Apple 樣板 creative_assets-universal_asset_template-static.psd 的 ART SAFE AREA：
+      x 1921–3322、y 660–1621（1402×962，水平置中、偏上；下方約 1330px 是頁首疊 App 名稱與取得鈕的區域）。
+      頁首（21:9）與搜尋結果（3:2）都從這張裁，只有安全區保證每種裁切都看得到。
+  版型的決定：
+    ① 安全區裡放「一個主張」＋「真實介面」：左邊品牌列＋主標，右邊一支 iPhone 的行事曆從安全區下緣往上冒（下半截落在頁首疊字區，被裁掉也還是一支手機）。
+       Apple：頁首一個清楚的主張、搜尋結果一眼看出用途並露出介面。
+    ② 安全區外是延伸：左邊 iPad 行事曆、右邊 iPhone 行程與總覽——寬裁切（iPad 橫放、Mac）才看得到，被裁掉也不缺意思。
+    ③ 主標沿用商城第 1 張截圖的句子（行事曆排行程，時間軸排交通），一個青綠關鍵詞；不寫價格、網址、Premium、獎項。
+    ④ 色票、機身與光暈跟 shots.html 同一組。
+  ?lang=zh-Hant|en|ja|ko；?site=<官網 repo 的 file URL，結尾 />；?guide=1 疊上安全區框（審稿用，不輸出）。
+-->
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<title>TripEZGo — App Store 創意素材</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+JP:wght@500;700&family=Noto+Sans+KR:wght@500;700&family=Noto+Sans+TC:wght@500;700&display=swap" />
+<style>
+  :root {
+    --paper: #fbf8f4; --card: #ffffff; --ink: #241d17; --machi: #2f918e; --taupe: #7c6f63; --line: #dbd5cd;
+    --brand-teal: #5cc6c3;
+    --shell-lit:  color-mix(in srgb, var(--ink) 78%, var(--paper));
+    --shell-edge: color-mix(in srgb, var(--card) 8%, transparent);
+    --shell-drop: color-mix(in srgb, var(--ink) 40%, transparent);
+    --halo:       color-mix(in srgb, var(--brand-teal) 22%, transparent);
+    --f-zh: "PingFang TC", "Noto Sans TC", sans-serif;
+    --f-ja: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    --f-ko: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    --f-en: "SF Pro Display", -apple-system, "Inter", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); overflow: hidden; }
+  .art { position: relative; width: 5244px; height: 2950px; overflow: hidden; background: var(--paper); color: var(--ink); }
+  .art[data-lang="zh-Hant"] { font-family: var(--f-zh); }
+  .art[data-lang="ja"] { font-family: var(--f-ja); }
+  .art[data-lang="ko"] { font-family: var(--f-ko); }
+  .art[data-lang="en"] { font-family: var(--f-en); }
+
+  .halo { position: absolute; border-radius: 50%; background: radial-gradient(closest-side, var(--halo), transparent); }
+
+  /* 安全區：x 1921–3322、y 660–1621 */
+  .safe { position: absolute; left: 1921px; top: 660px; width: 1402px; height: 962px; }
+  .cap { position: absolute; left: 48px; top: 0; bottom: 0; width: 660px; display: flex; flex-direction: column; justify-content: center; }
+  .brand { display: flex; align-items: center; gap: 22px; margin-bottom: 48px; }
+  .brand img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 0 0 1.5px var(--line); }
+  .brand span { font-family: var(--f-en); font-size: 54px; font-weight: 700; letter-spacing: -0.01em; }
+  .title { margin: 0; font-size: 104px; font-weight: 700; line-height: 1.16; letter-spacing: 0; }
+  .art[data-lang="en"] .title { letter-spacing: -0.025em; line-height: 1.08; }
+  .art[data-lang="ko"] .title { word-break: keep-all; }
+  .title em { font-style: normal; color: var(--machi); white-space: nowrap; }
+  .title .ln { display: table; white-space: nowrap; }
+
+  .device {
+    position: absolute; padding: var(--bezel); border-radius: calc(var(--r) + var(--bezel));
+    background: linear-gradient(158deg, var(--shell-lit) 0%, var(--ink) 55%, var(--ink) 100%);
+    box-shadow: 0 0 0 2px var(--shell-edge) inset, 0 40px 80px -40px var(--shell-drop), 0 6px 20px -8px var(--shell-drop);
+  }
+  .device img { display: block; width: var(--w); height: auto; border-radius: var(--r); background: var(--card); }
+  .phone { --bezel: 16px; --r: 64px; }
+  .pad { --bezel: 26px; --r: 30px; }
+
+  .guide { position: absolute; left: 1921px; top: 660px; width: 1402px; height: 962px; outline: 6px solid #0f0; z-index: 9; display: none; }
+  .guide.hdr { left: 0; top: 0; width: 5244px; height: 2247px; top: 351px; outline-color: #f0f; }
+  .guide.sr  { left: 397px; top: 0; width: 4425px; height: 2950px; outline-color: #0ff; }
+  html.g .guide { display: block; }
+</style>
+</head>
+<body>
+<div class="art" id="art">
+  <div class="halo" style="width:2600px;height:2600px;left:1500px;top:-200px"></div>
+  <div class="halo" style="width:2400px;height:2400px;left:-700px;top:700px;opacity:.7"></div>
+  <div class="halo" style="width:2200px;height:2200px;left:3700px;top:900px;opacity:.6"></div>
+
+  <!-- 延伸區：左 iPad 行事曆 -->
+  <div class="device pad" style="--w:1360px;left:360px;top:860px"><img id="ipad" alt=""></div>
+  <!-- 延伸區：右兩支 iPhone（行程、總覽） -->
+  <div class="device phone" style="--w:600px;left:3480px;top:1060px"><img id="event" alt=""></div>
+  <div class="device phone" style="--w:600px;left:4200px;top:820px"><img id="overview" alt=""></div>
+
+  <!-- 安全區：品牌＋主標＋iPhone 行事曆 -->
+  <div class="safe">
+    <div class="cap">
+      <div class="brand"><img id="icon" alt=""><span>TripEZGo</span></div>
+      <h1 class="title" id="title"></h1>
+    </div>
+    <div class="device phone" style="--w:620px;left:730px;top:60px"><img id="cal" alt=""></div>
+  </div>
+
+  <div class="guide"></div><div class="guide hdr"></div><div class="guide sr"></div>
+</div>
+<script>
+  /* 主標：[關鍵詞] 青綠；^ 斷行。沿用商城第 1 張截圖的主標 */
+  var COPY = {   /* B 的佔位句在下面 */
+    'zh-Hant': '行事曆排行程，^[時間軸]排交通',
+    'ja': '予定はカレンダー、^移動は[タイムライン]',
+    'en': 'Plan the day,^[plan the travel]',
+    'ko': '일정은 캘린더,^이동은 [타임라인]'
+  };
+  var SCREEN = { 'zh-Hant': 'zh', 'ja': 'ja', 'en': 'en', 'ko': 'ko' };
+  var q = new URLSearchParams(location.search);
+  var lang = COPY[q.get('lang')] ? q.get('lang') : 'zh-Hant';
+  if (q.get('guide')) document.documentElement.classList.add('g');
+  var art = document.getElementById('art');
+  art.dataset.lang = lang; art.lang = lang; document.documentElement.lang = lang;
+  var t = document.getElementById('title');
+  t.innerHTML = COPY[lang].split('^').map(function (s) {
+    return '<span class="ln">' + s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\[([^\]]+)\]/g, '<em>$1</em>') + '</span>';
+  }).join('');
+  var site = q.get('site') || '../';
+  var variant = q.get('variant') === 'B' ? 'B' : 'A';
+  document.getElementById('icon').src = site + 'assets/img/icon-512.png';
+  var dir = site + 'screens/out/' + SCREEN[lang] + '/';
+  document.getElementById('cal').src = dir + 'calendar.png';
+  document.getElementById('ipad').src = dir + 'ipad-calendar.png';
+  document.getElementById('event').src = dir + 'event.png';
+  document.getElementById('overview').src = dir + 'overview.png';
+  if (variant === 'A') document.getElementById('overview').src = 'png/raw-home.png';
+  if (variant === 'B') { document.getElementById('cal').src = 'png/raw-home.png'; t.innerHTML = '<span class="ln">旅程一打開，</span><span class="ln"><em>主頁</em>就看得到</span>'; }
+
+  /* 主標排不進 660px 就縮字（每次 2px，下限 72）；結果寫在 data-fit */
+  function fit() {
+    var size = 104;
+    t.style.fontSize = size + 'px';
+    var lines = t.querySelectorAll('.ln');
+    function over() { return [].some.call(lines, function (l) { return l.scrollWidth > 660 || l.getBoundingClientRect().width > 660; }); }
+    while (over() && size > 72) { size -= 2; t.style.fontSize = size + 'px'; }
+    art.dataset.fit = over() ? 'fail' : 'ok';
+    art.dataset.size = size;
+  }
+  var imgs = [].slice.call(document.images);
+  Promise.all([document.fonts.ready].concat(imgs.map(function (im) { return im.decode().catch(function () {}); })))
+    .then(function () { fit(); document.documentElement.dataset.ready = 'true'; });
+</script>
+</body>
+</html>

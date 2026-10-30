@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TripEZGo 1.6.0 CP5 素材草稿</title>
+<style>
+  :root { --paper: #fbf8f4; --ink: #241d17; --taupe: #7c6f63; --line: #dbd5cd; --accent: #1d7370; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px 40px 80px; background: var(--paper); color: var(--ink); font: 15px/1.55 -apple-system, "PingFang TC", sans-serif; }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  h2 { font-size: 20px; margin: 56px 0 4px; padding-top: 20px; border-top: 1px solid var(--line); }
+  p.lead { color: var(--taupe); margin: 0 0 12px; max-width: 980px; }
+  .row { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; margin-top: 14px; }
+  figure { margin: 0; }
+  figcaption { margin-top: 8px; max-width: 340px; color: var(--taupe); font-size: 13px; }
+  figcaption b { color: var(--ink); }
+  img, iframe { display: block; border: 1px solid var(--line); background: #fff; }
+  iframe.demo { width: 402px; height: 820px; }
+  iframe.box { width: 402px; height: 500px; }
+  .kf img { width: 200px; }
+  .shot img { width: 330px; }
+  .wide img { width: 960px; }
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 10px; background: #e9f3f2; color: var(--accent); font-size: 12px; margin-left: 6px; }
+  code { background: #f1ece5; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+</style>
+</head>
+<body>
+<h1>TripEZGo 1.6.0 CP5 素材草稿</h1>
+<p class="lead">全部是草稿，等你看過才全面做。動畫是真的可播放（打包後的 <code>demo.html</code>，跟 App 內載入的是同一份）；點一下畫面播完後重播、長按暫停。繁中、淺色。畫面來源 <code>screens/home.html</code>（新增行程、待辦兩種卡，互動模式）。</p>
+
+<h2>1　引導頁 <code>home</code> 動畫<span class="tag">once · crop safe</span></h2>
+<p class="lead">接在引導頁最前面。封面 zoom（旅程名 → 「第 1 天 · 共 6 天」進度）→ 拉遠露出畫布（即時動態、總覽、QR、匯率）→ 長按封面進編輯 → 拖「匯率換算」到總覽上換位置 → 點「完成」→ zoom 到即時動態卡（倒數每秒走）。約 9 秒。</p>
+<div class="row">
+  <figure><iframe class="demo" src="build/demo.html?demo=home&lang=zh-Hant&theme=light"></iframe><figcaption><b>可播放</b>　build/demo.html?demo=home</figcaption></figure>
+  <figure class="kf"><img src="png/kf-home-1-cover-zoom.png"><figcaption><b>影格 1</b>　封面 zoom：進度</figcaption></figure>
+  <figure class="kf"><img src="png/kf-home-2-canvas.png"><figcaption><b>影格 2</b>　拉遠，露出小工具畫布</figcaption></figure>
+  <figure class="kf"><img src="png/kf-home-3-edit.png"><figcaption><b>影格 3</b>　長按後進編輯（輕晃、「−」、＋／完成）</figcaption></figure>
+  <figure class="kf"><img src="png/kf-home-4-drag.png"><figcaption><b>影格 4</b>　拖匯率換算浮起（1.06 倍），其餘卡片讓位</figcaption></figure>
+  <figure class="kf"><img src="png/kf-home-5-live-zoom.png"><figcaption><b>影格 5</b>　完成後 zoom 到即時動態卡</figcaption></figure>
+</div>
+
+<h2>2　付費牆 <code>pw-home-pages</code> 動畫<span class="tag">loop · crop box 0,272,402,500 · nohand</span></h2>
+<p class="lead">第 1 頁 → 往左滑到第 2 頁（免費帳號蓋毛玻璃：鎖、「升級 Premium 解鎖更多頁」）→ 毛玻璃溶掉、露出第 2 頁 → 滑到第 3 頁 → 回第 1 頁。一輪約 13 秒，循環。</p>
+<div class="row">
+  <figure><iframe class="box" src="build/demo.html?demo=pw-home-pages&lang=zh-Hant&theme=light"></iframe><figcaption><b>可播放</b>　build/demo.html?demo=pw-home-pages</figcaption></figure>
+  <figure class="kf"><img src="png/kf-pw-1-page1.png"><figcaption><b>影格 1</b>　第 1 頁</figcaption></figure>
+  <figure class="kf"><img src="png/kf-pw-2-veil.png"><figcaption><b>影格 2</b>　第 2 頁，毛玻璃</figcaption></figure>
+  <figure class="kf"><img src="png/kf-pw-3-dissolve.png"><figcaption><b>影格 3</b>　毛玻璃溶掉中</figcaption></figure>
+  <figure class="kf"><img src="png/kf-pw-4-page2.png"><figcaption><b>影格 4</b>　第 2 頁露出來</figcaption></figure>
+  <figure class="kf"><img src="png/kf-pw-5-page3.png"><figcaption><b>影格 5</b>　第 3 頁</figcaption></figure>
+</div>
+
+<h2>3　改版樣本 <code>plan</code>（換新分頁列後重出）</h2>
+<p class="lead">左舊（1.5.x 分頁列）、右新（主頁／總覽／旅程／地圖／資料；標題改縮字不再截斷）。動畫流程、資料（山陽 6 日範本）沒動。</p>
+<div class="row">
+  <figure><iframe class="demo" src="build-old/demo.html?demo=plan&lang=zh-Hant&theme=light"></iframe><figcaption><b>舊版</b>（1181d17 打包）</figcaption></figure>
+  <figure><iframe class="demo" src="build/demo.html?demo=plan&lang=zh-Hant&theme=light"></iframe><figcaption><b>新版</b></figcaption></figure>
+  <figure class="wide"><img src="png/plan-compare.png"><figcaption><b>關鍵影格並排</b>　上舊下新：行事曆、時間軸、行程詳情、路程</figcaption></figure>
+</div>
+
+<h2>4　商店截圖 01 主頁</h2>
+<p class="lead">Premium、旅程中；封面＋行程（中）、待辦（小）、匯率（小）、總覽；沒有廣告。iPhone 6.9 吋 1320×2868、繁中。<b>標題是佔位</b>（「主頁：旅程一打開就看得到」、副標標了「（佔位）」）。</p>
+<div class="row shot">
+  <figure><img src="png/store-01-home.png"><figcaption><b>store-01-home.png</b>　data-fit=ok</figcaption></figure>
+</div>
+
+<h2>5　商店截圖 05「掛在行程＋路程」合成</h2>
+<p class="lead">兩支手機並排（左：行程詳情 <code>event.html?event=d1-airport&amp;extra=1</code>，右：路程 <code>leg.html</code>），1320×2868、繁中。標題、副標都是佔位。</p>
+<div class="row shot">
+  <figure><img src="png/store-05-event-leg.png"><figcaption><b>store-05-event-leg.png</b>　data-fit=ok。兩支只佔畫布下半，標題與手機之間有一塊空白（見報告）</figcaption></figure>
+</div>
+
+<h2>6　宣傳圖（頁首／搜尋結果 5244×2950）</h2>
+<p class="lead">複製 <code>creative.html</code> 到 <code>drafts-160/creative-160.html</code>（App repo 沒動）。兩個版本請選：A 只換延伸區右邊那支（總覽→主頁），主標不動；B 換安全區那支（行事曆→主頁），主標改成佔位句。</p>
+<div class="row wide">
+  <figure><img src="png/creative-A-zh-Hant.png"><figcaption><b>A</b>　延伸區換主頁（寬裁切才看得到）</figcaption></figure>
+  <figure><img src="png/creative-B-zh-Hant.png"><figcaption><b>B</b>　安全區換主頁，主標佔位「旅程一打開，主頁就看得到」</figcaption></figure>
+</div>
+</body>
+</html>
