@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=402">
+<title>資料</title>
+<!--
+  資料分頁（1.6.0；原「小工具」分頁，App：TripEZGo/App/WidgetsTabCoordinator.swift、Modules/Widgets/…/LibraryViewModel.swift）。
+  抬頭「資料」＋右上鈴鐺（掃描與匯率換算搬去主頁小工具）＋三格子分頁：靈感、筆記、購物清單（預設第一格＝靈感）。
+  畫面各自在 inspiration.html／notes.html／shop.html（共用抬頭 tools.js 的 libraryHead）；這一頁只是入口：
+  ?sub=inspiration|notes|shopping 換到那一格，其餘參數（lang、interactive…）原樣帶過去。
+  參數：?sub=inspiration|notes|shopping &bell=0（鈴鐺右上的未讀點關掉；預設亮著，基準圖有未讀公告）
+-->
+<link rel="stylesheet" href="screen.css?v=7e1e128cfb">
+</head>
+<body>
+<script type="module">
+const q = new URLSearchParams(location.search);
+const page = { inspiration: 'inspiration', notes: 'notes', shopping: 'shop', shop: 'shop' }[q.get('sub')] || 'inspiration';
+q.delete('sub');
+location.replace(`./${page}.html?${q}`);
+</script>
+</body>
+</html>
