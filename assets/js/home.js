@@ -335,13 +335,14 @@ document.querySelectorAll('[data-lazy-demo]').forEach((el) => io.observe(el));
    捲到附近時，同一張圖換成那個 HTML 畫面的互動版（iframe，interactive=1）：看起來一模一樣，但可以點。
    沒有 JS、或還沒捲到的時候，就是那張圖。 */
 const SCREEN_OF = {
+  home: ['home', 'layout=live:m,todo:s,fx:s,overview:m'],
   calendar: ['calendar', 'day=2'], timeline: ['timeline', 'day=2'], overview: ['overview', ''],
   'event-extra': ['event', 'extra=1'], 'event-airport': ['event', 'event=d1-airport&extra=1'], leg: ['leg', ''], map: ['map', ''], 'map-place': ['map-place', ''],
   'map-store': ['map-store', ''], 'map-nav': ['map-nav', ''], members: ['members', ''],
   'share-location': ['share-location', ''], lock: ['lock', ''], widget: ['widget', ''],
   note: ['note', ''], fx: ['fx', ''], shop: ['shop', ''], scan: ['scan', ''],
-  notes: ['notes', ''], toolbox: ['notes', 'menu=1'], 'scan-history': ['scan', 'hist=1'], 'fx-nokbd': ['fx', 'kbd=0'],
-  'map-live': ['map-live', 'pan=0'], 'map-route': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09'], 'map-mates': ['map-live', 'pan=0&nav=0&today=2&start=2026-10-09&focus=mates'], 'share-ig': ['share-ig', ''], 'share-gmap': ['share-gmap', ''], 'inspiration-flow': ['share-web', ''], inspiration: ['inspiration', ''], 'apple-calendar': ['apple-calendar', ''], siri: ['siri', ''],
+  notes: ['notes', ''], 'scan-history': ['scan', 'hist=1'], 'fx-nokbd': ['fx', 'kbd=0'],
+  'map-live': ['map-live', 'pan=0'], 'map-route': ['map-live', 'pan=0&nav=0&today=2'], 'map-mates': ['map-live', 'pan=0&nav=0&today=2&focus=mates'], 'share-ig': ['share-ig', ''], 'share-gmap': ['share-gmap', ''], 'inspiration-flow': ['share-web', ''], inspiration: ['inspiration', ''], 'apple-calendar': ['apple-calendar', ''], siri: ['siri', ''],
 };
 const SCREEN_LANG = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[L2];
 const [ZOOM, CLOSE, PLAYHINT] = pick({ zh: ['放大，自己玩玩看', '關閉', '親自玩玩看'], en: ['Open full screen and try it', 'Close', 'Try it yourself'], ja: ['拡大して自分で試す', '閉じる', '実際に触ってみよう'],
@@ -376,7 +377,7 @@ function fitPlay() {
 }
 const DIRECT = new Set(['lock']);
 // autoplay.js＋stories*.js 的內容雜湊（tools/stamp-home.mjs 蓋）：帶進 iframe 網址，改了腳本手機不會用到快取裡的舊版
-const AUTO_V = '8e2293d731';
+const AUTO_V = '48dd81db8b';
 const NO_AUTO = new Set(['note', 'members', 'lock', 'widget', 'apple-calendar', 'scan', 'fx', 'fx-nokbd', 'siri']);   // 沒有東西可演的、或使用者自己拖比較好的
 addEventListener('message', (e) => {
   if (e.data?.type === 'tz-esc' && playDlg?.open) { playDlg.close(); return; }

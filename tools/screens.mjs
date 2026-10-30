@@ -3,6 +3,7 @@
 //   node tools/screens.mjs render calendar "day=2" [--lang=en]   → screens/out/<lang>/calendar.png（1206×2622）
 //   node tools/screens.mjs compare calendar "day=2"              → screens/out/compare-calendar.png
 //                                                                    左：HTML　中：模擬器（screens/ref/zh/）　右：50% 疊圖
+//   node tools/screens.mjs compare calendar "day=2&start=2026-10-30" --ref=160-calendar   → 跟指定的基準圖比
 //   node tools/screens.mjs all                                     → 依 SHOTS 清單出四語全部截圖（screens/out/<lang>）
 //   node tools/screens.mjs render calendar "day=2&device=duo"      → screens/out/<lang>/duo-calendar.png（2853×2007，iPhone Duo 內側螢幕橫放 951×669pt）
 //   node tools/screens.mjs render calendar "day=2&device=ipad"     → screens/out/<lang>/ipad-calendar.png（2064×2752，iPad 13 吋）
@@ -21,12 +22,13 @@ const LANGS = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' };   // ko：只�
 
 // 官網用到的畫面：[檔名, 頁面, 參數]
 export const SHOTS = [
+  ['home', 'home', 'layout=live:m,todo:s,fx:s,overview:m'],
   ['calendar', 'calendar', 'day=2'],
   ['timeline', 'timeline', 'day=2'], ['overview', 'overview', ''], ['overview-files', 'overview', 'tab=files'], ['overview-todos', 'overview', 'tab=todos'],
   ['notes', 'notes', ''], ['note', 'note', ''], ['scan', 'scan', ''], ['fx', 'fx', ''], ['shop', 'shop', ''],
-  ['toolbox', 'notes', 'menu=1'], ['scan-history', 'scan', 'hist=1'], ['fx-nokbd', 'fx', 'kbd=0'],
+  ['scan-history', 'scan', 'hist=1'], ['fx-nokbd', 'fx', 'kbd=0'],
   ['event', 'event', ''], ['event-extra', 'event', 'extra=1'], ['event-airport', 'event', 'event=d1-airport&extra=1'], ['leg', 'leg', ''],
-  ['map-live', 'map-live', ''], ['map-route', 'map-live', 'nav=0&today=2&start=2026-10-09'], ['map-mates', 'map-live', 'nav=0&today=2&start=2026-10-09&focus=mates'], ['map', 'map', ''], ['map-place', 'map-place', ''], ['map-store', 'map-store', ''], ['map-nav', 'map-nav', ''],
+  ['map-live', 'map-live', ''], ['map-route', 'map-live', 'nav=0&today=2'], ['map-mates', 'map-live', 'nav=0&today=2&focus=mates'], ['map', 'map', ''], ['map-place', 'map-place', ''], ['map-store', 'map-store', ''], ['map-nav', 'map-nav', ''],
   ['share-ig', 'share-ig', ''], ['share-gmap', 'share-gmap', ''], ['inspiration-flow', 'share-web', 'step=post'], ['inspiration', 'inspiration', ''], ['apple-calendar', 'apple-calendar', ''], ['siri', 'siri', ''],
   ['members', 'members', ''], ['share-location', 'share-location', ''], ['lock', 'lock', ''], ['widget', 'widget', ''],
 ];
@@ -81,12 +83,14 @@ async function shoot(_page, port, name, query, lang) {
   if (!page._routed) { await routeSite(page); page._routed = true; }
   const url = `https://tripezgo.com/screens/${name}.html?lang=${LANGS[lang]}&${query || ''}`;
   await page.goto(url);
-  await page.waitForSelector('body[data-ready="1"]', { timeout: 15000 });
+  await page.waitForSelector('body[data-ready="1"]', { timeout: 30000 });
   return page.locator('#d').screenshot();
 }
 
 const [cmd, name, query = '', ...rest] = process.argv.slice(2);
 const lang = (rest.find(a => a.startsWith('--lang=')) || '--lang=zh').slice(7);
+// --ref=160-calendar：跟 screens/ref/<lang>/160-calendar.png 比（預設是跟畫面同名的舊基準圖）
+const refName = (rest.find(a => a.startsWith('--ref=')) || '').slice(6);
 const srv = await serve();
 const port = srv.address().port;
 const browser = await chromium.launch();
@@ -104,7 +108,8 @@ try {
     console.log('wrote', path.join(out, file0));
     if (cmd === 'compare') {
       // iPad 的基準圖放 screens/ref/<lang>/ipad-<name>.png（真機 @2x 擷取）；畫面縮成一半寬並排
-      const ref = path.join(screens, 'ref', lang, file0);
+      const refFile = refName ? `${isIpad(query) ? 'ipad-' : isDuo(query) ? 'duo-' : ''}${refName}.png` : file0;
+      const ref = path.join(screens, 'ref', lang, refFile);
       const [w, h] = isIpad(query) ? [516, 688] : isDuo(query) ? [476, 335] : [402, 874];
       const b64 = f => 'data:image/png;base64,' + fs.readFileSync(f).toString('base64');
       const cmp = await browser.newPage({ viewport: { width: w * 3 + 20, height: h }, deviceScaleFactor: 2 });
@@ -116,7 +121,7 @@ try {
           <img src="${b64(path.join(out, file0))}" width="${w}" style="position:absolute;inset:0;opacity:.5;mix-blend-mode:difference">
         </div></body>`);
       await cmp.waitForTimeout(200);
-      const file = path.join(screens, 'out', `compare-${file0}`);
+      const file = path.join(screens, 'out', `compare-${refName ? refFile : file0}`);
       await cmp.screenshot({ path: file });
       console.log('wrote', file);
     }

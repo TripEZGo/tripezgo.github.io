@@ -2,29 +2,11 @@
 // key＝首頁 home.js 的畫面名（SCREEN_OF 的 key）。notes 那一支照 App 的路跨頁（工具鈕 → 掃描器／匯率 modal，step.page 寫明在哪一頁）；
 // 其餘待在自己那一頁。一輪結束要回到起始的樣子，下一輪才接得上。
 export const STORIES = {
-  // 資料分頁（筆記）：照 App 的路——右上工具鈕 → 挑「掃描 QR Code」→ 滿版掃描器，對準掃到（結果紙）→ 收紙 →
-  // ✕ 回筆記 → 工具鈕 → 挑「匯率換算」→ modal 開著鍵盤、現值全選，直接打 3000 取代 → ✕ 回筆記（回到起始的樣子）
+  // 資料分頁（筆記）：1.6.0 起右上是鈴鐺、掃描與匯率換算搬去主頁小工具，這裡只切到購物清單
   notes: [
-    { page: 'notes', tap: '.head-tool' },
-    { tap: '.tz-menu [data-tool="scan"]' },
-    { page: 'scan', wait: 600 },
-    { page: 'scan', tap: '.cam' },
-    { page: 'scan', wait: 2300 },
-    { page: 'scan', tap: '.tz-dim.on' },
-    { page: 'scan', wait: 400 },
-    { page: 'scan', call: 'reset' },
-    { page: 'scan', tap: '.cam .x' },
-    { page: 'notes', tap: '.head-tool' },
-    { tap: '.tz-menu [data-tool="fx"]' },
-    { page: 'fx', wait: 400 },
-    { page: 'fx', tap: '.kb [data-k="3"]' },
-    { page: 'fx', tap: '.kb [data-k="0"]' },
-    { page: 'fx', tap: '.kb [data-k="0"]' },
-    { page: 'fx', tap: '.kb [data-k="0"]' },
-    { page: 'fx', wait: 1500 },
-    { page: 'fx', call: 'reset' },
-    { page: 'fx', tap: '.xs .tz-x' },
-    { page: 'notes', wait: 600 },
+    { page: 'notes', wait: 700 },
+    { page: 'notes', tap: '.seg > .seg-t:nth-child(4)' },
+    { page: 'shop', wait: 1200 },
   ],
   // 掃描器（直接開這一頁）：對準掃到新網址（結果紙）→ 收紙 →「掃描紀錄」鈕開紀錄紙（剛掃的在最上面）→ ✕ 收 → 歸零
   scan: [

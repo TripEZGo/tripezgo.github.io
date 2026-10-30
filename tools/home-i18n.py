@@ -140,6 +140,17 @@ T = {
   '免費開始，': ('Start free,', '無料ではじめて、', '무료로 시작하고,'),
   '需要再升級': ('upgrade when you need to', '必要なときにアップグレード', '필요할 때 업그레이드'),
   '免費版': ('Free', '無料版', '무료 버전'),
+  # 1.6.0 主頁
+  '主頁': ('Home', 'ホーム', '홈'),
+  '旅程一打開，': ('Open the app, ', '旅を開くと、', '여행을 열면 '),
+  '就看得到': (' shows it all', 'ですぐ見える', '에서 바로 보여요'),
+  '即時動態、待辦、匯率、總覽，擺成你要的樣子。': ('Live activity, to-dos, currency and overview, arranged the way you want.', 'ライブアクティビティ・ToDo・為替・概要を、好きな並びで。', '라이브 액티비티, 할 일, 환율, 한눈에 보기를 원하는 대로 배치하세요.'),
+  '封面看得到今天是第幾天、旅程走到哪': ('The cover shows which day it is and how far along the trip is', 'カバーで今日が何日目か、旅の進み具合がわかる', '커버에서 오늘이 며칠째인지, 여행이 어디까지 왔는지 볼 수 있어요'),
+  '長按進入編輯，拖一張小工具換位置': ('Press and hold to edit, then drag a widget to a new spot', '長押しで編集に入り、ウィジェットをドラッグして並べ替え', '길게 눌러 편집하고, 위젯을 끌어 위치 바꾸기'),
+  '小工具可以分好幾頁，左右滑著看': ('Spread widgets over several pages and swipe between them', 'ウィジェットは複数ページに分けて、左右にスワイプ', '위젯을 여러 페이지로 나누고 좌우로 넘겨 보세요'),
+  '主頁：封面顯示山陽 6 日的第 1 天，下面是即時動態、今日待辦、匯率換算與總覽小工具': ('Home: the cover shows day 1 of the 6-day Sanyo trip, with live activity, today’s to-dos, currency and overview widgets below', 'ホーム：カバーに山陽 6 日の 1 日目、その下にライブアクティビティ・今日のToDo・為替換算・概要のウィジェット', '홈: 커버에 산요 6일 여행의 1일째, 그 아래에 라이브 액티비티·오늘 할 일·환율 변환·한눈에 보기 위젯'),
+  '主頁小工具頁數': ('Home widget pages', 'ホームのウィジェットのページ数', '홈 위젯 페이지 수'),
+  '1 頁': ('1 page', '1 ページ', '1페이지'),
   '旅程數': ('Trips', '旅行の数', '여행 수'),
   '同時只能擁有 3 趟': ('3 at a time', '同時に3件', '동시에 3개까지'),
   '包含垃圾桶': ('trash included', 'ゴミ箱込み', '휴지통 포함'),
@@ -458,10 +469,10 @@ T = {
       ('What it costs right now: US$200 a month for AI, US$99 a year for the Apple Developer Program, plus about 30 hours a week of my own time building it.',
        '今かかっているコスト：AI に月 200 ドル、Apple Developer Program に年 99 ドル、それに週およそ 30 時間の個人開発の時間。',
        '현재 드는 비용: AI에 매달 200달러, Apple Developer Program에 매년 99달러, 그리고 매주 30시간 정도의 개인 개발 시간.'),
-  '所以 TripEZGo 還是以「免費就能用、付費更好用」為出發點，免費版與 Premium 只有這幾項差異：無廣告、旅程數（免費版同時只能擁有 3 趟，包含垃圾桶）、每趟旅伴（免費版 3 位）、即時動態、Apple／Google 行事曆整合。Premium 提供週訂閱、月訂閱、年訂閱與終身買斷。':
-      ('So TripEZGo starts from “free to use, better with Premium.” Free and Premium differ in just these ways: no ads, the number of trips (Free can only own 3 trips at a time, trash included), companions per trip (3 on Free), Live Activity, and Apple / Google Calendar integration. Premium comes as a weekly, monthly or yearly subscription, or a lifetime purchase.',
-       'だから TripEZGo は「無料でしっかり使えて、有料ならもっと便利に」が基本です。無料版と Premium の違いはこれだけ：広告なし、旅行の数（無料版は同時に所有できるのは 3 件まで。ゴミ箱の中も含みます）、旅行ごとの旅の仲間（無料版は 3 人）、ライブアクティビティ、Apple／Google カレンダー連携。Premium には週・月・年のサブスクリプションと、買い切りがあります。',
-       '그래서 TripEZGo는 ‘무료로도 충분히, Premium이면 더 편하게’를 기본으로 합니다. 무료 버전과 Premium의 차이는 이것뿐입니다: 광고 없음, 여행 수(무료 버전은 동시에 3개까지만 보유 가능, 휴지통 포함), 여행마다 동행(무료 버전은 3명), 라이브 액티비티, Apple/Google 캘린더 연동. Premium은 주간·월간·연간 구독과 평생 구매로 제공됩니다.'),
+  '所以 TripEZGo 還是以「免費就能用、付費更好用」為出發點，免費版與 Premium 只有這幾項差異：無廣告、旅程數（免費版同時只能擁有 3 趟，包含垃圾桶）、每趟旅伴（免費版 3 位）、主頁小工具頁數（免費版 1 頁，即將推出）、即時動態、Apple／Google 行事曆整合。Premium 提供週訂閱、月訂閱、年訂閱與終身買斷。':
+      ('So TripEZGo starts from “free to use, better with Premium.” Free and Premium differ in just these ways: no ads, the number of trips (Free can only own 3 trips at a time, trash included), companions per trip (3 on Free), Home widget pages (1 on Free, coming soon), Live Activity, and Apple / Google Calendar integration. Premium comes as a weekly, monthly or yearly subscription, or a lifetime purchase.',
+       'だから TripEZGo は「無料でしっかり使えて、有料ならもっと便利に」が基本です。無料版と Premium の違いはこれだけ：広告なし、旅行の数（無料版は同時に所有できるのは 3 件まで。ゴミ箱の中も含みます）、旅行ごとの旅の仲間（無料版は 3 人）、ホームのウィジェットのページ数（無料版は 1 ページ、近日公開）、ライブアクティビティ、Apple／Google カレンダー連携。Premium には週・月・年のサブスクリプションと、買い切りがあります。',
+       '그래서 TripEZGo는 ‘무료로도 충분히, Premium이면 더 편하게’를 기본으로 합니다. 무료 버전과 Premium의 차이는 이것뿐입니다: 광고 없음, 여행 수(무료 버전은 동시에 3개까지만 보유 가능, 휴지통 포함), 여행마다 동행(무료 버전은 3명), 홈 위젯 페이지 수(무료 버전은 1페이지, 곧 출시), 라이브 액티비티, Apple/Google 캘린더 연동. Premium은 주간·월간·연간 구독과 평생 구매로 제공됩니다.'),
   # 開發背景
   '背景故事': ('Backstory', '開発ストーリー', '개발 이야기'),
   # ── 藍圖（使用者 2026-10-13：橫向時間軸，從「關於」搬出來） ──
@@ -472,7 +483,7 @@ T = {
   '上一個里程碑': ('Previous milestone', '前のマイルストーン', '이전 마일스톤'),
   '下一個里程碑': ('Next milestone', '次のマイルストーン', '다음 마일스톤'),
   '已完成': ('Done', '完了', '완료'),
-  '即將推出': ('Coming soon', 'まもなく公開', '곧 출시'),
+  '即將推出': ('Coming soon', '近日公開', '곧 출시'),
   '進行中': ('In progress', '開発中', '진행 중'),
   '時程未定': ('No date yet', '時期未定', '일정 미정'),
   '構想與地基': ('Groundwork', '構想と土台', '구상과 기반'),

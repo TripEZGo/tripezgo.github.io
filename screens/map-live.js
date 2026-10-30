@@ -236,7 +236,7 @@ const routes = Object.fromEntries(trip.days.map(dd => [dd.day, dd.events
 // ── 介面層：頁首、日期列、搜尋、分享藥丸、i 鈕（同 map.js） ──
 d.insertAdjacentHTML('beforeend', `<div class="mk" id="mk"></div>
   <div class="head"><div class="greet">${`${t.monthDay(today.getMonth() + 1, today.getDate())} · ${t.weekday[today.getDay()]}`.replace(/[0-9]+/g, m => lang === 'ja' ? m : `<span lang="en">${m}</span>`)}</div>
-  <div class="title">${fmt(trip.title).replace(/[　-鿿＀-￯]+/g, m => `<span class="cjk">${m}</span>`)}</div></div>`);
+  <div class="title" data-fit>${fmt(trip.title).replace(/[　-鿿＀-￯]+/g, m => `<span class="cjk">${m}</span>`)}</div></div>`);
 // focus=mates（首頁 06 位置共享）：「分享我的位置」是開著的——LiveShareChip.configure(isOn: true)：
 // 藥丸換主色底、字換成「正在分享位置」（UI.json ui.liveshare.on，畫面上不寫人數）、點呼吸＋流光（樣式在 map-live.html）
 const LIVE_ON = params.get('focus') === 'mates';
@@ -253,7 +253,7 @@ d.insertAdjacentHTML('beforeend', `<div class="chips" id="chips">${chipHtml()}</
   <div class="fab on" style="top:${242 + DEV.top}px">${icon('infoFill')}</div>
   <div id="cardSlot"></div><div id="fabSlot"></div>`);
 ['chips', 'search', 'live'].forEach(c => jaWrap(d.querySelector(c === 'chips' ? '#chips' : '.' + c)));
-chrome(d, { tab: 2 });
+chrome(d, { tab: 3 });
 if (lang === 'ja') d.querySelectorAll('.tab span').forEach((el, i) => { el.textContent = TABS_JA[i]; });
 const mkEl = document.getElementById('mk');
 
@@ -363,12 +363,12 @@ function setCard(html) {
 function setNavChrome(on) {
   const sb = d.querySelector('.sb');
   d.querySelector('.tab-dot')?.remove();
-  if (!sb) { if (on) d.querySelectorAll('.tab')[2].insertAdjacentHTML('beforeend', '<i class="tab-dot"></i>'); return; }   // Duo：沒有狀態列（時刻在垂直列裡，沒有定位箭頭）
+  if (!sb) { if (on) d.querySelectorAll('.tab')[3].insertAdjacentHTML('beforeend', '<i class="tab-dot"></i>'); return; }   // Duo：沒有狀態列（時刻在垂直列裡，沒有定位箭頭）
   sb.classList.toggle('locating', on);
   sb.querySelector('.sb-loc')?.remove();
   if (!on) return;
   d.querySelector('.sb-time').insertAdjacentHTML('afterend', `<svg class="sb-loc" viewBox="0 0 13 13" aria-hidden="true"><path d="M1.2 5.6 11.8 1.2 7.4 11.8 6.4 6.6Z"/></svg>`);
-  d.querySelectorAll('.tab')[2].insertAdjacentHTML('beforeend', '<i class="tab-dot"></i>');
+  d.querySelectorAll('.tab')[3].insertAdjacentHTML('beforeend', '<i class="tab-dot"></i>');
 }
 
 // ── 退回底圖：MapKit 起不來（token 只認 tripezgo.com） → 畫成 map-nav.html 那一張 ──

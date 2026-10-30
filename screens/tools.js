@@ -4,8 +4,8 @@
 // 分格只剩 筆記／購物清單；掃描與匯率換算收進抬頭右上那顆工具鈕 → 「挑一個」的紙（MenuSheetViewController）
 // → 掃描器（滿版，scan.html）或匯率換算 modal（fx.html）。設計稿 ui-card-v130.html 第 1–5 節。
 //
-// - libraryHead：抬頭「資料」＋右上工具鈕（HeadIconButton，工具箱）＋兩格切換。截圖模式與互動模式同一份（notes／shop）。
-// - toolsMenu：「工具」那張挑一個的紙。notes.html／shop.html 帶 menu=1 時一進來就開著（截圖用）。
+// - libraryHead：抬頭「資料」＋右上鈴鐺（HeadIconButton）＋兩格切換。截圖模式與互動模式同一份（notes／shop）。
+// （1.6.0：抬頭右上換成鈴鐺，「工具」那張挑一個的紙與 toolsMenu 已移除；掃描與匯率換算在主頁小工具。）
 // - closeX：清單紙導覽列右上那顆 ✕（SheetCloseButton：36 的 tzSunken 圓、16 的 ✕、accentInk、筆畫 2.2）。
 // 以下只在互動模式（interactive）下用：
 // - subTabs：抬頭底下那條切換（SubTabContainerViewController）——點一格，白色那顆滑過去，再換畫面。
@@ -21,13 +21,13 @@ export const SUB_PAGES = ['inspiration', 'notes', 'shop'];
 
 // App 的字（Scripts/i18n/maps/Widgets.json：widgets.tab.title、subtab.*、tools.*、scan.card.*）
 export const LIB = {
-  'zh-Hant-TW': { title: '資料', subs: [IS['zh-Hant-TW']['widgets.subtab.inspiration'], '筆記', '購物清單'], tools: '工具',
+  'zh-Hant-TW': { title: '資料', subs: [IS['zh-Hant-TW']['widgets.subtab.inspiration'], '筆記', '購物清單'], tools: '工具', bell: '通知',
     scan: '掃描 QR Code', scanSub: '網址、文字，或旅程的共編邀請', fx: '匯率換算', fxSub: '兩種貨幣互換，兩邊的金額都能打', close: '關閉' },
-  en: { title: 'Library', subs: [IS.en['widgets.subtab.inspiration'], 'Notes', 'Shopping'], tools: 'Tools',
+  en: { title: 'Library', subs: [IS.en['widgets.subtab.inspiration'], 'Notes', 'Shopping'], tools: 'Tools', bell: 'Notifications',
     scan: 'Scan a QR Code', scanSub: 'Links, text, or a trip invite', fx: 'Currency Converter', fxSub: 'Convert between two currencies — type in either amount', close: 'Close' },
-  ja: { title: '資料', subs: [IS.ja['widgets.subtab.inspiration'], 'メモ', '買い物'], tools: 'ツール',
+  ja: { title: '資料', subs: [IS.ja['widgets.subtab.inspiration'], 'メモ', '買い物'], tools: 'ツール', bell: '通知',
     scan: 'QR コードをスキャン', scanSub: 'URL、テキスト、旅行の共同編集の招待', fx: '通貨換算', fxSub: '2 つの通貨を相互に換算。どちらの金額も入力できます', close: '閉じる' },
-  ko: { title: '자료', subs: [IS.ko['widgets.subtab.inspiration'], '메모', '쇼핑'], tools: '도구',
+  ko: { title: '자료', subs: [IS.ko['widgets.subtab.inspiration'], '메모', '쇼핑'], tools: '도구', bell: '알림',
     scan: 'QR 코드 스캔', scanSub: '링크, 텍스트 또는 여행 공동 편집 초대', fx: '환율 변환', fxSub: '두 통화를 서로 환산하고, 양쪽 금액 모두 입력할 수 있습니다', close: '닫기' },
 }[lang] || null;
 const L = LIB || {};
@@ -38,6 +38,8 @@ export const LIB_ICON = {
   scan: '<path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><rect x="7.5" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="13" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="7.5" y="13" width="3.5" height="3.5" rx=".6"/><path d="M13 13h1.5v1.5M16.5 16.5H15"/>',
   swapArrows: '<path d="M7 4v16l-3-3M17 20V4l3 3"/>',
   close: '<path d="M6 6l12 12M18 6 6 18"/>',
+  // 1.6.0：抬頭右上換成鈴鐺（DesignIcon.bell，筆畫 1.8；掃描與匯率換算搬去主頁小工具）
+  bell: '<path d="M18 9.6a6 6 0 1 0-12 0c0 5.1-2 6.4-2 6.4h16s-2-1.3-2-6.4z"/><path d="M13.7 19.3a2 2 0 0 1-3.4 0"/>',
 };
 const icon = (n, w) => `<svg viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:${w}">${LIB_ICON[n]}</svg>`;
 
@@ -64,8 +66,11 @@ html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
 .seg-t { position: absolute; top: 0; height: 45px; width: ${SEG_W}px; display: grid; place-items: center;
   font: 400 var(--t-sm)/16px var(--font); color: var(--sys-seg-ink); white-space: nowrap; }
 .seg-t.on { font-weight: 700; color: var(--ink); }
+.head-tool .bell-dot { position: absolute; left: 28.5px; top: 4.5px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-ink);
+  box-shadow: 0 0 0 1.5px var(--page); }
+html.no-bell .bell-dot { display: none; }
 .is-interactive .head-tool { cursor: pointer; } .is-interactive .head-tool:active { background: var(--surface); }
-/* 「工具」挑一個的紙（MenuSheetViewController）：custom detent＝貼內容高、iOS 26 浮動紙四邊內縮 8、圓角 Radius.lg 12、抓桿；
+/* 挑一個的紙（MenuSheetViewController；靈感的「新增關聯」選單也用這一組 .tz-menu）：custom detent＝貼內容高、iOS 26 浮動紙四邊內縮 8、圓角 Radius.lg 12、抓桿；
    內容 安全區上緣＋16、左右 20；抬頭 base semibold、之後 12；一列 上下 12 左右 4、最矮 56、圖示 20（muted）、間距 12、
    標題 base ink＋副標 xs muted（間 1）；兩列之間一條 border-soft，從 32 起畫 */
 .tz-menu-dim { position: absolute; inset: 0; z-index: 44; background: var(--sys-dim); }
@@ -108,50 +113,12 @@ export const closeX = (cls = '') => `<div class="tz-x ${cls}" role="button" aria
 /** 抬頭「資料」＋右上工具鈕＋兩格切換（current＝0 靈感／1 筆記／2 購物清單）。截圖模式也畫。 */
 export function libraryHead(device, current) {
   libStyle();
+  if (params.get('bell') === '0') document.documentElement.classList.add('no-bell');
   device.insertAdjacentHTML('beforeend', `<div class="wg-title">${L.title}</div>
-    <div class="head-tool" role="button" aria-label="${L.tools}" data-tap>${icon('toolbox', 1.8)}</div>
+    <div class="head-tool" role="button" aria-label="${L.bell}" data-tap>${icon('bell', 1.8)}<i class="bell-dot"></i></div>
     <div class="seg"><div class="seg-pill" style="left:${segLeft(current)}px"></div>
     ${L.subs.map((x, i) => `<div class="seg-t${i === current ? ' on' : ''}" style="left:${segLeft(i)}px">${x}</div>`).join('')}</div>`);
-  // 截圖：帶 menu=1 就畫成「點了工具鈕」那一刻（紙開著）
-  if (params.get('menu') === '1') toolsMenu(device, { from: SUB_PAGES[current], instant: true });
-  if (interactive) device.querySelector('.head-tool').addEventListener('click', () => toolsMenu(device, { from: SUB_PAGES[current] }));
-}
-
-/**
- * 「工具」挑一個的紙（LibraryViewModel.tools：掃描在上、匯率在下，不記上次挑的）。
- * 點一列：紙先收完（MenuSheetViewController 的規矩），接著開掃描器（scan.html，滿版）或匯率 modal（fx.html）。
- * 往下拉、點外面都只是收掉。
- */
-export function toolsMenu(device, { from = 'notes', instant = false } = {}) {
-  libStyle();
-  if (device.querySelector('.tz-menu')) return;
-  const dim = document.createElement('div'), el = document.createElement('div');
-  dim.className = 'tz-menu-dim'; el.className = 'tz-menu';
-  el.setAttribute('role', 'dialog'); el.setAttribute('aria-label', L.tools);
-  el.innerHTML = `<div class="tz-grab"></div><h3>${L.tools}</h3>
-    <div class="tz-mrow" data-tool="scan" data-tap>${icon('scan', 1.7)}<span><b>${L.scan}</b><span>${L.scanSub}</span></span></div>
-    <div class="tz-mrow" data-tool="fx" data-tap>${icon('swapArrows', 2)}<span><b>${L.fx}</b><span>${L.fxSub}</span></span></div>`;
-  if (!instant) { dim.classList.add('off'); el.classList.add('off'); }
-  device.append(dim, el);
-  if (!instant) requestAnimationFrame(() => requestAnimationFrame(() => { dim.classList.remove('off'); el.classList.remove('off'); }));
-  if (!interactive) return;
-  let closed = false;
-  const close = (then) => {
-    if (closed) return; closed = true;
-    dim.classList.add('off'); el.classList.add('off');
-    setTimeout(() => { dim.remove(); el.remove(); then?.(); }, 340);
-  };
-  dim.addEventListener('click', () => close());
-  el.addEventListener('click', (e) => {
-    const t = e.target.closest('[data-tool]')?.dataset.tool; if (!t) return;
-    close(() => go(t, `from=${from}`));
-  });
-  // 往下拉收掉
-  let y0 = null, dy = 0;
-  el.addEventListener('pointerdown', (e) => { if (e.target.closest('[data-tool]')) return; y0 = e.clientY; dy = 0; el.setPointerCapture(e.pointerId); el.style.transition = 'none'; });
-  el.addEventListener('pointermove', (e) => { if (y0 === null) return; dy = Math.max(0, e.clientY - y0); el.style.transform = `translateY(${dy}px)`; });
-  const end = () => { if (y0 === null) return; y0 = null; el.style.transition = ''; el.style.transform = ''; if (dy > 60) close(); };
-  el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+  // 鈴鐺：1.6.0 起點了 push 通知頁（尚未複刻，互動模式點了不動）；右上亮著的主色點＝有未讀公告（bell=0 關掉）
 }
 
 const CSS = `

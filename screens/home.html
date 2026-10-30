@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=60346b1ce2","/screens/chrome.js":"/screens/chrome.js?v=3eb5321d85","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=17414c4484","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<meta name="viewport" content="width=402">
+<title>主頁</title>
+<!--
+  主頁分頁（1.6.0，App：Modules/Home（HomeViewController、Canvas/*）、UI/…/HomeCover（HomeCoverView、HomeCoverProgressView）、
+  UI/…/Foundation/CanvasCardFrame.swift；卡片＝Modules/WidgetCards（LiveActivityHomeCard、ScanCards、ExchangeCards）＋
+  Home/Canvas/HomeOverview.swift；版面規則 Domain/Model/HomeLayout.swift；ADR-0055、ADR-0059）。
+
+  參數：?lang=zh-Hant-TW|en|ja|ko
+        &start=2026-10-30（第 1 天的日期）&today=1（第幾天是今天）&now=09:53:00（旅程時區的現在；即時動態那一格用，靜態不跳秒）
+        &edit=1        編輯模式（長按空白進去）：左上「＋」右上「完成」、封面可藏項目左邊的「−」、卡片左上的「−」、頁面點點（多一頁空頁）
+        &page=N        第幾頁（0 起算；預設 0）
+        &veil=1        免費帳號第二頁以後的毛玻璃（HomeCanvasView 的 premium veil）；page 要 ≥ 1
+        &layout=live:m,overview:m,scan:s,fx:s     每頁用 | 隔開、頁內用 , 隔開；尺寸 s／m／l；
+                       預設＝App 的預設版面（D152）：即時動態中、總覽中、QR Code 小＋匯率換算小
+        &hide=today,dates,place,progress           封面藏起來的項目（HomeCoverItem）
+        &edit=1&…  編輯模式下不畫那一頁以外的東西
+
+  可畫的小工具：live（即時動態）、overview（總覽）、scan（QR Code）、fx（匯率換算）、agenda（行程，進行中那一種）、
+  todo（今日待辦）。其他支（附件、購物…）還沒複刻，帶了會畫成一格空白的卡片。
+  互動模式（interactive=1，只給 App 內／官網的自動示範；截圖模式不變）：長按封面或畫布空白＝進編輯；編輯中長按小工具拖曳換位置
+  （由上往下、由左往右第一個放得下，放不下的往後排）；點「完成」離開；橫向拖曳換頁；veil＝1 時毛玻璃底下照樣畫第二頁以後的內容，
+  window.__auto.unlock() 讓毛玻璃溶掉。
+
+  數字：畫布 4 欄、格距 12、左右留白 20、上緣 12（HomeCanvasMetrics）；一格邊長 ＝ (402 − 40 − 36) ÷ 4 ＝ 81.5；
+  卡片圓角 20、細框 borderSoft、陰影 0 4 6 ink 16%（CanvasCardFrame）；封面總高 ＝ 狀態列 62 ＋ 260（HomeCoverMetrics）。
+  封面照片＝範本封面（covers/itsukushima-torii）。
+  未驗證：地點籌碼的字（Trip.placeList，MapKit 反查出來的城市名，範本檔裡沒有）——繁中照基準圖，其餘三語是照慣用寫法寫的。
+-->
+<link rel="stylesheet" href="screen.css?v=7e1e128cfb">
+<style>
+  :root { --mono: ui-monospace, "SF Mono", Menlo, monospace; --scrim-solid: #1f1914; }
+  .device { background: var(--page); }
+
+  /* ── 封面（HomeCoverView）：延伸到最上緣，高 62 + 260 ── */
+  .cv { position: absolute; left: 0; top: 0; width: var(--full, 402px); height: calc(322px + var(--dt, 0px)); overflow: hidden; background: #17493f; z-index: 2; }
+  .cv-img { position: absolute; inset: 0; background: center / cover no-repeat; }
+  .cv-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,58,52,.62) 0%, rgba(20,58,52,.52) 40%, rgba(20,58,52,.62) 100%); }
+  .cv .sb { z-index: 5; }
+  .cv-btn { position: absolute; z-index: 4; display: flex; align-items: center; justify-content: center; color: var(--accent-ink);
+    background: rgba(255,255,255,.92); border-radius: 22px; height: 42.5px; }
+  .cv-swap { left: 20px; top: calc(62.5px + var(--dt, 0px)); padding: 0 12px 0 11px; gap: 4px; font: 600 var(--t-sm)/16px var(--font); letter-spacing: .02em; }
+  .cv-swap svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .cv-set { right: calc(12px + var(--rr, 0px)); top: calc(62px + var(--dt, 0px)); width: 44px; height: 44px; background: none; color: #fff; }
+  .cv-set svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .cv-body { position: absolute; z-index: 3; left: 20px; right: calc(20px + var(--rr, 0px)); bottom: 20px; display: flex; flex-direction: column; color: #fff; }
+  .cv-today { font: 400 var(--t-xs)/14px var(--font); letter-spacing: .24px; color: rgba(255,255,255,.85); margin-bottom: 4px; }
+  .cv-trow { position: relative; display: flex; align-items: flex-start; }
+  .cv-title { flex: 1; min-width: 0; font: 600 var(--t-xxl)/33px var(--font); letter-spacing: -.59px; color: #fff; display: -webkit-box;
+    -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  .cv-pen { flex: none; width: 44px; height: 44px; margin: -8px -12px 0 0; display: grid; place-items: center; }
+  .cv-pen svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .cv-dates { margin-top: 4px; font: 400 var(--t-xs)/14px var(--font); letter-spacing: .24px; color: rgba(255,255,255,.85); }
+  .cv-prog { margin-top: 12px; }
+  .cv-prog b { display: block; font: 600 var(--t-xs)/14px var(--mono); letter-spacing: .02em; color: #fff; }
+  .cv-cells { display: flex; gap: 3px; margin-top: 4px; }
+  .cv-cells i { flex: 1; height: 4px; border-radius: 2px; background: rgba(255,255,255,.28); }
+  .cv-cells i.on { background: #fff; }
+  .cv-place { margin-top: 12px; align-self: flex-start; display: flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px 0 8px;
+    border-radius: 12px; background: rgba(255,255,255,.2); font: 400 var(--t-xs)/14px var(--font); color: #fff; }
+  .cv-place svg { width: 14px; height: 14px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .hide-today .cv-today, .hide-dates .cv-dates, .hide-progress .cv-prog, .hide-place .cv-place { display: none; }
+
+  /* 編輯中（HomeCoverView.isEditing）：內容整體往右讓 8；可藏項目左邊的「−」「＋」直徑 15；左上＋、右上完成 */
+  .edit .cv-body { left: 28px; }
+  .edit .cv-swap, .edit .cv-set, .edit .cv-pen { display: none; }
+  .cv-add, .cv-done { display: none; }
+  .edit .cv-add, .edit .cv-done { display: flex; }
+  .cv-add { left: 20px; top: calc(62.5px + var(--dt, 0px)); width: 44px; padding: 0; }
+  .cv-add svg { width: 17px; height: 17px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
+  .cv-done { right: calc(20px + var(--rr, 0px)); top: calc(62.5px + var(--dt, 0px)); padding: 0 14px; font: 600 var(--t-sm)/16px var(--font); }
+  .hx { position: relative; }
+  .bd { display: none; position: absolute; left: -23px; width: 15px; height: 15px; border-radius: 50%; background: rgba(255,255,255,.88); place-items: center; z-index: 6; }
+  .bd svg { width: 9px; height: 9px; fill: none; stroke: #3a332d; stroke-width: 2.4; stroke-linecap: round; }
+  .edit .bd { display: grid; }
+  .cv-today.hx .bd { top: -0.5px; } .cv-dates.hx .bd { top: -0.5px; } .cv-prog.hx .bd { top: -.5px; } .cv-place.hx .bd { top: 4.5px; left: -18px; }
+  .cv-place.hx .bd { left: -23px; }
+
+  /* ── 畫布 ── */
+  .pager { position: absolute; left: 0; top: calc(322px + var(--dt, 0px)); width: var(--avail, 402px); height: calc(var(--full-h, 874px) - 322px - var(--dt, 0px)); z-index: 1; }
+  .pg { position: absolute; top: 0; width: var(--avail, 402px); height: 100%; }
+  .card { position: absolute; border-radius: 20px; background: var(--card); box-shadow: 0 4px 6px rgba(var(--shadow-rgb, 31,25,20), .16);
+    overflow: visible; }
+  .card::before { content: ""; position: absolute; inset: 0; border-radius: 20px; border: 1px solid var(--border-soft); pointer-events: none; z-index: 3; }
+  .card .in { position: absolute; inset: 0; border-radius: 20px; overflow: hidden; padding: 14px; display: flex; flex-direction: column; }
+  .card.dark { background: var(--scrim-solid); color: #fff; }
+  .card.dark .in { padding: 13px 14px; }
+  .edit .card .bd { display: grid; left: -8px; top: -8px; width: 20px; height: 20px; background: rgba(214,208,200,.96); box-shadow: 0 1px 3px rgba(0,0,0,.18); }
+  .edit .card .bd svg { width: 11px; height: 11px; stroke: #3a332d; }
+  .dots { position: absolute; left: 0; width: var(--avail, 402px); top: calc(418.5px + var(--dt, 0px)); display: none; justify-content: center; gap: 8px; z-index: 2; }
+  .edit .dots { display: flex; }
+  .dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(60,50,40,.35); }
+  .dots i.on { background: var(--ink); }
+
+  /* 白卡的字標頭（WidgetHead：字標 16、字 11 bold .06em、尾巴 11 等寬） */
+  .wh { display: flex; align-items: center; gap: 6px; padding-bottom: 10px; }
+  .mark { flex: none; width: 16px; height: 16px; border-radius: 4px; background: var(--accent); display: grid; place-items: center; }
+  .mark svg { width: 10px; height: 10px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .wh b { flex: 1 1 auto; min-width: 0; font: 700 11px/13px var(--font); letter-spacing: .66px; text-transform: uppercase; color: var(--muted);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wh span.tail { flex: none; font: 600 var(--t-sm)/16px var(--font); color: var(--muted); }
+
+  /* 即時動態（LiveActivityHomeCard；零件＝ActivityHeader／TitleBlock／Countdown／Progress／NextRow，同 lock.html） */
+  .la-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .la-icon { flex: none; width: 20px; height: 20px; border-radius: 5px; background: var(--accent); display: grid; place-items: center; }
+  .la-icon svg { width: 13px; height: 13px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .la-app { flex: 1 1 auto; min-width: 0; font-size: 12px; line-height: 18px; letter-spacing: .24px; color: rgba(255,255,255,.62);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .la-day { flex: none; font-size: 11px; line-height: 16.5px; letter-spacing: .66px; color: rgba(255,255,255,.62); font-variant-numeric: tabular-nums; }
+  .la-main { display: flex; align-items: flex-end; gap: 12px; }
+  .la-l { flex: 1 1 auto; min-width: 0; }
+  .la-state { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; font: 700 11px/16.5px var(--font); letter-spacing: .66px; color: rgba(255,255,255,.62); }
+  .la-state i { width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+  .la-title { font: 700 20px/24px var(--font); letter-spacing: .1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .la-sub { margin-top: 3px; font-size: 12px; line-height: 18px; letter-spacing: .24px; color: rgba(255,255,255,.62);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .la-count { flex: none; text-align: right; }
+  .la-n { font: 700 20px/26px var(--font); font-variant-numeric: tabular-nums; }
+  .la-u { margin-top: 3px; font-size: 11px; line-height: 16.5px; letter-spacing: .66px; color: rgba(255,255,255,.62); }
+  .la-bar { margin-top: 12px; height: 4px; border-radius: 2px; background: rgba(255,255,255,.18); overflow: hidden; }
+  .la-bar span { display: block; height: 100%; border-radius: 2px; background: var(--brand-teal); }
+  .la-foot { margin-top: auto; }
+  .la-rule { height: 1px; background: rgba(255,255,255,.14); }
+  .la-next { margin-top: 7px; display: flex; align-items: center; gap: 6px; }
+  .la-next svg { flex: none; width: 13px; height: 13px; fill: none; stroke: rgba(255,255,255,.62); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .la-next .nm { flex: 1 1 auto; min-width: 0; font-size: 12px; line-height: 18px; letter-spacing: .24px; color: rgba(255,255,255,.86);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .la-next .tm { flex: none; font-size: 11px; line-height: 16.5px; letter-spacing: .44px; color: rgba(255,255,255,.62); font-variant-numeric: tabular-nums; }
+
+  /* 總覽（HomeOverview）：字標頭＋右上「編輯」；空狀態一句話置中 */
+  .ov-edit { font: 600 var(--t-sm)/16px var(--font); color: var(--muted); }
+  .card.ov .in { padding-top: 19px; }
+  .ov-empty { flex: 1; margin-top: 5px; display: grid; place-items: center; font: 400 var(--t-sm)/16px var(--font); color: var(--muted); text-align: center; padding: 0 8px; }
+
+  /* QR Code 小（ScanSmallCard：圖示 58／筆畫 1.6、間距 8、字 base bold） */
+  .sc { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+  .sc svg { width: 58px; height: 58px; fill: none; stroke: var(--accent-ink); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .sc b { font: 700 var(--t-base)/18px var(--font); letter-spacing: .3px; color: var(--ink); }
+
+  /* 匯率換算小（ExchangeSmallCard） */
+  .fx-a { font: 700 17px/21px var(--mono); color: var(--muted); white-space: nowrap; }
+  .fx-r { display: flex; align-items: baseline; gap: 4px; }
+  .fx-r i { font: 400 13px/16px var(--font); font-style: normal; color: var(--muted); }
+  .fx-r b { font: 700 24px/29px var(--mono); letter-spacing: -.24px; color: var(--ink); white-space: nowrap; }
+  .foot { margin-top: auto; font: 400 12px/15px var(--font); letter-spacing: .24px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* 免費帳號第二頁以後的毛玻璃（premium veil）：鎖、標題、說明、〔升級 Premium〕，垂直置中在畫布區 */
+  .veil { position: absolute; left: 0; top: 0; width: var(--avail, 402px); height: 100%; background: rgba(245,243,241,.92);
+    -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px); display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 0 20px 0; text-align: center; z-index: 3; }
+  .veil .lk { width: 53px; height: 53px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); display: grid; place-items: center; margin-bottom: 14px; }
+  .veil .lk svg { width: 24px; height: 24px; fill: none; stroke: var(--muted); stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+  .veil h3 { font: 700 var(--t-xl)/28px var(--font); color: var(--ink); }
+  .veil p { margin-top: 6px; font: 400 var(--t-sm)/15px var(--font); color: var(--muted); max-width: 346px; }
+  .veil .go { margin-top: 20px; width: 210px; height: 48px; border-radius: 8px; background: var(--accent-ink); color: var(--on-accent);
+    display: grid; place-items: center; font: 600 var(--t-lg)/20px var(--font); }
+  /* 行程（AgendaCard.live，中）與待辦（TodosCard）：零件同 widget.html（WidgetHead／WidgetAnswer／WidgetEventRow／WidgetTodoRow），卡片內縮 14 */
+  .ag-a { display: flex; align-items: baseline; gap: 6px; }
+  .ag-a i { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--success); transform: translateY(-1px); }
+  .ag-a b { font: 700 16px/20px var(--font); letter-spacing: .3px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ag-r { margin-top: 3px; font: 400 12px/15px var(--font); letter-spacing: .24px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ag-r b { color: var(--ink); }
+  .hair { margin: 6px 0 3px; height: 1px; background: var(--border); }
+  .row { display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+  .row + .row { border-top: 1px solid var(--border-soft); }
+  .row .tm { flex: none; width: 44px; font: 400 11px/14px var(--mono); letter-spacing: .22px; color: var(--muted); }
+  .row .nm { flex: 1 1 auto; min-width: 0; font: 400 13px/17px var(--font); letter-spacing: .26px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row .st { flex: none; font: 400 10px/13px var(--font); letter-spacing: .6px; color: var(--muted); }
+  .wh span.tail.mono { font: 400 11px/13px var(--mono); letter-spacing: .44px; }
+  .td { display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+  .td + .td { border-top: 1px solid var(--border-soft); }
+  .td svg { flex: none; width: 14px; height: 14px; fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .td .tx { flex: 1 1 auto; min-width: 0; font: 400 13px/17px var(--font); letter-spacing: .26px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .td .at { flex: none; font: 400 10px/13px var(--mono); color: var(--muted); }
+  .card.sz-s .td { padding: 5px 0; }
+  .card.sz-s .td svg { width: 13px; height: 13px; }
+  .card.sz-s .td .tx { font-size: 12px; }
+
+  /* ── 互動模式（自動示範）：編輯輕晃、拖曳浮起、換位置的動畫、換頁、毛玻璃溶掉 ── */
+  .is-interactive .cv-body { transition: left .25s; }
+  .is-interactive .card { transition: left .32s cubic-bezier(.3,.7,.3,1), top .32s cubic-bezier(.3,.7,.3,1), width .3s, height .3s; }
+  .is-interactive .card.drag { transition: none; z-index: 10; transform: scale(1.06); box-shadow: 0 10px 24px rgba(31,25,20,.28); animation: none; }
+  .is-interactive .card.land { transition: left .25s, top .25s, transform .2s, box-shadow .2s; }
+  .is-interactive .pg { transition: left .38s cubic-bezier(.25,.8,.3,1); }
+  .is-interactive .pager.drag .pg { transition: none; }
+  @keyframes jig { from { transform: rotate(-1deg); } to { transform: rotate(1deg); } }
+  .is-interactive.edit .card:not(.drag) { animation: jig .13s ease-in-out infinite alternate; }
+  .is-interactive.edit .card:nth-child(2n):not(.drag) { animation-delay: -.07s; }
+  .dots i.x { display: none; }
+  .edit .dots i.x { display: block; }
+  .veil { transition: opacity .9s ease, backdrop-filter .9s ease, -webkit-backdrop-filter .9s ease; }
+  .veil.off { opacity: 0; -webkit-backdrop-filter: blur(0); backdrop-filter: blur(0); pointer-events: none; }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module">
+import { lang, params, t, loadTrip, loadCategories, categoryName, duration, chrome, ready, fmt, ICON, svg, toMin, TAB_PAGES, interactive, embed, go, ipad, duo, DEV } from './chrome.js';
+
+const d = document.getElementById('d');
+const trip = await loadTrip();
+await loadCategories();
+
+// ── 字：Scripts/i18n/maps（Home.json、UI.json、WidgetCards.json、LiveActivity.json）──
+const S = {
+  'zh-Hant-TW': { swap: '切換旅程', day: n => `第 ${n} 天`, prog: (a, b) => `第 ${a} 天 · 共 ${b} 天`, count: n => `${n} 天`, done: '完成', edit: '編輯',
+    remainingShort: n => `還有 ${n} 件`,
+    noEvent: '不綁行程',
+    agenda: '進行中', todosToday: '今日待辦', remainP: '還有 ', endsAt: x => ` · ${x} 結束`, remainingOpen: n => `還有 ${n} 件未完成`, nearest: x => ` · 最近 ${x}`,
+    overview: '總覽', overviewEmpty: '寫下這趟旅程的重點', scan: '掃描', fx: '匯率換算', fxEmpty: '還沒換算過——點一下開始',
+    live: '進行中', remain: '還剩', next: x => `下一站 · ${x}`,
+    veilTitle: '升級 Premium 解鎖更多頁', veilBody: '免費版只能使用一頁小工具。升級 Premium，主頁可以放更多頁。', veilGo: '升級 Premium',
+    places: '廣島市、岡山市' },
+  en: { swap: 'Switch trip', day: n => `Day ${n}`, prog: (a, b) => `Day ${a} of ${b}`, count: n => `${n} days`, done: 'Done', edit: 'Edit',
+    remainingShort: n => `${n} left`,
+    noEvent: 'No event',
+    agenda: 'Now', todosToday: 'Today’s to-dos', remainP: 'In ', endsAt: x => ` · ends ${x}`, remainingOpen: n => `${n} still open`, nearest: x => ` · soonest ${x}`,
+    overview: 'Overview', overviewEmpty: 'Jot down what matters on this trip', scan: 'Scan', fx: 'Currency Converter', fxEmpty: 'Nothing converted yet — tap to start',
+    live: 'Now', remain: 'Ends in', next: x => `Next · ${x}`,
+    veilTitle: 'Upgrade to Premium for more pages', veilBody: 'The free version has one page of widgets. Upgrade to Premium to add more pages to Home.', veilGo: 'Upgrade to Premium',
+    places: 'Hiroshima, Okayama' },
+  ja: { swap: '旅行を切り替える', day: n => `${n} 日目`, prog: (a, b) => `${a} 日目 · 全 ${b} 日`, count: n => `${n} 日間`, done: '完了', edit: '編集',
+    remainingShort: n => `あと ${n} 件`,
+    noEvent: '予定に紐づけない',
+    agenda: '進行中', todosToday: '今日のやること', remainP: '残り ', endsAt: x => ` · ${x} 終了`, remainingOpen: n => `未完了があと ${n} 件`, nearest: x => ` · 直近 ${x}`,
+    overview: '概要', overviewEmpty: 'この旅の要点を書いておく', scan: 'スキャン', fx: '通貨換算', fxEmpty: 'まだ換算していません——タップで開始',
+    live: '進行中', remain: '残り', next: x => `次 · ${x}`,
+    veilTitle: 'Premium にアップグレードしてページを増やす', veilBody: '無料版で使えるウィジェットは 1 ページだけです。Premium にアップグレードすると、ホームにページを増やせます。', veilGo: 'Premium にアップグレード',
+    places: '広島市、岡山市' },
+  ko: { swap: '여행 전환', day: n => `${n}일차`, prog: (a, b) => `${a}일째 · 총 ${b}일`, count: n => `${n}일`, done: '완료', edit: '편집',
+    remainingShort: n => `${n}건 남음`,
+    noEvent: '일정에 묶지 않음',
+    agenda: '진행 중', todosToday: '오늘 할 일', remainP: '남은 시간 ', endsAt: x => ` · ${x} 종료`, remainingOpen: n => `미완료 ${n}건 남음`, nearest: x => ` · 가장 가까운 ${x}`,
+    overview: '한눈에 보기', overviewEmpty: '이번 여행의 핵심을 적어 두세요', scan: '스캔', fx: '환율 변환', fxEmpty: '아직 환산한 적이 없습니다 — 탭하여 시작',
+    live: '진행 중', remain: '남은 시간', next: x => `다음 · ${x}`,
+    veilTitle: 'Premium으로 업그레이드하고 페이지 더 추가하기', veilBody: '무료 버전에서는 위젯을 한 페이지만 쓸 수 있어요. Premium으로 업그레이드하면 홈에 페이지를 더 추가할 수 있어요.', veilGo: 'Premium으로 업그레이드',
+    places: '히로시마시, 오카야마시' },
+}[lang] || null;
+
+const todayNo = +(params.get('today') || 1);
+const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
+const dateOf = n => new Date(start.getTime() + (n - 1) * 864e5);
+const [nh, nm, ns = 0] = (params.get('now') || '09:53:00').split(':').map(Number);
+const nowSec = (nh * 60 + nm) * 60 + ns;
+const edit = params.get('edit') === '1';
+const veil = params.get('veil') === '1';
+const pageNo = +(params.get('page') || 0);
+const hidden = (params.get('hide') || '').split(',').filter(Boolean);
+if (edit) document.documentElement.classList.add('edit');
+d.classList.add(...hidden.map(h => `hide-${h}`));
+if (edit) d.classList.add('edit');
+
+// ── 圖示（DesignIcon.swift 的 24 格） ──
+const P = {
+  pencil: '<path d="M17 3Q21 3 21 7L7.5 20.5 2 22l1.5-5.5z"/>',
+  lock: '<rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8.5 10V7a3.5 3.5 0 0 1 7 0v3"/>',
+  scan: '<path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><rect x="7.5" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="13" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="7.5" y="13" width="3.5" height="3.5" rx=".6"/><path d="M13 13h1.5v1.5M16.5 16.5H15"/>',
+  brand: '<circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M6 8.4v4.2a3.4 3.4 0 0 0 3.4 3.4h5.2"/>',
+  nextStop: '<path d="M5 12h11M12 8l4 4-4 4"/><circle cx="19.4" cy="12" r="1.6"/>',
+  minus: '<path d="M5 12h14"/>',
+  swap: '<path d="m7 9 5-5 5 5M7 15l5 5 5-5"/>',
+};
+const sv = n => `<svg viewBox="0 0 24 24" aria-hidden="true">${P[n] || ICON[n]}</svg>`;
+const badge = `<span class="bd">${sv('minus')}</span>`;
+
+// ── 封面 ──
+const loc = { 'zh-Hant-TW': 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[lang];
+const today = dateOf(todayNo);
+const todayText = `${new Intl.DateTimeFormat(loc, { year: 'numeric', month: 'short', day: 'numeric' }).format(today)} · ${t.weekday[today.getDay()]}`;
+const last = dateOf(trip.dayCount);
+const range = `${t.shortDate(start.getMonth() + 1, start.getDate())} – ${t.shortDate(last.getMonth() + 1, last.getDate())} · ${S.count(trip.dayCount)}`;
+const cells = Array.from({ length: trip.dayCount }, (_, i) => `<i${i < todayNo ? ' class="on"' : ''}></i>`).join('');
+const cover = '../covers/itsukushima-torii.42b883d9.jpg';
+
+d.insertAdjacentHTML('beforeend', `
+<div class="cv"><div class="cv-img" style="background-image:url(${cover})"></div><div class="cv-scrim"></div>
+  <div class="cv-btn cv-swap">${sv('swap')}<span>${S.swap}</span></div>
+  <div class="cv-btn cv-set">${svg('settings')}</div>
+  <div class="cv-btn cv-add">${svg('plus')}</div><div class="cv-btn cv-done">${S.done}</div>
+  <div class="cv-body">
+    <div class="cv-today hx">${badge}${fmt(todayText)}</div>
+    <div class="cv-trow"><div class="cv-title">${fmt(trip.title)}</div><div class="cv-pen">${sv('pencil')}</div></div>
+    <div class="cv-dates hx">${badge}${fmt(range)}</div>
+    <div class="cv-prog hx">${badge}<b>${fmt(S.prog(todayNo, trip.dayCount))}</b><div class="cv-cells">${cells}</div></div>
+    <div class="cv-place hx">${badge}${sv('mapPin')}<span>${fmt(S.places)}</span></div>
+  </div></div>`);
+
+// ── 小工具 ──
+const SIZE = { s: [2, 2], m: [4, 2], l: [4, 4] };
+// iPad／Duo：畫布限最大寬度 480、置中（HomeCanvasMetrics.maxCanvasWidth，D97）；封面滿版。Duo 右緣讓出 84pt 的垂直列（可用寬 867）
+const FULL = DEV.w, RR = duo ? 84 : 0, AVAIL = FULL - RR, CANVAS = Math.min(AVAIL, 480), CL = (AVAIL - CANVAS) / 2;
+d.style.setProperty('--full', FULL + 'px'); d.style.setProperty('--full-h', DEV.h + 'px'); d.style.setProperty('--avail', AVAIL + 'px');
+d.style.setProperty('--rr', RR + 'px'); d.style.setProperty('--dt', DEV.top + 'px');
+const COL = 4, ROWS = 6, GAP = 12, SIDE = 20, TOP = 12, CELL = (CANVAS - 2 * SIDE - (COL - 1) * GAP) / COL;
+const DEFAULT = 'live:m,overview:m,scan:s,fx:s';
+const pages = (params.get('layout') || DEFAULT).split('|').map(p => p.split(',').filter(Boolean).map(x => { const [id, sz = 's'] = x.split(':'); return { id, sz }; }));
+// 「由上往下、由左往右第一個放得下」（HomeLayout.settle；一頁放不下的往下一頁推）
+function pack(items) {
+  const used = Array.from({ length: ROWS }, () => Array(COL).fill(false)), out = [];
+  for (const it of items) {
+    const [w, h] = SIZE[it.sz];
+    let done = false;
+    for (let r = 0; r + h <= ROWS && !done; r++) for (let c = 0; c + w <= COL && !done; c++) {
+      let ok = true;
+      for (let i = 0; i < h && ok; i++) for (let j = 0; j < w && ok; j++) if (used[r + i][c + j]) ok = false;
+      if (!ok) continue;
+      for (let i = 0; i < h; i++) for (let j = 0; j < w; j++) used[r + i][c + j] = true;
+      out.push({ ...it, src: it, r, c, w, h }); done = true;
+    }
+  }
+  return out;
+}
+
+// 即時動態：旅程時區的現在落在哪一則（時刻換成日本時間，同 overview.html 的 shift）
+const ZONE = { 'Asia/Taipei': 480, 'Asia/Tokyo': 540 };
+const shift = z => z ? 540 - (ZONE[z] ?? 540) : 0;
+const clock = m => `${String(Math.floor(m / 60) % 24).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+const timed = (trip.days.find(x => x.day === todayNo)?.events || []).filter(e => e.start && e.end && !e.isCancelled)
+  .map(e => ({ ...e, s: toMin(e.start) + shift(e.startTimeZoneID || e.timeZoneID), e2: toMin(e.end) + shift(e.endTimeZoneID || e.timeZoneID) }))
+  .sort((a, b) => a.s - b.s);
+const cur = timed.find(e => e.s * 60 <= nowSec && nowSec < e.e2 * 60);
+const nxt = cur ? timed.find(e => e.s >= cur.e2 || (e.s > cur.s)) : null;
+const hms = sec => { const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60; return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`; };
+
+// 待辦（TripWidgetUseCase.todos）：今天畫得到的行程上的待辦；排序＝提醒時刻早的在前、不綁行程（全日行程）的在後
+const todoList = [];
+for (const e of (trip.days.find(x => x.day === todayNo)?.events || []).filter(e => !e.isCancelled)) (e.todos || []).forEach(text => todoList.push({ text, at: e.start ? toMin(e.start) + shift(e.startTimeZoneID || e.timeZoneID) : null, done: false }));
+for (const e of trip.allDayEvents || []) if (e.fromDay <= todayNo && todayNo <= Math.max(e.fromDay, e.toDay)) (e.todos || []).forEach(text => todoList.push({ text, at: null, done: false }));
+todoList.forEach((x, k) => { x.k = k; });
+todoList.sort((a, b) => ((a.at ?? 1e9) - (b.at ?? 1e9)) || (a.k - b.k));
+const head = (label, tail = '') => `<div class="wh"><span class="mark"><svg viewBox="0 0 24 24">${P.brand}</svg></span><b>${fmt(label)}</b>${tail}</div>`;
+const BODY = {
+  live: () => {
+    if (!cur) return `<div class="la-head"><span class="la-icon"><svg viewBox="0 0 24 24">${P.brand}</svg></span><span class="la-app">TripEZGo · ${fmt(trip.title)}</span></div>`;
+    const left = cur.e2 * 60 - nowSec, frac = (nowSec - cur.s * 60) / ((cur.e2 - cur.s) * 60);
+    return `<div class="la-head"><span class="la-icon"><svg viewBox="0 0 24 24">${P.brand}</svg></span>
+      <span class="la-app">TripEZGo · ${fmt(trip.title)}</span><span class="la-day">${S.day(todayNo)}</span></div>
+      <div class="la-main"><div class="la-l"><div class="la-state"><i></i>${S.live}</div>
+        <div class="la-title">${fmt(cur.title)}</div>
+        <div class="la-sub">${fmt(`${clock(cur.s)} – ${clock(cur.e2)}`)}${cur.place ? ' · ' + fmt(cur.place.name) : ''}</div></div>
+        <div class="la-count"><div class="la-n">${hms(left)}</div><div class="la-u">${S.remain}</div></div></div>
+      <div class="la-bar"><span style="width:${(frac * 100).toFixed(1)}%"></span></div>
+      ${nxt ? `<div class="la-foot"><div class="la-rule"></div><div class="la-next"><svg viewBox="0 0 24 24">${P.nextStop}</svg>
+        <span class="nm">${fmt(S.next(nxt.title))}</span><span class="tm">${clock(nxt.s)}</span></div></div>` : ''}`;
+  },
+  overview: () => `${head(S.overview, `<span class="tail ov-edit">${S.edit}</span>`)}<div class="ov-empty">${fmt(S.overviewEmpty)}</div>`,
+  agenda: () => {
+    const stamp = `${lang === 'ko' ? `${today.getMonth() + 1}. ${today.getDate()}.` : `${today.getMonth() + 1}/${today.getDate()}`} · ${S.day(todayNo)}`;
+    if (!cur) return head(S.agenda, `<span class="tail mono">${stamp}</span>`);
+    const i = timed.indexOf(cur), left = Math.max(1, Math.round((cur.e2 * 60 - nowSec) / 60));
+    return `${head(S.agenda, `<span class="tail mono">${stamp}</span>`)}
+      <div class="ag-a"><i></i><b>${fmt(cur.title)}</b></div>
+      <div class="ag-r">${S.remainP}<b>${duration(left)}</b>${S.endsAt(clock(cur.e2))}</div><div class="hair"></div>
+      ${timed.slice(i + 1, i + 3).map(e => `<div class="row"><span class="tm">${clock(e.s)}</span><span class="nm">${fmt(e.title)}</span><span class="st">${fmt(categoryName(e.category))}</span></div>`).join('')}`;
+  },
+  todo: (it) => {
+    const small = it.sz === 's', all = todoList, open = all.filter(x => !x.done);
+    return `${head(S.todosToday, `<span class="tail mono">${all.filter(x => x.done).length} / ${all.length}</span>`)}
+      ${all.slice(0, 3).map(x => `<div class="td"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4"/></svg><span class="tx">${fmt(x.text)}</span>${small ? '' : `<span class="at">${x.at != null ? clock(x.at) : fmt(S.noEvent)}</span>`}</div>`).join('')}
+      <div class="foot">${(small ? S.remainingShort : S.remainingOpen)(open.length)}${open[0]?.at != null ? S.nearest(clock(open[0].at)) : ''}</div>`;
+  },
+  scan: () => `<div class="sc">${sv('scan')}<b>${S.scan}</b></div>`,
+  fx: () => `${head(S.fx)}<div class="fx-a">$100.00</div><div class="fx-r"><i>≈</i><b>¥486</b></div><div class="foot">${fmt(S.fxEmpty)}</div>`,
+};
+const card = it => {
+  const x = CL + SIDE + it.c * (CELL + GAP), y = TOP + it.r * (CELL + GAP), w = it.w * CELL + (it.w - 1) * GAP, h = it.h * CELL + (it.h - 1) * GAP;
+  const body = BODY[it.id] ? BODY[it.id](it) : '';
+  return `<div class="card sz-${it.sz}${it.id === 'live' ? ' dark' : ''}${it.id === 'overview' ? ' ov' : ''}" data-id="${it.id}" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px">${badge}<div class="in">${body}</div></div>`;
+};
+
+const pager = document.createElement('div'); pager.className = 'pager'; d.append(pager);
+const shown = edit ? [...pages, []] : [...pages];
+while (shown.length <= pageNo) shown.push([]);   // veil=1&page=1：第二頁以後的內容免費帳號看不到，頁還是在
+const PG = [];   // 互動用：每頁 { el, items, packed }
+shown.forEach((items, i) => {
+  const pg = document.createElement('div'); pg.className = 'pg'; pg.style.left = `${(i - pageNo) * AVAIL}px`;
+  const packed = pack(items);
+  const veilHere = veil && i >= 1;
+  // 毛玻璃底下照樣畫那一頁的內容（基準圖：模糊的卡片隱約透出來）
+  pg.innerHTML = packed.map(card).join('');
+  const nCards = pg.children.length;
+  if (veilHere) pg.insertAdjacentHTML('beforeend', `<div class="veil"><div class="lk">${sv('lock')}</div><h3>${fmt(S.veilTitle)}</h3><p>${fmt(S.veilBody)}</p><div class="go" data-tap>${fmt(S.veilGo)}</div></div>`);
+  pager.append(pg);
+  if (nCards) packed.forEach((it, k) => { it.el = pg.children[k]; });
+  PG.push({ el: pg, items, packed });
+});
+d.insertAdjacentHTML('beforeend', `<div class="dots" style="z-index:2">${shown.map((_, i) => `<i${i === pageNo ? ' class="on"' : ''}></i>`).join('')}${interactive && !edit ? '<i class="x"></i>' : ''}</div>`);
+
+// ════════ 互動模式（自動示範用；截圖模式不跑這一段） ════════
+if (interactive) {
+  const root = document.documentElement;
+  const canvasTop = 322 + DEV.top;                                   // 畫布起點（封面 62 + 260）
+  const setEdit = on => { root.classList.toggle('edit', on); d.classList.toggle('edit', on); };
+  const slot = it => ({ x: CL + SIDE + it.c * (CELL + GAP), y: TOP + it.r * (CELL + GAP) });
+  const box = it => { const { x, y } = slot(it); return [x, y, x + it.w * CELL + (it.w - 1) * GAP, y + it.h * CELL + (it.h - 1) * GAP]; };
+  // 換位置：把 items 重新排穩（pack），其餘的卡片動畫到新格子；被拖的那張跟著手指
+  function reflow(pgs, skipEl) {
+    pgs.packed = pack(pgs.items);
+    pgs.packed.forEach((it, k) => { it.el = it.src.el; if (it.el === skipEl) return; const { x, y } = slot(it); it.el.style.left = x + 'px'; it.el.style.top = y + 'px'; });
+  }
+  PG.forEach(pgs => pgs.packed.forEach(it => { it.src.el = it.el; }));   // 卡片元素記在原本的 item 上，重排之後還找得到
+
+  // 長按封面或畫布空白＝進編輯（HomeViewController.editLongPress；小工具自己的長按是系統選單，這裡不處理）
+  document.addEventListener('pointerdown', e => {
+    if (root.classList.contains('edit')) return;
+    if (e.target.closest('.card, .veil, .tabbar')) return;
+    const x0 = e.clientX, y0 = e.clientY;
+    let timer = setTimeout(() => { timer = null; setEdit(true); }, 500);
+    const cancel = ev => {
+      if (ev.type !== 'pointerup' && Math.hypot(ev.clientX - x0, ev.clientY - y0) <= 8) return;
+      clearTimeout(timer); document.removeEventListener('pointermove', cancel); document.removeEventListener('pointerup', cancel);
+    };
+    document.addEventListener('pointermove', cancel); document.addEventListener('pointerup', cancel);
+  });
+  d.querySelector('.cv-done').addEventListener('click', () => setEdit(false));
+
+  const scaleOf = () => d.getBoundingClientRect().width / 402;
+  // 編輯中拖小工具（HomeCanvasView.handleDrag：按住 .25 秒浮起、放大 1.06；拖到別的格子上就換位置）
+  pager.addEventListener('pointerdown', e => {
+    if (!root.classList.contains('edit')) return;
+    const el = e.target.closest('.card'); if (!el) return;
+    const pgs = PG.find(p => p.el.contains(el)); const me = pgs.packed.find(it => it.el === el); if (!me) return;
+    const sx = e.clientX, sy = e.clientY, sc = scaleOf();
+    const x0 = parseFloat(el.style.left), y0 = parseFloat(el.style.top);
+    let armed = false;
+    const arm = setTimeout(() => { armed = true; el.classList.remove('land'); el.classList.add('drag'); }, 250);
+    const move = ev => {
+      if (!armed) return;
+      const dx = (ev.clientX - sx) / sc, dy = (ev.clientY - sy) / sc;
+      el.style.left = x0 + dx + 'px'; el.style.top = y0 + dy + 'px';
+      const px = x0 + dx + el.offsetWidth / 2, py = y0 + dy + el.offsetHeight / 2;
+      const self = pgs.packed.find(it => it.el === el);
+      const hit = pgs.packed.find(it => { if (it === self) return false; const [a, b, c, e2] = box(it); return px >= a && px <= c && py >= b && py <= e2; });
+      if (hit) {
+        const from = pgs.items.indexOf(self.src), to = pgs.items.indexOf(hit.src);
+        pgs.items.splice(from, 1); pgs.items.splice(to, 0, self.src);
+        reflow(pgs, el);
+      }
+    };
+    const up = () => {
+      clearTimeout(arm); document.removeEventListener('pointermove', move); document.removeEventListener('pointerup', up);
+      if (!armed) return;
+      el.classList.add('land'); el.classList.remove('drag');
+      const { x, y } = slot(pgs.packed.find(it => it.el === el)); el.style.left = x + 'px'; el.style.top = y + 'px';
+      setTimeout(() => el.classList.remove('land'), 320);
+    };
+    document.addEventListener('pointermove', move); document.addEventListener('pointerup', up);
+  });
+
+  // 橫向拖曳換頁（跟手、放開吸附到最近的一頁：拖超過 80pt 或夠快就翻）
+  let curPage = pageNo;
+  const place = (n, dx = 0) => PG.forEach((pgs, i) => { pgs.el.style.left = `${(i - n) * 402 + dx}px`; });
+  const goPage = n => { curPage = Math.max(0, Math.min(PG.length - 1, n)); place(curPage); d.querySelectorAll('.dots i').forEach((x, i) => x.classList.toggle('on', i === curPage)); };
+  pager.addEventListener('pointerdown', e => {
+    if (root.classList.contains('edit') && e.target.closest('.card')) return;
+    const sx = e.clientX, sy = e.clientY, t0 = performance.now(), sc = scaleOf(); let dragging = false;
+    const mv = ev => {
+      const dx = (ev.clientX - sx) / sc, dy = (ev.clientY - sy) / sc;
+      if (!dragging && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) { dragging = true; pager.classList.add('drag'); }
+      if (dragging) place(curPage, dx);
+    };
+    const upH = ev => {
+      document.removeEventListener('pointermove', mv); document.removeEventListener('pointerup', upH);
+      if (!dragging) return; pager.classList.remove('drag');
+      const dx = (ev.clientX - sx) / sc, v = Math.abs(dx) / Math.max(1, performance.now() - t0);
+      goPage(Math.abs(dx) > 80 || v > .4 ? curPage + (dx < 0 ? 1 : -1) : curPage);
+    };
+    document.addEventListener('pointermove', mv); document.addEventListener('pointerup', upH);
+  });
+
+  // 即時動態那一格：倒數每秒走（同鎖定畫面的 Countdown）
+  if (cur) { let sec = 0; setInterval(() => { sec += 1; const n = d.querySelector('.la-n'); if (n) n.textContent = hms(cur.e2 * 60 - nowSec - sec); }, 1000); }
+
+  // ── 給自動示範（autoplay 的 { call }）用的：鏡頭與解鎖。鏡頭＝整個畫面放大再平移（局部＋zoom in/out，不是縮小整支手機） ──
+  const camTo = (fx, fy, k, ms = 700) => {
+    const W = 402, H = 874, top = embed ? 54 : 0;
+    const tx = Math.min(0, Math.max(W - W * k, W / 2 - k * fx)), ty = Math.min(0, Math.max(H - H * k, top + (H - top) / 2 - k * fy));
+    d.style.transformOrigin = '0 0'; d.style.transition = `transform ${ms}ms cubic-bezier(.3,.7,.3,1)`;
+    d.style.transform = k === 1 ? '' : `translate(${tx}px,${ty}px) scale(${k})`;
+  };
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  window.__auto = {
+    zoomCover: async () => { camTo(170, 232, 1.25, 600); await wait(650); camTo(112, 262, 2.1, 650); await wait(700); },
+    zoomOut: async () => { camTo(0, 0, 1); await wait(650); },
+    zoomLive: async () => { const el = d.querySelector('.card.dark'); camTo(201, parseFloat(el.style.top) + canvasTop + el.offsetHeight / 2, 1.2, 700); await wait(800); },
+    unlock: async () => { d.querySelectorAll('.veil').forEach(v => v.classList.add('off')); await wait(1100); },
+  };
+}
+
+chrome(d, { tab: 0 });
+d.querySelector('.sb')?.classList.add('on-dark');   // 封面是深色：狀態列字白
+ready();
+</script>
+</body>
+</html>
