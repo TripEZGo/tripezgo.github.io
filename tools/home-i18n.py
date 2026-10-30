@@ -205,13 +205,13 @@ T = {
   '筆記：圖文筆記，@ 連到行程，日文句子可以朗讀': ('Notes: text and photos, @ links to events, and Japanese phrases that can be read aloud',
                                           'メモ：写真と文字のメモ。@ で予定にリンクし、フレーズは読み上げも',
                                           '메모: 사진과 글, @로 일정에 연결하고, 일본어 문장은 읽어 주기도'),
-  '匯率換算：台幣與日圓互換，下方是最近的換算紀錄': ('Currency: converting between two currencies, with recent conversions below', '為替換算：2つの通貨を換算し、下に最近の換算履歴', '환율 변환: 두 통화를 변환하고, 아래에 최근 변환 기록'),
+  '主頁上的匯率換算小工具：顯示 $100.00 約等於 ¥486，點一下就能開始換算': ('The Currency Converter widget on Home: $100.00 shows as about ¥486, tap to start converting', 'ホームの為替換算ウィジェット：$100.00 が約 ¥486 と表示され、タップで換算を開始', '홈의 환율 변환 위젯: $100.00이 약 ¥486으로 표시되고, 탭하면 바로 환산 시작'),
   '購物清單：待購、已購、不買了的件數，商品依分類排成照片格': ('Shopping list: counts of to-buy, bought and skipped items, with items in a photo grid by category',
                                                     '買い物リスト：購入予定・購入済み・やめたの件数と、カテゴリ別の写真グリッド',
                                                     '쇼핑 목록: 살 것·구매함·안 사기 개수와 카테고리별 사진 그리드'),
-  'QR Code 掃描：打開就是鏡頭，對準就掃到，紀錄旅伴也看得到': ('QR code scanner: opens straight to the camera, scans on sight, and keeps a history your companions can see',
-                                                     'QR コードスキャン：開くとすぐカメラ。かざすだけで読み取り、履歴は旅の仲間も見られる',
-                                                     'QR 코드 스캔: 열자마자 카메라, 비추기만 하면 스캔, 기록은 동행도 볼 수 있음'),
+  '主頁上的 QR Code 掃描小工具：放在畫布最前面，點一下就開鏡頭掃描': ('The QR code scanner widget on Home: first on the canvas, one tap opens the camera to scan',
+                                                     'ホームの QR コードスキャンウィジェット：キャンバスの先頭に置いて、タップでカメラを起動して読み取り',
+                                                     '홈의 QR 코드 스캔 위젯: 캔버스 맨 앞에 두고, 탭하면 카메라로 바로 스캔'),
   # ── 2026-10-11 照手稿重排之後新增的字串 ──
   # 用詞：路程 leg／移動、全日 all-day／終日、待排 unscheduled／未定、標記 marker／マーカー、
   # 步行導航 walking directions／徒歩ナビ、位置共享 location sharing／位置の共有（App 字串表）。

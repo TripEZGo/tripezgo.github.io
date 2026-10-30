@@ -23,6 +23,7 @@ const LANGS = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' };   // ko：只�
 // 官網用到的畫面：[檔名, 頁面, 參數]
 export const SHOTS = [
   ['home', 'home', 'layout=live:m,todo:s,fx:s,overview:m'],
+  ['home-scan', 'home', 'layout=scan:s,todo:s,live:m,fx:s,agenda:s'], ['home-fx', 'home', 'layout=fx:m,live:m,todo:s,scan:s'],
   ['calendar', 'calendar', 'day=2'],
   ['timeline', 'timeline', 'day=2'], ['overview', 'overview', ''], ['overview-files', 'overview', 'tab=files'], ['overview-todos', 'overview', 'tab=todos'],
   ['notes', 'notes', ''], ['note', 'note', ''], ['scan', 'scan', ''], ['fx', 'fx', ''], ['shop', 'shop', ''],
