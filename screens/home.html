@@ -2,6 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=60346b1ce2","/screens/chrome.js":"/screens/chrome.js?v=3eb5321d85","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=17414c4484","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>主頁</title>
 <!--
@@ -36,17 +37,17 @@
   .device { background: var(--page); }
 
   /* ── 封面（HomeCoverView）：延伸到最上緣，高 62 + 260 ── */
-  .cv { position: absolute; left: 0; top: 0; width: 402px; height: 322px; overflow: hidden; background: #17493f; z-index: 2; }
+  .cv { position: absolute; left: 0; top: 0; width: var(--full, 402px); height: calc(322px + var(--dt, 0px)); overflow: hidden; background: #17493f; z-index: 2; }
   .cv-img { position: absolute; inset: 0; background: center / cover no-repeat; }
   .cv-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,58,52,.62) 0%, rgba(20,58,52,.52) 40%, rgba(20,58,52,.62) 100%); }
   .cv .sb { z-index: 5; }
   .cv-btn { position: absolute; z-index: 4; display: flex; align-items: center; justify-content: center; color: var(--accent-ink);
     background: rgba(255,255,255,.92); border-radius: 22px; height: 42.5px; }
-  .cv-swap { left: 20px; top: 62.5px; padding: 0 12px 0 11px; gap: 4px; font: 600 var(--t-sm)/16px var(--font); letter-spacing: .02em; }
+  .cv-swap { left: 20px; top: calc(62.5px + var(--dt, 0px)); padding: 0 12px 0 11px; gap: 4px; font: 600 var(--t-sm)/16px var(--font); letter-spacing: .02em; }
   .cv-swap svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .cv-set { right: 12px; top: 62px; width: 44px; height: 44px; background: none; color: #fff; }
+  .cv-set { right: calc(12px + var(--rr, 0px)); top: calc(62px + var(--dt, 0px)); width: 44px; height: 44px; background: none; color: #fff; }
   .cv-set svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-  .cv-body { position: absolute; z-index: 3; left: 20px; right: 20px; bottom: 20px; display: flex; flex-direction: column; color: #fff; }
+  .cv-body { position: absolute; z-index: 3; left: 20px; right: calc(20px + var(--rr, 0px)); bottom: 20px; display: flex; flex-direction: column; color: #fff; }
   .cv-today { font: 400 var(--t-xs)/14px var(--font); letter-spacing: .24px; color: rgba(255,255,255,.85); margin-bottom: 4px; }
   .cv-trow { position: relative; display: flex; align-items: flex-start; }
   .cv-title { flex: 1; min-width: 0; font: 600 var(--t-xxl)/33px var(--font); letter-spacing: -.59px; color: #fff; display: -webkit-box;
@@ -69,9 +70,9 @@
   .edit .cv-swap, .edit .cv-set, .edit .cv-pen { display: none; }
   .cv-add, .cv-done { display: none; }
   .edit .cv-add, .edit .cv-done { display: flex; }
-  .cv-add { left: 20px; top: 62.5px; width: 44px; padding: 0; }
+  .cv-add { left: 20px; top: calc(62.5px + var(--dt, 0px)); width: 44px; padding: 0; }
   .cv-add svg { width: 17px; height: 17px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
-  .cv-done { right: 20px; top: 62.5px; padding: 0 14px; font: 600 var(--t-sm)/16px var(--font); }
+  .cv-done { right: calc(20px + var(--rr, 0px)); top: calc(62.5px + var(--dt, 0px)); padding: 0 14px; font: 600 var(--t-sm)/16px var(--font); }
   .hx { position: relative; }
   .bd { display: none; position: absolute; left: -23px; width: 15px; height: 15px; border-radius: 50%; background: rgba(255,255,255,.88); place-items: center; z-index: 6; }
   .bd svg { width: 9px; height: 9px; fill: none; stroke: #3a332d; stroke-width: 2.4; stroke-linecap: round; }
@@ -80,8 +81,8 @@
   .cv-place.hx .bd { left: -23px; }
 
   /* ── 畫布 ── */
-  .pager { position: absolute; left: 0; top: 322px; width: 402px; height: 552px; z-index: 1; }
-  .pg { position: absolute; top: 0; width: 402px; height: 100%; }
+  .pager { position: absolute; left: 0; top: calc(322px + var(--dt, 0px)); width: var(--avail, 402px); height: calc(var(--full-h, 874px) - 322px - var(--dt, 0px)); z-index: 1; }
+  .pg { position: absolute; top: 0; width: var(--avail, 402px); height: 100%; }
   .card { position: absolute; border-radius: 20px; background: var(--card); box-shadow: 0 4px 6px rgba(var(--shadow-rgb, 31,25,20), .16);
     overflow: visible; }
   .card::before { content: ""; position: absolute; inset: 0; border-radius: 20px; border: 1px solid var(--border-soft); pointer-events: none; z-index: 3; }
@@ -90,7 +91,7 @@
   .card.dark .in { padding: 13px 14px; }
   .edit .card .bd { display: grid; left: -8px; top: -8px; width: 20px; height: 20px; background: rgba(214,208,200,.96); box-shadow: 0 1px 3px rgba(0,0,0,.18); }
   .edit .card .bd svg { width: 11px; height: 11px; stroke: #3a332d; }
-  .dots { position: absolute; left: 0; width: 402px; top: 418.5px; display: none; justify-content: center; gap: 8px; z-index: 2; }
+  .dots { position: absolute; left: 0; width: var(--avail, 402px); top: calc(418.5px + var(--dt, 0px)); display: none; justify-content: center; gap: 8px; z-index: 2; }
   .edit .dots { display: flex; }
   .dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(60,50,40,.35); }
   .dots i.on { background: var(--ink); }
@@ -148,7 +149,7 @@
   .foot { margin-top: auto; font: 400 12px/15px var(--font); letter-spacing: .24px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
   /* 免費帳號第二頁以後的毛玻璃（premium veil）：鎖、標題、說明、〔升級 Premium〕，垂直置中在畫布區 */
-  .veil { position: absolute; left: 0; top: 0; width: 402px; height: 100%; background: rgba(245,243,241,.92);
+  .veil { position: absolute; left: 0; top: 0; width: var(--avail, 402px); height: 100%; background: rgba(245,243,241,.92);
     -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px); display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 0 20px 0; text-align: center; z-index: 3; }
   .veil .lk { width: 53px; height: 53px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); display: grid; place-items: center; margin-bottom: 14px; }
@@ -198,7 +199,7 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, params, t, loadTrip, loadCategories, categoryName, duration, chrome, ready, fmt, ICON, svg, toMin, TAB_PAGES, interactive, embed, go } from './chrome.js';
+import { lang, params, t, loadTrip, loadCategories, categoryName, duration, chrome, ready, fmt, ICON, svg, toMin, TAB_PAGES, interactive, embed, go, ipad, duo, DEV } from './chrome.js';
 
 const d = document.getElementById('d');
 const trip = await loadTrip();
@@ -241,7 +242,7 @@ const S = {
 }[lang] || null;
 
 const todayNo = +(params.get('today') || 1);
-const start = new Date((params.get('start') || '2026-10-30') + 'T00:00:00');
+const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
 const dateOf = n => new Date(start.getTime() + (n - 1) * 864e5);
 const [nh, nm, ns = 0] = (params.get('now') || '09:53:00').split(':').map(Number);
 const nowSec = (nh * 60 + nm) * 60 + ns;
@@ -290,7 +291,11 @@ d.insertAdjacentHTML('beforeend', `
 
 // ── 小工具 ──
 const SIZE = { s: [2, 2], m: [4, 2], l: [4, 4] };
-const COL = 4, ROWS = 6, GAP = 12, SIDE = 20, TOP = 12, CELL = (402 - 2 * SIDE - (COL - 1) * GAP) / COL;
+// iPad／Duo：畫布限最大寬度 480、置中（HomeCanvasMetrics.maxCanvasWidth，D97）；封面滿版。Duo 右緣讓出 84pt 的垂直列（可用寬 867）
+const FULL = DEV.w, RR = duo ? 84 : 0, AVAIL = FULL - RR, CANVAS = Math.min(AVAIL, 480), CL = (AVAIL - CANVAS) / 2;
+d.style.setProperty('--full', FULL + 'px'); d.style.setProperty('--full-h', DEV.h + 'px'); d.style.setProperty('--avail', AVAIL + 'px');
+d.style.setProperty('--rr', RR + 'px'); d.style.setProperty('--dt', DEV.top + 'px');
+const COL = 4, ROWS = 6, GAP = 12, SIDE = 20, TOP = 12, CELL = (CANVAS - 2 * SIDE - (COL - 1) * GAP) / COL;
 const DEFAULT = 'live:m,overview:m,scan:s,fx:s';
 const pages = (params.get('layout') || DEFAULT).split('|').map(p => p.split(',').filter(Boolean).map(x => { const [id, sz = 's'] = x.split(':'); return { id, sz }; }));
 // 「由上往下、由左往右第一個放得下」（HomeLayout.settle；一頁放不下的往下一頁推）
@@ -362,7 +367,7 @@ const BODY = {
   fx: () => `${head(S.fx)}<div class="fx-a">$100.00</div><div class="fx-r"><i>≈</i><b>¥486</b></div><div class="foot">${fmt(S.fxEmpty)}</div>`,
 };
 const card = it => {
-  const x = SIDE + it.c * (CELL + GAP), y = TOP + it.r * (CELL + GAP), w = it.w * CELL + (it.w - 1) * GAP, h = it.h * CELL + (it.h - 1) * GAP;
+  const x = CL + SIDE + it.c * (CELL + GAP), y = TOP + it.r * (CELL + GAP), w = it.w * CELL + (it.w - 1) * GAP, h = it.h * CELL + (it.h - 1) * GAP;
   const body = BODY[it.id] ? BODY[it.id](it) : '';
   return `<div class="card sz-${it.sz}${it.id === 'live' ? ' dark' : ''}${it.id === 'overview' ? ' ov' : ''}" data-id="${it.id}" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px">${badge}<div class="in">${body}</div></div>`;
 };
@@ -372,11 +377,11 @@ const shown = edit ? [...pages, []] : [...pages];
 while (shown.length <= pageNo) shown.push([]);   // veil=1&page=1：第二頁以後的內容免費帳號看不到，頁還是在
 const PG = [];   // 互動用：每頁 { el, items, packed }
 shown.forEach((items, i) => {
-  const pg = document.createElement('div'); pg.className = 'pg'; pg.style.left = `${(i - pageNo) * 402}px`;
+  const pg = document.createElement('div'); pg.className = 'pg'; pg.style.left = `${(i - pageNo) * AVAIL}px`;
   const packed = pack(items);
   const veilHere = veil && i >= 1;
-  // 截圖模式：免費帳號第二頁以後只畫毛玻璃（同基準圖）；互動模式（自動示範）底下照樣畫那一頁的內容，毛玻璃才能溶掉
-  if (!veilHere || interactive) pg.innerHTML = packed.map(card).join('');
+  // 毛玻璃底下照樣畫那一頁的內容（基準圖：模糊的卡片隱約透出來）
+  pg.innerHTML = packed.map(card).join('');
   const nCards = pg.children.length;
   if (veilHere) pg.insertAdjacentHTML('beforeend', `<div class="veil"><div class="lk">${sv('lock')}</div><h3>${fmt(S.veilTitle)}</h3><p>${fmt(S.veilBody)}</p><div class="go" data-tap>${fmt(S.veilGo)}</div></div>`);
   pager.append(pg);
@@ -388,9 +393,9 @@ d.insertAdjacentHTML('beforeend', `<div class="dots" style="z-index:2">${shown.m
 // ════════ 互動模式（自動示範用；截圖模式不跑這一段） ════════
 if (interactive) {
   const root = document.documentElement;
-  const canvasTop = 322;                                   // 畫布起點（封面 62 + 260）
+  const canvasTop = 322 + DEV.top;                                   // 畫布起點（封面 62 + 260）
   const setEdit = on => { root.classList.toggle('edit', on); d.classList.toggle('edit', on); };
-  const slot = it => ({ x: SIDE + it.c * (CELL + GAP), y: TOP + it.r * (CELL + GAP) });
+  const slot = it => ({ x: CL + SIDE + it.c * (CELL + GAP), y: TOP + it.r * (CELL + GAP) });
   const box = it => { const { x, y } = slot(it); return [x, y, x + it.w * CELL + (it.w - 1) * GAP, y + it.h * CELL + (it.h - 1) * GAP]; };
   // 換位置：把 items 重新排穩（pack），其餘的卡片動畫到新格子；被拖的那張跟著手指
   function reflow(pgs, skipEl) {
@@ -487,7 +492,7 @@ if (interactive) {
 }
 
 chrome(d, { tab: 0 });
-d.querySelector('.sb').classList.add('on-dark');   // 封面是深色：狀態列字白
+d.querySelector('.sb')?.classList.add('on-dark');   // 封面是深色：狀態列字白
 ready();
 </script>
 </body>

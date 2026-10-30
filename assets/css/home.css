@@ -71,6 +71,9 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
   vertical-align:middle;
 }
 .tag-premium { background:var(--accent-ink); color:var(--accent-on); }
+/* 即將推出：同藍圖 .is-soon .rm-badge 的配色（accent-wash 底、accent-ink 字、accent 混 border 的框） */
+.tag-soon { color:var(--accent-ink); background:var(--accent-wash); border:1px solid color-mix(in srgb, var(--accent) 45%, var(--border)); height:20px; }
+tr .tag-soon, .eyebrow .tag-soon { margin-inline-start:6px; }
 
 /* ─── 截圖佔位：手機 720×1565 ───────────────────────────────────── */
 .ph {

@@ -4,8 +4,8 @@
 // 分格只剩 筆記／購物清單；掃描與匯率換算收進抬頭右上那顆工具鈕 → 「挑一個」的紙（MenuSheetViewController）
 // → 掃描器（滿版，scan.html）或匯率換算 modal（fx.html）。設計稿 ui-card-v130.html 第 1–5 節。
 //
-// - libraryHead：抬頭「資料」＋右上工具鈕（HeadIconButton，工具箱）＋兩格切換。截圖模式與互動模式同一份（notes／shop）。
-// - toolsMenu：「工具」那張挑一個的紙。notes.html／shop.html 帶 menu=1 時一進來就開著（截圖用）。
+// - libraryHead：抬頭「資料」＋右上鈴鐺（HeadIconButton）＋兩格切換。截圖模式與互動模式同一份（notes／shop）。
+// （1.6.0：抬頭右上換成鈴鐺，「工具」那張挑一個的紙與 toolsMenu 已移除；掃描與匯率換算在主頁小工具。）
 // - closeX：清單紙導覽列右上那顆 ✕（SheetCloseButton：36 的 tzSunken 圓、16 的 ✕、accentInk、筆畫 2.2）。
 // 以下只在互動模式（interactive）下用：
 // - subTabs：抬頭底下那條切換（SubTabContainerViewController）——點一格，白色那顆滑過去，再換畫面。
@@ -70,7 +70,7 @@ html[lang^="zh"] .wg-title { font-family: "TZTitleCJK", var(--font); }
   box-shadow: 0 0 0 1.5px var(--page); }
 html.no-bell .bell-dot { display: none; }
 .is-interactive .head-tool { cursor: pointer; } .is-interactive .head-tool:active { background: var(--surface); }
-/* 「工具」挑一個的紙（MenuSheetViewController）：custom detent＝貼內容高、iOS 26 浮動紙四邊內縮 8、圓角 Radius.lg 12、抓桿；
+/* 挑一個的紙（MenuSheetViewController；靈感的「新增關聯」選單也用這一組 .tz-menu）：custom detent＝貼內容高、iOS 26 浮動紙四邊內縮 8、圓角 Radius.lg 12、抓桿；
    內容 安全區上緣＋16、左右 20；抬頭 base semibold、之後 12；一列 上下 12 左右 4、最矮 56、圖示 20（muted）、間距 12、
    標題 base ink＋副標 xs muted（間 1）；兩列之間一條 border-soft，從 32 起畫 */
 .tz-menu-dim { position: absolute; inset: 0; z-index: 44; background: var(--sys-dim); }
@@ -119,43 +119,6 @@ export function libraryHead(device, current) {
     <div class="seg"><div class="seg-pill" style="left:${segLeft(current)}px"></div>
     ${L.subs.map((x, i) => `<div class="seg-t${i === current ? ' on' : ''}" style="left:${segLeft(i)}px">${x}</div>`).join('')}</div>`);
   // 鈴鐺：1.6.0 起點了 push 通知頁（尚未複刻，互動模式點了不動）；右上亮著的主色點＝有未讀公告（bell=0 關掉）
-}
-
-/**
- * 「工具」挑一個的紙（LibraryViewModel.tools：掃描在上、匯率在下，不記上次挑的）。
- * 點一列：紙先收完（MenuSheetViewController 的規矩），接著開掃描器（scan.html，滿版）或匯率 modal（fx.html）。
- * 往下拉、點外面都只是收掉。
- */
-export function toolsMenu(device, { from = 'notes', instant = false } = {}) {
-  libStyle();
-  if (device.querySelector('.tz-menu')) return;
-  const dim = document.createElement('div'), el = document.createElement('div');
-  dim.className = 'tz-menu-dim'; el.className = 'tz-menu';
-  el.setAttribute('role', 'dialog'); el.setAttribute('aria-label', L.tools);
-  el.innerHTML = `<div class="tz-grab"></div><h3>${L.tools}</h3>
-    <div class="tz-mrow" data-tool="scan" data-tap>${icon('scan', 1.7)}<span><b>${L.scan}</b><span>${L.scanSub}</span></span></div>
-    <div class="tz-mrow" data-tool="fx" data-tap>${icon('swapArrows', 2)}<span><b>${L.fx}</b><span>${L.fxSub}</span></span></div>`;
-  if (!instant) { dim.classList.add('off'); el.classList.add('off'); }
-  device.append(dim, el);
-  if (!instant) requestAnimationFrame(() => requestAnimationFrame(() => { dim.classList.remove('off'); el.classList.remove('off'); }));
-  if (!interactive) return;
-  let closed = false;
-  const close = (then) => {
-    if (closed) return; closed = true;
-    dim.classList.add('off'); el.classList.add('off');
-    setTimeout(() => { dim.remove(); el.remove(); then?.(); }, 340);
-  };
-  dim.addEventListener('click', () => close());
-  el.addEventListener('click', (e) => {
-    const t = e.target.closest('[data-tool]')?.dataset.tool; if (!t) return;
-    close(() => go(t, `from=${from}`));
-  });
-  // 往下拉收掉
-  let y0 = null, dy = 0;
-  el.addEventListener('pointerdown', (e) => { if (e.target.closest('[data-tool]')) return; y0 = e.clientY; dy = 0; el.setPointerCapture(e.pointerId); el.style.transition = 'none'; });
-  el.addEventListener('pointermove', (e) => { if (y0 === null) return; dy = Math.max(0, e.clientY - y0); el.style.transform = `translateY(${dy}px)`; });
-  const end = () => { if (y0 === null) return; y0 = null; el.style.transition = ''; el.style.transform = ''; if (dy > 60) close(); };
-  el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
 }
 
 const CSS = `

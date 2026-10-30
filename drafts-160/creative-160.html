@@ -1,10 +1,11 @@
 <!doctype html>
 <!--
   【1.6.0 CP5 草稿】App repo Scripts/store-creative/creative.html 的複本（App repo 沒動）。差別只有這幾處：
-    · ?variant=A（預設）：右邊延伸區那支「總覽」iPhone 換成主頁（drafts-160/png/raw-home.png，來自 screens/home.html）；主標、安全區照舊。
-    · ?variant=B：安全區那支「行事曆」iPhone 換成主頁，主標換成佔位句（「旅程一打開，[主頁]就看得到」，佔位）——主頁進到頁首／搜尋結果都裁得到。
-    · ?site= 沒帶就用 ../（本檔在官網 repo 的 drafts-160/ 底下）；主頁圖固定讀 png/raw-home.png。
-  產生：node drafts-160/creative-160.mjs
+    · ?variant=B（預設，使用者 2026-10-30 裁定）：安全區（中間主打）那支「行事曆」iPhone 換成主頁（screens/out/<語言>/home.png，tools/store/make.mjs 的主頁那一格，
+      版面＝即時動態（中）、待辦（小）、匯率（小）、總覽；第 1 天＝10/10）；主標換成 slogan（各語系 App repo fastlane/metadata/<語系>/subtitle.txt 原文，只加斷行）。
+    · ?variant=A：只換延伸區右邊那支（總覽→主頁），主標不動（舊稿，留著對照）。
+    · ?site= 沒帶就用 ../（本檔在官網 repo 的 drafts-160/ 底下）。
+  產生：node drafts-160/creative-160.mjs（輸出 out-160/creative/<fastlane 語系>.png）
   （以下是原檔說明）
   TripEZGo · App Store 創意素材（creative asset，iOS／iPadOS 27 起的商品頁頁首＋搜尋結果，2026-10-12）
   產生：node Scripts/store-creative/creative.mjs <輸出目錄> [--site=<官網 repo>]   → <輸出目錄>/<語系>.png（5244×2950，不透明 PNG）
@@ -103,11 +104,11 @@
 </div>
 <script>
   /* 主標：[關鍵詞] 青綠；^ 斷行。沿用商城第 1 張截圖的主標 */
-  var COPY = {   /* B 的佔位句在下面 */
-    'zh-Hant': '行事曆排行程，^[時間軸]排交通',
-    'ja': '予定はカレンダー、^移動は[タイムライン]',
-    'en': 'Plan the day,^[plan the travel]',
-    'ko': '일정은 캘린더,^이동은 [타임라인]'
+  var COPY = {   /* 1.6.0（使用者 2026-10-30 裁定）：主標＝slogan，各語系照 App repo fastlane/metadata/<語系>/subtitle.txt 原文（只加斷行，不改字） */
+    'zh-Hant': '旅行規劃、^[旅途所需]一次搞定',          /* zh-Hant：旅行規劃、旅途所需一次搞定 */
+    'ja': '旅の計画も、^旅先で要るものも、^[これひとつで]',   /* ja：旅の計画も、旅先で要るものも、これひとつで */
+    'en': 'Plan the trip,^all in [one app]',            /* en-US：Plan the trip, all in one app */
+    'ko': '여행 계획부터^여행길에 필요한^것까지, [앱 하나로]'  /* ko：여행 계획부터 여행길에 필요한 것까지, 앱 하나로 */
   };
   var SCREEN = { 'zh-Hant': 'zh', 'ja': 'ja', 'en': 'en', 'ko': 'ko' };
   var q = new URLSearchParams(location.search);
@@ -120,23 +121,23 @@
     return '<span class="ln">' + s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\[([^\]]+)\]/g, '<em>$1</em>') + '</span>';
   }).join('');
   var site = q.get('site') || '../';
-  var variant = q.get('variant') === 'B' ? 'B' : 'A';
+  var variant = q.get('variant') === 'A' ? 'A' : 'B';   /* 預設 B：中間（安全區）主打那支是主頁 */
   document.getElementById('icon').src = site + 'assets/img/icon-512.png';
   var dir = site + 'screens/out/' + SCREEN[lang] + '/';
   document.getElementById('cal').src = dir + 'calendar.png';
   document.getElementById('ipad').src = dir + 'ipad-calendar.png';
   document.getElementById('event').src = dir + 'event.png';
   document.getElementById('overview').src = dir + 'overview.png';
-  if (variant === 'A') document.getElementById('overview').src = 'png/raw-home.png';
-  if (variant === 'B') { document.getElementById('cal').src = 'png/raw-home.png'; t.innerHTML = '<span class="ln">旅程一打開，</span><span class="ln"><em>主頁</em>就看得到</span>'; }
+  if (variant === 'A') document.getElementById('overview').src = dir + 'home.png';
+  if (variant === 'B') document.getElementById('cal').src = dir + 'home.png';   /* 全站同一份主頁：即時動態（中）、待辦、匯率、總覽；第 1 天＝10/10 */
 
-  /* 主標排不進 660px 就縮字（每次 2px，下限 72）；結果寫在 data-fit */
+  /* 主標排不進 660px 就縮字（每次 2px，下限 60）；結果寫在 data-fit */
   function fit() {
-    var size = 104;
+    var size = 104, MIN = 60;
     t.style.fontSize = size + 'px';
     var lines = t.querySelectorAll('.ln');
     function over() { return [].some.call(lines, function (l) { return l.scrollWidth > 660 || l.getBoundingClientRect().width > 660; }); }
-    while (over() && size > 72) { size -= 2; t.style.fontSize = size + 'px'; }
+    while (over() && size > MIN) { size -= 2; t.style.fontSize = size + 'px'; }
     art.dataset.fit = over() ? 'fail' : 'ok';
     art.dataset.size = size;
   }

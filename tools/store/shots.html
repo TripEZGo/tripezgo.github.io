@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  TripEZGo · App Store 商城截圖（1.4.0 起順序：行事曆、靈感、地圖、行程、路程、總覽、資料、共編、位置、即時動態（分享那格併進靈感）；1.3.0，2026-10-12：畫面改由官網 screens/ 的 HTML 直接產，iPhone＋iPad 各 10 張×中英日；iPad 畫面同樣出自 screens/ 的 ?device=ipad）
+  TripEZGo · App Store 商城截圖（1.6.0 起順序：主頁、行事曆、靈感、地圖、行程＋路程（兩台並排）、總覽、資料、共編、位置、即時動態；1.4.0 起分享那格併進靈感；1.3.0，2026-10-12：畫面改由官網 screens/ 的 HTML 直接產，iPhone＋iPad 各 10 張×中英日；iPad 畫面同樣出自 screens/ 的 ?device=ipad）
   原稿：Open Design appstore-2026/screenshots.html；產生：node tools/store/make.mjs <輸出目錄>
   語言（目前 zh-Hant / ja / en；ko 另外補）× 兩個裝置欄位 × 十張。
     · iPhone 6.9"  1320×2868 px   原始畫面 raw/<lang>/iphone/NN.png（1206×2622）
@@ -252,6 +252,25 @@
   }
   .device .rail.pwr { right: 13%; width: 6%; }
   .device .rail.vol { right: 24%; width: 10%; }
+
+  /* 第 5 張（1.6.0）：行程詳情＋路程兩台並排（不重疊，兩台都完整露出），左邊那台抬高。畫面寬＝原圖等比縮放。
+     iPhone：畫面 600、邊框 16 → 機身 632；iPad：畫面 880、邊框 20 → 機身 920；Duo：畫面 1260、邊框 18 → 機身 1296 */
+  .shot.pair { --side: 100px; }
+  .shot.pair .pair-row { position: absolute; z-index: 1; left: 50%; bottom: var(--dev-bottom); transform: translateX(-50%); display: flex; align-items: flex-end; }
+  .shot.pair .pair-row .device { position: relative; transform: none; }   /* relative：iPad 機身上緣的 .rail 要相對機身定位 */
+  .shot[data-device="iphone"].pair { --title: 138px; --sub: 56px; --sub-gap: 34px; --halo-top: 900px; }
+  .shot[data-device="iphone"].pair .pair-row { gap: 24px; }
+  .shot[data-device="iphone"].pair .pair-row .device { padding: 16px; border-radius: 82px; }
+  .shot[data-device="iphone"].pair .pair-row .device img.screen { width: 600px; border-radius: 66px; }
+  .shot[data-device="iphone"].pair .pair-row .device.up { margin-bottom: 100px; }
+  .shot[data-device="ipad"].pair .pair-row { gap: 40px; }
+  .shot[data-device="ipad"].pair .pair-row .device { padding: 20px; }
+  .shot[data-device="ipad"].pair .pair-row .device img.screen { width: 880px; border-radius: 22px; }
+  .shot[data-device="ipad"].pair .pair-row .device.up { margin-bottom: 130px; }
+  .shot[data-device="duo"].pair .pair-row { gap: 40px; }
+  .shot[data-device="duo"].pair .pair-row .device { padding: 18px; }
+  .shot[data-device="duo"].pair .pair-row .device img.screen { width: 1260px; border-radius: 26px; }
+  .shot[data-device="duo"].pair .pair-row .device.up { margin-bottom: 100px; }
 </style>
 </head>
 <body>
@@ -261,57 +280,57 @@
   /* 文案：主標 [關鍵詞] 用青綠；| 只在 iPhone 斷行；^ 兩種裝置都斷行 */
   var COPY = {
     'zh-Hant': [
+      ['旅程一打開，|[主頁]就看得到', '即時動態、待辦、匯率、總覽，擺成你要的樣子'],
       ['行事曆排行程，|[時間軸]排交通', '一拖一拉就能排，還沒定時間的拖進時段就好'],
       ['在哪看到都能存，|[靈感]一次收齊', 'Safari、地圖、社群、相簿分享進來，一鍵變成行程'],
       ['下一站在哪，|[地圖]告訴你', '每日路線、日本超商藥妝、步行導航'],
-      ['該帶的，都[掛在行程上]', '票券、附件、待辦，出發前逐項打勾'],
-      ['下一站怎麼去，|用[路程]排好', '步行、開車、大眾運輸，自動估算時間'],
+      ['該帶的，都[掛在行程上]^怎麼去，用[路程]排好', '票券、附件、待辦出發前打勾，路程自動估算時間'],
       ['整趟旅程，[一頁]看完', '行程、附件、待辦按日分組，一看就知道'],
-      ['[資料與工具]都帶著', '筆記、購物清單、QR Code 掃描、匯率換算'],
+      ['[購物清單]、筆記，|旅途所需都帶著', '伴手禮邊買邊勾，實付金額也記下來'],
       ['[旅伴共編]，|一起排同一趟', '傳邀請連結或掃 QR Code 就能加入'],
       ['旅途中|[位置共享]', '走散了，也知道彼此在哪'],
       ['[即時動態]、|Widget', '不用解鎖，下一站就在鎖定畫面']
     ],
     'ja': [
+      ['旅の情報は|[ホーム]にそろう', '次の予定・ToDo・為替・概要を、好きな並びで'],
       ['予定はカレンダー、^移動は[タイムライン]', 'ドラッグで組み替え、未定の予定も時間帯へ'],
       ['どこで見ても、|[インスピレーション]に保存', 'Safari・地図・SNS・写真から共有して、ワンタップで予定に'],
       ['次の行き先は|[地図]が教えてくれる', '1日のルート、コンビニ・ドラッグストア、徒歩ナビ'],
-      ['必要なものは|[予定にまとめて]', 'チケット・添付・ToDo、出発前にチェック'],
-      ['次の行き方は、|[移動]で組んでおく', '徒歩・車・公共交通機関、所要時間を自動で見積もり'],
+      ['必要なものは[予定にまとめて]^行き方は[移動]で組んでおく', 'チケット・添付・ToDo をチェック、所要時間は自動で見積もり'],
       ['旅行全体を[1ページ]で', '予定・添付・ToDo を日ごとにまとめて'],
-      ['[資料とツール]を^いつも手元に', 'メモ・買い物リスト・QR スキャン・為替換算'],
+      ['[買い物リスト]とメモを^いつも手元に', 'お土産は買いながらチェック、支払額も記録'],
       ['[旅の仲間]と|同じ旅程を', '招待リンクか QR コードで参加'],
       ['旅行中は|[現在地]を共有', 'はぐれても、お互いの居場所が分かる'],
       ['[ライブアクティビティ]と^ウィジェット', 'ロック画面に次の行き先、ロック解除いらず']
     ],
     'en': [
+      ['Your trip, up front |on [Home]', 'The next stop, to-dos, currency and overview, arranged your way'],
       ['Plan the day, |[plan the travel]', 'Drag to plan, and drop unscheduled events onto a time'],
       ['Saved from anywhere, |[inspiration] in one place', 'Share in from Safari, maps, social apps and Photos, then turn it into an event in one tap'],
       ['The map knows |[your next stop]', 'Daily routes, shops in Japan and walking directions'],
-      ['Everything [on the event]', 'Tickets, files and to-dos, ticked off before you go'],
-      ['Getting to the next stop? |Plan it with [legs]', 'Walk, drive or transit, with times estimated for you'],
+      ['Everything [on the event]^Getting there? Use [legs]', 'Tickets, files and to-dos, plus travel times estimated for you'],
       ['The whole trip on [one page]', 'Events, files and to-dos grouped by day'],
-      ['[Library and tools], |all with you', 'Notes, shopping list, QR scanner and currency'],
+      ['[Shopping list] and notes, |all with you', 'Tick off souvenirs as you buy, and keep what you paid'],
       ['Plan it [together]', 'An invite link or a QR code, and companions are in'],
       ['See where [everyone] is', 'Share locations with your companions during the trip'],
       ['[Live Activities] |and widgets', 'Your next stop on the Lock Screen, no unlock needed']
     ],
     /* 韓文：照中文那組的意思寫，用詞照 App 韓文字串表與 fastlane/metadata/ko（동행、공동 편집、미정、자료、도구、위치 공유、
-       라이브 액티비티——即時動態一律照 App 字串表寫「라이브 액티비티」（使用者 2026-10-12 裁定統一）） */
+       라이브 액티비티——即時動態一律照 App 字串表寫「라이브 액티비티」（使用者 2026-10-12 裁定統一）；홈＝App 的「主頁」分頁） */
     'ko': [
+      ['여행 정보는 |[홈]에 한눈에', '다음 일정, 할 일, 환율, 한눈에 보기를 원하는 대로 배치'],
       ['일정은 캘린더, |이동은 [타임라인]', '끌어서 짜고, 미정 일정은 시간대로 끌어다 놓으면 끝'],
       ['어디서 봐도 저장돼요, |[영감]을 한곳에', 'Safari, 지도, SNS, 사진에서 공유해 오면 한 번에 일정으로'],
       ['다음 목적지는 |[지도]가 알려 줘요', '하루 동선, 일본 편의점·드러그스토어, 도보 길 안내'],
-      ['챙길 것은 |[일정에 달아 두기]', '승차권, 첨부, 할 일을 출발 전에 하나씩 체크'],
-      ['다음 장소까지 가는 길은, |[이동]으로 정리', '도보, 자동차, 대중교통 이동 시간을 자동으로 가늠'],
+      ['챙길 것은 [일정에 달아 두기]^가는 길은 [이동]으로 정리', '승차권, 첨부, 할 일을 체크하고 이동 시간은 자동으로'],
       ['여행 전체를 |[한 페이지]로', '일정, 첨부, 할 일을 날짜별로 묶어 한눈에'],
-      ['[자료와 도구]를 |늘 곁에', '메모, 쇼핑 목록, QR 코드 스캔, 환율 변환'],
+      ['[쇼핑 목록]과 메모를 |늘 곁에', '기념품은 사면서 체크하고, 낸 금액도 기록'],
       ['[동행]과 |같은 여행을 공동 편집', '초대 링크나 QR 코드로 바로 참여'],
       ['여행 중에는 |[위치 공유]', '흩어져도 서로 어디 있는지 알 수 있어요'],
       ['[라이브 액티비티]와 |위젯', '잠금 해제 없이 잠금 화면에서 다음 목적지 확인']
     ]
   };
-  var N = 10, PREMIUM = 9;   /* 第 10 張（即時動態）掛 Premium 標籤 */
+  var N = 10, PREMIUM = 9, PAIR = 4;   /* 第 5 張（行程＋路程）兩支並排；第 10 張（即時動態）掛 Premium 標籤 */   /* 第 10 張（即時動態）掛 Premium 標籤 */
   var LANGS = ['zh-Hant', 'ja', 'en', 'ko'];
   var LANG_NAME = { 'zh-Hant': '繁體中文', 'ja': '日本語', 'en': 'English', 'ko': '한국어' };
   var DEVICES = {
@@ -367,13 +386,17 @@
     h += '<h2 class="title" data-lines="' + maxT + '" data-od-id="' + sec.id + '-title">' + t.html + '</h2>';
     h += '<p class="sub" data-lines="' + maxS + '" data-od-id="' + sec.id + '-sub">' + esc(c[1]) + '</p>';
     h += '</div>';
-    h += '<div class="device" data-od-id="' + sec.id + '-device">';
-    if (device === 'ipad') h += '<i class="rail pwr"></i><i class="rail vol"></i>';
-    h += '<img class="screen" src="raw/' + lang + '/' + device + '/' + n + '.png"'
-       + ' width="' + D.iw + '" height="' + D.ih + '"'
-       + (lazy ? ' loading="lazy"' : '') + ' decoding="async"'
-       + ' alt="TripEZGo ' + LANG_NAME[lang] + ' ' + D.name + ' ' + n + '">';
-    h += '</div>';
+    function dev(file, cls) {
+      var d = '<div class="device ' + (cls || '') + '" data-od-id="' + sec.id + '-device">';
+      if (device === 'ipad') d += '<i class="rail pwr"></i><i class="rail vol"></i>';
+      d += '<img class="screen" src="raw/' + lang + '/' + device + '/' + file + '.png"'
+         + ' width="' + D.iw + '" height="' + D.ih + '"'
+         + (lazy ? ' loading="lazy"' : '') + ' decoding="async"'
+         + ' alt="TripEZGo ' + LANG_NAME[lang] + ' ' + D.name + ' ' + n + '"></div>';
+      return d;
+    }
+    if (i === PAIR) { sec.classList.add('pair'); h += '<div class="pair-row" data-od-id="' + sec.id + '-pair">' + dev(n + 'a', 'up') + dev(n + 'b') + '</div>'; }
+    else h += dev(n);
     sec.innerHTML = h;
     return sec;
   }
@@ -389,7 +412,7 @@
     var cap = sec.querySelector('.cap');
     var t = sec.querySelector('.title');
     var s = sec.querySelector('.sub');
-    var dev = sec.querySelector('.device');
+    var dev = sec.querySelector('.pair-row') || sec.querySelector('.device');
     var tag = sec.querySelector('.tag');
     var box = sec.getBoundingClientRect();
     var k = box.width / sec.offsetWidth || 1;

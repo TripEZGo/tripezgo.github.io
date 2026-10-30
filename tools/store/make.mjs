@@ -19,17 +19,19 @@ const root = path.resolve(here, '../..');
 const outDir = process.argv[2];
 if (!outDir) { console.log('usage: node tools/store/make.mjs <輸出目錄>'); process.exit(1); }
 
-// [輸出檔名, screens 頁, query]：順序＝商店上的順序（第 10 張掛 Premium，見 shots.html）。iPad 同序、同名，query 多帶 device=ipad
+// [輸出檔名, screens 頁, query, （選）第二張的頁與 query]：順序＝商店上的順序（1.6.0 起：主頁、行事曆、靈感、地圖、行程＋路程（兩台並排）、總覽、資料、共編、位置、即時動態；
+// 第 10 張掛 Premium，見 shots.html）。iPad／Duo 同序、同名，query 多帶 device=。第 5 張有第二張：raw 檔存成 05a／05b。
+// 主頁那一格的版面＝全站主頁同一份：即時動態（中）、待辦（小）、匯率（小）、總覽（中）；範本旅程、第 1 天＝2026-10-10。
 const SLOTS = [
+  ['home', 'home', 'layout=live:m,todo:s,fx:s,overview:m'],
   ['calendar', 'calendar', 'day=2'],
   ['inspiration', 'inspiration', ''],
   ['map', 'map-live', ''],
-  ['event', 'event', 'event=d1-airport&extra=1'],
-  ['leg', 'leg', ''],
+  ['event-leg', 'event', 'event=d1-airport&extra=1', ['leg', '']],
   ['overview', 'overview', ''],
-  ['library-tools', 'shop', ''],
+  ['library', 'shop', ''],
   ['collaboration', 'members', ''],
-  ['location-sharing', 'map-live', 'nav=0&today=2&start=2026-10-09&focus=mates'],
+  ['location-sharing', 'map-live', 'nav=0&today=2&focus=mates'],
   ['live-activity', 'lock', ''],
 ];
 const LOCALES = { zh: 'zh-Hant', en: 'en-US', ja: 'ja', ko: 'ko' };   // screens 的語言碼 → fastlane 的語系資料夾
@@ -42,14 +44,14 @@ const DEVICES = {
   duo: { query: 'device=duo', prefix: 'duo-', viewport: { width: 2853, height: 2007 } },
 };
 
-// 地圖那幾格要連 MapKit 的圖磚，偶爾等不到 data-ready（15 秒）——同一格最多再試兩次
+// 地圖那幾格要連 MapKit 的圖磚，偶爾等不到 data-ready（15 秒）——同一格最多再試八次（MapKit 圖磚偶爾載不齊，iPad 的位置共享那格尤其常等不到）
 function render(page, query, l) {
   for (let k = 0; ; k++) {
     try {
       execFileSync('node', [path.join(root, 'tools/screens.mjs'), 'render', page, query, `--lang=${l}`], { cwd: root, stdio: 'ignore' });
       return;
     } catch (e) {
-      if (k >= 2) throw e;
+      if (k >= 8) throw e;
       console.log('retry', page, query, l);
     }
   }
@@ -59,10 +61,14 @@ for (const l of Object.keys(LOCALES)) {
   for (const [dev, D] of Object.entries(DEVICES)) {
     const raw = path.join(here, 'raw', TEMPLATE_LANG[l], dev);
     fs.mkdirSync(raw, { recursive: true });
-    SLOTS.forEach(([, page, q], i) => {
-      render(page, [q, D.query].filter(Boolean).join('&'), l);
-      fs.copyFileSync(path.join(root, 'screens/out', l, `${D.prefix}${page}.png`), path.join(raw, `${String(i + 1).padStart(2, '0')}.png`));
-      console.log('raw', l, dev, i + 1, page);
+    SLOTS.forEach(([, page, q, second], i) => {
+      const n = String(i + 1).padStart(2, '0');
+      for (const [k, [pg, qq]] of (second ? [[`${n}a`, [page, q]], [`${n}b`, second]] : [[n, [page, q]]])) {
+        if (process.env.RESUME && fs.existsSync(path.join(raw, `${k}.png`))) continue;   // RESUME=1：已經有的 raw 不重出（地圖那幾格偶爾要重跑）
+        render(pg, [qq, D.query].filter(Boolean).join('&'), l);
+        fs.copyFileSync(path.join(root, 'screens/out', l, `${D.prefix}${pg}.png`), path.join(raw, `${k}.png`));
+        console.log('raw', l, dev, k, pg);
+      }
     });
   }
 }
