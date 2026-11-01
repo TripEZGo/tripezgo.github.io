@@ -141,3 +141,9 @@ GitHub repo 的 `Settings → Pages → Source` 要選 **GitHub Actions**。
 下載連結一律是 `https://apps.apple.com/app/id6801536372`（不帶地區，Apple 依使用者的商店地區導過去）：
 首頁三語的 hero 與方案段、`/open/` 的「前往下載」，首頁另有 `apple-itunes-app` Smart App Banner。
 
+
+## 官網 GA4
+
+Measurement ID：`G-MMDNPN68XK`。`tools/stage-pages.mjs` 在頁面產生後，為四語首頁、聯絡、公告、隱私與條款頁注入 `assets/js/analytics.js`，避免頁面重產後遺失。Google tag 使用標準 `js` 與 `config` 初始化，自動記錄 page_view，UTM 可用於 Threads 來源歸因。
+
+只在 `tripezgo.com`／`www.tripezgo.com` 啟用；localhost、iframe、`?mode=embed` 不載入 GA。screens 展示頁、trip/open/join/android-auth App 工具流程與 404 不注入，避免 App 內嵌畫面及自動展示算成官網造訪。此設定不會變更 iOS App 的 Firebase 收集政策。

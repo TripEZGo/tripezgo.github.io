@@ -14,7 +14,7 @@
  * 新增了沒分類的項目就讓 workflow 紅，逼人當場決定——不會靜靜地被發佈，也不會靜靜地 404。
  * 發佈清單裡的項目不存在也會紅（改名或刪掉時，清單要一起改）。
  * `tests/unit/stage-pages.test.mjs` 守著這兩條。 */
-import { cpSync, existsSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 /** 網站實際在送的東西（2026-10-20 從 repo 與頁面引用盤點：首頁的 iPhone 示範是 iframe 載 /screens/，所以 screens/ 在內）。 */
@@ -40,6 +40,24 @@ export function audit(entries) {
   };
 }
 
+/** Inject after generators have run, so translated and generated pages keep the tag. */
+export function stampAnalytics(html) {
+  if (html.includes('src="/assets/js/analytics.js"')) return html;
+  if (!html.includes('</head>')) throw new Error('Analytics: missing </head>');
+  return html.replace('</head>', '<script defer src="/assets/js/analytics.js"></script>\n</head>');
+}
+
+export function stageAnalytics(root) {
+  // Marketing pages only: screens are demos; trip/open/join/android-auth are App utility flows.
+  const files = ['index.html', 'privacy.html', 'terms.html', 'contact/index.html', 'announcements/index.html'];
+  for (const locale of ['', 'en/', 'ja/', 'ko/']) {
+    for (const name of files) {
+      const file = new URL(locale + name, root);
+      if (existsSync(file)) writeFileSync(file, stampAnalytics(readFileSync(file, 'utf8')));
+    }
+  }
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const root = new URL('../', import.meta.url);
   const out = new URL((process.argv[2] || '_site').replace(/\/?$/, '/'), 'file://' + process.cwd() + '/');
@@ -52,6 +70,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   rmSync(out, { recursive: true, force: true });
   mkdirSync(out, { recursive: true });
   for (const name of PUBLISH) cpSync(new URL(name, root), new URL(name, out), { recursive: true });
+  stageAnalytics(out);
   console.log('已複製 ' + PUBLISH.length + ' 個項目到 ' + out.pathname);
   if (!existsSync(new URL('index.html', out))) process.exit(1);
 }
