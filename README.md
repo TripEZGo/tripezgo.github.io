@@ -190,3 +190,7 @@ GA4 已允許四個語言子網域。首頁 MapKit 的既有 token 若僅授權 
 Cloudflare 已新增 `en`、`zh-tw`、`ja`、`ko` 的 CNAME → `tripezgo.github.io`。舊英文／日文／韓文路徑使用 Redirect Rules：只匹配 apex 與 www 上的 `/en` 或 `/en/…`（其他語言同理），動態目的地是 `concat("https://en.tripezgo.com", substring(http.request.uri.path, 3))`，狀態 301、Preserve query string 開啟。瀏覽器會保留未被覆寫的 fragment。繁中舊政策、條款、聯絡、公告頁固定 301 到 `zh-tw` 對應頁，讓舊內容與新內容保持一致；只有主網域首頁依使用者語言跳轉。App 工具路徑不匹配這些規則。
 
 每個語言站的 sitemap 只列自己的五個 canonical 頁；主站 sitemap 改為四個語言 sitemap 的索引。每頁保留四語 reciprocal hreflang，x-default 指向對應英文頁。切換前主 repo 的 `DEPLOY_LANG=legacy` 保留原站；四語站部署與 HTTPS 完成後改成 `router` 並啟用上述 Cloudflare 規則。
+
+2026-11-02 已完成切換：主 repo 設為 `DEPLOY_LANG=router`；四語站已部署、各自啟用 GitHub Enforce HTTPS；四條 Cloudflare 舊網址轉址規則已啟用並實測 301。20 個行銷頁的 canonical／hreflang 與四份語系 sitemap 均已驗證。
+
+即時同步使用主 repo 的 `SHELL_REPOS` variable 與 `GH_TOKEN` Actions secret。依使用者指定，實際權杖為 Classic、No expiration，僅有 `public_repo` scope；Classic 的權限涵蓋使用者有權操作的公開 repositories，無法只限制在四個語系 repo。權杖值不放在原始碼或文件。主站部署成功後發出 `master-updated`，四個語系 repo 由主 repo 的最新內容重建；每日排程與手動部署也保留。
