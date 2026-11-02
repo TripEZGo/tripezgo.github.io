@@ -49,7 +49,7 @@ export function stageLanguage(root, lang = 'router') {
       if (entry.isDirectory()) walk(file);
       else if (/\.(html|xml)$/.test(entry.name) || entry.name === 'chrome.js' || entry.name === 'announcements.json') {
         let text = rewriteContent(readFileSync(file, 'utf8'));
-        text = text.replace(/(hreflang="x-default" href=")https:\/\/zh-tw\.tripezgo\.com/g, '$1https://tripezgo.com');
+        text = text.replace(/(hreflang="x-default" href=")https:\/\/zh-tw\.tripezgo\.com/g, '$1https://en.tripezgo.com');
         if (entry.name === 'sitemap.xml') {
           text = text.replace(/https:\/\/tripezgo\.com\/[^<\s]*/g, publicURL);
           if (lang !== 'router') text = text.replace(/  <url>[\s\S]*?<\/url>/g, entry => entry.includes('<loc>https://' + lang + '.tripezgo.com/') ? entry : '');

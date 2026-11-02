@@ -165,7 +165,7 @@ Measurement ID：`G-MMDNPN68XK`。`tools/stage-pages.mjs` 在頁面產生後，�
 - `SOURCE_REPOSITORY`：本主 repo 的 `owner/repo`。
 - `DEPLOY_LANG`：上表的語言。
 - Pages → Source 選 **GitHub Actions**，Custom domain 填對應子網域，開啟 Enforce HTTPS。
-- 公告來源若使用 Actions secrets，四個 shell 也需要相同的 `TEZ_ANNOUNCEMENTS_URL`、`TEZ_WEB_ANNOUNCEMENTS_URL`（或使用可共用的 organization secrets）。
+- 四個 shell 會讀取主站公開的公告快照，不需要複製 secret gist 的 Actions secrets。
 
 主 repo 設定 `SHELL_REPOS` variable 為四個 shell 的 JSON 陣列，例如 `["owner/site-en","owner/site-zh-tw","owner/site-ja","owner/site-ko"]`；設定 `GH_TOKEN` secret，使用只對這四個 shell 有 Contents write 的 fine-grained PAT（repository_dispatch 所需）。主 repo 部署完成後會觸發四個 shell 重建；也可以個別手動執行 workflow。shell 的排程同樣會更新內容。部署 workflow 日後有修改時，也要更新 shell 的那一份。
 
@@ -184,3 +184,9 @@ npm run test:unit
 ```
 
 GA4 已允許四個語言子網域。首頁 MapKit 的既有 token 若僅授權 apex，需在 Apple 端重新簽發允許新子網域的 token，才能讓新網域內的地圖示範正常運作。
+
+### 遷移進度與 SEO 轉址
+
+Cloudflare 已新增 `en`、`zh-tw`、`ja`、`ko` 的 CNAME → `tripezgo.github.io`。舊英文／日文／韓文路徑使用 Redirect Rules：只匹配 apex 與 www 上的 `/en` 或 `/en/…`（其他語言同理），動態目的地是 `concat("https://en.tripezgo.com", substring(http.request.uri.path, 3))`，狀態 301、Preserve query string 開啟。瀏覽器會保留未被覆寫的 fragment。繁中舊政策、條款、聯絡、公告頁固定 301 到 `zh-tw` 對應頁，讓舊內容與新內容保持一致；只有主網域首頁依使用者語言跳轉。App 工具路徑不匹配這些規則。
+
+每個語言站的 sitemap 只列自己的五個 canonical 頁；主站 sitemap 改為四個語言 sitemap 的索引。每頁保留四語 reciprocal hreflang，x-default 指向對應英文頁。切換前主 repo 的 `DEPLOY_LANG=legacy` 保留原站；四語站部署與 HTTPS 完成後改成 `router` 並啟用上述 Cloudflare 規則。
