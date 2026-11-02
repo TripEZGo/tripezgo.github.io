@@ -164,7 +164,7 @@ export function go(page, query = '') {
   location.href = url;
 }
 /** 分頁列每一格對到哪個畫面（1.6.0 起設定不在分頁列上）。「資料」落在靈感那一格（LibraryViewModel.initialIndex：1.4.0 起第一次進來是靈感） */
-export const TAB_PAGES = ['home', 'overview', 'calendar', 'map', 'inspiration'];
+export const TAB_PAGES = ['home', 'overview-170', 'calendar', 'map', 'inspiration'];   // 「總覽」那一格＝1.7.0 新總覽（overview-170.html）；舊的 overview.html 只剩故事腳本（stories-plan.js）用
 
 export function chrome(device, { tab = null, dark = false, back = false } = {}) {
   if (interactive) {

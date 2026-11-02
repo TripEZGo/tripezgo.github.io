@@ -38,7 +38,8 @@ const LOCALES = { zh: 'zh-Hant', en: 'en-US', ja: 'ja', ko: 'ko' };   // screens
 const TEMPLATE_LANG = { zh: 'zh-Hant', en: 'en', ja: 'ja', ko: 'ko' };  // shots.html 的語系碼
 // screens.mjs 的輸出：iPad 那一張叫 ipad-<頁>.png；商城檔名 iPad 加 ipad- 前綴
 const DEVICES = {
-  iphone: { query: '', prefix: '', viewport: { width: 1320, height: 2868 } },
+  // pageOf：這個裝置某一格改畫別的頁。總覽那一格 iPhone 先換成 1.7.0 新總覽（overview-170）；iPad／Duo 的新總覽版面還沒有稿（見 .scratch/v170-todo 票 33），先沿用舊的
+  iphone: { query: '', prefix: '', viewport: { width: 1320, height: 2868 }, pageOf: { overview: 'overview-170' } },
   ipad: { query: 'device=ipad', prefix: 'ipad-', viewport: { width: 2064, height: 2752 } },
   // iPhone Duo 內側螢幕橫放：951×669pt @3x ＝ 2853×2007（screens/ 的 ?device=duo）；商城檔名加 duo- 前綴
   duo: { query: 'device=duo', prefix: 'duo-', viewport: { width: 2853, height: 2007 } },
@@ -65,8 +66,9 @@ for (const l of Object.keys(LOCALES)) {
       const n = String(i + 1).padStart(2, '0');
       for (const [k, [pg, qq]] of (second ? [[`${n}a`, [page, q]], [`${n}b`, second]] : [[n, [page, q]]])) {
         if (process.env.RESUME && fs.existsSync(path.join(raw, `${k}.png`))) continue;   // RESUME=1：已經有的 raw 不重出（地圖那幾格偶爾要重跑）
-        render(pg, [qq, D.query].filter(Boolean).join('&'), l);
-        fs.copyFileSync(path.join(root, 'screens/out', l, `${D.prefix}${pg}.png`), path.join(raw, `${k}.png`));
+        const pg2 = (D.pageOf && D.pageOf[pg]) || pg;
+        render(pg2, [qq, D.query].filter(Boolean).join('&'), l);
+        fs.copyFileSync(path.join(root, 'screens/out', l, `${D.prefix}${pg2}.png`), path.join(raw, `${k}.png`));
         console.log('raw', l, dev, k, pg);
       }
     });

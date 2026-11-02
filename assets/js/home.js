@@ -336,7 +336,7 @@ document.querySelectorAll('[data-lazy-demo]').forEach((el) => io.observe(el));
    沒有 JS、或還沒捲到的時候，就是那張圖。 */
 const SCREEN_OF = {
   home: ['home', 'layout=live:m,todo:s,fx:s,overview:m'],
-  calendar: ['calendar', 'day=2'], timeline: ['timeline', 'day=2'], overview: ['overview', ''],
+  calendar: ['calendar', 'day=2'], timeline: ['timeline', 'day=2'], overview: ['overview-170', ''],
   'event-extra': ['event', 'extra=1'], 'event-airport': ['event', 'event=d1-airport&extra=1'], leg: ['leg', ''], map: ['map', ''], 'map-place': ['map-place', ''],
   'map-store': ['map-store', ''], 'map-nav': ['map-nav', ''], members: ['members', ''],
   'share-location': ['share-location', ''], lock: ['lock', ''], widget: ['widget', ''],
