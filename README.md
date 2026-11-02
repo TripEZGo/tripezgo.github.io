@@ -171,7 +171,7 @@ Measurement ID：`G-MMDNPN68XK`。`tools/stage-pages.mjs` 在頁面產生後，�
 
 Cloudflare DNS：保留 apex 的 GitHub Pages 記錄；`www` 與四個語言子網域各加 CNAME，指向 **GitHub 帳號／組織的 `<owner>.github.io`，不是含 repo 路徑的 URL**。先用 DNS only 完成 GitHub 的網域與 HTTPS 驗證；HTTPS 就緒後可依需求啟用 proxy。移除會把所有語言子網域重新導回 apex 的舊 redirect rules。
 
-`tools/stage-pages.mjs` 讀取 `DEPLOY_LANG`：語言站將所選內容放到根路徑、產生對應 CNAME，並轉換導覽、canonical、hreflang、OG、sitemap 與公告連結。主網域與 `www` 的首頁／聯絡／公告／政策／條款頁讀取 `navigator.languages`，按偏好順序找 `zh-*`、`en-*`、`ja-*`、`ko-*`；沒有支援的語言時預設英文。使用 `location.replace` 並保留路徑、query、hash；停用 JavaScript 時顯示英文入口連結。
+`tools/stage-pages.mjs` 讀取 `DEPLOY_LANG`：語言站將所選內容放到根路徑、產生對應 CNAME，並轉換導覽、canonical、hreflang、OG、sitemap 與公告連結。主網域與 `www` 的首頁／聯絡／公告／政策／條款頁讀取 `navigator.languages`，按偏好順序找 `zh-*`、`en-*`、`ja-*`、`ko-*`；沒有支援的語言時預設英文。使用 `location.replace` 並保留路徑、query、hash；入口本身提供完整英文頁面；停用 JavaScript、語言讀取失敗或跳轉被阻擋時仍可閱讀。英文兜底頁 canonical 指向英文子網域，入口不重複載入 GA。
 
 舊 `/en/`、`/ja/`、`/ko/` 行銷頁保留靜態轉址；`/trip/`、`/open/`、`/join/`、`/android-auth/`、`/.well-known/` 與素材維持原路徑。App Store 既有政策網址仍能使用，會依偏好轉到語言子網域。靜態轉址不提供 HTTP 301/302 狀態碼。
 

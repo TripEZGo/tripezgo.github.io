@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { preferredLanguage, rewriteContent, stageLanguage, languageEntry } from '../../tools/language-sites.mjs';
 import { mkdtempSync, cpSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
+import { runInNewContext } from 'node:vm';
 import { pathToFileURL } from 'node:url';
 
 test('language negotiation respects priority, regional tags, exclusions and fallback', () => {
@@ -10,10 +11,21 @@ test('language negotiation respects priority, regional tags, exclusions and fall
 });
 
 test('static entry reads browser languages and preserves path, query and fragment', () => {
-  const html = languageEntry();
+  const html = languageEntry('<html lang="en"><body><main><h1>Plan your trip</h1></main></body></html>');
   assert.match(html, /navigator.languages/);
   assert.match(html, /location.pathname \+ location.search \+ location.hash/);
-  assert.match(html, /https:\/\/en.tripezgo.com/);
+  assert.match(html, /<main><h1>Plan your trip<\/h1><\/main>/);
+  for (const [languages, expected] of [[['ja-JP'], 'ja'], [['fr-FR'], 'en']]) {
+    let destination;
+    runInNewContext(html.match(/<script data-language-redirect>([\s\S]*?)<\/script>/)[1], {
+      navigator: { languages },
+      location: { pathname: '/', search: '?utm_source=test', hash: '#about', replace: value => { destination = value; } },
+    });
+    assert.equal(destination, `https://${expected}.tripezgo.com/?utm_source=test#about`);
+  }
+  assert.doesNotThrow(() => runInNewContext(html.match(/<script data-language-redirect>([\s\S]*?)<\/script>/)[1], {
+    navigator: {}, location: { replace() { throw new Error('Navigation blocked'); } },
+  }));
 });
 
 test('each language publishes root content, its CNAME, and legacy redirects', () => {
@@ -30,6 +42,11 @@ test('each language publishes root content, its CNAME, and legacy redirects', ()
       const sitemap = readFileSync(new URL('sitemap.xml', root), 'utf8');
       if (lang === 'router') {
         assert.match(html, /navigator.languages/);
+        assert.match(html, /<html lang="en"/);
+        assert.match(html, /<main[ >]/);
+        assert.match(html, /<h1[ >]/);
+        assert.match(html, /rel="canonical" href="https:\/\/en.tripezgo.com\/"/);
+        assert.ok(html.includes(readFileSync(new URL('../../en/index.html', import.meta.url), 'utf8').match(/<h1[\s\S]*?<\/h1>/)[0]));
         assert.match(sitemap, /<sitemapindex /);
       } else {
         const locations = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);

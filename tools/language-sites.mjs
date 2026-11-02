@@ -32,8 +32,16 @@ export function rewriteContent(text) {
 export function redirectPage(target) {
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="canonical" href="${target}"><title>TripEZGo</title></head><body><a href="${target}">Continue to TripEZGo</a><script>location.replace(${JSON.stringify(target)} + location.search + location.hash);</script></body></html>`;
 }
-export function languageEntry() {
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="canonical" href="https://tripezgo.com/"><title>TripEZGo</title></head><body><nav aria-label="Language"><a href="https://en.tripezgo.com/" hreflang="en">English</a> <a href="https://zh-tw.tripezgo.com/" hreflang="zh-Hant">繁體中文</a> <a href="https://ja.tripezgo.com/" hreflang="ja">日本語</a> <a href="https://ko.tripezgo.com/" hreflang="ko">한국어</a></nav><script>const preferredLanguage = ${preferredLanguage.toString()}; location.replace('https://' + preferredLanguage((navigator.languages || [navigator.language]).join(',')) + '.tripezgo.com' + location.pathname + location.search + location.hash);</script></body></html>`;
+export function languageEntry(englishHTML) {
+  // Serve real English content first. Navigation failure must leave a usable page.
+  const script = `<script data-language-redirect>(() => {
+    const preferredLanguage = ${preferredLanguage.toString()};
+    let language = 'en';
+    try { language = preferredLanguage((navigator.languages || [navigator.language]).join(',')); } catch {}
+    try { location.replace('https://' + language + '.tripezgo.com' + location.pathname + location.search + location.hash); } catch {}
+  })();</script>`;
+  // The destination records the visit; avoid counting the transient router as another page view.
+  return englishHTML.replace('<script defer src="/assets/js/analytics.js"></script>', '').replace('</body>', script + '\n</body>');
 }
 export function stageLanguage(root, lang = 'router') {
   if (lang !== 'router' && !Object.hasOwn(locales, lang)) throw new Error('Unsupported DEPLOY_LANG: ' + lang);
@@ -59,6 +67,10 @@ export function stageLanguage(root, lang = 'router') {
     }
   }
   walk(root);
+  const routerPages = lang === 'router' ? new Map(
+    ['index.html', 'privacy.html', 'terms.html', 'contact/index.html', 'announcements/index.html']
+      .map(name => [name, readFileSync(new URL('en/' + name, root), 'utf8')])
+  ) : null;
   // Old language paths remain usable on the main domain and each language host.
   for (const code of ['en', 'ja', 'ko']) {
     rmSync(new URL(code + '/', root), { recursive: true, force: true });
@@ -71,7 +83,7 @@ export function stageLanguage(root, lang = 'router') {
   if (lang === 'router') {
     const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + Object.keys(locales).map(code => '<sitemap><loc>https://' + code + '.tripezgo.com/sitemap.xml</loc></sitemap>').join('') + '</sitemapindex>\n';
     writeFileSync(new URL('sitemap.xml', root), sitemap);
-    for (const name of ['index.html', 'privacy.html', 'terms.html', 'contact/index.html', 'announcements/index.html']) writeFileSync(new URL(name, root), languageEntry().replace('rel="canonical" href="https://tripezgo.com/"', 'rel="canonical" href="https://tripezgo.com/' + name.replace(/index\.html$/, '') + '"'));
+    for (const [name, englishHTML] of routerPages) writeFileSync(new URL(name, root), languageEntry(englishHTML));
   }
   if (lang !== 'router') {
     const robots = new URL('robots.txt', root);
