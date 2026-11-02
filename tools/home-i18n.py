@@ -99,11 +99,11 @@ T = {
   '支援步行導航': ('Walking directions', '徒歩ナビ', '도보 길 안내'),
   # 04 總覽
   '06 · 總覽模式': ('06 · Overview', '06 · 概要', '06 · 한눈에 보기'),
-  '整趟旅程，': ('The whole trip,', '旅行まるごと、', '여행 전체를'),
-  '一頁看完': ('on one page', '1ページで', '한 페이지에'),
-  '行程、附件、待辦，要找的東西點一下就到。': ('Events, files and to-dos — whatever you need is one tap away.',
-                                         '予定・添付・やること。探しものはタップひとつで。',
-                                         '일정, 첨부, 할 일. 찾는 것은 탭 한 번이면 나와요.'),
+  '旅程總覽，': ('Your trip overview,', '旅の概要は、', '여행 한눈에 보기,'),
+  '一天一頁': ('a page a day', '1日1ページ', '하루 한 페이지'),
+  '每天的行程、封面與待辦，點一下就到。': ("Each day's events, cover and to-dos, one tap away.",
+                                         '毎日の予定・カバー・やること、タップひとつで。',
+                                         '하루하루의 일정, 커버, 할 일이 탭 한 번이면 나와요.'),
   # 06 旅伴
   '一起排，': ('Plan together,', '一緒に組んで、', '함께 짜고,'),
   '一起出發': ('travel together', '一緒に出発', '함께 떠나요'),
@@ -191,9 +191,10 @@ T = {
       ('Calendar: day 2 of the six-day San\'yō trip, events laid out by time, with the JR San\'yō Line departure between breakfast and the ferry',
        'カレンダー：山陽 6 日間の2日目。予定が時間順に並び、朝食とフェリーのあいだに JR 山陽本線の便',
        '캘린더: 산요 6일 여행의 2일차. 일정이 시간순으로 놓이고, 아침 식사와 페리 사이에 JR 산요 본선 열차 편'),
-  '總覽：今天的行程依時間列出，行程之間標著步行時間與間隔': ("Overview: today's events listed by time, with walking time and gaps between them",
-                                                    '概要：今日の予定が時間順に並び、予定のあいだに徒歩時間と間隔',
-                                                    '한눈에 보기: 오늘 일정이 시간순으로 나열되고, 일정 사이에 도보 시간과 간격'),
+  '總覽：山陽 6 日的第 1 天，行程卡帶封面，卡上掛著待辦，卡與卡之間標著路程':
+      ("Overview: day 1 of the six-day San'yō trip, event cards with covers and to-dos, and the legs marked between them",
+       '概要：山陽 6 日間の1日目。カバー付きの予定カードとやること、カードのあいだに移動',
+       '한눈에 보기: 산요 6일 여행의 1일째. 커버와 할 일이 붙은 일정 카드와 그 사이의 이동'),
   '路程：三個班次並排，選中的那一班顯示發車、抵達與候車時間':
       ('Leg: three departures side by side; the selected one shows departure, arrival and waiting time',
        '移動：3つの便が並び、選んだ便の発車・到着・待ち時間を表示',
@@ -306,13 +307,13 @@ T = {
        '<p><b>タイムライン表示</b>：タイムラインで見るほうがしっくりくるなら、切り替えもできます。何時何分にどこへ行くか、どれだけいるか、移動にどれだけかかるかがひと目でわかります。</p>',
        '<p><b>타임라인 보기</b>: 타임라인으로 보는 게 익숙하다면 전환하세요. 몇 시 몇 분에 어디로 가는지, 얼마나 머무는지, 이동은 얼마나 걸리는지 한눈에 보입니다.</p>'),
   # 04 總覽
-  '整趟行程表按日分組': ('Your whole itinerary, grouped by day', '旅行全体を日ごとに', '여행 전체를 날짜별로 묶어서'),
-  '每一天的附件集中在一起': ("Each day's files in one place", 'その日の添付をひとまとめに', '하루치 첨부를 한곳에'),
-  '哪一天、哪個行程還有待辦，一看就知道': ('See at a glance which day, and which event, still has to-dos', 'どの日のどの予定にやることが残っているか、ひと目でわかる', '어느 날 어느 일정에 할 일이 남았는지 한눈에'),
-  '總覽模式讓你一頁掌握整趟行程安排；除此之外，這裡也會依照每一天分組整理行程的附件與待辦事項，在這邊就能快速打開每個行程的附件，或是知道哪一天的哪一個行程還有待辦。':
-      ("Overview puts the whole trip on one page. It also gathers every event's files and to-dos, grouped by day — so you can open any event's files right here, or see which event on which day still has to-dos.",
-       '概要では、旅行全体の予定を1ページで見渡せます。予定の添付ややることも日ごとにまとめてあるので、ここから各予定の添付をすぐ開いたり、どの日のどの予定にやることが残っているかを確かめたりできます。',
-       '한눈에 보기에서는 여행 전체 일정을 한 페이지로 파악할 수 있습니다. 일정의 첨부와 할 일도 날짜별로 정리되어 있어서, 여기서 바로 각 일정의 첨부를 열거나 어느 날 어느 일정에 할 일이 남았는지 확인할 수 있어요.'),
+  '一天一頁，左右滑動換天': ('One page a day; swipe sideways to change day', '1日1ページ、左右にスワイプで日を切り替え', '하루 한 페이지, 좌우로 밀어 날짜 이동'),
+  '行程卡有封面，待辦直接在卡上勾': ('Event cards with covers; tick to-dos right on the card', '予定カードにカバー、やることはカード上でチェック', '일정 카드에 커버, 할 일은 카드에서 바로 체크'),
+  '卡與卡之間標著路程': ('Legs are marked between the cards', 'カードのあいだに移動を表示', '카드 사이에 이동 표시'),
+  '總覽把旅程拆成一天一頁，左右滑動就能換天。每一則行程是一張帶封面的卡片，沒有照片時用地圖或圖示代替；掛在行程上的待辦直接在卡片上勾，卡與卡之間標著路程與所需時間。還沒排進時段的行程放在待排，重要的待辦集中在總覽頁。':
+      ("Overview splits the trip into one page per day; swipe sideways to change day. Each event is a card with a cover — a map or an icon stands in when there is no photo — and the to-dos attached to it can be ticked right on the card, with the leg and its time marked between cards. Events not yet placed in a time slot wait under Unscheduled, and the key to-dos sit on the Overview page.",
+       '概要は旅を 1 日 1 ページに分け、左右にスワイプして日を切り替えます。予定はカバー付きのカードで、写真がなければ地図やアイコンが代わりに入ります。予定に付けたやることはカード上でそのままチェックでき、カードのあいだには移動と所要時間が表示されます。まだ時間に入れていない予定は「未定の予定」に、重要なやることは概要ページにまとまります。',
+       '한눈에 보기는 여행을 하루 한 페이지로 나누고, 좌우로 밀어 날짜를 바꿉니다. 각 일정은 커버가 붙은 카드이고, 사진이 없으면 지도나 아이콘이 대신합니다. 일정에 붙인 할 일은 카드에서 바로 체크할 수 있고, 카드 사이에는 이동과 소요 시간이 표시됩니다. 아직 시간대에 넣지 않은 일정은 미정 일정에, 중요한 할 일은 한눈에 보기 페이지에 모입니다.'),
   # 05 地圖
   '03 · 地圖模式': ('03 · Map', '03 · マップ', '03 · 지도'),
   '你每天安排的行程，只要設定好地點，就能在地圖上快速掌握行程彼此之間的位置關係與路線。':
