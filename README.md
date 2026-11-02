@@ -146,4 +146,41 @@ GitHub repo 的 `Settings → Pages → Source` 要選 **GitHub Actions**。
 
 Measurement ID：`G-MMDNPN68XK`。`tools/stage-pages.mjs` 在頁面產生後，為四語首頁、聯絡、公告、隱私與條款頁注入 `assets/js/analytics.js`，避免頁面重產後遺失。Google tag 使用標準 `js` 與 `config` 初始化，自動記錄 page_view，UTM 可用於 Threads 來源歸因。
 
-只在 `tripezgo.com`／`www.tripezgo.com` 啟用；localhost、iframe、`?mode=embed` 不載入 GA。screens 展示頁、trip/open/join/android-auth App 工具流程與 404 不注入，避免 App 內嵌畫面及自動展示算成官網造訪。此設定不會變更 iOS App 的 Firebase 收集政策。
+在 `tripezgo.com`／`www.tripezgo.com` 與 `en`／`zh-tw`／`ja`／`ko` 語言子網域啟用；localhost、iframe、`?mode=embed` 不載入 GA。screens 展示頁、trip/open/join/android-auth App 工具流程與 404 不注入，避免 App 內嵌畫面及自動展示算成官網造訪。此設定不會變更 iOS App 的 Firebase 收集政策。
+
+## 語言子網域與 shell repositories
+
+採用與 `zhgchgli.github.io` 相同的主 repo／語言 shell repo 模式。內容與產生器只在本 repo 維護；shell repo 只需要一份 `.github/workflows/pages.yml`，部署時 checkout 本 repo 的 `main`。**不需要 Cloudflare Worker**。
+
+| Pages repo | Actions variable `DEPLOY_LANG` | Pages custom domain |
+|---|---|---|
+| 本 repo | `router`（預設） | `tripezgo.com` |
+| `TripEZGo/tripezgo-en` | `en` | `en.tripezgo.com` |
+| `TripEZGo/tripezgo-zh-tw` | `zh-tw` | `zh-tw.tripezgo.com` |
+| `TripEZGo/tripezgo-ja` | `ja` | `ja.tripezgo.com` |
+| `TripEZGo/tripezgo-ko` | `ko` | `ko.tripezgo.com` |
+
+四個 shell repo 已建立並啟用 GitHub Actions Pages、設定對應 custom domain 與 Actions variables。Shell workflow 不監聽 push，支援手動、排程與 repository_dispatch；執行前會確認主 repo 已有語系產生器。各 shell 的 Settings → Secrets and variables → Actions → Variables 設定：
+
+- `SOURCE_REPOSITORY`：本主 repo 的 `owner/repo`。
+- `DEPLOY_LANG`：上表的語言。
+- Pages → Source 選 **GitHub Actions**，Custom domain 填對應子網域，開啟 Enforce HTTPS。
+- 公告來源若使用 Actions secrets，四個 shell 也需要相同的 `TEZ_ANNOUNCEMENTS_URL`、`TEZ_WEB_ANNOUNCEMENTS_URL`（或使用可共用的 organization secrets）。
+
+主 repo 設定 `SHELL_REPOS` variable 為四個 shell 的 JSON 陣列，例如 `["owner/site-en","owner/site-zh-tw","owner/site-ja","owner/site-ko"]`；設定 `GH_TOKEN` secret，使用只對這四個 shell 有 Contents write 的 fine-grained PAT（repository_dispatch 所需）。主 repo 部署完成後會觸發四個 shell 重建；也可以個別手動執行 workflow。shell 的排程同樣會更新內容。部署 workflow 日後有修改時，也要更新 shell 的那一份。
+
+Cloudflare DNS：保留 apex 的 GitHub Pages 記錄；`www` 與四個語言子網域各加 CNAME，指向 **GitHub 帳號／組織的 `<owner>.github.io`，不是含 repo 路徑的 URL**。先用 DNS only 完成 GitHub 的網域與 HTTPS 驗證；HTTPS 就緒後可依需求啟用 proxy。移除會把所有語言子網域重新導回 apex 的舊 redirect rules。
+
+`tools/stage-pages.mjs` 讀取 `DEPLOY_LANG`：語言站將所選內容放到根路徑、產生對應 CNAME，並轉換導覽、canonical、hreflang、OG、sitemap 與公告連結。主網域與 `www` 的首頁／聯絡／公告／政策／條款頁讀取 `navigator.languages`，按偏好順序找 `zh-*`、`en-*`、`ja-*`、`ko-*`；沒有支援的語言時預設英文。使用 `location.replace` 並保留路徑、query、hash；停用 JavaScript 時顯示英文入口連結。
+
+舊 `/en/`、`/ja/`、`/ko/` 行銷頁保留靜態轉址；`/trip/`、`/open/`、`/join/`、`/android-auth/`、`/.well-known/` 與素材維持原路徑。App Store 既有政策網址仍能使用，會依偏好轉到語言子網域。靜態轉址不提供 HTTP 301/302 狀態碼。
+
+本機驗證輸出（不設 `DEPLOY_LANG` 時仍維持原始多目錄預覽）：
+
+```bash
+DEPLOY_LANG=en node tools/stage-pages.mjs _site
+DEPLOY_LANG=router node tools/stage-pages.mjs _site
+npm run test:unit
+```
+
+GA4 已允許四個語言子網域。首頁 MapKit 的既有 token 若僅授權 apex，需在 Apple 端重新簽發允許新子網域的 token，才能讓新網域內的地圖示範正常運作。

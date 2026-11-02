@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  repository_dispatch:
+    types: [master-updated]
   workflow_dispatch:
   # 每天重產一次「我的遊記」（tools/journals.mjs）與公告（tools/announcements.mjs），部落格的新遊記、gist 的新公告隔天就上官網
   schedule:
@@ -16,6 +18,9 @@ permissions:
 concurrency:
   group: pages
   cancel-in-progress: false
+
+env:
+  DEPLOY_LANG: ${{ vars.DEPLOY_LANG || 'router' }}
 
 jobs:
   deploy:
@@ -32,6 +37,8 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           persist-credentials: false
+          repository: ${{ vars.SOURCE_REPOSITORY || github.repository }}
+          ref: main
 
       # 純靜態網站，沒有建置步驟。只做四件事：重產遊記與公告、把「要發佈的」複製到 _site/、
       # 把 _site 裡每個 HTML 檔的內部連結對一次（斷掉或指到沒發佈的東西就讓 build 紅）。
@@ -80,3 +87,18 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
+
+  notify-shells:
+    needs: deploy
+    if: ${{ vars.SHELL_REPOS != '' && vars.SOURCE_REPOSITORY == '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rebuild language repositories
+        env:
+          SHELL_REPOS: ${{ vars.SHELL_REPOS }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          set -euo pipefail
+          while IFS= read -r repo; do
+            gh api "repos/$repo/dispatches" -f event_type=master-updated
+          done < <(printf '%s' "$SHELL_REPOS" | jq -r '.[]')

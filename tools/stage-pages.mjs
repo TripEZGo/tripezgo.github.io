@@ -15,6 +15,7 @@
  * 發佈清單裡的項目不存在也會紅（改名或刪掉時，清單要一起改）。
  * `tests/unit/stage-pages.test.mjs` 守著這兩條。 */
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
+import { stageLanguage } from './language-sites.mjs';
 import { fileURLToPath } from 'node:url';
 
 /** 網站實際在送的東西（2026-10-20 從 repo 與頁面引用盤點：首頁的 iPhone 示範是 iframe 載 /screens/，所以 screens/ 在內）。 */
@@ -71,6 +72,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   mkdirSync(out, { recursive: true });
   for (const name of PUBLISH) cpSync(new URL(name, root), new URL(name, out), { recursive: true });
   stageAnalytics(out);
+  if (process.env.DEPLOY_LANG && process.env.DEPLOY_LANG !== 'legacy') stageLanguage(out, process.env.DEPLOY_LANG);
   console.log('已複製 ' + PUBLISH.length + ' 個項目到 ' + out.pathname);
   if (!existsSync(new URL('index.html', out))) process.exit(1);
 }

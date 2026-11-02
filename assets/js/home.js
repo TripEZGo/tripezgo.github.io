@@ -591,9 +591,9 @@ phones.forEach((f) => { (SCREEN_OF[f.dataset.screen][0] === 'map-live' ? mio : p
     const href = (b) => {
       if (b.external) return b.url;
       const u = new URL(b.url, location.href);
-      if (u.pathname === location.pathname) return u.hash || '#';
+      if (u.origin === location.origin && u.pathname === location.pathname) return u.hash || '#';
       if (document.documentElement.classList.contains('embed')) u.searchParams.set('mode', 'embed');
-      return u.pathname + u.search + u.hash;
+      return u.origin === location.origin ? u.pathname + u.search + u.hash : u.href;
     };
     const day = new Date().toISOString().slice(0, 10);   // 一天換一次網址：CI 每天重產，快取最多舊一天
     fetch(`/assets/data/announcements.json?d=${day}`).then((r) => (r.ok ? r.json() : {})).then((data) => {
