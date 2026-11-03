@@ -92,13 +92,21 @@ async function runOne(id, lang, theme) {
     if (!same(b, await page.screenshot())) row.problems.push('static：靜態畫面卻在動（再過 3 秒又變了）');
     row.shot = `${tag}.b.png`;
   } else if (kind === 'step') {
-    // step（靈感空狀態，2026-10-30 方案 A）：不自動播——停在第 1 格（0.8s 與 4.5s 一樣）；每一格畫面上有一支箭頭（#ag.on）；
+    // step（靈感空狀態，2026-10-30 方案 A；2026-11-03 加自動換頁）：停好 3 秒自動換下一格（手動走查時用 autoPause 停住）；每一格畫面上有一支箭頭（#ag.on）；
     // 殼本身沒有任何字；每點一下往前一格、點點（tzDemo.state().n）一路走到總數；最後一格 ›（↻）再點回第 1 步；點點可以跳步、‹ 回上一步。
     const state = () => page.evaluate(() => window.tzDemo.state());
     const arrowOn = () => page.evaluate(() => !!document.getElementById('ag')?.classList.contains('on') && !!document.querySelector('#ag .ah'));
     const waitStop = async (ms = 20000) => { for (let t = 0; t < ms / 100; t++) { if (await arrowOn()) { await page.waitForTimeout(150); return true; } await page.waitForTimeout(100); } return false; };
     if (!(await waitStop())) row.problems.push('step：第 1 格沒有箭頭');
-    if ((await state()).n !== 1) row.problems.push('step：沒有點就走了（不該自動播放）');   // 箭頭自己會浮動，所以不比截圖，看點點
+    // 自動換頁（2026-11-03 稿）：停好 3 秒自動換下一格，倒數圈畫在 › 外面；沒人點，點點自己往前走
+    // 上面的 4.5 秒已經過了：沒人點，點點應該自己往前走了（第 1 格停好 3 秒 → 第 2 格）
+    { let moved = (await state()).n >= 2; for (let t = 0; t < 120 && !moved; t++) { await page.waitForTimeout(250); moved = (await state()).n >= 2; } if (!moved) row.problems.push('step：沒有點，3 秒後也沒有自己換頁'); }
+    await waitStop();
+    if (!(await page.evaluate(() => document.getElementById('ring').classList.contains('run')))) row.problems.push('step：停好之後沒有倒數圈');
+    // 後面這些手動走查要「停著等點」：模擬 VoiceOver 焦點停在示範上（autoPause），結尾再放開驗證會繼續自己走
+    await page.evaluate(() => window.tzDemo.autoPause());
+    await page.evaluate(() => window.tzDemo.restart());
+    await waitStop();
     if ((await page.evaluate(() => document.body.innerText.trim())) !== '') row.problems.push('step：殼上有字（方案 A 沒有任何說明文字）');
     // App 翻回這一頁時呼叫 restart()：重來之後要停在第 1 步等點，不能自己播（背景載入的那一份會先停下來）
     await page.evaluate(() => window.tzDemo.restart());
@@ -133,6 +141,11 @@ async function runOne(id, lang, theme) {
       if ((await state()).n !== Math.min(12, total)) row.problems.push('step：點點沒有跳到那一步');
       await page.click('#prev'); await waitStop();
       if ((await state()).n !== Math.min(12, total) - 1) row.problems.push('step：‹ 沒有回上一步');
+      // 焦點離開（autoResume）：從 0 重新倒數，到了自己換下一格
+      const at = (await state()).n;
+      await page.evaluate(() => window.tzDemo.autoResume());
+      let adv = false; for (let t = 0; t < 120 && !adv; t++) { await page.waitForTimeout(250); adv = (await state()).n === at + 1; }
+      if (!adv) row.problems.push('step：autoResume 之後沒有自己換頁');
     }
     row.shot = `${tag}.b.png`;
   } else if (kind === 'ambient') {

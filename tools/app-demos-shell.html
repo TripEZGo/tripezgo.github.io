@@ -54,6 +54,15 @@
   #pager button { flex: none; width: 44px; height: 44px; border: 0; padding: 0; margin: 0; background: none; color: var(--arrow); display: grid; place-items: center; -webkit-tap-highlight-color: transparent; font: inherit; }
   #pager button svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   #pager button:disabled { opacity: .3; }
+  /* 自動換頁的倒數圈：畫在 › 外面（底圈 --border、進度 --arrow，線寬 2.4），從 12 點鐘順時針畫滿；畫滿就換頁 */
+  #nextwrap { position: relative; flex: none; width: 44px; height: 44px; }
+  #ring { position: absolute; inset: 0; width: 44px; height: 44px; pointer-events: none; display: none; transform: rotate(-90deg); }
+  #ring circle { fill: none; stroke-width: 2.4; }
+  #ring .rt { stroke: var(--border); }
+  #ring .rp { stroke: var(--arrow); stroke-dasharray: 125.664; stroke-dashoffset: 125.664; }
+  #ring.run { display: block; }
+  #ring.run .rp { animation: ringfill var(--auto-ms, 3000ms) linear forwards; }
+  @keyframes ringfill { to { stroke-dashoffset: 0; } }
   #dots { flex: 1; min-width: 0; display: flex; justify-content: center; align-items: center; }
   #dots i { flex: 0 1 14px; min-width: 0; height: 44px; position: relative; -webkit-tap-highlight-color: transparent; }
   #dots i.on { flex-basis: 22px; }
@@ -79,12 +88,44 @@
 </head>
 <body>
 <div id="view"><div id="stage"></div></div>
-<div id="pager" aria-hidden="true"><button id="prev" type="button" tabindex="-1"></button><div id="dots"></div><button id="next" type="button" tabindex="-1"></button></div>
+<div id="pager" aria-hidden="true"><button id="prev" type="button" tabindex="-1"></button><div id="dots"></div><div id="nextwrap"><svg id="ring" viewBox="0 0 44 44" aria-hidden="true"><circle class="rt" cx="22" cy="22" r="20"/><circle class="rp" cx="22" cy="22" r="20"/></svg><button id="next" type="button" tabindex="-1"></button></div></div>
 <script>
 (function () {
   /* DEMOS：page／q／auto＝iframe 載哪一頁、帶什麼參數、跑哪一支故事；flows＝once 模式依序播的幾段
      （{ page, q, auto }＝播故事；{ page, q, still: true, ms }＝靜態停 ms 毫秒；slide＝換進來時往上滑入）；
      still＝「減少動態」顯示的那一幀 { page, q }；flat＝整個視窗就是那一頁（不套手機尺寸）。 */
+  /*TZ-PURE*/
+  /* 純邏輯（沒有 DOM；tests/unit/app-demo-shell.test.mjs 把這一段抽出來直接跑）。 */
+  // 產品常數：每一步停幾毫秒自動換下一步。**全 repo 只有這一個地方寫它**——倒數圈的動畫時間也從這裡來（--auto-ms），原生端不知道它。
+  var AUTO_MS = 3000;
+  // 目前這一格的前一格與後一格（最後一格的下一格是第 1 格）：這兩格要預先載好。
+  function neighbourIdx(i, n) {
+    var out = [];
+    if (n < 2) return out;
+    var a = (i + 1) % n, b = (i - 1 + n) % n;
+    out.push(a); if (b !== a) out.push(b);
+    return out;
+  }
+  // 自動換頁的計時：停著（canRun）才跑；有任何一個「按住」的理由、或減少動態，就不跑；放開從 0 重來。
+  // o: { ms, reduced, canRun(), fire(), ring(on), set(fn, ms), clear(id) }
+  function makeAutoAdvance(o) {
+    var holds = {}, tid = null;
+    function holding() { for (var k in holds) if (holds[k]) return true; return false; }
+    function stop() { if (tid !== null) o.clear(tid); tid = null; o.ring(false); }
+    function restart() {
+      stop();
+      if (o.reduced || holding() || !o.canRun()) return;
+      o.ring(true);
+      tid = o.set(function () { tid = null; o.ring(false); o.fire(); }, o.ms);
+    }
+    return {
+      restart: restart, stop: stop,
+      hold: function (why) { holds[why] = true; stop(); },
+      release: function (why) { holds[why] = false; restart(); },
+      running: function () { return tid !== null; }
+    };
+  }
+  /*END-PURE*/
   var DEMOS = /*DEMOS*/{}/*END*/;
   var q = new URLSearchParams(location.search);
   var id = q.get('demo'), spec = DEMOS[id];
@@ -194,7 +235,7 @@
   var parked = false;   // 故事停在某一格的結尾、等下一次點（外部的 play() 不能把它放走）
   var cur = 0;          // 最後一次停好（準備好）的那一格（FRAMES 的位置）
   var heading = null;   // 正在播過去／快轉過去的那一格；null＝停著
-  var pendingFr = null, settleTimer = null;   // 快轉中、還沒換上來的那一份
+  var pendingFr = null;   // 快轉中、還沒換上來的那一份
   var prevBtn = document.getElementById('prev'), nextBtn = document.getElementById('next'), dotsEl = document.getElementById('dots');
   var ICON = {
     chevL: '<svg viewBox="0 0 24 24"><path d="M15 5 8 12l7 7"/></svg>',
@@ -240,15 +281,36 @@
     void g.getBoundingClientRect();
     g.classList.add('on');
   }
-  function parkedAt(idx, arrow) { parked = true; cur = idx; heading = null; renderPager(); drawArrow(arrow); tellParent(dotNo(FRAMES[idx])); }
+  function parkedAt(idx, arrow) { parked = true; cur = idx; heading = null; renderPager(); drawArrow(arrow); tellParent(dotNo(FRAMES[idx])); refreshPreload(); auto.restart(); }
 
   /* 快轉到 idx：背景載一份新的、一路做到那一格才停，等轉場跑完（settle）再換上來——舊的畫面一直留到那一刻 */
   function goTo(idx) {
     idx = Math.max(0, Math.min(FRAMES.length - 1, idx));
     hideArrow(); heading = idx; renderPager();
-    if (pendingFr) { pendingFr.remove(); pendingFr = null; clearTimeout(settleTimer); }
-    var fr = newFrame(Object.assign({}, flows[0], { ff: FRAMES[idx] }), st.name.replace(/r\d+$/, '') + 'r' + (++seq), true);
-    fr.classList.add('ff'); fr._idx = idx; pendingFr = fr; addFrame(fr);
+    if (pendingFr) { clearTimeout(pendingFr._st); pendingFr.remove(); pendingFr = null; }
+    var fr = takePreloaded(idx);
+    if (!fr) { fr = newFrame(Object.assign({}, flows[0], { ff: FRAMES[idx] }), st.name.replace(/r\d+$/, '') + 'r' + (++seq), true); fr.classList.add('ff'); fr._idx = idx; addFrame(fr); }
+    pendingFr = fr;
+    if (fr._ok) promote(fr, fr._arrow);   // 預載好的：已經停在那一格、轉場跑完了，直接換上來
+  }
+  /* 預載前後兩格：目前這格的前一格與後一格（最後一格的下一格是第 1 格）在背景載好、快轉到停好，點下一步／上一步時直接換上來，不必現載（現載的那一瞬間是空白）。
+     一次最多兩份（加上目前的那一份）。換上來之後再補新的鄰格。 */
+  var pre = {};   // 格 → iframe
+  function takePreloaded(idx) { var f = pre[idx]; if (!f) return null; delete pre[idx]; f.classList.remove('pre'); return f; }
+  function refreshPreload() {
+    if (!stepUI || !FRAMES.length) return;
+    var want = neighbourIdx(cur, FRAMES.length);
+    Object.keys(pre).forEach(function (k) { if (want.indexOf(+k) < 0) { pre[k].remove(); delete pre[k]; } });
+    want.forEach(function (i) {
+      if (pre[i] || (pendingFr && pendingFr._idx === i)) return;
+      var f = newFrame(Object.assign({}, flows[0], { ff: FRAMES[i] }), st.name.replace(/r\d+$/, '') + 'r' + (++seq), true);
+      f.classList.add('ff', 'pre'); f._idx = i; pre[i] = f; addFrame(f);
+    });
+  }
+  function ffBySource(w) {
+    var l = stage.querySelectorAll('iframe.ff');
+    for (var i = 0; i < l.length; i++) if (l[i].contentWindow === w) return l[i];
+    return null;
   }
   function promote(fr, arrow) {
     fr.classList.remove('next', 'ff'); pendingFr = null;
@@ -260,6 +322,17 @@
     parked = false; heading = cur + 1; hideArrow(); renderPager();
     try { st.fr.contentWindow.postMessage({ type: 'tz-auto-ctl', cmd: 'play', step: true }, '*'); } catch (e) {}
   }
+  /* 自動換下一格（靈感空狀態）：每一格停好之後 AUTO_MS 毫秒換下一格，最後一格回第 1 格，一直循環。
+     停在「按住畫面／原生說暫停（翻走、捲出畫面、App 進背景、VoiceOver 焦點在示範上）」時不跑，放開從 0 重來；減少動態不跑、不畫圈。 */
+  var ringEl = document.getElementById('ring');
+  document.documentElement.style.setProperty('--auto-ms', AUTO_MS + 'ms');
+  var auto = makeAutoAdvance({
+    ms: AUTO_MS, reduced: reduced || !stepUI,
+    canRun: function () { return parked && heading === null && !pendingFr; },
+    fire: function () { onNext(); },
+    ring: function (on) { ringEl.classList.remove('run'); if (on) { void ringEl.getBoundingClientRect(); ringEl.classList.add('run'); } },
+    set: function (fn, ms) { return setTimeout(fn, ms); }, clear: function (id) { clearTimeout(id); }
+  });
   function onNext() {
     if (!stepUI || pendingFr) return;                       // 快轉載入中（不到一秒）：先不理
     if (heading === null) {                                 // 停著
@@ -287,10 +360,11 @@
     if (d.type === 'tz-ss') { if (d.name) ssSnap[d.name] = d.data; return; }
     if (d.type === 'tz-auto-stop') {
       var si = FRAMES.indexOf(d.id);
-      if (pendingFr && pendingFr.contentWindow === e.source) {   // 快轉到的那一格停好了：等轉場跑完（面板滑進來、選單升起）再換上來
-        if (si !== pendingFr._idx) return;
-        var pf = pendingFr; clearTimeout(settleTimer);
-        settleTimer = setTimeout(function () { if (pendingFr === pf) promote(pf, d.arrow); }, reduced ? 120 : 500);
+      var ff = ffBySource(e.source);
+      if (ff) {   // 快轉到的那一格（要去的、或預載的鄰格）停好了：等轉場跑完（面板滑進來、選單升起）才算準備好，輪到時再換上來
+        if (si !== ff._idx) return;
+        clearTimeout(ff._st);
+        ff._st = setTimeout(function () { ff._ok = true; ff._arrow = d.arrow; if (pendingFr === ff) promote(ff, d.arrow); }, reduced ? 120 : 500);
         return;
       }
       // 換上來之前（背景載入中，一般播放時的換頁）的那一份也會自己先停：先記下「停著」，換上來時才不會被當成在播而放走
@@ -299,20 +373,28 @@
       return;
     }
     if (d.type === 'tz-auto-hello') { if (st.fr.contentWindow === e.source) ctl(); return; }
-    if (d.type === 'tz-ready') { var n = stage.querySelector('iframe.next'); if (n && n.contentWindow === e.source && n._ready) n._ready(); return; }
-    if (d.type === 'tz-nav' && pendingFr && pendingFr.contentWindow === e.source) {   // 快轉途中換頁：換掉那一份，不走一般的 swap（停到那一格才換上來）
+    if (d.type === 'tz-ready') { var n = stage.querySelector('iframe.next:not(.pre)'); if (n && n.contentWindow === e.source && n._ready) n._ready(); return; }
+    var navFf = d.type === 'tz-nav' ? ffBySource(e.source) : null;
+    if (navFf) {   // 快轉（或預載）途中換頁：換掉那一份，不走一般的 swap（停到那一格才換上來）
       var pu = String(d.url || ''); if (pu.indexOf('screens/') < 0) return;
       e.source.postMessage({ type: 'tz-nav-ok' }, '*');
-      var pn = document.createElement('iframe'); pn.className = 'next ff'; pn.name = pendingFr.name; pn._idx = pendingFr._idx;
+      var pn = document.createElement('iframe'); pn.className = navFf.className; pn.name = navFf.name; pn._idx = navFf._idx;
       pn.src = pu.split('#')[0] + (ssSnap[pn.name] ? '#ss=' + encodeURIComponent(JSON.stringify(ssSnap[pn.name])) : '');
       pn.setAttribute('aria-hidden', 'true'); pn.setAttribute('tabindex', '-1');
-      pendingFr.remove(); pendingFr = pn; addFrame(pn);
+      if (pre[navFf._idx] === navFf) pre[navFf._idx] = pn;
+      if (pendingFr === navFf) pendingFr = pn;
+      clearTimeout(navFf._st); navFf.remove(); addFrame(pn);
       return;
     }
     if (d.type === 'tz-nav') {
       if (st.fr.contentWindow !== e.source) return;
       var u = String(d.url || ''); if (u.indexOf('screens/') < 0) return;
       e.source.postMessage({ type: 'tz-nav-ok' }, '*');
+      if (stepUI && heading !== null && pre[heading]) {   // 播到一半要換頁，而要去的那一格早就預載好了：換那一份上來，不現載（現載的那一瞬間是空白）
+        pendingFr = takePreloaded(heading);
+        if (pendingFr._ok) promote(pendingFr, pendingFr._arrow);
+        return;
+      }
       var nf = document.createElement('iframe'); nf.className = 'next';
       nf.name = st.name;                          // 同一個 name：示範進度與畫面狀態接得上（不讀 e.source.name：跨來源會丟 SecurityError）
       var snap = ssSnap[st.name] ? '#ss=' + encodeURIComponent(JSON.stringify(ssSnap[st.name])) : '';   // 後備儲存：把最新一份進度放進新頁網址
@@ -335,12 +417,13 @@
     var hit = document.createElement('div'); hit.id = 'hit'; (stepUI ? view : document.body).appendChild(hit);   // step：只蓋手機畫面那一塊，不蓋下面的 ‹ 點點 ›
     var timer = null, held = false;
     function setHeld(on) { userPaused = on; ctl(on); }
-    function down() { held = false; clearTimeout(timer); timer = setTimeout(function () { held = true; setHeld(true); }, 380); }
+    function down() { auto.hold('touch'); held = false; clearTimeout(timer); timer = setTimeout(function () { held = true; setHeld(true); }, 380); }
     function up(ev) {
       clearTimeout(timer); timer = null;
-      if (held) { held = false; setHeld(false); return; }
-      if (ev && ev.type === 'pointerup' && stepMode) onNext();
+      if (held) { held = false; setHeld(false); }
+      else if (ev && ev.type === 'pointerup' && stepMode) onNext();
       else if (ev && ev.type === 'pointerup' && finished) restart();   // 播完後點一下：從頭重播
+      auto.release('touch');   // 放開：從 0 重來（點了就已經在換頁，換好才會開始倒數）
     }
     hit.addEventListener('pointerdown', down);
     hit.addEventListener('pointerup', up);
@@ -351,12 +434,14 @@
 
   // 外部控制：App 翻到這一頁／翻走、捲出畫面
   window.tzDemo = {
-    pause: function () { paused = true; ctl(); },
-    play: function () { paused = false; ctl(); },
+    pause: function () { paused = true; ctl(); auto.hold('ext'); },
+    play: function () { paused = false; ctl(); auto.release('ext'); },
+    autoPause: function () { auto.hold('focus'); },    // 原生：VoiceOver 焦點停在示範上，先不要自己換頁
+    autoResume: function () { auto.release('focus'); },
     step: function () { if (!stepMode || userPaused || paused) return; onNext(); },   // 原生（VoiceOver 啟動、調整的增加）叫它播下一格
     prev: function () { if (!stepMode || userPaused || paused) return; onPrev(); },   // 原生（VoiceOver 調整的減少）：回上一格
     state: function () { var i = heading !== null ? heading : cur; return stepMode ? { n: dotNo(FRAMES[i]), of: spec0().steps || 0 } : null; },   // 原生問「現在第幾步」（單向：原生問、頁面答）
-    restart: function () { paused = false; userPaused = false; if (stepMode) { if (cur !== 0 || heading !== null) goTo(0); else ctl(); } else if (once && !still) restart(); else ctl(); },
+    restart: function () { paused = false; userPaused = false; auto.release('ext'); if (stepMode) { if (cur !== 0 || heading !== null) goTo(0); else ctl(); } else if (once && !still) restart(); else ctl(); },
   };
   document.addEventListener('visibilitychange', function () { document.hidden ? window.tzDemo.pause() : window.tzDemo.play(); });
 })();
