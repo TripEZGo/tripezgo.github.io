@@ -161,7 +161,7 @@ const RAIL = 'M 3 1 C 2.4477 1 2 1.4477 2 2 L 2 10 C 2 10.5523 2.4477 11 3 11 L 
 const d = document.getElementById('d');
 const trip = await loadTrip();
 if (interactive) applyState(trip);   // 在行事曆拖過的時刻、選過的班次（demo-state.js）
-const key = params.get('event') || 'd2-ferry';
+const key = params.get('event') || 'd1-jrpass';
 let to, dayNo;
 for (const day of trip.days) { const e = day.events.find(x => x.key === key); if (e) { to = e; dayNo = day.day; break; } }
 const backTo = () => go('calendar', { day: params.get('day') || dayNo || 2 });

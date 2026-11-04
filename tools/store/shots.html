@@ -143,6 +143,7 @@
   }
   /* 字體堆疊依語言綁定 */
   .shot[data-lang="zh-Hant"] { font-family: var(--f-zh); }
+  .shot[data-lang="zh-Hans"] { font-family: "PingFang SC", "Noto Sans SC", sans-serif; }
   .shot[data-lang="ja"]      { font-family: var(--f-ja); }
   .shot[data-lang="ko"]      { font-family: var(--f-ko); }
   .shot[data-lang="en"]      { font-family: var(--f-en); }
@@ -291,6 +292,18 @@
       ['旅途中|[位置共享]', '走散了，也知道彼此在哪'],
       ['[即時動態]、|Widget', '不用解鎖，下一站就在鎖定畫面']
     ],
+    'zh-Hans': [
+      ['旅程一打开，|[主页]就看得到', '实时动态、待办、汇率、总览，摆成你要的样子'],
+      ['日历排行程，|[时间轴]排交通', '一拖一拉就能排，还没定时间的拖进时段就好'],
+      ['在哪看到都能存，|[灵感]一次收齐', 'Safari、地图、社交、相簿分享进来，一键变成行程'],
+      ['下一站在哪，|[地图]告诉你', '每日路线、日本便利店药妆、步行导航'],
+      ['该带的，都[挂在行程上]^怎么去，用[路程]排好', '票券、附件、待办出发前打勾，路程自动估算时间'],
+      ['旅程总览，|[一天一页]看清楚', '每天的行程卡有封面、待办，卡与卡之间标着路程'],
+      ['[购物清单]、笔记，|旅途所需都带着', '伴手礼边买边勾，实付金额也记下来'],
+      ['[旅伴共编]，|一起排同一趟', '发邀请链接或扫 QR Code 就能加入'],
+      ['旅途中|[位置共享]', '走散了，也知道彼此在哪'],
+      ['[实时动态]、|Widget', '不用解锁，下一站就在锁屏上']
+    ],
     'ja': [
       ['旅の情報は|[ホーム]にそろう', '次の予定・ToDo・為替・概要を、好きな並びで'],
       ['予定はカレンダー、^移動は[タイムライン]', 'ドラッグで組み替え、未定の予定も時間帯へ'],
@@ -331,8 +344,8 @@
     ]
   };
   var N = 10, PREMIUM = 9, PAIR = 4;   /* 第 5 張（行程＋路程）兩支並排；第 10 張（即時動態）掛 Premium 標籤 */   /* 第 10 張（即時動態）掛 Premium 標籤 */
-  var LANGS = ['zh-Hant', 'ja', 'en', 'ko'];
-  var LANG_NAME = { 'zh-Hant': '繁體中文', 'ja': '日本語', 'en': 'English', 'ko': '한국어' };
+  var LANGS = ['zh-Hant', 'zh-Hans', 'ja', 'en', 'ko'];
+  var LANG_NAME = { 'zh-Hant': '繁體中文', 'zh-Hans': '简体中文', 'ja': '日本語', 'en': 'English', 'ko': '한국어' };
   var DEVICES = {
     iphone: { name: 'iPhone 6.9 吋', size: '1320×2868', iw: 1206, ih: 2622,
               title: 118, titleMin: 84, sub: 46, safeTop: 48, gap: 90 },
@@ -361,7 +374,7 @@
     var D = DEVICES[device];
     var c = COPY[lang][i];
     var t = titleHTML(c[0], device);
-    var cjk = (lang === 'zh-Hant' || lang === 'ja');
+    var cjk = (lang === 'zh-Hant' || lang === 'zh-Hans' || lang === 'ja');
     /* 有手動斷點：行數就是段數；沒有：中日一行放完，英韓最多兩行 */
     var maxT = t.segs > 1 ? t.segs : (cjk ? 1 : 2);
     var maxS = cjk ? 1 : 2;

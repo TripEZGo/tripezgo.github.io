@@ -27,22 +27,23 @@ const SLOTS = [
   ['calendar', 'calendar', 'day=2'],
   ['inspiration', 'inspiration', ''],
   ['map', 'map-live', ''],
-  ['event-leg', 'event', 'event=d1-airport&extra=1', ['leg', '']],
+  ['event-leg', 'event', 'event=d1-flight-tpe-okj', ['leg', '']],
   ['overview', 'overview', ''],
   ['library', 'shop', ''],
   ['collaboration', 'members', ''],
   ['location-sharing', 'map-live', 'nav=0&today=2&focus=mates'],
   ['live-activity', 'lock', ''],
 ];
-const LOCALES = { zh: 'zh-Hant', en: 'en-US', ja: 'ja', ko: 'ko' };   // screens 的語言碼 → fastlane 的語系資料夾
-const TEMPLATE_LANG = { zh: 'zh-Hant', en: 'en', ja: 'ja', ko: 'ko' };  // shots.html 的語系碼
+const LOCALES = { zh: 'zh-Hant', hans: 'zh-Hans', en: 'en-US', ja: 'ja', ko: 'ko' };
+const RENDER_LANG = { hans: 'zh' };   // zh-Hans 的畫面沿用 zh 的原始截圖（screens 還沒有簡體字串），只有商城標題是簡體（shots.html 的 zh-Hans COPY）   // screens 的語言碼 → fastlane 的語系資料夾
+const TEMPLATE_LANG = { zh: 'zh-Hant', hans: 'zh-Hans', en: 'en', ja: 'ja', ko: 'ko' };  // shots.html 的語系碼
 // screens.mjs 的輸出：iPad 那一張叫 ipad-<頁>.png；商城檔名 iPad 加 ipad- 前綴
 const DEVICES = {
   // pageOf：這個裝置某一格改畫別的頁。總覽那一格 iPhone 先換成 1.7.0 新總覽（overview-170，day=1：停在第 1 天，行程卡、封面、待辦、路程都看得到）；iPad／Duo 的新總覽版面還沒有稿（見 .scratch/v170-todo 票 33），先沿用舊的
   iphone: { query: '', prefix: '', viewport: { width: 1320, height: 2868 }, pageOf: { overview: 'overview-170' }, queryOf: { overview: 'day=1' } },
-  ipad: { query: 'device=ipad', prefix: 'ipad-', viewport: { width: 2064, height: 2752 } },
+  ipad: { query: 'device=ipad', prefix: 'ipad-', viewport: { width: 2064, height: 2752 }, pageOf: { overview: 'overview-170-wide' }, queryOf: { overview: 'day=1' } },
   // iPhone Duo 內側螢幕橫放：951×669pt @3x ＝ 2853×2007（screens/ 的 ?device=duo）；商城檔名加 duo- 前綴
-  duo: { query: 'device=duo', prefix: 'duo-', viewport: { width: 2853, height: 2007 } },
+  duo: { query: 'device=duo', prefix: 'duo-', viewport: { width: 2853, height: 2007 }, pageOf: { overview: 'overview-170-wide' }, queryOf: { overview: 'day=1' } },
 };
 
 // 地圖那幾格要連 MapKit 的圖磚，偶爾等不到 data-ready（15 秒）——同一格最多再試八次（MapKit 圖磚偶爾載不齊，iPad 的位置共享那格尤其常等不到）
@@ -68,8 +69,8 @@ for (const l of Object.keys(LOCALES)) {
         if (process.env.RESUME && fs.existsSync(path.join(raw, `${k}.png`))) continue;   // RESUME=1：已經有的 raw 不重出（地圖那幾格偶爾要重跑）
         const pg2 = (D.pageOf && D.pageOf[pg]) || pg;
         const qx = D.pageOf && D.pageOf[pg] && D.queryOf && D.queryOf[pg];   // 換頁的格子帶自己的 query（總覽：停在第 1 天）
-        render(pg2, [qx || qq, D.query].filter(Boolean).join('&'), l);
-        fs.copyFileSync(path.join(root, 'screens/out', l, `${D.prefix}${pg2}.png`), path.join(raw, `${k}.png`));
+        render(pg2, [qx || qq, D.query].filter(Boolean).join('&'), RENDER_LANG[l] || l);
+        fs.copyFileSync(path.join(root, 'screens/out', RENDER_LANG[l] || l, `${D.prefix}${pg2}.png`), path.join(raw, `${k}.png`));
         console.log('raw', l, dev, k, pg);
       }
     });

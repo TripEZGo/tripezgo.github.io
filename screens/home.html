@@ -145,6 +145,7 @@
 
   /* 總覽（HomeOverview）：字標頭（1.7.0 起右上沒有「編輯」鈕，整張卡點下去開唯讀總覽）；空狀態一句話置中 */
   .card.ov .in { padding-top: 19px; }
+  .ov-note { flex: 1; min-height: 0; overflow: hidden; } .ov-note img { display: block; width: 100%; border-radius: 8px; margin: 0 0 8px; } .ov-note p { font: 400 var(--t-base)/24px var(--font); letter-spacing: -.24px; margin: 0 0 8px; color: var(--ink); }
   .ov-empty { flex: 1; margin-top: 5px; display: grid; place-items: center; font: 400 var(--t-sm)/16px var(--font); color: var(--muted); text-align: center; padding: 0 8px; }
 
   /* QR Code 小（ScanSmallCard：圖示 58／筆畫 1.6、間距 8、字 base bold） */
@@ -362,7 +363,13 @@ const BODY = {
       ${nxt ? `<div class="la-foot"><div class="la-rule"></div><div class="la-next"><svg viewBox="0 0 24 24">${P.nextStop}</svg>
         <span class="nm">${fmt(S.next(nxt.title))}</span><span class="tm">${clock(nxt.s)}</span></div></div>` : ''}`;
   },
-  overview: () => `${head(S.overview)}<div class="ov-empty">${fmt(S.overviewEmpty)}</div>`,
+  // 總覽小卡（OverviewWidgetCardView）：照這一趟的總覽筆記畫開頭——第一段是圖就滿寬畫圖，接著內文（筆記頁那一套字），超出卡片的由卡片切掉。沒有筆記才是空狀態一句話
+  overview: () => {
+    const n = (trip.notes || []).find(x => x.key === trip.overviewNoteKey);
+    if (!n) return `${head(S.overview)}<div class="ov-empty">${fmt(S.overviewEmpty)}</div>`;
+    const body = n.paragraphs.map(p => typeof p === 'string' ? `<p>${fmt(p.replace(/\{@([^}]+)\}/g, (_, k) => k))}</p>` : `<img src="img/tpl/${p.image}.jpg" alt="">`).join('');
+    return `${head(S.overview)}<div class="ov-note">${body}</div>`;
+  },
   agenda: () => {
     const stamp = `${lang === 'ko' ? `${today.getMonth() + 1}. ${today.getDate()}.` : `${today.getMonth() + 1}/${today.getDate()}`} · ${S.day(todayNo)}`;
     if (!cur) return head(S.agenda, `<span class="tail mono">${stamp}</span>`);

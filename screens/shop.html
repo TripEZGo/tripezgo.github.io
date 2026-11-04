@@ -133,11 +133,11 @@ const s = {
 // quotes（價格比較）與 event（關聯行程，範本裡的行程 key）只在互動模式的卡片上看得到。
 const N = (zh, en, ja, ko) => ({ 'zh-Hant-TW': zh, en, ja, ko }[lang]);   // ko 的品名、店名是自寫的（範本裡沒有購物清單）
 // 範本第 4 版的購物清單（trip.shopping：品名、大類 category、商品類型 productType、參考價 priceJPY、封面照片 image）。
-// 狀態是示意（範本沒有）：第 1 項「目前行程」、第 3、4 項已購買、最後一項不買了。
+// 狀態是示意（範本沒有）：第 1 項「目前行程」、沒有照片的排在後面（最後三項已購買、最後一項不買了）。
 const TRIP4 = await (await fetch(`./data/sanyo.${lang}.json`)).json();
 const CAT = { drugstore: 'drug', clothing: 'cloth', souvenir: 'souv', food: 'food', luxury: 'lux', electronics: 'elec', goods: 'goods', other: 'other' };
 const ITEMS = [...TRIP4.shopping].sort((a, b) => !a.image - !b.image).map((x, i, all) => ({ img: x.image || null, pt: x.productType, name: x.title, cat: CAT[x.category] || 'other', price: x.priceJPY, r: 1,
-  status: i === all.length - 1 ? 'skipped' : (i === 2 || i === 3) ? 'bought' : 'pending', linked: i === 0 }));
+  status: i === all.length - 1 ? 'skipped' : i >= all.length - 3 ? 'bought' : 'pending', linked: i === 0 }));
 await Promise.all(ITEMS.map(it => new Promise(res => { if (!it.img) return res(); const im = new Image(); im.onload = () => { it.r = im.naturalHeight / im.naturalWidth; res(); }; im.onerror = res; im.src = `img/tpl/${it.img}.jpg`; })));
 
 const IC = {
