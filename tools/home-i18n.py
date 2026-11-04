@@ -560,12 +560,8 @@ T = {
   'UI／UX Rebranding': ('UI/UX rebranding', 'UI/UX のリブランディング', 'UI/UX 리브랜딩'),
   '記帳與分帳': ('Expense tracking and bill splitting', '支出の記録と割り勘', '가계부와 정산'),
   'Apple 天氣整合': ('Apple Weather integration', 'Apple 天気との連携', 'Apple 날씨 연동'),
-  '全新總覽，一天一頁': ('A new Overview, one page per day', '新しい概要、1日1ページ', '새로운 한눈에 보기, 하루 한 페이지'),
-  '行程帶封面照片，待辦與檔案跟著行程走': ('Each event shows a cover photo, with its to-dos and files right below', '予定ごとにカバー写真、やることとファイルはその予定の下に', '일정마다 커버 사진, 할 일과 파일은 그 일정 아래에'),
-  '待辦更好用': ('Better to-dos', 'やることがもっと使いやすく', '더 편해진 할 일'),
-  '提醒、顏色標記、拖曳排序，還能寫備註': ('Reminders, colour labels, drag to reorder, and notes', 'リマインダー、カラーラベル、ドラッグで並べ替え、メモも書ける', '알림, 색상 표시, 드래그로 순서 변경, 메모까지'),
-  '行程描述可以放照片': ('Photos in event descriptions', '予定の説明に写真を', '일정 설명에 사진 넣기'),
-  '圖文並排，第一張照片就是行程封面': ('Text and photos together; the first photo becomes the cover', '文章と写真を一緒に。最初の写真がカバーに', '글과 사진을 함께, 첫 사진이 커버가 돼요'),
+  '全新的總覽設計': ('A brand-new Overview design', '新しい概要のデザイン', '새롭게 디자인된 한눈에 보기'),
+  '一天一頁，行程卡、交通與待辦一次看完': ('One page per day, with event cards, travel and to-dos all in one place', '1日1ページで、予定カード・移動・ToDo をまとめて確認', '하루 한 페이지로 일정 카드, 이동, 할 일을 한곳에서'),
   '筆記與附件翻譯': ('Translate notes and attachments', 'メモと添付の翻訳', '메모와 첨부 번역'),
   '1.6.0 主頁 UI／UX 優化': ('1.6.0 Home tab UI/UX polish', '1.6.0 ホーム画面の UI/UX 改善', '1.6.0 홈 UI/UX 개선'),
   '全新主頁功能上線，旅程資訊一把掌握': ('An all-new Home page that puts your whole trip at a glance', '新しいホーム画面で、旅の情報をひと目で', '새로운 홈 화면으로 여행 정보를 한눈에'),
@@ -812,16 +808,11 @@ if stale:
 exec(open(os.path.join(ROOT, 'tools/home-i18n-hans.py'), encoding='utf-8').read())
 HEAD_CN = dict(title='TripEZGo — 旅行规划 App｜日历排行程、旅伴共编',
                desc='TripEZGo 是 iPhone、iPad 上的旅行规划 App：日历排行程、时间轴排交通，和旅伴一起共编，自由行的行程表、票券和待办都在一起。无需注册、离线可用，免费下载。')
-# 1.7.0 藍圖那一格只留一條（.scratch/v170-release/copy/roadmap.md 的 zh-Hans 字）
-CN_ROADMAP = '<li><span><b>全新的总览设计</b><small>一天一页，行程卡、交通与待办一次看完</small></span></li>'
 
 
 def build_cn():
     body = SRC[SRC.index('<body>'):SRC.index('</body>')]
     body = re.sub(r'<!--.*?-->\n?', '', body, flags=re.S)
-    old = re.search(r'(<ul class="rm-log is-plain">\s*)<li><span><b>全新總覽，一天一頁</b>.*?</ul>', body, re.S)
-    assert old, '母版的 1.7.0 藍圖變了'
-    body = body.replace(old.group(0), old.group(1) + '@@CNROADMAP@@\n                </ul>', 1)
     missing, held = set(), []
     for k, v in TH.items():
         if '<' in k and k in body:
@@ -842,7 +833,6 @@ def build_cn():
     body = re.sub(r'>([^<>]+)<', text, body)
     body = re.sub(r'(alt|aria-label|title)="([^"]+)"', lambda m: f'{m.group(1)}="{tr(m.group(2))}"', body)
     body = re.sub(r'\x00(\d+)\x00', lambda m: held[int(m.group(1))], body)
-    body = body.replace('@@CNROADMAP@@', CN_ROADMAP)
     body = body.replace('/assets/img/shots/v2/zh/', '/assets/img/shots/v2/zh-Hans/')
     # 隱私、條款、聯絡、公告還沒有簡體版：連結照舊指到繁中那一份
     zh_link = '<a class="lang" href="/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>'
