@@ -7,7 +7,7 @@ import { runInNewContext } from 'node:vm';
 import { pathToFileURL } from 'node:url';
 
 test('language negotiation respects priority, regional tags, exclusions and fallback', () => {
-  for (const [input, expected] of [['', 'en'], ['fr-FR', 'en'], ['ja-JP,en;q=0.8', 'ja'], ['en;q=0.3,ko-KR;q=0.9', 'ko'], ['zh-TW', 'zh-tw'], ['zh-Hant', 'zh-tw'], ['ja;q=0,en;q=0.5', 'en'], ['fr,ko;q=0.8', 'ko']]) assert.equal(preferredLanguage(input), expected);
+  for (const [input, expected] of [['', 'en'], ['fr-FR', 'en'], ['ja-JP,en;q=0.8', 'ja'], ['en;q=0.3,ko-KR;q=0.9', 'ko'], ['zh-TW', 'zh-tw'], ['zh-Hant', 'zh-tw'], ['zh-CN', 'zh-cn'], ['zh-Hans-CN', 'zh-cn'], ['zh-SG', 'zh-cn'], ['zh-Hans', 'zh-cn'], ['zh-HK', 'zh-tw'], ['zh', 'zh-tw'], ['ja;q=0,en;q=0.5', 'en'], ['fr,ko;q=0.8', 'ko']]) assert.equal(preferredLanguage(input), expected);
 });
 
 test('static entry reads browser languages and preserves path, query and fragment', () => {

@@ -9,6 +9,7 @@ export function preferredLanguage(header = '') {
     return { tag, q: q ? Number(q.trim().slice(2)) : 1, index };
   }).filter(x => x.q > 0 && x.q <= 1).sort((a, b) => b.q - a.q || a.index - b.index);
   for (const { tag } of choices) {
+    if (/^zh-(?:hans|cn|sg)(?:-|$)/.test(tag)) return 'zh-cn';   // 簡體：zh-Hans、zh-CN、zh-SG
     if (/^zh(?:-|$)/.test(tag)) return 'zh-tw';
     for (const lang of ['en', 'ja', 'ko']) if (tag === lang || tag.startsWith(lang + '-')) return lang;
   }

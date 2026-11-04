@@ -159,8 +159,9 @@ Measurement ID：`G-MMDNPN68XK`。`tools/stage-pages.mjs` 在頁面產生後，�
 | `TripEZGo/tripezgo-zh-tw` | `zh-tw` | `zh-tw.tripezgo.com` |
 | `TripEZGo/tripezgo-ja` | `ja` | `ja.tripezgo.com` |
 | `TripEZGo/tripezgo-ko` | `ko` | `ko.tripezgo.com` |
+| `TripEZGo/tripezgo-zh-cn` | `zh-cn` | `zh-cn.tripezgo.com` |
 
-四個 shell repo 已建立並啟用 GitHub Actions Pages、設定對應 custom domain 與 Actions variables。Shell workflow 不監聽 push，支援手動、排程與 repository_dispatch；執行前會確認主 repo 已有語系產生器。各 shell 的 Settings → Secrets and variables → Actions → Variables 設定：
+五個 shell repo 已建立並啟用（zh-cn 於 2026-11-04 隨 1.7.0 簡體版加入；瀏覽器偏好 zh-Hans／zh-CN／zh-SG 導到 zh-cn，其他 zh-* 導到 zh-tw） GitHub Actions Pages、設定對應 custom domain 與 Actions variables。Shell workflow 不監聽 push，支援手動、排程與 repository_dispatch；執行前會確認主 repo 已有語系產生器。各 shell 的 Settings → Secrets and variables → Actions → Variables 設定：
 
 - `SOURCE_REPOSITORY`：本主 repo 的 `owner/repo`。
 - `DEPLOY_LANG`：上表的語言。
