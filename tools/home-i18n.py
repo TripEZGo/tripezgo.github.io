@@ -137,7 +137,7 @@ T = {
       ("<li><b>Inspiration</b>: whatever you share in from Safari, maps or social apps lands here first; when you're ready to plan, turn it into an event, a note or a shopping item in one tap.</li>",
        '<li><b>インスピレーション</b>：Safari・地図・SNS から共有したものはまずここに保存。組みたくなったら、ワンタップで予定・メモ・買い物リストに変えられます。</li>',
        '<li><b>영감</b>: Safari·지도·SNS에서 공유한 것은 먼저 여기에 저장돼요. 계획할 때 한 번에 일정·메모·쇼핑 목록으로 바꿀 수 있습니다.</li>'),
-  'QR Code 掃描': ('QR code scanner', 'QR コードスキャン', 'QR 코드 스캔'),
+  'QR Code 掃描、匯率換算，還有更多旅程小工具': ('QR code scanner, currency converter and more travel widgets', 'QR コードスキャン、為替換算など、旅に役立つウィジェットがいろいろ', 'QR 코드 스캔, 환율 변환 등 다양한 여행 위젯'),
   # AI
   '讓 AI': ('Let AI', 'AI に', 'AI에게'),
   '幫你排行程': ('plan it for you', '予定を組んでもらう', '일정을 맡기세요'),
