@@ -9,8 +9,8 @@ import { chromium } from 'playwright';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '../..');
 const [n, outDir] = process.argv.slice(2);
-const SLOTS = { '06': ['overview', 'overview-170', 'day=1', 'overview'] };   // [商城檔名, screens 頁, query, make.mjs 的 SLOTS 名]
-if (!SLOTS[n] || !outDir) { console.log('usage: node tools/store/slot.mjs 06 <輸出目錄>'); process.exit(1); }
+const SLOTS = { '03': ['overview', 'overview-170', 'day=1', 'overview'] };   // [商城檔名, screens 頁, query, make.mjs 的 SLOTS 名]
+if (!SLOTS[n] || !outDir) { console.log('usage: node tools/store/slot.mjs 03 <輸出目錄>'); process.exit(1); }
 const [name, page, query] = SLOTS[n];
 const LOCALES = { zh: 'zh-Hant', en: 'en-US', ja: 'ja', ko: 'ko' };
 const TEMPLATE_LANG = { zh: 'zh-Hant', en: 'en', ja: 'ja', ko: 'ko' };

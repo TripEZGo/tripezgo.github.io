@@ -19,16 +19,16 @@ const root = path.resolve(here, '../..');
 const outDir = process.argv[2];
 if (!outDir) { console.log('usage: node tools/store/make.mjs <輸出目錄>'); process.exit(1); }
 
-// [輸出檔名, screens 頁, query, （選）第二張的頁與 query]：順序＝商店上的順序（1.6.0 起：主頁、行事曆、靈感、地圖、行程＋路程（兩台並排）、總覽、資料、共編、位置、即時動態；
-// 第 10 張掛 Premium，見 shots.html）。iPad／Duo 同序、同名，query 多帶 device=。第 5 張有第二張：raw 檔存成 05a／05b。
+// [輸出檔名, screens 頁, query, （選）第二張的頁與 query]：順序＝商店上的順序（1.7.0 起：主頁、行事曆、總覽、靈感、地圖、行程＋路程（兩台並排）、資料、共編、位置、即時動態；
+// 第 10 張掛 Premium，見 shots.html）。iPad／Duo 同序、同名，query 多帶 device=。第 6 張有第二張：raw 檔存成 06a／06b。
 // 主頁那一格的版面＝全站主頁同一份：即時動態（中）、待辦（小）、匯率（小）、總覽（中）；範本旅程、第 1 天＝2026-10-10。
 const SLOTS = [
   ['home', 'home', 'layout=live:m,todo:s,fx:s,overview:m'],
   ['calendar', 'calendar', 'day=2'],
+  ['overview', 'overview', ''],
   ['inspiration', 'inspiration', ''],
   ['map', 'map-live', ''],
   ['event-leg', 'event', 'event=d1-flight-tpe-okj', ['leg', '']],
-  ['overview', 'overview', ''],
   ['library', 'shop', ''],
   ['collaboration', 'members', ''],
   ['location-sharing', 'map-live', 'nav=0&today=2&focus=mates'],
