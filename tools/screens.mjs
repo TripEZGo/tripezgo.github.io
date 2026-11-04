@@ -25,7 +25,7 @@ export const SHOTS = [
   ['home', 'home', 'layout=live:m,todo:s,fx:s,overview:m'],
   ['home-scan', 'home', 'layout=scan:s,todo:s,live:m,fx:s,agenda:s'], ['home-fx', 'home', 'layout=fx:m,live:m,todo:s,scan:s'],
   ['calendar', 'calendar', 'day=2'],
-  ['timeline', 'timeline', 'day=2'], ['overview', 'overview', ''], ['overview-files', 'overview', 'tab=files'], ['overview-todos', 'overview', 'tab=todos'],
+  ['timeline', 'timeline', 'day=2'], ['overview', 'overview-170', 'day=1'], ['overview-files', 'overview', 'tab=files'], ['overview-todos', 'overview', 'tab=todos'],
   ['notes', 'notes', ''], ['note', 'note', ''], ['scan', 'scan', ''], ['fx', 'fx', ''], ['shop', 'shop', ''],
   ['scan-history', 'scan', 'hist=1'], ['fx-nokbd', 'fx', 'kbd=0'],
   ['event', 'event', ''], ['event-extra', 'event', 'extra=1'], ['event-airport', 'event', 'event=d1-airport&extra=1'], ['leg', 'leg', ''],

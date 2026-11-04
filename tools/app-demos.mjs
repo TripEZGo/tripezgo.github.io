@@ -61,7 +61,7 @@ export const DEMOS = {
     pages: ['share-gmi', 'inspiration', 'event'] },
   map: { ...ONB, flows: [{ page: 'map-demo', q: 'nowalk=1', auto: 'map-pin-walk' }], pages: ['map-demo'] },
   mates: { ...ONB, flows: [{ page: 'map-demo', q: 'focus=mates', auto: 'mates-map' }], pages: ['map-demo'] },
-  overview: { ...ONB, flows: [{ page: 'overview', auto: 'overview' }], pages: ['overview'] },
+  overview: { ...ONB, flows: [{ page: 'overview-170', auto: 'overview170' }], pages: ['overview-170'] },   // 1.7.0 新總覽（引導頁票 32）：頁面自己帶故事，auto 只要有值就播
   glance: { ...ONB, flows: [{ page: 'lock', still: true, ms: 3500 }, { page: 'widget', still: true, ms: 4500, slide: true }], pages: ['lock', 'widget'] },
   library: { ...ONB, flows: [{ page: 'notes', auto: 'lib-scan-fx' }], pages: ['notes', 'shop'] },
   privacy: { mode: 'once', flat: true, flows: [{ page: 'privacy-flow' }], pages: ['privacy-flow'] },

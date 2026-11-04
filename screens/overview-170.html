@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=60346b1ce2","/screens/chrome.js":"/screens/chrome.js?v=6babc6c584","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=17414c4484","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<meta name="viewport" content="width=402">
+<title>Overview (1.7.0 onboarding demo)</title>
+<!--
+  引導頁「總覽」示範（1.7.0 票 32 設計稿）。402×874 原尺寸畫面，播一次、停在最後一幀；沒有鏡頭推拉。
+  版面與元件：z-overview-170.html 第 1 節（日程 chips、總覽頁、日頁行程卡、交通膠囊）的 CSS 原樣搬過來，
+  分頁列、頁首、手勢游標照 screens/screen.css 與 screens/overview.html（舊總覽示範）。
+  參數：?day=N（靜止畫面停在第 N 天，0＝總覽頁）&lang=zh-Hant-TW|en|ja &theme=light|dark &embed=1 &interactive=1 &auto=overview170（播故事）&still=1（靜止的第一幀）
+  文字：畫面上的字寫的是繁中，script 一開始依 ?lang= 換成表裡的英文／日文（/*I18N*/ 那一段，每列 [繁中, English, 日本語, 한국어]）。
+  與外殼 cam.html 的約定同舊示範：tz-auto-hello／tz-auto-progress／tz-auto-loop 往外送；tz-auto-ctl pause|play 往內收。
+-->
+<style>
+  :root {
+    --bg: #ffffff; --surface: #fbf8f4; --fg: #241d17; --muted: #7c6f63;
+    --border: #dbd5cd;
+    --border-soft: color-mix(in srgb, var(--border) 55%, var(--bg));
+    --page: #ffffff;
+    --card: #ffffff;
+    --sunken: color-mix(in srgb, var(--border) 28%, var(--surface));
+    --muted-ink: color-mix(in srgb, var(--muted) 90%, var(--fg));
+    --meta-on-tint: color-mix(in srgb, var(--muted) 75%, var(--fg));
+    --accent: #2f918e; --accent-on: #ffffff; --accent-ink: #1d7370;
+    --ink-deep: #1f1914; --brand-teal: #5cc6c3; --sky: var(--brand-teal);
+    --success: #40965d; --warn: #e9a535; --danger: #d25242;
+    --success-ink: #367f4f; --warn-ink: #8a6212; --danger-ink: #c14b3c;
+    --font-display: Inter, system-ui, -apple-system, "PingFang TC", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-body:    Inter, system-ui, -apple-system, "PingFang TC", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-mono:    "Monaco", "Menlo", "Courier New", Courier, monospace;
+    --text-xs: 12px; --text-sm: 13px; --text-base: 15px; --text-lg: 16px; --text-xl: 22px; --text-2xl: 28px;
+    --fs-h1: var(--text-2xl); --fs-h2: var(--text-xl);
+    --radius-sm: 8px; --radius-md: 8px; --radius-lg: 12px; --radius-pill: 9999px; --radius-chip: 12px;
+    --shadow-rgb: 36, 29, 23;
+    --detent-large: calc(100% - 72px);
+    --sheet-radius: var(--radius-lg);
+    --sheet-scrim: rgba(var(--shadow-rgb), 0.5);
+    --sheet-shadow: 0 -8px 28px rgba(var(--shadow-rgb), 0.16);
+    --grabber-w: 36px; --grabber-h: 5px; --grabber-inset: 5px;
+    --shell-1: color-mix(in srgb, var(--ink-deep) 82%, #ffffff);
+    --shell-2: color-mix(in srgb, var(--ink-deep) 92%, #ffffff);
+    --shell-3: var(--ink-deep);
+    --shell-void: var(--ink-deep);
+    --ev-wash: 16%;
+    --ev-eat:        oklch(0.452 0.086 30);
+    --ev-eat-light:  oklch(0.510 0.076 30);
+    --ev-shop:       oklch(0.566 0.079 74);
+    --ev-see:        oklch(0.498 0.058 150);
+    --ev-see-nature: oklch(0.556 0.051 150);
+    --ev-stay:       oklch(0.428 0.074 264);
+    --ev-move:       oklch(0.524 0.062 322);
+    --ev-move-local: oklch(0.582 0.055 322);
+    --ev-misc:       oklch(0.545 0.022 65);
+    --gut: 44px;          /* TripCalendarMetrics.hourLabelWidth */
+    --canvas-x: 56px;     /* TripCalendarMetrics.canvasLeading */
+    --row-trail: 20px;    /* TripCalendarMetrics.rowTrailingInset（Spacing.x5） */
+    --hour: 66px;         /* TripCalendarMetrics.hourHeight */
+
+    /* 這份文件自己的底色（不是 App 的 token） */
+    --doc-bg: #efe9e1;
+  }
+  html[data-theme="dark"] {
+    --page: #17120f; --bg: #17120f; --surface: #221c17; --card: #221c17;
+    --fg: #f3ede5; --muted: #a2958a; --border: #382f27;
+    --border-soft: color-mix(in srgb, var(--border) 55%, var(--bg));
+    --sunken: color-mix(in srgb, var(--border) 28%, var(--surface));
+    --muted-ink: color-mix(in srgb, var(--muted) 90%, var(--fg));
+    --meta-on-tint: color-mix(in srgb, var(--muted) 75%, var(--fg));
+    --accent: #5cc6c3; --accent-on: #12211f; --accent-ink: #7ad7d4;
+    --success: #5cb87a; --warn: #eeb455; --danger: #ef7565;
+    --success-ink: #7ecb96; --warn-ink: #f3c67c; --danger-ink: #f4907f;
+    --shadow-rgb: 0, 0, 0;
+    --ev-wash: 22%;
+    --sheet-scrim: rgba(var(--shadow-rgb), 0.62);
+    --sheet-shadow: 0 -8px 28px rgba(var(--shadow-rgb), 0.5);
+    color: var(--fg);
+  }
+* { box-sizing: border-box; }
+/* ── 這一頁自己的版面（402×874，原尺寸） ── */
+:root { --font: -apple-system, "SF Pro Text", "PingFang TC", "Hiragino Sans", sans-serif; --font-mono: var(--font); --font-display: var(--font); --font-body: var(--font); --glass: rgba(255,255,255,.94); --glass-on: rgba(0,0,0,.08); --glass-edge: rgba(0,0,0,.04); --tab-ink: #1a1a1a; }
+html[data-theme="dark"] { --glass: rgba(34,28,23,.94); --glass-on: rgba(255,255,255,.1); --glass-edge: rgba(255,255,255,.06); --tab-ink: #f3ede5; color-scheme: dark; }
+  .ov-tab[aria-selected="true"] { background: var(--bg); color: var(--fg); font-weight: 700; box-shadow: 0 1px 3px rgba(var(--shadow-rgb), 0.08); }
+
+  /* 主檔原樣（經 overview-v2）：清單、組標題、件數、chevron */
+  .ov-list { display: flex; flex-direction: column; }
+  .ov-day { display: flex; align-items: center; gap: 8px; background: var(--bg); padding: 10px 0 4px; font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; }
+  button.ov-day { width: 100%; min-height: 44px; border: 0; font: inherit; font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.06em; color: var(--muted); text-align: left; }
+  .ov-daylabel { display: flex; flex-direction: column; gap: 1px; min-width: 0; line-height: 1.2; }
+  .ov-day .dc-s { font-weight: 600; }
+  button.ov-day.is-past { color: var(--muted-ink); }
+  .ov-chev { margin-left: auto; width: 14px; height: 14px; flex: none; stroke: currentColor; fill: none; stroke-width: 2.4; transform: rotate(90deg); }
+  button.ov-day[aria-expanded="false"] .ov-chev { transform: rotate(0deg); }
+  .ov-tag { flex: none; padding: 1px 8px; border: 1px solid var(--border); border-radius: var(--radius-pill); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--muted); }
+  .ov-count { border-style: dashed; }
+  .ov-oob .ov-count { border-style: solid; border-color: var(--warn); color: var(--warn-ink); }
+  .ov-day.is-key { font-size: var(--text-sm); letter-spacing: 0; text-transform: none; color: var(--fg); }
+  .ov-daynext { margin-left: 2px; font-size: 9px; font-weight: 700; vertical-align: 3px; color: var(--muted-ink); }
+  .ov-zone { margin-left: auto; flex: 0 1 auto; min-width: 0; font-size: var(--text-xs); font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* 主檔原樣（經 overview-v2）：行程列 */
+  .ov-row { display: flex; align-items: baseline; gap: 10px; width: 100%; min-height: 44px; padding: 9px 4px; background: none; border: 0; border-bottom: 1px solid var(--border-soft); font: inherit; color: var(--fg); text-align: left; }
+  .ov-time { flex: none; min-width: 100px; white-space: nowrap; font-family: var(--font-mono); font-size: var(--text-xs); font-variant-numeric: tabular-nums; color: var(--muted); }
+  .ov-name { flex: 1 1 auto; font-size: var(--text-sm); font-weight: 600; min-width: 0; }
+  .ov-dot { display: inline-block; width: 8px; height: 8px; margin-right: 6px; vertical-align: 1px; border-radius: 50%; background: var(--ev); }
+  .ov-type { flex: none; align-self: center; display: grid; place-items: center; font-size: var(--text-xs); color: var(--muted); }
+  .ty-ico { width: 15px; height: 15px; fill: currentColor; stroke: none; display: block; }
+  .ov-route { display: flex; align-items: center; gap: 6px; width: 100%; min-height: 44px; padding: 6px 4px 6px 96px; background: none; border: 0; border-bottom: 1px solid var(--border-soft); font: inherit; font-size: var(--text-xs); color: var(--muted); text-align: left; }
+  .ov-route svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.7; flex: none; }
+  .ov-upload { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; min-height: 52px; margin-top: 10px; padding: 12px; background: none; border: 1px dashed var(--border); border-radius: var(--radius-md); font: inherit; font-size: var(--text-sm); font-weight: 600; color: var(--muted); }
+  .ov-upload svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.8; flex: none; }
+  [data-color="eat"]        { --ev: var(--ev-eat); }
+  [data-color="eat-light"]  { --ev: var(--ev-eat-light); }
+  [data-color="see"]        { --ev: var(--ev-see); }
+  [data-color="see-nature"] { --ev: var(--ev-see-nature); }
+  [data-color="move"]       { --ev: var(--ev-move); }
+  [data-color="move-local"] { --ev: var(--ev-move-local); }
+  [data-color="stay"]       { --ev: var(--ev-stay); }
+  [data-color="shop"]       { --ev: var(--ev-shop); }
+  [data-color="misc"]       { --ev: var(--ev-misc); }
+
+  /* overview-v2 原樣：總覽區塊 */
+  .ov-brief { padding-bottom: 10px; margin-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .ov-brief-edit { position: relative; margin-left: auto; flex: none; display: inline-flex; align-items: center; padding: 0; background: none; border: 0; font: inherit; font-size: var(--text-xs); font-weight: 600; letter-spacing: 0; color: var(--muted-ink); }
+  .ov-brief-body { --ov-brief-cap: 205px; position: relative; max-height: var(--ov-brief-cap); overflow: hidden; padding: 4px 4px 0; }
+  .ov-brief-body .np-body > :last-child { margin-bottom: 12px; }
+  .ov-brief-body.is-clipped::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 24px; background: linear-gradient(transparent, var(--bg)); pointer-events: none; }
+  .ov-brief-more { display: inline-flex; align-items: center; gap: 3px; min-height: 44px; padding: 0 4px; background: none; border: 0; font: inherit; font-size: var(--text-xs); font-weight: 600; color: var(--muted-ink); }
+  .ov-brief-more svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* 主檔原樣：筆記內文 */
+  .np-title { font-size: var(--fs-h2); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 4px; }
+  .np-meta { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--muted); margin: 0 0 16px; }
+  .np-body { font-size: var(--text-base); line-height: 1.65; color: var(--fg); }
+  .np-body p { margin: 0 0 12px; }
+  .np-body ul { margin: 0 0 12px; padding-left: 22px; }
+  .np-body li { margin-bottom: 4px; }
+  .np-fig { width: 100%; margin: 16px 0; }
+  .np-photo { aspect-ratio: 4 / 3; border-radius: var(--radius-md); border: 1px solid var(--border); position: relative; overflow: hidden;
+    background:
+      radial-gradient(circle at 74% 26%, color-mix(in oklch, var(--warn) 82%, var(--bg)) 0 11%, transparent 12%),
+      linear-gradient(180deg, color-mix(in oklch, var(--sky) 26%, var(--bg)) 0 58%, color-mix(in oklch, var(--sky) 62%, var(--fg)) 58% 100%); }
+  .np-photo::after { content: ''; position: absolute; left: -6%; right: -6%; bottom: 26%; height: 34%;
+    background: color-mix(in oklch, var(--fg) 42%, var(--bg));
+    clip-path: polygon(0 100%, 22% 34%, 38% 62%, 58% 12%, 78% 58%, 100% 30%, 100% 100%); }
+
+  /* 主檔原樣：分頁列 */
+  .tabbar { flex: 0 0 auto; position: relative; z-index: 27; display: grid; grid-template-columns: repeat(5, 1fr); padding: 8px 8px 22px; border-top: 1px solid var(--border); background: color-mix(in oklch, var(--page) 92%, transparent); }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 0; color: var(--muted); font-size: var(--text-xs); letter-spacing: 0.02em; }
+  .tab.active { color: var(--accent-ink); }
+  .tab svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.7; }
+  .tab.active svg { stroke-width: 2; }
+
+  /* 主檔原樣：sheet／grabber／sheet-nav（拿掉進出場動畫，直接畫在 large detent）。
+     App 現況：沒有 ✕；右上是 nav bar 的「編輯」（檢視成員不出現）。這一顆的樣子不在這次範圍，照 App 畫。 */
+  .scrim { position: absolute; inset: 0; background: var(--sheet-scrim); z-index: 30; }
+  .sheet { position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; background: var(--bg); border-radius: var(--sheet-radius) var(--sheet-radius) 0 0; box-shadow: var(--sheet-shadow); padding: 8px 0 0; height: var(--detent-large); overflow: hidden; z-index: 31; }
+  .grabber { width: var(--grabber-w); height: var(--grabber-h); margin: var(--grabber-inset) auto 12px; border-radius: var(--radius-pill); background: var(--border); flex: none; }
+  .sheet-nav { flex: none; display: flex; align-items: center; justify-content: flex-end; gap: 10px; padding: 0 20px 4px; min-height: 32px; }
+  .sheet-nav .nav-edit { font-size: var(--text-lg); color: var(--accent-ink); }
+  .np-scroll { flex: 1 1 auto; overflow: hidden; padding: 12px 20px 32px; }
+
+  /* ── 行事曆（第 5 節用）：主檔樣式、App 的 1 : 1 數字 ─────────────────────── */
+  /* 主檔原樣：日期晶片列（.chips-row／.day-chip） */
+  .chips-row { flex: none; display: flex; gap: 8px; padding: 10px 20px 4px; overflow: hidden; }
+  .day-chip { flex: none; font-size: var(--text-sm); min-height: 44px; padding: 5px 13px; display: inline-flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 1px; line-height: 1.22; background: var(--sunken); color: var(--fg); border: 1px solid var(--border); border-radius: var(--radius-chip); white-space: nowrap; }
+  .day-chip .dc-t { font-weight: 600; }
+  .day-chip .dc-s { font-size: var(--text-xs); font-weight: 400; color: var(--muted-ink); }
+  .day-chip.selected { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .day-chip.selected .dc-t { font-weight: 700; }
+  .day-chip.selected .dc-s { color: color-mix(in oklch, var(--bg) 72%, var(--fg)); }
+
+  /* 主檔原樣：全日那一段（.allday／.ad-label／.ad-item），左緣對齊內容欄 56、右緣 20（App 現況） */
+  .allday { flex: none; display: flex; align-items: flex-start; gap: 12px; padding: 8px var(--row-trail) 6px 0; background: var(--bg); border-bottom: 1px solid var(--border-soft); }
+  .ad-label { flex: none; width: var(--gut); padding-top: 13px; text-align: right; font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.02em; color: var(--muted); }
+  .ad-list { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+  .ad-item { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 44px; padding: 6px 10px; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--muted); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: var(--text-sm); font-weight: 600; color: var(--fg); }
+  .ad-item[data-color] { background: color-mix(in oklch, var(--ev) var(--ev-wash), var(--surface)); border-color: color-mix(in oklch, var(--ev) 30%, var(--border)); border-left-color: var(--ev); }
+  .ad-item .ad-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ad-item .ad-span { margin-left: auto; flex: none; font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 400; letter-spacing: 0.02em; color: var(--meta-on-tint); }
+
+  /* App 現況：時區說明格（ZoneNoteView，設計 j-zone-note-spacing 的 .tznote 換成 1 : 1） */
+  .tznote { margin: 8px 12px 8px; padding: 8px 12px; border-radius: var(--radius-sm); background: var(--surface); border: 1px solid var(--border-soft); font-size: var(--text-xs); line-height: 1.45; color: var(--muted-ink); display: flex; align-items: center; gap: 8px; }
+  .tznote b { color: var(--fg); font-weight: 600; }
+  .tznote .tx { flex: 1; min-width: 0; }
+  .tznote svg { flex: none; width: 13px; height: 13px; stroke: var(--muted); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* 主檔原樣：書擋列（.bookend／.bk-tag），左緣內容欄 56、右緣 20 */
+  .bookend { display: flex; align-items: center; gap: 9px; min-height: 44px; padding: 7px var(--row-trail) 7px var(--canvas-x); font-size: var(--text-sm); color: var(--fg); }
+  .bookend .bk-tag { flex: none; display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px; border: 1px solid color-mix(in oklch, var(--ev) 40%, var(--border)); border-radius: var(--radius-pill); background: color-mix(in oklch, var(--ev) var(--ev-wash), var(--surface)); font-size: var(--text-xs); font-weight: 600; color: var(--ev); }
+  .bookend .bk-tag svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .bookend .bk-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bookend .bk-day { flex: none; font-size: var(--text-xs); color: var(--muted); }
+
+  /* 主檔原樣：時間軸（一小時 66、刻度字騎在線上 −8、刻度底下那一行手機時刻 9px） */
+  .axis { position: relative; margin-top: 10px; }         /* TripCalendarMetrics.topInset */
+  .hr { position: relative; height: var(--hour); }
+  .hr .lb { position: absolute; left: 0; top: 0; width: var(--gut); text-align: right; transform: translateY(-8px); font-family: var(--font-mono); font-size: var(--text-xs); font-variant-numeric: tabular-nums; letter-spacing: 0.02em; line-height: 1.25; color: var(--muted); }
+  .hr .lb em { display: block; font-style: normal; font-size: 9px; color: color-mix(in srgb, var(--muted) 62%, var(--bg)); }
+  .hr .lb em sup { font-size: 7px; vertical-align: 3px; line-height: 0; }
+  .hr .ln { position: absolute; left: calc(var(--gut) + 8px); right: 0; top: 0; border-top: 1px solid var(--border-soft); }
+  .cal-event { position: absolute; left: var(--canvas-x); right: 8px; background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--border); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 5px 10px; overflow: hidden; }
+  .cal-event[data-color] { background: color-mix(in oklch, var(--ev) var(--ev-wash), var(--surface)); border-color: color-mix(in oklch, var(--ev) 30%, var(--border)); border-left-color: var(--ev); }
+  .cal-event .title { font-size: var(--text-sm); font-weight: 600; line-height: 1.3; }
+  .cal-event .etime { font-size: var(--text-xs); letter-spacing: 0.01em; color: var(--meta-on-tint); margin-top: 2px; white-space: nowrap; }
+
+  /* App 現況：待排區（PendingBandView，設計 B4 的 .band 換成 1 : 1）——只畫在「現況」那一張 */
+  .band { flex: none; padding: 8px var(--row-trail) 8px var(--canvas-x); background: var(--bg); }
+  .band .h { font-size: var(--text-xs); color: var(--muted); margin-bottom: 4px; }
+  .band .p { display: inline-flex; margin: 0 4px 4px 0; }
+
+  /* 手指（示意，實機沒有） */
+  .finger { position: absolute; width: 44px; height: 44px; border-radius: 50%; background: rgba(var(--shadow-rgb), 0.14); border: 1.5px solid rgba(var(--shadow-rgb), 0.38); transform: translate(-50%, -50%); z-index: 9; pointer-events: none; }
+  html[data-theme="dark"] .finger { background: rgba(243,237,229,0.18); border-color: rgba(243,237,229,0.5); }
+
+
+  /* ═══════════════════════ 以下是這一輪的新元件 ═══════════════════════ */
+
+  /* ── 待排行程子 section（button.ov-day.ov-pendsub）── 第 1 項 ─────────────────────
+     是什麼：「日程行程」標頭底下、跟「日程之外的行程」同一階的可收合組，裝**未指定日**的待排
+             （TripOverviewState.unscheduled）。指定了哪一天的待排（「待排 · 1 小時」那幾列）照舊在
+             它那一天的組裡，不搬過來。原本段頂那一整塊「待排行程」（is-key 標題＋列＋虛線新增框）拿掉。
+     為什麼這樣畫：
+       * 結構直接用「日程之外的行程」那一顆（button.ov-day ＋ .ov-chev ＋ 琥珀件數圈）——使用者原話
+         「標頭用跟『日程之外的行程』一樣的警示色件數 label」。同一階、同一個長相，讀起來就是「日程」
+         底下被挑出來的兩小組，不是第三個大段。
+       * 琥珀件數收起來也在：預設收合之後，它是唯一說「還有 N 則沒排」的線索（同 overview-v2 Q1 的理由）。
+       * **0 項時件數圈退回灰虛線**（.is-zero，未決 U2）：琥珀是警示，沒有東西可警示時還亮著，等於這一顆
+         永遠在喊，日程之外那一顆的琥珀也跟著失去意思。0 項時整組仍然在（編輯者），因為新增入口在它裡面。
+       * 順序：日程行程標頭 → 待排行程 → 日程之外的行程 → 第 1 天…（未決 U1）。待排這一組對編輯者恆在，
+         放第一個，它的位置不會因為日程之外出現／消失而跳；日程之外仍只差一列就貼著時區那一句。
+       * 預設收合、本次啟動記住展開狀態，跟日程之外同一套（ovToggled），不寫進資料。
+
+     ── 「＋ 新增行程」那個入口放哪（第 1 項的設計判斷，未決 U3）──
+     放在**子 section 展開後的最後一列**，元件照舊是 .ov-upload 那個虛線框（App 的 addUnscheduledEvent）。
+     理由：
+       a. 它是「不指定日期就新增一則」**唯一**的路（2026-08-17 裁定），應該跟它新增出來的東西住在一起：
+          按下去建出來的那一則，下一秒就出現在框的正上方，因果在同一個視野裡。
+       b. 讀完既有的才看到「再加一個」，跟原本的待排塊、附件的「上傳檔案」同一個順序，不另教一套。
+       c. 沒選放在標頭右端（一顆「＋」）：標頭整條是收合的命中區，右端還有 chevron；再塞一顆小鈕，
+          兩個動作擠在同一條 44pt 上，誤觸就是「想展開卻新增了一則」。
+       d. 代價：預設收合時要多點一下才看得到。但「新增一則有日期的行程」走的是行事曆右下的「＋」與
+          每一天裡的入口，這一顆本來就是少數情況；而 0 項時標頭寫「0 項」＋ chevron，點開就只有它。
+     唯讀與範本：照舊不出現（D16）；檢視成員遇到 0 項，整個子 section 不出現（未決 U4）。 */
+  .ov-pendsub .ov-count { border-style: solid; border-color: var(--warn); color: var(--warn-ink); }
+  .ov-pendsub.is-zero .ov-count { border-style: dashed; border-color: var(--border); color: var(--muted); }
+  /* 展開後最後那一顆新增框：跟上一列之間照 .ov-upload 原本的 10px，底下多 6px 再接下一組標頭，
+     免得虛線框的下緣貼著「第 1 天」那一條的命中區。 */
+  .ov-pendsub-add { margin-bottom: 6px; }
+
+  /* ── 「全日 · 開始」合併列 ── 第 2 項 ──────────────────────────────────────────
+     是什麼：被釘成「這一天的開始」（R12d 書擋）的那一則全日行程，在總覽那一天裡原本畫兩列——
+             上面一列「全日」（OverviewViewModel 的 rows(allDay)），下面一列「開始」（bookendRow）。
+             合併成一列，時間欄寫「全日 · 開始」。
+     App 裡誰會被拆成兩列：**只有全日行程、而且只在它被釘成開始（或結束）的那幾天**。定時行程沒有書擋，
+             跨日的定時行程（夜車）在隔天是同一列換跨日上標，不會拆。
+     為什麼這樣畫：
+       * 沒有新 CSS：.ov-time 是 min-width 100px 的等寬小字，「全日 · 開始」12px 約 64px，放得下，
+         名字欄的左緣不動。中間的「 · 」跟待排那一句「待排 · 1 小時」同一個連接法。
+       * **位置放在「開始」原本的位置**（所有全日列之後、第一則定時行程之前），不是「全日」那一列的位置：
+         這一天的路線從它出發，緊接著就是第一段路程與第一則行程——讀起來是「從民宿出發 → 坐公車 → 伏見稻荷」。
+         其他沒被釘的全日行程（周遊卡）照舊排在最上面。
+       * 2026-08-17 拆開的理由是「一格擠兩句話」。使用者這次推翻它；擠的代價只剩時間欄寬一點，
+         換到的是同一則行程不再在同一天出現兩次。
+       * 「結束」那一列（帶著走回來的那段路程）這次不動；只被釘成結束的那幾天要不要也合併 → 未決 U6。 */
+
+  /* ── 「閱讀更多」靠右（.ov-brief-foot）── 第 3 項 ─────────────────────────────
+     是什麼：總覽區塊被截斷時底下那一行「閱讀更多 ›」，從靠左移到右下。
+     為什麼這樣畫：
+       * 用一個 flex 列把它推到右緣（justify-content: flex-end），按鈕本身完全不改（字級、灰、›、44pt 命中區）。
+       * 右緣對齊：按鈕自己有 0 4px 的內距，所以字的右緣落在內容欄往內 4px——跟每一列行程最右邊那顆
+         類型圖示（.ov-row 的 padding 4px）同一條線，跟標題列右上「編輯」也在同一側。
+       * 「編輯」在右上、「閱讀更多」在右下：兩個動作都在右手拇指那一側，左邊整條留給內文。
+         overview-v2 當時放左邊的理由是「讀到淡掉的地方，下一行就是它」；淡出是整條寬的，
+         視線落到右下一樣自然，而右下是 iOS 上「繼續／更多」常見的位置。 */
+  .ov-brief-foot { display: flex; justify-content: flex-end; }
+
+  /* ── 總覽筆記標題（.ov-brief-title）── 第 5 項 ────────────────────────────────
+     是什麼：總覽那一篇筆記的標題。**預設＝旅程名稱**（第一次按「編輯」建立時寫入；原本是「總覽」）。
+             在總覽區塊的預覽裡畫在內文上面（原本預覽只畫內文、不畫標題），完整筆記紙照筆記頁原樣。
+     為什麼這樣畫：
+       * **預覽用筆記的「內文標題」樣式**（.np-body h2：16px / 700 / −0.01em，NoteEditorMetrics.heading*），
+         不是筆記標題的 22px / 800：這一塊正上方就是旅程分頁的 28px 大標題（多半就是同一個名字），
+         再壓一行 22px 粗黑字會讓「總覽」這一組看起來比整頁標題還重。16 / 700 比內文 15 / 400 大一階、
+         重兩階，一眼分得出標題與內文，而且是筆記編輯器裡**已經有的**樣式，不另造（未決 U7）。
+       * 完整筆記紙（按「閱讀更多」）照筆記頁原樣：標題 .np-title（22px / 800），所見即所得——
+         按「編輯」進去看到的就是同一個大小。
+       * 標題**不算在 1/4 上限裡**、不會被淡出：上限只管內文（overview-v2 原話），標題永遠完整顯示。
+         一行放不下就換行，不截字。
+       * 紙上標題底下那一行原本是「〈旅程名〉 · 旅程成員都看得到」；標題變成旅程名之後兩行開頭同一句，
+         改成「總覽 · 旅程成員都看得到」（單人旅程只寫「總覽」）——告訴人這一篇是什麼，而不是再說一次
+         旅程名（未決 U8）。 */
+  .ov-brief-title {
+    margin: 4px 4px 6px;   /* 底下 6 ＋ 內文框上緣 4 ＝ 10：內文第一段常是粗體（15 / 700），只靠字級差一階分不開，要靠這段空隙 */
+    font-size: var(--text-lg); font-weight: 700; letter-spacing: -0.01em; line-height: 1.3;
+    color: var(--fg);
+    overflow-wrap: anywhere;
+  }
+
+  /* ── 行事曆的待排區（.pz）── 第 7 項 ───────────────────────────────────────
+     是什麼：時間軸**捲動內容裡、00:00 之上**的一段（DayView.topStack），裝兩組待排：
+               「這一天」——指定了這一天、還沒排時段的（原本 PendingBandView 那一條，原本固定在全日之上）；
+               「未指定日」——整趟旅程還沒決定哪一天的（總覽「待排行程」那一組，每一天的這一段都看得到）。
+             長按一張拖進下面的時段，放開就排好；未指定日的那一張放開時同時排進這一天。
+     疊的順序（由上往下）：時區說明格 → 待排區 → 「開始」書擋 → 00:00。
+       * 時區說明講的是整條時間欄，最外面（2026-10-04 裁定的位置不動）。
+       * 「開始」是這一天的第一則**已排好**的行程，要貼著 00:00（R12d 的理由不動）。
+       * 待排還沒上軸，夾在兩者中間：它是「還沒放上去的東西」，放在軸的入口前面。
+     為什麼這樣畫：
+       * **左邊時間欄寫「待排」**，跟全日那一段時間欄寫「全日」同一個做法（.ad-label：等寬 12px、--muted、
+         靠右）。這一段因此跟它底下的 00:00、01:00 讀成同一把尺上的一格：「不是幾點的事，是待排的事」。
+       * 卡片都住在內容欄（左緣 56、右緣 20），跟全日那一段、書擋同一組線。
+       * 兩組各有一行小標（.pz-sub：12px、--muted），寫「這一天」「未指定日」＋件數。第一行尾端留著原本
+         那句「拖到下面排時間」——拖曳是這一段唯一的手勢，不能只靠 VoiceOver 提示。
+       * 卡片本身照原本的 .band .p（虛線框、「名稱 · 預計長度」）：虛線＝還沒有時刻，兩組都是。
+         兩組的差別用**底色**再說一次（.is-loose，見下一段），不只靠小標。
+     收合與高度上限（第 7 項要求定下來）：
+       * **整段不收合**。它在捲動內容裡、會捲走，不像以前那一條固定在頂端佔著畫面——捲下去它就不在了，
+         收合鈕要解決的問題（佔空間）不存在；多一顆 chevron 反而讓「拖」之前多一步。
+       * **「這一天」那一組不設上限、換行排**：是使用者自己指定給這一天的，通常 0–3 張，全部攤開才拖得到。
+       * **「未指定日」那一組固定一列、橫向滑動**（.pz-rail）：它是整趟的清單，可能十幾則，而且每一天都
+         再出現一次——換行排的話十幾張會把 00:00 推下去好幾列，天天如此。一列的高度＝一張卡，
+         右緣淡出說「右邊還有」（同 overview-v2 截斷淡出、R 線 .ac-fade 的語彙）（未決 U12）。
+       * 兩組都空時整段不出現（同原本「沒有待排的日子整條不出現」）；只有一組時只畫那一組。 */
+  .pz {
+    display: grid; grid-template-columns: var(--gut) minmax(0, 1fr); column-gap: 12px;
+    padding: 4px 0 8px;
+  }
+  .pz-label {
+    text-align: right; padding-top: 1px;
+    font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.02em; color: var(--muted);
+  }
+  .pz-body { min-width: 0; padding-right: var(--row-trail); }
+  .pz-sub { display: flex; align-items: baseline; gap: 6px; margin: 0 0 4px; font-size: var(--text-xs); color: var(--muted); line-height: 1.35; }
+  .pz-sub b { font-weight: 600; color: var(--muted-ink); }
+  .pz-sub .hint { margin-left: auto; white-space: nowrap; }
+  .pz-flow { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .pz-flow:last-child { margin-bottom: 0; }
+
+  /* 卡（App 現況 PendingCardView ＝ .band .p 的 1 : 1）：--card 底、1px 虛線、圓角 8、內距 4 8、13px。
+     畫出來一行字高，命中區撐到 44pt（pendingCardHitHeight），這裡不畫命中區。 */
+  .pz-card {
+    flex: none; display: inline-flex; align-items: center; white-space: nowrap;
+    padding: 4px 8px; border: 1px dashed var(--border); border-radius: var(--radius-sm);
+    background: var(--card); font-size: var(--text-sm); line-height: 1.3; color: var(--fg);
+  }
+  .pz-card .d { color: var(--muted); }
+
+  /* 未指定日的卡（.is-loose）：--sunken 底、--muted-ink 字，虛線框不變（未決 U13）。
+     為什麼是底色：兩組都還沒有時刻，所以虛線兩邊都要留；差別是「這一天有沒有說好」。
+     --sunken 在這個系統裡是「還沒被選中／退一階」的底（日期晶片的未選、分段控制的軌道），
+     放在白底卡旁邊讀得出「這幾張不是這一天的」，又不需要新顏色。不用琥珀：琥珀在總覽是
+     「要你處理」的警示，行事曆每一天都掛一排琥珀會吵。 */
+  .pz-card.is-loose { background: var(--sunken); color: var(--muted-ink); }
+  .pz-card.is-loose .d { color: var(--muted); }
+
+  /* 未指定日那一列：一列、不換行、可橫滑；右緣伸到螢幕邊（抵銷 .pz-body 的右內距），淡出 24px。 */
+  .pz-rail {
+    position: relative; display: flex; gap: 4px; overflow: hidden;
+    margin-right: calc(-1 * var(--row-trail)); padding-right: var(--row-trail);
+  }
+  .pz-rail::after {
+    content: ''; position: absolute; top: 0; bottom: 0; right: 0; width: 28px;
+    background: linear-gradient(to right, transparent, var(--bg)); pointer-events: none;
+  }
+
+  /* 拿起來的那一張（App 現況 PendingCardView.isLifted）：描邊換成實線強調色。卡留在原處——
+     放開前它還是待排，搬走是存完、重畫回來才算（DayView.endPendingDrag 的理由）。 */
+  .pz-card.is-lifted { border: 1.5px solid var(--accent); color: var(--accent-ink); background: color-mix(in oklch, var(--accent) 8%, var(--card)); }
+
+  /* 落點提示（App 現況 CalendarGhostView .pending ＝ 設計 B4 的 .card.ghost 換成 1 : 1）：
+     強調色 16% 的底、1.5px 實線強調色描邊、名字＋「放開就排在 10:30 – 12:30」。
+     位置貼齊格子、長度用它的預計長度，跟拉一段新行程同一套幾何（DayView.placeGhost）。這一輪不改它，
+     只是畫出來確認：未指定日的那一張拖下來，用的是同一個影子。 */
+  .cal-ghost {
+    position: absolute; left: var(--canvas-x); right: 8px; z-index: 5;
+    border: 1.5px solid var(--accent); border-radius: var(--radius-sm);
+    background: color-mix(in oklch, var(--accent) 16%, var(--card));
+    color: var(--accent-ink); padding: 5px 10px; overflow: hidden;
+  }
+  .cal-ghost .title { font-size: var(--text-sm); font-weight: 600; line-height: 1.3; }
+  .cal-ghost small { display: block; margin-top: 2px; font-size: var(--text-xs); }
+
+  /* ── 這一輪（2026-10-27）── */
+  .ov-row.is-live .ov-dot { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--success); }
+  .ov-live { display: block; margin-top: 2px; padding-left: 14px; font-size: var(--text-xs); font-weight: 600; color: var(--success-ink); }
+  /* 新：進行中＝類型色點帶主題色光暈呼吸（1.6s），名字換主題色；沒有字、沒有綠環 */
+  .ov-row.is-now .ov-dot { position: relative; background: var(--accent) !important; }
+  .ov-row.is-now .ov-dot::after { content: ""; position: absolute; inset: -5px; border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 55%, transparent) 0%, transparent 70%);
+    animation: nowglow 1.6s ease-in-out infinite; }
+  .ov-row.is-now .ov-name { color: var(--accent-ink); font-weight: 650; }
+  @keyframes nowglow { 0%,100% { opacity: .25; transform: scale(.7); } 50% { opacity: 1; transform: scale(1.25); } }
+  /* 新：每一天 section 裡、標頭底下第一行時區說明（一律顯示，與旅程分頁頂部同一句） */
+  .ov-dayzone { display: flex; align-items: center; gap: 4px; padding: 10px 4px 2px; font-size: var(--text-xs); color: var(--muted); }
+  .ov-dayzone svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .ov-hidden { padding: 10px 4px; font-size: var(--text-sm); color: var(--muted); }
+
+  /* 第 5 節：時區那一行的間距 */
+  .zs-now { padding: 18px 4px 2px; border-bottom: 1px solid var(--border-soft); }
+  .zs-cap { padding: 0 4px 8px; }
+  .zs-row { min-height: 0; padding: 9px 4px; border-bottom: 1px solid var(--border-soft); }
+  .zs-head .ov-daylabel .dz { display: flex; align-items: center; gap: 4px; margin-top: 3px; font-size: var(--text-xs); font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
+  .zs-head .ov-daylabel .dz svg, .ov-dayzone.zs-cap svg, .ov-dayzone.zs-row svg, .ov-dayzone.zs-now svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; }
+  /* ═══ 1.7.0 新增（只有這一段是這份稿自己的）═══════════════════════════════ */
+  body { margin: 0; background: var(--doc-bg); font-family: var(--font-body); color: var(--fg); -webkit-font-smoothing: antialiased; }
+  header.doc, .sec-h { max-width: 1500px; margin: 0 auto; padding: 32px 24px 8px; }
+  header.doc h1 { font-size: 26px; margin: 0 0 6px; }
+  header.doc p, .sec-h p { margin: 4px 0; color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 130ch; }
+  header.doc b, .sec-h b { color: var(--fg); }
+  .sec-h h2 { font-size: 19px; margin: 0 0 4px; }
+  .board { max-width: 1500px; margin: 0 auto; padding: 16px 24px 30px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
+  figure { margin: 0; width: 390px; }
+  figcaption { font-size: 13px; line-height: 1.6; margin-top: 12px; }
+  figcaption > b:first-child { display: block; font-size: 14px; margin-bottom: 2px; }
+  code { background: #fff; border: 1px solid var(--border); border-radius: 5px; padding: 0 5px; font-size: 12px; }
+  .open { color: var(--warn-ink); font-weight: 600; }
+  svg.fl { fill: currentColor; stroke: none; }
+  svg.ln { stroke: currentColor; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+
+  /* chips：第一顆「總覽」 */
+  .chips-row { padding: 6px 20px 8px; }
+  .day-chip.key .dc-t { display: inline-flex; align-items: center; gap: 4px; }
+  .day-chip.key svg { width: 13px; height: 13px; stroke-width: 2.2; }
+  .daycap { display: flex; align-items: baseline; gap: 8px; padding: 6px 20px 4px; font-size: var(--text-xs); color: var(--muted); }
+  .daycap b { font-size: var(--text-sm); color: var(--fg); }
+  .body { flex: 1 1 auto; min-height: 0; overflow: hidden; position: relative; padding: 0 20px 0; }
+  .sub { display: flex; align-items: center; gap: 8px; margin: 14px 0 4px; font-size: var(--text-xs); font-weight: 700; letter-spacing: .06em; color: var(--muted); }
+  .sub .n { font-weight: 600; letter-spacing: 0; }
+
+  /* 行程卡 */
+  .evc { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--card); margin: 10px 0 0; }
+  .prev { position: relative; height: 112px; overflow: hidden; border-bottom: 1px solid var(--border-soft); }
+  .prev.photo { background:
+      radial-gradient(circle at 74% 30%, color-mix(in oklch, var(--warn) 82%, var(--bg)) 0 9%, transparent 10%),
+      linear-gradient(180deg, color-mix(in oklch, var(--sky) 26%, var(--bg)) 0 55%, color-mix(in oklch, var(--sky) 62%, var(--fg)) 55% 100%); }
+  .prev.photo::after { content: ''; position: absolute; left: -6%; right: -6%; bottom: 22%; height: 40%;
+      background: color-mix(in oklch, var(--fg) 42%, var(--bg)); clip-path: polygon(0 100%, 22% 34%, 38% 62%, 58% 12%, 78% 58%, 100% 30%, 100% 100%); }
+  .prev.map { background:
+      linear-gradient(28deg, transparent 46%, #fff 46% 49%, transparent 49%),
+      linear-gradient(-62deg, transparent 58%, #fff 58% 61.5%, transparent 61.5%),
+      linear-gradient(90deg, transparent 20%, #fff 20% 22%, transparent 22%),
+      linear-gradient(0deg, transparent 64%, color-mix(in oklch, var(--see, #6aa27f) 30%, #eef0e6) 64% 82%, transparent 82%),
+      #eeebe3; }
+  .pin { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -100%); width: 30px; height: 30px; border-radius: 50% 50% 50% 0; rotate: -45deg; background: var(--ev); border: 2.5px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+  .pin::after { content: ''; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; margin: -4px; border-radius: 50%; background: #fff; }
+  .prev.empty { background: var(--sunken); display: grid; place-items: center; color: color-mix(in oklch, var(--ev) 70%, var(--muted)); }
+  .prev.empty svg.fl { width: 30px; height: 30px; opacity: .85; }
+  .prev.empty svg { width: 26px; height: 26px; stroke-width: 1.5; opacity: .8; }
+  .prevtag { position: absolute; left: 8px; bottom: 7px; font-size: 10px; color: #fff; background: rgba(31,25,20,.55); border-radius: 6px; padding: 1px 6px; z-index: 2; }
+  /* 卡的重點：名稱＋時間（使用者 2026-10-31「這是每張卡的重要資訊」）——名稱放大成卡標題、時間在它底下 */
+  .evhd { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "nm chev" "t chev"; column-gap: 10px; row-gap: 2px; padding: 12px 12px 8px; }
+  .evhd .nm { grid-area: nm; min-width: 0; font-size: var(--text-lg); font-weight: 700; letter-spacing: -0.01em; line-height: 1.3; }
+  .evhd .t { grid-area: t; font-family: var(--font-mono); font-size: var(--text-sm); color: var(--muted-ink); font-variant-numeric: tabular-nums; }
+  .evhd .nm .ov-dot { width: 9px; height: 9px; vertical-align: 2px; }
+  .evhd .chev { grid-area: chev; color: var(--muted); align-self: center; }
+  .evhd .chev svg { width: 14px; height: 14px; stroke-width: 2.2; }
+
+  /* 待辦（直向）——同 z-todo-170 的列 */
+  .tds { padding: 0 12px; }
+  .tr { display: flex; align-items: flex-start; gap: 10px; min-height: 40px; padding: 8px 0; position: relative; }
+  .tr + .tr::before, .tr + .compose::before { content: ''; position: absolute; left: 32px; right: 0; top: 0; height: 1px; background: var(--border-soft); }
+  .box { width: 22px; height: 22px; border-radius: 50%; border: 1.6px solid var(--border); flex: none; display: grid; place-items: center; }
+  .box svg { width: 13px; height: 13px; stroke: #fff; stroke-width: 2.6; }
+  .tr.done .box { background: var(--fg); border-color: var(--fg); }
+  .tm { flex: 1; min-width: 0; padding-top: 2px; }
+  .tt { font-size: var(--text-sm); line-height: 1.35; }
+  .tr.done .tt { color: var(--muted); text-decoration: line-through; }
+  .mt { font-size: var(--text-xs); color: var(--muted); margin-top: 1px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; margin-top: 7px; }
+  .compose { display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 8px 0; position: relative; color: var(--muted); font-size: var(--text-sm); }
+  .compose .box { border-style: dashed; }
+
+  /* 檔案（橫向捲動）：圖片直接顯示、其他是類型 icon */
+  .strip { display: flex; gap: 8px; overflow: hidden; padding: 6px 12px 12px; position: relative; }
+  .strip.bleed { margin: 0 -20px; padding-left: 20px; }
+  .tile { flex: none; width: 76px; }
+  .tile .th { width: 76px; height: 76px; border-radius: var(--radius-md); border: 1px solid var(--border-soft); overflow: hidden; position: relative; background: var(--sunken); display: grid; place-items: center; color: var(--muted-ink); }
+  .tile .th svg { width: 26px; height: 26px; stroke-width: 1.5; }
+  .tile .th.img1 { background: linear-gradient(160deg, #d7c3a6, #8e6e51); }
+  .tile .th.img2 { background: linear-gradient(200deg, #a9c3cc, #4f6f7b); }
+  .tile .th.img3 { background: linear-gradient(170deg, #e4d1c5 0 40%, #b7826a 40%); }
+  .tile .th .ext { position: absolute; left: 6px; bottom: 5px; font-size: 9px; font-weight: 700; letter-spacing: .04em; color: var(--muted-ink); }
+  .tile .nm { font-size: 10.5px; color: var(--muted-ink); margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tile.add .th { background: var(--bg); border: 1px dashed var(--border); color: var(--accent-ink); }
+  .strip .fade { position: absolute; right: 0; top: 0; bottom: 0; width: 28px; background: linear-gradient(90deg, transparent, var(--card)); }
+  /* 交通方式：前後各一段虛線，把上下兩張卡接起來（使用者 2026-10-31） */
+  .route { position: relative; display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 0 0 14px; font-size: var(--text-xs); color: var(--muted); }
+  .route::before { content: ''; position: absolute; left: 27.5px; top: 0; bottom: 0; border-left: 1.5px dashed color-mix(in oklch, var(--muted) 60%, var(--bg)); }
+  .route svg { position: relative; width: 28px; height: 28px; padding: 3px 0; stroke-width: 1.9; background: var(--page); color: var(--muted-ink); }
+  .route { font-size: var(--text-sm); }
+  .route + .evc { margin-top: 0; }
+  /* 可以點（開路程那張紙）：icon＋字＋› 收進一顆膠囊，命中區 44pt */
+  .route .leg { position: relative; display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 10px 0 4px; margin-left: -4px; border: 1px solid var(--border); border-radius: var(--radius-pill); background: var(--page); color: var(--muted-ink); }
+  .route .leg svg.chev { width: 13px; height: 13px; padding: 0; stroke-width: 2.2; color: var(--muted); background: none; }
+
+  /* 編輯行程表單（示意：只畫跟這次有關的下半段） */
+  .formnav { flex: none; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 4px 16px 8px; }
+  .formnav .t { font-weight: 650; font-size: var(--text-base); }
+  .rb { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); display: grid; place-items: center; background: var(--bg); color: var(--fg); }
+  .rb svg { width: 17px; height: 17px; stroke-width: 2; }
+  .rb.ok { justify-self: end; background: var(--accent-ink); border-color: var(--accent-ink); color: #fff; }
+  .cap { font-size: var(--text-xs); font-weight: 700; color: var(--muted-ink); margin: 16px 2px 6px; display: flex; align-items: center; }
+  .cap .r { margin-left: auto; font-weight: 600; color: var(--accent-ink); }
+  .inp { border: 1px solid var(--border); border-radius: var(--radius-sm); min-height: 44px; padding: 11px 12px; font-size: var(--text-sm); color: var(--muted); }
+  .desc { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+  .desc .np-photo { aspect-ratio: auto; height: 92px; border: 0; border-bottom: 1px solid var(--border-soft); border-radius: 0; }
+  .desc .txt { padding: 10px 12px 12px; font-size: var(--text-sm); line-height: 1.55; }
+  .desc .txt h4 { margin: 0 0 4px; font-size: var(--text-base); }
+  .desc .txt ul { margin: 4px 0 0; padding-left: 18px; }
+  .desc .more { display: flex; justify-content: flex-end; padding: 0 12px 10px; font-size: var(--text-xs); color: var(--muted-ink); font-weight: 600; }
+  .desc.empty { border-style: dashed; min-height: 64px; display: grid; place-items: center; color: var(--muted); font-size: var(--text-sm); }
+
+  /* 富文本編輯器 modal（同總覽筆記編輯） */
+  .edsheet { position: absolute; left: 0; right: 0; bottom: 0; top: 52px; background: var(--bg); border-radius: var(--sheet-radius) var(--sheet-radius) 0 0; box-shadow: var(--sheet-shadow); z-index: 31; display: flex; flex-direction: column; }
+  .edbody { flex: 1; padding: 6px 20px; overflow: hidden; }
+  .edbody .np-body { font-size: var(--text-base); }
+  .edbody h3 { font-size: var(--fs-h2); margin: 0 0 8px; }
+  .tool { flex: none; display: flex; gap: 4px; padding: 8px 12px; border-top: 1px solid var(--border); background: var(--surface); }
+  .tool span { min-width: 36px; height: 34px; border-radius: 8px; display: grid; place-items: center; font-size: 13px; font-weight: 700; color: var(--fg); }
+  .tool span.on { background: var(--sunken); }
+  .tool svg { width: 18px; height: 18px; }
+  .kb { flex: none; height: 216px; background: #d5d3d6; display: grid; place-items: center; color: #6d6a70; font-size: 12px; }
+
+  /* 「總覽」的旅程檔案＝購物清單那面兩欄瀑布流（主檔 .sl-wall／.sl-card／.sl-noimg／.sl-cap 原樣；App：ShoppingWallView） */
+  .sl-wall { columns: 2; column-gap: 10px; margin-top: 4px; }
+  .sl-card { display: block; width: 100%; break-inside: avoid; margin: 0 0 10px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+  .sl-img { display: block; width: 100%; }
+  .sl-noimg { display: grid; place-items: center; gap: 4px; min-height: 92px; padding: 18px 12px; background: var(--sunken); color: var(--muted-ink); }
+  .sl-noimg svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+  .sl-noimg .ext { font-size: 10px; font-weight: 700; letter-spacing: .05em; }
+  .sl-cap { display: block; padding: 8px 10px 10px; }
+  .sl-cap-n { display: block; font-size: var(--text-sm); font-weight: 600; line-height: 1.35; }
+  .sl-cap-p { display: block; margin-top: 2px; font-family: var(--font-mono); font-size: var(--text-xs); color: var(--muted); }
+  .sl-card.add { background: var(--bg); border-style: dashed; display: grid; place-items: center; gap: 4px; min-height: 92px; color: var(--accent-ink); font-size: var(--text-sm); font-weight: 600; }
+  .sl-card.add svg { width: 20px; height: 20px; stroke-width: 2; }
+  /* 總覽筆記：高度跟內容走，上限 220pt（原 205）；超出就淡出＋右下「閱讀更多 ›」，點了 present 完整筆記紙（使用者 2026-10-31） */
+  .ov-brief-body.cap280 { --ov-brief-cap: 220px; }
+  .ov-brief-foot { display: flex; justify-content: flex-end; }
+  /* 「閱讀更多」疊在淡出那一段上，不另佔高度（使用者 2026-10-31）：外框高度 0，按鈕貼內文框右下 */
+  .ov-brief-foot.over { position: relative; height: 0; }
+  /* 整列一條上下漸層（透明 → 底色），按鈕靠右坐在漸層裡（使用者 2026-10-31） */
+  /* 按鈕那一列是實心底色（字不吃漸層），漸層從那一列往上延伸 */
+  .ov-brief-foot.over::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 44px; background: var(--bg); pointer-events: none; }
+  .ov-brief-foot.over::before { content: ''; position: absolute; left: 0; right: 0; bottom: 44px; height: 56px; background: linear-gradient(180deg, transparent, var(--bg)); pointer-events: none; }
+  .ov-brief-foot.over .ov-brief-more { position: absolute; right: 0; bottom: 0; z-index: 1; }
+  .ov-brief-body.cap280.is-clipped::after { display: none; }
+  .ov-brief-more svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+  .capline { position: absolute; left: 6px; right: 6px; border-top: 1px dashed var(--warn); z-index: 5; }
+  .capline span { position: absolute; left: 0; top: 3px; font-size: 10px; color: var(--warn-ink); font-weight: 600; background: var(--page); padding: 0 3px; }
+  /* 待排行程（1.5.0 行事曆待排區 .pz-card 原樣）：總覽頁＝未指定日（.is-loose），每一天＝該日待排 */
+  .pz-flow { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 6px; }
+  .pz-card { flex: none; display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; min-height: 32px; padding: 4px 10px; border: 1px dashed var(--border); border-radius: var(--radius-sm); background: var(--card); font-size: var(--text-sm); line-height: 1.3; color: var(--fg); }
+  .pz-card .d { color: var(--muted); }
+  .pz-card .ov-dot { margin-right: 2px; }
+  .pz-card.is-loose { background: var(--sunken); color: var(--muted-ink); }
+  .pz-card.is-lifted { border: 1.5px solid var(--accent); color: var(--accent-ink); background: color-mix(in oklch, var(--accent) 8%, var(--card)); box-shadow: 0 8px 20px rgba(var(--shadow-rgb), .22); transform: rotate(-2deg); }
+  .pz-card.is-gone { opacity: .35; }
+  .sub .hint { margin-left: auto; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+  .slot { border: 1.5px dashed var(--accent); border-radius: var(--radius-lg); background: color-mix(in oklch, var(--accent) 8%, var(--card)); color: var(--accent-ink); padding: 12px; margin: 10px 0 0; }
+  .slot b { display: block; font-size: var(--text-lg); }
+  .slot span { font-family: var(--font-mono); font-size: var(--text-sm); }
+  /* 封面 placeholder（描述空狀態、編輯器頂端）：虛線框＋相片 icon＋一句提示；右上 ✕ 可刪（使用者 2026-10-31） */
+  .cover-ph { position: relative; height: 120px; border: 1.5px dashed var(--border); border-radius: var(--radius-md); background: var(--surface); display: grid; place-items: center; align-content: center; gap: 6px; color: var(--muted-ink); text-align: center; }
+  .cover-ph svg { width: 26px; height: 26px; stroke-width: 1.6; }
+  .cover-ph b { font-size: var(--text-sm); color: var(--fg); }
+  .cover-ph small { font-size: var(--text-xs); color: var(--muted); }
+  .cover-ph .x { position: absolute; right: 8px; top: 8px; width: 26px; height: 26px; border-radius: 50%; background: var(--bg); border: 1px solid var(--border); display: grid; place-items: center; color: var(--muted-ink); }
+  .cover-ph .x svg { width: 12px; height: 12px; stroke-width: 2.4; }
+  .desc.ph { border: 1px solid var(--border); }
+  .desc.ph .cover-ph { border: 0; border-bottom: 1px dashed var(--border); border-radius: 0; height: 92px; }
+  .desc.ph .txt { color: var(--muted); }
+  .picker { position: absolute; left: 0; right: 0; bottom: 0; height: 58%; background: var(--bg); border-radius: var(--sheet-radius) var(--sheet-radius) 0 0; box-shadow: var(--sheet-shadow); z-index: 40; padding: 10px 12px; }
+  .picker .ph-nav { display: flex; justify-content: space-between; font-size: var(--text-sm); padding: 4px 4px 10px; }
+  .picker .ph-nav b { font-weight: 650; }
+  .picker .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .picker .grid i { aspect-ratio: 1; background: linear-gradient(160deg, #d7c3a6, #8e6e51); }
+  .picker .grid i:nth-child(3n) { background: linear-gradient(200deg, #a9c3cc, #4f6f7b); }
+  .picker .grid i:nth-child(4n+1) { background: linear-gradient(170deg, #e4d1c5 0 40%, #b7826a 40%); }
+  /* ── 情境補圖（2026-10-31 拷問 Q31–Q50）── */
+  .alert { position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%); width: 270px; background: rgba(246,244,241,.98); border-radius: 14px; z-index: 45; text-align: center; overflow: hidden; }
+  .alert .bd { padding: 18px 16px 14px; }
+  .alert b { display: block; font-size: 15px; margin-bottom: 4px; }
+  .alert p { margin: 0; font-size: 13px; line-height: 1.45; }
+  .alert .btns { display: flex; border-top: 1px solid rgba(60,60,67,.18); }
+  .alert .btns span { flex: 1; padding: 11px 0; font-size: 15px; color: #0a72d6; }
+  .alert .btns span + span { border-left: 1px solid rgba(60,60,67,.18); }
+  .alert .btns span.pref { font-weight: 600; }
+  .alert .btns span.des { color: #d0342c; }
+  .dimall { position: absolute; inset: 0; background: rgba(36,29,23,.28); z-index: 44; }
+  .toast { position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); background: var(--ink-deep); color: #fff; border-radius: 12px; padding: 10px 16px; font-size: var(--text-sm); z-index: 30; white-space: nowrap; box-shadow: 0 6px 18px rgba(0,0,0,.2); }
+  .tr.fading { opacity: .35; }
+  .tr.fading .box { background: var(--fg); border-color: var(--fg); }
+  .conc { display: flex; align-items: center; gap: 8px; margin: 10px 0 2px; font-size: var(--text-xs); font-weight: 700; color: var(--muted); }
+  .conc::after { content: ''; flex: 1; height: 1px; background: var(--border-soft); }
+  .concrow { display: flex; gap: 10px; overflow: hidden; margin: 0 -20px 0 0; padding-right: 20px; }
+  .concrow .evc { flex: none; width: 270px; margin-top: 6px; }
+  .evc.cancelled .prev { filter: grayscale(1); opacity: .5; }
+  .evc.cancelled .nm { color: var(--muted); text-decoration: line-through; }
+  .evc.cancelled .t { text-decoration: line-through; }
+  .ctag { display: inline-block; margin-left: 6px; font-size: 11px; font-weight: 600; color: var(--muted-ink); border: 1px solid var(--border); border-radius: 999px; padding: 0 6px; vertical-align: 2px; }
+  .day-chip.hot { outline: 2px solid var(--accent); outline-offset: 1px; background: color-mix(in oklch, var(--accent) 12%, var(--sunken)); }
+  .tile .xx { position: absolute; right: 4px; top: 4px; width: 20px; height: 20px; border-radius: 50%; background: rgba(31,25,20,.72); color: #fff; display: grid; place-items: center; }
+  .tile .xx svg { width: 10px; height: 10px; stroke-width: 2.6; }
+  .bin { position: absolute; left: 50%; bottom: 100px; transform: translateX(-50%); width: 64px; height: 64px; border-radius: 50%; background: var(--ink-deep); color: #fff; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(36,29,23,.25); z-index: 30; }
+  .bin svg { width: 26px; height: 26px; }
+  .lifted { position: absolute; z-index: 31; transform: scale(.7) rotate(-3deg); box-shadow: 0 10px 24px rgba(0,0,0,.25); border-radius: var(--radius-md); }
+  .dcover { height: 180px; position: relative; }
+
+  /* ── 併入的 z-todo-170 元件（全部限定在 .tdscope 裡，300pt 手機框）── */
+  .tdscope {
+    --bg: #ffffff; --surface: #fbf8f4; --fg: #241d17; --muted: #7c6f63;
+    --muted-ink: color-mix(in srgb, var(--muted) 90%, var(--fg));
+    --border: #dbd5cd; --border-soft: color-mix(in srgb, var(--border) 55%, var(--bg));
+    --sunken: color-mix(in srgb, var(--border) 28%, var(--surface));
+    --accent: #2f918e; --accent-ink: #1d7370; --accent-soft: rgba(47,145,142,.12);
+    --warn-ink: #8a6212; --ink-deep: #1f1914;
+    --font: Inter, system-ui, -apple-system, "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    --mono: "Monaco", "Menlo", "Courier New", monospace;
+    --page: #efe9e1;
+    
+    --sw-eat: oklch(0.452 0.086 30); --sw-eatLight: oklch(0.510 0.076 30);
+    --sw-shop: oklch(0.566 0.079 74); --sw-shopMarket: oklch(0.624 0.070 74);
+    --sw-see: oklch(0.498 0.058 150); --sw-seeNature: oklch(0.556 0.051 150);
+    --sw-stay: oklch(0.428 0.074 264); --sw-stayLodge: oklch(0.486 0.065 264);
+    --sw-move: oklch(0.524 0.062 322); --sw-moveLocal: oklch(0.582 0.055 322);
+    --sw-misc: oklch(0.545 0.022 65);
+  }
+  .tdscope * { box-sizing: border-box; }
+  .tdscope .phone { width: 300px; height: 650px; border-radius: 44px; background: #111; padding: 8px; box-shadow: 0 12px 30px rgba(36,29,23,.18); }
+  .tdscope .screen { position: relative; width: 100%; height: 100%; border-radius: 37px; overflow: hidden; background: var(--bg); font-size: 11.5px; display: flex; flex-direction: column; }
+  .tdscope .status { flex: none; height: 34px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px 0 26px; font-weight: 600; font-size: 12px; }
+  .tdscope .island { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 88px; height: 25px; border-radius: 20px; background: #000; z-index: 30; }
+  .tdscope .dim { position: absolute; inset: 0; background: rgba(36,29,23,.28); z-index: 10; }
+  .tdscope svg.ln { stroke: currentColor; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+  .tdscope svg.ico { width: 17px; height: 17px; flex: none; }
+  .tdscope .tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: 62px; border-top: 1px solid var(--border-soft); background: rgba(255,255,255,.95); display: flex; justify-content: space-around; padding-top: 8px; font-size: 8.5px; color: var(--muted); z-index: 4; }
+  .tdscope .tabbar span.on { color: var(--accent-ink); font-weight: 600; }
+  .tdscope .ovhead { padding: 2px 16px 8px; }
+  .tdscope .ovhead b { font-size: 19px; letter-spacing: -0.015em; }
+  .tdscope .ovhead .s { color: var(--muted); font-size: 9.5px; margin-top: 2px; }
+  .tdscope .seg { display: flex; margin: 8px 0 0; background: var(--sunken); border-radius: 8px; padding: 2px; }
+  .tdscope .seg span { flex: 1; text-align: center; font-size: 10px; padding: 4px 0; border-radius: 6px; color: var(--muted-ink); }
+  .tdscope .seg span.on { background: var(--bg); color: var(--fg); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+  .tdscope .list { flex: 1; min-height: 0; overflow: hidden; padding: 0 14px 70px; position: relative; }
+  .tdscope .grp { display: flex; align-items: baseline; gap: 6px; margin: 12px 2px 2px; }
+  .tdscope .grp b { font-size: 12px; }
+  .tdscope .grp small { color: var(--muted); font-size: 9.5px; }
+  .tdscope .tr { display: flex; align-items: flex-start; gap: 9px; min-height: 40px; padding: 8px 2px; position: relative; background: var(--bg); }
+  .tdscope .tr + .tr::before, .tdscope .tr + .compose::before { content: ''; position: absolute; left: 30px; right: 0; top: 0; height: 1px; background: var(--border-soft); }
+  .tdscope .box { width: 18px; height: 18px; border-radius: 50%; border: 1.4px solid var(--border); flex: none; margin-top: 1px; display: grid; place-items: center; }
+  .tdscope .box svg { width: 11px; height: 11px; stroke: #fff; stroke-width: 2.6; }
+  .tdscope .tr.done .box { background: var(--accent-ink); border-color: var(--accent-ink); }
+  .tdscope .tm { flex: 1; min-width: 0; }
+  .tdscope .tt { font-size: 11.5px; line-height: 1.35; }
+  .tdscope .tr.done .tt { color: var(--muted); text-decoration: line-through; }
+  .tdscope .nt { font-size: 9.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px; }
+  .tdscope .mt { font-size: 9.5px; color: var(--muted); margin-top: 1px; }
+  .tdscope .mt .od { color: var(--muted-ink); font-weight: 600; }
+  .tdscope .trail { display: flex; align-items: center; gap: 8px; flex: none; margin-top: 2px; }
+  .tdscope .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .tdscope .goev { color: var(--muted); }
+  .tdscope .goev svg { width: 13px; height: 13px; }
+  .tdscope .info { color: var(--accent-ink); }
+  .tdscope .info svg { width: 17px; height: 17px; stroke-width: 2; }
+  .tdscope .field { flex: 1; font-size: 11.5px; line-height: 1.35; }
+  .tdscope .caret { display: inline-block; width: 1.5px; height: 12px; background: var(--accent-ink); vertical-align: -2px; margin-left: 1px; }
+  .tdscope .compose { display: flex; align-items: center; gap: 9px; min-height: 38px; padding: 8px 2px; position: relative; color: var(--muted); font-size: 11.5px; }
+  .tdscope .compose .box { border-style: dashed; }
+  .tdscope .tr.lift { box-shadow: 0 8px 22px rgba(36,29,23,.22); border-radius: 10px; transform: scale(1.03) translateY(-6px); z-index: 6; }
+  .tdscope .tr.lift::before { display: none; }
+  .tdscope .tr.gap { height: 40px; background: transparent; }
+  .tdscope .tr.gap::before { display: none; }
+  .tdscope .tr.ghost { opacity: .0; }
+  .tdscope .tr.small { transform: scale(.72); opacity: .85; border-radius: 10px; box-shadow: 0 6px 16px rgba(36,29,23,.2); }
+  .tdscope .bin { position: absolute; left: 50%; bottom: 80px; transform: translateX(-50%); width: 50px; height: 50px; border-radius: 50%; background: var(--bg); color: var(--fg); border: 1px solid var(--border); display: grid; place-items: center; box-shadow: 0 4px 14px rgba(36,29,23,.16); z-index: 7; }
+  .tdscope .bin svg { width: 21px; height: 21px; }
+  .tdscope .bin.hot { width: 64px; height: 64px; bottom: 73px; background: var(--ink-deep); color: #fff; border-color: var(--ink-deep); }
+  .tdscope .bin.hot svg { width: 26px; height: 26px; }
+  .tdscope .finger { position: absolute; width: 26px; height: 26px; border-radius: 50%; background: rgba(36,29,23,.14); border: 1.5px solid rgba(36,29,23,.3); z-index: 8; }
+  .tdscope .kb { position: absolute; left: 0; right: 0; bottom: 0; height: 210px; background: #d5d3d6; z-index: 9; display: flex; align-items: center; justify-content: center; color: #6d6a70; font-size: 10px; }
+  .tdscope .alert { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 220px; background: rgba(246,244,241,.98); border-radius: 14px; z-index: 25; text-align: center; overflow: hidden; }
+  .tdscope .alert .bd { padding: 16px 14px 13px; }
+  .tdscope .alert b { display: block; font-size: 12.5px; margin-bottom: 4px; }
+  .tdscope .alert p { margin: 0; font-size: 10.5px; line-height: 1.45; }
+  .tdscope .alert .btns { display: flex; border-top: 1px solid rgba(60,60,67,.18); }
+  .tdscope .alert .btns span { flex: 1; padding: 10px 0; font-size: 12.5px; color: #0a72d6; }
+  .tdscope .alert .btns span + span { border-left: 1px solid rgba(60,60,67,.18); }
+  .tdscope .alert .btns span.pref { font-weight: 600; }
+  .tdscope .alert .btns span.des { color: #d0342c; }
+  .tdscope .psheet { position: absolute; left: 0; right: 0; bottom: 0; top: 42px; z-index: 20; background: var(--bg); border-radius: 22px 22px 0 0; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 -4px 20px rgba(0,0,0,.18); }
+  .tdscope .grabber { width: 30px; height: 4px; border-radius: 4px; background: var(--border); margin: 5px auto 4px; }
+  .tdscope .snav { flex: none; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 2px 12px 8px; }
+  .tdscope .snav .t { font-weight: 650; font-size: 12.5px; }
+  .tdscope .rb { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--border); color: var(--fg); background: var(--bg); }
+  .tdscope .rb svg { width: 14px; height: 14px; stroke-width: 2; }
+  .tdscope .rb.ok { justify-self: end; background: var(--accent-ink); border-color: var(--accent-ink); color: #fff; }
+  .tdscope .rb.ok svg { stroke-width: 2.6; }
+  .tdscope .rb.off { opacity: .35; }
+  .tdscope .sbody { flex: 1; min-height: 0; overflow: hidden; padding: 0 14px; }
+  .tdscope .cap { font-size: 10px; font-weight: 700; color: var(--muted-ink); margin: 12px 2px 6px; }
+  .tdscope .inp { border: 1px solid var(--border); border-radius: 8px; min-height: 36px; padding: 9px 10px; font-size: 11.5px; background: var(--bg); }
+  .tdscope .inp.area { min-height: 58px; }
+  .tdscope .inp .ph { color: var(--muted); }
+  .tdscope .inp.ro { background: var(--surface); border-color: var(--border-soft); }
+  .tdscope .srow { display: flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 2px; font-size: 11.5px; }
+  .tdscope .srow svg { color: var(--muted); }
+  .tdscope .sw { margin-left: auto; width: 34px; height: 20px; border-radius: 10px; background: #e3e0dc; position: relative; }
+  .tdscope .sw::after { content: ''; position: absolute; left: 2px; top: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.2); }
+  .tdscope .sw.on { background: var(--accent); }
+  .tdscope .sw.on::after { left: 16px; }
+  .tdscope .sw.ro { opacity: .45; }
+  .tdscope .dt { display: flex; gap: 6px; margin-top: 6px; }
+  .tdscope .pill { background: var(--sunken); border-radius: 7px; padding: 7px 9px; font-size: 11px; font-variant-numeric: tabular-nums; }
+  .tdscope .ztf { flex: 1; border: 1px solid var(--border); border-radius: 8px; padding: 4px 9px; display: flex; align-items: center; }
+  .tdscope .ztf .v { font-family: var(--mono); font-size: 11.5px; }
+  .tdscope .ztf .z { font-size: 8.5px; color: var(--muted); }
+  .tdscope .ztf .ud { margin-left: auto; color: var(--muted); font-size: 9px; }
+  .tdscope .rail { display: flex; gap: 2px; flex-wrap: wrap; }
+  .tdscope .rail i { width: 23px; height: 23px; border-radius: 50%; display: grid; place-items: center; font-style: normal; }
+  .tdscope .rail i b { width: 17px; height: 17px; border-radius: 50%; display: grid; place-items: center; }
+  .tdscope .rail i b svg { width: 10px; height: 10px; stroke: #fff; stroke-width: 2.8; }
+  .tdscope .rail i.none b { border: 1.4px solid var(--border); background: var(--bg); position: relative; overflow: hidden; }
+  .tdscope .rail i.none b::after { content: ''; position: absolute; left: -2px; right: -2px; top: 50%; height: 1.4px; background: var(--border); transform: rotate(-45deg); }
+  .tdscope .rail i.pick { box-shadow: 0 0 0 1.6px var(--fg); }
+  .tdscope .menu { border: 1px solid var(--border); border-radius: 8px; min-height: 36px; padding: 0 10px; display: flex; align-items: center; font-size: 11.5px; }
+  .tdscope .menu .ud { margin-left: auto; color: var(--muted); font-size: 9px; }
+  .tdscope .delbtn { margin: 16px 0 0; border: 1px solid var(--border); border-radius: 9px; min-height: 36px; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 11.5px; color: var(--fg); }
+  .tdscope .hint { font-size: 9.5px; color: var(--muted); margin: 6px 2px 0; line-height: 1.5; }
+  .tdscope .evhead { padding: 4px 14px 6px; }
+  .tdscope .evhead .ty { display: inline-flex; align-items: center; gap: 4px; font-size: 9.5px; color: var(--sw-eat); font-weight: 600; }
+  .tdscope .evhead b { display: block; font-size: 16px; margin-top: 3px; }
+  .tdscope .evhead .s { color: var(--muted); font-size: 9.5px; margin-top: 2px; }
+  .tdscope .sect { display: flex; align-items: baseline; justify-content: space-between; margin: 12px 2px 2px; }
+  .tdscope .sect b { font-size: 11px; color: var(--muted-ink); }
+  .tdscope .sect span { font-size: 9.5px; color: var(--accent-ink); }
+  .tdscope .lock { background: linear-gradient(170deg, #3b5d58, #1d3533); color: #fff; }
+  .tdscope .lock .clock { text-align: center; font-size: 46px; font-weight: 300; margin-top: 30px; letter-spacing: -0.02em; }
+  .tdscope .lock .date { text-align: center; font-size: 11px; opacity: .85; }
+  .tdscope .noti { margin: 22px 10px 0; background: rgba(255,255,255,.82); color: var(--fg); border-radius: 16px; padding: 10px 11px; display: flex; gap: 9px; }
+  .tdscope .noti .ap { width: 26px; height: 26px; border-radius: 7px; background: var(--accent); flex: none; }
+  .tdscope .noti b { font-size: 11px; display: flex; justify-content: space-between; }
+  .tdscope .noti b small { font-weight: 400; color: var(--muted); font-size: 9px; }
+  .tdscope .noti p { margin: 2px 0 0; font-size: 10.5px; line-height: 1.4; }
+  .tdscope .setlist { margin: 0 14px; border: 1px solid var(--border); border-radius: 12px; padding: 0 12px; }
+  .tdscope .setlist .srow { min-height: 40px; }
+  .tdscope .setlist .srow + .srow { border-top: 1px solid var(--border-soft); }
+  .tdscope .setlist .srow.new { background: var(--accent-soft); margin: 0 -12px; padding: 0 14px; }
+  .tdscope .nrow { display: flex; gap: 9px; padding: 9px 2px; border-bottom: 1px solid var(--border-soft); }
+  .tdscope .nrow .ic { width: 26px; height: 26px; border-radius: 8px; background: var(--accent-soft); color: var(--accent-ink); display: grid; place-items: center; flex: none; }
+  .tdscope .nrow .ic svg { width: 14px; height: 14px; }
+  .tdscope .nrow b { font-size: 11px; display: block; }
+  .tdscope .nrow span { font-size: 9.5px; color: var(--muted); }
+  .tdscope .wg { margin: 18px auto 0; width: 150px; height: 150px; border-radius: 22px; background: var(--bg); box-shadow: 0 4px 16px rgba(0,0,0,.18); padding: 12px; color: var(--fg); }
+  .tdscope .wg h4 { margin: 0 0 6px; font-size: 10.5px; }
+  .tdscope .wg .w { display: flex; align-items: center; gap: 6px; font-size: 9.5px; padding: 3px 0; }
+  .tdscope .wg .w .box { width: 12px; height: 12px; margin: 0; border-width: 1.2px; }
+  .tdscope .wg .w .dot { width: 6px; height: 6px; margin-left: auto; }
+  .tdscope .mark { outline: 2px dashed color-mix(in srgb, var(--accent) 60%, transparent); outline-offset: 2px; border-radius: 8px; }
+  .tdscope figure { width: 300px; }
+
+  /* 「總覽」頁重要事項（T1–T4） */
+  .nt2 { font-size: var(--text-xs); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px; }
+  .info-i { flex: none; color: var(--accent-ink); margin-top: 1px; margin-left: 4px; }
+  .info-i svg { width: 22px; height: 22px; stroke-width: 2; }
+  .caret2 { display: inline-block; width: 2px; height: 15px; background: var(--accent-ink); vertical-align: -2px; margin-left: 1px; }
+  .liftwrap { position: absolute; left: 20px; right: 20px; z-index: 31; background: var(--bg); border-radius: 12px; padding: 0 10px; box-shadow: 0 10px 24px rgba(36,29,23,.24); transform: scale(1.03); }
+  .liftwrap .tr::before { display: none; }
+  .liftwrap.small { left: 110px; right: 110px; transform: scale(.75); }
+  .bin2 { position: absolute; left: 50%; bottom: 104px; transform: translateX(-50%); width: 52px; height: 52px; border-radius: 50%; background: var(--bg); color: var(--fg); border: 1px solid var(--border); display: grid; place-items: center; box-shadow: 0 4px 14px rgba(36,29,23,.16); z-index: 30; }
+  .bin2 svg { width: 22px; height: 22px; }
+  .bin2.hot { width: 66px; height: 66px; bottom: 97px; background: var(--ink-deep); color: #fff; border-color: var(--ink-deep); }
+  .bin2.hot svg { width: 28px; height: 28px; }
+  /* 重疊組（O1/O2）：組頂一列、組內卡片並排；兩張剛好放得下時各佔一半，三張以上橫捲 */
+  .ogrp { margin-top: 6px; }
+  .ohead { display: flex; align-items: baseline; gap: 8px; margin: 2px 0 6px; font-size: var(--text-xs); color: var(--muted); }
+  .ohead b { font-weight: 700; color: var(--muted-ink); letter-spacing: .04em; }
+  .ohead .span { font-family: var(--font-mono); }
+  .ohead .hint { margin-left: auto; }
+  .orow { display: flex; gap: 8px; }
+  .orow.scroll { overflow: hidden; margin-right: -20px; padding-right: 20px; }
+  .orow .evc { flex: 1 1 0; min-width: 0; margin-top: 0; }
+  .orow.scroll .evc { flex: none; width: 150px; }
+  .orow .evc .prev { height: 112px; }
+  .orow .evhd { padding: 10px 10px 8px; }
+  .orow .evhd .nm { font-size: var(--text-base); }
+  .orow .evhd .t { font-size: var(--text-xs); }
+  .orow .tds { padding: 0 10px; }
+  .orow .tt { font-size: var(--text-xs); }
+  .orow .box { width: 18px; height: 18px; }
+  .orow .tr + .tr::before { left: 26px; }
+  .obar { position: relative; height: 4px; border-radius: 2px; background: color-mix(in oklch, var(--ev) 70%, var(--bg)); margin: 0 10px 8px; }
+  .otl { position: relative; height: 26px; margin: 0 0 6px; border-radius: 6px; background: var(--sunken); font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+  .otl i { position: absolute; top: 4px; height: 8px; border-radius: 4px; background: var(--ev); }
+  .otl i.b { top: 14px; }
+  .otl span { position: absolute; bottom: -14px; }
+  /* ── 邊界情境（E1–E8）── */
+  /* 進行中（E3）：卡片 2pt 主色外框＋淡主色光暈；名稱前的類型色點換主色、帶呼吸光暈（1.6s，同 App 現況 is-now，
+     2026-10-27 定）；名稱換主色墨。沒有「進行中」字樣（同現況：沒有字、沒有綠環）。 */
+  .evc.now { border: 2px solid var(--accent); box-shadow: 0 0 0 4px color-mix(in oklch, var(--accent) 14%, transparent), 0 8px 20px -10px rgba(var(--shadow-rgb), .35); }
+  .evc.now .ov-dot { position: relative; background: var(--accent) !important; }
+  .evc.now .ov-dot::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 55%, transparent) 0%, transparent 70%); animation: nowglow2 1.6s ease-in-out infinite; }
+  .evc.now .evhd .nm { color: var(--accent-ink); }
+  @keyframes nowglow2 { 0%,100% { opacity: .35; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.3); } }
+  .nowtag { display: none; }
+  .route .leg.late { border-color: var(--warn); color: var(--warn-ink); }
+  .route .leg.late .warn { width: 18px; height: 18px; padding: 0; background: none; color: var(--warn); stroke-width: 2; }
+  .evc.is-allday .prev { height: 112px; }
+  .daytag { display: inline-block; font-family: var(--font-mono); font-size: var(--text-xs); color: var(--muted-ink); border: 1px solid var(--border); border-radius: 999px; padding: 0 7px; }
+  .emptyst { display: grid; justify-items: center; text-align: center; gap: 8px; padding: 40px 18px 0; color: var(--muted-ink); }
+  .emptyst svg { width: 72px; height: 72px; stroke-width: 1.2; color: var(--muted); }
+  .emptyst b { font-size: var(--text-base); color: var(--fg); }
+  .emptyst p { margin: 0; font-size: var(--text-sm); line-height: 1.55; }
+  .emptyst .btn { margin-top: 6px; min-height: 44px; padding: 0 20px; border-radius: 10px; background: var(--accent-ink); color: #fff; display: inline-flex; align-items: center; font-weight: 600; font-size: var(--text-sm); }
+  .ipad { width: 760px; height: 560px; border-radius: 30px; background: var(--ink-deep); padding: 14px; }
+  .ipad .screen { border-radius: 18px; }
+  .ipad .col { width: 430px; margin: 0 auto; }
+  figure.wide { width: 760px; }
+  /* 交通膠囊＝旅程頁時間軸那一顆（RouteLegCell／PillView，TripCalendarMetrics.routeLeg*），使用者 2026-10-31：
+     膠囊、3pt 頁底色光圈、內距 4/11、圖示 14、間距 5、字 13；
+     已設定＝--surface 底、--border 實線、墨色 semibold；未設定＝虛線 [4,3]、時鐘、灰字 medium「空檔 N 分」；
+     來不及＝琥珀底（warn 18% 混 surface）、琥珀邊（warn 55% 混 border）、--warn-ink 字＋警示記號；有別班可換＝⇄。沒有 ›：整顆就是按鈕。 */
+  .route .leg { position: relative; display: inline-flex; align-items: center; gap: 5px; min-height: 0; padding: 4px 11px; margin-left: -4px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--fg); font-size: var(--text-sm); font-weight: 600; box-shadow: 0 0 0 3px var(--card); }
+  .route .leg svg { width: 14px; height: 14px; padding: 0; stroke-width: 1.9; background: none; color: inherit; }
+  .route .leg.unset { border-style: dashed; color: var(--muted); font-weight: 500; background: var(--card); }
+  .route .leg.late { background: color-mix(in oklch, var(--warn) 18%, var(--surface)); border-color: color-mix(in oklch, var(--warn) 55%, var(--border)); color: var(--warn-ink); }
+  .route .leg.late .warn { width: 14px; height: 14px; color: var(--warn-ink); }
+  .prev.loading { background: var(--sunken); display: grid; place-items: center; }
+  .spin { width: 24px; height: 24px; border-radius: 50%; border: 2.4px solid color-mix(in oklch, var(--muted) 30%, transparent); border-top-color: var(--muted-ink); }
+  /* I1 地圖圖釘卡（GeoCardView：head＝pin＋標題／副標＋步行＋✕、類型藥丸、備註 4 行、在地圖 App 開啟、動作列） */
+  .mapbg { position: absolute; inset: 0; background:
+      linear-gradient(28deg, transparent 46%, #fff 46% 48%, transparent 48%),
+      linear-gradient(-62deg, transparent 58%, #fff 58% 60.5%, transparent 60.5%),
+      linear-gradient(90deg, transparent 30%, #fff 30% 31.5%, transparent 31.5%),
+      #eeebe3; }
+  .geocard { position: absolute; left: 10px; right: 10px; bottom: 96px; background: var(--bg); border-radius: 22px; box-shadow: 0 8px 28px rgba(0,0,0,.18); overflow: hidden; z-index: 5; }
+  .geocard .gcover { height: 112px; }
+  .geocard .gbody { padding: 12px 14px 14px; }
+  .geocard .ghead { display: flex; align-items: center; gap: 10px; }
+  .geocard .ghead .gpin { width: 22px; height: 22px; border-radius: 50% 50% 50% 0; rotate: -45deg; background: var(--ev); flex: none; }
+  .geocard .ghead b { font-size: var(--text-lg); display: block; }
+  .geocard .ghead small { color: var(--muted); font-size: var(--text-sm); }
+  .geocard .gib { margin-left: auto; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); display: grid; place-items: center; color: var(--muted-ink); flex: none; }
+  .geocard .gib svg { width: 15px; height: 15px; }
+  .geocard .gtag { display: inline-block; margin: 8px 0 6px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px; color: var(--muted-ink); }
+  .geocard .gnotes { font-size: var(--text-sm); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  .geocard .gbtn { margin-top: 10px; min-height: 40px; border-radius: 10px; background: var(--sunken); display: grid; place-items: center; font-size: var(--text-sm); font-weight: 600; }
+  /* I3 widget */
+  .wgt { margin: 40px auto 0; width: 330px; border-radius: 22px; background: var(--bg); box-shadow: 0 6px 20px rgba(0,0,0,.2); padding: 14px; }
+  .wgt h4 { margin: 0 0 8px; font-size: var(--text-sm); }
+  .wgt .w { display: flex; align-items: center; gap: 8px; font-size: var(--text-sm); padding: 5px 0; }
+  .wgt .w .box { width: 16px; height: 16px; }
+  .wgt .w.tap { background: color-mix(in oklch, var(--accent) 12%, transparent); border-radius: 8px; margin: 0 -6px; padding: 5px 6px; }
+  .tr.hl { background: color-mix(in oklch, var(--accent) 10%, transparent); border-radius: 8px; }
+  .mini-sheet { position: absolute; left: 0; right: 0; bottom: 0; height: 38%; background: var(--bg); border-radius: var(--sheet-radius) var(--sheet-radius) 0 0; box-shadow: var(--sheet-shadow); z-index: 31; padding: 6px 16px; }
+  .mini-sheet .cap { margin-top: 10px; }
+  /* 總覽右下「＋ 新增行程」＝旅程分頁那一顆（AddEventFloatingButton；設計 B1 .fab.add，主色圓＋白色＋），使用者 2026-10-31 */
+  .fab-add { position: absolute; right: 18px; bottom: 104px; width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; box-shadow: 0 4px 14px rgba(0,0,0,.18); z-index: 26; }
+  .fab-add svg { width: 24px; height: 24px; stroke: #fff; fill: none; stroke-width: 2.2; stroke-linecap: round; }
+  /* 總覽廣告卡（T1/T2）：同行程卡外形，封面區放廣告素材，標題列左邊「廣告」標籤；前後不接交通膠囊 */
+  .evc.ad .prev { background: linear-gradient(135deg, #e9e4dc, #d6cfc4); display: grid; place-items: center; color: var(--muted); font-size: var(--text-xs); }
+  .adtag { flex: none; font-size: 11px; font-weight: 700; color: var(--muted-ink); border: 1px solid var(--border); border-radius: 4px; padding: 0 5px; margin-right: 6px; vertical-align: 2px; }
+  .evc.ad .evhd .t { color: var(--muted); font-family: var(--font-body); }
+  .mini .evc { margin-top: 8px; }
+  .mini .evc .prev { height: 64px; }
+  table.qa { border-collapse: collapse; font-size: 13px; background: #fff; max-width: 1200px; }
+  table.qa td, table.qa th { border: 1px solid var(--border); padding: 7px 10px; text-align: left; vertical-align: top; line-height: 1.55; }
+  table.qa th { background: var(--surface); }
+
+  /* ── 3x／3y 批次與隱藏（CC5／CC6／CC7，2026-11-01）──
+     批次元件原樣抄 App：BatchSelectionTopBar／BatchSelectionToolbar／BatchSelectionCircle（BatchSelectionViews.swift）；
+     牆的卡片＝ShoppingWallView 同款（圈在媒體區右上，inset Spacing.x2）。待辦列：圈取代左邊那顆完成圈。 */
+  .cc6-section .sl-media { position: relative; }
+  .cc6-section .sl-card.is-hidden .sl-media > :not(.bsel-circle) { opacity: .55; }
+  .cc6-section .sl-card.is-hidden .sl-cap-n { color: var(--muted-ink); }
+  .cc6-section .bsel-circle { position: absolute; top: 8px; right: 8px; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--border); display: grid; place-items: center; z-index: 2; flex: none; }
+  .cc6-section .bsel-circle.inrow { position: static; margin-top: -1px; }
+  .cc6-section .bsel-circle svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; display: none; }
+  .cc6-section .bsel-circle.on { background: var(--accent-ink); border-color: var(--accent-ink); }
+  .cc6-section .bsel-circle.on svg { display: block; }
+  .cc6-section .bsel-bar { flex: none; display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 0 20px; font-size: var(--text-sm); font-weight: 700; }
+  .cc6-section .bsel-bar .l, .cc6-section .bsel-bar .r { color: var(--accent-ink); }
+  .cc6-section .bsel-bar .c { color: var(--fg); }
+  .cc6-section .bsel-tool { position: absolute; left: 16px; right: 16px; bottom: 50px; z-index: 30; background: var(--card); border-radius: 999px; padding: 4px 8px; display: flex; justify-content: space-around; box-shadow: 0 6px 18px rgba(var(--shadow-rgb), .16); border: 1px solid var(--border-soft); }
+  .cc6-section .bsel-tool span { min-height: 44px; display: grid; place-items: center; padding: 0 8px; font-size: var(--text-sm); font-weight: 600; color: var(--accent-ink); white-space: nowrap; }
+  .cc6-section .bsel-tool span.off { opacity: .35; }
+  .cc6-section .bsel-tool span.des { color: var(--danger-ink); }
+  .cc6-section .hid-entry { display: grid; place-items: center; min-height: 44px; margin: 0 0 8px; font-size: var(--text-sm); font-weight: 600; color: var(--accent-ink); }
+  .cc6-section .sl-gap { break-inside: avoid; margin: 0 0 10px; border: 1.5px dashed var(--accent); border-radius: var(--radius-md); background: color-mix(in oklch, var(--accent) 8%, var(--card)); }
+  .cc6-section .sl-card.is-lifted { position: absolute; z-index: 31; border: 1.5px solid var(--accent); box-shadow: 0 10px 24px rgba(var(--shadow-rgb), .25); transform: rotate(-2deg) scale(1.03); background: var(--card); }
+  .cc6-section .figtag { display:inline-block; font-size: 11px; font-weight: 700; border-radius: 6px; padding: 0 6px; margin-left: 6px; background: var(--fg); color:#fff; vertical-align: 1px; }
+  .cc6-section .figtag.newstr { background: var(--accent); }
+  .cc6-section .figtag.pick { background: var(--warn-ink); }
+  .cc6-section .dim-rest { opacity: .38; }
+  .cc6-section .tr.lifted-row { position: absolute; left: 20px; right: 20px; z-index: 31; background: var(--bg); border-radius: 12px; padding: 8px 10px; box-shadow: 0 10px 24px rgba(36,29,23,.24); transform: scale(1.03); }
+  .cc6-section .tr.lifted-row::before { display: none; }
+  .cc6-section .tr.gap-row { height: 44px; border: 1.5px dashed var(--accent); border-radius: 8px; background: color-mix(in oklch, var(--accent) 8%, var(--card)); }
+  .cc6-section .tr.gap-row::before { display: none; }
+  .cc6-section .tr.done .mt { color: var(--muted); }
+  .cc6-section table.qa td, .cc6-section table.qa th { vertical-align: top; }
+  .cc6-section .toast2 { position: absolute; left: 50%; bottom: 60px; transform: translateX(-50%); background: var(--ink-deep); color: #fff; border-radius: 12px; padding: 10px 16px; font-size: var(--text-sm); z-index: 30; white-space: nowrap; box-shadow: 0 6px 18px rgba(0,0,0,.2); }
+
+  /* 300pt 小框（檢視行程頁、編輯行程表單）用的同一組元件，縮成 300/390 */
+  .tdscope .cc7t-ck { width: 18px; height: 18px; border-radius: 50%; border: 1.2px solid var(--border); flex: none; margin-top: 1px; display: grid; place-items: center; }
+  .tdscope .cc7t-ck svg { width: 11px; height: 11px; stroke: #fff; fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; display: none; }
+  .tdscope .cc7t-ck.on { background: var(--accent-ink); border-color: var(--accent-ink); }
+  .tdscope .cc7t-ck.on svg { display: block; }
+  .tdscope .cc7t-bar { flex: none; display: flex; align-items: center; justify-content: space-between; min-height: 34px; padding: 0 16px; font-size: 10.5px; font-weight: 700; }
+  .tdscope .cc7t-bar .l, .tdscope .cc7t-bar .r { color: var(--accent-ink); }
+  .tdscope .cc7t-tool { position: absolute; left: 14px; right: 14px; bottom: 34px; z-index: 12; background: #fff; border-radius: 999px; padding: 3px 6px; display: flex; justify-content: space-around; box-shadow: 0 5px 14px rgba(36,29,23,.16); border: 1px solid var(--border-soft); }
+  .tdscope .cc7t-tool span { min-height: 34px; display: grid; place-items: center; padding: 0 6px; font-size: 10.5px; font-weight: 600; color: var(--accent-ink); white-space: nowrap; }
+  .tdscope .cc7t-tool span.off { opacity: .35; }
+  .tdscope .cc7t-tool span.des { color: #c14b3c; }
+  .tdscope .alert { width: 214px; }
+  .tdscope .alert .bd { padding: 14px 12px 10px; }
+  .tdscope .alert b { font-size: 12.5px; }
+  .tdscope .alert p { font-size: 10.5px; }
+  .tdscope .alert .btns span { font-size: 12px; padding: 8px 0; }
+  .tdscope .tr.done .mt { color: var(--muted); }
+  .tdscope .tr.lifted-row { position: absolute; left: 14px; right: 14px; z-index: 11; background: var(--bg); border-radius: 10px; padding: 8px 8px; box-shadow: 0 8px 22px rgba(36,29,23,.22); transform: scale(1.03); }
+  .tdscope .tr.lifted-row::before { display: none; }
+  .tdscope .tr.gap-row { height: 40px; border: 1.5px dashed var(--accent); border-radius: 8px; background: color-mix(in oklch, var(--accent) 8%, var(--bg)); }
+  .tdscope .tr.gap-row::before { display: none; }
+  .tdscope .toast2 { position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); background: var(--ink-deep); color: #fff; border-radius: 10px; padding: 7px 12px; font-size: 10.5px; z-index: 30; white-space: nowrap; }
+html, body { margin: 0; padding: 0; width: 402px; height: 874px; overflow: hidden; background: var(--page); font-family: var(--font); color: var(--fg); -webkit-font-smoothing: antialiased; }
+.screen { position: relative; display: block; width: 402px; height: 874px; border-radius: 0; background: var(--page); color: var(--fg); overflow: hidden; }
+/* 狀態列、動態島、主畫面橫條：screens/screen.css 的 .sb／.home 原樣（官網首頁的手機外框、商城截圖要有；打包進 App 的示範 embed=1 時真機自己有，不畫） */
+.sb { position: absolute; inset: 0 0 auto 0; height: 54px; z-index: 50; pointer-events: none; color: #000; }
+.sb-time { position: absolute; left: 47px; top: 20.5px; width: 51px; text-align: center; font: 600 18.5px/22px -apple-system, sans-serif; letter-spacing: -.2px; }
+.sb-island { position: absolute; left: 138.3px; top: 14px; width: 125px; height: 36.3px; border-radius: 18.2px; background: #000; }
+.sb-icons { position: absolute; left: 288px; top: 26px; }
+.sb.on-dark { color: #fff; }
+.home-bar { position: absolute; left: 130px; bottom: 8px; width: 141px; height: 5px; border-radius: 3px; background: #000; z-index: 50; }
+.home-bar.on-dark { background: #fff; }
+html.embed .sb, html.embed .home-bar { display: none; }
+/* 頁首：舊總覽示範 .head／.head-act（TripOverviewHeader）；日期小字 xs、抬頭 28/34 */
+.head { position: absolute; left: 20px; top: 74px; width: 314px; }
+.greet { font-size: var(--text-xs); line-height: 14px; color: var(--muted); letter-spacing: .24px; }
+.title { margin-top: 2px; font: 600 var(--text-2xl)/34px var(--font); letter-spacing: -.59px; white-space: nowrap; }
+.head-act { position: absolute; left: 346px; top: 70px; width: 44px; height: 44px; display: grid; place-items: center; color: var(--fg); }
+.head-act svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+/* 日程 chips 橫列 */
+.crow { position: absolute; left: 0; top: 124px; width: 402px; height: 60px; overflow: hidden; }
+.ctrack { display: flex; gap: 8px; padding: 6px 20px 8px; width: max-content; transition: transform .45s cubic-bezier(.3,.7,.3,1); }
+.day-chip { transition: background .25s, color .25s, border-color .25s; }
+.day-chip.key.selected .dc-t { font-weight: 700; }
+.chips-row { all: unset; }
+/* 日頁（橫向翻頁） */
+.pager { position: absolute; left: 0; top: 184px; width: 402px; bottom: 0; overflow: hidden; }
+.ptrack { display: flex; width: 1206px; height: 100%; transition: transform .5s cubic-bezier(.3,.7,.3,1); }
+.pg { flex: 0 0 402px; height: 100%; padding: 0 20px; overflow: hidden; }
+.pg > .evc:first-child { margin-top: 2px; }
+.tr { transition: opacity .35s, max-height .35s, min-height .35s, padding .35s; max-height: 80px; overflow: hidden; }
+.tr .box { transition: background .15s, border-color .15s; }
+.tr .box svg { opacity: 0; transition: opacity .15s; }
+.tr.done .box { background: var(--accent-ink); border-color: var(--accent-ink); }
+.tr.done .box svg { opacity: 1; }
+.tr.gone { opacity: 0; max-height: 0; min-height: 0; padding-top: 0; padding-bottom: 0; }
+.pg .tr:first-child::before { display: none; }
+/* 分頁列：screens/screen.css 的 .tabbar（iOS 26 浮動玻璃分頁列） */
+.gtabs { position: absolute; left: 21px; right: 21px; top: 791px; height: 62px; z-index: 40; border-radius: 31px; background: var(--glass); box-shadow: 0 0 0 .5px var(--glass-edge), 0 8px 30px rgba(0,0,0,.08); display: grid; grid-template-columns: repeat(5, 1fr); padding: 4px; }
+.gt { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; color: var(--tab-ink); font: 500 10px/12px var(--font); border-radius: 27px; }
+.gt svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.gt.on { background: var(--glass-on); color: var(--accent-ink); }
+.gt.on svg { stroke-width: 2; }
+.fab-add { right: 20px; bottom: 100px; transition: opacity .25s; }
+/* 手勢游標：舊示範（screens/overview.html 的 .auto-hand）原樣 */
+.auto-hand{position:fixed;left:0;top:0;width:44px;height:52px;pointer-events:none;z-index:99999;opacity:0;transform:translate(-15.5px,-4.5px);transition:opacity .2s,left .38s cubic-bezier(.3,.7,.3,1),top .38s cubic-bezier(.3,.7,.3,1);filter:drop-shadow(0 3px 6px rgba(0,0,0,.28))}
+.auto-hand.on{opacity:1}
+.auto-hand.slow{transition:opacity .2s,left .5s cubic-bezier(.3,.7,.3,1),top .5s cubic-bezier(.3,.7,.3,1)}
+.auto-hand svg{position:absolute;inset:0;width:44px;height:52px;transform-origin:15.5px 4.5px;transition:transform .12s}
+.auto-hand.down svg{transform:scale(.88) translateY(2px)}
+.auto-ring{position:absolute;left:15.5px;top:4.5px;width:0;height:0;border-radius:50%}
+.auto-ring::before{content:"";position:absolute;left:-22px;top:-22px;width:44px;height:44px;border-radius:50%;background:rgba(47,145,142,.35);border:2px solid rgba(47,145,142,.85);transform:scale(0);opacity:0}
+.auto-hand.tap .auto-ring::before{animation:auto-ripple .5s ease-out}
+@keyframes auto-ripple{0%{transform:scale(.2);opacity:1}100%{transform:scale(1.25);opacity:0}}
+</style>
+</head>
+<body>
+<div class="screen" id="d">
+<div class="sb" id="sb"><div class="sb-time">9:41</div><div class="sb-island"></div><svg class="sb-icons" width="80" height="13" viewBox="0 0 80 13" fill="currentColor"><rect x="0.3" y="8.3" width="3.2" height="4" rx=".8"/><rect x="5.3" y="5.9" width="3.2" height="6.4" rx=".8"/><rect x="10.3" y="3.3" width="3.2" height="9" rx=".8"/><rect x="15.3" y=".3" width="3.2" height="12" rx=".8"/><path d="M35.9 2.6c-2.6 0-5 1-6.8 2.7l1.4 1.4a7.7 7.7 0 0 1 10.8 0l1.4-1.4c-1.8-1.7-4.2-2.7-6.8-2.7zm0 3.9a5.7 5.7 0 0 0-4 1.6l1.4 1.4a3.7 3.7 0 0 1 5.2 0l1.4-1.4a5.7 5.7 0 0 0-4-1.6zm0 3.9c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" transform="translate(-.8 -1.6) scale(1.08)"/><rect x="53.6" y="1.5" width="23" height="10.3" rx="3" fill="none" stroke="currentColor" stroke-opacity=".38" stroke-width="1"/><rect x="55.4" y="3.2" width="19.4" height="6.9" rx="1.8"/><path d="M78 5v3.6c.7-.3 1.2-1 1.2-1.8S78.7 5.3 78 5z" fill-opacity=".4"/></svg></div><div class="home-bar" id="hb"></div>
+  <div class="head"><div class="greet">還有 12 天</div><div class="title">山陽 6 日</div></div>
+  <div class="head-act"><svg viewBox="0 0 24 24"><path d="M12 16V4M8 7.5l4-4 4 4M5 14v5q0 1 1 1h12q1 0 1-1v-5"/></svg></div>
+  <div class="crow"><div class="ctrack" id="ctrack"><span class="day-chip key"><span class="dc-t">總覽</span></span><span class="day-chip"><span class="dc-t">第 1 天</span><span class="dc-s">11/12 週四</span></span><span class="day-chip"><span class="dc-t">第 2 天</span><span class="dc-s">11/13 週五</span></span><span class="day-chip"><span class="dc-t">第 3 天</span><span class="dc-s">11/14 週六</span></span><span class="day-chip"><span class="dc-t">第 4 天</span><span class="dc-s">11/15 週日</span></span><span class="day-chip"><span class="dc-t">第 5 天</span><span class="dc-s">11/16 週一</span></span><span class="day-chip"><span class="dc-t">第 6 天</span><span class="dc-s">11/17 週二</span></span></div></div>
+  <div class="pager"><div class="ptrack" id="ptrack">
+    <div class="pg" id="pg0"><div class="ov-brief" style="margin-top:4px"><div class="ov-day is-key">總覽<span class="ov-brief-edit">編輯</span></div><div class="ov-brief-title">山陽 6 日</div><div class="ov-brief-body" style="max-height:none"><div class="np-body"><p>岡山進出、廣島當基地，一張 JR Pass 走透透</p><p style="margin-bottom:4px">全程靠「岡山＆廣島＆山口地區 JR Pass」，連宮島渡輪都含在內。</p></div></div></div><div class="sub">待排行程<span class="n">2</span></div><div class="pz-flow"><span class="pz-card is-loose" data-color="see"><span class="ov-dot"></span>大久野島（兔島）<span class="d"> · 5 小時</span></span><span class="pz-card is-loose" data-color="misc"><span class="ov-dot"></span>宮島 大聖院<span class="d"> · 45 分</span></span></div><div class="sub">重要事項<span class="n" id="keycnt">3</span></div><div class="tr " ><span class="box"><svg class="ln" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="#fff"/></svg></span><div class="tm"><div class="tt">十一月的廣島夜裡只有 4 度上下，厚外套要帶夠</div></div></div><div class="tr " id="t-esim"><span class="box"><svg class="ln" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="#fff"/></svg></span><div class="tm"><div class="tt">iPhone 錢包先開一張 Suica，市區公車與便利商店都刷得動</div></div><span class="dot" style="background:var(--ev-move)"></span></div><div class="tr " ><span class="box"><svg class="ln" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="#fff"/></svg></span><div class="tm"><div class="tt">岡山機場安檢穿靴子要脫下來，換一雙好脫的鞋</div></div></div><div class="compose"><span class="box"></span>新增待辦</div></div>
+    <div class="pg" id="pg1"><div class="evc" data-color="see"><div class="prev map"><span class="pin"></span></div><div class="evhd"><span class="t">14:11–14:40</span><span class="nm"><span class="ov-dot"></span>岡山機場入境、領行李</span><span class="chev"><svg class="ln" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></div></div><div class="route"><span class="leg"><svg class="ln" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="12" rx="2"/><path d="M6 11h12M9.5 19.5 8 22M14.5 19.5 16 22"/><circle cx="9.5" cy="13.5" r=".8" fill="currentColor"/><circle cx="14.5" cy="13.5" r=".8" fill="currentColor"/></svg>巴士 30 分<svg class="ln chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></div><div class="evc" data-color="see"><div class="prev photo"></div><div class="evhd"><span class="t">15:35–15:55</span><span class="nm"><span class="ov-dot"></span>岡山車站 兌換 JR Pass</span><span class="chev"><svg class="ln" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></div><div class="tds"><div class="tr " id="t-time"><span class="box"><svg class="ln" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="#fff"/></svg></span><div class="tm"><div class="tt">領票時順便拿一張山陽本線的紙本時刻表，離線也看得到</div></div><span class="dot" style="background:var(--ev-move)"></span></div></div></div></div>
+    <div class="pg" id="pg2"><div class="evc" data-color="move"><div class="prev empty"><svg class="fl" viewBox="0 0 15 15"><path d="M5.33,11c0.6745,0.009,1.3262,0.245,1.85,0.67l0.26,0.23h0.05l0.31-0.28c0.9817-0.8115,2.379-0.8846,3.44-0.18L13.5,7L12,6 V2.45c-0.0466-0.8-0.6989-1.4305-1.5-1.45H10c0.0343-0.518-0.3579-0.9657-0.8759-1C9.0828-0.0027,9.0413-0.0027,9,0H6 C5.482-0.0343,5.0343,0.3579,5,0.8759C4.9973,0.9172,4.9973,0.9587,5,1H4.5C3.6989,1.0195,3.0466,1.65,3,2.45V6L1.5,7l2.25,4.53 C4.2143,11.2041,4.7631,11.02,5.33,11z M4,2.45c0.0105-0.2594,0.2293-0.4611,0.4886-0.4506C4.4924,1.9996,4.4962,1.9998,4.5,2h6 c0.259-0.0171,0.4829,0.1789,0.5,0.4379c0.0014,0.0207,0.0014,0.0414,0,0.0621v3l-3.5-2L4,5.45C4,5.45,4,2.45,4,2.45z M14,13v1 c-0.2626,0.0194-0.5069,0.1416-0.68,0.34c-0.2717,0.2883-0.6178,0.4959-1,0.6c-0.6147,0.1815-1.2795,0.0425-1.77-0.37l-0.39-0.35 c-0.3043-0.3026-0.7957-0.3026-1.1,0c-0.14,0.12-0.27,0.25-0.42,0.37c-0.7328,0.5856-1.7814,0.556-2.48-0.07l-0.39-0.35 c-0.2864-0.2502-0.7136-0.2502-1,0c-0.19,0.15-0.36,0.32-0.55,0.47c-0.7043,0.5215-1.6732,0.4968-2.35-0.06l-0.31-0.27 C1.4153,14.1443,1.2172,14.0346,1,14v-1c0.2585-0.032,0.5205,0.0169,0.75,0.14c0.2782,0.1722,0.5424,0.3661,0.79,0.58 c0.2051,0.2235,0.5147,0.319,0.81,0.25c0.1125-0.0333,0.2177-0.0876,0.31-0.16c0.16-0.12,0.29-0.26,0.45-0.39 c0.7106-0.5888,1.7394-0.5888,2.45,0c0.16,0.13,0.31,0.28,0.47,0.41c0.2864,0.2502,0.7136,0.2502,1,0c0.16-0.13,0.31-0.28,0.47-0.41 c0.7123-0.5943,1.7477-0.5943,2.46,0c0.15,0.13,0.29,0.27,0.44,0.39c0.2864,0.2502,0.7136,0.2502,1,0l0.47-0.41 C13.1895,13.1408,13.5886,12.9995,14,13z"/></svg></div><div class="evhd"><span class="t">09:10–09:20</span><span class="nm"><span class="ov-dot"></span>JR 宮島渡輪 宮島口 → 宮島</span><span class="chev"><svg class="ln" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></div><div class="tds"><div class="tr " ><span class="box"><svg class="ln" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="#fff"/></svg></span><div class="tm"><div class="tt">宮島訪問稅 ¥100 在碼頭另外付，現金或 IC 卡都可以</div></div><span class="dot" style="background:var(--ev-misc)"></span></div></div></div><div class="route"><span class="leg"><svg class="ln" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2" fill="currentColor" stroke="none"/><path d="M11.5 8.5 9 13l3 2 1 6M13.5 8.5l2 3.5 3 1M12 15l-3 6"/></svg>步行 5 分<svg class="ln chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></div><div class="evc" data-color="eat"><div class="prev map"><span class="pin"></span></div><div class="evhd"><span class="t">09:30–10:05</span><span class="nm"><span class="ov-dot"></span>表參道商店街 邊走邊吃</span><span class="chev"><svg class="ln" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></div></div></div>
+  </div></div>
+  <span class="fab-add" id="fab"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+  <div class="gtabs"><div class="gt"><svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/></svg><span>主頁</span></div><div class="gt on"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg><span>總覽</span></div><div class="gt"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg><span>旅程</span></div><div class="gt"><svg viewBox="0 0 24 24"><path d="M9 3.5 3.5 5.5v15L9 18.5l6 2 5.5-2v-15L15 5.5z M9 3.5v15M15 5.5v15"/></svg><span>地圖</span></div><div class="gt"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z M14 3v5h5M8.5 12.5h7M8.5 16.5h5"/></svg><span>資料</span></div></div>
+</div>
+<div class="auto-hand" id="hand"><span class="auto-ring"></span><svg viewBox="0 0 40 48" aria-hidden="true">
+  <path d="M15.5 4.5c-1.9 0-3.3 1.5-3.3 3.3v18.4l-2.9-2.9c-1.4-1.4-3.6-1.5-5-.2-1.4 1.3-1.5 3.5-.2 4.9l9.7 11.3c2.4 2.8 5.9 4.4 9.6 4.4h4.1c6.1 0 11.1-5 11.1-11.1V21.7c0-1.8-1.5-3.3-3.3-3.3s-3.3 1.5-3.3 3.3v-1.6c0-1.8-1.5-3.3-3.3-3.3s-3.3 1.5-3.3 3.3v-1.3c0-1.8-1.5-3.3-3.3-3.3-.9 0-1.7.3-2.3.9V7.8c0-1.8-1.5-3.3-3.3-3.3z" fill="#fff" stroke="#1f1914" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M18.8 22.5v7M25.4 22.5v7M32 23.5v6" stroke="#1f1914" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var theme = q.get('theme') === 'dark' ? 'dark' : 'light';
+  var lang = q.get('lang') || 'zh-Hant-TW';
+  var col = lang === 'en' ? 1 : lang === 'ja' ? 2 : lang === 'ko' ? 3 : 0;
+  var TEXT = [
+    /*I18N*/
+    ["還有 12 天", "12 days to go", "あと 12 日", "12일 남음"],
+    ["山陽 6 日", "San'yō in 6 Days", "山陽 6 日間", "산요 6일"],
+    ["總覽", "Overview", "概要", "한눈에 보기"],
+    ["編輯", "Edit", "編集", "편집"],
+    ["第 1 天", "Day 1", "1 日目", "1일째"],
+    ["第 2 天", "Day 2", "2 日目", "2일째"],
+    ["第 3 天", "Day 3", "3 日目", "3일째"],
+    ["第 4 天", "Day 4", "4 日目", "4일째"],
+    ["第 5 天", "Day 5", "5 日目", "5일째"],
+    ["第 6 天", "Day 6", "6 日目", "6일째"],
+    ["11/12 週四", "11/12 Thu", "11/12 (木)", "11/12 (목)"],
+    ["11/13 週五", "11/13 Fri", "11/13 (金)", "11/13 (금)"],
+    ["11/14 週六", "11/14 Sat", "11/14 (土)", "11/14 (토)"],
+    ["11/15 週日", "11/15 Sun", "11/15 (日)", "11/15 (일)"],
+    ["11/16 週一", "11/16 Mon", "11/16 (月)", "11/16 (월)"],
+    ["11/17 週二", "11/17 Tue", "11/17 (火)", "11/17 (화)"],
+    ["岡山進出、廣島當基地，一張 JR Pass 走透透", "In and out of Okayama, based in Hiroshima, all of it on one JR pass", "岡山イン／アウト、広島を拠点に JR パスで巡る", "오카야마 인/아웃, 히로시마를 거점으로 JR 패스 한 장"],
+    ["全程靠「岡山＆廣島＆山口地區 JR Pass」，連宮島渡輪都含在內。", "Every leg is covered by the Okayama–Hiroshima–Yamaguchi Area Pass, ferry to Miyajima included.", "移動はすべて「岡山・広島・山口エリアパス」でカバー（JR 宮島フェリーも込み）。", "이동은 전부 '오카야마·히로시마·야마구치 에리어 패스'로 해결되고 JR 미야지마 페리까지 포함됩니다."],
+    ["待排行程", "Unscheduled", "未定の予定", "미정 일정"],
+    ["大久野島（兔島）", "Okunoshima (Rabbit Island)", "大久野島（うさぎの島）", "오쿠노시마(토끼섬)"],
+    ["宮島 大聖院", "Daishō-in, Miyajima", "宮島 大聖院", "미야지마 다이쇼인"],
+    ["· 5 小時", "· 5 h", "· 5 時間", "· 5시간"],
+    ["· 45 分", "· 45 min", "· 45 分", "· 45분"],
+    ["重要事項", "Key To-Dos", "重要なやること", "중요한 할 일"],
+    ["十一月的廣島夜裡只有 4 度上下，厚外套要帶夠", "Hiroshima drops to about 4°C at night in November. Pack a real coat", "11 月の広島は夜 4 度前後。厚手のアウターを忘れずに", "11월 히로시마는 밤에 4도 안팎. 두꺼운 외투를 챙길 것"],
+    ["iPhone 錢包先開一張 Suica，市區公車與便利商店都刷得動", "Set up a Suica in Apple Wallet before you leave — it works on city buses and in every convenience store", "iPhone のウォレットに Suica を用意。市内のバスもコンビニもタッチで済む", "iPhone 지갑에 Suica를 미리 발급. 시내 버스도 편의점도 태그로 해결"],
+    ["岡山機場安檢穿靴子要脫下來，換一雙好脫的鞋", "Security at Okayama Airport makes you take boots off. Wear something easier", "岡山空港の保安検査ではブーツは脱ぐ。脱ぎやすい靴に替えておく", "오카야마 공항 보안검색에서 부츠는 벗어야 함. 벗기 쉬운 신발로 갈아신을 것"],
+    ["新增待辦", "Add to-do", "やることを追加", "할 일 추가"],
+    ["岡山機場入境、領行李", "Immigration and baggage at Okayama Airport", "岡山空港 入国・荷物受取", "오카야마 공항 입국·수하물 수령"],
+    ["巴士 30 分", "Bus 30 min", "バス 30 分", "버스 30분"],
+    ["岡山車站 兌換 JR Pass", "Collect the JR pass at Okayama Station", "岡山駅で JR パスを受け取る", "오카야마역에서 JR 패스 수령"],
+    ["領票時順便拿一張山陽本線的紙本時刻表，離線也看得到", "Pick up a paper San'yō Line timetable while you are at the counter — it still works offline", "受け取りのときに山陽本線の紙の時刻表をもらう。オフラインでも見られる", "수령할 때 산요 본선 종이 시간표를 받아 둘 것. 오프라인에서도 볼 수 있음"],
+    ["JR 宮島渡輪 宮島口 → 宮島", "JR Miyajima ferry, Miyajimaguchi → Miyajima", "JR 宮島フェリー 宮島口 → 宮島", "JR 미야지마 페리 미야지마구치 → 미야지마"],
+    ["宮島訪問稅 ¥100 在碼頭另外付，現金或 IC 卡都可以", "The ¥100 visitor tax is paid separately at the pier — cash or IC card", "宮島訪問税 ¥100 は桟橋で別払い。現金でも IC カードでも可", "미야지마 방문세 ¥100은 선착장에서 별도 결제. 현금·IC 카드 모두 가능"],
+    ["步行 5 分", "Walk 5 min", "徒歩 5 分", "도보 5분"],
+    ["表參道商店街 邊走邊吃", "Eat your way along Omotesando", "表参道商店街で食べ歩き", "오모테산도 상점가에서 먹으며 걷기"],
+    ["主頁", "Home", "ホーム", "홈"],
+    ["旅程", "Trip", "旅行", "여행"],
+    ["地圖", "Map", "マップ", "지도"],
+    ["資料", "Library", "資料", "자료"],
+    /*END*/
+  ];
+  /* 繁中以外：把 body 裡每個文字節點（trim 之後整段相等）換成表裡那一欄；表裡沒有的不動 */
+  if (col) {
+    var dict = {};
+    TEXT.forEach(function (r) { dict[r[0]] = r[col]; });
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function (n) {
+      var t = n.nodeValue.trim();
+      if (t && dict.hasOwnProperty(t)) n.nodeValue = n.nodeValue.replace(t, dict[t]);
+    });
+    document.documentElement.lang = lang;
+  }
+  document.documentElement.dataset.theme = theme;
+  if (q.get('embed') === '1') document.documentElement.classList.add('embed');
+  if (theme === 'dark') { document.getElementById('sb').classList.add('on-dark'); document.getElementById('hb').classList.add('on-dark'); }
+  var $ = function (id) { return document.getElementById(id); };
+  var hand = $('hand'), ptrack = $('ptrack'), ctrack = $('ctrack');
+  var chips = [].slice.call(ctrack.children);
+  var paused = false, token = 0;
+
+  function say(type) { try { parent.postMessage({ type: type }, '*'); } catch (e) {} }
+  addEventListener('message', function (e) {
+    var d = e.data || {};
+    if (d.type === 'tz-auto-ctl') paused = d.cmd === 'pause';
+  });
+
+  /* 暫停：等待時間不往前走 */
+  function wait(ms) {
+    return new Promise(function (res) {
+      var left = ms, last = performance.now();
+      (function tick() {
+        var n = performance.now();
+        if (!paused) left -= n - last;
+        last = n;
+        if (left <= 0) res(); else setTimeout(tick, 30);
+      })();
+    });
+  }
+  function center(el) {
+    var r = el.getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+  }
+  function moveHand(x, y, slow) {
+    hand.classList.toggle('slow', !!slow);
+    hand.style.left = x + 'px'; hand.style.top = y + 'px';
+  }
+  function show() { hand.classList.add('on'); }
+  function hide() { hand.classList.remove('on'); }
+  async function tap(el) {
+    var c = center(el.querySelector('.box') || el);
+    moveHand(c.x, c.y); await wait(520);
+    hand.classList.add('down'); hand.classList.remove('tap'); void hand.offsetWidth; hand.classList.add('tap');
+    await wait(140);
+  }
+  function release() { hand.classList.remove('down'); }
+
+  function select(i) {
+    chips.forEach(function (c, k) { c.classList.toggle('selected', k === i); });
+    /* 選到的那一顆只要整顆看得到就不捲；超出右緣才捲到剛好露出（UICollectionView scrollToItem 的 centered-if-needed 效果） */
+    var c = chips[i], over = c.offsetLeft + c.offsetWidth + 20 - 402;
+    ctrack.style.transform = 'translateX(' + (-Math.max(0, over)) + 'px)';
+  }
+  function goPage(i) { ptrack.style.transform = 'translateX(' + (-402 * i) + 'px)'; select(i); }
+  async function swipe(to) {
+    show(); moveHand(320, 470); await wait(520);
+    hand.classList.add('down'); await wait(120);
+    moveHand(80, 470, true); goPage(to);
+    await wait(620); release(); await wait(150);
+  }
+  async function checkOff(id, thenGone) {
+    var el = $(id); await tap(el); el.classList.add('done'); release();
+    await wait(1000);                                   // 勾掉之後停 1 秒才淡出（Q34）
+    el.classList.add('gone'); await wait(450);
+  }
+
+  async function story() {
+    var my = ++token;
+    say('tz-auto-hello');
+    select(0);
+    await wait(1800);                                   // 拍 0：總覽頁（總覽筆記、待排行程、重要事項）
+    say('tz-auto-progress');
+    show(); await checkOff('t-esim');                   // 拍 1：勾掉一則重要事項
+    $('keycnt').textContent = '2';
+    say('tz-auto-progress');
+    await wait(500);
+    await swipe(1);                                     // 拍 2：左右滑到第 1 天（chips 跟著走）
+    say('tz-auto-progress');
+    await wait(1700);
+    await checkOff('t-time');                           // 拍 3：勾掉行程卡上的待辦
+    say('tz-auto-progress');
+    await wait(500);
+    await swipe(2);                                     // 拍 4：再滑到第 2 天（封面三種退路之一：空狀態）
+    hide();
+    say('tz-auto-progress');
+    await wait(2200);
+    say('tz-auto-loop');
+  }
+
+  var dayQ = parseInt(q.get('day'), 10) || 0;
+  if (q.get('still') === '1') { select(0); } else if (q.get('interactive') === '1' || q.get('auto')) {
+    if (document.readyState === 'complete') story(); else addEventListener('load', story);
+  } else { ptrack.style.transition = ctrack.style.transition = 'none'; goPage(dayQ); }   /* 靜止畫面：直接到位，不播轉場（截圖不能撞上動畫中途） */
+  /* 截圖工具（tools/screens.mjs）等 body[data-ready=1]：字型載完才算畫好 */
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function () { document.body.dataset.ready = '1'; });
+  window.__auto = { restart: function () { location.reload(); } };
+})();
+</script>
+</body>
+</html>
