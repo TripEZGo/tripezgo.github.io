@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=580bc67035","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=0d956dd369","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>檢視行程</title>
 <!--
@@ -63,6 +63,7 @@
   .desc { padding: 0 20px 8px; }
   .desc .p { font: 400 var(--t-base)/27.7px var(--font); letter-spacing: -.24px; color: var(--ink); margin: 0 0 12px; }
   .desc .p:last-child { margin-bottom: 0; }
+  .desc .dimg { display: block; width: 100%; border-radius: 8px; margin: 0 0 12px; }
   .sec-head { display: flex; align-items: baseline; gap: 10px; padding: 20px 20px 6px; }
   .sec-head b { flex: 1; font: 700 var(--t-sm)/15.5px var(--font); color: var(--ink); }
   .count { display: flex; align-items: center; gap: 6px; font: 700 var(--t-xs)/14.3px var(--font); color: var(--muted); }
@@ -241,30 +242,8 @@ const S = {
 }[lang] || null;
 const L = S || { allDay: s => `全日 · ${s}`, span: (a, b) => `第 ${a}–${b} 天`, todos: '待辦清單', addTodo: '新增待辦', files: '附件', desc: '描述', addFile: '新增附件', locale: 'zh-TW', hideDone: '收起已完成', showDone: '顯示已完成' };
 
-// 範本裡沒有的附件（extra=1）：一份 PDF 電子票券、一張照片。列的長相、圖示、第二行（副檔名大寫）照 App。
-const EXTRA_BY_EVENT = {
-  'jr-pass': {
-    'zh-Hant-TW': [['JR Pass 電子票券.pdf', 'pdf'], ['兌換收據.jpg', 'image']],
-    en: [['JR Pass e-ticket.pdf', 'pdf'], ['Exchange receipt.jpg', 'image']],
-    ja: [['JR Pass 電子チケット.pdf', 'pdf'], ['引換レシート.jpg', 'image']],
-    ko: [['JR Pass 전자 티켓.pdf', 'pdf'], ['교환 영수증.jpg', 'image']],
-  },
-  'd1-airport': {
-    'zh-Hant-TW': [['虎航 電子登機證.pdf', 'pdf'], ['護照資料頁.jpg', 'image']],
-    en: [['Tigerair boarding pass.pdf', 'pdf'], ['Passport photo page.jpg', 'image']],
-    ja: [['タイガーエア 搭乗券.pdf', 'pdf'], ['パスポート顔写真ページ.jpg', 'image']],
-    ko: [['타이거에어 탑승권.pdf', 'pdf'], ['여권 정보면.jpg', 'image']],
-  },
-};
-const EXTRA = (EXTRA_BY_EVENT[params.get('event') || 'jr-pass'] || EXTRA_BY_EVENT['jr-pass'])[lang] || [];
-// extra=1 也替第一則待辦補 1.7.0 的備註、提醒與標記色點（範本待辦沒有這三樣；行銷用）。列怎麼畫照 EventTodoRowCell：字、備註、提醒各一行，列尾色點
-const TODO_EXTRA = {
-  'zh-Hant-TW': { note: '記得帶護照', remind: '10/10 06:30' },
-  en: { note: 'Bring the passport', remind: '10/10 06:30' },
-  ja: { note: 'パスポートを忘れずに', remind: '10/10 06:30' },
-  ko: { note: '여권 챙기기', remind: '10/10 06:30' },
-}[lang] || null;
-
+// 範本第 4 版：行程自己帶 images（描述的圖，第一張是封面）、files（附件，含照片）、待辦的備註與顏色（todoMeta）——不再補示意資料
+const TPL = n => `img/tpl/${n}.jpg`;
 // DesignIcon.swift 的轉寫（24 格）。收進 chrome.js 之前先放這裡。
 const I = {
   cancel: '<circle cx="12" cy="12" r="9"/><path d="M8 8l8 8"/>',
@@ -304,7 +283,8 @@ if (ADDED) {
   if (params.get('chain') === '1') { const { CHAIN_EVENT, GM } = await import('./inspiration-chain.js'); trip.days.find(x => x.day === 2).events.push({ ...CHAIN_EVENT, notes: `${GM.desc}\n\n${GM.url}` }); }
   else { const { ADDED_EVENT, N, URL_ } = await import('./inspiration-data.js'); trip.days.find(x => x.day === 2).events.push({ ...ADDED_EVENT, notes: `${N.desc}\n\n${URL_}` }); }
 }
-const key = params.get('event') || 'jr-pass';
+const LEGACY = { 'd1-airport': 'd1-flight-tpe-okj', 'd1-jrpass-pickup': 'd1-jrpass' };   // 第 3 版的行程 key
+const key0 = params.get('event') || 'jr-pass', key = LEGACY[key0] || key0;
 const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
 const dateOf = n => new Date(start.getTime() + (n - 1) * 864e5);
 
@@ -340,7 +320,7 @@ let showsCompleted = false;
 const files = (ev.links || []).map(l => ({ name: l.title || l.url, kind: 'link', meta: '', url: l.url }));
 
 if (ADDED && params.get('chain') !== '1') files.push({ name: 'og-image.jpg', kind: 'image', meta: 'JPG' });
-if (params.get('extra') === '1') EXTRA.forEach(([name, kind]) => files.push({ name, kind, meta: name.split('.').pop().toUpperCase() }));
+(ev.files || []).forEach(f => files.push({ name: f.title, kind: 'image', meta: 'JPG', img: TPL(f.image) }));
 
 // 導覽列（TripEventDetailViewController.applyPins）：左邊「延後／提前、我不去了」（已取消或全日的沒有延後），
 // 右邊由外而內「刪除、編輯」，全日的再加兩顆釘選鈕（每日開始／結束，R12d）。
@@ -365,24 +345,27 @@ function navHTML() {
   return left + right;
 }
 
-const extraTodo = i => i === 0 && params.get('extra') === '1' && !!TODO_EXTRA;
+const tmeta = i => (ev.todoMeta || [])[i] || {};
+const extraTodo = i => !!(tmeta(i).note || tmeta(i).colour);
 // EventSectionHeaderView.configureTodos ＋ TodoCountView ＋ EventTodoRowCell／TodoCheckButton
 function todosHTML() {
   const n = done.size, unfinished = n < todos.length;
   const visible = todos.map((x, i) => i).filter(i => showsCompleted || !done.has(i) || sticky.has(i));
   const showsRows = visible.some(i => done.has(i));
   return `<div class="sec-head"><b>${L.todos}</b>${todos.length ? `<span class="count${unfinished ? ' due' : ' ok'}">${unfinished ? '<i></i>' : ''}${n}/${todos.length}</span>` : ''}${n > 0 ? `<span class="sec-tog" data-tog data-tap>${showsRows ? L.hideDone : L.showDone}</span>` : ''}</div>
-    ${visible.map(i => `<div class="todo${done.has(i) ? ' done' : ''}"><div class="box"${interactive ? ` data-todo="${i}" role="checkbox" aria-checked="${done.has(i)}"` : ''}><i>${done.has(i) ? ic('check') : ''}</i></div>${extraTodo(i) ? `<div class="col"><span>${esc(todos[i])}</span><div class="nt">${esc(TODO_EXTRA.note)}</div><div class="nt">${esc(TODO_EXTRA.remind)}</div></div><i class="dot sw-eat"></i>` : `<span>${esc(todos[i])}</span>`}</div>`).join('')}
+    ${visible.map(i => `<div class="todo${done.has(i) ? ' done' : ''}"><div class="box"${interactive ? ` data-todo="${i}" role="checkbox" aria-checked="${done.has(i)}"` : ''}><i>${done.has(i) ? ic('check') : ''}</i></div>${extraTodo(i) ? `<div class="col"><span>${esc(todos[i])}</span>${tmeta(i).note ? `<div class="nt">${esc(tmeta(i).note)}</div>` : ''}</div>${tmeta(i).colour ? `<i class="dot ${swatchClass(tmeta(i).colour)}"></i>` : ''}` : `<span>${esc(todos[i])}</span>`}</div>`).join('')}
     <div class="todo composer"><div class="box"><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10.2" fill="none"
       stroke="var(--border)" stroke-width="1.6" stroke-dasharray="3 3"/></svg></div><span>${L.addTodo}</span></div>`;
 }
 
 // 描述：富文本優先、沒有就退回純文字（每一行一段；EventDetailSections.descriptionParagraphs）。範本的描述是純文字
 const descParas = (ev.notes || '').split('\n').filter(x => x.trim());
+const descImgs = (ev.images || []).slice(1);   // 第一張在頂端當封面，不重複（EventDetailSections.descriptionParagraphs）
 // 封面（EventCoverViewModel）：描述第一張圖 → 有地點＝地圖快照＋類型色圖釘 → 都沒有＝空狀態（類型圖示 26）。範本描述沒有圖，所以只有後兩種
 const glyphOf = cat => `<svg viewBox="0 0 15 15" aria-hidden="true"><path fill-rule="evenodd" d="${MAKI[MAKI_OF_TYPE[cat] || DEFAULT_ICON_ID] || MAKI.marker}"/></svg>`;
 function coverHTML() {
   const cx = ev.isCancelled ? ' cx' : '';
+  if (ev.images && ev.images.length) return `<div class="cover cphoto ${swatchClass(ev.category)}${cx}" style="background:center/cover url(${TPL(ev.images[0])})"></div>`;
   if (ev.place) return `<div class="cover map ${swatchClass(ev.category)}${cx}"><span class="pin"></span></div>`;
   return `<div class="cover empty ${swatchClass(ev.category)}${cx}">${glyphOf(ev.category)}</div>`;
 }
@@ -400,8 +383,8 @@ d.insertAdjacentHTML('beforeend', `
   <div class="body" id="body">
     <div id="todos">${todosHTML()}</div>
     <div class="sec-head"><b>${L.files}</b>${files.length ? `<span class="count">${files.length}</span>` : ''}</div>
-    <div class="strip">${files.map((f, i) => `<div class="file" data-file="${i}"${interactive ? ' data-tap' : ''}><div class="th${f.kind === 'image' ? ' img' : ''}">${f.kind === 'image' ? '' : ic(FILE_ICON[f.kind])}${f.kind === 'pdf' ? '<span class="ext">PDF</span>' : ''}</div><span class="nm">${esc(f.name)}</span></div>`).join('')}<div class="file add"><div class="th">${ic('plus')}</div><span class="nm">${L.addFile}</span></div></div>
-    ${descParas.length ? `<div class="sec-head"><b>${L.desc}</b></div><div class="desc">${descParas.map(x => `<div class="p">${esc(x)}</div>`).join('')}</div>` : ''}
+    <div class="strip">${files.map((f, i) => `<div class="file" data-file="${i}"${interactive ? ' data-tap' : ''}><div class="th${f.kind === 'image' ? ' img' : ''}"${f.img ? ` style="background-image:url(${f.img});background-size:cover;background-position:center"` : ''}>${f.kind === 'image' ? '' : ic(FILE_ICON[f.kind])}${f.kind === 'pdf' ? '<span class="ext">PDF</span>' : ''}</div><span class="nm">${esc(f.name)}</span></div>`).join('')}<div class="file add"><div class="th">${ic('plus')}</div><span class="nm">${L.addFile}</span></div></div>
+    ${descParas.length || descImgs.length ? `<div class="sec-head"><b>${L.desc}</b></div><div class="desc">${descImgs.map(n => `<img class="dimg" src="${TPL(n)}" alt="">`).join('')}${descParas.map(x => `<div class="p">${esc(x)}</div>`).join('')}</div>` : ''}
   </div>
 </div></div>`);
 

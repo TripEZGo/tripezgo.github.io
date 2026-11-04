@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=580bc67035","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=0d956dd369","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>資料・購物清單</title>
 <!--
@@ -57,6 +57,7 @@
   .cap { padding: 8px 10px 10px; display: flex; flex-direction: column; gap: 2px; }
   .cap .n { font: 600 var(--t-sm)/15.5px var(--font); color: var(--ink); }
   .cap .p { font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); }
+  .noimg { aspect-ratio: 1; display: grid; place-items: center; background: var(--sunken); color: var(--muted); font: 600 var(--t-xxl)/1 var(--font); }
   .skipped .cap .n { color: var(--muted); text-decoration: line-through; }
   .skipped .cap .p { color: var(--muted-faint); text-decoration: line-through; }
 
@@ -131,21 +132,13 @@ const s = {
 // cat＝大分類（上面那一排籌碼篩的就是它，8 個）；pt＝商品類型（1.7.0，ProductType 26 種之一）：牆上第二行「價格 · 類型」與卡片上寫的是它（ShoppingViewModel.typeName）。
 // quotes（價格比較）與 event（關聯行程，範本裡的行程 key）只在互動模式的卡片上看得到。
 const N = (zh, en, ja, ko) => ({ 'zh-Hant-TW': zh, en, ja, ko }[lang]);   // ko 的品名、店名是自寫的（範本裡沒有購物清單）
-const ITEMS = [
-  { img: 'manju', pt: 'wagashi', r: 1, name: N('紅葉饅頭 12 入', 'Momiji manju, box of 12', 'もみじ饅頭 12 個入', '모미지 만주 12개입'), cat: 'souv', price: 1600, status: 'pending', linked: true,
-    event: 'd2-omotesando', quotes: [[N('山田屋 宮島本店', 'Yamadaya, Miyajima', 'やまだ屋 宮島本店', '야마다야 미야지마 본점'), 1600], [N('ekie 廣島站', 'ekie, Hiroshima Sta.', 'ekie 広島駅', 'ekie 히로시마역'), 1650]] },
-  { img: 'brush', pt: 'makeup', r: .75, name: N('熊野筆 腮紅刷', 'Kumano blush brush', '熊野筆 チークブラシ', '구마노 붓 블러셔 브러시'), cat: 'lux', price: 4800, status: 'pending',
-    quotes: [[N('筆之里工房', 'Fude-no-Sato Kobo', '筆の里工房', '후데노사토 공방'), 4620], [N('ekie 廣島站', 'ekie, Hiroshima Sta.', 'ekie 広島駅', 'ekie 히로시마역'), 4800], [N('晃祐堂 熊野本店', 'Koyudo, Kumano', '晃祐堂 熊野本店', '고유도 구마노 본점'), 4950]] },
-  { img: 'drops', pt: 'medicine', r: 1, name: N('眼藥水', 'Eye drops', '目薬', '안약'), cat: 'drug', price: 698, status: 'pending',
-    quotes: [[N('唐吉訶德 廣島本通店', 'Don Quijote Hondori', 'ドン・キホーテ 広島本通店', '돈키호테 히로시마 혼도리점'), 658], [N('大國藥妝 本通店', 'Daikoku Drug Hondori', 'ダイコクドラッグ 本通店', '다이코쿠 드러그 혼도리점'), 698], [N('松本清 廣島站前店', 'Matsukiyo, Hiroshima Sta.', 'マツモトキヨシ 広島駅前店', '마츠모토키요시 히로시마역앞점'), 715]] },
-  { img: 'soy', pt: 'seasoning', r: 1, name: N('牡蠣醬油', 'Oyster soy sauce', 'かき醤油', '굴 간장'), cat: 'food', price: 540, status: 'pending' },
-  { img: 'shamoji', pt: 'charm_badge', r: .75, name: N('宮島杓子', 'Miyajima rice paddle', '宮島しゃもじ', '미야지마 주걱'), cat: 'souv', price: 880, status: 'pending' },
-  { img: 'tote', pt: 'bag_wallet', r: 1, name: N('倉敷帆布托特包', 'Kurashiki canvas tote', '倉敷帆布トート', '구라시키 범포 토트백'), cat: 'goods', price: 6380, status: 'pending' },
-  { img: 'lemon', pt: 'cake_dessert', r: .75, name: N('瀨戶田檸檬蛋糕', 'Setoda lemon cakes', '瀬戸田レモンケーキ', '세토다 레몬 케이크'), cat: 'food', price: 1296, status: 'bought' },
-  { img: 'denim', pt: 'apparel', r: 1, name: N('兒島丹寧外套', 'Kojima denim jacket', '児島デニムジャケット', '고지마 데님 재킷'), cat: 'cloth', price: 16500, status: 'bought' },
-  { img: 'sunscreen', pt: 'skincare', r: 1, name: N('防曬乳', 'Sunscreen', '日焼け止め', '선크림'), cat: 'drug', price: 1078, status: 'bought' },
-  { img: 'sauce', pt: 'seasoning', r: 1, name: N('御好燒醬', 'Okonomi sauce', 'お好みソース', '오코노미 소스'), cat: 'food', price: 430, status: 'skipped' },
-];
+// 範本第 4 版的購物清單（trip.shopping：品名、大類 category、商品類型 productType、參考價 priceJPY、封面照片 image）。
+// 狀態是示意（範本沒有）：第 1 項「目前行程」、第 3、4 項已購買、最後一項不買了。
+const TRIP4 = await (await fetch(`./data/sanyo.${lang}.json`)).json();
+const CAT = { drugstore: 'drug', clothing: 'cloth', souvenir: 'souv', food: 'food', luxury: 'lux', electronics: 'elec', goods: 'goods', other: 'other' };
+const ITEMS = [...TRIP4.shopping].sort((a, b) => !a.image - !b.image).map((x, i, all) => ({ img: x.image || null, pt: x.productType, name: x.title, cat: CAT[x.category] || 'other', price: x.priceJPY, r: 1,
+  status: i === all.length - 1 ? 'skipped' : (i === 2 || i === 3) ? 'bought' : 'pending', linked: i === 0 }));
+await Promise.all(ITEMS.map(it => new Promise(res => { if (!it.img) return res(); const im = new Image(); im.onload = () => { it.r = im.naturalHeight / im.naturalWidth; res(); }; im.onerror = res; im.src = `img/tpl/${it.img}.jpg`; })));
 
 const IC = {
   shoppingBag: '<path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/>',
@@ -196,7 +189,7 @@ d.insertAdjacentHTML('beforeend', `<div class="head" id="head">${headHTML()}</di
 const card = i => {
   const it = ITEMS[i], st = state.status[i];
   return `<div class="card ${st}${it.linked ? ' linked' : ''}" data-i="${i}">
-  <div class="media"><div class="content"><img src="img/shop-${it.img}.svg" alt="">${it.linked ? `<span class="flag">${s.flag}</span>` : ''}</div>
+  <div class="media"><div class="content">${it.img ? `<img src="img/tpl/${it.img}.jpg" alt="">` : `<div class="noimg">${[...it.name][0]}</div>`}${it.linked ? `<span class="flag">${s.flag}</span>` : ''}</div>
     ${st === 'bought' ? `<div class="badge">${ic('shoppingBag')}</div>` : st === 'skipped' ? `<div class="badge">${ic('ban')}</div>` : ''}</div>
   <div class="cap"><div class="n">${fmt(it.name)}</div><div class="p"><span class="mono">${yen(shown(i))}</span>${s.sep}${productName(it.pt)}</div></div></div>`;
 };
@@ -338,7 +331,7 @@ if (interactive) {
       const low = it.quotes ? Math.min(...it.quotes.map(q => q[1])) : null;
       const link = it.event && findEvent(it.event);
       el.querySelector('.sc-body').innerHTML = `
-        <div class="sc-fig"><img src="img/shop-${it.img}.svg" alt=""></div>
+        <div class="sc-fig">${it.img ? `<img src="img/tpl/${it.img}.jpg" alt="">` : ''}</div>
         <div class="sc-title ${st}-t">${st === 'bought' ? '<i class="dot"></i>' : ''}${fmt(it.name)}</div>
         <div class="sc-price${struck ? ' struck' : ''}">${price}</div>
         <div class="sc-conv mono">${s.approx(ccy.format((paid ?? it.price) / RATE))}</div>

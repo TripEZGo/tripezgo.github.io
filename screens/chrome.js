@@ -45,7 +45,11 @@ document.documentElement.lang = htmlLang;
 
 export async function loadTrip() {
   const res = await fetch(`./data/sanyo.${lang}.json`);
-  return res.json();
+  const trip = await res.json();
+  // 範本第 4 版：待辦是物件 { text, note?, colour?, reminder? }。畫面程式一律讀字串（todos），備註／顏色／提醒留在平行的 todoMeta
+  const norm = o => { if (Array.isArray(o.todos)) { o.todoMeta = o.todos.map(x => (typeof x === 'string' ? {} : x)); o.todos = o.todos.map(x => (typeof x === 'string' ? x : x.text)); } };
+  [trip, ...(trip.allDayEvents || []), ...(trip.unscheduledEvents || []), ...trip.days.flatMap(d => d.events)].forEach(norm);
+  return trip;
 }
 
 // App 的 UI 字串（照 App 各語系的 xcstrings 抄，只收畫面上用得到的）
