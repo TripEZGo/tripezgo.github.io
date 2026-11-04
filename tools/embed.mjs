@@ -61,7 +61,7 @@ export const EMBED_HEAD = `<!-- embed:start — tools/embed.mjs 產生，不要�
 <!-- embed:end -->
 `;
 
-export const TARGETS = ['', 'en/', 'ja/', 'ko/'].flatMap((p) => ['index.html', 'privacy.html', 'terms.html'].map((f) => p + f));
+export const TARGETS = [...['', 'en/', 'ja/', 'ko/'].flatMap((p) => ['index.html', 'privacy.html', 'terms.html'].map((f) => p + f)), 'zh-cn/index.html'];   // zh-cn：簡體中文版首頁（1.7.0），公開頁還沒有簡體版
 
 export function stamp(html) {
   const cleaned = html.replace(/<!-- embed:start[\s\S]*?<!-- embed:end -->\n/, '');

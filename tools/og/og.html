@@ -39,6 +39,7 @@
 <script>
   // 標題的 [ ] 是青綠色那一段
   const COPY = {
+    'zh-cn': ['旅行规划、旅途所需<br>[一次搞定]', '日历排行程，和旅伴一起编，出发后也一直跟着你。'],
     zh: ['旅行規劃、旅途所需<br>[一次搞定]', '行事曆排行程、旅伴一起編，出發後也跟著你走。'],
     en: ['Plan the trip, carry what it needs — [all in one app]', 'Plan on a calendar, edit with your travel companions, and take it with you.'],
     ja: ['旅の計画も、<br>旅先で要るものも、<br>[これひとつで]', 'カレンダーで予定を組んで、旅の仲間と一緒に編集。出発したあとも、そのまま。'],
@@ -50,7 +51,7 @@
   document.getElementById('sub').textContent = COPY[lang][1];
   const img = document.getElementById('shot');
   img.onload = () => document.fonts.ready.then(() => { document.documentElement.dataset.ready = '1'; });
-  img.src = `../../assets/img/shots/v2/${lang}/calendar.webp`;
+  img.src = `../../assets/img/shots/v2/${lang === "zh-cn" ? "zh-Hans" : lang}/calendar.webp`;
 </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 /* Production website analytics. Embedded App pages and demos do not count as visits. */
 (() => {
-  if (!['tripezgo.com', 'www.tripezgo.com', 'en.tripezgo.com', 'zh-tw.tripezgo.com', 'ja.tripezgo.com', 'ko.tripezgo.com'].includes(location.hostname)) return;
+  if (!['tripezgo.com', 'www.tripezgo.com', 'en.tripezgo.com', 'zh-tw.tripezgo.com', 'ja.tripezgo.com', 'ko.tripezgo.com', 'zh-cn.tripezgo.com'].includes(location.hostname)) return;
   if (window.top !== window.self || new URLSearchParams(location.search).get('mode') === 'embed') return;
   const id = 'G-MMDNPN68XK';
   window.dataLayer = window.dataLayer || [];

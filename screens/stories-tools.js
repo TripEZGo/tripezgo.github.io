@@ -33,14 +33,14 @@ export const STORIES = {
   ],
   // 購物清單：開熊野筆 → 已購買（填實付）→ 計數變了 → 篩伴手禮 → 全部 → 再開熊野筆退回待購買 → 收卡片（回到起始）
   shop: [
-    { tap: '.card[data-i="1"]' },
+    { tap: '.card[data-i="0"]' },
     { tap: '[data-pick="bought"]' },
-    { type: '.pd input', text: '4620' },
+    { type: '.pd input', text: '1120' },
     { tap: '.pd .go' },
     { wait: 900 },
     { tap: '.chip[data-cat="souv"]' },
     { tap: '.chip[data-cat=""]' },
-    { tap: '.card[data-i="1"]' },
+    { tap: '.card[data-i="0"]' },
     { tap: '[data-pick="bought"].pressed' },
     { tap: '.tz-alert .destr' },
     { tap: '.tz-dim.on' },

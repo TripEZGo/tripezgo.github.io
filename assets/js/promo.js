@@ -13,7 +13,7 @@ const END = Date.parse('2026-12-31T23:59:59+08:00');
 const SITE = 'https://tripezgo.com/';
 
 const LANG = document.documentElement.lang.startsWith('ja') ? 'ja' : document.documentElement.lang.startsWith('en') ? 'en'
-  : document.documentElement.lang.startsWith('ko') ? 'ko' : 'zh';
+  : document.documentElement.lang.startsWith('ko') ? 'ko' : document.documentElement.lang === 'zh-Hans' ? 'hans' : 'zh';
 
 const T = {
   zh: {
@@ -119,6 +119,41 @@ const T = {
       'TripEZGo を開けば、今日どこへ行くか、どう行くか、何時に出るか、切符はどこか、ひと目でわかる\n開かなくても大丈夫。ロック画面とウィジェットに次の行き先が出ます。\ntripezgo.com\n#TripEZGo #旅行計画',
       '旅の仲間と出かけるときの正解\n1. TripEZGo でみんなで旅程を組む\n2. 毎日のルートをマップで見る\n3. 切符とやることを予定にまとめる\n4. 旅先では位置を共有して、はぐれない\n5. 次の行き先はロック画面で\ntripezgo.com\n#TripEZGo',
       'TripEZGo の 10 大機能まとめ\nカレンダー／タイムライン・アイデア保存・マップのルート・切符とやること・移動時間のお知らせ・旅の概要・共同編集・位置の共有・ライブアクティビティとウィジェット・メモ・QR・為替のツール\nアカウント不要、データは iCloud だけ。\ntripezgo.com\n#TripEZGo #旅行計画',
+    ],
+  },
+  hans: {
+    left: (d, hms) => `${d} 天 ${hms}`,
+    copied: '已复制', copyFailed: '请手动复制', copy: '复制文案',
+    need1: '请先完成步骤 1：复制文案。',
+    need2: '请先完成步骤 2：分享到社交媒体，分享完回到这一页就能兑换。',
+    ready: '谢谢你的分享！点上面的按钮到 App Store 兑换。',
+    captions: [
+      '最近出去玩，行程都排在 TripEZGo\n・日历＋时间轴，每天怎么走一眼看完\n・社交媒体、地图上看到的灵感一键收进来\n・每天的行程在地图上连成路线\n・车票、订位、待办都挂在行程上\n・两站之间的路程，时间不够会先提醒\n・整趟旅程一页看完\n・旅伴一起编，路上还能共享位置\n・锁屏上就能看到下一站\n・笔记、二维码、汇率换算都带着\n・不用账号，数据只在手机和 iCloud，没网也能用\ntripezgo.com\n#TripEZGo #旅行规划',
+      '排行程终于不用开 Excel 了\nTripEZGo 把每天的行程排在日历和时间轴上，地图直接画出路线；车票、订位、待办挂在行程里，路上锁屏就能看到下一站。\n旅伴可以一起编，不用注册、没网也能用。\ntripezgo.com\n#TripEZGo #旅行规划',
+      '推荐一个 iPhone／iPad 旅行规划 App：TripEZGo\n・日历、时间轴、地图三种看法\n・社交媒体上看到的景点一键存成灵感\n・路程时间不够会先提醒\n・旅伴共编、路上共享位置\n・实时活动、小组件看下一站\n・免账号，数据只在 iCloud\ntripezgo.com\n#TripEZGo #旅行规划',
+      '出发前的我：把票券、订位、待办都挂进 TripEZGo 的行程里。\n出发后的我：锁屏看下一站、地图看路线、点一下就打开车票。\n不用账号，没网也能用\ntripezgo.com\n#TripEZGo',
+      '以前规划旅行要开五个 App：笔记、地图、日历、汇率、塞满截图的相册。\n现在一个 TripEZGo 就搞定：行程、路线、票券、待办、灵感、汇率换算、扫描二维码全在里面。\ntripezgo.com\n#TripEZGo #旅行规划',
+      '和朋友出国最怕行程对不上。\n用 TripEZGo 大家一起编同一份行程，路上还能共享位置，走散了也找得到\n行程、路线、票券、待办都在同一个 App 里。\ntripezgo.com\n#TripEZGo #旅伴',
+      '自由行神器 TripEZGo\n・一天一天排，空档一眼就看出来\n・两个行程之间的路程自动排好时间\n・每天的路线画在地图上\n・票券、订位挂在行程上，到了现场点开就行\n・锁屏上直接看下一站\ntripezgo.com\n#TripEZGo #自由行',
+      '在 Instagram、Threads、Google 地图上看到想去的店？\n分享到 TripEZGo 存成灵感，之后一键排进行程，地图上还会帮你标出顺路的店\ntripezgo.com\n#TripEZGo #旅行灵感',
+      '我很在意隐私，所以选了 TripEZGo：不用注册账号，行程只存在自己的手机和 iCloud，同步、备份、和旅伴共享都走 iCloud\n功能也不少：日历、时间轴、地图路线、票券待办、实时活动都有。\ntripezgo.com\n#TripEZGo',
+      '在国外没网也不怕\nTripEZGo 离线也能看行程、改行程、打开票券；汇率换算、扫描二维码、笔记都内置。\n回到有网络的地方再同步到 iCloud。\ntripezgo.com\n#TripEZGo #旅行规划',
+      '整趟旅程一页看完\nTripEZGo 的总览把每天的行程、附件、待办整理好，要找什么点一下就到；切到日历看时间、切到地图看路线。\ntripezgo.com\n#TripEZGo #旅行规划',
+      '用 TripEZGo 排行程超快：\n1. 社交媒体、地图上看到的地方存成灵感\n2. 排进日历\n3. 两站之间的路程排好时间\n4. 挂上票券、待办\n5. 出发！锁屏上看下一站\ntripezgo.com\n#TripEZGo #旅行规划',
+      '谁懂旅行时一直解锁手机找下一站的痛\nTripEZGo 的实时活动和小组件直接把下一站、怎么去放在锁屏上，连 App 都不用打开。\n行程规划、地图、票券、旅伴共编也都在里面。\ntripezgo.com\n#TripEZGo',
+      '一句话介绍 TripEZGo：排行程、带票券、查交通、和旅伴共编，出发后也一直跟着你的旅行 App。\n免账号、离线可用、数据只在你的 iCloud。\ntripezgo.com\n#TripEZGo #旅行规划',
+      '下次出国就用 TripEZGo\n每天的行程排在时间轴上，路程时间不够会先提醒；车票、餐厅订位挂在行程上，到了现场点开就行；汇率换算直接在 App 里算。\ntripezgo.com\n#TripEZGo #自由行',
+      '旅行规划 App 用过不少，最后留下了 TripEZGo：\n・日历＋时间轴＋地图三种模式\n・灵感收集\n・路程提醒\n・旅伴共编＋位置共享\n・实时活动、小组件\n・笔记、二维码、汇率换算\n・不用账号\ntripezgo.com\n#TripEZGo',
+      '送给每次旅行都负责排行程的那个朋友\nTripEZGo 让你把行程、交通、票券、待办排好，再邀请大家一起看、一起改；出发后锁屏上就能看到下一站。\ntripezgo.com\n#TripEZGo #旅行规划',
+      '行程不是一张表，是一条路线\nTripEZGo 把每天的行程连成地图上的路线，两站之间要多久一目了然，顺路的店也标好了。\ntripezgo.com\n#TripEZGo',
+      '旅行要用的所有东西，终于收在同一个地方：\n行程、路线、车票、订位、待办、笔记、灵感、汇率\nTripEZGo，iPhone、iPad 都能用，不用注册。\ntripezgo.com\n#TripEZGo #旅行规划',
+      '最近发现的宝藏 App：TripEZGo\n排行程有日历、时间轴、地图三种看法，旅伴可以一起编；出门后实时活动显示下一站，没网也能看。免费下载！\ntripezgo.com\n#TripEZGo',
+      '错过这班车怎么办？TripEZGo 在两个行程之间排好路程，时间不够会先提醒\n再加上地图路线、票券、待办、旅伴共编，一个 App 搞定整趟旅行。\ntripezgo.com\n#TripEZGo',
+      '规划旅行的三个烦恼，TripEZGo 都解决了：\n・行程散落各处 → 日历＋总览一页看完\n・不知道怎么走 → 地图路线＋路程时间\n・旅伴意见多 → 大家一起编同一份行程\ntripezgo.com\n#TripEZGo #旅行规划',
+      '免注册、免登录、免费下载的旅行规划 App：TripEZGo\n行程、路线、票券、待办、灵感、笔记、汇率换算全都带着走，数据只在你的手机和 iCloud。\ntripezgo.com\n#TripEZGo',
+      '打开 TripEZGo，今天去哪、怎么去、几点出发、票在哪，一眼就知道\n不想打开也行，锁屏和小组件直接显示下一站。\ntripezgo.com\n#TripEZGo #旅行规划',
+      '和旅伴出游的正确打开方式\n1. 一起在 TripEZGo 排行程\n2. 每天的路线在地图上看\n3. 票券、待办挂在行程上\n4. 路上共享位置，不怕走散\n5. 锁屏上看下一站\ntripezgo.com\n#TripEZGo',
+      'TripEZGo 十大功能懒人包\n日历／时间轴・灵感收集・地图路线・票券待办・路程提醒・旅程总览・旅伴共编・位置共享・实时活动与小组件・笔记、二维码、汇率工具\n不用账号，数据只在 iCloud。\ntripezgo.com\n#TripEZGo #旅行规划',
     ],
   },
   ko: {

@@ -16,6 +16,8 @@ const SITE_LANGS = {
   ja: { prefix: '/ja/', name: '日本語' },
   ko: { prefix: '/ko/', name: '한국어' },
 };
+/** 只有首頁的語言（簡體中文，1.7.0）：隱私、條款、聯絡、公告還沒有簡體版，那幾頁的下拉不列它。 */
+const HOME_ONLY = { 'zh-Hans': { prefix: '/zh-cn/', name: '简体中文' } };
 /** 每一語都有一份的頁（相對於語言前綴） */
 const PAGES = ['index.html', 'privacy.html', 'terms.html'];
 const fileOf = (lang, page) => SITE_LANGS[lang].prefix.slice(1) + page;
@@ -32,11 +34,13 @@ test('each page\'s language menu shows its own language and links to the same pa
     const menu = html.slice(at, html.indexOf('</details>', at));
     assert.match(menu, new RegExp(`<summary>${SITE_LANGS[lang].name}</summary>`), fileOf(lang, page));
     const links = [...menu.matchAll(/<a class="lang" href="([^"]+)" hreflang="([^"]+)" lang="([^"]+)">([^<]+)<\/a>/g)];
-    const others = Object.keys(SITE_LANGS).filter((l) => l !== lang);
+    const home = page === 'index.html';
+    const others = [...Object.keys(SITE_LANGS).filter((l) => l !== lang), ...(home ? Object.keys(HOME_ONLY) : [])];
     assert.deepEqual(links.map((m) => m[2]).sort(), others.sort(), fileOf(lang, page));
     for (const [, href, hreflang, , name] of links) {
-      assert.equal(href, urlOf(hreflang, page), fileOf(lang, page));
-      assert.equal(name, SITE_LANGS[hreflang].name, fileOf(lang, page));
+      const L = SITE_LANGS[hreflang] || HOME_ONLY[hreflang];
+      assert.equal(href, home || SITE_LANGS[hreflang] ? L.prefix + (SITE_LANGS[hreflang] ? page.replace(/index\.html$/, '') : '') : urlOf(hreflang, page), fileOf(lang, page));
+      assert.equal(name, L.name, fileOf(lang, page));
     }
   }
 });
@@ -72,4 +76,17 @@ test('the sitemap lists every language of the homepage and legal pages, each wit
 test('the 404 page links to every language\'s homepage', () => {
   const html = read('404.html');
   for (const lang of ['en', 'ja', 'ko']) assert.ok(html.includes(`href="${SITE_LANGS[lang].prefix}" hreflang="${lang}"`), lang);
+});
+
+test('the Simplified Chinese homepage (/zh-cn/) is its own language: html lang, canonical, a menu that lists the others, hreflang alternates both ways', () => {
+  const html = read('zh-cn/index.html');
+  assert.match(html, /<html lang="zh-Hans">/);
+  assert.ok(html.includes('<link rel="canonical" href="https://tripezgo.com/zh-cn/">'));
+  const at = html.indexOf('<details class="lang-menu">');
+  const menu = html.slice(at, html.indexOf('</details>', at));
+  assert.match(menu, /<summary>简体中文<\/summary>/);
+  assert.deepEqual([...menu.matchAll(/hreflang="([^"]+)" lang=/g)].map((m) => m[1]).sort(), ['en', 'ja', 'ko', 'zh-Hant']);
+  for (const l of ['zh-Hant', 'en', 'ja', 'ko', 'zh-Hans']) assert.ok(html.includes(`hreflang="${l}" href=`), l);
+  for (const lang of Object.keys(SITE_LANGS)) assert.ok(read(fileOf(lang, 'index.html')).includes('<link rel="alternate" hreflang="zh-Hans" href="https://tripezgo.com/zh-cn/">'), lang);
+  assert.doesNotMatch(html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ''), /[一-鿿]*(隱私權|註冊|離線|購物清單|總覽)/, '還有繁體詞');
 });

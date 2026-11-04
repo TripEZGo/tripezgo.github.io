@@ -19,7 +19,7 @@ for (const l of langs.length ? langs : ['zh', 'en', 'ja', 'ko']) {
     execFileSync('node', [path.join(root, 'tools/screens.mjs'), 'render', page, q, `--lang=${l}`], { cwd: root, stdio: 'ignore' });
     const png = path.join(root, 'screens/out', l, `${page}.png`), tmp = path.join(root, 'screens/out', l, `${file}-720.png`);
     execFileSync('sips', ['-z', '1565', '720', png, '--out', tmp], { stdio: 'ignore' });
-    const out = path.join(root, 'assets/img/shots/v2', l, `${file}.webp`);
+    const out = path.join(root, 'assets/img/shots/v2', l === 'hans' ? 'zh-Hans' : l, `${file}.webp`);
     fs.mkdirSync(path.dirname(out), { recursive: true });
     execFileSync('cwebp', ['-quiet', '-q', '85', tmp, '-o', out]);
     console.log(l, file);

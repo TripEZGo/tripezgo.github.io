@@ -344,7 +344,7 @@ const SCREEN_OF = {
   notes: ['notes', ''], 'scan-history': ['scan', 'hist=1'], 'fx-nokbd': ['fx', 'kbd=0'],
   'map-live': ['map-live', 'pan=0'], 'map-route': ['map-live', 'pan=0&nav=0&today=2'], 'map-mates': ['map-live', 'pan=0&nav=0&today=2&focus=mates'], 'share-ig': ['share-ig', ''], 'share-gmap': ['share-gmap', ''], 'inspiration-flow': ['share-web', ''], inspiration: ['inspiration', ''], 'apple-calendar': ['apple-calendar', ''], siri: ['siri', ''],
 };
-const SCREEN_LANG = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[L2];
+const SCREEN_LANG = document.documentElement.lang === 'zh-Hans' ? 'zh-Hans' : { zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[L2];   // 簡體中文版（/zh-cn/）：畫面用 screens 的 ?lang=zh-Hans
 const [ZOOM, CLOSE, PLAYHINT] = pick({ zh: ['放大，自己玩玩看', '關閉', '親自玩玩看'], en: ['Open full screen and try it', 'Close', 'Try it yourself'], ja: ['拡大して自分で試す', '閉じる', '実際に触ってみよう'],
   ko: ['크게 열어 직접 써 보기', '닫기', '직접 써 보세요'] });
 // 全螢幕試玩：一個 <dialog>，裡面一支放大的手機（同一個畫面，互動但不自動播放）
@@ -377,7 +377,7 @@ function fitPlay() {
 }
 const DIRECT = new Set(['lock']);
 // autoplay.js＋stories*.js 的內容雜湊（tools/stamp-home.mjs 蓋）：帶進 iframe 網址，改了腳本手機不會用到快取裡的舊版
-const AUTO_V = '3c8893e058';
+const AUTO_V = 'c6f0fd95c3';
 const NO_AUTO = new Set(['note', 'members', 'lock', 'widget', 'apple-calendar', 'scan', 'fx', 'fx-nokbd', 'siri']);   // 沒有東西可演的、或使用者自己拖比較好的
 addEventListener('message', (e) => {
   if (e.data?.type === 'tz-esc' && playDlg?.open) { playDlg.close(); return; }

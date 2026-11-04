@@ -1,4 +1,4 @@
-// 分享預覽圖：node tools/og/make.mjs → assets/img/og-<zh|en|ja|ko>.png（1200×630）
+// 分享預覽圖：node tools/og/make.mjs → assets/img/og-<zh|zh-cn|en|ja|ko>.png（1200×630）
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
@@ -18,7 +18,7 @@ await new Promise((r) => srv.once('listening', r));
 const base = `http://127.0.0.1:${srv.address().port}/tools/og/og.html`;
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
-for (const lang of ['zh', 'en', 'ja', 'ko']) {
+for (const lang of ['zh', 'zh-cn', 'en', 'ja', 'ko']) {
   await p.goto(`${base}?lang=${lang}`);
   await p.waitForSelector('html[data-ready="1"]');
   await p.screenshot({ path: path.join(root, `assets/img/og-${lang}.png`) });

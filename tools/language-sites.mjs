@@ -1,5 +1,5 @@
-import { mkdirSync, readFileSync, writeFileSync, cpSync, rmSync, readdirSync } from 'node:fs';
-export const locales = { 'zh-tw': '', en: '/en', ja: '/ja', ko: '/ko' };
+import { mkdirSync, readFileSync, writeFileSync, cpSync, rmSync, readdirSync, existsSync } from 'node:fs';
+export const locales = { 'zh-tw': '', 'zh-cn': '/zh-cn', en: '/en', ja: '/ja', ko: '/ko' };   // zh-cn：簡體中文版（1.7.0）；目前只有首頁，其餘頁面連回 zh-tw（見 stageLanguage）
 const apex = 'tripezgo.com';
 const marketing = /^\/(?:index\.html)?$|^\/(?:contact|announcements)(?:\/|\/index\.html)?$|^\/(?:privacy|terms)\.html$/;
 export function preferredLanguage(header = '') {
@@ -18,7 +18,7 @@ export function publicURL(value) {
   let url;
   try { url = new URL(value, 'https://' + apex); } catch { return value; }
   if (![apex, 'www.' + apex].includes(url.hostname)) return value;
-  const match = url.pathname.match(/^\/(en|ja|ko)(?=\/|$)/);
+  const match = url.pathname.match(/^\/(en|ja|ko|zh-cn)(?=\/|$)/);
   const path = match ? url.pathname.slice(match[0].length) || '/' : url.pathname;
   if (!marketing.test(path)) return value;
   return `https://${match ? match[1] : 'zh-tw'}.${apex}${path}${url.search}${url.hash}`;
@@ -48,7 +48,11 @@ export function stageLanguage(root, lang = 'router') {
   // Flatten the selected language before removing source language directories.
   if (lang !== 'router' && locales[lang]) {
     for (const name of ['index.html', 'privacy.html', 'terms.html', 'contact', 'announcements']) {
-      cpSync(new URL(locales[lang].slice(1) + '/' + name, root), new URL(name, root), { recursive: true });
+      const from = new URL(locales[lang].slice(1) + '/' + name, root);
+      if (lang === 'zh-cn' && !existsSync(from)) {   // 簡體版還沒有隱私、條款、聯絡、公告：照繁中那份發佈，頁尾連結才不會 404
+        continue;   // 根目錄那份（繁中）本來就在 root 裡
+      }
+      cpSync(from, new URL(name, root), { recursive: true });
     }
   }
   function walk(dir) {
@@ -72,9 +76,9 @@ export function stageLanguage(root, lang = 'router') {
       .map(name => [name, readFileSync(new URL('en/' + name, root), 'utf8')])
   ) : null;
   // Old language paths remain usable on the main domain and each language host.
-  for (const code of ['en', 'ja', 'ko']) {
+  for (const code of ['en', 'ja', 'ko', 'zh-cn']) {
     rmSync(new URL(code + '/', root), { recursive: true, force: true });
-    for (const name of ['index.html', 'privacy.html', 'terms.html', 'contact/index.html', 'announcements/index.html']) {
+    for (const name of code === 'zh-cn' ? ['index.html'] : ['index.html', 'privacy.html', 'terms.html', 'contact/index.html', 'announcements/index.html']) {
       const file = new URL(code + '/' + name, root);
       const path = name.replace(/index\.html$/, '');
       writeRedirect(file, 'https://' + code + '.tripezgo.com/' + path);

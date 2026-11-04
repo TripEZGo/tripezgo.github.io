@@ -6,7 +6,12 @@
 // 範本改了就重新複製一份過來。
 
 export const params = new URLSearchParams(location.search);
-export const lang = params.get('lang') || 'zh-Hant-TW';
+const urlLang = params.get('lang') || 'zh-Hant-TW';
+// 簡體中文（?lang=zh-Hans）：畫面程式只有四語字串表，所以內部照繁中跑（lang＝'zh-Hant-TW'），資料讀範本的 zh-Hans 檔（dataLang），
+// 畫完之後由 hansPass() 把文字節點照 hans-dict.js（App 字串表的 zh-Hans 欄位，tools/gen-hans-dict.py 產生）換成簡體。
+export const HANS_MODE = urlLang === 'zh-Hans';
+export const lang = HANS_MODE ? 'zh-Hant-TW' : urlLang;
+export const dataLang = HANS_MODE ? 'zh-Hans' : lang;
 // 深色（App 的深色色票：screens/screen.css 的 html[data-theme="dark"]）。官網預設淺色；打包進 App 的示範（tools/app-demos.mjs）帶 theme=dark
 export const theme = params.get('theme') === 'dark' ? 'dark' : 'light';
 document.documentElement.dataset.theme = theme;
@@ -41,10 +46,10 @@ if (ipad) document.documentElement.classList.add('ipad');
    不帶 device 的 iPhone 與 device=ipad 一格都不動——Duo 的樣子全部掛在 html.duo 底下。 */
 if (duo) document.documentElement.classList.add('duo');
 const htmlLang = { 'zh-Hant-TW': 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[lang] || 'zh-Hant-TW';
-document.documentElement.lang = htmlLang;
+document.documentElement.lang = HANS_MODE ? 'zh-Hans' : htmlLang;
 
 export async function loadTrip() {
-  const res = await fetch(`./data/sanyo.${lang}.json`);
+  const res = await fetch(`./data/sanyo.${dataLang}.json`);
   const trip = await res.json();
   // 範本第 4 版：待辦是物件 { text, note?, colour?, reminder? }。畫面程式一律讀字串（todos），備註／顏色／提醒留在平行的 todoMeta
   const norm = o => { if (Array.isArray(o.todos)) { o.todoMeta = o.todos.map(x => (typeof x === 'string' ? {} : x)); o.todos = o.todos.map(x => (typeof x === 'string' ? x : x.text)); } };
@@ -221,8 +226,37 @@ function fitTitles() {
 }
 
 // 截圖工具等這個旗標：字型、資料都畫完了才拍
+// 簡體字典換字：文字節點（整段相等優先、再來是長的詞先換）、placeholder／aria-label／alt／title 屬性；之後長出來的節點（紙、提示）由 MutationObserver 接著換
+async function hansPass() {
+  const dictFile = './hans-dict' + '.js';   // 字串拼起來：app-demos 的 esbuild 不會把字典打進每一頁（引導頁只有繁中、英、日，用不到簡體）
+  const { HANS, HANS_RULES } = await import(dictFile);
+  const keys = Object.keys(HANS).filter(k => k.length >= 2).sort((a, b) => b.length - a.length);
+  const esc = k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = keys.length ? new RegExp(keys.map(esc).join('|'), 'g') : null;
+  const rules = HANS_RULES.map(([p, r]) => [new RegExp(p), r]);
+  const conv = t => {
+    const trimmed = t.trim();
+    if (!trimmed) return t;
+    if (HANS[trimmed]) return t.replace(trimmed, HANS[trimmed]);
+    for (const [p, r] of rules) if (p.test(trimmed)) { const x = trimmed.replace(p, r); return t.replace(trimmed, re ? x.replace(re, m => HANS[m]) : x); }
+    return re ? t.replace(re, m => HANS[m]) : t;
+  };
+  const walk = root => {
+    const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+    let n;
+    while ((n = w.nextNode())) {
+      if (n.nodeType === 3) { const v = conv(n.nodeValue); if (v !== n.nodeValue) n.nodeValue = v; }
+      else if (n.nodeName !== 'SCRIPT' && n.nodeName !== 'STYLE') for (const a of ['placeholder', 'aria-label', 'alt', 'title']) { const v = n.getAttribute?.(a); if (v) { const c = conv(v); if (c !== v) n.setAttribute(a, c); } }
+    }
+  };
+  walk(document.body);
+  new MutationObserver(ms => { for (const m of ms) for (const nd of m.addedNodes) if (nd.nodeType === 1) walk(nd); else if (nd.nodeType === 3) { const v = conv(nd.nodeValue); if (v !== nd.nodeValue) nd.nodeValue = v; } })
+    .observe(document.body, { childList: true, subtree: true });
+}
+
 export function ready() {
-  document.fonts.ready.then(() => {
+  document.fonts.ready.then(async () => {
+    if (HANS_MODE) await hansPass();
     fitTitles();
     document.body.dataset.ready = '1';
     if (embed && parent !== window) parent.postMessage({ type: 'tz-ready' }, '*');   // 打包進 App 的示範：殼（demo.html）等這一則才把新的一頁換上來
@@ -246,7 +280,7 @@ export const swatchClass = category => `sw-${SWATCH_OF[category] || 'misc'}`;
 
 let CATS = null;
 export async function loadCategories() {
-  CATS = (await (await fetch('./data/categories.json')).json())[lang];
+  CATS = (await (await fetch('./data/categories.json')).json())[dataLang];
 }
 export const categoryName = c => (CATS && CATS[c]) || c;
 

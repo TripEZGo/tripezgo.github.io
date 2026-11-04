@@ -34,7 +34,7 @@ POSTS = {
 }
 
 LANGS = ['en', 'ja', 'ko']   # T 每條的三欄就是這個順序
-NAMES = {'en': 'English', 'ja': '日本語', 'ko': '한국어'}
+NAMES = {'en': 'English', 'ja': '日本語', 'ko': '한국어', 'zh-cn': '简体中文'}
 
 T = {
   # chrome
@@ -740,6 +740,9 @@ def build(lang):
     for attr in ('name="description"', 'property="og:description"'):
         head = re.sub(rf'<meta {attr} content="[^"]*">', f'<meta {attr} content="{h["desc"]}">', head)
     head = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{h["title"]}">', head)
+    if 'hreflang="zh-Hans"' not in head:   # 簡體中文版（1.7.0）：每一頁的 head 都要互相指到
+        head = head.replace('<link rel="alternate" hreflang="en"', '<link rel="alternate" hreflang="zh-Hans" href="https://tripezgo.com/zh-cn/">\n<link rel="alternate" hreflang="en"', 1)
+        head = head.replace('<meta property="og:locale:alternate" content="zh_TW">', '<meta property="og:locale:alternate" content="zh_TW">\n<meta property="og:locale:alternate" content="zh_CN">', 1)
     # 樣式表與 home.js 這幾行照母版帶過來（home.js 負責把截圖換成互動畫面，少了它英日頁只剩靜態圖）
     head += SRC[SRC.index('<link rel="stylesheet"'):SRC.index('<script type="application/ld+json">')]
     jsonld = old[old.index('<script type="application/ld+json">'):]
@@ -790,7 +793,7 @@ def build(lang):
     body = body.replace('\n          ' + links[lang], '', 1)
     body = body.replace(f'<a href="/{lang}/" hreflang="{lang}" lang="{lang}">{NAMES[lang]}</a>', '<a href="/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>')
     # 語言名稱本身要留原文（中文／繁體中文／日本語），上面替換後再檢查一次
-    missing -= {'中文', '繁體中文', '日本語'}
+    missing -= {'中文', '繁體中文', '日本語', '简体中文'}
     if missing:
         sys.exit(f'{lang}: 沒有對照的中文字串：\n' + '\n'.join(sorted(missing)))
     out = head + jsonld + '\n</head>\n' + body + '</body>\n</html>\n'
@@ -804,3 +807,73 @@ for l in LANGS:
 stale = sorted(set(T) - used)
 if stale:
     print('對照表裡母版已經用不到的條目：\n' + '\n'.join(stale), file=sys.stderr)
+
+# ── 簡體中文版：/zh-cn/（對照表在 tools/home-i18n-hans.py，逐句人寫的大陸用語，不是繁簡轉換）──
+exec(open(os.path.join(ROOT, 'tools/home-i18n-hans.py'), encoding='utf-8').read())
+HEAD_CN = dict(title='TripEZGo — 旅行规划 App｜日历排行程、旅伴共编',
+               desc='TripEZGo 是 iPhone、iPad 上的旅行规划 App：日历排行程、时间轴排交通，和旅伴一起共编，自由行的行程表、票券和待办都在一起。无需注册、离线可用，免费下载。')
+# 1.7.0 藍圖那一格只留一條（.scratch/v170-release/copy/roadmap.md 的 zh-Hans 字）
+CN_ROADMAP = '<li><span><b>全新的总览设计</b><small>一天一页，行程卡、交通与待办一次看完</small></span></li>'
+
+
+def build_cn():
+    body = SRC[SRC.index('<body>'):SRC.index('</body>')]
+    body = re.sub(r'<!--.*?-->\n?', '', body, flags=re.S)
+    old = re.search(r'(<ul class="rm-log is-plain">\s*)<li><span><b>全新總覽，一天一頁</b>.*?</ul>', body, re.S)
+    assert old, '母版的 1.7.0 藍圖變了'
+    body = body.replace(old.group(0), old.group(1) + '@@CNROADMAP@@\n                </ul>', 1)
+    missing, held = set(), []
+    for k, v in TH.items():
+        if '<' in k and k in body:
+            held.append(v)
+            body = body.replace(k, f'\x00{len(held) - 1}\x00')
+
+    def tr(t):
+        if t in TH:
+            return TH[t]
+        if re.search(r'[一-鿿]', t):
+            missing.add(t)
+        return t
+
+    def text(m):
+        raw = m.group(1)
+        t = raw.strip()
+        return '>' + raw.replace(t, tr(t)) + '<' if t else m.group(0)
+    body = re.sub(r'>([^<>]+)<', text, body)
+    body = re.sub(r'(alt|aria-label|title)="([^"]+)"', lambda m: f'{m.group(1)}="{tr(m.group(2))}"', body)
+    body = re.sub(r'\x00(\d+)\x00', lambda m: held[int(m.group(1))], body)
+    body = body.replace('@@CNROADMAP@@', CN_ROADMAP)
+    body = body.replace('/assets/img/shots/v2/zh/', '/assets/img/shots/v2/zh-Hans/')
+    # 隱私、條款、聯絡、公告還沒有簡體版：連結照舊指到繁中那一份
+    zh_link = '<a class="lang" href="/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>'
+    cn_link = '<a class="lang" href="/zh-cn/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>'
+    assert '<summary>繁體中文</summary>' in body and cn_link in body
+    body = body.replace('<summary>繁體中文</summary>', '<summary>简体中文</summary>', 1)
+    body = body.replace('<div class="lang-list">\n          ' + cn_link, '<div class="lang-list">\n          ' + zh_link, 1)
+    body = body.replace('<a href="/zh-cn/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>', '<a href="/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>')
+    body = body.replace('class="brand" href="/"', 'class="brand" href="/zh-cn/"').replace('href="/#about"', 'href="/zh-cn/#about"')
+    missing -= {'中文', '繁體中文', '日本語', '简体中文'}
+    if missing:
+        sys.exit('zh-cn: 沒有對照的中文字串：\n' + '\n'.join(sorted(missing)))
+    head = SRC[:SRC.index('<link rel="stylesheet"')]
+    head = head.replace('<html lang="zh-Hant-TW">', '<html lang="zh-Hans">')
+    head = re.sub(r'<title>[^<]*</title>', f'<title>{HEAD_CN["title"]}</title>', head)
+    for attr in ('name="description"', 'property="og:description"', 'name="twitter:description"'):
+        head = re.sub(rf'<meta {attr} content="[^"]*">', f'<meta {attr} content="{HEAD_CN["desc"]}">', head)
+    for attr in ('property="og:title"', 'name="twitter:title"'):
+        head = re.sub(rf'<meta {attr} content="[^"]*">', f'<meta {attr} content="{HEAD_CN["title"]}">', head)
+    head = head.replace('<link rel="canonical" href="https://tripezgo.com/">', '<link rel="canonical" href="https://tripezgo.com/zh-cn/">')
+    head = head.replace('<meta property="og:url" content="https://tripezgo.com/">', '<meta property="og:url" content="https://tripezgo.com/zh-cn/">')
+    head = head.replace('<meta property="og:locale" content="zh_TW">', '<meta property="og:locale" content="zh_CN">', 1)
+    head = head.replace('<meta property="og:locale:alternate" content="zh_CN">', '<meta property="og:locale:alternate" content="zh_TW">', 1)
+    head = head.replace('content="TripEZGo：旅行規劃、旅途所需一次搞定"', 'content="TripEZGo：旅行规划、旅途所需一次搞定"')
+    head += SRC[SRC.index('<link rel="stylesheet"'):SRC.index('<script type="application/ld+json">')]
+    ld = SRC[SRC.index('<script type="application/ld+json">'):]
+    ld = ld[:ld.index('</script>') + 9]
+    ld = re.sub(r'"description": "[^"]*"', '"description": ' + json.dumps(HEAD_CN['desc'], ensure_ascii=False), ld)
+    os.makedirs(os.path.join(ROOT, 'zh-cn'), exist_ok=True)
+    open(os.path.join(ROOT, 'zh-cn/index.html'), 'w', encoding='utf-8').write(head + ld + '\n</head>\n' + body + '</body>\n</html>\n')
+    print('wrote zh-cn')
+
+
+build_cn()

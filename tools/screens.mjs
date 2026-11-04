@@ -18,7 +18,7 @@ import { chromium } from 'playwright';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const screens = path.join(root, 'screens');
-const LANGS = { zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' };   // ko：只給商城截圖（tools/store），官網沒有韓文——只寫進 screens/out/ko
+const LANGS = { zh: 'zh-Hant-TW', hans: 'zh-Hans', en: 'en', ja: 'ja', ko: 'ko' };   // ko：只給商城截圖（tools/store），官網沒有韓文——只寫進 screens/out/ko
 
 // 官網用到的畫面：[檔名, 頁面, 參數]
 export const SHOTS = [

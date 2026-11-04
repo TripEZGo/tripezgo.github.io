@@ -35,7 +35,7 @@ const SLOTS = [
   ['live-activity', 'lock', ''],
 ];
 const LOCALES = { zh: 'zh-Hant', hans: 'zh-Hans', en: 'en-US', ja: 'ja', ko: 'ko' };
-const RENDER_LANG = { hans: 'zh' };   // zh-Hans 的畫面沿用 zh 的原始截圖（screens 還沒有簡體字串），只有商城標題是簡體（shots.html 的 zh-Hans COPY）   // screens 的語言碼 → fastlane 的語系資料夾
+const RENDER_LANG = {};   // zh-Hans 自己渲染（screens 的 ?lang=zh-Hans：簡體字典＋範本 zh-Hans 資料）
 const TEMPLATE_LANG = { zh: 'zh-Hant', hans: 'zh-Hans', en: 'en', ja: 'ja', ko: 'ko' };  // shots.html 的語系碼
 // screens.mjs 的輸出：iPad 那一張叫 ipad-<頁>.png；商城檔名 iPad 加 ipad- 前綴
 const DEVICES = {
@@ -59,7 +59,9 @@ function render(page, query, l) {
   }
 }
 
-for (const l of Object.keys(LOCALES)) {
+const ONLY = (process.env.ONLY || '').split(',').filter(Boolean);   // ONLY=hans：只出這幾個語系（key：zh、hans、en、ja、ko）
+const LKEYS = Object.keys(LOCALES).filter((l) => !ONLY.length || ONLY.includes(l));
+for (const l of LKEYS) {
   for (const [dev, D] of Object.entries(DEVICES)) {
     const raw = path.join(here, 'raw', TEMPLATE_LANG[l], dev);
     fs.mkdirSync(raw, { recursive: true });
@@ -82,7 +84,7 @@ let bad = 0;
 try {
   for (const [dev, D] of Object.entries(DEVICES)) {
     const page = await browser.newPage({ viewport: D.viewport, deviceScaleFactor: 1 });
-    for (const l of Object.keys(LOCALES)) {
+    for (const l of LKEYS) {
       const dest = path.join(outDir, LOCALES[l]);
       fs.mkdirSync(dest, { recursive: true });
       // 順序換過（1.4.0：分享那格併進靈感）：舊的 NN-名稱.png 不清掉就會跟新的並存，一起被傳上去

@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=0d956dd369","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=08431e6552","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=1b5d6af317","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>資料・購物清單</title>
 <!--
@@ -92,7 +92,7 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, params, chrome, ready, fmt, interactive, go, t as T, svg, swatchClass, ipad, duo } from './chrome.js';
+import { lang, params, chrome, ready, fmt, interactive, go, t as T, svg, swatchClass, ipad, duo, dataLang } from './chrome.js';
 import { libraryHead } from './tools.js';
 import { productName } from './type-picker.js';
 
@@ -134,7 +134,7 @@ const s = {
 const N = (zh, en, ja, ko) => ({ 'zh-Hant-TW': zh, en, ja, ko }[lang]);   // ko 的品名、店名是自寫的（範本裡沒有購物清單）
 // 範本第 4 版的購物清單（trip.shopping：品名、大類 category、商品類型 productType、參考價 priceJPY、封面照片 image）。
 // 狀態是示意（範本沒有）：第 1 項「目前行程」、沒有照片的排在後面（最後三項已購買、最後一項不買了）。
-const TRIP4 = await (await fetch(`./data/sanyo.${lang}.json`)).json();
+const TRIP4 = await (await fetch(`./data/sanyo.${dataLang}.json`)).json();
 const CAT = { drugstore: 'drug', clothing: 'cloth', souvenir: 'souv', food: 'food', luxury: 'lux', electronics: 'elec', goods: 'goods', other: 'other' };
 const ITEMS = [...TRIP4.shopping].sort((a, b) => !a.image - !b.image).map((x, i, all) => ({ img: x.image || null, pt: x.productType, name: x.title, cat: CAT[x.category] || 'other', price: x.priceJPY, r: 1,
   status: i === all.length - 1 ? 'skipped' : i >= all.length - 3 ? 'bought' : 'pending', linked: i === 0 }));
@@ -224,7 +224,7 @@ ready();
    - StatusSegments.render：待購買兩顆（已購買主色、不買了 plain）；已購買／不買了只剩自己那一顆、墨底反白 */
 if (interactive) {
   const { subTabs, alert, sheet } = await import('./tools.js');
-  const trip = await (await fetch(`./data/sanyo.${lang}.json`)).json();
+  const trip = await (await fetch(`./data/sanyo.${dataLang}.json`)).json();
   subTabs(d, TAB);
   d.insertAdjacentHTML('beforeend', `<style>
     .stat, .chip, .card { cursor: pointer; }

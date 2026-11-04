@@ -1,0 +1,1702 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-sanyo-hiroshima-okayama-6d",
+  "revision": 5,
+  "contentLocale": "zh-Hans",
+  "title": "山阳 6 日｜广岛、宫岛、尾道、仓敷、冈山",
+  "subtitle": "冈山进出、广岛当基地，一张 JR Pass 走透",
+  "summary": "十一月的独旅：虎航冈山进出，前三晚住广岛车站附近当基地，一天宫岛严岛神社、一天尾道千光寺与鞆之浦、一天吴市大和博物馆与广岛市区，最后两天移到仓敷与冈山。全程靠「冈山＆广岛＆山口地区 JR Pass」，连宫岛渡轮都含在内。照片与行程顺序都来自原文；每一段交通的班次，是 2026 年 11 月照现行时刻表（工作日）重新查过的——照着走得动，但出发前仍请自己再查一次。",
+  "destination": "日本 广岛县・冈山县",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 6,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "sourceURL": "https://blog.zhgchg.li/31b9b3a63abc",
+  "sourceTitle": "[游记] 2023 山阳地区 广岛冈山 6 日自由行",
+  "tags": [
+    "独自旅行",
+    "世界遗产",
+    "JR Pass",
+    "秋季",
+    "濑户内海"
+  ],
+  "todos": [
+    {
+      "text": "买「冈山＆广岛＆山口地区 JR Pass」——冈山↔广岛单程就要 ¥6,460，加上宫岛、尾道、吴市几趟很快就回本",
+      "note": "第 1 天在冈山车站领票；去广岛的新干线和宫岛渡轮都靠这张。",
+      "colour": "move"
+    },
+    {
+      "text": "兑换 JR Pass 要按机器左下角黄色的「QRコードの読取り」再扫 QR；教程写的蓝色那颗在新版机器上会一直说 QR 无效",
+      "colour": "move"
+    },
+    {
+      "text": "进出站刷的是 JR Pass 那张票，订座票只是座位与时间的参考，刷不进闸机",
+      "colour": "move"
+    },
+    {
+      "text": "虎航不允许带自己的食物上飞机（乐桃没这条规定）——起飞前先吃完",
+      "colour": "eat"
+    },
+    {
+      "text": "肉类食品不能带进日本；整包盐酥鸡在冈山机场当场被销毁",
+      "colour": "eat"
+    },
+    "十一月的广岛夜里只有 4 度上下，厚外套要带够",
+    {
+      "text": "宫岛访问税 ¥100 要另外付，JR Pass 不含；码头有站务人员指引",
+      "note": "第 2 天坐 JR 宫岛渡轮时，在码头付。",
+      "colour": "misc"
+    },
+    "冈山机场安检穿靴子要脱下来，换一双好脱的鞋",
+    "酒店洗衣机很抢手，晚上回去就先去看有没有空机",
+    {
+      "text": "iPhone 钱包先开一张 Suica，市区公交与便利店都刷得动",
+      "colour": "move"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://www.westjr.co.jp/global/tc/ticket/pass/okayama_hiroshima_yamaguchi/",
+      "title": "JR 西日本 冈山＆广岛＆山口地区铁路周游券"
+    },
+    {
+      "url": "https://vjw-lp.digital.go.jp/zh-hant/",
+      "title": "Visit Japan Web 入境手续"
+    },
+    {
+      "url": "https://www.jnto.go.jp/safety-tips/tchi/index.html",
+      "title": "Safety tips 日本旅游防灾资讯"
+    },
+    {
+      "url": "https://dive-hiroshima.com/",
+      "title": "广岛县官方观光网站 Dive! Hiroshima"
+    }
+  ],
+  "images": {
+    "cafe-cat": "images/jp-sanyo-hiroshima-okayama-6d/cafe-cat.jpg",
+    "genbaku-dome": "images/jp-sanyo-hiroshima-okayama-6d/genbaku-dome.jpg",
+    "jmsdf-submarine": "images/jp-sanyo-hiroshima-okayama-6d/jmsdf-submarine.jpg",
+    "jrpass-machine": "images/jp-sanyo-hiroshima-okayama-6d/jrpass-machine.jpg",
+    "kibidango": "images/jp-sanyo-hiroshima-okayama-6d/kibidango.jpg",
+    "kibitsu-corridor": "images/jp-sanyo-hiroshima-okayama-6d/kibitsu-corridor.jpg",
+    "korakuen-night": "images/jp-sanyo-hiroshima-okayama-6d/korakuen-night.jpg",
+    "kurashiki-bikan": "images/jp-sanyo-hiroshima-okayama-6d/kurashiki-bikan.jpg",
+    "kurashiki-canal": "images/jp-sanyo-hiroshima-okayama-6d/kurashiki-canal.jpg",
+    "loop-bus-stop": "images/jp-sanyo-hiroshima-okayama-6d/loop-bus-stop.jpg",
+    "miyajima-deer": "images/jp-sanyo-hiroshima-okayama-6d/miyajima-deer.jpg",
+    "miyajima-ropeway": "images/jp-sanyo-hiroshima-okayama-6d/miyajima-ropeway.jpg",
+    "miyajima-torii": "images/jp-sanyo-hiroshima-okayama-6d/miyajima-torii.jpg",
+    "miyajima-visitor-tax": "images/jp-sanyo-hiroshima-okayama-6d/miyajima-visitor-tax.jpg",
+    "momiji-manju": "images/jp-sanyo-hiroshima-okayama-6d/momiji-manju.jpg",
+    "navy-curry": "images/jp-sanyo-hiroshima-okayama-6d/navy-curry.jpg",
+    "okonomiyaki": "images/jp-sanyo-hiroshima-okayama-6d/okonomiyaki.jpg",
+    "onomichi-ramen": "images/jp-sanyo-hiroshima-okayama-6d/onomichi-ramen.jpg",
+    "oyster-rice": "images/jp-sanyo-hiroshima-okayama-6d/oyster-rice.jpg",
+    "oyster-senbei": "images/jp-sanyo-hiroshima-okayama-6d/oyster-senbei.jpg",
+    "senkoji-view": "images/jp-sanyo-hiroshima-okayama-6d/senkoji-view.jpg",
+    "shukkeien-bamboo": "images/jp-sanyo-hiroshima-okayama-6d/shukkeien-bamboo.jpg",
+    "souvenirs-haul": "images/jp-sanyo-hiroshima-okayama-6d/souvenirs-haul.jpg",
+    "tomonoura-harbor": "images/jp-sanyo-hiroshima-okayama-6d/tomonoura-harbor.jpg",
+    "torii-souvenir": "images/jp-sanyo-hiroshima-okayama-6d/torii-souvenir.jpg",
+    "toyoko-route-map": "images/jp-sanyo-hiroshima-okayama-6d/toyoko-route-map.jpg",
+    "tram-night": "images/jp-sanyo-hiroshima-okayama-6d/tram-night.jpg",
+    "yamato-museum": "images/jp-sanyo-hiroshima-okayama-6d/yamato-museum.jpg"
+  },
+  "files": [
+    {
+      "image": "jrpass-machine",
+      "title": "冈山车站的 JR Pass 兑换机：要按左下黄色的「QRコードの読取り」"
+    },
+    {
+      "image": "loop-bus-stop",
+      "title": "广岛车站的定期观光巴士站牌与路线图（JR Pass 可搭）"
+    }
+  ],
+  "allDayEvents": [
+    {
+      "key": "stay-toyoko",
+      "title": "东横INN 广岛站棒球场前（3 晚）",
+      "fromDay": 1,
+      "toDay": 4,
+      "category": "hotel",
+      "colour": "taupe",
+      "place": {
+        "name": "东横INN 广岛站棒球场前（广岛县 广岛市）",
+        "latitude": 34.393721,
+        "longitude": 132.481499
+      },
+      "notes": "单人禁烟房，这趟三间里性价比最高的一间，一晚约 NT$1,537。从广岛车站走过去比地图看起来远——施工中又要跨道口，一个人拖行李算 18 分钟。酒店在 MAZDA 球场外，没比赛的日子整条路很冷清，夜归要有心理准备。Check-in 从 16:00 开始，单人房不大但该有的都有。前台有免费的洗衣券可以问——一个人带的衣服少，中途洗一次就够撑完六天。",
+      "openingDays": [
+        2,
+        3,
+        4
+      ],
+      "closingDays": [
+        1,
+        2,
+        3
+      ],
+      "todos": [
+        "订房确认信与护照放同一个夹层，Check-in 要出示",
+        "退房前检查抽屉与插座，充电器最容易留在墙上"
+      ],
+      "links": [
+        {
+          "url": "https://www.toyoko-inn.com/china/search/detail/00202/",
+          "title": "东横INN 广岛站棒球场前 官网"
+        }
+      ],
+      "files": [
+        {
+          "image": "toyoko-route-map",
+          "title": "东横INN 广岛站棒球场前：从广岛车站走过去的路线（地图截图，实际要多走一些）"
+        }
+      ]
+    },
+    {
+      "key": "stay-apa",
+      "title": "APA 酒店 广岛站前大桥（1 晚）",
+      "fromDay": 4,
+      "toDay": 5,
+      "category": "hotel",
+      "colour": "taupe",
+      "place": {
+        "name": "APA 酒店 广岛站前大桥（广岛县 广岛市）",
+        "latitude": 34.395364,
+        "longitude": 132.471991
+      },
+      "notes": "东横INN 订不到第四晚，单人房改住这里。离广岛车站近一些，但要过大马路再过桥，实际走约 10 分钟；从东横INN 走过来 15 分钟，一个人搬行李还算轻松。APA 的退房是 11:00，不赶。一个人没人帮忙看行李，直接拖去车站最省事——今天整天都在移动。今晚换到 APA，两家酒店走路 15 分钟。一个人搬行李，先拖过去寄放最省事，前台收得很干脆，不必等到下午 Check-in。",
+      "openingDays": [
+        5
+      ],
+      "closingDays": [
+        4
+      ]
+    },
+    {
+      "key": "stay-livemax",
+      "title": "Livemax 酒店 冈山仓敷站前（1 晚）",
+      "fromDay": 5,
+      "toDay": 6,
+      "category": "hotel",
+      "colour": "taupe",
+      "place": {
+        "name": "Livemax 酒店 冈山仓敷站前（冈山县 仓敷市）",
+        "latitude": 34.602529,
+        "longitude": 133.768515
+      },
+      "notes": "冈山市区已经找不到一个人住还划算的房间，沿 JR 线找到仓敷。就在仓敷车站外走五分钟，而且仓敷也有直达冈山机场的巴士，第二天自己赶飞机不用再绕回冈山。",
+      "openingDays": [
+        6
+      ],
+      "closingDays": [
+        5
+      ],
+      "todos": [
+        "柜台不是 24 小时：Check-in 前先确认柜台关门时间，夜归要在那之前回到酒店"
+      ]
+    },
+    {
+      "key": "jr-pass",
+      "title": "冈山＆广岛＆山口地区 JR Pass（5 日）",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "train",
+      "colour": "green",
+      "notes": "¥17,000，涵盖山阳新干线冈山↔广岛、去宫岛口的 JR 山阳本线与 JR 宫岛渡轮。一个人的行程说改就改，这张票让「临时多跳一站」不用再算一次钱——光是冈山↔广岛往返就要 ¥12,920。第 6 天返程走机场大巴，用不到它。",
+      "todos": [
+        {
+          "text": "出发前先在网站上订好新干线的座位，高峰时段自由席会站着",
+          "colour": "move"
+        },
+        {
+          "text": "第一次使用当天到绿色窗口或兑换机领实体票",
+          "colour": "move"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://www.westjr.co.jp/global/tc/ticket/pass/okayama_hiroshima_yamaguchi/",
+          "title": "JR 西日本 冈山＆广岛＆山口地区铁路周游券"
+        }
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-okunoshima",
+      "title": "大久野岛（兔子岛）",
+      "durationMinutes": 300,
+      "category": "sight",
+      "colour": "green",
+      "place": {
+        "name": "大久野岛・兔子岛（广岛县 竹原市）",
+        "latitude": 34.309121,
+        "longitude": 132.993759
+      },
+      "notes": "行前就列在参考名单上，车程太远没排进来。要从忠海港搭渡轮，往返加上玩至少半天——一个人时间全是自己的，但半天就是半天。下次把它跟尾道排在同一趟。"
+    },
+    {
+      "key": "u-daishoin",
+      "title": "宫岛 大圣院",
+      "durationMinutes": 45,
+      "category": "temple",
+      "colour": "none",
+      "place": {
+        "name": "大圣院（广岛县 廿日市市）",
+        "latitude": 34.291729,
+        "longitude": 132.318578
+      },
+      "notes": "从严岛神社往山上走五分钟，宫岛最古老的寺院。坡缓、人少，一个人慢慢走刚好。这次时间都给了缆车，留着下次。"
+    },
+    {
+      "key": "u-onomichi-u2",
+      "title": "ONOMICHI U2 海边仓库",
+      "durationMinutes": 90,
+      "category": "cafe",
+      "colour": "amber",
+      "place": {
+        "name": "ONOMICHI U2（广岛县 尾道市）",
+        "latitude": 34.401959,
+        "longitude": 133.189908
+      },
+      "notes": "海运仓库改建的复合设施，面包店与自行车旅馆都在里面。离尾道车站走路 10 分钟，一个人等返程列车时很适合塞进去。"
+    },
+    {
+      "key": "u-kibitsuhiko",
+      "title": "吉备津彦神社",
+      "durationMinutes": 45,
+      "category": "temple",
+      "colour": "none",
+      "place": {
+        "name": "吉备津彦神社（冈山县 冈山市）",
+        "latitude": 34.676572,
+        "longitude": 133.863513
+      },
+      "notes": "跟吉备津神社只差一站，桃太郎传说的另一半。赶飞机那天没排进去——一个人没人帮忙看行李，绕路的成本比想象中高。"
+    },
+    {
+      "key": "u-fukuyama-castle",
+      "title": "福山城（车站后站远眺）",
+      "durationMinutes": 40,
+      "category": "castle",
+      "colour": "none",
+      "place": {
+        "name": "福山城（广岛县 福山市）",
+        "latitude": 34.490996,
+        "longitude": 133.361146
+      },
+      "notes": "从尾道回程在福山转车时，天守阁就贴在车站后站，不进去也拍得到。原作者只远远拍了一张就走；这一天尾道到鞆之浦的班次已经很紧，所以放在待排，有空档再插进去。要进去的话门票 ¥500。"
+    },
+    {
+      "key": "u-sensuijima",
+      "title": "仙醉岛",
+      "durationMinutes": 60,
+      "category": "sight",
+      "colour": "green",
+      "place": {
+        "name": "仙醉岛（广岛县 福山市）",
+        "latitude": 34.383117,
+        "longitude": 133.397853
+      },
+      "notes": "从福山市营渡船场搭「平成伊吕波丸」过去约 5～10 分钟，船本身仿的是坂本龙马那艘，大约每 20 分钟一班（官方时刻表没查到，以现场为准）。岛上是五色岩海岸，不过原作者去的时候游客中心已关闭准备拆除、通往山上海岸的步道因落石封闭，只在沙滩待了 15 分钟，所以放在待排。末班船很早，上岛前先看好回程时刻。"
+    },
+    {
+      "key": "u-hiroshima-castle",
+      "title": "广岛城",
+      "durationMinutes": 50,
+      "category": "castle",
+      "colour": "green",
+      "place": {
+        "name": "广岛城（广岛县 广岛市）",
+        "latitude": 34.402146,
+        "longitude": 132.45954
+      },
+      "notes": "重建的天守阁，内部是历史博物馆，门票 ¥370。原作者从缩景园漫步过来，觉得整体很新、天守不高、看不到什么风景。这一天下午要在缩景园与资料馆（11 月 19:00 闭馆）之间分配时间，所以放在待排；从缩景园走过来约 12 分钟。"
+    },
+    {
+      "key": "u-kibitsu-shrine",
+      "title": "吉备津神社",
+      "durationMinutes": 90,
+      "category": "temple",
+      "colour": "red",
+      "place": {
+        "name": "吉备津神社（冈山县 冈山市）",
+        "latitude": 34.670682,
+        "longitude": 133.850611
+      },
+      "notes": "桃太郎传说的起点，本殿是国宝。最有名的是 360 米长的回廊，顺着山势一路延伸下去，早上人少的时候整条都是自己的——一个人走这一段最值得。",
+      "images": [
+        "kibitsu-corridor"
+      ]
+    }
+  ],
+  "markers": [
+    {
+      "key": "m-mazda-stadium",
+      "name": "MAZDA Zoom-Zoom 广岛棒球场（广岛县 广岛市）",
+      "latitude": 34.391912,
+      "longitude": 132.48462,
+      "category": "sight",
+      "notes": "酒店就在球场旁。有比赛的日子这一带会完全变一个样子，而且一个人反而最容易买到单张票。"
+    },
+    {
+      "key": "m-hondori",
+      "name": "本通商店街（广岛县 广岛市）",
+      "latitude": 34.39382,
+      "longitude": 132.456974,
+      "category": "shopping",
+      "notes": "广岛市区最热闹的有顶商店街，药妆与特产一次买齐。买完就是自己提，行李重量要自己算。"
+    },
+    {
+      "key": "m-okonomimura",
+      "name": "御好烧村（广岛县 广岛市）",
+      "latitude": 34.391289,
+      "longitude": 132.461894,
+      "category": "dining",
+      "notes": "一整栋楼都是广岛烧摊位，每一家都是铁板前一排吧台位——一个人反而最好坐。站前广场排不进去就来这里。"
+    },
+    {
+      "key": "m-orizuru",
+      "name": "折鹤塔（广岛县 广岛市）",
+      "latitude": 34.39567,
+      "longitude": 132.454686,
+      "category": "viewpoint",
+      "notes": "屋顶展望台看得到原爆圆顶与整片市区，晴天连宫岛的弥山都看得见。一个人看夜景不用迁就谁的体力，想待多久就待多久。"
+    },
+    {
+      "key": "m-misen",
+      "name": "弥山（广岛县 廿日市市）",
+      "latitude": 34.279592,
+      "longitude": 132.319611,
+      "category": "mountain",
+      "notes": "宫岛最高点，从狮子岩展望台再走 30 分钟上去。山路一个人走，返程缆车的末班要先记下来。"
+    },
+    {
+      "key": "m-senjokaku",
+      "name": "千叠阁・丰国神社（广岛县 廿日市市）",
+      "latitude": 34.297304,
+      "longitude": 132.320269,
+      "category": "temple",
+      "notes": "严岛神社旁的大殿与五重塔，木地板赤脚走很凉快。人少的时候坐在边上发呆，是一个人才做得成的事。"
+    },
+    {
+      "key": "m-miyajima-aquarium",
+      "name": "宫岛水族馆（广岛县 廿日市市）",
+      "latitude": 34.295476,
+      "longitude": 132.315651,
+      "category": "aquarium",
+      "notes": "宫岛唯一的水族馆，一个人看完约一小时。这趟时间全给了缆车与神社，跳过了。"
+    },
+    {
+      "key": "m-tennei-ji",
+      "name": "天宁寺 三重塔（广岛县 尾道市）",
+      "latitude": 34.409566,
+      "longitude": 133.200793,
+      "category": "temple",
+      "notes": "从猫之细道往下拍尾道水道，最有名的那个构图就在这里。一个人没人帮忙按快门，三脚架或自拍杆带着更实在。"
+    },
+    {
+      "key": "m-senkoji-park",
+      "name": "千光寺公园展望台（广岛县 尾道市）",
+      "latitude": 34.409818,
+      "longitude": 133.196308,
+      "category": "viewpoint",
+      "notes": "缆车山顶站旁的展望台，尾道水道与对岸向岛一览无遗。长椅不少，一个人待多久都没人催。"
+    },
+    {
+      "key": "m-iou-ji",
+      "name": "医王寺（广岛县 福山市）",
+      "latitude": 34.383183,
+      "longitude": 133.37681,
+      "category": "temple",
+      "notes": "鞆之浦的高处，爬一段石阶就能俯瞰整个港口。游客很少，一个人上去要自己留意天黑的时间。"
+    },
+    {
+      "key": "m-alley",
+      "name": "アレイからすこじま 潜艇码头（广岛县 吴市）",
+      "latitude": 34.225681,
+      "longitude": 132.549211,
+      "category": "harbor",
+      "notes": "全日本唯一看得到潜艇停泊的公园，离大和博物馆走路 25 分钟。单程就要半小时，一个人排行程前先想清楚划不划算。"
+    },
+    {
+      "key": "m-ohara",
+      "name": "大原美术馆（冈山县 仓敷市）",
+      "latitude": 34.596032,
+      "longitude": 133.770439,
+      "category": "artgallery",
+      "notes": "日本第一座西洋美术馆，格列柯与莫奈都在里面。一个人逛美术馆可以停在同一幅画前面很久，这里值得。"
+    },
+    {
+      "key": "m-mingeikan",
+      "name": "仓敷民艺馆（冈山县 仓敷市）",
+      "latitude": 34.595482,
+      "longitude": 133.771504,
+      "category": "museum",
+      "notes": "米仓改建，白墙与海鼠墙本身就是展品。馆不大，一个人 40 分钟走得完。"
+    },
+    {
+      "key": "m-ivy-square",
+      "name": "仓敷常春藤广场（冈山县 仓敷市）",
+      "latitude": 34.594597,
+      "longitude": 133.773391,
+      "category": "sight",
+      "notes": "大正时期的纺织厂改建，红砖配常春藤，傍晚拍照最好看。占地大、人不多，一个人绕一圈很舒服。"
+    },
+    {
+      "key": "m-yumeji",
+      "name": "梦二乡土美术馆（冈山县 冈山市）",
+      "latitude": 34.670712,
+      "longitude": 133.934643,
+      "category": "artgallery",
+      "notes": "后乐园对面，竹久梦二的故乡美术馆。从后乐园走过去五分钟，一个人顺路补一站刚好。"
+    },
+    {
+      "key": "m-pref-museum",
+      "name": "冈山县立美术馆（冈山县 冈山市）",
+      "latitude": 34.667669,
+      "longitude": 133.929811,
+      "category": "artgallery",
+      "notes": "从后乐园走回市区的路上。一个人遇到下雨，这里是最近的备选。"
+    },
+    {
+      "key": "m-omotecho",
+      "name": "表町商店街（冈山县 冈山市）",
+      "latitude": 34.658174,
+      "longitude": 133.930313,
+      "category": "shopping",
+      "notes": "冈山市区的老商店街，从冈山城走过去约 15 分钟。晚上还开着的店不少，一个人吃饭有得挑。"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-example",
+      "title": "示例：前两天怎么走",
+      "paragraphs": [
+        "下午先到 {@d1-jrpass}，换好票再坐新干线去广岛。",
+        "晚饭在 {@d1-okonomiyaki}，人多要排队，早点去。",
+        "第二天一早去 {@d2-itsukushima}，涨潮时的大鸟居最好看。",
+        "在笔记里输入 @ 就能链接到行程和购物项目，点一下直接打开。"
+      ]
+    },
+    {
+      "key": "n-transport",
+      "title": "示例：JR Pass 与交通怎么衔接",
+      "paragraphs": [
+        "{@d1-jrpass}：先把实体票领到手，之后去宫岛渡轮、尾道、吴市都靠这张。",
+        "{@d2-ferry}：JR Pass 含在内，不用另外买船票；只有宫岛访问税 ¥100 要在码头另付。",
+        "进出站刷的是 JR Pass 那张票，订座票只是座位与时间的参考，刷不进闸机",
+        "最后一天从 {@d6-aeon} 坐巴士去机场，班次写在 {@d6-flight-okj-tpe} 的路程里。",
+        "市区移动靠广岛的广电与冈山的冈电两种路面电车，IC 卡都能刷。下面是广岛夜里的电车。",
+        {
+          "image": "tram-night"
+        }
+      ]
+    },
+    {
+      "key": "n-souvenirs",
+      "title": "示例：伴手礼在哪里买",
+      "paragraphs": [
+        "第 2 天宫岛的 {@d2-itsukushima} 店很多，先看看就好，伴手礼回程再买，不用一路提着走。",
+        "第 4 天回到广岛车站：购物清单里的牡蛎仙贝、熊野化妆刷在车站的 ekie 买得到，顺便也能挑一盒红叶馒头、一个穴子饭便当。",
+        "第 5 天 {@d5-bikan}：仓敷帆布的店营业到 17:30，先进店，再赶后乐园的夜间点灯。",
+        "吉备团子在冈山车站买；最后一天在 {@d6-aeon} 补货，肉类制品不能带回国。",
+        "第 4 天 {@d4-kure-lunch}：吴市商店街有卖海军咖啡与海军咖喱的小店，店员很亲切，是这趟最有特色的伴手礼。下面是这趟带回来的战利品。",
+        {
+          "image": "souvenirs-haul"
+        }
+      ]
+    },
+    {
+      "key": "n-pitfalls",
+      "title": "范例：踩雷与提醒",
+      "paragraphs": [
+        "尾道与鞆之浦的班次很疏：{@d3-senkoji} 与 {@d3-tomonoura} 的路程出发前先看好时刻，错过一班常常要干等 30 分钟。",
+        "{@d4-peace-museum} 11 月开到 19:00（最后入馆 18:30），傍晚时段要先在官网预约网络票；12–2 月只开到 18:00。",
+        "APA 整栋一千多间房只有 7 台洗衣机，要洗衣服就在洗衣机快结束时下楼排队——原作者洗到晚上 11 点多才洗好烘好。",
+        "Livemax 酒店没有 24 小时柜台：{@d5-korakuen} 之后的末班车，要抓在关柜台之前。",
+        "冈山机场的 X 光机在大厅，安检完贴上封条才去报到；穿靴子安检要脱。{@d6-flight-okj-tpe} 前把行李整理好，别在柜台前再打开。"
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "行程总览：山阳 6 日怎么走",
+      "paragraphs": [
+        {
+          "image": "miyajima-torii"
+        },
+        "从冈山进、冈山出，中间把广岛当基地住三晚，最后两晚移到仓敷与冈山。全程只靠一张 {@jr-pass}，连宫岛渡轮都含在内，不必每天再想买哪种票。",
+        "第 1 天：冈山落地，兑换 JR Pass 乘车到广岛，晚餐吃广岛烧。",
+        "第 2 天：一整天在宫岛，逛 {@d2-itsukushima}、坐缆车上狮子岩，傍晚回广岛看原爆圆顶与和平公园。",
+        "第 3 天：到尾道走千光寺与猫之细道，午餐吃尾道拉面，下午去鞆之浦的港边散步。",
+        {
+          "image": "senkoji-view"
+        },
+        "第 4 天：到吴市看大和博物馆与铁鲸馆，下午回广岛市区逛缩景园与和平纪念资料馆。",
+        "第 5 天：移到仓敷，逛 {@d5-bikan}、吃咖喱、看美术馆，晚上赶冈山后乐园的夜间点灯。",
+        {
+          "image": "kurashiki-bikan"
+        },
+        "第 6 天：在冈山 AEON 补伴手礼、吃午餐，下午乘机回程。",
+        "住宿：{@stay-toyoko}当基地，第四晚换到 {@stay-apa}，最后一晚住 {@stay-livemax}，第二天直接坐接驳巴士去机场。",
+        "交通重点：冈山机场与冈山站之间坐机场接驳巴士；广岛、尾道、吴、仓敷、冈山之间的移动与宫岛渡轮都在 JR Pass 范围内；广岛市区以步行与有轨电车为主；鞆之浦要从福山转乘巴士，不在 JR Pass 范围。出发前请自己再查一次最新时刻表。",
+        "适合谁：想用一张票把广岛、宫岛、尾道、仓敷、冈山一次走完的人。一个人或两三个人都走得动，每天步行量不小，穿好走的鞋。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "inspirations": [
+    {
+      "key": "i-place",
+      "title": "西条酒藏通（广岛县 东广岛市）",
+      "summary": "JR 西条站走几步就到，一整排清酒酒藏，多数可以试饮。",
+      "category": "sight",
+      "place": {
+        "name": "西条酒藏通（广岛县 东广岛市）",
+        "latitude": 34.43,
+        "longitude": 132.7437
+      }
+    },
+    {
+      "key": "i-link",
+      "title": "广岛县官方观光网站 Dive! Hiroshima",
+      "summary": "整个广岛县的活动、景点与交通信息都在这里。",
+      "url": "https://dive-hiroshima.com/",
+      "category": "touristinfo"
+    },
+    {
+      "key": "i-text",
+      "text": "广岛烧直接在铁板上吃\n坐吧台位，用小铲子（ヘラ）切着吃，才是当地人的吃法。",
+      "category": "dining"
+    },
+    {
+      "key": "i-link-kurashiki",
+      "title": "仓敷观光 WEB（仓敷市官方观光网站）",
+      "summary": "景点、餐厅、购物与住宿按地区查找，还有模范行程与交通信息。",
+      "url": "https://www.kurashiki-tabi.jp/",
+      "category": "touristinfo"
+    },
+    {
+      "key": "i-link-okayama",
+      "title": "冈山观光 WEB（官方）",
+      "summary": "冈山县观光联盟运营的官方网站，季节信息、景点、模范行程与活动都在这里。",
+      "url": "https://www.okayama-kanko.jp/",
+      "category": "touristinfo"
+    },
+    {
+      "key": "i-link-harezushi",
+      "title": "「晴寿司」你知道吗？自由风格品尝冈山乡土料理",
+      "summary": "冈山节庆料理「散寿司」的现代版「晴寿司」，文中介绍了冈山市与仓敷儿岛的两家店。",
+      "url": "https://www.okayama-kanko.jp/okatabi/1247/page",
+      "category": "dining"
+    },
+    {
+      "key": "i-place-ivy",
+      "title": "仓敷常春藤广场（冈山县 仓敷市）",
+      "summary": "大正时期的纺织厂改建，红砖配常春藤，傍晚拍照最好看。",
+      "category": "sight",
+      "place": {
+        "name": "仓敷常春藤广场（冈山县 仓敷市）",
+        "latitude": 34.594597,
+        "longitude": 133.773391
+      },
+      "image": "kurashiki-canal"
+    },
+    {
+      "key": "i-text-hanpu",
+      "text": "仓敷帆布美观地区店 17:30 关门\n营业时间 10:00～17:30，年末年初休息。第 5 天逛完美观地区还要去后乐园，记得 17:30 前进店。",
+      "category": "shopping"
+    },
+    {
+      "key": "i-photo-deer",
+      "title": "宫岛的鹿",
+      "summary": "岛上的野生鹿不怕人，会乱咬纸袋、地图和外套，吃的东西要收好。",
+      "category": "park",
+      "image": "miyajima-deer"
+    },
+    {
+      "key": "i-photo-cat",
+      "title": "咖啡厅的店猫",
+      "summary": "猫之细道上还在营业的咖啡厅有一只很黏人的店猫，会自己跑来坐在旁边贴贴。",
+      "category": "cafe",
+      "image": "cafe-cat"
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-momiji",
+      "title": "红叶馒头 细豆沙 8 个装（藤い屋）",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "priceJPY": 1120,
+      "store": "藤い屋 宫岛本店、广岛站商店",
+      "image": "momiji-manju"
+    },
+    {
+      "key": "s-oyster-senbei",
+      "title": "牡蛎整只仙贝 8 片装（マルイチ商店）",
+      "category": "food",
+      "productType": "savory_snack",
+      "priceJPY": 702,
+      "store": "オイスターキッチン・マルイチ 広島ekie店",
+      "image": "oyster-senbei"
+    },
+    {
+      "key": "s-navy-curry",
+      "title": "吴海自咖喱 调理包",
+      "category": "food",
+      "productType": "instant_meal",
+      "priceJPY": 700,
+      "store": "吴阪急酒店咖啡厅等吴市店家；海军咖啡在 subarucoffee 等小店也买得到（未标价）",
+      "image": "navy-curry"
+    },
+    {
+      "key": "s-torii",
+      "title": "严岛神社鸟居 小摆饰",
+      "category": "souvenir",
+      "productType": "charm_badge",
+      "priceJPY": 1600,
+      "store": "宫岛 表参道商店街；依尺寸 ¥1,600 起",
+      "image": "torii-souvenir"
+    },
+    {
+      "key": "s-misago",
+      "title": "宫岛御砂烧 红叶纹系列（対厳堂）※起价",
+      "category": "goods",
+      "productType": "stationery_goods",
+      "priceJPY": 5280,
+      "store": "折鹤塔、严岛神社、大圣院等"
+    },
+    {
+      "key": "s-kumano",
+      "title": "熊野化妆刷 SOMELL GARDEN（晃祐堂）※起价",
+      "category": "drugstore",
+      "productType": "makeup",
+      "priceJPY": 5280,
+      "store": "广岛站大楼 ekie、折鹤塔、和平纪念资料馆"
+    },
+    {
+      "key": "s-kibidango",
+      "title": "元祖吉备团子 10 个装（廣榮堂）",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "priceJPY": 540,
+      "store": "廣榮堂 さんすて岡山店、冈山站内",
+      "image": "kibidango"
+    },
+    {
+      "key": "s-hanpu",
+      "title": "仓敷帆布 基帆托特包 小竖款",
+      "category": "clothing",
+      "productType": "bag_wallet",
+      "priceJPY": 6380,
+      "store": "仓敷帆布 美观地区店"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "广岛市",
+      "latitude": 34.3853,
+      "longitude": 132.4553,
+      "timeZoneID": "Asia/Tokyo"
+    },
+    {
+      "name": "广岛市",
+      "latitude": 34.3853,
+      "longitude": 132.4553,
+      "timeZoneID": "Asia/Tokyo"
+    },
+    {
+      "name": "广岛市",
+      "latitude": 34.3853,
+      "longitude": 132.4553,
+      "timeZoneID": "Asia/Tokyo"
+    },
+    {
+      "name": "广岛市",
+      "latitude": 34.3853,
+      "longitude": 132.4553,
+      "timeZoneID": "Asia/Tokyo"
+    },
+    {
+      "name": "冈山市",
+      "latitude": 34.6551,
+      "longitude": 133.9195,
+      "timeZoneID": "Asia/Tokyo"
+    },
+    {
+      "name": "冈山市",
+      "latitude": 34.6551,
+      "longitude": 133.9195,
+      "timeZoneID": "Asia/Tokyo"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "冈山落地，移动到广岛",
+      "events": [
+        {
+          "key": "d1-flight-tpe-okj",
+          "title": "虎航 桃园 → 冈山",
+          "start": "11:10",
+          "end": "14:11",
+          "startTimeZoneID": "Asia/Taipei",
+          "endTimeZoneID": "Asia/Tokyo",
+          "category": "flight",
+          "colour": "teal",
+          "place": {
+            "name": "桃园国际机场 第一航站楼（台湾 桃园市）",
+            "latitude": 25.082083,
+            "longitude": 121.237757
+          },
+          "notes": "去程 11:10 起飞、14:11 落地，是这条线最好的时段——落地还有一整个下午可以移动。实际飞约 2 小时，时差一小时，所以时刻表上看起来差 3 小时。没有指定座位，一个人选走道位更好进出。虎航柜台开放后人潮很快排开，一个人算两小时绰绰有余。管制区内吃的选择不多，机上又不能带自己的食物，过安检前先解决一餐。冈山机场很小，一个人入境到出关 30 分钟绰绰有余。出关后右手边就是机场大巴售票机，可以刷 IC 卡。时刻是原文 2023 年的班次；2026 年冬季班表（10/25–3/27）查不到冈山线现行的班号与时刻，订票时以航空公司公布为准。",
+          "todos": [
+            {
+              "text": "Visit Japan Web 的 QR 先截图存相册，落地时网络不一定通",
+              "colour": "misc"
+            },
+            {
+              "text": "托运行李 20 KG，磅秤在柜台旁边自己先称一次",
+              "colour": "misc"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://vjw-lp.digital.go.jp/zh-hant/",
+              "title": "Visit Japan Web 入境手续"
+            }
+          ]
+        },
+        {
+          "key": "d1-jrpass",
+          "title": "冈山车站 兑换 JR Pass",
+          "start": "16:40",
+          "end": "17:50",
+          "category": "station",
+          "colour": "green",
+          "place": {
+            "name": "冈山车站（冈山县 冈山市）",
+            "latitude": 34.665409,
+            "longitude": 133.917825
+          },
+          "notes": "兑换机在中央口附近，高峰时间要排 10 分钟。一个人订座很好处理，顺手把明天宫岛与后天尾道那两段的座位一起订好。",
+          "leg": {
+            "fromKey": "d1-flight-tpe-okj",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "note": "冈山机场大巴到冈山车站西口，车程 30 分、¥1,000，不用预约。班次照 2026 年 10 月 25 日起的时刻表，冈电与中铁轮流发车，落地后最早的一班是 16:05。原作者落地后现场有加开班次（坐满即发），最早约 15:20 就到得了冈山站，但那不在时刻表上，所以默认排 16:05；要不要赌加开班次，落地后到乘车处看现场",
+            "routeURL": "https://okayama-kido.co.jp/bus/kuukou.html",
+            "runs": [
+              {
+                "name": "冈电巴士 特急",
+                "departure": "16:05",
+                "arrival": "16:35"
+              },
+              {
+                "name": "冈电巴士 特急",
+                "departure": "17:25",
+                "arrival": "17:55"
+              },
+              {
+                "name": "中铁巴士 特急",
+                "departure": "18:30",
+                "arrival": "19:00"
+              }
+            ],
+            "selectedRunIndex": 0,
+            "links": [
+              {
+                "url": "https://okayama-kido.co.jp/bus/kuukou.html",
+                "title": "冈山机场 巴士时刻表"
+              }
+            ]
+          },
+          "todos": [
+            {
+              "text": "领票时顺便拿一张山阳本线的纸质时刻表，离线也看得到",
+              "colour": "move"
+            }
+          ]
+        },
+        {
+          "key": "d1-okonomiyaki",
+          "title": "晚餐：广岛烧物语 站前广场",
+          "start": "19:20",
+          "end": "20:30",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "广岛烧物语 站前广场（广岛县 广岛市）",
+            "latitude": 34.396944,
+            "longitude": 132.473056
+          },
+          "notes": "一整层楼十几家广岛烧摊位，全部是铁板前的吧台位，一个人坐下来完全不尴尬。面可以选そば或うどん，加牡蛎是广岛的正确答案。",
+          "leg": {
+            "fromKey": "d1-jrpass",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "note": "山阳新干线 冈山 → 广岛，樱花号 40 分、回声号 77 分、希望号 36 分；希望号、瑞穗号能不能用 JR Pass 以 JR 西日本当时的规则为准（原文的车票照片上就是希望号，JR 西日本英文页没有明讲），出发前请再确认。餐厅就在广岛车站旁的商场 6 楼，下车走几分钟就到",
+            "routeURL": "https://www.jr-odekake.net/",
+            "runs": [
+              {
+                "name": "樱花号 765",
+                "departure": "18:11",
+                "arrival": "18:51"
+              },
+              {
+                "name": "樱花号 767",
+                "departure": "18:32",
+                "arrival": "19:11"
+              },
+              {
+                "name": "樱花号 769",
+                "departure": "19:11",
+                "arrival": "19:51"
+              }
+            ],
+            "selectedRunIndex": 0
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 18,
+            "note": "走回东横INN，夜里只有 4 度，外套穿好"
+          },
+          "todos": [
+            "先看门口的候位板，热门那几摊晚上七点会排队"
+          ],
+          "images": [
+            "okonomiyaki"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "宫岛一整天，傍晚原爆圆顶",
+      "events": [
+        {
+          "key": "d2-ferry",
+          "title": "JR 宫岛渡轮 宫岛口 → 宫岛",
+          "start": "09:10",
+          "end": "09:20",
+          "category": "ferry",
+          "colour": "teal",
+          "place": {
+            "name": "宫岛栈桥（广岛县 廿日市市）",
+            "latitude": 34.302095,
+            "longitude": 132.322247
+          },
+          "notes": "10 分钟的航程，JR Pass 含。挑 09:10–16:10 之间的班次会绕到大鸟居前面，甲板右侧视野最好；一个人上船就直接往右舷站，位子好占。",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 26,
+            "note": "从酒店走 18 分到广岛车站，JR 山阳本线 26 分到宫岛口，再走几分钟就是码头；搭往岩国、大野浦方向的普通车",
+            "runs": [
+              {
+                "name": "山阳本线 岩国方向",
+                "departure": "08:21",
+                "arrival": "08:47"
+              },
+              {
+                "name": "山阳本线 岩国方向",
+                "departure": "08:35",
+                "arrival": "09:01"
+              },
+              {
+                "name": "山阳本线 岩国方向",
+                "departure": "08:53",
+                "arrival": "09:19"
+              }
+            ],
+            "selectedRunIndex": 0
+          },
+          "todos": [
+            {
+              "text": "宫岛访问税 ¥100 在码头另外付，现金或 IC 卡都可以",
+              "colour": "misc"
+            }
+          ],
+          "files": [
+            {
+              "image": "miyajima-visitor-tax",
+              "title": "宫岛访问税的海报：¥100，码头有站务人员指引购买"
+            }
+          ]
+        },
+        {
+          "key": "d2-itsukushima",
+          "title": "宫岛：表参道、严岛神社、红叶谷",
+          "start": "09:45",
+          "end": "12:30",
+          "category": "temple",
+          "colour": "red",
+          "place": {
+            "name": "严岛神社（广岛县 廿日市市）",
+            "latitude": 34.296534,
+            "longitude": 132.319005
+          },
+          "notes": "世界遗产。看大鸟居要看潮汐——涨潮时鸟居浮在海上，退潮才走得到鸟居脚下，两种完全不同的画面，出发前先查当天的潮汐表。回廊是单向动线，走进去就不能回头，一个人反而好把握自己的节奏。码头到神社这一段全是店：现烤牡蛎、炸红叶馒头、星鳗包子。一个人吃不完几样，挑两三摊浅尝就好；特产返程再买，不然一路提着走。十一月中是红叶最好的时候，整条溪谷都是枫树。往里走到底就是缆车的红叶谷站，入口也有免费接驳车，一个人走不动就搭。",
+          "leg": {
+            "fromKey": "d2-ferry",
+            "mode": "walking",
+            "durationMinutes": 12,
+            "note": "沿海岸走，途中会先经过千叠阁与五重塔"
+          },
+          "links": [
+            {
+              "url": "https://www.itsukushimajinja.jp/",
+              "title": "严岛神社 官网（含潮汐表）"
+            }
+          ],
+          "images": [
+            "miyajima-torii"
+          ]
+        },
+        {
+          "key": "d2-ropeway",
+          "title": "宫岛缆车 → 狮子岩展望台",
+          "start": "13:00",
+          "end": "14:05",
+          "category": "cablecar",
+          "colour": "green",
+          "place": {
+            "name": "狮子岩展望台（广岛县 廿日市市）",
+            "latitude": 34.278782,
+            "longitude": 132.325421
+          },
+          "notes": "两段缆车，中间要换乘。展望台看得到整片濑户内海与散落的岛；再往上走 30 分钟是弥山山顶，这次没走。官网现行时间是上行 9:00–16:00、下行 9:20–16:30，一个人上山一定要先把 16:30 这个数字记下来；部分假日要提前在官网预约。",
+          "leg": {
+            "fromKey": "d2-itsukushima",
+            "mode": "other",
+            "durationMinutes": 20,
+            "note": "红叶谷站搭循环式缆车到榧谷，再换交走式缆车上狮子岩",
+            "routeURL": "https://miyajima-ropeway.info/"
+          },
+          "images": [
+            "miyajima-ropeway"
+          ]
+        },
+        {
+          "key": "d2-oyster",
+          "title": "午餐：牡蛎屋",
+          "start": "14:35",
+          "end": "15:20",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "牡蛎屋（广岛县 廿日市市）",
+            "latitude": 34.298559,
+            "longitude": 132.321705
+          },
+          "notes": "表参道上最有名的牡蛎专门店，烤牡蛎、炸牡蛎、牡蛎饭都在菜单上。中午一定要排队，一个人先写名字再去旁边逛，回来通常就轮到了。",
+          "leg": {
+            "fromKey": "d2-ropeway",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "note": "缆车下山后沿原路走回表参道"
+          },
+          "images": [
+            "oyster-rice"
+          ]
+        },
+        {
+          "key": "d2-genbaku-dome",
+          "title": "原爆圆顶与和平纪念公园",
+          "start": "17:00",
+          "end": "18:15",
+          "category": "sight",
+          "colour": "red",
+          "place": {
+            "name": "原爆圆顶（广岛县 广岛市）",
+            "latitude": 34.395466,
+            "longitude": 132.453524
+          },
+          "notes": "从外面绕一圈就好，内部不开放。傍晚的光线打在残骸上，跟白天完全是两种感受。旁边有免费的英日文导览志愿者，一个人听反而问得多。从圆顶走过相生桥就是公园。慰灵碑、和平之灯、原爆之子像连成一直线，站在慰灵碑前正好把圆顶框在中间——这一段最适合一个人慢慢走。",
+          "leg": {
+            "fromKey": "d2-oyster",
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 70,
+            "note": "渡轮回宫岛口，JR 山阳本线回广岛，再转路面电车（2 号线或 6 号线）到原爆圆顶前，电车约 15 分；电车大约每 5～10 分钟一班（没有对过广电的时刻表，以现场为准）",
+            "runs": [
+              {
+                "name": "JR 宫岛渡轮 + 山阳本线 白市方向 + 广电",
+                "departure": "15:25",
+                "arrival": "16:35"
+              },
+              {
+                "name": "JR 宫岛渡轮 + 山阳本线 糸崎方向 + 广电",
+                "departure": "15:40",
+                "arrival": "16:50"
+              },
+              {
+                "name": "JR 宫岛渡轮 + 山阳本线 白市方向 + 广电",
+                "departure": "15:55",
+                "arrival": "17:05"
+              }
+            ],
+            "selectedRunIndex": 1
+          },
+          "images": [
+            "genbaku-dome"
+          ]
+        },
+        {
+          "key": "d2-orizuru",
+          "title": "折鹤塔 展望台",
+          "start": "18:30",
+          "end": "19:00",
+          "category": "viewpoint",
+          "colour": "none",
+          "place": {
+            "name": "折鹤塔（广岛县 广岛市）",
+            "latitude": 34.39567,
+            "longitude": 132.454686
+          },
+          "notes": "原本排在傍晚上去看夜景，走了一整天宫岛实在没力气了，取消。一个人的行程没人可以商量，累了就是自己喊停。门票 ¥2,200，下次一定要去。",
+          "isCancelled": true,
+          "leg": {
+            "fromKey": "d2-genbaku-dome",
+            "mode": "walking",
+            "durationMinutes": 5
+          },
+          "links": [
+            {
+              "url": "https://www.orizurutower.jp/",
+              "title": "折鹤塔 官网"
+            }
+          ]
+        },
+        {
+          "key": "d2-yakiniku",
+          "title": "晚餐：炭火烧肉 敏（外带烧肉便当）",
+          "start": "19:10",
+          "end": "19:50",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "炭火烧肉 敏 猿猴桥店（广岛县 广岛市）",
+            "latitude": 34.395374,
+            "longitude": 132.478677
+          },
+          "notes": "猿猴桥町的老店，晚上有外带的烧肉便当，比堂食便宜一半。一个人吃烧肉本来就尴尬，买回酒店配啤酒刚刚好，也不用再应付店里的座位。",
+          "leg": {
+            "fromKey": "d2-genbaku-dome",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "note": "有轨电车回广岛车站，出站往猿猴桥町走"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 14,
+            "note": "提着便当走回酒店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "尾道千光寺与鞆之浦",
+      "events": [
+        {
+          "key": "d3-senkoji",
+          "title": "千光寺与猫之细道（含缆车、咖啡厅）",
+          "start": "09:50",
+          "end": "13:20",
+          "category": "temple",
+          "colour": "red",
+          "place": {
+            "name": "千光寺（广岛县 尾道市）",
+            "latitude": 34.410365,
+            "longitude": 133.198685
+          },
+          "notes": "大同元年（806 年）创建，红色的本堂就挂在崖边。这里是俯瞰尾道水道最好的位置，对岸的向岛与来往的渡轮都看得一清二楚。单程 3 分钟就到山顶，¥500。建议搭上去、走下来——下山那条路会经过千光寺、猫之细道与一堆展望点，反过来走就全变成爬坡。一个人不用迁就谁的脚程，慢慢下最好。沿路藏着 100 多颗手绘的「福石猫」，找猫比看猫多。石阶窄又陡，一个人拖着行李上不来——先寄在车站再上山。猫之细道半路上的老屋咖啡馆，露台正对尾道水道。吧台与单人座都有，爬完坡在这里喝一杯，是这一段最舒服的 40 分钟。",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 61,
+            "note": "从酒店走 18 分到广岛车站，新干线回声号 广岛 → 三原 24～28 分，转山阳本线经糸崎到尾道（含转车等候约 30 分），再走 15 分到缆车山麓站。原作者就是在三原换车时干等了 30 几分钟",
+            "runs": [
+              {
+                "name": "回声号 938 + 山阳本线 福山方向",
+                "departure": "07:39",
+                "arrival": "08:35"
+              },
+              {
+                "name": "回声号 940 + 山阳本线 冈山方向",
+                "departure": "08:02",
+                "arrival": "09:03"
+              },
+              {
+                "name": "回声号 942 + 山阳本线 相生方向",
+                "departure": "08:40",
+                "arrival": "09:40"
+              }
+            ],
+            "selectedRunIndex": 1
+          },
+          "todos": [
+            "三原转山阳本线的班次很疏，先把换乘那一班的发车时刻截图存起来"
+          ],
+          "images": [
+            "senkoji-view"
+          ]
+        },
+        {
+          "key": "d3-ramen",
+          "title": "午餐：尾道拉面",
+          "start": "13:45",
+          "end": "14:15",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "尾道本通商店街（广岛县 尾道市）",
+            "latitude": 34.406467,
+            "longitude": 133.197693
+          },
+          "notes": "汤头是濑户内小鱼干加酱油，上面浮一层猪背脂，配扁平的直面。商店街上好几家老店都是吧台位，一个人随到随坐；人少的那家通常也不会踩雷。",
+          "leg": {
+            "fromKey": "d3-senkoji",
+            "mode": "walking",
+            "durationMinutes": 12,
+            "note": "从猫之细道走下山，接上本通商店街"
+          },
+          "images": [
+            "onomichi-ramen"
+          ]
+        },
+        {
+          "key": "d3-tomonoura",
+          "title": "鞆之浦：港边散步与常夜灯",
+          "start": "16:30",
+          "end": "17:45",
+          "category": "sight",
+          "colour": "green",
+          "place": {
+            "name": "鞆之浦（广岛县 福山市）",
+            "latitude": 34.380877,
+            "longitude": 133.380327
+          },
+          "notes": "《悬崖上的金鱼姬》的取景地，也是日本第一个现代港都、坂本龙马谈判的地方。福山站前站就有往鞆之浦的巴士指示，非常清楚，一个人也不会迷路，坐到终点站就是。港边那座 1859 年的石灯笼，是鞆之浦的标志。傍晚点灯后配上海面，这趟临时起意的行程反而是整天最好的一段。",
+          "leg": {
+            "fromKey": "d3-ramen",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 83,
+            "note": "从尾道搭山阳本线到福山（约 20 分，一小时只有一两班），再到福山站前 5 号乘车处搭鞆铁巴士到终点站鞆港，车程约 40 分（原文实测）；巴士大约每 30 分钟一班",
+            "routeURL": "https://tomotetsu.co.jp/bus/",
+            "runs": [
+              {
+                "name": "山阳本线 福山方向 + 鞆铁巴士",
+                "departure": "14:05",
+                "arrival": "15:40"
+              },
+              {
+                "name": "山阳本线 冈山方向 + 鞆铁巴士",
+                "departure": "14:47",
+                "arrival": "16:10"
+              },
+              {
+                "name": "山阳本线 福山方向 + 鞆铁巴士",
+                "departure": "15:26",
+                "arrival": "16:40"
+              }
+            ],
+            "selectedRunIndex": 1
+          },
+          "images": [
+            "tomonoura-harbor"
+          ]
+        },
+        {
+          "key": "d3-dinner",
+          "title": "晚餐：炭火烧肉 敏（外带）",
+          "start": "20:30",
+          "end": "21:15",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "炭火烧肉 敏 猿猴桥店（广岛县 广岛市）",
+            "latitude": 34.395374,
+            "longitude": 132.478677
+          },
+          "notes": "回到广岛已经八点多，又去买了一次外带便当。从鞆之浦回广岛要两小时，返程的巴士班次比去程更疏——一个人在海边小镇错过末班就真的没辙，离开前先看好。",
+          "leg": {
+            "fromKey": "d3-tomonoura",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 113,
+            "note": "鞆铁巴士回福山站前约 40 分，转搭新干线樱花号 福山 → 广岛 22～24 分，再走 8 分到烧肉店；巴士班次到傍晚越来越疏，上车前先确认末班",
+            "routeURL": "https://tomotetsu.co.jp/bus/",
+            "runs": [
+              {
+                "name": "鞆铁巴士 + 樱花号 767",
+                "departure": "17:43",
+                "arrival": "19:11"
+              },
+              {
+                "name": "鞆铁巴士 + 樱花号 769",
+                "departure": "17:58",
+                "arrival": "19:51"
+              },
+              {
+                "name": "鞆铁巴士 + 回声号 963",
+                "departure": "18:38",
+                "arrival": "20:46"
+              }
+            ],
+            "selectedRunIndex": 1
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 14,
+            "note": "走回酒店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "吴市大和博物馆，广岛市区巡礼",
+      "events": [
+        {
+          "key": "d4-yamato",
+          "title": "吴市：大和博物馆与铁鲸馆",
+          "start": "10:30",
+          "end": "12:55",
+          "category": "museum",
+          "colour": "red",
+          "place": {
+            "name": "大和博物馆・吴市海事历史科学馆（广岛县 吴市）",
+            "latitude": 34.241185,
+            "longitude": 132.55588
+          },
+          "notes": "馆内那艘 1/10 的大和模型有 26 米长，光绕一圈就值回票价。门票 ¥500，二楼的零式战机与人间鱼雷回天也在同一层。9:00–18:00 开放、最后入馆 17:30，周二休馆（遇节假日顺延；4/29–5/5、7/21–8/31、12/29–1/3 不休）。一个人看展，想停多久就停多久。免费，10:00–18:00 开放（最后入馆 17:30），周二休馆，而且可以走进真正的潜艇「秋潮」内部——那艘就摆在门口的陆地上。舱间很窄，一个人穿行反而顺。扫雷艇的展示在一楼，潜艇舱间在最上层。",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 36,
+            "note": "退房后先把行李拖去 APA 寄放（两间酒店走路 15 分钟），再走 10 分到广岛车站，JR 吴线 安艺路 Liner 约 36 分到吴车站；出站走空桥直达，不必过马路",
+            "runs": [
+              {
+                "name": "安艺路 Liner 开往广站（经吴市）",
+                "departure": "09:29",
+                "arrival": "10:05"
+              },
+              {
+                "name": "安艺路 Liner 开往广站（经吴市）",
+                "departure": "10:00",
+                "arrival": "10:35"
+              },
+              {
+                "name": "安艺路 Liner 开往广站（经吴市）",
+                "departure": "10:30",
+                "arrival": "11:05"
+              }
+            ],
+            "selectedRunIndex": 0
+          },
+          "links": [
+            {
+              "url": "https://yamato-museum.com/",
+              "title": "大和博物馆 官网"
+            }
+          ],
+          "images": [
+            "yamato-museum",
+            "jmsdf-submarine"
+          ]
+        },
+        {
+          "key": "d4-kure-lunch",
+          "title": "午餐：吴冷面",
+          "start": "13:25",
+          "end": "14:20",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "吴市 红砖通商店街（广岛县 吴市）",
+            "latitude": 34.246508,
+            "longitude": 132.566174
+          },
+          "notes": "吴的名物是冷面，酱汁偏甜、面条扁平，跟韩式冷面完全两回事。红砖通商店街上好几家老店都做这一味，中午一个人几乎不用等位。",
+          "leg": {
+            "fromKey": "d4-yamato",
+            "mode": "walking",
+            "durationMinutes": 18
+          }
+        },
+        {
+          "key": "d4-shukkeien",
+          "title": "缩景园",
+          "start": "16:00",
+          "end": "16:40",
+          "category": "park",
+          "colour": "green",
+          "place": {
+            "name": "缩景园（广岛县 广岛市）",
+            "latitude": 34.400338,
+            "longitude": 132.467449
+          },
+          "notes": "1620 年建的回游式庭园，园中央十座大小岛，绕一圈约 40 分。门票 ¥350，9:00–17:00 开放、16:30 最后入园，跟隔壁县立美术馆的联票比较划算。十一月中枫叶正红，一个人慢慢绕刚好。",
+          "leg": {
+            "fromKey": "d4-kure-lunch",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "note": "吴线 安艺路 Liner 吴 → 广岛 约 35 分，出站再搭路面电车或走路约 25 分到缩景园",
+            "runs": [
+              {
+                "name": "安艺路 Liner 开往广岛",
+                "departure": "13:45",
+                "arrival": "14:20"
+              },
+              {
+                "name": "安艺路 Liner 开往广岛",
+                "departure": "14:16",
+                "arrival": "14:51"
+              },
+              {
+                "name": "安艺路 Liner 开往广岛",
+                "departure": "14:45",
+                "arrival": "15:20"
+              }
+            ],
+            "selectedRunIndex": 2
+          },
+          "images": [
+            "shukkeien-bamboo"
+          ]
+        },
+        {
+          "key": "d4-peace-museum",
+          "title": "广岛和平纪念资料馆",
+          "start": "17:20",
+          "end": "19:00",
+          "category": "museum",
+          "colour": "red",
+          "place": {
+            "name": "广岛和平纪念资料馆（广岛县 广岛市）",
+            "latitude": 34.391812,
+            "longitude": 132.452105
+          },
+          "notes": "门票 ¥200，本馆与东馆连在一起。11 月 7:30–19:00 开放、最后入馆 18:30（12–2 月只开到 18:00），傍晚时段官网标示要先预约网络票，出发前请上官网确认。这一馆值得留足 90 分钟；里面非常沉重，一个人看完，通常需要一段安静的路才走得出来。红叶馒头、牡蛎酱油、熊野笔都在这一层。明天要移动一整天，顺手买一个广岛名物的星鳗饭便当。一个人买特产要记得：最后全部都是自己提上飞机。",
+          "leg": {
+            "fromKey": "d4-shukkeien",
+            "mode": "walking",
+            "durationMinutes": 27,
+            "note": "从缩景园走到和平纪念资料馆约 27 分钟；怕赶时间可改搭路面电车到原爆圆顶前再走，电车约每 5～10 分钟一班"
+          },
+          "todos": [
+            "先上官网确认当天的闭馆时间与最后入馆时刻",
+            {
+              "text": "特产店多半 21:00 打烊，别逛到最后才想起来",
+              "colour": "shop"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://hpmmuseum.jp/",
+              "title": "广岛和平纪念资料馆 官网"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "仓敷美观地区，冈山后乐园点灯",
+      "events": [
+        {
+          "key": "d5-bikan",
+          "title": "仓敷美观地区与阿智神社",
+          "start": "11:20",
+          "end": "12:50",
+          "category": "sight",
+          "colour": "red",
+          "place": {
+            "name": "仓敷美观地区（冈山县 仓敷市）",
+            "latitude": 34.596525,
+            "longitude": 133.772586
+          },
+          "notes": "白墙仓库、海鼠墙与垂柳夹着仓敷川，江户时代的米仓区完整留了下来。川舟游船一趟 20 分钟 ¥500，一个人也上得了船，售票在观光咨询处。美观地区旁小山丘上的神社，石阶有点陡但爬上去就能俯瞰整片白墙老街。境内那棵阿知的藤树据说有 500 年。游客很少，一个人上来很安静。车站有投币储物柜，大型的很快就满；今晚的酒店就在站外五分钟，一个人直接拖去前台寄放更保险。",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 70,
+            "note": "从 APA 走 10 分到广岛车站，新干线樱花号 广岛 → 冈山 40 分，在冈山转山阳本线普通车 17 分到仓敷，再走 15 分到阿智神社。行李可以寄仓敷站的置物柜（大型的很快满），或直接拖去站外五分钟的酒店柜台",
+            "runs": [
+              {
+                "name": "樱花号 740 + 山阳本线 三原方向",
+                "departure": "08:10",
+                "arrival": "09:20"
+              },
+              {
+                "name": "樱花号 742 + 山阳本线 仓敷方向",
+                "departure": "09:33",
+                "arrival": "10:43"
+              },
+              {
+                "name": "樱花号 744 + 山阳本线 金光方向",
+                "departure": "10:33",
+                "arrival": "11:46"
+              }
+            ],
+            "selectedRunIndex": 1
+          },
+          "todos": [
+            "储物柜只吃 ¥100 硬币，先在便利店换好"
+          ],
+          "images": [
+            "kurashiki-bikan"
+          ]
+        },
+        {
+          "key": "d5-miyake",
+          "title": "午餐：三宅商店 咖喱",
+          "start": "12:52",
+          "end": "13:50",
+          "category": "dining",
+          "colour": "amber",
+          "place": {
+            "name": "三宅商店（冈山县 仓敷市）",
+            "latitude": 34.596325,
+            "longitude": 133.772286
+          },
+          "notes": "老町屋改建的咖啡馆，招牌是咖喱饭与时令水果芭菲。中午一定要排队，一个人先去登记名字再去逛美术馆，回来刚好轮到。",
+          "leg": {
+            "fromKey": "d5-bikan",
+            "mode": "walking",
+            "durationMinutes": 3
+          }
+        },
+        {
+          "key": "d5-ohara",
+          "title": "大原美术馆与水果圣代",
+          "start": "14:15",
+          "end": "16:30",
+          "category": "artgallery",
+          "colour": "green",
+          "place": {
+            "name": "大原美术馆（冈山县 仓敷市）",
+            "latitude": 34.596032,
+            "longitude": 133.770439
+          },
+          "notes": "1930 年开馆，日本第一座西洋美术馆。本馆有格列柯的《受胎告知》与莫奈的《睡莲》，门票 ¥2,000，周一闭馆——排行程前先确认。一个人看展没人催，一小时只够走一轮。冈山是水果王国，白桃与麝香葡萄的芭菲是这一区的标配。价格不低但份量很实在，一个人吃一份刚好，当下午茶。",
+          "leg": {
+            "fromKey": "d5-miyake",
+            "mode": "walking",
+            "durationMinutes": 5
+          },
+          "links": [
+            {
+              "url": "https://www.ohara.or.jp/",
+              "title": "大原美术馆 官网"
+            }
+          ]
+        },
+        {
+          "key": "d5-outlet",
+          "title": "三井 OUTLET PARK 仓敷",
+          "start": "16:50",
+          "end": "17:35",
+          "category": "shopping",
+          "colour": "none",
+          "place": {
+            "name": "三井 OUTLET PARK 仓敷（冈山县 仓敷市）",
+            "latitude": 34.60371,
+            "longitude": 133.762007
+          },
+          "notes": "行前排在美观地区之后，实际走完老街已经下午四点，时间全用完了，取消——一个人走走停停比想象中慢。它就在仓敷车站北口，下次安排在抵达当天。",
+          "isCancelled": true,
+          "leg": {
+            "fromKey": "d5-ohara",
+            "mode": "walking",
+            "durationMinutes": 20
+          }
+        },
+        {
+          "key": "d5-korakuen",
+          "title": "后乐园点灯、冈山城夜景与晚餐",
+          "start": "18:00",
+          "end": "21:30",
+          "category": "park",
+          "colour": "red",
+          "place": {
+            "name": "冈山后乐园（冈山县 冈山市）",
+            "latitude": 34.66633,
+            "longitude": 133.937395
+          },
+          "notes": "日本三名园之一。2026 年秋季的「幻想庭园」是 11 月 20 日到 29 日，17:00–20:30 开放（最后入园 20:00），夜间门票 ¥500，跟白天完全两种样子；不在这段期间就看不到点灯，出发前先确认当年日程。同一时期冈山城也有「乌城灯源乡」点灯。一个人夜游，人不多、很安静。黑色外墙的天守阁，人称「乌城」，跟后乐园隔着旭川对望。夜间点灯时从月见桥那一侧看过去最好看，桥上人不多，一个人架手机也不挡路。走了一整天，找一碗热的收尾——拉面店的吧台位对一个人最友善。从冈山城沿着市区走回车站约 25 分钟，路上会经过表町商店街。",
+          "leg": {
+            "fromKey": "d5-ohara",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 17,
+            "note": "山阳本线 仓敷 → 冈山 17 分，出站搭路面电车（冈电东山线）到城下，再走约 10 分到后乐园，这一段约 25 分；电车约每 5～10 分钟一班",
+            "runs": [
+              {
+                "name": "山阳本线 备前片上方向",
+                "departure": "16:39",
+                "arrival": "16:56"
+              },
+              {
+                "name": "山阳本线 播州赤穗方向",
+                "departure": "17:00",
+                "arrival": "17:17"
+              },
+              {
+                "name": "山阳本线 冈山方向",
+                "departure": "17:12",
+                "arrival": "17:29"
+              }
+            ],
+            "selectedRunIndex": 1
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 17,
+            "note": "走回冈山车站，山阳本线 冈山 → 仓敷 17 分，下车走五分钟就是酒店；Livemax 的柜台不是 24 小时，先确认几点关",
+            "runs": [
+              {
+                "name": "山阳本线 福山方向",
+                "departure": "21:54",
+                "arrival": "22:11"
+              },
+              {
+                "name": "山阳本线 三原方向",
+                "departure": "22:18",
+                "arrival": "22:35"
+              },
+              {
+                "name": "山阳本线 福山方向",
+                "departure": "22:51",
+                "arrival": "23:08"
+              }
+            ],
+            "selectedRunIndex": 0
+          },
+          "links": [
+            {
+              "url": "https://okayama-korakuen.jp/",
+              "title": "冈山后乐园 官网"
+            }
+          ],
+          "images": [
+            "korakuen-night"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "冈山 AEON，下午返程",
+      "events": [
+        {
+          "key": "d6-aeon",
+          "title": "AEON MALL 冈山 特产、午餐",
+          "start": "10:30",
+          "end": "12:40",
+          "category": "shopping",
+          "colour": "amber",
+          "place": {
+            "name": "AEON MALL 冈山（冈山县 冈山市）",
+            "latitude": 34.66202,
+            "longitude": 133.917354
+          },
+          "notes": "跟冈山车站天桥直接相连，下雨也不用出去。特产、药妆与美食广场一次解决，最后的日元零钱在这里花光；一个人买多少提多少，别买过头。今天要赶下午的飞机，一个人没有人帮忙看行李，先搭山阳本线到冈山把它寄进置物柜，再到 AEON 慢慢逛、吃午餐。吉备津神社原本排在上午，但桃太郎线工作日白天约每 50 分钟一班，来回加参拜要两个多小时，所以放在待排。",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 17,
+            "note": "从仓敷车站搭山阳本线到冈山，17 分；09:23 这班 09:40 到冈山。先把行李寄进冈山站置物柜，再走空桥进 AEON，约 10 分",
+            "runs": [
+              {
+                "name": "山阳本线 冈山方向",
+                "departure": "08:43",
+                "arrival": "09:00"
+              },
+              {
+                "name": "山阳本线 冈山方向",
+                "departure": "09:23",
+                "arrival": "09:40"
+              },
+              {
+                "name": "山阳本线 冈山方向",
+                "departure": "09:42",
+                "arrival": "09:59"
+              }
+            ],
+            "selectedRunIndex": 1
+          },
+          "todos": [
+            {
+              "text": "肉类制品不能带回国，别买肉包或卤味当特产",
+              "colour": "eat"
+            }
+          ]
+        },
+        {
+          "key": "d6-flight-okj-tpe",
+          "title": "虎航 冈山 → 桃园",
+          "start": "15:25",
+          "end": "17:35",
+          "startTimeZoneID": "Asia/Tokyo",
+          "endTimeZoneID": "Asia/Taipei",
+          "category": "flight",
+          "colour": "teal",
+          "place": {
+            "name": "冈山桃太郎机场（冈山县 冈山市）",
+            "latitude": 34.756973,
+            "longitude": 133.853869
+          },
+          "notes": "15:25 起飞、17:35 落地，回到台北天还没黑，第二天休息一天再上班刚刚好。一个人的旅程收尾很干脆，不用再跟谁对行程。机场很小，一个人值机与安检很快。免税店选择不多，要买的在市区就先买齐。二楼有展望台可以看飞机，候机时间一个人也不无聊。时刻是原文 2023 年的班次；2026 年冬季班表（10/25–3/27）查不到冈山线现行的班号与时刻，订票时以航空公司公布为准。",
+          "leg": {
+            "fromKey": "d6-aeon",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "note": "机场巴士从冈山站西口到冈山桃太郎机场，车程 30 分、¥1,000；班次取自 2026 年 10 月 25 日起的时刻表，12:55 这班最保险（13:25 到，起飞前两小时）",
+            "routeURL": "https://okayama-kido.co.jp/bus/kuukou.html",
+            "runs": [
+              {
+                "name": "中铁巴士 特急",
+                "departure": "10:30",
+                "arrival": "11:00"
+              },
+              {
+                "name": "冈电巴士 特急",
+                "departure": "11:10",
+                "arrival": "11:40"
+              },
+              {
+                "name": "冈电巴士 特急",
+                "departure": "12:55",
+                "arrival": "13:25"
+              }
+            ],
+            "selectedRunIndex": 2
+          },
+          "todos": [
+            "安检穿靴子要脱下来，提前换一双好脱的",
+            {
+              "text": "退税单与商品收据在出境前先整理好",
+              "colour": "misc"
+            },
+            "冈山机场的 X 光机放在大厅：先过安检、贴上封条，再去报到；封好的行李打开就要重新过一次"
+          ]
+        }
+      ]
+    }
+  ]
+}

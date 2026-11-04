@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 export const PUBLISH = [
   '.nojekyll', '.well-known', '404.html', 'CNAME', 'android-auth', 'announcements', 'app-ads.txt', 'assets', 'contact', 'covers',
   'en', 'index.html', 'ja', 'join', 'ko', 'open', 'privacy.html', 'robots.txt', 'screens',
-  'sitemap.xml', 'terms.html', 'trip',
+  'sitemap.xml', 'terms.html', 'trip', 'zh-cn',
 ];
 /** 刻意不發佈：開發用或專案文件。`.git`、`node_modules` 等工具產物不用列，下面的 IGNORED 直接略過。 */
 export const KEEP_OUT = [
@@ -51,7 +51,7 @@ export function stampAnalytics(html) {
 export function stageAnalytics(root) {
   // Marketing pages only: screens are demos; trip/open/join/android-auth are App utility flows.
   const files = ['index.html', 'privacy.html', 'terms.html', 'contact/index.html', 'announcements/index.html'];
-  for (const locale of ['', 'en/', 'ja/', 'ko/']) {
+  for (const locale of ['', 'en/', 'ja/', 'ko/', 'zh-cn/']) {
     for (const name of files) {
       const file = new URL(locale + name, root);
       if (existsSync(file)) writeFileSync(file, stampAnalytics(readFileSync(file, 'utf8')));

@@ -13,18 +13,19 @@ import json, os, re
 R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 SITE = 'https://tripezgo.com'
 LANGS = {'zh': ('', 'zh-Hant', 'zh_TW'), 'en': ('en/', 'en', 'en_US'), 'ja': ('ja/', 'ja', 'ja_JP'), 'ko': ('ko/', 'ko', 'ko_KR')}
-ALT = {'zh': 'TripEZGo：旅行規劃、旅途所需一次搞定', 'en': 'TripEZGo: plan the trip, carry what it needs — all in one app',
+LANGS_HOME = {**LANGS, 'zh-cn': ('zh-cn/', 'zh-Hans', 'zh_CN')}   # 簡體中文版（1.7.0）只有首頁：首頁的 hreflang／og:locale 五語互指，隱私、條款仍是四語
+ALT = {'zh-cn': 'TripEZGo：旅行规划、旅途所需一次搞定', 'zh': 'TripEZGo：旅行規劃、旅途所需一次搞定', 'en': 'TripEZGo: plan the trip, carry what it needs — all in one app',
        'ja': 'TripEZGo：旅の計画も、旅先で要るものも、これひとつで', 'ko': 'TripEZGo: 여행 계획부터 여행길에 필요한 것까지, 앱 하나로'}
 
 def meta(head, attr, key):
     m = re.search(rf'<meta {attr}="{re.escape(key)}" content="([^"]*)">', head)
     return m.group(1) if m else None
 
-def fix(rel_by_lang, lang, kind):
+def fix(rel_by_lang, lang, kind, LS=LANGS):
     path = os.path.join(R, rel_by_lang[lang])
     html = open(path, encoding='utf-8').read()
     i = html.index('</head>'); head, rest = html[:i], html[i:]
-    prefix, hl, loc = LANGS[lang]
+    prefix, hl, loc = LS[lang]
     url = f'{SITE}/{rel_by_lang[lang].replace("index.html", "")}'
     # 先拿掉這支會重寫的那幾行，再照固定順序補回 og:url 後面
     title = meta(head, 'property', 'og:title') or re.search(r'<title>([^<]*)</title>', head).group(1)
@@ -35,11 +36,11 @@ def fix(rel_by_lang, lang, kind):
                 r'<link rel="canonical" href="[^"]*">\n',
                 r'<link rel="alternate" hreflang="[^"]+" href="[^"]*">\n']:
         head = re.sub(pat, '', head)
-    alts = ''.join(f'<link rel="alternate" hreflang="{LANGS[l][1]}" href="{SITE}/{rel_by_lang[l].replace("index.html", "")}">\n' for l in LANGS)
+    alts = ''.join(f'<link rel="alternate" hreflang="{LS[l][1]}" href="{SITE}/{rel_by_lang[l].replace("index.html", "")}">\n' for l in LS)
     alts += f'<link rel="alternate" hreflang="x-default" href="{SITE}/{rel_by_lang["zh"].replace("index.html", "")}">\n'
     img = f'{SITE}/assets/img/og-{lang}.png'
     og = (f'<meta property="og:locale" content="{loc}">\n'
-          + ''.join(f'<meta property="og:locale:alternate" content="{LANGS[l][2]}">\n' for l in LANGS if l != lang)
+          + ''.join(f'<meta property="og:locale:alternate" content="{LS[l][2]}">\n' for l in LS if l != lang)
           + f'<meta property="og:image" content="{img}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
           + f'<meta property="og:image:alt" content="{ALT[lang]}">\n'
           + f'<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:title" content="{title}">\n'
@@ -55,7 +56,7 @@ def fix(rel_by_lang, lang, kind):
     if kind == 'home':
         m = re.search(r'(<script type="application/ld\+json">)(.*?)(</script>)', head, re.S)
         ld = json.loads(m.group(2))
-        ld['inLanguage'] = [LANGS[l][1] for l in LANGS]
+        ld['inLanguage'] = [LS[l][1] for l in LS]
         ld['url'] = url
         ld['image'] = img
         ld['author'] = {'@type': 'Person', 'name': 'Harry Li (ZhgChg Li)', 'url': 'https://zhgchg.li/'}
@@ -65,5 +66,6 @@ def fix(rel_by_lang, lang, kind):
         open(path, 'w', encoding='utf-8').write(out); print('seo', rel_by_lang[lang])
 
 for page, kind in [('index.html', 'home'), ('privacy.html', 'legal'), ('terms.html', 'legal')]:
-    rel = {l: LANGS[l][0] + page for l in LANGS}
-    for l in LANGS: fix(rel, l, kind)
+    LS = LANGS_HOME if kind == 'home' else LANGS
+    rel = {l: LS[l][0] + page for l in LS}
+    for l in LS: fix(rel, l, kind, LS)
