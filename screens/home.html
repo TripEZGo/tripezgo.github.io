@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=580bc67035","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=580bc67035","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>主頁</title>
 <!--
@@ -47,6 +47,18 @@
   .cv-swap svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .cv-set { right: calc(12px + var(--rr, 0px)); top: calc(62px + var(--dt, 0px)); width: 44px; height: 44px; background: none; color: #fff; }
   .cv-set svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  /* 右上 AI 鈕（HomeCoverAIButton）：44pt 命中區在設定鈕左邊貼著，裡面一顆正圓（27÷0.76 = 35.5）、記號 15.5÷0.76 = 20.4；底＝切換旅程膠囊那一種（tzCard 92%） */
+  .cv-ai { position: absolute; z-index: 4; right: calc(12px + 44px + var(--rr, 0px)); top: calc(62px + var(--dt, 0px)); width: 44px; height: 44px; display: grid; place-items: center; }
+  .cv-ai i { width: 35.5px; height: 35.5px; border-radius: 50%; background: rgba(255,255,255,.92); color: var(--accent-ink); display: grid; place-items: center; }
+  .cv-ai svg { width: 20.4px; height: 20.4px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .edit .cv-ai, .edit .cv-share { display: none; }
+  /* 地點那一列（placeShareRow）：地點籌碼在左、共編膠囊在右緣；膠囊＝切換旅程那一種（tzCard 92%、capsule、.sm semibold、tzAccentInk），看得到的高 21÷0.76 = 27.6，swap 換成 members 圖示 16、圖字間 4、左右內縮 12 */
+  .cv-prow { margin-top: 12px; display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .cv-prow .cv-place { margin-top: 0; min-width: 0; flex: 0 1 auto; }
+  .cv-prow .cv-place span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cv-share { flex: none; margin-left: auto; display: inline-flex; align-items: center; gap: 4px; height: 27.6px; padding: 0 12px; border-radius: 14px;
+    background: rgba(255,255,255,.92); color: var(--accent-ink); font: 600 var(--t-sm)/16px var(--font); white-space: nowrap; }
+  .cv-share svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .cv-body { position: absolute; z-index: 3; left: 20px; right: calc(20px + var(--rr, 0px)); bottom: 20px; display: flex; flex-direction: column; color: #fff; }
   .cv-today { font: 400 var(--t-xs)/14px var(--font); letter-spacing: .24px; color: rgba(255,255,255,.85); margin-bottom: 4px; }
   .cv-trow { position: relative; display: flex; align-items: flex-start; }
@@ -131,8 +143,7 @@
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .la-next .tm { flex: none; font-size: 11px; line-height: 16.5px; letter-spacing: .44px; color: rgba(255,255,255,.62); font-variant-numeric: tabular-nums; }
 
-  /* 總覽（HomeOverview）：字標頭＋右上「編輯」；空狀態一句話置中 */
-  .ov-edit { font: 600 var(--t-sm)/16px var(--font); color: var(--muted); }
+  /* 總覽（HomeOverview）：字標頭（1.7.0 起右上沒有「編輯」鈕，整張卡點下去開唯讀總覽）；空狀態一句話置中 */
   .card.ov .in { padding-top: 19px; }
   .ov-empty { flex: 1; margin-top: 5px; display: grid; place-items: center; font: 400 var(--t-sm)/16px var(--font); color: var(--muted); text-align: center; padding: 0 8px; }
 
@@ -207,7 +218,7 @@ await loadCategories();
 
 // ── 字：Scripts/i18n/maps（Home.json、UI.json、WidgetCards.json、LiveActivity.json）──
 const S = {
-  'zh-Hant-TW': { swap: '切換旅程', day: n => `第 ${n} 天`, prog: (a, b) => `第 ${a} 天 · 共 ${b} 天`, count: n => `${n} 天`, done: '完成', edit: '編輯',
+  'zh-Hant-TW': { share: '旅程共編', swap: '切換旅程', day: n => `第 ${n} 天`, prog: (a, b) => `第 ${a} 天 · 共 ${b} 天`, count: n => `${n} 天`, done: '完成',
     remainingShort: n => `還有 ${n} 件`,
     noEvent: '不綁行程',
     agenda: '進行中', todosToday: '今日待辦', remainP: '還有 ', endsAt: x => ` · ${x} 結束`, remainingOpen: n => `還有 ${n} 件未完成`, nearest: x => ` · 最近 ${x}`,
@@ -215,7 +226,7 @@ const S = {
     live: '進行中', remain: '還剩', next: x => `下一站 · ${x}`,
     veilTitle: '升級 Premium 解鎖更多頁', veilBody: '免費版只能使用一頁小工具。升級 Premium，主頁可以放更多頁。', veilGo: '升級 Premium',
     places: '廣島市、岡山市' },
-  en: { swap: 'Switch trip', day: n => `Day ${n}`, prog: (a, b) => `Day ${a} of ${b}`, count: n => `${n} days`, done: 'Done', edit: 'Edit',
+  en: { share: 'Trip Sharing', swap: 'Switch trip', day: n => `Day ${n}`, prog: (a, b) => `Day ${a} of ${b}`, count: n => `${n} days`, done: 'Done',
     remainingShort: n => `${n} left`,
     noEvent: 'No event',
     agenda: 'Now', todosToday: 'Today’s to-dos', remainP: 'In ', endsAt: x => ` · ends ${x}`, remainingOpen: n => `${n} still open`, nearest: x => ` · soonest ${x}`,
@@ -223,7 +234,7 @@ const S = {
     live: 'Now', remain: 'Ends in', next: x => `Next · ${x}`,
     veilTitle: 'Upgrade to Premium for more pages', veilBody: 'The free version has one page of widgets. Upgrade to Premium to add more pages to Home.', veilGo: 'Upgrade to Premium',
     places: 'Hiroshima, Okayama' },
-  ja: { swap: '旅行を切り替える', day: n => `${n} 日目`, prog: (a, b) => `${a} 日目 · 全 ${b} 日`, count: n => `${n} 日間`, done: '完了', edit: '編集',
+  ja: { share: '旅程の共同編集', swap: '旅行を切り替える', day: n => `${n} 日目`, prog: (a, b) => `${a} 日目 · 全 ${b} 日`, count: n => `${n} 日間`, done: '完了',
     remainingShort: n => `あと ${n} 件`,
     noEvent: '予定に紐づけない',
     agenda: '進行中', todosToday: '今日のやること', remainP: '残り ', endsAt: x => ` · ${x} 終了`, remainingOpen: n => `未完了があと ${n} 件`, nearest: x => ` · 直近 ${x}`,
@@ -231,7 +242,7 @@ const S = {
     live: '進行中', remain: '残り', next: x => `次 · ${x}`,
     veilTitle: 'Premium にアップグレードしてページを増やす', veilBody: '無料版で使えるウィジェットは 1 ページだけです。Premium にアップグレードすると、ホームにページを増やせます。', veilGo: 'Premium にアップグレード',
     places: '広島市、岡山市' },
-  ko: { swap: '여행 전환', day: n => `${n}일차`, prog: (a, b) => `${a}일째 · 총 ${b}일`, count: n => `${n}일`, done: '완료', edit: '편집',
+  ko: { share: '여행 공동 편집', swap: '여행 전환', day: n => `${n}일차`, prog: (a, b) => `${a}일째 · 총 ${b}일`, count: n => `${n}일`, done: '완료',
     remainingShort: n => `${n}건 남음`,
     noEvent: '일정에 묶지 않음',
     agenda: '진행 중', todosToday: '오늘 할 일', remainP: '남은 시간 ', endsAt: x => ` · ${x} 종료`, remainingOpen: n => `미완료 ${n}건 남음`, nearest: x => ` · 가장 가까운 ${x}`,
@@ -263,6 +274,9 @@ const P = {
   nextStop: '<path d="M5 12h11M12 8l4 4-4 4"/><circle cx="19.4" cy="12" r="1.6"/>',
   minus: '<path d="M5 12h14"/>',
   swap: '<path d="m7 9 5-5 5 5M7 15l5 5 5-5"/>',
+  // DesignIcon.computerAI（機器人 A，1.7.0）、DesignIcon.members（兩個人）：照 DesignIcon.swift 的 <path d> 抄
+  computerAI: '<rect x="4" y="8" width="16" height="12" rx="3.5"/><path d="M12 8V5.2"/><circle cx="12" cy="3.8" r="1.4"/><path d="M1.8 12.5v3.5M22.2 12.5v3.5"/><path d="M9 13.4h.01M15 13.4h.01" stroke-width="2.6"/><path d="M10 16.8h4"/>',
+  members: '<circle cx="9" cy="8" r="3.4"/><path d="M3.4 19.6a5.8 5.8 0 0 1 11.2 0"/><path d="M16.4 5.4a3.4 3.4 0 0 1 0 5.2"/><path d="M17.6 14.4a5.8 5.8 0 0 1 3 5.2"/>',
 };
 const sv = n => `<svg viewBox="0 0 24 24" aria-hidden="true">${P[n] || ICON[n]}</svg>`;
 const badge = `<span class="bd">${sv('minus')}</span>`;
@@ -279,6 +293,7 @@ const cover = '../covers/itsukushima-torii.42b883d9.jpg';
 d.insertAdjacentHTML('beforeend', `
 <div class="cv"><div class="cv-img" style="background-image:url(${cover})"></div><div class="cv-scrim"></div>
   <div class="cv-btn cv-swap">${sv('swap')}<span>${S.swap}</span></div>
+  <div class="cv-ai"><i>${sv('computerAI')}</i></div>
   <div class="cv-btn cv-set">${svg('settings')}</div>
   <div class="cv-btn cv-add">${svg('plus')}</div><div class="cv-btn cv-done">${S.done}</div>
   <div class="cv-body">
@@ -286,7 +301,7 @@ d.insertAdjacentHTML('beforeend', `
     <div class="cv-trow"><div class="cv-title">${fmt(trip.title)}</div><div class="cv-pen">${sv('pencil')}</div></div>
     <div class="cv-dates hx">${badge}${fmt(range)}</div>
     <div class="cv-prog hx">${badge}<b>${fmt(S.prog(todayNo, trip.dayCount))}</b><div class="cv-cells">${cells}</div></div>
-    <div class="cv-place hx">${badge}${sv('mapPin')}<span>${fmt(S.places)}</span></div>
+    <div class="cv-prow"><div class="cv-place hx">${badge}${sv('mapPin')}<span>${fmt(S.places)}</span></div><div class="cv-share">${sv('members')}<span>${fmt(S.share)}</span></div></div>
   </div></div>`);
 
 // ── 小工具 ──
@@ -347,7 +362,7 @@ const BODY = {
       ${nxt ? `<div class="la-foot"><div class="la-rule"></div><div class="la-next"><svg viewBox="0 0 24 24">${P.nextStop}</svg>
         <span class="nm">${fmt(S.next(nxt.title))}</span><span class="tm">${clock(nxt.s)}</span></div></div>` : ''}`;
   },
-  overview: () => `${head(S.overview, `<span class="tail ov-edit">${S.edit}</span>`)}<div class="ov-empty">${fmt(S.overviewEmpty)}</div>`,
+  overview: () => `${head(S.overview)}<div class="ov-empty">${fmt(S.overviewEmpty)}</div>`,
   agenda: () => {
     const stamp = `${lang === 'ko' ? `${today.getMonth() + 1}. ${today.getDate()}.` : `${today.getMonth() + 1}/${today.getDate()}`} · ${S.day(todayNo)}`;
     if (!cur) return head(S.agenda, `<span class="tail mono">${stamp}</span>`);

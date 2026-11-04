@@ -377,7 +377,7 @@ function fitPlay() {
 }
 const DIRECT = new Set(['lock']);
 // autoplay.js＋stories*.js 的內容雜湊（tools/stamp-home.mjs 蓋）：帶進 iframe 網址，改了腳本手機不會用到快取裡的舊版
-const AUTO_V = '48dd81db8b';
+const AUTO_V = '3c8893e058';
 const NO_AUTO = new Set(['note', 'members', 'lock', 'widget', 'apple-calendar', 'scan', 'fx', 'fx-nokbd', 'siri']);   // 沒有東西可演的、或使用者自己拖比較好的
 addEventListener('message', (e) => {
   if (e.data?.type === 'tz-esc' && playDlg?.open) { playDlg.close(); return; }

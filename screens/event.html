@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=580bc67035","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=580bc67035","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>檢視行程</title>
 <!--
@@ -59,7 +59,10 @@
 
   /* ── 表：備註、待辦、附件 ── */
   .body { position: absolute; left: 0; right: 0; }
-  .notes { padding: 0 20px 8px;  /* EventNotesCell：底下 ≤8，自動列高時就是 8 */ font: 400 var(--t-sm)/15.5px var(--font); color: var(--ink); white-space: pre-wrap; }
+  /* 描述（EventNotesCell，1.7.0 唯讀富文本）：抬頭「描述」、字照筆記頁（note.html 的 .p：base／27.7／−.24）、左右 20、底下 8 */
+  .desc { padding: 0 20px 8px; }
+  .desc .p { font: 400 var(--t-base)/27.7px var(--font); letter-spacing: -.24px; color: var(--ink); margin: 0 0 12px; }
+  .desc .p:last-child { margin-bottom: 0; }
   .sec-head { display: flex; align-items: baseline; gap: 10px; padding: 20px 20px 6px; }
   .sec-head b { flex: 1; font: 700 var(--t-sm)/15.5px var(--font); color: var(--ink); }
   .count { display: flex; align-items: center; gap: 6px; font: 700 var(--t-xs)/14.3px var(--font); color: var(--muted); }
@@ -76,14 +79,49 @@
   .todo span { font: 400 var(--t-sm)/15.5px var(--font); color: var(--ink); }
   .todo.composer span { color: rgba(60,60,67,.3); }
   html[data-theme="dark"] .todo.composer span { color: rgba(235,235,245,.3); }  /* UITextField 的 placeholder（系統色） */
-  /* 附件列：EventFileCell —— 圖示 16、間距 8、列高至少 44、上下 4、箭頭 15 */
-  .file { display: flex; align-items: center; gap: 8px; min-height: 44px; margin: 4px 20px; }
-  .file svg { flex: none; width: 16px; height: 16px; fill: none; stroke: var(--muted); stroke-width: 1.8;
-    stroke-linecap: round; stroke-linejoin: round; }
-  .file .nm { flex: 1; min-width: 0; font: 400 var(--t-sm)/15.5px var(--font); color: var(--ink);
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .file .mt { flex: none; font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); }
-  .file .chev { width: 15px; height: 15px; stroke-width: 2; }
+  /* 附件橫列（EventFileStripView／EventFileTileView，1.7.0 票 15）：滿版、第一格離左 20、格距 8、縮圖 76（圓角 8、細框 borderSoft、底 sunken）、
+     檔名在底下 4pt、xs、mutedOnSunken、中間省略；PDF 在縮圖左下角寫「PDF」（xs 粗體，左 6、底 5）；最後一格「＋ 新增附件」是同大的虛線框 */
+  .strip { display: flex; gap: 8px; padding: 4px 0 4px 20px; overflow: hidden; }
+  .file { flex: none; width: 76px; }
+  .file .th { position: relative; width: 76px; height: 76px; box-sizing: border-box; border-radius: 8px; border: 1px solid var(--border-soft); background: var(--sunken);
+    display: grid; place-items: center; overflow: hidden; }
+  .file .th svg { width: 26px; height: 26px; fill: none; stroke: var(--muted-on-sunken); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .file .th .ext { position: absolute; left: 6px; bottom: 5px; font: 700 var(--t-xs)/14.3px var(--font); color: var(--muted-on-sunken); }
+  .file .th.img { background: linear-gradient(160deg, #e9dfd2, #c9b9a4 55%, #a8927a); }
+  .file .th.img svg { display: none; }
+  .file .nm { display: block; width: 76px; margin-top: 4px; font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted-on-sunken); white-space: nowrap; overflow: hidden; }
+  .file.add .th { background: var(--page); border: 1px dashed var(--border); }
+  .file.add .th svg { stroke: var(--accent-ink); stroke-width: 2; }
+  .file.add .nm { color: var(--accent-ink); white-space: normal; text-align: left; }
+
+  /* 封面（EventCoverView，高 180＝Height.detail，滿版；描述第一張圖／地圖快照＋實心白邊圖釘／空狀態三種一樣高）。
+     表從 safe area 上緣開始，封面是第一列；導覽鈕在封面上面那一帶（左右各一顆玻璃） */
+  .cover { position: absolute; left: 0; right: 0; top: 70.67px; height: 180px; overflow: hidden; background: var(--sunken); }
+  .cover.cx { opacity: .5; filter: grayscale(1); }   /* 已取消：整個封面淡掉＋去色 */
+  .cover.map { background:
+      linear-gradient(28deg, transparent 46%, #fff 46% 49%, transparent 49%),
+      linear-gradient(-62deg, transparent 58%, #fff 58% 61.5%, transparent 61.5%),
+      linear-gradient(90deg, transparent 20%, #fff 20% 22%, transparent 22%),
+      linear-gradient(0deg, transparent 64%, color-mix(in oklch, var(--sw-base) 22%, #eef0e6) 64% 82%, transparent 82%),
+      #eeebe3; }
+  html[data-theme="dark"] .cover.map { background:
+      linear-gradient(28deg, transparent 46%, #4a4b4e 46% 49%, transparent 49%),
+      linear-gradient(-62deg, transparent 58%, #4a4b4e 58% 61.5%, transparent 61.5%),
+      linear-gradient(90deg, transparent 20%, #4a4b4e 20% 22%, transparent 22%),
+      linear-gradient(0deg, transparent 64%, color-mix(in oklch, var(--sw-base) 30%, #232426) 64% 82%, transparent 82%),
+      #2c2d30; }
+  /* 實心圖釘（DesignIcon.mapPinSolid）：30 的圓、朝下接 90° 的尖（圓心到尖 15·√2）、類型色底、2.5 白邊、中心直徑 8 白點、陰影 0 2 6 .25；尖端對準封面中心 */
+  .cover .pin { position: absolute; left: calc(50% - 15px); top: calc(50% - 15px - 21.21px); width: 30px; height: 30px; box-sizing: border-box;
+    border-radius: 50% 50% 50% 0; rotate: -45deg; background: var(--sw-base); border: 2.5px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+  .cover .pin::after { content: ""; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; margin: -4px; border-radius: 50%; background: #fff; }
+  .cover.empty { display: grid; place-items: center; }
+  .cover.empty svg { width: 26px; height: 26px; fill: var(--sw-base); }
+  .cover.cx.empty svg { fill: var(--muted); }
+
+  /* 待辦列尾的標記色點（1.7.0；TripOverviewMetrics.swatchDotSize 8）、備註與提醒各一行 xs 灰字（EventTodoRowCell.noteLabel／metaLabel，行距 2） */
+  .todo .col { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .todo .nt { font: 400 var(--t-xs)/14.3px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .todo .dot { flex: none; width: 8px; height: 8px; border-radius: 50%; margin-left: 10px; background: var(--sw-base); }
 
   /* ── 互動模式（interactive=1）才用得到的樣子 ── */
   .h1.cx { color: var(--muted); text-decoration: line-through; }   /* EventFactsView.headingText：已取消＝muted＋劃線 */
@@ -184,23 +222,24 @@
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { params, lang, t, loadTrip, loadCategories, categoryName, chrome, ready, interactive, go, duration, ipad, duo } from './chrome.js';
+import { params, lang, t, loadTrip, loadCategories, categoryName, swatchClass, chrome, ready, interactive, go, duration, ipad, duo } from './chrome.js';
+import { MAKI, MAKI_OF_TYPE, DEFAULT_ICON_ID } from '../trip/icons.js';
 const SHEET_W = ipad ? 936 : duo ? 653 : 402;   // sheet 寬（iPad 見 <style> 的 iPad 段）
 import { applyState, loadState, patchEvent, doneTodos, shiftFrom, toMin, clock } from './demo-state.js';
 
 // App 的字串（Scripts/i18n/maps：Trips.detailAllDay、UI.daySpan／todoListTitle／addTodo／filesLabel）
 const S = {
   'zh-Hant-TW': { allDay: s => `全日 · ${s}`, span: (a, b) => a === b ? `第 ${a} 天` : `第 ${a}–${b} 天`,
-    todos: '待辦清單', addTodo: '新增待辦', files: '附件', locale: 'zh-TW', hideDone: '收起已完成', showDone: '顯示已完成' },
+    todos: '待辦清單', addTodo: '新增待辦', files: '附件', desc: '描述', addFile: '新增附件', locale: 'zh-TW', hideDone: '收起已完成', showDone: '顯示已完成' },
   en: { allDay: s => `All-day · ${s}`, span: (a, b) => a === b ? `Day ${a}` : `Days ${a}–${b}`,
-    todos: 'To-Do List', addTodo: 'Add to-do', files: 'Files', locale: 'en-US', hideDone: 'Hide finished', showDone: 'Show finished' },
+    todos: 'To-Do List', addTodo: 'Add to-do', files: 'Files', desc: 'Notes', addFile: 'Add attachment', locale: 'en-US', hideDone: 'Hide finished', showDone: 'Show finished' },
   ja: { allDay: s => `終日 · ${s}`, span: (a, b) => a === b ? `${a}日目` : `${a}〜${b} 日目`,
-    todos: 'やることリスト', addTodo: 'やることを追加', files: '添付', locale: 'ja-JP', hideDone: '完了したものを隠す', showDone: '完了したものを表示' },
+    todos: 'やることリスト', addTodo: 'やることを追加', files: '添付', desc: 'メモ', addFile: '添付を追加', locale: 'ja-JP', hideDone: '完了したものを隠す', showDone: '完了したものを表示' },
   // ko：trips.detail.allday、domain.itinerary.daylabel、ui.day.span、ui.todolist.title、ui.add.todo、ui.files.label、ui.hide/showcompleted
   ko: { allDay: s => `종일 · ${s}`, span: (a, b) => a === b ? `${a}일차` : `${a}~${b}일차`,
-    todos: '할 일 목록', addTodo: '할 일 추가', files: '첨부', locale: 'ko-KR', hideDone: '완료한 것 숨기기', showDone: '완료한 것 보기' },
+    todos: '할 일 목록', addTodo: '할 일 추가', files: '첨부', desc: '설명', addFile: '첨부 추가', locale: 'ko-KR', hideDone: '완료한 것 숨기기', showDone: '완료한 것 보기' },
 }[lang] || null;
-const L = S || { allDay: s => `全日 · ${s}`, span: (a, b) => `第 ${a}–${b} 天`, todos: '待辦清單', addTodo: '新增待辦', files: '附件', locale: 'zh-TW', hideDone: '收起已完成', showDone: '顯示已完成' };
+const L = S || { allDay: s => `全日 · ${s}`, span: (a, b) => `第 ${a}–${b} 天`, todos: '待辦清單', addTodo: '新增待辦', files: '附件', desc: '描述', addFile: '新增附件', locale: 'zh-TW', hideDone: '收起已完成', showDone: '顯示已完成' };
 
 // 範本裡沒有的附件（extra=1）：一份 PDF 電子票券、一張照片。列的長相、圖示、第二行（副檔名大寫）照 App。
 const EXTRA_BY_EVENT = {
@@ -218,6 +257,13 @@ const EXTRA_BY_EVENT = {
   },
 };
 const EXTRA = (EXTRA_BY_EVENT[params.get('event') || 'jr-pass'] || EXTRA_BY_EVENT['jr-pass'])[lang] || [];
+// extra=1 也替第一則待辦補 1.7.0 的備註、提醒與標記色點（範本待辦沒有這三樣；行銷用）。列怎麼畫照 EventTodoRowCell：字、備註、提醒各一行，列尾色點
+const TODO_EXTRA = {
+  'zh-Hant-TW': { note: '記得帶護照', remind: '10/10 06:30' },
+  en: { note: 'Bring the passport', remind: '10/10 06:30' },
+  ja: { note: 'パスポートを忘れずに', remind: '10/10 06:30' },
+  ko: { note: '여권 챙기기', remind: '10/10 06:30' },
+}[lang] || null;
 
 // DesignIcon.swift 的轉寫（24 格）。收進 chrome.js 之前先放這裡。
 const I = {
@@ -231,6 +277,7 @@ const I = {
   photo: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M4 17l5.5-5.5L14 16l2.5-2.5L20 17"/>',
   paperclip: '<path d="M21 12l-8.5 8.5Q7 22 5.5 13.5L14 5Q20.5 6.5 19 10l-8.5 8.5Q8.5 19.5 7.5 15.5L16 7"/>',
   chevronRight: '<path d="M9 5l7 7-7 7"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
   // 互動模式用到的（DesignIcon.swift：refresh＝改回要去、shiftTime＝延後／提前、check＝勾掉的待辦、close）
   refresh: '<path d="M12 4.5A7.5 7.5 0 1 1 5.32 8.6M12 1.5v3M8.6 4.5H12V8"/>',
   shift: '<path d="M20.2 12a8.2 8.2 0 1 1-2.62-6.01M20.4 3v4.4H16M12 7.6V12l3.1 1.9"/>',
@@ -318,21 +365,32 @@ function navHTML() {
   return left + right;
 }
 
+const extraTodo = i => i === 0 && params.get('extra') === '1' && !!TODO_EXTRA;
 // EventSectionHeaderView.configureTodos ＋ TodoCountView ＋ EventTodoRowCell／TodoCheckButton
 function todosHTML() {
   const n = done.size, unfinished = n < todos.length;
   const visible = todos.map((x, i) => i).filter(i => showsCompleted || !done.has(i) || sticky.has(i));
   const showsRows = visible.some(i => done.has(i));
   return `<div class="sec-head"><b>${L.todos}</b>${todos.length ? `<span class="count${unfinished ? ' due' : ' ok'}">${unfinished ? '<i></i>' : ''}${n}/${todos.length}</span>` : ''}${n > 0 ? `<span class="sec-tog" data-tog data-tap>${showsRows ? L.hideDone : L.showDone}</span>` : ''}</div>
-    ${visible.map(i => `<div class="todo${done.has(i) ? ' done' : ''}"><div class="box"${interactive ? ` data-todo="${i}" role="checkbox" aria-checked="${done.has(i)}"` : ''}><i>${done.has(i) ? ic('check') : ''}</i></div><span>${esc(todos[i])}</span></div>`).join('')}
+    ${visible.map(i => `<div class="todo${done.has(i) ? ' done' : ''}"><div class="box"${interactive ? ` data-todo="${i}" role="checkbox" aria-checked="${done.has(i)}"` : ''}><i>${done.has(i) ? ic('check') : ''}</i></div>${extraTodo(i) ? `<div class="col"><span>${esc(todos[i])}</span><div class="nt">${esc(TODO_EXTRA.note)}</div><div class="nt">${esc(TODO_EXTRA.remind)}</div></div><i class="dot sw-eat"></i>` : `<span>${esc(todos[i])}</span>`}</div>`).join('')}
     <div class="todo composer"><div class="box"><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10.2" fill="none"
       stroke="var(--border)" stroke-width="1.6" stroke-dasharray="3 3"/></svg></div><span>${L.addTodo}</span></div>`;
 }
 
+// 描述：富文本優先、沒有就退回純文字（每一行一段；EventDetailSections.descriptionParagraphs）。範本的描述是純文字
+const descParas = (ev.notes || '').split('\n').filter(x => x.trim());
+// 封面（EventCoverViewModel）：描述第一張圖 → 有地點＝地圖快照＋類型色圖釘 → 都沒有＝空狀態（類型圖示 26）。範本描述沒有圖，所以只有後兩種
+const glyphOf = cat => `<svg viewBox="0 0 15 15" aria-hidden="true"><path fill-rule="evenodd" d="${MAKI[MAKI_OF_TYPE[cat] || DEFAULT_ICON_ID] || MAKI.marker}"/></svg>`;
+function coverHTML() {
+  const cx = ev.isCancelled ? ' cx' : '';
+  if (ev.place) return `<div class="cover map ${swatchClass(ev.category)}${cx}"><span class="pin"></span></div>`;
+  return `<div class="cover empty ${swatchClass(ev.category)}${cx}">${glyphOf(ev.category)}</div>`;
+}
 d.insertAdjacentHTML('beforeend', `
 <div class="sheet" id="sheet">
   <div class="grabber"></div>
   <div id="nav">${navHTML()}</div>
+  ${coverHTML()}
   <div class="facts" id="facts">
     <div class="h1${ev.isCancelled ? ' cx' : ''}">${escD(ev.title)}</div>
     <div class="date">${esc(dateLine)}</div>
@@ -340,19 +398,20 @@ d.insertAdjacentHTML('beforeend', `
     ${subtitle ? `<div class="sub">${esc(subtitle)}</div>` : ''}
   </div>
   <div class="body" id="body">
-    ${ev.notes ? `<div class="notes">${esc(ev.notes)}</div>` : ''}
     <div id="todos">${todosHTML()}</div>
-    ${files.length ? `<div class="sec-head"><b>${L.files}</b><span class="count">${files.length}</span></div>
-    ${files.map((f, i) => `<div class="file" data-file="${i}"${interactive ? ' data-tap' : ''}>${ic(FILE_ICON[f.kind])}<span class="nm">${esc(f.name)}</span>${f.meta ? `<span class="mt">${f.meta}</span>` : ''}${ic('chevronRight', 'chev')}</div>`).join('')}` : ''}
+    <div class="sec-head"><b>${L.files}</b>${files.length ? `<span class="count">${files.length}</span>` : ''}</div>
+    <div class="strip">${files.map((f, i) => `<div class="file" data-file="${i}"${interactive ? ' data-tap' : ''}><div class="th${f.kind === 'image' ? ' img' : ''}">${f.kind === 'image' ? '' : ic(FILE_ICON[f.kind])}${f.kind === 'pdf' ? '<span class="ext">PDF</span>' : ''}</div><span class="nm">${esc(f.name)}</span></div>`).join('')}<div class="file add"><div class="th">${ic('plus')}</div><span class="nm">${L.addFile}</span></div></div>
+    ${descParas.length ? `<div class="sec-head"><b>${L.desc}</b></div><div class="desc">${descParas.map(x => `<div class="p">${esc(x)}</div>`).join('')}</div>` : ''}
   </div>
-</div>`);
+</div></div>`);
 
 // 表接在事實列底下：事實列下緣 10，＋備註那一段上面那一塊（備註沒有段頭，UITableView 仍留了這一塊——照 ref 量）
 const facts = document.getElementById('facts');
-document.getElementById('body').style.top = (facts.offsetTop + facts.offsetHeight + 10 + 27.67) + 'px';
+facts.style.top = (82.67 + 180) + 'px';   // 封面（180）在表的第一列，事實列接在封面底下（EventDetailSections.Kind.cover）
+document.getElementById('body').style.top = (facts.offsetTop + facts.offsetHeight + 10) + 'px';   // 事實列底下的 10（factsBottomPadding）；封面之後的第一段就是待辦，它的抬頭自己帶上面 20
 
 // 附件名稱：UILabel 的 byTruncatingMiddle（CSS 只有尾端省略）
-document.querySelectorAll('.file .nm').forEach(el => {
+document.querySelectorAll('.file:not(.add) .nm').forEach(el => {
   const full = el.textContent;
   el.style.textOverflow = 'clip';
   if (el.scrollWidth <= el.clientWidth) return;

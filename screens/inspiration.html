@@ -2,13 +2,13 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=580bc67035","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=580bc67035","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>資料・靈感</title>
 <!--
   資料分頁・靈感（1.4.0；App：Modules/Widgets/…/Inspiration/ ＋ UI/…/Components/Share/Inspiration*Parts.swift）。
   參數：?lang=zh-Hant-TW|en|ja|ko（zh-Hans 的字備好了，畫面還沒開）
-        &step=list|detail|link（截圖停在哪一步：清單｜一則的檢視紙｜檢視紙上開著「新增關聯」那張紙）　&filter=unlinked（「未關聯」開著）
+        &step=list|detail|link|types（截圖停在哪一步：清單｜一則的檢視紙｜檢視紙上開著「新增關聯」那張紙｜「類型」篩選紙）　&filter=unlinked（「未關聯」開著）
         &device=ipad（只畫清單）
   抬頭「資料」＋三格切換（靈感｜筆記｜購物清單，LibraryViewModel.Subtab 的順序）同 notes／shop（tools.js libraryHead）。
 
@@ -17,6 +17,8 @@
      標題（未讀：列首 6pt 主色點＋粗體）＋「來源 · 時間」（認得的站寫人話、認不得的寫網域）＋分類小標（凹底）＋類型小標（細框＋族色點），
      已關聯的那一列右邊一顆淡主色圓底的勾。右下 ＋（FloatingActionButton，同筆記、購物清單）。
      字：Widgets.json／Domain.json（screens/inspiration-strings.js，tools/gen-inspiration-strings.py 產）。
+  ①b 「類型」那張紙（1.7.0；&step=types）：EventTypePickerViewController 的可複選篩選版——標題「類型」、右上「完成」、分段「地點｜商品」、搜尋、
+     商品那一邊＝8 大類各一群、共 26 種、每種一枚圖示（type-picker.js；同購物表單那一張）。
   ② 檢視紙（InspirationDetailViewController：present 的 pageSheet，沒有左上關閉鈕、只靠往下拉）：右上 ✎ 與紅色垃圾桶（這裡畫成
      檢視行程那一套玻璃鈕）；第一列同高 210 的圖（左上小標）→ 原始連結（等寬、主色墨）→ 類型晶片＋標題 → 描述（surface 底細框）→
      「關聯」（空的寫「無」）；底部釘著「新增關聯」主按鈕。
@@ -122,6 +124,7 @@ import { lang, params, chrome, ready, fmt, interactive, go, svg, swatchClass, ca
 import { libraryHead, subTabs, libStyle, sheet } from './tools.js';
 import { IS } from './inspiration-strings.js';
 import { N, OLD_ITEMS, HOST } from './inspiration-data.js';
+import { pickerSheet, TP_CSS } from './type-picker.js';
 // chain=1（引導頁「分享」示範）：用它自己的資料，首頁的靈感示範不會看到
 const CHAIN = params.get('chain') === '1' ? await import('./inspiration-chain.js') : null;
 
@@ -256,6 +259,10 @@ function openDetail(it, { instant = false, withMenu = false } = {}) {
 
 // ── 狀態切換（截圖模式的 step、互動模式的點擊） ──
 const step = interactive ? 'list' : (params.get('step') || 'list');
+// 「類型」開的那一張紙（EventTypePickerViewController.filterSheet(placeOptions:productGroups:…)，1.7.0）：最上面分段「地點｜商品」，兩邊可複選、切換不清另一邊；
+// 右上「完成」。step=types 停在商品那一邊（打開時只選了商品的就停在商品，其餘停地點；這裡沒選，截圖取商品那一邊——26 種有圖示的才是新東西）
+const tpStyle = document.createElement('style'); tpStyle.textContent = TP_CSS; document.head.append(tpStyle);
+if (step === 'types') d.insertAdjacentHTML('beforeend', pickerSheet({ seg: true, done: true }));
 if (step === 'detail' || step === 'link') openDetail(NEW_ITEM, { instant: true, withMenu: step === 'link' });
 
 ready();
@@ -264,7 +271,13 @@ if (interactive) {
   subTabs(d, 0);
   const rail = document.getElementById('rail'), list = document.getElementById('list');
   rail.addEventListener('click', (e) => {
-    const f = e.target.closest('[data-f]')?.dataset.f; if (!f || f === 'type') return;
+    const f = e.target.closest('[data-f]')?.dataset.f; if (!f) return;
+    if (f === 'type') {
+      d.insertAdjacentHTML('beforeend', pickerSheet({ seg: true, done: true }));
+      const close = () => d.querySelectorAll('.tpdim, .tp').forEach(x => x.remove());
+      d.querySelector('.tpdim').addEventListener('click', close); d.querySelector('.tp .tpdone').addEventListener('click', close);
+      return;
+    }
     if (f === 'unlinked') state.unlinked = !state.unlinked; else state.cats.has(f) ? state.cats.delete(f) : state.cats.add(f);
     const sl = rail.scrollLeft; rail.innerHTML = chips(); rail.scrollLeft = sl;
     list.innerHTML = listHTML();

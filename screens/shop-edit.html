@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=580bc67035","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=c2f7382617","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=8786dc6a33","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<meta name="viewport" content="width=402">
+<title>新增購物項目</title>
+<!--
+  新增／編輯一項購物清單（1.7.0；App：Modules/Widgets/…/Shopping/ShoppingEditViewController.swift ＋ UI/…/TripEventDetail/TypeTitleRow.swift、
+  UI/…/Foundation/EventTypePickerViewController.swift（商品類型那一張紙）、UI/…/Shopping/PriceFieldView.swift）。
+  參數：?lang= &theme= &picker=1（疊上「類型」選擇紙）&type=<商品類型 key，預設 wagashi>
+  欄位的順序照 App：圖片、類型｜品名（一列：類型晶片＋品名輸入）、商品說明、參考價格、關聯行程，底下釘著「儲存」；
+  1.7.0 起商品分類的晶片列併進「類型｜品名」那一列——一個商品一種類型（26 種，type-picker.js），晶片點開選類型那一張紙。
+  欄名 xs semibold muted、欄距 18、框 min 44／內距 10×12／圓角 8、價格框＝幣別 88 寬（sunken 底、向下小箭）＋細線＋18 等寬數字（PriceFieldView）。
+  版面元件沿用分享延伸那一套（share-ext.css：.inp、.chip、.info、.seg），因為 App 的這幾顆本來就是同一組元件。
+  範例內容（品名、價格）是行銷用的示範，範本裡沒有購物清單的編輯畫面。
+-->
+<link rel="stylesheet" href="screen.css?v=7e1e128cfb">
+<link rel="stylesheet" href="share-ext.css?v=5bde9fb502">
+<style>
+  .device { background: var(--page); }
+  .nv { position: absolute; left: 0; right: 0; top: 0; height: 64px; z-index: 3; background: var(--page); }
+  .nv .ttl { position: absolute; left: 90px; right: 90px; top: 21px; text-align: center; font: 600 var(--t-lg)/22px var(--font); white-space: nowrap; }
+  .body { position: absolute; left: 0; right: 0; top: 64px; bottom: 96px; overflow: hidden; padding: 10px 20px 0; display: flex; flex-direction: column; gap: 18px; }
+  .fld { display: flex; flex-direction: column; gap: 6px; }
+  .fld > b { font: 600 var(--t-xs)/14.3px var(--font); color: var(--muted); }
+  .pill { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 6px 14px; border-radius: 12px; border: 1px solid var(--border);
+    background: var(--sunken); font: 600 var(--t-sm)/16px var(--font); color: var(--ink); }
+  .pill svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ph1 { font: 400 var(--t-base)/22px var(--font); color: var(--muted); }
+  .note { min-height: 88px; white-space: normal; }
+  /* PriceFieldView：surface 底、边、圓角 8；幣別 88 寬 sunken 底＋向下小箭 10、細線、18 等寬數字 */
+  .pf { display: flex; align-items: stretch; min-height: 44px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); overflow: hidden; }
+  .pf .cur { flex: none; width: 88px; display: flex; align-items: center; justify-content: center; gap: 4px; background: var(--sunken); border-right: 1px solid var(--border);
+    font: 600 var(--t-sm)/16px system-ui, -apple-system, sans-serif; letter-spacing: .06em; color: var(--ink); }
+  .pf .cur svg { width: 10px; height: 10px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .pf .amt { flex: 1; display: flex; align-items: center; padding: 10px 12px; font: 600 18px/22px system-ui, -apple-system, sans-serif; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .conv { font: 400 var(--t-xs)/14.3px system-ui, -apple-system, sans-serif; font-variant-numeric: tabular-nums; color: var(--muted); margin-top: -0px; }
+  .linkempty { font: 400 var(--t-base)/22px var(--font); color: var(--ink); margin-bottom: 4px; }
+  .foot { position: absolute; left: 0; right: 0; bottom: 0; height: 96px; padding: 14px 20px 0; background: var(--page); z-index: 3; border-top: 1px solid var(--border-soft); }
+  .foot .primary { display: block; text-align: center; line-height: 48px; background: var(--accent-ink); color: var(--on-accent); border-radius: 8px; font: 600 var(--t-base)/48px var(--font); }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module">
+import { lang, params, chrome, ready, fmt } from './chrome.js';
+import { di } from './share-ext.js';
+import { productChip, pickerSheet, TP_CSS } from './type-picker.js';
+
+const L = { 'zh-Hant-TW': 0, en: 1, ja: 2, ko: 3 }[lang] ?? 1;
+// App 的字（Scripts/i18n/maps/Widgets.json：widgets.shopping.*）
+const S = {
+  title: ['新增購物項目', 'New item', '商品を追加', '항목 추가'][L], images: ['圖片', 'Photos', '写真', '사진'][L], addPhoto: ['加照片', 'Add photo', '写真を追加', '사진 추가'][L],
+  typeTitle: ['類型｜品名', 'Type | Item name', '種類｜品名', '유형 | 품명'][L], note: ['商品說明', 'Notes', '商品メモ', '상품 메모'][L],
+  notePh: ['規格、要注意什麼、在哪一家看過', 'Specs, what to watch out for, where you saw it', 'サイズ、注意点、どこで見たか', '사양, 주의할 점, 어디서 봤는지'][L],
+  price: ['參考價格', 'Reference price', '参考価格', '참고 가격'][L], events: ['關聯行程', 'Linked events', '関連する予定', '연결된 일정'][L],
+  linkEmpty: ['還沒關聯任何行程。', 'No events linked yet.', 'まだ予定と関連づけていません。', '아직 연결된 일정이 없습니다.'][L],
+  linkAdd: ['管理關聯行程', 'Manage linked events', '関連する予定を管理', '연결된 일정 관리'][L], save: ['儲存', 'Save', '保存', '저장'][L],
+  // 範例：宮島的紅葉饅頭（shop.html 的第一項）；約 TWD＝1600 ÷ 4.96（同匯率換算那一頁）、「約」照 shopping 卡片
+  name: ['紅葉饅頭 12 入', 'Momiji manju, box of 12', 'もみじ饅頭 12 個入', '모미지 만주 12개입'][L], approx: ['約 TWD 322.58', 'About TWD 322.58', '約 TWD 322.58', '약 TWD 322.58'][L],
+};
+const TYPE = params.get('type') || 'wagashi';
+const CSS = document.createElement('style'); CSS.textContent = TP_CSS; document.head.append(CSS);
+const chev = '<svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>';
+const plus = '<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>';
+
+const d = document.getElementById('d');
+d.innerHTML = `
+  <div class="nv"><div class="ttl">${S.title}</div></div>
+  <div class="body">
+    <div class="fld"><b>${S.images}</b><span class="pill">${plus}${S.addPhoto}</span></div>
+    <div class="fld"><b>${S.typeTitle}</b><div class="info">${productChip(TYPE)}<div class="inp">${fmt(S.name)}</div></div></div>
+    <div class="fld"><b>${S.note}</b><div class="inp ph note">${S.notePh}</div></div>
+    <div class="fld"><b>${S.price}</b><div class="pf"><span class="cur">JPY${chev}</span><span class="amt">1,600</span></div><div class="conv">${S.approx}</div></div>
+    <div class="fld"><b>${S.events}</b><div class="linkempty">${S.linkEmpty}</div><span class="pill">${S.linkAdd}</span></div>
+  </div>
+  <div class="foot"><div class="primary">${S.save}</div></div>
+  ${params.get('picker') === '1' ? pickerSheet({ selected: [TYPE] }) : ''}`;
+chrome(d);
+ready();
+</script>
+</body>
+</html>
