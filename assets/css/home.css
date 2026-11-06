@@ -104,6 +104,8 @@ h3 { font-size:var(--text-xl); margin:0 0 10px; font-weight:600; }
   font-size:var(--text-sm); color:var(--fg); line-height:1.3;
 }
 .hero-tags .i { width:16px; height:16px; color:var(--accent-ink); stroke-width:2; }
+.hero-ph { margin:20px 0 0; }
+.hero-ph a, .hero-ph img { display:block; width:250px; height:54px; }
 
 /* 三支手機：中間行事曆在前，兩側縮小、壓低、退到後面 */
 .trio { --c:clamp(140px, 18vw, 224px); display:flex; justify-content:center; align-items:center; padding-bottom:8px; }
