@@ -18,7 +18,8 @@ import path from 'node:path';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 /** 黃金檔有幾份：v1（一趟一個旅程時區）、v1-dayzones（仍是 `v: 1`，多一個選填的 `trip.dayZones`＝每一天各帶旅程時區，App 1.5.0）。
  *  兩份都留，舊連結仍要讀得懂。 */
-export const VERSIONS = ['v1', 'v1-dayzones'];
+export const VERSIONS = ['v1', 'v1-dayzones', 'v1-placeid'];
+/* v1-placeid：仍是 `v: 1`，`items[].placeID` 多一個選填的鍵＝Apple 地圖的 Place ID（App 1.8.0）。 */
 export const fixturePath = (version = 'v1') => path.join(root, `tests/fixtures/golden-${version}.json`);
 export const FIXTURE = fixturePath('v1');
 export const defaultAppGolden = (version = 'v1') => path.resolve(root, `../tripezgo/docs/public-link/golden-${version}.json`);

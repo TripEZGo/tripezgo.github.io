@@ -190,7 +190,7 @@ export function validateCopy(json) {
     }
     /* `icon`／`swatch` 不讀：App 1.0.0 (185) 拿掉了那兩格（ADR-0024），舊的公開版本裡還有——
      * App 的解碼器對不認得的鍵視而不見，這裡也一樣（類型決定圖示與顏色，見 looks.js）。 */
-    for (const k of ['place', 'type']) if (!isStringOrNull(row[k])) return null;
+    for (const k of ['place', 'type', 'placeID']) if (!isStringOrNull(row[k])) return null;
     if (typeof row.color !== 'string') return null;
     let leg = null;
     if (has(row, 'leg')) {
@@ -206,6 +206,8 @@ export function validateCopy(json) {
       place: row.place || null,
       geo,
       type: row.type || null,
+      /* Apple 地圖的 Place ID（App 1.8.0 的 `items[].placeID`，選填；舊連結沒有，讀成 null）。 */
+      placeID: row.placeID || null,
       color: row.color,
       leg,
     });
@@ -221,6 +223,16 @@ export function validateCopy(json) {
     dayZones,
     items,
   };
+}
+
+/** Apple 地圖「開到那一家店」的網址：只有行程帶 Place ID 時才有，否則 `null`。
+ *  `place-id` 是 Apple「Adopting unified Maps URLs」文件裡 `/place` 路徑的參數（https://maps.apple.com/place?place-id=…）；
+ *  有座標就一併帶 `coordinate`（同一份文件的參數），讓 ID 不被認得時地圖仍落在那個點上。 */
+export function appleMapsUrl(item) {
+  if (!item || !item.placeID) return null;
+  let url = 'https://maps.apple.com/place?place-id=' + encodeURIComponent(item.placeID);
+  if (item.geo) url += '&coordinate=' + item.geo.join(',');
+  return url;
 }
 
 /** 第 `n` 天（1 起算）的旅程時區：有 `dayZones` 的用那一天自己的，沒有或讀不懂的整趟用 `tz`；超出天數的讀最後一天（時間表多問的「旅程隔天」）。
