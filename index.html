@@ -36,8 +36,8 @@
 <meta name="twitter:title" content="TripEZGo — 旅行規劃 App｜行事曆排行程、旅伴共編">
 <meta name="twitter:description" content="TripEZGo 是 iPhone、iPad 的旅行規劃 App：行事曆排行程、時間軸排交通，跟旅伴一起共編，自由行的行程表、票券與待辦都在一起。免註冊、離線可用，免費下載。">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-zh.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=11dd613b21">
-<script type="module" src="/assets/js/home.js?v=70f3276f66"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=ddd6a39d57">
+<script type="module" src="/assets/js/home.js?v=fe1f6794d8"></script>
 <script type="module" src="/assets/js/promo.js?v=39a8133668"></script>
 <script type="application/ld+json">
 {
@@ -110,7 +110,7 @@
   html.embed .site-header .wrap { min-height: 52px; justify-content: center; }
   html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
   html.embed .site-nav::-webkit-scrollbar { display: none; }
-  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--fg); }
   html.embed .site-nav > a.hide-sm:hover, html.embed .site-nav > a.hide-sm:active { border-color: var(--accent); color: var(--accent-ink); }
 </style>
 <!-- embed:end -->
@@ -333,6 +333,51 @@
           <figure class="ph shot"><img src="/assets/img/shots/v2/zh/home.webp" width="720" height="1565" alt="主頁：封面顯示山陽 6 日的第 1 天，下面是即時動態、今日待辦、匯率換算與總覽小工具" loading="lazy"></figure>
         </div>
       </article>
+      <!-- 主頁小工具（使用者 2026-11-08）：接在「主頁」那篇下面 -->
+      <div class="hw-block" id="home-widgets">
+        <div class="hw-head">
+          <p class="eyebrow">主頁小工具</p>
+          <h3>主頁上放什麼，<span class="nb">你自己排</span></h3>
+          <p>跟 iPhone 主畫面一樣，長按就能加、拖曳、換尺寸；每一趟旅程排自己的一份。點一支，看它放上主頁的樣子。</p>
+        </div>
+        <!-- 14 支＝App 新增小工具紙的順序（HomeWidgetGallery.canonicalOrder）；名稱與說明照 App 字串（WidgetCards.json、Home.json）。
+             左邊網格、右邊 demo（預設天氣；assets/js/home.js 的 #home-widgets 那段），卡片是 /screens/home.html?solo=<id>:<s|m|l> 的 iframe。 -->
+        <div class="hw-layout">
+          <ul class="hw-grid">
+              <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">總覽</span><span class="hw-sz">中・大</span></button>
+                <p class="hw-desc" hidden>這趟旅程的總覽筆記：怎麼走、住哪、交通怎麼接，打開主頁第一眼就看到。</p></li>
+              <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">天氣</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>這趟旅程每一天的天氣，每一格用那一天的旅程地點；10 天內是預報，更遠是往年平均。點一天看詳情。</p></li>
+              <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">步數</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>旅途中每天走了多少路——步數、步行距離、爬樓層數。從 Apple 健康讀取，只留在你的手機上。</p></li>
+              <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">即時動態</span><span class="hw-sz">中・大</span></button>
+                <p class="hw-desc" hidden>旅程中的目前行程、倒數與下一站，跟鎖定畫面的即時動態同一張。</p></li>
+              <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">行程</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>現在該做什麼——目前的行程、下一站，以及今天還剩幾站。</p></li>
+              <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">附件</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>要用的東西在哪——今天要出示的，還有隨身文件。</p></li>
+              <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">待辦清單</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>還有什麼沒做。可以直接在這裡打勾。</p></li>
+              <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">購物清單</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>還有什麼要買、在哪一站買。可以直接在這裡打勾。</p></li>
+              <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">匯率換算</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>上次換出來是多少，用當日匯率，沒網路也能換算；站在店裡瞄一眼就知道。</p></li>
+              <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">旅程</span><span class="hw-sz">小・中</span></button>
+                <p class="hw-desc" hidden>下一趟是什麼時候，或者這一趟走到第幾天了。</p></li>
+              <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">檢視筆記</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>把一則筆記放在主頁上——租車注意事項、講不出來的那句日文。</p></li>
+              <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">筆記列表</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>一趟旅程裡的筆記，最近改的在前。</p></li>
+              <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">靈感</span><span class="hw-sz">小・中</span></button>
+                <p class="hw-desc" hidden>還沒讀的靈感有幾則，以及最新的幾則；點一則就打開它。</p></li>
+              <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">QR Code</span><span class="hw-sz">小</span></button>
+                <p class="hw-desc" hidden>一按就打開掃描器——網址、文字或旅程的共編邀請；掃過的留下紀錄，旅伴也看得到。</p></li>
+          </ul>
+          <div class="hw-demo" aria-live="polite"></div>
+        </div>
+        <p class="hw-hint">共 14 支，小、中、大三種尺寸；免費版用第一頁，Premium 可以排好幾頁。</p>
+        <div class="hw-strings" hidden><span data-k="s">小</span><span data-k="m">中</span><span data-k="l">大</span><span data-k="size">尺寸</span></div>
+      </div>
       <article class="feature">
         <div>
           <p class="eyebrow">01 · 行事曆／時間軸</p>
@@ -487,7 +532,7 @@
         <h2>路上用得到的，<span class="nb">都帶著</span></h2>
         <p class="lede">資料分頁收著靈感、筆記、購物清單；想到什麼先丟進來，要用的時候都在。</p>
       </div>
-      <!-- App 1.6.0：資料分頁＝靈感／筆記／購物清單，右上是通知鈴鐺（ADR-0055）。主頁小工具 2026-11-08 起自成下一區 #home-widgets -->
+      <!-- App 1.6.0：資料分頁＝靈感／筆記／購物清單，右上是通知鈴鐺（ADR-0055）。主頁小工具 2026-11-08 起在 #features「主頁」那篇下面（#home-widgets） -->
       <div class="tools is-three">
         <article class="tool">
           <figure class="ph shot"><img src="/assets/img/shots/v2/zh/inspiration.webp" width="720" height="1565" alt="靈感：從其他 App 分享進來的網頁、地圖與貼文，標著未讀與未關聯，資料分頁右上是通知鈴鐺" loading="lazy"></figure>
@@ -515,51 +560,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="home-widgets">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">主頁小工具</p>
-        <h2>主頁上放什麼，<span class="nb">你自己排</span></h2>
-        <p class="lede">跟 iPhone 主畫面一樣，長按就能加、拖曳、換尺寸；每一趟旅程排自己的一份。點一支，看它放上主頁的樣子。</p>
-      </div>
-      <!-- 14 支＝App 新增小工具紙的順序（HomeWidgetGallery.canonicalOrder）；名稱與說明照 App 字串（WidgetCards.json、Home.json）。
-           點了開 demo 紙（assets/js/home.js 的 #home-widgets 那段），卡片是 /screens/home.html?solo=<id>:<s|m|l> 的 iframe。 -->
-      <ul class="hw-grid">
-          <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">總覽</span><span class="hw-sz">中・大</span></button>
-            <p class="hw-desc" hidden>這趟旅程的總覽筆記：怎麼走、住哪、交通怎麼接，打開主頁第一眼就看到。</p></li>
-          <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">天氣</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>這趟旅程每一天的天氣，每一格用那一天的旅程地點；10 天內是預報，更遠是往年平均。點一天看詳情。</p></li>
-          <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">步數</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>旅途中每天走了多少路——步數、步行距離、爬樓層數。從 Apple 健康讀取，只留在你的手機上。</p></li>
-          <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">即時動態</span><span class="hw-tag">Premium</span></button>
-            <p class="hw-desc" hidden>旅程中的目前行程、倒數與下一站，跟鎖定畫面的即時動態同一張。</p></li>
-          <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">行程</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>現在該做什麼——目前的行程、下一站，以及今天還剩幾站。</p></li>
-          <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">附件</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>要用的東西在哪——今天要出示的，還有隨身文件。</p></li>
-          <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">待辦清單</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>還有什麼沒做。可以直接在這裡打勾。</p></li>
-          <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">購物清單</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>還有什麼要買、在哪一站買。可以直接在這裡打勾。</p></li>
-          <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">匯率換算</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>上次換出來是多少，用當日匯率，沒網路也能換算；站在店裡瞄一眼就知道。</p></li>
-          <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">旅程</span><span class="hw-sz">小・中</span></button>
-            <p class="hw-desc" hidden>下一趟是什麼時候，或者這一趟走到第幾天了。</p></li>
-          <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">檢視筆記</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>把一則筆記放在主頁上——租車注意事項、講不出來的那句日文。</p></li>
-          <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">筆記列表</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>一趟旅程裡的筆記，最近改的在前。</p></li>
-          <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">靈感</span><span class="hw-sz">小・中</span></button>
-            <p class="hw-desc" hidden>還沒讀的靈感有幾則，以及最新的幾則；點一則就打開它。</p></li>
-          <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">QR Code</span><span class="hw-sz">小</span></button>
-            <p class="hw-desc" hidden>一按就打開掃描器——網址、文字或旅程的共編邀請；掃過的留下紀錄，旅伴也看得到。</p></li>
-      </ul>
-      <p class="hw-hint">共 14 支，小、中、大三種尺寸；免費版用第一頁，Premium 可以排好幾頁。</p>
-      <div class="hw-strings" hidden><span data-k="s">小</span><span data-k="m">中</span><span data-k="l">大</span><span data-k="size">尺寸</span><span data-k="close">關閉</span></div>
-    </div>
-  </section>
-
-  <section class="section" id="more">
+  <section class="section section-alt" id="more">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">整合</p>
@@ -585,7 +586,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="ai">
+  <section class="section" id="ai">
     <div class="wrap">
       <div class="ai-band">
         <div>

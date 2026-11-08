@@ -153,7 +153,6 @@ T = {
   '中': ('Medium', '中', '보통'),
   '大': ('Large', '大', '크게'),
   '尺寸': ('Size', 'サイズ', '크기'),
-  '關閉': ('Close', '閉じる', '닫기'),
   '這趟旅程的總覽筆記：怎麼走、住哪、交通怎麼接，打開主頁第一眼就看到。': ('Your trip’s overview note — the route, where you’re staying, how the transport connects — the first thing you see on Home.', 'この旅の概要メモ。どう回るか、どこに泊まるか、交通のつなぎ方を、ホームを開いて最初に目に入る場所に。', '이번 여행의 한눈에 보기 메모. 어떻게 돌지, 어디서 묵을지, 교통은 어떻게 이어지는지 홈을 열면 바로 보여요.'),
   '這趟旅程每一天的天氣，每一格用那一天的旅程地點；10 天內是預報，更遠是往年平均。點一天看詳情。': ('The weather for every day of this trip, each day at that day’s place: a forecast up to 10 days out, past averages beyond that. Tap a day for details.', 'この旅の毎日の天気です。日ごとにその日の旅行先で、10 日以内は予報、それより先は例年の平均。日をタップすると詳細が表示されます。', '이번 여행의 매일 날씨예요. 날마다 그날의 여행지 기준이고, 10일 안은 예보, 그보다 먼 날은 예년 평균이에요. 날짜를 누르면 자세히 볼 수 있어요.'),
   '旅途中每天走了多少路——步數、步行距離、爬樓層數。從 Apple 健康讀取，只留在你的手機上。': ('How far you walk each day of the trip: steps, walking distance and flights climbed. Read from Apple Health, and it stays on your phone.', '旅行中に毎日どれだけ歩いたか。歩数、歩行距離、上った階数。Apple のヘルスケアから読み取り、データは iPhone の中だけに。', '여행 중 하루에 얼마나 걸었는지 보여줘요. 걸음 수, 걸은 거리, 오른 층수. Apple 건강 앱에서 읽어 오고, 데이터는 내 iPhone에만 남아요.'),

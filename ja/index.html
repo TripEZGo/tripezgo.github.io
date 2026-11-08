@@ -36,8 +36,8 @@
 <meta name="twitter:title" content="TripEZGo — 旅行計画・旅程表アプリ｜カレンダーで予定、旅の仲間と共同編集">
 <meta name="twitter:description" content="iPhone・iPad の旅行計画アプリ。カレンダーで旅程表を作り、移動はタイムラインで、旅の仲間と共同編集。登録不要・オフライン対応、無料でダウンロード。">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-ja.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=11dd613b21">
-<script type="module" src="/assets/js/home.js?v=70f3276f66"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=ddd6a39d57">
+<script type="module" src="/assets/js/home.js?v=fe1f6794d8"></script>
 <script type="module" src="/assets/js/promo.js?v=39a8133668"></script>
 <script type="application/ld+json">
 {
@@ -110,7 +110,7 @@
   html.embed .site-header .wrap { min-height: 52px; justify-content: center; }
   html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
   html.embed .site-nav::-webkit-scrollbar { display: none; }
-  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--fg); }
   html.embed .site-nav > a.hide-sm:hover, html.embed .site-nav > a.hide-sm:active { border-color: var(--accent); color: var(--accent-ink); }
 </style>
 <!-- embed:end -->
@@ -326,6 +326,48 @@
           <figure class="ph shot"><img src="/assets/img/shots/v2/ja/home.webp" width="720" height="1565" alt="ホーム：カバーに山陽 6 日の 1 日目、その下にライブアクティビティ・今日のToDo・為替換算・概要のウィジェット" loading="lazy"></figure>
         </div>
       </article>
+            <div class="hw-block" id="home-widgets">
+        <div class="hw-head">
+          <p class="eyebrow">ホームのウィジェット</p>
+          <h3>ホームに何を置くか、<span class="nb">自分で決める</span></h3>
+          <p>iPhone のホーム画面と同じように、長押しで追加・ドラッグ・サイズ変更。旅行ごとに自分だけの配置にできます。タップすると、ホームに置いたときの見た目を確認できます。</p>
+        </div>
+                <div class="hw-layout">
+          <ul class="hw-grid">
+              <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">概要</span><span class="hw-sz">中・大</span></button>
+                <p class="hw-desc" hidden>この旅の概要メモ。どう回るか、どこに泊まるか、交通のつなぎ方を、ホームを開いて最初に目に入る場所に。</p></li>
+              <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">天気</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>この旅の毎日の天気です。日ごとにその日の旅行先で、10 日以内は予報、それより先は例年の平均。日をタップすると詳細が表示されます。</p></li>
+              <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">歩数</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>旅行中に毎日どれだけ歩いたか。歩数、歩行距離、上った階数。Apple のヘルスケアから読み取り、データは iPhone の中だけに。</p></li>
+              <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">ライブアクティビティ</span><span class="hw-sz">中・大</span></button>
+                <p class="hw-desc" hidden>旅行中の現在の予定、カウントダウン、次の目的地。ロック画面のライブアクティビティと同じカードです。</p></li>
+              <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">予定</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>いま何をする時間か——現在の予定、次の目的地、今日あと何件か。</p></li>
+              <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">添付</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>必要なものがどこにあるか——今日見せるものと、持ち歩く書類。</p></li>
+              <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">やることリスト</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>まだ終わっていないこと。ここでそのままチェックできます。</p></li>
+              <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">買い物リスト</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>あと何をどこで買うか。ここで直接チェックできます。</p></li>
+              <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">為替換算</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>前回いくらだったか。その日のレートで、オフラインでも換算できます。お店でちらっと見るだけ。</p></li>
+              <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">旅行</span><span class="hw-sz">小・中</span></button>
+                <p class="hw-desc" hidden>次はいつ出発か、この旅行はいま何日目か。</p></li>
+              <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">メモを表示</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>メモを 1 件ホームに——レンタカーの注意点や、言えないあの一言。</p></li>
+              <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">メモ一覧</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>1 つの旅程のメモを、最近書き換えた順に。</p></li>
+              <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">インスピレーション</span><span class="hw-sz">小・中</span></button>
+                <p class="hw-desc" hidden>未読のインスピレーションの件数と最新の数件。タップすると開きます。</p></li>
+              <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">QR コード</span><span class="hw-sz">小</span></button>
+                <p class="hw-desc" hidden>タップするだけでスキャナを開きます。URL、テキスト、旅行の共同編集の招待に。スキャンした履歴が残り、旅の仲間も見られます。</p></li>
+          </ul>
+          <div class="hw-demo" aria-live="polite"></div>
+        </div>
+        <p class="hw-hint">全 14 種、小・中・大の 3 サイズ。無料版は 1 ページ、Premium なら何ページでも並べられます。</p>
+        <div class="hw-strings" hidden><span data-k="s">小</span><span data-k="m">中</span><span data-k="l">大</span><span data-k="size">サイズ</span></div>
+      </div>
       <article class="feature">
         <div>
           <p class="eyebrow">01 · カレンダー／タイムライン</p>
@@ -507,49 +549,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="home-widgets">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">ホームのウィジェット</p>
-        <h2>ホームに何を置くか、<span class="nb">自分で決める</span></h2>
-        <p class="lede">iPhone のホーム画面と同じように、長押しで追加・ドラッグ・サイズ変更。旅行ごとに自分だけの配置にできます。タップすると、ホームに置いたときの見た目を確認できます。</p>
-      </div>
-            <ul class="hw-grid">
-          <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">概要</span><span class="hw-sz">中・大</span></button>
-            <p class="hw-desc" hidden>この旅の概要メモ。どう回るか、どこに泊まるか、交通のつなぎ方を、ホームを開いて最初に目に入る場所に。</p></li>
-          <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">天気</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>この旅の毎日の天気です。日ごとにその日の旅行先で、10 日以内は予報、それより先は例年の平均。日をタップすると詳細が表示されます。</p></li>
-          <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">歩数</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>旅行中に毎日どれだけ歩いたか。歩数、歩行距離、上った階数。Apple のヘルスケアから読み取り、データは iPhone の中だけに。</p></li>
-          <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">ライブアクティビティ</span><span class="hw-tag">Premium</span></button>
-            <p class="hw-desc" hidden>旅行中の現在の予定、カウントダウン、次の目的地。ロック画面のライブアクティビティと同じカードです。</p></li>
-          <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">予定</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>いま何をする時間か——現在の予定、次の目的地、今日あと何件か。</p></li>
-          <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">添付</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>必要なものがどこにあるか——今日見せるものと、持ち歩く書類。</p></li>
-          <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">やることリスト</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>まだ終わっていないこと。ここでそのままチェックできます。</p></li>
-          <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">買い物リスト</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>あと何をどこで買うか。ここで直接チェックできます。</p></li>
-          <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">為替換算</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>前回いくらだったか。その日のレートで、オフラインでも換算できます。お店でちらっと見るだけ。</p></li>
-          <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">旅行</span><span class="hw-sz">小・中</span></button>
-            <p class="hw-desc" hidden>次はいつ出発か、この旅行はいま何日目か。</p></li>
-          <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">メモを表示</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>メモを 1 件ホームに——レンタカーの注意点や、言えないあの一言。</p></li>
-          <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">メモ一覧</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>1 つの旅程のメモを、最近書き換えた順に。</p></li>
-          <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">インスピレーション</span><span class="hw-sz">小・中</span></button>
-            <p class="hw-desc" hidden>未読のインスピレーションの件数と最新の数件。タップすると開きます。</p></li>
-          <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">QR コード</span><span class="hw-sz">小</span></button>
-            <p class="hw-desc" hidden>タップするだけでスキャナを開きます。URL、テキスト、旅行の共同編集の招待に。スキャンした履歴が残り、旅の仲間も見られます。</p></li>
-      </ul>
-      <p class="hw-hint">全 14 種、小・中・大の 3 サイズ。無料版は 1 ページ、Premium なら何ページでも並べられます。</p>
-      <div class="hw-strings" hidden><span data-k="s">小</span><span data-k="m">中</span><span data-k="l">大</span><span data-k="size">サイズ</span><span data-k="close">閉じる</span></div>
-    </div>
-  </section>
-
-  <section class="section" id="more">
+  <section class="section section-alt" id="more">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">連携</p>
@@ -575,7 +575,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="ai">
+  <section class="section" id="ai">
     <div class="wrap">
       <div class="ai-band">
         <div>

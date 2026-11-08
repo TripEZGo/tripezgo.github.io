@@ -36,8 +36,8 @@
 <meta name="twitter:title" content="TripEZGo — 旅行规划 App｜日历排行程、旅伴共编">
 <meta name="twitter:description" content="TripEZGo 是 iPhone、iPad 上的旅行规划 App：日历排行程、时间轴排交通，和旅伴一起共编，自由行的行程表、票券和待办都在一起。无需注册、离线可用，免费下载。">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-zh-cn.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=11dd613b21">
-<script type="module" src="/assets/js/home.js?v=70f3276f66"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=ddd6a39d57">
+<script type="module" src="/assets/js/home.js?v=fe1f6794d8"></script>
 <script type="module" src="/assets/js/promo.js?v=39a8133668"></script>
 <script type="application/ld+json">
 {
@@ -110,7 +110,7 @@
   html.embed .site-header .wrap { min-height: 52px; justify-content: center; }
   html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
   html.embed .site-nav::-webkit-scrollbar { display: none; }
-  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--fg); }
   html.embed .site-nav > a.hide-sm:hover, html.embed .site-nav > a.hide-sm:active { border-color: var(--accent); color: var(--accent-ink); }
 </style>
 <!-- embed:end -->
@@ -326,6 +326,48 @@
           <figure class="ph shot"><img src="/assets/img/shots/v2/zh-Hans/home.webp" width="720" height="1565" alt="主页：封面显示山阳 6 日的第 1 天，下面是实时活动、今日待办、汇率换算和总览小组件" loading="lazy"></figure>
         </div>
       </article>
+            <div class="hw-block" id="home-widgets">
+        <div class="hw-head">
+          <p class="eyebrow">主页小组件</p>
+          <h3>主页上放什么，<span class="nb">你自己排</span></h3>
+          <p>和 iPhone 主屏幕一样，长按就能添加、拖动、换尺寸；每一趟旅程排自己的一份。点一个，看看它放到主页上的样子。</p>
+        </div>
+                <div class="hw-layout">
+          <ul class="hw-grid">
+              <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">总览</span><span class="hw-sz">中・大</span></button>
+                <p class="hw-desc" hidden>这趟旅程的总览笔记：怎么走、住哪、交通怎么接，打开主页第一眼就能看到。</p></li>
+              <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">天气</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>这趟旅程每一天的天气，每一格用那一天的旅程地点；10 天内是预报，更远的是往年平均。点一天查看详情。</p></li>
+              <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">步数</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>旅途中每天走了多少路——步数、步行距离、爬楼层数。从 Apple 健康读取，只留在你的手机上。</p></li>
+              <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">实时活动</span><span class="hw-sz">中・大</span></button>
+                <p class="hw-desc" hidden>旅程中的当前行程、倒数与下一站，和锁屏上的实时活动是同一张。</p></li>
+              <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">行程</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>现在该做什么——当前的行程、下一站，以及今天还剩几站。</p></li>
+              <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">附件</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>要用的东西在哪——今天要出示的，还有随身文件。</p></li>
+              <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">待办清单</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>还有什么没做。可以直接在这里打勾。</p></li>
+              <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">购物清单</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>还有什么要买、在哪一站买。可以直接在这里打勾。</p></li>
+              <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">汇率换算</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>上次换出来是多少，用当天汇率，没有网络也能换算；站在店里瞄一眼就知道。</p></li>
+              <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">旅程</span><span class="hw-sz">小・中</span></button>
+                <p class="hw-desc" hidden>下一趟是什么时候，或者这一趟走到第几天了。</p></li>
+              <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">查看笔记</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>把一则笔记放在主页上——租车注意事项、讲不出来的那句日文。</p></li>
+              <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">笔记列表</span><span class="hw-sz">小・中・大</span></button>
+                <p class="hw-desc" hidden>一趟旅程里的笔记，最近改的在前。</p></li>
+              <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">灵感</span><span class="hw-sz">小・中</span></button>
+                <p class="hw-desc" hidden>还没读的灵感有几条，以及最新的几条；点一条就打开它。</p></li>
+              <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">二维码</span><span class="hw-sz">小</span></button>
+                <p class="hw-desc" hidden>一点就打开扫描器——网址、文字或旅程的共编邀请；扫过的留下记录，旅伴也看得到。</p></li>
+          </ul>
+          <div class="hw-demo" aria-live="polite"></div>
+        </div>
+        <p class="hw-hint">共 14 个，小、中、大三种尺寸；免费版用第一页，Premium 可以排好几页。</p>
+        <div class="hw-strings" hidden><span data-k="s">小</span><span data-k="m">中</span><span data-k="l">大</span><span data-k="size">尺寸</span></div>
+      </div>
       <article class="feature">
         <div>
           <p class="eyebrow">01 · 日历／时间轴</p>
@@ -507,49 +549,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="home-widgets">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">主页小组件</p>
-        <h2>主页上放什么，<span class="nb">你自己排</span></h2>
-        <p class="lede">和 iPhone 主屏幕一样，长按就能添加、拖动、换尺寸；每一趟旅程排自己的一份。点一个，看看它放到主页上的样子。</p>
-      </div>
-            <ul class="hw-grid">
-          <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">总览</span><span class="hw-sz">中・大</span></button>
-            <p class="hw-desc" hidden>这趟旅程的总览笔记：怎么走、住哪、交通怎么接，打开主页第一眼就能看到。</p></li>
-          <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">天气</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>这趟旅程每一天的天气，每一格用那一天的旅程地点；10 天内是预报，更远的是往年平均。点一天查看详情。</p></li>
-          <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">步数</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>旅途中每天走了多少路——步数、步行距离、爬楼层数。从 Apple 健康读取，只留在你的手机上。</p></li>
-          <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">实时活动</span><span class="hw-tag">Premium</span></button>
-            <p class="hw-desc" hidden>旅程中的当前行程、倒数与下一站，和锁屏上的实时活动是同一张。</p></li>
-          <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">行程</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>现在该做什么——当前的行程、下一站，以及今天还剩几站。</p></li>
-          <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">附件</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>要用的东西在哪——今天要出示的，还有随身文件。</p></li>
-          <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">待办清单</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>还有什么没做。可以直接在这里打勾。</p></li>
-          <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">购物清单</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>还有什么要买、在哪一站买。可以直接在这里打勾。</p></li>
-          <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">汇率换算</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>上次换出来是多少，用当天汇率，没有网络也能换算；站在店里瞄一眼就知道。</p></li>
-          <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">旅程</span><span class="hw-sz">小・中</span></button>
-            <p class="hw-desc" hidden>下一趟是什么时候，或者这一趟走到第几天了。</p></li>
-          <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">查看笔记</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>把一则笔记放在主页上——租车注意事项、讲不出来的那句日文。</p></li>
-          <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">笔记列表</span><span class="hw-sz">小・中・大</span></button>
-            <p class="hw-desc" hidden>一趟旅程里的笔记，最近改的在前。</p></li>
-          <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">灵感</span><span class="hw-sz">小・中</span></button>
-            <p class="hw-desc" hidden>还没读的灵感有几条，以及最新的几条；点一条就打开它。</p></li>
-          <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">二维码</span><span class="hw-sz">小</span></button>
-            <p class="hw-desc" hidden>一点就打开扫描器——网址、文字或旅程的共编邀请；扫过的留下记录，旅伴也看得到。</p></li>
-      </ul>
-      <p class="hw-hint">共 14 个，小、中、大三种尺寸；免费版用第一页，Premium 可以排好几页。</p>
-      <div class="hw-strings" hidden><span data-k="s">小</span><span data-k="m">中</span><span data-k="l">大</span><span data-k="size">尺寸</span><span data-k="close">关闭</span></div>
-    </div>
-  </section>
-
-  <section class="section" id="more">
+  <section class="section section-alt" id="more">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">集成</p>
@@ -575,7 +575,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="ai">
+  <section class="section" id="ai">
     <div class="wrap">
       <div class="ai-band">
         <div>

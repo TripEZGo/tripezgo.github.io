@@ -36,8 +36,8 @@
 <meta name="twitter:title" content="TripEZGo — 여행 플래너 앱｜캘린더로 일정, 동행과 공동 편집">
 <meta name="twitter:description" content="iPhone·iPad 여행 플래너 앱. 캘린더로 일정을 짜고 이동은 타임라인으로, 동행과 함께 편집하세요. 회원가입 없이 오프라인에서도, 무료로 다운로드.">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-ko.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=11dd613b21">
-<script type="module" src="/assets/js/home.js?v=70f3276f66"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=ddd6a39d57">
+<script type="module" src="/assets/js/home.js?v=fe1f6794d8"></script>
 <script type="module" src="/assets/js/promo.js?v=39a8133668"></script>
 <script type="application/ld+json">
 {
@@ -110,7 +110,7 @@
   html.embed .site-header .wrap { min-height: 52px; justify-content: center; }
   html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
   html.embed .site-nav::-webkit-scrollbar { display: none; }
-  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--fg); }
   html.embed .site-nav > a.hide-sm:hover, html.embed .site-nav > a.hide-sm:active { border-color: var(--accent); color: var(--accent-ink); }
 </style>
 <!-- embed:end -->
@@ -326,6 +326,48 @@
           <figure class="ph shot"><img src="/assets/img/shots/v2/ko/home.webp" width="720" height="1565" alt="홈: 커버에 산요 6일 여행의 1일째, 그 아래에 라이브 액티비티·오늘 할 일·환율 변환·한눈에 보기 위젯" loading="lazy"></figure>
         </div>
       </article>
+            <div class="hw-block" id="home-widgets">
+        <div class="hw-head">
+          <p class="eyebrow">홈 위젯</p>
+          <h3>홈에 무엇을 둘지, <span class="nb">직접 정해요</span></h3>
+          <p>iPhone 홈 화면처럼 길게 눌러 추가하고, 끌어서 옮기고, 크기를 바꿔요. 여행마다 따로 배치할 수 있어요. 하나를 누르면 홈에 놓았을 때 모습을 볼 수 있어요.</p>
+        </div>
+                <div class="hw-layout">
+          <ul class="hw-grid">
+              <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">한눈에 보기</span><span class="hw-sz">M · L</span></button>
+                <p class="hw-desc" hidden>이번 여행의 한눈에 보기 메모. 어떻게 돌지, 어디서 묵을지, 교통은 어떻게 이어지는지 홈을 열면 바로 보여요.</p></li>
+              <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">날씨</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>이번 여행의 매일 날씨예요. 날마다 그날의 여행지 기준이고, 10일 안은 예보, 그보다 먼 날은 예년 평균이에요. 날짜를 누르면 자세히 볼 수 있어요.</p></li>
+              <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">걸음 수</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>여행 중 하루에 얼마나 걸었는지 보여줘요. 걸음 수, 걸은 거리, 오른 층수. Apple 건강 앱에서 읽어 오고, 데이터는 내 iPhone에만 남아요.</p></li>
+              <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">라이브 액티비티</span><span class="hw-sz">M · L</span></button>
+                <p class="hw-desc" hidden>여행 중 현재 일정, 카운트다운, 다음 장소를 보여 줘요. 잠금 화면 라이브 액티비티와 같은 카드예요.</p></li>
+              <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">일정</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>지금 무엇을 할 시간인지 — 현재 일정, 다음 목적지, 오늘 남은 개수.</p></li>
+              <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">첨부</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>필요한 것이 어디 있는지 — 오늘 보여줄 것과 늘 들고 다니는 서류.</p></li>
+              <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">할 일 목록</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>아직 남은 일. 여기서 바로 체크할 수 있습니다.</p></li>
+              <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">쇼핑 목록</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>무엇을 어디서 더 살지. 여기서 바로 체크할 수 있습니다.</p></li>
+              <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">환율 계산기</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>지난번에 얼마였는지, 그날 환율로 보여 줘요. 인터넷 없이도 계산되니 가게에서 한 번 보면 끝.</p></li>
+              <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">여행</span><span class="hw-sz">S · M</span></button>
+                <p class="hw-desc" hidden>다음 여행은 언제인지, 이번 여행은 며칠차인지.</p></li>
+              <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">메모 보기</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>메모 하나를 홈에 — 렌터카 주의사항, 도무지 안 나오는 그 한마디.</p></li>
+              <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">메모 목록</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>한 여행의 메모를 최근에 고친 순서로.</p></li>
+              <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">영감</span><span class="hw-sz">S · M</span></button>
+                <p class="hw-desc" hidden>읽지 않은 영감 수와 최근 몇 개. 누르면 열립니다.</p></li>
+              <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">QR 코드</span><span class="hw-sz">S</span></button>
+                <p class="hw-desc" hidden>한 번 눌러 스캐너를 엽니다. 링크, 텍스트, 여행 공동 편집 초대에. 스캔한 기록이 남고 동행도 볼 수 있어요.</p></li>
+          </ul>
+          <div class="hw-demo" aria-live="polite"></div>
+        </div>
+        <p class="hw-hint">모두 14가지, 작게·보통·크게 세 가지 크기. 무료 버전은 한 페이지, Premium은 여러 페이지를 쓸 수 있어요.</p>
+        <div class="hw-strings" hidden><span data-k="s">작게</span><span data-k="m">보통</span><span data-k="l">크게</span><span data-k="size">크기</span></div>
+      </div>
       <article class="feature">
         <div>
           <p class="eyebrow">01 · 캘린더/타임라인</p>
@@ -507,49 +549,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="home-widgets">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">홈 위젯</p>
-        <h2>홈에 무엇을 둘지, <span class="nb">직접 정해요</span></h2>
-        <p class="lede">iPhone 홈 화면처럼 길게 눌러 추가하고, 끌어서 옮기고, 크기를 바꿔요. 여행마다 따로 배치할 수 있어요. 하나를 누르면 홈에 놓았을 때 모습을 볼 수 있어요.</p>
-      </div>
-            <ul class="hw-grid">
-          <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">한눈에 보기</span><span class="hw-sz">M · L</span></button>
-            <p class="hw-desc" hidden>이번 여행의 한눈에 보기 메모. 어떻게 돌지, 어디서 묵을지, 교통은 어떻게 이어지는지 홈을 열면 바로 보여요.</p></li>
-          <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">날씨</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>이번 여행의 매일 날씨예요. 날마다 그날의 여행지 기준이고, 10일 안은 예보, 그보다 먼 날은 예년 평균이에요. 날짜를 누르면 자세히 볼 수 있어요.</p></li>
-          <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">걸음 수</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>여행 중 하루에 얼마나 걸었는지 보여줘요. 걸음 수, 걸은 거리, 오른 층수. Apple 건강 앱에서 읽어 오고, 데이터는 내 iPhone에만 남아요.</p></li>
-          <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">라이브 액티비티</span><span class="hw-tag">Premium</span></button>
-            <p class="hw-desc" hidden>여행 중 현재 일정, 카운트다운, 다음 장소를 보여 줘요. 잠금 화면 라이브 액티비티와 같은 카드예요.</p></li>
-          <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">일정</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>지금 무엇을 할 시간인지 — 현재 일정, 다음 목적지, 오늘 남은 개수.</p></li>
-          <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">첨부</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>필요한 것이 어디 있는지 — 오늘 보여줄 것과 늘 들고 다니는 서류.</p></li>
-          <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">할 일 목록</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>아직 남은 일. 여기서 바로 체크할 수 있습니다.</p></li>
-          <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">쇼핑 목록</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>무엇을 어디서 더 살지. 여기서 바로 체크할 수 있습니다.</p></li>
-          <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">환율 계산기</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>지난번에 얼마였는지, 그날 환율로 보여 줘요. 인터넷 없이도 계산되니 가게에서 한 번 보면 끝.</p></li>
-          <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">여행</span><span class="hw-sz">S · M</span></button>
-            <p class="hw-desc" hidden>다음 여행은 언제인지, 이번 여행은 며칠차인지.</p></li>
-          <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">메모 보기</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>메모 하나를 홈에 — 렌터카 주의사항, 도무지 안 나오는 그 한마디.</p></li>
-          <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">메모 목록</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>한 여행의 메모를 최근에 고친 순서로.</p></li>
-          <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">영감</span><span class="hw-sz">S · M</span></button>
-            <p class="hw-desc" hidden>읽지 않은 영감 수와 최근 몇 개. 누르면 열립니다.</p></li>
-          <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">QR 코드</span><span class="hw-sz">S</span></button>
-            <p class="hw-desc" hidden>한 번 눌러 스캐너를 엽니다. 링크, 텍스트, 여행 공동 편집 초대에. 스캔한 기록이 남고 동행도 볼 수 있어요.</p></li>
-      </ul>
-      <p class="hw-hint">모두 14가지, 작게·보통·크게 세 가지 크기. 무료 버전은 한 페이지, Premium은 여러 페이지를 쓸 수 있어요.</p>
-      <div class="hw-strings" hidden><span data-k="s">작게</span><span data-k="m">보통</span><span data-k="l">크게</span><span data-k="size">크기</span><span data-k="close">닫기</span></div>
-    </div>
-  </section>
-
-  <section class="section" id="more">
+  <section class="section section-alt" id="more">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">연동</p>
@@ -575,7 +575,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="ai">
+  <section class="section" id="ai">
     <div class="wrap">
       <div class="ai-band">
         <div>

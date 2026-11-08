@@ -84,7 +84,7 @@ ${EMBED_HEAD}<!-- 這一頁是 tools/gen-contact.mjs 產生的，不要手改。
   main { max-width: 760px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 5vw, 56px); }
   h1 { font-size: var(--text-2xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); margin: 0 0 10px; }
   .lede { color: var(--muted); margin: 0 0 20px; }
-  .cta { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; border-radius: var(--radius-pill);
+  .cta { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; border-radius: var(--radius-md);
     background: var(--accent); color: var(--accent-on); font-weight: 600; text-decoration: none; }
   .cta:hover { background: var(--accent-ink); color: var(--accent-on); }
   .cta svg { width: 16px; height: 16px; }

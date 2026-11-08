@@ -186,7 +186,7 @@ ${EMBED_HEAD}<!-- 這一頁是 tools/announcements.mjs 產生的，不要手改�
   .an-when { text-align: right; padding-top: 2px; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
   .an-when time { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
   .an-new[hidden] { display: none; }
-  .an-new { font-weight: 700; font-size: 11px; line-height: 1.6; padding: 1px 8px; border-radius: var(--radius-pill); background: var(--accent-wash); color: var(--accent-ink);
+  .an-new { font-weight: 700; font-size: 11px; line-height: 1.6; padding: 1px 8px; border-radius: 6px; background: var(--accent-wash); color: var(--accent-ink);
     border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border-soft)); }
   .an-card { background: var(--page); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 1px 2px rgba(var(--shadow-rgb), .05); }
   .an-entry:target .an-card { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }

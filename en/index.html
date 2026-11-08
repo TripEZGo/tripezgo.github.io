@@ -36,8 +36,8 @@
 <meta name="twitter:title" content="TripEZGo — Travel Planner & Itinerary App for iPhone and iPad">
 <meta name="twitter:description" content="Travel planner and itinerary app for iPhone and iPad: plan days on a calendar, map each route and co-edit with travel companions. No sign-up, works offline. Free.">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-en.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=11dd613b21">
-<script type="module" src="/assets/js/home.js?v=70f3276f66"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=ddd6a39d57">
+<script type="module" src="/assets/js/home.js?v=fe1f6794d8"></script>
 <script type="module" src="/assets/js/promo.js?v=39a8133668"></script>
 <script type="application/ld+json">
 {
@@ -110,7 +110,7 @@
   html.embed .site-header .wrap { min-height: 52px; justify-content: center; }
   html.embed .site-nav { margin-inline: auto; justify-content: safe center; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 8px 0; }
   html.embed .site-nav::-webkit-scrollbar { display: none; }
-  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+  html.embed .site-nav > a.hide-sm { display: inline-block; padding: 5px 9px; font-size: var(--text-xs); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--fg); }
   html.embed .site-nav > a.hide-sm:hover, html.embed .site-nav > a.hide-sm:active { border-color: var(--accent); color: var(--accent-ink); }
 </style>
 <!-- embed:end -->
@@ -326,6 +326,48 @@
           <figure class="ph shot"><img src="/assets/img/shots/v2/en/home.webp" width="720" height="1565" alt="Home: the cover shows day 1 of the 6-day Sanyo trip, with live activity, today’s to-dos, currency and overview widgets below" loading="lazy"></figure>
         </div>
       </article>
+            <div class="hw-block" id="home-widgets">
+        <div class="hw-head">
+          <p class="eyebrow">Home widgets</p>
+          <h3>What goes on Home <span class="nb">is up to you</span></h3>
+          <p>Just like the iPhone Home Screen: press and hold to add, drag and resize, and each trip gets its own layout. Tap a widget to see how it looks on Home.</p>
+        </div>
+                <div class="hw-layout">
+          <ul class="hw-grid">
+              <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">Overview</span><span class="hw-sz">M · L</span></button>
+                <p class="hw-desc" hidden>Your trip’s overview note — the route, where you’re staying, how the transport connects — the first thing you see on Home.</p></li>
+              <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">Weather</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>The weather for every day of this trip, each day at that day’s place: a forecast up to 10 days out, past averages beyond that. Tap a day for details.</p></li>
+              <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">Steps</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>How far you walk each day of the trip: steps, walking distance and flights climbed. Read from Apple Health, and it stays on your phone.</p></li>
+              <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">Live Activity</span><span class="hw-sz">M · L</span></button>
+                <p class="hw-desc" hidden>Your current event, the countdown and the next stop during a trip. The same card as the Live Activity on the Lock Screen.</p></li>
+              <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">Agenda</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>What to do now — the current event, the stop after it, and how many are left today.</p></li>
+              <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">Files</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>Where the paperwork is — what you’ll show today, plus what you carry throughout.</p></li>
+              <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">To-Dos</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>What’s still outstanding. Tick things off right here.</p></li>
+              <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">Shopping list</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>What’s left to buy, and where. Tick things off right here.</p></li>
+              <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">Currency converter</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>What you last converted, at today’s rate — it works offline too, so a glance in the shop is enough.</p></li>
+              <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">Trips</span><span class="hw-sz">S · M</span></button>
+                <p class="hw-desc" hidden>When the next one leaves, or how far into this one you are.</p></li>
+              <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">Note</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>Keep one note on Home — the car rental small print, the phrase you can never say.</p></li>
+              <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">Note List</span><span class="hw-sz">S · M · L</span></button>
+                <p class="hw-desc" hidden>The notes in one trip, most recently changed first.</p></li>
+              <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">Inspiration</span><span class="hw-sz">S · M</span></button>
+                <p class="hw-desc" hidden>How many inspirations you haven’t read, and the latest few. Tap one to open it.</p></li>
+              <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-pressed="false"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">QR Code</span><span class="hw-sz">S</span></button>
+                <p class="hw-desc" hidden>Opens the scanner in one tap — for links, text or a trip invite. What you scan is kept, and your travel companions can see it too.</p></li>
+          </ul>
+          <div class="hw-demo" aria-live="polite"></div>
+        </div>
+        <p class="hw-hint">14 widgets in small, medium and large. The free version gets one page; Premium lets you lay out as many as you like.</p>
+        <div class="hw-strings" hidden><span data-k="s">Small</span><span data-k="m">Medium</span><span data-k="l">Large</span><span data-k="size">Size</span></div>
+      </div>
       <article class="feature">
         <div>
           <p class="eyebrow">01 · Calendar / Timeline</p>
@@ -507,49 +549,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="home-widgets">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Home widgets</p>
-        <h2>What goes on Home <span class="nb">is up to you</span></h2>
-        <p class="lede">Just like the iPhone Home Screen: press and hold to add, drag and resize, and each trip gets its own layout. Tap a widget to see how it looks on Home.</p>
-      </div>
-            <ul class="hw-grid">
-          <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">Overview</span><span class="hw-sz">M · L</span></button>
-            <p class="hw-desc" hidden>Your trip’s overview note — the route, where you’re staying, how the transport connects — the first thing you see on Home.</p></li>
-          <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">Weather</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>The weather for every day of this trip, each day at that day’s place: a forecast up to 10 days out, past averages beyond that. Tap a day for details.</p></li>
-          <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">Steps</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>How far you walk each day of the trip: steps, walking distance and flights climbed. Read from Apple Health, and it stays on your phone.</p></li>
-          <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">Live Activity</span><span class="hw-tag">Premium</span></button>
-            <p class="hw-desc" hidden>Your current event, the countdown and the next stop during a trip. The same card as the Live Activity on the Lock Screen.</p></li>
-          <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">Agenda</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>What to do now — the current event, the stop after it, and how many are left today.</p></li>
-          <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">Files</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>Where the paperwork is — what you’ll show today, plus what you carry throughout.</p></li>
-          <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">To-Dos</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>What’s still outstanding. Tick things off right here.</p></li>
-          <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">Shopping list</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>What’s left to buy, and where. Tick things off right here.</p></li>
-          <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">Currency converter</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>What you last converted, at today’s rate — it works offline too, so a glance in the shop is enough.</p></li>
-          <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">Trips</span><span class="hw-sz">S · M</span></button>
-            <p class="hw-desc" hidden>When the next one leaves, or how far into this one you are.</p></li>
-          <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">Note</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>Keep one note on Home — the car rental small print, the phrase you can never say.</p></li>
-          <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">Note List</span><span class="hw-sz">S · M · L</span></button>
-            <p class="hw-desc" hidden>The notes in one trip, most recently changed first.</p></li>
-          <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">Inspiration</span><span class="hw-sz">S · M</span></button>
-            <p class="hw-desc" hidden>How many inspirations you haven’t read, and the latest few. Tap one to open it.</p></li>
-          <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">QR Code</span><span class="hw-sz">S</span></button>
-            <p class="hw-desc" hidden>Opens the scanner in one tap — for links, text or a trip invite. What you scan is kept, and your travel companions can see it too.</p></li>
-      </ul>
-      <p class="hw-hint">14 widgets in small, medium and large. The free version gets one page; Premium lets you lay out as many as you like.</p>
-      <div class="hw-strings" hidden><span data-k="s">Small</span><span data-k="m">Medium</span><span data-k="l">Large</span><span data-k="size">Size</span><span data-k="close">Close</span></div>
-    </div>
-  </section>
-
-  <section class="section" id="more">
+  <section class="section section-alt" id="more">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Integrations</p>
@@ -575,7 +575,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="ai">
+  <section class="section" id="ai">
     <div class="wrap">
       <div class="ai-band">
         <div>

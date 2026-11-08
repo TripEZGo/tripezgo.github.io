@@ -122,7 +122,7 @@
 .lang-menu { position: relative; }
 .lang-menu > summary {
   list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
-  color: var(--fg); border: 1px solid var(--border); border-radius: var(--radius-pill);
+  color: var(--fg); border: 1px solid var(--border); border-radius: var(--radius-sm);
   padding: 4px 10px 4px 12px; font-size: var(--text-xs); font-weight: 500; white-space: nowrap;
 }
 .lang-menu > summary::-webkit-details-marker { display: none; }
@@ -147,7 +147,7 @@
 /* 手機版頁首的漢堡選單：寬螢幕時頁首直接列出隱私／功能／方案／關於，這顆藏起來（使用者 2026-10-12） */
 .nav-menu { position: relative; display: none; }
 .nav-menu > summary { list-style: none; cursor: pointer; display: grid; place-items: center; width: 36px; height: 32px;
-  border: 1px solid var(--border); border-radius: var(--radius-pill); color: var(--fg); }
+  border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--fg); }
 .nav-menu > summary::-webkit-details-marker { display: none; }
 .nav-menu > summary:hover, .nav-menu[open] > summary { border-color: var(--accent); color: var(--accent-ink); }
 .burger, .burger::before, .burger::after { display: block; width: 14px; height: 1.5px; background: currentColor; border-radius: 1px; }
