@@ -36,8 +36,8 @@
 <meta name="twitter:title" content="TripEZGo — 여행 플래너 앱｜캘린더로 일정, 동행과 공동 편집">
 <meta name="twitter:description" content="iPhone·iPad 여행 플래너 앱. 캘린더로 일정을 짜고 이동은 타임라인으로, 동행과 함께 편집하세요. 회원가입 없이 오프라인에서도, 무료로 다운로드.">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-ko.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=527da86c4c">
-<script type="module" src="/assets/js/home.js?v=4f79246d2d"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=11dd613b21">
+<script type="module" src="/assets/js/home.js?v=70f3276f66"></script>
 <script type="module" src="/assets/js/promo.js?v=39a8133668"></script>
 <script type="application/ld+json">
 {
@@ -149,6 +149,17 @@
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="w-notes" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z M14 3v5h5M8.5 12.5h7M8.5 16.5h5"/></symbol>
+  <symbol id="w-weather" viewBox="0 0 24 24"><path d="M8.5 3.2v1.4M3.3 8.4h1.4M4.8 4.7l1 1M12.2 4.7l-1 1"/><path d="M5.7 11.6A3.6 3.6 0 1 1 11.8 8"/><path d="M9 20h8.5a3.5 3.5 0 0 0 .5-6.96A4.8 4.8 0 0 0 9 12a4 4 0 0 0 0 8z"/></symbol>
+  <symbol id="w-walking" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2" fill="currentColor" stroke="none"/><path d="M11.5 8.5 9 13l3 2 1 6M13.5 8.5l2 3.5 3 1M12 15l-3 6"/></symbol>
+  <symbol id="w-lock" viewBox="0 0 24 24"><rect x="5" y="2.6" width="14" height="18.8" rx="3"/><path d="M8.6 9.5h6.8M8.6 13H13"/></symbol>
+  <symbol id="w-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></symbol>
+  <symbol id="w-clip" viewBox="0 0 24 24"><path d="M21 12 12.5 20.5Q7 22 5.5 13.5L14 5Q20.5 6.5 19 10L10.5 18.5Q8.5 19.5 7.5 15.5L16 7"/></symbol>
+  <symbol id="w-check" viewBox="0 0 24 24"><path d="M5 13l5 5L19 7"/></symbol>
+  <symbol id="w-bag" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></symbol>
+  <symbol id="w-swap" viewBox="0 0 24 24"><path d="M7 4v16l-3-3M17 20V4l3 3"/></symbol>
+  <symbol id="w-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.5 2.5M15.2 15.2l2.5 2.5M6.3 17.7l2.5-2.5M15.2 8.8l2.5-2.5"/></symbol>
+  <symbol id="w-scan" viewBox="0 0 24 24"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><rect x="7.5" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="13" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="7.5" y="13" width="3.5" height="3.5" rx=".6"/><path d="M13 13h1.5v1.5M16.5 16.5H15"/></symbol>
 </svg>
 
 <a class="skip-link" href="#main">메인 콘텐츠로 건너뛰기</a>
@@ -465,55 +476,80 @@
   <section class="section" id="tools">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">자료와 홈 위젯</p>
+        <p class="eyebrow">자료</p>
         <h2>여행길에 필요한 것은, <span class="nb">모두 여기에</span></h2>
-        <p class="lede">자료 탭에는 영감·메모·쇼핑 목록을 담고, QR 코드 스캔과 환율 변환은 홈 위젯으로 두어 바로 쓸 수 있어요.</p>
+        <p class="lede">자료 탭에 영감, 메모, 쇼핑 목록을 모아 둬요. 떠오르면 일단 넣어 두면, 필요할 때 거기 있어요.</p>
       </div>
-            <div class="tool-groups">
-        <div class="tool-group">
-          <h3 class="tg-h">자료</h3>
-          <div class="tools is-three">
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/ko/inspiration.webp" width="720" height="1565" alt="영감: 다른 앱에서 공유해 온 웹페이지·지도·게시물. 읽지 않음·미연결 표시가 붙고, 자료 탭 오른쪽 위는 알림 벨" loading="lazy"></figure>
-              <h4>영감 모으기</h4>
-              <p>공유로 먼저 저장하고, 일정에 넣을 때 일정으로 바꿔요</p>
-            </article>
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/ko/note.webp" width="720" height="1565" alt="메모: 사진과 글, @로 일정에 연결하고, 일본어 문장은 읽어 주기도" loading="lazy"></figure>
-              <h4>메모</h4>
-              <p>사진도 글도 기록하고, 현지 말을 못 해도 읽어 줘요</p>
-            </article>
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/ko/shop.webp" width="720" height="1565" alt="쇼핑 목록: 살 것·구매함·안 사기 개수와 카테고리별 사진 그리드" loading="lazy"></figure>
-              <h4>쇼핑 목록</h4>
-              <p>아직 안 산 것이 한눈에, 가격을 비교해 가장 싸게</p>
-            </article>
-          </div>
-        </div>
-        <div class="tool-group">
-          <h3 class="tg-h">홈 위젯</h3>
-          <div class="tools one">
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/ko/home-scan.webp" width="720" height="1565" alt="홈의 QR 코드 스캔 위젯: 캔버스 맨 앞에 두고, 탭하면 카메라로 바로 스캔" loading="lazy"></figure>
-              <h4>QR 코드 스캔, 환율 변환 등 다양한 여행 위젯</h4>
-              <p>열고 스캔하면 기록이 남고, 동행도 볼 수 있어요</p>
-            </article>
-          </div>
-        </div>
+            <div class="tools is-three">
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/ko/inspiration.webp" width="720" height="1565" alt="영감: 다른 앱에서 공유해 온 웹페이지·지도·게시물. 읽지 않음·미연결 표시가 붙고, 자료 탭 오른쪽 위는 알림 벨" loading="lazy"></figure>
+          <h4>영감 모으기</h4>
+          <p>공유로 먼저 저장하고, 일정에 넣을 때 일정으로 바꿔요</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/ko/note.webp" width="720" height="1565" alt="메모: 사진과 글, @로 일정에 연결하고, 일본어 문장은 읽어 주기도" loading="lazy"></figure>
+          <h4>메모</h4>
+          <p>사진도 글도 기록하고, 현지 말을 못 해도 읽어 줘요</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/ko/shop.webp" width="720" height="1565" alt="쇼핑 목록: 살 것·구매함·안 사기 개수와 카테고리별 사진 그리드" loading="lazy"></figure>
+          <h4>쇼핑 목록</h4>
+          <p>아직 안 산 것이 한눈에, 가격을 비교해 가장 싸게</p>
+        </article>
       </div>
       <details class="more"><summary>자세히 보기</summary><div class="more-body">
 <ul>
 <li><b>영감</b>: Safari·지도·SNS에서 공유한 것은 먼저 여기에 저장돼요. 계획할 때 한 번에 일정·메모·쇼핑 목록으로 바꿀 수 있습니다.</li>
 <li><b>메모</b>: 사진과 글을 자유롭게 편집하고, 읽어 주기도 지원해요. 현지 말을 못 해도 그대로 상대에게 들려줄 수 있습니다.</li>
-<li><b>환율 변환</b>: 홈 위젯이에요. 그날의 환율로, 인터넷이 없어도 변환할 수 있어요.</li>
 <li><b>쇼핑 목록</b>: 사고 싶은 것을 여기에 모아 두면 아직 안 산 것이 한눈에 보여요. 가게마다 가격도 기록해 가장 싼 곳에서 살 수 있습니다.</li>
-<li><b>QR 코드 스캔</b>: 홈 위젯이에요. 열고 스캔하기만 하면 기록이 남고, 동행도 바로 볼 수 있어요.</li>
 </ul>
           </div></details>
     </div>
   </section>
 
-  <section class="section section-alt" id="more">
+  <section class="section section-alt" id="home-widgets">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">홈 위젯</p>
+        <h2>홈에 무엇을 둘지, <span class="nb">직접 정해요</span></h2>
+        <p class="lede">iPhone 홈 화면처럼 길게 눌러 추가하고, 끌어서 옮기고, 크기를 바꿔요. 여행마다 따로 배치할 수 있어요. 하나를 누르면 홈에 놓았을 때 모습을 볼 수 있어요.</p>
+      </div>
+            <ul class="hw-grid">
+          <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">한눈에 보기</span><span class="hw-sz">M · L</span></button>
+            <p class="hw-desc" hidden>이번 여행의 한눈에 보기 메모. 어떻게 돌지, 어디서 묵을지, 교통은 어떻게 이어지는지 홈을 열면 바로 보여요.</p></li>
+          <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">날씨</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>이번 여행의 매일 날씨예요. 날마다 그날의 여행지 기준이고, 10일 안은 예보, 그보다 먼 날은 예년 평균이에요. 날짜를 누르면 자세히 볼 수 있어요.</p></li>
+          <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">걸음 수</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>여행 중 하루에 얼마나 걸었는지 보여줘요. 걸음 수, 걸은 거리, 오른 층수. Apple 건강 앱에서 읽어 오고, 데이터는 내 iPhone에만 남아요.</p></li>
+          <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">라이브 액티비티</span><span class="hw-tag">Premium</span></button>
+            <p class="hw-desc" hidden>여행 중 현재 일정, 카운트다운, 다음 장소를 보여 줘요. 잠금 화면 라이브 액티비티와 같은 카드예요.</p></li>
+          <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">일정</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>지금 무엇을 할 시간인지 — 현재 일정, 다음 목적지, 오늘 남은 개수.</p></li>
+          <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">첨부</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>필요한 것이 어디 있는지 — 오늘 보여줄 것과 늘 들고 다니는 서류.</p></li>
+          <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">할 일 목록</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>아직 남은 일. 여기서 바로 체크할 수 있습니다.</p></li>
+          <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">쇼핑 목록</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>무엇을 어디서 더 살지. 여기서 바로 체크할 수 있습니다.</p></li>
+          <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">환율 계산기</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>지난번에 얼마였는지, 그날 환율로 보여 줘요. 인터넷 없이도 계산되니 가게에서 한 번 보면 끝.</p></li>
+          <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">여행</span><span class="hw-sz">S · M</span></button>
+            <p class="hw-desc" hidden>다음 여행은 언제인지, 이번 여행은 며칠차인지.</p></li>
+          <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">메모 보기</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>메모 하나를 홈에 — 렌터카 주의사항, 도무지 안 나오는 그 한마디.</p></li>
+          <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">메모 목록</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>한 여행의 메모를 최근에 고친 순서로.</p></li>
+          <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">영감</span><span class="hw-sz">S · M</span></button>
+            <p class="hw-desc" hidden>읽지 않은 영감 수와 최근 몇 개. 누르면 열립니다.</p></li>
+          <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">QR 코드</span><span class="hw-sz">S</span></button>
+            <p class="hw-desc" hidden>한 번 눌러 스캐너를 엽니다. 링크, 텍스트, 여행 공동 편집 초대에. 스캔한 기록이 남고 동행도 볼 수 있어요.</p></li>
+      </ul>
+      <p class="hw-hint">모두 14가지, 작게·보통·크게 세 가지 크기. 무료 버전은 한 페이지, Premium은 여러 페이지를 쓸 수 있어요.</p>
+      <div class="hw-strings" hidden><span data-k="s">작게</span><span data-k="m">보통</span><span data-k="l">크게</span><span data-k="size">크기</span><span data-k="close">닫기</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="more">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">연동</p>
@@ -539,7 +575,7 @@
     </div>
   </section>
 
-  <section class="section" id="ai">
+  <section class="section section-alt" id="ai">
     <div class="wrap">
       <div class="ai-band">
         <div>
@@ -942,7 +978,8 @@
           <tr><th scope="row">첨부, 할 일, 이동과 대체 편</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">동행과 공동 편집, 위치 공유</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">위젯, Siri</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
-          <tr><th scope="row">자료와 홈 위젯(영감, 메모, 쇼핑 목록, QR 코드 스캔, 환율 변환)</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">홈 위젯(날씨, 걸음 수, 일정, 할 일, 환율 계산기, QR 코드 등)</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">자료(영감, 메모, 쇼핑 목록)</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">iCloud 동기화와 백업</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">가져오기·내보내기</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">AI 에이전트 연동</th><td><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="포함"><use href="#i-check"/></svg></td></tr>

@@ -36,8 +36,8 @@
 <meta name="twitter:title" content="TripEZGo — 旅行规划 App｜日历排行程、旅伴共编">
 <meta name="twitter:description" content="TripEZGo 是 iPhone、iPad 上的旅行规划 App：日历排行程、时间轴排交通，和旅伴一起共编，自由行的行程表、票券和待办都在一起。无需注册、离线可用，免费下载。">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-zh-cn.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=527da86c4c">
-<script type="module" src="/assets/js/home.js?v=4f79246d2d"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=11dd613b21">
+<script type="module" src="/assets/js/home.js?v=70f3276f66"></script>
 <script type="module" src="/assets/js/promo.js?v=39a8133668"></script>
 <script type="application/ld+json">
 {
@@ -149,6 +149,17 @@
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="w-notes" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z M14 3v5h5M8.5 12.5h7M8.5 16.5h5"/></symbol>
+  <symbol id="w-weather" viewBox="0 0 24 24"><path d="M8.5 3.2v1.4M3.3 8.4h1.4M4.8 4.7l1 1M12.2 4.7l-1 1"/><path d="M5.7 11.6A3.6 3.6 0 1 1 11.8 8"/><path d="M9 20h8.5a3.5 3.5 0 0 0 .5-6.96A4.8 4.8 0 0 0 9 12a4 4 0 0 0 0 8z"/></symbol>
+  <symbol id="w-walking" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2" fill="currentColor" stroke="none"/><path d="M11.5 8.5 9 13l3 2 1 6M13.5 8.5l2 3.5 3 1M12 15l-3 6"/></symbol>
+  <symbol id="w-lock" viewBox="0 0 24 24"><rect x="5" y="2.6" width="14" height="18.8" rx="3"/><path d="M8.6 9.5h6.8M8.6 13H13"/></symbol>
+  <symbol id="w-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></symbol>
+  <symbol id="w-clip" viewBox="0 0 24 24"><path d="M21 12 12.5 20.5Q7 22 5.5 13.5L14 5Q20.5 6.5 19 10L10.5 18.5Q8.5 19.5 7.5 15.5L16 7"/></symbol>
+  <symbol id="w-check" viewBox="0 0 24 24"><path d="M5 13l5 5L19 7"/></symbol>
+  <symbol id="w-bag" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></symbol>
+  <symbol id="w-swap" viewBox="0 0 24 24"><path d="M7 4v16l-3-3M17 20V4l3 3"/></symbol>
+  <symbol id="w-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.5 2.5M15.2 15.2l2.5 2.5M6.3 17.7l2.5-2.5M15.2 8.8l2.5-2.5"/></symbol>
+  <symbol id="w-scan" viewBox="0 0 24 24"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><rect x="7.5" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="13" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="7.5" y="13" width="3.5" height="3.5" rx=".6"/><path d="M13 13h1.5v1.5M16.5 16.5H15"/></symbol>
 </svg>
 
 <a class="skip-link" href="#main">跳到主要内容</a>
@@ -465,55 +476,80 @@
   <section class="section" id="tools">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">资料与小工具</p>
+        <p class="eyebrow">资料</p>
         <h2>路上用得到的，<span class="nb">都带着</span></h2>
-        <p class="lede">资料页收着灵感、笔记和购物清单；扫描二维码和汇率换算放在主页上，随手就能用。</p>
+        <p class="lede">资料页收着灵感、笔记和购物清单；想到什么先丢进来，要用的时候都在。</p>
       </div>
-            <div class="tool-groups">
-        <div class="tool-group">
-          <h3 class="tg-h">资料</h3>
-          <div class="tools is-three">
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/zh-Hans/inspiration.webp" width="720" height="1565" alt="灵感：从其他 App 分享进来的网页、地图和帖子，标着未读与未关联，资料页右上角是通知铃铛" loading="lazy"></figure>
-              <h4>灵感收集</h4>
-              <p>分享进来先存着，想排了再变成行程</p>
-            </article>
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/zh-Hans/note.webp" width="720" height="1565" alt="笔记：图文笔记，@ 链接到行程，日语句子可以朗读" loading="lazy"></figure>
-              <h4>笔记</h4>
-              <p>图文都能记，不会当地语言也能念给对方听</p>
-            </article>
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/zh-Hans/shop.webp" width="720" height="1565" alt="购物清单：待购、已购、不买了的件数，商品按分类排成照片格" loading="lazy"></figure>
-              <h4>购物清单</h4>
-              <p>还有什么没买一看就知道，比价买到最便宜</p>
-            </article>
-          </div>
-        </div>
-        <div class="tool-group">
-          <h3 class="tg-h">主页小组件</h3>
-          <div class="tools one">
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/zh-Hans/home-scan.webp" width="720" height="1565" alt="主页上的扫描二维码小组件：放在画布最前面，点一下就打开相机扫描" loading="lazy"></figure>
-              <h4>扫描二维码、汇率换算，还有更多旅行小组件</h4>
-              <p>一开一扫就留下记录，旅伴也能看到</p>
-            </article>
-          </div>
-        </div>
+            <div class="tools is-three">
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/zh-Hans/inspiration.webp" width="720" height="1565" alt="灵感：从其他 App 分享进来的网页、地图和帖子，标着未读与未关联，资料页右上角是通知铃铛" loading="lazy"></figure>
+          <h4>灵感收集</h4>
+          <p>分享进来先存着，想排了再变成行程</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/zh-Hans/note.webp" width="720" height="1565" alt="笔记：图文笔记，@ 链接到行程，日语句子可以朗读" loading="lazy"></figure>
+          <h4>笔记</h4>
+          <p>图文都能记，不会当地语言也能念给对方听</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/zh-Hans/shop.webp" width="720" height="1565" alt="购物清单：待购、已购、不买了的件数，商品按分类排成照片格" loading="lazy"></figure>
+          <h4>购物清单</h4>
+          <p>还有什么没买一看就知道，比价买到最便宜</p>
+        </article>
       </div>
       <details class="more"><summary>展开介绍</summary><div class="more-body">
 <ul>
 <li><b>灵感</b>：从 Safari、地图、社交媒体分享进来的内容先存在这里，想排的时候再一键变成行程、笔记或购物清单。</li>
 <li><b>笔记</b>：支持丰富的图文编辑，还特别支持朗读，不会当地语言也可以直接念给对方听。</li>
-<li><b>汇率换算</b>：主页上的小组件，使用当天汇率，没有网络也能换算。</li>
 <li><b>待购清单</b>：想买什么都记在这里，还有什么没买一看就知道；也可以记下各家店的价格，让你买到最便宜的。</li>
-<li><b>扫描二维码</b>：主页上的小组件，一开一扫并留下记录，旅伴也能直接看到。</li>
 </ul>
           </div></details>
     </div>
   </section>
 
-  <section class="section section-alt" id="more">
+  <section class="section section-alt" id="home-widgets">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">主页小组件</p>
+        <h2>主页上放什么，<span class="nb">你自己排</span></h2>
+        <p class="lede">和 iPhone 主屏幕一样，长按就能添加、拖动、换尺寸；每一趟旅程排自己的一份。点一个，看看它放到主页上的样子。</p>
+      </div>
+            <ul class="hw-grid">
+          <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">总览</span><span class="hw-sz">中・大</span></button>
+            <p class="hw-desc" hidden>这趟旅程的总览笔记：怎么走、住哪、交通怎么接，打开主页第一眼就能看到。</p></li>
+          <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">天气</span><span class="hw-sz">小・中・大</span></button>
+            <p class="hw-desc" hidden>这趟旅程每一天的天气，每一格用那一天的旅程地点；10 天内是预报，更远的是往年平均。点一天查看详情。</p></li>
+          <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">步数</span><span class="hw-sz">小・中・大</span></button>
+            <p class="hw-desc" hidden>旅途中每天走了多少路——步数、步行距离、爬楼层数。从 Apple 健康读取，只留在你的手机上。</p></li>
+          <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">实时活动</span><span class="hw-tag">Premium</span></button>
+            <p class="hw-desc" hidden>旅程中的当前行程、倒数与下一站，和锁屏上的实时活动是同一张。</p></li>
+          <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">行程</span><span class="hw-sz">小・中・大</span></button>
+            <p class="hw-desc" hidden>现在该做什么——当前的行程、下一站，以及今天还剩几站。</p></li>
+          <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">附件</span><span class="hw-sz">小・中・大</span></button>
+            <p class="hw-desc" hidden>要用的东西在哪——今天要出示的，还有随身文件。</p></li>
+          <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">待办清单</span><span class="hw-sz">小・中・大</span></button>
+            <p class="hw-desc" hidden>还有什么没做。可以直接在这里打勾。</p></li>
+          <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">购物清单</span><span class="hw-sz">小・中・大</span></button>
+            <p class="hw-desc" hidden>还有什么要买、在哪一站买。可以直接在这里打勾。</p></li>
+          <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">汇率换算</span><span class="hw-sz">小・中・大</span></button>
+            <p class="hw-desc" hidden>上次换出来是多少，用当天汇率，没有网络也能换算；站在店里瞄一眼就知道。</p></li>
+          <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">旅程</span><span class="hw-sz">小・中</span></button>
+            <p class="hw-desc" hidden>下一趟是什么时候，或者这一趟走到第几天了。</p></li>
+          <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">查看笔记</span><span class="hw-sz">小・中・大</span></button>
+            <p class="hw-desc" hidden>把一则笔记放在主页上——租车注意事项、讲不出来的那句日文。</p></li>
+          <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">笔记列表</span><span class="hw-sz">小・中・大</span></button>
+            <p class="hw-desc" hidden>一趟旅程里的笔记，最近改的在前。</p></li>
+          <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">灵感</span><span class="hw-sz">小・中</span></button>
+            <p class="hw-desc" hidden>还没读的灵感有几条，以及最新的几条；点一条就打开它。</p></li>
+          <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">二维码</span><span class="hw-sz">小</span></button>
+            <p class="hw-desc" hidden>一点就打开扫描器——网址、文字或旅程的共编邀请；扫过的留下记录，旅伴也看得到。</p></li>
+      </ul>
+      <p class="hw-hint">共 14 个，小、中、大三种尺寸；免费版用第一页，Premium 可以排好几页。</p>
+      <div class="hw-strings" hidden><span data-k="s">小</span><span data-k="m">中</span><span data-k="l">大</span><span data-k="size">尺寸</span><span data-k="close">关闭</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="more">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">集成</p>
@@ -539,7 +575,7 @@
     </div>
   </section>
 
-  <section class="section" id="ai">
+  <section class="section section-alt" id="ai">
     <div class="wrap">
       <div class="ai-band">
         <div>
@@ -942,7 +978,8 @@
           <tr><th scope="row">附件、待办、路程与班次备选</th><td><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">旅伴共编、共享位置</th><td><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">小组件、Siri</th><td><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td></tr>
-          <tr><th scope="row">资料与小工具（灵感、笔记、购物清单、扫描二维码、汇率换算）</th><td><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">主页小组件（天气、步数、行程、待办、汇率换算、二维码等）</th><td><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">资料（灵感、笔记、购物清单）</th><td><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">iCloud 同步与备份</th><td><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">导入导出</th><td><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">AI Agent 集成</th><td><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="支持"><use href="#i-check"/></svg></td></tr>

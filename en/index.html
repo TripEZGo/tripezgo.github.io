@@ -36,8 +36,8 @@
 <meta name="twitter:title" content="TripEZGo — Travel Planner & Itinerary App for iPhone and iPad">
 <meta name="twitter:description" content="Travel planner and itinerary app for iPhone and iPad: plan days on a calendar, map each route and co-edit with travel companions. No sign-up, works offline. Free.">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-en.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=527da86c4c">
-<script type="module" src="/assets/js/home.js?v=4f79246d2d"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=11dd613b21">
+<script type="module" src="/assets/js/home.js?v=70f3276f66"></script>
 <script type="module" src="/assets/js/promo.js?v=39a8133668"></script>
 <script type="application/ld+json">
 {
@@ -149,6 +149,17 @@
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="w-notes" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z M14 3v5h5M8.5 12.5h7M8.5 16.5h5"/></symbol>
+  <symbol id="w-weather" viewBox="0 0 24 24"><path d="M8.5 3.2v1.4M3.3 8.4h1.4M4.8 4.7l1 1M12.2 4.7l-1 1"/><path d="M5.7 11.6A3.6 3.6 0 1 1 11.8 8"/><path d="M9 20h8.5a3.5 3.5 0 0 0 .5-6.96A4.8 4.8 0 0 0 9 12a4 4 0 0 0 0 8z"/></symbol>
+  <symbol id="w-walking" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2" fill="currentColor" stroke="none"/><path d="M11.5 8.5 9 13l3 2 1 6M13.5 8.5l2 3.5 3 1M12 15l-3 6"/></symbol>
+  <symbol id="w-lock" viewBox="0 0 24 24"><rect x="5" y="2.6" width="14" height="18.8" rx="3"/><path d="M8.6 9.5h6.8M8.6 13H13"/></symbol>
+  <symbol id="w-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></symbol>
+  <symbol id="w-clip" viewBox="0 0 24 24"><path d="M21 12 12.5 20.5Q7 22 5.5 13.5L14 5Q20.5 6.5 19 10L10.5 18.5Q8.5 19.5 7.5 15.5L16 7"/></symbol>
+  <symbol id="w-check" viewBox="0 0 24 24"><path d="M5 13l5 5L19 7"/></symbol>
+  <symbol id="w-bag" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></symbol>
+  <symbol id="w-swap" viewBox="0 0 24 24"><path d="M7 4v16l-3-3M17 20V4l3 3"/></symbol>
+  <symbol id="w-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.5 2.5M15.2 15.2l2.5 2.5M6.3 17.7l2.5-2.5M15.2 8.8l2.5-2.5"/></symbol>
+  <symbol id="w-scan" viewBox="0 0 24 24"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><rect x="7.5" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="13" y="7.5" width="3.5" height="3.5" rx=".6"/><rect x="7.5" y="13" width="3.5" height="3.5" rx=".6"/><path d="M13 13h1.5v1.5M16.5 16.5H15"/></symbol>
 </svg>
 
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -465,55 +476,80 @@
   <section class="section" id="tools">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Library & Home widgets</p>
+        <p class="eyebrow">Library</p>
         <h2>What you need on the road, <span class="nb">all in one place</span></h2>
-        <p class="lede">The Library holds your inspiration, notes and shopping list; the QR code scanner and currency converter sit on Home, one tap away.</p>
+        <p class="lede">The Library holds your inspiration, notes and shopping list — drop things in as they come to you, and they’re there when you need them.</p>
       </div>
-            <div class="tool-groups">
-        <div class="tool-group">
-          <h3 class="tg-h">Library</h3>
-          <div class="tools is-three">
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/en/inspiration.webp" width="720" height="1565" alt="Inspiration: pages, maps and posts shared in from other apps, marked unread and not added, with the notification bell at the top right of the Library" loading="lazy"></figure>
-              <h4>Collect inspiration</h4>
-              <p>Share it in to save it now; turn it into an event when you plan</p>
-            </article>
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/en/note.webp" width="720" height="1565" alt="Notes: text and photos, @ links to events, and Japanese phrases that can be read aloud" loading="lazy"></figure>
-              <h4>Notes</h4>
-              <p>Text and photos — and it reads phrases aloud when you don't speak the language</p>
-            </article>
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/en/shop.webp" width="720" height="1565" alt="Shopping list: counts of to-buy, bought and skipped items, with items in a photo grid by category" loading="lazy"></figure>
-              <h4>Shopping list</h4>
-              <p>See what's left to buy, and compare prices to get the cheapest</p>
-            </article>
-          </div>
-        </div>
-        <div class="tool-group">
-          <h3 class="tg-h">Home widgets</h3>
-          <div class="tools one">
-            <article class="tool">
-              <figure class="ph shot"><img src="/assets/img/shots/v2/en/home-scan.webp" width="720" height="1565" alt="The QR code scanner widget on Home: first on the canvas, one tap opens the camera to scan" loading="lazy"></figure>
-              <h4>QR code scanner, currency converter and more travel widgets</h4>
-              <p>Open, scan, and it's saved — your companions see it too</p>
-            </article>
-          </div>
-        </div>
+            <div class="tools is-three">
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/en/inspiration.webp" width="720" height="1565" alt="Inspiration: pages, maps and posts shared in from other apps, marked unread and not added, with the notification bell at the top right of the Library" loading="lazy"></figure>
+          <h4>Collect inspiration</h4>
+          <p>Share it in to save it now; turn it into an event when you plan</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/en/note.webp" width="720" height="1565" alt="Notes: text and photos, @ links to events, and Japanese phrases that can be read aloud" loading="lazy"></figure>
+          <h4>Notes</h4>
+          <p>Text and photos — and it reads phrases aloud when you don't speak the language</p>
+        </article>
+        <article class="tool">
+          <figure class="ph shot"><img src="/assets/img/shots/v2/en/shop.webp" width="720" height="1565" alt="Shopping list: counts of to-buy, bought and skipped items, with items in a photo grid by category" loading="lazy"></figure>
+          <h4>Shopping list</h4>
+          <p>See what's left to buy, and compare prices to get the cheapest</p>
+        </article>
       </div>
       <details class="more"><summary>Read more</summary><div class="more-body">
 <ul>
 <li><b>Inspiration</b>: whatever you share in from Safari, maps or social apps lands here first; when you're ready to plan, turn it into an event, a note or a shopping item in one tap.</li>
 <li><b>Notes</b>: rich text-and-photo editing, plus read-aloud — don't speak the language? Let your phone say it for you.</li>
-<li><b>Currency</b>: a Home widget that uses today's rate, and converts even without a connection.</li>
 <li><b>Shopping list</b>: write down everything you want to buy and see at a glance what's still left. Note each shop's price too, so you get the cheapest one.</li>
-<li><b>QR code scanner</b>: a Home widget — open it, scan, and it's saved to a history your companions can see too.</li>
 </ul>
           </div></details>
     </div>
   </section>
 
-  <section class="section section-alt" id="more">
+  <section class="section section-alt" id="home-widgets">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Home widgets</p>
+        <h2>What goes on Home <span class="nb">is up to you</span></h2>
+        <p class="lede">Just like the iPhone Home Screen: press and hold to add, drag and resize, and each trip gets its own layout. Tap a widget to see how it looks on Home.</p>
+      </div>
+            <ul class="hw-grid">
+          <li><button type="button" class="hw-btn" data-w="overview" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">Overview</span><span class="hw-sz">M · L</span></button>
+            <p class="hw-desc" hidden>Your trip’s overview note — the route, where you’re staying, how the transport connects — the first thing you see on Home.</p></li>
+          <li><button type="button" class="hw-btn" data-w="weather" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-weather"/></svg></span><span class="hw-name">Weather</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>The weather for every day of this trip, each day at that day’s place: a forecast up to 10 days out, past averages beyond that. Tap a day for details.</p></li>
+          <li><button type="button" class="hw-btn" data-w="steps" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-walking"/></svg></span><span class="hw-name">Steps</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>How far you walk each day of the trip: steps, walking distance and flights climbed. Read from Apple Health, and it stays on your phone.</p></li>
+          <li><button type="button" class="hw-btn" data-w="live" data-sizes="ml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-lock"/></svg></span><span class="hw-name">Live Activity</span><span class="hw-tag">Premium</span></button>
+            <p class="hw-desc" hidden>Your current event, the countdown and the next stop during a trip. The same card as the Live Activity on the Lock Screen.</p></li>
+          <li><button type="button" class="hw-btn" data-w="agenda" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">Agenda</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>What to do now — the current event, the stop after it, and how many are left today.</p></li>
+          <li><button type="button" class="hw-btn" data-w="files" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-clip"/></svg></span><span class="hw-name">Files</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>Where the paperwork is — what you’ll show today, plus what you carry throughout.</p></li>
+          <li><button type="button" class="hw-btn" data-w="todo" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-check"/></svg></span><span class="hw-name">To-Dos</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>What’s still outstanding. Tick things off right here.</p></li>
+          <li><button type="button" class="hw-btn" data-w="shopping" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-bag"/></svg></span><span class="hw-name">Shopping list</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>What’s left to buy, and where. Tick things off right here.</p></li>
+          <li><button type="button" class="hw-btn" data-w="fx" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-swap"/></svg></span><span class="hw-name">Currency converter</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>What you last converted, at today’s rate — it works offline too, so a glance in the shop is enough.</p></li>
+          <li><button type="button" class="hw-btn" data-w="trips" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-calendar"/></svg></span><span class="hw-name">Trips</span><span class="hw-sz">S · M</span></button>
+            <p class="hw-desc" hidden>When the next one leaves, or how far into this one you are.</p></li>
+          <li><button type="button" class="hw-btn" data-w="noteView" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">Note</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>Keep one note on Home — the car rental small print, the phrase you can never say.</p></li>
+          <li><button type="button" class="hw-btn" data-w="noteList" data-sizes="sml" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-notes"/></svg></span><span class="hw-name">Note List</span><span class="hw-sz">S · M · L</span></button>
+            <p class="hw-desc" hidden>The notes in one trip, most recently changed first.</p></li>
+          <li><button type="button" class="hw-btn" data-w="inspiration" data-sizes="sm" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-sparkle"/></svg></span><span class="hw-name">Inspiration</span><span class="hw-sz">S · M</span></button>
+            <p class="hw-desc" hidden>How many inspirations you haven’t read, and the latest few. Tap one to open it.</p></li>
+          <li><button type="button" class="hw-btn" data-w="scan" data-sizes="s" aria-haspopup="dialog"><span class="hw-ic"><svg class="i"><use href="#w-scan"/></svg></span><span class="hw-name">QR Code</span><span class="hw-sz">S</span></button>
+            <p class="hw-desc" hidden>Opens the scanner in one tap — for links, text or a trip invite. What you scan is kept, and your travel companions can see it too.</p></li>
+      </ul>
+      <p class="hw-hint">14 widgets in small, medium and large. The free version gets one page; Premium lets you lay out as many as you like.</p>
+      <div class="hw-strings" hidden><span data-k="s">Small</span><span data-k="m">Medium</span><span data-k="l">Large</span><span data-k="size">Size</span><span data-k="close">Close</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="more">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Integrations</p>
@@ -539,7 +575,7 @@
     </div>
   </section>
 
-  <section class="section" id="ai">
+  <section class="section section-alt" id="ai">
     <div class="wrap">
       <div class="ai-band">
         <div>
@@ -942,7 +978,8 @@
           <tr><th scope="row">Files, to-dos, legs and backup departures</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">Co-editing and location sharing</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">Widgets, Siri</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
-          <tr><th scope="row">Library & Home widgets (inspiration, notes, shopping list, QR code scanner, currency)</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">Home widgets (weather, steps, agenda, to-dos, currency converter, QR code and more)</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
+          <tr><th scope="row">Library (inspiration, notes, shopping list)</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">iCloud sync and backup</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">Import and export</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>
           <tr><th scope="row">AI agent integration</th><td><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td><td class="prem"><svg class="i ok" role="img" aria-label="Included"><use href="#i-check"/></svg></td></tr>

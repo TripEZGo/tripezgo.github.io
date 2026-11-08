@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=08431e6552","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=1b5d6af317","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=08431e6552","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=40b4ea05f9","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=5276fe4b75","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=8d1c8f56db","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=556156768c","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=ae8e95791f"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>主頁</title>
 <!--
@@ -20,8 +20,15 @@
         &hide=today,dates,place,progress           封面藏起來的項目（HomeCoverItem）
         &edit=1&…  編輯模式下不畫那一頁以外的東西
 
-  可畫的小工具：live（即時動態）、overview（總覽）、scan（QR Code）、fx（匯率換算）、agenda（行程，進行中那一種）、
-  todo（今日待辦）。其他支（附件、購物…）還沒複刻，帶了會畫成一格空白的卡片。
+  可畫的小工具（1.8.0 起 App 的每一支、每一種尺寸；id＝layout 與 solo 用的短名，尺寸 s／m／l）：
+    overview（總覽）m l　weather（天氣）s m l　steps（步數）s m l　live（即時動態）m l　agenda（行程，進行中那一種）s m l
+    files（附件）s m l　todo（今日待辦）s m l　shopping（購物）s m l　fx（匯率換算）s m l　trips（旅程）s m
+    noteView（檢視筆記）s m l　noteList（筆記列表）s m l　inspiration（靈感）s m　scan（QR Code）s
+  一般畫布上，舊的六支（live overview scan fx agenda todo）維持原本的畫法（商城截圖靠它們，一格都不動）；新的 id 照 App 畫。
+        &solo=<id>:<s|m|l>   官網示範用：只畫那一張卡（例 ?solo=weather:m&lang=en&theme=dark），大小就是 402 寬畫布上的樣子
+                       （格 81.5、格距 12：小 175×175、中 362×175、大 362×362），放在左上 16、.device 剛好是卡片＋四周各 16、
+                       頁面透明底、沒有封面／狀態列／分頁列／編輯角標。today 預設 2（宮島那天）、now 預設 10:41:00；
+                       solo 時所有尺寸都照 App 的卡片畫（含舊六支沒畫過的 s／l）；today／now 決定「今天」那一天的內容。
   互動模式（interactive=1，只給 App 內／官網的自動示範；截圖模式不變）：長按封面或畫布空白＝進編輯；編輯中長按小工具拖曳換位置
   （由上往下、由左往右第一個放得下，放不下的往後排）；點「完成」離開；橫向拖曳換頁；veil＝1 時毛玻璃底下照樣畫第二頁以後的內容，
   window.__auto.unlock() 讓毛玻璃溶掉。
@@ -206,14 +213,206 @@
   .edit .dots i.x { display: block; }
   .veil { transition: opacity .9s ease, backdrop-filter .9s ease, -webkit-backdrop-filter .9s ease; }
   .veil.off { opacity: 0; -webkit-backdrop-filter: blur(0); backdrop-filter: blur(0); pointer-events: none; }
+  /* ═══ 1.8.0：每一種小工具、每一種尺寸（solo 與新 id；舊的六支在一般畫布不受影響） ═══ */
+  .card.nw .in > * { flex-shrink: 0; }
+  .card.nw .in > .n-sp { flex: 1 1 0; min-height: 0; }
+  .card.nw .mark svg .fill { fill: #fff; stroke: none; }
+  html[data-theme="dark"] .card.nw .mark svg, html.solo[data-theme="dark"] .mark svg { stroke: var(--on-accent); }
+  html[data-theme="dark"] .card.nw .mark svg .fill, html.solo[data-theme="dark"] .mark svg .fill { fill: var(--on-accent); }
+  .wh i.live { flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+  .n-sp { flex: 1 1 0; min-height: 0; }
+  .nw svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+  /* WidgetAnswer／WidgetNextLine／WidgetHairline／WidgetEventRow／WidgetTransitRow／WidgetAllDayRow／WidgetSummary／WidgetGroupLabel／WidgetFoot */
+  .n-ans { display: flex; align-items: baseline; gap: 6px; }
+  .n-ans i { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--success); transform: translateY(-1px); }
+  .n-ans b { font: 700 16px/20px var(--font); letter-spacing: .3px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-ans.sm b { font-size: 15px; line-height: 19px; white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .n-rem { margin-top: 3px; font: 400 12px/15px var(--font); letter-spacing: .24px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-rem b { color: var(--ink); }
+  .n-hair { height: 1px; background: var(--border); }
+  .n-hair.s { margin: 9px 0 6px; } .n-hair.m { margin: 6px 0 3px; } .n-hair.l { margin: 6px 0 4px; }
+  .n-nl { padding-top: 8px; }
+  .n-nl .h { display: flex; align-items: baseline; gap: 6px; }
+  .n-nl .h b { font: 700 12px/15px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-nl .tm { flex: none; font: 400 12px/15px var(--mono); color: var(--muted); white-space: nowrap; }
+  .n-nl .v { font: 400 12px/15px var(--font); letter-spacing: .24px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-ev { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-top: 1px solid var(--border-soft); }
+  .n-ev.l { padding: 5px 0; }
+  .n-ev.first { border-top: 0; }
+  .n-ev .tm { flex: none; width: 44px; font: 400 11px/14px var(--mono); letter-spacing: .22px; color: var(--muted); }
+  .n-ev .nm { flex: 1 1 auto; min-width: 0; font: 400 13px/17px var(--font); letter-spacing: .26px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-ev .nm.live { font-weight: 700; } .n-ev .nm.done { color: var(--muted); }
+  .n-ev .st { flex: none; font: 400 10px/13px var(--font); letter-spacing: .6px; color: var(--muted); }
+  .n-ev .st.live { font-weight: 700; color: var(--green200); }
+  .n-tr { display: flex; align-items: center; gap: 8px; padding: 3px 0; }
+  .n-tr.l { padding: 2px 0; }
+  .n-tr .ic { flex: none; width: 44px; display: flex; justify-content: flex-end; color: var(--muted); }
+  .n-tr .ic svg { width: 12px; height: 12px; stroke-width: 1.8; }
+  .n-tr span:last-child { min-width: 0; font: 400 12px/15px var(--font); letter-spacing: .24px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-ad { display: flex; align-items: center; gap: 8px; padding: 4px 0 6px; }
+  .n-ad .tm { flex: none; width: 44px; font: 400 11px/14px var(--mono); color: var(--muted); }
+  .n-ad .nm { min-width: 0; font: 700 13px/17px var(--font); letter-spacing: .26px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-sum { border-top: 1px solid var(--border); padding-top: 10px; display: flex; gap: 10px; justify-content: space-between; font: 400 12px/15px var(--font); letter-spacing: .24px; color: var(--muted); }
+  .n-sum span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-sum span.mono { flex: none; font-family: var(--mono); letter-spacing: 0; }
+  .n-grp { font: 700 10px/13px var(--font); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); padding-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-grp.nf { padding-top: 7px; }
+  .n-foot { font: 400 12px/15px var(--font); letter-spacing: .24px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* WidgetDetailRow */
+  .n-dt { display: flex; align-items: baseline; gap: 10px; padding: 5px 0; border-top: 1px solid var(--border-soft); }
+  .n-dt.first { border-top: 0; }
+  .n-dt .nm { flex: 1 1 auto; min-width: 0; font: 400 13px/17px var(--font); letter-spacing: .26px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-dt .dl { flex: none; font: 400 10px/13px var(--mono); color: var(--muted); white-space: nowrap; }
+  /* WidgetFileRow／WidgetTodoRow／WidgetShoppingRow */
+  .n-fr, .n-td { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-top: 1px solid var(--border-soft); }
+  .n-fr.l, .n-td.l { padding: 5px 0; }
+  .n-fr.first, .n-td.first { border-top: 0; }
+  .n-fr svg, .n-td svg { flex: none; width: 14px; height: 14px; margin-right: 2px; stroke: var(--muted); stroke-width: 1.8; }
+  .n-fr.s svg, .n-td.s svg { width: 13px; height: 13px; margin-right: 2px; }
+  .n-td svg.ok { stroke: var(--green200); }
+  .n-fr .nm, .n-td .tx { flex: 1 1 auto; min-width: 0; font: 400 13px/17px var(--font); letter-spacing: .26px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-fr.s .nm, .n-td.s .tx { font-size: 12px; line-height: 15px; }
+  .n-fr .nm { text-overflow: clip; }
+  .n-td.done .tx { color: var(--muted); text-decoration: line-through; }
+  .n-fr .sz, .n-td .at { flex: none; font: 400 10px/13px var(--mono); color: var(--muted); white-space: nowrap; }
+  .n-td.done .at { text-decoration: line-through; }
+  .n-td .at.late { font-weight: 700; color: var(--red200); }
+  .n-td .dot { flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--sw-base, var(--muted)); }
+  /* 匯率換算 */
+  .n-fxh { display: flex; align-items: baseline; gap: 4px; }
+  .n-fxh.v { flex-direction: column; align-items: flex-start; gap: 0; }
+  .n-fxh.v > div { display: flex; align-items: baseline; gap: 4px; }
+  .n-fxh .a { font: 700 17px/21px var(--mono); color: var(--muted); white-space: nowrap; }
+  .n-fxh i { font: 400 13px/16px var(--font); font-style: normal; color: var(--muted); }
+  .n-fxh .r { font: 700 24px/29px var(--mono); letter-spacing: -.24px; color: var(--ink); white-space: nowrap; }
+  /* WidgetTwoColumn */
+  .n-two { flex: 1 1 0; min-height: 0; display: flex; }
+  .n-two > .lc { flex: none; display: flex; flex-direction: column; min-height: 0; }
+  .n-two > i { flex: none; width: 1px; margin-left: 12px; background: var(--border-soft); }
+  .n-two > .rc { flex: 1 1 auto; min-width: 0; margin-left: 12px; display: flex; flex-direction: column; min-height: 0; }
+  .n-col { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+  .n-col > * { flex-shrink: 0; } .n-col > .n-sp { flex: 1 1 0; }
+  .n-rw { display: flex; align-items: center; gap: 12px; }
+  .n-ring { flex: none; width: 62px; height: 62px; }
+  .n-ring circle { fill: none; stroke: var(--border); stroke-width: 6; }
+  .n-ring circle.on { stroke: var(--accent); stroke-linecap: round; }
+  .n-ring text { font: 700 16px var(--mono); fill: var(--ink); stroke: none; text-anchor: middle; dominant-baseline: central; }
+  .n-rw b { display: block; font: 700 13px/17px var(--font); color: var(--ink); white-space: nowrap; }
+  .n-rw span { display: block; margin-top: 2px; font: 400 12px/15px var(--font); color: var(--muted); white-space: nowrap; }
+  .n-big { display: flex; align-items: baseline; gap: 4px; }
+  .n-big b { font: 700 30px/36px var(--mono); letter-spacing: -.3px; color: var(--ink); }
+  .n-big span { font: 400 13px/16px var(--font); letter-spacing: .26px; color: var(--muted); white-space: nowrap; }
+  .n-name { font: 700 13px/17px var(--font); letter-spacing: .26px; color: var(--ink); }
+  /* 筆記 */
+  .n-nt { font: 700 16px/20px var(--font); letter-spacing: .32px; color: var(--ink); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  .n-nt.s { font-size: 15px; line-height: 19px; letter-spacing: .3px; }
+  .n-np p { font: 400 13px/17px var(--font); letter-spacing: .26px; color: var(--ink); display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+  .n-np.s p { -webkit-line-clamp: 1; } .n-np.m p { -webkit-line-clamp: 2; } .n-np.l p { -webkit-line-clamp: 3; }
+  .n-np p + p { margin-top: 4px; } .n-np.s p + p { margin-top: 2px; }
+  .n-nr .sub { font: 400 12px/15px var(--font); letter-spacing: .24px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* 靈感 */
+  .n-ir { display: flex; align-items: center; gap: 8px; padding: 2px 0; border-top: 1px solid var(--border-soft); }
+  .n-ir.first { border-top: 0; }
+  .n-ir.s { padding: 4px 0; }
+  .n-ir .tile { flex: none; width: 24px; height: 24px; border-radius: 6px; background: var(--surface); border: 1px solid var(--border-soft); display: grid; place-items: center; color: var(--muted); }
+  .n-ir.s .tile { width: 34px; height: 34px; border-radius: 7px; }
+  .n-ir .tile svg { width: 13px; height: 13px; stroke-width: 1.8; }
+  .n-ir .tt { min-width: 0; flex: 1 1 auto; }
+  .n-ir .ti { display: flex; align-items: baseline; gap: 5px; font: 400 12px/15px var(--font); color: var(--ink); }
+  .n-ir .ti i { flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-ink); transform: translateY(-1px); }
+  .n-ir .ti span { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-ir .ti span.b { font-weight: 700; }
+  .n-ir.s .ti span { white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .n-ir .me { font: 400 10px/13px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-add { align-self: flex-start; display: flex; align-items: center; gap: 4px; height: 28px; padding: 0 11px 0 9px; border-radius: 14px; background: var(--accent-ink); color: var(--on-accent); }
+  .n-add svg { width: 13px; height: 13px; stroke-width: 2.2; }
+  .n-add span { font: 700 12px/15px var(--font); white-space: nowrap; }
+  /* CanvasCardHeader（天氣、步數）：12 粗、字距 .06em、右邊註記 12 */
+  .n-ch { flex: none; display: flex; align-items: center; gap: 6px; height: 16px; margin-bottom: 10px; }
+  .n-ch .mark { flex: none; }
+  .n-ch b { flex: none; font: 700 12px/16px var(--font); letter-spacing: .72px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .n-ch span:last-child { margin-left: auto; min-width: 0; font: 400 12px/16px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-attr { flex: none; margin-top: auto; padding-top: 8px; min-height: 24px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .n-attr svg { display: block; width: 60.5px; height: 11px; color: var(--muted-on-sunken); stroke: none; }
+  .n-attr span { font: 500 12px/16px var(--font); color: var(--accent-ink); white-space: nowrap; }
+  .n-wi { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; color: var(--ink); }
+  .n-wone { display: flex; flex-direction: column; min-width: 0; }
+  .n-wone .dt { font: 600 12px/15px var(--font); color: var(--ink); white-space: nowrap; }
+  .n-wone .pl { font: 400 12px/15px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-wone .big { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+  .n-wone .big .wi { width: 28px; height: 28px; stroke-width: 1.5; }
+  .n-wone .tp { font: 700 22px/28px var(--font); letter-spacing: -.44px; color: var(--ink); white-space: nowrap; min-width: 0; }
+  .n-wm { display: flex; gap: 4px; }
+  .n-wm .c { width: calc((100% - 16px) / 5); flex: none; padding: 6px 2px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .n-wm .c.today { background: var(--sunken); }
+  .n-wm .dt { font: 600 12px/15px var(--font); color: var(--ink); white-space: nowrap; max-width: 100%; }
+  .n-wm .c.today .dt { color: var(--accent-ink); }
+  .n-wm .pl { width: 100%; font: 400 12px/15px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-wm .gl { margin: 4px 0; } .n-wm .wi { width: 20px; height: 20px; display: block; }
+  .n-wm .tp { font: 600 13px/16px var(--font); color: var(--ink); white-space: nowrap; }
+  .n-wl { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+  .n-wl .r { flex: 1 1 0; min-height: 0; display: flex; align-items: center; gap: 8px; padding: 0 8px; border-top: 1px solid var(--border-soft); }
+  .n-wl .r.nosep { border-top-color: transparent; }
+  .n-wl .r.today { background: var(--sunken); border-radius: 8px; border-top-color: transparent; }
+  .n-wl .dt { flex: none; width: 64px; font: 600 12px/15px var(--font); color: var(--ink); white-space: nowrap; }
+  .n-wl .r.today .dt { color: var(--accent-ink); }
+  .n-wl .pl { flex: 1 1 0; min-width: 0; font: 400 12px/15px var(--font); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .n-wl .gl { flex: none; width: 60px; display: flex; justify-content: center; } .n-wl .wi { width: 20px; height: 20px; display: block; }
+  .n-wl .tp { flex: none; width: 64px; text-align: right; font: 600 13px/16px var(--font); color: var(--ink); white-space: nowrap; }
+  .n-samt { display: flex; align-items: baseline; gap: 3px; }
+  .n-samt b { font: 700 28px/34px var(--font); letter-spacing: -.56px; color: var(--ink); white-space: nowrap; }
+  .n-samt span { font: 500 13px/16px var(--font); color: var(--muted); white-space: nowrap; }
+  .n-mrs.l { margin-top: 8px; }
+  .n-mr { height: 22px; border-top: 1px solid var(--border-soft); display: flex; align-items: center; gap: 6px; font: 400 13px/16px var(--font); color: var(--ink); white-space: nowrap; }
+  .n-mr svg { flex: none; width: 14px; height: 14px; stroke: var(--muted); stroke-width: 1.8; }
+  .n-tot { flex: none; height: 28px; display: flex; align-items: baseline; }
+  .n-tot > i { align-self: center; flex: none; width: 1px; height: 16px; margin: 0 12px; background: var(--border-soft); }
+  .n-tc { display: flex; align-items: baseline; gap: 6px; white-space: nowrap; }
+  .n-tc .cap { font: 400 12px/15px var(--font); color: var(--muted); }
+  .n-tc .big { font: 700 22px/28px var(--font); letter-spacing: -.44px; color: var(--ink); }
+  .n-tc .mid { font: 600 15px/19px var(--font); color: var(--ink); }
+  .n-tc .u { font: 400 13px/16px var(--font); color: var(--muted); }
+  .n-bars { margin-top: auto; padding-top: 8px; display: flex; gap: 4px; }
+  .n-bars .b { flex: none; width: 43px; display: flex; flex-direction: column; align-items: center; }
+  .n-bars .well { height: 60px; width: 100%; display: flex; align-items: flex-end; justify-content: center; }
+  .n-bars .well i { display: block; width: 16px; border-radius: 3px 3px 0 0; background: color-mix(in srgb, var(--accent) 38%, transparent); }
+  .n-bars .b.t .well i { background: var(--accent); }
+  .n-bars span { margin-top: 3px; font: 400 12px/15px var(--font); color: var(--muted); white-space: nowrap; }
+  .n-bars .b.t span { color: var(--accent-ink); font-weight: 600; }
+  .n-dr { flex: 1 1 0; min-height: 0; margin-top: 12px; display: flex; flex-direction: column; }
+  .n-dr .r { flex: 1 1 0; min-height: 0; display: flex; align-items: center; gap: 8px; }
+  .n-dr .d { flex: none; width: 40px; font: 400 12px/15px var(--font); color: var(--muted); white-space: nowrap; }
+  .n-dr .r.t .d { color: var(--accent-ink); font-weight: 600; }
+  .n-dr .tr { flex: 1 1 0; min-width: 0; height: 10px; }
+  .n-dr .tr i { display: block; height: 10px; border-radius: 5px; background: color-mix(in srgb, var(--accent) 38%, transparent); }
+  .n-dr .r.t .tr i { background: var(--accent); }
+  .n-dr .c { flex: none; width: 52px; text-align: right; font: 400 13px/16px var(--font); color: var(--ink); white-space: nowrap; }
+  .n-dr .r.t .c { font-weight: 600; }
+  /* 即時動態 大：進度條兩端的時刻、今天接下來 */
+  .la-lab { margin-top: 6px; display: flex; justify-content: space-between; font-size: 11px; line-height: 16.5px; letter-spacing: .44px; color: rgba(255,255,255,.62); font-variant-numeric: tabular-nums; }
+  .la-up { margin-top: 10px; }
+  .la-up .h { font: 700 10px/15px var(--font); letter-spacing: .6px; color: rgba(255,255,255,.6); padding-bottom: 2px; }
+  .la-up .r { display: flex; align-items: baseline; gap: 8px; padding: 5px 0; border-top: 1px solid rgba(255,255,255,.12); }
+  .la-up .tm { flex: none; width: 36px; font-size: 11px; line-height: 16px; color: rgba(255,255,255,.65); font-variant-numeric: tabular-nums; }
+  .la-up .nm { min-width: 0; font-size: 12.5px; line-height: 16px; color: rgba(255,255,255,.86); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* 單張模式（?solo=id:size，官網示範用）：只畫那一張卡，透明底，不要封面、狀態列、分頁列 */
+  html.solo, html.solo body, html.solo .device { background: transparent !important; }
+  html.solo body { overflow: hidden; }
+  .n-g > .n-ev.first { border-top: 0; }
 </style>
 </head>
 <body>
 <div class="device" id="d"></div>
 <script type="module">
-import { lang, params, t, loadTrip, loadCategories, categoryName, duration, chrome, ready, fmt, ICON, svg, toMin, TAB_PAGES, interactive, embed, go, ipad, duo, DEV } from './chrome.js';
+import { lang, params, t, loadTrip, loadCategories, categoryName, duration, chrome, ready, fmt, ICON, svg, toMin, TAB_PAGES, interactive, embed, go, ipad, duo, DEV, HANS_MODE } from './chrome.js';
 
 const d = document.getElementById('d');
+// ?solo=<id>:<s|m|l>：只畫那一張卡（官網示範用），見最下面「單張模式」
+const [soloRaw = '', soloSzRaw = ''] = (params.get('solo') || '').split(':');
+const soloId = ['overview', 'weather', 'steps', 'live', 'agenda', 'files', 'todo', 'shopping', 'fx', 'trips', 'noteView', 'noteList', 'inspiration', 'scan'].find(x => x.toLowerCase() === soloRaw.toLowerCase()) || soloRaw;
+const soloSz = soloSzRaw.toLowerCase();
+const solo = !!soloId;
+if (solo) document.documentElement.classList.add('solo');
 const trip = await loadTrip();
 await loadCategories();
 
@@ -253,12 +452,12 @@ const S = {
     places: '히로시마시, 오카야마시' },
 }[lang] || null;
 
-const todayNo = +(params.get('today') || 1);
+const todayNo = +(params.get('today') || (solo ? 2 : 1));
 const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
 const dateOf = n => new Date(start.getTime() + (n - 1) * 864e5);
-const [nh, nm, ns = 0] = (params.get('now') || '17:05:00').split(':').map(Number);
+const [nh, nm, ns = 0] = (params.get('now') || (solo ? '10:41:00' : '17:05:00')).split(':').map(Number);
 const nowSec = (nh * 60 + nm) * 60 + ns;
-const edit = params.get('edit') === '1';
+const edit = !solo && params.get('edit') === '1';
 const veil = params.get('veil') === '1';
 const pageNo = +(params.get('page') || 0);
 const hidden = (params.get('hide') || '').split(',').filter(Boolean);
@@ -291,7 +490,7 @@ const range = `${t.shortDate(start.getMonth() + 1, start.getDate())} – ${t.sho
 const cells = Array.from({ length: trip.dayCount }, (_, i) => `<i${i < todayNo ? ' class="on"' : ''}></i>`).join('');
 const cover = '../covers/itsukushima-torii.42b883d9.jpg';
 
-d.insertAdjacentHTML('beforeend', `
+if (!solo) d.insertAdjacentHTML('beforeend', `
 <div class="cv"><div class="cv-img" style="background-image:url(${cover})"></div><div class="cv-scrim"></div>
   <div class="cv-btn cv-swap">${sv('swap')}<span>${S.swap}</span></div>
   <div class="cv-ai"><i>${sv('computerAI')}</i></div>
@@ -388,12 +587,672 @@ const BODY = {
   scan: () => `<div class="sc">${sv('scan')}<b>${S.scan}</b></div>`,
   fx: () => `${head(S.fx)}<div class="fx-a">$100.00</div><div class="fx-r"><i>≈</i><b>¥486</b></div><div class="foot">${fmt(S.fxEmpty)}</div>`,
 };
-const card = it => {
-  const x = CL + SIDE + it.c * (CELL + GAP), y = TOP + it.r * (CELL + GAP), w = it.w * CELL + (it.w - 1) * GAP, h = it.h * CELL + (it.h - 1) * GAP;
-  const body = BODY[it.id] ? BODY[it.id](it) : '';
-  return `<div class="card sz-${it.sz}${it.id === 'live' ? ' dark' : ''}${it.id === 'overview' ? ' ov' : ''}" data-id="${it.id}" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px">${badge}<div class="in">${body}</div></div>`;
+const W = {
+  'zh-Hant-TW': {
+    stateLive: `進行中`,
+    nextStop: `下一站`,
+    doneToday: `今天走完了`,
+    nothingAfter: `之後沒有行程了`,
+    allDay: `全日`,
+    stopsRemaining: (a) => `還有 ${a} 站`,
+    transitAhead: (a) => `還要移動 ${a} 分`,
+    stateDone: `已完成`,
+    filesToday: `今日附件`,
+    filesTrip: `旅程附件`,
+    moreFiles: (a) => `還有 ${a} 份附件`,
+    groupForToday: `今天要用`,
+    groupCarried: `隨身文件`,
+    tripFileTotal: (a) => `整趟共 ${a} 份附件`,
+    emptyFiles: `還沒有附件`,
+    todosToday: `今日待辦`,
+    groupOpen: (a) => `未完成 · ${a} 件`,
+    groupDone: `已完成`,
+    todosOpenToday: (a) => `今天還有 ${a} 件沒做`,
+    todoNoEvent: `不綁行程`,
+    todosRemaining: (a) => `還有 ${a} 件`,
+    todosRemainingOpen: (a) => `還有 ${a} 件未完成`,
+    todosNearest: (a) => ` · 最近 ${a}`,
+    todosAllDoneToday: `今天的都做完了`,
+    todosHidden: (a) => `未顯示 ${a} 件`,
+    shoppingHere: `這一站要買`,
+    shoppingNext: `下一站要買`,
+    shoppingTrip: `旅程購物`,
+    groupHandled: `已處理`,
+    shoppingOpen: (a) => `還有 ${a} 樣`,
+    shoppingOpenLong: (a) => `還有 ${a} 樣待購買`,
+    shoppingOpenTrip: (a) => `整趟還有 ${a} 樣要買`,
+    shoppingHidden: (a) => `未顯示 ${a} 樣`,
+    shoppingNoEvent: `不綁行程`,
+    shoppingAllDoneTrip: `整趟都買齊了`,
+    headExchange: `匯率換算`,
+    exchangePrevious: `先前換過`,
+    exchangeAsOf: (a) => `匯率截至 ${a}`,
+    exchangeTap: `點一下換算`,
+    emptyExchange: `還沒換算過——點一下開始`,
+    tripOngoing: `旅程中`,
+    dayCountTotal: (a) => `共 ${a} 天`,
+    returnsOn: (a, b) => `回程 ${a} · 還有 ${b} 天`,
+    groupUpNext: `接下來`,
+    noNextTrip: `還沒排下一趟`,
+    tripsCompleted: (a) => `已完成 ${a} 趟`,
+    dayNumber: (a) => `第 ${a} 天`,
+    sampleTripKyoto: `京都・紅葉小旅行`,
+    sampleTripOkinawa: `沖繩・慢活潛水`,
+    headNote: `筆記`,
+    noteCount: (a) => `${a} 則`,
+    moreNotes: (a) => `還有 ${a} 則`,
+    headInspiration: `靈感`,
+    inspirationNewUnit: `則新的`,
+    inspirationAdd: `新增`,
+    inspirationYesterday: (a) => `昨天 ${a}`,
+    inspirationMeta: (a, b) => `${a} · ${b}`,
+    today: `今天`,
+    liveUpcomingHead: `今天接下來`,
+    remainPrefix: `還有 `,
+    endsAtSuffix: (a) => ` · ${a} 結束`,
+    groupToday: (a) => `今天 · ${a}`,
+    startsAt: (a) => `${a} 開始`,
+    stopsAfter: (a) => `之後還有 ${a} 站`,
+    lastStopToday: `今天的最後一站`,
+    startsAtRemainPrefix: (a) => `${a} 開始 · 還有 `,
+    weatherTitle: `天氣`,
+    weatherSource: `資料來源`,
+    stepsTitle: `步數`,
+    stepsTrip: `整趟`,
+    stepsFlightsCount: (a) => `${a} 層`,
+    progressDuring: (a, b) => `第 ${a} 天 · 共 ${b} 天`,
+    stepsCount: (a) => `${a} 步`,
+    legModeWalking: `步行`,
+    legModeDriving: `開車`,
+    legModeCycling: `騎車`,
+    legModeOther: `其他`,
+    legModeTransit: `大眾運輸`,
+  },
+  en: {
+    stateLive: `Now`,
+    nextStop: `Next stop`,
+    doneToday: `Today is done`,
+    nothingAfter: `Nothing after this`,
+    allDay: `All-day`,
+    stopsRemaining: (a) => `${a} stops left`,
+    transitAhead: (a) => `${a} min travel left`,
+    stateDone: `Done`,
+    filesToday: `Today's files`,
+    filesTrip: `Trip files`,
+    moreFiles: (a) => `${a} more files`,
+    groupForToday: `For today`,
+    groupCarried: `Carried throughout`,
+    tripFileTotal: (a) => `${a} files on this trip`,
+    emptyFiles: `No files yet`,
+    todosToday: `Today's to-dos`,
+    groupOpen: (a) => `Open · ${a}`,
+    groupDone: `Done`,
+    todosOpenToday: (a) => `${a} left today`,
+    todoNoEvent: `No event`,
+    todosRemaining: (a) => `${a} left`,
+    todosRemainingOpen: (a) => `${a} still open`,
+    todosNearest: (a) => ` · soonest ${a}`,
+    todosAllDoneToday: `All done for today`,
+    todosHidden: (a) => `${a} not shown`,
+    shoppingHere: `Buy here`,
+    shoppingNext: `Buy next stop`,
+    shoppingTrip: `Trip shopping`,
+    groupHandled: `Handled`,
+    shoppingOpen: (a) => `${a} left`,
+    shoppingOpenLong: (a) => `${a} left to buy`,
+    shoppingOpenTrip: (a) => `${a} still to buy on this trip`,
+    shoppingHidden: (a) => `${a} not shown`,
+    shoppingNoEvent: `Not tied to a stop`,
+    shoppingAllDoneTrip: `The whole list is done`,
+    headExchange: `Currency`,
+    exchangePrevious: `Earlier`,
+    exchangeAsOf: (a) => `Rate as of ${a}`,
+    exchangeTap: `Tap to convert`,
+    emptyExchange: `Nothing converted yet — tap to start`,
+    tripOngoing: `On the trip`,
+    dayCountTotal: (a) => `${a} days`,
+    returnsOn: (a, b) => `Back ${a} · ${b} days to go`,
+    groupUpNext: `Up next`,
+    noNextTrip: `No next trip yet`,
+    tripsCompleted: (a) => `${a} done`,
+    dayNumber: (a) => `Day ${a}`,
+    sampleTripKyoto: `Kyoto · autumn colors`,
+    sampleTripOkinawa: `Okinawa · slow days and diving`,
+    headNote: `Note`,
+    noteCount: (a) => `${a}`,
+    moreNotes: (a) => `${a} more`,
+    headInspiration: `Inspiration`,
+    inspirationNewUnit: `new`,
+    inspirationAdd: `Add`,
+    inspirationYesterday: (a) => `Yesterday ${a}`,
+    inspirationMeta: (a, b) => `${a} · ${b}`,
+    today: `Today`,
+    liveUpcomingHead: `Later today`,
+    remainPrefix: `In `,
+    endsAtSuffix: (a) => ` · ends ${a}`,
+    groupToday: (a) => `Today · ${a}`,
+    startsAt: (a) => `Starts ${a}`,
+    stopsAfter: (a) => `${a} stops after this`,
+    lastStopToday: `Last stop today`,
+    startsAtRemainPrefix: (a) => `Starts ${a} · in `,
+    weatherTitle: `Weather`,
+    weatherSource: `Data Sources`,
+    stepsTitle: `Steps`,
+    stepsTrip: `Trip total`,
+    stepsFlightsCount: (a) => `${a} flights`,
+    progressDuring: (a, b) => `Day ${a} of ${b}`,
+    stepsCount: (a) => `${a} steps`,
+    legModeWalking: `Walking`,
+    legModeDriving: `Driving`,
+    legModeCycling: `Cycling`,
+    legModeOther: `Other`,
+    legModeTransit: `Transit`,
+  },
+  ja: {
+    stateLive: `進行中`,
+    nextStop: `次の目的地`,
+    doneToday: `今日は終わりました`,
+    nothingAfter: `このあとの予定はありません`,
+    allDay: `終日`,
+    stopsRemaining: (a) => `あと ${a} か所`,
+    transitAhead: (a) => `残り移動 ${a} 分`,
+    stateDone: `完了`,
+    filesToday: `今日の添付`,
+    filesTrip: `旅行の添付`,
+    moreFiles: (a) => `ほかに添付 ${a} 件`,
+    groupForToday: `今日使うもの`,
+    groupCarried: `持ち歩く書類`,
+    tripFileTotal: (a) => `旅行全体で添付 ${a} 件`,
+    emptyFiles: `添付がまだありません`,
+    todosToday: `今日のやること`,
+    groupOpen: (a) => `未完了 · ${a} 件`,
+    groupDone: `完了`,
+    todosOpenToday: (a) => `今日はあと ${a} 件`,
+    todoNoEvent: `予定に紐づけない`,
+    todosRemaining: (a) => `あと ${a} 件`,
+    todosRemainingOpen: (a) => `未完了があと ${a} 件`,
+    todosNearest: (a) => ` · 直近 ${a}`,
+    todosAllDoneToday: `今日の分はすべて終わりました`,
+    todosHidden: (a) => `非表示 ${a} 件`,
+    shoppingHere: `ここで買う`,
+    shoppingNext: `次で買う`,
+    shoppingTrip: `旅の買い物`,
+    groupHandled: `処理済み`,
+    shoppingOpen: (a) => `あと ${a} 点`,
+    shoppingOpenLong: (a) => `あと ${a} 点購入予定`,
+    shoppingOpenTrip: (a) => `旅であと ${a} 点`,
+    shoppingHidden: (a) => `未表示 ${a} 点`,
+    shoppingNoEvent: `予定に紐づかない`,
+    shoppingAllDoneTrip: `旅の分は買い揃えました`,
+    headExchange: `為替換算`,
+    exchangePrevious: `これまでの換算`,
+    exchangeAsOf: (a) => `レート基準日 ${a}`,
+    exchangeTap: `タップして換算`,
+    emptyExchange: `まだ換算していません——タップで開始`,
+    tripOngoing: `旅行中`,
+    dayCountTotal: (a) => `全 ${a} 日`,
+    returnsOn: (a, b) => `帰着 ${a} · あと ${b} 日`,
+    groupUpNext: `このあと`,
+    noNextTrip: `次の旅行はまだありません`,
+    tripsCompleted: (a) => `${a} 件終了`,
+    dayNumber: (a) => `${a} 日目`,
+    sampleTripKyoto: `京都・紅葉の小旅行`,
+    sampleTripOkinawa: `沖縄・のんびりダイビング`,
+    headNote: `メモ`,
+    noteCount: (a) => `${a} 件`,
+    moreNotes: (a) => `ほかに ${a} 件`,
+    headInspiration: `インスピレーション`,
+    inspirationNewUnit: `件の新着`,
+    inspirationAdd: `追加`,
+    inspirationYesterday: (a) => `昨日 ${a}`,
+    inspirationMeta: (a, b) => `${a} · ${b}`,
+    today: `今日`,
+    liveUpcomingHead: `今日このあと`,
+    remainPrefix: `残り `,
+    endsAtSuffix: (a) => ` · ${a} 終了`,
+    groupToday: (a) => `今日 · ${a}`,
+    startsAt: (a) => `${a} 開始`,
+    stopsAfter: (a) => `このあとあと ${a} 件`,
+    lastStopToday: `今日の最後の目的地`,
+    startsAtRemainPrefix: (a) => `${a} 開始 · 残り `,
+    weatherTitle: `天気`,
+    weatherSource: `データソース`,
+    stepsTitle: `歩数`,
+    stepsTrip: `旅の合計`,
+    stepsFlightsCount: (a) => `${a} 階`,
+    progressDuring: (a, b) => `${a} 日目 · 全 ${b} 日`,
+    stepsCount: (a) => `${a} 歩`,
+    legModeWalking: `徒歩`,
+    legModeDriving: `車`,
+    legModeCycling: `自転車`,
+    legModeOther: `その他`,
+    legModeTransit: `公共交通`,
+  },
+  ko: {
+    stateLive: `진행 중`,
+    nextStop: `다음 목적지`,
+    doneToday: `오늘은 끝났습니다`,
+    nothingAfter: `이후에는 일정이 없습니다`,
+    allDay: `종일`,
+    stopsRemaining: (a) => `${a}곳 남음`,
+    transitAhead: (a) => `이동 ${a}분 남음`,
+    stateDone: `완료`,
+    filesToday: `오늘의 첨부`,
+    filesTrip: `여행 첨부`,
+    moreFiles: (a) => `첨부 ${a}개 더`,
+    groupForToday: `오늘 쓸 것`,
+    groupCarried: `늘 들고 다니는 서류`,
+    tripFileTotal: (a) => `여행 전체 첨부 ${a}개`,
+    emptyFiles: `아직 첨부가 없습니다`,
+    todosToday: `오늘 할 일`,
+    groupOpen: (a) => `미완료 · ${a}건`,
+    groupDone: `완료`,
+    todosOpenToday: (a) => `오늘 ${a}건 남음`,
+    todoNoEvent: `일정에 묶지 않음`,
+    todosRemaining: (a) => `${a}건 남음`,
+    todosRemainingOpen: (a) => `미완료 ${a}건 남음`,
+    todosNearest: (a) => ` · 가장 가까운 ${a}`,
+    todosAllDoneToday: `오늘 할 일을 모두 마쳤습니다`,
+    todosHidden: (a) => `${a}건 표시 안 함`,
+    shoppingHere: `여기서 살 것`,
+    shoppingNext: `다음에 살 것`,
+    shoppingTrip: `여행 쇼핑`,
+    groupHandled: `처리됨`,
+    shoppingOpen: (a) => `${a}개 남음`,
+    shoppingOpenLong: (a) => `구매할 항목 ${a}개`,
+    shoppingOpenTrip: (a) => `이번 여행에서 ${a}개 더`,
+    shoppingHidden: (a) => `${a}개 표시 안 됨`,
+    shoppingNoEvent: `일정에 없음`,
+    shoppingAllDoneTrip: `여행에서 살 것은 다 샀습니다`,
+    headExchange: `환율 계산`,
+    exchangePrevious: `이전 환산`,
+    exchangeAsOf: (a) => `환율 기준 ${a}`,
+    exchangeTap: `탭하여 환산`,
+    emptyExchange: `아직 환산한 적이 없습니다 — 탭하여 시작`,
+    tripOngoing: `여행 중`,
+    dayCountTotal: (a) => `총 ${a}일`,
+    returnsOn: (a, b) => `귀국 ${a} · ${b}일 남음`,
+    groupUpNext: `다음 차례`,
+    noNextTrip: `다음 여행이 아직 없습니다`,
+    tripsCompleted: (a) => `${a}개 완료`,
+    dayNumber: (a) => `${a}일차`,
+    sampleTripKyoto: `교토 · 단풍 여행`,
+    sampleTripOkinawa: `오키나와 · 느긋한 다이빙`,
+    headNote: `메모`,
+    noteCount: (a) => `${a}개`,
+    moreNotes: (a) => `${a}개 더`,
+    headInspiration: `영감`,
+    inspirationNewUnit: `개 새 영감`,
+    inspirationAdd: `추가`,
+    inspirationYesterday: (a) => `어제 ${a}`,
+    inspirationMeta: (a, b) => `${a} · ${b}`,
+    today: `오늘`,
+    liveUpcomingHead: `오늘 다음 일정`,
+    remainPrefix: `남은 시간 `,
+    endsAtSuffix: (a) => ` · ${a} 종료`,
+    groupToday: (a) => `오늘 · ${a}`,
+    startsAt: (a) => `${a} 시작`,
+    stopsAfter: (a) => `이후에 ${a}곳 더`,
+    lastStopToday: `오늘의 마지막 목적지`,
+    startsAtRemainPrefix: (a) => `${a} 시작 · 남은 시간 `,
+    weatherTitle: `날씨`,
+    weatherSource: `데이터 출처`,
+    stepsTitle: `걸음 수`,
+    stepsTrip: `여행 합계`,
+    stepsFlightsCount: (a) => `${a}층`,
+    progressDuring: (a, b) => `${a}일째 · 총 ${b}일`,
+    stepsCount: (a) => `${a}걸음`,
+    legModeWalking: `도보`,
+    legModeDriving: `자동차`,
+    legModeCycling: `자전거`,
+    legModeOther: `기타`,
+    legModeTransit: `대중교통`,
+  },
+}[lang];
+
+// ════════ 1.8.0：每一種小工具、每一種尺寸（solo 模式全走這裡；一般畫布只有新 id 走這裡，舊的六支照舊） ════════
+// 卡片外殼＝HomeCanvasCardView（白卡底＋14 內縮；FittingRows 在預設字級就是原樣）。零件照 WidgetPieces.swift／WidgetTheme.swift，
+// 天氣與步數兩張是 UIKit 手刻（HomeWeatherCardView／HomeStepsCardView，抬頭＝CanvasCardHeader）。
+// 版面放不下的就讓卡片切（App 也是：SwiftUI 的 VStack 不會為了塞進去自己縮）。
+const CLG = HANS_MODE ? 'zh-Hans' : lang;
+const mdOf = dt => lang === 'ko' ? `${dt.getMonth() + 1}. ${dt.getDate()}.` : `${dt.getMonth() + 1}/${dt.getDate()}`;
+const wdOf = dt => t.weekday[dt.getDay()];
+const dayEv = n => trip.days.find(x => x.day === n)?.events || [];
+const allEv = () => [...trip.days.flatMap(x => x.events), ...(trip.allDayEvents || []), ...(trip.unscheduledEvents || [])];
+const grouped = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+// 範本裡沒有的東西（App 的字串表也沒有的）：每種語言一份。簡體另寫（簡體不經字典，因為字典只收 App 字串表有的）
+const C = {
+  'zh-Hant-TW': { ago: n => `${n} 小時前`, km: '公里', yen: '¥', twd: '$', usd: '$', tags: ['宮島', '交通'], pdf: 'JR Pass 電子票券.pdf', jpg: '兌換收據.jpg' },
+  'zh-Hans': { ago: n => `${n} 小时前`, km: '公里', yen: '¥', twd: '$', usd: '$', tags: ['宫岛', '交通'], pdf: 'JR Pass 电子票券.pdf', jpg: '兑换收据.jpg' },
+  en: { ago: n => `${n} hr ago`, km: 'km', yen: '¥', twd: 'NT$', usd: '$', tags: ['Miyajima', 'Transit'], pdf: 'JR Pass e-ticket.pdf', jpg: 'Exchange receipt.jpg' },
+  ja: { ago: n => `${n} 時間前`, km: 'km', yen: '￥', twd: 'NT$', usd: '$', tags: ['宮島', '交通'], pdf: 'JR Pass 電子チケット.pdf', jpg: '引換レシート.jpg' },
+  ko: { ago: n => `${n}시간 전`, km: 'km', yen: 'JP¥', twd: 'NT$', usd: '$', tags: ['미야지마', '교통'], pdf: 'JR Pass 전자 티켓.pdf', jpg: '교환 영수증.jpg' },
+}[CLG];
+// 零件用的圖示（DesignIcon.swift 的 <path d>；24 格）
+const NI = {
+  photo: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M4 17l5.5-5.5L14 16l2.5-2.5L20 17"/>',
+  paperclip: '<path d="M21 12l-8.5 8.5Q7 22 5.5 13.5L14 5Q20.5 6.5 19 10l-8.5 8.5Q8.5 19.5 7.5 15.5L16 7"/>',
+  document: '<path d="M14 3H6v18h12V7zM14 3v4h4M9 13h6M9 17h6"/>',
+  link: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+  notes: ICON.notes, mapPin: ICON.mapPin, plus: ICON.plus, clock: ICON.clock, transit: ICON.transit,
+  walking: '<circle cx="13" cy="4" r="2"/><path d="M11.5 8.5 9 13l3 2 1 6M13.5 8.5l2 3.5 3 1M12 15l-3 6"/>',
+  driving: '<path d="M5 16.5V13l1.9-4.3q.6-1.2 1.8-1.2h6.6q1.2 0 1.8 1.2L19 13v3.5M4 13h16"/><circle cx="8" cy="16.5" r="1.4"/><circle cx="16" cy="16.5" r="1.4"/>',
+  cycling: '<circle cx="6" cy="16" r="3.2"/><circle cx="18" cy="16" r="3.2"/><path d="M6 16l4-7h4l-2 7M14 9h3l1 7"/>',
+  ellipsis: '<circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/>',
+  todoBox: '<circle cx="12" cy="12" r="8.4"/>', todoChecked: '<circle cx="12" cy="12" r="8.4"/><path d="M8.6 12.2l2.3 2.3 4.5-4.7"/>',
+  ban: '<circle cx="12" cy="12" r="10"/><path d="M4.929 4.929 19.07 19.071"/>',
+  // 天氣十枚（DesignIcon.weather*）、步行距離、爬樓層數
+  wSun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/>',
+  wSunCloud: '<path d="M8.5 3.2v1.4M3.3 8.4h1.4M4.8 4.7l1 1M12.2 4.7l-1 1"/><path d="M5.7 11.6A3.6 3.6 0 1 1 11.8 8"/><path d="M9 20h8.5a3.5 3.5 0 0 0 .5-6.96A4.8 4.8 0 0 0 9 12a4 4 0 0 0 0 8z"/>',
+  wCloud: '<path d="M7 18.5h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7 9.5a4.5 4.5 0 0 0 0 9z"/>',
+  wRain: '<path d="M7 15h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7 6a4.5 4.5 0 0 0 0 9z"/><path d="M8.5 18 7.5 20.5M12.5 18l-1 2.5M16.5 18l-1 2.5"/>',
+  dist: '<circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6.5a3 3 0 0 0 0-6h-5a3 3 0 0 1 0-6H16"/>',
+  stairs: '<path d="M3.5 20.5H8v-4.5h4.5v-4.5H17V7h3.5"/>',
+};
+const ni = (k, cls = '') => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${NI[k]}</svg>`;
+const MARKHTML = g => `<span class="mark"><svg viewBox="0 0 24 24">${g}</svg></span>`;
+// WidgetHead（字標＋〔旅程中的綠點〕＋大寫標籤＋右邊等寬的那一格）
+const hd = (label, trailing, live = false) => `<div class="wh">${MARKHTML(P.brand)}${live ? '<i class="live"></i>' : ''}<b>${fmt(label)}</b>${trailing ? `<span class="tail mono">${fmt(trailing)}</span>` : ''}</div>`;
+// CanvasCardHeader（天氣、步數）：12 粗、字距 .06em，右邊註記 12 一般
+const ch = (glyph, label, note) => `<div class="n-ch">${MARKHTML(glyph)}<b>${fmt(label)}</b>${note ? `<span>${fmt(note)}</span>` : ''}</div>`;
+const sp = '<div class="n-sp"></div>';
+const gl = (text, first = true) => `<div class="n-grp${first ? '' : ' nf'}">${fmt(text)}</div>`;
+const sm = (leading, trailing) => `<div class="n-sum"><span>${fmt(leading)}</span>${trailing ? `<span class="mono">${fmt(trailing)}</span>` : ''}</div>`;
+const ft = text => `<div class="n-foot">${fmt(text)}</div>`;
+const hairl = sz => `<div class="n-hair ${sz}"></div>`;
+const big = (value, unit, sz) => `<div class="n-big${sz === 'l' ? ' l' : ''}"><b>${value}</b><span>${fmt(unit)}</span></div>`;
+const dtr = (name, detail, first) => `<div class="n-dt${first ? ' first' : ''}"><span class="nm">${fmt(name)}</span>${detail ? `<span class="dl">${fmt(detail)}</span>` : ''}</div>`;
+const two = (w, left, right) => `<div class="n-two"><div class="lc" style="width:${w}px">${left}</div><i></i><div class="rc">${right}</div></div>`;
+const nmName = (txt, sz, cls = '') => `<div class="n-name ${sz}${cls}">${fmt(txt)}</div>`;
+const money = (n, cur) => cur === 'JPY' ? `${C.yen}${grouped(Math.round(n))}` : `${cur === 'USD' ? C.usd : C.twd}${grouped(n.toFixed(2).split('.')[0])}.${n.toFixed(2).split('.')[1]}`;
+const MOD = {};
+const ICO_OF = { walking: 'walking', driving: 'driving', cycling: 'cycling', transit: 'transit', other: 'ellipsis' };
+const MODE_NAME = { walking: W.legModeWalking, driving: W.legModeDriving, cycling: W.legModeCycling, transit: W.legModeTransit, other: W.legModeOther };
+// 這一則行程自己的交通（Event.leg）：有選班次寫「出發時刻 班次 · 時間」，沒有寫「交通方式 時間」（WidgetText.run／leg）
+const legOf = e => {
+  const L = e.leg; if (!L || !(L.durationMinutes > 0)) return null;
+  const run = L.runs?.[L.selectedRunIndex ?? -1];
+  const label = run?.name && run.departure ? `${run.departure} ${run.name} · ${duration(L.durationMinutes)}` : `${MODE_NAME[L.mode] || ''} ${duration(L.durationMinutes)}`.trim();
+  return { label, icon: ICO_OF[L.mode] || 'clock', minutes: L.durationMinutes };
+};
+const evRow = (e, o = {}) => {
+  const live = cur && e === cur, done = e.e2 * 60 <= nowSec && !live;
+  const tr = o.status === false ? '' : live ? W.stateLive : done ? W.stateDone : categoryName(e.category);
+  return `<div class="n-ev${o.sz === 'l' ? ' l' : ''}${o.first ? ' first' : ''}"><span class="tm">${clock(e.s)}</span><span class="nm${live ? ' live' : ''}${done ? ' done' : ''}">${fmt(e.title)}</span>${tr ? `<span class="st${live ? ' live' : ''}">${fmt(tr)}</span>` : ''}</div>`;
+};
+const trRow = (e, sz) => { const g = legOf(e); return g ? `<div class="n-tr${sz === 'l' ? ' l' : ''}"><span class="ic">${ni(g.icon)}</span><span>${fmt(g.label)}</span></div>` : ''; };
+
+// ── 行程（AgendaCard）：進行中那一種；沒有進行中的就是「下一站」那一種 ──
+MOD.agenda = sz => {
+  const stamp = sz === 's' ? W.dayNumber(todayNo) : sz === 'l' ? `${todayText} · ${W.dayNumber(todayNo)}` : `${mdOf(today)} · ${W.dayNumber(todayNo)}`;
+  const live = !!cur, focus = cur || timed.find(e => e.s * 60 > nowSec);
+  if (!focus) return hd(W.doneToday, stamp);
+  const after = timed.filter(e => e.s > focus.s);
+  const left = Math.max(1, Math.round(((live ? focus.e2 : focus.s) * 60 - nowSec) / 60));
+  const prefix = live || sz === 's' ? W.remainPrefix : W.startsAtRemainPrefix(clock(focus.s));
+  const answer = `<div class="n-ans${sz === 's' ? ' sm' : ''}">${live ? '<i></i>' : ''}<b>${fmt(focus.title)}</b></div>` +
+    `<div class="n-rem">${fmt(prefix)}<b>${fmt(duration(left))}</b>${live && sz !== 's' ? fmt(W.endsAtSuffix(clock(focus.e2))) : ''}</div>`;
+  const top = hd(live ? W.stateLive : W.nextStop, stamp);
+  if (sz === 's') {
+    const n1 = after[0];
+    const line = live
+      ? (n1 ? `<div class="n-nl s"><div class="h"><b>${fmt(W.nextStop)}</b><span class="tm">${clock(n1.s)}</span></div><div class="v">${fmt(n1.title)}</div></div>`
+        : `<div class="n-nl s"><div class="h"><b>${fmt(W.doneToday)}</b></div></div>`)
+      : `<div class="n-nl s"><div class="h"><b>${fmt(W.startsAt(clock(focus.s)))}</b></div><div class="v">${fmt(after.length ? W.stopsAfter(after.length) : W.lastStopToday)}</div></div>`;
+    return top + answer + sp + line;
+  }
+  if (sz === 'm') {
+    const rows = after.slice(0, 2).map((e, i) => evRow(e, { first: i === 0 })).join('');
+    return top + answer + hairl('m') + rows + (after.length ? '' : `<div class="n-tr"><span class="ic">${ni('clock')}</span><span>${fmt(live ? W.nothingAfter : W.lastStopToday)}</span></div>`) + sp;
+  }
+  // 大：全日行程一列、接下來每一站（各自帶它的交通）、底下合計
+  const allDay = (trip.allDayEvents || []).find(e => e.fromDay <= todayNo && todayNo <= Math.max(e.fromDay, e.toDay));
+  const stops = timed.filter(e => e.e2 * 60 > nowSec).slice(0, 7);
+  const transit = after.reduce((a, e) => a + (legOf(e)?.minutes || 0), 0);
+  return top + answer + hairl('l') +
+    (allDay ? `<div class="n-ad"><span class="tm">${fmt(W.allDay)}</span><span class="nm">${fmt(allDay.title)}</span></div>` : '') +
+    stops.map((e, i) => `<div class="n-g" data-trim>${evRow(e, { first: i === 0, sz: 'l' })}${trRow(e, 'l')}</div>`).join('') + sp +
+    sm(after.length ? W.stopsRemaining(after.length + (live ? 0 : 1)) : W.doneToday, transit > 0 ? W.transitAhead(transit) : null);
 };
 
+// ── 附件（FilesCard）：今天要用的＋隨身文件 ──
+const SIZE_OF = { pdf: '842 KB', image: '1.4 MB' };
+const filesData = () => {
+  const dayRows = [], carried = [];
+  for (const e of dayEv(todayNo)) if (!e.isCancelled) {
+    (e.files || []).forEach(f => dayRows.push({ name: f.title, kind: 'image', size: SIZE_OF.image }));
+    (e.links || []).forEach(l => dayRows.push({ name: l.title, kind: 'link' }));
+  }
+  const covering = (trip.allDayEvents || []).filter(e => e.fromDay <= todayNo && todayNo <= Math.max(e.fromDay, e.toDay)).sort((a, b) => (b.key === 'jr-pass') - (a.key === 'jr-pass'));
+  for (const e of covering) {
+    if (e.key === 'jr-pass') carried.push({ name: C.pdf, kind: 'pdf', size: SIZE_OF.pdf }, { name: C.jpg, kind: 'image', size: SIZE_OF.image });
+    (e.files || []).forEach(f => carried.push({ name: f.title, kind: 'image', size: SIZE_OF.image }));
+    (e.links || []).forEach(l => carried.push({ name: l.title, kind: 'link' }));
+  }
+  const total = allEv().reduce((a, e) => a + (e.files || []).length + (e.links || []).length, 0) + (trip.allDayEvents || []).some(e => e.key === 'jr-pass') * 2;
+  return { dayRows, carried, rows: [...dayRows, ...carried], total };
+};
+const FK = { pdf: 'document', image: 'photo', link: 'paperclip' };
+const fileRow = (r, o) => `<div class="n-fr${o.sz === 's' ? ' s' : ''}${o.sz === 'l' ? ' l' : ''}${o.first ? ' first' : ''}">${ni(FK[r.kind])}<span class="nm" data-mid>${fmt(r.name)}</span>${r.size && o.sz !== 's' ? `<span class="sz">${r.size}</span>` : ''}</div>`;
+MOD.files = sz => {
+  const f = filesData(), md = mdOf(today);
+  const head_ = hd(W.filesToday, sz === 's' ? md : `${md} · ${W.dayNumber(todayNo)}`);
+  if (!f.rows.length) return head_ + sp;
+  if (sz === 'l') {
+    return head_ + gl(W.groupForToday) + f.dayRows.slice(0, 4).map((r, i) => fileRow(r, { sz, first: i === 0 })).join('') +
+      (f.carried.length ? gl(W.groupCarried, false) + f.carried.slice(0, 3).map((r, i) => fileRow(r, { sz, first: i === 0 })).join('') : '') +
+      sp + sm(W.tripFileTotal(f.total));
+  }
+  const shown = f.rows.slice(0, 3), hidden = f.rows.length - shown.length;
+  return head_ + shown.map((r, i) => fileRow(r, { sz, first: i === 0 })).join('') + sp + (hidden > 0 ? ft(W.moreFiles(hidden)) : '');
+};
+
+// ── 待辦（TodosCard） ──
+const metaOf = e => e.todoMeta || [];
+const mTodos = () => {
+  const out = [];
+  for (const e of dayEv(todayNo).filter(e => !e.isCancelled)) (e.todos || []).forEach((text, i) => out.push({ text, at: e.start ? toMin(e.start) + shift(e.startTimeZoneID || e.timeZoneID) : null, colour: metaOf(e)[i]?.colour }));
+  for (const e of trip.allDayEvents || []) if (e.fromDay <= todayNo && todayNo <= Math.max(e.fromDay, e.toDay)) (e.todos || []).forEach((text, i) => out.push({ text, at: null, colour: metaOf(e)[i]?.colour }));
+  out.forEach((x, k) => { x.k = k; x.done = false; });
+  const firstNoEvent = out.find(x => x.at == null); if (firstNoEvent) firstNoEvent.done = true;   // 示範：有一條已經勾掉（大卡才看得到「已完成」那一組）
+  return out.sort((a, b) => (a.done - b.done) || ((a.at ?? 1e9) - (b.at ?? 1e9)) || (a.k - b.k));
+};
+const SWATCH_TODO = c => c ? `<i class="dot sw-${c}"></i>` : '';
+const todoRow = (x, o) => {
+  const late = !x.done && x.at != null && x.at * 60 < nowSec;
+  return `<div class="n-td${o.sz === 's' ? ' s' : ''}${o.sz === 'l' ? ' l' : ''}${o.first ? ' first' : ''}${x.done ? ' done' : ''}">${ni(x.done ? 'todoChecked' : 'todoBox', x.done ? 'ok' : '')}<span class="tx">${fmt(x.text)}</span>` +
+    `${o.sz !== 's' ? `<span class="at${late ? ' late' : ''}">${x.at != null ? clock(x.at) : fmt(W.todoNoEvent)}</span>` : ''}${SWATCH_TODO(x.colour)}</div>`;
+};
+MOD.todo = sz => {
+  const all = mTodos(), open = all.filter(x => !x.done), done = all.filter(x => x.done);
+  const head_ = hd(W.todosToday, `${done.length} / ${all.length}`);
+  if (!all.length) return head_ + sp;
+  if (sz === 'l') {
+    return head_ + gl(W.groupOpen(open.length)) + open.slice(0, 5).map((x, i) => todoRow(x, { sz, first: i === 0 })).join('') +
+      (done.length ? gl(W.groupDone, false) + done.slice(0, 3).map((x, i) => todoRow(x, { sz, first: i === 0 })).join('') : '') +
+      sp + sm(W.todosOpenToday(open.length), open.length > 5 ? W.todosHidden(open.length - 5) : null);
+  }
+  const first = open[0];
+  const foot = open.length ? (sz === 's' ? W.todosRemaining : W.todosRemainingOpen)(open.length) + (first?.at != null ? W.todosNearest(clock(first.at)) : '') : W.todosAllDoneToday;
+  return head_ + all.slice(0, 3).map((x, i) => todoRow(x, { sz, first: i === 0 })).join('') + sp + ft(foot);
+};
+
+// ── 購物（ShoppingCard）：整趟（沒有「這一站／下一站」要買的時候） ──
+const STOP_OF = { 's-oyster-senbei': ['d2-oyster', 2], 's-kibidango': ['d5-korakuen', 5], 's-hanpu': ['d5-bikan', 5] };
+const mShop = () => {
+  const out = (trip.shopping || []).map((s, k) => {
+    const [key, day] = STOP_OF[s.key] || [];
+    const ev = key ? dayEv(day).find(e => e.key === key) : null;
+    const at = ev ? toMin(ev.start) : null;
+    return { title: s.title, price: s.priceJPY, handled: s.key === 's-momiji', at, name: ev?.title, abs: ev ? day * 2000 + at : null, k };
+  });
+  return out.sort((a, b) => (a.handled - b.handled) || ((a.abs ?? 1e9) - (b.abs ?? 1e9)) || (a.k - b.k));
+};
+const shopRow = (x, o) => `<div class="n-td${o.sz === 's' ? ' s' : ''}${o.sz === 'l' ? ' l' : ''}${o.first ? ' first' : ''}${x.handled ? ' done' : ''}">${ni(x.handled ? 'todoChecked' : 'todoBox', x.handled ? 'ok' : '')}<span class="tx">${fmt(x.title)}</span>` +
+  `${o.sz !== 's' && x.price != null ? `<span class="at">${fmt(money(x.price, 'JPY'))}</span>` : ''}</div>`;
+MOD.shopping = sz => {
+  const all = mShop(), open = all.filter(x => !x.handled), handled = all.filter(x => x.handled);
+  const head_ = hd(W.shoppingTrip, `${handled.length} / ${all.length}`);
+  if (!all.length) return head_ + sp;
+  if (sz === 'l') {
+    const shownOpen = open.slice(0, 5), label = x => x.at != null && x.name ? `${clock(x.at)} · ${x.name}` : W.shoppingNoEvent;
+    const rows = shownOpen.map((x, i) => { const starts = i === 0 || label(shownOpen[i - 1]) !== label(x); return (starts ? gl(label(x), i === 0) : '') + shopRow(x, { sz, first: starts }); }).join('');
+    return head_ + rows + (handled.length ? gl(W.groupHandled, false) + handled.slice(0, 2).map((x, i) => shopRow(x, { sz, first: i === 0 })).join('') : '') +
+      sp + sm(W.shoppingOpenTrip(open.length), open.length > 5 ? W.shoppingHidden(open.length - 5) : null);
+  }
+  const first = open[0];
+  const foot = !open.length ? W.shoppingAllDoneTrip : sz === 's' ? W.shoppingOpen(open.length) : W.shoppingOpenLong(open.length);
+  const tailTxt = sz !== 's' && open.length && first?.at != null && first.name ? ` · ${clock(first.at)} ${first.name}` : '';
+  return head_ + all.slice(0, 3).map((x, i) => shopRow(x, { sz, first: i === 0 })).join('') + sp + `<div class="n-foot">${fmt(foot)}${tailTxt ? `<span>${fmt(tailTxt)}</span>` : ''}</div>`;
+};
+
+// ── 匯率換算（ExchangeCard）：有換算紀錄的那一種 ──
+const FX = (() => {
+  const to = CLG === 'en' ? 'USD' : 'TWD', rate = to === 'USD' ? 0.00669 : 0.2102;
+  const row = n => ({ from: 'JPY', to, amount: n, result: n * rate });
+  return { to, rate, rows: [1580, 3600, 980, 12000, 560, 2400].map(row) };
+})();
+const rateDate = new Intl.DateTimeFormat(HANS_MODE ? 'zh-Hans' : lang, { dateStyle: 'medium' }).format(start);
+const fxHero = (r, stacked) => stacked
+  ? `<div class="n-fxh v"><b class="a">${fmt(money(r.amount, 'JPY'))}</b><div><i>≈</i><b class="r">${fmt(money(r.result, r.to))}</b></div></div>`
+  : `<div class="n-fxh"><b class="a">${fmt(money(r.amount, 'JPY'))}</b><i>≈</i><b class="r">${fmt(money(r.result, r.to))}</b></div>`;
+MOD.fx = sz => {
+  const top = FX.rows[0];
+  const foot = `${money(100, 'JPY')} ≈ ${money(100 * FX.rate, FX.to)} · ${W.exchangeTap}`;
+  if (sz === 's') return hd(W.headExchange) + fxHero(top, true) + sp + ft(foot);
+  const prev = FX.rows.slice(1, sz === 'm' ? 3 : 6);
+  return hd(W.headExchange, `JPY → ${FX.to}`) + fxHero(top, false) + gl(W.exchangePrevious, false) +
+    prev.map(r => dtr(`${money(r.amount, 'JPY')} → ${money(r.result, r.to)}`, null, false)).join('') + sp + ft(foot) + (sz === 'l' ? ft(W.exchangeAsOf(rateDate)) : '');
+};
+
+// ── 旅程（TripsCard）：旅程中那一種 ──
+MOD.trips = sz => {
+  const R = 28, circ = 2 * Math.PI * R;
+  const ring = `<svg class="n-ring" viewBox="0 0 62 62"><circle cx="31" cy="31" r="${R}"/><circle class="on" cx="31" cy="31" r="${R}" stroke-dasharray="${(circ * todayNo / trip.dayCount).toFixed(2)} ${circ.toFixed(2)}" transform="rotate(-90 31 31)"/><text x="31" y="31">${todayNo}</text></svg>`;
+  const endDay = dateOf(trip.dayCount);
+  const body = `${sp}<div class="n-rw">${ring}<div><b>${fmt(W.dayNumber(todayNo))}</b><span>${fmt(W.dayCountTotal(trip.dayCount))}</span></div></div>${sp}${ft(W.returnsOn(mdOf(endDay), trip.dayCount - todayNo))}`;
+  if (sz === 's') return hd(W.tripOngoing, null, true) + body;
+  const up = [[W.sampleTripKyoto, new Date(2026, 10, 21)], [W.sampleTripOkinawa, new Date(2026, 11, 12)]];
+  return hd(trip.title, range, true) + two(132, `<div class="n-col">${body}</div>`,
+    `${gl(W.groupUpNext)}${up.map(([n, dt], i) => dtr(n, mdOf(dt), i === 0)).join('')}${sp}${ft(W.tripsCompleted(3))}`);
+};
+
+// ── 檢視筆記／筆記列表（NoteCard／NoteListCard） ──
+const mention = s => s.replace(/\{@([\w-]+)\}/g, (_, k) => allEv().find(e => e.key === k)?.title || '');
+const textParas = n => n.paragraphs.filter(p => typeof p === 'string').map(mention);
+MOD.noteView = sz => {
+  const n = trip.notes.find(x => x.key === 'n-transport') || trip.notes[0], paras = textParas(n);
+  const cap = { s: 2, m: 3, l: 8 }[sz];
+  return hd(W.headNote) + `<div class="n-nt ${sz}">${fmt(n.title)}</div>` + hairl(sz) +
+    `<div class="n-np ${sz}">${paras.slice(0, cap).map(p => `<p data-trim>${fmt(p)}</p>`).join('')}</div>` + sp +
+    (sz !== 's' ? ft(C.tags.map(x => `#${x}`).join(' ')) : '');
+};
+MOD.noteList = sz => {
+  const listed = trip.notes.filter(n => n.key !== trip.overviewNoteKey), cap = { s: 3, m: 2, l: 6 }[sz];
+  const rows = listed.slice(0, cap).map((n, i) => `<div class="n-nr">${dtr(n.title, null, i === 0)}${sz !== 's' && textParas(n)[0] ? `<div class="sub">${fmt(textParas(n)[0])}</div>` : ''}</div>`).join('');
+  return hd(trip.title, W.noteCount(listed.length)) + rows + sp + (listed.length > cap ? sm(W.moreNotes(listed.length - cap)) : '');
+};
+
+// ── 靈感（InspirationCard） ──
+const INS_ICON = { image: 'photo', place: 'mapPin', text: 'notes', link: 'link' };
+const insRows = () => (trip.inspirations || []).slice(0, 3).map((x, i) => {
+  const kind = x.url ? 'link' : x.place ? 'place' : x.image ? 'image' : 'text';
+  const title = x.title || (x.text || '').split('\n')[0];
+  const time = i === 0 ? C.ago(2) : i === 1 ? W.inspirationYesterday('21:30') : C.ago(5);
+  const src = x.url ? new URL(x.url).hostname.replace(/^www\./, '') : null;
+  return { title, meta: src ? W.inspirationMeta(src, time) : time, icon: INS_ICON[kind], unread: true };
+});
+const insRow = (r, sz, first) => `<div class="n-ir ${sz}${first ? ' first' : ''}"><span class="tile">${ni(r.icon)}</span><div class="tt"><div class="ti">${r.unread ? '<i></i>' : ''}<span class="${r.unread ? 'b' : ''}">${fmt(r.title)}</span></div><div class="me">${fmt(r.meta)}</div></div></div>`;
+MOD.inspiration = sz => {
+  const rows = insRows(), unread = 4;
+  const answer = big(unread, W.inspirationNewUnit, 's');
+  if (sz === 's') return hd(W.headInspiration) + answer + hairl('s') + insRow(rows[0], 's', true) + sp;
+  const add = `<div class="n-add">${ni('plus')}<span>${fmt(W.inspirationAdd)}</span></div>`;
+  return hd(W.headInspiration, trip.title) + two(108, `${answer}${sp}${add}`, rows.map((r, i) => insRow(r, 'm', i === 0)).join('') + sp);
+};
+
+// ── 天氣（HomeWeatherCardView／HomeWeatherDayViews）：旅程模式，旅程中 ──
+// Apple 天氣標示是 Apple 給的圖（combinedMarkLight／DarkURL），這裡畫中性佔位（比例 5.5:1，高 11），不放 Apple 的 logo
+const WXICON = { sun: 'wSun', sunCloud: 'wSunCloud', cloud: 'wCloud', rain: 'wRain' };
+const WXD = [{ i: 'sunCloud', hi: 23, lo: 14 }, { i: 'sun', hi: 24, lo: 14 }, { i: 'cloud', hi: 22, lo: 15 }, { i: 'rain', hi: 19, lo: 16 }, { i: 'sunCloud', hi: 22, lo: 14 }, { i: 'sun', hi: 23, lo: 13 }];
+const wxDays = () => Array.from({ length: trip.dayCount }, (_, k) => {
+  const n = k + 1, dt = dateOf(n), w = WXD[k % WXD.length], isToday = n === todayNo;
+  return { n, isToday, label: isToday ? W.today : `${mdOf(dt)} ${wdOf(dt)}`, place: trip.dayPlaces?.[k]?.name || '', icon: WXICON[w.i], temp: `${w.lo}°–${w.hi}°` };
+});
+const ATTR = `<div class="n-attr"><svg viewBox="0 0 60.5 11" aria-hidden="true"><rect x="0" y="0.5" width="10" height="10" rx="3" fill="currentColor" opacity=".55"/><rect x="13" y="2" width="47.5" height="7" rx="3.5" fill="currentColor" opacity=".35"/></svg><span>${fmt(W.weatherSource)}</span></div>`;
+MOD.weather = sz => {
+  const days = wxDays(), head_ = ch(NI.wSunCloud, W.weatherTitle);
+  const ti = days.findIndex(x => x.isToday);
+  if (sz === 's') {
+    const x = days[ti >= 0 ? ti : 0];
+    return head_ + `<div class="n-wone"><div class="dt">${fmt(x.label)}</div>${x.place ? `<div class="pl">${fmt(x.place)}</div>` : ''}<div class="big">${ni(x.icon, 'wi')}<span class="tp">${fmt(x.temp)}</span></div></div>` + ATTR;
+  }
+  if (sz === 'm') {
+    const total = days.length, cols = 5, startAt = Math.min(Math.max((ti < 0 ? 0 : ti) - Math.floor((cols - 1) / 2), 0), Math.max(total - cols, 0));
+    const shown = days.slice(startAt, startAt + cols);
+    return head_ + `<div class="n-wm">${shown.map(x => `<div class="c${x.isToday ? ' today' : ''}"><div class="dt">${fmt(x.label)}</div><div class="pl">${fmt(x.place)}</div><div class="gl">${ni(x.icon, 'wi')}</div><div class="tp">${fmt(x.temp)}</div></div>`).join('')}</div>` + ATTR;
+  }
+  const list = (ti >= 0 ? days.filter(x => x.n >= todayNo) : days).slice(0, 7);
+  return head_ + `<div class="n-wl">${list.map((x, i) => `<div class="r${x.isToday ? ' today' : ''}${i === 0 || list[i - 1].isToday || x.isToday ? ' nosep' : ''}"><span class="dt">${fmt(x.label)}</span><span class="pl">${fmt(x.place)}</span><span class="gl">${ni(x.icon, 'wi')}</span><span class="tp">${fmt(x.temp)}</span></div>`).join('')}</div>` + ATTR;
+};
+
+// ── 步數（HomeStepsCardView／HomeStepsBars）：旅程中。每天的步數是示範值；今天只走到現在這個時間 ──
+const STEPS_FULL = [11260, 15840, 19230, 12780, 21460, 9040], FLIGHTS_FULL = [8, 14, 21, 11, 18, 9];
+const dayFrac = Math.min(1, Math.max(.12, (nowSec / 60 - 420) / 900));
+const stDays = () => Array.from({ length: Math.min(todayNo, trip.dayCount) }, (_, k) => {
+  const n = k + 1, f = n === todayNo ? dayFrac : 1, v = STEPS_FULL[k % 6], fl = FLIGHTS_FULL[k % 6];
+  return { n, isToday: n === todayNo, steps: Math.round(v * f / 10) * 10, flights: Math.round(fl * f), label: n === todayNo ? W.today : mdOf(dateOf(n)) };
+});
+const stAmount = steps => { const [pre, suf] = W.stepsCount('\u0001').split('\u0001'); return { num: pre + grouped(steps), unit: suf.trim() }; };
+const stKm = steps => { const km = (Math.round(steps * 0.0007 * 10) / 10).toFixed(1); return CLG === 'ko' ? `${km}${C.km}` : `${km} ${C.km}`; };
+const metricRow = (icon, text) => `<div class="n-mr">${ni(icon)}<span>${fmt(text)}</span></div>`;
+MOD.steps = sz => {
+  const days = stDays(), td = days[days.length - 1], tripSteps = days.reduce((a, x) => a + x.steps, 0);
+  const note = sz === 's' ? W.today : W.progressDuring(td.n, trip.dayCount);
+  const head_ = ch('<circle class="fill" cx="13" cy="4" r="2"/><path d="M11.5 8.5 9 13l3 2 1 6M13.5 8.5l2 3.5 3 1M12 15l-3 6"/>', W.stepsTitle, note);
+  const rows = `<div class="n-mrs">${metricRow('dist', stKm(td.steps))}${metricRow('stairs', W.stepsFlightsCount(td.flights))}</div>`;
+  if (sz === 's') { const a = stAmount(td.steps); return head_ + `<div class="n-samt"><b>${fmt(a.num)}</b><span>${fmt(a.unit)}</span></div>` + sp + rows; }
+  const col = (cap, steps, big_) => { const a = stAmount(steps); return `<div class="n-tc"><span class="cap">${fmt(cap)}</span><b class="${big_ ? 'big' : 'mid'}">${fmt(a.num)}</b><span class="u">${fmt(a.unit)}</span></div>`; };
+  const totals = `<div class="n-tot">${col(W.today, td.steps, true)}<i></i>${col(W.stepsTrip, tripSteps, false)}</div>`;
+  const shown = days.slice(-7), max = Math.max(...shown.map(x => x.steps), 1);
+  if (sz === 'm') {
+    return head_ + totals + `<div class="n-bars">${shown.map(x => `<div class="b${x.isToday ? ' t' : ''}"><div class="well"><i style="height:${Math.max(3, Math.round(x.steps / max * 60))}px"></i></div><span>${fmt(x.label)}</span></div>`).join('')}</div>`;
+  }
+  return head_ + totals + rows.replace('n-mrs', 'n-mrs l') + `<div class="n-dr">${shown.slice().reverse().map(x => `<div class="r${x.isToday ? ' t' : ''}"><span class="d">${fmt(x.label)}</span><span class="tr"><i style="width:${Math.max(2, Math.round(x.steps / max * 1000) / 10)}%"></i></span><span class="c">${grouped(x.steps)}</span></div>`).join('')}</div>`;
+};
+
+// ── 即時動態 大（LiveActivityHomeCard，isLarge）：中的那一套＋進度條兩端的時刻＋「今天接下來」幾列 ──
+MOD.live = sz => {
+  if (sz !== 'l' || !cur) return BODY.live();
+  const left = cur.e2 * 60 - nowSec, frac = (nowSec - cur.s * 60) / ((cur.e2 - cur.s) * 60);
+  const up = timed.filter(e => e.s > cur.s).slice(0, 4);
+  return `<div class="la-head"><span class="la-icon"><svg viewBox="0 0 24 24">${P.brand}</svg></span>
+      <span class="la-app">TripEZGo · ${fmt(trip.title)}</span><span class="la-day">${S.day(todayNo)}</span></div>
+      <div class="la-main"><div class="la-l"><div class="la-state"><i></i>${S.live}</div>
+        <div class="la-title">${fmt(cur.title)}</div>
+        <div class="la-sub">${fmt(`${clock(cur.s)} – ${clock(cur.e2)}`)}${cur.place ? ' · ' + fmt(cur.place.name) : ''}</div></div>
+        <div class="la-count"><div class="la-n">${hms(left)}</div><div class="la-u">${S.remain}</div></div></div>
+      <div class="la-bar"><span style="width:${(frac * 100).toFixed(1)}%"></span></div>
+      <div class="la-lab"><span>${clock(cur.s)}</span><span>${clock(cur.e2)}</span></div>
+      ${up.length ? `<div class="la-up"><div class="h">${fmt(W.liveUpcomingHead)}</div>${up.map(e => `<div class="r"><span class="tm">${clock(e.s)}</span><span class="nm">${fmt(e.title)}</span></div>`).join('')}</div>` : ''}
+      ${nxt ? `<div class="la-foot"><div class="la-rule"></div><div class="la-next"><svg viewBox="0 0 24 24">${P.nextStop}</svg>
+        <span class="nm">${fmt(S.next(nxt.title))}</span><span class="tm">${clock(nxt.s)}</span></div></div>` : ''}`;
+};
+// 一般畫布上沒做過的尺寸也有得畫；舊的六支在一般畫布維持原樣（商城截圖靠它們）
+const LEGACY_IDS = new Set(['live', 'overview', 'scan', 'fx', 'agenda', 'todo']);
+const PLAIN = new Set(['live', 'overview', 'scan']);   // 沿用舊的標記（solo 時 live 中／overview／scan 本來就對）
+MOD.overview = () => BODY.overview(); MOD.scan = () => BODY.scan();
+const useModern = it => !!MOD[it.id] && (solo || !LEGACY_IDS.has(it.id));
+
+const card = (it, at) => {
+  let x = CL + SIDE + it.c * (CELL + GAP), y = TOP + it.r * (CELL + GAP), w = it.w * CELL + (it.w - 1) * GAP, h = it.h * CELL + (it.h - 1) * GAP;
+  if (at) ({ x, y, w, h } = at);
+  const modern = useModern(it);
+  const body = modern ? MOD[it.id](it.sz) : BODY[it.id] ? BODY[it.id](it) : '';
+  return `<div class="card sz-${it.sz}${it.id === 'live' ? ' dark' : ''}${it.id === 'overview' ? ' ov' : ''}${modern && !PLAIN.has(it.id) ? ' nw' : ''}" data-id="${it.id}" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px">${badge}<div class="in">${body}</div></div>`;
+};
+
+if (!solo) {
 const pager = document.createElement('div'); pager.className = 'pager'; d.append(pager);
 const shown = edit ? [...pages, []] : [...pages];
 while (shown.length <= pageNo) shown.push([]);   // veil=1&page=1：第二頁以後的內容免費帳號看不到，頁還是在
@@ -403,7 +1262,7 @@ shown.forEach((items, i) => {
   const packed = pack(items);
   const veilHere = veil && i >= 1;
   // 毛玻璃底下照樣畫那一頁的內容（基準圖：模糊的卡片隱約透出來）
-  pg.innerHTML = packed.map(card).join('');
+  pg.innerHTML = packed.map(it => card(it)).join('');
   const nCards = pg.children.length;
   if (veilHere) pg.insertAdjacentHTML('beforeend', `<div class="veil"><div class="lk">${sv('lock')}</div><h3>${fmt(S.veilTitle)}</h3><p>${fmt(S.veilBody)}</p><div class="go" data-tap>${fmt(S.veilGo)}</div></div>`);
   pager.append(pg);
@@ -513,8 +1372,34 @@ if (interactive) {
   };
 }
 
+} else {
+// ════════ 單張模式（?solo=<id>:<s|m|l>，官網示範用） ════════
+// 只畫那一張卡，大小就是 402 寬畫布上的樣子（格 81.5、格距 12：小 175×175、中 362×175、大 362×362），放在左上 16、
+// .device 剛好是卡片＋四周各 16（陰影 0 4 6 要有地方畫）；沒有封面、狀態列、分頁列、編輯角標，頁面與 .device 都是透明底。
+const SOLO_CELLS = { s: [2, 2], m: [4, 2], l: [4, 4] }[soloSz] || [2, 2], SOLO_CELL = 81.5;
+const sw = SOLO_CELLS[0] * SOLO_CELL + (SOLO_CELLS[0] - 1) * GAP, sh = SOLO_CELLS[1] * SOLO_CELL + (SOLO_CELLS[1] - 1) * GAP;
+d.style.width = `${sw + 32}px`; d.style.height = `${sh + 32}px`;
+document.body.style.width = d.style.width; document.body.style.height = d.style.height;
+d.insertAdjacentHTML('beforeend', card({ id: soloId, sz: soloSz in SIZE ? soloSz : 's' }, { x: 16, y: 16, w: sw, h: sh }));
+}
+// 版面讓步，照 App（widget.html 同一份）：WidgetHead 放不下就只留標籤、檔名中間省略、底行放不下先縮字（SecondaryLine 的 minimumScaleFactor .6）
+function fitNew(root) {
+  root.querySelectorAll('.card.nw .wh').forEach(wh => { const tl = wh.querySelector(':scope > span.tail'), b = wh.querySelector('b'); if (tl && b && b.scrollWidth > b.clientWidth) tl.style.display = 'none'; });
+  root.querySelectorAll('.card.nw .n-fr .nm[data-mid]').forEach(el => {
+    const full = Array.from(el.textContent); if (el.scrollWidth <= el.clientWidth) return;
+    let lo = 1, hi = full.length; const cut = k => { const a = Math.ceil(k / 2); return full.slice(0, a).join('') + '…' + full.slice(full.length - (k - a)).join(''); };
+    while (lo < hi) { const k = Math.ceil((lo + hi) / 2); el.textContent = cut(k); if (el.scrollWidth <= el.clientWidth) lo = k; else hi = k - 1; }
+    el.textContent = cut(lo);
+  });
+  // 放不下就從最後面拿掉可省的列（SwiftUI 是把字壓成更少行；這裡拿掉整段，不留半行）
+  root.querySelectorAll('.card.nw .in').forEach(inn => { let g = inn.querySelectorAll('[data-trim]'), k = g.length; while (k > 1 && inn.scrollHeight > inn.clientHeight + 0.5) g[--k].remove(); });
+  root.querySelectorAll('.card.nw .n-foot').forEach(el => { el.style.fontSize = ''; for (let s = 12; s > 7.2 && el.scrollWidth > el.clientWidth; s -= .2) el.style.fontSize = s + 'px'; });
+}
+if (d.querySelector('.card.nw')) { await document.fonts.ready; fitNew(d); }
+if (!solo) {
 chrome(d, { tab: 0 });
 d.querySelector('.sb')?.classList.add('on-dark');   // 封面是深色：狀態列字白
+}
 ready();
 </script>
 </body>

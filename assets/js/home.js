@@ -375,6 +375,62 @@ function fitPlay() {
   f.style.setProperty('--w', w + 'px');
   f.querySelector('iframe').style.transform = `scale(${w / 402})`;
 }
+// 主頁小工具（#home-widgets）：點網格的一支開 demo 紙。名稱、說明、尺寸字都在 HTML 裡（四語由 tools/home-i18n*.py 翻），
+// 卡片是 /screens/home.html?solo=<id>:<s|m|l> 的 iframe（步數用第 5 天：第 2 天只有兩天的長條，卡片幾乎是空的）：畫面是卡片＋四周 16 的透明邊（402 寬畫布的卡片尺寸），縮放進舞台。
+const HW_SIZE = { s: [175, 175], m: [362, 175], l: [362, 362] };
+const hwRoot = document.getElementById('home-widgets');
+if (hwRoot) {
+  const btns = [...hwRoot.querySelectorAll('.hw-btn')];
+  const str = (k) => hwRoot.querySelector(`.hw-strings [data-k="${k}"]`)?.textContent || k;
+  const ico = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${d}"/></svg>`;
+  let dlg, cur = 0, size = 'm', opener = null;
+  const dark = () => matchMedia('(prefers-color-scheme: dark)').matches;
+  const fitCard = () => {
+    const box = dlg?.querySelector('.hw-card'); if (!box) return;
+    const [w, h] = HW_SIZE[size], W = w + 32, H = h + 32;
+    const k = Math.min(1, dlg.querySelector('.hw-stage').clientWidth / W);
+    box.style.width = W * k + 'px'; box.style.height = H * k + 'px';
+    const fr = box.querySelector('iframe'); fr.style.transform = `scale(${k})`;
+  };
+  const render = () => {
+    const b = btns[cur], sizes = b.dataset.sizes;
+    if (!sizes.includes(size)) size = sizes.includes('m') ? 'm' : sizes[0];
+    const [w, h] = HW_SIZE[size], name = b.querySelector('.hw-name').textContent, tag = b.querySelector('.hw-tag');
+    const prev = btns[(cur + btns.length - 1) % btns.length], next = btns[(cur + 1) % btns.length];
+    dlg.innerHTML = `<div class="hw-top"><span class="hw-ic">${b.querySelector('.hw-ic').innerHTML}</span>
+        <h3 id="hw-title">${name}${tag ? tag.outerHTML : ''}</h3>
+        <button type="button" class="hw-x" aria-label="${str('close')}">${ico('M6 6l12 12M18 6 6 18')}</button></div>
+      <p class="hw-desc">${b.parentElement.querySelector('.hw-desc').innerHTML}</p>
+      ${sizes.length > 1 ? `<div class="hw-seg" role="group" aria-label="${str('size')}">${[...sizes].map((z) => `<button type="button" data-z="${z}" aria-pressed="${z === size}">${str(z)}</button>`).join('')}</div>` : ''}
+      <div class="hw-stage"><div class="hw-card"><iframe title="${name}" width="${w + 32}" height="${h + 32}" tabindex="-1"
+        src="/screens/home.html?lang=${SCREEN_LANG}&solo=${b.dataset.w}:${size}${b.dataset.w === 'steps' ? '&today=5' : ''}${dark() ? '&theme=dark' : ''}"></iframe></div></div>
+      <div class="hw-nav"><button type="button" data-step="-1">${ico('m15 6-6 6 6 6')}${prev.querySelector('.hw-name').textContent}</button>
+        <button type="button" data-step="1">${next.querySelector('.hw-name').textContent}${ico('m9 6 6 6-6 6')}</button></div>`;
+    dlg.setAttribute('aria-labelledby', 'hw-title');
+    fitCard();
+  };
+  const ensure = () => {
+    if (dlg) return;
+    dlg = document.createElement('dialog'); dlg.className = 'hw-dlg';
+    document.body.append(dlg);
+    dlg.addEventListener('click', (e) => {
+      if (e.target === dlg) { const r = dlg.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dlg.close(); return; }
+      if (e.target.closest('.hw-x')) { dlg.close(); return; }
+      const st = e.target.closest('[data-step]');
+      if (st) { cur = (cur + +st.dataset.step + btns.length) % btns.length; render(); dlg.querySelector(`[data-step="${st.dataset.step}"]`).focus(); return; }
+      const z = e.target.closest('[data-z]');
+      if (z) { size = z.dataset.z; render(); dlg.querySelector(`[data-z="${size}"]`).focus(); }
+    });
+    dlg.addEventListener('close', () => { dlg.innerHTML = ''; document.documentElement.style.overflow = ''; opener?.focus(); });
+    new ResizeObserver(fitCard).observe(dlg);
+  };
+  hwRoot.addEventListener('click', (e) => {
+    const b = e.target.closest('.hw-btn'); if (!b) return;
+    ensure(); opener = b; cur = btns.indexOf(b); size = 'm'; render();
+    document.documentElement.style.overflow = 'hidden';
+    dlg.showModal(); dlg.querySelector('.hw-x').focus();
+  });
+}
 const DIRECT = new Set(['lock']);
 // autoplay.js＋stories*.js 的內容雜湊（tools/stamp-home.mjs 蓋）：帶進 iframe 網址，改了腳本手機不會用到快取裡的舊版
 const AUTO_V = 'c6f0fd95c3';
