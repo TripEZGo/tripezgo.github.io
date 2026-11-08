@@ -33,6 +33,9 @@ export const PAGES = [
     cta: '문의 양식 열기', fallback: '이메일로 보내셔도 됩니다:' },
 ];
 const CONTACT_PATH = Object.fromEntries(PAGES.map((p) => [p.home, p.home + 'contact/']));
+/** 簡體中文只有首頁（tests/unit/languages.test.mjs 的 HOME_ONLY）：從首頁抽來的頁首語言選單與頁尾，要拿掉指到 /zh-cn/ 的那一條，
+ *  否則在這一頁選「简体中文」會掉回簡中首頁，而不是同一頁的簡中版（2026-11-08）。 */
+export const dropHomeOnlyLanguages = (html) => html.replace(/\n[ \t]*<a (?:class="lang" )?href="\/zh-cn\/" hreflang="zh-Hans" lang="zh-Hans">简体中文<\/a>/g, '');
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 function slice(html, start, end) {
   const a = html.indexOf(start), b = html.indexOf(end, a);
@@ -45,10 +48,10 @@ export const formLink = (page) => `${FORM}?usp=pp_url&hl=${page.hl}&${LANG_ENTRY
 
 export function render(page) {
   const home = readFileSync(join(root, page.home.slice(1), 'index.html'), 'utf8');
-  const header = slice(home, '<header class="site-header">', '</header>')
+  const header = dropHomeOnlyLanguages(slice(home, '<header class="site-header">', '</header>'))
     .replace(/href="#/g, `href="${page.home}#`)
     .replace(/class="lang" href="(\/(?:en\/|ja\/|ko\/)?)"/g, (_, href) => `class="lang" href="${CONTACT_PATH[href]}"`);
-  const footer = slice(home, '<footer class="site-footer">', '</footer>');
+  const footer = dropHomeOnlyLanguages(slice(home, '<footer class="site-footer">', '</footer>'));
   const skipLink = slice(home, '<a class="skip-link"', '</a>');
   const url = `https://tripezgo.com${page.home}contact/`, img = `https://tripezgo.com/assets/img/og-${page.key}.png`;
   const alts = PAGES.map((p) => `<link rel="alternate" hreflang="${p.htmlLang}" href="https://tripezgo.com${p.home}contact/">`).join('\n')

@@ -25,6 +25,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { siteCssHref } from './stamp-css.mjs';
 import { EMBED_HEAD } from './embed.mjs';
+import { dropHomeOnlyLanguages } from './gen-contact.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = path.join(root, 'assets/data/announcements.json');
@@ -135,11 +136,11 @@ function entry(a, page) {
 export function renderPage(page, items) {
   const home = fs.readFileSync(path.join(root, HOME[page.key].slice(1), 'index.html'), 'utf8');
   const self = pagePath(page.key);
-  const header = slice(home, '<header class="site-header">', '</header>')
+  const header = dropHomeOnlyLanguages(slice(home, '<header class="site-header">', '</header>'))
     .replace(/href="#announcements"/g, `href="${self}" aria-current="page"`)
     .replace(/href="#/g, `href="${HOME[page.key]}#`)
     .replace(/class="lang" href="(\/(?:en\/|ja\/|ko\/)?)"/g, (_, href) => `class="lang" href="${href}announcements/"`);
-  const footer = slice(home, '<footer class="site-footer">', '</footer>');
+  const footer = dropHomeOnlyLanguages(slice(home, '<footer class="site-footer">', '</footer>'));
   const skipLink = slice(home, '<a class="skip-link"', '</a>');
   const url = `https://tripezgo.com${self}`, img = `https://tripezgo.com/assets/img/og-${page.key}.png`;
   const alts = PAGES.map((p) => `<link rel="alternate" hreflang="${p.htmlLang}" href="https://tripezgo.com${pagePath(p.key)}">`).join('\n')

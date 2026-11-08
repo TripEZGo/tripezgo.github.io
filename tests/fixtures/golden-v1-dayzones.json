@@ -66,9 +66,9 @@
         "v" : 1
       },
       "plainText" : {
-        "en" : "台北轉東京\n11/20 – 11/22 · 3 days\n\nDay 1 · 11/20\n18:00 – 20:00　士林夜市\n\nDay 2 · 11/21\n(nothing planned)\n\nDay 3 · 11/22\n10:00 – 13:00　台北 → 東京\n14:00 – 16:00　淺草寺\n\nPlanned with TripEZGo: https://tripezgo.com",
-        "ja" : "台北轉東京\n11/20 – 11/22 · 3 日\n\n1 日目 · 11/20\n18:00 – 20:00　士林夜市\n\n2 日目 · 11/21\n（予定なし）\n\n3 日目 · 11/22\n10:00 – 13:00　台北 → 東京\n14:00 – 16:00　淺草寺\n\nTripEZGo で組んだ旅程：https://tripezgo.com",
-        "zh" : "台北轉東京\n11/20 – 11/22 · 3 天\n\n第 1 天 · 11/20\n18:00 – 20:00　士林夜市\n\n第 2 天 · 11/21\n（尚無安排）\n\n第 3 天 · 11/22\n10:00 – 13:00　台北 → 東京\n14:00 – 16:00　淺草寺\n\n用 TripEZGo 安排的旅程：https://tripezgo.com"
+        "en" : "台北轉東京\n11/20 – 11/22 · 3 days\n\nDay 1 · 11/20\n18:00 – 20:00　士林夜市\n\nDay 2 · 11/21\n(nothing planned)\n\nDay 3 · 11/22\n10:00 – 13:00　台北 → 東京\n14:00 – 16:00　淺草寺\n\nPlanned with TripEZGo: https://en.tripezgo.com",
+        "ja" : "台北轉東京\n11/20 – 11/22 · 3 日\n\n1 日目 · 11/20\n18:00 – 20:00　士林夜市\n\n2 日目 · 11/21\n（予定なし）\n\n3 日目 · 11/22\n10:00 – 13:00　台北 → 東京\n14:00 – 16:00　淺草寺\n\nTripEZGo で組んだ旅程：https://ja.tripezgo.com",
+        "zh" : "台北轉東京\n11/20 – 11/22 · 3 天\n\n第 1 天 · 11/20\n18:00 – 20:00　士林夜市\n\n第 2 天 · 11/21\n（尚無安排）\n\n第 3 天 · 11/22\n10:00 – 13:00　台北 → 東京\n14:00 – 16:00　淺草寺\n\n用 TripEZGo 安排的旅程：https://zh-tw.tripezgo.com"
       },
       "record" : {
         "formatVersion" : 1,
