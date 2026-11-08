@@ -11,7 +11,7 @@
  */
 import { CONFIG } from './config.js';
 import { createClient } from './cloudkit.js';
-import { base64UrlEncode, blockRange, clock, dayOffsetMark, daysOf, ITINERARY, laneLayout, linkURL, mapDayOf, openSealed, OpenFailure, parseFragment, phoneNote, phonePlan, phoneReading, phoneReadingOn, phoneShifts, plainText, sealedFromRecord, zoneDifference, zoneName, zoneOffset, zoneOfDay } from './core.js';
+import { appleMapsUrl, base64UrlEncode, blockRange, clock, dayOffsetMark, daysOf, ITINERARY, laneLayout, linkURL, mapDayOf, openSealed, OpenFailure, parseFragment, phoneNote, phonePlan, phoneReading, phoneReadingOn, phoneShifts, plainText, sealedFromRecord, zoneDifference, zoneName, zoneOffset, zoneOfDay } from './core.js';
 import { SWATCH_DARK, SWATCH_LIGHT } from './icons.js';
 import { iconOf, iconPath, swatchOf } from './looks.js';
 import { LANGS, S } from './strings.js';
@@ -560,15 +560,20 @@ function whenText(id) {
 function openPlace(id) {
   const it = D.copy.items[id];
   if (!it) return;
-  /* 只留 Google 地圖一顆，而且只在有設地點（名稱或座標）時才出現（使用者要求 2026-09-26）。 */
+  /* Google 地圖只在有設地點（名稱或座標）時才出現（使用者要求 2026-09-26）；
+   * 行程帶 Place ID 時多一顆 Apple 地圖（使用者裁定 2026-11-08），沒有 ID 就只有 Google 那顆。 */
   const google = it.geo || it.place ? placeLinks(it) : null;
+  const apple = appleMapsUrl(it);
   closePlace();
   const w = document.createElement('div');
   w.id = 'place';
   w.innerHTML = '<div class="scrim" data-close></div><div class="pcard" role="dialog" aria-modal="true" aria-labelledby="pc-t" data-testid="place-card" style="' + tyVar(it) + '">'
     + '<p class="k">' + tyIcon(it) + '<span>' + whenText(id) + '</span></p>'
     + '<h3 id="pc-t">' + esc(it.title) + '</h3>' + (it.place ? '<p class="loc">' + esc(it.place) + '</p>' : '')
-    + (google ? '<div class="go"><a class="btn2" target="_blank" rel="noopener" data-testid="open-google" href="' + esc(google) + '">' + svg(IC.pin) + esc(s().openGoogle) + '</a></div>' : '')
+    + (google || apple ? '<div class="go">'
+      + (apple ? '<a class="btn2" target="_blank" rel="noopener" data-testid="open-apple" href="' + esc(apple) + '">' + svg(IC.pin) + esc(s().openApple) + '</a>' : '')
+      + (google ? '<a class="btn2" target="_blank" rel="noopener" data-testid="open-google" href="' + esc(google) + '">' + svg(IC.pin) + esc(s().openGoogle) + '</a>' : '')
+      + '</div>' : '')
     + '<button class="linkbtn x" type="button" data-close>' + esc(s().close) + '</button></div>';
   document.body.appendChild(w);
   (w.querySelector('.btn2') || w.querySelector('.x')).focus();

@@ -2,6 +2,9 @@
 import { test, expect } from '@playwright/test';
 import { dated, undated, fakeCloudKit, pathOf, recordOf, useConfig } from './fake-cloudkit.mjs';
 import { fakeMapKit } from './fake-mapkit.mjs';
+import { readFileSync } from 'node:fs';
+
+const placeIdCase = JSON.parse(readFileSync(new URL('../fixtures/golden-v1-placeid.json', import.meta.url), 'utf8')).cases[0];
 
 async function open(page, c, config = {}) {
   await useConfig(page, config);
@@ -325,4 +328,19 @@ test('日期未定的純文字也逐字相同', async ({ page, context }) => {
   await page.getByTestId('copy-text').click();
   await expect(page.locator('#toast')).toBeVisible();
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(undated.plainText.zh);
+});
+
+test('地點卡：行程有 Place ID 就多一顆 Apple 地圖（在 Google 前面），沒有 ID 的那一則只有 Google（使用者裁定 2026-11-08）', async ({ page }) => {
+  await open(page, placeIdCase);
+  await page.locator('.tl-ev', { hasText: '清水寺' }).click();
+  const card = page.getByTestId('place-card');
+  await expect(card.getByTestId('open-apple')).toHaveText('Apple 地圖');
+  await expect(card.getByTestId('open-apple')).toHaveAttribute('href',
+    'https://maps.apple.com/place?place-id=I521E602783BA9605&coordinate=34.9949,135.785');
+  await expect(card.getByTestId('open-apple')).toHaveAttribute('target', '_blank');
+  await expect(card.getByTestId('open-google')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await page.locator('.tl-ev', { hasText: '錦市場' }).click();
+  await expect(page.getByTestId('open-apple')).toHaveCount(0);
+  await expect(page.getByTestId('open-google')).toBeVisible();
 });
