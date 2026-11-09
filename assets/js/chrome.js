@@ -9,23 +9,28 @@ const FOOTER = {
     links: [['/privacy.html', '隱私權政策'], ['/terms.html', '使用者條款'], ['/#about', '關於'], ['/contact/', '聯絡我們'],
       ['/en/', 'English', 'en'], ['/ja/', '日本語', 'ja'], ['/ko/', '한국어', 'ko']],
     author: 'https://zhgchg.li/',   // 頁尾「Produced by ZhgChg.Li」徽章連到的作者網站（同語言）
+    heads: ['網站', '條款', '語言', '追蹤我們'],
   },
   en: {
     home: '/en/', label: 'TripEZGo home', tag: 'Plan the trip, carry what it needs — all in one app.', width: '34ch', nav: 'Footer',
     links: [['/en/privacy.html', 'Privacy Policy'], ['/en/terms.html', 'Terms of Use'], ['/en/#about', 'About'], ['/en/contact/', 'Contact'],
       ['/', '繁體中文', 'zh-Hant'], ['/ja/', '日本語', 'ja'], ['/ko/', '한국어', 'ko']],
     author: 'https://en.zhgchg.li/',   // 頁尾「Produced by ZhgChg.Li」徽章連到的作者網站（同語言）
+    heads: ['Site', 'Legal', 'Language', 'Follow'],
   },
   ja: {
     home: '/ja/', label: 'TripEZGo ホーム', tag: '旅の計画も、旅先で要るものも、これひとつで。', width: '32ch', nav: 'フッター',
     links: [['/ja/privacy.html', 'プライバシーポリシー'], ['/ja/terms.html', '利用規約'], ['/ja/#about', 'このアプリについて'], ['/ja/contact/', 'お問い合わせ'],
       ['/', '繁體中文', 'zh-Hant'], ['/en/', 'English', 'en'], ['/ko/', '한국어', 'ko']],
     author: 'https://jp.zhgchg.li/',   // 頁尾「Produced by ZhgChg.Li」徽章連到的作者網站（同語言）
+    heads: ['サイト', '規約', '言語', 'フォロー'],
   },
 };
 
-// 社群連結（使用者 2026-10-25）；圖示是 Simple Icons（CC0），樣式在 chrome.css 的 .footer-social
-const SOCIAL = '<p class="footer-social"><a href="https://www.instagram.com/tripezgo/" target="_blank" rel="noopener"><span class="m m-ig" aria-hidden="true"></span>Instagram</a><a href="https://www.threads.com/@tripezgo" target="_blank" rel="noopener"><span class="m m-th" aria-hidden="true"></span>Threads</a></p>';
+// 社群連結（使用者 2026-10-25；2026-11-09 搬到頁尾右側自成一欄、加 LinkedIn）。
+// Instagram／Threads 圖示是 Simple Icons（CC0），LinkedIn 是官方品牌素材；樣式在 chrome.css 的 .footer-social
+const SOCIAL = [['Instagram', 'https://www.instagram.com/tripezgo/', 'm-ig'], ['Threads', 'https://www.threads.com/@tripezgo', 'm-th'],
+  ['LinkedIn', 'https://www.linkedin.com/company/tripezgo/home/', 'm-li']];
 
 // 頁尾左欄的「Produced by ZhgChg.Li」徽章（取代原本頁尾右下的 Powered by 那行）；明暗各一張，跟系統深淺色切換
 const produced = (url) => '<p class="footer-produced"><a href="' + url + '" target="_blank" rel="noopener"><picture>'
@@ -44,11 +49,22 @@ export function brandHtml(lang) {
 /** `<footer class="site-footer">` 裡面那一整塊。 */
 export function footerHtml(lang) {
   const f = FOOTER[lang] || FOOTER.zh;
-  const links = f.links.map(([href, text, hl]) => '<a href="' + href + '"'
+  const a = ([href, text, hl]) => '<li><a href="' + href + '"'
     + (hl ? ' hreflang="' + hl + '" lang="' + hl + '"' : '')
-    + (href.startsWith('http') ? ' target="_blank" rel="noopener"' : '') + '>' + esc(text) + '</a>').join('');   // 聯絡表單等站外連結開新視窗
-  return '<div class="wrap"><div class="footer-top"><div>' + brandHtml(lang)
-    + '<p style="margin:12px 0 0;max-width:' + f.width + '">' + esc(f.tag) + '</p>' + SOCIAL + produced(f.author) + '</div>'
-    + '<nav class="footer-links" aria-label="' + esc(f.nav) + '">' + links + '</nav></div>'
+    + (href.startsWith('http') ? ' target="_blank" rel="noopener"' : '') + '>' + esc(text) + '</a></li>';   // 聯絡表單等站外連結開新視窗
+  // 頁尾 A 款（Open Design 稿 site-footer-redesign，使用者 2026-11-09）：網站／條款／語言三組，社群自成第四組
+  const langs = f.links.filter((l) => l[2]);
+  const legal = f.links.filter((l) => !l[2] && /(privacy|terms)\.html$/.test(l[0]));
+  const site = f.links.filter((l) => !langs.includes(l) && !legal.includes(l));
+  const group = (cls, head, items) => '<div class="footer-group footer-group--' + cls + '"><h2 class="footer-heading">' + esc(head)
+    + '</h2><ul>' + items.map(a).join('') + '</ul></div>';
+  const social = '<div class="footer-social"><h2 class="footer-heading">' + esc(f.heads[3]) + '</h2><ul>'
+    + SOCIAL.map(([t, u, c]) => '<li><a href="' + u + '" target="_blank" rel="noopener"><span class="m ' + c + '" aria-hidden="true"></span>' + t + '</a></li>').join('')
+    + '</ul></div>';
+  return '<div class="wrap"><div class="footer-top"><div class="footer-brand">' + brandHtml(lang)
+    + '<p style="margin:12px 0 0;max-width:' + f.width + '">' + esc(f.tag) + '</p>' + produced(f.author) + '</div>'
+    + '<div class="footer-nav"><nav class="footer-links" aria-label="' + esc(f.nav) + '">'
+    + group('site', f.heads[0], site) + group('legal', f.heads[1], legal) + group('lang', f.heads[2], langs) + '</nav>'
+    + social + '</div></div>'
     + '<div class="footer-bottom"><span>© 2026 TripEZGo</span></div></div>';
 }

@@ -49,6 +49,11 @@ T = {
   '隱私權政策': ('Privacy Policy', 'プライバシーポリシー', '개인정보 처리방침'),
   '使用者條款': ('Terms of Use', '利用規約', '이용약관'),
   '聯絡我們': ('Contact', 'お問い合わせ', '문의하기'),
+  # 頁尾 A 款的分組小標（2026-11-09）
+  '網站': ('Site', 'サイト', '사이트'),
+  '條款': ('Legal', '規約', '약관'),
+  '語言': ('Language', '言語', '언어'),
+  '追蹤我們': ('Follow', 'フォロー', '팔로우'),
   '旅行規劃、旅途所需一次搞定。': ('Plan the trip, carry what it needs — all in one app.', '旅の計画も、旅先で要るものも、これひとつで。', '여행 계획부터 여행길에 필요한 것까지, 앱 하나로.'),
   '<p class="footer-produced"><a href="https://zhgchg.li/" target="_blank" rel="noopener"><picture><source srcset="/assets/img/produced-by-zhgchgli-dark.svg" media="(prefers-color-scheme: dark)"><img src="/assets/img/produced-by-zhgchgli-light.svg" width="141" height="54" alt="Produced by ZhgChg.Li"></picture></a></p>': ('<p class="footer-produced"><a href="https://en.zhgchg.li/" target="_blank" rel="noopener"><picture><source srcset="/assets/img/produced-by-zhgchgli-dark.svg" media="(prefers-color-scheme: dark)"><img src="/assets/img/produced-by-zhgchgli-light.svg" width="141" height="54" alt="Produced by ZhgChg.Li"></picture></a></p>', '<p class="footer-produced"><a href="https://jp.zhgchg.li/" target="_blank" rel="noopener"><picture><source srcset="/assets/img/produced-by-zhgchgli-dark.svg" media="(prefers-color-scheme: dark)"><img src="/assets/img/produced-by-zhgchgli-light.svg" width="141" height="54" alt="Produced by ZhgChg.Li"></picture></a></p>', '<p class="footer-produced"><a href="https://en.zhgchg.li/" target="_blank" rel="noopener"><picture><source srcset="/assets/img/produced-by-zhgchgli-dark.svg" media="(prefers-color-scheme: dark)"><img src="/assets/img/produced-by-zhgchgli-light.svg" width="141" height="54" alt="Produced by ZhgChg.Li"></picture></a></p>'),
   # hero

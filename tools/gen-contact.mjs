@@ -35,7 +35,8 @@ export const PAGES = [
 const CONTACT_PATH = Object.fromEntries(PAGES.map((p) => [p.home, p.home + 'contact/']));
 /** 簡體中文只有首頁（tests/unit/languages.test.mjs 的 HOME_ONLY）：從首頁抽來的頁首語言選單與頁尾，要拿掉指到 /zh-cn/ 的那一條，
  *  否則在這一頁選「简体中文」會掉回簡中首頁，而不是同一頁的簡中版（2026-11-08）。 */
-export const dropHomeOnlyLanguages = (html) => html.replace(/\n[ \t]*<a (?:class="lang" )?href="\/zh-cn\/" hreflang="zh-Hans" lang="zh-Hans">简体中文<\/a>/g, '');
+// 頁尾 A 款把語言連結包在 <li> 裡（2026-11-09）：整個 <li> 一起拿掉，不留空項目
+export const dropHomeOnlyLanguages = (html) => html.replace(/\n[ \t]*(?:<li>)?<a (?:class="lang" )?href="\/zh-cn\/" hreflang="zh-Hans" lang="zh-Hans">简体中文<\/a>(?:<\/li>)?/g, '');
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 function slice(html, start, end) {
   const a = html.indexOf(start), b = html.indexOf(end, a);

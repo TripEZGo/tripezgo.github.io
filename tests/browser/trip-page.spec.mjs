@@ -145,7 +145,8 @@ test('頁首頁尾跟首頁同一份：標誌回首頁、頁尾的連結與字�
   await expect(page.locator('header.site-header .brand .m-mark')).toBeVisible();
   const foot = page.locator('footer.site-footer');
   await expect(foot).toContainText('旅行規劃、旅途所需一次搞定。');
-  await expect(foot.locator('.footer-links a').first()).toHaveAttribute('href', '/privacy.html');
+  /* 頁尾 A 款（2026-11-09）把連結分成網站／條款／語言三組，網站組在最前面；隱私權政策是「條款」組的第一個 */
+  await expect(foot.locator('.footer-group--legal a').first()).toHaveAttribute('href', '/privacy.html');
   await expect(foot).toContainText('© 2026 TripEZGo');
   /* 跟首頁同一份樣式：頁首 64px 高 */
   expect((await page.locator('header.site-header .wrap').boundingBox()).height).toBeGreaterThanOrEqual(64);
@@ -153,9 +154,9 @@ test('頁首頁尾跟首頁同一份：標誌回首頁、頁尾的連結與字�
   await page.locator('[data-lang="en"]').click();
   await expect(page.locator('header.site-header .brand')).toHaveAttribute('href', '/en/');
   await expect(foot).toContainText('Plan the trip, carry what it needs — all in one app.');
-  await expect(foot.locator('.footer-links a').first()).toHaveAttribute('href', '/en/privacy.html');
+  await expect(foot.locator('.footer-group--legal a').first()).toHaveAttribute('href', '/en/privacy.html');
   await page.locator('[data-lang="ja"]').click();
-  await expect(foot.locator('.footer-links a').first()).toHaveText('プライバシーポリシー');
+  await expect(foot.locator('.footer-group--legal a').first()).toHaveText('プライバシーポリシー');
 
   /* 共用樣式不可以蓋到這一頁自己的 class：時間表方塊的副標也叫 .m（2026-09-26 撞過一次，
    * 標誌的遮罩把副標畫成一條色塊） */

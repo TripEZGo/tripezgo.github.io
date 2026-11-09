@@ -9,7 +9,7 @@ App 自己的名詞照 App 的 zh-Hans 字串表與 App Store 簡中介紹（fas
 
 TH = {
   '跳到主要內容': '跳到主要内容', '隱私': '隐私', '選單': '菜单', '功能': '功能', '方案': '方案', 'TripEZGo 首頁': 'TripEZGo 首页',
-  '主要導覽': '主导航', '頁尾導覽': '页脚导航', '隱私權政策': '隐私政策', '使用者條款': '使用条款', '聯絡我們': '联系我们',
+  '主要導覽': '主导航', '頁尾導覽': '页脚导航', '隱私權政策': '隐私政策', '使用者條款': '使用条款', '聯絡我們': '联系我们', '網站': '网站', '條款': '条款', '語言': '语言', '追蹤我們': '关注我们',
   '旅行規劃、旅途所需一次搞定。': '旅行规划、旅途所需一次搞定。',
   '<p class="footer-produced"><a href="https://zhgchg.li/" target="_blank" rel="noopener"><picture><source srcset="/assets/img/produced-by-zhgchgli-dark.svg" media="(prefers-color-scheme: dark)"><img src="/assets/img/produced-by-zhgchgli-light.svg" width="141" height="54" alt="Produced by ZhgChg.Li"></picture></a></p>': '<p class="footer-produced"><a href="https://zhgchg.li/" target="_blank" rel="noopener"><picture><source srcset="/assets/img/produced-by-zhgchgli-dark.svg" media="(prefers-color-scheme: dark)"><img src="/assets/img/produced-by-zhgchgli-light.svg" width="141" height="54" alt="Produced by ZhgChg.Li"></picture></a></p>',
   'iPhone 與 iPad 旅行規劃': 'iPhone 和 iPad 旅行规划', '旅行規劃、旅途所需': '旅行规划、旅途所需', '一次搞定': '一次搞定',

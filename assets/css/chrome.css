@@ -77,7 +77,7 @@
 /* ─── 標誌：形狀由 mask 提供，顏色由 currentColor 給 ─────────────────── */
 /* 只選兩個標誌本人：公開頁的時間表也有一個叫 .m 的副標，單寫 .m 會把它畫成一條色塊
    （2026-09-26）。全站的 .m 都跟 m-mark／m-word 一起出現，所以首頁不受影響。 */
-.m.m-mark, .m.m-word, .m.m-ig, .m.m-th {
+.m.m-mark, .m.m-word, .m.m-ig, .m.m-th, .m.m-li {
   -webkit-mask: var(--src) center / contain no-repeat;
   mask: var(--src) center / contain no-repeat;
   background: currentColor;
@@ -88,6 +88,9 @@
 .m-word { --src: url(../img/tripezgo-wordmark.svg); }
 .m-ig { --src: url(../img/social-instagram.svg); }
 .m-th { --src: url(../img/social-threads.svg); }
+/* LinkedIn：官方品牌素材 in-logo.zip 的 InBug-Black.png 原圖縮小，沒改形狀（Simple Icons 已下架 LinkedIn）；
+   mask 只取 alpha，所以黑色原圖一樣跟著 currentColor 變色 */
+.m-li { --src: url(../img/social-linkedin.png); }
 
 /* ─── 頁首 ─────────────────────────────────────────────────────────── */
 .site-header {
@@ -174,23 +177,61 @@
   font-size: var(--text-sm);
   color: var(--muted);
 }
+/* 版面照 Open Design 稿 site-footer-redesign 的 A 款「分欄式」（使用者 2026-11-09）：
+   左欄品牌＋標語＋徽章；右側四欄，每欄一個小標——網站、條款、語言、追蹤我們。
+   社群（Instagram、Threads、LinkedIn）從品牌欄搬到右側自成一欄，用一條細直線跟導覽分開。 */
+.site-footer ul { list-style: none; margin: 0; padding: 0; }
 .footer-top {
-  display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between;
-  padding-bottom: 32px; border-bottom: 1px solid var(--border-soft);
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px;
+  padding-bottom: 40px; border-bottom: 1px solid var(--border-soft);
 }
-.footer-links { display: flex; flex-wrap: wrap; gap: 10px 26px; }
-.footer-links a { color: var(--muted); text-decoration: none; }
-.footer-links a:hover { color: var(--fg); text-decoration: underline; }
+.footer-nav { display: flex; align-items: flex-start; }
+.footer-links { display: flex; align-items: flex-start; gap: clamp(32px, 5vw, 56px); }
+.footer-group ul, .footer-social ul { display: grid; gap: 10px; }
+.footer-group a { white-space: nowrap; }
+.footer-heading {
+  margin: 0 0 12px;
+  font-size: var(--text-xs); font-weight: 600; line-height: 1.5; letter-spacing: .06em;
+  color: var(--fg);
+}
+.footer-links a, .footer-social a { color: var(--muted); text-decoration: none; text-underline-offset: 3px; }
+.footer-links a:hover, .footer-social a:hover { color: var(--fg); text-decoration: underline; }
+.footer-social {
+  margin-inline-start: clamp(32px, 5vw, 56px);
+  padding-inline-start: clamp(32px, 5vw, 56px);
+  border-inline-start: 1px solid var(--border-soft);
+  align-self: stretch;
+}
+.footer-social a { display: inline-flex; align-items: center; gap: 8px; }
+.footer-social .m { width: 18px; height: 18px; }
 .footer-bottom {
   display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between;
   padding-top: 24px;
 }
 .site-footer .brand .m-word { color: var(--fg); }
-/* 社群連結：品牌欄標語底下（使用者 2026-10-25） */
-.footer-social { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 16px 0 0; }
-.footer-social a { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); text-decoration: none; }
-.footer-social a:hover { color: var(--fg); }
-.footer-social .m { width: 18px; height: 18px; }
+/* 平板：右側四欄放不下品牌欄旁邊，品牌欄改到上面，四欄照舊一排 */
+@media (max-width: 960px) {
+  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+}
+/* 手機：網站、條款疊在左，語言在右，組成兩欄；追蹤我們改成橫排、上方加細線放最後。點擊高度至少 44px */
+@media (max-width: 640px) {
+  .footer-nav { flex-direction: column; gap: 24px; }
+  .footer-links {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    grid-template-areas: "site lang" "legal lang";
+  }
+  .footer-group--site { grid-area: site; }
+  .footer-group--legal { grid-area: legal; }
+  .footer-group--lang { grid-area: lang; }
+  .footer-group ul { gap: 0; }
+  .footer-heading { margin-bottom: 4px; }
+  .footer-links a, .footer-social a { display: inline-flex; align-items: center; min-height: 44px; }
+  .footer-social {
+    margin-inline-start: 0; padding-inline-start: 0; border-inline-start: 0;
+    padding-top: 24px; border-top: 1px solid var(--border-soft);
+  }
+  .footer-social ul { display: flex; flex-wrap: wrap; column-gap: 24px; row-gap: 0; }
+}
 /* 「Produced by ZhgChg.Li」徽章：品牌欄最底下，取代頁尾右下的 Powered by（使用者 2026-11-09）。
    明暗兩張 SVG 由 <picture> 跟系統深淺色切換，這裡只管間距與尺寸。 */
 .footer-produced { margin: 20px 0 0; line-height: 0; }
