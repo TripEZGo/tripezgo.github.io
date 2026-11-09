@@ -11,7 +11,7 @@ TH = {
   '跳到主要內容': '跳到主要内容', '隱私': '隐私', '選單': '菜单', '功能': '功能', '方案': '方案', 'TripEZGo 首頁': 'TripEZGo 首页',
   '主要導覽': '主导航', '頁尾導覽': '页脚导航', '隱私權政策': '隐私政策', '使用者條款': '使用条款', '聯絡我們': '联系我们',
   '旅行規劃、旅途所需一次搞定。': '旅行规划、旅途所需一次搞定。',
-  '<span>Powered by <a href="https://zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a></span>': '<span>Powered by <a href="https://zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a></span>',
+  '<p class="footer-produced"><a href="https://zhgchg.li/" target="_blank" rel="noopener"><picture><source srcset="/assets/img/produced-by-zhgchgli-dark.svg" media="(prefers-color-scheme: dark)"><img src="/assets/img/produced-by-zhgchgli-light.svg" width="141" height="54" alt="Produced by ZhgChg.Li"></picture></a></p>': '<p class="footer-produced"><a href="https://zhgchg.li/" target="_blank" rel="noopener"><picture><source srcset="/assets/img/produced-by-zhgchgli-dark.svg" media="(prefers-color-scheme: dark)"><img src="/assets/img/produced-by-zhgchgli-light.svg" width="141" height="54" alt="Produced by ZhgChg.Li"></picture></a></p>',
   'iPhone 與 iPad 旅行規劃': 'iPhone 和 iPad 旅行规划', '旅行規劃、旅途所需': '旅行规划、旅途所需', '一次搞定': '一次搞定',
   '行事曆排行程、旅伴一起編，出發後也跟著你走。': '日历排行程，和旅伴一起编，出发后也一直跟着你。',
   '在 App Store 下載': '在 App Store 下载', '功能介紹': '功能介绍', '免註冊': '免注册', '離線可用': '离线可用', '免費下載': '免费下载',

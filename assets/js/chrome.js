@@ -8,24 +8,29 @@ const FOOTER = {
     home: '/', label: 'TripEZGo 首頁', tag: '旅行規劃、旅途所需一次搞定。', width: '32ch', nav: '頁尾導覽',
     links: [['/privacy.html', '隱私權政策'], ['/terms.html', '使用者條款'], ['/#about', '關於'], ['/contact/', '聯絡我們'],
       ['/en/', 'English', 'en'], ['/ja/', '日本語', 'ja'], ['/ko/', '한국어', 'ko']],
-    made: 'Powered by <a href="https://zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a>',   // 寫死的 HTML（作者連結），不是使用者資料
+    author: 'https://zhgchg.li/',   // 頁尾「Produced by ZhgChg.Li」徽章連到的作者網站（同語言）
   },
   en: {
     home: '/en/', label: 'TripEZGo home', tag: 'Plan the trip, carry what it needs — all in one app.', width: '34ch', nav: 'Footer',
     links: [['/en/privacy.html', 'Privacy Policy'], ['/en/terms.html', 'Terms of Use'], ['/en/#about', 'About'], ['/en/contact/', 'Contact'],
       ['/', '繁體中文', 'zh-Hant'], ['/ja/', '日本語', 'ja'], ['/ko/', '한국어', 'ko']],
-    made: 'Powered by <a href="https://en.zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a>',   // 寫死的 HTML（作者連結），不是使用者資料
+    author: 'https://en.zhgchg.li/',   // 頁尾「Produced by ZhgChg.Li」徽章連到的作者網站（同語言）
   },
   ja: {
     home: '/ja/', label: 'TripEZGo ホーム', tag: '旅の計画も、旅先で要るものも、これひとつで。', width: '32ch', nav: 'フッター',
     links: [['/ja/privacy.html', 'プライバシーポリシー'], ['/ja/terms.html', '利用規約'], ['/ja/#about', 'このアプリについて'], ['/ja/contact/', 'お問い合わせ'],
       ['/', '繁體中文', 'zh-Hant'], ['/en/', 'English', 'en'], ['/ko/', '한국어', 'ko']],
-    made: 'Powered by <a href="https://jp.zhgchg.li/" target="_blank" rel="noopener">zhgchgli</a>',   // 寫死的 HTML（作者連結），不是使用者資料
+    author: 'https://jp.zhgchg.li/',   // 頁尾「Produced by ZhgChg.Li」徽章連到的作者網站（同語言）
   },
 };
 
 // 社群連結（使用者 2026-10-25）；圖示是 Simple Icons（CC0），樣式在 chrome.css 的 .footer-social
 const SOCIAL = '<p class="footer-social"><a href="https://www.instagram.com/tripezgo/" target="_blank" rel="noopener"><span class="m m-ig" aria-hidden="true"></span>Instagram</a><a href="https://www.threads.com/@tripezgo" target="_blank" rel="noopener"><span class="m m-th" aria-hidden="true"></span>Threads</a></p>';
+
+// 頁尾左欄的「Produced by ZhgChg.Li」徽章（取代原本頁尾右下的 Powered by 那行）；明暗各一張，跟系統深淺色切換
+const produced = (url) => '<p class="footer-produced"><a href="' + url + '" target="_blank" rel="noopener"><picture>'
+  + '<source srcset="/assets/img/produced-by-zhgchgli-dark.svg" media="(prefers-color-scheme: dark)">'
+  + '<img src="/assets/img/produced-by-zhgchgli-light.svg" width="141" height="54" alt="Produced by ZhgChg.Li"></picture></a></p>';
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const marks = '<span class="m m-mark" role="img" aria-hidden="true"></span><span class="m m-word" role="img" aria-hidden="true"></span>';
@@ -43,7 +48,7 @@ export function footerHtml(lang) {
     + (hl ? ' hreflang="' + hl + '" lang="' + hl + '"' : '')
     + (href.startsWith('http') ? ' target="_blank" rel="noopener"' : '') + '>' + esc(text) + '</a>').join('');   // 聯絡表單等站外連結開新視窗
   return '<div class="wrap"><div class="footer-top"><div>' + brandHtml(lang)
-    + '<p style="margin:12px 0 0;max-width:' + f.width + '">' + esc(f.tag) + '</p>' + SOCIAL + '</div>'
+    + '<p style="margin:12px 0 0;max-width:' + f.width + '">' + esc(f.tag) + '</p>' + SOCIAL + produced(f.author) + '</div>'
     + '<nav class="footer-links" aria-label="' + esc(f.nav) + '">' + links + '</nav></div>'
-    + '<div class="footer-bottom"><span>© 2026 TripEZGo</span><span>' + f.made + '</span></div></div>';
+    + '<div class="footer-bottom"><span>© 2026 TripEZGo</span></div></div>';
 }
