@@ -57,7 +57,7 @@ export const S = {
     badT: '這條連結不完整',
     badWhy: '解不開這趟行程。請對方重新複製一次連結——網址最後那一段（# 之後）也要一起帶上。',
     learn: '看看 TripEZGo 是什麼',
-    modes: { walking: '步行', driving: '開車', cycling: '騎車', transit: '大眾運輸', other: '其他' },
+    modes: { walking: '步行', driving: '開車', cycling: '騎單車', motorcycle: '騎機車', transit: '大眾運輸', other: '其他' },
   },
   en: {
     tzNote: 'Times are in %s, %s from your device’s time', tzDiff: '%s%s h %s min', tzDiffH: '%s%s h', tzDiffM: '%s%s min',
@@ -93,7 +93,7 @@ export const S = {
     badT: 'This link is incomplete',
     badWhy: 'The trip can’t be unlocked. Ask them to copy the link again — the last part of the address (after the #) has to come with it.',
     learn: 'See what TripEZGo is',
-    modes: { walking: 'Walking', driving: 'Driving', cycling: 'Cycling', transit: 'Transit', other: 'Other' },
+    modes: { walking: 'Walking', driving: 'Driving', cycling: 'Bike', motorcycle: 'Motorbike', transit: 'Transit', other: 'Other' },
   },
   ja: {
     tzNote: '現在は%sで表示しています。端末の時刻との差は %s', tzDiff: '%s%s時間%s分', tzDiffH: '%s%s時間', tzDiffM: '%s%s分',
@@ -129,7 +129,7 @@ export const S = {
     badT: 'このリンクは不完全です',
     badWhy: '旅程を開けませんでした。リンクをもう一度コピーしてもらってください。URL の最後の部分（# のあと）も必要です。',
     learn: 'TripEZGo について',
-    modes: { walking: '徒歩', driving: '車', cycling: '自転車', transit: '公共交通', other: 'その他' },
+    modes: { walking: '徒歩', driving: '車', cycling: '自転車', motorcycle: 'バイク', transit: '公共交通', other: 'その他' },
   },
 };
 

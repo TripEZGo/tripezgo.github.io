@@ -28,12 +28,13 @@ const tyVar = (item) => '--ev: var(--sw-' + swatchOf(item) + ')';
 const tyIcon = (item) => '<svg class="ty" viewBox="0 0 15 15" fill-rule="evenodd" aria-hidden="true" data-icon="' + iconOf(item) + '"><path d="' + iconPath(iconOf(item)) + '"/></svg>';
 
 /* ═══ 圖示（設計稿的線條圖示組） ═════════════════════════════════
- * 交通方式：設計稿有 car／walk／train；騎車與「其他」取 App 的 DesignIcon（.cycling／.ellipsis）。 */
+ * 交通方式：設計稿有 car／walk／train；騎單車、騎機車與「其他」取 App 的 DesignIcon（.cycling／.motorcycle／.ellipsis）。 */
 const IC = {
   driving: '<path d="M4 16v-3.2l1.8-4.3A2 2 0 0 1 7.7 7h8.6a2 2 0 0 1 1.9 1.5L20 12.8V16"/><circle cx="7.5" cy="16.2" r="1.5"/><circle cx="16.5" cy="16.2" r="1.5"/>',
   walking: '<circle cx="13" cy="4.2" r="1.9"/><path d="M11.6 8.6 9.2 13l3 2 1 5.6M13.6 8.6l2 3.4 3 1M12 15l-2.8 5.6"/>',
   transit: '<rect x="5.4" y="3.6" width="13.2" height="12.4" rx="2.3"/><path d="M5.6 11.2h12.8M8.4 20l2-3.6M15.6 20l-2-3.6"/>',
   cycling: '<circle cx="6" cy="16" r="3.2"/><circle cx="18" cy="16" r="3.2"/><path d="M6 16 10 9h4l-2 7M14 9h3l1 7"/>',
+  motorcycle: '<circle cx="5.5" cy="16" r="3"/><circle cx="18.5" cy="16" r="3"/><path d="M5.5 16h4.5l3-6h3.5l2 6M13 10l-.8-2.5H10"/>',
   other: '<circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/>',
   cal: '<rect x="3.6" y="5" width="16.8" height="15.4" rx="2.4"/><path d="M3.6 9.8h16.8M8.4 3.4v3.2M15.6 3.4v3.2"/>',
   pin: '<path d="M12 21s6.6-5.6 6.6-10.2A6.6 6.6 0 0 0 5.4 10.8C5.4 15.4 12 21 12 21z"/><circle cx="12" cy="10.6" r="2.4"/>',
