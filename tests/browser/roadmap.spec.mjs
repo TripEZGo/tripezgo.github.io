@@ -9,15 +9,15 @@ test.beforeEach(async ({ page }) => {
 });
 
 for (const lang of LANGS) {
-  test(`roadmap sits between features and plans, one #roadmap, one milestone in progress: ${lang}`, async ({ page }) => {
+  test(`roadmap sits between features and plans, one #roadmap, one current milestone: ${lang}`, async ({ page }) => {
     await page.goto(lang);
     const ids = await page.locator('main > section[id]').evaluateAll((s) => s.map((e) => e.id));
     expect(ids.indexOf('roadmap')).toBe(ids.indexOf('plans') - 1);
     expect(ids.indexOf('roadmap')).toBeGreaterThan(ids.indexOf('features'));
     await expect(page.locator('#roadmap')).toHaveCount(1);
-    await expect(page.locator('.rm-item.is-now')).toHaveCount(1);   // 1.7.0 上架（11.05）後 1.8.0 開工中
+    await expect(page.locator('.rm-item.is-now')).toHaveCount(1);   // 1.8.0 即將上架（目前這一站）
     await expect(page.locator('.rm-item[aria-current="step"]')).toHaveCount(1);
-    await expect(page.locator('.rm-item.is-planned')).toHaveCount(2);   // 1.9.0，加上時程未定的那一張
+    await expect(page.locator('.rm-item.is-planned')).toHaveCount(2);   // 1.9.0（進行中）與「接下來」（規劃中）
     await expect(page.locator('.rm-item').last()).toHaveClass(/is-planned/);
     await expect(page.locator('.site-header .site-nav > a[href="#roadmap"]')).toHaveCount(1);
   });
