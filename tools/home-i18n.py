@@ -37,6 +37,7 @@ LANGS = ['en', 'ja', 'ko']   # T 每條的三欄就是這個順序
 NAMES = {'en': 'English', 'ja': '日本語', 'ko': '한국어', 'zh-cn': '简体中文'}
 
 T = {
+  '旅行 x 音樂 ↗': ('Travel x Music ↗', '旅行 x 音楽 ↗', '여행 x 음악 ↗'),
   # chrome
   '跳到主要內容': ('Skip to main content', 'メインコンテンツへ移動', '메인 콘텐츠로 건너뛰기'),
   '隱私': ('Privacy', 'プライバシー', '개인정보'),

@@ -66,5 +66,5 @@ export function footerHtml(lang) {
     + '<div class="footer-nav"><nav class="footer-links" aria-label="' + esc(f.nav) + '">'
     + group('site', f.heads[0], site) + group('legal', f.heads[1], legal) + group('lang', f.heads[2], langs) + '</nav>'
     + social + '</div></div>'
-    + '<div class="footer-bottom"><span>© 2026 TripEZGo</span></div></div>';
+    + '<div class="footer-bottom"><span>© 2026 TripEZGo</span></div><div class="footer-sound-row"><a class="footer-sound" href="https://sound.tripezgo.com/" target="_blank" rel="noopener noreferrer">' + esc(({zh:'旅行 x 音樂',en:'Travel x Music',ja:'旅行 x 音楽',ko:'여행 x 음악'})[lang] || '旅行 x 音樂') + ' ↗</a></div></div>';
 }
