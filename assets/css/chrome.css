@@ -241,6 +241,5 @@
 
 
 /* Sister project: sound.tripezgo.com. */
-.footer-sound-row { display:flex; justify-content:center; margin:24px auto 0; padding:20px var(--gutter) 0; max-width:var(--wrap); border-top:1px solid var(--border-soft); }
 .site-footer .footer-sound { color:var(--accent-ink); font-weight:600; text-decoration:none; text-underline-offset:4px; }
 .site-footer .footer-sound:hover { color:var(--accent); text-decoration:underline; }
