@@ -627,6 +627,7 @@ T = {
   '旅伴位置共享、抵達提醒、步行導航': ('Companion location sharing, arrival alerts, walking navigation', '旅の仲間との位置情報共有、到着通知、徒歩ナビ', '동행 위치 공유, 도착 알림, 도보 내비게이션'),
   '旅程名稱自動建議、封面自動用目的地地圖': ('Trip names suggested for you, cover set to the destination map', '旅行名を自動で提案、カバーは目的地の地図に', '여행 이름 자동 추천, 표지는 목적지 지도로 자동 설정'),
   '旅程時區與旅程地點': ('Trip time zone and trip place', '旅行のタイムゾーンと場所', '여행 시간대와 여행 장소'),
+  '完整的旅程分享：PDF、社群分享': ('Full trip sharing: PDF, social sharing', '旅程の共有を充実：PDF、SNSシェア', '완성된 여행 공유: PDF, 소셜 공유'),
   '完整的旅程分享': ('Full trip sharing', '旅程の共有を充実', '완성된 여행 공유'),
   '支援產生 PDF 或分享到社群': ('Make a PDF or share to social media', 'PDFの作成やSNSへのシェアに対応', 'PDF 만들기와 소셜 공유 지원'),
   '旅程編輯紀錄': ('Trip edit history', '旅行の編集履歴', '여행 편집 기록'),
