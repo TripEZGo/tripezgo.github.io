@@ -1,0 +1,135 @@
+{
+ "style": "magazine",
+ "sections": [
+  {
+   "id": "overview",
+   "format": "all",
+   "pdfPage": 1
+  },
+  {
+   "id": "map-1",
+   "format": "all",
+   "pdfPage": 2
+  },
+  {
+   "id": "map-2",
+   "format": "all",
+   "pdfPage": 3
+  },
+  {
+   "id": "day1-pdf-1",
+   "format": "pdf",
+   "pdfPage": 4
+  },
+  {
+   "id": "day1-story-1",
+   "format": "story",
+   "pdfPage": null
+  },
+  {
+   "id": "day1-square-1",
+   "format": "square",
+   "pdfPage": null
+  },
+  {
+   "id": "day2-pdf-1",
+   "format": "pdf",
+   "pdfPage": 5
+  },
+  {
+   "id": "day2-story-1",
+   "format": "story",
+   "pdfPage": null
+  },
+  {
+   "id": "day2-square-1",
+   "format": "square",
+   "pdfPage": null
+  },
+  {
+   "id": "day3-pdf-1",
+   "format": "pdf",
+   "pdfPage": 6
+  },
+  {
+   "id": "day3-story-1",
+   "format": "story",
+   "pdfPage": null
+  },
+  {
+   "id": "day3-square-1",
+   "format": "square",
+   "pdfPage": null
+  },
+  {
+   "id": "day4-pdf-1",
+   "format": "pdf",
+   "pdfPage": 7
+  },
+  {
+   "id": "day4-story-1",
+   "format": "story",
+   "pdfPage": null
+  },
+  {
+   "id": "day4-square-1",
+   "format": "square",
+   "pdfPage": null
+  },
+  {
+   "id": "day5-pdf-1",
+   "format": "pdf",
+   "pdfPage": 8
+  },
+  {
+   "id": "day5-story-1",
+   "format": "story",
+   "pdfPage": null
+  },
+  {
+   "id": "day5-square-1",
+   "format": "square",
+   "pdfPage": null
+  },
+  {
+   "id": "day6-pdf-1",
+   "format": "pdf",
+   "pdfPage": 9
+  },
+  {
+   "id": "day6-story-1",
+   "format": "story",
+   "pdfPage": null
+  },
+  {
+   "id": "day6-square-1",
+   "format": "square",
+   "pdfPage": null
+  },
+  {
+   "id": "att-1",
+   "format": "all",
+   "pdfPage": 10
+  },
+  {
+   "id": "att-2",
+   "format": "all",
+   "pdfPage": 11
+  },
+  {
+   "id": "att-3",
+   "format": "all",
+   "pdfPage": 12
+  },
+  {
+   "id": "att-3-p2",
+   "format": "all",
+   "pdfPage": 13
+  },
+  {
+   "id": "att-4",
+   "format": "all",
+   "pdfPage": 14
+  }
+ ]
+}

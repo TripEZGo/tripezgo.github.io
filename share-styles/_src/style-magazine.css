@@ -1,0 +1,423 @@
+
+/* ═══ 雜誌（Premium）：編輯排版。直角、細黑線、襯線大標、巨大的天數、滿版照片；顏色只有墨、紙白與一絲深青綠（同 TripEZGo 的 token）。 ═══ */
+:root {
+  --font-display: Didot, "Bodoni 72", "Playfair Display", "Songti TC", "Noto Serif TC", "Hiragino Mincho ProN", "Noto Serif JP", Georgia, serif;
+  --ink: #17120f; --ink-2: #6b6159; --line: #17120f; --line-2: #ddd6cc; --paper: #f6f1ea; --page-bg: #ffffff; --sheet-bg: #ffffff;
+  --card: #ffffff; --sunken: #f3eee7; --r: 0px; --r-lg: 0px; --chips-bg: #fff;
+}
+.kicker { font-weight: 700; letter-spacing: .22em; color: var(--accent-ink); }
+.kicker i { border-radius: 0; width: 18px; height: 1px; opacity: 1; }
+.trip-name { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; }
+.blk-t, .page-t { font-family: var(--font-display); }
+.blk-t { font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--ink); padding-bottom: 6px; border-bottom: 2px solid var(--ink); }
+.page-t { font-size: 40px; font-weight: 700; letter-spacing: -0.02em; padding-bottom: 8px; border-bottom: 3px solid var(--ink); display: block; }
+.map { border: 1px solid var(--ink); border-radius: 0; }
+.edge-lbl { background: var(--ink); color: #fff; border-radius: 0; letter-spacing: .04em; }
+.edge-ar { fill: var(--ink); stroke: #fff; }
+.draft-note { border-radius: 0; }
+.day-head { display: grid; grid-template-columns: auto 1fr; column-gap: 22px; align-items: end; padding-bottom: 12px; border-bottom: 3px solid var(--ink); }
+.day-no { display: flex; align-items: baseline; gap: 8px; font-family: var(--font-display); }
+.day-no i { font-size: 13px; letter-spacing: .3em; color: var(--ink-2); }
+.day-no b { font-size: 96px; line-height: .8; font-weight: 400; letter-spacing: -0.04em; }
+.day-tt { flex-direction: column; align-items: flex-start; gap: 4px; padding-bottom: 4px; }
+.day-date { font-size: 12px; letter-spacing: .2em; color: var(--accent-ink); font-weight: 700; }
+.day-place { font-family: var(--font-display); font-size: 30px; font-weight: 700; line-height: 1.15; }
+.allday { border: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); border-radius: 0; background: var(--sunken); }
+.ad-name { font-family: var(--font-display); font-size: 1.15em; }
+.event { border: 0; border-top: 1px solid var(--ink); border-radius: 0; background: none; flex-direction: row-reverse; gap: 0; align-items: flex-start; padding: 12px 0 14px; }
+.ev-cover { flex: none; width: 150px; margin-left: 18px; }
+.ev-cover img { height: 112px; border: 0; }
+.ev-main { flex: 1 1 auto; min-width: 0; padding: 0; column-gap: 12px; }
+.ev-no { display: inline-block; width: auto; height: auto; border: 0; box-shadow: none; background: none; border-radius: 0; color: var(--accent-ink); font: italic 400 24px/1 var(--font-display); }
+.ev-no::after { content: '.'; }
+.ev-name { font-family: var(--font-display); font-size: 20px; font-weight: 700; }
+.ev-top { align-items: baseline; gap: 8px; }
+.ev-time, .ev-loc { padding-left: 0; }
+.ev-time { color: var(--ink); font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+.ev-type { color: var(--ink); text-transform: uppercase; letter-spacing: .06em; }
+.ev-type .dot { border-radius: 0; }
+.ev-main > .rich, .ev-main > .ev-att { margin-left: 0; }
+.ev-main > .rich { border-top: 0; padding-top: 0; margin-top: 10px; }
+.rich p { line-height: 1.75; }
+.inline-img img { border-radius: 0; }
+.inline-img figcaption { font-family: var(--font-display); font-style: italic; }
+.leg { padding: 5px 0; } .leg::before { display: none; }
+.leg-row { margin: 0; }
+.leg-row::before { content: ''; flex: 0 0 34px; height: 1px; background: var(--ink); }
+.leg-pill { border: 0; background: none; box-shadow: none; padding: 0; font-size: 11px; letter-spacing: .1em; font-weight: 700; color: var(--ink); }
+.leg-gap { letter-spacing: .06em; }
+.leg-late { border-radius: 0; }
+.leg-desc { margin: 4px 0 0 0; padding-left: 46px; font-family: var(--font-display); font-style: italic; }
+.overlap { border: 0; border-top: 3px double var(--ink); border-bottom: 1px solid var(--ink); border-radius: 0; padding: 8px 0 10px; }
+.ov-label { letter-spacing: .2em; font-weight: 700; color: var(--ink); margin: 0 0 6px; }
+.ov-cards { gap: 0; }
+.ov-cards .event { flex-direction: column; border-top: 0; padding: 4px 16px 0 0; }
+.ov-cards .event + .event { border-left: 1px solid var(--ink); padding: 4px 0 0 16px; }
+.event.compact .ev-cover { width: 100%; margin: 0 0 8px; } .event.compact .ev-cover img { height: 84px; }
+.url-cell { border: 1px solid var(--ink); border-top: 4px solid var(--ink); border-radius: 0; }
+.url-cell.no-og { border-left: 1px solid var(--ink); border-top-color: var(--accent); }
+.uc-title { font-family: var(--font-display); font-size: 1.05em; }
+.uc-body > .qr { border-radius: 0; border: 1px solid var(--ink); }
+.file-chip { border-radius: 0; border: 1px solid var(--ink); background: none; } .fc-ic { border-radius: 0; background: var(--ink); color: #fff; }
+.day-index li { border-bottom: 1px solid var(--ink); padding: .5em 0; }
+.di-no { font-family: var(--font-display); font-size: 1.25em; font-style: italic; font-weight: 400; }
+.di-pl { font-weight: 700; } .di-sum { font-family: var(--font-display); font-style: italic; }
+.imp-list li { border-bottom: 1px solid var(--ink); } .imp-ic { border-radius: 0; background: none; border: 1px solid var(--ink); color: var(--ink); }
+.runhead { font-family: var(--font-display); font-style: italic; font-weight: 400; letter-spacing: .04em; border-bottom: 1px solid var(--ink); }
+.runfoot .sig { font-style: italic; font-family: var(--font-display); }
+.pn { color: var(--ink); font-weight: 700; }
+/* ── PDF ── */
+html[data-fmt=pdf] .sheet-overview .sheet-body { top: 30px; left: 0; right: 0; bottom: 66px; padding: 0 48px; display: flex; flex-direction: column; }
+html[data-fmt=pdf] .sheet-overview .cover { margin: 0; }
+html[data-fmt=pdf] .sheet-overview .cover-media img { aspect-ratio: 16 / 9; height: auto; border: 0; border-radius: 0; filter: saturate(1.04); }
+html[data-fmt=pdf] .sheet-overview .cover-text { margin: -56px 28px 0; background: #fff; padding: 18px 26px 12px; border-top: 4px solid var(--ink); }
+html[data-fmt=pdf] .sheet-overview .trip-name { font-size: 34px; }
+html[data-fmt=pdf] .sheet-overview .blk-note { margin-top: 18px; }
+html[data-fmt=pdf] .sheet-overview .blk-days { margin-top: 16px; }
+html[data-fmt=pdf] .sheet-overview .blk-note .rich p:first-child::first-letter { float: left; font-family: var(--font-display); font-size: 3.4em; line-height: .86; padding: .04em .1em 0 0; font-weight: 700; }
+html[data-fmt=pdf] .sheet-overview .inline-img img { max-height: 80px; }
+html[data-fmt=pdf] .sheet-overview .rich p { font-size: 12px; line-height: 1.65; }
+html[data-fmt=pdf] .sheet-overview .imp-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; }
+html[data-fmt=pdf] .att-corner { border-radius: 0; border-color: var(--ink); background: none; }
+/* ── 社群 ── */
+html[data-fmt=story] .ab-overview { padding: 40px 60px 128px; }
+html[data-fmt=story] .ab-overview .cover { margin: 0; } html[data-fmt=story] .ab-overview .cover-media { min-height: 540px; }
+html[data-fmt=story] .ab-overview .cover-media img { aspect-ratio: auto; height: 100%; border: 0; border-radius: 0; }
+html[data-fmt=story] .ab-overview .cover-text { margin: -150px 32px 0; background: #fff; padding: 40px 44px 26px; border-top: 8px solid var(--ink); }
+html[data-fmt=story] .ab-overview .trip-name { font-size: 66px; line-height: 1.12; }
+html[data-fmt=story] .ab-overview .blk-days { margin: 40px 0 0; }
+html[data-fmt=story] .ab-overview .day-index li { padding: 16px 0; }
+html[data-fmt=story] .ab-day .day-no b { font-size: 190px; }
+html[data-fmt=story] .ab-day .day-no i { font-size: 26px; }
+html[data-fmt=story] .ab-day .day-place { font-size: 54px; }
+html[data-fmt=story] .ab-day .day-date { font-size: 24px; }
+html[data-fmt=story] .ab-day .ev-cover { width: 150px; margin-left: 20px; } html[data-fmt=story] .ab-day .ev-cover img { height: 96px; min-height: 0; }
+html[data-fmt=story] .ab-day .ev-name { font-size: 34px; } html[data-fmt=story] .ab-day .ev-no { font-size: 30px; }
+html[data-fmt=story] .ab-day .ev-main { padding: 0; }
+html[data-fmt=story] .ab-map .page-t { font-size: 76px; }
+html[data-fmt=square] .ab-overview { padding: 56px 60px 84px; display: flex; }
+html[data-fmt=square] .ab-overview .cover-media img { aspect-ratio: 3 / 2; height: auto; border: 0; border-radius: 0; }
+html[data-fmt=square] .ab-overview .cover-text { margin: 0; background: #fff; padding: 18px 0 0; border-top: 6px solid var(--ink); }
+html[data-fmt=square] .ab-overview .trip-name { font-size: 42px; }
+html[data-fmt=square] .ab-overview .blk-days { margin: 22px 0 0; }
+html[data-fmt=square] .ab-overview .day-index { columns: 2; column-gap: 40px; }
+html[data-fmt=square] .ab-day .day-no b { font-size: 120px; }
+html[data-fmt=square] .ab-day .day-place { font-size: 32px; }
+html[data-fmt=square] .ab-day > .day-head { border-bottom-width: 2px; }
+html[data-fmt=square] .ab-day .ev-cover { width: 74px; margin-left: 12px; } html[data-fmt=square] .ab-day .ev-cover img { height: 62px; }
+html[data-fmt=square] .ab-day .ev-no { font-size: 26px; } html[data-fmt=square] .ab-day .ev-name { font-size: 23px; }
+html[data-fmt=square] .ab-day .ev-main { padding: 0; }
+html[data-fmt=square] .ab-map .page-t { font-size: 58px; }
+/* ── 網頁 ── */
+html[data-fmt=web] .chips a { border-radius: 0; background: none; border: 0; border-bottom: 2px solid transparent; font-family: var(--font-display); font-size: 15px; letter-spacing: .06em; padding: 0 10px; }
+html[data-fmt=web] .chips a:first-child { background: none; color: var(--ink); border-bottom-color: var(--ink); }
+html[data-fmt=web] .cover-media img { max-height: 460px; border-radius: 0; border: 0; }
+html[data-fmt=web] .cover-text { margin-top: -54px; background: #fff; padding: 20px 20px 4px; border-top: 4px solid var(--ink); position: relative; margin-left: 12px; margin-right: 12px; }
+html[data-fmt=web] .trip-name { font-size: clamp(30px, 7vw, 52px); }
+html[data-fmt=web] .day-no b { font-size: 72px; }
+html[data-fmt=web] .day-place { font-size: 24px; }
+@media (min-width: 900px) {
+  html[data-fmt=web] .day-no b { font-size: 110px; }
+  html[data-fmt=web] .day-place { font-size: 34px; }
+  html[data-fmt=web] .part-overview { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+  html[data-fmt=web] .part-overview .cover { grid-column: 1 / -1; }
+  html[data-fmt=web] .part-overview .blk-imp { grid-column: 1 / -1; }
+}
+
+
+:root { --pin-bg: #17120f; --line-c: #17120f; --lg-bg: rgba(255,255,255,.92); }
+.legend h3 { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: 1.25em; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.legend .pin, .en { border-radius: 0; } .tm-pin circle { stroke-width: calc(var(--sw) * .5); }
+.tm-line { stroke-width: calc(var(--sw) * .7); }
+
+
+html[data-fmt=pdf] .sheet-overview .cover-text { margin-top: -60px; padding: 14px 26px 8px; }
+html[data-fmt=pdf] .sheet-overview .blk-note { margin-top: 12px; }
+html[data-fmt=pdf] .sheet-overview .blk-days { margin-top: 12px; }
+
+html[data-fmt=square] .ab-overview .kicker { white-space: nowrap; font-size: 15px; letter-spacing: .08em; }
+html[data-fmt=story] .ab-overview .day-index.dense li:not(.di-more) { padding: 10px 0; }
+html[data-fmt=pdf] .sheet-overview .imp-bm { margin-top: 6px; padding-top: 5px; }
+html[data-fmt=story] .ab-overview .cover-text { padding: 28px 40px 18px; }
+html[data-fmt=pdf] .sheet-overview .day-index li:not(.di-more) { padding: 2px 0; }
+html[data-fmt=pdf] .sheet-overview .blk-note .rich p:first-child::first-letter { font-size: 2.6em; }
+html[data-fmt=pdf] .sheet-overview .blk-note { margin-top: 8px; }
+html[data-fmt=pdf] .sheet-overview .blk-days { margin-top: 8px; }
+html[data-fmt=pdf] .sheet-overview .trip-name { font-size: 31px; }
+
+html[data-fmt=story] .ab-day .event, html[data-fmt=square] .ab-day .event { flex-direction: row-reverse; border-radius: 0; }
+html[data-fmt=story] .ab-day .leg-pill { font-size: 21px; }
+
+/* ═══ 日頁間距（S101）：一組固定尺度，每一處都從這裡取，不各寫各的數字。
+   --sp1 4 · --sp2 8 · --sp3 12 · --sp4 16 · --sp6 24 · --sp8 32（PDF；9:16 的 u＝6px、1:1 的 u＝5px 等比放大）。
+   節奏：頁首下方 sp6；行程之間＝上一則下緣 sp3 ＋ 細線 ＋ 下一則上緣 sp4；卡內：標題→時間 sp2、地點／地址／時區行之間 sp1、地點區塊上下 sp2、描述前 sp4、附件書籤前 sp3。 ═══ */
+:root { --u: 4px; --sp1: calc(var(--u) * 1); --sp2: calc(var(--u) * 2); --sp3: calc(var(--u) * 3); --sp4: calc(var(--u) * 4); --sp6: calc(var(--u) * 6); --sp8: calc(var(--u) * 8); --leg-ind: 46px; }
+html[data-fmt=story] { --u: 6px; --leg-ind: 58px; }
+html[data-fmt=square] { --u: 5px; --leg-ind: 52px; }
+/* pdf */
+html[data-fmt=pdf] .day-head { padding-bottom: var(--sp4); }
+html[data-fmt=pdf] .allday-list { margin-top: var(--sp4); }
+html[data-fmt=pdf] .allday { padding: var(--sp3) var(--sp4); gap: var(--sp3); }
+html[data-fmt=pdf] .timeline { margin-top: var(--sp6); }
+html[data-fmt=pdf] .event { padding: var(--sp4) 0 var(--sp3); }
+html[data-fmt=pdf] .ev-cover { margin-left: var(--sp4); }
+html[data-fmt=pdf] .ev-main { row-gap: var(--sp2); column-gap: var(--sp3); }
+html[data-fmt=pdf] .ev-top { gap: var(--sp2); }
+html[data-fmt=pdf] .ev-loc { margin-top: var(--sp1); line-height: 1.5; }
+html[data-fmt=pdf] .ev-loc.has-addr { row-gap: var(--sp1); gap: var(--sp1); }
+html[data-fmt=pdf] .ev-main > .rich { margin-top: var(--sp4); }
+html[data-fmt=pdf] .ev-main > .ev-att { margin-top: var(--sp3); }
+html[data-fmt=pdf] .leg { padding: var(--sp2) 0 var(--sp3); }
+html[data-fmt=pdf] .leg-row { gap: var(--sp1) var(--sp3); }
+html[data-fmt=pdf] .leg-z { margin: var(--sp2) 0 0 var(--leg-ind); }
+html[data-fmt=pdf] .leg-alt { margin: var(--sp2) 0 0 var(--leg-ind); }
+html[data-fmt=pdf] .leg-desc { margin: var(--sp2) 0 0 0; padding-left: var(--leg-ind); }
+html[data-fmt=pdf] .overlap { padding: var(--sp3) 0 var(--sp4); margin: var(--sp3) 0; }
+html[data-fmt=pdf] .ov-label { margin: 0 0 var(--sp3); }
+html[data-fmt=pdf] .ov-cards .event { padding: var(--sp2) var(--sp4) 0 0; }
+html[data-fmt=pdf] .ov-cards .event + .event { padding: var(--sp2) 0 0 var(--sp4); }
+html[data-fmt=pdf] .event.compact .ev-cover { margin: 0 0 var(--sp3); }
+/* story */
+html[data-fmt=story] .ab-day .day-head { padding-bottom: var(--sp4); }
+html[data-fmt=story] .ab-day .allday-list { margin-top: var(--sp4); }
+html[data-fmt=story] .ab-day .allday { padding: var(--sp3) var(--sp4); gap: var(--sp3); }
+html[data-fmt=story] .ab-day .timeline { margin-top: var(--sp6); }
+html[data-fmt=story] .ab-day .event { padding: var(--sp4) 0 var(--sp3); }
+html[data-fmt=story] .ab-day .ev-cover { margin-left: var(--sp4); }
+html[data-fmt=story] .ab-day .ev-main { row-gap: var(--sp2); column-gap: var(--sp3); }
+html[data-fmt=story] .ab-day .ev-top { gap: var(--sp2); }
+html[data-fmt=story] .ab-day .ev-loc { margin-top: var(--sp1); line-height: 1.5; }
+html[data-fmt=story] .ab-day .ev-loc.has-addr { row-gap: var(--sp1); gap: var(--sp1); }
+html[data-fmt=story] .ab-day .ev-main > .rich { margin-top: var(--sp4); }
+html[data-fmt=story] .ab-day .ev-main > .ev-att { margin-top: var(--sp3); }
+html[data-fmt=story] .ab-day .leg { padding: var(--sp2) 0 var(--sp3); }
+html[data-fmt=story] .ab-day .leg-row { gap: var(--sp1) var(--sp3); }
+html[data-fmt=story] .ab-day .leg-z { margin: var(--sp2) 0 0 var(--leg-ind); }
+html[data-fmt=story] .ab-day .leg-alt { margin: var(--sp2) 0 0 var(--leg-ind); }
+html[data-fmt=story] .ab-day .leg-desc { margin: var(--sp2) 0 0 0; padding-left: var(--leg-ind); }
+html[data-fmt=story] .ab-day .overlap { padding: var(--sp3) 0 var(--sp4); margin: var(--sp3) 0; }
+html[data-fmt=story] .ab-day .ov-label { margin: 0 0 var(--sp3); }
+html[data-fmt=story] .ab-day .ov-cards .event { padding: var(--sp2) var(--sp4) 0 0; }
+html[data-fmt=story] .ab-day .ov-cards .event + .event { padding: var(--sp2) 0 0 var(--sp4); }
+html[data-fmt=story] .ab-day .event.compact .ev-cover { margin: 0 0 var(--sp3); }
+/* square */
+html[data-fmt=square] .ab-day .day-head { padding-bottom: var(--sp4); }
+html[data-fmt=square] .ab-day .allday-list { margin-top: var(--sp4); }
+html[data-fmt=square] .ab-day .allday { padding: var(--sp3) var(--sp4); gap: var(--sp3); }
+html[data-fmt=square] .ab-day .timeline { margin-top: var(--sp6); }
+html[data-fmt=square] .ab-day .event { padding: var(--sp4) 0 var(--sp3); }
+html[data-fmt=square] .ab-day .ev-cover { margin-left: var(--sp4); }
+html[data-fmt=square] .ab-day .ev-main { row-gap: var(--sp2); column-gap: var(--sp3); }
+html[data-fmt=square] .ab-day .ev-top { gap: var(--sp2); }
+html[data-fmt=square] .ab-day .ev-loc { margin-top: var(--sp1); line-height: 1.5; }
+html[data-fmt=square] .ab-day .ev-loc.has-addr { row-gap: var(--sp1); gap: var(--sp1); }
+html[data-fmt=square] .ab-day .ev-main > .rich { margin-top: var(--sp4); }
+html[data-fmt=square] .ab-day .ev-main > .ev-att { margin-top: var(--sp3); }
+html[data-fmt=square] .ab-day .leg { padding: var(--sp2) 0 var(--sp3); }
+html[data-fmt=square] .ab-day .leg-row { gap: var(--sp1) var(--sp3); }
+html[data-fmt=square] .ab-day .leg-z { margin: var(--sp2) 0 0 var(--leg-ind); }
+html[data-fmt=square] .ab-day .leg-alt { margin: var(--sp2) 0 0 var(--leg-ind); }
+html[data-fmt=square] .ab-day .leg-desc { margin: var(--sp2) 0 0 0; padding-left: var(--leg-ind); }
+html[data-fmt=square] .ab-day .overlap { padding: var(--sp3) 0 var(--sp4); margin: var(--sp3) 0; }
+html[data-fmt=square] .ab-day .ov-label { margin: 0 0 var(--sp3); }
+html[data-fmt=square] .ab-day .ov-cards .event { padding: var(--sp2) var(--sp4) 0 0; }
+html[data-fmt=square] .ab-day .ov-cards .event + .event { padding: var(--sp2) 0 0 var(--sp4); }
+html[data-fmt=square] .ab-day .event.compact .ev-cover { margin: 0 0 var(--sp3); }
+html[data-fmt=pdf] .ov-cards .event, html[data-fmt=story] .ab-day .ov-cards .event, html[data-fmt=square] .ab-day .ov-cards .event { padding-bottom: 0; }
+html[data-fmt=pdf] .event.compact, html[data-fmt=story] .ab-day .event.compact, html[data-fmt=square] .ab-day .event.compact { padding-bottom: 0; }
+
+/* 社群：時間、地點、地址、時區行由上往下疊在標題下面（跟 PDF 同一個節奏），不再排成三欄 */
+html[data-fmt=story] .ab-day .ev-main, html[data-fmt=square] .ab-day .ev-main { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'top top' 'time type' 'loc loc'; align-items: baseline; }
+html[data-fmt=story] .ab-day .ev-loc, html[data-fmt=square] .ab-day .ev-loc { padding-left: 0; margin-top: 0; }
+
+/* S103 行程封面一律 16:9（PDF、9:16、1:1；同時段小卡也一樣）：aspect-ratio ＋ object-fit，不寫死高度 */
+.ev-cover img { height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+html[data-fmt=pdf] .ev-cover { width: 220px; }
+html[data-fmt=pdf] .ev-cover img, html[data-fmt=pdf] .event.compact .ev-cover img { height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+html[data-fmt=pdf] .event.compact .ev-cover { width: 100%; }
+html[data-fmt=story] .ab-day .ev-cover { width: 300px; }
+html[data-fmt=story] .ab-day .ev-cover img, html[data-fmt=story] .ab-day .ov-cards .ev-cover img { height: auto; min-height: 0; aspect-ratio: 16 / 9; object-fit: cover; }
+html[data-fmt=story] .ab-day .ov-cards .ev-cover { width: 220px; }
+html[data-fmt=square] .ab-day .ev-cover { width: 220px; }
+html[data-fmt=square] .ab-day .ev-cover img, html[data-fmt=square] .ab-day .ov-cards .ev-cover img { height: auto; min-height: 0; aspect-ratio: 16 / 9; object-fit: cover; }
+html[data-fmt=square] .ab-day .ov-cards .ev-cover { width: 170px; }
+
+/* 「2/4」小標籤：三種格式都放在標題（地點）同一行的右側 */
+.day-tt { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: var(--sp3); row-gap: var(--sp1); }
+.day-tt .day-date { grid-column: 1 / -1; }
+.day-tt .day-place { grid-column: 1; }
+.day-tt .day-part { grid-column: 2; justify-self: end; align-self: center; }
+
+/* ═══ S105 路程併進分隔線：兩則行程之間只有一條線，路程文字坐在線上；沒有路程就是一條完整的線 ═══
+   ──路程文字──────────（左邊一小段線，右邊的線延伸到欄寬；線在第一行的垂直中線上，放不下時文字可以換行） */
+:root { --leg-fs: 11px; --leg-line-w: 34px; --leg-ind: calc(var(--leg-line-w) + var(--sp3)); }
+html[data-fmt=story] { --leg-fs: 21px; --leg-line-w: 52px; }
+html[data-fmt=square] { --leg-fs: 18px; --leg-line-w: 44px; }
+.leg-row::before { content: none; }
+.leg-row { display: flex; flex-wrap: nowrap; align-items: flex-start; gap: 0; margin: 0; font-size: var(--leg-fs); line-height: 1.5; }
+.leg-ln { flex: 0 0 var(--leg-line-w); min-width: 0; background: linear-gradient(var(--ink), var(--ink)) center / 100% 1px no-repeat; }
+.leg-ln::before { content: '\200b'; }
+.leg-ln-r { flex: 1 1 var(--sp6); }
+.leg-body { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp1) var(--sp3); padding: 0 var(--sp3); min-width: 0; flex: 0 1 auto; }
+.leg-pill { font-size: inherit; }
+html[data-fmt=pdf] .leg, html[data-fmt=story] .ab-day .leg, html[data-fmt=square] .ab-day .leg { padding: 0; }
+html[data-fmt=story] .ab-day .leg-pill, html[data-fmt=square] .ab-day .leg-pill { font-size: inherit; padding: 0; }
+html[data-fmt=story] .ab-day .leg-row, html[data-fmt=square] .ab-day .leg-row { gap: 0; }
+.leg + .event, .leg + .overlap { border-top: 0; }
+.leg + .overlap { padding-top: var(--sp3); }
+.overlap { border-bottom: 0; }
+.leg-alt, .leg-desc { margin-top: var(--sp2); }
+
+/* S106 全日卡：標題、日期範圍＋第幾天、（類型）、（地點與地址）；每一層用同一組間距 */
+.allday { align-items: flex-start; }
+.ad-t { display: flex; flex-direction: column; gap: var(--sp1); }
+.ad-loc { display: flex; align-items: flex-start; gap: .45em; font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.5; margin: 0; }
+.ad-loc .ic { margin-top: .15em; flex: none; } .ad-loc span { min-width: 0; overflow-wrap: anywhere; }
+.allday .ev-type { margin-top: var(--sp1); }
+html[data-fmt=square] .ab-day .allday .ev-type { display: inline-flex; }
+html[data-fmt=story] .ab-day .ad-loc span, html[data-fmt=square] .ab-day .ad-loc span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+html[data-fmt=story] .ab-day .ad-loc, html[data-fmt=square] .ab-day .ad-loc { font-size: var(--fs-xs); }
+
+/* ═══ S108 類型放在標題正上方：icon ＋類型名稱當 kicker 一行，左對齊、小字、次要墨色；編號（5.）留在標題前面同一行 ═══ */
+.ev-main, .event.compact .ev-main { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'type' 'top' 'time' 'loc'; }
+html[data-fmt=story] .ab-day .ev-main, html[data-fmt=square] .ab-day .ev-main,
+html[data-fmt=story] .ab-day .ov-cards .ev-main, html[data-fmt=square] .ab-day .ov-cards .ev-main { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'type' 'top' 'time' 'loc'; }
+.ev-type, .allday .ev-type { justify-self: start; margin: 0 0 calc(-1 * var(--sp1)); color: var(--ink-2); font-size: var(--fs-xs); font-weight: 600; letter-spacing: .08em; }
+html[data-fmt=story] .ab-day .ev-type, html[data-fmt=square] .ab-day .ev-type, html[data-fmt=story] .ab-day .allday .ev-type, html[data-fmt=square] .ab-day .allday .ev-type { justify-self: start; margin: 0 0 calc(-1 * var(--sp1)); }
+.event.compact .ev-type { margin: 0 0 calc(-1 * var(--sp1)); }
+.ev-type .dot { display: none; }
+
+/* ═══ S109 全日行程：日頁頁首下方的輕量清單（不要框、底色、卡片感）；筆與筆之間細線；結束後接時間軸第一則自己的分隔線 ═══ */
+html[data-fmt=pdf] .allday-list { margin-top: var(--sp4); display: block; }
+html[data-fmt=pdf] .allday-label { margin: 0 0 var(--sp1); }
+html[data-fmt=pdf] .allday { display: block; background: none; border: 0; border-radius: 0; padding: var(--sp2) 0; margin: 0; gap: 0; }
+html[data-fmt=pdf] .allday + .allday { border-top: 1px solid var(--line-2); }
+html[data-fmt=pdf] .ad-row1 { display: flex; align-items: baseline; gap: var(--sp3); margin: 0; }
+html[data-fmt=pdf] .ad-row1 .ev-no { font-size: 12px; }
+html[data-fmt=pdf] .ad-name { flex: 1 1 auto; min-width: 0; font-family: var(--font-display); font-size: 16px; font-weight: 700; line-height: 1.3; }
+html[data-fmt=pdf] .ad-of { flex: none; margin-left: auto; font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); white-space: nowrap; letter-spacing: 0; }
+html[data-fmt=pdf] .ad-meta { margin: var(--sp1) 0 0; font-size: 12px; color: var(--ink-2); line-height: 1.5; }
+html[data-fmt=pdf] .ad-addr { margin: var(--sp1) 0 0; font-size: 12px; color: var(--ink-2); line-height: 1.5; }
+html[data-fmt=story] .ab-day .allday-list { margin-top: var(--sp4); display: block; }
+html[data-fmt=story] .ab-day .allday-label { margin: 0 0 var(--sp1); }
+html[data-fmt=story] .ab-day .allday { display: block; background: none; border: 0; border-radius: 0; padding: var(--sp2) 0; margin: 0; gap: 0; }
+html[data-fmt=story] .ab-day .allday + .allday { border-top: 1px solid var(--line-2); }
+html[data-fmt=story] .ab-day .ad-row1 { display: flex; align-items: baseline; gap: var(--sp3); margin: 0; }
+html[data-fmt=story] .ab-day .ad-row1 .ev-no { font-size: 22px; }
+html[data-fmt=story] .ab-day .ad-name { flex: 1 1 auto; min-width: 0; font-family: var(--font-display); font-size: 28px; font-weight: 700; line-height: 1.3; }
+html[data-fmt=story] .ab-day .ad-of { flex: none; margin-left: auto; font-family: var(--font-mono); font-size: 22px; color: var(--ink-2); white-space: nowrap; letter-spacing: 0; }
+html[data-fmt=story] .ab-day .ad-meta { margin: var(--sp1) 0 0; font-size: 22px; color: var(--ink-2); line-height: 1.5; }
+html[data-fmt=story] .ab-day .ad-addr { margin: var(--sp1) 0 0; font-size: 22px; color: var(--ink-2); line-height: 1.5; }
+html[data-fmt=square] .ab-day .allday-list { margin-top: var(--sp4); display: block; }
+html[data-fmt=square] .ab-day .allday-label { margin: 0 0 var(--sp1); }
+html[data-fmt=square] .ab-day .allday { display: block; background: none; border: 0; border-radius: 0; padding: var(--sp2) 0; margin: 0; gap: 0; }
+html[data-fmt=square] .ab-day .allday + .allday { border-top: 1px solid var(--line-2); }
+html[data-fmt=square] .ab-day .ad-row1 { display: flex; align-items: baseline; gap: var(--sp3); margin: 0; }
+html[data-fmt=square] .ab-day .ad-row1 .ev-no { font-size: 17px; }
+html[data-fmt=square] .ab-day .ad-name { flex: 1 1 auto; min-width: 0; font-family: var(--font-display); font-size: 21px; font-weight: 700; line-height: 1.3; }
+html[data-fmt=square] .ab-day .ad-of { flex: none; margin-left: auto; font-family: var(--font-mono); font-size: 17px; color: var(--ink-2); white-space: nowrap; letter-spacing: 0; }
+html[data-fmt=square] .ab-day .ad-meta { margin: var(--sp1) 0 0; font-size: 17px; color: var(--ink-2); line-height: 1.5; }
+html[data-fmt=square] .ab-day .ad-addr { margin: var(--sp1) 0 0; font-size: 17px; color: var(--ink-2); line-height: 1.5; }
+html[data-fmt=story] .ab-day .ad-name, html[data-fmt=square] .ab-day .ad-name, html[data-fmt=story] .ab-day .ad-meta, html[data-fmt=square] .ab-day .ad-meta { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+html[data-fmt=story] .ab-day .ad-addr, html[data-fmt=square] .ab-day .ad-addr { display: none; }
+
+/* 同時段小卡：內容由上往下排，不要被格狀排版拉開 */
+.ev-main { align-content: start; }
+
+/* PDF 行程卡在描述處跨頁：續頁頂端一小行「6. 標題…（續）」，標題過長以省略號收尾、（續）一定留著 */
+
+/* ═══ S115 同時段組：每一則都是跟一般行程完全相同的行程卡，上下疊放；只多一個小標＋左側一條細線（不加框、不加底色）；任何 section 的第一個元素都不畫自己的上線 ═══ */
+.overlap { border: 0; border-radius: 0; background: none; margin: 0; padding: 0 0 0 var(--sp4); border-left: 2px solid var(--ink); }
+.ov-label { margin: var(--sp3) 0 0; letter-spacing: .2em; font-weight: 700; color: var(--ink); }
+.overlap .ov-label + .event { border-top: 0; padding-top: var(--sp2); }
+html[data-fmt=pdf] .overlap, html[data-fmt=story] .ab-day .overlap, html[data-fmt=square] .ab-day .overlap { padding: 0 0 0 var(--sp4); margin: 0; }
+html[data-fmt=pdf] .ov-label, html[data-fmt=story] .ab-day .ov-label, html[data-fmt=square] .ab-day .ov-label { margin: var(--sp3) 0 0; }
+.leg + .overlap { padding-top: 0; border-top: 0; }
+.day-head + .timeline > .event:first-child { border-top: 0; }
+.day-head + .timeline > .overlap:first-child { margin-top: 0; }
+.day-head + .timeline > .leg:first-child .leg-ln { background: none; }
+
+/* 檢視後修正：同時段組在 9:16、1:1 只留左側一條細線（不能有框、圓角）；網址連結頁的「附件 N」角標不壓到標題線 */
+html[data-fmt=story] .ab-day .overlap, html[data-fmt=square] .ab-day .overlap { border: 0; border-left: 2px solid var(--ink); border-radius: 0; background: none; }
+html[data-fmt=pdf] .overlap { border: 0; border-left: 2px solid var(--ink); border-radius: 0; background: none; }
+.sheet-att .page-t { margin-top: 22px; }
+
+/* 描述內嵌圖：保留 16:9 比例，不裁成細長條 */
+.ev-main .inline-img { width: 72%; }
+.ev-main .inline-img img, html[data-fmt=pdf] .ev-main .inline-img img { max-height: none; aspect-ratio: 16 / 9; height: auto; width: 100%; object-fit: cover; }
+/* 路程：社群也寫路程時間；「·」跟「提早／遲到」垂直對齊 */
+html[data-fmt=story] .ab-day .leg-dur, html[data-fmt=square] .ab-day .leg-dur { display: inline; }
+.leg-body { align-items: center; }
+.leg-sep { line-height: 1; align-self: center; }
+/* 空的一天：一行次要墨色的字，不用虛線框 */
+.day-empty, html[data-fmt=story] .ab-day .day-empty, html[data-fmt=square] .ab-day .day-empty { border: 0; background: none; border-radius: 0; padding: var(--sp4) 0; margin: 0; text-align: left; color: var(--ink-2); font-size: var(--fs-sm); }
+/* 附件頁：統一頁首；網址附件全寬橫列 */
+.att-head { font-family: var(--font-display); font-size: var(--fs-sm); line-height: 1.6; margin: 0 0 var(--sp3); }
+.att-head b { font-size: var(--fs-lg); color: var(--ink); }
+.att-block { margin: 0 0 var(--sp8); }
+.att-block .url-cell.compact { width: 100%; }
+.att-block .url-cell.compact .uc-og { width: 220px; }
+.sheet-att .page-t { margin-top: 0; }
+
+/* ═══ S118 總覽的逐日摘要依空間盡量多寫：每天用同一個行數（--dl，由原生量測可用高度後平均分配），空間夠就 2、3 行以上直到列完，不夠才減少、最後才截斷 ═══ */
+html[data-fmt=pdf] .sheet-overview { --dl: var(--dl-pdf, 1); }
+html[data-fmt=story] .sheet-overview { --dl: var(--dl-story, 1); }
+html[data-fmt=square] .sheet-overview { --dl: var(--dl-square, 1); }
+.sheet-overview .day-index .di-sum, .sheet-overview .day-index.dense .di-sum, .sheet-overview .day-index.ai .di-sum { white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: var(--dl, 1); }
+.sheet-overview .day-index.ai .di-sum { -webkit-line-clamp: 1; }
+.sheet-overview .day-index.ai .di-list { white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; -webkit-line-clamp: var(--dl, 1); }
+.sheet-overview .day-index li:not(.di-more), .sheet-overview .cover.no-cover ~ .blk-days .day-index li { flex: 0 0 auto; }
+/* 8 天以上（dense）：地名不截斷，要截就截摘要 */
+.sheet-overview .day-index.dense .di-top { max-width: none; flex: none; }
+.sheet-overview .day-index.dense .di-pl { overflow: visible; text-overflow: clip; }
+.sheet-overview .day-index.dense .di-sum { min-width: 0; flex: 1 1 0; }
+
+.ev-main .inline-img { width: 72%; max-width: 330px; }
+
+/* 8 天以上：社群格式的 .ab-overview 規則（max-width 48%）也要讓位，地名不截斷、不跟摘要重疊 */
+html[data-fmt=pdf] .sheet-overview .day-index.dense .di-top { max-width: none; flex: none; }
+html[data-fmt=pdf] .sheet-overview .day-index.dense .di-sum { flex: 1 1 0; min-width: 0; }
+html[data-fmt=story] .sheet-overview .day-index.dense .di-top { max-width: none; flex: none; }
+html[data-fmt=story] .sheet-overview .day-index.dense .di-sum { flex: 1 1 0; min-width: 0; }
+html[data-fmt=square] .sheet-overview .day-index.dense .di-top { max-width: none; flex: none; }
+html[data-fmt=square] .sheet-overview .day-index.dense .di-sum { flex: 1 1 0; min-width: 0; }
+
+/* S119：1:1 頁首同 PDF／9:16——大數字右側，日期在上、地名在下，底緣對齊數字 */
+html[data-fmt=square] .ab-day > .day-head { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: end; column-gap: 22px; }
+html[data-fmt=square] .ab-day .day-date { font-size: 16px; }
+
+/* S119 補：PDF 行程描述的內嵌圖——欄寬的 50%、最高 200px、保留原比例、靠左，圖說在圖下方（社群不放描述） */
+html[data-fmt=pdf] .ev-main .inline-img { width: 50%; max-width: none; margin-left: 0; margin-right: auto; }
+html[data-fmt=pdf] .ev-main .inline-img img { display: block; width: auto; max-width: 100%; height: auto; max-height: 200px; aspect-ratio: auto; object-fit: contain; }
+
+/* S119 補：網址附件卡——og 圖 16:9 縮圖、卡高跟著內容；上緣線統一用墨色 */
+.att-block .url-cell.compact { align-items: flex-start; }
+.att-block .url-cell.compact .uc-og { flex: none; width: 220px; }
+.att-block .url-cell.compact .uc-og img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.url-cell.no-og { border-top-color: var(--ink); }
+
+/* S119 補：社群班次路程——班次名稱以省略號截斷，時刻、時區、路程時間留在同一行 */
+html[data-fmt=story] .ab-day .leg-pill.has-svc { flex-wrap: nowrap; overflow: hidden; min-width: 0; max-width: 100%; }
+html[data-fmt=story] .ab-day .leg-svc { display: flex; flex-wrap: nowrap; min-width: 0; overflow: hidden; }
+html[data-fmt=story] .ab-day .leg-svc .svc-n { min-width: 0; flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+html[data-fmt=story] .ab-day .leg-svc .svc-t { flex: none; flex-direction: row; flex-wrap: nowrap; white-space: nowrap; overflow: visible; text-overflow: clip; }
+html[data-fmt=story] .ab-day .leg-dur { flex: none; white-space: nowrap; }
+
+/* S119 補：社群班次路程——班次名稱以省略號截斷，時刻、時區、路程時間留在同一行 */
+html[data-fmt=square] .ab-day .leg-pill.has-svc { flex-wrap: nowrap; overflow: hidden; min-width: 0; max-width: 100%; }
+html[data-fmt=square] .ab-day .leg-svc { display: flex; flex-wrap: nowrap; min-width: 0; overflow: hidden; }
+html[data-fmt=square] .ab-day .leg-svc .svc-n { min-width: 0; flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+html[data-fmt=square] .ab-day .leg-svc .svc-t { flex: none; flex-direction: row; flex-wrap: nowrap; white-space: nowrap; overflow: visible; text-overflow: clip; }
+html[data-fmt=square] .ab-day .leg-dur { flex: none; white-space: nowrap; }
+
+/* S119 補（S118）：總覽逐日摘要有空間就多寫幾行——8 天以上（dense）與 AI 版也照 --dl，不再被 1 行蓋掉 */
+html[data-fmt=pdf] .sheet-overview .day-index .di-sum, html[data-fmt=pdf] .sheet-overview .day-index.dense .di-sum,
+html[data-fmt=pdf] .sheet-overview .day-index.ai .di-sum, html[data-fmt=pdf] .sheet-overview .day-index.ai:not(.dense) .di-sum { -webkit-line-clamp: var(--dl, 1); }
+
+/* S119 補（S118）：總覽逐日摘要有空間就多寫幾行——8 天以上（dense）與 AI 版也照 --dl，不再被 1 行蓋掉 */
+html[data-fmt=story] .sheet-overview .day-index .di-sum, html[data-fmt=story] .sheet-overview .day-index.dense .di-sum,
+html[data-fmt=story] .sheet-overview .day-index.ai .di-sum, html[data-fmt=story] .sheet-overview .day-index.ai:not(.dense) .di-sum { -webkit-line-clamp: var(--dl, 1); }
+
+/* S119 補（S118）：總覽逐日摘要有空間就多寫幾行——8 天以上（dense）與 AI 版也照 --dl，不再被 1 行蓋掉 */
+html[data-fmt=square] .sheet-overview .day-index .di-sum, html[data-fmt=square] .sheet-overview .day-index.dense .di-sum,
+html[data-fmt=square] .sheet-overview .day-index.ai .di-sum, html[data-fmt=square] .sheet-overview .day-index.ai:not(.dense) .di-sum { -webkit-line-clamp: var(--dl, 1); }

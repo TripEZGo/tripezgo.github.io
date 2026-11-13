@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="140" viewBox="0 0 640 140">
+  <!-- 示意：Premium 使用者自己的 logo 橫幅（虛構的「旅人工作室」，只給設計稿示意版面，不是任何真實品牌） -->
+  <rect width="640" height="140" rx="20" fill="#f1e3c8"/>
+  <circle cx="70" cy="70" r="36" fill="none" stroke="#7a4a21" stroke-width="6"/>
+  <path d="M52 78 L70 44 L88 78 Z" fill="#7a4a21"/>
+  <text x="130" y="68" font-family="'Songti TC','Noto Serif TC',serif" font-size="40" font-weight="700" fill="#4a2d14">旅人工作室</text>
+  <text x="132" y="104" font-family="Helvetica,Arial,sans-serif" font-size="20" letter-spacing="7" fill="#7a4a21">TRAVELER STUDIO</text>
+</svg>
