@@ -37,17 +37,13 @@ for (const page of PAGES) {
   });
 }
 
-test('trip/：連線只准 CloudKit 與 MapKit，腳本只准自己與 MapKit JS', () => {
-  const p = policyOf(read('trip/index.html'));
-  assert.deepEqual(p['connect-src'], ['https://api.apple-cloudkit.com', 'https://*.apple-mapkit.com', 'https://*.ls.apple.com']);
-  assert.ok(p['script-src'].includes('https://cdn.apple-mapkit.com'));
-  assert.ok(!('frame-src' in p) && p['default-src'][0] === "'none'");
-});
-
-test('trip/：可以被別的網站嵌入——沒有 frame-bust，CSP 也沒有 frame-ancestors', () => {
+test('trip/（已停用頁）：沒有任何對外連線的權限，腳本只有自己的行內那一段（票 35）', () => {
   const html = read('trip/index.html');
-  assert.doesNotMatch(html, /window\.top/);
-  assert.ok(!('frame-ancestors' in policyOf(html)));
+  const p = policyOf(html);
+  for (const d of ['connect-src', 'frame-src', 'worker-src', 'child-src', 'font-src']) assert.ok(!(d in p), d);
+  assert.deepEqual(p['default-src'], ["'none'"]);
+  assert.ok(p['script-src'].every((s) => s === "'self'" || /^'sha256-/.test(s)), p['script-src'].join(' '));
+  assert.doesNotMatch(html, /<script[^>]*\ssrc=/);
 });
 
 test('open/、join/ 沒有任何對外連線的權限', () => {
@@ -74,15 +70,4 @@ test('I5：Android 的 intent:// 只在片段合格時才組出來', () => {
   for (const bad of ['#a;b', '#a#Intent;package=evil;end', '#', '', '#a b', '#%3Bend', '#a/b', '#a===']) {
     assert.match(run(bad) ?? '', /^\/open\/#/, JSON.stringify(bad));
   }
-});
-
-test('trip/：被嵌入時的「在 tripezgo.com 開啟」三種語言都有字，而且 app.js 的作者動作都擋在 FRAMED 後面', async () => {
-  const { S, LANGS } = await import('../../trip/strings.js');
-  for (const { k } of LANGS) assert.ok(S[k].openOnSite && /tripezgo\.com/.test(S[k].openOnSite), k);
-  const app = read('trip/app.js');
-  assert.match(app, /function authorHtml\(\) \{\n  if \(FRAMED\)/);
-  assert.match(app, /function onAuthorClick\(action\) \{\n  if \(FRAMED\) return;/);
-  assert.match(app, /if \(!FRAMED && state === 'normal' && webToken/);
-  assert.match(app, /if \(FRAMED \|\| !handOffToAndroid\(\)\)/);
-  assert.match(app, /if \(!FRAMED\) restoreAfterSignIn\(\)/);
 });

@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { createHash, generateKeyPairSync, verify } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { base64Decode, base64Encode } from '../../trip/core.js';
-import { CONTAINER, ENVIRONMENT, parseSigningKeys, runCleanup } from '../../tools/cleanup/cleanup.mjs';
+import { CONTAINER, ENVIRONMENT, modeFromEnv, parseSigningKeys, runCleanup } from '../../tools/cleanup/cleanup.mjs';
 
 const golden = JSON.parse(readFileSync(new URL('../fixtures/golden-v1.json', import.meta.url), 'utf8'));
 const signingKey = base64Decode(golden.signingKey);
@@ -186,4 +186,61 @@ test('刪不掉的逐筆記下（例如 record 在清理途中被原作者更新
   assert.equal(report.failed.length, 1);
   assert.equal(report.failed[0].recordName, fx.tampered.recordName);
   assert.match(report.failed[0].error, /CONFLICT/);
+});
+
+/* ── 票 35：MODE=purge。公開連結整個停用（S60），1.10.0 上架當天起這個 type 的紀錄一律刪，不再驗章。 ── */
+
+test('purge：App 寫的合法紀錄也刪，沒有任何一筆留下；原因都是 purge', async () => {
+  const fx = fixtures();
+  const ws = fakeWebServices(Object.values(fx));
+  const report = await run(ws, { mode: 'purge' });
+  assert.equal(ws.store.size, 0);
+  assert.equal(report.scanned, 9);
+  assert.equal(report.kept, 0);
+  assert.equal(report.deleted.length, 9);
+  assert.ok(report.deleted.every((d) => d.reason.startsWith('purge')));
+});
+
+test('purge 試跑：列出全部，一筆都不刪，只打 query', async () => {
+  const ws = fakeWebServices(Object.values(fixtures()));
+  const report = await run(ws, { mode: 'purge', dryRun: true });
+  assert.equal(report.wouldDelete.length, 9);
+  assert.equal(report.deleted.length, 0);
+  assert.equal(ws.store.size, 9);
+  assert.ok(ws.requests.every((r) => r.path.endsWith('/records/query')));
+});
+
+test('purge 不驗章：沒有簽章金鑰也能跑；欄位缺的紀錄一樣刪', async () => {
+  const ws = fakeWebServices([fixtures().valid, record('2'.repeat(32), {})]);
+  const report = await run(ws, { mode: 'purge', signingKeys: [] });
+  assert.equal(report.deleted.length, 2);
+  assert.equal(ws.store.size, 0);
+});
+
+test('purge 照樣只打 Production 的 public database，刪除帶 recordChangeTag、不是 atomic', async () => {
+  const fx = fixtures();
+  const ws = fakeWebServices([fx.valid]);
+  await run(ws, { mode: 'purge' });
+  for (const r of ws.requests) assert.ok(r.path.startsWith('/database/1/' + CONTAINER + '/production/public/'), r.path);
+  const modify = ws.requests.find((r) => r.path.endsWith('/records/modify'));
+  assert.deepEqual(modify.body.operations, [{ operationType: 'delete', record: { recordName: fx.valid.recordName, recordChangeTag: fx.valid.recordChangeTag } }]);
+  assert.equal(modify.body.atomic, false);
+});
+
+test('預設（沒給 mode）維持舊判定：合法的留著；不認得的 mode 拒絕執行', async () => {
+  const fx = fixtures();
+  const ws = fakeWebServices([fx.valid, fx.unsigned]);
+  await run(ws);
+  assert.deepEqual([...ws.store.keys()], [fx.valid.recordName]);
+  const ws2 = fakeWebServices([fx.valid]);
+  await assert.rejects(run(ws2, { mode: 'purg' }), /mode/);
+  assert.equal(ws2.requests.length, 0);
+});
+
+test('modeFromEnv：MODE 沒設或空字串＝legacy，purge＝purge，其他（含大小寫、typo）丟錯', () => {
+  assert.equal(modeFromEnv(undefined), 'legacy');
+  assert.equal(modeFromEnv(''), 'legacy');
+  assert.equal(modeFromEnv('purge'), 'purge');
+  assert.throws(() => modeFromEnv('Purge'), /MODE/);
+  assert.throws(() => modeFromEnv('all'), /MODE/);
 });

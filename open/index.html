@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-1FukO2EP3XFd9sLJ5HoIDy/UQz07g1yAvJnYKICi68g=' 'sha256-r+6wCecIXRI4mKPfsgpKZIXfQVifIk1HXepoCvx1+yA='; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-cXftdj9ew9SsHq9FIPAsQqQOuVJkkZ7slVKIPHj9gaI=' 'sha256-r+6wCecIXRI4mKPfsgpKZIXfQVifIk1HXepoCvx1+yA='; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>在 TripEZGo 中打開 — TripEZGo</title>
@@ -40,7 +40,7 @@
 /* 共用的跳轉頁（使用者要求 2026-09-26）：「在 TripEZGo 建立這個旅程」與加入共享都走這一頁。
  *
  * 網址是 /open/#<正式連結，encodeURIComponent 過>——正式連結就是 App 發出去的那一條
- * （https://www.tripezgo.com/trip/#<id>.<金鑰>，或 https://www.tripezgo.com/join/#<…>）。
+ * （https://www.tripezgo.com/join/#<…>；舊的公開連結 /trip/#… 已停用，這一頁只告訴他停用了）。
  * 放在 # 裡：片段不會送到伺服器，那把金鑰不會出現在任何存取記錄上。
  *
  * 走到這一頁的是**沒裝 App 的那一支**（裝了的話 Universal Link 早就把他帶進 App 了）：
@@ -54,7 +54,8 @@
   var STRINGS = {
     zh: {
       lang: 'zh-Hant-TW', title: '在 TripEZGo 中打開 — TripEZGo',
-      trip: '公開旅程', join: '旅程邀請',
+      join: '旅程邀請',
+      retiredHead: '這個連結已停用',
       head: '正在打開 TripEZGo⋯',
       lede: '裝了 TripEZGo 的 iPhone 會直接打開 App。沒有跳過去的話，用底下的按鈕。',
       go: '在 TripEZGo 中打開',
@@ -69,7 +70,8 @@
     },
     en: {
       lang: 'en', title: 'Open in TripEZGo — TripEZGo',
-      trip: 'Shared trip', join: 'Trip invitation',
+      join: 'Trip invitation',
+      retiredHead: 'This link has been disabled',
       head: 'Opening TripEZGo…',
       lede: 'An iPhone with TripEZGo installed opens the app straight away. If it didn’t, use the buttons below.',
       go: 'Open in TripEZGo',
@@ -84,7 +86,8 @@
     },
     ja: {
       lang: 'ja', title: 'TripEZGo で開く — TripEZGo',
-      trip: '公開旅程', join: '旅程への招待',
+      join: '旅程への招待',
+      retiredHead: 'このリンクは無効になりました',
       head: 'TripEZGo を開いています⋯',
       lede: 'TripEZGo が入っている iPhone なら、そのままアプリが開きます。開かないときは下のボタンから。',
       go: 'TripEZGo で開く',
@@ -124,7 +127,14 @@
   var JOIN = /^https:\/\/(www\.)?tripezgo\.com\/join\/#(s=)?[A-Za-z0-9_-]+={0,2}$/;
   var link = '';
   try { link = decodeURIComponent(location.hash.slice(1)); } catch (err) { link = ''; }
-  var kind = TRIP.test(link) ? 'trip' : JOIN.test(link) ? 'join' : '';
+  /* 公開連結（/trip/#…）已停用（1.10.0）：認得它，只是不再提供「在 App 中打開」與剪貼簿接回。 */
+  if (TRIP.test(link)) {
+    $('head').textContent = t.retiredHead;
+    $('lede').hidden = true;
+    $('foot').hidden = true;
+    return;
+  }
+  var kind = JOIN.test(link) ? 'join' : '';
   if (!kind) {
     $('head').textContent = t.badHead;
     $('lede').textContent = t.badLede;

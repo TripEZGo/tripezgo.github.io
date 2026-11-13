@@ -26,6 +26,14 @@
  *   CK_S2S_PRIVATE_KEY   那一把的 EC P-256 私鑰（PEM）
  *   TEZ_SIGNING_KEYS     目前接受的簽章金鑰，base64，逗號分隔（換鑰期間新舊並列）
  *   DRY_RUN              "true" ＝只列出會刪哪些，不刪
+ *   MODE                 沒設或空字串＝上面那套判定（預設）；"purge" ＝**這個 type 的紀錄全刪、不再驗章**（票 35）。
+ *                        其他值直接拒絕執行，免得打錯字就悄悄退回另一種行為。
+ *
+ * ## MODE=purge（1.10.0 上架當天才用）
+ * 公開連結整個停用（S60）：網頁一律顯示「這個連結已停用」、App 不再讀寫這個 type。上架當天起，
+ * 這個 type 裡不論誰寫的、簽沒簽、驗不驗得過，一律刪。舊版 App 之後新發的連結也一樣會在下一輪被清掉。
+ * 這個模式**不需要** TEZ_SIGNING_KEYS（不驗章），其餘（只碰 Production、S2S 身分、分頁、DRY_RUN、
+ * recordChangeTag、不 atomic）與預設模式完全相同。上架當天的步驟在 tools/cleanup/RETIRE.md。
  */
 import { createPrivateKey, createHash, sign } from 'node:crypto';
 import { appendFileSync } from 'node:fs';
@@ -77,8 +85,21 @@ export function parseSigningKeys(text) {
   return keys;
 }
 
-export async function runCleanup({ fetchImpl, keyId, privateKey, signingKeys, dryRun = false, log = console.log, now = () => new Date() }) {
-  if (!signingKeys || !signingKeys.length) {
+export const MODES = ['legacy', 'purge'];
+
+/** 環境變數 `MODE` → 'legacy' | 'purge'。沒設或空字串＝legacy；其他一律丟錯。 */
+export function modeFromEnv(value) {
+  if (value === undefined || value === '') return 'legacy';
+  if (!MODES.includes(value) || value === 'legacy') throw new Error('MODE 只接受空白或 purge，收到「' + value + '」：拒絕執行');
+  return value;
+}
+
+export const PURGE_REASON = 'purge（公開連結已停用，這個 type 全刪）';
+
+export async function runCleanup({ fetchImpl, keyId, privateKey, signingKeys, dryRun = false, mode = 'legacy', log = console.log, now = () => new Date() }) {
+  if (!MODES.includes(mode)) throw new Error('mode 只接受 ' + MODES.join('、') + '，收到「' + mode + '」：拒絕執行');
+  const purge = mode === 'purge';
+  if (!purge && (!signingKeys || !signingKeys.length)) {
     /* 沒有金鑰＝每一筆都驗不過＝全部刪光。寧可不跑。 */
     throw new Error('沒有任何簽章金鑰：拒絕執行（否則每一筆都會被當成沒簽）');
   }
@@ -109,7 +130,7 @@ export async function runCleanup({ fetchImpl, keyId, privateKey, signingKeys, dr
     for (const record of page.records || []) {
       if (record.serverErrorCode) continue;
       report.scanned++;
-      const reason = await verdict(record, signingKeys);
+      const reason = purge ? PURGE_REASON : await verdict(record, signingKeys);
       if (!reason) { report.kept++; continue; }
       doomed.push({
         recordName: record.recordName,
@@ -140,7 +161,7 @@ export async function runCleanup({ fetchImpl, keyId, privateKey, signingKeys, dr
     }
   }
 
-  log('環境：' + ENVIRONMENT + '（寫死）｜掃過 ' + report.scanned + ' 筆｜留下 ' + report.kept + ' 筆｜'
+  log('模式：' + mode + '｜環境：' + ENVIRONMENT + '（寫死）｜掃過 ' + report.scanned + ' 筆｜留下 ' + report.kept + ' 筆｜'
     + (dryRun ? '試跑，會刪 ' + report.wouldDelete.length + ' 筆' : '刪掉 ' + report.deleted.length + ' 筆，失敗 ' + report.failed.length + ' 筆'));
   for (const d of dryRun ? report.wouldDelete : report.deleted) {
     log((dryRun ? '會刪  ' : '已刪  ') + d.recordName + '  ' + d.reason + '  建立者 ' + (d.creator || '?') + '  建立於 ' + (d.createdAt || '?'));
@@ -149,10 +170,10 @@ export async function runCleanup({ fetchImpl, keyId, privateKey, signingKeys, dr
   return report;
 }
 
-function summaryMarkdown(report, dryRun) {
+function summaryMarkdown(report, dryRun, mode = 'legacy') {
   const rows = (dryRun ? report.wouldDelete : report.deleted).map((d) => '| ' + d.recordName + ' | ' + d.reason + ' | ' + (d.creator || '') + ' | ' + (d.createdAt || '') + ' |');
   const failed = report.failed.map((d) => '| ' + d.recordName + ' | ' + d.reason + ' | ' + d.error + ' |');
-  return '## 公開連結每日清理（' + ENVIRONMENT + (dryRun ? '，試跑' : '') + '）\n\n'
+  return '## 公開連結每日清理（' + ENVIRONMENT + '，' + mode + (dryRun ? '，試跑' : '') + '）\n\n'
     + '掃過 ' + report.scanned + ' 筆，留下 ' + report.kept + ' 筆，' + (dryRun ? '會刪 ' : '刪掉 ') + rows.length + ' 筆'
     + (dryRun ? '' : '，失敗 ' + failed.length + ' 筆') + '。\n\n'
     + (rows.length ? '| recordName | 原因 | 建立者 | 建立於 |\n|---|---|---|---|\n' + rows.join('\n') + '\n\n' : '')
@@ -161,15 +182,17 @@ function summaryMarkdown(report, dryRun) {
 
 async function main() {
   const { CK_S2S_KEY_ID: keyId, CK_S2S_PRIVATE_KEY: pem, TEZ_SIGNING_KEYS: keys, DRY_RUN } = process.env;
-  const missing = ['CK_S2S_KEY_ID', 'CK_S2S_PRIVATE_KEY', 'TEZ_SIGNING_KEYS'].filter((n) => !process.env[n]);
+  const mode = modeFromEnv(process.env.MODE);
+  /* purge 不驗章，不需要簽章金鑰。 */
+  const missing = ['CK_S2S_KEY_ID', 'CK_S2S_PRIVATE_KEY', ...(mode === 'purge' ? [] : ['TEZ_SIGNING_KEYS'])].filter((n) => !process.env[n]);
   if (missing.length) {
     /* Production 的 key 與正式簽章金鑰設好之前，排程每天照跑、每天跳過——不算失敗，不寄紅燈信。 */
     console.log('::warning::沒有設定 ' + missing.join('、') + '，這一輪跳過（見 README 的每日清理一節）');
     return;
   }
   const dryRun = DRY_RUN === 'true';
-  const report = await runCleanup({ fetchImpl: fetch, keyId, privateKey: pem, signingKeys: parseSigningKeys(keys), dryRun });
-  if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, summaryMarkdown(report, dryRun));
+  const report = await runCleanup({ fetchImpl: fetch, keyId, privateKey: pem, signingKeys: mode === 'purge' ? [] : parseSigningKeys(keys), dryRun, mode });
+  if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, summaryMarkdown(report, dryRun, mode));
   if (report.failed.length) process.exitCode = 1;
 }
 

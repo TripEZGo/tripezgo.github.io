@@ -1,7 +1,7 @@
 {
   "name": "tripezgo-site",
   "private": true,
-  "description": "tripezgo.com 是純靜態網站，沒有建置步驟。這份只給測試用：公開連結頁 trip/ 與每日清理工具。",
+  "description": "tripezgo.com 是純靜態網站，沒有建置步驟。這份只給測試用：公開連結停用頁 trip/、跳轉頁 open/、分享模板 share-styles/ 與每日清理工具。",
   "type": "module",
   "scripts": {
     "test": "npm run test:unit && npm run test:browser",

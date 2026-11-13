@@ -26,20 +26,17 @@ robots.txt / sitemap.xml
 - 隱私權政策：`https://tripezgo.com/privacy.html`（英文版 `https://tripezgo.com/en/privacy.html`）
 - 使用者條款：`https://tripezgo.com/terms.html`（英文版 `https://tripezgo.com/en/terms.html`）
 
-## 公開連結頁 `trip/`
+## 公開連結頁 `trip/`（1.10.0 起停用）
 
-`https://tripezgo.com/trip/#<id>.<key>`——App 的「公開連結」（App repo 的 ADR-0023、
-`.scratch/public-trip-share/spec.md`）。頁面用 CloudKit Web Services 匿名讀 public database、
-WebCrypto 在瀏覽器裡解密，金鑰只在 `#` 片段裡、不會送到伺服器。版面照 Open Design 稿
-`trip-share-public.html`。
+`https://tripezgo.com/trip/` 之下不論 `#` 後面是什麼，一律只顯示「這個連結已停用」（五語：繁中、en、ja、ko、简中，
+依瀏覽器語言挑一種；沒有 JS 時五種都顯示）。不讀 CloudKit、不解密、不載 `trip/` 底下的任何 JS，CSP 的 `default-src` 是 `'none'`。
+App 的公開連結在 1.10.0 拿掉（S59、S60）；**這個頁面在 1.10.0 上架當天才部署**，步驟在 `tools/cleanup/RETIRE.md`。
 
 ```
-trip/index.html     版面與樣式（設計稿的 token）
-trip/app.js         讀取、狀態、繪製
-trip/core.js        純函式：網址、解密、驗章、逐日分桶、純文字——瀏覽器、測試、清理工具共用
-trip/cloudkit.js    Web Services（只用 fetch，不載 CloudKit JS）
-trip/config.js      API token（Production → Development 依序查）、MapKit JS token
-trip/strings.js     三語字典
+trip/index.html     停用頁
+trip/core.js        純函式：網址、解密、驗章、逐日分桶、純文字——清理工具與單元測試用
+trip/icons.js, config.js   screens/ 的展示頁還在用
+trip/app.js, cloudkit.js, strings.js, looks.js   舊的公開頁；已沒有頁面載入（上架後再清）
 ```
 
 ### 測試
@@ -57,13 +54,14 @@ npm run golden:check      # 黃金檔副本 vs App repo 那一份（預設找 ..
   加密、簽章、產純文字的那一份。解密與三語純文字都跟它逐字對。App 那一份變了就複製過來。
   v1-dayzones（App 1.5.0）＝仍是 `v: 1`，多一個選填的 `trip.dayZones`（每一天各帶旅程時區；舊版 App 的解碼會忽略它、照 `tz`＝第 1 天讀）；
   沒有 `dayZones` 的舊連結照舊讀，兩份都留。`v: 2` 一度設計過又撤回，網站仍認得（官網可能發出過），App 不再寫。
-- 瀏覽器測試把 CloudKit 在 HTTP 邊界上假掉（`page.route` 攔 `api.apple-cloudkit.com`）。
+- 瀏覽器測試：`trip-retired.spec.mjs`（停用頁）、`open-page.spec.mjs`（跳轉頁）、`csp.spec.mjs`。
 - `.github/workflows/test.yml` 在 push 時只跑 `npm run test:unit`，**不擋部署**。瀏覽器測試（Playwright）**禁止在 GitHub CI 跑**（使用者 2026-10-26），只在本機跑。
 
 ### 每日清理 `tools/cleanup/`
 
 `.github/workflows/cleanup.yml` 每天 03:23（台北）跑一次、也能手動觸發（手動預設**試跑**：只列不刪）。
-它用 server-to-server key 列出 **Production** public database 的 `TripEZGoPublicItinerary`，
+它用 server-to-server key 列出 **Production** public database 的 `TripEZGoPublicItinerary`。
+`MODE=purge`（1.10.0 上架當天起，見 `tools/cleanup/RETIRE.md`）＝**全刪**、不驗章；沒設 `MODE` ＝下面這套判定：
 刪掉格式版本不認得、payload 壞格式、沒簽、或 HMAC 在目前接受的任一把金鑰下都驗不過的——
 那些不是 App 寫的（任何登入 iCloud 的人都能直接用 Web Services 建這個 type 的 record，吃的是
 container 共用的 public 額度）。每一筆刪了什麼、為什麼，寫在 log 與 job summary。

@@ -8,7 +8,7 @@
  * script-src 不給 'unsafe-inline'，行內 script 只能靠 `'sha256-…'` 放行——那串雜湊是內容的指紋，
  * 改一個字就對不上、頁面直接不跑。所以雜湊不手寫：這支從頁面裡算出來蓋回去，
  * `tests/unit/csp.test.mjs` 守著「CSP 裡的雜湊 = 頁面現在的行內 script」。
- * trip/ 的 import map 是 tools/stamp-trip.mjs 產生的，它蓋完會順手呼叫這裡。 */
+ * trip/ 現在是停用頁（票 35），行內 script 只有挑語言那一段。 */
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
