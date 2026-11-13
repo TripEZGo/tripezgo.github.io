@@ -15,9 +15,10 @@ for (const lang of LANGS) {
     expect(ids.indexOf('roadmap')).toBe(ids.indexOf('plans') - 1);
     expect(ids.indexOf('roadmap')).toBeGreaterThan(ids.indexOf('features'));
     await expect(page.locator('#roadmap')).toHaveCount(1);
-    await expect(page.locator('.rm-item.is-now')).toHaveCount(1);   // 1.8.0 即將上架（目前這一站）
+    await expect(page.locator('.rm-item.is-now')).toHaveCount(1);   // 1.10.0 進行中（目前這一站）
     await expect(page.locator('.rm-item[aria-current="step"]')).toHaveCount(1);
-    await expect(page.locator('.rm-item.is-planned')).toHaveCount(2);   // 1.9.0（進行中）與「接下來」（規劃中）
+    await expect(page.locator('.rm-item.is-soon')).toHaveCount(2);   // 1.8.0、1.9.0（即將推出）
+    await expect(page.locator('.rm-item.is-planned')).toHaveCount(1);   // 「接下來」（規劃中）
     await expect(page.locator('.rm-item').last()).toHaveClass(/is-planned/);
     await expect(page.locator('.site-header .site-nav > a[href="#roadmap"]')).toHaveCount(1);
   });
