@@ -37,6 +37,7 @@ LANGS = ['en', 'ja', 'ko']   # T 每條的三欄就是這個順序
 NAMES = {'en': 'English', 'ja': '日本語', 'ko': '한국어', 'zh-cn': '简体中文'}
 
 T = {
+  '旅行 x 音樂 ↗': ('Travel x Music ↗', '旅行 x 音楽 ↗', '여행 x 음악 ↗'),
   # chrome
   '跳到主要內容': ('Skip to main content', 'メインコンテンツへ移動', '메인 콘텐츠로 건너뛰기'),
   '隱私': ('Privacy', 'プライバシー', '개인정보'),
@@ -598,7 +599,6 @@ T = {
   '@ 行程或購物項目，點了直接打開': ('@-mention an event or shopping item; tap it to open it', '予定や買い物アイテムを @ で指定。タップですぐ開けます', '일정이나 쇼핑 항목을 @로 지정하고, 누르면 바로 열려요'),
   'App 內 AI 排行程': ('AI trip planning inside the app', 'アプリ内の AI で旅程づくり', '앱 안에서 AI로 일정 짜기'),
   'Apple 行事曆、Google 日曆': ('Apple Calendar, Google Calendar', 'Apple カレンダー、Google カレンダー', 'Apple 캘린더, Google 캘린더'),
-  'PDF 匯出': ('PDF export', 'PDF 書き出し', 'PDF 내보내기'),
   'iCloud 備份同步': ('iCloud backup and sync', 'iCloud のバックアップと同期', 'iCloud 백업·동기화'),
   '依標題自動選好行程類型與購物分類': ('Event type and shopping category picked automatically from the title', 'タイトルから予定タイプと買い物カテゴリを自動で選択', '제목을 보고 일정 유형과 쇼핑 분류를 자동 선택'),
   '全新主頁': ('A new Home page', '新しいホーム画面', '새로운 홈'),
@@ -627,6 +627,8 @@ T = {
   '旅伴位置共享、抵達提醒、步行導航': ('Companion location sharing, arrival alerts, walking navigation', '旅の仲間との位置情報共有、到着通知、徒歩ナビ', '동행 위치 공유, 도착 알림, 도보 내비게이션'),
   '旅程名稱自動建議、封面自動用目的地地圖': ('Trip names suggested for you, cover set to the destination map', '旅行名を自動で提案、カバーは目的地の地図に', '여행 이름 자동 추천, 표지는 목적지 지도로 자동 설정'),
   '旅程時區與旅程地點': ('Trip time zone and trip place', '旅行のタイムゾーンと場所', '여행 시간대와 여행 장소'),
+  '完整的旅程分享': ('Full trip sharing', '旅程の共有を充実', '완성된 여행 공유'),
+  '支援產生 PDF 或分享到社群': ('Make a PDF or share to social media', 'PDFの作成やSNSへのシェアに対応', 'PDF 만들기와 소셜 공유 지원'),
   '旅程編輯紀錄': ('Trip edit history', '旅行の編集履歴', '여행 편집 기록'),
   '旅程資訊一把掌握': ('Your whole trip at a glance', '旅の情報をひと目で', '여행 정보를 한눈에'),
   '旅行靈感': ('Travel inspiration', '旅のインスピレーション', '여행 영감'),

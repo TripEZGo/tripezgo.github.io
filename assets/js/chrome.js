@@ -49,13 +49,14 @@ export function brandHtml(lang) {
 /** `<footer class="site-footer">` 裡面那一整塊。 */
 export function footerHtml(lang) {
   const f = FOOTER[lang] || FOOTER.zh;
-  const a = ([href, text, hl]) => '<li><a href="' + href + '"'
+  const a = ([href, text, hl]) => '<li><a href="' + href + '"' + (href === 'https://sound.tripezgo.com/' ? ' class="footer-sound"' : '')
     + (hl ? ' hreflang="' + hl + '" lang="' + hl + '"' : '')
     + (href.startsWith('http') ? ' target="_blank" rel="noopener"' : '') + '>' + esc(text) + '</a></li>';   // 聯絡表單等站外連結開新視窗
   // 頁尾 A 款（Open Design 稿 site-footer-redesign，使用者 2026-11-09）：網站／條款／語言三組，社群自成第四組
   const langs = f.links.filter((l) => l[2]);
   const legal = f.links.filter((l) => !l[2] && /(privacy|terms)\.html$/.test(l[0]));
   const site = f.links.filter((l) => !langs.includes(l) && !legal.includes(l));
+  site.push(['https://sound.tripezgo.com/', ({zh:'旅行 x 音樂',en:'Travel x Music',ja:'旅行 x 音楽',ko:'여행 x 음악'})[lang] || '旅行 x 音樂']);
   const group = (cls, head, items) => '<div class="footer-group footer-group--' + cls + '"><h2 class="footer-heading">' + esc(head)
     + '</h2><ul>' + items.map(a).join('') + '</ul></div>';
   const social = '<div class="footer-social"><h2 class="footer-heading">' + esc(f.heads[3]) + '</h2><ul>'
