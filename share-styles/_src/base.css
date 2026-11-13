@@ -190,9 +190,9 @@ html[data-fmt=story] .ab-map .edge-lbl { font-size: 26px; padding: 4px 14px; } h
 .legend li { display: flex; align-items: center; gap: .5em; line-height: 1.5; min-width: 0; }
 .legend li span { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .legend .pin { flex: none; display: inline-grid; place-items: center; min-width: 1.6em; height: 1.6em; padding: 0 .3em; border-radius: 999px; background: var(--pin-bg); color: var(--pin-fg); font-size: .82em; font-weight: 700; font-variant-numeric: tabular-nums; }
-html[data-fmt=pdf] .legend { position: absolute; left: 0; right: 0; top: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 14px; padding: 12px 26px 10px; font-size: 10.5px; }
-html[data-fmt=story] .legend, html[data-fmt=square] .legend { position: absolute; left: 36px; right: 36px; bottom: 120px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 22px; padding: 18px 22px; border-radius: 22px; font-size: 20px; }
-html[data-fmt=square] .legend { left: 40px; right: 40px; bottom: 92px; gap: 6px 18px; padding: 12px 18px; font-size: 17px; border-radius: 18px; }
+html[data-fmt=pdf] .legend { position: static; flex: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 14px; padding: 12px 26px 10px; font-size: 10.5px; }
+html[data-fmt=story] .legend, html[data-fmt=square] .legend { position: static; flex: none; margin: 0 36px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 22px; padding: 18px 22px; border-radius: 22px; font-size: 20px; }
+html[data-fmt=square] .legend { margin: 0 40px; gap: 6px 18px; padding: 12px 18px; font-size: 17px; border-radius: 18px; }
 .legend-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px 22px; padding: 16px 4px 0; font-size: var(--fs-sm); background: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
 .legend-flow li span { white-space: normal; }
 .map-part { position: absolute; z-index: 8; left: 36px; top: 36px; padding: 4px 18px; border-radius: 999px; background: var(--lg-bg); color: var(--lg-fg); font-size: 22px; font-weight: 700; }
@@ -218,6 +218,12 @@ html[data-fmt=square] .legend h3 { font-size: .95em; }
 /* 共用：地圖層（三種格式各一層，CSS 只顯示目標格式那一層）、section 預設 */
 .lay { display: none; position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
 .lay > .trip-map { position: absolute; left: 0; top: 0; right: 0; bottom: 0; height: auto; margin: 0; }
+/* 地圖頁：地圖圖只佔圖例以外的範圍，圖例接在地圖下方、不疊在圖上——MapKit 的標誌與法律聲明在地圖圖的左下角，不准蓋掉
+   （1.10.0 票 19，主 session 2026-11-14）。地圖格的高度＝sheet-body 扣掉圖例，原生端排完量 .trip-map 再照那個尺寸拍。社群原本圖例的 bottom 讓開頁底標誌，搬到 sheet-body。 */
+.sheet-map .sheet-body { display: flex; flex-direction: column; }
+.sheet-map .lay { position: relative; left: auto; top: auto; right: auto; bottom: auto; flex: 1 1 auto; min-height: 0; }
+html[data-fmt=story] .sheet-map .sheet-body { bottom: 120px; }
+html[data-fmt=square] .sheet-map .sheet-body { bottom: 92px; }
 .sec { break-after: page; page-break-after: always; }
 
 .di-list { display: block; margin-top: .1em; font-size: var(--fs-xs); line-height: 1.5; color: var(--ink-2); }

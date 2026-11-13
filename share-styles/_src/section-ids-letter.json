@@ -22,6 +22,11 @@
    "pdfPage": 4
   },
   {
+   "id": "day1-pdf-2",
+   "format": "pdf",
+   "pdfPage": 5
+  },
+  {
    "id": "day1-story-1",
    "format": "story",
    "pdfPage": null
@@ -34,7 +39,17 @@
   {
    "id": "day2-pdf-1",
    "format": "pdf",
-   "pdfPage": 5
+   "pdfPage": 6
+  },
+  {
+   "id": "day2-pdf-2",
+   "format": "pdf",
+   "pdfPage": 7
+  },
+  {
+   "id": "day2-pdf-3",
+   "format": "pdf",
+   "pdfPage": 8
   },
   {
    "id": "day2-story-1",
@@ -49,7 +64,12 @@
   {
    "id": "day3-pdf-1",
    "format": "pdf",
-   "pdfPage": 6
+   "pdfPage": 9
+  },
+  {
+   "id": "day3-pdf-2",
+   "format": "pdf",
+   "pdfPage": 10
   },
   {
    "id": "day3-story-1",
@@ -64,7 +84,12 @@
   {
    "id": "day4-pdf-1",
    "format": "pdf",
-   "pdfPage": 7
+   "pdfPage": 11
+  },
+  {
+   "id": "day4-pdf-2",
+   "format": "pdf",
+   "pdfPage": 12
   },
   {
    "id": "day4-story-1",
@@ -79,7 +104,12 @@
   {
    "id": "day5-pdf-1",
    "format": "pdf",
-   "pdfPage": 8
+   "pdfPage": 13
+  },
+  {
+   "id": "day5-pdf-2",
+   "format": "pdf",
+   "pdfPage": 14
   },
   {
    "id": "day5-story-1",
@@ -94,7 +124,7 @@
   {
    "id": "day6-pdf-1",
    "format": "pdf",
-   "pdfPage": 9
+   "pdfPage": 15
   },
   {
    "id": "day6-story-1",
@@ -109,27 +139,27 @@
   {
    "id": "att-1",
    "format": "all",
-   "pdfPage": 10
+   "pdfPage": 16
   },
   {
    "id": "att-2",
    "format": "all",
-   "pdfPage": 11
+   "pdfPage": 17
   },
   {
    "id": "att-3",
    "format": "all",
-   "pdfPage": 12
+   "pdfPage": 18
   },
   {
    "id": "att-3-p2",
    "format": "all",
-   "pdfPage": 13
+   "pdfPage": 19
   },
   {
    "id": "att-4",
    "format": "all",
-   "pdfPage": 14
+   "pdfPage": 20
   }
  ]
 }

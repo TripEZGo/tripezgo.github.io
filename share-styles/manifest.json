@@ -3,14 +3,14 @@
   "styles": [
     {
       "id": "magazine",
-      "version": 1,
+      "version": 2,
       "files": {
         "a4": "magazine/template.html",
         "letter": "magazine/template-letter.html"
       },
       "sha256": {
-        "a4": "1cc58d8422843928a12e8798e4190d97e4371c15821f6e09c6f10f4ae5c6aab0",
-        "letter": "3927f4dc6dfab95a5234815f9d5afcb670442a39373a0729d045fa3bcec1bb0c"
+        "a4": "afe5af18df690262ed203fa18076396aa2d76843a140ef2a8920ff932b0d0f20",
+        "letter": "fb73a55bfc02a4b37b48968d4f96646e5d27ab78d5f77d5ea8f89c3b8a68c455"
       }
     }
   ]
