@@ -809,3 +809,8 @@ if PAPER != 'letter':
 
 if PAPER != 'letter':
     exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'indexpage.py'), encoding='utf8').read())
+
+# 模板有變，manifest 的 SHA-256 就要跟著變（票 34）。A4 與 Letter 是兩次分開的執行，兩份都在才寫。
+if not VERIFY and not NOSPLIT and all(os.path.exists(os.path.join(ROOT, 'magazine', n)) for n in ('template.html', 'template-letter.html')):
+    import manifest
+    print('wrote', manifest.write())
