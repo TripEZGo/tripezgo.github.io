@@ -439,6 +439,7 @@ body{ background: #d8d2c9; }
 .sheet-overview .blk-note .rich{ display: grid; grid-template-columns: minmax(0, 1fr) 190px; column-gap: 20px; align-items: start; }
 .sheet-overview .blk-note .rich p{ grid-column: 1; }
 .sheet-overview .blk-note .inline-img{ grid-column: 2; grid-row: 1 / span 3; margin-top: 0; }
+.sheet-overview .blk-note .inline-img ~ .inline-img{ grid-column: 1 / -1; grid-row: auto; margin-top: 10px; }
 .sheet-overview .imp-bm{ flex: none; }
 .sheet-overview .blk-days{ flex: 1 1 auto; display: flex; flex-direction: column; min-height: min-content; margin-top: 14px; }
 .sheet-overview .day-index{ flex: 1 1 auto; display: flex; flex-direction: column; min-height: min-content; }
