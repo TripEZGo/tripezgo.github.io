@@ -12,10 +12,10 @@ TripEZGo 1.10.0 拿掉 App 內的公開連結（S59）。舊連結一律停用�
 | `tools/cleanup/cleanup.mjs` | 新增 `MODE=purge`（全刪、不驗章）。沒設 `MODE` ＝ 舊判定，行為不變。`DRY_RUN` 照舊 |
 | 測試 | `npm run test:unit`、`npx playwright test`（本機）。purge 的單元測試用假的 Web Services |
 
-## 部署前要先補的一件事：workflow 的 `MODE`（這份分支沒動它）
+## workflow 的 `MODE`（已在這份分支改好）
 
 `.github/workflows/cleanup.yml` 現在不會把 `MODE` 傳給 `cleanup.mjs`，所以手動觸發也只能跑舊判定。
-票 35 要求「排程維持舊模式、手動觸發能選 purge」，這需要改 workflow；改 workflow 要主 session 決定，所以只附 patch：
+票 35 要求「排程維持舊模式、手動觸發能選 purge」。下面這段已套進 `.github/workflows/cleanup.yml`：
 
 ```diff
    workflow_dispatch:
@@ -36,7 +36,7 @@ TripEZGo 1.10.0 拿掉 App 內的公開連結（S59）。舊連結一律停用�
 ```
 
 `MODE` 只接受空字串或 `purge`，其他值（含大小寫、打錯字）直接拒絕執行，不會悄悄退回另一種行為。
-這個 patch 要先進 `main`（workflow 只認預設分支上的版本才能手動觸發），而且要在 1.10.0 上架**之前**進，這樣當天才有得用。
+workflow 只認預設分支上的版本才能手動觸發，所以步驟 2 合進 `main` 之後，步驟 3 才有 purge 可選。
 它單獨進 main 是安全的：預設仍是舊判定，不會刪更多東西。
 
 ## 上架當天

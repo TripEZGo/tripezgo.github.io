@@ -16,6 +16,11 @@ on:
         description: 只列出會刪哪些，不刪
         type: boolean
         default: true
+      mode:
+        description: legacy＝只刪不是 App 寫的（預設）；purge＝這個 type 全刪（1.10.0 上架當天才用）
+        type: choice
+        options: [legacy, purge]
+        default: legacy
 
 permissions:
   contents: read
@@ -44,3 +49,5 @@ jobs:
           TEZ_SIGNING_KEYS: ${{ secrets.TEZ_SIGNING_KEYS }}
           # 排程觸發時沒有 inputs → 空字串 → 真的刪；手動觸發預設試跑。
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+          # 排程觸發沒有 inputs → 空字串 → 舊判定。上架當天步驟 5 之後，把排程改成 purge（tools/cleanup/RETIRE.md）。
+          MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'purge' && 'purge' || '' }}
