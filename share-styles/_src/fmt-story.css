@@ -1,0 +1,55 @@
+
+/* ═══ 社群限時動態：每張 1080 × 1920 的 artboard；總覽、整趟地圖、每天各一張；不放描述、不放附件。 ═══ */
+:root { --fs: 27px; --fs-sm: 23px; --fs-xs: 20px; --fs-lg: 31px; --fs-xl: 58px; --fs-h1: 78px; --gap: 18px; }
+.ab-foot { position: absolute; left: 76px; right: 76px; bottom: 36px; display: flex; justify-content: center; }
+.ab-foot .badge-a { --wm: 156px; --fs: 13.5px; } .ab-foot .user-logo { height: 70px; max-width: 480px; border-radius: 12px; }
+.page-t { font-size: var(--fs-xl); color: var(--ink); letter-spacing: -0.01em; }
+.ab-overview .cover { flex: 1 1 auto; display: flex; flex-direction: column; min-height: min-content; }
+.ab-overview .cover-media { flex: 1 1 0; min-height: 565px; }
+.ab-overview .cover-media img { height: 100%; aspect-ratio: auto; }
+.ab-overview .cover-text { flex: none; }
+.ab-overview .blk-days { flex: none; }
+.day-map .map-img, .trip-map .map-img { aspect-ratio: auto; height: 100%; }
+.edge-lbl { font-size: 20px; }
+/* 行程卡改橫排：封面縮成左側方塊，不放描述與附件 */
+.ab-day .event { flex-direction: row; align-items: stretch; border-radius: 18px; }
+.ab-day .ev-cover { flex: none; width: 150px; } .ab-day .ev-cover img { width: 100%; height: 100%; min-height: 0; }
+.ab-day .ev-main { flex: 1 1 auto; min-width: 0; padding: 12px 20px 14px; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: 'top top top' 'time loc type'; column-gap: 16px; align-items: baseline; }
+.ab-day .ev-no { font-size: 20px; } .ab-day .ev-time { padding-left: 0; font-size: 23px; }
+.ab-day .ev-top { gap: 12px; } .ab-day .ev-name { font-size: 35px; }
+.ab-day .ev-loc { padding-left: 0; font-size: 21px; display: flex; min-width: 0; } .ab-day .ev-loc span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ab-day .ev-loc .ic { display: none; }
+.ab-day .leg { padding: 5px 0 5px 22px; } .ab-day .leg::before { left: 46px; }
+.ab-day .leg-row { gap: 8px 14px; } .ab-day .leg-pill { font-size: 22px; } .ab-day .leg-gap { font-size: 20px; } .ab-day .leg-late { font-size: 20px; }
+.ab-day .overlap { padding: 12px; } .ab-day .ov-label { font-size: 20px; margin-bottom: 8px; }
+.ab-day .ov-cards .event { flex-direction: row; } .ab-day .ov-cards .ev-cover { width: 96px; } .ab-day .ov-cards .ev-cover img { height: 100%; min-height: 0; }
+.ab-day .ov-cards .ev-main { grid-template-columns: 1fr; grid-template-areas: 'top' 'time' 'loc' 'type'; padding: 10px 14px 12px; row-gap: 2px; } .ab-day .ov-cards .ev-name { font-size: 27px; } .ab-day .ov-cards .ev-type { justify-self: start; }
+.ab-day .allday { padding: 8px 18px; } .ab-day .ad-name { font-size: 27px; }
+.ab-day .day-head { gap: 20px; }
+.ab-overview .day-index li { padding: 15px 0; }
+
+.legend { font-size: 20px; } .legend li { line-height: 1.5; }
+
+.ab-day { justify-content: flex-start; }
+
+.sheet-body { left: 76px; right: 76px; top: 80px; bottom: 128px; }
+.lay-story { display: block; }
+
+/* S82 社群：地址一行省略；地址前的 pin 要留著（地點名稱行的 icon 照舊隱藏） */
+.ab-day .ev-loc.has-addr { flex-direction: column; }
+.ab-day .ev-loc.has-addr .loc-n, .ab-day .ev-loc.has-addr .loc-a { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+.ab-day .ev-loc.has-addr .loc-a { display: flex; }
+.ab-day .ev-loc.has-addr .loc-a .ic { display: inline-block; flex: none; width: 1em; height: 1em; }
+.ab-day .ev-loc.has-addr .loc-a .a-t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* S80 限動：封面不得小於 16:9，逐日摘要讓步——超過 6 列（dense）改成「天 · 日期 · 地點」與標題同一行 */
+.ab-overview .day-index.dense li:not(.di-more) { display: flex; flex-direction: row; align-items: baseline; gap: 14px; padding-top: 10px; padding-bottom: 10px; }
+.ab-overview .day-index.dense .di-top { flex: none; max-width: 48%; }
+.ab-overview .day-index.dense .di-sum { flex: 1 1 auto; min-width: 0; margin-top: 0; }
+
+/* S86 社群：時區行一行省略（icon 留著） */
+.ab-day .ev-loc.has-addr .loc-z { display: flex; white-space: nowrap; overflow: hidden; }
+.ab-day .ev-loc.has-addr .loc-z .ic { display: inline-block; flex: none; width: 1em; height: 1em; }
+.ab-day .ev-loc.has-addr .loc-z .a-t, .ab-day .ev-loc.has-addr .loc-a .a-t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ab-day .leg-z { white-space: nowrap; overflow: hidden; margin-left: 40px; }
+.ab-day .leg-z .a-t { overflow: hidden; text-overflow: ellipsis; }

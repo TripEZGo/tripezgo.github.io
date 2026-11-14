@@ -21,7 +21,7 @@ import { fileURLToPath } from 'node:url';
 /** 網站實際在送的東西（2026-10-20 從 repo 與頁面引用盤點：首頁的 iPhone 示範是 iframe 載 /screens/，所以 screens/ 在內）。 */
 export const PUBLISH = [
   '.nojekyll', '.well-known', '404.html', 'CNAME', 'android-auth', 'announcements', 'app-ads.txt', 'assets', 'contact', 'covers',
-  'en', 'index.html', 'ja', 'join', 'ko', 'open', 'privacy.html', 'robots.txt', 'screens',
+  'en', 'index.html', 'ja', 'join', 'ko', 'open', 'privacy.html', 'robots.txt', 'screens', 'share-styles',
   'sitemap.xml', 'terms.html', 'trip', 'zh-cn',
 ];
 /** 刻意不發佈：開發用或專案文件。`.git`、`node_modules` 等工具產物不用列，下面的 IGNORED 直接略過。 */
@@ -29,6 +29,18 @@ export const KEEP_OUT = [
   '.github', '.gitignore', '.obsidian', '_posts', 'CONTEXT.md', 'README.md', 'package-lock.json', 'package.json',
   'playwright.config.mjs', 'tests', 'tools',
 ];
+/** share-styles/ 只發佈 App 要下載的東西：manifest.json 與各風格資料夾裡的模板。
+ *  `_src`（產生器）、`_preview`、`_sample`、`_badge` 與開發用的 index.html、README.md 不上正式站（票 34）。
+ *  `src` 是 cpSync 給的絕對路徑，比對相對於 share-styles/ 的那一段。 */
+export function shareStylesFilter(src) {
+  const rel = src.split(/[\\/]share-styles(?:[\\/]|$)/)[1];
+  if (rel === undefined || rel === '') return true;
+  const parts = rel.split(/[\\/]/);
+  if (parts[0].startsWith('_')) return false;
+  if (parts.length === 1) return parts[0] === 'manifest.json' || !parts[0].includes('.');
+  return /^template(-letter)?\.html$/.test(parts[1]);
+}
+
 /** 工具與瀏覽器留下的、不在版本控制裡的東西。 */
 const IGNORED = ['.git', '.DS_Store', 'node_modules', 'test-results', 'playwright-report', '_site'];
 
@@ -70,7 +82,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   }
   rmSync(out, { recursive: true, force: true });
   mkdirSync(out, { recursive: true });
-  for (const name of PUBLISH) cpSync(new URL(name, root), new URL(name, out), { recursive: true });
+  for (const name of PUBLISH) cpSync(new URL(name, root), new URL(name, out), { recursive: true, ...(name === 'share-styles' ? { filter: shareStylesFilter } : {}) });
   stageAnalytics(out);
   if (process.env.DEPLOY_LANG && process.env.DEPLOY_LANG !== 'legacy') stageLanguage(out, process.env.DEPLOY_LANG);
   console.log('已複製 ' + PUBLISH.length + ' 個項目到 ' + out.pathname);

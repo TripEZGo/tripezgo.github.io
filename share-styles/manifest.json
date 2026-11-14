@@ -1,0 +1,17 @@
+{
+  "contractVersion": 1,
+  "styles": [
+    {
+      "id": "magazine",
+      "version": 3,
+      "files": {
+        "a4": "magazine/template.html",
+        "letter": "magazine/template-letter.html"
+      },
+      "sha256": {
+        "a4": "caa6dac15f17b4a111ab2e91b2de86d5d8e1ae20d7329d6d851394777ddffc7d",
+        "letter": "a7ebdc9ccf4bdbac76560eff3d2f3e2186264fb9d08d0c663e27143fe6722ec4"
+      }
+    }
+  ]
+}

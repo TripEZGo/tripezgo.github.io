@@ -1,0 +1,92 @@
+
+/* ═══ PDF：A4（794 × 1123 CSS px）。Letter 換 @page 與 --pw／--ph（816 × 1056）；每頁底部留緩衝，Letter 放得下。 ═══ */
+@page { size: A4; margin: 0; }
+/* Letter：@page { size: Letter; margin: 0; } 並把 :root 的 --pw 改 816px、--ph 改 1056px */
+:root { --pw: 794px; --ph: 1122px; --fs: 13px; --fs-sm: 12px; --fs-xs: 11px; --fs-lg: 15px; --fs-xl: 22px; --fs-h1: 28px; --gap: 12px; }
+body { background: #d8d2c9; }
+.sheet { position: relative; width: var(--pw); height: var(--ph); margin: 28px auto; background: var(--sheet-bg, var(--page-bg)); overflow: hidden; break-after: page; page-break-after: always; box-shadow: 0 8px 28px rgba(36,29,23,.18), 0 0 0 1px rgba(36,29,23,.08); }
+.sheet-body { position: absolute; left: 48px; right: 48px; top: 70px; bottom: 62px; }
+.sheet-overview .sheet-body { top: 44px; }
+.runhead { position: absolute; left: 48px; right: 48px; top: 28px; padding-bottom: 8px; border-bottom: 1px solid var(--line); font-size: var(--fs-xs); font-weight: 700; letter-spacing: .06em; color: var(--ink-2); }
+.runfoot { position: absolute; left: 48px; right: 48px; bottom: 16px; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.pn { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.cont { margin-top: 10px; text-align: center; font-size: var(--fs-xs); color: var(--ink-2); }
+.cont-head { display: flex; gap: .6em; align-items: baseline; font-size: var(--fs-sm); color: var(--ink-2); margin-bottom: 4px; }
+.cont-head span { font-weight: 700; color: var(--ink); } .cont-head em { font-style: normal; }
+.page-t { font-size: var(--fs-xl); color: var(--ink); letter-spacing: -0.01em; }
+.map-cap { margin-top: 10px; font-size: var(--fs-sm); color: var(--ink-2); }
+.trip-map .map-img { aspect-ratio: auto; height: 100%; }
+.sheet-att .att-corner { position: absolute; right: 48px; top: 24px; padding: 2px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: var(--fs-xs); font-weight: 700; color: var(--ink-2); background: var(--paper); }
+.att-head { font-size: var(--fs-xs); color: var(--ink-2); line-height: 1.6; } .att-head b { color: var(--ink); font-size: var(--fs-sm); }
+.att-frame { margin-top: 16px; height: 790px; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: #fff; }
+.att-img { width: 100%; height: 100%; object-fit: cover; }
+.fakepdf { height: 100%; padding: 34px; color: #cfc8bf; }
+.fakepdf i { display: block; height: 8px; border-radius: 4px; background: #ece7df; margin-bottom: 12px; }
+.fakepdf .fp-h { display: block; height: 22px; width: 52%; background: #e3ddd4; border-radius: 5px; margin-bottom: 22px; }
+.fakepdf .fp-qr { width: 120px; height: 120px; margin: 24px 0; background: repeating-linear-gradient(90deg, #d9d2c8 0 6px, #fff 6px 12px); }
+.sheet-att .url-grid { grid-template-columns: 1fr 1fr; }
+
+.sheet-overview .cover-media img { aspect-ratio: 2.5 / 1; }
+.ev-cover img { height: 84px; }
+.sheet-overview .blk { margin-top: 18px; }
+.day-index li { padding: .38em 0; }
+.imp-list li { padding: .4em 0; }
+.inline-img img { max-height: 80px; }
+
+/* 總覽頁（S75）：封面、筆記、逐日摘要由上往下，逐日摘要吃掉剩下的高度，每天一列等高——天數少列距就寬、天數多就緊，整頁剛好填滿 */
+.sheet-overview .sheet-body { display: flex; flex-direction: column; }
+.sheet-overview .cover { flex: none; }
+.sheet-overview .blk-note { flex: none; margin-top: 14px; }
+.sheet-overview .blk-note .rich { display: grid; grid-template-columns: minmax(0, 1fr) 190px; column-gap: 20px; align-items: start; }
+.sheet-overview .blk-note .rich p { grid-column: 1; }
+.sheet-overview .blk-note .inline-img { grid-column: 2; grid-row: 1 / span 3; margin-top: 0; }
+/* 總覽筆記第二張圖起（主 session 裁定 2026-11-14）：不疊在側欄那格，排在文字下方、整欄寬、依序往下（App 把它們排在所有文字後面） */
+.sheet-overview .blk-note .inline-img ~ .inline-img { grid-column: 1 / -1; grid-row: auto; margin-top: 10px; }
+.sheet-overview .imp-bm { flex: none; }
+.sheet-overview .blk-days { flex: 1 1 auto; display: flex; flex-direction: column; min-height: min-content; margin-top: 14px; }
+.sheet-overview .day-index { flex: 1 1 auto; display: flex; flex-direction: column; min-height: min-content; }
+.sheet-overview .day-index li { flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; padding: 3px 0; }
+.sheet-overview .day-index li.di-more { flex: 0 0 auto; }
+.sheet-overview .di-sum { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12px; color: var(--ink); }
+.sheet-overview .di-list { white-space: normal; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; font-size: 11.5px; }
+/* S80 封面固定 16:9，空間不夠由逐日摘要讓步：超過 6 列（dense）改成「天 · 日期 · 地點」與標題同一行、標題 1 行；AI 版（.ai）句子與標題同一行，行程清單 1 行 */
+.sheet-overview .day-index.dense li, .sheet-overview .day-index.ai li { flex-direction: column; justify-content: center; }
+.sheet-overview .day-index.dense li:not(.di-more) { flex-direction: row !important; align-items: baseline; gap: 10px; flex-wrap: nowrap; }
+.sheet-overview .day-index.dense .di-top { flex: none; max-width: 46%; }
+.sheet-overview .day-index.dense .di-sum { flex: 1 1 auto; min-width: 0; margin-top: 0; -webkit-line-clamp: 1; }
+.sheet-overview .day-index.dense .di-list { display: none; }
+.sheet-overview .day-index.ai:not(.dense) li:not(.di-more) { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 10px; align-items: baseline; }
+.sheet-overview .day-index.ai:not(.dense) .di-sum { margin-top: 0; -webkit-line-clamp: 1; }
+.sheet-overview .day-index.ai:not(.dense) .di-list { grid-column: 1 / -1; }
+.sheet-overview .rich p { font-size: 12px; line-height: 1.65; }
+.sheet-overview .cover-media img { aspect-ratio: 16 / 9; }
+
+@media print { body { background: none; } .sheet { margin: 0 !important; box-shadow: none !important; } }
+
+/* 整趟地圖：獨立一頁、滿版（左右上到頁邊），底下留頁尾 badge 那一條；沒有標題、沒有說明文字 */
+.sheet-map .sheet-body { left: 0; right: 0; top: 0; bottom: 70px; }
+.sheet-map .trip-map { position: absolute; inset: 0; height: auto; margin: 0; }
+
+/* 整趟地圖那一頁橫向：具名 @page 只讓這一頁用橫向 A4（Letter 換成 Letter landscape、--lw 1056、--lh 816）。
+   Chrome 量得到混合方向；iOS 的 WKWebView.createPDF 是否照 named page 走，要 probe。 */
+@page map { size: A4 landscape; margin: 0; }
+:root { --lw: 1122px; --lh: 794px; }
+.sheet-map { page: map; width: var(--lw); height: var(--lh); }
+
+/* 內容靠上（S119 撤回 S58 的垂直置中）：頁首在每一頁的位置都一樣 */
+.sheet-day .sheet-body { display: flex; flex-direction: column; justify-content: flex-start; }
+
+.lay-pdf { display: block; }
+@media print { .draft { display: none !important; } }
+
+/* 黑白列印要讀得懂：警示與膠囊的邊線加深、摘要字加深（彩色列印與螢幕預覽也維持好看） */
+@media print { .leg-pill { border-color: var(--ink-2); } .di-sum, .ev-loc, .leg-gap { color: var(--ink); } .edge-lbl { border: 1px solid var(--ink); } }
+.sheet-overview .day-index.dense li:not(.di-more) { padding: 1px 0; }
+.sheet-overview .day-index.dense li.di-more { padding-top: 2px; }
+.sheet-overview .day-index.dense .di-no, .sheet-overview .day-index.dense .di-pl { font-size: 1em; }
+.sheet-overview .day-index.dense li.di-more { line-height: 1.2; }
+.sheet-overview .blk-note { margin-top: 8px; } .sheet-overview .blk-days { margin-top: 8px; }
+.sheet-overview .rich p { line-height: 1.5; }
+.sheet-overview .imp-bm { margin-top: 4px; padding-top: 4px; }
+.sheet-overview .day-index.dense li:not(.di-more) { padding: 0; }
+.sheet-overview .cover-text { padding-top: 8px; padding-bottom: 8px; }

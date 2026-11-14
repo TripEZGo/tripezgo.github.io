@@ -1,0 +1,30 @@
+{
+ "pdf": {
+  "overview": 8,
+  "v-overview-ai": 8,
+  "v-overview-12": 8,
+  "v-overview-nocover": 8,
+  "v-overview-noimp": 8
+ },
+ "story": {
+  "overview": 8,
+  "v-overview-ai": 8,
+  "v-overview-12": 1,
+  "v-overview-nocover": 8,
+  "v-overview-noimp": 8
+ },
+ "square": {
+  "overview": 8,
+  "v-overview-ai": 8,
+  "v-overview-12": 3,
+  "v-overview-nocover": 8,
+  "v-overview-noimp": 8
+ },
+ "pdf-letter": {
+  "overview": 1,
+  "v-overview-ai": 1,
+  "v-overview-12": 8,
+  "v-overview-nocover": 8,
+  "v-overview-noimp": 8
+ }
+}

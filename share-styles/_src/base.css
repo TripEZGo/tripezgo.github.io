@@ -1,0 +1,301 @@
+
+/* ═══ 共同骨架：結構與預設變數。各風格在 style-*.css 改變數＋加裝飾，各格式在 fmt-*.css 定紙／板／網頁尺寸。 ═══ */
+:root {
+  --paper: #fbf8f4; --page-bg: #ffffff; --card: #ffffff; --ink: #241d17; --ink-2: #7c6f63; --line: #dbd5cd;
+  --line-2: color-mix(in srgb, var(--line) 55%, var(--paper)); --sunken: color-mix(in srgb, var(--line) 26%, var(--paper));
+  --accent: #2f918e; --accent-ink: #1d7370; --accent-on: #ffffff;
+  --warn: #e9a535; --warn-ink: #8a6212; --warn-bg: color-mix(in srgb, #e9a535 16%, #fff);
+  --r: 8px; --r-lg: 12px;
+  --font: Inter, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "PingFang TC", "Hiragino Sans", "Noto Sans TC", "Noto Sans JP", sans-serif;
+  --font-display: var(--font);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "PingFang TC", monospace;
+  /* 尺度（各格式覆寫） */
+  --fs: 13px; --fs-sm: 12px; --fs-xs: 11px; --fs-lg: 15px; --fs-xl: 21px; --fs-h1: 30px;
+  --gap: 12px;
+}
+:root { color-scheme: light; }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; background: var(--page-bg); color: var(--ink); font-family: var(--font); font-size: var(--fs); line-height: 1.55; letter-spacing: 0.01em; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, p, ul, ol, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+img { display: block; max-width: 100%; }
+.ic { width: 1.1em; height: 1.1em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ic-s { width: 1em; height: 1em; }
+.mk { width: 1.05em; height: 1.05em; flex: none; }
+.qr { display: block; width: 100%; height: 100%; color: #241d17; }
+
+/* 稿上的說明（不是模板的一部分；列印與社群輸出時都不會有） */
+.draft-note { position: absolute; z-index: 9; right: 8px; top: 8px; padding: 2px 9px; border: 1px dashed var(--warn); border-radius: 999px; background: var(--warn-bg); color: var(--warn-ink); font-family: var(--font); font-size: 11px; line-height: 1.5; letter-spacing: 0; }
+.draft-note.block { position: static; display: block; border-radius: 6px; margin: 8px 0; }
+@media print { .draft-note, .draft-page, .board-label { display: none !important; } }
+.draft-page { margin: 24px auto; max-width: 900px; padding: 20px; border: 1px dashed var(--warn); border-radius: 12px; background: var(--warn-bg); color: #3b2f1a; font-family: var(--font); }
+.draft-page h2 { font-size: 15px; margin-bottom: 10px; } .draft-page h3 { font-size: 13px; margin: 8px 0; } .draft-page p { font-size: 12px; line-height: 1.6; }
+.draft-page code { background: #fff; padding: 0 4px; border-radius: 4px; }
+.dp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.demo-card { background: var(--page-bg); color: var(--ink); padding: 16px; border-radius: 12px; }
+
+/* ── 封面／總覽 ── */
+.cover { position: relative; }
+.cover-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.cover-text { position: relative; }
+.kicker { display: flex; align-items: center; gap: .6em; font-family: var(--font-mono); font-size: var(--fs-sm); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.kicker i { width: 4px; height: 4px; border-radius: 50%; background: currentColor; opacity: .6; }
+.trip-name { font-family: var(--font-display); font-size: var(--fs-h1); line-height: 1.2; letter-spacing: -0.015em; font-weight: 700; margin-top: .25em; overflow-wrap: anywhere; }
+.trip-place, .tz-summary { display: flex; align-items: center; gap: .5em; color: var(--ink-2); font-size: var(--fs-sm); margin-top: .4em; }
+.deco, .tape, .notch { display: none; }
+.blk { margin-top: calc(var(--gap) * 2); }
+.blk-t, .page-t { font-size: var(--fs-sm); font-weight: 700; letter-spacing: .06em; color: var(--ink-2); display: flex; align-items: center; gap: .6em; }
+.blk-t .n { font-weight: 600; letter-spacing: 0; }
+.rich p { font-size: var(--fs); line-height: 1.7; margin-top: .55em; overflow-wrap: anywhere; }
+.rich p:first-child { margin-top: 0; }
+.inline-img { margin-top: .8em; }
+.inline-img img { width: 100%; max-height: 120px; object-fit: cover; border-radius: var(--r); }
+.inline-img figcaption { font-size: var(--fs-xs); color: var(--ink-2); margin-top: .35em; }
+.day-index li { display: block; padding: .5em 0; border-bottom: 1px solid var(--line-2); }
+.di-top { display: flex; align-items: baseline; gap: .5em; min-width: 0; white-space: nowrap; }
+.di-no { font-weight: 700; } .di-pl { color: var(--ink); overflow: hidden; text-overflow: ellipsis; } .di-sep { font-style: normal; color: var(--ink-2); }
+.di-d { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-2); letter-spacing: 0; }
+.di-sum { display: block; margin-top: .1em; font-size: var(--fs-sm); line-height: 1.5; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.imp-list li { display: flex; align-items: center; gap: .7em; padding: .55em 0; border-bottom: 1px solid var(--line-2); }
+.imp-ic { display: grid; place-items: center; width: 2em; height: 2em; border-radius: var(--r); background: var(--sunken); color: var(--ink-2); flex: none; }
+.imp-n { font-weight: 600; flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; } .imp-m { font-size: var(--fs-sm); color: var(--ink-2); font-family: var(--font-mono); }
+
+/* ── 地圖＋邊緣箭頭 ── */
+.map { position: relative; overflow: hidden; border-radius: var(--r); background: #e9e4da; }
+.map-img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 1190 / 600; }
+.edge { position: absolute; z-index: 3; display: flex; align-items: center; gap: 6px; top: var(--pos); transform: translateY(-50%); max-width: 78%; }
+.edge-l { left: 6px; flex-direction: row-reverse; } .edge-r { right: 6px; flex-direction: row; }
+.edge-lbl { padding: 2px 9px; border-radius: 999px; background: rgba(255,255,255,.94); color: #241d17; font-size: var(--fs-xs); font-weight: 700; line-height: 1.45; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; box-shadow: 0 1px 3px rgba(36,29,23,.25); }
+.edge-ar { width: 1.9em; height: 1.9em; fill: var(--accent-ink); stroke: #fff; stroke-width: 1.6; stroke-linejoin: round; transform: rotate(var(--deg)); flex: none; filter: drop-shadow(0 1px 2px rgba(36,29,23,.35)); }
+
+/* ── 一天 ── */
+.day-head { display: flex; align-items: baseline; gap: .9em; flex-wrap: wrap; }
+.day-no { font-weight: 700; font-size: var(--fs-xl); letter-spacing: -0.01em; white-space: nowrap; }
+.day-no i { font-style: normal; } .day-no b { font-weight: 700; }
+.day-tt { display: flex; align-items: baseline; gap: .8em; flex-wrap: wrap; min-width: 0; }
+.day-date { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--ink-2); }
+.day-place { font-size: var(--fs-lg); font-weight: 600; overflow-wrap: anywhere; }
+.day-map { margin-top: var(--gap); }
+.allday-list { margin-top: var(--gap); display: grid; gap: 8px; }
+.allday { display: flex; align-items: center; gap: .8em; padding: .6em .9em; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--sunken); border-left: 4px solid var(--ev); }
+.ad-ic { color: var(--ev); font-size: 1.3em; display: grid; place-items: center; }
+.ad-t { flex: 1 1 auto; min-width: 0; } .ad-name { font-weight: 700; overflow-wrap: anywhere; } .ad-span { display: flex; align-items: center; gap: .4em; font-size: var(--fs-sm); color: var(--ink-2); }
+.timeline { margin-top: var(--gap); display: flex; flex-direction: column; gap: 0; }
+.timeline > * { flex: none; }
+
+.event { position: relative; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card); overflow: hidden; break-inside: avoid; }
+.ev-cover img { width: 100%; height: 96px; object-fit: cover; }
+.ev-main { display: grid; grid-template-columns: 1fr auto; grid-template-areas: 'top top' 'time type' 'loc loc'; column-gap: .8em; row-gap: .15em; padding: .75em .95em .85em; align-items: center; }
+.ev-top { grid-area: top; display: flex; align-items: center; gap: .6em; min-width: 0; }
+.ev-no { flex: none; display: inline-grid; place-items: center; width: 1.7em; height: 1.7em; border-radius: 50%; background: var(--accent); color: #fff; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--accent); font-size: .85em; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
+.ev-name { font-size: var(--fs-lg); font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; overflow-wrap: anywhere; min-width: 0; }
+.ev-time { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--ink-2); font-variant-numeric: tabular-nums; padding-left: 2.35em; letter-spacing: 0; grid-area: time; }
+.ev-type { display: inline-flex; align-items: center; gap: .4em; font-size: var(--fs-xs); font-weight: 600; color: var(--ev, var(--ink-2)); justify-self: end; white-space: nowrap; grid-area: type; }
+.ev-type .dot, .allday .dot { width: .6em; height: .6em; border-radius: 50%; background: var(--ev); flex: none; }
+.ev-loc { grid-area: loc; display: flex; align-items: flex-start; gap: .45em; font-size: var(--fs-sm); color: var(--ink-2); padding-left: 2.35em; line-height: 1.45; }
+.ev-loc .ic { margin-top: .12em; } .ev-loc span { min-width: 0; overflow-wrap: anywhere; }
+.ev-main > .rich, .ev-main > .ev-att { grid-column: 1 / -1; margin-left: 2.35em; margin-top: .7em; }
+.ev-main > .rich { padding-top: .7em; border-top: 1px dashed var(--line); }
+.event.no-cover .ev-main { padding-top: .8em; }
+
+.leg { position: relative; padding: .5em 0 .5em 1.1em; }
+.leg::before { content: ''; position: absolute; left: calc(1.1em + .95em - 1px); top: 0; bottom: 0; border-left: 1.5px dashed color-mix(in srgb, var(--ink-2) 55%, transparent); }
+.leg-row { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: .5em .7em; margin-left: .55em; }
+.leg-pill { display: inline-flex; align-items: center; gap: .4em; padding: .15em .8em; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); font-size: var(--fs-sm); font-weight: 600; box-shadow: 0 0 0 3px var(--page-bg); white-space: nowrap; }
+.leg-gap { font-size: var(--fs-xs); color: var(--ink-2); white-space: nowrap; }
+.leg-late { display: inline-flex; align-items: center; gap: .35em; padding: .1em .65em; border-radius: 999px; background: var(--warn-bg); color: var(--warn-ink); border: 1px solid color-mix(in srgb, var(--warn) 55%, transparent); font-size: var(--fs-xs); font-weight: 700; white-space: nowrap; }
+.leg-desc { margin: .45em 0 0 .55em; font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.55; padding-left: .3em; overflow-wrap: anywhere; }
+
+.overlap { position: relative; margin: 0; padding: .55em; border: 1px dashed color-mix(in srgb, var(--ink-2) 55%, transparent); border-radius: calc(var(--r-lg) + 4px); }
+.ov-label { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .05em; color: var(--ink-2); margin: .05em .2em .5em; }
+.ov-cards { display: grid; grid-template-columns: 1fr 1fr; gap: .6em; }
+.ov-cards .event { min-width: 0; }
+.event.compact .ev-cover img { height: 70px; }
+.event.compact .ev-main { grid-template-columns: 1fr; grid-template-areas: 'top' 'time' 'loc' 'type'; padding: .6em .7em .7em; }
+.event.compact .ev-time, .event.compact .ev-loc { padding-left: 0; }
+.event.compact .ev-type { justify-self: start; margin-top: .2em; }
+.event.compact .ev-name { font-size: var(--fs); }
+.day-empty { margin-top: var(--gap); padding: 1.6em 1em; text-align: center; border: 1px dashed var(--line); border-radius: var(--r-lg); color: var(--ink-2); }
+
+/* ── 附件 ── */
+.file-list { display: grid; gap: 6px; }
+.file-chip { display: flex; align-items: center; gap: .7em; padding: .5em .7em; border: 1px solid var(--line); border-radius: var(--r); background: var(--paper); }
+.fc-ic { position: relative; display: grid; place-items: center; width: 2.2em; height: 2.2em; border-radius: var(--r); background: var(--sunken); color: var(--ink-2); flex: none; }
+.fc-ic b { position: absolute; left: 3px; bottom: 1px; font-size: 7px; letter-spacing: .04em; }
+.fc-t { display: flex; flex-direction: column; min-width: 0; } .fc-n { font-weight: 600; overflow-wrap: anywhere; } .fc-m { font-size: var(--fs-xs); color: var(--ink-2); }
+.url-cell { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card); overflow: hidden; break-inside: avoid; }
+.uc-og img { width: 100%; aspect-ratio: 1.91 / 1; object-fit: cover; }
+.uc-body { display: flex; align-items: stretch; gap: .9em; padding: .7em .8em; }
+.uc-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: .4em; }
+.uc-title { font-weight: 700; line-height: 1.35; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.uc-domain { display: flex; align-items: center; gap: .4em; font-size: var(--fs-xs); color: var(--ink-2); font-family: var(--font-mono); letter-spacing: 0; word-break: break-all; }
+.uc-body > .qr { flex: none; width: 76px; height: 76px; padding: 5px; background: #fff; border-radius: 6px; border: 1px solid var(--line-2); }
+.url-cell.no-og { border-left: 5px solid var(--accent); }
+.url-cell.no-og .uc-body { padding: .9em 1em; }
+.url-cell.no-og .uc-body > .qr { width: 92px; height: 92px; }
+.url-cell.no-og .uc-title { font-size: var(--fs-lg); }
+.url-cell.compact { flex-direction: row; align-items: stretch; }
+.url-cell.compact .uc-og { flex: none; width: 128px; } .url-cell.compact .uc-og img { width: 100%; height: 100%; aspect-ratio: auto; }
+.url-cell.compact .uc-body { flex: 1 1 auto; min-width: 0; padding: .6em .7em; }
+.url-cell.compact .uc-body > .qr { width: 60px; height: 60px; }
+.url-cell.compact.no-og .uc-body > .qr { width: 60px; height: 60px; }
+.url-cell.compact.no-og .uc-title { font-size: var(--fs); }
+.url-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); margin-top: var(--gap); align-items: start; }
+
+/* ── 頁尾簽名 ── */
+.sig { font-size: var(--fs-xs); color: var(--ink-2); letter-spacing: .02em; }
+
+/* ── Powered by TripEZGo badge（使用者選定方向 A：極簡單色字標）──
+   一般版：小字距「POWERED BY」＋品牌字標，單色、無框、無圖標（字標寬 ≥ 88px 即可讀，品牌識別稿規定）。
+   Premium 版：字標與小標改香檳金，中間一條細金線，小標換成字距更寬的 PREMIUM。淺／深底各一組配色。
+   logo 是品牌稿向量 #tz-word（symbol 內嵌一次），路徑資料原樣。 */
+html[data-style=magazine] { --b-fg: #241d17; --b-fg2: #7c6f63; --b-gt: #8f6d2c; --b-g1: #d2b06a; }
+
+.badge-a { --wm: 96px; --fs: 8.5px; display: inline-flex; align-items: center; gap: calc(var(--fs) * 1.2); color: var(--b-fg); line-height: 1; white-space: nowrap; }
+.badge-a .wm { width: var(--wm); height: calc(var(--wm) * .1743); flex: none; display: block; }
+.badge-a .by { font-style: normal; font-family: Inter, system-ui, -apple-system, "SF Pro Text", sans-serif; font-size: var(--fs); font-weight: 500; letter-spacing: .24em; text-transform: uppercase; color: var(--b-fg2); }
+.badge-a .vr { width: 1px; height: calc(var(--fs) * 2.2); background: linear-gradient(transparent, var(--b-g1), transparent); }
+.badge-a.pre { color: var(--b-gt); } .badge-a.pre .by { color: var(--b-gt); font-weight: 600; letter-spacing: .38em; }
+.user-logo { display: block; height: 36px; width: auto; max-width: 240px; border-radius: 6px; }
+.variants { margin: 28px 0; }
+.variants .board-label { text-align: center; color: #5a4d40; font: 600 13px var(--font); margin: 16px 0 6px; }
+@media print { .variants { display: none !important; } }
+
+@media (max-width: 560px) { .url-cell.compact { flex-direction: column; } .url-cell.compact .uc-og { width: auto; } .url-cell.compact .uc-og img { height: auto; aspect-ratio: 1.91 / 1; } .url-cell.compact .uc-body > .qr { width: 56px; height: 56px; } }
+
+.day-part { font-family: var(--font-mono); font-size: var(--fs-sm); font-weight: 700; padding: 0 .7em; border: 1.5px solid currentColor; border-radius: 999px; color: var(--accent-ink); white-space: nowrap; align-self: center; }
+
+/* 整趟地圖滿版（PDF／社群）：不要框、不要圓角、不要風格的歪斜與膠帶 */
+.sheet-map .map, .ab-map .map { border: 0 !important; border-radius: 0 !important; transform: none !important; box-shadow: none !important; overflow: hidden; }
+.sheet-map .map::before, .ab-map .map::before { display: none; }
+.sheet-map .edge-lbl, .ab-map .edge-lbl { font-size: 15px; }
+html[data-fmt=story] .ab-map .edge-lbl { font-size: 26px; padding: 4px 14px; } html[data-fmt=square] .ab-map .edge-lbl { font-size: 22px; padding: 3px 12px; }
+.ab-map .ab-foot { z-index: 10; }
+
+/* ═══ 整趟地圖：連線、編號圖釘、帶編號的邊緣箭頭、圖例 ═══ */
+:root { --pin-bg: #1d7370; --pin-fg: #ffffff; --pin-ring: #ffffff; --line-c: #1d7370; --line-case: rgba(255,255,255,.92); --lg-bg: rgba(251,248,244,.9); --lg-fg: #241d17; }
+.tm-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+.tm-case { fill: none; stroke: var(--line-case); stroke-width: calc(var(--sw) * 2.4); stroke-linejoin: round; stroke-linecap: round; }
+.tm-line { fill: none; stroke: var(--line-c); stroke-width: var(--sw); stroke-linejoin: round; stroke-linecap: round; }
+.tm-pin circle { fill: var(--pin-bg); stroke: var(--pin-ring); stroke-width: calc(var(--sw) * .7); }
+.tm-pin text { fill: var(--pin-fg); text-anchor: middle; dominant-baseline: central; font-weight: 700; font-family: var(--font); }
+.tedge { position: absolute; z-index: 6; left: var(--x); top: var(--y); display: flex; align-items: center; gap: 6px; max-width: 94%; }
+.tedge-r { transform: translate(-100%, -50%); flex-direction: row; } .tedge-l { transform: translate(0, -50%); flex-direction: row-reverse; }
+.tedge-t { transform: translate(-50%, 0); flex-direction: column-reverse; } .tedge-b { transform: translate(-50%, -100%); flex-direction: column; }
+.en { display: inline-block; min-width: 1.5em; padding: 0 .45em; margin-right: .45em; border-radius: 999px; background: var(--pin-bg); color: var(--pin-fg); text-align: center; font-size: .92em; }
+.legend { color: var(--lg-fg); background: var(--lg-bg); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); z-index: 7; }
+.legend h3 { font-size: 1em; font-weight: 700; margin-bottom: .35em; letter-spacing: .04em; }
+.legend ol { list-style: none; margin: 0; padding: 0; }
+.legend li { display: flex; align-items: center; gap: .5em; line-height: 1.5; min-width: 0; }
+.legend li span { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.legend .pin { flex: none; display: inline-grid; place-items: center; min-width: 1.6em; height: 1.6em; padding: 0 .3em; border-radius: 999px; background: var(--pin-bg); color: var(--pin-fg); font-size: .82em; font-weight: 700; font-variant-numeric: tabular-nums; }
+html[data-fmt=pdf] .legend { position: static; flex: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 14px; padding: 12px 26px 10px; font-size: 10.5px; }
+html[data-fmt=story] .legend, html[data-fmt=square] .legend { position: static; flex: none; margin: 0 36px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 22px; padding: 18px 22px; border-radius: 22px; font-size: 20px; }
+html[data-fmt=square] .legend { margin: 0 40px; gap: 6px 18px; padding: 12px 18px; font-size: 17px; border-radius: 18px; }
+.legend-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px 22px; padding: 16px 4px 0; font-size: var(--fs-sm); background: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.legend-flow li span { white-space: normal; }
+.map-part { position: absolute; z-index: 8; left: 36px; top: 36px; padding: 4px 18px; border-radius: 999px; background: var(--lg-bg); color: var(--lg-fg); font-size: 22px; font-weight: 700; }
+
+.trip-map .draft-note { top: auto; bottom: 8px; }
+
+/* 整趟地圖（S50–S58）：群組圖釘（膠囊）與長途總覽的地名標籤 */
+.tm-pin rect { fill: var(--pin-bg); stroke: var(--pin-ring); stroke-width: calc(var(--sw) * .7); }
+html[data-fmt=pdf] .legend { grid-template-columns: repeat(var(--cols, 6), minmax(0, 1fr)); }
+.long-lbl { position: absolute; z-index: 6; padding: 1px 8px; border-radius: 6px; background: rgba(255,255,255,.9); color: #241d17; font-size: 12px; font-weight: 700; line-height: 1.5; white-space: nowrap; }
+.map-page + .map-page { margin-top: 28px; }
+
+html[data-fmt=square] .legend { grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); font-size: 14.5px; gap: 6px 14px; padding: 12px 14px; }
+html[data-fmt=square] .legend h3 { font-size: .95em; }
+
+.tedge-r .edge-lbl { text-align: right; } .tedge-l .edge-lbl { text-align: left; } .tedge-t .edge-lbl, .tedge-b .edge-lbl { text-align: center; }
+.tedge .edge-lbl { border-radius: 12px; padding: 2px 10px; line-height: 1.4; }
+
+.tedge-r { transform: translate(-100%, 0) !important; } .tedge-l { transform: translate(0, 0) !important; }
+
+.tedge-t, .tedge-b { transform: translate(0, 0) !important; flex-direction: row-reverse !important; } .tedge-t .edge-lbl, .tedge-b .edge-lbl { text-align: left; }
+
+/* 共用：地圖層（三種格式各一層，CSS 只顯示目標格式那一層）、section 預設 */
+.lay { display: none; position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+.lay > .trip-map { position: absolute; left: 0; top: 0; right: 0; bottom: 0; height: auto; margin: 0; }
+/* 地圖頁：地圖圖只佔圖例以外的範圍，圖例接在地圖下方、不疊在圖上——MapKit 的標誌與法律聲明在地圖圖的左下角，不准蓋掉
+   （1.10.0 票 19，主 session 2026-11-14）。地圖格的高度＝sheet-body 扣掉圖例，原生端排完量 .trip-map 再照那個尺寸拍。社群原本圖例的 bottom 讓開頁底標誌，搬到 sheet-body。 */
+.sheet-map .sheet-body { display: flex; flex-direction: column; }
+.sheet-map .lay { position: relative; left: auto; top: auto; right: auto; bottom: auto; flex: 1 1 auto; min-height: 0; }
+html[data-fmt=story] .sheet-map .sheet-body { bottom: 120px; }
+html[data-fmt=square] .sheet-map .sheet-body { bottom: 92px; }
+.sec { break-after: page; page-break-after: always; }
+
+.di-list { display: block; margin-top: .1em; font-size: var(--fs-xs); line-height: 1.5; color: var(--ink-2); }
+.day-index li.di-more { border-bottom: 0; color: var(--ink-2); font-style: italic; padding-top: .5em; }
+
+/* S77 封面可不勾：沒有封面圖時，標題區頂在最上面，不留圖的位置；社群格式也不把剩餘高度撐給封面 */
+.cover.no-cover { flex: none !important; display: block !important; }
+.cover.no-cover .cover-text { margin-top: 0 !important; }
+.cover.no-cover .deco { display: none !important; }
+
+/* S81 日頁附件只留一行小書籤：附件名 → 第 N 頁（內部連結），附件本體只在文末附件頁 */
+.ev-att { display: flex; flex-direction: column; gap: 3px; align-items: flex-start; }
+.ev-bm { display: inline-flex; align-items: center; gap: .4em; max-width: 100%; font-size: var(--fs-xs); line-height: 1.5; color: var(--accent-ink, var(--accent)); text-decoration: none; border-bottom: 1px dashed currentColor; }
+.ev-bm .ic { flex: none; }
+.ev-bm .bm-n { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; }
+.ev-bm i { font-style: normal; flex: none; } .ev-bm .bm-p { flex: none; white-space: nowrap; }
+.outline-demo { margin: 18px 0 0; padding: 0; list-style: none; max-width: 520px; }
+.outline-demo li { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px dotted var(--line); font-size: var(--fs-sm); }
+.outline-demo b { font-variant-numeric: tabular-nums; }
+.draft-p { margin-top: 10px; font-size: var(--fs-sm); line-height: 1.7; color: var(--ink-2); max-width: 560px; }
+.draft-p code { padding: 0 4px; border-radius: 4px; background: var(--sunken, #eee); }
+
+/* S82 地址：地點名稱下一行；pin icon 在地址前（黑白列印也清楚） */
+.ev-loc.has-addr { flex-direction: column; gap: 0; align-items: stretch; }
+.ev-loc .loc-n { font-weight: 600; }
+.ev-loc .loc-a { display: flex; align-items: flex-start; gap: .45em; font-size: .94em; line-height: 1.45; }
+.ev-loc .loc-a .ic { flex: none; margin-top: .12em; }
+.ev-loc .loc-a .a-t { min-width: 0; overflow-wrap: anywhere; }
+
+.imp-bm { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 0; margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line-2); font-size: var(--fs-xs); color: var(--ink-2); line-height: 1.6; }
+.imp-bm b { font-weight: 700; color: var(--ink); } .imp-bm .bm-sep { font-style: normal; padding: 0 .1em; }
+
+/* S86 時區資訊：獨立一行小字＋時鐘 icon，跟地點／地址行同一套字級與 icon 對齊 */
+.ev-loc .loc-z { display: flex; align-items: flex-start; gap: .45em; font-size: .94em; line-height: 1.45; }
+.ev-loc .loc-z .ic { flex: none; margin-top: .12em; }
+.ev-loc .loc-z .a-t { min-width: 0; overflow-wrap: anywhere; }
+.ev-loc.has-addr .loc-a .a-t { min-width: 0; }
+.leg-z { display: flex; align-items: flex-start; gap: .45em; margin: .15em 0 0 .55em; font-size: var(--fs-xs); line-height: 1.45; color: var(--ink-2); }
+.leg-z .ic { flex: none; margin-top: .1em; }
+/* S86 路程班次：交通膠囊顯示班次名與發車／到站時刻 */
+.leg-pill.has-svc { flex-wrap: wrap; row-gap: 0; }
+.leg-svc { display: inline-flex; align-items: baseline; gap: .6em; }
+.leg-svc .svc-n { font-weight: 700; }
+.leg-svc .svc-t { display: inline-flex; flex-direction: column; font-variant-numeric: tabular-nums; }
+.leg-svc .leg-tl { display: block; white-space: nowrap; }
+.leg-dur { font-weight: 500; opacity: .75; margin-left: .2em; }
+.leg-dur::before { content: '· '; }
+.ev-bm.imp { gap: .3em; } .ev-bm.imp .bm-p { font-family: var(--font-mono); font-weight: 700; } .ev-bm.imp .bm-n { font-weight: 600; }
+
+.att-lbl { font-family: var(--font); font-size: var(--fs-xs); font-weight: 700; letter-spacing: .1em; color: var(--accent-ink); margin: 0 0 6px; }
+.att-cell { min-width: 0; }
+
+/* S96路程備案／可搭班次 */
+.leg-alt { margin: .15em 0 0 .55em; font-size: var(--fs-xs); color: var(--ink-2); line-height: 1.5; }
+.leg-alt b { font-weight: 700; color: var(--ink); } .leg-alt .alt-short { display: none; }
+
+/* 一天的拆法依格式各自量測：for-* 的 section 只在自己的格式顯示（拆法相同的格式共用同一組 section，不加 for-*） */
+.for-pdf, .for-story, .for-square { display: none; }
+html[data-fmt=pdf] .for-pdf, html[data-fmt=story] .for-story, html[data-fmt=square] .for-square { display: block; }
+
+/* S104 時區接在時刻後面：同一行、次要墨色小字；整段不從中間斷開 */
+.tz { display: inline-block; margin-left: .7em; font-size: .85em; font-weight: 500; letter-spacing: 0; color: var(--ink-2); white-space: nowrap; }
+.leg-pill .tz { margin-left: .6em; } .leg-tl { white-space: normal; }
+
+/* S110 路程：不寫「空檔」，照 App 寫「· 提早 X 到」或「· 遲到 X」 */
+.leg-sep { font-style: normal; color: var(--ink-2); }
+.leg-early { color: var(--ink-2); white-space: nowrap; }
+
+/* S111 框外標記：只是 dot，疊起來的一疊（不帶數字）每層用同一種圓點樣式，白色描邊讓邊緣看得出層次 */
+.tm-stack circle { fill: var(--pin-bg); stroke: var(--pin-ring); stroke-width: calc(var(--sw) * .7); }
+
+.tm-stack text { fill: var(--pin-fg); text-anchor: middle; dominant-baseline: central; font-weight: 700; font-family: var(--font); }
+
+/* S117 框外 dot 的方向箭頭：跟 dot 同色、同一種白描邊 */
+.tm-arrow { fill: var(--pin-bg); stroke: var(--pin-ring); stroke-width: calc(var(--sw) * .7); stroke-linejoin: round; }

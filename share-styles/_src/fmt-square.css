@@ -1,0 +1,61 @@
+
+/* ═══ 社群方形：每張 1080 × 1080 的 artboard。一天排成左（標題＋地圖）右（行程）兩欄；不放描述、不放附件。 ═══ */
+:root { --fs: 24px; --fs-sm: 21px; --fs-xs: 18px; --fs-lg: 27px; --fs-xl: 50px; --fs-h1: 64px; --gap: 14px; }
+.ab-foot { position: absolute; left: 60px; right: 60px; bottom: 22px; display: flex; justify-content: center; }
+.ab-foot .badge-a { --wm: 132px; --fs: 12px; } .ab-foot .user-logo { height: 56px; max-width: 400px; }
+.page-t { font-size: var(--fs-xl); color: var(--ink); letter-spacing: -0.01em; }
+.trip-map .map-img, .day-map .map-img { aspect-ratio: auto; height: 100%; }
+.edge-lbl { font-size: 18px; }
+/* 一天：左欄 330 寬（標題、時區、地圖），右欄行程 */
+.ab-day { display: flex; flex-direction: column; }
+.ab-day > .day-head { flex-direction: row; align-items: baseline; gap: 20px; padding-bottom: 10px; }
+.ab-day > .allday-list { margin-top: 12px; }
+.ab-day > .timeline { margin-top: 10px; }
+.ab-day .event { flex-direction: row; align-items: stretch; border-radius: 14px; }
+.ab-day .ev-cover { flex: none; width: 96px; } .ab-day .ev-cover img { width: 100%; height: 100%; min-height: 0; }
+.ab-day .ev-main { padding: 8px 14px 10px; row-gap: 0; }
+.ab-day .ev-no { font-size: 17px; } .ab-day .ev-top { gap: 9px; } .ab-day .ev-name { font-size: 26px; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.ab-day .ev-time { padding-left: 0; font-size: 19px; } .ab-day .ev-type { font-size: 17px; }
+.ab-day .ev-loc { padding-left: 0; font-size: 17px; display: flex; min-width: 0; } .ab-day .ev-loc span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .ab-day .ev-loc .ic { display: none; }
+.ab-day .leg { padding: 2px 0 2px 16px; } .ab-day .leg::before { left: 34px; }
+.ab-day .leg-row { gap: 4px 10px; } .ab-day .leg-pill { font-size: 18px; padding: 1px 12px; box-shadow: none; } .ab-day .leg-gap { font-size: 17px; } .ab-day .leg-late { font-size: 17px; padding: 0 10px; }
+.ab-day .overlap { padding: 6px 8px 4px; border-radius: 16px; } .ab-day .ov-label { font-size: 17px; margin: 0 4px 6px; }
+.ab-day .ov-cards { grid-template-columns: 1fr; gap: 6px; }
+.ab-day .ov-cards .event { flex-direction: row; } .ab-day .ov-cards .ev-cover { width: 70px; }
+.ab-day .ov-cards .ev-main { padding: 6px 12px 8px; } .ab-day .ov-cards .ev-name { font-size: 22px; }
+.ab-day .allday { padding: 9px 14px; border-radius: 14px; } .ab-day .ad-name { font-size: 22px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; } .ab-day .ad-span { font-size: 17px; } .ab-day .allday .ev-type { display: none; }
+.ab-day .day-empty { margin-top: 24px; font-size: 26px; padding: 60px 20px; }
+.ab-overview { display: flex; flex-direction: column; }
+.ab-overview .cover { display: grid; grid-template-columns: 1fr 1fr; column-gap: 36px; align-items: center; flex: none; }
+.ab-overview .cover-media { flex: none; min-height: 0; }
+.ab-overview .cover-media img { height: auto; aspect-ratio: 3 / 2; }
+.ab-overview .cover-text { flex: none; padding-top: 20px; }
+.ab-overview .trip-name { font-size: 54px; }
+.ab-overview .blk-days { flex: none; margin-top: 20px; }
+.ab-overview .day-index { columns: 2; column-gap: 44px; }
+.ab-overview .day-index li { padding: 6px 0; break-inside: avoid; } .ab-overview .di-sum { font-size: 19px; } .ab-overview .di-d { font-size: 16px; }
+
+.ab-day { justify-content: flex-start; }
+
+.sheet-body { left: 60px; right: 60px; top: 56px; bottom: 100px; }
+.lay-square { display: block; }
+
+/* S82 社群：地址一行省略 */
+.ab-day .ev-loc.has-addr { flex-direction: column; }
+.ab-day .ev-loc.has-addr .loc-n { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ab-day .ev-loc.has-addr .loc-a { display: flex; white-space: nowrap; overflow: hidden; }
+.ab-day .ev-loc.has-addr .loc-a .ic { display: inline-block; flex: none; width: 1em; height: 1em; }
+.ab-day .ev-loc.has-addr .loc-a .a-t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* S82 地址多一行：方形每天卡片收緊一點，仍然一頁放得下 */
+.ab-day .ev-loc.has-addr { font-size: 15px; line-height: 1.25; }
+.ab-day .ev-loc.has-addr .loc-n { font-weight: 600; }
+.ab-day .ev-time { line-height: 1.2; }
+.ab-day .leg { padding-top: 2px; padding-bottom: 2px; }
+
+/* S86 社群：時區行一行省略（icon 留著） */
+.ab-day .ev-loc.has-addr .loc-z { display: flex; white-space: nowrap; overflow: hidden; }
+.ab-day .ev-loc.has-addr .loc-z .ic { display: inline-block; flex: none; width: 1em; height: 1em; }
+.ab-day .ev-loc.has-addr .loc-z .a-t, .ab-day .ev-loc.has-addr .loc-a .a-t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ab-day .leg-z { white-space: nowrap; overflow: hidden; margin-left: 40px; }
+.ab-day .leg-z .a-t { overflow: hidden; text-overflow: ellipsis; }

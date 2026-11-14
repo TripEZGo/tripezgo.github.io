@@ -1,0 +1,33 @@
+/* ═══ 社群（9:16 與 1:1）共用：一個 section ＝ 一張全螢幕高的 artboard（寬 100vw、高 100vh；原生端用 1080×1920 或 1080×1080 的 viewport 排）。
+   判斷條件在 cssunify.py：螢幕、aspect ≤ 4/5 ＝ 限動；4/5 < aspect < 5/4 ＝ 方形。社群不放描述、不放附件、不放頁首與頁碼，一律由這裡的 CSS 隱藏（同一份 DOM）。 ═══ */
+html, body { margin: 0; }
+.sec { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: var(--sheet-bg, var(--page-bg)); }
+.sheet-body { position: absolute; }
+.runhead, .pn, .blk-note, .blk-imp, .di-list, .rich, .ev-att, .leg-desc, .sheet-att, .att-corner, .draft.long, .draft.pdfonly, .imp-bm { display: none !important; }
+.sheet-map .sheet-body { left: 0; right: 0; top: 0; bottom: 0; }
+.sheet-day .sheet-body { display: flex; flex-direction: column; justify-content: flex-start; }
+.sheet-overview .sheet-body { display: flex; flex-direction: column; }
+.page-t { font-size: var(--fs-xl); color: var(--ink); letter-spacing: -0.01em; }
+
+/* S77 沒有封面：逐日摘要吃掉原本封面的高度，每天一列等高，不留大洞（社群兩種格式都一樣；方形改單欄） */
+.cover.no-cover ~ .blk-days { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+.cover.no-cover ~ .blk-days .day-index { columns: 1 !important; flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+.sheet-overview.no-cover .sheet-body { display: flex !important; flex-direction: column; }
+.cover.no-cover ~ .blk-days .day-index li { flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; }
+.cover.no-cover ~ .blk-days .day-index li.di-more { flex: 0 0 auto; }
+
+/* S86 社群：路程班次一行，放不下以省略；「兩個都顯示」兩段時刻接成一行 */
+.ab-day .leg-pill.has-svc { max-width: 100%; min-width: 0; flex-wrap: nowrap; overflow: hidden; }
+.ab-day .leg-svc { min-width: 0; overflow: hidden; }
+.ab-day .leg-svc .svc-n, .ab-day .leg-svc .svc-t { white-space: nowrap; }
+.ab-day .leg-svc .svc-t { flex-direction: row; gap: .5em; overflow: hidden; text-overflow: ellipsis; }
+.ab-day .leg-svc .leg-tl:first-child:not(:last-child)::after { content: '／'; margin-left: .5em; }
+.ab-day .leg-dur { display: none; }
+
+/* S96社群：備案／可搭班次縮成一句 */
+.ab-day .leg-alt .alt-full { display: none; } .ab-day .leg-alt .alt-short { display: inline; }
+.ab-day .leg-alt { margin-left: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* S104 社群：班次膠囊一行放不下時，時區整段換到下一行（不用省略，不從中間斷） */
+.ab-day .leg-pill.has-svc { flex-wrap: wrap; overflow: visible; max-width: 100%; }
+.ab-day .leg-svc .svc-t { flex-direction: row; flex-wrap: wrap; overflow: visible; text-overflow: clip; }

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>分享風格</title><style>
+:root { --paper:#fbf8f4; --ink:#241d17; --taupe:#7c6f63; --line:#dbd5cd; --teal:#1d7370; }
+* { box-sizing: border-box; } body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.6 Inter, system-ui, -apple-system, "PingFang TC", sans-serif; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 24px 16px 64px; }
+h1 { font-size: clamp(22px, 5vw, 28px); margin: 0 0 4px; letter-spacing: -.01em; } .lead { color: var(--taupe); margin: 0 0 14px; font-size: 14px; }
+.tabs { display: flex; gap: 8px; position: sticky; top: 0; padding: 10px 0; background: var(--paper); z-index: 5; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs button { flex: none; min-height: 40px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--line); background: none; color: var(--ink); font: inherit; font-weight: 600; cursor: pointer; }
+.tabs button[aria-pressed=true] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.row { margin-top: 26px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.rh { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; } h2 { margin: 0; font-size: 20px; }
+.tag { font-size: 12px; font-weight: 700; padding: 1px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--taupe); white-space: nowrap; } .tag.free { color: var(--teal); border-color: var(--teal); }
+.row > p { margin: 4px 0 14px; color: var(--taupe); font-size: 14px; max-width: 680px; }
+/* 縮圖：桌機三張同高並排（flex-grow＝寬高比）；手機 PDF／限動各半、方形整排 */
+.strip { display: flex; gap: 16px; align-items: flex-start; }
+.strip figure { margin: 0; min-width: 0; }
+.f-pdf { flex: 0.7071 1 0; } .f-story { flex: 0.5625 1 0; } .f-square { flex: 1 1 0; }
+@media (max-width: 720px) {
+  .strip { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .f-square { grid-column: 1 / -1; }
+}
+figcaption { font-size: 12px; color: var(--taupe); margin-top: 6px; }
+.thumb { position: relative; display: block; width: 100%; overflow: hidden; border-radius: 8px; border: 1px solid var(--line); background: #fff; box-shadow: 0 6px 18px -10px rgba(36,29,23,.4); }
+.thumb .pdfimg { display: block; width: 100%; height: 100%; object-fit: contain; background: #fff; }
+.thumb iframe { position: absolute; left: 0; top: 0; border: 0; transform-origin: 0 0; pointer-events: none; background: #fff; }
+.foot { margin-top: 24px; font-size: 13px; color: var(--taupe); } .foot a { color: var(--teal); }
+</style></head><body><div class="wrap"><h1>分享風格</h1><p class="lead">每個風格只有一份 RWD 的 template.html，PDF（列印）、限時動態 9:16、方形 1:1 都由同一份依版面尺寸排出來。點縮圖開模板；上面的按鈕換看哪一頁。這一頁是給你挑的，不是模板。</p><div class="tabs"><button type="button" data-k="overview" aria-pressed="true">總覽</button><button type="button" data-k="map" aria-pressed="false">地圖 1</button><button type="button" data-k="map2" aria-pressed="false">地圖 2</button><button type="button" data-k="day2" aria-pressed="false">第 2 天</button><button type="button" data-k="day5" aria-pressed="false">第 5 天</button></div><section class="row"><div class="rh"><h2>雜誌</h2><span class="tag free">免費</span></div><p>編輯排版：直角、細黑線、襯線大標、巨大的天數、滿版照片，行程像刊物一樣一則一則往下讀。</p><div class="strip"><figure class="f-pdf"><a class="thumb" href="magazine/template.html" target="_blank" rel="noopener" style="aspect-ratio:794/1123" aria-label="雜誌 PDF（列印）"><img class="pdfimg" data-st="magazine" src="_preview/magazine/p-01.jpg" alt=""></a><figcaption>PDF（列印）</figcaption></figure><figure class="f-story"><a class="thumb" href="magazine/template.html" target="_blank" rel="noopener" style="aspect-ratio:1080/1920" aria-label="雜誌 限時動態 9:16" data-w="1080" data-h="1920"><iframe loading="lazy" tabindex="-1" data-base="magazine/template.html" data-fmt="story" src="magazine/template.html" title="限時動態 9:16" style="width:1080px;height:1920px"></iframe></a><figcaption>限時動態 9:16</figcaption></figure><figure class="f-square"><a class="thumb" href="magazine/template.html" target="_blank" rel="noopener" style="aspect-ratio:1080/1080" aria-label="雜誌 方形 1:1" data-w="1080" data-h="1080"><iframe loading="lazy" tabindex="-1" data-base="magazine/template.html" data-fmt="square" src="magazine/template.html" title="方形 1:1" style="width:1080px;height:1080px"></iframe></a><figcaption>方形 1:1</figcaption></figure></div></section><p class="foot">Powered by TripEZGo badge：<a href="_badge/badge.html">_badge/badge.html</a>（已選方向 A）</p></div><script>
+(function () {
+  var ids = {"overview": ["overview", 1], "map": ["map-1", 2], "map2": ["map-2", 3], "day2": ["day2-pdf-1", 5], "day5": ["day5-pdf-1", 12]};
+  function pn(n) { return n < 10 ? '0' + n : '' + n; }
+  function fit() {
+    document.querySelectorAll('.thumb').forEach(function (t) {
+      var f = t.querySelector('iframe'); if (!f) return;
+      var s = t.clientWidth / parseFloat(t.dataset.w);
+      f.style.transform = 'scale(' + s + ')';
+    });
+  }
+  function show(k) {
+    document.querySelectorAll('.tabs button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.k === k ? 'true' : 'false'); });
+    document.querySelectorAll('iframe[data-base]').forEach(function (f) { f.src = f.dataset.base + '#' + ids[k][0]; });
+    document.querySelectorAll('.pdfimg').forEach(function (im) { im.src = '_preview/' + im.dataset.st + '/p-' + pn(ids[k][1]) + '.jpg'; });
+  }
+  document.querySelectorAll('.tabs button').forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.k); }); });
+  if (window.ResizeObserver) { var ro = new ResizeObserver(fit); document.querySelectorAll('.thumb').forEach(function (t) { ro.observe(t); }); }
+  window.addEventListener('resize', fit); fit();
+})();
+</script></body></html>
