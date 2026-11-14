@@ -21,7 +21,7 @@ func rect(for job: Job) -> MKMapRect {
     let minX = pts.map(\.x).min()!, maxX = pts.map(\.x).max()!
     let minY = pts.map(\.y).min()!, maxY = pts.map(\.y).max()!
     let lat = job.members.map { $0[0] }.reduce(0, +) / Double(job.members.count)
-    let minSide = MKMapPointsPerMeterAtLatitude(lat) * 6_000      // 至少 6 km 見方
+    let minSide = MKMapPointsPerMeterAtLatitude(lat) * 2_000      // 至少 2 km 見方（S157，App 的 ShareMapArt.minimumSpanMetres）
     let ex = max(maxX - minX, minSide), ey = max(maxY - minY, minSide)
     let l = job.safe[0], t = job.safe[1], r = job.safe[2], b = job.safe[3]
     let sw = job.w - l - r, sh = job.h - t - b
