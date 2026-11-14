@@ -1,6 +1,30 @@
 {
  "zh": [
   {
+   "id": "2026-11-14-update-190",
+   "date": "2026-11-14",
+   "title": "1.9.0 新功能：天氣、步數與推薦景點",
+   "body": "主頁多了天氣與步數小工具；依每天的旅程地點推薦附近景點，按一下就排進行程。\nGoogle 地圖的地點或整份清單可以直接匯入靈感，IG、Threads 貼文會自動找出地點；行程裡能看街景 Look Around，也看得到旅伴改了哪些行程。\n路程新增騎單車、騎機車、纜車，總覽可以拖曳換時間，韓國的地點自動用 Naver Map 開。",
+   "image": null,
+   "button": null
+  },
+  {
+   "id": "2026-11-05-overview-170",
+   "date": "2026-11-05",
+   "title": "1.7.0 新功能：全新總覽",
+   "body": "「總覽」整個重新設計：一天一頁，當天的行程卡、交通與待辦一次看完。\n從 Instagram、Threads 分享進來的靈感，會自動用貼文內容產生標題。",
+   "image": null,
+   "button": null
+  },
+  {
+   "id": "2026-10-31-home-160",
+   "date": "2026-10-31",
+   "title": "1.6.0 新功能：主頁",
+   "body": "最左邊多了「主頁」分頁：上面是旅程封面，下面的小工具像 iPhone 主畫面一樣，長按就能自己排。\n設定改從主頁右上角進去；QR Code 掃描和匯率換算變成主頁上的小工具；通知在「資料」右上角的鈴鐺。",
+   "image": null,
+   "button": null
+  },
+  {
    "id": "2026-10-25-share-premium",
    "date": "2026-10-25",
    "title": "限時活動：分享到社群，免費兌換一年 Premium",
@@ -26,6 +50,30 @@
   }
  ],
  "en": [
+  {
+   "id": "2026-11-14-update-190",
+   "date": "2026-11-14",
+   "title": "New in 1.9.0: weather, steps and recommended spots",
+   "body": "Home has new weather and steps widgets, and recommended spots near each day's trip place go into your plans with one tap.\nImport a place or a whole list from Google Maps into Inspiration, and Instagram and Threads posts now find the place for you. See a place's Look Around right from your plans, and which plans your companions changed.\nNew travel modes (bike, motorbike and cable car), drag in Overview to swap times, and places in Korea open in Naver Map.",
+   "image": null,
+   "button": null
+  },
+  {
+   "id": "2026-11-05-overview-170",
+   "date": "2026-11-05",
+   "title": "New in 1.7.0: a brand-new Overview",
+   "body": "Overview has been redesigned: one page per day, with that day's event cards, travel and to-dos all in one place.\nInspiration shared from Instagram or Threads now gets a title from the post itself.",
+   "image": null,
+   "button": null
+  },
+  {
+   "id": "2026-10-31-home-160",
+   "date": "2026-10-31",
+   "title": "New in 1.6.0: Home",
+   "body": "There's a new Home tab on the far left: your trip's cover on top, and widgets below that you arrange like your iPhone Home Screen — just touch and hold.\nSettings now opens from the top-right of Home; QR Code scanning and the currency converter are widgets on Home; notifications live behind the bell at the top-right of Library.",
+   "image": null,
+   "button": null
+  },
   {
    "id": "2026-10-25-share-premium",
    "date": "2026-10-25",
@@ -53,6 +101,30 @@
  ],
  "ja": [
   {
+   "id": "2026-11-14-update-190",
+   "date": "2026-11-14",
+   "title": "1.9.0 の新機能：天気・歩数・おすすめスポット",
+   "body": "ホームに天気と歩数のウィジェットが加わりました。毎日の旅の場所の近くのおすすめスポットは、タップするだけで予定に追加できます。\nGoogle マップの場所やリストをまるごとインスピレーションに読み込めるようになり、Instagram や Threads の投稿からは場所が自動で見つかります。予定からルックアラウンドで街並みを確認でき、旅の仲間がどの予定を変えたかもわかります。\n移動に自転車・バイク・ケーブルカーを追加。概要ではドラッグで時間を入れ替えられ、韓国の場所は Naver Map で開きます。",
+   "image": null,
+   "button": null
+  },
+  {
+   "id": "2026-11-05-overview-170",
+   "date": "2026-11-05",
+   "title": "1.7.0 の新機能：新しい概要",
+   "body": "「概要」を全面的にデザインし直しました。1日1ページで、その日の予定カード・移動・ToDo をまとめて確認できます。\nInstagram や Threads から共有したインスピレーションには、投稿の内容から自動でタイトルが付きます。",
+   "image": null,
+   "button": null
+  },
+  {
+   "id": "2026-10-31-home-160",
+   "date": "2026-10-31",
+   "title": "1.6.0 の新機能：ホーム",
+   "body": "いちばん左に「ホーム」タブが加わりました。上に旅程のカバー、下のウィジェットは iPhone のホーム画面と同じように長押しで並べ替えられます。\n設定はホームの右上から開きます。QR コードの読み取りと為替換算はホームのウィジェットに、通知は「資料」右上のベルにあります。",
+   "image": null,
+   "button": null
+  },
+  {
    "id": "2026-10-25-share-premium",
    "date": "2026-10-25",
    "title": "期間限定：SNS でシェアして、Premium 1 年分を無料で",
@@ -78,6 +150,30 @@
   }
  ],
  "ko": [
+  {
+   "id": "2026-11-14-update-190",
+   "date": "2026-11-14",
+   "title": "1.9.0 새 기능: 날씨, 걸음 수, 추천 장소",
+   "body": "홈에 날씨·걸음 수 위젯이 생겼고, 날마다 여행 장소 근처의 추천 장소를 탭 한 번으로 일정에 넣을 수 있어요.\nGoogle 지도의 장소나 목록 전체를 영감으로 가져올 수 있고, Instagram, Threads 게시물에서는 장소를 자동으로 찾아줘요. 일정에서 둘러보기로 거리 모습을 보고, 동행이 어떤 일정을 바꿨는지도 확인할 수 있어요.\n이동 수단에 자전거, 오토바이, 케이블카가 추가되었고, 한눈에 보기에서 끌어서 시간을 바꿀 수 있으며, 한국 장소는 Naver Map으로 열려요.",
+   "image": null,
+   "button": null
+  },
+  {
+   "id": "2026-11-05-overview-170",
+   "date": "2026-11-05",
+   "title": "1.7.0 새 기능: 새로워진 한눈에 보기",
+   "body": "「한눈에 보기」를 완전히 새로 디자인했어요. 하루 한 페이지로 그날의 일정 카드, 이동, 할 일을 한곳에서 볼 수 있어요.\nInstagram이나 Threads에서 공유한 영감은 게시물 내용으로 제목이 자동으로 붙어요.",
+   "image": null,
+   "button": null
+  },
+  {
+   "id": "2026-10-31-home-160",
+   "date": "2026-10-31",
+   "title": "1.6.0 새 기능: 홈",
+   "body": "맨 왼쪽에 「홈」 탭이 생겼어요. 위에는 여행 커버, 아래 위젯은 iPhone 홈 화면처럼 길게 눌러 직접 배치할 수 있어요.\n설정은 홈 오른쪽 위에서 열어요. QR 코드 스캔과 환율 계산기는 홈의 위젯이 되었고, 알림은 「자료」 오른쪽 위의 종에 있어요.",
+   "image": null,
+   "button": null
+  },
   {
    "id": "2026-10-25-share-premium",
    "date": "2026-10-25",

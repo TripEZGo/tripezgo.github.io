@@ -17,7 +17,7 @@ for (const lang of LANGS) {
     await expect(page.locator('#roadmap')).toHaveCount(1);
     await expect(page.locator('.rm-item.is-now')).toHaveCount(1);   // 1.10.0 進行中（目前這一站）
     await expect(page.locator('.rm-item[aria-current="step"]')).toHaveCount(1);
-    await expect(page.locator('.rm-item.is-soon')).toHaveCount(2);   // 1.8.0、1.9.0（即將推出）
+    await expect(page.locator('.rm-item.is-soon')).toHaveCount(0);   // 1.8.0、1.9.0 一起上架（11.14）
     await expect(page.locator('.rm-item.is-planned')).toHaveCount(1);   // 「接下來」（規劃中）
     await expect(page.locator('.rm-item').last()).toHaveClass(/is-planned/);
     await expect(page.locator('.site-header .site-nav > a[href="#roadmap"]')).toHaveCount(1);
