@@ -382,6 +382,25 @@ html[data-fmt=story] .sheet-overview .day-index.dense .di-sum { flex: 1 1 0; min
 html[data-fmt=square] .sheet-overview .day-index.dense .di-top { max-width: none; flex: none; }
 html[data-fmt=square] .sheet-overview .day-index.dense .di-sum { flex: 1 1 0; min-width: 0; }
 
+/* S156④ 8 天以上、地名很長：地名照樣不截斷（太長就自己換行），摘要擠不下一段像樣的寬度（12em）就換到下一行、整列寬，至少一行看得到（E5）。用 min-width 不用 flex-basis：1:1 的列是直向，basis 會變成高度。
+   從前地名 flex:none 吃掉整列，摘要被壓成 0 寬，總覽只剩地名。三種格式各寫一份：cssunify 把它們排在各格式 fmt 規則之後才蓋得過 */
+html[data-fmt=pdf] .sheet-overview .day-index.dense li:not(.di-more) { flex-wrap: wrap; row-gap: 2px; }
+html[data-fmt=pdf] .sheet-overview .day-index.dense .di-top { flex: 0 1 auto; min-width: 0; max-width: 100%; white-space: normal; }
+html[data-fmt=pdf] .sheet-overview .day-index.dense .di-top .di-no, html[data-fmt=pdf] .sheet-overview .day-index.dense .di-top .di-d { flex: none; white-space: nowrap; }
+html[data-fmt=pdf] .sheet-overview .day-index.dense .di-pl { min-width: 0; overflow-wrap: anywhere; }
+html[data-fmt=pdf] .sheet-overview .day-index.dense .di-sum { flex: 1 1 0; min-width: min(12em, 100%); }
+html[data-fmt=story] .sheet-overview .day-index.dense li:not(.di-more) { flex-wrap: wrap; row-gap: 2px; }
+html[data-fmt=story] .sheet-overview .day-index.dense .di-top { flex: 0 1 auto; min-width: 0; max-width: 100%; white-space: normal; }
+html[data-fmt=story] .sheet-overview .day-index.dense .di-top .di-no, html[data-fmt=story] .sheet-overview .day-index.dense .di-top .di-d { flex: none; white-space: nowrap; }
+html[data-fmt=story] .sheet-overview .day-index.dense .di-pl { min-width: 0; overflow-wrap: anywhere; }
+html[data-fmt=story] .sheet-overview .day-index.dense .di-sum { flex: 1 1 0; min-width: min(12em, 100%); }
+html[data-fmt=square] .sheet-overview .day-index.dense li:not(.di-more) { flex-wrap: wrap; row-gap: 2px; }
+html[data-fmt=square] .sheet-overview .day-index.dense .di-top { flex: 0 1 auto; min-width: 0; max-width: 100%; white-space: normal; }
+html[data-fmt=square] .sheet-overview .day-index.dense .di-top .di-no, html[data-fmt=square] .sheet-overview .day-index.dense .di-top .di-d { flex: none; white-space: nowrap; }
+html[data-fmt=square] .sheet-overview .day-index.dense .di-pl { min-width: 0; overflow-wrap: anywhere; }
+/* 1:1 的列是直向（沒封面時兩欄改一欄、列 column）：摘要用 basis 0 時 WebKit 把它的內在高度算成 0，量行高得 0、除出 NaN，整份排版失敗 */
+html[data-fmt=square] .sheet-overview .day-index.dense .di-sum { flex: none; min-width: 0; }
+
 /* S119：1:1 頁首同 PDF／9:16——大數字右側，日期在上、地名在下，底緣對齊數字 */
 html[data-fmt=square] .ab-day > .day-head { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: end; column-gap: 22px; }
 html[data-fmt=square] .ab-day .day-date { font-size: 16px; }

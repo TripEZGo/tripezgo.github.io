@@ -20,7 +20,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 CONTRACT_VERSION = 1
 # 風格 id → 內容版本。改了該風格的模板就在這裡 +1。
-STYLE_VERSIONS = {'magazine': 3}
+STYLE_VERSIONS = {'magazine': 4}
 PAPERS = {'a4': 'template.html', 'letter': 'template-letter.html'}
 
 
