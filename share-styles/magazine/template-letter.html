@@ -545,6 +545,11 @@ body{ background: #d8d2c9; }
 .sheet-overview{ --dl: var(--dl-pdf, 1); }
 .sheet-overview .day-index.dense .di-top{ max-width: none; flex: none; }
 .sheet-overview .day-index.dense .di-sum{ flex: 1 1 0; min-width: 0; }
+.sheet-overview .day-index.dense li:not(.di-more){ flex-wrap: wrap; row-gap: 2px; }
+.sheet-overview .day-index.dense .di-top{ flex: 0 1 auto; min-width: 0; max-width: 100%; white-space: normal; }
+.sheet-overview .day-index.dense .di-top .di-no,.sheet-overview .day-index.dense .di-top .di-d{ flex: none; white-space: nowrap; }
+.sheet-overview .day-index.dense .di-pl{ min-width: 0; overflow-wrap: anywhere; }
+.sheet-overview .day-index.dense .di-sum{ flex: 1 1 0; min-width: min(12em, 100%); }
 .ev-main .inline-img{ width: 50%; max-width: none; margin-left: 0; margin-right: auto; }
 .ev-main .inline-img img{ display: block; width: auto; max-width: 100%; height: auto; max-height: 200px; aspect-ratio: auto; object-fit: contain; }
 .sheet-overview .day-index .di-sum,.sheet-overview .day-index.dense .di-sum,.sheet-overview .day-index.ai .di-sum,.sheet-overview .day-index.ai:not(.dense) .di-sum{ -webkit-line-clamp: var(--dl, 1); }
@@ -717,6 +722,11 @@ html,body{ margin: 0; }
 .sheet-overview{ --dl: var(--dl-story, 1); }
 .sheet-overview .day-index.dense .di-top{ max-width: none; flex: none; }
 .sheet-overview .day-index.dense .di-sum{ flex: 1 1 0; min-width: 0; }
+.sheet-overview .day-index.dense li:not(.di-more){ flex-wrap: wrap; row-gap: 2px; }
+.sheet-overview .day-index.dense .di-top{ flex: 0 1 auto; min-width: 0; max-width: 100%; white-space: normal; }
+.sheet-overview .day-index.dense .di-top .di-no,.sheet-overview .day-index.dense .di-top .di-d{ flex: none; white-space: nowrap; }
+.sheet-overview .day-index.dense .di-pl{ min-width: 0; overflow-wrap: anywhere; }
+.sheet-overview .day-index.dense .di-sum{ flex: 1 1 0; min-width: min(12em, 100%); }
 .sheet-day .leg-pill.has-svc{ flex-wrap: nowrap; overflow: hidden; min-width: 0; max-width: 100%; }
 .sheet-day .leg-svc{ display: flex; flex-wrap: nowrap; min-width: 0; overflow: hidden; }
 .sheet-day .leg-svc .svc-n{ min-width: 0; flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -901,6 +911,11 @@ html,body{ margin: 0; }
 .sheet-overview{ --dl: var(--dl-square, 1); }
 .sheet-overview .day-index.dense .di-top{ max-width: none; flex: none; }
 .sheet-overview .day-index.dense .di-sum{ flex: 1 1 0; min-width: 0; }
+.sheet-overview .day-index.dense li:not(.di-more){ flex-wrap: wrap; row-gap: 2px; }
+.sheet-overview .day-index.dense .di-top{ flex: 0 1 auto; min-width: 0; max-width: 100%; white-space: normal; }
+.sheet-overview .day-index.dense .di-top .di-no,.sheet-overview .day-index.dense .di-top .di-d{ flex: none; white-space: nowrap; }
+.sheet-overview .day-index.dense .di-pl{ min-width: 0; overflow-wrap: anywhere; }
+.sheet-overview .day-index.dense .di-sum{ flex: none; min-width: 0; }
 .sheet-day .sheet-body > .day-head{ display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: end; column-gap: 22px; }
 .sheet-day .day-date{ font-size: 16px; }
 .sheet-day .leg-pill.has-svc{ flex-wrap: nowrap; overflow: hidden; min-width: 0; max-width: 100%; }
