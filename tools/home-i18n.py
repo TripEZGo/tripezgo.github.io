@@ -629,6 +629,7 @@ T = {
   '旅程時區與旅程地點': ('Trip time zone and trip place', '旅行のタイムゾーンと場所', '여행 시간대와 여행 장소'),
   '完整的旅程分享：PDF、社群分享': ('Full trip sharing: PDF, social sharing', '旅程の共有を充実：PDF、SNSシェア', '완성된 여행 공유: PDF, 소셜 공유'),
   '完整的旅程分享': ('Full trip sharing', '旅程の共有を充実', '완성된 여행 공유'),
+  '支援 Google Drive 備份同步': ('Google Drive backup and sync', 'Google ドライブでのバックアップと同期', 'Google 드라이브 백업·동기화'),
   '支援產生 PDF 或分享到社群': ('Make a PDF or share to social media', 'PDFの作成やSNSへのシェアに対応', 'PDF 만들기와 소셜 공유 지원'),
   '旅程編輯紀錄': ('Trip edit history', '旅行の編集履歴', '여행 편집 기록'),
   '旅程資訊一把掌握': ('Your whole trip at a glance', '旅の情報をひと目で', '여행 정보를 한눈에'),
