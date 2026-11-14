@@ -137,6 +137,7 @@
   var once = (q.get('mode') || spec0().mode || 'loop') === 'once';
   var cropMode = q.get('crop') || spec0().crop || 'none';
   var safe = cropMode === 'safe', boxed = cropMode === 'box';
+  var storage = q.get('storage') === 'drive' ? 'drive' : '';   // 引導頁隱私頁：選了 Google Drive 就轉給畫面頁（privacy-flow.html）；其他示範不看
   var nohand = q.has('nohand') ? q.get('nohand') === '1' : !!spec0().nohand;
   document.documentElement.dataset.theme = theme;
   document.documentElement.lang = lang;
@@ -175,7 +176,7 @@
   function urlOf(p) {
     var useStill = (still && !stepUI) || p.still === true;   // step 示範的「減少動態」也走快轉，不用靜態頁
     var pg = still && !stepUI && spec.still ? spec.still : p;
-    var u = 'screens/' + pg.page + '.html?lang=' + lang + '&theme=' + theme + '&embed=1' + (nohand ? '&nohand=1' : '');
+    var u = 'screens/' + pg.page + '.html?lang=' + lang + '&theme=' + theme + '&embed=1' + (nohand ? '&nohand=1' : '') + (storage ? '&storage=' + storage : '');
     if (useStill) u += '&still=1';
     else u += '&interactive=1' + (p.auto ? '&auto=' + p.auto : '') + (p.ff ? '&ff=' + p.ff : '');
     return u + (pg.q ? '&' + pg.q : '');
