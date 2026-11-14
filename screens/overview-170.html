@@ -1158,8 +1158,37 @@ html.embed .sb, html.embed .home-bar { display: none; }
     moveHand(80, 470, true); goPage(to);
     await wait(620); release(); await wait(150);
   }
+  /* 要點的那一列被分頁列擋住或在畫面外（範本 v4 的總覽內容變長了），先用手指往上推、把那一頁捲到它露出來再點。
+     捲動自己用 rAF 推（不靠 smooth scroll），錄影的虛擬時鐘與暫停都照樣算。 */
+  function scrollPg(pg, to, ms) {
+    return new Promise(function (res) {
+      var from = pg.scrollTop, t0 = performance.now(), held = 0, last = t0;
+      (function step() {
+        var n = performance.now();
+        if (paused) held += n - last;
+        last = n;
+        var k = Math.min(1, (n - t0 - held) / ms), e = 1 - Math.pow(1 - k, 3);
+        pg.scrollTop = from + (to - from) * e;
+        if (k < 1) requestAnimationFrame(step); else res();
+      })();
+    });
+  }
+  async function reveal(el) {
+    var pg = el.closest('.pg'); if (!pg) return;
+    var row = el.getBoundingClientRect();
+    var top = pg.getBoundingClientRect().top, bottom = document.querySelector('.gtabs').getBoundingClientRect().top - 24;
+    if (row.bottom <= bottom && row.top >= top) return;
+    var want = row.top + row.height / 2 - (top + (bottom - top) * 0.55);   // 捲到那一列落在可見區中間偏下
+    var to = Math.max(0, Math.min(pg.scrollHeight - pg.clientHeight, pg.scrollTop + want));
+    var d = to - pg.scrollTop; if (Math.abs(d) < 1) return;
+    var y0 = Math.min(bottom - 40, top + (bottom - top) * 0.8), y1 = Math.max(top + 60, y0 - Math.min(Math.abs(d), 360));
+    show(); moveHand(200, y0); await wait(450);
+    hand.classList.add('down'); await wait(100);
+    moveHand(200, y1, true); await scrollPg(pg, to, 520);
+    release(); await wait(250);
+  }
   async function checkOff(id, thenGone) {
-    var el = $(id); await tap(el); el.classList.add('done'); release();
+    var el = $(id); await reveal(el); await tap(el); el.classList.add('done'); release();
     await wait(1000);                                   // 勾掉之後停 1 秒才淡出（Q34）
     el.classList.add('gone'); await wait(450);
   }
@@ -1171,7 +1200,7 @@ html.embed .sb, html.embed .home-bar { display: none; }
     await wait(1800);                                   // 拍 0：總覽頁（總覽筆記、待排行程、重要事項）
     say('tz-auto-progress');
     show(); await checkOff('t-esim');                   // 拍 1：勾掉一則重要事項
-    $('keycnt').textContent = '2';
+    $('keycnt').textContent = String((parseInt($('keycnt').textContent, 10) || 1) - 1);   // 勾掉一則就少一則（範本 v4 有 10 則）
     say('tz-auto-progress');
     await wait(500);
     await swipe(1);                                     // 拍 2：左右滑到第 1 天（chips 跟著走）
