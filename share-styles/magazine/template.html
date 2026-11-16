@@ -399,6 +399,24 @@ html[data-style=magazine]{ --b-fg: #241d17; --b-fg2: #7c6f63; --b-gt: #8f6d2c; -
 .att-block .url-cell.compact .uc-og{ flex: none; width: 220px; }
 .att-block .url-cell.compact .uc-og img{ width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
 .url-cell.no-og{ border-top-color: var(--ink); }
+/* S175 附件頁的網址卡：預覽圖滿版（1.91:1）＋下方左文右大 QR。只用在附件頁（.att-block 裡），書籤不動 */
+.url-cell.big{ position: relative; flex-direction: column; }
+.url-cell.big .uc-og{ position: relative; }
+.url-cell.big .uc-og img{ width: 100%; height: auto; aspect-ratio: 1.91 / 1; object-fit: cover; }
+.url-cell.big .uc-body{ align-items: center; gap: var(--sp6); padding: var(--sp3) var(--sp3) var(--sp3) var(--sp6); }
+.url-cell.big .uc-text{ justify-content: center; gap: var(--sp2); }
+.url-cell.big .uc-title{ font-size: var(--fs-lg); line-height: 1.35; }
+.uc-url{ display: flex; align-items: flex-start; gap: .4em; margin: 0; font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-2); letter-spacing: 0; line-height: 1.45; }
+.uc-url .ic{ flex: none; margin-top: .2em; }
+.uc-url span{ min-width: 0; word-break: break-all; }
+.url-cell.big .uc-body > .qr{ background: #fff; }
+/* S183⑤ 網址彙總：每張卡上方一行「6-1　第 1 天 › 名古屋城」 */
+.att-sub{ display: flex; align-items: baseline; gap: var(--sp3); margin: 0 0 var(--sp2); font-family: var(--font-display); font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.5; }
+.att-sub b{ font-family: var(--font-mono); font-weight: 700; color: var(--ink); letter-spacing: 0; }
+.att-sub span{ min-width: 0; overflow-wrap: anywhere; }
+.sheet-att .att-block{ margin-bottom: var(--sp6); }
+/* S183② 重要附件組的標題：放在第一份重要附件那一頁的最上面 */
+.sheet-att .att-grp{ margin: 0 0 var(--sp4); }
 @page{ size: A4; margin: 0; }
 @page map{ size: A4 landscape; margin: 0; }
 @media print, screen and (min-aspect-ratio: 5/4) {
@@ -553,6 +571,7 @@ body{ background: #d8d2c9; }
 .ev-main .inline-img{ width: 50%; max-width: none; margin-left: 0; margin-right: auto; }
 .ev-main .inline-img img{ display: block; width: auto; max-width: 100%; height: auto; max-height: 200px; aspect-ratio: auto; object-fit: contain; }
 .sheet-overview .day-index .di-sum,.sheet-overview .day-index.dense .di-sum,.sheet-overview .day-index.ai .di-sum,.sheet-overview .day-index.ai:not(.dense) .di-sum{ -webkit-line-clamp: var(--dl, 1); }
+.url-cell.big .uc-body > .qr{ width: 160px; height: 160px; padding: 8px; }
 }
 @media screen and (max-aspect-ratio: 4/5) {
 html,body{ margin: 0; }
@@ -733,6 +752,7 @@ html,body{ margin: 0; }
 .sheet-day .leg-svc .svc-t{ flex: none; flex-direction: row; flex-wrap: nowrap; white-space: nowrap; overflow: visible; text-overflow: clip; }
 .sheet-day .leg-dur{ flex: none; white-space: nowrap; }
 .sheet-overview .day-index .di-sum,.sheet-overview .day-index.dense .di-sum,.sheet-overview .day-index.ai .di-sum,.sheet-overview .day-index.ai:not(.dense) .di-sum{ -webkit-line-clamp: var(--dl, 1); }
+.url-cell.big .uc-body > .qr{ width: 260px; height: 260px; padding: 12px; }
 }
 @media screen and (min-aspect-ratio: 4/5) and (max-aspect-ratio: 5/4) {
 html,body{ margin: 0; }
@@ -924,7 +944,111 @@ html,body{ margin: 0; }
 .sheet-day .leg-svc .svc-t{ flex: none; flex-direction: row; flex-wrap: nowrap; white-space: nowrap; overflow: visible; text-overflow: clip; }
 .sheet-day .leg-dur{ flex: none; white-space: nowrap; }
 .sheet-overview .day-index .di-sum,.sheet-overview .day-index.dense .di-sum,.sheet-overview .day-index.ai .di-sum,.sheet-overview .day-index.ai:not(.dense) .di-sum{ -webkit-line-clamp: var(--dl, 1); }
+.url-cell.big .uc-body > .qr{ width: 260px; height: 260px; padding: 12px; }
 }
+/* S178／S178a 地圖：MapKit 氣球標記、地圖外的灰色虛線圈、指北針、比例尺、魚骨方向線、圖例正圓編號、每日行程地圖那一頁 */
+.tm-mk{ opacity: .85; }
+.tm-balloon path{ fill: var(--accent-ink); stroke: #fff; stroke-linejoin: round; }
+.tm-balloon text,.tm-mk-dot text,.tm-mk-t{ fill: #fff; text-anchor: middle; dominant-baseline: central; font-weight: 700; font-family: var(--font); font-variant-numeric: tabular-nums; }
+.tm-mk-dot circle,.tm-mk > circle{ fill: var(--accent-ink); stroke: #fff; }
+.tm-off-arrow{ fill: #6b6b6b; stroke: #fff; stroke-width: 1.2; stroke-linejoin: round; }
+.tm-off-c{ fill: rgba(255,255,255,.9); stroke: #6b6b6b; stroke-width: 1.5; stroke-dasharray: 4 3; }
+.tm-off-t{ fill: #4d4d4d; text-anchor: middle; dominant-baseline: central; font-weight: 700; font-family: var(--font); font-variant-numeric: tabular-nums; }
+.tm-route{ opacity: .5; pointer-events: none; }
+.tm-route-line,.tm-route-rib{ fill: none; stroke: var(--accent-ink); stroke-linecap: round; stroke-linejoin: round; }
+.tm-cp-solid{ fill: var(--ink); stroke: #fff; stroke-width: 2.4; paint-order: stroke; stroke-linejoin: round; }
+.tm-cp-open{ fill: #fff; stroke: var(--ink); stroke-width: 1.1; stroke-linejoin: round; }
+.tm-cp-t{ font-family: var(--font); font-size: 11px; font-weight: 700; fill: var(--ink); text-anchor: middle; dominant-baseline: central; paint-order: stroke; stroke: #fff; stroke-width: 3; stroke-linejoin: round; }
+.tm-scale-case{ fill: none; stroke: rgba(255,255,255,.95); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.tm-scale-line{ fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.tm-scale-t{ font-family: var(--font); font-size: 10.5px; font-weight: 600; fill: var(--ink); text-anchor: middle; paint-order: stroke; stroke: rgba(255,255,255,.92); stroke-width: 3; stroke-linejoin: round; font-variant-numeric: tabular-nums; }
+.legend .pin,.dm-legend .pin{ flex: none; display: inline-grid; place-items: center; box-sizing: border-box; width: 1.6em; height: 1.6em; min-width: 0; padding: 0; border-radius: 50%; aspect-ratio: 1 / 1; overflow: hidden; background: var(--accent-ink); color: #fff; opacity: .85; font-size: .82em; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.legend .pin.d2,.dm-legend .pin.d2{ font-size: .68em; width: 1.93em; height: 1.93em; }
+.legend .pin.d3,.dm-legend .pin.d3{ font-size: .56em; width: 2.34em; height: 2.34em; }
+.legend .pin.off,.dm-legend .pin.off{ background: rgba(255,255,255,.9); color: #4d4d4d; border: 1.5px dashed #6b6b6b; opacity: 1; }
+.legend .lg-off h3{ color: #6b6b6b; border-bottom: 1px dashed #6b6b6b; }
+.sheet-daymap .sheet-body{ display: flex; flex-direction: column; }
+.dm-head{ flex: none; display: flex; align-items: flex-end; border-bottom: solid var(--ink); }
+.dm-no{ display: inline-flex; align-items: baseline; gap: .2em; }
+.dm-no i{ font-style: normal; color: var(--ink-2); }
+.dm-no b{ font-family: var(--font-display); font-weight: 400; line-height: .9; color: var(--ink); }
+.dm-date{ display: block; font-weight: 700; letter-spacing: .12em; color: var(--accent-ink); }
+.dm-place{ margin: 0; font-family: var(--font-display); font-weight: 400; line-height: 1.2; color: var(--ink); }
+.dm-main{ flex: 1 1 auto; min-height: 0; display: flex; }
+.dm-main > .lay{ position: relative; left: auto; top: auto; right: auto; bottom: auto; flex: 1 1 auto; min-width: 0; min-height: 0; }
+.dm-legend{ flex: none; color: var(--lg-fg); background: var(--lg-bg); }
+.dm-legend ol{ list-style: none; margin: 0; padding: 0; display: grid; }
+.dm-legend li{ display: flex; align-items: center; gap: .5em; min-width: 0; line-height: 1.4; }
+.dm-legend li span{ flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dm-legend .tm{ flex: none; font-style: normal; font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--ink-2); }
+@media print, screen and (min-aspect-ratio: 5/4){
+.dm-head{ gap: 18px; margin: 0 36px; padding: 22px 0 10px; border-bottom-width: 2px; }
+.dm-no i{ font-size: 11px; }
+.dm-no b{ font-size: 64px; }
+.dm-date{ font-size: 11px; }
+.dm-place{ font-size: 24px; }
+.dm-main{ flex-direction: row; margin-top: 10px; }
+.dm-legend{ width: 292px; padding: 16px 20px; font-size: 11px; }
+.dm-legend ol{ row-gap: 6px; }
+}
+@media screen and (max-aspect-ratio: 4/5){
+.dm-head{ gap: 22px; margin: 0 76px; padding: 76px 0 24px; border-bottom-width: 3px; }
+.dm-no i{ font-size: 26px; }
+.dm-no b{ font-size: 190px; }
+.dm-date{ font-size: 24px; }
+.dm-place{ font-size: 54px; }
+.dm-main{ flex-direction: column; margin-top: 20px; }
+.dm-legend{ margin: 0 36px; padding: 20px 26px; border-radius: 22px; font-size: 20px; }
+.dm-legend ol{ grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-flow: column; grid-template-rows: repeat(var(--rows, 4), auto); column-gap: 30px; row-gap: 6px; }
+}
+@media screen and (min-aspect-ratio: 4/5) and (max-aspect-ratio: 5/4){
+.dm-head{ gap: 22px; margin: 0 60px; padding: 56px 0 10px; border-bottom-width: 2px; }
+.dm-no i{ font-size: 20px; }
+.dm-no b{ font-size: 120px; }
+.dm-date{ font-size: 16px; }
+.dm-place{ font-size: 32px; }
+.dm-main{ flex-direction: column; margin-top: 12px; }
+.dm-legend{ margin: 0 40px; padding: 12px 16px; border-radius: 18px; font-size: 14.5px; }
+.dm-legend ol{ grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-flow: column; grid-template-rows: repeat(var(--rows, 3), auto); column-gap: 18px; row-gap: 3px; }
+}
+/* S185 黑白輸出：composer 在 <body> 加 class="mono"。只換顏色，不動版面、字級、間距；文字、線條、圖示、QR 仍是 HTML/SVG 向量（照片、地圖底圖、附件頁由 App 轉成黑白點陣）。
+   純黑墨、白紙：淡色底塊拿掉、改 0.5pt 黑框；只有「遲到」這種警示反白。 */
+body.mono{
+  --ink: #000; --ink-2: #000; --line: #000; --line-2: #000; --line-c: #000;
+  --paper: #fff; --page-bg: #fff; --card: #fff; --sunken: #fff; --sheet-bg: #fff;
+  --accent: #000; --accent-ink: #000; --accent-on: #fff;
+  --warn: #000; --warn-ink: #000; --warn-bg: #fff;
+  --pin-bg: #000; --pin-fg: #fff; --pin-ring: #fff; --lg-fg: #000; --chips-bg: #fff;
+  --b-fg: #000; --b-fg2: #000; --b-gt: #000; --b-g1: #000;
+  --sw-eat: #000; --sw-eatLight: #000; --sw-shop: #000; --sw-shopMarket: #000; --sw-see: #000; --sw-seeNature: #000;
+  --sw-stay: #000; --sw-stayLodge: #000; --sw-move: #000; --sw-moveLocal: #000; --sw-misc: #000;
+  background: #fff;
+}
+body.mono *{ box-shadow: none !important; text-shadow: none !important; }
+body.mono .edge-ar{ filter: none; }
+body.mono .qr{ color: #000; }
+body.mono .map{ background: #fff; }
+body.mono .leg::before{ border-left-color: #000; }
+body.mono .overlap{ border-color: #000; }
+body.mono .edge-lbl,body.mono .long-lbl{ color: #000; background: #fff; }
+body.mono .edge-lbl{ background: #000; color: #fff; }
+/* 細線一律 0.5px（列印約 0.375pt），粗線（版頭、天數下的粗黑線）不動 */
+body.mono .runhead{ border-bottom-width: .5px; }
+body.mono .leg-pill,body.mono .file-chip,body.mono .att-frame,body.mono .sheet-att .att-corner{ border-width: .5px; }
+/* 細黑線＋只有警示反白：「遲到」實心反白，其餘淺色底塊拿掉、改 0.5pt 黑框 */
+body.mono .leg-late{ background: #000; color: #fff; border: 1px solid #000; }
+body.mono .day-part{ color: #000; border-width: 1px; }
+body.mono .allday{ background: #fff; }
+body.mono .imp-ic,body.mono .fc-ic{ background: #fff; color: #000; border: .5px solid #000; }
+body.mono .legend{ --lg-bg: #fff; background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+body.mono .legend h3{ border-bottom-width: .5px; }
+/* 地圖上的向量：標記與圖例純黑、地圖外的灰色虛線圈改黑、方向線不透明 */
+body.mono .tm-mk,body.mono .tm-route{ opacity: 1; }
+body.mono .tm-off-arrow{ fill: #000; }
+body.mono .tm-off-c{ fill: #fff; stroke: #000; }
+body.mono .tm-off-t{ fill: #000; }
+body.mono .legend .pin.off,body.mono .dm-legend .pin.off{ background: #fff; color: #000; border-color: #000; }
+body.mono .legend .lg-off h3{ color: #000; border-bottom-color: #000; }
 </style>
 </head>
 <body>

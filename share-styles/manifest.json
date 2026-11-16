@@ -1,16 +1,16 @@
 {
-  "contractVersion": 1,
+  "contractVersion": 2,
   "styles": [
     {
       "id": "magazine",
-      "version": 4,
+      "version": 5,
       "files": {
         "a4": "magazine/template.html",
         "letter": "magazine/template-letter.html"
       },
       "sha256": {
-        "a4": "08b69d0ef83d4ef55242d321c25daa6b0e520893173e7ab3280597b03af34838",
-        "letter": "7f33f73542165d74307041e1ac644a1ee5bba4d74d813b74deadbf8a90087c42"
+        "a4": "6e1c0979e5ae3cba0decb9d11e1ecc924ebcd0f0c26cc85ec68dab3cd40a2c39",
+        "letter": "5e633f809bd1ff4f97a68323adb4e4ae7d852b9bbcf35ecae0be48e4565fb9f8"
       }
     }
   ]

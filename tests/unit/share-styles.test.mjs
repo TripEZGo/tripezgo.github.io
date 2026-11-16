@@ -10,8 +10,8 @@ const dir = new URL('../../share-styles/', import.meta.url);
 const manifest = JSON.parse(readFileSync(new URL('manifest.json', dir), 'utf8'));
 const sha = (buf) => createHash('sha256').update(buf).digest('hex');
 
-test('manifest：contractVersion 是 1，有雜誌一個風格，A4 與 Letter 兩份', () => {
-  assert.equal(manifest.contractVersion, 1);
+test('manifest：contractVersion 是 2，有雜誌一個風格，A4 與 Letter 兩份', () => {
+  assert.equal(manifest.contractVersion, 2);
   assert.deepEqual(manifest.styles.map((s) => s.id), ['magazine']);
   const [magazine] = manifest.styles;
   assert.equal(typeof magazine.version, 'number');

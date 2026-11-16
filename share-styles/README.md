@@ -20,7 +20,7 @@ share-styles/<風格 id>/template-letter.html   Letter（美加）
 
 ```json
 {
-  "contractVersion": 1,
+  "contractVersion": 2,
   "styles": [
     {
       "id": "magazine",
@@ -50,8 +50,9 @@ python3 share-styles/_src/manifest.py
 
 - 只改 CSS（長相）：不動 `contractVersion`，加 `version`。
 - 改 DOM、class 名、section id 規則或 slot 欄位：**升 `contractVersion`**。
-- App 只接受 `contractVersion` 不大於它自己認得的版本；比它新的一律忽略，改用舊快取或內建備援。
-  所以升版之後，舊版 App 繼續用舊的樣子，不會壞。要讓新版 App 讀到，新版 App 要先上架。
+- App 只接受 `contractVersion` 與它自己認得的版本**完全相同**的 manifest（S192）；比它新或比它舊的一律忽略，改用快取（寫入時契約相同）或內建備援。
+  所以升版之後，舊版 App 繼續用內建的樣子，不會壞。要讓新版 App 讀到，新版 App 要先上架。
+- 契約 2（1.10.0）：大網址卡＋`.att-grp`、`.tm-mk` 氣球標記與每日地圖頁、`body.mono` 黑白。
 
 ## 模板的限制
 
