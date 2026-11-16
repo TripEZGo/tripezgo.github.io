@@ -8,7 +8,9 @@
 <!--
   引導頁第 8 頁（ADR-0050）：官網首頁「隱私與安全」的資料流向圖（index.html #privacy、assets/js/home.js 的 flow()、assets/css/home.css 的 .pf-*），
   標記與 CSS 照抄，只做三件事：①全開（iCloud 同步備份＋旅程共編的線都畫出來），下方兩個開關列拿掉 ②不能按、沒有自動輪播，傳輸線照官網一直流動 ③沒有卡片底與外框，直接放在頁面底色上。
-  網址：privacy-flow.html?lang=<zh-Hant-TW|en|ja>&theme=<light|dark>&still=<0|1>。
+  網址：privacy-flow.html?lang=<zh-Hant-TW|en|ja>&theme=<light|dark>&still=<0|1>&storage=<icloud|drive>。
+  storage=drive（1.10.0，引導頁選了 Google Drive）：雲端節點換成 Google Drive、上方一句改「備份到 Google Drive。」，
+  旅伴那幾個人與連到他們的三條線整個收合隱藏（不是灰掉）；iPhone → Google Drive → iPad 那兩條線照舊流動。
   外層殼（demo.html）用 postMessage {type:'tz-auto-ctl', cmd:'pause'|'play'} 控制：長按暫停傳輸線，放開繼續。
 -->
 <style>
@@ -84,6 +86,7 @@
   box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 7%, transparent), var(--shadow-sm);
 }
 .pf-phone .pf-tile svg { width: 26px; height: 26px; }
+.pf-stage.solo { grid-template-columns: minmax(0, 1fr); }
 .pf-mates { display: grid; row-gap: 14px; }
 .pf-mate { flex-direction: row; gap: 10px; text-align: start; }
 .pf-mate .pf-tile {
@@ -133,6 +136,14 @@
     ja: { account: 'あなたの Apple アカウント', me: 'あなたの iPhone', ipad: 'あなたの iPad', cloud: 'Apple iCloud', cloudOn: 'バックアップと同期', mates: ['ミカ', 'ケン', 'ユキ'], shared: 'iCloud で同期し、旅の仲間 3 人と共同編集。' }
   };
   var F = FS[lang] || FS.en;
+  // 引導頁選了 Google Drive：沒有旅伴共編，雲端節點是 Google Drive。
+  var DRIVE = qs.get('storage') === 'drive';
+  var DRIVE_FS = {
+    'zh-Hant-TW': { account: '你的 Google 帳號', cloud: 'Google Drive', cloudOn: '備份', shared: '備份到 Google Drive。' },
+    en: { account: 'Your Google Account', cloud: 'Google Drive', cloudOn: 'Backup', shared: 'Backed up to Google Drive.' },
+    ja: { account: 'あなたの Google アカウント', cloud: 'Google Drive', cloudOn: 'バックアップ', shared: 'Google Drive にバックアップ。' }
+  };
+  if (DRIVE) F = Object.assign({}, F, DRIVE_FS[FS[lang] ? lang : 'en']);
   document.documentElement.lang = FS[lang] ? lang : 'en';
   if (qs.get('still') === '1') document.documentElement.classList.add('still');
   var ico = {
@@ -143,7 +154,7 @@
   var wire = function (cls, edge) { return '<g class="pf-wire ' + cls + '" data-edge="' + edge + '"><path class="pf-track"/><path class="pf-flow"/></g>'; };
   el.innerHTML = '<div class="pf-card">' +
     '<p class="pf-status">' + F.shared + '</p>' +
-    '<div class="pf-stage" data-sync="true" data-share="true">' +
+    '<div class="pf-stage' + (DRIVE ? ' solo' : '') + '" data-sync="true" data-share="' + (DRIVE ? 'false' : 'true') + '">' +
       '<div class="pf-account"><p class="pf-account-label">' + F.account + '</p>' +
         '<div class="pf-devices">' +
           '<div class="pf-node pf-phone"><span class="pf-tile">' + ico.phone + '</span><span class="pf-nm"><b>' + F.me + '</b></span></div>' +
@@ -151,8 +162,8 @@
         '</div>' +
         '<div class="pf-node pf-cloud"><span class="pf-tile">' + ico.cloud + '</span><span class="pf-nm"><b>' + F.cloud + '</b><small>' + F.cloudOn + '</small></span></div>' +
       '</div>' +
-      '<div class="pf-mates">' + F.mates.map(function (n) { return '<div class="pf-node pf-mate"><span class="pf-tile">' + n.charAt(0) + '</span><span class="pf-nm"><b>' + n + '</b></span></div>'; }).join('') + '</div>' +
-      '<svg class="pf-wires" aria-hidden="true">' + wire('a', 'phone') + wire('a', 'ipad') + wire('b', 'mate-1') + wire('b', 'mate-2') + wire('b', 'mate-3') + '</svg>' +
+      (DRIVE ? '' : '<div class="pf-mates">' + F.mates.map(function (n) { return '<div class="pf-node pf-mate"><span class="pf-tile">' + n.charAt(0) + '</span><span class="pf-nm"><b>' + n + '</b></span></div>'; }).join('') + '</div>') +
+      '<svg class="pf-wires" aria-hidden="true">' + wire('a', 'phone') + wire('a', 'ipad') + (DRIVE ? '' : wire('b', 'mate-1') + wire('b', 'mate-2') + wire('b', 'mate-3')) + '</svg>' +
     '</div>' +
     '</div>';
   var stage = el.querySelector('.pf-stage'), GAP = 6;
@@ -165,7 +176,8 @@
     var cloud = el.querySelector('.pf-cloud'), cloudTile = cloud.querySelector('.pf-tile'), hub = pt(cloudTile, 'left');
     draw('phone', hCurve(pt(el.querySelector('.pf-phone .pf-tile'), 'right'), hub));
     draw('ipad', hCurve(hub, pt(el.querySelector('.pf-ipad .pf-tile'), 'right')));
-    var below = box(el.querySelector('.pf-mates')).t > box(cloud).b;
+    var mates = el.querySelector('.pf-mates');
+    var below = mates ? box(mates).t > box(cloud).b : false;
     el.querySelectorAll('.pf-mate .pf-tile').forEach(function (t, i) { draw('mate-' + (i + 1), below ? vCurve(pt(cloud, 'bottom'), pt(t, 'top')) : hCurve(pt(cloudTile, 'right'), pt(t, 'left'))); });
   }
   layout(); new ResizeObserver(layout).observe(stage);
