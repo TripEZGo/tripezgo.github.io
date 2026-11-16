@@ -17,7 +17,8 @@ SQUARE_Q = '@media screen and (min-aspect-ratio: 4/5) and (max-aspect-ratio: 5/4
 
 
 def strip_comments(s):
-    return re.sub(r'/\*.*?\*/', '', s, flags=re.S)
+    # `/*! … */` 是要留在模板裡的註解（模板契約的說明）；其餘註解只給原始檔讀，不輸出。
+    return re.sub(r'/\*(?!!).*?\*/', '', s, flags=re.S)
 
 
 def blocks(css):
@@ -28,6 +29,10 @@ def blocks(css):
         if j < 0:
             break
         head = css[i:j].strip()
+        while head.startswith('/*!'):
+            e = head.index('*/') + 2
+            out.append(('/*!', '/*' + head[3:e]))
+            head = head[e:].strip()
         depth, k = 1, j + 1
         while k < n and depth:
             if css[k] == '{':
@@ -83,6 +88,9 @@ def process(css, default_bucket=None):
     """回傳 (globals, {bucket: [rules]}, pages)。default_bucket：整份檔案都屬於哪個格式（fmt 檔）。"""
     glob, buckets, pages = [], {'pdf': [], 'story': [], 'square': []}, []
     for head, body in blocks(css):
+        if head == '/*!':
+            (buckets[default_bucket] if default_bucket else glob).append(body)
+            continue
         if head.startswith('@page'):
             pages.append('%s{%s}' % (head, body))
             continue

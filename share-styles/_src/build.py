@@ -774,6 +774,9 @@ def build_template(style, nm):
         return s_
     out = [_dedupe_notes(x_) for x_ in out]
     css = swatch_css() + assemble(read('base.css'), read('style-%s.css' % style), read('fmt-pdf.css'), read('fmt-story.css'), read('fmt-square.css'), read('fmt-social.css'))
+    # 契約 2 的尾段（S178 地圖、S185 黑白）：原樣接在三個格式區塊之後，註解照留（S192）
+    if os.path.exists(os.path.join(ROOT, '_src', 'style-%s-tail.css' % style)):
+        css += '\n' + read('style-%s-tail.css' % style).rstrip('\n')
     html_ = ('<!doctype html>\n<html lang="zh-Hant" data-style="%s">\n<head>\n<meta charset="utf-8">\n'
              '<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>%s</title>\n'
              '<!-- 分享模板契約：每個風格只有這一份 RWD 的純 HTML＋CSS，沒有 JS、不載任何外部資源（字型、圖片、CSS 都是本機相對路徑或 data:）。\n'

@@ -414,6 +414,24 @@ html[data-fmt=pdf] .ev-main .inline-img img { display: block; width: auto; max-w
 .att-block .url-cell.compact .uc-og { flex: none; width: 220px; }
 .att-block .url-cell.compact .uc-og img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
 .url-cell.no-og { border-top-color: var(--ink); }
+/*! S175 附件頁的網址卡：預覽圖滿版（1.91:1）＋下方左文右大 QR。只用在附件頁（.att-block 裡），書籤不動 */
+.url-cell.big{ position: relative; flex-direction: column; }
+.url-cell.big .uc-og{ position: relative; }
+.url-cell.big .uc-og img{ width: 100%; height: auto; aspect-ratio: 1.91 / 1; object-fit: cover; }
+.url-cell.big .uc-body{ align-items: center; gap: var(--sp6); padding: var(--sp3) var(--sp3) var(--sp3) var(--sp6); }
+.url-cell.big .uc-text{ justify-content: center; gap: var(--sp2); }
+.url-cell.big .uc-title{ font-size: var(--fs-lg); line-height: 1.35; }
+.uc-url{ display: flex; align-items: flex-start; gap: .4em; margin: 0; font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-2); letter-spacing: 0; line-height: 1.45; }
+.uc-url .ic{ flex: none; margin-top: .2em; }
+.uc-url span{ min-width: 0; word-break: break-all; }
+.url-cell.big .uc-body > .qr{ background: #fff; }
+/*! S183⑤ 網址彙總：每張卡上方一行「6-1　第 1 天 › 名古屋城」 */
+.att-sub{ display: flex; align-items: baseline; gap: var(--sp3); margin: 0 0 var(--sp2); font-family: var(--font-display); font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.5; }
+.att-sub b{ font-family: var(--font-mono); font-weight: 700; color: var(--ink); letter-spacing: 0; }
+.att-sub span{ min-width: 0; overflow-wrap: anywhere; }
+.sheet-att .att-block{ margin-bottom: var(--sp6); }
+/*! S183② 重要附件組的標題：放在第一份重要附件那一頁的最上面 */
+.sheet-att .att-grp{ margin: 0 0 var(--sp4); }
 
 /* S119 補：社群班次路程——班次名稱以省略號截斷，時刻、時區、路程時間留在同一行 */
 html[data-fmt=story] .ab-day .leg-pill.has-svc { flex-wrap: nowrap; overflow: hidden; min-width: 0; max-width: 100%; }
@@ -440,3 +458,8 @@ html[data-fmt=story] .sheet-overview .day-index.ai .di-sum, html[data-fmt=story]
 /* S119 補（S118）：總覽逐日摘要有空間就多寫幾行——8 天以上（dense）與 AI 版也照 --dl，不再被 1 行蓋掉 */
 html[data-fmt=square] .sheet-overview .day-index .di-sum, html[data-fmt=square] .sheet-overview .day-index.dense .di-sum,
 html[data-fmt=square] .sheet-overview .day-index.ai .di-sum, html[data-fmt=square] .sheet-overview .day-index.ai:not(.dense) .di-sum { -webkit-line-clamp: var(--dl, 1); }
+
+/* S175 網址卡的 QR 在各格式的大小 */
+html[data-fmt=pdf] .url-cell.big .uc-body > .qr{ width: 160px; height: 160px; padding: 8px; }
+html[data-fmt=story] .url-cell.big .uc-body > .qr{ width: 260px; height: 260px; padding: 12px; }
+html[data-fmt=square] .url-cell.big .uc-body > .qr{ width: 260px; height: 260px; padding: 12px; }
