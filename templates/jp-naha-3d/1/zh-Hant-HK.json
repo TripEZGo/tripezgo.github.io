@@ -1,0 +1,799 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-naha-3d",
+  "revision": 1,
+  "contentLocale": "zh-Hant-HK",
+  "title": "那霸 3 日｜國際通・首里城・瀨長島（免揸車）",
+  "subtitle": "免揸車：用 Yui Rail 串起國際通、首里城同瀨長島",
+  "summary": "三日那霸，全程唔使租車：牧志公設市場同壺屋陶街、國際通、首里城公園同玉陵、波上宮，最後去瀨長島。須知寫咗機場出入市區、Yui Rail 車票、首里城現況同瀨長島交通。福州園、識名園同金城町石疊道放咗做備選。",
+  "destination": "日本 那霸",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "雙人",
+    "初訪",
+    "免揸車",
+    "城下町"
+  ],
+  "todos": [
+    {
+      "text": "登記 Visit Japan Web（入境審查同海關申報）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 機票同訂房搞掂之後就可以填"
+    }
+  ],
+  "images": {
+    "d1-04": "images/jp-naha-3d/d1-04.jpg",
+    "d2-04": "images/jp-naha-3d/d2-04.jpg",
+    "d3-01": "images/jp-naha-3d/d3-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：牧志・國際通周邊（連住 2 晚）",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "牧志駅前",
+        "latitude": 26.2172382,
+        "longitude": 127.6924535,
+        "applePlaceID": "I5D7964AF52104406",
+        "address": "沖縄県那覇市, 牧志",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "備選：福州園（福州園）",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "福州園",
+        "latitude": 26.2178612,
+        "longitude": 127.6757643,
+        "applePlaceID": "IFFF6FABA8D32C489",
+        "address": "〒900-0005, 沖縄県那覇市, 久米2丁目29-19",
+        "addressIsApproximate": false
+      },
+      "notes": "中國風庭園，喺縣廳前站附近，成人 ¥200（Yui Rail 官網）；營業時間請出發前確認"
+    },
+    {
+      "key": "u-02",
+      "title": "備選：識名園（識名園）",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "識名園",
+        "latitude": 26.2041211,
+        "longitude": 127.7146734,
+        "applePlaceID": "IF8DA34208B2B5A64",
+        "address": "〒902-0072, 沖縄県那覇市, 真地421-7",
+        "addressIsApproximate": false
+      },
+      "notes": "琉球王家別邸庭園，成人 ¥400（Yui Rail 官網）；營業時間請出發前確認"
+    },
+    {
+      "key": "u-03",
+      "title": "備選：金城町石疊道（金城町石畳道）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "首里金城町石疊道",
+        "latitude": 26.2157629,
+        "longitude": 127.7148682,
+        "applePlaceID": "ID33AB7140FDC17B9",
+        "address": "〒903-0815, 沖縄県那覇市, 首里金城町2丁目35",
+        "addressIsApproximate": false
+      },
+      "notes": "首里城附近保留住琉球石疊嘅斜路，成日都可以散步；店舖營業時間請出發前確認"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "資料來源同查證",
+      "paragraphs": [
+        {
+          "text": "來源遊記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/2cbc121a1b7c/",
+          "style": "bullet"
+        },
+        {
+          "text": "查證（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "Yui Rail 車費（機場站、牧志站）同 1 日、2 日券、優惠設施：https://www.yui-rail.co.jp/ticketinfo-ticket/ticketinfo/1day-pass/ （查證 2026-11-17）；https://www.yui-rail.co.jp/routemap/nahakuko/?t=fare （查證 2026-11-17）；https://www.yui-rail.co.jp/routemap/makishi/?t=fare （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "Yui Rail 信用卡感應付款：https://ryukyushimpo.jp/news/economics/entry-4099337.html （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "首里城公園：官網首頁（開園時間、正殿 2026/11 完成、11/23 公開、11/22 臨時休園）：https://oki-park.jp/shurijo/ （查證 2026-11-17）；正殿預約同新票價係第三方整理，官網相關頁面攞唔到，請出發前確認：https://www.iwafu.com/jp/events/1167204 （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "波上宮：授與所同社務所 9:00–16:30、停車場 20 個車位、機場同的士資訊：https://naminouegu.jp/ 、https://naminouegu.jp/map.html （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "瀨長島 Umikaji Terrace：營業時間同地址 https://umikajiterrace.com/ ；機場接駁巴士同 Umikaji Liner https://www.umikajiterrace.com/accessguide/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "壺屋陶街：最近嘅 Yui Rail 站係牧志站、行約 10 至 15 分鐘：https://www.tsuboya-yachimun.com/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "Churasun 6：官網 https://www.churasun6.com/ ，1 部 20:30、2 部 22:30（沿用同系列自駕範本喺 2026-11-17 嘅查證）",
+          "style": "bullet"
+        },
+        {
+          "text": "官方資料確認唔到，請出發前確認",
+          "style": "heading"
+        },
+        {
+          "text": "玉陵、壺屋各店、國際通各店、第一牧志公設市場、なかむら家、琉球嘅牛、玉家、ASHIBINAA、Blue Seal 嘅營業時間同休息日。",
+          "style": "bullet"
+        },
+        {
+          "text": "首里城 7 至 11 月以外嘅開園時間同休園日、正殿內部預約有冇滿額，以及新票價。",
+          "style": "bullet"
+        },
+        {
+          "text": "國際通去瀨長島嘅 Umikaji Liner 時刻同車費、的士去瀨長島同國際通嘅車資。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出發前須知",
+      "paragraphs": [
+        {
+          "text": "呢份範本嘅定位",
+          "style": "heading"
+        },
+        {
+          "text": "免揸車範本：淨係靠 Yui Rail（ゆいレール）、巴士、的士同步行，住喺牧志・國際通一帶，喺那霸市區同瀨長島活動。",
+          "style": "bullet"
+        },
+        {
+          "text": "沖繩本島中部同北部（美麗海、恩納、北谷）請睇另一份自駕範本。",
+          "style": "bullet"
+        },
+        {
+          "text": "機場出入市區（那覇空港 OKA）",
+          "style": "heading"
+        },
+        {
+          "text": "Yui Rail：機場站去牧志站單程 ¥320，約 13 至 15 分鐘（時刻請查官網）；機場站去旭橋站約 10 分鐘；去首里站 ¥360。官網車費表：https://www.yui-rail.co.jp/routemap/nahakuko/?t=fare",
+          "style": "bullet"
+        },
+        {
+          "text": "的士：機場去旭橋、波上宮一帶約 10 分鐘、約 ¥1,200（波上宮官網）；去國際通嘅車資以叫車 App 預計為準。",
+          "style": "bullet"
+        },
+        {
+          "text": "離境日：搭的士約 15 分鐘到機場；亦可以搭 Yui Rail 到機場站。",
+          "style": "bullet"
+        },
+        {
+          "text": "Yui Rail 車票（2026-11-17 查官網）",
+          "style": "heading"
+        },
+        {
+          "text": "單程票：牧志去首里 ¥290、牧志去旭橋 ¥250；機場去首里 ¥360。",
+          "style": "bullet"
+        },
+        {
+          "text": "1 日券（24 小時）成人 ¥1,000、小童 ¥500；2 日券（48 小時）成人 ¥1,800、小童 ¥900；喺任何一個車站都買到，由購票時間起計。",
+          "style": "bullet"
+        },
+        {
+          "text": "信用卡感應付款：2025/3/28 起啟用，據琉球新報報導 1 日最多收 ¥800（請以官網最新公告為準）。",
+          "style": "bullet"
+        },
+        {
+          "text": "本範本每日搭 Yui Rail 約 2 至 3 次、花費低過 1 日券，買單程票或者用 IC 卡（OKICA、Suica）抵啲；1 日券嘅優惠設施折扣都係少少幾十日圓。",
+          "style": "bullet"
+        },
+        {
+          "text": "首里城現況（2026-11-17 查官網）",
+          "style": "heading"
+        },
+        {
+          "text": "2019 年大火後重建緊：正殿（正殿）按官網喺 2026 年 11 月完成，2026/11/23（星期一・假日）中午起公開；當日上午同 11/22 全日臨時休園。",
+          "style": "bullet"
+        },
+        {
+          "text": "入正殿內部參觀要預約指定日期同時間（每 30 分鐘一場）嘅網上預約；正殿以外嘅有料區域唔使預約（第三方整理，請以官網為準）。",
+          "style": "bullet"
+        },
+        {
+          "text": "入場費 2026/11/23 起調整：官網免費票價頁攞唔到，第三方整理為成人 ¥1,000、高中生 ¥760、中小學生 ¥370；調整前成人 ¥400（Yui Rail 官網）。",
+          "style": "bullet"
+        },
+        {
+          "text": "無料區域同守禮門一帶可以免費入；如果預約唔到正殿內部，都仲可以參觀城郭同其他有料區域。",
+          "style": "bullet"
+        },
+        {
+          "text": "其他區域嘅復元進度同可入範圍請查 https://oki-park.jp/shurijo/ 。",
+          "style": "bullet"
+        },
+        {
+          "text": "預約同購票",
+          "style": "heading"
+        },
+        {
+          "text": "首里城正殿內部：喺官網預約指定日期同時間，旺季同公開初期容易滿額，請及早訂。",
+          "style": "bullet"
+        },
+        {
+          "text": "燒肉 琉球嘅牛：要訂座。",
+          "style": "bullet"
+        },
+        {
+          "text": "Churasun 6：官網預約 https://www.churasun6.com/ ；限 20 歲或以上，1 部票價約 ¥6,500 起包一杯飲品；除咗擊掌同合照，嚴禁觸碰舞者。",
+          "style": "bullet"
+        },
+        {
+          "text": "瀨長島交通",
+          "style": "heading"
+        },
+        {
+          "text": "機場出發：週末同假日有瀨長島機場接駁巴士（TK04，東京巴士），成人 ¥250；平日冇；機場去瀨長島搭車約 10 分鐘。",
+          "style": "bullet"
+        },
+        {
+          "text": "國際通出發：Umikaji Liner（ウミカジライナー，TK02）往糸滿；詳細時刻車費請睇 https://www.umikajiterrace.com/accessguide/ ，或者致電東京巴士 098-850-0011。",
+          "style": "bullet"
+        },
+        {
+          "text": "的士最簡單；回程亦可以喺島上叫車。",
+          "style": "bullet"
+        },
+        {
+          "text": "季節",
+          "style": "heading"
+        },
+        {
+          "text": "範本以 7 月夏季遊記為基準：那霸夏天好熱、紫外線強，戶外景點（波上宮天橋、瀨長島、Outlet）排咗喺朝早同黃昏，仲要帶定防曬同水；其他季節一樣行得通。",
+          "style": "bullet"
+        },
+        {
+          "text": "壺屋陶街下晝好多舖頭都早收，行程排喺 14 點前後到店。",
+          "style": "bullet"
+        },
+        {
+          "text": "壺屋燒物博物館 2026/9/1 至 2027/3/31 暫停開放，只逛街，唔入館。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "吉伊卡哇師薩周邊（ちいかわ シーサー）",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "國際通上嘅專門店有賣，遊記喺呢度買咗草裙兔兔"
+    },
+    {
+      "key": "s-02",
+      "title": "Blue Seal 散銀包（ブルーシール）",
+      "category": "clothing",
+      "productType": "bag_wallet",
+      "store": "瀨長島、豐崎嘅 Blue Seal 店有賣，遊記買咗紀念散銀包"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "那霸市",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "那霸市",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "那霸市",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "那霸市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵達那霸機場（那覇空港）",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "airport",
+          "place": {
+            "name": "那霸機場",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "午餐：第一牧志公設市場周邊（第一牧志公設市場）",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "market",
+          "place": {
+            "name": "第一牧志公設市場",
+            "latitude": 26.2145489,
+            "longitude": 127.6882674,
+            "applePlaceID": "IC5383C58AD3469EA",
+            "address": "〒900-0014, 沖縄県那覇市, 松尾2丁目10-1",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "機場站搭 Yui Rail（ゆいレール）去牧志站約 13 至 15 分鐘，單程 ¥320；出站後行約 10 分鐘；行李可以先寄放喺酒店"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "壺屋陶街（壺屋やちむん通り）",
+          "start": "14:00",
+          "end": "15:45",
+          "category": "sight",
+          "place": {
+            "name": "壺屋Yachimun通",
+            "latitude": 26.2130862,
+            "longitude": 127.691306,
+            "applePlaceID": "I6A995B686ACA42DA",
+            "address": "〒902-0065",
+            "addressIsApproximate": true
+          },
+          "notes": "各店營業時間唔同，多數下晝好早就收舖，請出發前確認；壺屋燒物博物館 2026/9/1 至 2027/3/31 因外牆維修暫停開放（Yui Rail 官網）",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "由公設市場行約 10 至 15 分鐘，石疊小路上有好多陶器舖、窯場同咖啡店"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "國際通（国際通り）：藥妝同手信散步",
+          "start": "16:00",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "那覇国際通り商店街",
+            "latitude": 26.2160938,
+            "longitude": 127.689231,
+            "applePlaceID": "IAA939DC0B8514F67",
+            "address": "〒900-0013, 沖縄県那覇市, 牧志3丁目2-10",
+            "addressIsApproximate": false
+          },
+          "notes": "全長約 1.6 公里，各店營業時間唔同，多數營業到約 21:00，請出發前確認",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "由壺屋行約 15 分鐘去國際通；沿街一路逛到食晚飯"
+          },
+          "images": [
+            "d1-04"
+          ]
+        },
+        {
+          "key": "d1-05",
+          "title": "晚餐：居酒屋 なかむら家（なかむら家）",
+          "start": "18:00",
+          "end": "19:30",
+          "category": "dining",
+          "place": {
+            "name": "なかむら家",
+            "latitude": 26.2159698,
+            "longitude": 127.6821636,
+            "applePlaceID": "ICA3891BE7AB3D242",
+            "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目15 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "只收現金；營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "國際通周邊行約 10 分鐘"
+          }
+        },
+        {
+          "key": "d1-06",
+          "title": "唐吉訶德 國際通店（ドン・キホーテ 国際通り店）",
+          "start": "19:45",
+          "end": "20:45",
+          "category": "shopping",
+          "place": {
+            "name": "唐吉訶德國際通店",
+            "latitude": 26.2159386,
+            "longitude": 127.6877135,
+            "applePlaceID": "IBDB33462100C5694",
+            "address": "〒900-0014, 沖縄県那覇市, 松尾2丁目8-19",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；免稅櫃檯喺 4 樓，排隊條龍好長但手續快",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "行約 10 分鐘；國際通上有大細兩間唐吉訶德"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "行返住宿；國際通周邊夜晚都仲有好多人，行大路就得"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "那霸市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "首里城公園（首里城公園）",
+          "start": "09:45",
+          "end": "12:15",
+          "category": "castle",
+          "place": {
+            "name": "首里城正殿(首里城公園)",
+            "latitude": 26.2170379,
+            "longitude": 127.7194829,
+            "applePlaceID": "IC97D4775995DCEAA",
+            "address": "〒903-0815, 沖縄県那覇市, 首里金城町1-2",
+            "addressIsApproximate": false
+          },
+          "notes": "官網：7 至 11 月無料區域 8:00–19:30、有料區域 8:30–19:00（18:30 截止售票）；其他月份嘅時段同休園日請查官網；2026/11/22 全日同 11/23 上午臨時休園",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "由住宿行去牧志站，搭 Yui Rail 去首里站，¥290、約 17 分鐘；出站後行約 15 分鐘到守禮門，沿途上斜"
+          },
+          "todos": [
+            {
+              "text": "預約首里城正殿內部參觀",
+              "note": "指定日期同時間（每 30 分鐘一場）嘅網上預約，2026/11/23 起開放參觀；官網 https://oki-park.jp/shurijo/"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "玉陵（玉陵）",
+          "start": "12:30",
+          "end": "13:15",
+          "category": "sight",
+          "place": {
+            "name": "玉陵",
+            "latitude": 26.2182059,
+            "longitude": 127.7147027,
+            "applePlaceID": "I194BD0E6509F2CF2",
+            "address": "〒903-0815, 沖縄県那覇市, 首里金城町1丁目3",
+            "addressIsApproximate": false
+          },
+          "notes": "開放時間同休館日請出發前確認；Yui Rail 官網顯示成人入場費 ¥300",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "由首里城行約 10 至 15 分鐘"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "午餐：首里站周邊（首里駅）",
+          "start": "13:30",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "首里",
+            "latitude": 26.2191196,
+            "longitude": 127.72549,
+            "applePlaceID": "I1DFEBCED69086C9D",
+            "address": "沖縄県那覇市, 首里汀良町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "行返首里站一帶；首里係沖繩麵同傳統小食嘅發源地"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "波上宮（波上宮）：包括波之上海灘、護國寺",
+          "start": "15:15",
+          "end": "17:00",
+          "category": "temple",
+          "place": {
+            "name": "波上宮",
+            "latitude": 26.220688,
+            "longitude": 127.6711195,
+            "applePlaceID": "I403C23C7EBE9131F",
+            "address": "〒900-0031, 沖縄県那覇市, 若狭1丁目25-11",
+            "addressIsApproximate": false
+          },
+          "notes": "授與所同社務所 9:00–16:30、祈禱受付 10:00–15:30（官網 2026/1 公告），建議 16:30 前參拜；境內有免費停車場約 20 個車位",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "首里站搭 Yui Rail 去旭橋站約 22 分鐘，再行約 15 分鐘到神社；亦可以由神社另一邊落斜去海灘，比行天橋近"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "晚餐：燒肉 琉球嘅牛（焼肉 琉球の牛 那覇久茂地店）",
+          "start": "17:30",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "焼肉 琉球の牛 那覇久茂地",
+            "latitude": 26.2155533,
+            "longitude": 127.6819627,
+            "applePlaceID": "I849648257EA60142",
+            "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目16-1",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；要訂座，上菜較慢，預留約 2 個鐘",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "由波上宮沿旭橋方向行約 20 分鐘，或者搭的士約 10 分鐘"
+          },
+          "todos": [
+            {
+              "text": "訂座燒肉 琉球嘅牛（那霸久茂地）",
+              "note": "遊記有訂座；上菜慢，預留約 2 個鐘"
+            }
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "Churasun 6 沖繩（ちゅらさん6）辣妹酒吧表演",
+          "start": "20:15",
+          "end": "21:30",
+          "category": "bar",
+          "place": {
+            "name": "Churasun 6 Okinawa",
+            "latitude": 26.2183985,
+            "longitude": 127.6801257,
+            "applePlaceID": "I230A443A8401DEFB",
+            "address": "〒900-0032, 沖縄県那覇市, 松山1丁目5-1 2F",
+            "addressIsApproximate": false
+          },
+          "notes": "官網：1 部 20:30 開演（20:00 入場）、2 部 22:30 開演；休息日請出發前確認；未滿 20 歲不可入場；散場約 21:30，遲過其他日子嘅 21:00",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "行約 15 分鐘；由一樓夜店旁邊嘅入口一直行到尾轉左，上 2 樓先係 Churasun 6，1 樓係夜店，唔好行錯"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "行返住宿；松山一帶夜晚較複雜，建議結伴行大路"
+          },
+          "todos": [
+            {
+              "text": "預約 Churasun 6 表演",
+              "note": "官網 https://www.churasun6.com/ ；限 20 歲或以上；1 部 20:30 開演"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "那霸市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "瀨長島（瀬長島ウミカジテラス）",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "sight",
+          "place": {
+            "name": "瀬長島ウミカジテラス",
+            "latitude": 26.1764709,
+            "longitude": 127.6404074,
+            "applePlaceID": "IC9B0D0C2786C14A4",
+            "address": "〒901-0233, 沖縄県豊見城市, 瀬長174-6",
+            "addressIsApproximate": false
+          },
+          "notes": "官網：設施 10:00–21:00、商店 10:00–20:00、餐飲 11:00–21:00（最後點餐 20:30），全年無休；免費停車",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "退房後搭的士約 25 至 30 分鐘（車資以叫車 App 預計為準）；慳錢行法：喺國際通搭 Umikaji Liner（ウミカジライナー，東京巴士 TK02，往糸滿）去瀨長島，時刻同車費請查 https://www.umikajiterrace.com/accessguide/"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "體驗柏青哥（P-Time 津嘉山）",
+          "start": "11:50",
+          "end": "12:30",
+          "category": "show",
+          "place": {
+            "name": "Pachinko P Time",
+            "latitude": 26.1809003,
+            "longitude": 127.7153955,
+            "applePlaceID": "I9F0293E1440584FB",
+            "address": "〒901-1117, 沖縄県島尻郡南風原町, 字津嘉山1718-2",
+            "addressIsApproximate": false
+          },
+          "notes": "日本柏青哥店，未滿 18 歲不可入場；營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "由瀨長島搭的士約 20 分鐘（免揸車：路線巴士班次疏，建議搭的士）"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "午餐：沖繩麵 玉家 豐崎店（そば処 玉家 豊崎店）",
+          "start": "12:45",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "そば処 玉家 豊崎店",
+            "latitude": 26.1549155,
+            "longitude": 127.661911,
+            "applePlaceID": "I7B5CBC327B28BBE5",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-1069",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；先喺售票機買券再入座",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "搭的士約 15 分鐘到豐崎"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "那霸 ASHIBINAA Outlet（あしびなー）",
+          "start": "13:45",
+          "end": "14:45",
+          "category": "shopping",
+          "place": {
+            "name": "科布拉 彪馬 高爾夫 奧特萊斯 阿西比納",
+            "latitude": 26.1590816,
+            "longitude": 127.6562155,
+            "applePlaceID": "ID2B7B6F4D2760D9",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-188",
+            "addressIsApproximate": false
+          },
+          "notes": "約 10:00–20:00 係常見時段；營業時間請出發前確認；戶外好曬，2 樓有藥妝店",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "由玉家行約 10 分鐘"
+          }
+        },
+        {
+          "key": "d3-05",
+          "title": "Blue Seal 豐崎店（ブルーシール）",
+          "start": "15:00",
+          "end": "15:20",
+          "category": "dessert",
+          "place": {
+            "name": "Blue Seal 豐崎",
+            "latitude": 26.1591407,
+            "longitude": 127.6597059,
+            "applePlaceID": "IA99C4322896EB6C9",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-411",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；遊記推介琉球紅茶味",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "由 Outlet 行到對面"
+          }
+        },
+        {
+          "key": "d3-06",
+          "title": "那霸機場（那覇空港）：辦理登機、出境、手信",
+          "start": "15:45",
+          "end": "17:45",
+          "category": "airport",
+          "place": {
+            "name": "那霸機場",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "的士約 15 分鐘（Blue Seal 去機場）；國際航線建議起飛前 2 個鐘到達；當日時間按實際航班調整，客運大樓商店街有手信店、無印良品、藥妝店"
+          }
+        }
+      ]
+    }
+  ]
+}

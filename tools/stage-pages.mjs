@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 export const PUBLISH = [
   '.nojekyll', '.well-known', '404.html', 'CNAME', 'android-auth', 'announcements', 'app-ads.txt', 'assets', 'contact', 'covers',
   'en', 'index.html', 'ja', 'join', 'ko', 'open', 'privacy.html', 'robots.txt', 'screens', 'share-styles',
-  'sitemap.xml', 'terms.html', 'trip', 'zh-cn',
+  'sitemap.xml', 'templates', 'terms.html', 'trip', 'zh-cn',
 ];
 /** 刻意不發佈：開發用或專案文件。`.git`、`node_modules` 等工具產物不用列，下面的 IGNORED 直接略過。 */
 export const KEEP_OUT = [

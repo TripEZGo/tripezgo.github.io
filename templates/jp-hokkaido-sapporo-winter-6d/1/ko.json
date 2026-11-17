@@ -1,0 +1,1553 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-hokkaido-sapporo-winter-6d",
+  "revision": 1,
+  "contentLocale": "ko",
+  "title": "홋카이도 6일｜삿포로・조잔케이・오타루・후라노 비에이 (겨울)",
+  "subtitle": "겨울: 조잔케이 온천 1박, 삿포로 4박, 오타루와 후라노・비에이는 당일치기",
+  "summary": "신치토세 공항으로 드나드는 겨울 엿새: 조잔케이 온천에서 1박하고 나머지는 삿포로에 묵으며 오타루 운하, 홋카이도 신궁, 시내 맛집을 둘러봅니다. 후라노와 비에이는 당일 투어에 참가하며 여행사는 지정하지 않습니다. 준비 사항에 눈길, 짧은 해, 교통 지연에 대한 주의를 적었습니다. 시라이토 폭포와 조잔케이 물산관은 대안으로 두었습니다.",
+  "destination": "일본 삿포로・조잔케이・오타루・후라노 비에이",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 6,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "겨울",
+    "온천",
+    "설경"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록 (입국 심사와 세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권과 숙소 예약이 끝나면 바로 작성할 수 있습니다"
+    }
+  ],
+  "images": {
+    "d2-03": "images/jp-hokkaido-sapporo-winter-6d/d2-03.jpg",
+    "d2-09": "images/jp-hokkaido-sapporo-winter-6d/d2-09.jpg",
+    "d2-12": "images/jp-hokkaido-sapporo-winter-6d/d2-12.jpg",
+    "d3-02": "images/jp-hokkaido-sapporo-winter-6d/d3-02.jpg",
+    "d3-04": "images/jp-hokkaido-sapporo-winter-6d/d3-04.jpg",
+    "d3-06": "images/jp-hokkaido-sapporo-winter-6d/d3-06.jpg",
+    "d4-03": "images/jp-hokkaido-sapporo-winter-6d/d4-03.jpg",
+    "d4-06": "images/jp-hokkaido-sapporo-winter-6d/d4-06.jpg",
+    "d4-07": "images/jp-hokkaido-sapporo-winter-6d/d4-07.jpg",
+    "d4-08": "images/jp-hokkaido-sapporo-winter-6d/d4-08.jpg",
+    "d5-01": "images/jp-hokkaido-sapporo-winter-6d/d5-01.jpg",
+    "d5-05": "images/jp-hokkaido-sapporo-winter-6d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 유라쿠 소안 (Jozankei Yurakusoan), 조잔케이 온천 거리 입구, 1박 (여행기 숙소)",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "조잔케이 유라쿠 소안",
+        "latitude": 42.9674373,
+        "longitude": 141.1673866,
+        "applePlaceID": "IEB53DA3AE1107F9E",
+        "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目228-1",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "숙박: 게이오 프렐리아 호텔 삿포로 (京王プレリアホテル札幌), 삿포로역 북쪽 출구, 4박 연속 (여행기 숙소)",
+      "fromDay": 2,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "게이오 프렐리아 호텔 삿포로",
+        "latitude": 43.0701426,
+        "longitude": 141.348337,
+        "applePlaceID": "ID6A37439075B56AB",
+        "address": "〒060-0808, 北海道札幌市北区, 北8条西4丁目11-1",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "closingDays": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "대안: 시라이토 폭포 (白糸の滝)",
+      "durationMinutes": 60,
+      "category": "waterfall",
+      "place": {
+        "name": "시라이토 폭포",
+        "latitude": 42.9690862,
+        "longitude": 141.1699254,
+        "applePlaceID": "IE4305C4887E65D0E",
+        "address": "〒061-2302，北海道札幌市南区，定山渓温泉東2丁目107",
+        "addressIsApproximate": false
+      },
+      "notes": "호텔 근처. 여행기에서는 쌓인 눈과 결빙으로 폐쇄되어 있었습니다. 영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-02",
+      "title": "대안: 조잔케이 물산관 중앙점 (定山渓物産館 中央店)",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "조잔케이 원천 공원",
+        "latitude": 42.9650293,
+        "longitude": 141.1632451,
+        "applePlaceID": "I5196F29D69C0FD98",
+        "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目",
+        "addressIsApproximate": false
+      },
+      "notes": "온천 달걀을 사서 원천 공원에서 삶을 수 있습니다. 영업시간은 출발 전에 확인하세요"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "출처와 확인 사항",
+      "paragraphs": [
+        {
+          "text": "참고한 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/055527a739dd/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인함 (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "신치토세 공항에서 삿포로까지 JR 쾌속 에어포트 (약 33~43분, 피크 9:00~16:00 시간당 약 6편, IC 카드 사용 가능, 4호차 지정석): https://www.jrhokkaido.co.jp/global/chinese/travel/airport.html (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "갓파 라이너 (약 60분, 전 좌석 예약제, 편도 1,700엔, 인터넷 가격 1,460엔, 예약 마감 전날 17:00, 삿포로역 27번 승강장): https://www.jotetsu.co.jp/bus/kappa_liner/index.html (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "삿포로에서 조잔케이로 가는 다른 경로와 에스타 버스터미널 정비 (2025/12부터): https://jozankei.jp/tw/news/newaccess/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "오타루 수족관 겨울 2026/12/12~2027/2/23 10:00~16:00, 2026/11/24~12/11 휴관, 겨울 성인 1,300엔: https://uu-beihaidao.tw/corporate/otaru-aq.shtml (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "삿포로 TV 타워 9:00~22:00, 최종 입장 21:50: https://www.tv-tower.co.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못함. 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "JR 쾌속 에어포트의 실제 요금과 첫차・막차. 삿포로행 일반 공항 버스의 시간표와 요금.",
+          "style": "bullet"
+        },
+        {
+          "text": "조잔케이 신사, 갓파 가족 소원 족욕과 조잔케이 원천 공원, 후루카와 가지쓰 J.glacée, 이와토 관음당의 개방 시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "삿포로 요도바시, 징기스칸 다루마 본점, 다누키코지, 삿포로 PARCO, 다이마루 삿포로, 홋카이도 신궁, 진구 찻집, 도리톤 마루야마점, 야키니쿠 바 타무라, 홋카이도청 구 본청사, Sandria의 영업시간과 겨울 시간대.",
+          "style": "bullet"
+        },
+        {
+          "text": "오타루 운하점 르타오, 사카이마치 거리 가게들, 오타루 증기 시계가 정시에 울리는 시각.",
+          "style": "bullet"
+        },
+        {
+          "text": "당일 투어 각 명소의 영업시간: 후라노 닌구르 테라스, 후라노 허브 가든, 비에이역, 비에이 크리스마스 트리, 시라히게 폭포, 시로가네 푸른 연못 겨울 조명 기간.",
+          "style": "bullet"
+        },
+        {
+          "text": "당일 투어의 집합 장소, 가격, 일정 세부 사항. 여행기는 점심 출발 B안이며 여행사마다 다릅니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "삿포로 3월 중순부터 겨울까지 각 명소의 적설 폐쇄 상황 (여행기에서는 시라이토 폭포와 현수교가 눈으로 폐쇄).",
+          "style": "bullet"
+        },
+        {
+          "text": "변경 사항과 취사 선택",
+          "style": "heading"
+        },
+        {
+          "text": "여행기는 3월 중순 일정이며, 이 템플릿은 겨울로 표시하고 눈길, 짧은 해, 교통 지연 등의 주의를 더했으며 일정 내용과 순서는 여행기 그대로 유지했습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기의 당일 투어 선택과 가격은 채택하지 않았습니다. 규칙에 따라 업체는 지정하지 않고 명소의 순서와 스스로 가는 방법만 적었습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기의 삿포로 쓰나구 요코초 (3월까지만 영업)와 Le Labo 가격 참고는 채택하지 않았습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 5일차의 홋카이도 신궁과 마루야마 공원 순서는 신궁을 먼저 가고 점심을 먹는 것으로 바꿨습니다. 겨울에는 해가 짧아 신궁은 낮에 가야 하기 때문입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "삿포로 도큐 백화점은 여행기에서 구경했지만 영업 상황을 확인하지 못해 이 템플릿에는 넣지 않았습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 정보",
+          "style": "heading"
+        },
+        {
+          "text": "숙박: 여행기 저자는 조잔케이의 유라쿠 소안 (1박)과 삿포로역 북쪽 출구의 게이오 프렐리아 호텔 삿포로 (4박)에 묵었으며 둘 다 저자가 실제로 묵은 곳입니다. 객실 요금과 위치는 여행기를 참고하세요.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 준비 사항",
+      "paragraphs": [
+        {
+          "text": "겨울 주의 사항",
+          "style": "heading"
+        },
+        {
+          "text": "눈과 도로 상황: 12월부터 2월까지 삿포로 시내도 눈이 쌓이고 얼며 교외는 더 깊습니다. 조잔케이, 후라노, 비에이, 시라히게 폭포의 산책로와 다리는 자주 얼어붙으니 천천히 걸으세요. 여행기의 3월 중순에는 시내 눈이 많이 줄었지만 교외에는 아직 눈이 쌓여 있었고 시라이토 폭포와 현수교는 눈으로 폐쇄되어 있었습니다. 한겨울은 여행기보다 더 심합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "신발: 미끄럼 방지 밑창의 방한 부츠를 신거나 아이젠을 달고, 일반 운동화는 신지 마세요. 일본 공항 보안 검색은 엄격해서 부츠는 벗어서 X선에 통과시켜야 하니 벗기 쉬운 것을 고르세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "옷차림: 방한 외투, 발열 내의, 장갑, 모자, 목도리. 밤이 되면 기온이 더 내려가며, 여행기에서도 해가 진 뒤에도 여전히 춥다고 합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "짧은 해: 동지 전후에는 16:00 무렵이면 어두워지므로 명소는 대부분 오후 일찍 다 봐야 합니다. 출발 전에 삿포로의 일출과 일몰 시각을 확인하고 야외 명소는 낮에 배치하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "교통 지연: 대설 때는 JR 홋카이도, 버스, 신치토세 공항 항공편이 지연되거나 운행이 중단될 수 있습니다. 일정을 너무 빡빡하게 짜지 말고, 중요한 예약 편에는 여유를 두고, 출발 전에 JR 홋카이도와 항공사 공지를 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "매일의 교통은 JR과 버스가 중심이며, 4일차 당일 투어는 이동 시간이 길고 겨울 도로 상황 때문에 더 느려질 수 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항과 시내 이동 (신치토세 공항 CTS)",
+          "style": "heading"
+        },
+        {
+          "text": "첫 번째 선택은 JR 쾌속 에어포트 (快速エアポート)입니다. 공항역은 B1에 있으며 '국내선, JR선' 표지를 따라가세요. 삿포로역까지 최단 약 33분 (특별 쾌속), 일반 쾌속은 약 37분, 구간 쾌속은 약 43분이며 9:00~16:00에는 시간당 약 6편. 교통 IC 카드로 바로 개찰구를 통과할 수 있어 자동 발매기에 줄 설 필요가 없습니다. 1~3, 5~6호차는 자유석, 4호차는 지정석입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "요금: 공식 페이지에는 없고 여행기에도 적혀 있지 않으니 JR 홋카이도 공식 사이트의 요금 페이지를 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "일부 열차는 오타루까지 직통하지만 모든 열차가 그런 것은 아니니 탑승 전에 열차 행선지를 확인하세요. 'Local'이라고 표시된 보통 열차는 오타루에 가지 않습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "대안: 공항 버스. 예를 들어 마코마나이역행 호쿠토 교통 공항 버스를 타고 조잔케이행 버스로 갈아탈 수 있으며 전체 약 120분. 삿포로행 일반 공항 버스는 공식 사이트에서 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 6일차에는 삿포로역 11:19 JR 쾌속 에어포트로 공항까지 약 38분, 12:00에 도착했습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "삿포로와 조잔케이 교통",
+          "style": "heading"
+        },
+        {
+          "text": "삿포로역에서 조잔케이까지 가장 편한 것은 갓파 라이너 (かっぱライナー号)입니다. 약 60분, 전 좌석 예약제 (좌석 지정 없음), 공식 사이트에서 예약하고 삿포로역 27번 승강장에서 탑니다. 요금은 편도 1,700엔, 인터넷 예약 할인가 1,460엔이며 여행기에서는 왕복 2,920엔. 예약은 승차일 약 한 달 전부터 열리고 전날 17:00에 마감되며, 전자 승차권은 휴대폰에서 활성화해 기사에게 보여 주면 되고 티켓을 따로 받을 필요가 없습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "삿포로역 16:00와 17:00 출발 편은 가을・겨울 한정이며 조잔케이 차고 앞까지만 갑니다. 승하차 정류장은 예약할 때 골라야 합니다. 여행기에서는 호텔과 가장 가까운 시라이토 폭포 정류장에서 내렸고, 호텔 바로 앞인 '조잔케이 온천 히가시 2초메' 정류장까지 갈 수도 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "다른 두 경로 (조잔케이 관광협회 2025/12 정보): 삿포로역에서 지하철 난보쿠선으로 마코마나이역까지 가서 조잔케이 버스로 갈아타면 약 70분, 예약 불필요, 약 30분에 1편. 삿포로역 버스터미널 (에스타)은 정비 중이라 역 앞에서 출발하는 일반 조잔케이 버스는 아침 몇 편뿐이므로 지하철과 버스 조합 또는 갓파 라이너가 현실적입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "삿포로 시내는 지하철이 매우 편리합니다. 난보쿠선으로 삿포로역에서 오도리, 스스키노까지 각각 약 3~5분이며 마루야마코엔역은 오도리에서 도자이선으로 갈아탑니다. 교통 IC 카드를 공통으로 쓸 수 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "예약과 티켓 구입",
+          "style": "heading"
+        },
+        {
+          "text": "갓파 라이너: 공식 사이트에서 예약하세요. 주소는 출처에 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "오타루 수족관: 공식 사이트에서 온라인으로 구입할 수 있고 입장할 때 QR 코드를 제시합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "당일 투어: 많은 여행사가 삿포로 출발 이 당일 투어 (후라노 닌구르 테라스, 비에이, 시라히게 폭포, 푸른 연못 조명 일대)를 운영합니다. 출발 전에 집합 장소, 점심 포함 여부, 겨울 조명 기간을 직접 비교하세요. 여행기에서는 낮 11:50 출발 프로그램을 골랐고 밤 21:00 무렵 삿포로 오도리역으로 돌아왔습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "대중교통으로 직접 가는 대안: 삿포로역에서 JR 하코다테 본선으로 아사히카와까지 가서 후라노선으로 갈아타 후라노까지 약 2~3시간. 후라노에서 비에이까지는 JR 후라노선을 탈 수 있습니다. 비에이의 푸른 연못과 시라히게 폭포는 역에서 멀어 겨울에는 대부분 택시나 렌터카에 의존합니다. 겨울에 운전할 때는 눈길 운전 위험을 스스로 판단하고, 눈길에 익숙하지 않다면 직접 운전은 권하지 않습니다. 시간표와 요금은 JR 홋카이도 공식 사이트에서 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "푸른 연못 조명: 겨울 밤에만 있으며 날짜와 시간은 해마다 다릅니다. 비에이초 관광협회에서 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "입국과 인터넷",
+          "style": "heading"
+        },
+        {
+          "text": "출발 전에 Visit Japan Web에 등록하세요. 입국 심사와 세관 신고는 같은 QR 코드를 씁니다: https://www.vjw.digital.go.jp/main/#/vjwpco001 .",
+          "style": "bullet"
+        },
+        {
+          "text": "인터넷은 실물 SIM 카드나 eSIM을 쓸 수 있습니다. eSIM은 인터넷이 되는 곳에서 활성화해야 하므로 대만에서 출발하기 전에 설정해 두는 것이 가장 좋습니다. 여행기에서는 비에이 깊은 산속에서만 잠깐 신호가 잡히지 않았습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "귀국 3일 전부터 온라인 체크인과 좌석 선택이 가능하며 공항 줄서기 시간을 줄일 수 있으니 이용하는 항공사 공식 사이트를 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행 일정의 속도",
+          "style": "heading"
+        },
+        {
+          "text": "1일차와 6일차는 공항 이동을 포함하고 4일차 당일 투어는 하루 종일 이동이라 이동 비중이 일반적인 30%보다 높습니다. 4일차 삿포로 귀환 시각은 약 21:00.",
+          "style": "bullet"
+        },
+        {
+          "text": "오타루 수족관은 겨울에 16:00까지만 열기 때문에 3일차에는 수족관을 먼저 가고 운하와 사카이마치 거리를 둘러봅니다.",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "롯카테이 럼 건포도 버터 샌드 (六花亭 ラム酒入りレーズンバターサンド)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "오타루 사카이마치 거리나 공항에서 구입. 여행기에서는 유통기한이 짧고 차갑게 먹으면 더 맛있다고 합니다"
+    },
+    {
+      "key": "s-02",
+      "title": "롯카테이 위스키 봉봉 초콜릿 (六花亭 ボンボンショコラ洋酒入り)",
+      "category": "souvenir",
+      "productType": "chocolate_candy",
+      "store": "여행기 추천, 진짜 술이 들어 있습니다. 오타루 사카이마치 거리나 공항에서 구입"
+    },
+    {
+      "key": "s-03",
+      "title": "르타오 쿠키와 틴 케이스 딸기 건조 초콜릿 (ルタオ)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "오타루 운하점. 여행기에서는 쿠키가 맛있고 딸기 건조 초콜릿은 단 편이라고 합니다"
+    },
+    {
+      "key": "s-04",
+      "title": "삿포로 농학교 우유 쿠키 (札幌農学校)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "공항이나 백화점에서 구입 (여행기의 전리품)"
+    },
+    {
+      "key": "s-05",
+      "title": "구운 옥수수 맛 과자 (焼きとうもろこし風味のお菓子)",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "공항 기념품 코너 (여행기에서 괜찮다고 함)"
+    },
+    {
+      "key": "s-06",
+      "title": "기타이치 글라스 홋카이도 지역 술과 멜론 리큐르 (北一硝子)",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "오타루 기타이치 글라스 아웃렛에서 무료 시음 가능. 여행기에서는 멜론 리큐르를 샀고 얼음이나 탄산수에 타서 마십니다"
+    },
+    {
+      "key": "s-07",
+      "title": "나무 수공예 악사 장식",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "후라노 닌구르 테라스 통나무집의 수공예 상품. 매장 안은 촬영 금지"
+    },
+    {
+      "key": "s-08",
+      "title": "홋카이도 신궁 교통안전 부적과 스티커 (交通安全守)",
+      "category": "souvenir",
+      "productType": "charm_badge",
+      "store": "홋카이도 신궁. 부적은 차 안에 걸 수 있고 스티커는 오토바이, 자전거, 헬멧에 붙일 수 있습니다"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "삿포로시",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "삿포로시",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "오타루시",
+      "latitude": 43.1906335,
+      "longitude": 140.9944389,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "삿포로시",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "삿포로시",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "삿포로시",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "삿포로시",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "신치토세 공항 도착 (新千歳空港)",
+          "start": "13:15",
+          "end": "14:20",
+          "category": "airport",
+          "place": {
+            "name": "신치토세 공항 국제선 터미널",
+            "latitude": 42.78662,
+            "longitude": 141.6766,
+            "applePlaceID": "I6EBDB85749A9452",
+            "address": "北海道千歳市, 美々",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "삿포로역: 27번 승강장에서 대기 (札幌駅 27番のりば)",
+          "start": "15:10",
+          "end": "15:45",
+          "category": "station",
+          "place": {
+            "name": "삿포로",
+            "latitude": 43.068593,
+            "longitude": 141.3507724,
+            "applePlaceID": "I50F4652462F771D9",
+            "address": "北海道札幌市北区, 北6条西",
+            "addressIsApproximate": false
+          },
+          "notes": "역 운영 시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "공항역 B1에서 JR 쾌속 에어포트 (快速エアポート)를 타면 삿포로까지 최단 약 33~41분. 교통 IC 카드로 바로 개찰구를 통과할 수 있습니다. 자유석은 1~3, 5~6호차"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "조잔케이 온천 도착, 체크인: 유라쿠 소안 (Jozankei Yurakusoan)",
+          "start": "17:00",
+          "end": "17:30",
+          "category": "hotel",
+          "place": {
+            "name": "조잔케이 유라쿠 소안",
+            "latitude": 42.9674373,
+            "longitude": 141.1673866,
+            "applePlaceID": "IEB53DA3AE1107F9E",
+            "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目228-1",
+            "addressIsApproximate": false
+          },
+          "notes": "체크인과 체크아웃 시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "삿포로역 27번 승강장에서 갓파 라이너 (かっぱライナー号) 직행 약 60분, 전 좌석 예약제. 시라이토 폭포 (白糸の滝) 정류장에서 내리면 길 건너가 호텔. 승하차 때 전자 승차권을 제시하고 짐은 직원이 차량에 싣습니다"
+          },
+          "todos": [
+            {
+              "text": "갓파 라이너 삿포로역→조잔케이 (귀가편 포함) 예약",
+              "note": "공식 사이트 https://www.jotetsu.co.jp/bus/kappa_liner/index.html , 승차일 한 달 전부터 예약 가능, 전날 17:00 마감. 전자 승차권은 휴대폰에서 활성화"
+            }
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "저녁: 기타노쿠니 이자카야 (定山渓万世閣ホテルミリオーネ 3층)",
+          "start": "18:10",
+          "end": "19:30",
+          "category": "dining",
+          "place": {
+            "name": "조잔케이 만세이카쿠 호텔 밀리오네",
+            "latitude": 42.9642083,
+            "longitude": 141.1635384,
+            "applePlaceID": "IA3379425E5189323",
+            "address": "〒061-2302",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "호텔에서 도보 약 10분. 눈길이니 미끄럼 방지 신발을 신으세요"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "호텔까지 걸어서 돌아갑니다. 밤에는 기온이 낮고 길이 얼 수 있습니다"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "삿포로시",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "아침: 호텔 일식 조식",
+          "start": "09:00",
+          "end": "09:50",
+          "category": "dining",
+          "place": {
+            "name": "조잔케이 유라쿠 소안",
+            "latitude": 42.9674373,
+            "longitude": 141.1673866,
+            "applePlaceID": "IEB53DA3AE1107F9E",
+            "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目228-1",
+            "addressIsApproximate": false
+          },
+          "notes": "조식 시간은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 2,
+            "durationSource": "user",
+            "note": "호텔 안에서 식사"
+          }
+        },
+        {
+          "key": "d2-02",
+          "title": "조잔케이 신사 (定山渓神社)",
+          "start": "10:05",
+          "end": "10:35",
+          "category": "temple",
+          "place": {
+            "name": "조잔케이 신사",
+            "latitude": 42.9649277,
+            "longitude": 141.1671937,
+            "applePlaceID": "I30D94C38550067DE",
+            "address": "〒061-2301, 北海道札幌市南区, 定山渓温泉3丁目218",
+            "addressIsApproximate": false
+          },
+          "notes": "경내 개방 여부는 출발 전에 확인하세요. 겨울에는 계단에 눈이 쌓이고 얼어붙습니다",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "호텔에서 도보 약 10분. 오르막 계단은 겨울에 얼기 쉽습니다"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "갓파 가족의 소원 족욕과 조잔케이 원천 공원 (河童家族の祈願足湯・定山源泉公園)",
+          "start": "10:50",
+          "end": "11:40",
+          "category": "park",
+          "place": {
+            "name": "조잔케이 원천 공원",
+            "latitude": 42.9650293,
+            "longitude": 141.1632451,
+            "applePlaceID": "I5196F29D69C0FD98",
+            "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "무료. 영업시간은 출발 전에 확인하세요. 공원 안에 공용 족욕장과 온천 달걀을 삶을 수 있는 원천이 있으며 겨울에는 일부 폐쇄될 수 있습니다",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "신사에서 도보 약 10분, 옆 비탈을 내려가면 원천 공원"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "빵과 디저트: 후루카와 가지쓰 J.glacée (조잔케이)",
+          "start": "11:55",
+          "end": "12:20",
+          "category": "bakery",
+          "place": {
+            "name": "J.glacée 조잔케이",
+            "latitude": 42.9659773,
+            "longitude": 141.1611764,
+            "applePlaceID": "I2DD452F5679637EA",
+            "address": "〒061-2303, 北海道札幌市南区, 定山渓温泉西4丁目356",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 8,
+            "durationSource": "user",
+            "note": "온천 거리를 따라 올라가 약 8분. 여행기에서 추천한 것은 갓 구운 사과 크루아상"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "이와토 관음당 (岩戸観音堂)",
+          "start": "12:35",
+          "end": "12:55",
+          "category": "temple",
+          "place": {
+            "name": "이와토 관음",
+            "latitude": 42.9664674,
+            "longitude": 141.1608122,
+            "applePlaceID": "I2A38F02C369DB8E5",
+            "address": "〒061-2303",
+            "addressIsApproximate": true
+          },
+          "notes": "경내는 자유롭게 참배할 수 있습니다. 겨울에는 쌓인 눈을 조심하세요",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 12,
+            "durationSource": "user",
+            "note": "도보 약 12분, 가는 길은 온천 거리와 눈에 덮인 현수교"
+          }
+        },
+        {
+          "key": "d2-06",
+          "title": "짐 찾기, 시라이토 폭포 버스 정류장에서 대기 (白糸の滝バス停)",
+          "start": "13:10",
+          "end": "13:30",
+          "category": "station",
+          "place": {
+            "name": "시라이토 폭포",
+            "latitude": 42.9690862,
+            "longitude": 141.1699254,
+            "applePlaceID": "IE4305C4887E65D0E",
+            "address": "〒061-2302，北海道札幌市南区，定山渓温泉東2丁目107",
+            "addressIsApproximate": false
+          },
+          "notes": "버스 출발 시각은 예약한 전자 승차권을 확인하세요",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "먼저 호텔로 돌아가 맡긴 짐을 찾고 올 때 내린 정류장 맞은편으로 길을 건넙니다. 예약한 귀가 버스는 13:31 무렵 도착"
+          }
+        },
+        {
+          "key": "d2-07",
+          "title": "체크인: 게이오 프렐리아 호텔 삿포로 (京王プレリアホテル札幌)",
+          "start": "14:50",
+          "end": "15:20",
+          "category": "hotel",
+          "place": {
+            "name": "게이오 프렐리아 호텔 삿포로",
+            "latitude": 43.0701426,
+            "longitude": 141.348337,
+            "applePlaceID": "ID6A37439075B56AB",
+            "address": "〒060-0808, 北海道札幌市北区, 北8条西4丁目11-1",
+            "addressIsApproximate": false
+          },
+          "notes": "체크인과 체크아웃 시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-06",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "갓파 라이너로 삿포로역까지 약 60분 (시간은 전자 승차권 확인, 귀가 편과 정차 정류장은 미리 예약해야 함), 역에서 북쪽 출구의 호텔까지 도보 약 5분"
+          }
+        },
+        {
+          "key": "d2-08",
+          "title": "삿포로 요도바시 가챠와 장난감 (ヨドバシカメラ マルチメディア札幌)",
+          "start": "15:35",
+          "end": "16:05",
+          "category": "shopping",
+          "place": {
+            "name": "요도바시 카메라 멀티미디어 삿포로",
+            "latitude": 43.068333,
+            "longitude": 141.3476752,
+            "applePlaceID": "IBD9DA5EA3549CF8",
+            "address": "〒060-0806, 北海道札幌市北区, 北6条西5丁目1-22",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-07",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "호텔에서 JR 삿포로역 남쪽 출구 방향으로 도보 약 15분"
+          }
+        },
+        {
+          "key": "d2-09",
+          "title": "스스키노 교차로 (すすきの交差点)",
+          "start": "16:25",
+          "end": "16:55",
+          "category": "sight",
+          "place": {
+            "name": "스스키노 프리 인포메이션 스스키노 교차로",
+            "latitude": 43.0559525,
+            "longitude": 141.3535483,
+            "applePlaceID": "I87F015F4ED47ECDB",
+            "address": "〒064-0804, 北海道札幌市中央区, 南4条西3丁目9-5",
+            "addressIsApproximate": false
+          },
+          "notes": "하루 종일 볼 수 있음",
+          "leg": {
+            "fromKey": "d2-08",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "삿포로역에서 지하철 난보쿠선으로 스스키노역까지 약 5분, 도보와 대기를 포함해 약 20분"
+          },
+          "images": [
+            "d2-09"
+          ]
+        },
+        {
+          "key": "d2-10",
+          "title": "저녁: 징기스칸 다루마 본점 (成吉思汗 だるま 本店)",
+          "start": "17:00",
+          "end": "18:00",
+          "category": "dining",
+          "place": {
+            "name": "삿포로 징기스칸 유키다루마 스스키노 본점",
+            "latitude": 43.0525874,
+            "longitude": 141.3526282,
+            "applePlaceID": "IDDDFD4EF638AA2EB",
+            "address": "〒064-0806, 北海道札幌市中央区, 南6条西4 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기에서는 다 먹고 나와 보니 가게 밖에 긴 줄이 생겨 있었다고 합니다. 근처에 다른 지점도 있습니다",
+          "leg": {
+            "fromKey": "d2-09",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "교차로에서 도보 약 5분"
+          }
+        },
+        {
+          "key": "d2-11",
+          "title": "다누키코지 상점가 (狸小路商店街) 산책",
+          "start": "18:15",
+          "end": "18:45",
+          "category": "shopping",
+          "place": {
+            "name": "다누키코지 상점가",
+            "latitude": 43.0572554,
+            "longitude": 141.3527691,
+            "applePlaceID": "I95C7EBDAA769D5FC",
+            "address": "〒060-0062",
+            "addressIsApproximate": true
+          },
+          "notes": "상점가는 하루 종일 걸을 수 있습니다. 가게마다 영업시간이 다르니 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-10",
+            "mode": "walking",
+            "durationMinutes": 8,
+            "durationSource": "user",
+            "note": "스스키노에서 오도리 방향으로 도보 약 8분"
+          }
+        },
+        {
+          "key": "d2-12",
+          "title": "삿포로 TV 타워 야경 (さっぽろテレビ塔)",
+          "start": "19:00",
+          "end": "19:50",
+          "category": "viewpoint",
+          "place": {
+            "name": "삿포로 TV 타워",
+            "latitude": 43.0611553,
+            "longitude": 141.3564238,
+            "applePlaceID": "IB4FF172F48C5B9BC",
+            "address": "〒060-0042, 北海道札幌市中央区, 大通西1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "약 9:00~22:00, 최종 입장 약 21:50 (공식 사이트 tv-tower.co.jp, 확인 2026-11-17). 전망대 안에서 기념 도장을 찍을 수 있습니다",
+          "leg": {
+            "fromKey": "d2-11",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "다누키코지에서 동쪽으로 도보 약 15분, 오도리 공원"
+          },
+          "images": [
+            "d2-12"
+          ]
+        },
+        {
+          "key": "d2-13",
+          "title": "삿포로 PARCO (札幌PARCO) 쇼핑",
+          "start": "20:05",
+          "end": "20:45",
+          "category": "shopping",
+          "place": {
+            "name": "무인양품 삿포로 파르코",
+            "latitude": 43.0587429,
+            "longitude": 141.3531098,
+            "applePlaceID": "IEA4EA202B6CE869A",
+            "address": "〒060-0061",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-12",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "TV 타워에서 남서쪽으로 도보 약 10분, 다음 교차로 바로 옆"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "오도리역에서 지하철로 삿포로역까지 약 6분, 북쪽 출구의 호텔까지 걷는 시간 포함 약 25분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "오타루시",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "오타루역 앞 버스터미널 (小樽駅前バスターミナル)",
+          "start": "10:45",
+          "end": "11:00",
+          "category": "station",
+          "place": {
+            "name": "오타루",
+            "latitude": 43.197135,
+            "longitude": 140.9937207,
+            "applePlaceID": "I889A120FB5A8AD1D",
+            "address": "北海道小樽市, 稲穂",
+            "addressIsApproximate": true
+          },
+          "notes": "역 운영 시간은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "삿포로역에서 JR 하코다테 본선으로 약 40~60분 (쾌속은 약 40분, 보통 열차는 더 느리고 겨울에는 서서 가는 경우가 많음). 역을 나와 길을 건너 오른쪽이 버스 정류장"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "오타루 수족관 (おたる水族館): 해수 공원과 펭귄 산책",
+          "start": "11:25",
+          "end": "13:40",
+          "category": "aquarium",
+          "place": {
+            "name": "오타루 수족관",
+            "latitude": 43.2370258,
+            "longitude": 141.0116485,
+            "applePlaceID": "I2D2DA6DFBC661C60",
+            "address": "〒047-0047, 北海道小樽市, 祝津3丁目303",
+            "addressIsApproximate": false
+          },
+          "notes": "겨울 2026/12/12~2027/2/23 10:00~16:00 (최종 입장은 공식 사이트 기준). 2026/11/24~12/11 휴관. 3월 이후 시간은 계절마다 다르니 공식 사이트 uu-beihaidao.tw 확인",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "오타루역 앞 3번 승강장에서 홋카이도 주오 버스 10 오타루 수족관선 직행 약 20분. 11 슈쿠쓰선도 가지만 약 30분"
+          },
+          "todos": [
+            {
+              "text": "오타루 수족관 입장권 예약",
+              "note": "공식 사이트에서 온라인으로 구입, 입장할 때 QR 코드 제시. 겨울은 10:00~16:00, 2026/11/24~12/11 휴관: https://uu-beihaidao.tw/corporate/otaru-aq.shtml"
+            }
+          ],
+          "images": [
+            "d3-02"
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "점심: 르타오 오타루 운하점 산반코 카페 (ルタオ小樽運河店 三番庫カフェ)",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "cafe",
+          "place": {
+            "name": "LeTAO 운가 플라자점",
+            "latitude": 43.2003192,
+            "longitude": 141.0003805,
+            "applePlaceID": "I4F761A5F6B738BD1",
+            "address": "〒047-0031, 北海道小樽市, 色内2丁目1-20",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "버스로 오타루역까지 약 20분 (겨울에는 배차가 적어 대기 포함), 역 앞 큰길을 따라 운하까지 약 15분"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "오타루 운하 (小樽運河)",
+          "start": "15:45",
+          "end": "16:25",
+          "category": "sight",
+          "place": {
+            "name": "오타루 운하 관광 안내소",
+            "latitude": 43.1979983,
+            "longitude": 141.0032716,
+            "applePlaceID": "I832E860AC996B492",
+            "address": "〒047-0007, 北海道小樽市, 港町5",
+            "addressIsApproximate": false
+          },
+          "notes": "하루 종일 개방",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "도보 약 5분"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "사카이마치 거리 쇼핑: 롯카테이와 기타이치 글라스 (六花亭・北一硝子)",
+          "start": "16:40",
+          "end": "17:20",
+          "category": "shopping",
+          "place": {
+            "name": "사카이마치 혼도리",
+            "latitude": 43.19427936731942,
+            "longitude": 141.0061036116922,
+            "address": "日本北海道小樽市",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 기타이치 글라스 아웃렛에서는 홋카이도 지역 술을 무료로 시음할 수 있습니다 (여행기)",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 12,
+            "durationSource": "user",
+            "note": "운하와 사카이마치 거리를 따라 증기 시계 방향으로 걷습니다. 길가에 가게가 줄지어 있습니다"
+          }
+        },
+        {
+          "key": "d3-06",
+          "title": "오타루 증기 시계 (小樽蒸気時計)",
+          "start": "17:35",
+          "end": "17:55",
+          "category": "sight",
+          "place": {
+            "name": "오타루 오르골당",
+            "latitude": 43.1905274,
+            "longitude": 141.0079933,
+            "applePlaceID": "I7854E0806E990114",
+            "address": "〒047-0015, 北海道小樽市, 住吉町4-1",
+            "addressIsApproximate": false
+          },
+          "notes": "증기 시계는 정시마다 기적을 울리니 출발 전에 확인하세요. 겉모습은 하루 종일 볼 수 있습니다",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "사카이마치 거리 끝까지 걸어갑니다"
+          },
+          "images": [
+            "d3-06"
+          ]
+        },
+        {
+          "key": "d3-07",
+          "title": "저녁: 홋카이도 수프 카레 포장 (사보이 삿포로역 북쪽 출구점)",
+          "start": "19:15",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "카레 사보이",
+            "latitude": 43.0711749,
+            "longitude": 141.3492145,
+            "applePlaceID": "IF12D261DD619DA7C",
+            "address": "〒060-0808, 北海道札幌市北区, 北8条西4, 稲津ビルB1F",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기에서는 포장해서 호텔에서 먹었습니다",
+          "leg": {
+            "fromKey": "d3-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "오타루역까지 걸어서 약 25분, JR로 삿포로까지 약 40~60분 (쾌속을 놓치면 보통 열차로)"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "호텔까지 도보 약 10분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "삿포로시",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "아침: 고메다 커피점 오도리 니시 2초메점 (コメダ珈琲店 大通西2丁目店)",
+          "start": "10:30",
+          "end": "11:15",
+          "category": "cafe",
+          "place": {
+            "name": "고메다 커피점 오도리 니시 2초메점",
+            "latitude": 43.0600811,
+            "longitude": 141.3540977,
+            "applePlaceID": "IEBAB0F64D775C39E",
+            "address": "〒060-0042, 北海道札幌市中央区, 大通西2丁目5 ほくほく札幌ビル",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "삿포로역에서 지하철 난보쿠선으로 오도리역까지 약 3분, 도보 포함 약 15분"
+          }
+        },
+        {
+          "key": "d4-02",
+          "title": "당일 투어 참가: 집합과 출발 (삿포로→후라노・비에이): 오도리역 31번 출구",
+          "start": "11:40",
+          "end": "11:50",
+          "category": "other",
+          "place": {
+            "name": "오도리",
+            "latitude": 43.060133,
+            "longitude": 141.3521003,
+            "applePlaceID": "ID4D40B56EED1493D",
+            "address": "北海道札幌市中央区, 大通西",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분. 전날 출발 전 안내를 받는 것이 보통입니다"
+          },
+          "todos": [
+            {
+              "text": "삿포로 출발 후라노・비에이 당일 투어 예약",
+              "note": "여러 여행사가 운영합니다. 집합 장소, 출발 시간, 푸른 연못 조명 포함 여부, 겨울 운행 기간을 확인"
+            }
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "당일 투어: 후라노 닌구르 테라스 (ニングルテラス)",
+          "start": "13:30",
+          "end": "14:20",
+          "category": "shopping",
+          "place": {
+            "name": "닌구르 테라스",
+            "latitude": 43.3232668,
+            "longitude": 142.3563319,
+            "applePlaceID": "I1BD87D631F91F3F6",
+            "address": "〒076-0016, 北海道富良野市, 中御料 新富良野プリンスホテル内",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "driving",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "관광버스. 삿포로에서 후라노까지 약 1시간 40분, 고속도로와 산길. 여행기는 6명 소규모 투어"
+          },
+          "images": [
+            "d4-03"
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "당일 투어: 허브 가든 후라노 (ハーブガーデン富良野) 휴식과 쇼핑",
+          "start": "14:50",
+          "end": "15:20",
+          "category": "shopping",
+          "place": {
+            "name": "허브 가든 후라노",
+            "latitude": 43.4767859,
+            "longitude": 142.456069,
+            "applePlaceID": "IFE8C7F0CB66946CD",
+            "address": "〒071-0503, 北海道上富良野町, 空知郡, 西3線北27",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "관광버스로 약 30분"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "당일 투어: 비에이역 (美瑛駅)",
+          "start": "15:40",
+          "end": "16:30",
+          "category": "station",
+          "place": {
+            "name": "비에이역 앞",
+            "latitude": 43.5908242,
+            "longitude": 142.4629629,
+            "applePlaceID": "I4C77A7B74A95C144",
+            "address": "北海道上川郡美瑛町, 本町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "관광버스로 약 20분"
+          }
+        },
+        {
+          "key": "d4-06",
+          "title": "당일 투어: 비에이 크리스마스 트리 나무 (クリスマスツリーの木)",
+          "start": "16:40",
+          "end": "17:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "크리스마스 트리",
+            "latitude": 43.554906,
+            "longitude": 142.444779,
+            "applePlaceID": "IA60552C27BD92613",
+            "address": "〒071-0471, 北海道上川郡美瑛町, 美馬牛1258-17",
+            "addressIsApproximate": false
+          },
+          "notes": "하루 종일 볼 수 있음",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "관광버스로 약 10분"
+          },
+          "images": [
+            "d4-06"
+          ]
+        },
+        {
+          "key": "d4-07",
+          "title": "당일 투어: 시라히게 폭포 (白ひげの滝)",
+          "start": "17:30",
+          "end": "17:50",
+          "category": "waterfall",
+          "place": {
+            "name": "시라히게 폭포",
+            "latitude": 43.4746092,
+            "longitude": 142.6393959,
+            "applePlaceID": "I9350E2156999C85B",
+            "address": "〒071-0235, 北海道上川郡美瑛町, 白金",
+            "addressIsApproximate": true
+          },
+          "notes": "하루 종일 볼 수 있음",
+          "leg": {
+            "fromKey": "d4-06",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "관광버스로 약 30분"
+          },
+          "images": [
+            "d4-07"
+          ]
+        },
+        {
+          "key": "d4-08",
+          "title": "당일 투어: 시로가네 푸른 연못 (白金青い池) 야간 조명",
+          "start": "17:55",
+          "end": "18:25",
+          "category": "sight",
+          "place": {
+            "name": "푸른 연못 주차장",
+            "latitude": 43.4927509,
+            "longitude": 142.6124775,
+            "applePlaceID": "I3E38C2FC7DFAF0A0",
+            "address": "北海道上川郡美瑛町, 道道966号",
+            "addressIsApproximate": false
+          },
+          "notes": "겨울 조명 시간대와 날짜는 해마다 다르니 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-07",
+            "mode": "driving",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "관광버스로 약 5분"
+          },
+          "images": [
+            "d4-08"
+          ]
+        },
+        {
+          "key": "d4-09",
+          "title": "당일 투어: 삿포로로 귀환 (오도리역 31번 출구)",
+          "start": "20:55",
+          "end": "21:00",
+          "category": "other",
+          "place": {
+            "name": "오도리",
+            "latitude": 43.060133,
+            "longitude": 141.3521003,
+            "applePlaceID": "ID4D40B56EED1493D",
+            "address": "北海道札幌市中央区, 大通西",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-08",
+            "mode": "driving",
+            "durationMinutes": 150,
+            "durationSource": "user",
+            "note": "관광버스로 약 2시간 30분, 도중 20:00 무렵 휴게소에서 화장실 휴식. 겨울에는 도로 상황과 날씨로 지연될 수 있습니다"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "오도리역에서 지하철로 삿포로역까지 약 6분, 도보 포함 약 25분. 돌아오는 시간이 늦어 대부분의 식당이 문을 닫았을 테니 역 앞 편의점에서 야식을 살 수 있습니다"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "삿포로시",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "홋카이도 신궁 (北海道神宮)",
+          "start": "10:15",
+          "end": "11:45",
+          "category": "temple",
+          "place": {
+            "name": "홋카이도 신궁",
+            "latitude": 43.0542509,
+            "longitude": 141.307759,
+            "applePlaceID": "I2389099864CF42DA",
+            "address": "〒064-8505, 北海道札幌市中央区, 宮ケ丘474",
+            "addressIsApproximate": false
+          },
+          "notes": "겨울에는 개방 시간이 짧으니 출발 전에 확인하세요. 경내에서는 음식을 먹을 수 없습니다",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "삿포로역에서 지하철 난보쿠선으로 오도리까지, 도자이선으로 갈아타 마루야마코엔역까지 약 20분. 3번 출구에서 마루야마 공원을 지나 도보 약 15분, 겨울에는 눈이 쌓이고 얼어붙습니다"
+          },
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "진구 찻집: 홋카이도 우유 아이스크림 (神宮茶屋)",
+          "start": "12:00",
+          "end": "12:30",
+          "category": "dessert",
+          "place": {
+            "name": "진구 찻집",
+            "latitude": 43.0560054,
+            "longitude": 141.3086439,
+            "applePlaceID": "IA225B526E784F4AD",
+            "address": "〒064-0959, 北海道札幌市中央区, 宮ケ丘3-10",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "신궁 참배길 옆. 신궁 안에서는 먹을 수 없으니 찻집에서 다 먹고 드나드세요"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "점심: 홋카이도 해산물 회전초밥 도리톤 마루야마점 (トリトン 円山店)",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "dining",
+          "place": {
+            "name": "도리톤 마루야마점",
+            "latitude": 43.0624592,
+            "longitude": 141.3205112,
+            "applePlaceID": "I62421FAE817B5508",
+            "address": "〒064-0824, 北海道札幌市中央区, 北4条西23丁目2番17号",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기 추천 가게로 인기 시간대에는 줄을 섭니다",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "신궁에서 마루야마코엔역 부근까지 도보 약 15분"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "다이마루 삿포로 (大丸札幌店)와 백화점 먹거리 구경",
+          "start": "14:30",
+          "end": "15:45",
+          "category": "shopping",
+          "place": {
+            "name": "다이마루 삿포로점",
+            "latitude": 43.0676755,
+            "longitude": 141.3495392,
+            "applePlaceID": "IA4557664496F8EB4",
+            "address": "〒060-0005, 北海道札幌市中央区, 北5条西4丁目7",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "마루야마코엔역에서 도자이선으로 오도리까지, 난보쿠선으로 갈아타 삿포로역까지 약 20분, 도보 포함 약 25분"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "홋카이도청 구 본청사 (北海道庁旧本庁舎, 붉은 벽돌 청사)",
+          "start": "16:00",
+          "end": "16:40",
+          "category": "sight",
+          "place": {
+            "name": "홋카이도청 구 본청사",
+            "latitude": 43.063938,
+            "longitude": 141.3480029,
+            "applePlaceID": "I8B34F2FBD4B6C0C7",
+            "address": "〒060-0003",
+            "addressIsApproximate": true
+          },
+          "notes": "건물 개방 시간은 출발 전에 확인하세요. 겉모습은 하루 종일 볼 수 있습니다",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 12,
+            "durationSource": "user",
+            "note": "삿포로역 남쪽 출구에서 도보 약 12분. 겨울에는 길이 미끄럽습니다"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "저녁: 홋카이도 와규 야키니쿠 야키니쿠 바 타무라 (焼肉Bar Tamura)",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "야키니쿠 바 타무라",
+            "latitude": 43.0638731,
+            "longitude": 141.3503823,
+            "applePlaceID": "IFDAFAED1CED7325B",
+            "address": "〒060-0002, 北海道札幌市中央区, 北2条西4丁目1, 札幌三井JPビルディング",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 삿포로 미쓰이 JP 타워 부근에 있으며 인기가 많으니 예약이 필요한지 확인하세요",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "붉은 벽돌 청사에서 도보 약 10분, 옆 건물"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "삿포로역 샌드위치 자판기 (サンドイッチ工房 Sandria)",
+          "start": "19:15",
+          "end": "19:45",
+          "category": "bakery",
+          "place": {
+            "name": "산도리아 샌드위치 자판기",
+            "latitude": 43.0685488,
+            "longitude": 141.3500869,
+            "applePlaceID": "I4D4A1F7F6DA2A01C",
+            "address": "〒060-0806",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 1인 2개 한정이며 자주 긴 줄이 생깁니다",
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "삿포로역까지 도보 약 15분"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "북쪽 출구의 호텔까지 도보 약 10분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "삿포로시",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "신치토세 공항 국내선 터미널: 기념품과 먹거리 (新千歳空港 国内線ターミナル)",
+          "start": "12:00",
+          "end": "12:50",
+          "category": "shopping",
+          "place": {
+            "name": "신치토세 공항 국내선 터미널 빌딩",
+            "latitude": 42.7877125,
+            "longitude": 141.681506,
+            "applePlaceID": "IB8EC0A7848DC63FE",
+            "address": "〒066-0012, 北海道千歳市, 美々987-22, 新千歳空港",
+            "addressIsApproximate": false
+          },
+          "notes": "각 가게 영업시간은 출발 전에 확인하세요. 터미널 1층에 먹거리와 기념품이 많습니다",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "삿포로역에서 JR 쾌속 에어포트로 신치토세 공항역까지 약 38~41분, 도보와 개찰구 통과 포함 약 55분. 여행기에서는 11:19 출발 열차를 타고 12:00 무렵 도착"
+          }
+        },
+        {
+          "key": "d6-02",
+          "title": "신치토세 공항 국제선 터미널: 체크인, 출국 (귀국)",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "airport",
+          "place": {
+            "name": "신치토세 공항 국제선 터미널",
+            "latitude": 42.78662,
+            "longitude": 141.6766,
+            "applePlaceID": "I6EBDB85749A9452",
+            "address": "北海道千歳市, 美々",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "국내선 터미널에서 국제선 터미널까지 걸어갑니다. 여행기에 따르면 맨 끝 카운터는 165미터를 더 걸어야 합니다. 일본 공항 보안 검색은 엄격해서 부츠는 벗어서 X선에 통과시켜야 합니다"
+          },
+          "todos": [
+            {
+              "text": "귀국 3일 전 온라인 체크인과 좌석 선택",
+              "note": "항공사 공식 사이트에서 진행하면 공항 대기 시간을 줄일 수 있습니다"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

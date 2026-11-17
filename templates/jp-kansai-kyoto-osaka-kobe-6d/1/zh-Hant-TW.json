@@ -1,0 +1,1124 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kansai-kyoto-osaka-kobe-6d",
+  "revision": 1,
+  "contentLocale": "zh-Hant-TW",
+  "title": "京阪神 6 日｜京都・大阪・神戶",
+  "subtitle": "京都三晚、大阪三晚，寺社、環球影城與道頓堀一次排進六天",
+  "summary": "把原本八天的遊記濃縮成六天：前三天住京都，走清水寺、金閣寺與嵐山，後三天住大阪，逛道頓堀、環球影城與神戶。每天最多四個主要景點，大阪城、鶴橋、Nintendo OSAKA 與甲子園放在備選。出發前須知寫了入境、交通卡、環球影城預約與退稅提醒。",
+  "destination": "日本 京都・大阪・神戶",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 6,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "雙人",
+    "初訪",
+    "寺社",
+    "環球影城"
+  ],
+  "todos": [
+    {
+      "text": "登錄 Visit Japan Web（入境審查與海關申報）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 機票與訂房完成後即可填寫"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kansai-kyoto-osaka-kobe-6d/d1-03.jpg",
+    "d2-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d2-01.jpg",
+    "d2-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d2-02.jpg",
+    "d2-04": "images/jp-kansai-kyoto-osaka-kobe-6d/d2-04.jpg",
+    "d3-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d3-01.jpg",
+    "d3-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d3-02.jpg",
+    "d3-04": "images/jp-kansai-kyoto-osaka-kobe-6d/d3-04.jpg",
+    "d4-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d4-01.jpg",
+    "d4-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d4-02.jpg",
+    "d4-04": "images/jp-kansai-kyoto-osaka-kobe-6d/d4-04.jpg",
+    "d5-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d5-01.jpg",
+    "d5-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d5-02.jpg",
+    "d5-05": "images/jp-kansai-kyoto-osaka-kobe-6d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：東橫INN京都四條大宮（東横INN京都四条大宮）",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "Toyoko Inn Kyoto Shijo-omiya",
+        "latitude": 35.0037169,
+        "longitude": 135.7473422,
+        "applePlaceID": "IBCA9C49A7B39459C",
+        "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "住宿：東橫INN京都四條大宮（東横INN京都四条大宮）",
+      "fromDay": 2,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "東橫INN京都四條大宮",
+        "latitude": 35.0037169,
+        "longitude": 135.7473422,
+        "applePlaceID": "IBCA9C49A7B39459C",
+        "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        3
+      ],
+      "closingDays": [
+        2
+      ]
+    },
+    {
+      "key": "ad3-03",
+      "title": "住宿：APA 飯店＆度假村 大阪梅田站塔（アパホテル&リゾート 大阪梅田駅タワー）",
+      "fromDay": 3,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "アパホテル&リゾート 大阪梅田駅タワー",
+        "latitude": 34.7000083,
+        "longitude": 135.5016043,
+        "applePlaceID": "I89646F39C1562D81",
+        "address": "〒530-0057, 大阪府大阪市北区, 曾根崎2丁目8-32",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        4,
+        5,
+        6
+      ],
+      "closingDays": [
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "備選：大阪城（大阪城）",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "大阪城",
+        "latitude": 34.6872339,
+        "longitude": 135.5258417,
+        "applePlaceID": "IB3018F8341616AC5",
+        "address": "〒540-0002, 大阪府大阪市中央区, 大阪城1-1",
+        "addressIsApproximate": false
+      },
+      "notes": "天守閣開放時間請出發前確認；人工售票隊伍長，可先購買網路票"
+    },
+    {
+      "key": "u-02",
+      "title": "備選：大阪任天堂（Nintendo OSAKA）",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "Nintendo OSAKA",
+        "latitude": 34.7017999,
+        "longitude": 135.4967532,
+        "applePlaceID": "IB8F10D98C49B2EBB",
+        "address": "〒530-0001",
+        "addressIsApproximate": true
+      },
+      "notes": "位於大丸梅田店內，營業時間請出發前確認"
+    },
+    {
+      "key": "u-03",
+      "title": "備選：阪神甲子園球場（阪神甲子園球場）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "阪神甲子園球場",
+        "latitude": 34.7212093,
+        "longitude": 135.3616261,
+        "applePlaceID": "I844277B44C5A0C7D",
+        "address": "〒663-8152, 兵庫県西宮市, 甲子園町1-82",
+        "addressIsApproximate": false
+      },
+      "notes": "需配合阪神虎賽程，票券很快售完，請提早購票；營業時間請出發前確認"
+    },
+    {
+      "key": "u-04",
+      "title": "備選：鶴橋（鶴橋コリアタウン）",
+      "durationMinutes": 60,
+      "category": "market",
+      "place": {
+        "name": "鶴橋駅 西出口",
+        "latitude": 34.6655849,
+        "longitude": 135.5300792,
+        "applePlaceID": "I8D15846FED98658C",
+        "address": "大阪府大阪市天王寺区, 下味原町",
+        "addressIsApproximate": true
+      },
+      "notes": "營業時間請出發前確認"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "資料來源與查證",
+      "paragraphs": [
+        {
+          "text": "來源遊記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/76d66c2e34af/",
+          "style": "bullet"
+        },
+        {
+          "text": "查證（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "JR 特急はるか 單程票價：https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "關西機場利木津巴士 梅田時刻與票價：https://www.kate.co.jp/en/timetable/detail/UM （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "京都塔展望室時間：https://www.kyoto-tower.jp/en/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "金閣寺時間：https://www.shokoku-ji.jp/en/kinkakuji/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "清水寺開門時間：https://www.kiyomizudera.or.jp/en/location/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "天龍寺時間：https://www.tenryuji.com/en/visit/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "環球影城營業日曆：https://www.usj.co.jp/web/en/us/area/information/calendar （查證 2026-11-17，頁面未列時間，請出發前確認）",
+          "style": "bullet"
+        },
+        {
+          "text": "未能從官方確認，請出發前確認",
+          "style": "heading"
+        },
+        {
+          "text": "嵐山猴子公園：官方網站無法開啟，各來源時間不一致。",
+          "style": "bullet"
+        },
+        {
+          "text": "八坂神社、道頓堀、元町商店街、神戶港設施與各餐廳的營業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "巴士與電車的實際班次與車程。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記資料",
+          "style": "heading"
+        },
+        {
+          "text": "飯店與行程順序依作者 2023 年 5 月的旅程調整；原 8 日濃縮為 6 日，未排入大阪城、鶴橋與大阪任天堂（見備選標記）。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出發前須知",
+      "paragraphs": [
+        {
+          "text": "入境與網路",
+          "style": "heading"
+        },
+        {
+          "text": "出發前先在 Visit Japan Web 登錄入境審查與海關申報，抵達後出示 QR 碼：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "帳號密碼請牢記或另外寫下，入境時才不會登不進去。",
+          "style": "bullet"
+        },
+        {
+          "text": "網路可用實體 SIM 卡或 eSIM，飛機落地後再開啟。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通",
+          "style": "heading"
+        },
+        {
+          "text": "電車、地鐵、公車可用 Suica 或 ICOCA 交通卡；iPhone 可在錢包加入 Suica。遊記 2023 年資料：需用 Mastercard 儲值，建議在台灣先儲值好。",
+          "style": "bullet"
+        },
+        {
+          "text": "機場到京都：JR 特急はるか，單程約 2,700 日圓（官網，2026 年 11 月起票價調整，請出發前確認）；遊記記為車程約 1.5 小時，請以時刻表為準。建議在售票機買票確保有座位。",
+          "style": "bullet"
+        },
+        {
+          "text": "大阪梅田到關西機場：關西機場利木津巴士，從阪急三番街搭乘約 60 分，單程 1,800 日圓，不需預約，約每 10 至 15 分一班。帶行李搭巴士比轉乘電車輕鬆。",
+          "style": "bullet"
+        },
+        {
+          "text": "京都市區大多用公車與阪急電車；公車路線與班次請出發前以導航確認。",
+          "style": "bullet"
+        },
+        {
+          "text": "預約",
+          "style": "heading"
+        },
+        {
+          "text": "環球影城入場券建議提早購買，熱門日期可能售完。",
+          "style": "bullet"
+        },
+        {
+          "text": "超級任天堂世界需要區域入場券，取得方式請看環球影城官網與 App。",
+          "style": "bullet"
+        },
+        {
+          "text": "其他",
+          "style": "heading"
+        },
+        {
+          "text": "日幣現金要備足：寺廟門票、紀念品、御守與部分座位車票只收現金。",
+          "style": "bullet"
+        },
+        {
+          "text": "阪神虎甲子園比賽票很快售完，想看球賽要配合賽程提早購票（見備選待辦行程）。",
+          "style": "bullet"
+        },
+        {
+          "text": "退稅規定近年有調整，請出發前確認日本觀光廳的說明。",
+          "style": "bullet"
+        },
+        {
+          "text": "拍照盡量避免拍到路人正臉；拍寺廟建議斜拍；垃圾多半要帶回飯店。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "京都市",
+      "latitude": 35.02107,
+      "longitude": 135.75385,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "京都市",
+      "latitude": 35.02107,
+      "longitude": 135.75385,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "京都市",
+      "latitude": 35.02107,
+      "longitude": 135.75385,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "大阪市",
+      "latitude": 34.69379,
+      "longitude": 135.50107,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "大阪市",
+      "latitude": 34.69379,
+      "longitude": 135.50107,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "大阪市",
+      "latitude": 34.69379,
+      "longitude": 135.50107,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "京都市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵達關西國際機場（関西国際空港）",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "airport",
+          "place": {
+            "name": "關西國際機場",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "放行李、辦理入住：東橫INN京都四條大宮（東横INN京都四条大宮）",
+          "start": "16:30",
+          "end": "17:00",
+          "category": "hotel",
+          "place": {
+            "name": "Toyoko Inn Kyoto Shijo-omiya",
+            "latitude": 35.0037169,
+            "longitude": 135.7473422,
+            "applePlaceID": "IBCA9C49A7B39459C",
+            "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+            "addressIsApproximate": false
+          },
+          "notes": "入住時間請以飯店為準",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "JR はるか（關西機場→京都，約 80 分，單程約 2,700 日圓）＋京都車站轉地鐵或計程車到飯店"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "京都塔展望台（京都タワー）",
+          "start": "17:45",
+          "end": "19:00",
+          "category": "sight",
+          "place": {
+            "name": "京都塔",
+            "latitude": 34.9875399,
+            "longitude": 135.7593633,
+            "applePlaceID": "IB477000AA8B21F20",
+            "address": "〒600-8216, 京都府京都市下京区, 烏丸通七条下る東塩小路町721-1",
+            "addressIsApproximate": false
+          },
+          "notes": "展望室 10:00–21:00（最後入場 20:30）；時間可能臨時調整",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "步行至地下鐵烏丸線四條站，搭到京都站（約 5 分），再步行到京都塔"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "晚餐：京都拉麵小路（京都拉麺小路）",
+          "start": "19:30",
+          "end": "20:45",
+          "category": "dining",
+          "place": {
+            "name": "Toyoko Kyoto Ramen Koji",
+            "latitude": 34.98567,
+            "longitude": 135.757991,
+            "applePlaceID": "I81879431E0925E7E",
+            "address": "〒600-8216, 京都府京都市下京区, 東塩小路町657",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "京都車站大樓 10 樓，從京都塔步行約 10 分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "搭地下鐵烏丸線回四條站，再步行約 10 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "京都市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "八坂神社（八坂神社）",
+          "start": "09:30",
+          "end": "10:15",
+          "category": "temple",
+          "place": {
+            "name": "八坂神社",
+            "latitude": 35.0036515,
+            "longitude": 135.7785541,
+            "applePlaceID": "IF3DD6C93CCB05636",
+            "address": "〒605-0073, 京都府京都市東山区, 祇園町北側625",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "阪急京都線 大宮→河原町 約 6 分，再步行約 15 分"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "清水寺（清水寺）",
+          "start": "11:00",
+          "end": "12:30",
+          "category": "temple",
+          "place": {
+            "name": "清水寺",
+            "latitude": 34.9947926,
+            "longitude": 135.7850021,
+            "applePlaceID": "I8C491B25C0D2CC13",
+            "address": "〒605-0862, 京都府京都市東山区, 清水1丁目294",
+            "addressIsApproximate": false
+          },
+          "notes": "06:00 開門，關門時間依季節而異；公休日請出發前確認",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "沿二年坂、產寧坂（二寧坂・産寧坂）步行約 1.5 公里，路上可吃抹茶冰淇淋與糰子"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "午餐：清水寺周邊（蓋飯）",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "dining",
+          "place": {
+            "name": "清水寺周邊餐廳",
+            "latitude": 34.9958553,
+            "longitude": 135.7807147,
+            "address": "京都府京都市東山区清水2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行下山"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "金閣寺（鹿苑寺）",
+          "start": "15:15",
+          "end": "16:30",
+          "category": "temple",
+          "place": {
+            "name": "金閣寺",
+            "latitude": 35.0395125,
+            "longitude": 135.7284424,
+            "applePlaceID": "IC4F6609AF49EBC33",
+            "address": "〒603-8361, 京都府京都市北区, 金閣寺町1",
+            "addressIsApproximate": false
+          },
+          "notes": "09:00–17:00；公休日請出發前確認",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "京都市巴士（祇園一帶→金閣寺道，車程約 40–45 分），下車再步行約 15 分"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "晚餐：四條大宮周邊（居酒屋）",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "四条大宮",
+            "latitude": 35.0033133,
+            "longitude": 135.7485501,
+            "applePlaceID": "IE68D13DF449EA6A0",
+            "address": "京都府京都市下京区, 四条大宮町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "京都市巴士返回四條大宮一帶，請以導航確認路線"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回飯店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "京都市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "天龍寺（天龍寺）",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "temple",
+          "place": {
+            "name": "天龍寺",
+            "latitude": 35.0156201,
+            "longitude": 135.6737414,
+            "applePlaceID": "IFA8991BF9FF43769",
+            "address": "〒616-8385, 京都府京都市右京区, 嵯峨天龍寺芒ノ馬場町68",
+            "addressIsApproximate": false
+          },
+          "notes": "08:30–17:00（最後入場 16:50）；偶有臨時休館",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "阪急京都線 大宮→桂，轉阪急嵐山線到嵐山（遊記指大宮可直達，平日多需在桂轉車）"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "嵐山竹林小徑（嵯峨野の竹林）",
+          "start": "10:50",
+          "end": "11:30",
+          "category": "park",
+          "place": {
+            "name": "竹林の小径",
+            "latitude": 35.0168217,
+            "longitude": 135.6713167,
+            "applePlaceID": "I2150E2A73D2902CD",
+            "address": "〒616-8394",
+            "addressIsApproximate": true
+          },
+          "notes": "全天開放，無公休",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "由天龍寺北側出口直接走到竹林"
+          },
+          "images": [
+            "d3-02"
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "午餐：嵐山（蕎麥麵、天婦羅）",
+          "start": "12:00",
+          "end": "13:00",
+          "category": "dining",
+          "place": {
+            "name": "渡月橋",
+            "latitude": 35.0127929,
+            "longitude": 135.6777513,
+            "applePlaceID": "ICB75BE0B9C432E3B",
+            "address": "〒616-8383, 京都府京都市右京区, 嵯峨中ノ島町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回渡月橋一帶"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "嵐山猴子公園（嵐山モンキーパークいわたやま）",
+          "start": "13:30",
+          "end": "15:15",
+          "category": "park",
+          "place": {
+            "name": "嵐山Monkey Park Iwatayama",
+            "latitude": 35.0113875,
+            "longitude": 135.6766429,
+            "applePlaceID": "IEE1B5A6498912271",
+            "address": "〒616-0004, 京都府京都市西京区, 嵐山中尾下町61",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認（各來源記載不一，約 9:00 起、冬季較早最後入園；惡劣天候會臨時休園）",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "步行到渡月橋南側入口，登山約 30–45 分（已含在停留時間）"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "回飯店取行李：東橫INN京都四條大宮（東横INN京都四条大宮）",
+          "start": "16:15",
+          "end": "16:30",
+          "category": "hotel",
+          "place": {
+            "name": "Toyoko Inn Kyoto Shijo-omiya",
+            "latitude": 35.0037169,
+            "longitude": 135.7473422,
+            "applePlaceID": "IBCA9C49A7B39459C",
+            "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "阪急嵐山線＋京都線 嵐山→桂→大宮 約 25 分，含步行"
+          }
+        },
+        {
+          "key": "d3-06",
+          "title": "辦理入住：APA 飯店＆度假村 大阪梅田站塔（アパホテル&リゾート 大阪梅田駅タワー）",
+          "start": "17:45",
+          "end": "18:15",
+          "category": "hotel",
+          "place": {
+            "name": "アパホテル&リゾート 大阪梅田駅タワー",
+            "latitude": 34.7000083,
+            "longitude": 135.5016043,
+            "applePlaceID": "I89646F39C1562D81",
+            "address": "〒530-0057, 大阪府大阪市北区, 曾根崎2丁目8-32",
+            "addressIsApproximate": false
+          },
+          "notes": "入住時間請以飯店為準",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "阪急京都線特急 大宮→大阪梅田 約 45 分，再步行至飯店"
+          }
+        },
+        {
+          "key": "d3-07",
+          "title": "晚餐：テング酒場 曽根崎お初天神通り店（烤雞串居酒屋）",
+          "start": "18:45",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "てんぐ大ホール 曽根崎お初天神通り店",
+            "latitude": 34.7011984,
+            "longitude": 135.5005634,
+            "applePlaceID": "IB32F0215EA412694",
+            "address": "〒530-0057",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d3-06",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回飯店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "大阪市",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "神戶元町商店街（元町商店街）：神戶牛可樂餅",
+          "start": "09:45",
+          "end": "11:15",
+          "category": "shopping",
+          "place": {
+            "name": "神戸元町商店街連合会",
+            "latitude": 34.6881288,
+            "longitude": 135.1851714,
+            "applePlaceID": "IA1EC235AC77B005B",
+            "address": "〒650-0022",
+            "addressIsApproximate": true
+          },
+          "notes": "商店街全天可逛，各店營業時間請出發前確認",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "JR 神戶線新快速 大阪→三ノ宮 約 22 分（或阪急神戶線 梅田→神戶三宮），再步行約 10 分"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "神戶港濱海區：美利堅公園與海港樂園（メリケンパーク・ハーバーランド）",
+          "start": "11:50",
+          "end": "13:15",
+          "category": "park",
+          "place": {
+            "name": "Meriken Park",
+            "latitude": 34.6821699,
+            "longitude": 135.1887417,
+            "applePlaceID": "I404195BB0FA8E7B2",
+            "address": "〒650-0042",
+            "addressIsApproximate": true
+          },
+          "notes": "戶外園區，全天可進入；神戶港塔等設施營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "從元町沿海邊步行約 20 分"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "午餐與咖啡：神戶港區",
+          "start": "13:40",
+          "end": "14:40",
+          "category": "dining",
+          "place": {
+            "name": "神戶港區餐廳或咖啡廳",
+            "latitude": 34.6777779,
+            "longitude": 135.1792483,
+            "address": "兵庫県神戸市中央区東川崎町1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "道頓堀（道頓堀）：固力果看板、螃蟹道樂",
+          "start": "16:00",
+          "end": "18:00",
+          "category": "sight",
+          "place": {
+            "name": "道頓堀グリコサイン",
+            "latitude": 34.6689236,
+            "longitude": 135.5010784,
+            "applePlaceID": "I3F64FE06319B949C",
+            "address": "〒542-0071, 大阪府大阪市中央区, 道頓堀1丁目10-4",
+            "addressIsApproximate": false
+          },
+          "notes": "街區全天可逛，各店營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "阪神本線直通 神戶三宮→大阪難波 約 50 分，再步行約 10 分"
+          },
+          "images": [
+            "d4-04"
+          ]
+        },
+        {
+          "key": "d4-05",
+          "title": "晚餐：串かつ いっとく（炸串）",
+          "start": "18:30",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "新世界炸串伊特庫道頓堀店",
+            "latitude": 34.6687747,
+            "longitude": 135.5030622,
+            "applePlaceID": "I87B4426659227D48",
+            "address": "〒542-0071",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分"
+          }
+        },
+        {
+          "key": "d4-06",
+          "title": "唐吉訶德道頓堀店（ドン・キホーテ 道頓堀店）",
+          "start": "20:05",
+          "end": "21:00",
+          "category": "shopping",
+          "place": {
+            "name": "唐吉訶德",
+            "latitude": 34.6694034,
+            "longitude": 135.5026747,
+            "applePlaceID": "I9C2AF11E4F40D9E2",
+            "address": "〒542-0084, 大阪府大阪市中央区, 宗右衛門町7-13",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "步行約 5 分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "地下鐵御堂筋線 難波→梅田 約 10 分，再步行至飯店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "大阪市",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "日本環球影城（ユニバーサル・スタジオ・ジャパン）",
+          "start": "09:30",
+          "end": "11:15",
+          "category": "sight",
+          "place": {
+            "name": "UNIVERSAL STUDIOS JAPAN櫻島2-1-33",
+            "latitude": 34.666476,
+            "longitude": 135.4361984,
+            "address": "日本大阪府大阪市此花區",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間每日不同，請查官網行事曆",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "JR 大阪→西九條，轉 JR 夢咲線到環球影城站，再步行入園（含步行到大阪站）"
+          },
+          "todos": [
+            {
+              "text": "購買環球影城入場券（指定日期）",
+              "note": "官網 https://www.usj.co.jp/web/en/us/ 熱門日期可能售完，建議確定日期後盡早購買"
+            }
+          ],
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "哈利波特魔法世界（ウィザーディング・ワールド・オブ・ハリー・ポッター）",
+          "start": "11:40",
+          "end": "13:10",
+          "category": "sight",
+          "place": {
+            "name": "哈利波特的魔法世界",
+            "latitude": 34.6677813,
+            "longitude": 135.431436,
+            "applePlaceID": "I35D71F76166D04C6",
+            "address": "〒554-0031, 大阪府大阪市此花区, 桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "隨園區營業時間，請查官網行事曆",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "園內步行"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "午餐：園區內",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "dining",
+          "place": {
+            "name": "環球影城園區內餐廳",
+            "latitude": 34.6629006,
+            "longitude": 135.4323564,
+            "applePlaceID": "IB6A4744E52DDD6AD",
+            "address": "大阪府大阪市此花区桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "隨園區營業時間",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "園內步行"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "園區遊行表演",
+          "start": "14:50",
+          "end": "15:35",
+          "category": "show",
+          "place": {
+            "name": "環球影城園區遊行路線",
+            "latitude": 34.6629006,
+            "longitude": 135.4323564,
+            "applePlaceID": "IB6A4744E52DDD6AD",
+            "address": "大阪府大阪市此花区桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "演出時間每日不同，請於園區 App 確認",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "園內步行"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "超級任天堂世界（SUPER NINTENDO WORLD）",
+          "start": "16:30",
+          "end": "18:30",
+          "category": "sight",
+          "place": {
+            "name": "超級任天堂世界",
+            "latitude": 34.6679191,
+            "longitude": 135.430367,
+            "applePlaceID": "I19B2A609EF7804EC",
+            "address": "〒554-0031, 大阪府大阪市此花区, 桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "需持區域入場券，依指定時段入場；隨園區營業時間",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "園內步行"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "JR 夢咲線轉 JR 環狀線回大阪站，再步行至飯店"
+          },
+          "todos": [
+            {
+              "text": "確認超級任天堂世界入場方式（區域入場券）",
+              "note": "依官網與園區 App 的最新規定取得入場時段"
+            }
+          ],
+          "images": [
+            "d5-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "大阪市",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "關西國際機場出境（関西国際空港）",
+          "start": "09:15",
+          "end": "10:15",
+          "category": "airport",
+          "place": {
+            "name": "關西國際機場",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "關西機場利木津巴士 阪急三番街→關西機場 第 1 航廈 約 60 分，單程 1,800 日圓"
+          }
+        }
+      ]
+    }
+  ]
+}

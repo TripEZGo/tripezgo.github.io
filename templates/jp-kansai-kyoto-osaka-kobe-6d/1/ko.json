@@ -1,0 +1,1124 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kansai-kyoto-osaka-kobe-6d",
+  "revision": 1,
+  "contentLocale": "ko",
+  "title": "간사이 6일｜교토·오사카·고베",
+  "subtitle": "교토 3박, 오사카 3박. 사찰과 신사, 유니버설, 도톤보리를 6일에 한 번에",
+  "summary": "원래 8일짜리 여행기를 6일로 압축했습니다. 앞의 3일은 교토에 묵으며 기요미즈데라, 금각사, 아라시야마를, 뒤의 3일은 오사카에 묵으며 도톤보리, 유니버설 스튜디오 재팬, 고베를 돌아요. 하루 주요 명소는 최대 4곳이고, 오사카성, 쓰루하시, Nintendo OSAKA, 고시엔은 후보로 넣어 두었습니다. 출발 전 안내에는 입국, 교통카드, 유니버설 예약, 세금 환급 안내를 적었습니다.",
+  "destination": "일본 교토·오사카·고베",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 6,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "첫 방문",
+    "사찰과 신사",
+    "유니버설 스튜디오"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록 (입국 심사와 세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권과 숙소를 예약하면 바로 입력 가능"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kansai-kyoto-osaka-kobe-6d/d1-03.jpg",
+    "d2-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d2-01.jpg",
+    "d2-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d2-02.jpg",
+    "d2-04": "images/jp-kansai-kyoto-osaka-kobe-6d/d2-04.jpg",
+    "d3-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d3-01.jpg",
+    "d3-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d3-02.jpg",
+    "d3-04": "images/jp-kansai-kyoto-osaka-kobe-6d/d3-04.jpg",
+    "d4-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d4-01.jpg",
+    "d4-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d4-02.jpg",
+    "d4-04": "images/jp-kansai-kyoto-osaka-kobe-6d/d4-04.jpg",
+    "d5-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d5-01.jpg",
+    "d5-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d5-02.jpg",
+    "d5-05": "images/jp-kansai-kyoto-osaka-kobe-6d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 도요코인 교토 시조오미야(東横INN京都四条大宮)",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "도요코인 교토 시조오미야",
+        "latitude": 35.0037169,
+        "longitude": 135.7473422,
+        "applePlaceID": "IBCA9C49A7B39459C",
+        "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "숙박: 도요코인 교토 시조오미야(東横INN京都四条大宮)",
+      "fromDay": 2,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "도요코인 교토 시조오미야",
+        "latitude": 35.0037169,
+        "longitude": 135.7473422,
+        "applePlaceID": "IBCA9C49A7B39459C",
+        "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        3
+      ],
+      "closingDays": [
+        2
+      ]
+    },
+    {
+      "key": "ad3-03",
+      "title": "숙박: APA 호텔&리조트 오사카 우메다에키 타워(アパホテル&リゾート 大阪梅田駅タワー)",
+      "fromDay": 3,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "APA 호텔&리조트 오사카 우메다에키 타워",
+        "latitude": 34.7000083,
+        "longitude": 135.5016043,
+        "applePlaceID": "I89646F39C1562D81",
+        "address": "〒530-0057, 大阪府大阪市北区, 曾根崎2丁目8-32",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        4,
+        5,
+        6
+      ],
+      "closingDays": [
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "후보: 오사카성(大阪城)",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "오사카성",
+        "latitude": 34.6872339,
+        "longitude": 135.5258417,
+        "applePlaceID": "IB3018F8341616AC5",
+        "address": "〒540-0002, 大阪府大阪市中央区, 大阪城1-1",
+        "addressIsApproximate": false
+      },
+      "notes": "천수각 개관 시간은 출발 전에 확인하세요. 현장 매표소는 줄이 길어 온라인 티켓을 먼저 살 수 있어요"
+    },
+    {
+      "key": "u-02",
+      "title": "후보: 닌텐도 오사카(Nintendo OSAKA)",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "닌텐도 오사카",
+        "latitude": 34.7017999,
+        "longitude": 135.4967532,
+        "applePlaceID": "IB8F10D98C49B2EBB",
+        "address": "〒530-0001",
+        "addressIsApproximate": true
+      },
+      "notes": "다이마루 우메다점 안에 있습니다. 영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-03",
+      "title": "후보: 한신 고시엔 구장(阪神甲子園球場)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "한신 고시엔 구장",
+        "latitude": 34.7212093,
+        "longitude": 135.3616261,
+        "applePlaceID": "I844277B44C5A0C7D",
+        "address": "〒663-8152, 兵庫県西宮市, 甲子園町1-82",
+        "addressIsApproximate": false
+      },
+      "notes": "한신 타이거스 경기 일정에 맞춰야 하고 표가 금방 매진되니 일찍 사세요. 영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-04",
+      "title": "후보: 쓰루하시(鶴橋コリアタウン)",
+      "durationMinutes": 60,
+      "category": "market",
+      "place": {
+        "name": "쓰루하시역 서쪽 출구",
+        "latitude": 34.6655849,
+        "longitude": 135.5300792,
+        "applePlaceID": "I8D15846FED98658C",
+        "address": "大阪府大阪市天王寺区, 下味原町",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인하세요"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "자료 출처와 확인",
+      "paragraphs": [
+        {
+          "text": "원본 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/76d66c2e34af/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인(2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "JR 특급 하루카 편도 요금: https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/ (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "간사이공항 리무진 버스 우메다 시각과 요금: https://www.kate.co.jp/en/timetable/detail/UM (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "교토 타워 전망실 시간: https://www.kyoto-tower.jp/en/ (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "금각사 시간: https://www.shokoku-ji.jp/en/kinkakuji/ (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "기요미즈데라 개문 시간: https://www.kiyomizudera.or.jp/en/location/ (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "덴류지 시간: https://www.tenryuji.com/en/visit/ (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "유니버설 스튜디오 재팬 영업 캘린더: https://www.usj.co.jp/web/en/us/area/information/calendar (2026-11-17 확인, 페이지에 시간이 없으니 출발 전에 확인하세요)",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못한 것. 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "아라시야마 원숭이 공원: 공식 사이트가 열리지 않고 출처마다 시간이 다릅니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "야사카 신사, 도톤보리, 모토마치 상점가, 고베항 시설, 각 식당의 영업시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "버스와 전철의 실제 배차와 소요 시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 자료",
+          "style": "heading"
+        },
+        {
+          "text": "호텔과 일정 순서는 작성자의 2023년 5월 여행에 맞춰 조정했습니다. 원래 8일을 6일로 압축해 오사카성, 쓰루하시, 닌텐도 오사카는 넣지 않았습니다(후보 표시 참고).",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 안내",
+      "paragraphs": [
+        {
+          "text": "입국과 인터넷",
+          "style": "heading"
+        },
+        {
+          "text": "출발 전에 Visit Japan Web에서 입국 심사와 세관 신고를 등록하고, 도착 후 QR 코드를 보여 주세요: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "계정과 비밀번호는 외우거나 따로 적어 두어 입국할 때 로그인하지 못하는 일이 없도록 하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "인터넷은 물리 SIM이나 eSIM을 쓰고, 비행기가 착륙한 뒤에 켜세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "교통",
+          "style": "heading"
+        },
+        {
+          "text": "전철, 지하철, 버스는 Suica나 ICOCA 교통카드를 쓸 수 있고, iPhone은 지갑에 Suica를 추가할 수 있어요. 여행기 2023년 자료: 충전에 Mastercard가 필요하니 대만에서 미리 충전해 두는 것이 좋음.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항에서 교토까지: JR 특급 하루카, 편도 약 2,700엔(공식 사이트, 2026년 11월부터 요금 조정이 있으니 출발 전에 확인). 여행기에는 약 1.5시간이라고 되어 있으니 시각표를 기준으로 하세요. 좌석을 확보하려면 매표기에서 사는 것이 좋습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "오사카 우메다에서 간사이공항까지: 간사이공항 리무진 버스, 한큐 산반가이에서 약 60분, 편도 1,800엔, 예약 불필요, 약 10~15분 간격. 짐이 있으면 전철을 갈아타는 것보다 버스가 편해요.",
+          "style": "bullet"
+        },
+        {
+          "text": "교토 시내는 대부분 버스와 한큐 전철을 씁니다. 버스 노선과 배차는 출발 전에 내비로 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "예약",
+          "style": "heading"
+        },
+        {
+          "text": "유니버설 스튜디오 재팬 입장권은 일찍 사세요. 인기 있는 날은 매진될 수 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "슈퍼 닌텐도 월드는 에어리어 입장권이 필요하니 받는 방법은 공식 사이트와 앱에서 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "기타",
+          "style": "heading"
+        },
+        {
+          "text": "엔화 현금은 넉넉히: 사찰 입장료, 기념품, 부적, 일부 지정석 승차권은 현금만 받습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "고시엔 한신 타이거스 경기 표는 금방 매진되니 야구를 보려면 일정에 맞춰 일찍 구매하세요(후보 할 일 참고).",
+          "style": "bullet"
+        },
+        {
+          "text": "세금 환급 규정이 최근 몇 년 사이 바뀌었으니 출발 전에 일본 관광청 설명을 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "사진을 찍을 때는 행인의 얼굴이 나오지 않게 하고, 사찰은 비스듬히 찍는 것이 좋아요. 쓰레기는 대개 호텔까지 가져와야 합니다.",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "교토시",
+      "latitude": 35.02107,
+      "longitude": 135.75385,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "교토시",
+      "latitude": 35.02107,
+      "longitude": 135.75385,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "교토시",
+      "latitude": 35.02107,
+      "longitude": 135.75385,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "오사카시",
+      "latitude": 34.69379,
+      "longitude": 135.50107,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "오사카시",
+      "latitude": 34.69379,
+      "longitude": 135.50107,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "오사카시",
+      "latitude": 34.69379,
+      "longitude": 135.50107,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "교토시",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "간사이 국제공항(関西国際空港) 도착",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "airport",
+          "place": {
+            "name": "간사이 국제공항",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "짐 맡기고 체크인: 도요코인 교토 시조오미야(東横INN京都四条大宮)",
+          "start": "16:30",
+          "end": "17:00",
+          "category": "hotel",
+          "place": {
+            "name": "도요코인 교토 시조오미야",
+            "latitude": 35.0037169,
+            "longitude": 135.7473422,
+            "applePlaceID": "IBCA9C49A7B39459C",
+            "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+            "addressIsApproximate": false
+          },
+          "notes": "체크인 시간은 호텔 안내를 따르세요",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "JR 하루카(간사이공항→교토, 약 80분, 편도 약 2,700엔), 교토역에서 지하철이나 택시로 호텔까지"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "교토 타워 전망대(京都タワー)",
+          "start": "17:45",
+          "end": "19:00",
+          "category": "sight",
+          "place": {
+            "name": "교토 타워",
+            "latitude": 34.9875399,
+            "longitude": 135.7593633,
+            "applePlaceID": "IB477000AA8B21F20",
+            "address": "〒600-8216, 京都府京都市下京区, 烏丸通七条下る東塩小路町721-1",
+            "addressIsApproximate": false
+          },
+          "notes": "전망실 10:00~21:00(마지막 입장 20:30). 시간이 임시로 바뀔 수 있음",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "지하철 가라스마선 시조역까지 걸어서 교토역까지 승차(약 5분), 교토 타워까지 도보"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "저녁: 교토 라멘 코지(京都拉麺小路)",
+          "start": "19:30",
+          "end": "20:45",
+          "category": "dining",
+          "place": {
+            "name": "교토 라멘 코지",
+            "latitude": 34.98567,
+            "longitude": 135.757991,
+            "applePlaceID": "I81879431E0925E7E",
+            "address": "〒600-8216, 京都府京都市下京区, 東塩小路町657",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "교토역 빌딩 10층, 교토 타워에서 도보 약 10분"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "지하철 가라스마선으로 시조역까지 돌아와 도보 약 10분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "교토시",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "야사카 신사(八坂神社)",
+          "start": "09:30",
+          "end": "10:15",
+          "category": "temple",
+          "place": {
+            "name": "야사카 신사",
+            "latitude": 35.0036515,
+            "longitude": 135.7785541,
+            "applePlaceID": "IF3DD6C93CCB05636",
+            "address": "〒605-0073, 京都府京都市東山区, 祇園町北側625",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "한큐 교토선 오미야→가와라마치 약 6분, 거기서 도보 약 15분"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "기요미즈데라(清水寺)",
+          "start": "11:00",
+          "end": "12:30",
+          "category": "temple",
+          "place": {
+            "name": "기요미즈데라",
+            "latitude": 34.9947926,
+            "longitude": 135.7850021,
+            "applePlaceID": "I8C491B25C0D2CC13",
+            "address": "〒605-0862, 京都府京都市東山区, 清水1丁目294",
+            "addressIsApproximate": false
+          },
+          "notes": "06:00 개문, 폐문 시간은 계절에 따라 다름. 휴무일은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "니넨자카·산넨자카(二寧坂・産寧坂)를 따라 약 1.5km 도보. 길에서 말차 아이스크림과 당고를 먹을 수 있어요"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "점심: 기요미즈데라 주변(덮밥)",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "dining",
+          "place": {
+            "name": "기요미즈데라 주변 식당",
+            "latitude": 34.9958553,
+            "longitude": 135.7807147,
+            "address": "京都府京都市東山区清水2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "걸어서 언덕을 내려감"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "금각사(鹿苑寺)",
+          "start": "15:15",
+          "end": "16:30",
+          "category": "temple",
+          "place": {
+            "name": "금각사",
+            "latitude": 35.0395125,
+            "longitude": 135.7284424,
+            "applePlaceID": "IC4F6609AF49EBC33",
+            "address": "〒603-8361, 京都府京都市北区, 金閣寺町1",
+            "addressIsApproximate": false
+          },
+          "notes": "09:00~17:00. 휴무일은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "교토 시버스(기온 일대→긴카쿠지미치, 약 40~45분), 내려서 도보 약 15분"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "저녁: 시조오미야 주변(이자카야)",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "시조오미야",
+            "latitude": 35.0033133,
+            "longitude": 135.7485501,
+            "applePlaceID": "IE68D13DF449EA6A0",
+            "address": "京都府京都市下京区, 四条大宮町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "교토 시버스로 시조오미야 일대로 돌아옴. 경로는 내비로 확인하세요"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "걸어서 호텔로"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "교토시",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "덴류지(天龍寺)",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "temple",
+          "place": {
+            "name": "덴류지",
+            "latitude": 35.0156201,
+            "longitude": 135.6737414,
+            "applePlaceID": "IFA8991BF9FF43769",
+            "address": "〒616-8385, 京都府京都市右京区, 嵯峨天龍寺芒ノ馬場町68",
+            "addressIsApproximate": false
+          },
+          "notes": "08:30~17:00(마지막 입장 16:50). 가끔 임시 휴관",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "한큐 교토선 오미야→가쓰라, 한큐 아라시야마선으로 갈아타 아라시야마까지(여행기에는 오미야에서 직통이라고 되어 있으나 평일에는 대체로 가쓰라에서 갈아탐)"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "아라시야마 대나무 숲길(嵯峨野の竹林)",
+          "start": "10:50",
+          "end": "11:30",
+          "category": "park",
+          "place": {
+            "name": "대나무 숲길",
+            "latitude": 35.0168217,
+            "longitude": 135.6713167,
+            "applePlaceID": "I2150E2A73D2902CD",
+            "address": "〒616-8394",
+            "addressIsApproximate": true
+          },
+          "notes": "종일 개방, 휴무일 없음",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "덴류지 북쪽 출구에서 바로 대나무 숲으로 걸어감"
+          },
+          "images": [
+            "d3-02"
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "점심: 아라시야마(소바, 튀김)",
+          "start": "12:00",
+          "end": "13:00",
+          "category": "dining",
+          "place": {
+            "name": "도게쓰교",
+            "latitude": 35.0127929,
+            "longitude": 135.6777513,
+            "applePlaceID": "ICB75BE0B9C432E3B",
+            "address": "〒616-8383, 京都府京都市右京区, 嵯峨中ノ島町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도게쓰교 일대까지 걸어서 돌아감"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "아라시야마 원숭이 공원 이와타야마(嵐山モンキーパークいわたやま)",
+          "start": "13:30",
+          "end": "15:15",
+          "category": "park",
+          "place": {
+            "name": "아라시야마 원숭이 공원 이와타야마",
+            "latitude": 35.0113875,
+            "longitude": 135.6766429,
+            "applePlaceID": "IEE1B5A6498912271",
+            "address": "〒616-0004, 京都府京都市西京区, 嵐山中尾下町61",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요(출처마다 다르며 9:00경부터, 겨울에는 마지막 입장이 더 이름. 악천후에는 임시 휴원)",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "도게쓰교 남쪽 입구까지 걸어가 산길을 약 30~45분 오름(체류 시간에 포함)"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "호텔에 돌아가 짐 찾기: 도요코인 교토 시조오미야(東横INN京都四条大宮)",
+          "start": "16:15",
+          "end": "16:30",
+          "category": "hotel",
+          "place": {
+            "name": "도요코인 교토 시조오미야",
+            "latitude": 35.0037169,
+            "longitude": 135.7473422,
+            "applePlaceID": "IBCA9C49A7B39459C",
+            "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "한큐 아라시야마선+교토선 아라시야마→가쓰라→오미야 약 25분, 도보 포함"
+          }
+        },
+        {
+          "key": "d3-06",
+          "title": "체크인: APA 호텔&리조트 오사카 우메다에키 타워(アパホテル&リゾート 大阪梅田駅タワー)",
+          "start": "17:45",
+          "end": "18:15",
+          "category": "hotel",
+          "place": {
+            "name": "APA 호텔&리조트 오사카 우메다에키 타워",
+            "latitude": 34.7000083,
+            "longitude": 135.5016043,
+            "applePlaceID": "I89646F39C1562D81",
+            "address": "〒530-0057, 大阪府大阪市北区, 曾根崎2丁目8-32",
+            "addressIsApproximate": false
+          },
+          "notes": "체크인 시간은 호텔 안내를 따르세요",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "한큐 교토선 특급 오미야→오사카우메다 약 45분, 호텔까지 도보"
+          }
+        },
+        {
+          "key": "d3-07",
+          "title": "저녁: 뎅구 사카바 소네자키 오하쓰텐진도리점(テング酒場 曽根崎お初天神通り店) 닭꼬치 이자카야",
+          "start": "18:45",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "뎅구 오홀 소네자키 오하쓰텐진도리점",
+            "latitude": 34.7011984,
+            "longitude": 135.5005634,
+            "applePlaceID": "IB32F0215EA412694",
+            "address": "〒530-0057",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-06",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "걸어서 호텔로"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "오사카시",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "고베 모토마치 상점가(元町商店街): 고베 소고기 크로켓",
+          "start": "09:45",
+          "end": "11:15",
+          "category": "shopping",
+          "place": {
+            "name": "고베 모토마치 상점가 연합회",
+            "latitude": 34.6881288,
+            "longitude": 135.1851714,
+            "applePlaceID": "IA1EC235AC77B005B",
+            "address": "〒650-0022",
+            "addressIsApproximate": true
+          },
+          "notes": "상점가는 종일 둘러볼 수 있음. 각 가게의 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "JR 고베선 신쾌속 오사카→산노미야 약 22분(또는 한큐 고베선 우메다→고베산노미야), 거기서 도보 약 10분"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "고베항 워터프런트: 메리켄 파크와 하버랜드(メリケンパーク・ハーバーランド)",
+          "start": "11:50",
+          "end": "13:15",
+          "category": "park",
+          "place": {
+            "name": "메리켄 파크",
+            "latitude": 34.6821699,
+            "longitude": 135.1887417,
+            "applePlaceID": "I404195BB0FA8E7B2",
+            "address": "〒650-0042",
+            "addressIsApproximate": true
+          },
+          "notes": "야외 공원으로 종일 입장 가능. 고베 포트 타워 등 시설의 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "모토마치에서 해안을 따라 도보 약 20분"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "점심과 커피: 고베항 지역",
+          "start": "13:40",
+          "end": "14:40",
+          "category": "dining",
+          "place": {
+            "name": "고베항 지역 식당과 카페",
+            "latitude": 34.6777779,
+            "longitude": 135.1792483,
+            "address": "兵庫県神戸市中央区東川崎町1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "도톤보리(道頓堀): 글리코 간판, 가니 도라쿠",
+          "start": "16:00",
+          "end": "18:00",
+          "category": "sight",
+          "place": {
+            "name": "도톤보리 글리코 사인",
+            "latitude": 34.6689236,
+            "longitude": 135.5010784,
+            "applePlaceID": "I3F64FE06319B949C",
+            "address": "〒542-0071, 大阪府大阪市中央区, 道頓堀1丁目10-4",
+            "addressIsApproximate": false
+          },
+          "notes": "거리는 종일 둘러볼 수 있음. 각 가게의 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "한신 본선 직통 고베산노미야→오사카난바 약 50분, 거기서 도보 약 10분"
+          },
+          "images": [
+            "d4-04"
+          ]
+        },
+        {
+          "key": "d4-05",
+          "title": "저녁: 구시카쓰 잇토쿠(串かつ いっとく) 꼬치튀김",
+          "start": "18:30",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "신세카이 구시카쓰 잇토쿠 도톤보리점",
+            "latitude": 34.6687747,
+            "longitude": 135.5030622,
+            "applePlaceID": "I87B4426659227D48",
+            "address": "〒542-0071",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분"
+          }
+        },
+        {
+          "key": "d4-06",
+          "title": "돈키호테 도톤보리점(ドン・キホーテ 道頓堀店)",
+          "start": "20:05",
+          "end": "21:00",
+          "category": "shopping",
+          "place": {
+            "name": "돈키호테",
+            "latitude": 34.6694034,
+            "longitude": 135.5026747,
+            "applePlaceID": "I9C2AF11E4F40D9E2",
+            "address": "〒542-0084, 大阪府大阪市中央区, 宗右衛門町7-13",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "도보 약 5분"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "지하철 미도스지선 난바→우메다 약 10분, 호텔까지 도보"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "오사카시",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "유니버설 스튜디오 재팬(ユニバーサル・スタジオ・ジャパン)",
+          "start": "09:30",
+          "end": "11:15",
+          "category": "sight",
+          "place": {
+            "name": "유니버설 스튜디오 재팬 사쿠라지마 2-1-33",
+            "latitude": 34.666476,
+            "longitude": 135.4361984,
+            "address": "日本大阪府大阪市此花區",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 날마다 다르니 공식 캘린더를 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "JR 오사카→니시쿠조, JR 유메사키선으로 갈아타 유니버설시티역, 걸어서 입장(오사카역까지의 도보 포함)"
+          },
+          "todos": [
+            {
+              "text": "유니버설 스튜디오 재팬 입장권 구매(날짜 지정)",
+              "note": "공식 사이트 https://www.usj.co.jp/web/en/us/ 인기 있는 날은 매진될 수 있으니 날짜가 정해지면 서둘러 구매"
+            }
+          ],
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "해리 포터 마법 세계(ウィザーディング・ワールド・オブ・ハリー・ポッター)",
+          "start": "11:40",
+          "end": "13:10",
+          "category": "sight",
+          "place": {
+            "name": "해리 포터 마법 세계",
+            "latitude": 34.6677813,
+            "longitude": 135.431436,
+            "applePlaceID": "I35D71F76166D04C6",
+            "address": "〒554-0031, 大阪府大阪市此花区, 桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "파크 영업시간에 따릅니다. 공식 캘린더를 확인하세요",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "파크 안 도보"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "점심: 파크 안",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "dining",
+          "place": {
+            "name": "유니버설 스튜디오 재팬 내 식당",
+            "latitude": 34.6629006,
+            "longitude": 135.4323564,
+            "applePlaceID": "IB6A4744E52DDD6AD",
+            "address": "大阪府大阪市此花区桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "파크 영업시간에 따릅니다",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "파크 안 도보"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "파크 퍼레이드",
+          "start": "14:50",
+          "end": "15:35",
+          "category": "show",
+          "place": {
+            "name": "유니버설 스튜디오 재팬 퍼레이드 코스",
+            "latitude": 34.6629006,
+            "longitude": 135.4323564,
+            "applePlaceID": "IB6A4744E52DDD6AD",
+            "address": "大阪府大阪市此花区桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "공연 시간은 날마다 다르니 파크 앱에서 확인하세요",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "파크 안 도보"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "슈퍼 닌텐도 월드(SUPER NINTENDO WORLD)",
+          "start": "16:30",
+          "end": "18:30",
+          "category": "sight",
+          "place": {
+            "name": "슈퍼 닌텐도 월드",
+            "latitude": 34.6679191,
+            "longitude": 135.430367,
+            "applePlaceID": "I19B2A609EF7804EC",
+            "address": "〒554-0031, 大阪府大阪市此花区, 桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "에어리어 입장권이 필요하며 지정된 시간대에 입장. 파크 영업시간에 따릅니다",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "파크 안 도보"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "JR 유메사키선에서 JR 오사카 환상선으로 갈아타 오사카역으로 돌아와 호텔까지 도보"
+          },
+          "todos": [
+            {
+              "text": "슈퍼 닌텐도 월드 입장 방법 확인(에어리어 입장권)",
+              "note": "공식 사이트와 파크 앱의 최신 규정에 따라 입장 시간대를 받으세요"
+            }
+          ],
+          "images": [
+            "d5-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "오사카시",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "간사이 국제공항(関西国際空港) 출국",
+          "start": "09:15",
+          "end": "10:15",
+          "category": "airport",
+          "place": {
+            "name": "간사이 국제공항",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "간사이공항 리무진 버스 한큐 산반가이→간사이공항 제1터미널 약 60분, 편도 1,800엔"
+          }
+        }
+      ]
+    }
+  ]
+}

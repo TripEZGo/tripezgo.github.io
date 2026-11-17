@@ -1,0 +1,1135 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-tokyo-5d",
+  "revision": 1,
+  "contentLocale": "ja",
+  "title": "東京 5 日間｜渋谷・お台場・ディズニー・浅草",
+  "subtitle": "渋谷、お台場、ディズニー、浅草。初めての東京の王道 5 日間",
+  "summary": "旅行記まるごとの東京 5 日間。渋谷と原宿、お台場、東京ディズニーリゾート、浅草とスカイツリーを組み込みました。ガンダムファクトリーとユニコーンガンダムは展示が終わったので、teamLab Planets に差し替えています。亀有、秋葉原、ダイバーシティ、芝公園は候補に入れてあります。出発前のメモには、入国、交通系 IC カード、予約の注意をまとめました。",
+  "destination": "日本 東京",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "ふたり旅",
+    "初めて",
+    "ディズニー",
+    "都会"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web に登録する（入国審査と税関申告）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 航空券とホテルを予約したら入力できます"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-tokyo-5d/d1-03.jpg",
+    "d1-05": "images/jp-tokyo-5d/d1-05.jpg",
+    "d2-02": "images/jp-tokyo-5d/d2-02.jpg",
+    "d2-04": "images/jp-tokyo-5d/d2-04.jpg",
+    "d2-05": "images/jp-tokyo-5d/d2-05.jpg",
+    "d3-01": "images/jp-tokyo-5d/d3-01.jpg",
+    "d4-01": "images/jp-tokyo-5d/d4-01.jpg",
+    "d4-02": "images/jp-tokyo-5d/d4-02.jpg",
+    "d4-05": "images/jp-tokyo-5d/d4-05.jpg",
+    "d4-07": "images/jp-tokyo-5d/d4-07.jpg",
+    "d5-02": "images/jp-tokyo-5d/d5-02.jpg",
+    "d5-03": "images/jp-tokyo-5d/d5-03.jpg",
+    "d5-05": "images/jp-tokyo-5d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "宿泊：ホテルヴィラフォンテーヌグランド東京汐留",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "ホテルヴィラフォンテーヌグランド東京汐留",
+        "latitude": 35.6619383,
+        "longitude": 139.7599978,
+        "applePlaceID": "ID6E5F2FC0A58ABF1",
+        "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "候補：亀有（亀有公園）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "亀有駅",
+        "latitude": 35.7665751,
+        "longitude": 139.8477718,
+        "applePlaceID": "I4A90016323A0CF14",
+        "address": "東京都葛飾区, 亀有",
+        "addressIsApproximate": true
+      },
+      "notes": "こち亀の銅像は駅前にあります。旅行記の筆者が 2023 年に訪れたときは、周辺はほとんどセットと銅像だけでした。営業時間は出発前に確認を"
+    },
+    {
+      "key": "u-02",
+      "title": "候補：秋葉原（秋葉原電気街）",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "秋葉原",
+        "latitude": 35.6983512,
+        "longitude": 139.7729252,
+        "applePlaceID": "I2552F15E78F49592",
+        "address": "東京都千代田区, 神田花岡町",
+        "addressIsApproximate": true
+      },
+      "notes": "営業時間は出発前に確認を"
+    },
+    {
+      "key": "u-03",
+      "title": "候補：ダイバーシティ東京 プラザ",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "ダイバーシティ東京 プラザ（お台場）",
+        "latitude": 35.6251924,
+        "longitude": 139.7755015,
+        "applePlaceID": "I9E847CDBACD2B144",
+        "address": "〒135-0064, 東京都江東区, 青海1丁目1-10",
+        "addressIsApproximate": false
+      },
+      "notes": "実物大ユニコーンガンダム立像は 2026/08/31 に展示を終了。商業施設の営業時間は出発前に確認を"
+    },
+    {
+      "key": "u-04",
+      "title": "候補：東京都立芝公園",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "芝公園（東京）",
+        "latitude": 35.6546533,
+        "longitude": 139.7486025,
+        "address": "日本東京港區",
+        "addressIsApproximate": true
+      },
+      "notes": "木々の間から遠くに東京タワーが見えます。終日開放"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "出典と確認",
+      "paragraphs": [
+        {
+          "text": "元の旅行記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/9da2c51fa4f2/",
+          "style": "bullet"
+        },
+        {
+          "text": "確認済み（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "東京タワー展望台の時間：https://www.tokyotower.co.jp/en/ （2026-11-17 確認）",
+          "style": "bullet"
+        },
+        {
+          "text": "東京スカイツリー展望台の時間（当日の表示）：https://en.tokyo-skytree.jp/ （2026-11-17 確認）",
+          "style": "bullet"
+        },
+        {
+          "text": "明治神宮の開門時間：https://www.meijijingu.or.jp/en/visit/ （2026-11-17 確認）",
+          "style": "bullet"
+        },
+        {
+          "text": "皇居東御苑の時間と休園：https://www.kunaicho.go.jp/e-event/higashigyoen02.html （2026-11-17 確認）",
+          "style": "bullet"
+        },
+        {
+          "text": "浅草寺本堂の時間：https://www.senso-ji.jp/about/ （2026-11-17 確認）",
+          "style": "bullet"
+        },
+        {
+          "text": "変更があったもの",
+          "style": "heading"
+        },
+        {
+          "text": "GUNDAM FACTORY YOKOHAMA は 2024/03 に終了したため、もとの行程は teamLab Planets とお台場方面に差し替えました。",
+          "style": "bullet"
+        },
+        {
+          "text": "お台場の実物大ユニコーンガンダム立像は 2026/08/31 に展示を終了（運営の TOKYO GUNDAM PROJECT が発表。報道 https://dengekionline.com/article/202608/85200 、2026-11-17 確認）したため、組み込んでいません。",
+          "style": "bullet"
+        },
+        {
+          "text": "日本科学未来館は改修中（公式サイトに 2027/04/23 リニューアルオープンとあります）のため、組み込んでいません。",
+          "style": "bullet"
+        },
+        {
+          "text": "公式情報では確認できなかったもの。出発前に確認を",
+          "style": "heading"
+        },
+        {
+          "text": "渋谷スカイの時間と予約ルール（公式ページを取得できず）。",
+          "style": "bullet"
+        },
+        {
+          "text": "東京ディズニーシーの当日の営業時間と夜のショー（公式サイトがタイムアウト）。",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Planets の営業時間（公式ページを取得できず、第三者の情報は食い違い）。",
+          "style": "bullet"
+        },
+        {
+          "text": "フジテレビ球体展望室、国会議事堂の見学ルール、LE LABO、極味や、各飲食店の営業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "成田エクスプレスと浅草線エアポート快特の運賃と所要時間（公式サイトが開けず、旅行記 2023 年の情報を採用）。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記の情報",
+          "style": "heading"
+        },
+        {
+          "text": "宿泊は筆者の 2023 年 6 月の旅に合わせて、汐留に 4 泊連続。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記にある亀有のこち亀と秋葉原は、日ごとの行程には入れていません（候補の印を参照）。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出発前のメモ",
+      "paragraphs": [
+        {
+          "text": "入国とネット",
+          "style": "heading"
+        },
+        {
+          "text": "出発前に Visit Japan Web で入国審査と税関申告を登録：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "ネットは物理 SIM か eSIM で。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通",
+          "style": "heading"
+        },
+        {
+          "text": "電車、地下鉄、バスは Suica か PASMO が使えます。iPhone ならウォレットに Suica を追加できます。旅行記の筆者は 2023 年に iPhone の Suica を使用。Android の人は成田空港で Welcome Suica を買えます。",
+          "style": "bullet"
+        },
+        {
+          "text": "空港から市内へ：成田エクスプレスは全車指定席で、交通系 IC カードでそのまま改札を通ろうとすると止められるので、先に指定席券を買います（旅行記での経験。詳しくは JR 東日本の公式サイトを参照）。",
+          "style": "bullet"
+        },
+        {
+          "text": "汐留駅を出るとすぐゆりかもめと大江戸線に乗れます。ほかのエリアへは新橋駅（JR、銀座線、浅草線）まで約 10 分歩きます。",
+          "style": "bullet"
+        },
+        {
+          "text": "成田へ戻る：新橋から都営浅草線のエアポート快特で約 1 時間 15 分、直通。旅行記によると、この区間の切符は当時カードも Suica も使えなかったので、現金を多めに。",
+          "style": "bullet"
+        },
+        {
+          "text": "東京のバスは乗るときに IC カードで支払います（降りるときに払う京都とは違います）。",
+          "style": "bullet"
+        },
+        {
+          "text": "予約",
+          "style": "heading"
+        },
+        {
+          "text": "渋谷スカイ、東京ディズニーシー、teamLab Planets、東京スカイツリーは早めのチケット購入と時間枠の予約がおすすめ。人気の日は当日はたいてい売り切れです。",
+          "style": "bullet"
+        },
+        {
+          "text": "ディズニーシーの入口はパーク内の電車の先にあります。旅行記の筆者はシーのみの 1 パーク券で、城もパレードもなし。夜の水上ショーの前列席は別売りです。",
+          "style": "bullet"
+        },
+        {
+          "text": "展望台とディズニーの営業時間は日によって違うので、出発前に公式サイトで確認を。",
+          "style": "bullet"
+        },
+        {
+          "text": "その他",
+          "style": "heading"
+        },
+        {
+          "text": "日本円の現金は多めに：ドラッグストアや空港アクセスの切符などで、カードが使えない、通らない場面があり、旅行記は少なくとも 1 万円を持ち歩くよう勧めています。",
+          "style": "bullet"
+        },
+        {
+          "text": "免税・税還付のルールは近年変わっています。出発前に観光庁の説明を確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "荷物はホテルに預けられます。旅行記の筆者は最終日に預けて、身軽に街歩きしました。",
+          "style": "bullet"
+        },
+        {
+          "text": "ディズニーのパーク内のレストランはよく満席になるので、旅行記は軽食の持参を勧めています。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "獺祭（旭酒造）",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "東京駅や成田空港の免税店で買えます。旅行記によると、どちらも値段は同じくらい"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "東京",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "東京",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "東京",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "東京",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "東京",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "成田国際空港に到着",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "airport",
+          "place": {
+            "name": "成田国際空港",
+            "latitude": 35.7632517,
+            "longitude": 140.3829322,
+            "applePlaceID": "IAB50389A6079F824",
+            "address": "千葉県成田市, 三里塚御料牧場",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "荷物を預けてチェックイン：ホテルヴィラフォンテーヌグランド東京汐留",
+          "start": "15:45",
+          "end": "16:15",
+          "category": "hotel",
+          "place": {
+            "name": "ホテルヴィラフォンテーヌグランド東京汐留",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "notes": "チェックイン時間はホテルの案内に従ってください",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "JR 成田エクスプレスで東京駅まで約 60 分、全車指定席なのでホームか券売機で先に座席を取ります。JR か地下鉄に乗り換えて新橋へ、そこからホテルまで徒歩約 10 分。各区間の運賃は出発前に確認を"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "渋谷スクランブル交差点",
+          "start": "17:00",
+          "end": "17:30",
+          "category": "sight",
+          "place": {
+            "name": "渋谷スクランブル交差点",
+            "latitude": 35.6591944,
+            "longitude": 139.6975155,
+            "address": "東京都渋谷区道玄坂2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "終日見られます、休みなし",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "新橋駅まで徒歩約 10 分、JR 山手線か地下鉄銀座線で渋谷まで約 25 分"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "夕食：極味や 渋谷パルコ店 神戸牛ステーキとハンバーグ",
+          "start": "17:45",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "極味や 渋谷パルコ店",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I27C7C5F97CC5C83B",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1 渋谷パルコB1F",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認を。混む時間帯は行列ができます（旅行記では約 45 分待ち）",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "交差点から徒歩約 10 分"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "渋谷スカイ（SHIBUYA SKY）展望台",
+          "start": "19:30",
+          "end": "20:45",
+          "category": "viewpoint",
+          "place": {
+            "name": "渋谷スカイ",
+            "latitude": 35.658351,
+            "longitude": 139.7024167,
+            "applePlaceID": "I26904022D636B068",
+            "address": "〒150-0002, 東京都渋谷区, 渋谷2丁目24-12, 渋谷スクランブルスクエア 14F-45F, 46F 屋上",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認を。入場時間枠の事前予約が必要で、当日はたいてい売り切れ。展望台にバッグは持ち込めません（有料ロッカーあり）",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "PARCO から渋谷スクランブルスクエアまで徒歩約 10 分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "JR 山手線か地下鉄銀座線で新橋へ、そこから徒歩約 10 分"
+          },
+          "todos": [
+            {
+              "text": "渋谷スカイの入場時間枠を予約する",
+              "note": "公式サイト https://www.shibuya-scramble-square.com/sky/ 当日はたいてい売り切れなので、日程が決まったら早めに予約を"
+            }
+          ],
+          "images": [
+            "d1-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "チームラボプラネッツ TOKYO",
+          "start": "09:30",
+          "end": "11:00",
+          "category": "artgallery",
+          "place": {
+            "name": "チームラボプラネッツ TOKYO DMM",
+            "latitude": 35.6492824,
+            "longitude": 139.789685,
+            "applePlaceID": "I96F6ACCAB28133E",
+            "address": "〒135-0061",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間と休館日は出発前に確認を。時間枠の事前予約が必要",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "ゆりかもめ 汐留→新豊洲 約 15 分、そこから徒歩約 5 分"
+          },
+          "todos": [
+            {
+              "text": "チームラボプラネッツの入場時間枠を予約する",
+              "note": "公式サイト https://www.teamlab.art/e/planets/ 日付に合わせて時間枠を予約"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "お台場の自由の女神像（お台場海浜公園）",
+          "start": "11:30",
+          "end": "12:00",
+          "category": "sight",
+          "place": {
+            "name": "自由の女神像",
+            "latitude": 35.6278608,
+            "longitude": 139.7718434,
+            "applePlaceID": "IDD964C09F6F6B4",
+            "address": "〒135-0091, 東京都港区, 台場1-4-1",
+            "addressIsApproximate": false
+          },
+          "notes": "屋外の公園で終日入れます",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "ゆりかもめ 新豊洲→お台場海浜公園 約 15 分、そこから徒歩約 5 分。途中でフジテレビとお台場の景色が見られます"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "昼食：デックス東京ビーチ たこ焼きとから揚げ",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "デックス東京ビーチ",
+            "latitude": 35.6290897,
+            "longitude": 139.7757831,
+            "applePlaceID": "IB3FCC15C9C5C542C",
+            "address": "〒135-0091, 東京都港区, 台場1丁目6-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認を",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "自由の女神像から徒歩約 5 分"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "フジテレビ本社ビル",
+          "start": "13:30",
+          "end": "14:15",
+          "category": "sight",
+          "place": {
+            "name": "フジテレビ",
+            "latitude": 35.6265943,
+            "longitude": 139.7742811,
+            "applePlaceID": "IB2A7C7313DF391A",
+            "address": "〒137-8088, 東京都港区, 台場2丁目4-8",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認を（球体展望室は別に営業時間と休みがあります）",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "徒歩約 10 分"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "新宿でお買い物（新宿駅周辺）：デパートとドラッグストア",
+          "start": "15:15",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "新宿三丁目",
+            "latitude": 35.6908591,
+            "longitude": 139.7048661,
+            "applePlaceID": "I5B743E919E124DD5",
+            "address": "東京都新宿区, 新宿",
+            "addressIsApproximate": true
+          },
+          "notes": "各店の営業時間は出発前に確認を",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "東京テレポート駅まで歩き、りんかい線で JR 埼京線に直通して新宿まで約 35 分。本数はナビで確認を"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "夕食：新宿（居酒屋）",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "新宿駅周辺の居酒屋",
+            "latitude": 35.6913159,
+            "longitude": 139.7034026,
+            "address": "東京都新宿区新宿3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認を",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "徒歩"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "都営大江戸線 新宿→汐留 約 20 分、そこからホテルまで徒歩"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "東京ディズニーシー 午前：トイ・ストーリー・マニア！、ソアリン：ファンタスティック・フライト",
+          "start": "09:15",
+          "end": "13:00",
+          "category": "sight",
+          "place": {
+            "name": "東京ディズニーシー",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は日によって異なります。公式カレンダーで確認を",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "JR 新橋→東京、京葉線に乗り換えて舞浜、ディズニーリゾートラインで東京ディズニーシー・ステーションへ"
+          },
+          "todos": [
+            {
+              "text": "東京ディズニーシーのチケットを買う",
+              "note": "公式サイト https://www.tokyodisneyresort.jp/en/tds/ 日程が決まったら購入。夜のショーの前列席とプライオリティパスは別売り"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "昼食：パーク内",
+          "start": "13:15",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "東京ディズニーシー",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "パークの営業時間に準じます。レストランはよく満席になるので軽食を持っておくと安心",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "パーク内を徒歩"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "東京ディズニーシー 午後：センター・オブ・ジ・アース、海底2万マイル、インディ・ジョーンズ・アドベンチャー、お買い物",
+          "start": "14:30",
+          "end": "19:00",
+          "category": "sight",
+          "place": {
+            "name": "東京ディズニーシー",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "パークの営業時間に準じます。公式カレンダーで確認を",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "パーク内を徒歩"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "夜の水上ショー（メディテレーニアンハーバー）",
+          "start": "19:15",
+          "end": "20:45",
+          "category": "show",
+          "place": {
+            "name": "東京ディズニーシー",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "内容と時間はその時期の発表に従います。公式サイトかパークのアプリで確認を。前列席は有料の指定席",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "パーク内を徒歩でハーバーへ"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "JR 京葉線 舞浜→東京、JR に乗り換えて新橋、そこから徒歩約 10 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "東京タワー",
+          "start": "09:15",
+          "end": "10:45",
+          "category": "sight",
+          "place": {
+            "name": "東京タワー",
+            "latitude": 35.6585581,
+            "longitude": 139.7455037,
+            "applePlaceID": "I9F5C79B7A59D296F",
+            "address": "2-8, Shibakoen 4-Chōme, Minato, Tokyo, Japan",
+            "addressIsApproximate": false
+          },
+          "notes": "メインデッキ 09:00～23:00（最終入場 22:30）。トップデッキツアー 09:00～22:45（最終入場 22:15）",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "都営大江戸線 汐留→赤羽橋 約 5 分、そこから徒歩約 7 分（新橋から徒歩約 20 分でも行けます）"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "明治神宮",
+          "start": "11:30",
+          "end": "12:45",
+          "category": "temple",
+          "place": {
+            "name": "明治神宮",
+            "latitude": 35.6762064,
+            "longitude": 139.699375,
+            "applePlaceID": "I65EB06A821AE2921",
+            "address": "〒151-8557, 東京都渋谷区, 代々木神園町1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "日の出に開門、日没に閉門、年中無休。実際の時間は月によって異なり、入場無料",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "都営大江戸線 赤羽橋→代々木 約 17 分、そこから南参道入口まで徒歩約 5 分"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "昼食：原宿・表参道あたり",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "dining",
+          "place": {
+            "name": "原宿・表参道周辺の飲食店",
+            "latitude": 35.6687322,
+            "longitude": 139.7085394,
+            "address": "東京都渋谷区神宮前4丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認を",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "参道を原宿方面へ歩いて約 15 分"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "ル ラボ 青山店（LE LABO）",
+          "start": "14:15",
+          "end": "15:15",
+          "category": "shopping",
+          "place": {
+            "name": "ル ラボ 青山",
+            "latitude": 35.6635812,
+            "longitude": 139.7129256,
+            "applePlaceID": "I40419DBE1F059E9C",
+            "address": "〒107-0062, 東京都港区, 南青山5丁目5-24",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認を。香水はその場で調合してラベルを貼るので、約 15～20 分待ちます",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "徒歩約 10 分"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "浅草寺と雷門",
+          "start": "16:00",
+          "end": "17:15",
+          "category": "temple",
+          "place": {
+            "name": "浅草寺",
+            "latitude": 35.7146948,
+            "longitude": 139.7967499,
+            "applePlaceID": "I24702A862C9B16DC",
+            "address": "〒111-0032, 東京都台東区, 浅草2丁目3-1",
+            "addressIsApproximate": false
+          },
+          "notes": "本堂 06:00～17:00（10～3 月は 06:30 開堂）。境内と仲見世商店街の営業時間は出発前に確認を",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "東京メトロ銀座線 表参道→浅草 直通で約 32 分、そこから雷門まで徒歩"
+          },
+          "images": [
+            "d4-05"
+          ]
+        },
+        {
+          "key": "d4-06",
+          "title": "夕食：東京ソラマチ",
+          "start": "17:45",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "東京ソラマチ",
+            "latitude": 35.7099596,
+            "longitude": 139.8095184,
+            "applePlaceID": "I698159AE84ABBDF0",
+            "address": "〒131-0045, 東京都墨田区, 押上1丁目1-13",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認を",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "隅田川沿いを徒歩約 25 分。東武線か地下鉄で押上まで行く方法もあります"
+          }
+        },
+        {
+          "key": "d4-07",
+          "title": "東京スカイツリー展望台",
+          "start": "19:00",
+          "end": "20:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "東京スカイツリー",
+            "latitude": 35.7100211,
+            "longitude": 139.8107243,
+            "applePlaceID": "IF4B9F085287510CE",
+            "address": "〒131-0045, 東京都墨田区, 押上1丁目1-81",
+            "addressIsApproximate": false
+          },
+          "notes": "公式サイトでは当日 10:00～22:00（最終入場 21:00）と表示。日によって変わるので出発前に確認を。入場時間枠の予約がおすすめ",
+          "leg": {
+            "fromKey": "d4-06",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "同じ建物内、展望台の入口まで歩く"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "都営浅草線 押上→新橋 約 25 分、そこから徒歩約 10 分"
+          },
+          "todos": [
+            {
+              "text": "東京スカイツリーの入場時間枠を予約する",
+              "note": "公式サイト https://en.tokyo-skytree.jp/ 旅行記の筆者は購入が遅れて最上階に行けなかったので、早めの購入を"
+            }
+          ],
+          "images": [
+            "d4-07"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "チェックアウトして荷物を預ける：ホテルヴィラフォンテーヌグランド東京汐留",
+          "start": "09:00",
+          "end": "09:30",
+          "category": "hotel",
+          "place": {
+            "name": "ホテルヴィラフォンテーヌグランド東京汐留",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "notes": "荷物を預けられる時間はフロントで確認を",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "同じ建物"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "国会議事堂",
+          "start": "10:15",
+          "end": "11:00",
+          "category": "sight",
+          "place": {
+            "name": "国会議事堂",
+            "latitude": 35.6759144,
+            "longitude": 139.7448921,
+            "applePlaceID": "ICCECE2B497EBB942",
+            "address": "〒100-0014, 東京都千代田区, 永田町1丁目7-1",
+            "addressIsApproximate": false
+          },
+          "notes": "外観は外から撮影できます。内部の見学は開放日と予約制に限られるので、衆議院・参議院の公式サイトで確認を",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "東京メトロ銀座線 新橋→溜池山王、そこから徒歩約 10 分。ナビで確認を"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "皇居東御苑",
+          "start": "11:30",
+          "end": "12:45",
+          "category": "park",
+          "place": {
+            "name": "皇居東御苑",
+            "latitude": 35.6866161,
+            "longitude": 139.7572947,
+            "applePlaceID": "I3FE13000298EBF54",
+            "address": "〒100-0001, 東京都千代田区, 千代田1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "11～2 月は 09:00～16:00（最終入園 15:30）。月曜・金曜と 12/28～1/3 は休園。無料",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "地下鉄で大手町駅へ、そこから大手門入口まで徒歩。ナビで確認を"
+          },
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "昼食：東京駅（天ぷらそば）",
+          "start": "13:15",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "立食い寿司 函太郎 東京駅一番街店",
+            "latitude": 35.6809358,
+            "longitude": 139.7683535,
+            "applePlaceID": "I652EEAAA71949961",
+            "address": "〒100-0005",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認を",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "大手門から徒歩約 15 分"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "東京駅丸の内駅舎",
+          "start": "14:30",
+          "end": "15:00",
+          "category": "station",
+          "place": {
+            "name": "東京駅丸の内駅前広場",
+            "latitude": 35.6815007,
+            "longitude": 139.7652769,
+            "applePlaceID": "IB46F08B4D007506F",
+            "address": "〒100-0005, 東京都千代田区, 丸の内1丁目9",
+            "addressIsApproximate": false
+          },
+          "notes": "外観は終日眺められます。駅構内の店の営業時間は出発前に確認を",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "駅構内を徒歩"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "ホテルに戻って荷物を受け取る：ホテルヴィラフォンテーヌグランド東京汐留",
+          "start": "15:30",
+          "end": "15:45",
+          "category": "hotel",
+          "place": {
+            "name": "ホテルヴィラフォンテーヌグランド東京汐留",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "JR 東京→新橋 約 5 分、そこから徒歩約 10 分"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "成田国際空港から出国",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "airport",
+          "place": {
+            "name": "成田国際空港",
+            "latitude": 35.7632517,
+            "longitude": 140.3829322,
+            "applePlaceID": "IAB50389A6079F824",
+            "address": "千葉県成田市, 三里塚御料牧場",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "新橋から都営浅草線のエアポート快特で成田空港まで直通、約 1 時間 15 分（旅行記 2023 年の情報）。この区間の切符は、旅行記によるとカードも Suica も使えなかったので、現金を用意して出発前に確認を"
+          }
+        }
+      ]
+    }
+  ]
+}

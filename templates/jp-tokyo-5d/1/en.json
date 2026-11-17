@@ -1,0 +1,1135 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-tokyo-5d",
+  "revision": 1,
+  "contentLocale": "en",
+  "title": "Tokyo in 5 Days — Shibuya, Odaiba, Disney, Asakusa",
+  "subtitle": "Shibuya, Odaiba, Disney and Asakusa: the classic five days for a first visit to Tokyo",
+  "summary": "Five days of Tokyo from a full travelogue: Shibuya and Harajuku, Odaiba, Tokyo Disney, Asakusa and Skytree are all in. The Gundam factory and the Unicorn Gundam are gone, so teamLab Planets takes their place. Kameari, Akihabara, DiverCity and Shiba Park are kept as alternates. The notes cover entry, transit cards and reservations.",
+  "destination": "Tokyo, Japan",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Two travelers",
+    "First visit",
+    "Disney",
+    "City"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in once your flights and hotels are booked"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-tokyo-5d/d1-03.jpg",
+    "d1-05": "images/jp-tokyo-5d/d1-05.jpg",
+    "d2-02": "images/jp-tokyo-5d/d2-02.jpg",
+    "d2-04": "images/jp-tokyo-5d/d2-04.jpg",
+    "d2-05": "images/jp-tokyo-5d/d2-05.jpg",
+    "d3-01": "images/jp-tokyo-5d/d3-01.jpg",
+    "d4-01": "images/jp-tokyo-5d/d4-01.jpg",
+    "d4-02": "images/jp-tokyo-5d/d4-02.jpg",
+    "d4-05": "images/jp-tokyo-5d/d4-05.jpg",
+    "d4-07": "images/jp-tokyo-5d/d4-07.jpg",
+    "d5-02": "images/jp-tokyo-5d/d5-02.jpg",
+    "d5-03": "images/jp-tokyo-5d/d5-03.jpg",
+    "d5-05": "images/jp-tokyo-5d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Stay: Hotel Villa Fontaine Grand Tokyo-Shiodome (ホテルヴィラフォンテーヌグランド東京汐留)",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "Hotel Villa Fontaine Shiodome",
+        "latitude": 35.6619383,
+        "longitude": 139.7599978,
+        "applePlaceID": "ID6E5F2FC0A58ABF1",
+        "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Kameari (亀有公園)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Kameari Station",
+        "latitude": 35.7665751,
+        "longitude": 139.8477718,
+        "applePlaceID": "I4A90016323A0CF14",
+        "address": "東京都葛飾区, 亀有",
+        "addressIsApproximate": true
+      },
+      "notes": "The Kochikame statues are in front of the station; when the travelogue's author visited in 2023 most of the surroundings were just sets and statues; check opening hours before you go"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Akihabara (秋葉原電気街)",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "Akihabara",
+        "latitude": 35.6983512,
+        "longitude": 139.7729252,
+        "applePlaceID": "I2552F15E78F49592",
+        "address": "東京都千代田区, 神田花岡町",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: DiverCity Tokyo Plaza (ダイバーシティ東京プラザ)",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "DiverCity Tokyo Plaza, Odaiba",
+        "latitude": 35.6251924,
+        "longitude": 139.7755015,
+        "applePlaceID": "I9E847CDBACD2B144",
+        "address": "〒135-0064, 東京都江東区, 青海1丁目1-10",
+        "addressIsApproximate": false
+      },
+      "notes": "The life-size Unicorn Gundam statue ended its display on 31 Aug 2026; check the mall's opening hours before you go"
+    },
+    {
+      "key": "u-04",
+      "title": "Alternate: Shiba Park (東京都立芝公園)",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "Shiba Park, Tokyo",
+        "latitude": 35.6546533,
+        "longitude": 139.7486025,
+        "address": "日本東京港區",
+        "addressIsApproximate": true
+      },
+      "notes": "You can see Tokyo Tower through the trees from a distance; open all day"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and fact-checking",
+      "paragraphs": [
+        {
+          "text": "Source travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/9da2c51fa4f2/",
+          "style": "bullet"
+        },
+        {
+          "text": "Checked (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Tokyo Tower observation deck hours: https://www.tokyotower.co.jp/en/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Tokyo Skytree observation deck hours (as shown for the day): https://en.tokyo-skytree.jp/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Meiji Jingu opening hours: https://www.meijijingu.or.jp/en/visit/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Imperial Palace East Gardens hours and closing days: https://www.kunaicho.go.jp/e-event/higashigyoen02.html (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Sensō-ji main hall hours: https://www.senso-ji.jp/about/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Changed since the travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "GUNDAM FACTORY YOKOHAMA closed in March 2024, so the original stop is replaced by teamLab Planets and the Odaiba area.",
+          "style": "bullet"
+        },
+        {
+          "text": "The life-size Unicorn Gundam statue in Odaiba ended its display on 31 Aug 2026 (announced by the operator, TOKYO GUNDAM PROJECT; report https://dengekionline.com/article/202608/85200 , checked 2026-11-17), so it is not included.",
+          "style": "bullet"
+        },
+        {
+          "text": "The National Museum of Emerging Science and Innovation (Miraikan) is under renovation (the official site says it reopens on 23 Apr 2027), so it is not included.",
+          "style": "bullet"
+        },
+        {
+          "text": "Could not be confirmed from official sources; check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "SHIBUYA SKY hours and reservation rules (the official page could not be retrieved).",
+          "style": "bullet"
+        },
+        {
+          "text": "Tokyo DisneySea's hours for the day and the night show (the official site timed out).",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Planets hours (the official page could not be retrieved, and third-party sources contradict each other).",
+          "style": "bullet"
+        },
+        {
+          "text": "Hours for the Fuji TV spherical observatory, the National Diet Building's visitor rules, LE LABO, Kiwamiya and the restaurants.",
+          "style": "bullet"
+        },
+        {
+          "text": "Fares and journey times of the Narita Express and the Asakusa Line Airport Rapid (the official sites would not open; the 2023 travelogue's figures are used).",
+          "style": "bullet"
+        },
+        {
+          "text": "Travelogue details",
+          "style": "heading"
+        },
+        {
+          "text": "The hotel follows the author's trip in June 2023: Shiodome, four nights in a row.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue's Kochikame stop in Kameari and Akihabara are not in the daily plans (see the alternates).",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Entry and internet",
+          "style": "heading"
+        },
+        {
+          "text": "Before you leave, register your immigration and customs declaration on Visit Japan Web: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "For data, use a physical SIM or an eSIM.",
+          "style": "bullet"
+        },
+        {
+          "text": "Getting around",
+          "style": "heading"
+        },
+        {
+          "text": "Trains, subways and buses take Suica or PASMO; on an iPhone you can add Suica to Wallet. The travelogue's author used the Suica on an iPhone in 2023; Android users can buy a Welcome Suica at Narita Airport.",
+          "style": "bullet"
+        },
+        {
+          "text": "Airport to the city: every seat on the Narita Express (成田エクスプレス) is reserved, and tapping a transit card at the gate will be refused, so buy a reserved-seat ticket first (from the travelogue; see the JR East website for details).",
+          "style": "bullet"
+        },
+        {
+          "text": "Shiodome Station exits straight onto the Yurikamome and the Oedo Line; for other districts it is about a 10-minute walk to Shimbashi Station (JR, the Ginza Line and the Asakusa Line).",
+          "style": "bullet"
+        },
+        {
+          "text": "Back to Narita: from Shimbashi the Toei Asakusa Line Airport Rapid runs direct in about 1 hour 15 min; the travelogue says that ticket could not be paid for by card or Suica at the time, so carry plenty of cash.",
+          "style": "bullet"
+        },
+        {
+          "text": "On Tokyo buses you tap your card when you board (unlike Kyoto, where you pay when you get off).",
+          "style": "bullet"
+        },
+        {
+          "text": "Reservations",
+          "style": "heading"
+        },
+        {
+          "text": "Book SHIBUYA SKY, Tokyo DisneySea, teamLab Planets and Tokyo Skytree early and reserve time slots; popular dates are usually gone on the day.",
+          "style": "bullet"
+        },
+        {
+          "text": "The DisneySea entrance is past the in-park train; the travelogue's author bought a DisneySea one-park ticket, so no castle and no parade; front-row seats for the night water show are sold separately.",
+          "style": "bullet"
+        },
+        {
+          "text": "Observation decks and Disney hours differ every day, so check the official sites before you go.",
+          "style": "bullet"
+        },
+        {
+          "text": "Other",
+          "style": "heading"
+        },
+        {
+          "text": "Carry plenty of yen in cash: drugstores, the airport express ticket and some other places turned out not to take cards, or the card was refused; the travelogue suggests keeping at least ¥10,000 on you.",
+          "style": "bullet"
+        },
+        {
+          "text": "The duty-free and tax-refund rules have changed in recent years; check the Japan Tourism Agency's explanation before you leave.",
+          "style": "bullet"
+        },
+        {
+          "text": "You can leave bags at the hotel; on the last day the travelogue's author left them there and then shopped without them.",
+          "style": "bullet"
+        },
+        {
+          "text": "Restaurants inside the Disney parks are often full, so the travelogue suggests bringing a snack.",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Dassai (Asahi Shuzo)",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "Available at the duty-free shops in Tokyo Station and Narita Airport; the travelogue says the prices are about the same"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Tokyo",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Tokyo",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Tokyo",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Tokyo",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Tokyo",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Tokyo",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Narita International Airport (成田国際空港)",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "airport",
+          "place": {
+            "name": "Narita International Airport",
+            "latitude": 35.7632517,
+            "longitude": 140.3829322,
+            "applePlaceID": "IAB50389A6079F824",
+            "address": "千葉県成田市, 三里塚御料牧場",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Drop your bags and check in: Hotel Villa Fontaine Grand Tokyo-Shiodome (ホテルヴィラフォンテーヌグランド東京汐留)",
+          "start": "15:45",
+          "end": "16:15",
+          "category": "hotel",
+          "place": {
+            "name": "Hotel Villa Fontaine Shiodome",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "notes": "Check-in time is set by the hotel",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "JR Narita Express (成田エクスプレス) to Tokyo Station, about 60 min, all seats reserved, so get a seat at the platform or a ticket machine first; then JR or the subway to Shimbashi and about 10 min on foot to the hotel. Check each leg's fare before you go"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "Shibuya Crossing (渋谷スクランブル交差点)",
+          "start": "17:00",
+          "end": "17:30",
+          "category": "sight",
+          "place": {
+            "name": "Shibuya Crossing",
+            "latitude": 35.6591944,
+            "longitude": 139.6975155,
+            "address": "東京都渋谷区道玄坂2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Open all day, no closing days",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "About 10 min on foot to Shimbashi Station, then the JR Yamanote Line or the Ginza Line subway to Shibuya, about 25 min"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "Dinner: Kiwamiya Shibuya PARCO (極味や 渋谷パルコ店), Kobe beef steak and hamburg steak",
+          "start": "17:45",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "Kiwamiya Shibuya PARCO",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I27C7C5F97CC5C83B",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1 渋谷パルコB1F",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; expect a queue at peak hours (about 45 min in the travelogue)",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot from the crossing"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "SHIBUYA SKY observation deck (渋谷スカイ)",
+          "start": "19:30",
+          "end": "20:45",
+          "category": "viewpoint",
+          "place": {
+            "name": "Shibuya Sky",
+            "latitude": 35.658351,
+            "longitude": 139.7024167,
+            "applePlaceID": "I26904022D636B068",
+            "address": "〒150-0002, 東京都渋谷区, 渋谷2丁目24-12, 渋谷スクランブルスクエア 14F-45F, 46F 屋上",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; you must reserve an entry slot in advance and tickets are usually gone on the day; bags are not allowed on the deck (paid lockers available)",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot from PARCO to Shibuya Scramble Square"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Take the JR Yamanote Line or the Ginza Line subway to Shimbashi, then walk about 10 min"
+          },
+          "todos": [
+            {
+              "text": "Reserve a SHIBUYA SKY entry slot",
+              "note": "Official site https://www.shibuya-scramble-square.com/sky/ Tickets are usually gone on the day, so reserve as soon as your date is fixed"
+            }
+          ],
+          "images": [
+            "d1-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Tokyo",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "teamLab Planets TOKYO (チームラボプラネッツ)",
+          "start": "09:30",
+          "end": "11:00",
+          "category": "artgallery",
+          "place": {
+            "name": "teamLab Planets TOKYO DMM",
+            "latitude": 35.6492824,
+            "longitude": 139.789685,
+            "applePlaceID": "I96F6ACCAB28133E",
+            "address": "〒135-0061",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours and closing days before you go; you must reserve a time slot in advance",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Yurikamome (ゆりかもめ), Shiodome → Shin-Toyosu, about 15 min, then about 5 min on foot"
+          },
+          "todos": [
+            {
+              "text": "Reserve a teamLab Planets entry slot",
+              "note": "Official site https://www.teamlab.art/e/planets/ Reserve a slot for your date"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "Statue of Liberty in Odaiba (お台場海浜公園)",
+          "start": "11:30",
+          "end": "12:00",
+          "category": "sight",
+          "place": {
+            "name": "Statue of Liberty",
+            "latitude": 35.6278608,
+            "longitude": 139.7718434,
+            "applePlaceID": "IDD964C09F6F6B4",
+            "address": "〒135-0091, 東京都港区, 台場1-4-1",
+            "addressIsApproximate": false
+          },
+          "notes": "An outdoor park, open all day",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Yurikamome, Shin-Toyosu → Odaiba-Kaihin-Koen, about 15 min, then about 5 min on foot; you pass Fuji TV and the Odaiba waterfront on the way"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "Lunch: DECKS Tokyo Beach (デックス東京ビーチ), takoyaki and fried chicken",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "DECKS Tokyo Beach",
+            "latitude": 35.6290897,
+            "longitude": 139.7757831,
+            "applePlaceID": "IB3FCC15C9C5C542C",
+            "address": "〒135-0091, 東京都港区, 台場1丁目6-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "About 5 min on foot from the Statue of Liberty"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "Fuji TV headquarters building (フジテレビ本社ビル)",
+          "start": "13:30",
+          "end": "14:15",
+          "category": "sight",
+          "place": {
+            "name": "Fuji TV",
+            "latitude": 35.6265943,
+            "longitude": 139.7742811,
+            "applePlaceID": "IB2A7C7313DF391A",
+            "address": "〒137-8088, 東京都港区, 台場2丁目4-8",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go (the spherical observatory has its own hours and closing days)",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "Shopping in Shinjuku (新宿駅周辺): department stores and drugstores",
+          "start": "15:15",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "Shinjuku-sanchome",
+            "latitude": 35.6908591,
+            "longitude": 139.7048661,
+            "applePlaceID": "I5B743E919E124DD5",
+            "address": "東京都新宿区, 新宿",
+            "addressIsApproximate": true
+          },
+          "notes": "Check each shop's opening hours before you go",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "Walk to Tokyo Teleport Station and take the Rinkai Line (りんかい線) through to the JR Saikyo Line for Shinjuku, about 35 min; confirm the trains with your navigation app"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "Dinner: Shinjuku (izakaya)",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "Izakaya near Shinjuku Station",
+            "latitude": 35.6913159,
+            "longitude": 139.7034026,
+            "address": "東京都新宿区新宿3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "On foot"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "Toei Oedo Line, Shinjuku → Shiodome, about 20 min, then walk to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Tokyo",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Tokyo DisneySea (東京ディズニーシー), morning: Toy Story Mania!, Soaring: Fantastic Flight",
+          "start": "09:15",
+          "end": "13:00",
+          "category": "sight",
+          "place": {
+            "name": "Tokyo DisneySea",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "Hours differ every day; check the official calendar",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "JR Shimbashi → Tokyo, then the Keiyo Line to Maihama, then the Disney Resort Line (リゾートライン) to Tokyo DisneySea Station"
+          },
+          "todos": [
+            {
+              "text": "Buy Tokyo DisneySea tickets",
+              "note": "Official site https://www.tokyodisneyresort.jp/en/tds/ Buy once your date is fixed; front-row seats for the night show and priority passes are sold separately"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "Lunch: inside the park",
+          "start": "13:15",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "Tokyo DisneySea",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "Follows the park's hours; restaurants are often full, so bring a snack",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On foot inside the park"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "Tokyo DisneySea, afternoon: Journey to the Center of the Earth, 20,000 Leagues Under the Sea, Indiana Jones Adventure, shopping",
+          "start": "14:30",
+          "end": "19:00",
+          "category": "sight",
+          "place": {
+            "name": "Tokyo DisneySea",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "Follows the park's hours; check the official calendar",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On foot inside the park"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "Night water show (Mediterranean Harbor)",
+          "start": "19:15",
+          "end": "20:45",
+          "category": "show",
+          "place": {
+            "name": "Tokyo DisneySea",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "Show content and times follow the current announcement; check the official site or the park's app; front-row seats are paid and reserved",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "On foot inside the park to the harbor"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "JR Keiyo Line, Maihama → Tokyo, then JR to Shimbashi and about 10 min on foot"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Tokyo",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "Tokyo Tower (東京タワー)",
+          "start": "09:15",
+          "end": "10:45",
+          "category": "sight",
+          "place": {
+            "name": "Tokyo Tower",
+            "latitude": 35.6585581,
+            "longitude": 139.7455037,
+            "applePlaceID": "I9F5C79B7A59D296F",
+            "address": "2-8, Shibakoen 4-Chōme, Minato, Tokyo, Japan",
+            "addressIsApproximate": false
+          },
+          "notes": "Main Deck 09:00–23:00 (last entry 22:30); Top Deck Tour 09:00–22:45 (last entry 22:15)",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "Toei Oedo Line, Shiodome → Akabanebashi, about 5 min, then about 7 min on foot (or about 20 min on foot from Shimbashi)"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "Meiji Jingu (明治神宮)",
+          "start": "11:30",
+          "end": "12:45",
+          "category": "temple",
+          "place": {
+            "name": "Meiji Jingu",
+            "latitude": 35.6762064,
+            "longitude": 139.699375,
+            "applePlaceID": "I65EB06A821AE2921",
+            "address": "〒151-8557, 東京都渋谷区, 代々木神園町1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Opens at sunrise and closes at sunset, open all year; actual hours vary by month; free admission",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Toei Oedo Line, Akabanebashi → Yoyogi, about 17 min, then about 5 min on foot to the south approach entrance"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "Lunch: Harajuku and Omotesando area",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "dining",
+          "place": {
+            "name": "Restaurants around Harajuku and Omotesando",
+            "latitude": 35.6687322,
+            "longitude": 139.7085394,
+            "address": "東京都渋谷区神宮前4丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 min on foot along the approach toward Harajuku"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "LE LABO Aoyama (ル ラボ 青山店)",
+          "start": "14:15",
+          "end": "15:15",
+          "category": "shopping",
+          "place": {
+            "name": "LE LABO Aoyama",
+            "latitude": 35.6635812,
+            "longitude": 139.7129256,
+            "applePlaceID": "I40419DBE1F059E9C",
+            "address": "〒107-0062, 東京都港区, 南青山5丁目5-24",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; perfume is blended and labelled in the store, about a 15–20 min wait",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "Sensō-ji and Kaminarimon (浅草寺・雷門)",
+          "start": "16:00",
+          "end": "17:15",
+          "category": "temple",
+          "place": {
+            "name": "Sensō-ji",
+            "latitude": 35.7146948,
+            "longitude": 139.7967499,
+            "applePlaceID": "I24702A862C9B16DC",
+            "address": "〒111-0032, 東京都台東区, 浅草2丁目3-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Main hall 06:00–17:00 (opens 06:30 from October to March); check the grounds' and Nakamise's opening hours before you go",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "Tokyo Metro Ginza Line, Omotesando → Asakusa, direct, about 32 min, then walk to Kaminarimon"
+          },
+          "images": [
+            "d4-05"
+          ]
+        },
+        {
+          "key": "d4-06",
+          "title": "Dinner: Tokyo Solamachi (東京ソラマチ)",
+          "start": "17:45",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "Tokyo Solamachi",
+            "latitude": 35.7099596,
+            "longitude": 139.8095184,
+            "applePlaceID": "I698159AE84ABBDF0",
+            "address": "〒131-0045, 東京都墨田区, 押上1丁目1-13",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "About 25 min on foot along the Sumida River; you can also take the Tobu Line or the subway to Oshiage"
+          }
+        },
+        {
+          "key": "d4-07",
+          "title": "Tokyo Skytree observation deck (東京スカイツリー)",
+          "start": "19:00",
+          "end": "20:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "Tokyo Skytree",
+            "latitude": 35.7100211,
+            "longitude": 139.8107243,
+            "applePlaceID": "IF4B9F085287510CE",
+            "address": "〒131-0045, 東京都墨田区, 押上1丁目1-81",
+            "addressIsApproximate": false
+          },
+          "notes": "The official site showed 10:00–22:00 for the day (last entry 21:00); hours change by date, so check before you go; reserving an entry slot is recommended",
+          "leg": {
+            "fromKey": "d4-06",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Same complex, walk to the observation deck entrance"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "Toei Asakusa Line, Oshiage → Shimbashi, about 25 min, then about 10 min on foot"
+          },
+          "todos": [
+            {
+              "text": "Reserve a Tokyo Skytree entry slot",
+              "note": "Official site https://en.tokyo-skytree.jp/ The travelogue's author missed the top level by buying late, so buy early"
+            }
+          ],
+          "images": [
+            "d4-07"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Tokyo",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "Check out and leave your bags: Hotel Villa Fontaine Grand Tokyo-Shiodome (ホテルヴィラフォンテーヌグランド東京汐留)",
+          "start": "09:00",
+          "end": "09:30",
+          "category": "hotel",
+          "place": {
+            "name": "Hotel Villa Fontaine Shiodome",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "notes": "Confirm with the front desk how long they can hold your bags",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Same building"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "National Diet Building (国会議事堂)",
+          "start": "10:15",
+          "end": "11:00",
+          "category": "sight",
+          "place": {
+            "name": "National Diet Building",
+            "latitude": 35.6759144,
+            "longitude": 139.7448921,
+            "applePlaceID": "ICCECE2B497EBB942",
+            "address": "〒100-0014, 東京都千代田区, 永田町1丁目7-1",
+            "addressIsApproximate": false
+          },
+          "notes": "You can photograph the outside from the street; tours inside are limited to open days and reservations, so check the House of Representatives and House of Councillors websites",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "Tokyo Metro Ginza Line, Shimbashi → Tameike-Sanno, then about 10 min on foot; confirm with your navigation app"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "Imperial Palace East Gardens (皇居東御苑)",
+          "start": "11:30",
+          "end": "12:45",
+          "category": "park",
+          "place": {
+            "name": "Imperial Palace East Gardens",
+            "latitude": 35.6866161,
+            "longitude": 139.7572947,
+            "applePlaceID": "I3FE13000298EBF54",
+            "address": "〒100-0001, 東京都千代田区, 千代田1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "09:00–16:00 from November to February (last entry 15:30); closed Mondays, Fridays and 28 Dec–3 Jan; free",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Take the subway to Otemachi Station, then walk to the Otemon entrance; confirm with your navigation app"
+          },
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "Lunch: Tokyo Station (tempura soba)",
+          "start": "13:15",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "Standing Sushi Hakotaro, Tokyo Station Ichibangai",
+            "latitude": 35.6809358,
+            "longitude": 139.7683535,
+            "applePlaceID": "I652EEAAA71949961",
+            "address": "〒100-0005",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 min on foot from Otemon"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "Tokyo Station Marunouchi Building (東京駅丸の内駅舎)",
+          "start": "14:30",
+          "end": "15:00",
+          "category": "station",
+          "place": {
+            "name": "Tokyo Station Marunouchi Square",
+            "latitude": 35.6815007,
+            "longitude": 139.7652769,
+            "applePlaceID": "IB46F08B4D007506F",
+            "address": "〒100-0005, 東京都千代田区, 丸の内1丁目9",
+            "addressIsApproximate": false
+          },
+          "notes": "You can admire the exterior all day; check opening hours of the shops inside the station before you go",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On foot inside the station"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "Back to the hotel for your bags: Hotel Villa Fontaine Grand Tokyo-Shiodome (ホテルヴィラフォンテーヌグランド東京汐留)",
+          "start": "15:30",
+          "end": "15:45",
+          "category": "hotel",
+          "place": {
+            "name": "Hotel Villa Fontaine Shiodome",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "JR Tokyo → Shimbashi, about 5 min, then about 10 min on foot"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "Depart from Narita International Airport (成田国際空港)",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "airport",
+          "place": {
+            "name": "Narita International Airport",
+            "latitude": 35.7632517,
+            "longitude": 140.3829322,
+            "applePlaceID": "IAB50389A6079F824",
+            "address": "千葉県成田市, 三里塚御料牧場",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "From Shimbashi, the Toei Asakusa Line Airport Rapid goes straight to Narita Airport in about 1 hour 15 min (from the 2023 travelogue); the travelogue says this ticket could not be paid for by card or Suica, so carry cash and check before you go"
+          }
+        }
+      ]
+    }
+  ]
+}

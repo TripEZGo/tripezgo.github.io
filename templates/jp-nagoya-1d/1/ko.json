@@ -1,0 +1,526 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-nagoya-1d",
+  "revision": 1,
+  "contentLocale": "ko",
+  "title": "나고야 1일｜나고야성·오스·아쓰타",
+  "subtitle": "숙박 없이 당일치기: 나고야성, 오스, 아쓰타 신궁",
+  "summary": "환승이거나 하루뿐인 사람을 위한 일정입니다. 공항에서 시내로 들어가 나고야성, 오스 상점가, 아쓰타 신궁을 돌고 저녁에 공항으로 돌아오니 숙소 예약은 필요 없어요. 이누야마성, 호라이켄, 오아시스21, 스카이 프롬나드는 후보로 넣어 두었습니다. 메모에는 공항과 시내 오가는 법, 당일 이동, 현재 상황 안내를 적었습니다.",
+  "destination": "일본 나고야",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 1,
+  "coverColour": "amber",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "첫 방문",
+    "당일치기"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록 (입국 심사와 세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권을 끊으면 바로 입력 가능. 체류 일수는 1일로 입력"
+    },
+    {
+      "text": "항공사 기내 반입 수하물 규정 확인",
+      "note": "저가항공은 개수와 무게 제한이 엄격한 경우가 많고, 위탁 수하물이 없을 때는 특히 중요해요. 출발 전에 공식 사이트 규정대로 짐을 꾸리세요"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-nagoya-1d/d1-03.jpg",
+    "d1-04": "images/jp-nagoya-1d/d1-04.jpg",
+    "d1-06": "images/jp-nagoya-1d/d1-06.jpg",
+    "d1-07": "images/jp-nagoya-1d/d1-07.jpg"
+  },
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "후보: 이누야마성(犬山城)",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "국보 이누야마성",
+        "latitude": 35.388289,
+        "longitude": 136.9392532,
+        "applePlaceID": "IFBE24E9AD8810570",
+        "address": "〒484-0082, 愛知県犬山市, 犬山北古券65-2",
+        "addressIsApproximate": false
+      },
+      "notes": "현존 천수각을 가진 국보 명성. 나고야역에서 메이테쓰로 약 30분. 영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-02",
+      "title": "후보: 아쓰타 호라이켄 본점(あつた蓬莱軒 本店)",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "아쓰타 호라이켄 본점",
+        "latitude": 35.1200799,
+        "longitude": 136.9069536,
+        "applePlaceID": "I83D929CB24747C9E",
+        "address": "〒456-0043, 愛知県名古屋市熱田区, 神戸町503",
+        "addressIsApproximate": false
+      },
+      "notes": "나고야 명물 히쓰마부시의 유명 가게로, 여행기 작성자가 먹고 싶었지만 못 먹은 곳입니다. 영업시간은 출발 전에 확인하세요. 줄이 긴 편"
+    },
+    {
+      "key": "u-03",
+      "title": "후보: 오아시스21(オアシス21)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "오아시스21",
+        "latitude": 35.1710721,
+        "longitude": 136.909529,
+        "applePlaceID": "I89208ACA56E58EBF",
+        "address": "〒461-0005, 愛知県名古屋市東区, 東桜1-11-1",
+        "addressIsApproximate": false
+      },
+      "notes": "MIRAI TOWER 바로 옆. 영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-04",
+      "title": "후보: JR 나고야 다카시마야 JR 게이트 타워 스카이 프롬나드(スカイプロムナード)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "스카이 프롬나드",
+        "latitude": 35.1705156,
+        "longitude": 136.8849769,
+        "applePlaceID": "IBDD8085F0261DA6",
+        "address": "〒450-0002, 愛知県名古屋市中村区, 名駅4丁目7番1号, ミッドランド スクエア 44-46F",
+        "addressIsApproximate": false
+      },
+      "notes": "나고야역 위의 전망 공간으로 입장권이 필요합니다. 영업시간은 출발 전에 확인하세요"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "자료 출처와 확인",
+      "paragraphs": [
+        {
+          "text": "원본 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/7b8a0563c157/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인(2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "나고야성 시간과 요금: https://www.nagoyajo.city.nagoya.jp/en/information/ (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "나고야성 천수각 상태: https://www.nagoyajo.city.nagoya.jp/en/ (2026-11-17 확인, 페이지에 천수각 입장 불가로 표시)",
+          "style": "bullet"
+        },
+        {
+          "text": "MIRAI TOWER 전망대 시간: https://www.nagoya-tv-tower.co.jp/ (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "야바톤 야바초 본점: https://www.yabaton.com/stores/yabacho-honten (2026-11-17 확인, 페이지에 오픈 준비 중으로 표시)",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못한 것. 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "메이테쓰 공항선 특급 요금과 배차: 공식 페이지가 열리지 않았습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "아쓰타 신궁 개방 및 수여소 시간: 공식 사이트에 접속되지 않았습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "오스 간논 개방 시간: 공식 사이트에 기재가 없습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "콘파루 오스 본점 영업시간: 여행기에는 8:00 개점이라고 되어 있으나 공식 확인은 못 했습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "오스 상점가 각 가게, 메이테쓰 나고야역, 데바사키 가게의 영업시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 자료",
+          "style": "heading"
+        },
+        {
+          "text": "순서는 작성자의 2023년 9월 당일치기 강행군에 맞춰 조정했고, 작성자가 여행기에서 가고 싶다고 쓴 이누야마성과 장어덮밥을 후보로 넣었습니다.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 안내",
+      "paragraphs": [
+        {
+          "text": "이 일정의 성격",
+          "style": "heading"
+        },
+        {
+          "text": "숙박 없는 당일치기 강행군: 이른 아침에 도착해 늦은 밤에 떠납니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 작성자는 저가항공 심야편을 탔습니다(가는 편은 새벽 출발, 이른 아침 도착, 오는 편은 늦은 밤 출발). 이 일정의 시간도 그런 항공편을 기준으로 짰으니, 실제로는 본인 항공편에 맞추세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "저가항공은 보통 기내 반입 수하물의 개수와 무게를 제한하니 항공사 규정을 따르세요. 위탁 수하물이 없어야 가볍게 하루를 뛸 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "입국",
+          "style": "heading"
+        },
+        {
+          "text": "출발 전에 Visit Japan Web에서 입국 심사와 세관 신고를 등록하고, 도착 후 QR 코드를 보여 주세요: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "공항과 시내 오가기",
+          "style": "heading"
+        },
+        {
+          "text": "주부 국제공항에서 나고야역까지: 메이테쓰 공항선 특급(μ-SKY)으로 약 30분. 특급권을 따로 사야 하고 좌석 지정도 가능합니다. 준급이나 보통 열차는 싸지만 느려요. 요금은 메이테쓰 공식 사이트를 기준으로 하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 2023년 자료: 미리 온라인으로 산 편도 승차권과 μ-SKY가 약 271 대만 달러.",
+          "style": "bullet"
+        },
+        {
+          "text": "시각표와 요금 검색: https://www.meitetsu.co.jp/eng/",
+          "style": "bullet"
+        },
+        {
+          "text": "당일 이동",
+          "style": "heading"
+        },
+        {
+          "text": "시내는 지하철 메이조선이 중심입니다(가미마에즈, 시야쿠쇼, 사카에, 아쓰타진구니시 모두 같은 노선). 1일권이 있으니 당일 탑승 횟수로 이득인지 따져 보세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "비가 자주 오니 우산을 챙기세요. 나고야성역 주변에는 가게가 많지 않아요.",
+          "style": "bullet"
+        },
+        {
+          "text": "현재 상황",
+          "style": "heading"
+        },
+        {
+          "text": "나고야성 천수각은 보수 중이라 들어갈 수 없고, 혼마루 어전과 정원만 볼 수 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "오스 간논 본당은 여행기 작성자가 갔을 때 수리 중이었습니다. 현재 상황은 출발 전에 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "나고야성 입장료는 2026년 10월 1일부터 조정됩니다. 공식 사이트를 기준으로 하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "기타",
+          "style": "heading"
+        },
+        {
+          "text": "심야 항공편이라면 마지막 연결 전철과 공항 체크인 카운터의 열고 닫는 시간에 주의하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "돌아올 때는 시간이 넉넉하니 공항 제1터미널에서 면세점을 구경하고 전망대에서 비행기 이착륙을 볼 수 있어요.",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "개구리 만주(나고야 아오가에루 혼케, かえるまんじゅう)",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "메이테쓰 나고야역 지하상가"
+    },
+    {
+      "key": "s-02",
+      "title": "닷사이 23 750ml(獺祭 純米大吟醸 磨き二割三分)",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "priceJPY": 5700,
+      "store": "주부 국제공항 면세점(여행기 2023년 자료로 약 5,700엔)"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "나고야시",
+      "latitude": 35.18147,
+      "longitude": 136.90641,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "나고야시",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "주부 국제공항(中部国際空港) 도착",
+          "start": "06:30",
+          "end": "07:30",
+          "category": "airport",
+          "place": {
+            "name": "주부 국제공항",
+            "latitude": 34.8590656,
+            "longitude": 136.8145748,
+            "applePlaceID": "I7690DD660D1ACED2",
+            "address": "〒479-0881, 愛知県常滑市, セントレア1丁目1番",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "아침: 콘파루 오스 본점(コンパル 大須本店) 새우튀김 토스트",
+          "start": "08:45",
+          "end": "09:30",
+          "category": "cafe",
+          "place": {
+            "name": "콘파루 오스 본점",
+            "latitude": 35.1593994,
+            "longitude": 136.904706,
+            "applePlaceID": "IAE7114C877C23B65",
+            "address": "〒460-0011, 愛知県名古屋市中区, 大須3丁目20-19",
+            "addressIsApproximate": false
+          },
+          "notes": "여행기에는 8:00 개점이라고 되어 있습니다. 영업시간과 휴무일은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "메이테쓰 공항선 주부 국제공항→가나야마(약 35분), 지하철 메이조선으로 갈아타 가미마에즈역, 거기서 도보 약 5분"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "나고야성(名古屋城): 혼마루 어전",
+          "start": "10:00",
+          "end": "11:45",
+          "category": "castle",
+          "place": {
+            "name": "나고야성",
+            "latitude": 35.1855722,
+            "longitude": 136.8990898,
+            "applePlaceID": "I5C7269B41465E8B1",
+            "address": "〒460-0031, 愛知県名古屋市中区, 本丸1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00~16:30(마지막 입장 16:00), 12/29~1/1 휴무. 천수각은 보수 중이라 들어갈 수 없음",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "지하철 메이조선 가미마에즈→시야쿠쇼(약 15분), 정문까지 도보 약 10분. 혼마루 어전은 신발을 벗어야 하고, 보관함은 100엔 동전이 필요"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "주부덴력 MIRAI TOWER(中部電力 MIRAI TOWER)",
+          "start": "12:05",
+          "end": "13:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "나고야 TV 타워",
+            "latitude": 35.1723693,
+            "longitude": 136.9083318,
+            "applePlaceID": "I8412B48CB48B2489",
+            "address": "〒460-0003, 愛知県名古屋市中区, 錦3丁目6-15先",
+            "addressIsApproximate": false
+          },
+          "notes": "전망대는 평일과 일요일 10:00~21:00, 토요일 10:00~21:40(마지막 입장은 폐관 20분 전). 행사일에는 달라질 수 있음",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "지하철 메이조선 시야쿠쇼→사카에(약 7분), 도보 약 5분. 중간층 카페는 입장권 없이 이용 가능"
+          },
+          "images": [
+            "d1-04"
+          ]
+        },
+        {
+          "key": "d1-05",
+          "title": "점심: 야바톤 야바초 본점(矢場とん 矢場町本店) 미소카쓰",
+          "start": "13:15",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "미소카쓰 야바톤",
+            "latitude": 35.1616572,
+            "longitude": 136.9062773,
+            "applePlaceID": "I3B0C805668CA79DB",
+            "address": "〒460-0011, 愛知県名古屋市中区, 大須3丁目6-18",
+            "addressIsApproximate": false
+          },
+          "notes": "11:00~21:00, 연중무휴(공식 사이트 기준, 공식 사이트에 오픈 준비 중으로 표시되니 출발 전에 확인). 인기 시간대에는 줄을 서야 함",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "사카에 일대에서 도보 약 15분"
+          }
+        },
+        {
+          "key": "d1-06",
+          "title": "오스 간논과 오스 상점가(大須観音・大須商店街)",
+          "start": "14:30",
+          "end": "16:15",
+          "category": "temple",
+          "place": {
+            "name": "오스 간논",
+            "latitude": 35.1597227,
+            "longitude": 136.8994224,
+            "applePlaceID": "I4801B3035F04964A",
+            "address": "〒460-0011, 愛知県名古屋市中区, 大須2丁目21-47",
+            "addressIsApproximate": false
+          },
+          "notes": "사찰 개방 시간은 출발 전에 확인하세요. 상점가는 가게마다 영업시간이 달라 대부분 오후에 엽니다",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "도보 약 15분. 상점가에서는 과일 다이후쿠를 먹고 드럭스토어 쇼핑도 가능"
+          },
+          "images": [
+            "d1-06"
+          ]
+        },
+        {
+          "key": "d1-07",
+          "title": "아쓰타 신궁(熱田神宮)",
+          "start": "16:45",
+          "end": "17:45",
+          "category": "temple",
+          "place": {
+            "name": "아쓰타 신궁",
+            "latitude": 35.1273434,
+            "longitude": 136.9086948,
+            "applePlaceID": "ID01F90EDA7EA995C",
+            "address": "〒456-8585",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "지하철 메이조선 가미마에즈→아쓰타진구니시(약 10분), 정문까지 도보. 진구마에역까지 타도 됨"
+          },
+          "images": [
+            "d1-07"
+          ]
+        },
+        {
+          "key": "d1-08",
+          "title": "메이테쓰 나고야역(名鉄名古屋駅)에서 기념품 쇼핑",
+          "start": "18:30",
+          "end": "19:15",
+          "category": "shopping",
+          "place": {
+            "name": "나고야역 메이테쓰 중앙 출구",
+            "latitude": 35.1698124,
+            "longitude": 136.8844492,
+            "applePlaceID": "I45CC8527349BC561",
+            "address": "愛知県名古屋市中村区, 名駅",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-07",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "메이테쓰 나고야 본선 진구마에→메이테쓰 나고야, 도보와 대기 시간 포함 약 10분"
+          }
+        },
+        {
+          "key": "d1-09",
+          "title": "저녁: 나고야역 주변(데바사키)",
+          "start": "19:30",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "나고야",
+            "latitude": 35.1707684,
+            "longitude": 136.8819514,
+            "applePlaceID": "I7BE10E940AFF7BF7",
+            "address": "愛知県名古屋市中村区, 名駅",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-08",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "역 주변 도보"
+          }
+        },
+        {
+          "key": "d1-10",
+          "title": "주부 국제공항(中部国際空港) 출국",
+          "start": "21:10",
+          "end": "23:15",
+          "category": "airport",
+          "place": {
+            "name": "주부 국제공항",
+            "latitude": 34.8590656,
+            "longitude": 136.8145748,
+            "applePlaceID": "I7690DD660D1ACED2",
+            "address": "〒479-0881, 愛知県常滑市, セントレア1丁目1番",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d1-09",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "메이테쓰 공항선 메이테쓰 나고야→주부 국제공항, 특급으로 약 30분. 체크인과 보안 검색 시간을 넉넉히 잡으세요"
+          }
+        }
+      ]
+    }
+  ]
+}

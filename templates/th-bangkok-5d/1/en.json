@@ -1,0 +1,1040 @@
+{
+  "formatVersion": 3,
+  "templateID": "th-bangkok-5d",
+  "revision": 1,
+  "contentLocale": "en",
+  "title": "Bangkok in 5 Days — Grand Palace, Wat Arun, Chatuchak, ICONSIAM",
+  "subtitle": "The Grand Palace, Wat Arun, Chatuchak Weekend Market and ICONSIAM",
+  "summary": "Five days in Bangkok: day 1 is the airport arrival plus a hotel sky bar, followed by the Grand Palace, Wat Arun, Chatuchak, ICONSIAM and Jodd Fairs night market, and the last morning is a park before you fly out. Chatuchak needs a weekend. The notes cover the TDAC arrival card, getting between the airport and the city, transit cards, internet and cash. Chinatown, Old Siam and Central Rama 9 are in the alternates.",
+  "destination": "Bangkok, Thailand",
+  "regionCodes": [
+    "TH"
+  ],
+  "dayCount": 5,
+  "coverColour": "amber",
+  "defaultTimeZoneID": "Asia/Bangkok",
+  "tags": [
+    "Couple",
+    "First visit",
+    "Markets",
+    "Night market"
+  ],
+  "todos": [
+    {
+      "text": "Fill in the Thailand Digital Arrival Card (TDAC)",
+      "note": "https://tdac.immigration.go.th Free to submit within 3 days before arrival; you must fill it in again on every entry"
+    }
+  ],
+  "images": {
+    "d2-01": "images/th-bangkok-5d/d2-01.jpg",
+    "d2-02": "images/th-bangkok-5d/d2-02.jpg",
+    "d2-04": "images/th-bangkok-5d/d2-04.jpg",
+    "d2-05": "images/th-bangkok-5d/d2-05.jpg",
+    "d3-01": "images/th-bangkok-5d/d3-01.jpg",
+    "d3-03": "images/th-bangkok-5d/d3-03.jpg",
+    "d3-04": "images/th-bangkok-5d/d3-04.jpg",
+    "d4-01": "images/th-bangkok-5d/d4-01.jpg",
+    "d4-04": "images/th-bangkok-5d/d4-04.jpg",
+    "d5-01": "images/th-bangkok-5d/d5-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Stay: Sathorn (the travelogue stayed at JC Kevin Sathorn Bangkok Hotel)",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "JC Kevin Sathorn Bangkok Hotel",
+        "latitude": 13.716456,
+        "longitude": 100.531506,
+        "applePlaceID": "ID1CD506260F5CC3E",
+        "address": "36 ถนนนราธิวาสราชนครินทร์, แขวงทุ่งวัดดอน เขตสาทร, กรุงเทพมหานคร 10120, ประเทศไทย",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: The Old Siam Shopping Plaza (The Old Siam Shopping Plaza), in the old town",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "The Old Siam Plaza",
+        "latitude": 13.7457087,
+        "longitude": 100.4999517,
+        "applePlaceID": "IABC9B0FBF57AF31F",
+        "address": "12 ถนนตรีเพชร",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go; after Wat Pho the travelogue came here to change money (SuperRich) and ate Thai roti on the ground floor"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Chinatown (เยาวราช)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Yaowarat Road",
+        "latitude": 13.7408881,
+        "longitude": 100.5087729,
+        "address": "แขวงจักรวรรดิ, เขตสัมพันธวงศ์, 曼谷, 泰國",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go; the travelogue passed by in a car, and the neon at night feels very cyberpunk"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: Central Rama 9 (เซ็นทรัล พระราม 9)",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "Central",
+        "latitude": 13.7583493,
+        "longitude": 100.5662375,
+        "applePlaceID": "IEE9FD7290329464A",
+        "address": "9/9 ถนนรัชดาภิเษก, แขวงห้วยขวาง เขตห้วยขวาง, กรุงเทพมหานคร 10310, ประเทศไทย",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go; the travelogue dropped by after Jodd Fairs, and it has NaRaYa Bangkok bags"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and checks",
+      "paragraphs": [
+        {
+          "text": "Source travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/b7e7c0938985/",
+          "style": "bullet"
+        },
+        {
+          "text": "Checked (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Grand Palace (daily 8:30–16:30, tickets until 15:30, admission THB 500): https://www.royalgrandpalace.th/en/home (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Chatuchak Market (Sat–Sun 9:00–18:00 in full; Wed–Thu plants; Fri wholesale): https://www.chatuchakmarket.org/opening-times/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "CentralWorld (daily 10:00–22:00): https://www.centralworld.co.th/en (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "ICONSIAM (daily 10:00–22:00): https://www.iconsiam.com/en/getting-here (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Airport Rail Link (about 26–30 minutes, THB 15–45, about 05:30 to midnight): not available from an official site; from compiled travel information (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Airport taxis (THB 50 service charge, tolls, typical fare range): the airport site https://suvarnabhumi.airportthai.co.th/service/transportation/detail/304 and compiled travel information (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "King Power Mahanakhon (10:00–19:00, daytime and sunset sessions): the official site was not available; from a ticketing platform's information (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Wat Arun (about 8:00–18:00, THB 200) and Wat Pho (opening hours differ between sources): not confirmed from an official source (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "The Rock Pub (address 1011/3-4 Phahon Yothin Road): Time Out Bangkok and directory listings (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "LHAO LHAO (1271/6-7 Phahon Yothin Road, about 15:00–03:00): directory listings (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Address of JC Kevin Sathorn Hotel: https://jckevin.com/ (checked 2026-11-17); coordinates from OpenStreetMap data",
+          "style": "bullet"
+        },
+        {
+          "text": "Thailand Digital Arrival Card, TDAC (required of foreign visitors, within 3 days before arrival, free, refilled on every entry): https://tdac.immigration.go.th/manual/en/ and notices from Thai embassies abroad (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Could not be confirmed from an official source; check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "Opening hours and closing days of Wat Pho, Wat Arun, Lumphini Park, the Terminal 21 food court, Benjakitti Park, Jodd Fairs, Zoom Sky Bar, Big C, Shake Shack, LHAO LHAO and The Rock Pub.",
+          "style": "bullet"
+        },
+        {
+          "text": "Current admission to Wat Pho and King Power Mahanakhon (2024 travelogue data: Wat Pho THB 300, King Power THB 1,080).",
+          "style": "bullet"
+        },
+        {
+          "text": "2024 travelogue data: the boat from Tha Chang Pier to Wat Arun THB 30, from Wat Arun to ICONSIAM THB 40, and a one-hour massage THB 250–270.",
+          "style": "bullet"
+        },
+        {
+          "text": "Changes and trade-offs",
+          "style": "heading"
+        },
+        {
+          "text": "The travelogue originally covered 5 days including the travel days; this version turns day 1 into the airport arrival plus a hotel sky bar, and leaves only a morning park visit and the departure on day 5.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue's breakfasts (Wang Chunsheng beef hotpot and the hotel breakfast) are left out; promotional links are removed and only official links remain.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Entry",
+          "style": "heading"
+        },
+        {
+          "text": "Thailand Digital Arrival Card (TDAC): every foreign visitor must fill it in free on the official site https://tdac.immigration.go.th and submit it within 3 days before arrival (including the day of arrival); you must refile on every entry. Use only the official site — any site that charges is fake.",
+          "style": "bullet"
+        },
+        {
+          "text": "Between the airport and the city",
+          "style": "heading"
+        },
+        {
+          "text": "Airport Rail Link: from Suvarnabhumi to Phaya Thai takes about 26–30 minutes and costs THB 15–45, with the airport to Phaya Thai about THB 45; it runs from about 05:30 to midnight, every 10–15 minutes. Only single-journey tickets are sold, and the Rabbit Card is not accepted.",
+          "style": "bullet"
+        },
+        {
+          "text": "The 2024 travelogue's route: Airport Rail Link to Phaya Thai, the BTS Sukhumvit Line to Siam, then the BTS Silom Line to Chong Nonsi; after the exit, walk across the skywalk and then about 15 minutes to the hotel; at night the lights are few and walking alone is frightening.",
+          "style": "bullet"
+        },
+        {
+          "text": "Taxi: public taxis queue on the ground floor (Public Taxi) and charge by the meter plus the THB 50 airport service charge, with the expressway toll of about THB 70–80 paid separately; to the city usually about THB 400–575; Grab also works, and the travelogue's return from the hotel to the airport was THB 577 including tolls.",
+          "style": "bullet"
+        },
+        {
+          "text": "Before the taxi reaches the hotel the road is a two-way street, so the driver has to overshoot and make a U-turn, adding a short detour.",
+          "style": "bullet"
+        },
+        {
+          "text": "Transport cards",
+          "style": "heading"
+        },
+        {
+          "text": "At the BTS staffed windows you can buy a Rabbit Card, top it up and tap in and out; the Rabbit Card works only on the BTS, not on the MRT or the Airport Rail Link.",
+          "style": "bullet"
+        },
+        {
+          "text": "For the MRT buy a ticket, or tap in and out directly with a VISA contactless card (this worked in the travelogue's test; check yourself whether your bank supports it).",
+          "style": "bullet"
+        },
+        {
+          "text": "Before you leave Taiwan, register for Grab and link a credit card.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Chao Phraya piers have official ticket counters; do not take the private boats touting outside the pier.",
+          "style": "bullet"
+        },
+        {
+          "text": "Internet and cash",
+          "style": "heading"
+        },
+        {
+          "text": "The travelogue used an eSIM (AIS); activating it needs an internet connection, so it is best to activate it in Taiwan first; the airport has free Wi-Fi.",
+          "style": "bullet"
+        },
+        {
+          "text": "Changing baht: the travelogue changed money at SuperRich in The Old Siam Shopping Plaza near Wat Pho; banknotes must not be stained or written on, and SuperRich keeps hours, so you cannot change if you arrive too early or too late.",
+          "style": "bullet"
+        },
+        {
+          "text": "Bookings",
+          "style": "heading"
+        },
+        {
+          "text": "The Rock Pub: on the travelogue's night the ticket was THB 350 with one drink, bought in advance.",
+          "style": "bullet"
+        },
+        {
+          "text": "King Power Mahanakhon: tickets bought online are usually cheaper than at the door; confirm the daytime or sunset session first.",
+          "style": "bullet"
+        },
+        {
+          "text": "Zoom Sky Bar: if you want dinner, book ahead — arriving late may leave only bar snacks.",
+          "style": "bullet"
+        },
+        {
+          "text": "Lodging",
+          "style": "heading"
+        },
+        {
+          "text": "4 nights in Sathorn: the travelogue stayed at JC Kevin Sathorn Bangkok Hotel, an apartment-style suite about 1 kilometer, or 15 minutes on foot, from Chong Nonsi BTS Station. The travelogue booked late and paid a high price; booking early can be much cheaper.",
+          "style": "bullet"
+        },
+        {
+          "text": "Weather and season",
+          "style": "heading"
+        },
+        {
+          "text": "The travelogue visited in August, when afternoon thunderstorms are common, so schedule temple visits in the morning.",
+          "style": "bullet"
+        },
+        {
+          "text": "Chatuchak Weekend Market is fully open only on Saturday and Sunday. This template puts it on day 3, so when you apply dates make day 3 a Saturday or Sunday; otherwise swap it with day 4 and go somewhere else.",
+          "style": "bullet"
+        },
+        {
+          "text": "Thai limits on alcohol sales: 11:00–14:00 and 17:00–24:00, and no alcohol is sold all day on Buddhist holidays (travelogue data).",
+          "style": "bullet"
+        },
+        {
+          "text": "Dress and safety",
+          "style": "heading"
+        },
+        {
+          "text": "The Grand Palace, Wat Pho and Wat Arun all have dress codes: no shorts, bare shoulders, ripped jeans, cropped trousers or short skirts.",
+          "style": "bullet"
+        },
+        {
+          "text": "Beware of pickpockets in crowds; anyone outside an attraction who says it is closed and steers you to a tuk-tuk or a private boat is running a scam.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue met a scam in which a stranger starts a conversation to swap money and look at banknotes; ignore it.",
+          "style": "bullet"
+        },
+        {
+          "text": "The emergency line for foreigners is 1155.",
+          "style": "bullet"
+        },
+        {
+          "text": "Tipping is not part of Thai culture; for a massage the travelogue gave THB 20 as a token.",
+          "style": "bullet"
+        },
+        {
+          "text": "Other",
+          "style": "heading"
+        },
+        {
+          "text": "A reminder from the travelogue: mango sticky rice cannot be brought back to Taiwan.",
+          "style": "bullet"
+        },
+        {
+          "text": "Alternates: The Old Siam Shopping Plaza in the old town, Chinatown (Yaowarat Road) and Central Rama 9 are kept as alternate sights.",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Thai menthol nasal inhaler sticks",
+      "category": "other",
+      "productType": "other_product",
+      "store": "Cheaper at Chatuchak (2024 travelogue data: 6 for THB 99, versus 6 for THB 140 at Big C)  about THB 99"
+    },
+    {
+      "key": "s-02",
+      "title": "Goose-brand cooling balm",
+      "category": "other",
+      "productType": "other_product",
+      "store": "A cooling balm recommended locally in Thailand; drugstores or supermarkets"
+    },
+    {
+      "key": "s-03",
+      "title": "Phutawan room diffuser",
+      "category": "other",
+      "productType": "other_product",
+      "store": "Chatuchak and city department stores"
+    },
+    {
+      "key": "s-04",
+      "title": "Dried durian",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "Big C or department stores"
+    },
+    {
+      "key": "s-05",
+      "title": "NaRaYa Bangkok bag",
+      "category": "clothing",
+      "productType": "bag_wallet",
+      "store": "Central Rama 9 and other department stores"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Bangkok",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "Bangkok",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "Bangkok",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "Bangkok",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "Bangkok",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Bangkok",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Suvarnabhumi Airport (ท่าอากาศยานสุวรรณภูมิ)",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "airport",
+          "place": {
+            "name": "Suvarnabhumi Airport",
+            "latitude": 13.6923807,
+            "longitude": 100.7504675,
+            "applePlaceID": "IFDAB6455B3E20B5D",
+            "address": "999 ถนน สุวรรณภูมิ 6, อำเภอบางพลี, สมุทรปราการ 10540, ประเทศไทย",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Lunch: a Thai restaurant at the airport",
+          "start": "13:45",
+          "end": "14:45",
+          "category": "dining",
+          "place": {
+            "name": "Suvarnabhumi Airport",
+            "latitude": 13.6923807,
+            "longitude": 100.7504675,
+            "applePlaceID": "IFDAB6455B3E20B5D",
+            "address": "999 ถนน สุวรรณภูมิ 6, อำเภอบางพลี, สมุทรปราการ 10540, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue had pad kaprao (basil pork) with vegetable soup at the airport",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "After baggage claim and setting up an eSIM or SIM card, look for food on the arrivals level; an eSIM needs an internet connection to activate, and the airport has Wi-Fi"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "Zoom Sky Bar at JC Kevin Sathorn Bangkok Hotel (Zoom Sky Bar): dinner and the night view",
+          "start": "18:30",
+          "end": "20:30",
+          "category": "bar",
+          "place": {
+            "name": "Zoom Sky Bar and Restaurant",
+            "latitude": 13.7130168,
+            "longitude": 100.5343349,
+            "applePlaceID": "I343CCA9BF4111217",
+            "address": "36 ถนนนราธิวาสราชนครินทร์, แขวงทุ่งวัดดอน เขตสาทร, กรุงเทพมหานคร 10120, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue arrived late and only bar snacks and skewers were left, so book ahead if you want dinner",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "Take the Airport Rail Link from Suvarnabhumi to Phaya Thai, about 26 minutes, change to the BTS Sukhumvit Line to Siam, then the BTS Silom Line to Chong Nonsi, and walk about 15 minutes to the hotel to leave your bags and check in; about 2 hours including waiting and check-in"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "The sky bar is on the top floor of the same hotel; just take the lift"
+          },
+          "todos": [
+            {
+              "text": "Book a table at Zoom Sky Bar",
+              "note": "On the top floor of JC Kevin Sathorn Hotel; book ahead if you want dinner, because the travelogue arrived late and only bar snacks were left"
+            },
+            {
+              "text": "Check Airport Rail Link and taxi prices",
+              "note": "The Airport Rail Link takes about 26–30 minutes and costs THB 15–45; a taxi adds a THB 50 service charge and tolls"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Bangkok",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Wat Pho (วัดโพธิ์): the Reclining Buddha and the colorful chedis",
+          "start": "09:00",
+          "end": "10:30",
+          "category": "temple",
+          "place": {
+            "name": "Wat Pho",
+            "latitude": 13.7465708,
+            "longitude": 100.4933274,
+            "applePlaceID": "I67AD50C514533DFA",
+            "address": "2 ถ.สนามไชย, แขวงพระบรมมหาราชวัง เขตพระนคร, กรุงเทพมหานคร 10200, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go (sources give roughly 8:00 as the start, with closing times varying in the evening); take your shoes off to enter the halls, and the dress code is the same as at the Grand Palace",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "A Grab or taxi takes about 30 minutes; the travelogue's Grab fare was THB 135"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "The Grand Palace and Wat Phra Kaew (พระบรมมหาราชวัง)",
+          "start": "10:45",
+          "end": "12:45",
+          "category": "sight",
+          "place": {
+            "name": "Grand Palace",
+            "latitude": 13.7498484,
+            "longitude": 100.4912996,
+            "applePlaceID": "IC2442E04BCA25F52",
+            "address": "ถนน หน้าพระลาน, แขวงพระบรมมหาราชวัง เขตพระนคร, กรุงเทพมหานคร 10200, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Daily 8:30–16:30, tickets sold until 15:30 (official site royalgrandpalace.th)",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk about 10 minutes from Wat Pho to the Grand Palace; admission is THB 500 (official site); shorts, bare shoulders, ripped jeans and short skirts are not allowed inside; no photos of the Emerald Buddha"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "Lunch: a restaurant between the Grand Palace and Tha Chang Pier",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "dining",
+          "place": {
+            "name": "Pad Thai tha Chang Pier",
+            "latitude": 13.7522966,
+            "longitude": 100.4890399,
+            "address": "เขตพระนคร, กรุงเทพมหานคร 10200, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "The travelogue found a Western restaurant on the way from the Grand Palace to the pier"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "Wat Arun (วัดอรุณราชวราราม)",
+          "start": "14:25",
+          "end": "15:40",
+          "category": "temple",
+          "place": {
+            "name": "Wat Arun",
+            "latitude": 13.7437622,
+            "longitude": 100.4888971,
+            "applePlaceID": "I966ACCBC23B8B32D",
+            "address": "ถนนวังเดิม",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go (most sources say about 8:00–18:00); the travelogue's ticket was THB 200; no bare shoulders, shorts, bare midriffs or short skirts, but Thai dress is allowed",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "At Tha Chang Pier find the official ticket counter; the travelogue's boat ticket was THB 30 on a new air-conditioned boat; private boats touting outside the pier ask THB 500–1,000, so ignore them"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "ICONSIAM (ไอคอนสยาม): a riverside department store and the floating-market food hall",
+          "start": "16:10",
+          "end": "17:40",
+          "category": "shopping",
+          "place": {
+            "name": "Icon Siam",
+            "latitude": 13.7264875,
+            "longitude": 100.5107734,
+            "applePlaceID": "I678AEEF4439CA40B",
+            "address": "299 ถนนเจริญนคร, แขวงคลองต้นไทร เขตคลองสาน, กรุงเทพมหานคร 10600, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Daily 10:00–22:00 (official site)",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "From Wat Arun go back to the pier, buy a ticket for the boat to ICONSIAM at the ticket booth at Pier 2 (THB 40 in the travelogue), then board at Pier 1"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "Dinner: LHAO LHAO (เหลาเหลา), Thai-Chinese cooking",
+          "start": "18:45",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "lhaolhao",
+            "latitude": 13.782148,
+            "longitude": 100.545261,
+            "applePlaceID": "ICA7ED9CC9ED29EAA",
+            "address": "1271/4 ถนนพหลโยธิน, แขวงพญาไท เขตพญาไท, กรุงเทพมหานคร 10400, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go (a directory lists about 15:00–03:00, not confirmed from an official source); the travelogue recommends the crab curry, fried oyster omelet and stir-fried minced pork with olive greens",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "driving",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "A Grab or taxi takes about 50 minutes (evening traffic); you can also take the BTS back to Siam and change to the Sukhumvit Line to Ari, then walk a short way, about 70 minutes"
+          }
+        },
+        {
+          "key": "d2-07",
+          "title": "The Rock Pub: live rock music",
+          "start": "20:00",
+          "end": "21:00",
+          "category": "bar",
+          "place": {
+            "name": "The Rock Pub",
+            "latitude": 13.7714658,
+            "longitude": 100.5415173,
+            "applePlaceID": "IB95CFC463B07BF09",
+            "address": "1011/3-4 ถนนพหลโยธิน",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go (sources differ, and it may be closed on Mondays); on the travelogue's night the show began at 20:00 with four bands, and the ticket was THB 350 with one drink, bought in advance; you can stay later (the travelogue stayed until about 23:00); it depends on the show schedule",
+          "leg": {
+            "fromKey": "d2-06",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "From LHAO LHAO walk along Phahon Yothin Road or take one BTS stop to Sanam Pao"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "A Grab or taxi takes about 45 minutes; going by BTS to Chong Nonsi still leaves about 15 minutes on foot along poorly lit streets, so it is not recommended to walk alone at night"
+          },
+          "todos": [
+            {
+              "text": "Buy tickets for The Rock Pub in advance",
+              "note": "The travelogue's ticket was THB 350 with one drink, bought in advance; check the bar's official page to see whether there is a show on the day you visit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Bangkok",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Chatuchak Weekend Market (ตลาดนัดจตุจักร)",
+          "start": "10:00",
+          "end": "13:15",
+          "category": "market",
+          "place": {
+            "name": "Chatuchak Weekend Market",
+            "latitude": 13.7999235,
+            "longitude": 100.5508672,
+            "applePlaceID": "I9CD59BBA5B87475E",
+            "address": "290 ถนน กำแพงเพชร 3",
+            "addressIsApproximate": false
+          },
+          "notes": "The whole market is open Saturday and Sunday 9:00–18:00; Wednesday and Thursday only the plant section, Friday wholesale only (official site chatuchakmarket.org, whose wording for Friday hours is unclear); toilets on the outer edge cost THB 5, and the Mixt Chatuchak mall has free toilets",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "A Grab or taxi takes about 45 minutes (the travelogue's Uber was THB 374 from the other side of the city); you can also take the BTS to Mo Chit or the MRT to Chatuchak Park"
+          },
+          "todos": [
+            {
+              "text": "Check that day 3 falls on a Saturday or Sunday",
+              "note": "Chatuchak is fully open Saturday and Sunday 9:00–18:00 https://www.chatuchakmarket.org/opening-times/"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "Lunch: Mixt Chatuchak mall",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "dining",
+          "place": {
+            "name": "Mixt Chatuchak",
+            "latitude": 13.802724,
+            "longitude": 100.551246,
+            "applePlaceID": "I9F5BF15006E467D0",
+            "address": "8 ถนนกำแพงเพชร 3, แขวงจตุจักร เขตจตุจักร, กรุงเทพมหานคร 10900, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "A mall on the edge of the market; the travelogue had seafood fried rice and a durian juice for THB 89"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "King Power Mahanakhon (คิงเพาเวอร์ มหานคร): the sky walk and observation deck",
+          "start": "16:00",
+          "end": "17:45",
+          "category": "viewpoint",
+          "place": {
+            "name": "King Power Mahanakhon",
+            "latitude": 13.723656,
+            "longitude": 100.528302,
+            "applePlaceID": "IA19CCE33A63A7D29",
+            "address": "114 ถนนนราธิวาสราชนครินทร์, แขวงสีลม เขตบางรัก, กรุงเทพมหานคร 10500, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Most sources say daily 10:00–19:00, with the daytime session until about 16:00 and the sunset session 16:00–19:00, last entry 18:30 (not confirmed from an official source, so check before you go); the travelogue's ticket was THB 1,080, backpacks may not go up, and phones are not allowed on the glass walkway",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "Walk about 15 minutes to Saphan Khwai BTS Station, take the BTS to Chong Nonsi, and the tower is right outside the exit; the Rabbit Card works on the BTS"
+          },
+          "todos": [
+            {
+              "text": "Buy King Power Mahanakhon tickets online",
+              "note": "Confirm the daytime or sunset session; tickets bought on site are usually more expensive"
+            }
+          ],
+          "images": [
+            "d3-03"
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "Jodd Fairs (Jodd Fairs): volcano ribs and night-market snacks",
+          "start": "18:45",
+          "end": "20:30",
+          "category": "market",
+          "place": {
+            "name": "Jodd Fairs",
+            "latitude": 13.7680888,
+            "longitude": 100.5711691,
+            "applePlaceID": "I5DF5E52AD54C4FD5",
+            "address": "แขวงดินแดง เขตดินแดง, กรุงเทพมหานคร 10400, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go (most sources say from late afternoon until late at night); the travelogue had volcano ribs, grilled seafood and coconut ice cream for dinner",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Take the BTS to Sala Daeng and change to the MRT at Silom, then the MRT to Phra Ram 9; the Rabbit Card does not work on the MRT, so buy a ticket or tap in and out with a VISA contactless card (this worked in the travelogue's test)"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "A Grab or taxi takes about 40 minutes; on the way back you can pick up a 7-Eleven toastie as a late snack"
+          },
+          "images": [
+            "d3-04"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Bangkok",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "CentralWorld (เซ็นทรัลเวิลด์)",
+          "start": "10:30",
+          "end": "12:15",
+          "category": "shopping",
+          "place": {
+            "name": "Central",
+            "latitude": 13.746558,
+            "longitude": 100.539148,
+            "applePlaceID": "I40CE84432F27B0C2",
+            "address": "999/9 ถนนพระราม 1, แขวงปทุมวัน เขตปทุมวัน, กรุงเทพมหานคร 10330, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Daily 10:00–22:00 (official site)",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "The BTS Silom Line from Chong Nonsi to Siam takes about 15 minutes, then about 10 minutes on foot or across the skywalk to CentralWorld"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "Lunch: Shake Shack at CentralWorld",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "fastfood",
+          "place": {
+            "name": "Shake Shack",
+            "latitude": 13.7473212,
+            "longitude": 100.5402392,
+            "applePlaceID": "IDE718A176EEB9ED0",
+            "address": "ชั้น 1 999/9 ถนน ราชดำริ, แขวงลุมพินี เขตปทุมวัน, กรุงเทพมหานคร 10330, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue tried the Bangkok-only coconut milk shake",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On the ground floor inside the mall"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "Big C supermarket (บิ๊กซี ราชดำริ): snacks and souvenirs",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "shopping",
+          "place": {
+            "name": "Big C Ratchadamri",
+            "latitude": 13.7470124,
+            "longitude": 100.5407032,
+            "applePlaceID": "I8CD6893AE7BC9D33",
+            "address": "เขตปทุมวัน, กรุงเทพมหานคร, ประเทศไทย",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go; the travelogue says plastic bags are no longer given out, so bring your own or buy a reusable bag",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk from CentralWorld to the Big C across the road"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "Terminal 21 (เทอร์มินอล 21 อโศก)",
+          "start": "15:15",
+          "end": "17:30",
+          "category": "shopping",
+          "place": {
+            "name": "Terminal 21 shopping mall",
+            "latitude": 13.737569,
+            "longitude": 100.560395,
+            "applePlaceID": "IC871E1341A101156",
+            "address": "88 ซอยสุขุมวิท 19 ถนนสุขุมวิท",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go (not listed on the official site); each floor is themed on a different city",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "BTS from Chit Lom to Asok takes about 15 minutes, and the station connects to the mall"
+          },
+          "images": [
+            "d4-04"
+          ]
+        },
+        {
+          "key": "d4-05",
+          "title": "Dinner: the Pier 21 food court upstairs at Terminal 21",
+          "start": "17:45",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "Pier 21 Food Court",
+            "latitude": 13.7380042,
+            "longitude": 100.5602643,
+            "applePlaceID": "IF5BD4E6BD3ECD559",
+            "address": "ชั้น 5, 88 ถนน สุขุมวิท",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; first swap cash for a food card at the counter, pay with the card's QR code, and take the card back to the counter to refund the balance when you finish (travelogue; no deposit or fee)",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Take the escalator up inside the mall"
+          }
+        },
+        {
+          "key": "d4-06",
+          "title": "Benjakitti Park (สวนเบญจกิติ): an evening walk",
+          "start": "19:05",
+          "end": "20:15",
+          "category": "park",
+          "place": {
+            "name": "Benchakitti Park",
+            "latitude": 13.7300105,
+            "longitude": 100.5573946,
+            "applePlaceID": "IEECC3E9C5A209A40",
+            "address": "ถนนรัชดาภิเษก",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go; the travelogue went at night and saw no monitor lizards",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "Walk about 20 minutes behind Terminal 21; on the way back the travelogue met a scam on the BTS platform in which a stranger strikes up a conversation to swap money and look at banknotes — ignore it"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "A Grab or taxi takes about 30 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Bangkok",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "Lumphini Park (สวนลุมพินี): a morning walk to look for water monitors",
+          "start": "09:15",
+          "end": "10:45",
+          "category": "park",
+          "place": {
+            "name": "Lumphini Park",
+            "latitude": 13.731312,
+            "longitude": 100.541644,
+            "applePlaceID": "IB331CA74B843D834",
+            "address": "192 ถนนวิทยุ, แขวงลุมพินี เขตปทุมวัน, กรุงเทพมหานคร 10330, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "Open from early morning to evening every day; check the exact hours before you go; the travelogue saw only one water monitor by the lake in the morning, and locals do not like them, so do not touch them",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "After checking out, a Grab or taxi takes about 20 minutes; you can leave your bags at the hotel"
+          },
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "Depart from Suvarnabhumi Airport (ท่าอากาศยานสุวรรณภูมิ)",
+          "start": "12:30",
+          "end": "15:00",
+          "category": "airport",
+          "place": {
+            "name": "Suvarnabhumi Airport",
+            "latitude": 13.6923807,
+            "longitude": 100.7504675,
+            "applePlaceID": "IFDAB6455B3E20B5D",
+            "address": "999 ถนน สุวรรณภูมิ 6, อำเภอบางพลี, สมุทรปราการ 10540, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "driving",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "Go back to the hotel for your bags, then a Grab or taxi to the airport takes about 50–60 minutes; the travelogue's Grab from the hotel was THB 577 on the expressway, with a toll of about THB 50 added to the fare afterwards; you can also take the BTS to Phaya Thai and change to the Airport Rail Link, about 26 minutes and around THB 45"
+          }
+        }
+      ]
+    }
+  ]
+}

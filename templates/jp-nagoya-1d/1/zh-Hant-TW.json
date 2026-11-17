@@ -1,0 +1,526 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-nagoya-1d",
+  "revision": 1,
+  "contentLocale": "zh-Hant-TW",
+  "title": "名古屋 1 日｜名古屋城・大須・熱田",
+  "subtitle": "當天來回不住宿：名古屋城、大須與熱田神宮",
+  "summary": "給轉機或只有一天的人：從機場進市區，走名古屋城、大須商店街與熱田神宮，傍晚回機場，不用訂住宿。犬山城、蓬萊軒、綠洲 21 與空中步道放在備選。須知裡寫了機場進出市區、當天移動與現況提醒。",
+  "destination": "日本 名古屋",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 1,
+  "coverColour": "amber",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "雙人",
+    "初訪",
+    "當天來回"
+  ],
+  "todos": [
+    {
+      "text": "登錄 Visit Japan Web（入境審查與海關申報）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 機票完成後即可填寫；停留天數填 1 日"
+    },
+    {
+      "text": "確認航空公司手提行李規定",
+      "note": "廉航常限制件數與重量，無托運行李時尤其需要，出發前依官網規定整理行李"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-nagoya-1d/d1-03.jpg",
+    "d1-04": "images/jp-nagoya-1d/d1-04.jpg",
+    "d1-06": "images/jp-nagoya-1d/d1-06.jpg",
+    "d1-07": "images/jp-nagoya-1d/d1-07.jpg"
+  },
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "備選：犬山城（犬山城）",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "國寶犬山城",
+        "latitude": 35.388289,
+        "longitude": 136.9392532,
+        "applePlaceID": "IFBE24E9AD8810570",
+        "address": "〒484-0082, 愛知県犬山市, 犬山北古券65-2",
+        "addressIsApproximate": false
+      },
+      "notes": "現存天守的國寶名城，離名古屋站搭名鐵約 30 分；營業時間請出發前確認"
+    },
+    {
+      "key": "u-02",
+      "title": "備選：蓬萊軒 熱田神宮前 本店（あつた蓬莱軒 本店）",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "Atsuta蓬莱轩本店",
+        "latitude": 35.1200799,
+        "longitude": 136.9069536,
+        "applePlaceID": "I83D929CB24747C9E",
+        "address": "〒456-0043, 愛知県名古屋市熱田区, 神戸町503",
+        "addressIsApproximate": false
+      },
+      "notes": "名古屋鰻魚飯（ひつまぶし）名店，遊記作者想吃而沒吃到；營業時間請出發前確認，常需排隊"
+    },
+    {
+      "key": "u-03",
+      "title": "備選：綠洲 21（オアシス21）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Oasis 21",
+        "latitude": 35.1710721,
+        "longitude": 136.909529,
+        "applePlaceID": "I89208ACA56E58EBF",
+        "address": "〒461-0005, 愛知県名古屋市東区, 東桜1-11-1",
+        "addressIsApproximate": false
+      },
+      "notes": "位於 MIRAI TOWER 旁；營業時間請出發前確認"
+    },
+    {
+      "key": "u-04",
+      "title": "備選：JR 名古屋高島屋 JR GATE TOWER 空中步道（スカイプロムナード）",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "スカイプロムナード",
+        "latitude": 35.1705156,
+        "longitude": 136.8849769,
+        "applePlaceID": "IBDD8085F0261DA6",
+        "address": "〒450-0002, 愛知県名古屋市中村区, 名駅4丁目7番1号, ミッドランド スクエア 44-46F",
+        "addressIsApproximate": false
+      },
+      "notes": "名古屋站上方觀景台，需購票；營業時間請出發前確認"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "資料來源與查證",
+      "paragraphs": [
+        {
+          "text": "來源遊記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/7b8a0563c157/",
+          "style": "bullet"
+        },
+        {
+          "text": "查證（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "名古屋城時間與票價：https://www.nagoyajo.city.nagoya.jp/en/information/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "名古屋城天守閣狀態：https://www.nagoyajo.city.nagoya.jp/en/ （查證 2026-11-17，頁面標示天守閣無法進入）",
+          "style": "bullet"
+        },
+        {
+          "text": "MIRAI TOWER 展望台時間：https://www.nagoya-tv-tower.co.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "矢場とん 矢場町本店：https://www.yabaton.com/stores/yabacho-honten （查證 2026-11-17，頁面標示開店準備中）",
+          "style": "bullet"
+        },
+        {
+          "text": "未能從官方確認，請出發前確認",
+          "style": "heading"
+        },
+        {
+          "text": "名鐵機場線 特急票價與班次：官網頁面無法開啟。",
+          "style": "bullet"
+        },
+        {
+          "text": "熱田神宮開放與授與所時間：官網無法連線。",
+          "style": "bullet"
+        },
+        {
+          "text": "大須觀音開放時間：官網未列。",
+          "style": "bullet"
+        },
+        {
+          "text": "Konparu 大須本店營業時間：遊記記載 8:00 開門，未查官方。",
+          "style": "bullet"
+        },
+        {
+          "text": "大須商店街各店、名鐵名古屋站與手羽先店的營業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記資料",
+          "style": "heading"
+        },
+        {
+          "text": "行程順序依作者 2023 年 9 月的一日快閃調整；加入作者在遊記提到想去的犬山城與鰻魚飯作為備選標記。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出發前須知",
+      "paragraphs": [
+        {
+          "text": "這份行程的性質",
+          "style": "heading"
+        },
+        {
+          "text": "當天來回的一日快閃：清晨抵達、深夜離開，不住宿。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記作者搭的是低成本航空紅眼班機（去程凌晨起飛、清晨抵達；回程深夜起飛）。此行程的時間依這種班次排，實際請以自己的航班為準。",
+          "style": "bullet"
+        },
+        {
+          "text": "廉航通常限制手提行李件數與重量，依航空公司規定；無托運行李才能輕裝跑一天。",
+          "style": "bullet"
+        },
+        {
+          "text": "入境",
+          "style": "heading"
+        },
+        {
+          "text": "出發前先在 Visit Japan Web 登錄入境審查與海關申報，抵達後出示 QR 碼：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "機場進出市區",
+          "style": "heading"
+        },
+        {
+          "text": "中部國際機場到名古屋站：名鐵機場線，特急（μ-SKY）約 30 分，需加購特急券並可指定座位；準急或普通車較便宜但較慢。票價請以名鐵官網為準。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記 2023 年資料：事先網購單程車票加 μ-SKY 約新台幣 271 元。",
+          "style": "bullet"
+        },
+        {
+          "text": "搭乘時刻與票價查詢：https://www.meitetsu.co.jp/eng/",
+          "style": "bullet"
+        },
+        {
+          "text": "當天移動",
+          "style": "heading"
+        },
+        {
+          "text": "市區以地下鐵名城線為主軸（上前津、市役所、榮、熱田神宮西都在同一條線上），可買一日券，請依當天搭乘次數評估划不划算。",
+          "style": "bullet"
+        },
+        {
+          "text": "下雨很常見，建議帶傘；名古屋城站附近商店不多。",
+          "style": "bullet"
+        },
+        {
+          "text": "現況",
+          "style": "heading"
+        },
+        {
+          "text": "名古屋城天守閣整修中不能進入，只能參觀本丸御殿與庭園。",
+          "style": "bullet"
+        },
+        {
+          "text": "大須觀音本殿遊記當時維修中，現況請出發前確認。",
+          "style": "bullet"
+        },
+        {
+          "text": "名古屋城門票將於 2026 年 10 月 1 日起調整，請以官網為準。",
+          "style": "bullet"
+        },
+        {
+          "text": "其他",
+          "style": "heading"
+        },
+        {
+          "text": "深夜班機注意最後一班接駁電車與機場報到櫃檯開放、關閉時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "回程時間充裕，可在機場第一航廈逛免稅店與觀景台看飛機起降。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "青蛙饅頭（名古屋 青蛙本家，かえるまんじゅう）",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "名鐵名古屋站地下街"
+    },
+    {
+      "key": "s-02",
+      "title": "獺祭 二割三分 750ml（獺祭 純米大吟醸 磨き二割三分）",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "priceJPY": 5700,
+      "store": "中部國際機場免稅店（遊記 2023 年資料約 5,700 日圓）"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "名古屋市",
+      "latitude": 35.18147,
+      "longitude": 136.90641,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "名古屋市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵達中部國際機場（中部国際空港）",
+          "start": "06:30",
+          "end": "07:30",
+          "category": "airport",
+          "place": {
+            "name": "中部國際機場",
+            "latitude": 34.8590656,
+            "longitude": 136.8145748,
+            "applePlaceID": "I7690DD660D1ACED2",
+            "address": "〒479-0881, 愛知県常滑市, セントレア1丁目1番",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "早餐：Konparu 大須本店（コンパル 大須本店）炸蝦吐司",
+          "start": "08:45",
+          "end": "09:30",
+          "category": "cafe",
+          "place": {
+            "name": "孔帕魯 大須 總店",
+            "latitude": 35.1593994,
+            "longitude": 136.904706,
+            "applePlaceID": "IAE7114C877C23B65",
+            "address": "〒460-0011, 愛知県名古屋市中区, 大須3丁目20-19",
+            "addressIsApproximate": false
+          },
+          "notes": "遊記記載 8:00 開門；營業時間與公休日請出發前確認",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "名鐵機場線 中部國際機場→金山（約 35 分），轉地下鐵名城線到上前津站，再步行約 5 分"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "名古屋城（名古屋城）：本丸御殿",
+          "start": "10:00",
+          "end": "11:45",
+          "category": "castle",
+          "place": {
+            "name": "名古屋城",
+            "latitude": 35.1855722,
+            "longitude": 136.8990898,
+            "applePlaceID": "I5C7269B41465E8B1",
+            "address": "〒460-0031, 愛知県名古屋市中区, 本丸1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–16:30（最後入場 16:00）；12/29–1/1 休；天守閣整修中不能進入",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "地下鐵名城線 上前津→市役所（約 15 分），再步行約 10 分到正門；本丸御殿需脫鞋，寄物櫃要 100 日圓硬幣"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "中部電力 MIRAI TOWER（中部電力 MIRAI TOWER）",
+          "start": "12:05",
+          "end": "13:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "名古屋電視塔",
+            "latitude": 35.1723693,
+            "longitude": 136.9083318,
+            "applePlaceID": "I8412B48CB48B2489",
+            "address": "〒460-0003, 愛知県名古屋市中区, 錦3丁目6-15先",
+            "addressIsApproximate": false
+          },
+          "notes": "展望台平日與週日 10:00–21:00、週六 10:00–21:40（最後入場為閉館前 20 分）；活動日可能調整",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "地下鐵名城線 市役所→榮（約 7 分），再步行約 5 分；中間層咖啡廳不需門票"
+          },
+          "images": [
+            "d1-04"
+          ]
+        },
+        {
+          "key": "d1-05",
+          "title": "午餐：矢場とん 矢場町本店（矢場とん 矢場町本店）味噌豬排",
+          "start": "13:15",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "Misokatsu矢場Ton",
+            "latitude": 35.1616572,
+            "longitude": 136.9062773,
+            "applePlaceID": "I3B0C805668CA79DB",
+            "address": "〒460-0011, 愛知県名古屋市中区, 大須3丁目6-18",
+            "addressIsApproximate": false
+          },
+          "notes": "11:00–21:00，無公休（官網；官網顯示開店準備中，請出發前確認）；熱門時段需排隊",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "從榮一帶步行約 15 分"
+          }
+        },
+        {
+          "key": "d1-06",
+          "title": "大須觀音與大須商店街（大須観音・大須商店街）",
+          "start": "14:30",
+          "end": "16:15",
+          "category": "temple",
+          "place": {
+            "name": "大須觀音",
+            "latitude": 35.1597227,
+            "longitude": 136.8994224,
+            "applePlaceID": "I4801B3035F04964A",
+            "address": "〒460-0011, 愛知県名古屋市中区, 大須2丁目21-47",
+            "addressIsApproximate": false
+          },
+          "notes": "寺院開放時間請出發前確認；商店街各店營業時間不一，多數午後營業",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "步行約 15 分；商店街可吃水果大福、買藥妝"
+          },
+          "images": [
+            "d1-06"
+          ]
+        },
+        {
+          "key": "d1-07",
+          "title": "熱田神宮（熱田神宮）",
+          "start": "16:45",
+          "end": "17:45",
+          "category": "temple",
+          "place": {
+            "name": "熱田神宮",
+            "latitude": 35.1273434,
+            "longitude": 136.9086948,
+            "applePlaceID": "ID01F90EDA7EA995C",
+            "address": "〒456-8585",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "地下鐵名城線 上前津→熱田神宮西（約 10 分），再步行到正門；也可搭到神宮前站"
+          },
+          "images": [
+            "d1-07"
+          ]
+        },
+        {
+          "key": "d1-08",
+          "title": "名鐵名古屋站伴手禮採購（名鉄名古屋駅）",
+          "start": "18:30",
+          "end": "19:15",
+          "category": "shopping",
+          "place": {
+            "name": "名古屋駅 名鉄中央口",
+            "latitude": 35.1698124,
+            "longitude": 136.8844492,
+            "applePlaceID": "I45CC8527349BC561",
+            "address": "愛知県名古屋市中村区, 名駅",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-07",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "名鐵名古屋本線 神宮前→名鐵名古屋，約 10 分，含步行與候車"
+          }
+        },
+        {
+          "key": "d1-09",
+          "title": "晚餐：名古屋站周邊（手羽先）",
+          "start": "19:30",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "名古屋",
+            "latitude": 35.1707684,
+            "longitude": 136.8819514,
+            "applePlaceID": "I7BE10E940AFF7BF7",
+            "address": "愛知県名古屋市中村区, 名駅",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-08",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "站區步行"
+          }
+        },
+        {
+          "key": "d1-10",
+          "title": "中部國際機場出境（中部国際空港）",
+          "start": "21:10",
+          "end": "23:15",
+          "category": "airport",
+          "place": {
+            "name": "中部國際機場",
+            "latitude": 34.8590656,
+            "longitude": 136.8145748,
+            "applePlaceID": "I7690DD660D1ACED2",
+            "address": "〒479-0881, 愛知県常滑市, セントレア1丁目1番",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d1-09",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "名鐵機場線 名鐵名古屋→中部國際機場，特急約 30 分；請預留報到與安檢時間"
+          }
+        }
+      ]
+    }
+  ]
+}

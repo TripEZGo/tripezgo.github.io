@@ -1,0 +1,1620 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kyushu-loop-8d",
+  "revision": 1,
+  "contentLocale": "zh-Hans",
+  "title": "九州一周 8 日｜福冈・由布院・别府・高千穗・熊本",
+  "subtitle": "福冈进出，由布院、别府、熊本、高千穗一日游，再回福冈与糸岛",
+  "summary": "八天绕九州一圈：福冈、由布院、别府温泉、熊本、高千穗一日游，最后回福冈并走一趟糸岛。高千穗写成参加一日游，不指定旅行社。第五天一日游与第七天糸岛的交通时间占比会超过三成，这是距离使然。唐津、祐德稻荷与武雄放在备选。",
+  "destination": "日本 福冈・由布院・别府・熊本・高千穗",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 8,
+  "coverColour": "green",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "双人",
+    "初访",
+    "温泉",
+    "一日游"
+  ],
+  "todos": [
+    {
+      "text": "登录 Visit Japan Web（入境审查与海关申报）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 机票与订房完成后即可填写"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kyushu-loop-8d/d1-03.jpg",
+    "d1-04": "images/jp-kyushu-loop-8d/d1-04.jpg",
+    "d2-02": "images/jp-kyushu-loop-8d/d2-02.jpg",
+    "d2-03": "images/jp-kyushu-loop-8d/d2-03.jpg",
+    "d2-04": "images/jp-kyushu-loop-8d/d2-04.jpg",
+    "d3-01": "images/jp-kyushu-loop-8d/d3-01.jpg",
+    "d3-02": "images/jp-kyushu-loop-8d/d3-02.jpg",
+    "d3-04": "images/jp-kyushu-loop-8d/d3-04.jpg",
+    "d3-05": "images/jp-kyushu-loop-8d/d3-05.jpg",
+    "d5-02": "images/jp-kyushu-loop-8d/d5-02.jpg",
+    "d5-04": "images/jp-kyushu-loop-8d/d5-04.jpg",
+    "d5-05": "images/jp-kyushu-loop-8d/d5-05.jpg",
+    "d5-06": "images/jp-kyushu-loop-8d/d5-06.jpg",
+    "d6-01": "images/jp-kyushu-loop-8d/d6-01.jpg",
+    "d6-03": "images/jp-kyushu-loop-8d/d6-03.jpg",
+    "d7-01": "images/jp-kyushu-loop-8d/d7-01.jpg",
+    "d8-01": "images/jp-kyushu-loop-8d/d8-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：博多站周边（游记住过：东横INN 博多口站前）",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "东横INN博多口驿前",
+        "latitude": 33.5919297,
+        "longitude": 130.4188355,
+        "applePlaceID": "IAB8D758F1F33DBFB",
+        "address": "〒812-0011, 福岡県福岡市博多区, 博多駅前1丁目15-5",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "住宿：别府站周边",
+      "fromDay": 2,
+      "toDay": 4,
+      "category": "lodging",
+      "place": {
+        "name": "别府",
+        "latitude": 33.2795901,
+        "longitude": 131.5002405,
+        "applePlaceID": "IF23E7F677FFDB0E7",
+        "address": "大分県別府市, 駅前町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        3,
+        4
+      ],
+      "closingDays": [
+        2,
+        3
+      ]
+    },
+    {
+      "key": "ad4-04",
+      "title": "住宿：熊本站周边",
+      "fromDay": 4,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "熊本",
+        "latitude": 32.7894252,
+        "longitude": 130.6884708,
+        "applePlaceID": "I1FA3C2930A533584",
+        "address": "熊本県熊本市西区, 春日",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        5,
+        6
+      ],
+      "closingDays": [
+        4,
+        5
+      ]
+    },
+    {
+      "key": "ad6-06",
+      "title": "住宿：博多站周边（游记住过：东横INN 博多口站前）",
+      "fromDay": 6,
+      "toDay": 8,
+      "category": "lodging",
+      "place": {
+        "name": "东横INN博多口驿前",
+        "latitude": 33.5919297,
+        "longitude": 130.4188355,
+        "applePlaceID": "IAB8D758F1F33DBFB",
+        "address": "〒812-0011, 福岡県福岡市博多区, 博多駅前1丁目15-5",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        7,
+        8
+      ],
+      "closingDays": [
+        6,
+        7
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "备选：汤布院昭和馆（汤布院昭和馆）",
+      "durationMinutes": 60,
+      "category": "museum",
+      "place": {
+        "name": "汤布院昭和馆",
+        "latitude": 33.2683602,
+        "longitude": 131.3663107,
+        "applePlaceID": "IFAD0F247A5DD5081",
+        "address": "〒879-5102, 大分県由布市, 湯布院町川上1479-1",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记说很有日式传统感，在汤之坪街道一带"
+    },
+    {
+      "key": "u-02",
+      "title": "备选：十字山展望台（十字山展望台）",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "明矾温泉",
+        "latitude": 33.3191799,
+        "longitude": 131.4513029,
+        "address": "日本大分縣別府市",
+        "addressIsApproximate": true
+      },
+      "notes": "营业时间请出发前确认；游记说适合看夜景，白天很晒、只有厕所没有商店"
+    },
+    {
+      "key": "u-03",
+      "title": "备选：唐津城（唐津城）",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "唐津城天守阁",
+        "latitude": 33.4535116,
+        "longitude": 129.9781644,
+        "applePlaceID": "I56BB50D32FAEA4E4",
+        "address": "〒847-0016, 佐賀県唐津市, 東城内8-1 唐津城本丸",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记说从舞鹤公园搭电梯单趟 100 日元，傍晚天守阁已关闭；博多天神高速巴士站搭巴士到唐津约 1,100 日元（游记 2024 年资料）"
+    },
+    {
+      "key": "u-04",
+      "title": "备选：祐德稻荷神社（祐德稻荷神社）",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "祐德稻荷",
+        "latitude": 33.0734186,
+        "longitude": 130.1081926,
+        "applePlaceID": "ID3DB480A2105D1E3",
+        "address": "〒849-1321　, 佐賀県鹿島市, 古枝",
+        "addressIsApproximate": true
+      },
+      "notes": "营业时间请出发前确认；游记说从肥前鹿岛站转巴士，表参道平日店家多半没开，可付费搭电梯"
+    },
+    {
+      "key": "u-05",
+      "title": "备选：武雄神社与武雄大楠（武雄神社）",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "武雄神社",
+        "latitude": 33.1881218,
+        "longitude": 130.0209047,
+        "applePlaceID": "IDC0AA1E9D3F9DFA2",
+        "address": "〒843-0022, 佐賀県武雄市, 武雄町大字武雄5327",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记说大楠树树龄推估 3,000 年，旁边有蓬莱汤门楼与温泉街"
+    },
+    {
+      "key": "u-06",
+      "title": "备选：福冈市美术馆（福冈市美术馆）",
+      "durationMinutes": 60,
+      "category": "artgallery",
+      "place": {
+        "name": "福冈市美术馆",
+        "latitude": 33.5839631,
+        "longitude": 130.3795624,
+        "applePlaceID": "I76CEBD6F922445B4",
+        "address": "〒810-0051, 福岡県福岡市中央区, 大濠公園1-6",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记提到周一休馆，馆外有草间弥生的南瓜"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "资料来源与查证",
+      "paragraphs": [
+        {
+          "text": "来源游记",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/cb65fd5ab770/",
+          "style": "bullet"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "查证（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "九州横断特急时刻（熊本–别府每日 3 往复；2 号别府 7:44 发、阿苏 10:08、熊本 11:21 到）：https://www.jrkyushu.co.jp/chinese/train/odan.html （搜寻摘录 JR 九州官网 2026-01 时刻，查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "由布院之森（博多 9:17 发、由布院 11:31 到，约 2 小时 14 分钟，全车指定席）：https://www.jrkyushu.co.jp/trains/yufuinnomori/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "博多到由布院特急运赁约 6,130 日元（含特急料金）：https://ekitan.com/zh-tw/article/yufuinnomori-jikoku-ryoukin （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "由布院与别府间亀の井巴士路线（36 系统、观光快速ゆふりん）：https://mb.jorudan.co.jp/os/bus/4405/stop/159315.html （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "别府地狱（8:00–17:00、年中无休）：https://www.beppu-jigoku.com/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "高千穗峡划船预约规则（前 2 周 9:00 开放、前 2 天 9:00 截止）：https://takachiho-kanko.info/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "福冈机场到博多站（地铁约 5 分钟、260 日元）：https://travelist.jp/airport_FUK/guide/posts/p309 （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本到博多九州新干线（约 38 分钟、自由席约 5,310 日元，民间整理）：https://jr-shinkansen.net/articles/hakata-kumamoto/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "LaLaport 福冈（10:00–21:00、巴士约 20 分钟、实物大 νGundam）：https://ja.wikipedia.org/wiki/ららぽーと福冈 （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本站前高速巴士到高千穗约 2,700 日元（旧资料）、天岩户与天安河原平日无公交车：https://www.bring-you.info/?p=39864 （网络整理，查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "未能从官方确认，请出发前确认",
+          "style": "heading"
+        },
+        {
+          "text": "东长寺、大濠公园、汤之坪街道、金鳞湖、别府塔、明矾地狱、加藤神社、上通・下通商店街、高千穗神社、天岩户神社、天安河原、路飞铜像、樱井二见浦、樱井神社、南藏院的开放时间与公休日。",
+          "style": "bullet"
+        },
+        {
+          "text": "由布院到别府的巴士时间、票价与末班车；高千穗一日游的行程、集合点与价格。",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本站到高千穗的高速巴士现况班次。",
+          "style": "bullet"
+        },
+        {
+          "text": "已变动与取舍",
+          "style": "heading"
+        },
+        {
+          "text": "游记是釜山搭邮轮进博多的 11 天行程；釜山与邮轮整段不采用，改成从福冈机场进出的九州一周。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记没有熊本段（2023 年九州游记有），这份加入 2023 年游记的熊本加藤神社、上通・下通与路飞铜像，并按循环顺序排成别府→熊本→高千穗→福冈。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记高千穗是从福冈出发的一日游；这份改成熊本出发（依规则写成参加一日游，不指定厂商）。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记的唐津、祐德稻荷、武雄温泉、下关与佐世保不在循环上，唐津、祐德稻荷、武雄放备选。",
+          "style": "bullet"
+        },
+        {
+          "text": "这份刻意避开北九州范本与熊本阿苏范本已用的景点（门司港、太宰府、柳川、熊本城、阿苏、水前寺等）。",
+          "style": "bullet"
+        },
+        {
+          "text": "第 5 天的一日游与第 7 天的糸岛，交通时间占比会超过一般 30%，这是距离使然。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记资料",
+          "style": "heading"
+        },
+        {
+          "text": "住宿只写区域：游记住过东横INN 博多口站前、东横INN 大分站前与 APA 福冈渡边通；别府与熊本没有作者推荐的住宿，所以只写车站周边。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出发前须知",
+      "paragraphs": [
+        {
+          "text": "路线",
+          "style": "heading"
+        },
+        {
+          "text": "福冈进、福冈出的九州一周：福冈 → 由布院 → 别府 → 熊本 → 高千穗（一日游）→ 福冈。",
+          "style": "bullet"
+        },
+        {
+          "text": "住宿顺序：福冈 1 晚、别府 2 晚、熊本 2 晚、福冈 2 晚。",
+          "style": "bullet"
+        },
+        {
+          "text": "入境与网络",
+          "style": "heading"
+        },
+        {
+          "text": "出发前先在 Visit Japan Web 登录入境审查与海关申报：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "网络可用实体 SIM 卡或 eSIM。",
+          "style": "bullet"
+        },
+        {
+          "text": "机场到市区",
+          "style": "heading"
+        },
+        {
+          "text": "福冈机场国际线航站楼没有地铁站：先搭免费接驳巴士约 10 分钟到国内线航站楼，再搭地铁空港线到博多站约 5 分钟、260 日元，可刷交通 IC 卡；连同领行李与步行，保守预留 30–40 分钟。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记说接驳车约 5–10 分钟一班，从地铁站出来到国际线出境大厅要再加约 30 分钟。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通票券",
+          "style": "heading"
+        },
+        {
+          "text": "这条路线搭特急多（博多→由布院、别府→熊本），行程前可比较单买车票与 JR 九州铁路周游券：https://www.jrkyushu.co.jp/chinese/",
+          "style": "bullet"
+        },
+        {
+          "text": "游记 2024 年提醒：JR Pass 有线上预约座位时，兑换需出示同一张信用卡；周游券不含山阳新干线与部分新干线班次，进出新干线票口请先确认（游记 2024 年资料）。",
+          "style": "bullet"
+        },
+        {
+          "text": "由布院之森全车指定席；九州横断特急自由席在 2 号车厢。",
+          "style": "bullet"
+        },
+        {
+          "text": "无人小站要从第一节车厢下车，用周游券直接出示；在无人 JR 出站时不要把周游券投进车票回收箱（游记）。",
+          "style": "bullet"
+        },
+        {
+          "text": "由布院到别府",
+          "style": "heading"
+        },
+        {
+          "text": "亀の井巴士有「观光快速ゆふりん」与 36 系统连接由布院站前与别府站，所需时间与票价请查亀の井巴士官网；也可搭 JR 经大分转乘。",
+          "style": "bullet"
+        },
+        {
+          "text": "别府地狱约 8:00–17:00 营业、年中无休；下午排的明矾地狱最晚要在 17:00 前离开。",
+          "style": "bullet"
+        },
+        {
+          "text": "高千穗一日游",
+          "style": "heading"
+        },
+        {
+          "text": "多家旅行社都有开这条一日游（熊本、福冈出发都有，含高千穗神社、高千穗峡、天岩户神社、天安河原一带），出发前自行比较行程、集合点与是否含午餐。",
+          "style": "bullet"
+        },
+        {
+          "text": "自己搭大众运输的替代方式：从熊本站前搭高速巴士「たかちほ号」到高千穗巴士中心，单程约 2,700 日元（网络整理的旧资料，班次与票价请出发前确认）；天岩户神社与天安河原平日没有公交车，要搭出租车，周末与旺季有循环巴士。",
+          "style": "bullet"
+        },
+        {
+          "text": "高千穗峡划船只收网络预约：搭乘日前 2 周 9:00 开放、前 2 天 9:00 截止，旺季很快售完。想搭船的人先问旅行社能不能配合时间。",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本市区",
+          "style": "heading"
+        },
+        {
+          "text": "市区以路面电车与巴士为主。游记 2024 年更新提到熊本县内多家巴士与熊本电铁已不再收 Suica 等交通 IC 卡，请准备日币现金，并先确认现况。",
+          "style": "bullet"
+        },
+        {
+          "text": "其他",
+          "style": "heading"
+        },
+        {
+          "text": "日币现金要备足：部分小店、巴士与小车站不收刷卡。",
+          "style": "bullet"
+        },
+        {
+          "text": "第 6 天、第 8 天用到酒店寄存行李；东横INN 等酒店通常可在柜台寄存。",
+          "style": "bullet"
+        },
+        {
+          "text": "由布院车站的储物柜行李箱位置少，游记建议一到站就先去放。",
+          "style": "bullet"
+        },
+        {
+          "text": "第 8 天最后的机场时间依实际航班调整。",
+          "style": "bullet"
+        },
+        {
+          "text": "路线说明：这份范本偏重九州一周的移动，第 1、7、8 天的福冈景点与北九州（门司港、太宰府、柳川）、熊本阿苏范本都不重复。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "由布院布丁铜锣烧（プリンどら焼き）",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "汤之坪街道沿线店家"
+    },
+    {
+      "key": "s-02",
+      "title": "胡麻粉（由布院みやげ）",
+      "category": "food",
+      "productType": "seasoning",
+      "store": "汤之坪街道沿线店家"
+    },
+    {
+      "key": "s-03",
+      "title": "地狱蒸布丁（冈本屋）",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "明矾地狱对面的冈本屋布丁店"
+    },
+    {
+      "key": "s-04",
+      "title": "汤之花入浴剂（湯の花）",
+      "category": "drugstore",
+      "productType": "bath_hair",
+      "store": "明矾地狱与汤之花小屋的商店"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "福冈市",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "由布市",
+      "latitude": 33.1800158,
+      "longitude": 131.426733,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "别府市",
+      "latitude": 33.2844521,
+      "longitude": 131.491172,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "熊本市",
+      "latitude": 32.8032049,
+      "longitude": 130.7080236,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "高千穗町",
+      "latitude": 32.7116801,
+      "longitude": 131.3077912,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福冈市",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福冈市",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福冈市",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "福冈市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵达福冈机场（福冈空港）",
+          "start": "11:30",
+          "end": "12:30",
+          "category": "airport",
+          "place": {
+            "name": "福冈机场",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "午餐：博多站筑紫口周边",
+          "start": "13:10",
+          "end": "14:10",
+          "category": "dining",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "国际线航站楼搭免费接驳巴士到国内线航站楼约 10 分钟，再搭地铁空港线到博多站约 5 分钟、260 日元（可刷交通 IC 卡）；国际线出境与领行李另计"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "东长寺（东长寺）：福冈大佛与五重塔",
+          "start": "14:45",
+          "end": "15:30",
+          "category": "temple",
+          "place": {
+            "name": "东长寺",
+            "latitude": 33.5952774,
+            "longitude": 130.4142118,
+            "applePlaceID": "IEB6531DAB0C8DB00",
+            "address": "〒812-0037, 福岡県福岡市博多区, 御供所町2-4",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；游记说二楼福冈大佛参拜 50 日元（2024 年资料）",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "先到酒店寄存行李（东横INN 博多口站前，步行约 10 分钟），再步行约 15 分钟到祇园的东长寺"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "大濠公园（大濠公园）：绕湖散步",
+          "start": "16:00",
+          "end": "17:30",
+          "category": "park",
+          "place": {
+            "name": "大濠公园",
+            "latitude": 33.5863808,
+            "longitude": 130.3763008,
+            "applePlaceID": "ICE1436AE72C1A84",
+            "address": "〒810-0051, 福岡県福岡市中央区, 大濠公園1",
+            "addressIsApproximate": false
+          },
+          "notes": "公园全天开放；绕湖一圈约 45 分钟（游记 2024 年资料）；福冈市美术馆周一休馆",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "地铁空港线从祇园站到大濠公园站约 10 分钟、约 210 日元，出站即公园"
+          },
+          "images": [
+            "d1-04"
+          ]
+        },
+        {
+          "key": "d1-05",
+          "title": "晚餐：天神周边",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "天神站周边餐厅",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "地铁空港线大濠公园站到天神站约 6 分钟"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "地铁空港线天神站到博多站约 5 分钟，再步行约 10 分钟到酒店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "由布市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "午餐：由布院站周边（丰后牛）",
+          "start": "11:50",
+          "end": "12:50",
+          "category": "dining",
+          "place": {
+            "name": "由布院站",
+            "latitude": 33.2626525,
+            "longitude": 131.3551252,
+            "applePlaceID": "I7467AB095BE51661",
+            "address": "〒879-5114, 大分県由布市, 湯布院町川北8-2",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；游记推荐的由布まぶし 心 车站出口那家当天休息，请先确认公休",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 165,
+            "durationSource": "user",
+            "note": "退房后步行约 10 分钟到博多站；JR 特急「由布院之森」1 号 9:17 发、11:31 到由布院，约 2 小时 14 分钟，全车指定席；订不到可改搭一般特急「ゆふ」。抵达后在站内投币式储物柜寄存行李（游记 1,000 日元，行李箱位置少）"
+          },
+          "todos": [
+            {
+              "text": "预约由布院之森（或特急ゆふ）座位",
+              "note": "JR 九州网络预约；游记说由布院之森太晚订会满，只剩一般特急。全车指定席 https://www.jrkyushu.co.jp/trains/yufuinnomori/"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "汤之坪街道（湯の坪街道）：由布院商店街",
+          "start": "13:05",
+          "end": "14:15",
+          "category": "sight",
+          "place": {
+            "name": "湯の坪街道",
+            "latitude": 33.26667426444787,
+            "longitude": 131.3628757917489,
+            "address": "日本大分縣由布市",
+            "addressIsApproximate": true
+          },
+          "notes": "街道可自由步行；各店家营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从由布院站沿街道往金鳞湖方向步行，沿途是伴手礼、甜点与文创小店"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "金鳞湖（金鳞湖）",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "sight",
+          "place": {
+            "name": "金鳞湖",
+            "latitude": 33.2665347,
+            "longitude": 131.3686421,
+            "applePlaceID": "IFBF00B68422CC487",
+            "address": "〒879-5102, 大分県由布市, 湯布院町川上1796",
+            "addressIsApproximate": false
+          },
+          "notes": "全天开放，无公休",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "沿汤之坪街道走到底就是金鳞湖，步行约 15 分钟"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "别府塔（别府タワー）：夜景与市景",
+          "start": "17:45",
+          "end": "18:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "别府塔",
+            "latitude": 33.2817659,
+            "longitude": 131.5059048,
+            "applePlaceID": "I69180B9495484F45",
+            "address": "〒874-0920, 大分県別府市, 北浜3丁目10-2 別府タワー",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 135,
+            "durationSource": "user",
+            "note": "步行约 25 分钟回由布院站取行李；亀の井巴士「观光快速ゆふりん」或 36 系统到别府站约 1 小时（班次与票价请出发前确认，也可改搭 JR 经大分）；再步行约 10 分钟到别府塔"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "晚餐：别府站周边",
+          "start": "19:00",
+          "end": "20:00",
+          "category": "dining",
+          "place": {
+            "name": "别府",
+            "latitude": 33.2795901,
+            "longitude": 131.5002405,
+            "applePlaceID": "IF23E7F677FFDB0E7",
+            "address": "大分県別府市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从别府塔步行回别府站前一带"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从晚餐地点步行回酒店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "别府市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "海地狱（海地狱）：湛蓝泉水",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "onsen",
+          "place": {
+            "name": "海地狱",
+            "latitude": 33.3158752,
+            "longitude": 131.4696389,
+            "applePlaceID": "I79696E21A55C8805",
+            "address": "〒874-0045",
+            "addressIsApproximate": true
+          },
+          "notes": "8:00–17:00，年中无休（别府地狱官网）；七地狱共通券游记建议在海地狱入口购买，票价请出发前确认",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "从别府站搭亀の井巴士到海地狱（铁轮一带）约 25–30 分钟，班次请出发前确认"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "灶地狱（かまど地狱）：烟雾表演与足汤",
+          "start": "10:50",
+          "end": "11:50",
+          "category": "onsen",
+          "place": {
+            "name": "かまど地狱",
+            "latitude": 33.3163959,
+            "longitude": 131.4723898,
+            "applePlaceID": "IA5FA3543EFBBD764",
+            "address": "〒874-0045, 大分県別府市, 大字鉄輪621",
+            "addressIsApproximate": false
+          },
+          "notes": "8:00–17:00，年中无休（别府地狱官网）",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "跟着指标步行，途中会经过鬼石坊主地狱；灶地狱有足汤、饮温泉水与蒸脸体验"
+          },
+          "images": [
+            "d3-02"
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "午餐：血池地狱 极乐亭（地狱极乐咖喱）",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "血之池地狱",
+            "latitude": 33.3271913,
+            "longitude": 131.4781603,
+            "applePlaceID": "I73FD155ED979A8F7",
+            "address": "〒874-0016, 大分県別府市, 野田778",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从铁轮站牌搭巴士到血池地狱约 10 分钟"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "血池地狱与龙卷地狱（血の池地狱・龙卷地狱）",
+          "start": "13:30",
+          "end": "14:45",
+          "category": "onsen",
+          "place": {
+            "name": "血之池地狱",
+            "latitude": 33.3271913,
+            "longitude": 131.4781603,
+            "applePlaceID": "I73FD155ED979A8F7",
+            "address": "〒874-0016, 大分県別府市, 野田778",
+            "addressIsApproximate": false
+          },
+          "notes": "8:00–17:00，年中无休（别府地狱官网）；龙卷地狱约 30–40 分钟喷发一次、每次约 6–10 分钟，可先问工作人员",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "血池地狱往下走就是龙卷地狱；先去哪个看喷发时间"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "明矾地狱与汤之花小屋（明矾地狱・湯の花小屋）",
+          "start": "15:10",
+          "end": "16:15",
+          "category": "onsen",
+          "place": {
+            "name": "明矾 汤の里",
+            "latitude": 33.319525,
+            "longitude": 131.4540748,
+            "applePlaceID": "IA5690AFE1A8F1151",
+            "address": "〒874-0843, 大分県別府市, 明礬温泉6組",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；游记说售票口在对面的冈本屋布丁店",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "血池地狱搭巴士往海地狱方向再上坡到明矾；游记建议先上山再下来，顺序可反过来"
+          },
+          "images": [
+            "d3-05"
+          ]
+        },
+        {
+          "key": "d3-06",
+          "title": "晚餐：别府站周边",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "别府",
+            "latitude": 33.2795901,
+            "longitude": 131.5002405,
+            "applePlaceID": "IF23E7F677FFDB0E7",
+            "address": "大分県別府市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "搭巴士回别府站约 30–40 分钟，最后一班车请先确认"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从晚餐地点步行回酒店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "熊本市",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "午餐：熊本站周边",
+          "start": "11:45",
+          "end": "12:45",
+          "category": "dining",
+          "place": {
+            "name": "熊本站周边餐厅",
+            "latitude": 32.79096,
+            "longitude": 130.6878509,
+            "address": "熊本県熊本市西区春日3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 237,
+            "durationSource": "user",
+            "note": "退房后步行到别府站；JR 九州横断特急 2 号 7:44 别府发、10:08 过阿苏、11:21 熊本到（JR 九州官网 2026-01 时刻，请出发前确认），自由席在 2 号车厢；全程约 3 小时 40 分钟"
+          },
+          "todos": [
+            {
+              "text": "预约九州横断特急 2 号座位（别府→熊本）",
+              "note": "每日只有 3 往复，2 号 7:44 从别府发车；时刻 https://www.jrkyushu.co.jp/chinese/train/odan.html"
+            }
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "加藤神社（加藤神社）：从后方看熊本城",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "temple",
+          "place": {
+            "name": "加藤神社",
+            "latitude": 32.807117,
+            "longitude": 130.7053761,
+            "applePlaceID": "I831099B0902FAA97",
+            "address": "〒860-0002, 熊本県熊本市中央区, 本丸2-1",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；游记说部分殿舍维修中",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "先寄存行李到酒店；熊本站搭市电到通町筋或熊本城一带约 20 分钟，再步行约 20 分钟、有上坡（游记）"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "上通・下通商店街（上通・下通アーケード）",
+          "start": "15:00",
+          "end": "16:30",
+          "category": "shopping",
+          "place": {
+            "name": "下通りアーケード",
+            "latitude": 32.80199538213618,
+            "longitude": 130.70906498323706,
+            "address": "日本熊本縣熊本市",
+            "addressIsApproximate": true
+          },
+          "notes": "商店街可自由步行；各店家营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "从加藤神社搭巴士或步行到通町筋，约 30 分钟；游记提醒熊本市内巴士与市电已不收交通 IC 卡，备日币现金"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "晚餐：下通周边（手羽先与串烧）",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "下通周边居酒屋",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "商店街内步行"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "从下通搭市电回熊本站约 20 分钟"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "高千穗町",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "参加一日游：集合出发（熊本→高千穗）",
+          "start": "09:00",
+          "end": "09:20",
+          "category": "other",
+          "place": {
+            "name": "熊本",
+            "latitude": 32.7894252,
+            "longitude": 130.6884708,
+            "applePlaceID": "I1FA3C2930A533584",
+            "address": "熊本県熊本市西区, 春日",
+            "addressIsApproximate": true
+          },
+          "notes": "集合点与时间依旅行社通知；营业时间请出发前确认",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从酒店步行到集合点，约 10 分钟（依旅行社通知）"
+          },
+          "todos": [
+            {
+              "text": "预约高千穗一日游",
+              "note": "多家旅行社都有开；比较集合点、是否含午餐与是否可加购划船，建议数天前预约"
+            }
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "高千穗神社（高千穗神社）：夫妇杉",
+          "start": "11:45",
+          "end": "12:25",
+          "category": "temple",
+          "place": {
+            "name": "高千穗神社",
+            "latitude": 32.7064748,
+            "longitude": 131.3019346,
+            "applePlaceID": "I73B4EC96A6D7C512",
+            "address": "〒882-1101",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认；游记说被神木环绕，夫妇杉可牵手绕三圈",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "driving",
+            "durationMinutes": 145,
+            "durationSource": "user",
+            "note": "旅游大巴从熊本到高千穗约 2.5 小时（游记福冈出发约 3 小时），途中休息站休息；实际依旅行社安排"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "午餐：高千穗料理（依一日游安排）",
+          "start": "12:40",
+          "end": "13:25",
+          "category": "dining",
+          "place": {
+            "name": "高千穗神社神乐殿",
+            "latitude": 32.7064814,
+            "longitude": 131.301935,
+            "applePlaceID": "ID8ED2F9278942B6C",
+            "address": "〒882-1101, 宮崎県西臼杵郡高千穂町, 三田井1037",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "依旅行社安排的餐厅，多在神社附近"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "高千穗峡谷（高千穗峡）",
+          "start": "13:45",
+          "end": "14:35",
+          "category": "sight",
+          "place": {
+            "name": "五个濑川峡谷(高千穗峡谷)",
+            "latitude": 32.7032163,
+            "longitude": 131.299885,
+            "applePlaceID": "ID39D10310E5C61AC",
+            "address": "宮崎県西臼杵郡高千穂町, 向山",
+            "addressIsApproximate": true
+          },
+          "notes": "全天可散步；划船营运时间与是否营运每日早上 8:00 左右更新，请出发前确认",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "午餐后沿步道一路下坡约 20 分钟到峡谷；有预约划船或体力不足时，导游可能安排接驳车"
+          },
+          "todos": [
+            {
+              "text": "预约高千穗峡划船（想搭才需要）",
+              "note": "官网只收网络预约，搭乘日前 2 周 9:00 开放、前 2 天 9:00 截止；热门日期早就售完，先问旅行社能否配合 https://takachiho-kanko.info/"
+            }
+          ],
+          "images": [
+            "d5-04"
+          ]
+        },
+        {
+          "key": "d5-05",
+          "title": "天岩户神社西本宫（天岩户神社）",
+          "start": "15:00",
+          "end": "15:40",
+          "category": "temple",
+          "place": {
+            "name": "天岩户神社",
+            "latitude": 32.7344288,
+            "longitude": 131.3504925,
+            "applePlaceID": "IA4D011E91CF2BB05",
+            "address": "〒882-1621, 宮崎県西臼杵郡高千穂町, 岩戸1073-1",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "旅游大巴从峡谷到天岩户神社约 15–20 分钟；下车后步行约 5 分钟到西本宫"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "天安河原（天安河原）：石头堆叠的洞窟",
+          "start": "15:55",
+          "end": "16:40",
+          "category": "sight",
+          "place": {
+            "name": "天安河原宫",
+            "latitude": 32.742666,
+            "longitude": 131.351087,
+            "applePlaceID": "ID7527595A6DDBA52",
+            "address": "〒882-1621, 宮崎県西臼杵郡高千穂町, 岩戸2404-1",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；位于西本宫上游约 500 公尺",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从西本宫步行约 15 分钟到天安河原，回程沿途有冰淇淋店"
+          },
+          "images": [
+            "d5-06"
+          ]
+        },
+        {
+          "key": "d5-07",
+          "title": "晚餐：熊本站周边",
+          "start": "19:30",
+          "end": "20:30",
+          "category": "dining",
+          "place": {
+            "name": "熊本站周边餐厅",
+            "latitude": 32.79096,
+            "longitude": 130.6878509,
+            "address": "熊本県熊本市西区春日3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "driving",
+            "durationMinutes": 170,
+            "durationSource": "user",
+            "note": "旅游大巴回程约 2.5–3 小时，途中休息站停靠；实际抵达时间依旅行社安排"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从熊本站步行回酒店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "福冈市",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "路飞铜像（ルフィ像）：熊本县厅前",
+          "start": "09:45",
+          "end": "10:15",
+          "category": "sight",
+          "place": {
+            "name": "熊本县厅",
+            "latitude": 32.7898029,
+            "longitude": 130.7415739,
+            "applePlaceID": "I9D3D945CF9ABD15A",
+            "address": "〒862-0950, 熊本県熊本市中央区, 水前寺6丁目18-1",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "酒店寄存行李；搭熊本市电或巴士到县厅一带约 30–35 分钟，请以导航为准"
+          },
+          "images": [
+            "d6-01"
+          ]
+        },
+        {
+          "key": "d6-02",
+          "title": "午餐：博多站周边",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "回酒店取行李，到熊本站约 30 分钟；九州新干线熊本到博多约 38 分钟，普通车自由席约 5,310 日元（民间整理资料，请以 JR 官网为准）"
+          }
+        },
+        {
+          "key": "d6-03",
+          "title": "LaLaport 福冈（ららぽーと福冈）：实物大 νGundam",
+          "start": "14:45",
+          "end": "17:30",
+          "category": "shopping",
+          "place": {
+            "name": "ららぽーと福冈",
+            "latitude": 33.5647786,
+            "longitude": 130.4402293,
+            "applePlaceID": "I23ED44362FD515EC",
+            "address": "〒812-8627",
+            "addressIsApproximate": true
+          },
+          "notes": "10:00–21:00（维基百科记载的商场营业时间）；各店家时间请出发前确认",
+          "leg": {
+            "fromKey": "d6-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "先回酒店寄存行李（步行约 10 分钟），再从博多巴士总站搭西铁巴士到「ららぽーと福冈」约 20 分钟，下车即商场"
+          },
+          "images": [
+            "d6-03"
+          ]
+        },
+        {
+          "key": "d6-04",
+          "title": "晚餐：博多站周边",
+          "start": "18:15",
+          "end": "19:30",
+          "category": "dining",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d6-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "搭西铁巴士回博多约 20 分钟"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从晚餐地点步行回酒店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "福冈市",
+      "events": [
+        {
+          "key": "d7-01",
+          "title": "樱井二见浦夫妇岩（樱井二见ヶ浦）",
+          "start": "10:30",
+          "end": "11:20",
+          "category": "beach",
+          "place": {
+            "name": "樱井二见浦",
+            "latitude": 33.6397261,
+            "longitude": 130.1978507,
+            "applePlaceID": "IEB39ADAB4A321F34",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井",
+            "addressIsApproximate": true
+          },
+          "notes": "全天开放；海上鸟居与夫妇岩，天气与潮位影响景色",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "约 8:15 出发：JR 从博多到九大学研都市站约 35–40 分钟，转搭巴士（游记称西之浦线）约 30 分钟、730 日元（游记 2024 年资料，班次请出发前确认）"
+          },
+          "images": [
+            "d7-01"
+          ]
+        },
+        {
+          "key": "d7-02",
+          "title": "樱井神社（樱井神社）",
+          "start": "11:35",
+          "end": "12:05",
+          "category": "temple",
+          "place": {
+            "name": "樱井神社",
+            "latitude": 33.6283792,
+            "longitude": 130.1920845,
+            "applePlaceID": "I400B8E51901E47E1",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井4227",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d7-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "夫妇岩后方步行约 10 分钟（游记说可再往后走）"
+          }
+        },
+        {
+          "key": "d7-03",
+          "title": "午餐：樱井二见浦周边",
+          "start": "12:20",
+          "end": "13:20",
+          "category": "dining",
+          "place": {
+            "name": "樱井二见浦",
+            "latitude": 33.6397261,
+            "longitude": 130.1978507,
+            "applePlaceID": "IEB39ADAB4A321F34",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d7-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "海岸一带找餐厅；游记说直达博多的回程巴士下午每小时一班"
+          }
+        },
+        {
+          "key": "d7-04",
+          "title": "天神商圈逛街（天神）：动漫周边与玩具店",
+          "start": "15:30",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "天神商圈",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d7-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "巴士与 JR 回博多约 80–90 分钟，再搭地铁到天神约 5 分钟；糸岛距离远，这天交通时间占比较高"
+          }
+        },
+        {
+          "key": "d7-05",
+          "title": "晚餐：天神周边",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "天神周边餐厅",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d7-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "商圈内步行"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "地铁空港线天神站到博多站约 5 分钟，再步行约 10 分钟"
+          }
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "title": "福冈市",
+      "events": [
+        {
+          "key": "d8-01",
+          "title": "南藏院（南藏院）：释迦涅槃像",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "temple",
+          "place": {
+            "name": "南藏院",
+            "latitude": 33.6198728,
+            "longitude": 130.5729067,
+            "applePlaceID": "I968AADFBBA808E5D",
+            "address": "〒811-2405",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认；游记说禁止短袖短裤露肚露肩、播音乐、跳舞与部分区域摄影",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "退房后行李放酒店柜台；博多站搭 JR 篠栗线到南藏院前站约 30–35 分钟，出站经荒神茶屋过马路到入口（游记）"
+          },
+          "images": [
+            "d8-01"
+          ]
+        },
+        {
+          "key": "d8-02",
+          "title": "午餐：博多站周边",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d8-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "JR 回博多站约 35 分钟"
+          }
+        },
+        {
+          "key": "d8-03",
+          "title": "福冈机场出境（福冈空港）",
+          "start": "14:30",
+          "end": "16:00",
+          "category": "airport",
+          "place": {
+            "name": "福冈机场",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d8-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "回酒店取行李（步行约 5 分钟）；地铁空港线博多到国内线航站楼约 5 分钟，再搭免费接驳巴士到国际线约 10 分钟，游记建议抓到出境大厅再加 30 分钟；实际时间依航班调整"
+          }
+        }
+      ]
+    }
+  ]
+}

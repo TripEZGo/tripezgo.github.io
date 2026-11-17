@@ -1,0 +1,1119 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-tokyo-suburbs-summer-5d",
+  "revision": 1,
+  "contentLocale": "ja",
+  "title": "東京近郊 5 日間｜川越・熱海花火・原宿（夏）",
+  "subtitle": "夏だけの旅：川越の小江戸、熱海の花火、原宿。成田イン／アウト",
+  "summary": "夏の東京近郊を5日間。川越の古い町並み、熱海の海上花火、渋谷 SHIBUYA SKY、原宿をめぐります。熱海の花火は開催日が決まっているので、先に公式サイトで日程を調べてから航空券を取ってください。東京タワーなど都心の名所はすでに東京のテンプレートにあるので、ここでは重ねません。ちいかわラーメン、カワウソカフェ、上野のヨドバシは候補に入れてあります。",
+  "destination": "日本 東京・川越・熱海",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "amber",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "ふたり旅",
+    "夏",
+    "花火",
+    "近郊"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web に登録する（入国審査・税関申告）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 航空券と宿の予約が済めば入力できます"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-tokyo-suburbs-summer-5d/d1-03.jpg",
+    "d2-01": "images/jp-tokyo-suburbs-summer-5d/d2-01.jpg",
+    "d2-02": "images/jp-tokyo-suburbs-summer-5d/d2-02.jpg",
+    "d2-04": "images/jp-tokyo-suburbs-summer-5d/d2-04.jpg",
+    "d3-05": "images/jp-tokyo-suburbs-summer-5d/d3-05.jpg",
+    "d4-01": "images/jp-tokyo-suburbs-summer-5d/d4-01.jpg",
+    "d4-03": "images/jp-tokyo-suburbs-summer-5d/d4-03.jpg",
+    "d4-05": "images/jp-tokyo-suburbs-summer-5d/d4-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "宿泊：ダイワロイネットホテル東京新橋 4連泊（旅行記で泊まった宿）",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "新橋",
+        "latitude": 35.6663462,
+        "longitude": 139.7581631,
+        "applePlaceID": "IFB85061A18C087FF",
+        "address": "東京都港区, 新橋",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "候補：ちいかわラーメン 豚 池袋",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "ちいかわらんど 池袋パルコ店",
+        "latitude": 35.7308315,
+        "longitude": 139.7123843,
+        "applePlaceID": "IB5AB546D925C398B",
+        "address": "〒171-0022, 東京都豊島区, 南池袋1丁目28-2 池袋PARCO",
+        "addressIsApproximate": false
+      },
+      "notes": "旅行記の情報：現地で並べば入れます。営業時間は出発前に確認してください"
+    },
+    {
+      "key": "u-02",
+      "title": "候補：I'm donut? 原宿",
+      "durationMinutes": 60,
+      "category": "dessert",
+      "place": {
+        "name": "アイムドーナツ？ 原宿",
+        "latitude": 35.6698281,
+        "longitude": 139.7032186,
+        "applePlaceID": "I4A423C8BF4E252B8",
+        "address": "〒150-0001, 東京都渋谷区, 神宮前1丁目14-24",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認してください"
+    },
+    {
+      "key": "u-03",
+      "title": "候補：ヨドバシカメラ 上野店",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "ヨドバシカメラ マルチメディア上野",
+        "latitude": 35.711101,
+        "longitude": 139.7744334,
+        "applePlaceID": "I6934612917EACD58",
+        "address": "〒110-0005, 東京都台東区, 上野4丁目10-10",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記では隣に2号店もあると書かれています"
+    },
+    {
+      "key": "u-04",
+      "title": "候補：カワウソカフェ（カワウソ 若林の家）",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "若林",
+        "latitude": 35.6459667,
+        "longitude": 139.6599438,
+        "applePlaceID": "IEEB18A3AC40A0A56",
+        "address": "東京都世田谷区, 若林",
+        "addressIsApproximate": true
+      },
+      "notes": "旅行記は調べた結果、ふれあいの時間が長いと感じたとのこと。営業時間は出発前に確認してください"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "情報源と確認",
+      "paragraphs": [
+        {
+          "text": "元の旅行記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/958599363857/",
+          "style": "bullet"
+        },
+        {
+          "text": "確認（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "熱海海上花火大会（打ち上げ場所は熱海港の7.5m岸壁から海釣り施設まで。打ち上げ日は公式サイトを参照。公式ページには2026年の複数の日程と、2027年の日程がすでに掲載されています）：https://www.ataminews.gr.jp/event/8 （確認 2026-11-17）。打ち上げ時間は旅行記と第三者のまとめより、公式ページには時間の記載なし。",
+          "style": "bullet"
+        },
+        {
+          "text": "京成スカイライナー（成田空港第2ターミナルから京成上野まで約41分。運賃1,280円＋指定席1,300円だが、公式の上野のページには2,470円とあり、両者は一致しません）：https://www.keisei.co.jp/keisei/tetudou/skyliner/us/directions/ueno.html （確認 2026-11-17、情報源は検索結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "HARRY 原宿テラス（平日13:00〜18:00、週末・祝日11:00〜18:00、ラストオーダー17:30、休みなし、予約は最低60分）：https://harinezumi-cafe.com/store/harajuku-terrace/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "SHIBUYA SKY（10:00〜22:30頃、最終入場21:20頃。第三者のまとめで、公式ページは入手できず）：https://www.shibuya-scramble-square.com/sky/ （確認 2026-11-17、出発前に確認を）",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Borderless（10:00〜21:00頃、毎月第1・第3火曜休み、料金は情報源により異なる）：https://www.teamlab.art/e/borderless-azabudai/ （確認 2026-11-17、公式ページの内容は完全には入手できず、情報源は検索結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "川越氷川神社（縁むすび風鈴は2026年6/27〜9/6の9:00〜20:00、社務所 049-224-0589）：https://www.kawagoehikawa.jp/ （確認 2026-11-17、情報源は検索結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "ちいかわもぐもぐ本舗 川越店（9:30〜17:30頃、年中無休、住所：川越市元町2-7-9、オープン時のプレスリリースより）：https://chiikawamogumogu.jp/ （確認 2026-11-17、出発前に確認を）",
+          "style": "bullet"
+        },
+        {
+          "text": "東京から熱海への新幹線（こだま約50分、ひかり約40分。指定席約4,270円、自由席約3,740円）：検索結果のまとめページ（確認 2026-11-17、公式ではありません）",
+          "style": "bullet"
+        },
+        {
+          "text": "東武東上線の池袋から川越まで約30分：https://www.tobu.co.jp/en/access/kawagoe/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "公式で確認できなかった項目。出発前に確認してください",
+          "style": "heading"
+        },
+        {
+          "text": "各レストラン、商業施設、旧第八十五銀行本店本館、サンシャインシティ、東急プラザ表参道原宿などの営業時間と定休日。",
+          "style": "bullet"
+        },
+        {
+          "text": "川越のバス運賃と本数、各スポットの座標は推定値です。",
+          "style": "bullet"
+        },
+        {
+          "text": "変更と取捨選択",
+          "style": "heading"
+        },
+        {
+          "text": "旅行記1日目の渋谷 SHIBUYA SKY と夕食は残しました。東京タワーは旅行記では通りかかっただけなので入れていません（テンプレート02ですでにカバー）。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記2・3・5日目のちいかわのカフェ、ちいかわラーメン、ちいかわパーク、せんべい、さつまいもスティックなどの店は、池袋の牛たんとガシャポンのデパートだけを残し、ちいかわラーメンは候補にしました。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記5日目の上野のヨドバシは、上野マルイの項目にまとめ、簡単に触れる程度にしました。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記4日目のドラッグストアでの買い物、香水、パンのおみやげなど私的な買い物は省略しました。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出発前のご案内",
+      "paragraphs": [
+        {
+          "text": "前提条件：熱海の花火の日程に合わせる",
+          "style": "heading"
+        },
+        {
+          "text": "この行程の中心は3日目の熱海海上花火大会で、決まった日にしか打ち上げられません。先に打ち上げ日を決め、その前後に旅全体を組んでください。",
+          "style": "bullet"
+        },
+        {
+          "text": "打ち上げ日は熱海市観光協会の公式サイトで確認してください：https://www.ataminews.gr.jp/event/8 。日付を自分で決めつけたり、過去の年の日付から推測したりしないでください。",
+          "style": "bullet"
+        },
+        {
+          "text": "打ち上げ時間は季節によって違い、旅行記の情報では7・8月は20:15頃から、ほかの月は20:20頃から、約20〜25分です。公式サイトに従ってください。",
+          "style": "bullet"
+        },
+        {
+          "text": "テンプレートは9月中旬の夏の旅行記を基準にしており、天気や日照は季節で変わります。",
+          "style": "bullet"
+        },
+        {
+          "text": "空港と市内の移動（成田国際空港 NRT）",
+          "style": "heading"
+        },
+        {
+          "text": "京成スカイライナー：成田空港第2ターミナルから京成上野まで約41分、全席指定で自由席はなく、約2,580円（運賃1,280円＋指定席料金1,300円、京成公式 FAQ）。京成公式の上野のページには別に2,470円とあり一致しないため、出発前に京成の公式サイトで確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "京成本線（特急・快速・アクセス特急）は安いが遅いです。時刻と運賃は京成の公式サイトで確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "JR の成田エクスプレスは東京駅、品川、新宿、池袋へ直通します。時刻と運賃は JR 東日本の公式サイトで確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記ではスカイライナーで京成上野まで行き、銀座線に乗り換えて新橋へ。入国後は空港の「鉄道」方面で SKYLINER & KEISEI INFORMATION CENTER を見つけて引き換え、ほかの鉄道会社のカウンターもあるので注意してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "このテンプレートで成田を選んだ理由：旅行記が成田の出入りで、スカイライナーが上野まで最速だから。羽田に変えても構いません。その場合は京急か東京モノレールを別に調べてください。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通チケット",
+          "style": "heading"
+        },
+        {
+          "text": "交通カードは Suica（iPhone の Suica を含む）が使えます。空港の駅には Welcome Suica と通常の Suica のチャージ機があります。",
+          "style": "bullet"
+        },
+        {
+          "text": "川越周遊きっぷ（電車＋東武バス）：東武東上線の池袋〜川越往復と、東武バス（東武の小江戸循環バスを含む）が1日乗り放題。バス会社は西武と東武の2社があり、このきっぷは東武限定。使うときは Suica を同時にタッチしないでください。",
+          "style": "bullet"
+        },
+        {
+          "text": "西武の「小江戸巡回バス」は東武の周遊きっぷが使えません。交通カードで払うか、西武の周遊きっぷを買ってください。",
+          "style": "bullet"
+        },
+        {
+          "text": "東京〜熱海の東海道新幹線は JR 東海と JR 西日本が運行しており、早めにオンラインで購入できます。旅行記では乗車の約4週間前に購入し（2025年の情報）、電子チケットの QR コードで改札を通りました。",
+          "style": "bullet"
+        },
+        {
+          "text": "予約とチケット",
+          "style": "heading"
+        },
+        {
+          "text": "SHIBUYA SKY：公式サイト https://www.shibuya-scramble-square.com/sky/ は人気なので早めに購入を。旅行記では18:40の夜景の回を購入。入場前に自撮り棒を預ける必要があり、上には無料のロッカーがあります。",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Borderless：公式サイト https://www.teamlab.art/e/borderless-azabudai/ 早めの購入をおすすめします。館内に地図はなく、入口に公式のパンフレットがあります。",
+          "style": "bullet"
+        },
+        {
+          "text": "ちいかわもぐもぐ本舗 川越店：終日、人数制限があります。現地で QR コードを読み取って次の回を予約でき、入れないのが心配ならオンラインでも予約できます。スマホ1台・アカウント1つで1日1回しか予約できません。",
+          "style": "bullet"
+        },
+        {
+          "text": "HARRY 原宿テラス店 カワウソカフェ：公式サイト https://harinezumi-cafe.com/store/harajuku-terrace/ で予約、60分以上が必要です。当日に行くと入れないことがあります。",
+          "style": "bullet"
+        },
+        {
+          "text": "熱海：ビーチは無料で入れて有料席はありません。レジャーシートは持参してください。帰りの新幹線は先に買っておきましょう。花火のあとは駅がとても混みます。",
+          "style": "bullet"
+        },
+        {
+          "text": "入国",
+          "style": "heading"
+        },
+        {
+          "text": "ビザなしで入国する前に Visit Japan Web に登録してください。入国審査と税関申告の QR コードは一つにまとめられています（旅行記は2025年の情報、Visit Japan Web の公式サイトで確認を）。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅のペース",
+          "style": "heading"
+        },
+        {
+          "text": "1日目と5日目は空港の出入りがあり、2日目は川越往復、3日目は熱海往復で、移動の比重が高めです。3日目は花火のあとホテルに戻るのが22:45頃で、21:00を過ぎます。",
+          "style": "bullet"
+        },
+        {
+          "text": "宿泊はダイワロイネットホテル東京新橋に4連泊で、新橋駅から徒歩約2分。部屋は小さめです。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "シュガーバターの木",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "上野駅の構内で購入（旅行記のおみやげ）"
+    },
+    {
+      "key": "s-02",
+      "title": "川越せんべい",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "川越の小江戸の通りのおみやげ店。旅行記のおすすめは海鮮味で、プレーンは硬め"
+    },
+    {
+      "key": "s-03",
+      "title": "黒糖いもスティック",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "川越の小江戸の通りのおみやげ店"
+    },
+    {
+      "key": "s-04",
+      "title": "ちいかわもぐもぐ 川越限定のさつまいもシリーズ",
+      "category": "goods",
+      "productType": "figure_plush",
+      "priceJPY": 2970,
+      "store": "ちいかわもぐもぐ本舗 川越店。一部の商品は購入制限あり。旅行記では大きなさつまいもうさぎが2,970円、小さなさつまいもちいかわが1,870円（2025年の情報）"
+    },
+    {
+      "key": "s-05",
+      "title": "ちいかわもぐもぐ 川越限定のさつまいもシリーズ",
+      "category": "goods",
+      "productType": "figure_plush",
+      "priceJPY": 2970,
+      "store": "ちいかわもぐもぐ本舗 川越店。一部の商品は購入制限あり。旅行記では大きなさつまいもうさぎが2,970円、小さなさつまいもちいかわが1,870円（2025年の情報）"
+    },
+    {
+      "key": "s-06",
+      "title": "東海道新幹線 チケット音声キーホルダー（ガチャ）",
+      "category": "other",
+      "productType": "other_product",
+      "store": "上野マルイ2階のガチャガチャコーナー（旅行記より）"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "東京",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "川越市",
+      "latitude": 35.9251449,
+      "longitude": 139.4857811,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "熱海市",
+      "latitude": 35.0963585,
+      "longitude": 139.0717294,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "東京",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "東京",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "成田国際空港 第2ターミナルに到着",
+          "start": "14:40",
+          "end": "15:40",
+          "category": "airport",
+          "place": {
+            "name": "第2旅客ターミナルビル前中央広場",
+            "latitude": 35.7727875,
+            "longitude": 140.3867587,
+            "applePlaceID": "ICD95BF7CCD2E115A",
+            "address": "〒286-0104, 千葉県成田市, 古込1-1, 成田国際空港第2ターミナル B1F",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "荷物を預けてチェックイン：ダイワロイネットホテル東京新橋",
+          "start": "17:00",
+          "end": "17:30",
+          "category": "hotel",
+          "place": {
+            "name": "ダイワロイネットホテル新橋",
+            "latitude": 35.6684836,
+            "longitude": 139.7570966,
+            "applePlaceID": "I3D58F9FFA532BB30",
+            "address": "〒105-0004, 東京都港区, 新橋1丁目17-2",
+            "addressIsApproximate": false
+          },
+          "notes": "チェックインとチェックアウトの時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "空港内の鉄道方面にある SKYLINER & KEISEI INFORMATION CENTER で乗車券に引き換える。スカイライナーで京成上野まで約41分、全席指定、約2,580円（運賃1,280円＋指定席料金1,300円）。京成上野で東京メトロ銀座線（渋谷方面）に乗り換えて新橋まで約20分、駅から徒歩約2分"
+          },
+          "todos": [
+            {
+              "text": "スカイライナーの切符（行き）を買い、帰りの座席を予約する",
+              "note": "ネットで事前購入でき、成田空港駅で引き換えます。帰りは京成上野駅で座席を予約"
+            }
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "SHIBUYA SKY 展望台：夜景の時間帯",
+          "start": "18:40",
+          "end": "20:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "SHIBUYA SKYチケットカウンター",
+            "latitude": 35.6586113,
+            "longitude": 139.7023452,
+            "applePlaceID": "I3BB50A8AC3225E97",
+            "address": "〒150-0002",
+            "addressIsApproximate": true
+          },
+          "notes": "10:00〜22:30頃（最終入場21:20頃）、元日のみ休み。営業時間は公式サイトに従い、出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "新橋駅から東京メトロ銀座線で渋谷駅まで約15分、渋谷スクランブルスクエアまで徒歩約5分。上がる前に、1階で専用エレベーターを探す"
+          },
+          "todos": [
+            {
+              "text": "SHIBUYA SKY のチケットを買う（夜景の時間帯）",
+              "note": "公式サイト https://www.shibuya-scramble-square.com/sky/ 旅行記では入場日の約2週間前に発売（2025年の情報）"
+            }
+          ],
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "夕食：串カツ あらた 渋谷パルコ店（渋谷 PARCO フードホール）",
+          "start": "20:15",
+          "end": "21:00",
+          "category": "dining",
+          "place": {
+            "name": "串カツあらた 渋谷パルコ店",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I4E0C674AF1360F12",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記より：串カツ店は別にお通し代がかかります",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "スクランブルスクエアから PARCO まで徒歩約10〜15分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "渋谷駅から東京メトロ銀座線で新橋へ戻る約15分、徒歩と待ち時間を入れて約30分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "川越市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "川越氷川神社：縁むすび風鈴と鯛みくじ",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "temple",
+          "place": {
+            "name": "川越氷川神社",
+            "latitude": 35.9275637,
+            "longitude": 139.4885561,
+            "applePlaceID": "IB61C9ABDE4FF6D05",
+            "address": "〒350-0052",
+            "addressIsApproximate": true
+          },
+          "notes": "境内は自由に参拝できます。夏限定の「縁むすび風鈴」は2026年は6/27〜9/6の9:00〜20:00で、年によって期間が違います。社務所の電話 049-224-0589",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "新橋駅から JR 山手線で池袋まで約30分。池袋から東武東上線で川越まで約30分（川越特急）。川越駅3番のりばから東武バス「名01」で氷川神社まで約20分。川越周遊きっぷ（電車＋東武バス）をお持ちなら、バスでは運転手に QR コードを見せ、Suica は使わない"
+          },
+          "todos": [
+            {
+              "text": "川越周遊きっぷ（電車＋東武バス）を買う",
+              "note": "池袋〜川越の往復と東武バスが1日乗り放題。東武バス限定で、使う日に有効化してください"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "ちいかわもぐもぐ本舗 川越店：川越限定のさつまいもシリーズ",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "shopping",
+          "place": {
+            "name": "ちいかわもぐもぐ本舗 川越店",
+            "latitude": 35.9244889,
+            "longitude": 139.4814476,
+            "applePlaceID": "IEF60C1C73DD6B1DD",
+            "address": "〒350-0062",
+            "addressIsApproximate": true
+          },
+          "notes": "9:30〜17:30頃、年中無休（オープン時のプレスリリースより。営業時間は出発前に確認してください）",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "氷川神社からバスで小江戸エリアへ戻る約20分、または徒歩約20分。西武の「小江戸巡回バス」は東武の周遊きっぷが使えず、別料金"
+          },
+          "todos": [
+            {
+              "text": "ちいかわもぐもぐ本舗 川越店の入店時間枠を予約する",
+              "note": "終日、人数制限があります。スマホ1台・アカウント1つで1日1回、当日その場で QR コードを読み取って予約もできます"
+            }
+          ],
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "昼食：旧第八十五銀行本店本館 2階のカフェ",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "cafe",
+          "place": {
+            "name": "旧八十五銀行本店本館（あさひ銀行川越支店）",
+            "latitude": 35.9225931,
+            "longitude": 139.4831352,
+            "applePlaceID": "I69356DB7102EE3E3",
+            "address": "〒350-0063, 埼玉県川越市, 幸町4-2",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。テラスは公共スペースなので、利用しなくても入れます",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "徒歩約5分"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "時の鐘と大正浪漫夢通り",
+          "start": "14:45",
+          "end": "16:00",
+          "category": "sight",
+          "place": {
+            "name": "川越時の鐘 幸町15-1",
+            "latitude": 35.923497,
+            "longitude": 139.483188,
+            "address": "日本埼玉縣川越市",
+            "addressIsApproximate": true
+          },
+          "notes": "鐘楼の外観は終日見られます。沿道の店は営業時間が違うので、出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "一番街と大正浪漫夢通りを徒歩約10分"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "夕食：牛たん焼き 仙台辺見 池袋パルコ店",
+          "start": "17:30",
+          "end": "18:30",
+          "category": "dining",
+          "place": {
+            "name": "池袋パルコ",
+            "latitude": 35.7308315,
+            "longitude": 139.7123843,
+            "applePlaceID": "I4470FCF4975CA9C5",
+            "address": "〒171-8557, 東京都豊島区, 南池袋1丁目28-2",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "小江戸巡回バスか東武バスで川越駅へ戻る約15分、東武東上線で池袋へ戻る約30分、待ち時間と乗り換え込み"
+          }
+        },
+        {
+          "key": "d2-06",
+          "title": "池袋サンシャインシティ：ガシャポンデパートメントストア 池袋総本店",
+          "start": "19:00",
+          "end": "20:00",
+          "category": "shopping",
+          "place": {
+            "name": "ガシャポンのデパート 池袋総本店",
+            "latitude": 35.7288563,
+            "longitude": 139.7200754,
+            "applePlaceID": "I1EA870DC41AF85E2",
+            "address": "〒170-0013, 東京都豊島区, 東池袋3丁目1-3",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "池袋駅からサンシャインシティまで徒歩約10〜15分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "池袋駅まで徒歩約15分、JR 山手線で新橋へ戻る約30分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "熱海市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "昼食：神戸牛ダイア 東京駅店",
+          "start": "11:30",
+          "end": "12:30",
+          "category": "dining",
+          "place": {
+            "name": "神戸牛ダイア 東京グランスタ八重洲店",
+            "latitude": 35.6800541,
+            "longitude": 139.7680557,
+            "applePlaceID": "I4E17865EF7248D83",
+            "address": "〒100-0005",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記より：同じ階の極味屋は11:00の開店前からすでに長い行列",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "新橋駅から JR で東京駅まで約5分、八重洲地下街のあたりまで歩く"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "東京駅一番街：キャラクターショップとグルメ街",
+          "start": "12:45",
+          "end": "14:15",
+          "category": "shopping",
+          "place": {
+            "name": "東京駅一番街",
+            "latitude": 35.68107,
+            "longitude": 139.76811,
+            "applePlaceID": "I1F15EEC1925C92ED",
+            "address": "〒100-0005, 東京都千代田区, 丸の内1丁目9-1 東京駅一番街",
+            "addressIsApproximate": false
+          },
+          "notes": "店ごとに営業時間が違うので、出発前に確認してください。東京駅の手荷物預かりカウンターは20:00頃までしか開いていません（旅行記の情報）。コインロッカーに預けましょう",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "徒歩約5分"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "熱海駅前商店街とコンビニで買い出し（熱海駅前・仲見世通り）",
+          "start": "15:45",
+          "end": "16:45",
+          "category": "shopping",
+          "place": {
+            "name": "熱海",
+            "latitude": 35.1036105,
+            "longitude": 139.0777622,
+            "applePlaceID": "ICC6D196498CD6208",
+            "address": "静岡県熱海市, 田原本町",
+            "addressIsApproximate": true
+          },
+          "notes": "店ごとに営業時間が違うので、出発前に確認してください",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "東京駅の東海道新幹線 日本橋口から入り、こだまで熱海まで約50分（ひかりは一部の便が停車し、約40分）。指定席は約4,270円、自由席は約3,740円（検索結果のまとめより、公式ページではありません）。帰りの切符は先に買っておく。花火のあとは人が多くなります"
+          },
+          "todos": [
+            {
+              "text": "東京〜熱海の往復新幹線を予約する",
+              "note": "先に花火の日を決めてから切符を買います。旅行記では乗車の約4週間前に購入（2025年の情報）。帰りは花火のあとの便を選ぶ"
+            }
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "熱海サンビーチ：レジャーシートで場所取りと待機",
+          "start": "17:00",
+          "end": "19:45",
+          "category": "beach",
+          "place": {
+            "name": "熱海サンビーチ",
+            "latitude": 35.0980447,
+            "longitude": 139.0768168,
+            "applePlaceID": "I816B6250ACBFFDB1",
+            "address": "〒413-0012, 静岡県熱海市, 東海岸町",
+            "addressIsApproximate": true
+          },
+          "notes": "ビーチは開放された場所で、休みはありません。レジャーシートは持参してください。ビーチ周辺にトイレがありますが、旅行記では設備を先に確認するよう注意しています",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "熱海駅からビーチまで下り坂を徒歩約15〜20分。帰りは上り坂なので体力を残しておく"
+          }
+        },
+        {
+          "key": "d3-05",
+          "title": "熱海海上花火大会",
+          "start": "20:15",
+          "end": "20:45",
+          "category": "show",
+          "place": {
+            "name": "熱海サンビーチ",
+            "latitude": 35.0980447,
+            "longitude": 139.0768168,
+            "applePlaceID": "I816B6250ACBFFDB1",
+            "address": "〒413-0012, 静岡県熱海市, 東海岸町",
+            "addressIsApproximate": true
+          },
+          "notes": "決まった日だけ打ち上げられるので、まず打ち上げ日に合わせて日程を組みます。日程は熱海市観光協会の公式サイト https://www.ataminews.gr.jp/event/8 で確認。時間は20:15か20:20からの約20〜25分が多い（旅行記と第三者の情報より、公式サイトで確認を）。入場は無料",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "ビーチの東側の後方で鑑賞。レジャーシートの場所から徒歩約5分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "20:45頃に会場を出て、熱海駅まで徒歩約20〜25分。事前に買った21:26頃の新幹線に乗り（旅行記では実際は22:02発に乗り、20分近く遅れた）、東京まで約45分。東京駅で JR に乗り換えて新橋へ。新幹線の切符を持っていれば、右側の有人通路から在来線の改札へそのまま通れます"
+          },
+          "todos": [
+            {
+              "text": "熱海海上花火大会の打ち上げ日を確認してから、旅全体の日程を決める",
+              "note": "この行程は打ち上げ日に合わせて組む必要があります。打ち上げ日は公式サイトで確認：https://www.ataminews.gr.jp/event/8"
+            }
+          ],
+          "images": [
+            "d3-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "teamLab Borderless：麻布台ヒルズ（teamLab Borderless: MORI Building DIGITAL ART MUSEUM）",
+          "start": "10:30",
+          "end": "12:45",
+          "category": "museum",
+          "place": {
+            "name": "チームラボボーダレス",
+            "latitude": 35.6620821,
+            "longitude": 139.7429831,
+            "applePlaceID": "I4D63FF6237C65D4D",
+            "address": "〒106-0041",
+            "addressIsApproximate": true
+          },
+          "notes": "情報源のまとめでは10:00〜21:00頃、毎月第1・第3火曜休み。公式サイトに従い、出発前に確認してください",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "新橋からバスか電車で約20〜25分、神谷町駅か虎ノ門のあたりへ。そこから歩いて麻布台ヒルズ ガーデンプラザ B の地下1階へ。館内には地図がなく、入口を右に曲がると無料のコインロッカーがあります"
+          },
+          "todos": [
+            {
+              "text": "teamLab Borderless のチケットを買う",
+              "note": "公式サイト https://www.teamlab.art/e/borderless-azabudai/ 早めの購入をおすすめします"
+            }
+          ],
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "昼食：ハーブス 麻布台ヒルズ店のフルーツミルクレープ",
+          "start": "13:00",
+          "end": "13:45",
+          "category": "cafe",
+          "place": {
+            "name": "HARBS 麻布台ヒルズ店",
+            "latitude": 35.6617921,
+            "longitude": 139.7414455,
+            "applePlaceID": "ID342BB3415C34D12",
+            "address": "〒105-0001",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "同じ敷地内を徒歩約5分"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "原宿でお買い物：東急プラザ表参道原宿（ちいかわのパン屋）と KIDDY LAND 原宿店",
+          "start": "14:30",
+          "end": "15:10",
+          "category": "shopping",
+          "place": {
+            "name": "東急プラザ表参道原宿",
+            "latitude": 35.6686716,
+            "longitude": 139.7059169,
+            "applePlaceID": "I36622972312760EA",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前4丁目30-3",
+            "addressIsApproximate": false
+          },
+          "notes": "店ごとに営業時間が違うので、出発前に確認してください。パン屋のイートイン側は整理券が必要で、グッズの店は不要",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "東京メトロで明治神宮前〈原宿〉駅へ、約30分、乗り換え1回"
+          },
+          "images": [
+            "d4-03"
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "ザ グレート バーガー：和牛スライダー",
+          "start": "15:20",
+          "end": "15:45",
+          "category": "fastfood",
+          "place": {
+            "name": "頂好ハンバーガー（顶好汉堡店）",
+            "latitude": 35.6662251,
+            "longitude": 139.7046999,
+            "applePlaceID": "I19EDD305DB383DA5",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前6丁目12-5 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "原宿エリア内を徒歩約10分"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "HARRY 原宿テラス店 カワウソカフェ",
+          "start": "16:05",
+          "end": "17:30",
+          "category": "cafe",
+          "place": {
+            "name": "ハリー原宿テラス",
+            "latitude": 35.6691599,
+            "longitude": 139.7079697,
+            "applePlaceID": "IBF8E3491E606B707",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前4丁目26番5号, 神宮前426ビル 3F",
+            "addressIsApproximate": false
+          },
+          "notes": "平日13:00〜18:00、週末・祝日11:00〜18:00（ラストオーダー17:30）、休みなし。予約は60分以上（公式サイト）",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "徒歩約5分。ビルの最上階で、脇の階段から上がります"
+          },
+          "todos": [
+            {
+              "text": "HARRY 原宿テラス店 カワウソカフェを予約する",
+              "note": "公式サイト https://harinezumi-cafe.com/store/harajuku-terrace/ 予約は60分以上。当日に行くと入れないことがあります"
+            }
+          ],
+          "images": [
+            "d4-05"
+          ]
+        },
+        {
+          "key": "d4-06",
+          "title": "夕食：極味や 渋谷パルコ店の伊万里牛ステーキ",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "極味や 渋谷パルコ店",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I27C7C5F97CC5C83B",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1 渋谷パルコB1F",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。人気の時間帯は売り切れます",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "原宿駅から JR 山手線で渋谷まで約5分、PARCO まで歩く"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "渋谷から東京メトロ銀座線で新橋へ戻る約15分、徒歩を入れて約25分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "上野マルイと Loft、2階のガチャガチャコーナー",
+          "start": "11:00",
+          "end": "12:30",
+          "category": "shopping",
+          "place": {
+            "name": "上野マルイ",
+            "latitude": 35.7107345,
+            "longitude": 139.7757649,
+            "applePlaceID": "I294F815904982079",
+            "address": "〒110-0005, 東京都台東区, 上野6丁目15-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "新橋駅から JR 山手線で上野まで約20分。チェックアウト後、荷物は先に駅のコインロッカーに預けられます"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "昼食：上野駅周辺",
+          "start": "12:45",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "上野駅 公園口",
+            "latitude": 35.7143877,
+            "longitude": 139.7763973,
+            "applePlaceID": "I7417813C5B65E03D",
+            "address": "東京都台東区, 上野公園",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "徒歩約5分"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "京成上野駅：荷物の受け取りとおみやげ（シュガーバターの木）",
+          "start": "13:45",
+          "end": "14:15",
+          "category": "station",
+          "place": {
+            "name": "京成上野駅 正面口",
+            "latitude": 35.7111645,
+            "longitude": 139.7740598,
+            "applePlaceID": "IFA2C7ED6B1A4396A",
+            "address": "東京都台東区, 上野公園",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください。京成上野駅は上野駅の不忍口側にあり、駅構内のコインロッカーで荷物を取ります",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "上野駅から京成上野まで徒歩約15分（旅行記は構内で迷いやすいと注意しており、荷物は京成上野のコインロッカーに直接預けるのがおすすめ）"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "成田国際空港 第2ターミナルから出国：Japan Food Hall と免税店でお買い物",
+          "start": "15:05",
+          "end": "17:30",
+          "category": "airport",
+          "place": {
+            "name": "第2旅客ターミナルビル前中央広場",
+            "latitude": 35.7727875,
+            "longitude": 140.3867587,
+            "applePlaceID": "ICD95BF7CCD2E115A",
+            "address": "〒286-0104, 千葉県成田市, 古込1-1, 成田国際空港第2ターミナル B1F",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "京成上野からスカイライナーで成田空港第2ターミナルまで約41分、全席指定、約2,580円。帰りの座席は京成上野駅で先に予約できます（中国語が話せる駅員さんがいます）"
+          }
+        }
+      ]
+    }
+  ]
+}

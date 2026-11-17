@@ -1,0 +1,1274 @@
+{
+  "formatVersion": 3,
+  "templateID": "kr-busan-6d",
+  "revision": 1,
+  "contentLocale": "ja",
+  "title": "釜山 6 日間｜海雲台・機張・南浦・影島",
+  "subtitle": "海雲台に3泊、南浦に2泊。機張、影島、海辺のカフェ",
+  "summary": "金海空港の出入りで釜山を6日間。海雲台、機張の海辺と福泉寺、南浦洞と影島をめぐります。釜山パス、交通カード、バスの乗車ルール、免税の払い戻しについてはご案内にまとめました。影島大橋の跳開は公式発表の土曜14:00が基準で、土曜以外は橋を眺めるだけです。田浦カフェ通り、太宗台、広安里は候補に入れてあります。",
+  "destination": "韓国 釜山",
+  "regionCodes": [
+    "KR"
+  ],
+  "dayCount": 6,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Seoul",
+  "tags": [
+    "ふたり旅",
+    "初めて",
+    "海辺",
+    "グルメ"
+  ],
+  "images": {
+    "d1-03": "images/kr-busan-6d/d1-03.jpg",
+    "d1-05": "images/kr-busan-6d/d1-05.jpg",
+    "d2-01": "images/kr-busan-6d/d2-01.jpg",
+    "d2-02": "images/kr-busan-6d/d2-02.jpg",
+    "d2-06": "images/kr-busan-6d/d2-06.jpg",
+    "d3-04": "images/kr-busan-6d/d3-04.jpg",
+    "d4-02": "images/kr-busan-6d/d4-02.jpg",
+    "d4-03": "images/kr-busan-6d/d4-03.jpg",
+    "d4-05": "images/kr-busan-6d/d4-05.jpg",
+    "d5-01": "images/kr-busan-6d/d5-01.jpg",
+    "d5-03": "images/kr-busan-6d/d5-03.jpg",
+    "d5-04": "images/kr-busan-6d/d5-04.jpg",
+    "d5-05": "images/kr-busan-6d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "宿泊：海雲台駅周辺（3連泊。旅行記ではベニキア海雲台ホテルに宿泊）",
+      "fromDay": 1,
+      "toDay": 4,
+      "category": "lodging",
+      "place": {
+        "name": "アーバンステイ 海雲台駅",
+        "latitude": 35.162884,
+        "longitude": 129.15852,
+        "applePlaceID": "ICE654B0F96298CCB",
+        "address": "대한민국 부산광역시 구남로8번길",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3,
+        4
+      ],
+      "closingDays": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "key": "ad4-04",
+      "title": "宿泊：チャガルチ駅周辺（2連泊。旅行記では Hotel Noah に宿泊、向かいが BIFF広場）",
+      "fromDay": 4,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "チャガルチ市場（자갈치 시장）",
+        "latitude": 35.0967691,
+        "longitude": 129.0311048,
+        "applePlaceID": "IF5CA9EEE2623435D",
+        "address": "대한민국 부산광역시 Nampodong 자갈치해안로",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        5,
+        6
+      ],
+      "closingDays": [
+        4,
+        5
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "候補：田浦カフェ通り（전포카페거리）",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "ヨヌンダン 田浦カフェ通り店（연운당）",
+        "latitude": 35.155045,
+        "longitude": 129.06445,
+        "applePlaceID": "IC758428305DBEBDB",
+        "address": "대한민국 부산광역시 전포대로209번길",
+        "addressIsApproximate": false
+      },
+      "notes": "店ごとに営業時間が違うので、出発前に確認してください。カフェと小さな店が集まり、地下鉄の田浦駅のすぐそば"
+    },
+    {
+      "key": "u-02",
+      "title": "候補：コッサルチプ 田浦店（꽃살집）",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "田浦大路209番キル（전포대로209번길）",
+        "latitude": 35.15538116159487,
+        "longitude": 129.06383055315845,
+        "address": "南韓釜山廣域市",
+        "addressIsApproximate": true
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記は CatchTable で事前予約。韓牛のセットは高め"
+    },
+    {
+      "key": "u-03",
+      "title": "候補：太宗台（태종대）",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "太宗台",
+        "latitude": 35.05,
+        "longitude": 129.083,
+        "applePlaceID": "IB1F79FC82E37717A",
+        "address": "대한민국 부산광역시",
+        "addressIsApproximate": true
+      },
+      "notes": "営業時間は出発前に確認してください。釜山パスに太宗台が含まれていたが、旅行記では行かなかった"
+    },
+    {
+      "key": "u-04",
+      "title": "候補：ハヌルヌン展望台（영주 하늘눈 전망대）",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "栄州路88番キル（영주로88번길）",
+        "latitude": 35.1140109138675,
+        "longitude": 129.0317555952759,
+        "address": "南韓釜山廣域市",
+        "addressIsApproximate": true
+      },
+      "notes": "営業時間は出発前に確認してください。釜山港と南浦を見渡せます"
+    },
+    {
+      "key": "u-05",
+      "title": "候補：広安里海水浴場（광안리해수욕장）",
+      "durationMinutes": 60,
+      "category": "beach",
+      "place": {
+        "name": "広安里ビーチ",
+        "latitude": 35.1541667,
+        "longitude": 129.1205556,
+        "applePlaceID": "IF0825929203AB00B",
+        "address": "대한민국 부산광역시 광안해변로",
+        "addressIsApproximate": true
+      },
+      "notes": "終日開放、定休日なし。広安大橋の夜景が見られます"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "情報源と確認",
+      "paragraphs": [
+        {
+          "text": "元の旅行記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/8ace34a1a3d8/",
+          "style": "bullet"
+        },
+        {
+          "text": "確認（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "空港リムジンバス（2路線、運賃、始発と終発、購入方法）：https://www.busan.go.kr/eng/bsnews01/1691463 （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "釜山金海軽電鉄（運賃1,600〜1,800ウォン、地下鉄とは30分以内なら無料乗り換え。公式ページには空港から沙上まで約9分とあるが、多くの情報源の約20〜30分と合わないので、現地の時刻に従うこと）：https://busannavi.net/en/?p=4384 （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "軽電鉄＋2号線で海雲台まで（約55分、約2,800ウォン）：https://mileasia.com/korea/busan-airport-to-haeundae-beach/ （確認 2026-11-17、情報源はまとめページ）",
+          "style": "bullet"
+        },
+        {
+          "text": "松島海上ケーブルカー（9:00〜21:00頃、チケット販売は閉場の30分前まで。クリスタルキャビン往復24,000ウォン、一般キャビン往復19,000ウォン）：https://www.busanaircruise.co.kr （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "スカイラインリュージュ釜山（平日約10:00〜19:00、週末・祝日約10:00〜20:00）：https://busan.skylineluge.com/en/visiting-us/faqs （確認 2026-11-17、情報源は検索結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "影島大橋の跳開（土曜14:00〜14:15、悪天候で中止になることがあります）：https://www.busan.go.kr/eng/bsnews01/1743033 （確認 2026-11-17、情報源は検索結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "スパランドの営業時間は情報源により異なる（9:00から22:00か23:00頃）ため、公式サイトに従ってください。",
+          "style": "bullet"
+        },
+        {
+          "text": "公式で確認できなかった項目。出発前に確認してください",
+          "style": "heading"
+        },
+        {
+          "text": "海東龍宮寺、釜山 BUSAN X the SKY、スカイカプセル、海岸列車の時刻、釜山タワー、甘川洞の店、ロッテ百貨店 光復店、富平カントン市場、福泉寺、各レストランの営業時間と定休日。",
+          "style": "bullet"
+        },
+        {
+          "text": "リムジンバスの所要時間（公式に記載なし）、スカイラインリュージュの定休日。",
+          "style": "bullet"
+        },
+        {
+          "text": "各スポットの座標は推定値です。",
+          "style": "bullet"
+        },
+        {
+          "text": "変更と取捨選択",
+          "style": "heading"
+        },
+        {
+          "text": "旅行記の1日目は夜20:05にやっと釜山に着きましたが、このテンプレートは昼に着く想定にして、予定を前倒ししています。旅行記の8日目は10:50発の早い便で帰ったため、テンプレートもそれに合わせました。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記7日目の西面（ロッテ百貨店釜山本店、田浦カフェ通り、コッサルチプ）は6日目のロッテ百貨店 光復店と買い物が重なるため、光復店と影島だけを残し、西面は候補にしました。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記5日目は影島大橋の午後の跳開が予定でしたが、夏は夜に変わっていました。テンプレートでは公式の土曜14:00を記載し、土曜以外は橋を眺めるだけと考えてください。",
+          "style": "bullet"
+        },
+        {
+          "text": "福泉寺は、旅行記では到着時にすでに閉まっていて入れなかったため、テンプレートでは午後に前倒ししました。それでも開いている時間を先に確認してください。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出発前のご案内",
+      "paragraphs": [
+        {
+          "text": "ルート",
+          "style": "heading"
+        },
+        {
+          "text": "このテンプレートは8日7泊の旅行記を6日間に圧縮しました。1日目は空港から海雲台、2日目は機張と青沙浦、3日目はスパランド、センタムシティ、ヨット、4日目は南浦と松島、甘川洞、釜山タワー、5日目は富平と影島、6日目は空港へ戻ります。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記の西面の予定（田浦カフェ通り、ロッテ百貨店釜山本店、コッサルチプ）と太宗台は入れていません。田浦カフェ通りとコッサルチプは候補にしてあります。",
+          "style": "bullet"
+        },
+        {
+          "text": "空港と市内の移動（金海国際空港 PUS）",
+          "style": "heading"
+        },
+        {
+          "text": "釜山金海軽電鉄＋地下鉄：空港駅まで徒歩約5分、軽電鉄で沙上駅へ、地下鉄2号線（緑線）に乗り換えて海雲台駅まで。乗り換え込みで約55分、約2,800ウォン（複数のまとめページ、2026年の情報。軽電鉄の区間は約20〜30分だが情報源により異なる）。",
+          "style": "bullet"
+        },
+        {
+          "text": "空港リムジンバス1番（海雲台・機張）：広安大橋を通り、海雲台ビーチ駅に停車、60分おきに1本、大人9,500ウォン、乗り換え割引なし、現金不可でカードのみ。空港発の始発は07:10、終発は21:40。所要時間は公式に記載がなく、複数のまとめページでは約60〜80分とされています。",
+          "style": "bullet"
+        },
+        {
+          "text": "空港リムジンバス2番（西面・釜田）：大人7,500ウォン、西面駅（ロッテ百貨店）に停車、空港発の始発は07:00、終発は22:00。",
+          "style": "bullet"
+        },
+        {
+          "text": "リムジンは Bustago アプリで予約するか、空港1階4番ゲートの券売機で購入できます。座席は指定されず、満席だと乗れません（釜山市の告知、2025年7月）。",
+          "style": "bullet"
+        },
+        {
+          "text": "帰りの目安：チャガルチ駅発で約85分。リムジンに乗るなら、先に西面（2号線）で乗り換えが必要です。",
+          "style": "bullet"
+        },
+        {
+          "text": "釜山パスとチケット",
+          "style": "heading"
+        },
+        {
+          "text": "旅行記では「釜山パス VISIT BUSAN PASS」で、スカイライン・リュージュ、スパランド、松島ケーブルカー、釜山タワー、海岸列車などと引き換えました。自分の行き先の組み合わせで、お得かどうか比べてください。",
+          "style": "bullet"
+        },
+        {
+          "text": "スカイカプセルはパスに含まれず、別に購入して時間枠を予約する必要があります。とても人気です。",
+          "style": "bullet"
+        },
+        {
+          "text": "ヨットツアーは船会社への事前予約が必要です。夜の便は1人5,000ウォンが別にかかり（旅行記は2025年の情報）、集合場所には30分前に着いてください。",
+          "style": "bullet"
+        },
+        {
+          "text": "乗車ルールと交通カード",
+          "style": "heading"
+        },
+        {
+          "text": "釜山のバスのルール：20インチを超えるスーツケースと、手に持った飲み物のカップは乗せられません。前のドアから乗り、後ろのドアから降ります。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通カードは T-money の実物カード、または iPhone のウォレットの T-money が使えます。先に台湾でチャージするか、現金を持って機械でチャージしてください（機械は1,000ウォン単位）。",
+          "style": "bullet"
+        },
+        {
+          "text": "韓国では公共交通機関の検索に Naver Map を使ってください。韓国では Google マップのナビは正確ではありません。",
+          "style": "bullet"
+        },
+        {
+          "text": "見どころのポイント",
+          "style": "heading"
+        },
+        {
+          "text": "海東龍宮寺：扁額のある入口の階段は急ですが、右側に本殿へまっすぐ下れる緩やかな坂があります。",
+          "style": "bullet"
+        },
+        {
+          "text": "スカイカプセルと海岸列車は別々のチケットです。パスで引き換えた海岸列車のチケットは、当日各駅で1回乗車できます。",
+          "style": "bullet"
+        },
+        {
+          "text": "福泉寺は静かなお寺で、夕方以降は閉まることがあるため、夜景は釜山タワーでどうぞ。山道は急で、バスは山のふもとまでです。",
+          "style": "bullet"
+        },
+        {
+          "text": "影島大橋の跳開：土曜14:00（公式告知）。夏には夜に変わったこともあるので、出発前に最新の告知を確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "釜山の公共の場所では、空港の滑走路の撮影は禁止です（軍民共用空港のため）。",
+          "style": "bullet"
+        },
+        {
+          "text": "免税の払い戻し",
+          "style": "heading"
+        },
+        {
+          "text": "韓国の免税払い戻しは複数の会社の機械に分かれます。レシートに書かれた払い戻し会社を確認して、対応する機械へ行ってください。その場で払い戻しを受けなかった場合は、出国前に空港で現金の払い戻しを受ける必要があります。",
+          "style": "bullet"
+        },
+        {
+          "text": "入国",
+          "style": "heading"
+        },
+        {
+          "text": "ビザなしで入国できます。出発の3日前から、オンラインの入国申請書（e-Arrival Card）を入力できます：https://www.e-arrivalcard.go.kr",
+          "style": "bullet"
+        },
+        {
+          "text": "旅のペース",
+          "style": "heading"
+        },
+        {
+          "text": "1・6日目は空港の出入りがあるため、移動の比重が高めです。",
+          "style": "bullet"
+        },
+        {
+          "text": "テンプレートは7〜8月の夏の旅行記を基準にしているので、日没の時間、跳開の時間、営業時間は季節で変わります。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "HBAF アーモンド（HBAF 아몬드）",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "龍頭山公園入口近くの専門店が味の種類が最も豊富（旅行記のおすすめ）"
+    },
+    {
+      "key": "s-02",
+      "title": "あずきバターのよもぎ餅（ミルゴッ）",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "富平カントン市場（ミルゴッ）、帰ったら冷蔵し、食べる前に常温に戻す"
+    },
+    {
+      "key": "s-03",
+      "title": "オリーブヤングのスキンケアとお菓子",
+      "category": "drugstore",
+      "productType": "skincare",
+      "store": "海雲台、BIFF広場、西面に支店があり、一定額以上はその場で免税の払い戻しを受けられる"
+    },
+    {
+      "key": "s-04",
+      "title": "ブギと釜山のおみやげ",
+      "category": "other",
+      "productType": "other_product",
+      "store": "南浦洞の釜山おみやげ専門店（ビッグショップ）"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "釜山広域市",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "釜山広域市",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "釜山広域市",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "釜山広域市",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "釜山広域市",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "釜山広域市",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "釜山広域市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "金海国際空港に到着（김해국제공항）",
+          "start": "12:00",
+          "end": "13:00",
+          "category": "airport",
+          "place": {
+            "name": "金海国際空港",
+            "latitude": 35.1729576,
+            "longitude": 128.9470804,
+            "applePlaceID": "IE960D9814668060",
+            "address": "46718 대한민국 부산광역시 강서구 공항진입로 108",
+            "addressIsApproximate": false
+          },
+          "todos": [
+            {
+              "text": "韓国の入国申請書（e-Arrival Card）を入力する",
+              "note": "https://www.e-arrivalcard.go.kr 出発の3日前から入力できます"
+            }
+          ]
+        },
+        {
+          "key": "d1-02",
+          "title": "昼食：海雲台伝統市場（해운대전통시장）",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "market",
+          "place": {
+            "name": "海雲台市場（해운대 시장）",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "屋台ごとに営業時間が違うので、出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "空港から徒歩約5分で釜山金海軽電鉄の空港駅へ。軽電鉄で沙上駅まで（約20〜30分、情報源により異なる）、地下鉄2号線に乗り換えて海雲台駅まで（約25分）。先にホテルに荷物を預ける分を含め、全体で約55分、約2,800ウォン"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "海雲台海水浴場（해운대해수욕장）",
+          "start": "15:45",
+          "end": "17:00",
+          "category": "beach",
+          "place": {
+            "name": "海雲台海水浴場",
+            "latitude": 35.1588479,
+            "longitude": 129.1614766,
+            "applePlaceID": "IE45CABD32BDF74DE",
+            "address": "대한민국 부산",
+            "addressIsApproximate": true
+          },
+          "notes": "終日開放、定休日なし",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "海雲台伝統市場からビーチまで徒歩約10分"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "塩パン：自然島の塩パン（자연도 소금빵）海雲台店",
+          "start": "17:20",
+          "end": "17:50",
+          "category": "bakery",
+          "place": {
+            "name": "海雲台市場（해운대 시장）",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "海岸沿いを歩くか、尾浦方面のバスで約20分"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "釜山 BUSAN X the SKY（부산 엑스더스카이）",
+          "start": "18:05",
+          "end": "19:15",
+          "category": "viewpoint",
+          "place": {
+            "name": "釜山 X the SKY",
+            "latitude": 35.159485,
+            "longitude": 129.17017,
+            "applePlaceID": "I651F216A2DD2455D",
+            "address": "48099 대한민국 부산광역시 해운대구 달맞이길 30",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。入場券は別売りで、事前に公式サイトか旅行プラットフォームで予約できます",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "塩パンの店から海側へ向かって歩いて約10分"
+          },
+          "images": [
+            "d1-05"
+          ]
+        },
+        {
+          "key": "d1-06",
+          "title": "夕食：うなぎ焼き 風川鰻（풍천만）海雲台店",
+          "start": "19:40",
+          "end": "20:40",
+          "category": "dining",
+          "place": {
+            "name": "海雲台市場（해운대 시장）",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "尾浦からバスか地下鉄で海雲台へ戻る、約25分"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "夕食の店からホテルまで、海雲台伝統市場を通って歩いて戻る"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "釜山広域市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "機張 スカイライン・リュージュ（스카이라인 루지 부산）",
+          "start": "10:00",
+          "end": "11:40",
+          "category": "sight",
+          "place": {
+            "name": "スカイラインリュージュ釜山",
+            "latitude": 35.1941211,
+            "longitude": 129.2191261,
+            "applePlaceID": "IEBA0E08CDCEE6A12",
+            "address": "619902 대한민국 부산광역시 기장군 기장읍 시랑리 산60-1",
+            "addressIsApproximate": false
+          },
+          "notes": "平日約10:00〜19:00、週末・祝日約10:00〜20:00、チケット販売は閉場の30分前まで（公式サイト）",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "海雲台のホテル前から機張方面のバスで約40分（旅行記は2025年の情報、ルートは Naver Map で確認を）"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "海東龍宮寺（해동용궁사）",
+          "start": "12:00",
+          "end": "13:00",
+          "category": "temple",
+          "place": {
+            "name": "海東龍宮寺",
+            "latitude": 35.1884104,
+            "longitude": 129.2230755,
+            "applePlaceID": "I359B3BF00E45933C",
+            "address": "대한민국 부산광역시 갈맷길",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "リュージュの向かい側から徒歩約10分、上り坂。入口の右側に、本殿へまっすぐ下れる緩やかな坂があります"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "昼食：松亭駅周辺（송정역）",
+          "start": "13:45",
+          "end": "14:25",
+          "category": "dining",
+          "place": {
+            "name": "松亭駅",
+            "latitude": 35.1809,
+            "longitude": 129.2,
+            "applePlaceID": "I11BD5A83E7537B56",
+            "address": "48073 대한민국 부산광역시 해운대구 송정중앙로8번길 60",
+            "addressIsApproximate": false
+          },
+          "notes": "駅そばのコンビニや、海水浴場周辺の小さな店。営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "龍宮寺のバス停から松亭までバス、そこから徒歩約10分、合計約40分"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "海岸列車：松亭→青沙浦（해변열차）",
+          "start": "14:40",
+          "end": "15:10",
+          "category": "train",
+          "place": {
+            "name": "松亭海水浴場",
+            "latitude": 35.17915,
+            "longitude": 129.20024,
+            "applePlaceID": "IFCEC0F6807C4E51D",
+            "address": "대한민국 부산광역시 송정해변로",
+            "addressIsApproximate": true
+          },
+          "notes": "便ごとの指定席で、時刻表は出発前に確認してください。チケットは当日、各駅で1回乗車できます",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "駅のホームで検札して待ちます。早めに並ぶと良い席を取りやすい"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "ハニーバタートースト：DIART COFFEE 青沙浦（청사포）",
+          "start": "15:25",
+          "end": "16:00",
+          "category": "cafe",
+          "place": {
+            "name": "ディアート",
+            "latitude": 35.16074,
+            "longitude": 129.1919,
+            "applePlaceID": "I53A7026903DD571E",
+            "address": "대한민국 부산광역시 청사포로128번길",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "青沙浦駅から徒歩約5分。近くのレストランで昼食も取れます"
+          }
+        },
+        {
+          "key": "d2-06",
+          "title": "海雲台ブルーラインパーク スカイカプセル：青沙浦→尾浦（스카이캡슐）",
+          "start": "16:15",
+          "end": "17:00",
+          "category": "sight",
+          "place": {
+            "name": "海雲台ブルーラインパーク",
+            "latitude": 35.1612314,
+            "longitude": 129.1913974,
+            "applePlaceID": "I591A9DF0E6187835",
+            "address": "48116 대한민국 부산광역시 해운대구 청사포로 116",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間と時間枠は出発前に確認してください。事前にチケットを買い、時間枠を予約する必要があります",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "青沙浦駅のホームから2階への階段を上がり、チケットと引き換えに番号札をもらって並びます"
+          },
+          "todos": [
+            {
+              "text": "海雲台ブルーラインパーク スカイカプセルのチケットを買い、時間枠を予約する",
+              "note": "とても人気なので、出発前に予約してください。青沙浦発の枠であることを確認"
+            }
+          ],
+          "images": [
+            "d2-06"
+          ]
+        },
+        {
+          "key": "d2-07",
+          "title": "夕食：マッチャンドゥル王塩焼き 海雲台店（맛찬들왕소금구이 해운대점）",
+          "start": "17:45",
+          "end": "19:00",
+          "category": "dining",
+          "place": {
+            "name": "海雲台市場（해운대 시장）",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください。入口のタブレットで順番待ちができます",
+          "leg": {
+            "fromKey": "d2-06",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "尾浦からバスで海雲台へ戻る、約15分。早めに順番待ちの番号を取るのがおすすめ"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "夕食の店からホテルまで歩いて戻る。海雲台のメインストリートを散策しながら"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "釜山広域市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "新世界スパランド チムジルバン（스파랜드 센텀시티）",
+          "start": "10:00",
+          "end": "13:30",
+          "category": "sight",
+          "place": {
+            "name": "新世界センタムシティ スパランド",
+            "latitude": 35.168285,
+            "longitude": 129.12898,
+            "applePlaceID": "I5647C11FC6C138EC",
+            "address": "48058 대한민국 부산광역시 해운대구 센텀남대로 35",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "海雲台から地下鉄2号線でセンタムシティ駅へ、徒歩約5分"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "昼食：新世界百貨店センタムシティのフードコート（센텀시티 신세계）",
+          "start": "13:45",
+          "end": "14:45",
+          "category": "dining",
+          "place": {
+            "name": "新世界センタムシティ スパランド",
+            "latitude": 35.168285,
+            "longitude": 129.12898,
+            "applePlaceID": "I5647C11FC6C138EC",
+            "address": "48058 대한민국 부산광역시 해운대구 센텀남대로 35",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "同じ建物内の移動"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "新世界百貨店センタムシティ（신세계 센텀시티）",
+          "start": "15:00",
+          "end": "17:00",
+          "category": "shopping",
+          "place": {
+            "name": "新世界センタムシティ スパランド",
+            "latitude": 35.168285,
+            "longitude": 129.12898,
+            "applePlaceID": "I5647C11FC6C138EC",
+            "address": "48058 대한민국 부산광역시 해운대구 센텀남대로 35",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。ギネス認定の世界最大の百貨店",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "同じ建物内の移動"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "釜山ヨットツアー Y Holic（Yacht Holic）",
+          "start": "17:45",
+          "end": "19:30",
+          "category": "sight",
+          "place": {
+            "name": "水営湾ヨット競技場",
+            "latitude": 35.159416,
+            "longitude": 129.13898,
+            "applePlaceID": "IFBDB4F956D3132C8",
+            "address": "대한민국 부산광역시",
+            "addressIsApproximate": true
+          },
+          "notes": "夜の便は18:30頃に出航。営業時間と時間枠は船会社に確認してください",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "センタムシティから地下鉄2号線で冬柏駅へ、そこから徒歩約15分で桟橋。集合場所には30分前に着くこと"
+          },
+          "todos": [
+            {
+              "text": "釜山のヨットツアーを予約する（Y Holic かほかの船会社）",
+              "note": "船会社への事前予約が必要です。夜の便は別料金で、集合場所に30分前に着いてください"
+            }
+          ],
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "夜食と散歩：海雲台 九南路周辺（해운대 구남로）",
+          "start": "20:00",
+          "end": "21:00",
+          "category": "dining",
+          "place": {
+            "name": "ケミジプ（개미집）",
+            "latitude": 35.16139,
+            "longitude": 129.16083,
+            "applePlaceID": "I89636C1EDFCC9761",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "店ごとに営業時間が違うので、出発前に確認してください",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "桟橋からバスで海雲台へ戻る、約25分"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "海雲台のメインストリートからホテルまで歩いて戻る"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "釜山広域市",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "昼食：香港飯店0410 南浦1号店（홍콩0410 남포1호점）",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "dining",
+          "place": {
+            "name": "香港飯店0410（홍콩반점0410）",
+            "latitude": 35.09886,
+            "longitude": 129.02968,
+            "applePlaceID": "IBFE99096445E067B",
+            "address": "대한민국 부산광역시 Nampodong 남포길",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "海雲台駅から2号線で西面へ、1号線に乗り換えてチャガルチ駅まで約60分。先に南浦のホテルに荷物を預けると約75分"
+          }
+        },
+        {
+          "key": "d4-02",
+          "title": "松島海上ケーブルカーと松島龍宮雲橋（송도해상케이블카・송도용궁구름다리）",
+          "start": "12:55",
+          "end": "14:55",
+          "category": "sight",
+          "place": {
+            "name": "松島海上ケーブルカー",
+            "latitude": 35.076576,
+            "longitude": 129.023513,
+            "applePlaceID": "IF229B75B3ADDB44A",
+            "address": "49269 대한민국 부산광역시 서구 송도해변로 171",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00〜21:00頃、チケット販売は閉場の30分前まで、悪天候で早く運休することがあります（公式、2026年11月告知）。龍宮雲橋の営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "南浦洞から松島ケーブルカー駅までバス、そこから徒歩約10分、合計約40分"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "甘川洞文化村（감천문화마을）",
+          "start": "15:55",
+          "end": "17:20",
+          "category": "sight",
+          "place": {
+            "name": "甘川文化村",
+            "latitude": 35.0976014,
+            "longitude": 129.0089655,
+            "applePlaceID": "I8310C55F2CE28F79",
+            "address": "대한민국 부산광역시 감내2로",
+            "addressIsApproximate": false
+          },
+          "notes": "集落は自由に歩けます。店の営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "松島からバスか村内の小型バスに乗り換えて甘川洞へ、約55分。小型バスは本数が多い分、車内は混みます"
+          },
+          "images": [
+            "d4-03"
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "夕食：モックグモン 南浦店（목구멍 남포점）の鉄蓋焼き",
+          "start": "18:05",
+          "end": "19:05",
+          "category": "dining",
+          "place": {
+            "name": "ナンポ オーシャン2ヘブン ホテル＆スパ",
+            "latitude": 35.09663,
+            "longitude": 129.026645,
+            "applePlaceID": "I18AF8BE9E1EDECB",
+            "address": "대한민국 부산광역시 Nampodong 자갈치로",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください。肉は最低3人前から注文",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "甘川洞からバスで南浦へ戻る、約40分"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "龍頭山公園と釜山タワー（용두산공원・부산타워）",
+          "start": "19:25",
+          "end": "20:40",
+          "category": "viewpoint",
+          "place": {
+            "name": "釜山タワー",
+            "latitude": 35.1012275,
+            "longitude": 129.0324283,
+            "applePlaceID": "ID3C417E53F9FD110",
+            "address": "대한민국 부산광역시 용두산길",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください。夜景と日没の時間は季節で変わります",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "南浦から徒歩約20分。ナビに「龍頭山公園入口」を設定するとエスカレーターで上れます"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "釜山タワーから徒歩で下り、BIFF広場を通ってホテルへ"
+          },
+          "images": [
+            "d4-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "釜山広域市",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "富平カントン市場（부평깡통시장）",
+          "start": "09:45",
+          "end": "11:15",
+          "category": "market",
+          "place": {
+            "name": "富平カントン市場（부평깡통시장）",
+            "latitude": 35.101433,
+            "longitude": 129.02588,
+            "applePlaceID": "ICB481987C8311691",
+            "address": "48977 대한민국 부산광역시 중구 중구로47번길 31-13",
+            "addressIsApproximate": false
+          },
+          "notes": "屋台ごとに営業時間が違うので、出発前に確認してください",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "チャガルチ駅周辺から徒歩約15分"
+          },
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "昼食とショッピング：ロッテ百貨店 光復店（롯데백화점 광복점）",
+          "start": "11:40",
+          "end": "13:10",
+          "category": "shopping",
+          "place": {
+            "name": "ロッテ百貨店 光復店",
+            "latitude": 35.098286,
+            "longitude": 129.03665,
+            "applePlaceID": "IB027D4897C932119",
+            "address": "대한민국 부산광역시 중앙대로",
+            "addressIsApproximate": true
+          },
+          "notes": "10:30頃から営業。休業日は出発前に確認してください",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "富平カントン市場から徒歩約20分"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "影島大橋（영도대교）の跳開",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "sight",
+          "place": {
+            "name": "影島大橋",
+            "latitude": 35.0955202,
+            "longitude": 129.0364731,
+            "address": "南韓釜山廣域市",
+            "addressIsApproximate": true
+          },
+          "notes": "土曜14:00〜14:15に跳開（公式告知）、悪天候で中止になることがあります。ほかの日は橋の上を自由に歩けます",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "ロッテ百貨店 光復店から徒歩約10分"
+          },
+          "todos": [
+            {
+              "text": "影島大橋の跳開の告知を確認する",
+              "note": "https://www.busan.go.kr/eng/bsnews01/1743033 土曜14:00、悪天候で中止になることがあります"
+            }
+          ],
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "ヒンニョウル文化村（흰여울문화마을）",
+          "start": "15:00",
+          "end": "16:30",
+          "category": "sight",
+          "place": {
+            "name": "ヒンニョウル文化村",
+            "latitude": 35.078556,
+            "longitude": 129.04497,
+            "applePlaceID": "I7862CB99E6223017",
+            "address": "대한민국 부산광역시 절영로",
+            "addressIsApproximate": true
+          },
+          "notes": "村と海岸の遊歩道は自由に歩けます。店の営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "影島大橋からバスでヒンニョウルへ、約25分"
+          },
+          "images": [
+            "d5-04"
+          ]
+        },
+        {
+          "key": "d5-05",
+          "title": "福泉寺（복천사）影島",
+          "start": "17:05",
+          "end": "17:50",
+          "category": "temple",
+          "place": {
+            "name": "影島海水湯（영도 해수탕）",
+            "latitude": 35.083714,
+            "longitude": 129.03828,
+            "applePlaceID": "I33A22280D2B01BDB",
+            "address": "대한민국 부산광역시 남항남로",
+            "addressIsApproximate": true
+          },
+          "notes": "夕方以降は入れても出られず、閉門時間を過ぎると再開しません（旅行記は2025年の情報）。必ず日没前に着き、出発前に確認してください",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "バスで1駅乗って新仙小学校（신선초등학교）へ、そこから上り坂を歩いて約20分、全体で約30分（旅行記は2025年の情報）"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "夕食：南浦 BIFF広場周辺（BIFF 광장）",
+          "start": "18:45",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "BIFF広場",
+            "latitude": 35.098785,
+            "longitude": 129.029,
+            "applePlaceID": "IB69D243EB6734EF",
+            "address": "48953 대한민국 부산광역시 중구 구덕로 44",
+            "addressIsApproximate": false
+          },
+          "notes": "屋台ごとに営業時間が違うので、出発前に確認してください。旅行記のおすすめは BHC チキン南浦店とマッコリ",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "福泉寺の下からバスで南浦へ戻る、約40分"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "BIFF広場からホテルまで歩いて戻る"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "釜山広域市",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "金海国際空港でチェックインして出国（김해국제공항）",
+          "start": "08:30",
+          "end": "10:30",
+          "category": "airport",
+          "place": {
+            "name": "金海国際空港",
+            "latitude": 35.1729576,
+            "longitude": 128.9470804,
+            "applePlaceID": "IE960D9814668060",
+            "address": "46718 대한민국 부산광역시 강서구 공항진입로 108",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "チャガルチ駅から1号線で西面、2号線に乗り換えて沙上駅、さらに釜山金海軽電鉄で空港駅まで、約85分、約2,800ウォン。07:00前の出発がおすすめ。代わりに、西面（ロッテ百貨店）から空港リムジン2番（約7,500ウォン）に乗る方法もあり、始発は06:00、以降60分おき"
+          },
+          "todos": [
+            {
+              "text": "Bustago で空港リムジンバスを予約する（任意）",
+              "note": "座席は指定されず、満席だと乗れません。地下鉄と軽電鉄を使う手もあります"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

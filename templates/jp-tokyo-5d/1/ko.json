@@ -1,0 +1,1135 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-tokyo-5d",
+  "revision": 1,
+  "contentLocale": "ko",
+  "title": "도쿄 5일｜시부야·오다이바·디즈니·아사쿠사",
+  "subtitle": "시부야, 오다이바, 디즈니, 아사쿠사. 처음 가는 도쿄의 정석 5일",
+  "summary": "여행기 전체를 담은 도쿄 5일 일정입니다. 시부야와 하라주쿠, 오다이바, 도쿄 디즈니, 아사쿠사와 스카이트리를 모두 넣었어요. 건담 팩토리와 유니콘 건담은 전시가 끝나 teamLab Planets로 바꿨습니다. 가메아리, 아키하바라, 다이버시티, 시바 공원은 후보로 넣어 두었습니다. 출발 전 안내에는 입국, 교통카드, 예약 안내를 적었습니다.",
+  "destination": "일본 도쿄",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "첫 방문",
+    "디즈니",
+    "도심"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록 (입국 심사와 세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권과 숙소를 예약하면 바로 입력 가능"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-tokyo-5d/d1-03.jpg",
+    "d1-05": "images/jp-tokyo-5d/d1-05.jpg",
+    "d2-02": "images/jp-tokyo-5d/d2-02.jpg",
+    "d2-04": "images/jp-tokyo-5d/d2-04.jpg",
+    "d2-05": "images/jp-tokyo-5d/d2-05.jpg",
+    "d3-01": "images/jp-tokyo-5d/d3-01.jpg",
+    "d4-01": "images/jp-tokyo-5d/d4-01.jpg",
+    "d4-02": "images/jp-tokyo-5d/d4-02.jpg",
+    "d4-05": "images/jp-tokyo-5d/d4-05.jpg",
+    "d4-07": "images/jp-tokyo-5d/d4-07.jpg",
+    "d5-02": "images/jp-tokyo-5d/d5-02.jpg",
+    "d5-03": "images/jp-tokyo-5d/d5-03.jpg",
+    "d5-05": "images/jp-tokyo-5d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 호텔 빌라 퐁텐 그랑 도쿄 시오도메(ホテルヴィラフォンテーヌグランド東京汐留)",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "호텔 빌라 퐁텐 시오도메",
+        "latitude": 35.6619383,
+        "longitude": 139.7599978,
+        "applePlaceID": "ID6E5F2FC0A58ABF1",
+        "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "후보: 가메아리(亀有公園)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "가메아리역",
+        "latitude": 35.7665751,
+        "longitude": 139.8477718,
+        "applePlaceID": "I4A90016323A0CF14",
+        "address": "東京都葛飾区, 亀有",
+        "addressIsApproximate": true
+      },
+      "notes": "고치카메(こち亀) 동상은 역 앞에 있습니다. 여행기 작성자가 2023년에 갔을 때 주변은 대부분 세트와 동상만 남아 있었어요. 영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-02",
+      "title": "후보: 아키하바라(秋葉原電気街)",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "아키하바라",
+        "latitude": 35.6983512,
+        "longitude": 139.7729252,
+        "applePlaceID": "I2552F15E78F49592",
+        "address": "東京都千代田区, 神田花岡町",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-03",
+      "title": "후보: 다이버시티 도쿄 플라자(ダイバーシティ東京プラザ)",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "다이버시티 도쿄 플라자(오다이바)",
+        "latitude": 35.6251924,
+        "longitude": 139.7755015,
+        "applePlaceID": "I9E847CDBACD2B144",
+        "address": "〒135-0064, 東京都江東区, 青海1丁目1-10",
+        "addressIsApproximate": false
+      },
+      "notes": "실물 크기 유니콘 건담 입상은 2026/08/31에 전시가 끝났습니다. 쇼핑몰 영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-04",
+      "title": "후보: 도쿄도립 시바 공원(芝公園)",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "시바 공원(도쿄)",
+        "latitude": 35.6546533,
+        "longitude": 139.7486025,
+        "address": "日本東京港區",
+        "addressIsApproximate": true
+      },
+      "notes": "나무 사이로 멀리 도쿄 타워가 보입니다. 종일 개방"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "자료 출처와 확인",
+      "paragraphs": [
+        {
+          "text": "원본 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/9da2c51fa4f2/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인(2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "도쿄 타워 전망대 시간: https://www.tokyotower.co.jp/en/ (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "도쿄 스카이트리 전망대 시간(당일 표시): https://en.tokyo-skytree.jp/ (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "메이지 신궁 개방 시간: https://www.meijijingu.or.jp/en/visit/ (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "고쿄 히가시교엔 시간과 휴원: https://www.kunaicho.go.jp/e-event/higashigyoen02.html (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "센소지 본당 시간: https://www.senso-ji.jp/about/ (2026-11-17 확인)",
+          "style": "bullet"
+        },
+        {
+          "text": "바뀐 것",
+          "style": "heading"
+        },
+        {
+          "text": "요코하마 건담 팩토리(GUNDAM FACTORY YOKOHAMA)는 2024/03에 종료되어, 원래 일정을 teamLab Planets와 오다이바 일대로 바꿨습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "오다이바 실물 크기 유니콘 건담 입상은 2026/08/31에 전시가 끝났기에(운영사 TOKYO GUNDAM PROJECT 공지, 보도 https://dengekionline.com/article/202608/85200 , 2026-11-17 확인) 넣지 않았습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "일본 과학미래관은 보수 중이라(공식 사이트에 2027/04/23 재개관으로 명시) 넣지 않았습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못한 것. 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "시부야 스카이 시간과 예약 규정(공식 페이지를 가져오지 못함).",
+          "style": "bullet"
+        },
+        {
+          "text": "도쿄 디즈니씨 당일 영업시간과 야간 쇼(공식 사이트 시간 초과).",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Planets 영업시간(공식 페이지를 가져오지 못했고 제3자 자료는 서로 모순).",
+          "style": "bullet"
+        },
+        {
+          "text": "후지 TV 구체 전망실, 국회의사당 견학 규정, LE LABO, 기와미야와 각 식당의 영업시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "나리타 익스프레스와 아사쿠사선 에어포트 쾌특의 요금과 소요 시간(공식 사이트가 열리지 않아 여행기 2023년 자료 사용).",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 자료",
+          "style": "heading"
+        },
+        {
+          "text": "숙소는 작성자의 2023년 6월 여행에 맞춰 시오도메에서 4박 연속.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기의 가메아리 고치카메(こち亀)와 아키하바라는 일자별 일정에 넣지 않았습니다(후보 표시 참고).",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 안내",
+      "paragraphs": [
+        {
+          "text": "입국과 인터넷",
+          "style": "heading"
+        },
+        {
+          "text": "출발 전에 Visit Japan Web에서 입국 심사와 세관 신고를 등록하세요: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "인터넷은 물리 SIM이나 eSIM을 쓸 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "교통",
+          "style": "heading"
+        },
+        {
+          "text": "전철, 지하철, 버스는 Suica나 PASMO를 쓸 수 있고, iPhone은 지갑에 Suica를 추가할 수 있어요. 여행기 작성자는 2023년에 iPhone의 Suica를 썼고, Android 사용자는 나리타공항에서 Welcome Suica를 살 수 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항에서 시내로: 나리타 익스프레스(成田エクスプレス)는 전 좌석 지정석이라 교통카드로 그대로 개찰을 통과하려 하면 막히니, 먼저 지정석권을 사야 합니다(여행기 경험, 자세한 내용은 JR 히가시니혼 공식 사이트 참고).",
+          "style": "bullet"
+        },
+        {
+          "text": "시오도메역을 나서면 바로 유리카모메와 오에도선이 있고, 다른 지역으로 가려면 신바시역(JR, 긴자선, 아사쿠사선)까지 약 10분 걸어야 합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "나리타로 돌아올 때: 신바시에서 도에이 아사쿠사선 에어포트 쾌특으로 약 1시간 15분 직통. 여행기에 그 구간 승차권은 당시 카드나 Suica를 쓸 수 없었다고 하니 현금을 넉넉히 준비하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "도쿄 버스는 탈 때 카드로 결제합니다(내릴 때 내는 교토와 다릅니다).",
+          "style": "bullet"
+        },
+        {
+          "text": "예약",
+          "style": "heading"
+        },
+        {
+          "text": "시부야 스카이, 도쿄 디즈니씨, teamLab Planets, 도쿄 스카이트리는 일찍 표를 사고 시간대를 예약하세요. 인기 있는 날은 현장에서 대부분 표가 없습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "디즈니씨 입구는 파크 안 전철을 지나서 있어요. 여행기에서 산 것은 디즈니씨 단일 파크권이라 성과 퍼레이드는 없었고, 야간 수상 쇼 앞자리는 별도 구매입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "전망대와 디즈니의 영업시간은 날마다 다르니 출발 전에 공식 사이트를 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "기타",
+          "style": "heading"
+        },
+        {
+          "text": "엔화 현금은 넉넉히: 드럭스토어나 공항 급행 승차권 등에서 카드를 쓸 수 없거나 결제가 안 되는 경우가 있었고, 여행기는 최소 1만 엔을 지니라고 권합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "면세와 세금 환급 규정이 최근 몇 년 사이 바뀌었으니 출발 전에 일본 관광청 설명을 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "짐은 호텔에 맡길 수 있고, 여행기 작성자는 마지막 날 호텔에 짐을 맡기고 가볍게 거리를 돌아다녔습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "디즈니 파크 안 식당은 자주 만석이라 여행기는 간식을 챙기라고 권합니다.",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "닷사이(아사히 주조)",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "도쿄역이나 나리타공항 면세점에서 살 수 있고, 여행기에 따르면 두 곳의 가격이 비슷합니다"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "도쿄",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "도쿄",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "도쿄",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "도쿄",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "도쿄",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "도쿄",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "나리타 국제공항(成田国際空港) 도착",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "airport",
+          "place": {
+            "name": "나리타 국제공항",
+            "latitude": 35.7632517,
+            "longitude": 140.3829322,
+            "applePlaceID": "IAB50389A6079F824",
+            "address": "千葉県成田市, 三里塚御料牧場",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "짐 맡기고 체크인: 호텔 빌라 퐁텐 그랑 도쿄 시오도메(ホテルヴィラフォンテーヌグランド東京汐留)",
+          "start": "15:45",
+          "end": "16:15",
+          "category": "hotel",
+          "place": {
+            "name": "호텔 빌라 퐁텐 시오도메",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "notes": "체크인 시간은 호텔 안내를 따르세요",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "JR 나리타 익스프레스(成田エクスプレス)로 도쿄역까지 약 60분, 전 좌석 지정석이라 승강장이나 발권기에서 먼저 좌석을 잡으세요. JR이나 지하철로 신바시까지 가서 호텔까지 도보 약 10분. 각 구간 요금은 출발 전에 확인하세요"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "시부야 스크램블 교차로(渋谷スクランブル交差点)",
+          "start": "17:00",
+          "end": "17:30",
+          "category": "sight",
+          "place": {
+            "name": "시부야 스크램블 교차로",
+            "latitude": 35.6591944,
+            "longitude": 139.6975155,
+            "address": "東京都渋谷区道玄坂2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "종일 개방, 휴무일 없음",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "신바시역까지 도보 약 10분, JR 야마노테선이나 지하철 긴자선으로 시부야까지 약 25분"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "저녁: 기와미야 시부야 파르코점(極味や 渋谷パルコ店) 고베 소고기 스테이크와 함박스테이크",
+          "start": "17:45",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "기와미야 시부야 파르코점",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I27C7C5F97CC5C83B",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1 渋谷パルコB1F",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 인기 시간대에는 줄을 서야 합니다(여행기에서는 약 45분 대기)",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "교차로에서 도보 약 10분"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "시부야 스카이 전망대(渋谷スカイ)",
+          "start": "19:30",
+          "end": "20:45",
+          "category": "viewpoint",
+          "place": {
+            "name": "시부야 스카이",
+            "latitude": 35.658351,
+            "longitude": 139.7024167,
+            "applePlaceID": "I26904022D636B068",
+            "address": "〒150-0002, 東京都渋谷区, 渋谷2丁目24-12, 渋谷スクランブルスクエア 14F-45F, 46F 屋上",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 입장 시간대를 미리 예약해야 하고 현장에서는 대부분 표가 없음. 전망대에는 가방을 가져갈 수 없음(유료 보관함 있음)",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "파르코에서 시부야 스크램블 스퀘어까지 도보 약 10분"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "JR 야마노테선이나 지하철 긴자선으로 신바시까지 가서 도보 약 10분"
+          },
+          "todos": [
+            {
+              "text": "시부야 스카이 입장 시간대 예약",
+              "note": "공식 사이트 https://www.shibuya-scramble-square.com/sky/ 현장에서는 대부분 표가 없으니 날짜가 정해지면 서둘러 예약"
+            }
+          ],
+          "images": [
+            "d1-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "도쿄",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "팀랩 플래닛 도쿄(チームラボプラネッツ)",
+          "start": "09:30",
+          "end": "11:00",
+          "category": "artgallery",
+          "place": {
+            "name": "팀랩 플래닛 TOKYO DMM",
+            "latitude": 35.6492824,
+            "longitude": 139.789685,
+            "applePlaceID": "I96F6ACCAB28133E",
+            "address": "〒135-0061",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간과 휴관일은 출발 전에 확인하세요. 시간대를 미리 예약해야 함",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "유리카모메(ゆりかもめ) 시오도메→신토요스 약 15분, 거기서 도보 약 5분"
+          },
+          "todos": [
+            {
+              "text": "팀랩 플래닛 입장 시간대 예약",
+              "note": "공식 사이트 https://www.teamlab.art/e/planets/ 날짜에 맞춰 시간대를 예약"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "오다이바 자유의 여신상(お台場海浜公園)",
+          "start": "11:30",
+          "end": "12:00",
+          "category": "sight",
+          "place": {
+            "name": "자유의 여신상",
+            "latitude": 35.6278608,
+            "longitude": 139.7718434,
+            "applePlaceID": "IDD964C09F6F6B4",
+            "address": "〒135-0091, 東京都港区, 台場1-4-1",
+            "addressIsApproximate": false
+          },
+          "notes": "야외 공원으로 종일 입장 가능",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "유리카모메 신토요스→오다이바카이힌코엔 약 15분, 거기서 도보 약 5분. 가는 길에 후지 TV와 오다이바 풍경을 볼 수 있어요"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "점심: 덱스 도쿄 비치(デックス東京ビーチ) 다코야키와 닭튀김",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "덱스 도쿄 비치",
+            "latitude": 35.6290897,
+            "longitude": 139.7757831,
+            "applePlaceID": "IB3FCC15C9C5C542C",
+            "address": "〒135-0091, 東京都港区, 台場1丁目6-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "자유의 여신상에서 도보 약 5분"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "후지 TV 본사 빌딩(フジテレビ本社ビル)",
+          "start": "13:30",
+          "end": "14:15",
+          "category": "sight",
+          "place": {
+            "name": "후지 TV",
+            "latitude": 35.6265943,
+            "longitude": 139.7742811,
+            "applePlaceID": "IB2A7C7313DF391A",
+            "address": "〒137-8088, 東京都港区, 台場2丁目4-8",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요(구체 전망실은 별도의 운영 시간과 휴무일이 있음)",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "신주쿠 쇼핑(新宿駅周辺): 백화점과 드럭스토어",
+          "start": "15:15",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "신주쿠산초메",
+            "latitude": 35.6908591,
+            "longitude": 139.7048661,
+            "applePlaceID": "I5B743E919E124DD5",
+            "address": "東京都新宿区, 新宿",
+            "addressIsApproximate": true
+          },
+          "notes": "각 가게의 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "도쿄 텔레포트역까지 걸어가 린카이선(りんかい線)이 JR 사이쿄선으로 직통해 신주쿠까지 약 35분. 배차는 내비로 확인하세요"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "저녁: 신주쿠(이자카야)",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "신주쿠역 주변 이자카야",
+            "latitude": 35.6913159,
+            "longitude": 139.7034026,
+            "address": "東京都新宿区新宿3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "도에이 오에도선 신주쿠→시오도메 약 20분, 호텔까지 도보"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "도쿄",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "도쿄 디즈니씨(東京ディズニーシー) 오전: 토이 스토리 매니아!, 소어린: 판타스틱 플라이트",
+          "start": "09:15",
+          "end": "13:00",
+          "category": "sight",
+          "place": {
+            "name": "도쿄 디즈니씨",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 날마다 다르니 공식 캘린더를 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "JR 신바시→도쿄, 게이요선으로 갈아타 마이하마, 디즈니 리조트 라인(リゾートライン)으로 도쿄 디즈니씨역까지"
+          },
+          "todos": [
+            {
+              "text": "도쿄 디즈니씨 입장권 구매",
+              "note": "공식 사이트 https://www.tokyodisneyresort.jp/en/tds/ 날짜가 정해지면 구매. 야간 쇼 앞자리와 프라이어리티 패스는 별도 구매"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "점심: 파크 안",
+          "start": "13:15",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "도쿄 디즈니씨",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "파크 영업시간에 따릅니다. 식당이 자주 만석이니 간식을 챙기면 좋아요",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "파크 안 도보"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "도쿄 디즈니씨 오후: 센터 오브 디 어스, 해저 2만 마일, 인디아나 존스 어드벤처, 쇼핑",
+          "start": "14:30",
+          "end": "19:00",
+          "category": "sight",
+          "place": {
+            "name": "도쿄 디즈니씨",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "파크 영업시간에 따릅니다. 공식 캘린더를 확인하세요",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "파크 안 도보"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "야간 수상 쇼(메디테레이니언 하버)",
+          "start": "19:15",
+          "end": "20:45",
+          "category": "show",
+          "place": {
+            "name": "도쿄 디즈니씨",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "공연 내용과 시간은 그 시기 공지를 따릅니다. 공식 사이트나 파크 앱에서 확인하세요. 앞자리는 유료 지정석",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "파크 안을 걸어 하버까지"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "JR 게이요선 마이하마→도쿄, JR로 갈아타 신바시, 거기서 도보 약 10분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "도쿄",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "도쿄 타워(東京タワー)",
+          "start": "09:15",
+          "end": "10:45",
+          "category": "sight",
+          "place": {
+            "name": "도쿄 타워",
+            "latitude": 35.6585581,
+            "longitude": 139.7455037,
+            "applePlaceID": "I9F5C79B7A59D296F",
+            "address": "2-8, Shibakoen 4-Chōme, Minato, Tokyo, Japan",
+            "addressIsApproximate": false
+          },
+          "notes": "메인 데크 09:00~23:00(마지막 입장 22:30), 톱 데크 투어 09:00~22:45(마지막 입장 22:15)",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "도에이 오에도선 시오도메→아카바네바시 약 5분, 거기서 도보 약 7분(신바시에서 도보 약 20분으로도 갈 수 있음)"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "메이지 신궁(明治神宮)",
+          "start": "11:30",
+          "end": "12:45",
+          "category": "temple",
+          "place": {
+            "name": "메이지 신궁",
+            "latitude": 35.6762064,
+            "longitude": 139.699375,
+            "applePlaceID": "I65EB06A821AE2921",
+            "address": "〒151-8557, 東京都渋谷区, 代々木神園町1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "일출에 개문, 일몰에 폐문, 연중무휴. 실제 시간은 달마다 다르며 무료 입장",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "도에이 오에도선 아카바네바시→요요기 약 17분, 거기서 남쪽 참배길 입구까지 도보 약 5분"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "점심: 하라주쿠, 오모테산도 일대",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "dining",
+          "place": {
+            "name": "하라주쿠·오모테산도 주변 식당",
+            "latitude": 35.6687322,
+            "longitude": 139.7085394,
+            "address": "東京都渋谷区神宮前4丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "참배길을 따라 하라주쿠 방향으로 도보 약 15분"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "르 라보 아오야마점(ル ラボ 青山店, LE LABO)",
+          "start": "14:15",
+          "end": "15:15",
+          "category": "shopping",
+          "place": {
+            "name": "르 라보 아오야마",
+            "latitude": 35.6635812,
+            "longitude": 139.7129256,
+            "applePlaceID": "I40419DBE1F059E9C",
+            "address": "〒107-0062, 東京都港区, 南青山5丁目5-24",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 향수는 현장에서 담고 라벨을 붙여 주며 약 15~20분 기다려야 해요",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "센소지와 가미나리몬(浅草寺・雷門)",
+          "start": "16:00",
+          "end": "17:15",
+          "category": "temple",
+          "place": {
+            "name": "센소지",
+            "latitude": 35.7146948,
+            "longitude": 139.7967499,
+            "applePlaceID": "I24702A862C9B16DC",
+            "address": "〒111-0032, 東京都台東区, 浅草2丁目3-1",
+            "addressIsApproximate": false
+          },
+          "notes": "본당 06:00~17:00(10~3월은 06:30 개당). 경내와 나카미세 상점가 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "도쿄메트로 긴자선 오모테산도→아사쿠사 직통 약 32분, 거기서 가미나리몬까지 도보"
+          },
+          "images": [
+            "d4-05"
+          ]
+        },
+        {
+          "key": "d4-06",
+          "title": "저녁: 도쿄 소라마치(東京ソラマチ)",
+          "start": "17:45",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "도쿄 소라마치",
+            "latitude": 35.7099596,
+            "longitude": 139.8095184,
+            "applePlaceID": "I698159AE84ABBDF0",
+            "address": "〒131-0045, 東京都墨田区, 押上1丁目1-13",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "스미다강을 따라 도보 약 25분. 도부선이나 지하철로 오시아게까지 갈 수도 있음"
+          }
+        },
+        {
+          "key": "d4-07",
+          "title": "도쿄 스카이트리 전망대(東京スカイツリー)",
+          "start": "19:00",
+          "end": "20:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "도쿄 스카이트리",
+            "latitude": 35.7100211,
+            "longitude": 139.8107243,
+            "applePlaceID": "IF4B9F085287510CE",
+            "address": "〒131-0045, 東京都墨田区, 押上1丁目1-81",
+            "addressIsApproximate": false
+          },
+          "notes": "공식 사이트에는 당일 10:00~22:00(마지막 입장 21:00)으로 표시. 날짜에 따라 바뀌니 출발 전에 확인하세요. 입장 시간대 예약을 권장",
+          "leg": {
+            "fromKey": "d4-06",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "같은 건물, 전망대 입구까지 도보"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "도에이 아사쿠사선 오시아게→신바시 약 25분, 거기서 도보 약 10분"
+          },
+          "todos": [
+            {
+              "text": "도쿄 스카이트리 입장 시간대 예약",
+              "note": "공식 사이트 https://en.tokyo-skytree.jp/ 여행기 작성자는 늦게 사서 최상층을 못 갔으니 일찍 구매하세요"
+            }
+          ],
+          "images": [
+            "d4-07"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "도쿄",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "체크아웃하고 짐 맡기기: 호텔 빌라 퐁텐 그랑 도쿄 시오도메(ホテルヴィラフォンテーヌグランド東京汐留)",
+          "start": "09:00",
+          "end": "09:30",
+          "category": "hotel",
+          "place": {
+            "name": "호텔 빌라 퐁텐 시오도메",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "notes": "짐을 맡길 수 있는 시간은 프런트에 확인하세요",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "같은 건물"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "국회의사당(国会議事堂)",
+          "start": "10:15",
+          "end": "11:00",
+          "category": "sight",
+          "place": {
+            "name": "국회의사당",
+            "latitude": 35.6759144,
+            "longitude": 139.7448921,
+            "applePlaceID": "ICCECE2B497EBB942",
+            "address": "〒100-0014, 東京都千代田区, 永田町1丁目7-1",
+            "addressIsApproximate": false
+          },
+          "notes": "외관은 바깥에서 사진을 찍을 수 있어요. 내부 견학은 개방일과 예약제로 한정되니 중의원·참의원 공식 사이트에서 확인하세요",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "도쿄메트로 긴자선 신바시→다메이케산노, 거기서 도보 약 10분. 내비로 확인하세요"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "고쿄 히가시교엔(皇居東御苑)",
+          "start": "11:30",
+          "end": "12:45",
+          "category": "park",
+          "place": {
+            "name": "고쿄 히가시교엔",
+            "latitude": 35.6866161,
+            "longitude": 139.7572947,
+            "applePlaceID": "I3FE13000298EBF54",
+            "address": "〒100-0001, 東京都千代田区, 千代田1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "11~2월 09:00~16:00(마지막 입장 15:30). 월요일, 금요일과 12/28~1/3은 휴원. 무료",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "지하철로 오테마치역까지 가서 오테몬 입구까지 도보. 내비로 확인하세요"
+          },
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "점심: 도쿄역(튀김 소바)",
+          "start": "13:15",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "다치구이 스시 하코타로 도쿄역 이치방가이점",
+            "latitude": 35.6809358,
+            "longitude": 139.7683535,
+            "applePlaceID": "I652EEAAA71949961",
+            "address": "〒100-0005",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "오테몬에서 도보 약 15분"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "도쿄역 마루노우치 역사(東京駅丸の内駅舎)",
+          "start": "14:30",
+          "end": "15:00",
+          "category": "station",
+          "place": {
+            "name": "도쿄역 마루노우치 역 앞 광장",
+            "latitude": 35.6815007,
+            "longitude": 139.7652769,
+            "applePlaceID": "IB46F08B4D007506F",
+            "address": "〒100-0005, 東京都千代田区, 丸の内1丁目9",
+            "addressIsApproximate": false
+          },
+          "notes": "외관은 종일 감상할 수 있어요. 역 안 가게의 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "역 안 도보"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "호텔로 돌아가 짐 찾기: 호텔 빌라 퐁텐 그랑 도쿄 시오도메(ホテルヴィラフォンテーヌグランド東京汐留)",
+          "start": "15:30",
+          "end": "15:45",
+          "category": "hotel",
+          "place": {
+            "name": "호텔 빌라 퐁텐 시오도메",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "JR 도쿄→신바시 약 5분, 거기서 도보 약 10분"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "나리타 국제공항(成田国際空港) 출국",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "airport",
+          "place": {
+            "name": "나리타 국제공항",
+            "latitude": 35.7632517,
+            "longitude": 140.3829322,
+            "applePlaceID": "IAB50389A6079F824",
+            "address": "千葉県成田市, 三里塚御料牧場",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "신바시에서 도에이 아사쿠사선 에어포트 쾌특으로 나리타공항까지 직통, 약 1시간 15분(여행기 2023년 자료). 이 구간 승차권은 여행기에 카드나 Suica를 쓸 수 없었다고 하니, 현금을 준비하고 출발 전에 확인하세요"
+          }
+        }
+      ]
+    }
+  ]
+}
