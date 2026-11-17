@@ -1,0 +1,1281 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-sanyo-okayama-hiroshima-6d",
+  "revision": 2,
+  "contentLocale": "ko",
+  "title": "산요 6일｜히로시마·미야지마·오노미치·구라시키·오카야마",
+  "subtitle": "오카야마 인/아웃, 구라시키 1박·히로시마 3박, 오노미치를 거쳐 오카야마로",
+  "summary": "오카야마 모모타로 공항으로 드나드는 일정이에요. 첫날은 구라시키로, 이어지는 3박은 히로시마에서 미야지마, 원폭 돔, 구레를 돌고, 5일차에는 오노미치를 거쳐 오카야마로 돌아와 마지막에 오카야마성과 고라쿠엔을 둘러봅니다. 5일차는 오노미치 왕복과 환승으로 이동 시간이 3할을 넘으니, 여유롭게 가고 싶다면 오노미치 점심 이후 일정을 빼세요. 도모노우라, 후쿠야마성, 기비쓰 신사는 대체 후보로 두었습니다.",
+  "destination": "일본 오카야마・히로시마",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 6,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "첫 방문",
+    "세계유산",
+    "세토내해"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록(입국 심사·세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권과 숙소 예약이 끝나면 바로 작성할 수 있어요"
+    }
+  ],
+  "images": {
+    "d1-02": "images/jp-sanyo-okayama-hiroshima-6d/d1-02.jpg",
+    "d1-03": "images/jp-sanyo-okayama-hiroshima-6d/d1-03.jpg",
+    "d2-01": "images/jp-sanyo-okayama-hiroshima-6d/d2-01.jpg",
+    "d2-02": "images/jp-sanyo-okayama-hiroshima-6d/d2-02.jpg",
+    "d2-04": "images/jp-sanyo-okayama-hiroshima-6d/d2-04.jpg",
+    "d2-05": "images/jp-sanyo-okayama-hiroshima-6d/d2-05.jpg",
+    "d3-01": "images/jp-sanyo-okayama-hiroshima-6d/d3-01.jpg",
+    "d3-03": "images/jp-sanyo-okayama-hiroshima-6d/d3-03.jpg",
+    "d4-01": "images/jp-sanyo-okayama-hiroshima-6d/d4-01.jpg",
+    "d4-02": "images/jp-sanyo-okayama-hiroshima-6d/d4-02.jpg",
+    "d5-01": "images/jp-sanyo-okayama-hiroshima-6d/d5-01.jpg",
+    "d5-03": "images/jp-sanyo-okayama-hiroshima-6d/d5-03.jpg",
+    "d6-01": "images/jp-sanyo-okayama-hiroshima-6d/d6-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 구라시키역 일대(여행기에서 묵은 곳: HOTEL LiVEMAX 오카야마 구라시키역앞)",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "구라시키",
+        "latitude": 34.6017124,
+        "longitude": 133.7654347,
+        "applePlaceID": "IC254A9932624F965",
+        "address": "岡山県倉敷市, 阿知",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ],
+      "todos": [
+        {
+          "text": "호텔 프런트 운영 시간 확인(구라시키 호텔은 24시간 프런트가 아님)",
+          "note": "여행기에 따르면 프런트가 닫기 전에 체크인해야 함"
+        }
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "숙박: 히로시마역 일대(여행기에서 묵은 곳: 도요코인 히로시마역 스타디움 앞)",
+      "fromDay": 2,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "히로시마",
+        "latitude": 34.3987106,
+        "longitude": 132.4750239,
+        "applePlaceID": "I558EEBEC59B3D890",
+        "address": "広島県広島市南区, 松原町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "key": "ad5-05",
+      "title": "숙박: 오카야마역 일대(역 앞, 다음 날 공항 버스 타기 편함)",
+      "fromDay": 5,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "오카야마",
+        "latitude": 34.666644,
+        "longitude": 133.9183193,
+        "applePlaceID": "I93FED519C6CEADFD",
+        "address": "岡山県岡山市北区, 駅元町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        6
+      ],
+      "closingDays": [
+        5
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "대체: 도모노우라 (鞆の浦)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "후쿠야마시 도모노우라 역사민속자료관",
+        "latitude": 34.3842872,
+        "longitude": 133.3817812,
+        "applePlaceID": "I3C61CF436A2D46BA",
+        "address": "〒720-0202, 広島県福山市, 鞆町後地7536-1",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인. 여행기에 따르면 후쿠야마역 앞에서 버스로 약 40분, 상야등과 해 질 녘 항구 풍경이 있고 반나절은 잡아야 함"
+    },
+    {
+      "key": "u-02",
+      "title": "대체: 후쿠야마성 (福山城)",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "스지가네 고몬",
+        "latitude": 34.4898953,
+        "longitude": 133.360955,
+        "applePlaceID": "I309799357674FB95",
+        "address": "〒720-0061",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인. 여행기에서는 후쿠야마역 뒤쪽에서 멀리서만 봄"
+    },
+    {
+      "key": "u-03",
+      "title": "대체: 기비쓰 신사 (吉備津神社)",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "기비쓰 신사 회랑",
+        "latitude": 34.670828,
+        "longitude": 133.845825,
+        "applePlaceID": "IB405E8D6690FC293",
+        "address": "〒701-1341, 岡山県岡山市北区, 吉備津1716-1",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인. 여행기에 따르면 오카야마역에서 전철로 약 30분, 내려서 다시 걸어서 약 15분, 편백나무 회랑과 은행나무가 있음"
+    },
+    {
+      "key": "u-04",
+      "title": "대체: 미야케 상점 (三宅商店) 카레 정식",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "미야케 상점",
+        "latitude": 34.5963058,
+        "longitude": 133.7722686,
+        "applePlaceID": "I6BA238D4BAD93333",
+        "address": "〒710-0054, 岡山県倉敷市, 本町3-11",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인. 여행기가 추천하는 구라시키 점심 카레 정식"
+    },
+    {
+      "key": "u-05",
+      "title": "대체: 파를러 구다모노 고마치 (パーラー果物小町)",
+      "durationMinutes": 60,
+      "category": "dessert",
+      "place": {
+        "name": "파를러 구다모노 고마치",
+        "latitude": 34.5949755,
+        "longitude": 133.7710575,
+        "applePlaceID": "IE046F142B5340870",
+        "address": "〒710-0046, 岡山県倉敷市, 中央1丁目4-22 きび美ミュージアム",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인. 여행기가 추천하는 오카야마 샤인머스캣 과일 파르페"
+    },
+    {
+      "key": "u-06",
+      "title": "대체: 다이쇼인 (大聖院)",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "다이쇼인",
+        "latitude": 34.2919436,
+        "longitude": 132.3185366,
+        "applePlaceID": "IC89052627BBC1008",
+        "address": "〒739-0592",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인. 미야지마 모미지다니 공원 일대의 고찰"
+    },
+    {
+      "key": "u-07",
+      "title": "대체: 오리즈루 타워 (おりづるタワー)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "오리즈루 타워",
+        "latitude": 34.3957122,
+        "longitude": 132.4545106,
+        "applePlaceID": "I6D0E302BFD43D260",
+        "address": "〒730-0051, 広島県広島市中区, 大手町1丁目2-1",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인. 여행기에 따르면 원폭 돔 바로 옆이고 높지 않아서 들어가지 않음"
+    },
+    {
+      "key": "u-08",
+      "title": "대체: 부케 다르브르 카페 (ブーケ ダルブル)",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "쇼콜라티에 부케 다르브르",
+        "latitude": 34.4102048,
+        "longitude": 133.1998666,
+        "applePlaceID": "I254843C667D8C7B4",
+        "address": "〒722-0033, 広島県尾道市, 東土堂町19-18",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인. 여행기에 따르면 센코지에서 내려오는 길에 영업하는 카페이고 가게 고양이가 사람을 잘 따름"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "자료 출처와 확인",
+      "paragraphs": [
+        {
+          "text": "원문 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/31b9b3a63abc/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인(2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "오카야마 공항 버스(시간, 요금, 증편, 구라시키 직행): https://www.okayama-airport.org/tw/access/bus (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "히로시마 평화기념자료관(개관 시간, 휴관일, 200엔): https://hpmmuseum.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "오카야마 고라쿠엔(개원 시간, 입장료는 자료마다 표기가 다름): https://okayama-korakuen.jp/ 와 오카야마시 공고 자료(확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "오카야마성 천수(9:00–17:30, 입장 17:00까지, 12/29–31 휴무): https://okayama-castle.jp/ 와 오카야마시 공고 자료(확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "슈케이엔(개원 시간, 12/29–31 휴무): https://shukkeien.jp/ (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "야마토 뮤지엄(화요일 휴관, 9:00–18:00): https://www.yamato-museum.com/ ; 개관 시간은 박물관 정보 사이트 https://www.museum.or.jp/museum/13101 에서(확인 2026-11-17, 공식 사이트에는 시간 기재 없음)",
+          "style": "bullet"
+        },
+        {
+          "text": "미야지마 로프웨이(상행 9:00–16:00, 하행 9:20–16:30, 요금): https://www.miyajima.or.jp/ 의 요금 페이지와 목록 자료(확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "센코지산 로프웨이(9:00–17:15, 15분 간격): 관광 정보 사이트(확인 2026-11-17, 공식 전화 0848-22-4900)",
+          "style": "bullet"
+        },
+        {
+          "text": "히로덴 노면전차 요금 240엔: https://www.hiroden.co.jp/en/s-fares.html (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "오카야마·히로시마·야마구치 지역 철도 패스: https://www.westjr.co.jp/global/tc/ticket/pass/okayama_hiroshima_yamaguchi/ (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못한 것, 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "아치 신사, 구라시키 미관 지구 가게들, 히로시마성 천수(여행기 2023년 안내판 9:00–18:00), 이쓰쿠시마 신사 참배 시간과 참배료(약 300엔), 해상자위대 구레 사료관, 오노미치 각 가게, 히로시마 오코노미 모노가타리, 가키야, 이온몰 오카야마의 영업시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "미야지마 방문세 100엔: 여행기 2023년 자료이며 공식 사이트에서는 확인하지 못함.",
+          "style": "bullet"
+        },
+        {
+          "text": "신칸센 오카야마↔히로시마의 현행 편도 요금.",
+          "style": "bullet"
+        },
+        {
+          "text": "달라진 점과 취사선택",
+          "style": "heading"
+        },
+        {
+          "text": "여행기는 원래 히로시마 인/아웃이었지만(실제로는 오카야마 공항으로 드나들며 첫날 히로시마로 이동하고 마지막 날 오카야마로 돌아옴) 이 템플릿은 오카야마 인/아웃으로 바꿔 순서를 다시 짰습니다. 구라시키는 1일차로 옮기고, 히로시마 3박, 오노미치는 5일차 오카야마로 돌아오는 길에, 오카야마성과 고라쿠엔은 5·6일차로 나누었어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기의 후쿠야마, 도모노우라, 센스이지마, 기비쓰 신사, 구라시키의 작은 가게들은 대체 후보 명소에 넣었습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "5일차 오노미치 왕복과 환승의 이동 시간 비중은 30%를 넘습니다. 히로시마에서 오카야마로 가야 하는 이동일이라서이고, 여유롭게 가려면 오노미치 점심 이후 일정을 빼세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기는 혼자 여행이었고, 이 템플릿은 성인 2명 기준으로 짜서 시간 간격을 여유 있게 했습니다.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 안내",
+      "paragraphs": [
+        {
+          "text": "교통 티켓",
+          "style": "heading"
+        },
+        {
+          "text": "오카야마·히로시마·야마구치 지역 철도 패스(JR 서일본): 5일 연속, 성인 17,000엔(공식 사이트 표시, 가격이 바뀔 수 있음). 산요 신칸센 오카야마~하카타 지정석, JR 재래선, JR 미야지마 페리를 포함합니다. 이 일정에서는 1일차에 오카야마역에서 JR로 구라시키에 가는 날부터 시작해 1–5일차에 딱 맞게 쓰고, 6일차 공항 버스는 포함되지 않아요.",
+          "style": "bullet"
+        },
+        {
+          "text": "패스를 사지 않을 경우 여행기 2023년 자료로 오카야마↔히로시마 신칸센 편도는 약 6,460엔이고, 미야지마·오노미치·구레 왕복을 더하면 패스가 더 이득이니 출발 전 요금으로 직접 계산해 보세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "히로덴 노면전차는 시내 어디든 240엔이고 내릴 때 냅니다. 미야지마 방문세는 1인 100엔으로, 섬에 들어갈 때 미야지마구치 선착장에서 직원의 안내를 받아 구입합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "오카야마 모모타로 공항과 시내 이동",
+          "style": "heading"
+        },
+        {
+          "text": "오카야마역행 공항 버스: 약 30분, 오카야마역 서쪽 출구 1,000엔(운동공원 앞, 오카야마 대학 거리 950엔), ICOCA, Suica 같은 교통 IC 카드 사용 가능. 시간표는 2026/10/25–2027/01/31 유효.",
+          "style": "bullet"
+        },
+        {
+          "text": "타이베이, 가오슝에서 오는 국제선 도착 후에는 오카야마역 방면으로 시간표에 없는 증편 버스가 있으니, 입국 수속 후 곧장 정류장으로 가서 줄을 서세요. 여행기 2023년 자료로는 승객이 차면 바로 출발.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항에서 구라시키역 직행: 약 35분, 1,400엔. 공항 출발은 12편 중 5편이 매일 운행하고 나머지는 특정 날짜만, 구라시키 출발 공항행은 매일 9편. 시각은 공식 사이트에서 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "6일차 공항행: 오카야마역 서쪽 출구에서 같은 공항 버스를 탑니다. 여행기에 따르면 국제선 출발 전에는 사람이 많지만 증편이 있음.",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 사이트: https://www.okayama-airport.org/tw/access/bus",
+          "style": "bullet"
+        },
+        {
+          "text": "숙박",
+          "style": "heading"
+        },
+        {
+          "text": "1박째 구라시키: 여행기에서는 'HOTEL LiVEMAX 오카야마 구라시키역앞'에 묵었고 구라시키역을 나와 도보 약 5분. 이곳은 24시간 프런트가 아니라서 프런트가 닫기 전에 호텔로 돌아와야 한다고 함.",
+          "style": "bullet"
+        },
+        {
+          "text": "2–4박째 히로시마: 여행기에서는 '도요코인 히로시마역 스타디움 앞'에 묵었고 마쓰다 구장 바로 바깥. 역에서 걸어서 약 15분에 건널목을 건너야 하며, 방이 철도 쪽이라 열차가 지나가면 소리가 남.",
+          "style": "bullet"
+        },
+        {
+          "text": "5박째 오카야마: 오카야마역 일대에 묵고 다음 날 곧장 공항 버스를 탑니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "날씨와 계절",
+          "style": "heading"
+        },
+        {
+          "text": "11월 중순~하순에는 오카야마 고라쿠엔과 오카야마성에서 가을 라이트업 행사가 있습니다(날짜는 오카야마 관광 사이트에서 확인). 여행기 작성자가 11월에 방문했을 때 히로시마의 밤은 약 4도라 방한복이 필요했어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "이쓰쿠시마 신사의 썰물 시간은 매일 다르니, 썰물 때의 신사와 도리이를 찍고 싶다면 먼저 물때표를 확인하세요. 여행기의 11월 방문 때는 썰물이 새벽 3시와 저녁 5시였습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "예약과 알림",
+          "style": "heading"
+        },
+        {
+          "text": "2일차 원폭 자료관은 7:30–8:30과 저녁 일부 시간대에 온라인 예약이 필요하고, 낮의 일반 시간대는 필요 없습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "야마토 뮤지엄은 화요일 휴관이니 4일차 일정은 요일에 맞춰 바꿀 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "타이거에어는 기내에 음식을 가져갈 수 없고(여행기), 일본 입국 시 육류 제품은 가져가지 마세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "엔화 현금과 교통 IC 카드를 모두 준비하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "대체 후보",
+          "style": "heading"
+        },
+        {
+          "text": "도모노우라, 후쿠야마성, 기비쓰 신사, 구라시키의 작은 가게 등은 대체 후보 명소로 두었으니 시간과 날씨에 따라 추가하세요.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "여행 개요: 산요(오카야마 출입) 6일 코스",
+      "paragraphs": [
+        {
+          "image": "d3-01"
+        },
+        "오카야마 모모타로 공항으로 들어가 오카야마 모모타로 공항으로 나옵니다. 첫날 밤은 구라시키, 이어서 히로시마를 거점으로 3박, 마지막 1박은 다시 오카야마입니다. 산요 신칸센과 JR이 중심이고, 히로시마 시내는 노면전차, 미야지마는 JR 미야지마 페리를 탑니다.",
+        "1일차: 오후에 공항에 도착해 공항버스와 JR로 구라시키로 가서, 저녁에 아치 신사에 오르고 {@d1-03}을 산책한 뒤 구라시키역 주변에서 저녁을 먹습니다.",
+        "2일차: JR과 산요 신칸센으로 히로시마로 이동해 {@d2-01}과 평화기념자료관을 보고, 점심은 히로시마식 오코노미야키, 오후에는 히로시마성, 해 질 무렵 {@d2-05}에 갑니다.",
+        {
+          "image": "d2-01"
+        },
+        "3일차: 하루 종일 미야지마에서 {@d3-01}을 보고 굴 요리로 점심을 먹은 뒤, 오후에 {@d3-03}를 타고, 저녁은 히로시마역 주변에서 먹습니다.",
+        "4일차: JR 구레선으로 구레에 가서 {@d4-01}과 해상자위대 구레 사료관을 보고 구레 냉면을 먹은 뒤, 저녁에 히로시마역에서 쇼핑합니다.",
+        "5일차: 히로시마에서 오카야마로 가는 길에 오노미치에서 {@d5-01}을 걷고 오노미치 라멘을 먹습니다. 저녁에 오카야마에서 짐을 맡기고 {@d5-03}에 갑니다.",
+        {
+          "image": "d6-01"
+        },
+        "6일차: 아침에 {@d6-01}을 보고, {@d6-02}에서 기념품을 사고 튀김 소바로 점심을 먹은 뒤, 오후에 역 서쪽 출구에서 공항버스를 타고 공항으로 갑니다.",
+        "숙소: 첫째 밤은 구라시키역 주변, 둘째~넷째 밤은 히로시마역 주변, 다섯째 밤은 오카야마역 앞에서 묵고 다음 날 곧장 공항버스를 탑니다.",
+        "교통 포인트: 공항에서 오카야마역까지는 공항버스로 약 30분이고 구라시키역 직행 편도 있습니다. 오카야마·구라시키·히로시마·오노미치·구레 사이는 JR과 산요 신칸센이 중심이므로 오카야마·히로시마·야마구치 지역 철도 패스가 이득인지 출발 전 요금으로 직접 계산해 보세요. 히로시마 시내는 히로덴 노면전차, 미야지마는 JR 페리를 타며 섬에서는 별도의 방문세가 듭니다. 5일차는 오노미치 왕복과 환승에 드는 이동 시간이 전체의 3할이 넘으니, 여유롭게 보내고 싶다면 오노미치 점심 이후 일정을 빼세요. 출발 전에 최신 시간표를 확인하세요.",
+        "이런 분께: 오카야마로 출입하면서 구라시키, 히로시마, 미야지마, 구레, 오노미치, 오카야마를 한 번에 돌고 싶은 분. 성인 2명 기준의 속도입니다. 걷는 거리가 길어 편한 신발이 필수이고, 2일차는 자료관 내용이 무거우니 시간을 넉넉히 잡으세요."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "구레 해군 커피와 해자대 카레 (呉海軍コーヒー・呉海自カレー)",
+      "category": "food",
+      "productType": "tea_coffee",
+      "store": "구레시 상점가의 커피숍"
+    },
+    {
+      "key": "s-02",
+      "title": "오카야마 과일 젤리 (GOHOBI 콜라겐 과일 젤리)",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "구라시키 미관 지구(여행기가 추천하는 구라시키 특산품)"
+    },
+    {
+      "key": "s-03",
+      "title": "이쓰쿠시마 신사 도리이 미니 모형",
+      "category": "souvenir",
+      "productType": "charm_badge",
+      "store": "미야지마 오모테산도 상점"
+    },
+    {
+      "key": "s-04",
+      "title": "히로시마와 오카야마 기념품",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "히로시마역 ekie, 오카야마역, 이온몰 오카야마(여행기에 따르면 오카야마 기념품은 역이나 백화점에 있음)"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "구라시키시",
+      "latitude": 34.58333,
+      "longitude": 133.76667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "히로시마시",
+      "latitude": 34.4,
+      "longitude": 132.45,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "히로시마시",
+      "latitude": 34.4,
+      "longitude": 132.45,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "히로시마시",
+      "latitude": 34.4,
+      "longitude": 132.45,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "오카야마시",
+      "latitude": 34.65,
+      "longitude": 133.93333,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "오카야마시",
+      "latitude": 34.65,
+      "longitude": 133.93333,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "구라시키시",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "오카야마 모모타로 공항 도착 (岡山桃太郎空港)",
+          "start": "14:00",
+          "end": "15:00",
+          "category": "airport",
+          "place": {
+            "name": "오카야마 공항",
+            "latitude": 34.760098,
+            "longitude": 133.8532645,
+            "applePlaceID": "I7E27BF1F5E5B283F",
+            "address": "〒701-1131, 岡山県岡山市北区, 日応寺1277",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "아치 신사 (阿智神社): 높은 곳에서 내려다보는 구라시키",
+          "start": "16:30",
+          "end": "17:20",
+          "category": "temple",
+          "place": {
+            "name": "아치 신사",
+            "latitude": 34.5974588,
+            "longitude": 133.7734768,
+            "applePlaceID": "IC4617BF6EA7D33DE",
+            "address": "〒710-0054, 岡山県倉敷市, 本町12-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "공항 버스로 오카야마역까지 약 30분, 1,000엔(국제선 도착 후 증편 있음), JR 산요 본선으로 갈아타고 구라시키까지 약 17분, 거기서 아치 신사까지 도보 약 15분"
+          },
+          "todos": [
+            {
+              "text": "공항 버스 시각과 구라시키 직행편 확인",
+              "note": "https://www.okayama-airport.org/tw/access/bus 2026/10/25부터 시간표"
+            }
+          ],
+          "images": [
+            "d1-02"
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "구라시키 미관 지구 (倉敷美観地区): 저녁 산책",
+          "start": "17:35",
+          "end": "19:00",
+          "category": "sight",
+          "place": {
+            "name": "구라시키 미관 지구",
+            "latitude": 34.5957059,
+            "longitude": 133.7716304,
+            "applePlaceID": "IAB89652100DAF584",
+            "address": "〒710-0046, 岡山県倉敷市, 中央",
+            "addressIsApproximate": true
+          },
+          "notes": "거리는 자유롭게 걸을 수 있음. 각 가게 영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "아치 신사에서 돌계단을 따라 내려와 도보 약 10분"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "저녁: 구라시키역 일대",
+          "start": "19:15",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "구라시키역 일대 식당",
+            "latitude": 34.6015261,
+            "longitude": 133.7660173,
+            "address": "岡山県倉敷市阿知1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "미관 지구에서 구라시키역 앞까지 도보 약 15분"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "히로시마시",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "원폭 돔과 평화기념공원 (原爆ドーム・平和記念公園)",
+          "start": "10:45",
+          "end": "11:45",
+          "category": "sight",
+          "place": {
+            "name": "원폭 돔",
+            "latitude": 34.3954753,
+            "longitude": 132.4535978,
+            "applePlaceID": "I5E095211678C6A0E",
+            "address": "〒730-0051, 広島県広島市中区, 大手町1丁目10",
+            "addressIsApproximate": false
+          },
+          "notes": "돔과 공원은 종일 관람 가능",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "JR로 오카야마까지 약 20분, 산요 신칸센으로 갈아타고 히로시마까지 약 40분(먼저 히로시마역에서 짐 보관), 히로덴 노면전차로 겐바쿠 돔마에역까지 약 15분, 240엔"
+          },
+          "todos": [
+            {
+              "text": "오카야마·히로시마·야마구치 지역 철도 패스 구입",
+              "note": "JR 서일본 공식 사이트나 대리점에서. 1일차부터 5일간 유효, 오카야마역에서 교환(여행기에 따르면 'QRコードの読取り' 버튼으로 QR 코드를 스캔해야 함)"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "히로시마 평화기념자료관 (広島平和記念資料館)",
+          "start": "12:00",
+          "end": "13:15",
+          "category": "museum",
+          "place": {
+            "name": "히로시마 평화기념자료관",
+            "latitude": 34.3917983,
+            "longitude": 132.4520946,
+            "applePlaceID": "I994A655E4AB1C1B",
+            "address": "〒730-0811, 広島県広島市中区, 中島町1-2",
+            "addressIsApproximate": false
+          },
+          "notes": "3–7월과 9–11월 7:30–19:00, 12–2월 7:30–18:00(폐관 30분 전 입장 마감). 12/30–31 휴관, 2027년 2/15–20은 전시 교체로 휴관",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "평화기념공원 안에서 도보 약 10분. 관람은 약 60–75분이며 내용이 무거움"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "점심: 혼도리 일대(히로시마풍 오코노미야키 또는 굴 요리)",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "dining",
+          "place": {
+            "name": "사이제리야 가미야초 혼도리 에키마에점",
+            "latitude": 34.393559,
+            "longitude": 132.4567828,
+            "applePlaceID": "IC18D7460724901E8",
+            "address": "〒730-0031, 広島県広島市中区, 紙屋町2丁目3番26号",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "혼도리 일대까지 도보 약 15분"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "히로시마성 (広島城)",
+          "start": "14:50",
+          "end": "15:40",
+          "category": "castle",
+          "place": {
+            "name": "히로시마성",
+            "latitude": 34.4006005,
+            "longitude": 132.4622016,
+            "applePlaceID": "IAE7DD45211BC54E0",
+            "address": "広島県広島市中区, 上八丁堀",
+            "addressIsApproximate": true
+          },
+          "notes": "천수각 9:00–18:00(여행기 2023년 안내판 자료). 겨울철 시간과 휴관일은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "혼도리에서 도보 약 15분. 히로시마성의 원래 건물은 원폭으로 사라졌고 지금은 전후에 재건한 것"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "슈케이엔 (縮景園)",
+          "start": "16:05",
+          "end": "16:55",
+          "category": "park",
+          "place": {
+            "name": "슈케이엔",
+            "latitude": 34.3999784,
+            "longitude": 132.4675333,
+            "applePlaceID": "IBF206682E734C6FB",
+            "address": "〒730-0014, 広島県広島市中区, 上幟町2-11",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–17:00(9/16–3/15, 입장 16:30까지), 9:00–18:00(3/16–9/15). 12/29–31 휴무",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "도보 약 20분, 또는 히로덴으로 슈케이엔마에까지 가서 도보. 가을·겨울에는 17:00에 문을 닫으니 일찍 입장"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "저녁: 히로시마 오코노미 모노가타리 에키마에히로바 (広島お好み物語 駅前ひろば, 히로시마풍 오코노미야키)",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "히로시마 오코노미 모노가타리 에키마에히로바",
+            "latitude": 34.396848,
+            "longitude": 132.4729265,
+            "applePlaceID": "I5A5941CECA87DA87",
+            "address": "〒732-0822, 広島県広島市南区, 松原町10-1, 広島フルフォーカスビル6F",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "히로덴으로 히로시마역까지 약 15분. 가게는 히로시마역 출구 오른쪽 건물 6층에 있고 한 층 전체가 오코노미야키 가게"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "여행기에 따르면 역에서 걸어서 약 15분, 건널목을 건너야 함"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "히로시마시",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "이쓰쿠시마 신사와 바다 위 도리이 (厳島神社)",
+          "start": "10:15",
+          "end": "11:30",
+          "category": "temple",
+          "place": {
+            "name": "이쓰쿠시마 신사",
+            "latitude": 34.2960364,
+            "longitude": 132.31969,
+            "applePlaceID": "I7EA0EDCABFD8E819",
+            "address": "〒739-0588, 広島県廿日市市, 宮島町1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "약 6:30부터 저녁까지 개방, 폐문 시간은 계절에 따라 다르니 출발 전에 확인",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "JR 산요 본선으로 미야지마구치까지 약 30분, JR 미야지마 페리로 약 10분(JR 패스로 탑승 가능). 섬에 들어갈 때 미야지마 방문세 100엔은 별도. 선착장에서 신사까지 도보 약 10–15분"
+          },
+          "todos": [
+            {
+              "text": "이쓰쿠시마 신사의 당일 조수와 개방 시간 확인",
+              "note": "https://www.miyajima.or.jp/ 썰물 때의 신사와 도리이를 보려면 먼저 물때표를 확인"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "점심: 가키야 (牡蠣屋, 굴밥과 굴튀김)",
+          "start": "11:45",
+          "end": "12:45",
+          "category": "dining",
+          "place": {
+            "name": "가키야",
+            "latitude": 34.2985639,
+            "longitude": 132.3216529,
+            "applePlaceID": "IA41DD48BF72B0DFE",
+            "address": "〒739-0588, 広島県廿日市市, 宮島町539",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "오모테산도를 따라 도보 약 10분"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "미야지마 로프웨이와 시시이와 전망대 (宮島ロープウェー・獅子岩展望台)",
+          "start": "13:15",
+          "end": "15:15",
+          "category": "cablecar",
+          "place": {
+            "name": "모미지다니",
+            "latitude": 34.2932995,
+            "longitude": 132.3267853,
+            "applePlaceID": "I6113F6876A0754CF",
+            "address": "広島県廿日市市, 宮島町",
+            "addressIsApproximate": true
+          },
+          "notes": "약 9:00–16:00(하행 막차 16:30). 계절과 강풍 운휴는 출발 전에 확인",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "모미지다니역까지 도보 약 25분(또는 무료 셔틀버스). 로프웨이는 두 구간이고 시시이와역에서 도보 약 30분"
+          },
+          "images": [
+            "d3-03"
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "저녁: 히로시마역 일대(여행기 추천은 숯불구이 빈 엔코바시점의 포장 도시락)",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "히로시마역",
+            "latitude": 34.39641,
+            "longitude": 132.4758,
+            "applePlaceID": "IE1D566D5D88F7A02",
+            "address": "〒732-0822, 広島県広島市南区, 松原町2-37",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "걸어서 선착장까지 내려가 페리로 미야지마구치에 돌아와 JR로 히로시마역까지"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "히로시마시",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "야마토 뮤지엄 (大和ミュージアム)",
+          "start": "10:15",
+          "end": "12:15",
+          "category": "museum",
+          "place": {
+            "name": "구레시 해사역사과학관 야마토 뮤지엄",
+            "latitude": 34.2411912,
+            "longitude": 132.5558263,
+            "applePlaceID": "I77D335EE33A1FDFB",
+            "address": "〒737-0029, 広島県呉市, 宝町5-20",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–18:00(입관 17:30까지). 화요일 휴관(화요일이 공휴일이면 다음 날, 4/29–5/5, 7/21–8/31, 12/29–1/3은 무휴)",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "JR 구레선으로 구레역까지 약 35–50분. 역을 나와 육교를 건너 도보 약 5분이면 박물관"
+          },
+          "todos": [
+            {
+              "text": "야마토 뮤지엄 휴관일(화요일) 확인",
+              "note": "https://www.yamato-museum.com/ 요일에 맞춰 4일차 순서를 조정"
+            }
+          ],
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "해상자위대 구레 사료관 (海上自衛隊呉史料館 てつのくじら館)",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "museum",
+          "place": {
+            "name": "해상자위대 구레 사료관(데쓰노쿠지라칸)",
+            "latitude": 34.2422422,
+            "longitude": 132.555365,
+            "applePlaceID": "I77CBF5EE2D518548",
+            "address": "〒737-0029",
+            "addressIsApproximate": true
+          },
+          "notes": "무료 입관. 영업시간과 휴관일은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "야마토 뮤지엄 뒤쪽에서 도보 약 5분. 실제 퇴역한 잠수함 안을 볼 수 있음"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "점심: 구레시 상점가(구레 냉면)",
+          "start": "14:00",
+          "end": "15:00",
+          "category": "dining",
+          "place": {
+            "name": "구레시 상점가 일대(구레 냉면)",
+            "latitude": 34.2459288,
+            "longitude": 132.5649722,
+            "address": "広島県呉市中通3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "여행기에 따르면 상점가까지 걸어서 약 30분. 택시나 버스로 줄일 수 있음"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "히로시마역 쇼핑과 기념품 (ekie)",
+          "start": "16:30",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "아방세 에키에 히로시마역점",
+            "latitude": 34.397971,
+            "longitude": 132.4760597,
+            "applePlaceID": "IFE0D78E6E12E9D03",
+            "address": "〒732-0822, 広島県広島市南区, 松原町1-2",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "JR 구레선으로 히로시마역까지 약 35–50분"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "저녁: 히로시마역 일대",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "히로시마역",
+            "latitude": 34.39641,
+            "longitude": 132.4758,
+            "applePlaceID": "IE1D566D5D88F7A02",
+            "address": "〒732-0822, 広島県広島市南区, 松原町2-37",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "오카야마시",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "센코지와 고양이 골목 (千光寺・猫の細道)",
+          "start": "10:30",
+          "end": "12:30",
+          "category": "temple",
+          "place": {
+            "name": "센코지",
+            "latitude": 34.41045,
+            "longitude": 133.19871,
+            "applePlaceID": "I4FF7648391C3D757",
+            "address": "〒722-0033, 広島県尾道市, 東土堂町15-1",
+            "addressIsApproximate": false
+          },
+          "notes": "센코지산 로프웨이 9:00–17:15, 약 15분 간격. 사찰 개방 시간은 출발 전에 확인",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "산요 신칸센으로 후쿠야마까지 약 25–40분, JR 산요 본선으로 갈아타고 오노미치까지 약 20분, 거기서 버스나 도보로 로프웨이역까지. 여행기는 환승 대기가 30분 넘게 걸릴 수 있다고 알려줌"
+          },
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "점심: 오노미치 라멘 (尾道ラーメン)",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "dining",
+          "place": {
+            "name": "오노미치역 일대 상점가 라멘집",
+            "latitude": 34.4063786,
+            "longitude": 133.1984852,
+            "address": "広島県尾道市土堂1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "산을 내려와 상점가를 지나 오노미치역으로. 여행기에서 먹은 곳은 대만 사람이 시작한 오노미치 라멘 쇼야"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "오카야마성 (岡山城)",
+          "start": "16:10",
+          "end": "17:15",
+          "category": "castle",
+          "place": {
+            "name": "오카야마성",
+            "latitude": 34.6651516,
+            "longitude": 133.936075,
+            "applePlaceID": "IB1053247CF420A0C",
+            "address": "〒700-0823, 岡山県岡山市北区, 丸の内2丁目3番1号",
+            "addressIsApproximate": false
+          },
+          "notes": "천수 9:00–17:30(입장 17:00까지). 12/29–31 휴무",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 110,
+            "durationSource": "user",
+            "note": "JR로 후쿠야마까지 가서 산요 신칸센으로 오카야마까지 약 20분. 먼저 호텔에 짐을 맡기고 노면전차로 시로시타까지 가서 도보 약 10분"
+          },
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "저녁: 오카야마역 일대",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "오카야마",
+            "latitude": 34.666644,
+            "longitude": 133.9183193,
+            "applePlaceID": "I93FED519C6CEADFD",
+            "address": "岡山県岡山市北区, 駅元町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "노면전차로 오카야마역 앞으로 돌아옴"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "오카야마시",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "오카야마 고라쿠엔 (岡山後楽園)",
+          "start": "08:30",
+          "end": "10:00",
+          "category": "park",
+          "place": {
+            "name": "오카야마 고라쿠엔",
+            "latitude": 34.6672584,
+            "longitude": 133.9361393,
+            "applePlaceID": "I21A7C8A0D8035A78",
+            "address": "〒703-8257, 岡山県岡山市北区, 後楽園1-5",
+            "addressIsApproximate": false
+          },
+          "notes": "3/20–9/30 7:30–18:00(입장 17:45까지), 10/1–3/19 8:00–17:00(입장 16:45까지). 행사 기간에는 변경될 수 있음",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "노면전차로 시로시타까지 가서 도보 약 10분, 또는 오카야마역에서 걸어서 약 25분. 입장료 약 500엔(공식 자료마다 표기가 다름)"
+          },
+          "images": [
+            "d6-01"
+          ]
+        },
+        {
+          "key": "d6-02",
+          "title": "오카야마역 앞 쇼핑 (イオンモール岡山): 기념품",
+          "start": "10:45",
+          "end": "12:00",
+          "category": "shopping",
+          "place": {
+            "name": "이온몰 오카야마",
+            "latitude": 34.6622566,
+            "longitude": 133.917743,
+            "applePlaceID": "I5183DF830F1B7373",
+            "address": "〒700-0907, 岡山県岡山市北区, 下石井1丁目2-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "노면전차나 도보로 오카야마역 앞으로 돌아옴"
+          }
+        },
+        {
+          "key": "d6-03",
+          "title": "점심: 튀김 소바(오카야마역 일대)",
+          "start": "12:00",
+          "end": "12:40",
+          "category": "dining",
+          "place": {
+            "name": "오카야마",
+            "latitude": 34.666644,
+            "longitude": 133.9183193,
+            "applePlaceID": "I93FED519C6CEADFD",
+            "address": "岡山県岡山市北区, 駅元町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d6-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user"
+          }
+        },
+        {
+          "key": "d6-04",
+          "title": "오카야마 모모타로 공항에서 체크인하고 출국 (岡山桃太郎空港)",
+          "start": "13:30",
+          "end": "15:30",
+          "category": "airport",
+          "place": {
+            "name": "오카야마 공항",
+            "latitude": 34.760098,
+            "longitude": 133.8532645,
+            "applePlaceID": "I7E27BF1F5E5B283F",
+            "address": "〒701-1131, 岡山県岡山市北区, 日応寺1277",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d6-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "오카야마역 서쪽 출구에서 공항 버스로 약 30분, 1,000엔. 국제선 출발 전에는 증편이 있으니 항공편 시각에 맞춰 일찍 정류장으로. 공항은 작고 X선 검색기가 로비에 있음"
+          }
+        }
+      ]
+    }
+  ]
+}

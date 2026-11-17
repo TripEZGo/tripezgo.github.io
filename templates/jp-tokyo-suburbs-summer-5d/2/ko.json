@@ -1,0 +1,1144 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-tokyo-suburbs-summer-5d",
+  "revision": 2,
+  "contentLocale": "ko",
+  "title": "도쿄 근교 5일｜가와고에·아타미 불꽃놀이·하라주쿠 (여름)",
+  "subtitle": "여름 한정: 가와고에 고에도, 아타미 불꽃놀이, 하라주쿠. 나리타 인/아웃",
+  "summary": "여름 도쿄 근교 5일. 가와고에 옛 거리, 아타미 해상 불꽃놀이, 시부야 SHIBUYA SKY, 하라주쿠를 돌아요. 아타미 불꽃놀이는 개최 날짜가 정해져 있으니, 먼저 공식 사이트에서 날짜를 확인하고 항공권을 예약하세요. 도쿄타워 같은 시내 명소는 이미 도쿄 템플릿에 있어서 여기서는 겹치지 않았어요. 치이카와 라멘, 수달 카페, 우에노 요도바시는 후보로 넣어 두었습니다.",
+  "destination": "일본 도쿄·가와고에·아타미",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "amber",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "여름",
+    "불꽃놀이",
+    "근교"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록 (입국 심사와 세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권과 숙소 예약을 마치면 작성할 수 있어요"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-tokyo-suburbs-summer-5d/d1-03.jpg",
+    "d2-01": "images/jp-tokyo-suburbs-summer-5d/d2-01.jpg",
+    "d2-02": "images/jp-tokyo-suburbs-summer-5d/d2-02.jpg",
+    "d2-04": "images/jp-tokyo-suburbs-summer-5d/d2-04.jpg",
+    "d3-05": "images/jp-tokyo-suburbs-summer-5d/d3-05.jpg",
+    "d4-01": "images/jp-tokyo-suburbs-summer-5d/d4-01.jpg",
+    "d4-03": "images/jp-tokyo-suburbs-summer-5d/d4-03.jpg",
+    "d4-05": "images/jp-tokyo-suburbs-summer-5d/d4-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 다이와 로이넷 호텔 도쿄 신바시 (ダイワロイネットホテル東京新橋) 4박 연박 (여행기에서 묵은 곳)",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "신바시 (新橋)",
+        "latitude": 35.6663462,
+        "longitude": 139.7581631,
+        "applePlaceID": "IFB85061A18C087FF",
+        "address": "東京都港区, 新橋",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "후보: 치이카와 라멘 부타 (ちいかわラーメン 豚) 이케부쿠로",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "치이카와랜드 이케부쿠로 파르코점 (ちいかわらんど 池袋パルコ店)",
+        "latitude": 35.7308315,
+        "longitude": 139.7123843,
+        "applePlaceID": "IB5AB546D925C398B",
+        "address": "〒171-0022, 東京都豊島区, 南池袋1丁目28-2 池袋PARCO",
+        "addressIsApproximate": false
+      },
+      "notes": "여행기 자료: 현장에서 줄을 서면 들어갈 수 있어요. 영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-02",
+      "title": "후보: I'm donut? 하라주쿠 (アイムドーナツ 原宿)",
+      "durationMinutes": 60,
+      "category": "dessert",
+      "place": {
+        "name": "아임도넛? 하라주쿠",
+        "latitude": 35.6698281,
+        "longitude": 139.7032186,
+        "applePlaceID": "I4A423C8BF4E252B8",
+        "address": "〒150-0001, 東京都渋谷区, 神宮前1丁目14-24",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-03",
+      "title": "후보: 요도바시카메라 우에노점 (ヨドバシカメラ 上野店)",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "요도바시카메라 멀티미디어 우에노",
+        "latitude": 35.711101,
+        "longitude": 139.7744334,
+        "applePlaceID": "I6934612917EACD58",
+        "address": "〒110-0005, 東京都台東区, 上野4丁目10-10",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 여행기에는 옆에 2호점도 있다고 나와요"
+    },
+    {
+      "key": "u-04",
+      "title": "후보: 수달 카페 (カワウソ 若林の家)",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "와카바야시 (若林)",
+        "latitude": 35.6459667,
+        "longitude": 139.6599438,
+        "applePlaceID": "IEEB18A3AC40A0A56",
+        "address": "東京都世田谷区, 若林",
+        "addressIsApproximate": true
+      },
+      "notes": "여행기는 알아본 뒤 교감 시간이 더 길다고 느꼈어요. 영업시간은 출발 전에 확인하세요"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "자료 출처와 확인",
+      "paragraphs": [
+        {
+          "text": "원본 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/958599363857/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인 (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "아타미 해상 불꽃놀이 대회 (발사 장소는 아타미항 7.5m 안벽에서 바다낚시 시설까지, 개최일은 공식 사이트 참고. 공식 페이지에서 2026년의 여러 날짜와 2027년 날짜가 이미 공개된 것을 볼 수 있음): https://www.ataminews.gr.jp/event/8 (확인 2026-11-17). 발사 시간은 여행기와 제삼자 정리에서 가져왔으며 공식 페이지에는 시간이 없어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "게이세이 스카이라이너 (나리타 제2터미널에서 게이세이 우에노까지 약 41분. 운임 1,280엔 + 지정석 1,300엔이지만 공식 우에노 페이지에는 2,470엔으로 표기되어 둘이 일치하지 않음): https://www.keisei.co.jp/keisei/tetudou/skyliner/us/directions/ueno.html (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "HARRY 하라주쿠 테라스 (평일 13:00~18:00, 주말·공휴일 11:00~18:00, 마지막 주문 17:30, 휴무일 없음, 예약 최소 60분): https://harinezumi-cafe.com/store/harajuku-terrace/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "SHIBUYA SKY (약 10:00~22:30, 최종 입장 약 21:20, 제삼자 정리이며 공식 페이지는 확보하지 못함): https://www.shibuya-scramble-square.com/sky/ (확인 2026-11-17, 출발 전에 확인하세요)",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Borderless (약 10:00~21:00, 매월 첫째·셋째 화요일 휴관, 자료마다 요금이 다름): https://www.teamlab.art/e/borderless-azabudai/ (확인 2026-11-17, 공식 페이지의 전체 내용은 확보하지 못했고 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "가와고에 히카와 신사 (인연 풍경 2026년 6/27~9/6 9:00~20:00, 신사 사무소 049-224-0589): https://www.kawagoehikawa.jp/ (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "치이카와 모구모구 본포 가와고에점 (약 9:30~17:30, 연중무휴, 주소: 가와고에시 모토마치 2-7-9, 오픈 보도자료 자료): https://chiikawamogumogu.jp/ (확인 2026-11-17, 출발 전에 확인하세요)",
+          "style": "bullet"
+        },
+        {
+          "text": "도쿄에서 아타미까지 신칸센 (고다마 약 50분, 히카리 약 40분. 지정석 약 4,270엔, 자유석 약 3,740엔): 검색 정리 페이지 (확인 2026-11-17, 공식 아님)",
+          "style": "bullet"
+        },
+        {
+          "text": "도부 도조선 이케부쿠로에서 가와고에까지 약 30분: https://www.tobu.co.jp/en/access/kawagoe/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못한 항목이니 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "각 식당, 쇼핑몰, 옛 하치주고 은행 본점 본관, 선샤인시티, 도큐 플라자 오모테산도 하라주쿠 등의 영업시간과 휴무일.",
+          "style": "bullet"
+        },
+        {
+          "text": "가와고에 버스 요금과 운행 편수, 각 명소의 좌표는 추정값입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "바뀐 점과 취사선택",
+          "style": "heading"
+        },
+        {
+          "text": "여행기 1일 차의 시부야 SHIBUYA SKY와 저녁은 남겼습니다. 도쿄타워는 여행기에서 지나가기만 해서 넣지 않았어요 (템플릿 02에서 이미 다룸).",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 2, 3, 5일 차의 치이카와 카페, 치이카와 라멘, 치이카와 파크, 센베이, 고구마 스틱 등의 가게는 이케부쿠로의 소고기 혀구이와 가샤폰 백화점만 남기고, 치이카와 라멘은 후보로 돌렸습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 5일 차의 우에노 요도바시는 우에노 마루이 항목에 합쳐 간단히 언급했습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 4일 차의 드럭스토어 쇼핑, 향수, 빵 기념품 같은 개인 쇼핑은 생략했습니다.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 안내",
+      "paragraphs": [
+        {
+          "text": "선결 조건: 아타미 불꽃놀이 날짜에 맞추기",
+          "style": "heading"
+        },
+        {
+          "text": "이 일정의 핵심은 3일 차의 아타미 해상 불꽃놀이 대회(熱海海上花火大会)로, 정해진 날에만 쏘아 올려요. 먼저 개최일을 정하고, 그 전후로 여행 전체를 짜야 해요.",
+          "style": "bullet"
+        },
+        {
+          "text": "개최일은 아타미시 관광협회 공식 사이트에서 확인하세요: https://www.ataminews.gr.jp/event/8 . 날짜를 임의로 가정하거나 지난해 날짜로 추정하지 마세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "발사 시간은 계절에 따라 달라요. 여행기 자료로는 7, 8월은 약 20:15부터, 다른 달은 약 20:20부터이며 약 20~25분입니다. 공식 사이트를 따르세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "템플릿은 9월 중순 여름 여행기를 기준으로 해서 날씨와 일조는 계절에 따라 달라요.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항과 시내 이동 (나리타 국제공항 NRT)",
+          "style": "heading"
+        },
+        {
+          "text": "게이세이 스카이라이너: 나리타공항 제2터미널에서 게이세이 우에노까지 약 41분, 전석 지정석이며 자유석은 없어요. 약 2,580엔 (운임 1,280엔 + 지정석 요금 1,300엔, 게이세이 공식 FAQ). 게이세이 공식 우에노 페이지에는 2,470엔으로 따로 표기되어 일치하지 않으니 출발 전에 게이세이 공식 사이트에서 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "게이세이 본선(특급 또는 쾌속, 액세스 특급)은 더 싸지만 느려요. 시간표와 요금은 게이세이 공식 사이트에서 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "JR 나리타 익스프레스는 도쿄역, 시나가와, 신주쿠, 이케부쿠로까지 직통해요. 시간표와 요금은 JR 동일본 공식 사이트에서 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기에서는 스카이라이너로 게이세이 우에노까지 가서 긴자선으로 갈아타 신바시로 갔어요. 입국 후 공항의 '철도' 방면에서 SKYLINER & KEISEI INFORMATION CENTER를 찾아 교환하고, 다른 철도 회사의 서비스 카운터도 있으니 주의하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "이 템플릿이 나리타를 고른 이유: 여행기가 나리타로 드나들었고, 스카이라이너가 우에노까지 가장 빠르기 때문이에요. 하네다로 바꿔도 되며, 그럴 때는 게이큐나 도쿄 모노레일을 따로 알아보세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "교통 티켓",
+          "style": "heading"
+        },
+        {
+          "text": "교통카드는 Suica(iPhone의 Suica 포함)를 쓸 수 있어요. 공항 역에는 Welcome Suica와 일반 Suica 충전기가 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "가와고에 주유권(전철+도부 버스): 도부 도조선 이케부쿠로~가와고에 왕복과 도부 버스(도부 고에도 순환 버스 포함) 하루 승차권. 버스 회사는 세이부와 도부 두 곳이며 이 표는 도부 전용이에요. 표를 쓸 때 Suica를 함께 찍지 마세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "세이부의 '고에도 순환 버스'는 도부 주유권을 쓸 수 없어요. 교통카드로 내거나 세이부의 주유권을 사세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "도쿄~아타미의 도카이도 신칸센은 JR 도카이와 JR 니시니혼이 운영하며 미리 온라인으로 살 수 있어요. 여행기에서는 승차 약 4주 전에 표를 샀고 (여행기 2025년 자료), 전자 승차권 QR 코드로 개찰구를 지났어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "예약과 티켓",
+          "style": "heading"
+        },
+        {
+          "text": "SHIBUYA SKY: 공식 사이트 https://www.shibuya-scramble-square.com/sky/ 는 인기가 많으니 일찍 사세요. 여행기에서는 18:40 야경 회차를 샀어요. 입장 전에 셀카봉을 맡겨야 하고, 위에는 무료 보관함이 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Borderless: 공식 사이트 https://www.teamlab.art/e/borderless-azabudai/ 미리 사 두기를 권해요. 관내에 지도는 없지만 입구에 공식 안내 책자가 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "치이카와 모구모구 본포 가와고에점: 종일 인원 제한이 있어요. 현장에서 QR 코드를 스캔해 다음 회차를 예약할 수 있고, 헛걸음이 걱정되면 온라인으로 예약하세요. 휴대폰 한 대, 계정 한 개로 하루 한 번만 예약할 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "HARRY 하라주쿠 테라스 수달 카페: 공식 사이트 https://harinezumi-cafe.com/store/harajuku-terrace/ 에서 예약, 최소 60분이 필요해요. 당일에 가면 헛걸음할 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "아타미: 해변은 무료 입장이고 유료석이 없으니 돗자리를 직접 가져가세요. 돌아오는 신칸센은 미리 사 두세요. 불꽃놀이가 끝나면 역에 사람이 아주 많아요.",
+          "style": "bullet"
+        },
+        {
+          "text": "입국",
+          "style": "heading"
+        },
+        {
+          "text": "무비자 입국 전에 Visit Japan Web에 먼저 등록하세요. 입국 심사와 세관 신고 QR 코드는 하나로 합쳐졌어요 (여행기 2025년 자료, Visit Japan Web 공식 사이트에서 확인).",
+          "style": "bullet"
+        },
+        {
+          "text": "일정 리듬",
+          "style": "heading"
+        },
+        {
+          "text": "1일 차와 5일 차는 공항을 오가고, 2일 차는 가와고에 왕복, 3일 차는 아타미 왕복이라 이동 비중이 높아요. 3일 차는 불꽃놀이가 끝난 뒤 호텔에 돌아오면 22:45쯤으로 21:00을 넘겨요.",
+          "style": "bullet"
+        },
+        {
+          "text": "숙박은 다이와 로이넷 호텔 도쿄 신바시에서 4박 연박이며, 신바시역에서 걸어서 약 2분. 방은 작은 편이에요.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "여행 개요: 도쿄 근교 5일 코스",
+      "paragraphs": [
+        {
+          "image": "d3-05"
+        },
+        "나리타 제2터미널로 들어가서 나리타로 나오고, 4박 모두 신바시의 같은 호텔을 거점으로 쓰며, 가와고에와 아타미는 전철로 당일치기로 다녀옵니다. 이번 여행의 핵심은 3일차 아타미 해상 불꽃놀이 대회입니다. 불꽃놀이는 정해진 날에만 열리므로 먼저 개최일을 확인한 뒤 전체 일정을 그 날짜 앞뒤로 맞춥니다.",
+        "1일차: 나리타에 도착해 신바시에 짐을 맡기고, 밤에는 시부야로 가서 {@d1-03}에서 야경을 보고, 저녁은 시부야 PARCO 푸드홀에서 꼬치튀김을 먹습니다.",
+        "2일차: 가와고에에서 {@d2-01}, 치이카와 모구모구 본포 가와고에점의 가와고에 한정 고구마 시리즈, 점심은 옛 하치주고 은행 본점 본관 2층 카페, 오후에는 {@d2-04}. 저녁에는 이케부쿠로로 돌아와 소고기 혀구이를 먹고 선샤인시티의 가샤폰 백화점을 둘러봅니다.",
+        {
+          "image": "d2-04"
+        },
+        "3일차: 점심은 도쿄역에서 고베규, 이치반가이의 캐릭터 숍. 오후에는 전철로 아타미에 가서 역 앞 상점가와 편의점에서 보급을 하고, 저녁에 {@d3-04}, 밤의 {@d3-05}을 기다린 뒤 호텔에는 22:45쯤 돌아옵니다.",
+        "4일차: 오전에는 아자부다이 힐즈의 {@d4-01}, 점심은 HARBS의 과일 밀푀유 케이크. 오후에는 하라주쿠에서 도큐 플라자와 KIDDY LAND, 와규 슬라이더, 그리고 {@d4-05}. 저녁은 시부야 PARCO에서 이마리규 스테이크.",
+        {
+          "image": "d4-01"
+        },
+        "5일차: 우에노에서 {@d5-01}, 점심은 우에노역 주변. {@d5-03}에서 짐을 찾고 기념품을 산 뒤, 나리타 제2터미널 면세점을 돌아보고 출국합니다.",
+        "숙소: 다이와 로이넷 호텔 도쿄 신바시에서 4박 연박. 신바시역에서 걸어서 약 2분이고 방은 작은 편입니다.",
+        "교통 포인트: 나리타 제2터미널에서 게이세이 우에노까지는 게이세이 스카이라이너로 약 41분, 전 좌석 지정석이며 요금은 게이세이 공식 사이트에서 확인하세요. 이케부쿠로에서 가와고에는 도부 도조선으로 약 30분이고, 가와고에 주유권은 도부 버스만 해당됩니다. 도쿄에서 아타미는 도카이도 신칸센이며 온라인으로 미리 예약할 수 있습니다. 교통카드는 Suica를 쓸 수 있습니다. 불꽃놀이 개최일은 아타미시 관광협회 공식 사이트에서 확인하고 마음대로 가정하지 마세요. 출발 전에 최신 시간표를 확인하세요.",
+        "이런 분께: 가와고에, 아타미 불꽃놀이 대회, 하라주쿠와 치이카와 관련 코스를 한 여행에 묶고 싶은 분. 2·3일차는 가와고에와 아타미 왕복이라 이동이 많고, 불꽃놀이 날은 호텔에 늦게 돌아옵니다. 항공권과 숙소를 잡기 전에 불꽃놀이 개최일을 먼저 확인하세요."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "슈거 버터 트리 (シュガーバターの木)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "우에노역 안에서 구입 (여행기 기념품)"
+    },
+    {
+      "key": "s-02",
+      "title": "가와고에 센베이 (川越せんべい)",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "가와고에 고에도 거리의 기념품 가게. 여행기는 해산물 맛을 추천하며 플레인은 더 딱딱해요"
+    },
+    {
+      "key": "s-03",
+      "title": "흑설탕 고구마 스틱 (黒糖いもスティック)",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "가와고에 고에도 거리의 기념품 가게"
+    },
+    {
+      "key": "s-04",
+      "title": "치이카와 모구모구 가와고에 한정 고구마 시리즈",
+      "category": "goods",
+      "productType": "figure_plush",
+      "priceJPY": 2970,
+      "store": "치이카와 모구모구 본포 가와고에점. 일부 상품은 구매 제한이 있어요. 여행기에서 큰 고구마 우사기 2,970엔, 작은 고구마 치이카와 1,870엔 (2025년 자료)"
+    },
+    {
+      "key": "s-05",
+      "title": "치이카와 모구모구 가와고에 한정 고구마 시리즈",
+      "category": "goods",
+      "productType": "figure_plush",
+      "priceJPY": 2970,
+      "store": "치이카와 모구모구 본포 가와고에점. 일부 상품은 구매 제한이 있어요. 여행기에서 큰 고구마 우사기 2,970엔, 작은 고구마 치이카와 1,870엔 (2025년 자료)"
+    },
+    {
+      "key": "s-06",
+      "title": "도카이도 신칸센 티켓 음성 키링 가챠 (東海道新幹線 チケット音声キーホルダー)",
+      "category": "other",
+      "productType": "other_product",
+      "store": "우에노 마루이 2층 가챠 코너 (여행기)"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "도쿄",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "가와고에시",
+      "latitude": 35.9251449,
+      "longitude": 139.4857811,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "아타미시",
+      "latitude": 35.0963585,
+      "longitude": 139.0717294,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "도쿄",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "도쿄",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "도쿄",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "나리타 국제공항 제2터미널 도착 (成田国際空港)",
+          "start": "14:40",
+          "end": "15:40",
+          "category": "airport",
+          "place": {
+            "name": "나리타 공항 제2터미널 앞 중앙광장 (第2旅客ターミナルビル前中央広場)",
+            "latitude": 35.7727875,
+            "longitude": 140.3867587,
+            "applePlaceID": "ICD95BF7CCD2E115A",
+            "address": "〒286-0104, 千葉県成田市, 古込1-1, 成田国際空港第2ターミナル B1F",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "짐 맡기고 체크인: 다이와 로이넷 호텔 도쿄 신바시 (ダイワロイネットホテル東京新橋)",
+          "start": "17:00",
+          "end": "17:30",
+          "category": "hotel",
+          "place": {
+            "name": "다이와 로이넷 호텔 신바시",
+            "latitude": 35.6684836,
+            "longitude": 139.7570966,
+            "applePlaceID": "I3D58F9FFA532BB30",
+            "address": "〒105-0004, 東京都港区, 新橋1丁目17-2",
+            "addressIsApproximate": false
+          },
+          "notes": "체크인과 체크아웃 시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "공항 안 철도 방면에 있는 SKYLINER & KEISEI INFORMATION CENTER에서 승차권으로 교환. 스카이라이너로 게이세이 우에노까지 약 41분, 전석 지정석, 약 2,580엔 (운임 1,280엔 + 지정석 요금 1,300엔). 게이세이 우에노에서 도쿄 메트로 긴자선(시부야 방면)으로 갈아타 신바시까지 약 20분, 출구에서 걸어서 약 2분"
+          },
+          "todos": [
+            {
+              "text": "스카이라이너 표(가는 편) 구입과 돌아오는 편 좌석 예약하기",
+              "note": "온라인으로 미리 살 수 있고 나리타공항역에서 교환해요. 돌아오는 편은 게이세이 우에노역에서 좌석 예약"
+            }
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "SHIBUYA SKY 전망대 (渋谷スカイ): 야경 시간대",
+          "start": "18:40",
+          "end": "20:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "SHIBUYA SKY 티켓 카운터 (SHIBUYA SKYチケットカウンター)",
+            "latitude": 35.6586113,
+            "longitude": 139.7023452,
+            "applePlaceID": "I3BB50A8AC3225E97",
+            "address": "〒150-0002",
+            "addressIsApproximate": true
+          },
+          "notes": "10:00~22:30쯤 (최종 입장 21:20쯤), 1월 1일만 휴무. 영업시간은 공식 사이트를 따르고 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "신바시역에서 도쿄 메트로 긴자선으로 시부야역까지 약 15분, 시부야 스크램블 스퀘어까지 걸어서 약 5분. 올라가기 전에 1층에서 전용 엘리베이터를 찾으세요"
+          },
+          "todos": [
+            {
+              "text": "SHIBUYA SKY 티켓 구입하기 (야경 시간대)",
+              "note": "공식 사이트 https://www.shibuya-scramble-square.com/sky/ 여행기에서는 입장일 약 2주 전에 판매 시작 (2025년 자료)"
+            }
+          ],
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "저녁: 꼬치튀김 (串カツあらた 渋谷パルコ店) 시부야 PARCO 푸드홀",
+          "start": "20:15",
+          "end": "21:00",
+          "category": "dining",
+          "place": {
+            "name": "쿠시카츠 아라타 시부야 파르코점 (串カツあらた 渋谷パルコ店)",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I4E0C674AF1360F12",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기 참고: 꼬치튀김 가게는 기본 안주 비용(오토시)을 따로 받아요",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "스크램블 스퀘어에서 PARCO까지 걸어서 약 10~15분"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "시부야역에서 도쿄 메트로 긴자선으로 신바시로 돌아오기 약 15분, 걷고 기다리는 시간 포함 약 30분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "가와고에시",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "가와고에 히카와 신사 (川越氷川神社): 인연 풍경과 도미 오미쿠지",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "temple",
+          "place": {
+            "name": "히카와 신사 (氷川神社)",
+            "latitude": 35.9275637,
+            "longitude": 139.4885561,
+            "applePlaceID": "IB61C9ABDE4FF6D05",
+            "address": "〒350-0052",
+            "addressIsApproximate": true
+          },
+          "notes": "경내는 자유롭게 참배할 수 있어요. 여름 한정 '인연 풍경(縁むすび風鈴)'은 2026년 6/27~9/6 9:00~20:00이며 해마다 기간이 달라요. 신사 사무소 전화 049-224-0589",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "신바시역에서 JR 야마노테선으로 이케부쿠로까지 약 30분. 이케부쿠로에서 도부 도조선으로 가와고에까지 약 30분 (가와고에 특급). 가와고에역 3번 승차장에서 도부 버스 '名01'로 히카와 신사까지 약 20분. 가와고에 주유권(전철+도부 버스)이 있으면 버스에서 기사에게 QR 코드를 보여 주고, Suica는 찍지 마세요"
+          },
+          "todos": [
+            {
+              "text": "가와고에 주유권(전철+도부 버스) 구입하기",
+              "note": "이케부쿠로~가와고에 왕복과 도부 버스 하루 승차권. 도부 버스 전용이며 사용하는 날 활성화하세요"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "치이카와 모구모구 본포 가와고에점 (ちいかわもぐもぐ本舗 川越店): 가와고에 한정 고구마 시리즈",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "shopping",
+          "place": {
+            "name": "치이카와 모구모구 본포 가와고에점 (ちいかわもぐもぐ本舗 川越店)",
+            "latitude": 35.9244889,
+            "longitude": 139.4814476,
+            "applePlaceID": "IEF60C1C73DD6B1DD",
+            "address": "〒350-0062",
+            "addressIsApproximate": true
+          },
+          "notes": "9:30~17:30쯤, 연중무휴 (오픈 보도자료 자료이며 영업시간은 출발 전에 확인하세요)",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "히카와 신사에서 버스로 고에도 지역으로 돌아가기 약 20분, 또는 걸어서 약 20분. 세이부 '고에도 순환 버스'는 도부 주유권을 쓸 수 없고 따로 요금을 내요"
+          },
+          "todos": [
+            {
+              "text": "치이카와 모구모구 본포 가와고에점 입장 시간대 예약하기",
+              "note": "종일 인원 제한이 있어요. 휴대폰 한 대, 계정 한 개로 하루 한 번 예약할 수 있으며, 당일 현장에서 QR 코드를 스캔해 예약해도 돼요"
+            }
+          ],
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "점심: 옛 하치주고 은행 본점 본관 (旧第八十五銀行本店本館) 2층 카페",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "cafe",
+          "place": {
+            "name": "아사히은행 가와고에지점 (옛 하치주고 은행 본점 본관)",
+            "latitude": 35.9225931,
+            "longitude": 139.4831352,
+            "applePlaceID": "I69356DB7102EE3E3",
+            "address": "〒350-0063, 埼玉県川越市, 幸町4-2",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 테라스는 공공 공간이라 이용하지 않아도 들어갈 수 있어요",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "걸어서 약 5분"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "도키노카네 종루와 다이쇼 로망 유메도리 (時の鐘・大正浪漫夢通り)",
+          "start": "14:45",
+          "end": "16:00",
+          "category": "sight",
+          "place": {
+            "name": "가와고에 도키노카네 사이와이초 15-1",
+            "latitude": 35.923497,
+            "longitude": 139.483188,
+            "address": "日本埼玉縣川越市",
+            "addressIsApproximate": true
+          },
+          "notes": "종루 외관은 종일 볼 수 있어요. 길가 가게마다 영업시간이 다르니 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "이치반가이와 다이쇼 로망 유메도리를 따라 걸어서 약 10분"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "저녁: 소고기 혀구이 (牛たん焼き 仙台辺見 池袋パルコ店)",
+          "start": "17:30",
+          "end": "18:30",
+          "category": "dining",
+          "place": {
+            "name": "이케부쿠로 파르코",
+            "latitude": 35.7308315,
+            "longitude": 139.7123843,
+            "applePlaceID": "I4470FCF4975CA9C5",
+            "address": "〒171-8557, 東京都豊島区, 南池袋1丁目28-2",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "고에도 순환 버스나 도부 버스로 가와고에역까지 약 15분, 도부 도조선으로 이케부쿠로까지 약 30분, 기다림과 환승 포함"
+          }
+        },
+        {
+          "key": "d2-06",
+          "title": "이케부쿠로 선샤인시티: 가샤폰 백화점 이케부쿠로 총본점 (サンシャインシティ ガシャポンデパートメントストア)",
+          "start": "19:00",
+          "end": "20:00",
+          "category": "shopping",
+          "place": {
+            "name": "가샤폰 백화점 이케부쿠로 총본점",
+            "latitude": 35.7288563,
+            "longitude": 139.7200754,
+            "applePlaceID": "I1EA870DC41AF85E2",
+            "address": "〒170-0013, 東京都豊島区, 東池袋3丁目1-3",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "이케부쿠로역에서 선샤인시티까지 걸어서 약 10~15분"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "이케부쿠로역까지 걸어서 약 15분, JR 야마노테선으로 신바시로 돌아오기 약 30분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "아타미시",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "점심: 고베규 (神戸牛ダイア 東京駅店)",
+          "start": "11:30",
+          "end": "12:30",
+          "category": "dining",
+          "place": {
+            "name": "고베규 다이아 도쿄 그랑스타 야에스점",
+            "latitude": 35.6800541,
+            "longitude": 139.7680557,
+            "applePlaceID": "I4E17865EF7248D83",
+            "address": "〒100-0005",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기 참고: 같은 층의 기와미야는 11:00 개점 전부터 이미 긴 줄이 늘어서요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "신바시역에서 JR로 도쿄역까지 약 5분, 야에스 지하상가 쪽으로 걸어가요"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "도쿄역 이치반가이 (東京駅一番街): 캐릭터 숍과 먹자골목",
+          "start": "12:45",
+          "end": "14:15",
+          "category": "shopping",
+          "place": {
+            "name": "도쿄역 이치반가이",
+            "latitude": 35.68107,
+            "longitude": 139.76811,
+            "applePlaceID": "I1F15EEC1925C92ED",
+            "address": "〒100-0005, 東京都千代田区, 丸の内1丁目9-1 東京駅一番街",
+            "addressIsApproximate": false
+          },
+          "notes": "가게마다 영업시간이 다르니 출발 전에 확인하세요. 도쿄역 수하물 보관 카운터는 20:00쯤까지만 열어요 (여행기 자료). 대신 코인 로커를 이용하세요",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "걸어서 약 5분"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "아타미역 앞 상점가와 편의점 보급 (熱海駅前・仲見世通り)",
+          "start": "15:45",
+          "end": "16:45",
+          "category": "shopping",
+          "place": {
+            "name": "아타미 (熱海)",
+            "latitude": 35.1036105,
+            "longitude": 139.0777622,
+            "applePlaceID": "ICC6D196498CD6208",
+            "address": "静岡県熱海市, 田原本町",
+            "addressIsApproximate": true
+          },
+          "notes": "가게마다 영업시간이 다르니 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "도쿄역 도카이도 신칸센 니혼바시 출입구로 들어가 고다마로 아타미까지 약 50분 (히카리는 일부 열차만 정차, 약 40분). 지정석 약 4,270엔, 자유석 약 3,740엔 (검색 결과 정리, 공식 페이지 아님). 돌아오는 표를 미리 사 두세요. 불꽃놀이가 끝나면 사람이 아주 많아요"
+          },
+          "todos": [
+            {
+              "text": "도쿄~아타미 왕복 신칸센 예약하기",
+              "note": "먼저 불꽃놀이 날짜를 정한 뒤 표를 사세요. 여행기에서는 승차 약 4주 전에 구입 (2025년 자료). 돌아오는 편은 불꽃놀이 이후 열차로"
+            }
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "아타미 선 비치 (熱海サンビーチ): 돗자리로 자리 잡고 기다리기",
+          "start": "17:00",
+          "end": "19:45",
+          "category": "beach",
+          "place": {
+            "name": "아타미 선 비치",
+            "latitude": 35.0980447,
+            "longitude": 139.0768168,
+            "applePlaceID": "I816B6250ACBFFDB1",
+            "address": "〒413-0012, 静岡県熱海市, 東海岸町",
+            "addressIsApproximate": true
+          },
+          "notes": "해변은 열린 공간이라 휴무일이 없어요. 돗자리는 직접 가져가세요. 해변 주변에 화장실이 있지만 여행기에서는 시설을 먼저 확인하라고 알려요",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "아타미역에서 해변까지 내리막길을 걸어서 약 15~20분. 돌아올 때는 오르막이니 체력을 아껴 두세요"
+          }
+        },
+        {
+          "key": "d3-05",
+          "title": "아타미 해상 불꽃놀이 대회 (熱海海上花火大会)",
+          "start": "20:15",
+          "end": "20:45",
+          "category": "show",
+          "place": {
+            "name": "아타미 선 비치",
+            "latitude": 35.0980447,
+            "longitude": 139.0768168,
+            "applePlaceID": "I816B6250ACBFFDB1",
+            "address": "〒413-0012, 静岡県熱海市, 東海岸町",
+            "addressIsApproximate": true
+          },
+          "notes": "정해진 날에만 쏘아 올리니 먼저 개최일에 맞춰 일정을 짜야 해요. 개최일은 아타미시 관광협회 공식 사이트 https://www.ataminews.gr.jp/event/8 에서 확인. 시간은 대부분 20:15 또는 20:20부터 약 20~25분 (여행기와 제삼자 자료이니 공식 사이트에서 확인). 무료 입장",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "해변 동쪽 뒤편에서 관람, 돗자리 자리에서 걸어서 약 5분"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "20:45쯤 자리를 떠 아타미역까지 걸어서 약 20~25분. 미리 사 둔 21:26쯤 신칸센을 타고 (여행기에서는 실제로 22:02 열차를 탔고 20분 가까이 지연) 도쿄까지 약 45분. 도쿄역에서 JR로 갈아타 신바시로. 신칸센 표가 있으면 오른쪽 유인 통로로 곧장 재래선 개찰구를 지나갈 수 있어요"
+          },
+          "todos": [
+            {
+              "text": "아타미 해상 불꽃놀이 대회 개최일을 확인한 뒤 여행 전체 날짜 정하기",
+              "note": "이 일정은 개최일에 맞춰 짜야 해요. 개최일은 공식 사이트에서 확인: https://www.ataminews.gr.jp/event/8"
+            }
+          ],
+          "images": [
+            "d3-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "도쿄",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "teamLab Borderless: 아자부다이 힐즈 (teamLab Borderless: MORI Building DIGITAL ART MUSEUM)",
+          "start": "10:30",
+          "end": "12:45",
+          "category": "museum",
+          "place": {
+            "name": "팀랩 보더리스 (チームラボボーダレス)",
+            "latitude": 35.6620821,
+            "longitude": 139.7429831,
+            "applePlaceID": "I4D63FF6237C65D4D",
+            "address": "〒106-0041",
+            "addressIsApproximate": true
+          },
+          "notes": "자료 정리상 10:00~21:00쯤, 매월 첫째·셋째 화요일 휴관. 공식 사이트를 따르고 출발 전에 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "신바시에서 버스나 전철로 약 20~25분 걸려 가미야초역이나 도라노몬 일대로, 걸어서 아자부다이 힐즈 가든 플라자 B 지하 1층으로 들어가요. 관내에 지도가 없고, 입구에서 오른쪽으로 돌면 무료 보관함이 있어요"
+          },
+          "todos": [
+            {
+              "text": "teamLab Borderless 티켓 구입하기",
+              "note": "공식 사이트 https://www.teamlab.art/e/borderless-azabudai/ 미리 사 두기를 권해요"
+            }
+          ],
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "점심: 하브스 아자부다이 힐즈점 (ハーブス 麻布台ヒルズ店) 과일 밀푀유 케이크",
+          "start": "13:00",
+          "end": "13:45",
+          "category": "cafe",
+          "place": {
+            "name": "HARBS 아자부다이 힐즈점 (麻布台ヒルズ店)",
+            "latitude": 35.6617921,
+            "longitude": 139.7414455,
+            "applePlaceID": "ID342BB3415C34D12",
+            "address": "〒105-0001",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "같은 단지 안에서 걸어서 약 5분"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "하라주쿠 쇼핑: 도큐 플라자 오모테산도 하라주쿠(치이카와 빵집)와 KIDDY LAND 하라주쿠점",
+          "start": "14:30",
+          "end": "15:10",
+          "category": "shopping",
+          "place": {
+            "name": "도큐 플라자 오모테산도 하라주쿠",
+            "latitude": 35.6686716,
+            "longitude": 139.7059169,
+            "applePlaceID": "I36622972312760EA",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前4丁目30-3",
+            "addressIsApproximate": false
+          },
+          "notes": "가게마다 영업시간이 다르니 출발 전에 확인하세요. 빵집 매장 식사 쪽은 정리권을 뽑아야 하고, 굿즈 매장은 필요 없어요",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "도쿄 메트로를 갈아타 메이지신궁마에〈하라주쿠〉역까지 약 30분, 환승 1회"
+          },
+          "images": [
+            "d4-03"
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "더 그레이트 버거 (ザ グレート バーガー): 와규 슬라이더",
+          "start": "15:20",
+          "end": "15:45",
+          "category": "fastfood",
+          "place": {
+            "name": "딩하오 버거 (顶好汉堡店)",
+            "latitude": 35.6662251,
+            "longitude": 139.7046999,
+            "applePlaceID": "I19EDD305DB383DA5",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前6丁目12-5 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "하라주쿠 안에서 걸어서 약 10분"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "HARRY 하라주쿠 테라스 수달 카페 (ＨＡＲＲＹ原宿テラス店)",
+          "start": "16:05",
+          "end": "17:30",
+          "category": "cafe",
+          "place": {
+            "name": "해리 하라주쿠 테라스",
+            "latitude": 35.6691599,
+            "longitude": 139.7079697,
+            "applePlaceID": "IBF8E3491E606B707",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前4丁目26番5号, 神宮前426ビル 3F",
+            "addressIsApproximate": false
+          },
+          "notes": "평일 13:00~18:00, 주말·공휴일 11:00~18:00 (마지막 주문 17:30), 휴무일 없음. 예약은 최소 60분 (공식 사이트)",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "걸어서 약 5분. 건물 꼭대기 층이며 옆 계단으로 올라가요"
+          },
+          "todos": [
+            {
+              "text": "HARRY 하라주쿠 테라스 수달 카페 예약하기",
+              "note": "공식 사이트 https://harinezumi-cafe.com/store/harajuku-terrace/ 예약은 최소 60분이며, 당일에 가면 헛걸음할 수 있어요"
+            }
+          ],
+          "images": [
+            "d4-05"
+          ]
+        },
+        {
+          "key": "d4-06",
+          "title": "저녁: 기와미야 시부야 PARCO점 (極味や 渋谷パルコ店) 이마리규 스테이크",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "기와미야 시부야 파르코점 (極味や 渋谷パルコ店)",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I27C7C5F97CC5C83B",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1 渋谷パルコB1F",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 인기 시간대에는 품절돼요",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "하라주쿠역에서 JR 야마노테선으로 시부야까지 약 5분, PARCO까지 걸어가요"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "시부야에서 도쿄 메트로 긴자선으로 신바시로 돌아오기 약 15분, 걷는 시간 포함 약 25분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "도쿄",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "우에노 마루이 (上野マルイ)와 Loft, 2층 가챠 코너",
+          "start": "11:00",
+          "end": "12:30",
+          "category": "shopping",
+          "place": {
+            "name": "우에노 마루이",
+            "latitude": 35.7107345,
+            "longitude": 139.7757649,
+            "applePlaceID": "I294F815904982079",
+            "address": "〒110-0005, 東京都台東区, 上野6丁目15-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "신바시역에서 JR 야마노테선으로 우에노까지 약 20분. 체크아웃 후 짐은 먼저 역 코인 로커에 맡길 수 있어요"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "점심: 우에노역 주변",
+          "start": "12:45",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "우에노역 공원 출구",
+            "latitude": 35.7143877,
+            "longitude": 139.7763973,
+            "applePlaceID": "I7417813C5B65E03D",
+            "address": "東京都台東区, 上野公園",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "걸어서 약 5분"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "게이세이 우에노역: 짐 찾기와 기념품 (슈거 버터 트리)",
+          "start": "13:45",
+          "end": "14:15",
+          "category": "station",
+          "place": {
+            "name": "게이세이 우에노역 정면 출구",
+            "latitude": 35.7111645,
+            "longitude": 139.7740598,
+            "applePlaceID": "IFA2C7ED6B1A4396A",
+            "address": "東京都台東区, 上野公園",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 게이세이 우에노역은 우에노역 시노바즈 출구 쪽에 있으며, 역 안 코인 로커에서 짐을 찾아요",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "우에노역에서 게이세이 우에노까지 걸어서 약 15분 (여행기는 역 안에서 길을 잃기 쉽다고 알리며, 짐은 게이세이 우에노 코인 로커에 바로 맡기기를 권해요)"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "나리타 국제공항 제2터미널 출국: Japan Food Hall, 면세점 쇼핑 (成田国際空港)",
+          "start": "15:05",
+          "end": "17:30",
+          "category": "airport",
+          "place": {
+            "name": "나리타 공항 제2터미널 앞 중앙광장 (第2旅客ターミナルビル前中央広場)",
+            "latitude": 35.7727875,
+            "longitude": 140.3867587,
+            "applePlaceID": "ICD95BF7CCD2E115A",
+            "address": "〒286-0104, 千葉県成田市, 古込1-1, 成田国際空港第2ターミナル B1F",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "게이세이 우에노에서 스카이라이너로 나리타공항 제2터미널까지 약 41분, 전석 지정석, 약 2,580엔. 돌아오는 편은 게이세이 우에노역에서 미리 좌석 예약 가능 (중국어를 하는 역무원이 있어요)"
+          }
+        }
+      ]
+    }
+  ]
+}

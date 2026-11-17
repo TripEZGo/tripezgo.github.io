@@ -1,0 +1,1144 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-tokyo-suburbs-summer-5d",
+  "revision": 2,
+  "contentLocale": "zh-Hans",
+  "title": "东京近郊 5 日｜川越・热海花火・原宿（夏季）",
+  "subtitle": "夏季限定：川越小江户、热海花火与原宿，成田进出",
+  "summary": "夏天的东京近郊五天：川越老街、热海海上花火、涩谷 SHIBUYA SKY 与原宿。热海花火需要配合施放日期，先到官网查好日期再订机票。东京铁塔等市区景点已在东京模板，这份不重复。吉伊卡哇拉面、水獭咖啡厅与上野 Yodobashi 放在备选。",
+  "destination": "日本 东京・川越・热海",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "amber",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "双人",
+    "夏季",
+    "花火",
+    "近郊"
+  ],
+  "todos": [
+    {
+      "text": "登录 Visit Japan Web（入境审查与海关申报）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 机票与订房完成后即可填写"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-tokyo-suburbs-summer-5d/d1-03.jpg",
+    "d2-01": "images/jp-tokyo-suburbs-summer-5d/d2-01.jpg",
+    "d2-02": "images/jp-tokyo-suburbs-summer-5d/d2-02.jpg",
+    "d2-04": "images/jp-tokyo-suburbs-summer-5d/d2-04.jpg",
+    "d3-05": "images/jp-tokyo-suburbs-summer-5d/d3-05.jpg",
+    "d4-01": "images/jp-tokyo-suburbs-summer-5d/d4-01.jpg",
+    "d4-03": "images/jp-tokyo-suburbs-summer-5d/d4-03.jpg",
+    "d4-05": "images/jp-tokyo-suburbs-summer-5d/d4-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：东京新桥大和 ROYNET 酒店（ダイワロイネットホテル東京新橋）连住 4 晚（游记住过）",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "新桥",
+        "latitude": 35.6663462,
+        "longitude": 139.7581631,
+        "applePlaceID": "IFB85061A18C087FF",
+        "address": "東京都港区, 新橋",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "备选：吉伊卡哇拉面 豚（ちいかわラーメン 豚）池袋",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "ちいかわらんど 池袋パルコ店",
+        "latitude": 35.7308315,
+        "longitude": 139.7123843,
+        "applePlaceID": "IB5AB546D925C398B",
+        "address": "〒171-0022, 東京都豊島区, 南池袋1丁目28-2 池袋PARCO",
+        "addressIsApproximate": false
+      },
+      "notes": "游记资料：现场排队即可入场；营业时间请出发前确认"
+    },
+    {
+      "key": "u-02",
+      "title": "备选：I'm donut? 原宿（アイムドーナツ 原宿）",
+      "durationMinutes": 60,
+      "category": "dessert",
+      "place": {
+        "name": "I'm donut? harajuku",
+        "latitude": 35.6698281,
+        "longitude": 139.7032186,
+        "applePlaceID": "I4A423C8BF4E252B8",
+        "address": "〒150-0001, 東京都渋谷区, 神宮前1丁目14-24",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认"
+    },
+    {
+      "key": "u-03",
+      "title": "备选：Yodobashi Camera 上野（ヨドバシカメラ 上野店）",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "Yodobashi Camera Multimedia上野",
+        "latitude": 35.711101,
+        "longitude": 139.7744334,
+        "applePlaceID": "I6934612917EACD58",
+        "address": "〒110-0005, 東京都台東区, 上野4丁目10-10",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记提到旁边还有二号店"
+    },
+    {
+      "key": "u-04",
+      "title": "备选：水獭咖啡厅（カワウソ 若林の家）",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "若林",
+        "latitude": 35.6459667,
+        "longitude": 139.6599438,
+        "applePlaceID": "IEEB18A3AC40A0A56",
+        "address": "東京都世田谷区, 若林",
+        "addressIsApproximate": true
+      },
+      "notes": "游记查资料后觉得互动时间较长；营业时间请出发前确认"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "资料来源与查证",
+      "paragraphs": [
+        {
+          "text": "来源游记",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/958599363857/",
+          "style": "bullet"
+        },
+        {
+          "text": "查证（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "热海海上花火大会（发射地点热海港 7.5m 岸壁到海钓り施设；施放日请看官网，官网页面可见 2026 年多个日期与 2027 年日期已公布）：https://www.ataminews.gr.jp/event/8 （查证 2026-11-17）；施放时间来自游记与第三方整理，官网页未列出时间。",
+          "style": "bullet"
+        },
+        {
+          "text": "京成 Skyliner（成田第二航站楼到京成上野约 41 分；车费 1,280 日元加指定席 1,300 日元，官网上野页标 2,470 日元，两者不一致）：https://www.keisei.co.jp/keisei/tetudou/skyliner/us/directions/ueno.html （查证 2026-11-17，来源为搜索结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "HARRY 原宿 terrace（平日 13:00–18:00、周末与假日 11:00–18:00，最后点单 17:30，无公休，预约最少 60 分）：https://harinezumi-cafe.com/store/harajuku-terrace/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "SHIBUYA SKY（约 10:00–22:30、最后入场约 21:20，第三方整理，官方页面未能取得）：https://www.shibuya-scramble-square.com/sky/ （查证 2026-11-17，请出发前确认）",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Borderless（约 10:00–21:00、每月第 1、3 个周二休，各来源票价不一）：https://www.teamlab.art/e/borderless-azabudai/ （查证 2026-11-17，官方页面未能取得完整内容，来源为搜索结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "川越冰川神社（缘むすび风铃 2026 年 6/27–9/6 9:00–20:00，社务所 049-224-0589）：https://www.kawagoehikawa.jp/ （查证 2026-11-17，来源为搜索结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "吉伊卡哇 MOGUMOGU 本铺 川越店（约 9:30–17:30、年中无休、住所：川越市元町 2-7-9，开幕新闻稿资料）：https://chiikawamogumogu.jp/ （查证 2026-11-17，请出发前确认）",
+          "style": "bullet"
+        },
+        {
+          "text": "东京到热海新干线（こだま约 50 分、ひかり约 40 分；指定席约 4,270 日元、自由席约 3,740 日元）：搜索整理页（查证 2026-11-17，非官方）",
+          "style": "bullet"
+        },
+        {
+          "text": "东武东上线池袋到川越约 30 分：https://www.tobu.co.jp/en/access/kawagoe/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "未能从官方确认，请出发前确认",
+          "style": "heading"
+        },
+        {
+          "text": "各餐厅、商场、旧第八十五银行本店本馆、Sunshine City、东急 Plaza 表参道原宿等营业时间与公休。",
+          "style": "bullet"
+        },
+        {
+          "text": "川越巴士票价与班次、各景点坐标为估计值。",
+          "style": "bullet"
+        },
+        {
+          "text": "已变动与取舍",
+          "style": "heading"
+        },
+        {
+          "text": "游记第 1 天涩谷 SHIBUYA SKY 与晚餐保留；东京铁塔游记仅路过，不排入（模板 02 已涵盖）。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记第 2、3、5 天的吉伊卡哇咖啡厅、吉伊卡哇拉面、吉伊卡哇 Park、仙贝与红薯条等店家只留 Ikebukuro 牛舌与扭蛋百货，吉伊卡哇拉面列为备选。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记第 5 天的上野 Yodobashi 并入上野丸井一段，简短带过。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记第 4 天的药妆采购、香水与面包伴手礼等私人购物略去。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出发前须知",
+      "paragraphs": [
+        {
+          "text": "先决条件：配合热海花火日期",
+          "style": "heading"
+        },
+        {
+          "text": "这份行程的重点是第 3 天的热海海上花火大会（热海海上花火大会），只在特定日期施放，必须先确定施放日，再把整趟旅程排在那一天前后。",
+          "style": "bullet"
+        },
+        {
+          "text": "施放日请到热海市观光协会官网查：https://www.ataminews.gr.jp/event/8 。不要自行假设日期，也不要用过期年份的日期推算。",
+          "style": "bullet"
+        },
+        {
+          "text": "施放时间依季节不同，游记资料为 7、8 月约 20:15 起、其他月份约 20:20 起，约 20–25 分；请以官网为准。",
+          "style": "bullet"
+        },
+        {
+          "text": "模板以 9 月中旬的夏季游记为基准，天气与日照随季节而异。",
+          "style": "bullet"
+        },
+        {
+          "text": "机场进出市区（成田国际机场 NRT）",
+          "style": "heading"
+        },
+        {
+          "text": "京成 Skyliner：成田机场第二航站楼到京成上野约 41 分，全车指定席，没有自由席；约 2,580 日元（车费 1,280 日元加指定席费 1,300 日元，京成官网 FAQ）。京成官网上野页另标 2,470 日元，两者不一致，请出发前查京成官网。",
+          "style": "bullet"
+        },
+        {
+          "text": "京成本线（特急或快速、Access Express）较便宜但较慢，请查京成官网时刻与票价。",
+          "style": "bullet"
+        },
+        {
+          "text": "JR 成田特快（成田エクスプレス）可直达东京站、品川、新宿、池袋，请查 JR 东日本官网时刻与票价。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记选 Skyliner 到京成上野，转银座线到新桥；入境后在机场「铁道」方向找 SKYLINER & KEISEI INFORMATION CENTER 兑换，注意另有其他铁路的服务柜台。",
+          "style": "bullet"
+        },
+        {
+          "text": "本模板选成田：游记搭成田出入，Skyliner 到上野最快；也可改选羽田，请另查京急或东京单轨电车。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通票券",
+          "style": "heading"
+        },
+        {
+          "text": "交通卡可用 Suica（含 iPhone 的 Suica），机场车站有 Welcome Suica 与一般 Suica 充值机。",
+          "style": "bullet"
+        },
+        {
+          "text": "川越周游券（电车加东武巴士）：东武东上线池袋到川越往返，加上全天东武巴士（含东武小江户循环巴士）；巴士有西武与东武两家，此票只限东武；用票时不要同时刷 Suica。",
+          "style": "bullet"
+        },
+        {
+          "text": "西武的「小江户巡回巴士」不能用东武周游券，可刷交通卡付费或买西武的周游券。",
+          "style": "bullet"
+        },
+        {
+          "text": "东京到热海的东海道新干线是 JR 东海与 JR 西日本营运，可提早在线上购票；游记在乘车前约 4 周买票（游记 2025 年资料），可用电子车票 QR Code 进站。",
+          "style": "bullet"
+        },
+        {
+          "text": "预约与购票",
+          "style": "heading"
+        },
+        {
+          "text": "SHIBUYA SKY：官网 https://www.shibuya-scramble-square.com/sky/ 热门，请提前购买；游记买的是 18:40 夜景场；入场前要存放自拍棒，上去有免费储物柜。",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Borderless：官网 https://www.teamlab.art/e/borderless-azabudai/ ，建议提前购买；馆内没有地图，入口有官方手册。",
+          "style": "bullet"
+        },
+        {
+          "text": "吉伊卡哇 MOGUMOGU 本铺 川越店：全天人数管制，可到现场扫 QR Code 预约下一场，怕白跑一趟可线上预约；一支手机一个帐号一天只能预约一次。",
+          "style": "bullet"
+        },
+        {
+          "text": "HARRY 原宿 terrace 水獭咖啡厅：官网 https://harinezumi-cafe.com/store/harajuku-terrace/ 预约，需至少 60 分钟；当日去可能白跑一趟。",
+          "style": "bullet"
+        },
+        {
+          "text": "热海：沙滩免费入场、没有付费席，请自备野餐垫；回程新干线事前买好，花火结束后车站人潮很多。",
+          "style": "bullet"
+        },
+        {
+          "text": "入境",
+          "style": "heading"
+        },
+        {
+          "text": "免签入境前请先在 Visit Japan Web 登录，入境审查与海关申报 QR Code 已合并（游记 2025 年资料，请查 Visit Japan Web 官网）。",
+          "style": "bullet"
+        },
+        {
+          "text": "行程节奏",
+          "style": "heading"
+        },
+        {
+          "text": "第 1 天与第 5 天含机场进出，第 2 天往返川越、第 3 天往返热海，交通比重高。第 3 天花火散场后回到酒店约 22:45，超过 21:00。",
+          "style": "bullet"
+        },
+        {
+          "text": "住宿连住 4 晚：东京新桥大和 ROYNET 酒店，新桥站步行约 2 分；房间偏小。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "行程总览：东京近郊 5 日怎么走",
+      "paragraphs": [
+        {
+          "image": "d3-05"
+        },
+        "从成田第二航站楼进、成田出，四晚都住新桥同一家酒店当基地，中间一天去川越、一天去热海，都是坐电车当天往返。这趟的重点是第 3 天的热海海上花火大会，花火只在特定日期燃放，要先确定燃放日，再把整趟行程排在那一天前后。",
+        "第 1 天：成田落地，先到新桥放行李，晚上到涩谷上 {@d1-03} 看夜景，晚饭吃涩谷 PARCO 美食街的串炸。",
+        "第 2 天：到川越逛 {@d2-01}，再去吉伊卡哇 MOGUMOGU 本铺川越店看川越限定的红薯系列，午饭在旧第八十五银行本店本馆二楼咖啡厅，下午走 {@d2-04}；傍晚回池袋吃牛舌、逛太阳城的扭蛋百货。",
+        {
+          "image": "d2-04"
+        },
+        "第 3 天：中午在东京站吃神户牛、逛一番街的角色商店，下午坐车到热海，在站前商店街和便利店补给，傍晚到 {@d3-04}，等晚上的 {@d3-05}，散场后回到酒店大约 22:45。",
+        "第 4 天：上午去麻布台之丘的 {@d4-01}，午饭吃 HARBS 的水果千层蛋糕；下午到原宿逛东急 Plaza 和 KIDDY LAND，吃和牛迷你汉堡，再到 {@d4-05}，晚饭在涩谷 PARCO 吃伊万里牛排。",
+        {
+          "image": "d4-01"
+        },
+        "第 5 天：到上野逛 {@d5-01}，在上野站附近吃午饭，到 {@d5-03} 取行李、买伴手礼，再去成田第二航站楼逛免税店后出境。",
+        "住宿：东京新桥大和 ROYNET 酒店连住 4 晚，步行到新桥站约 2 分钟，房间偏小。",
+        "交通重点：成田第二航站楼到京成上野坐京成 Skyliner，约 41 分钟，全车对号入座，票价请查京成官网；池袋到川越坐东武东上线约 30 分钟，川越周游券只限东武巴士；东京到热海坐东海道新干线，可以提前在网上买票；交通卡可用 Suica。花火燃放日请到热海市观光协会官网查，不要自己想当然。出发前请自己再查一次最新时刻表。",
+        "适合谁：想把川越、热海花火大会、原宿和吉伊卡哇相关行程串在一起的人。第 2、3 天往返川越和热海，交通占比高，花火那天很晚才回酒店；请先确定花火燃放日再订机票和酒店。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Sugar Butter Tree（シュガーバターの木）",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "上野站内买（游记伴手礼）"
+    },
+    {
+      "key": "s-02",
+      "title": "川越仙贝（川越せんべい）",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "川越小江户街道上伴手礼店，游记推荐海鲜口味，原味较硬"
+    },
+    {
+      "key": "s-03",
+      "title": "黑糖红薯条（黒糖いもスティック）",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "川越小江户街道上伴手礼店"
+    },
+    {
+      "key": "s-04",
+      "title": "吉伊卡哇 MOGUMOGU 川越限定红薯系列",
+      "category": "goods",
+      "productType": "figure_plush",
+      "priceJPY": 2970,
+      "store": "吉伊卡哇 MOGUMOGU 本铺 川越店；部分商品限购，游记大红薯兔兔 2,970 日元、小红薯吉伊卡哇 1,870 日元（2025 年资料）"
+    },
+    {
+      "key": "s-05",
+      "title": "吉伊卡哇 MOGUMOGU 川越限定红薯系列",
+      "category": "goods",
+      "productType": "figure_plush",
+      "priceJPY": 2970,
+      "store": "吉伊卡哇 MOGUMOGU 本铺 川越店；部分商品限购，游记大红薯兔兔 2,970 日元、小红薯吉伊卡哇 1,870 日元（2025 年资料）"
+    },
+    {
+      "key": "s-06",
+      "title": "新干线车票声音钥匙圈扭蛋（東海道新幹線 チケット音声キーホルダー）",
+      "category": "other",
+      "productType": "other_product",
+      "store": "上野丸井二楼扭蛋区（游记）"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "东京",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "川越市",
+      "latitude": 35.9251449,
+      "longitude": 139.4857811,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "热海市",
+      "latitude": 35.0963585,
+      "longitude": 139.0717294,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "东京",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "东京",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "东京",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵达成田国际机场第二航站楼（成田国际空港）",
+          "start": "14:40",
+          "end": "15:40",
+          "category": "airport",
+          "place": {
+            "name": "第2旅客ターミナルビル前中央広場",
+            "latitude": 35.7727875,
+            "longitude": 140.3867587,
+            "applePlaceID": "ICD95BF7CCD2E115A",
+            "address": "〒286-0104, 千葉県成田市, 古込1-1, 成田国際空港第2ターミナル B1F",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "放行李、办理入住：东京新桥大和 ROYNET 酒店（ダイワロイネットホテル東京新橋）",
+          "start": "17:00",
+          "end": "17:30",
+          "category": "hotel",
+          "place": {
+            "name": "Daiwa Roynet Hotel新桥",
+            "latitude": 35.6684836,
+            "longitude": 139.7570966,
+            "applePlaceID": "I3D58F9FFA532BB30",
+            "address": "〒105-0004, 東京都港区, 新橋1丁目17-2",
+            "addressIsApproximate": false
+          },
+          "notes": "入住与退房时间请出发前确认",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "机场内铁道方向找 SKYLINER & KEISEI INFORMATION CENTER 兑换车票；Skyliner 到京成上野约 41 分，全车指定席，约 2,580 日元（1,280 日元车费加 1,300 日元指定席费）；京成上野转东京 Metro 银座线（涩谷方向）到新桥约 20 分，出站步行约 2 分"
+          },
+          "todos": [
+            {
+              "text": "购买 Skyliner 车票（去程）与回程订座",
+              "note": "可网络预购，到成田机场站兑换；回程到京成上野站订座"
+            }
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "SHIBUYA SKY 展望台（渋谷スカイ）：夜景时段",
+          "start": "18:40",
+          "end": "20:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "SHIBUYA SKYチケットカウンター",
+            "latitude": 35.6586113,
+            "longitude": 139.7023452,
+            "applePlaceID": "I3BB50A8AC3225E97",
+            "address": "〒150-0002",
+            "addressIsApproximate": true
+          },
+          "notes": "约 10:00–22:30（最后入场约 21:20），仅元旦休；营业时间以官网为准，请出发前确认",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "新桥站搭东京 Metro 银座线到涩谷站约 15 分，步行到涩谷 Scramble Square 约 5 分；上去前先到一楼找专用电梯"
+          },
+          "todos": [
+            {
+              "text": "购买 SHIBUYA SKY 门票（夜景时段）",
+              "note": "官网 https://www.shibuya-scramble-square.com/sky/ ，游记约在入场日前 2 周开卖（2025 年资料）"
+            }
+          ],
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "晚餐：串炸（串カツあらた 渋谷パルコ店）涩谷 PARCO 美食街",
+          "start": "20:15",
+          "end": "21:00",
+          "category": "dining",
+          "place": {
+            "name": "串炸阿拉塔涩谷Parco店",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I4E0C674AF1360F12",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；游记注意：串炸店会另收小菜费（お通し）",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从 Scramble Square 步行到 PARCO 约 10–15 分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "涩谷站搭东京 Metro 银座线回新桥约 15 分，加步行与等车约 30 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "川越市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "川越冰川神社（川越冰川神社）：缘むすび风铃与鲷鱼御神签",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "temple",
+          "place": {
+            "name": "冰川神社",
+            "latitude": 35.9275637,
+            "longitude": 139.4885561,
+            "applePlaceID": "IB61C9ABDE4FF6D05",
+            "address": "〒350-0052",
+            "addressIsApproximate": true
+          },
+          "notes": "境内可自由参拜；夏季限定「缘むすび风铃」2026 年为 6/27–9/6 9:00–20:00，各年期间不同；社务所电话 049-224-0589",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "新桥站搭 JR 山手线到池袋约 30 分；东武东上线池袋到川越约 30 分（川越特急）；川越站巴士 3 号乘车处搭东武巴士名 01 到冰川神社约 20 分；若有川越周游券（电车加东武巴士）搭巴士时给司机看 QR Code，不要刷 Suica"
+          },
+          "todos": [
+            {
+              "text": "购买川越周游券（电车加东武巴士）",
+              "note": "池袋到川越往返加东武巴士全天；仅限东武巴士，请于使用日启用"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "吉伊卡哇 MOGUMOGU 本铺 川越店（ちいかわもぐもぐ本舗 川越店）：川越限定红薯系列",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "shopping",
+          "place": {
+            "name": "ちいかわもぐもぐ本舗 川越店",
+            "latitude": 35.9244889,
+            "longitude": 139.4814476,
+            "applePlaceID": "IEF60C1C73DD6B1DD",
+            "address": "〒350-0062",
+            "addressIsApproximate": true
+          },
+          "notes": "约 9:30–17:30、年中无休（开幕新闻稿资料，营业时间请出发前确认）",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "冰川神社搭巴士回小江户区域约 20 分，或步行约 20 分；西武「小江户循环巴士」不能用东武周游券，另付费"
+          },
+          "todos": [
+            {
+              "text": "预约吉伊卡哇 MOGUMOGU 本铺 川越店入店时段",
+              "note": "全天人数管制；一支手机一个帐号一天一次，可当天现场扫 QR Code 预约"
+            }
+          ],
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "午餐：旧第八十五银行本店本馆（旧第八十五银行本店本馆）二楼咖啡厅",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "cafe",
+          "place": {
+            "name": "Asahi银行川越支店(旧八十五银行本店本馆)",
+            "latitude": 35.9225931,
+            "longitude": 139.4831352,
+            "applePlaceID": "I69356DB7102EE3E3",
+            "address": "〒350-0063, 埼玉県川越市, 幸町4-2",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；露台为公共区域，不消费也可进入",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "步行约 5 分"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "时之钟与大正浪漫梦通（時の鐘・大正浪漫夢通り）",
+          "start": "14:45",
+          "end": "16:00",
+          "category": "sight",
+          "place": {
+            "name": "川越時の鐘幸町15-1",
+            "latitude": 35.923497,
+            "longitude": 139.483188,
+            "address": "日本埼玉縣川越市",
+            "addressIsApproximate": true
+          },
+          "notes": "钟塔外观全天可见；沿路各店营业时间不一，请出发前确认",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "沿一番街与大正浪漫梦通步行约 10 分"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "晚餐：牛舌（牛たん焼き 仙台辺見 池袋パルコ店）",
+          "start": "17:30",
+          "end": "18:30",
+          "category": "dining",
+          "place": {
+            "name": "池袋Parco",
+            "latitude": 35.7308315,
+            "longitude": 139.7123843,
+            "applePlaceID": "I4470FCF4975CA9C5",
+            "address": "〒171-8557, 東京都豊島区, 南池袋1丁目28-2",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "小江户巡回巴士或东武巴士回川越站约 15 分，东武东上线回池袋约 30 分，含等车与转乘"
+          }
+        },
+        {
+          "key": "d2-06",
+          "title": "池袋太阳城：扭蛋百货公司池袋总店（サンシャインシティ ガシャポンデパートメントストア）",
+          "start": "19:00",
+          "end": "20:00",
+          "category": "shopping",
+          "place": {
+            "name": "Gashapon百货 池袋总本店",
+            "latitude": 35.7288563,
+            "longitude": 139.7200754,
+            "applePlaceID": "I1EA870DC41AF85E2",
+            "address": "〒170-0013, 東京都豊島区, 東池袋3丁目1-3",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从池袋站步行到太阳城约 10–15 分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "步行回池袋站约 15 分，搭 JR 山手线回新桥约 30 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "热海市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "午餐：神户牛（神戸牛ダイア 東京駅店）",
+          "start": "11:30",
+          "end": "12:30",
+          "category": "dining",
+          "place": {
+            "name": "神户牛迪亚东京Grandsta八重洲店",
+            "latitude": 35.6800541,
+            "longitude": 139.7680557,
+            "applePlaceID": "I4E17865EF7248D83",
+            "address": "〒100-0005",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认；游记注意：同层的极味屋 11:00 开店前已大排长龙",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "新桥站搭 JR 到东京站约 5 分，步行到八重洲地下街一带"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "东京车站一番街（东京駅一番街）：角色商店与美食街",
+          "start": "12:45",
+          "end": "14:15",
+          "category": "shopping",
+          "place": {
+            "name": "东京车站一番街",
+            "latitude": 35.68107,
+            "longitude": 139.76811,
+            "applePlaceID": "I1F15EEC1925C92ED",
+            "address": "〒100-0005, 東京都千代田区, 丸の内1丁目9-1 東京駅一番街",
+            "addressIsApproximate": false
+          },
+          "notes": "各店营业时间不一，请出发前确认；东京车站行李寄存处只开到约 20:00（游记资料），改用储物柜寄物",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "步行约 5 分"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "热海站前商店街与便利店补给（熱海駅前・仲見世通り）",
+          "start": "15:45",
+          "end": "16:45",
+          "category": "shopping",
+          "place": {
+            "name": "热海",
+            "latitude": 35.1036105,
+            "longitude": 139.0777622,
+            "applePlaceID": "ICC6D196498CD6208",
+            "address": "静岡県熱海市, 田原本町",
+            "addressIsApproximate": true
+          },
+          "notes": "各店营业时间不一，请出发前确认",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "东京站东海道新干线日本桥口进站，搭こだま到热海约 50 分（ひかり部分班次停靠、约 40 分）；指定席约 4,270 日元、自由席约 3,740 日元（搜索整理，非官方页面）。先买好回程票，花火结束后人潮很多"
+          },
+          "todos": [
+            {
+              "text": "预订东京到热海的来回新干线",
+              "note": "先决定花火日期再购票；游记约在乘车前 4 周买（2025 年资料），回程选花火后的班次"
+            }
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "热海阳光沙滩（熱海サンビーチ）：野餐垫占位与等待",
+          "start": "17:00",
+          "end": "19:45",
+          "category": "beach",
+          "place": {
+            "name": "热海Sun Beach",
+            "latitude": 35.0980447,
+            "longitude": 139.0768168,
+            "applePlaceID": "I816B6250ACBFFDB1",
+            "address": "〒413-0012, 静岡県熱海市, 東海岸町",
+            "addressIsApproximate": true
+          },
+          "notes": "沙滩为开放空间，无公休；自备野餐垫，海滩周边有厕所，游记提醒设备请先查",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从热海站步行下坡约 15–20 分到海滩；回程是上坡，请预留体力"
+          }
+        },
+        {
+          "key": "d3-05",
+          "title": "热海海上花火大会（热海海上花火大会）",
+          "start": "20:15",
+          "end": "20:45",
+          "category": "show",
+          "place": {
+            "name": "热海Sun Beach",
+            "latitude": 35.0980447,
+            "longitude": 139.0768168,
+            "applePlaceID": "I816B6250ACBFFDB1",
+            "address": "〒413-0012, 静岡県熱海市, 東海岸町",
+            "addressIsApproximate": true
+          },
+          "notes": "只在特定日期施放，须先配合施放日规划行程，施放日请见热海市观光协会官网 https://www.ataminews.gr.jp/event/8 ；时间多为 20:15 或 20:20 起约 20–25 分（游记与第三方资料，请查官网）；免费入场",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "在沙滩东侧靠后位置观赏，从野餐位置步行约 5 分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "约 20:45 离场，步行回热海站约 20–25 分；搭事先买好的 21:26 左右新干线班次（游记实际搭 22:02，延误近 20 分）到东京约 45 分；东京站转 JR 回新桥。已持新干线票可从右侧人工通道直接过在来线闸口"
+          },
+          "todos": [
+            {
+              "text": "确认热海海上花火大会施放日，再决定整趟旅程日期",
+              "note": "本行程必须配合施放日规划；施放日请到官网查：https://www.ataminews.gr.jp/event/8"
+            }
+          ],
+          "images": [
+            "d3-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "东京",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "teamLab Borderless：麻布台之丘（teamLab Borderless: MORI Building DIGITAL ART MUSEUM）",
+          "start": "10:30",
+          "end": "12:45",
+          "category": "museum",
+          "place": {
+            "name": "チームラボボーダレス",
+            "latitude": 35.6620821,
+            "longitude": 139.7429831,
+            "applePlaceID": "I4D63FF6237C65D4D",
+            "address": "〒106-0041",
+            "addressIsApproximate": true
+          },
+          "notes": "各来源整理约 10:00–21:00，每月第 1、3 个周二休；以官网为准，请出发前确认",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "新桥搭巴士或电车约 20–25 分到神谷町站或虎之门一带，步行进麻布台之丘 Garden Plaza B 地下 1 楼；馆内无地图，入口右转有免费置物区"
+          },
+          "todos": [
+            {
+              "text": "购买 teamLab Borderless 门票",
+              "note": "官网 https://www.teamlab.art/e/borderless-azabudai/ ，建议提前购买"
+            }
+          ],
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "午餐：HARBS 麻布台之丘店（ハーブス 麻布台ヒルズ店）水果千层蛋糕",
+          "start": "13:00",
+          "end": "13:45",
+          "category": "cafe",
+          "place": {
+            "name": "HARBS 麻布台ヒルズ店",
+            "latitude": 35.6617921,
+            "longitude": 139.7414455,
+            "applePlaceID": "ID342BB3415C34D12",
+            "address": "〒105-0001",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "同一园区内步行约 5 分"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "原宿逛街：东急 Plaza 表参道原宿（吉伊卡哇面包店）与 KIDDY LAND 原宿店",
+          "start": "14:30",
+          "end": "15:10",
+          "category": "shopping",
+          "place": {
+            "name": "东急Plaza表参道原宿",
+            "latitude": 35.6686716,
+            "longitude": 139.7059169,
+            "applePlaceID": "I36622972312760EA",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前4丁目30-3",
+            "addressIsApproximate": false
+          },
+          "notes": "各店营业时间不一，请出发前确认；面包店用餐侧需抽整理券，周边商品店不用",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "搭东京 Metro 转乘到明治神宫前〈原宿〉站，约 30 分，转乘 1 次"
+          },
+          "images": [
+            "d4-03"
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "The Great Burger（ザ グレート バーガー）和牛迷你汉堡",
+          "start": "15:20",
+          "end": "15:45",
+          "category": "fastfood",
+          "place": {
+            "name": "顶好汉堡店",
+            "latitude": 35.6662251,
+            "longitude": 139.7046999,
+            "applePlaceID": "I19EDD305DB383DA5",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前6丁目12-5 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "在原宿区域步行约 10 分"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "HARRY 原宿 terrace 水獭咖啡厅（ＨＡＲＲＹ原宿テラス店）",
+          "start": "16:05",
+          "end": "17:30",
+          "category": "cafe",
+          "place": {
+            "name": "Harry Harajuku Terrace",
+            "latitude": 35.6691599,
+            "longitude": 139.7079697,
+            "applePlaceID": "IBF8E3491E606B707",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前4丁目26番5号, 神宮前426ビル 3F",
+            "addressIsApproximate": false
+          },
+          "notes": "平日 13:00–18:00、周末与假日 11:00–18:00（最后点单 17:30），无公休；预约需至少 60 分钟（官网）",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "步行约 5 分，位于大楼顶楼，从侧边楼梯上"
+          },
+          "todos": [
+            {
+              "text": "预约 HARRY 原宿 terrace 水獭咖啡厅",
+              "note": "官网 https://harinezumi-cafe.com/store/harajuku-terrace/ ；需至少 60 分钟，当日去可能白跑一趟"
+            }
+          ],
+          "images": [
+            "d4-05"
+          ]
+        },
+        {
+          "key": "d4-06",
+          "title": "晚餐：极味屋 涩谷 PARCO 店（極味や 渋谷パルコ店）伊万里牛排",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "極味や 渋谷パルコ店",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I27C7C5F97CC5C83B",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1 渋谷パルコB1F",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；热门时段会售罄",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "原宿站搭 JR 山手线到涩谷约 5 分，步行到 PARCO"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "涩谷搭东京 Metro 银座线回新桥约 15 分，加步行约 25 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "东京",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "上野丸井（上野マルイ）与 Loft、二楼扭蛋区",
+          "start": "11:00",
+          "end": "12:30",
+          "category": "shopping",
+          "place": {
+            "name": "上野Marui",
+            "latitude": 35.7107345,
+            "longitude": 139.7757649,
+            "applePlaceID": "I294F815904982079",
+            "address": "〒110-0005, 東京都台東区, 上野6丁目15-1",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "新桥站搭 JR 山手线到上野约 20 分；退房后行李可先寄存车站储物柜"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "午餐：上野站周边",
+          "start": "12:45",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "上野駅 公园口",
+            "latitude": 35.7143877,
+            "longitude": 139.7763973,
+            "applePlaceID": "I7417813C5B65E03D",
+            "address": "東京都台東区, 上野公園",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "步行约 5 分"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "京成上野站：领取行李与买伴手礼（Sugar Butter Tree）",
+          "start": "13:45",
+          "end": "14:15",
+          "category": "station",
+          "place": {
+            "name": "京成上野駅 正面口",
+            "latitude": 35.7111645,
+            "longitude": 139.7740598,
+            "applePlaceID": "IFA2C7ED6B1A4396A",
+            "address": "東京都台東区, 上野公園",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认；京成上野站在上野站不忍口一侧，到站内储物柜取行李",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从上野站步行到京成上野约 15 分（游记提醒站内易迷路，建议行李直接寄存京成上野的储物柜）"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "成田国际机场第二航站楼出境：Japan Food Hall、免税店购物（成田国际空港）",
+          "start": "15:05",
+          "end": "17:30",
+          "category": "airport",
+          "place": {
+            "name": "第2旅客ターミナルビル前中央広場",
+            "latitude": 35.7727875,
+            "longitude": 140.3867587,
+            "applePlaceID": "ICD95BF7CCD2E115A",
+            "address": "〒286-0104, 千葉県成田市, 古込1-1, 成田国際空港第2ターミナル B1F",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "京成上野搭 Skyliner 到成田机场第二航站楼约 41 分，全车指定席，约 2,580 日元；回程可先在京成上野站订座（工作人员有人会说中文）"
+          }
+        }
+      ]
+    }
+  ]
+}

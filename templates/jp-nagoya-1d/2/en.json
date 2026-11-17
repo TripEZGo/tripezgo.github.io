@@ -1,0 +1,549 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-nagoya-1d",
+  "revision": 2,
+  "contentLocale": "en",
+  "title": "Nagoya in 1 Day — Nagoya Castle, Ōsu, Atsuta",
+  "subtitle": "A same-day round trip with no hotel: Nagoya Castle, Ōsu and Atsuta Shrine",
+  "summary": "For a layover or a single free day: head into the city from the airport, see Nagoya Castle, the Ōsu shopping arcades and Atsuta Shrine, then return to the airport in the evening. No hotel needed. Inuyama Castle, Horaiken, Oasis 21 and the Sky Promenade are kept as alternates. The notes cover getting to and from the airport, getting around on the day, and what has changed lately.",
+  "destination": "Nagoya, Japan",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 1,
+  "coverColour": "amber",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Two travelers",
+    "First visit",
+    "Day trip"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in once your flight is booked; enter 1 day for length of stay"
+    },
+    {
+      "text": "Check the airline's carry-on baggage rules",
+      "note": "Low-cost carriers often limit the number and weight of carry-on bags, especially when you have no checked bag; pack according to the rules on the airline's website before you leave"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-nagoya-1d/d1-03.jpg",
+    "d1-04": "images/jp-nagoya-1d/d1-04.jpg",
+    "d1-06": "images/jp-nagoya-1d/d1-06.jpg",
+    "d1-07": "images/jp-nagoya-1d/d1-07.jpg"
+  },
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Inuyama Castle (犬山城)",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "Inuyama Castle, a National Treasure",
+        "latitude": 35.388289,
+        "longitude": 136.9392532,
+        "applePlaceID": "IFBE24E9AD8810570",
+        "address": "〒484-0082, 愛知県犬山市, 犬山北古券65-2",
+        "addressIsApproximate": false
+      },
+      "notes": "A National Treasure castle whose original keep survives, about 30 min from Nagoya Station by Meitetsu; check opening hours before you go"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Horaiken Atsuta Jingu-mae Main Store (あつた蓬莱軒 本店)",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "Atsuta Horaiken Main Store",
+        "latitude": 35.1200799,
+        "longitude": 136.9069536,
+        "applePlaceID": "I83D929CB24747C9E",
+        "address": "〒456-0043, 愛知県名古屋市熱田区, 神戸町503",
+        "addressIsApproximate": false
+      },
+      "notes": "A famous Nagoya eel rice (hitsumabushi) restaurant that the travelogue's author wanted to try and missed; check opening hours before you go, and expect queues"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: Oasis 21 (オアシス21)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Oasis 21",
+        "latitude": 35.1710721,
+        "longitude": 136.909529,
+        "applePlaceID": "I89208ACA56E58EBF",
+        "address": "〒461-0005, 愛知県名古屋市東区, 東桜1-11-1",
+        "addressIsApproximate": false
+      },
+      "notes": "Next to MIRAI TOWER; check opening hours before you go"
+    },
+    {
+      "key": "u-04",
+      "title": "Alternate: Sky Promenade at JR Nagoya Takashimaya JR Gate Tower (スカイプロムナード)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "Sky Promenade",
+        "latitude": 35.1705156,
+        "longitude": 136.8849769,
+        "applePlaceID": "IBDD8085F0261DA6",
+        "address": "〒450-0002, 愛知県名古屋市中村区, 名駅4丁目7番1号, ミッドランド スクエア 44-46F",
+        "addressIsApproximate": false
+      },
+      "notes": "An observation deck above Nagoya Station that needs a ticket; check opening hours before you go"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and fact-checking",
+      "paragraphs": [
+        {
+          "text": "Source travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/7b8a0563c157/",
+          "style": "bullet"
+        },
+        {
+          "text": "Checked (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Nagoya Castle hours and fees: https://www.nagoyajo.city.nagoya.jp/en/information/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Nagoya Castle main keep status: https://www.nagoyajo.city.nagoya.jp/en/ (checked 2026-11-17; the page says the main keep cannot be entered)",
+          "style": "bullet"
+        },
+        {
+          "text": "MIRAI TOWER observation deck hours: https://www.nagoya-tv-tower.co.jp/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Yabaton Yabacho Main Store: https://www.yabaton.com/stores/yabacho-honten (checked 2026-11-17; the page says it is preparing to open)",
+          "style": "bullet"
+        },
+        {
+          "text": "Could not be confirmed from official sources; check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "Meitetsu Airport Line limited express fares and times: the official page would not open.",
+          "style": "bullet"
+        },
+        {
+          "text": "Atsuta Shrine opening and amulet-office hours: the official site could not be reached.",
+          "style": "bullet"
+        },
+        {
+          "text": "Ōsu Kannon opening hours: not listed on the official site.",
+          "style": "bullet"
+        },
+        {
+          "text": "Konparu Ōsu Main Store hours: the travelogue says it opens at 8:00; not checked against an official source.",
+          "style": "bullet"
+        },
+        {
+          "text": "Opening hours of shops in the Ōsu arcades, Meitetsu Nagoya Station and the tebasaki restaurants.",
+          "style": "bullet"
+        },
+        {
+          "text": "Travelogue details",
+          "style": "heading"
+        },
+        {
+          "text": "The order of stops follows the author's one-day dash in September 2023; the Inuyama Castle and eel rice the author wrote about wanting to try are added as alternates.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "What this itinerary is",
+          "style": "heading"
+        },
+        {
+          "text": "A one-day dash with no hotel: arrive in the early morning, leave late at night.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue's author took red-eye flights on a low-cost carrier (out early in the morning, arriving at dawn; back late at night). The timings here are built around that kind of schedule, so go by your own flights.",
+          "style": "bullet"
+        },
+        {
+          "text": "Low-cost carriers usually limit the number and weight of carry-on bags, so follow the airline's rules; with no checked bag you can travel light for the day.",
+          "style": "bullet"
+        },
+        {
+          "text": "Entry",
+          "style": "heading"
+        },
+        {
+          "text": "Before you leave, register your immigration and customs declaration on Visit Japan Web and show the QR code on arrival: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "Between the airport and the city",
+          "style": "heading"
+        },
+        {
+          "text": "Chubu Centrair Airport to Nagoya Station: the Meitetsu Airport Line limited express (μ-SKY) takes about 30 min; it needs an extra limited-express ticket and you can reserve a seat. Rapid and local trains are cheaper but slower. Check fares on the Meitetsu website.",
+          "style": "bullet"
+        },
+        {
+          "text": "From the 2023 travelogue: a one-way ticket plus μ-SKY bought online in advance came to about NT$271.",
+          "style": "bullet"
+        },
+        {
+          "text": "Timetables and fares: https://www.meitetsu.co.jp/eng/",
+          "style": "bullet"
+        },
+        {
+          "text": "Getting around on the day",
+          "style": "heading"
+        },
+        {
+          "text": "The Meijo Line subway is the backbone of the day (Kamimaezu, Shiyakusho, Sakae and Atsuta Jingu Nishi are all on it); a one-day pass is available, so work out whether it pays off for the rides you plan.",
+          "style": "bullet"
+        },
+        {
+          "text": "Rain is common, so bring an umbrella; there are few shops near Nagoya Castle.",
+          "style": "bullet"
+        },
+        {
+          "text": "Current conditions",
+          "style": "heading"
+        },
+        {
+          "text": "Nagoya Castle's main keep is closed for renovation; you can only visit Honmaru Palace and the gardens.",
+          "style": "bullet"
+        },
+        {
+          "text": "Ōsu Kannon's main hall was under repair when the travelogue's author visited; check the current state before you go.",
+          "style": "bullet"
+        },
+        {
+          "text": "Nagoya Castle admission changes from 1 October 2026; go by the official site.",
+          "style": "bullet"
+        },
+        {
+          "text": "Other",
+          "style": "heading"
+        },
+        {
+          "text": "On a late-night flight, watch the last connecting train and the hours when the airport check-in counters open and close.",
+          "style": "bullet"
+        },
+        {
+          "text": "There is plenty of time on the way back, so browse the duty-free shops at Terminal 1 and watch planes from the observation deck.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "Trip overview: how the day runs",
+      "paragraphs": [
+        {
+          "image": "d1-03"
+        },
+        "A same-day dash: in through Chubu Centrair at dawn, out through the same airport late at night, no hotel. The Meitetsu Airport Line links the airport to the city, and the Meijo subway line is the spine of the day, running north to south and back to Nagoya Station.",
+        "Day 1, morning: land at dawn, have a fried shrimp toast breakfast in Ōsu, see the Honmaru Palace at {@d1-03}, then go up {@d1-04} for a view over the city.",
+        {
+          "image": "d1-06"
+        },
+        "Day 1, afternoon: miso katsu for lunch at Yabaton, then {@d1-06}, and a walk around {@d1-07}.",
+        {
+          "image": "d1-07"
+        },
+        "Day 1, evening: head to {@d1-08} first, then tebasaki chicken wings for dinner around Nagoya Station, then the train back to the airport to depart.",
+        "Where to sleep: this is a same-day dash with no overnight stay.",
+        "Getting around: the Meitetsu Airport Line takes about 30 minutes from Chubu Centrair to Nagoya Station on the μ-SKY limited express, which needs a supplementary ticket; in the city the Meijo subway line is the spine, and a one-day pass is worth it only if you ride enough that day. The Nagoya Castle main keep is closed for renovation, so you can only visit the Honmaru Palace and the grounds. With a late flight, mind the last connecting train and when the airport check-in counters open and close. Check the latest timetables before you go.",
+        "Who it suits: anyone with just one day who wants a quick pass through Nagoya's castle, food and shrines. The timing assumes a low-cost red-eye flight, so always go by your own flight; only carry-on luggage keeps the day light."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Kaeru manju (Nagoya Kaeru Honke, かえるまんじゅう)",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "Meitetsu Nagoya Station underground mall"
+    },
+    {
+      "key": "s-02",
+      "title": "Dassai Junmai Daiginjo Migaki Niwari Sanbu (23% polish) 750 ml (獺祭 純米大吟醸 磨き二割三分)",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "priceJPY": 5700,
+      "store": "Duty-free shop at Chubu Centrair Airport (about ¥5,700 in the 2023 travelogue)"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Nagoya",
+      "latitude": 35.18147,
+      "longitude": 136.90641,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Nagoya",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Chubu Centrair International Airport (中部国際空港)",
+          "start": "06:30",
+          "end": "07:30",
+          "category": "airport",
+          "place": {
+            "name": "Chubu Centrair International Airport",
+            "latitude": 34.8590656,
+            "longitude": 136.8145748,
+            "applePlaceID": "I7690DD660D1ACED2",
+            "address": "〒479-0881, 愛知県常滑市, セントレア1丁目1番",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Breakfast: Konparu Ōsu Main Store (コンパル 大須本店), fried shrimp toast",
+          "start": "08:45",
+          "end": "09:30",
+          "category": "cafe",
+          "place": {
+            "name": "Konparu Ōsu Main Store",
+            "latitude": 35.1593994,
+            "longitude": 136.904706,
+            "applePlaceID": "IAE7114C877C23B65",
+            "address": "〒460-0011, 愛知県名古屋市中区, 大須3丁目20-19",
+            "addressIsApproximate": false
+          },
+          "notes": "The travelogue says it opens at 8:00; check opening hours and closing days before you go",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "Meitetsu Airport Line, Chubu Centrair Airport → Kanayama (about 35 min), then the Meijo Line subway to Kamimaezu, and about 5 min on foot"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "Nagoya Castle (名古屋城): Honmaru Palace",
+          "start": "10:00",
+          "end": "11:45",
+          "category": "castle",
+          "place": {
+            "name": "Nagoya Castle",
+            "latitude": 35.1855722,
+            "longitude": 136.8990898,
+            "applePlaceID": "I5C7269B41465E8B1",
+            "address": "〒460-0031, 愛知県名古屋市中区, 本丸1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–16:30 (last entry 16:00); closed 29 Dec–1 Jan; the main keep is closed for renovation and cannot be entered",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Meijo Line subway, Kamimaezu → Shiyakusho (about 15 min), then about 10 min on foot to the main gate; Honmaru Palace requires taking off your shoes, and the lockers need 100-yen coins"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "Chubu Electric Power MIRAI TOWER (中部電力 MIRAI TOWER)",
+          "start": "12:05",
+          "end": "13:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "Nagoya TV Tower",
+            "latitude": 35.1723693,
+            "longitude": 136.9083318,
+            "applePlaceID": "I8412B48CB48B2489",
+            "address": "〒460-0003, 愛知県名古屋市中区, 錦3丁目6-15先",
+            "addressIsApproximate": false
+          },
+          "notes": "Observation deck 10:00–21:00 on weekdays and Sundays, 10:00–21:40 on Saturdays (last entry 20 min before closing); may change on event days",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "Meijo Line subway, Shiyakusho → Sakae (about 7 min), then about 5 min on foot; the café on the middle level needs no ticket"
+          },
+          "images": [
+            "d1-04"
+          ]
+        },
+        {
+          "key": "d1-05",
+          "title": "Lunch: Yabaton Yabacho Main Store (矢場とん 矢場町本店), miso katsu",
+          "start": "13:15",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "Misokatsu Yabaton",
+            "latitude": 35.1616572,
+            "longitude": 136.9062773,
+            "applePlaceID": "I3B0C805668CA79DB",
+            "address": "〒460-0011, 愛知県名古屋市中区, 大須3丁目6-18",
+            "addressIsApproximate": false
+          },
+          "notes": "11:00–21:00, no regular closing days (official site; it shows the shop as preparing to open, so check before you go); expect a queue at peak hours",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 min on foot from the Sakae area"
+          }
+        },
+        {
+          "key": "d1-06",
+          "title": "Ōsu Kannon and the Ōsu shopping arcades (大須観音・大須商店街)",
+          "start": "14:30",
+          "end": "16:15",
+          "category": "temple",
+          "place": {
+            "name": "Ōsu Kannon",
+            "latitude": 35.1597227,
+            "longitude": 136.8994224,
+            "applePlaceID": "I4801B3035F04964A",
+            "address": "〒460-0011, 愛知県名古屋市中区, 大須2丁目21-47",
+            "addressIsApproximate": false
+          },
+          "notes": "Check the temple's opening hours before you go; shops in the arcades keep their own hours, and most open in the afternoon",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 min on foot; the arcades are good for fruit daifuku and drugstore shopping"
+          },
+          "images": [
+            "d1-06"
+          ]
+        },
+        {
+          "key": "d1-07",
+          "title": "Atsuta Shrine (熱田神宮)",
+          "start": "16:45",
+          "end": "17:45",
+          "category": "temple",
+          "place": {
+            "name": "Atsuta Shrine",
+            "latitude": 35.1273434,
+            "longitude": 136.9086948,
+            "applePlaceID": "ID01F90EDA7EA995C",
+            "address": "〒456-8585",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Meijo Line subway, Kamimaezu → Atsuta Jingu Nishi (about 10 min), then on foot to the main gate; you can also ride to Jingu-mae Station"
+          },
+          "images": [
+            "d1-07"
+          ]
+        },
+        {
+          "key": "d1-08",
+          "title": "Souvenir shopping at Meitetsu Nagoya Station (名鉄名古屋駅)",
+          "start": "18:30",
+          "end": "19:15",
+          "category": "shopping",
+          "place": {
+            "name": "Nagoya Station, Meitetsu Central Exit",
+            "latitude": 35.1698124,
+            "longitude": 136.8844492,
+            "applePlaceID": "I45CC8527349BC561",
+            "address": "愛知県名古屋市中村区, 名駅",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-07",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Meitetsu Nagoya Main Line, Jingu-mae → Meitetsu Nagoya, about 10 min including walking and waiting"
+          }
+        },
+        {
+          "key": "d1-09",
+          "title": "Dinner: around Nagoya Station (tebasaki chicken wings)",
+          "start": "19:30",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "Nagoya",
+            "latitude": 35.1707684,
+            "longitude": 136.8819514,
+            "applePlaceID": "I7BE10E940AFF7BF7",
+            "address": "愛知県名古屋市中村区, 名駅",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-08",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "On foot around the station"
+          }
+        },
+        {
+          "key": "d1-10",
+          "title": "Depart from Chubu Centrair International Airport (中部国際空港)",
+          "start": "21:10",
+          "end": "23:15",
+          "category": "airport",
+          "place": {
+            "name": "Chubu Centrair International Airport",
+            "latitude": 34.8590656,
+            "longitude": 136.8145748,
+            "applePlaceID": "I7690DD660D1ACED2",
+            "address": "〒479-0881, 愛知県常滑市, セントレア1丁目1番",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d1-09",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Meitetsu Airport Line, Meitetsu Nagoya → Chubu Centrair Airport, about 30 min on the limited express; leave time for check-in and security"
+          }
+        }
+      ]
+    }
+  ]
+}

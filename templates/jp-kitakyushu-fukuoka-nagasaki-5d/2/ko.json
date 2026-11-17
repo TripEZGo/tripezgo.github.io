@@ -1,0 +1,1201 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kitakyushu-fukuoka-nagasaki-5d",
+  "revision": 2,
+  "contentLocale": "ko",
+  "title": "기타큐슈 5일｜후쿠오카·나가사키·다자이후·야나가와·모지코",
+  "subtitle": "후쿠오카를 거점으로, 하루는 나가사키, 하루는 다자이후와 야나가와, 하루는 모지코",
+  "summary": "후쿠오카에서 5일을 묵으며 매일 하카타에서 출발해요. 다자이후와 야나가와, 나가사키 당일 왕복, 모지코 레트로 거리, 그리고 후쿠오카 시내. 나가사키 당일 왕복은 이동 시간 비중이 높은 편인데, 거리 때문이에요. 후쿠오카 타워, 나가사키 안경다리, 다자이후 스타벅스는 대체 후보로 두었습니다.",
+  "destination": "일본 후쿠오카・나가사키・기타큐슈",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "green",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "첫 방문",
+    "맛집",
+    "역사"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록(입국 심사·세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권과 숙소 예약이 끝나면 바로 작성할 수 있어요"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d1-03.jpg",
+    "d1-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d1-05.jpg",
+    "d2-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-01.jpg",
+    "d2-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-04.jpg",
+    "d2-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-05.jpg",
+    "d2-06": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-06.jpg",
+    "d3-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-01.jpg",
+    "d3-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-04.jpg",
+    "d3-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-05.jpg",
+    "d4-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-01.jpg",
+    "d4-02": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-02.jpg",
+    "d4-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-04.jpg",
+    "d4-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-05.jpg",
+    "d5-02": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d5-02.jpg",
+    "d5-03": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d5-03.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 후쿠오카 덴진 일대",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "덴진",
+        "latitude": 33.5913835,
+        "longitude": 130.3989064,
+        "applePlaceID": "IE9F4B2EE1A6F4F8D",
+        "address": "福岡県福岡市中央区, 天神",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "대체: 후쿠오카 타워 (福岡タワー)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "후쿠오카 타워",
+        "latitude": 33.5932849,
+        "longitude": 130.3514528,
+        "applePlaceID": "ID097EC5E453200F5",
+        "address": "〒814-0001, 福岡県福岡市早良区, 百道浜2丁目3-26",
+        "addressIsApproximate": false
+      },
+      "notes": "09:30–22:00(마지막 입장 21:30). 시내에서 멀고 여행기에서는 경치가 평범했지만 거울 같은 외관이 아름다움"
+    },
+    {
+      "key": "u-02",
+      "title": "대체: 다자이후 오모테산도 스타벅스 (スターバックス)",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "스타벅스 커피 다자이후 덴만구 오모테산도점",
+        "latitude": 33.5196319,
+        "longitude": 130.5334179,
+        "applePlaceID": "ICFD12966FE79BA8D",
+        "address": "〒818-0117, 福岡県太宰府市, 宰府3丁目2-43",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인. 여행기에서는 사람이 많다고 함"
+    },
+    {
+      "key": "u-03",
+      "title": "대체: 나가사키 안경다리 (眼鏡橋)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "안경다리",
+        "latitude": 32.7471779,
+        "longitude": 129.8800814,
+        "applePlaceID": "IB8CAB7EB65560E8C",
+        "address": "長崎県長崎市",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인. 여행기에서는 정면에서 수면에 비친 모습을 찍을 것을 권함"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "자료 출처와 확인",
+      "paragraphs": [
+        {
+          "text": "원문 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인(2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "글로버 정원 개원 시간과 요금(08:00–18:00, 2026/11–12는 20:00까지 연장, 일반 1,300엔): https://glover-garden.jp/guide/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "나가사키 원폭 자료관(입관료 200엔, 휴관 12/29–12/31, 상설전 일부 비공개): https://nabmuseum.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "나가사키 원폭 자료관 개관 시간(시 홈페이지, 9–4월 08:30–17:30, 5–8월은 18:30까지): https://www.city.nagasaki.lg.jp/heiwa/3030000/3030300/p005150.html (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "야나가와 뱃놀이(쇼게쓰 승선장 09:30–15:00, 약 60분, 성인 2,200엔): https://www.yanagawakk.co.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "니시테쓰 다자이후·야나가와 관광 티켓(디지털 3,620엔, 역 창구 3,730엔, 2일간 유효): https://www.ensen24.jp/kippu/tc/dazaifu-yanagawa/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "다자이후 덴만구 참배 시간: https://www.dazaifutenmangu.or.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "캐널시티 하카타 영업시간: https://www.canalcity.co.jp/service/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "덴진 지하상가 영업시간: https://www.tenchika.com/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "고쿠라성 천수각 개관 시간: https://www.kokura-castle.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "후쿠오카 타워 전망대 09:30–22:00(마지막 입장 21:30): https://www.fukuokatower.co.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "후쿠오카 소프트뱅크 호크스 홈경기 일정(공식 사이트 예 18:00 시작, みずほPayPayドーム福岡): https://www.softbankhawks.co.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "후쿠오카시 지하철 공항선(덴진, 공항, 도진마치가 같은 노선): https://subway.city.fukuoka.lg.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "제3자 자료로 비공식이니 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "구시다 신사 참배 04:00–22:00, 이나사야마 로프웨이 09:00–22:00, 모지코 블루 윙 도개교 개폐 시각과 전망실 10:00–22:00, 하카타 미야자키 소고기 영업시간, 덴진에서 공항까지 지하철 약 11분과 요금 약 260엔.",
+          "style": "bullet"
+        },
+        {
+          "text": "하카타에서 나가사키까지 소요 시간: 니시큐슈 신칸센 개통 후 가장 빠르면 약 1시간 20분, 여행기에는 약 1시간 50분으로 적혀 있고, 이 일정은 약 1시간 30–50분으로 잡았어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못한 것, 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "글로버 정원 휴무일, 오우라 성당, 평화공원, 스미요시 신사, 이치란 다자이후 산도점, 우메가에모치, 야키카레, 하카타 기온 뎃나베 군만두의 영업시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "고쿠라성 휴관일, 모지코 레트로 전망실 휴관일, 이나사야마 로프웨이 요금.",
+          "style": "bullet"
+        },
+        {
+          "text": "달라진 점",
+          "style": "heading"
+        },
+        {
+          "text": "이 템플릿은 여행기의 후쿠오카와 기타큐슈 구간(여행기 1일차부터 5일차 전반)만 가져왔고, 구마모토와 아소 구간은 별도 템플릿으로 만들었습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기에서는 첫날 밤 21:00에야 공항을 나왔지만, 이 템플릿은 오후 도착으로 바꾸고 밤에 캐널시티 하카타와 나카스 포장마차를 넣었습니다(원래는 여행기 3일차 밤).",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기의 라라포트 후쿠오카(후쿠오카 건담)는 일정에 넣지 않았어요. 대체 후보로 쓸 때는 그 전시가 아직 있는지 출발 전에 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 자료",
+          "style": "heading"
+        },
+        {
+          "text": "숙소는 여행기에 따라 후쿠오카 덴진 일대에서 4박 연속. 여행기 작성자는 와타나베도리역 근처 호텔에 묵었지만 낡았다고 느껴서 지역만 적었습니다.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 안내",
+      "paragraphs": [
+        {
+          "text": "입국과 인터넷",
+          "style": "heading"
+        },
+        {
+          "text": "출발 전에 Visit Japan Web에서 입국 심사와 세관 신고를 등록하세요: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "인터넷은 물리 SIM이나 eSIM을 쓸 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "교통",
+          "style": "heading"
+        },
+        {
+          "text": "후쿠오카의 지하철, 버스, JR, 니시테쓰는 대부분 Suica 같은 전국 호환 교통 IC 카드를 쓸 수 있어요. JR과 니시테쓰 특급은 특급권이나 별도 티켓이 필요할 수 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항에서 시내로: 후쿠오카 공항 국내선 터미널은 지하철 공항선과 바로 연결되어 덴진까지 약 11분, 하카타까지 약 5분. 국제선 터미널에서는 먼저 무료 셔틀버스로 국내선 터미널로 가야 합니다(요금과 배차는 출발 전에 확인).",
+          "style": "bullet"
+        },
+        {
+          "text": "니시테쓰 다자이후·야나가와 관광 티켓: 후쿠오카(덴진)역이나 야쿠인역에서만 출발할 수 있고 코스는 둘 중 하나(후쿠오카→야나가와→다자이후→후쿠오카, 또는 후쿠오카→다자이후→야나가와→후쿠오카). 자동 개찰구는 못 쓰고 유인 창구로 지나가야 하며, 사용 기간은 시작일 포함 2일. 중간에 나올 수 있는 곳은 다자이후역과 니시테쓰 야나가와역뿐이고, 다른 역에서 나오거나 출발역으로 일찍 돌아오면 티켓이 무효가 됩니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "야나가와 뱃놀이는 약 60–70분이고 쇼게쓰 승선장 접수는 15:00까지라서, '후쿠오카→야나가와→다자이후→후쿠오카' 순서로 오전에 먼저 배를 타는 것이 좋아요.",
+          "style": "bullet"
+        },
+        {
+          "text": "나가사키는 장거리 당일 왕복입니다. 특급 가모메와 니시큐슈 신칸센을 다케오온천에서 같은 승강장에서 갈아탑니다. 왕복 막차를 먼저 확인하세요. 하카타로 돌아오는 시각이 21:00를 넘을 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "JR 규슈 기타큐슈 패스(여행기 작성자는 2023년에 5일권을 구입)는 신칸센을 포함하지 않습니다. 하카타에서 고쿠라까지 신칸센을 타면 별도 요금이고, JR 특급 소닉이나 보통열차는 쓸 수 있어요. 이 일정은 이동량이 많으니 본전을 뽑는지는 직접 계산해 보세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "예약",
+          "style": "heading"
+        },
+        {
+          "text": "니시테쓰 다자이후·야나가와 관광 티켓은 덴진이나 야쿠인역에서 현장 구입도 되고, 온라인으로 디지털 티켓도 살 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "야나가와 뱃놀이는 예약을 권장합니다. 성수기와 주말에는 오래 기다릴 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "후쿠오카 소프트뱅크 호크스 야구 경기: 먼저 일정을 확인하고 홈경기가 있을 때만 4일차 밤에 넣으세요. 현장에서도 표를 살 수 있지만 좌석 선택지는 한정됩니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "이나사야마 야경은 일몰 시각에 맞춰야 하므로 2일차 오후 일정은 앞뒤로 조정할 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "기타",
+          "style": "heading"
+        },
+        {
+          "text": "엔화 현금을 넉넉히 준비하세요. 일부 셔틀, 작은 가게, 포장마차는 카드를 받지 않습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "나가사키 카스텔라는 보관 기한이 약 12일, 우메가에모치는 당일에 먹어야 해요.",
+          "style": "bullet"
+        },
+        {
+          "text": "나가사키 원폭 자료관은 2026/09–2027/03 상설전 일부가 비공개이니 출발 전에 확인하세요.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "여행 개요: 기타큐슈 5일 코스",
+      "paragraphs": [
+        {
+          "image": "d3-04"
+        },
+        "후쿠오카로 들어가 후쿠오카로 나오며, 닷새 모두 후쿠오카 텐진 일대에서 묵어 숙소를 옮기지 않습니다. 매일 하카타나 텐진에서 출발해 나가사키는 당일치기, 다자이후와 야나가와가 하루, 모지코와 고쿠라가 하루입니다. 후쿠오카를 중심으로 지하철, 니시테쓰, JR로 방사형으로 다닙니다.",
+        "1일차: 오후에 후쿠오카 공항에 도착해 지하철로 텐진에 가서 짐을 맡기고, 저녁에 {@d1-03}을 구경하고, 저녁 식사는 철판 군만두, 그다음 {@d1-05}에서 야경과 노점을 봅니다.",
+        "2일차: 특급과 서규슈 신칸센으로 나가사키에 가서 먼저 {@d2-01}과 오우라 천주당, 점심은 신치 차이나타운, 오후에는 {@d2-04}과 평화공원, 해 질 무렵 이나사야마 야경을 보고 후쿠오카로 돌아옵니다.",
+        {
+          "image": "d2-06"
+        },
+        "3일차: 텐진에서 니시테쓰를 타고 오전에 {@d3-01}, 점심 뒤 다자이후에서 우메가에모치와 {@d3-04}, 저녁에는 텐진 지하상가, 저녁 식사는 미야자키규입니다.",
+        "4일차: 신칸센으로 고쿠라에 가서 JR로 갈아타고 {@d4-01}. 전망실에 오르고 점심은 구운 카레, 오후에는 고쿠라로 돌아와 {@d4-04}, 밤에 홈경기가 있으면 돔에서 소프트뱅크 호크스 경기를 봅니다.",
+        {
+          "image": "d4-01"
+        },
+        "5일차: 오전에 {@d5-02}과 {@d5-03}, 점심 뒤 하카타역에서 기념품을 사고 호텔에서 짐을 찾아 오후에 지하철로 공항에 갑니다.",
+        "숙소: 후쿠오카 텐진 일대에서 4박 연박하고, 5일차에는 체크아웃해 짐을 맡깁니다.",
+        "교통 포인트: 국제선 터미널에서 무료 셔틀버스로 국내선 터미널에 가서 지하철 공항선으로 텐진까지 약 11분입니다. 다자이후와 야나가와는 니시테쓰 다자이후·야나가와 패스를 쓰는데, 니시테쓰 후쿠오카(텐진)역이나 야쿠인역에서만 출발할 수 있고 자동 개찰구는 쓸 수 없으며, 후쿠오카, 야나가와, 다자이후, 후쿠오카 순서를 권합니다. 나가사키는 특급 카모메와 서규슈 신칸센으로 가는 장거리 당일치기라 이동 시간 비중이 높으니 왕복 막차를 확인하세요. 하카타로 21:00 넘어 돌아올 수도 있습니다. JR 기타큐슈 패스는 신칸센이 대상이 아니라 하카타에서 고쿠라까지 신칸센은 별도 요금입니다. 출발 전에 최신 시간표를 확인하세요.",
+        "이런 분께: 숙소를 바꾸지 않고 짐도 옮기지 않으면서 매일 후쿠오카에서 나가사키, 다자이후, 야나가와, 모지코로 다녀오고 싶은 분. 2일차 나가사키 당일치기는 피곤하고 자료관 내용도 무거우니 체력과 시간에 여유를 두세요."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "히요코 과자 (ひよ子)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "덴진 지하상가에서 살 수 있음"
+    },
+    {
+      "key": "s-02",
+      "title": "나가사키 카스텔라 (カステラ)",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "나가사키역이나 하카타에서 살 수 있고 보관 기한은 약 12일"
+    },
+    {
+      "key": "s-03",
+      "title": "명란젓 (辛子明太子)",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "하카타역과 공항에서 판매"
+    },
+    {
+      "key": "s-04",
+      "title": "후쿠오카 소프트뱅크 호크스 수건",
+      "category": "other",
+      "productType": "other_product",
+      "store": "みずほPayPayドーム福岡 구장 안에서 판매"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "후쿠오카시",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "후쿠오카시",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "후쿠오카시",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "후쿠오카시",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "후쿠오카시",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "후쿠오카시",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "후쿠오카 공항 도착 (福岡空港)",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "airport",
+          "place": {
+            "name": "후쿠오카 공항",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "짐 맡기고 체크인: 후쿠오카 덴진 일대 호텔",
+          "start": "15:00",
+          "end": "15:30",
+          "category": "hotel",
+          "place": {
+            "name": "덴진",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "notes": "체크인 시간은 호텔 안내에 따름",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "국제선 터미널에서 무료 셔틀버스로 국내선 터미널까지 약 10분, 후쿠오카시 지하철 공항선으로 덴진까지 약 11분(요금 약 260엔, 출발 전에 확인), 거기서 호텔까지 도보"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "캐널시티 하카타 (キャナルシティ博多)",
+          "start": "16:15",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "캐널시티 하카타 스미요시 1-2-1",
+            "latitude": 33.5908098,
+            "longitude": 130.4106146,
+            "address": "日本福岡縣福岡市博多區",
+            "addressIsApproximate": true
+          },
+          "notes": "상점 10:00–21:00, 식당 11:00–23:00, 매장마다 다름. 연중무휴(공식 사이트)",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "도보 약 25–30분, 또는 버스·지하철로 하카타 방면으로 가서 도보"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "저녁: 하카타 기온 뎃나베 철판 군만두 (博多祇園 鉄なべ)",
+          "start": "18:15",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "하카타 기온 뎃나베",
+            "latitude": 33.592484,
+            "longitude": 130.4139834,
+            "applePlaceID": "IC5F6C83099E71F6E",
+            "address": "〒812-0861, 福岡県福岡市博多区, 祇園町2-20",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인. 여행기에서는 2인분은 시켜야 배부르다고 함(1인분 8개)",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "캐널시티에서 도보 약 15분"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "나카스 포장마차 (中洲屋台) 야경과 노점",
+          "start": "19:45",
+          "end": "20:45",
+          "category": "market",
+          "place": {
+            "name": "잇류 라멘 나카스 포장마차",
+            "latitude": 33.5900202,
+            "longitude": 130.4055095,
+            "applePlaceID": "IA698F48C2255DD56",
+            "address": "〒810-0002, 福岡県福岡市中央区, 西中洲1-14 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "포장마차는 대개 저녁 무렵 문을 엶. 각 포장마차의 영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "도보 약 15분"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "지하철 나카스가와바타에서 덴진까지 1정거장 약 3분, 거기서 호텔까지 도보"
+          },
+          "images": [
+            "d1-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "후쿠오카시",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "글로버 정원 (グラバー園)",
+          "start": "10:30",
+          "end": "11:45",
+          "category": "sight",
+          "place": {
+            "name": "글로버 정원",
+            "latitude": 32.7362511,
+            "longitude": 129.8687273,
+            "applePlaceID": "IE18B35E51782C33F",
+            "address": "長崎県長崎市, 松が枝町",
+            "addressIsApproximate": true
+          },
+          "notes": "공식 사이트의 기본 시간은 08:00–18:00(마지막 입장은 폐장 20분 전), 계절에 따라 연장. 2026년 11–12월은 08:00–20:00. 휴무일은 출발 전에 확인",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 135,
+            "durationSource": "user",
+            "note": "하카타역에서 특급 릴레이 가모메로 다케오온천까지 가서 같은 승강장에서 니시큐슈 신칸센으로 갈아타고 나가사키까지, 전체 약 1시간 30–50분. 나가사키역에서 노면전차(약 140엔, 확인 필요)로 오우라 천주당 아래까지 가서 오르막길 도보 약 10분"
+          },
+          "todos": [
+            {
+              "text": "나가사키 왕복 열차 시각과 좌석 확인",
+              "note": "JR 규슈 공식 사이트 https://www.jrkyushu.co.jp/ 에서 특급 가모메와 니시큐슈 신칸센을 조회. 돌아오는 막차부터 먼저 확인"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "오우라 천주당 (大浦天主堂)",
+          "start": "12:00",
+          "end": "12:20",
+          "category": "temple",
+          "place": {
+            "name": "오우라 성당",
+            "latitude": 32.734929,
+            "longitude": 129.8700393,
+            "applePlaceID": "IDD4FA4732AB27012",
+            "address": "〒850-0931, 長崎県長崎市, 南山手町2-18",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인. 여행기에서는 외관만 사진으로 찍음",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "글로버 정원에서 내려와 도보 약 10분"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "점심: 나가사키 신치 차이나타운 (新地中華街)",
+          "start": "12:40",
+          "end": "13:40",
+          "category": "dining",
+          "place": {
+            "name": "나가사키 신치 차이나타운",
+            "latitude": 32.7417012,
+            "longitude": 129.8756011,
+            "applePlaceID": "I95158EC3722DC86E",
+            "address": "〒850-0842, 長崎県長崎市, 新地町10-13",
+            "addressIsApproximate": false
+          },
+          "notes": "각 가게 영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "도보 약 15분"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "나가사키 원폭 자료관 (長崎原爆資料館)",
+          "start": "14:15",
+          "end": "15:35",
+          "category": "museum",
+          "place": {
+            "name": "나가사키 원폭 자료관",
+            "latitude": 32.7725849,
+            "longitude": 129.8645474,
+            "applePlaceID": "IBCDCE060473CBA74",
+            "address": "〒852-8117, 長崎県長崎市, 平野町7-8",
+            "addressIsApproximate": false
+          },
+          "notes": "9월–4월 08:30–17:30(마지막 입관 17:00), 5–8월은 18:30까지(마지막 입관 18:00). 12/29–12/31 휴관. 2026/09–2027/03 상설전 일부 비공개",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "노면전차 정류장까지 걸어가서 하마구치마치까지 약 15분(약 140엔, 확인 필요), 거기서 도보"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "나가사키 평화공원·폭심지 (平和公園)",
+          "start": "15:50",
+          "end": "16:30",
+          "category": "park",
+          "place": {
+            "name": "평화공원",
+            "latitude": 32.7758255,
+            "longitude": 129.8634034,
+            "applePlaceID": "ID03370EADD799C66",
+            "address": "〒852-8118",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "자료관을 나와 곧장 도보 약 10분"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "이나사야마 야경 (稲佐山展望台)",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "이나사야마",
+            "latitude": 32.7527,
+            "longitude": 129.8495,
+            "applePlaceID": "IE2A6A6ABE502618C",
+            "address": "〒852-8011, 長崎県長崎市, 稲佐町",
+            "addressIsApproximate": true
+          },
+          "notes": "로프웨이 09:00–22:00(제3자 자료, 출발 전에 확인). 전망대는 입장 무료. 일몰 시각은 계절마다 다르니 이 구간의 시작 시각은 직접 조정. 강풍이나 악천후에는 로프웨이가 운휴할 수 있음",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "노면전차나 버스로 후치진자역 근처까지 가서 이나사야마 로프웨이 후치진자역까지 도보, 로프웨이는 약 5분. 버스는 배차가 적으니 시각을 먼저 확인. 왕복권이 더 싸고, 너무 늦으면 로프웨이가 멈춤"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 150,
+            "durationSource": "user",
+            "note": "로프웨이로 내려와 버스나 노면전차로 나가사키역까지, 신칸센과 특급 가모메로 하카타까지(약 1시간 30–50분), 지하철로 덴진까지. 막차 시각을 먼저 확인"
+          },
+          "images": [
+            "d2-06"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "후쿠오카시",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "야나가와 뱃놀이 (柳川川下り)",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "sight",
+          "place": {
+            "name": "야나가와 관광 뱃놀이 안내소",
+            "latitude": 33.1596523,
+            "longitude": 130.3984069,
+            "applePlaceID": "I85FC89796B37BDF0",
+            "address": "〒832-0068, 福岡県柳川市, 城隅町18-9",
+            "addressIsApproximate": false
+          },
+          "notes": "쇼게쓰 승선장 09:30–15:00, 연중 운항(공식 사이트). 겨울(12–2월)에는 고타쓰 배. 2월 중순에는 물을 빼는 기간이라 짧은 코스로 변경",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "니시테쓰 후쿠오카(덴진)역까지 걸어가 니시테쓰 특급으로 약 50분 걸려 니시테쓰 야나가와역까지, 거기서 셔틀버스나 도보 약 5–10분. 니시테쓰 다자이후·야나가와 관광 티켓 사용"
+          },
+          "todos": [
+            {
+              "text": "니시테쓰 다자이후·야나가와 관광 티켓 구입",
+              "note": "공식 사이트 https://www.ensen24.jp/kippu/tc/dazaifu-yanagawa/ 에서 디지털 티켓을 온라인으로 사거나, 덴진·야쿠인역 창구에서 구입"
+            },
+            {
+              "text": "야나가와 뱃놀이 예약",
+              "note": "공식 사이트 https://www.yanagawakk.co.jp/ 예약 권장. 접수는 15:00까지, 전화 0944-72-6177"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "점심: 이치란 라멘 다자이후 산도점 (一蘭 太宰府参道店)",
+          "start": "13:00",
+          "end": "13:50",
+          "category": "dining",
+          "place": {
+            "name": "이치란 다자이후 산도점",
+            "latitude": 33.5190531,
+            "longitude": 130.5316896,
+            "applePlaceID": "I45C12655D5F294DD",
+            "address": "〒818-0117, 福岡県太宰府市, 宰府2丁目6-2",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "하선 후 셔틀버스로 니시테쓰 야나가와역에 돌아와 니시테쓰로 후쓰카이치역까지 가서 다자이후선으로 갈아타고 다자이후역까지, 약 1시간"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "우메가에모치 (梅ヶ枝餅)",
+          "start": "14:05",
+          "end": "14:25",
+          "category": "dessert",
+          "place": {
+            "name": "다자이후 오모테산도 우메가에모치 가게",
+            "latitude": 33.5178371,
+            "longitude": 130.5324315,
+            "address": "福岡県太宰府市宰府2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인. 갓 만든 것을 당일에 먹음, 보관 기한 약 하루",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "오모테산도를 걸어서"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "다자이후 덴만구 (太宰府天満宮)",
+          "start": "14:45",
+          "end": "16:30",
+          "category": "temple",
+          "place": {
+            "name": "다자이후 덴만구",
+            "latitude": 33.5214755,
+            "longitude": 130.5348435,
+            "applePlaceID": "ID92BE18ADFBB28C5",
+            "address": "〒818-0195, 福岡県太宰府市, 宰府4丁目7-1",
+            "addressIsApproximate": false
+          },
+          "notes": "개문 06:30(춘분부터 06:00). 폐문은 9–11월과 4–5월 19:00, 6–8월 19:30, 12–3월 18:30. 연중무휴(공식 사이트)",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "오모테산도를 따라 도보 약 15분"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "덴진 지하상가 (天神地下街)",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "shopping",
+          "place": {
+            "name": "후쿠오카은행 덴진 지하상가",
+            "latitude": 33.5911981,
+            "longitude": 130.3994536,
+            "applePlaceID": "I565EA2C4FA433D60",
+            "address": "〒810-0001, 福岡県中央区, 福岡市, 天神1丁目11番17号, 天神地下街東ー4・福岡ビル口中地階",
+            "addressIsApproximate": false
+          },
+          "notes": "상점 10:00–20:00, 식당 10:00–21:00, 매장마다 다름(공식 사이트). 정기 휴일은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "니시테쓰 다자이후선으로 후쓰카이치에서 갈아타고 니시테쓰 후쿠오카(덴진)역까지 약 30–35분. 티켓은 후쿠오카(덴진)역에서 나와야 함"
+          },
+          "images": [
+            "d3-05"
+          ]
+        },
+        {
+          "key": "d3-06",
+          "title": "저녁: 하카타 미야자키 소고기 (博多 みやちく)",
+          "start": "19:15",
+          "end": "20:30",
+          "category": "dining",
+          "place": {
+            "name": "하카타 미야치쿠",
+            "latitude": 33.5937392,
+            "longitude": 130.404962,
+            "applePlaceID": "I31CED493AB8B250F",
+            "address": "〒810-0801, 福岡県福岡市博多区, 中洲5丁目2番1号, ジェイパーク中洲ビル2F",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인(제3자 자료에는 점심 11:00–15:00, 저녁 17:00부터)",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "덴진에서 도보 약 20분, 또는 지하철 1정거장으로 나카스가와바타"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "지하철 나카스가와바타에서 덴진까지 1정거장 약 3분, 거기서 호텔까지 도보"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "후쿠오카시",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "모지코 레트로 지구와 블루 윙 모지 도개교 (門司港レトロ・ブルーウイングもじ)",
+          "start": "09:45",
+          "end": "11:15",
+          "category": "sight",
+          "place": {
+            "name": "모지코 레트로",
+            "latitude": 33.9461413,
+            "longitude": 130.9630072,
+            "applePlaceID": "IB8EB6FE0A4781857",
+            "address": "〒801-0852, 福岡県北九州市門司区, 港町",
+            "addressIsApproximate": true
+          },
+          "notes": "도개교는 하루 6번 개폐(제3자 자료에는 10:00, 11:00, 13:00, 14:00, 15:00, 16:00으로 나옴, 출발 전에 확인). 개교 때 다리 상판이 올라가는 모습을 볼 수 있음",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 95,
+            "durationSource": "user",
+            "note": "하카타역에서 JR 신칸센으로 고쿠라까지 약 17–20분(JR 기타큐슈 패스는 신칸센 미포함, 여행기에서는 잘못 타서 2,160엔 추가 지불), 거기서 JR 가고시마 본선으로 갈아타고 모지코까지 약 15분. JR 특급 소닉으로 약 1시간에 가는 방법도 있음"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "모지코 레트로 전망실 (門司港レトロ展望室)",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "viewpoint",
+          "place": {
+            "name": "모지코 레트로 전망실",
+            "latitude": 33.94853,
+            "longitude": 130.9641574,
+            "applePlaceID": "I75C45BE9429A34EA",
+            "address": "〒801-0853, 福岡県北九州市門司区, 東港町1-32 門司港レトロハイマート",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00–22:00(마지막 입장 21:30), 부정기 휴무(제3자 자료, 연 4회 정도 휴관), 출발 전에 확인",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "점심: 모지코 야키카레 (焼きカレー)",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "모지코역 택시 승강장",
+            "latitude": 33.9448865,
+            "longitude": 130.962049,
+            "applePlaceID": "I9ADD2D39314D10C9",
+            "address": "〒801-0841",
+            "addressIsApproximate": true
+          },
+          "notes": "각 가게 영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "도보"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "고쿠라성 (小倉城)",
+          "start": "14:15",
+          "end": "15:30",
+          "category": "castle",
+          "place": {
+            "name": "고쿠라성",
+            "latitude": 33.8844402,
+            "longitude": 130.8742289,
+            "applePlaceID": "I34703FF158E11AF6",
+            "address": "〒803-0813, 福岡県北九州市小倉北区, 城内2-1",
+            "addressIsApproximate": false
+          },
+          "notes": "천수각 09:00–18:00(공식 사이트). 휴관일과 마지막 입장은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "JR로 모지코에서 고쿠라까지 약 15분, 거기서 도보 약 15분. 입구는 고쿠라역 밖 쇼핑센터 쪽"
+          },
+          "images": [
+            "d4-04"
+          ]
+        },
+        {
+          "key": "d4-05",
+          "title": "후쿠오카 소프트뱅크 호크스 야구 경기 (みずほPayPayドーム福岡)",
+          "start": "17:15",
+          "end": "21:00",
+          "category": "show",
+          "place": {
+            "name": "후쿠오카 야후오쿠 돔(후쿠오카 돔)",
+            "latitude": 33.5952912,
+            "longitude": 130.3620958,
+            "applePlaceID": "IDDF234C6592D00E3",
+            "address": "〒810-0065，福岡県福岡市中央区，地行浜2丁目2-2",
+            "addressIsApproximate": false
+          },
+          "notes": "경기 일정에 맞춰야 함(공식 사이트 예: 평일 홈경기 18:00 시작). 경기 유무와 시작 시각은 공식 사이트 기준. 경기는 약 3시간",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "고쿠라에서 신칸센으로 하카타까지 약 20분, 지하철 공항선으로 도진마치역까지 간 뒤 도보 약 15분"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "지하철 도진마치역에서 덴진까지 약 6분. 경기가 끝나면 사람이 많으니 역까지 천천히 걸어가도 좋음"
+          },
+          "todos": [
+            {
+              "text": "후쿠오카 소프트뱅크 호크스 경기 티켓 구입(경기 일정에 맞춰야 함)",
+              "note": "공식 사이트 https://www.softbankhawks.co.jp/ 에서 4일차 밤에 홈경기가 있는지 먼저 확인. 현장에서도 표를 살 수 있고, 좌석은 공식 사이트의 좌석도로 미리 볼 수 있어요"
+            }
+          ],
+          "images": [
+            "d4-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "후쿠오카시",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "체크아웃하고 짐 맡기기: 후쿠오카 덴진 일대 호텔",
+          "start": "09:00",
+          "end": "09:20",
+          "category": "hotel",
+          "place": {
+            "name": "덴진",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "notes": "짐 보관은 프런트에 확인",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "같은 건물"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "스미요시 신사 (住吉神社)",
+          "start": "10:00",
+          "end": "11:00",
+          "category": "temple",
+          "place": {
+            "name": "스미요시 신사",
+            "latitude": 33.5859073,
+            "longitude": 130.4136965,
+            "address": "福岡県福岡市博多区住吉3丁目1-51",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "도보 약 25분. 버스나 지하철을 타고 나머지를 걸어도 됨"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "구시다 신사 (櫛田神社)",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "temple",
+          "place": {
+            "name": "구시다 신사",
+            "latitude": 33.5929732,
+            "longitude": 130.4105131,
+            "applePlaceID": "ID7A9C3758718EF9A",
+            "address": "〒812-0026, 福岡県福岡市博多区, 上川端町1-41",
+            "addressIsApproximate": false
+          },
+          "notes": "참배 시간 04:00–22:00(제3자 여행 사이트, 비공식, 출발 전에 확인). 하카타 기온 야마카사 가마를 전시",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "도보 약 20분, 캐널시티 하카타를 지나서"
+          },
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "점심: 하카타역 일대",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "하카타",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "하카타역까지 도보 약 10분"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "하카타역에서 기념품 쇼핑 (博多駅)",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "station",
+          "place": {
+            "name": "하카타",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "각 가게 영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "역 안을 걸어서"
+          }
+        },
+        {
+          "key": "d5-06",
+          "title": "호텔로 돌아가 짐 찾기: 후쿠오카 덴진 일대 호텔",
+          "start": "15:00",
+          "end": "15:15",
+          "category": "hotel",
+          "place": {
+            "name": "덴진",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "지하철로 하카타에서 덴진까지 약 5분, 거기서 호텔까지 도보"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "후쿠오카 공항 출국 (福岡空港)",
+          "start": "16:15",
+          "end": "17:45",
+          "category": "airport",
+          "place": {
+            "name": "후쿠오카 공항",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          },
+          "notes": "항공편 시각은 실제 항공권에 맞춰 조정. 국제선은 출발 2시간 전 도착 권장",
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "지하철 공항선으로 덴진에서 국내선 터미널까지 약 11분, 거기서 무료 셔틀버스로 국제선 터미널까지 약 10분(요금 약 260엔, 출발 전에 확인)"
+          }
+        }
+      ]
+    }
+  ]
+}

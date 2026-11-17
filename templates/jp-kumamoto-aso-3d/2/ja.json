@@ -1,0 +1,805 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kumamoto-aso-3d",
+  "revision": 2,
+  "contentLocale": "ja",
+  "title": "熊本・阿蘇 3 日間｜熊本城・阿蘇・水前寺",
+  "subtitle": "熊本城、阿蘇日帰りツアー、水前寺。阿蘇くまもと空港イン／アウト",
+  "summary": "熊本で3日間。熊本城、水前寺成趣園、市内グルメに、真ん中の1日は阿蘇日帰りツアー。ご案内には公共交通で自分で行く方法も載せています。中岳火口は警戒レベルによって近づけないことがあり、日帰りツアー当日の行程が変わることもあります。宿は路面電車に乗りやすい通町筋・下通周辺で組んであります。",
+  "destination": "日本 熊本・阿蘇",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "ふたり旅",
+    "初めて",
+    "日帰りツアー",
+    "自然"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web に登録する（入国審査・税関申告）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 航空券と宿の予約が済めば入力できます"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kumamoto-aso-3d/d1-03.jpg",
+    "d2-02": "images/jp-kumamoto-aso-3d/d2-02.jpg",
+    "d2-03": "images/jp-kumamoto-aso-3d/d2-03.jpg",
+    "d2-04": "images/jp-kumamoto-aso-3d/d2-04.jpg",
+    "d3-01": "images/jp-kumamoto-aso-3d/d3-01.jpg",
+    "d3-04": "images/jp-kumamoto-aso-3d/d3-04.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "宿泊：熊本市中心部（通町筋・下通周辺）",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "通町筋",
+        "latitude": 32.8029362,
+        "longitude": 130.7111486,
+        "applePlaceID": "IBE2A5C0EDC247D00",
+        "address": "熊本県熊本市中央区, 上通町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "予備：熊本市役所 14 階展望ロビー",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "熊本市役所",
+        "latitude": 32.8032049,
+        "longitude": 130.7080236,
+        "applePlaceID": "IE798B2B4DB566952",
+        "address": "〒860-8601",
+        "addressIsApproximate": true
+      },
+      "notes": "営業時間は出発前に確認。旅行記では無料で熊本城を見下ろせるとのこと。年始休みあり"
+    },
+    {
+      "key": "u-02",
+      "title": "予備：加藤神社",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "加藤神社",
+        "latitude": 32.807117,
+        "longitude": 130.7053761,
+        "applePlaceID": "I831099B0902FAA97",
+        "address": "〒860-0002, 熊本県熊本市中央区, 本丸2-1",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認。旅行記では熊本城から歩いて約 20 分、坂道あり、裏手から熊本城が見えるとのこと"
+    },
+    {
+      "key": "u-03",
+      "title": "予備：ルフィ像",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "熊本県庁",
+        "latitude": 32.7898029,
+        "longitude": 130.7415739,
+        "applePlaceID": "I9D3D945CF9ABD15A",
+        "address": "〒862-0950, 熊本県熊本市中央区, 水前寺6丁目18-1",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認。熊本県庁の前にある"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "出典と確認",
+      "paragraphs": [
+        {
+          "text": "元の旅行記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "確認済み（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "阿蘇くまもと空港から市内へのバスとタクシー（時間・運賃）：https://www.kumamoto-airport.co.jp/en/access/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "リムジンバスの本数と時刻改正のお知らせ：https://www.sankobus.jp/bus/ap-limousine/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本城（9:00–17:00、12/29 休、800 円、三館共通 1,100 円）：https://castle.kumamoto-guide.jp/en/info/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "水前寺成趣園（8:30–17:00、無休、500 円）：https://suizenji.or.jp/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "くまモンスクエア（10:00–19:00、2026/11 の公演カレンダー）：https://kumamon-land.jp/squares/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "阿蘇中岳火口（警戒レベル 2、夏期の開放時間 8:30–18:00）：https://aso-volcano.jp/ 、https://www.aso-visitorcenter.com/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "阿蘇神社（御札所 9:00–17:00、楼門の修復完了）：https://www.asojinja.or.jp/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "サクラマチクマモト（ショップ 10:00–20:00、レストラン 10:00–22:00）：https://www.sakuramachi-kumamoto.jp/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "阿蘇山上線、阿蘇登山線、阿蘇山火口シャトルの路線名：https://www.sankobus.jp/bus/aso/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "公式情報で確認できなかったこと。出発前に確認を",
+          "style": "heading"
+        },
+        {
+          "text": "阿蘇中岳火口の冬期の開放時間と当日の立入可否、日帰りツアーの行程の細部と料金。",
+          "style": "bullet"
+        },
+        {
+          "text": "鶴屋百貨店、勝烈亭 新市街本店、アミュプラザくまもと、阿蘇神社の境内の開放時間、草千里のレストラン、熊本市役所の展望ロビー、加藤神社、ルフィ像の営業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "リムジンバスの各便の実際の時刻と運賃（公式の運賃ページが開けなかったため、空港公式サイトの 2026 年の情報を採用）。",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本県内のバスと電車が交通系 IC カードに対応しているか：旅行記の 2024-11 の更新では現金のみ。公式には未確認。",
+          "style": "bullet"
+        },
+        {
+          "text": "変更点と取捨選択",
+          "style": "heading"
+        },
+        {
+          "text": "このテンプレートは旅行記の熊本と阿蘇の部分（5 日目の後半から 10 日目）だけを使っています。福岡の部分は別のテンプレートにあります。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記では 1 日目に JR で福岡から来ていますが、こちらは阿蘇くまもと空港イン／アウトに変更。旅行記では熊本 5 日間のところを 3 日間に圧縮しました。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記の筆者は路線バスと JR で自力で阿蘇に登っていますが、このテンプレートはルールに従い日帰りツアー参加にし、ご案内に公共交通の代替手段を載せました。",
+          "style": "bullet"
+        },
+        {
+          "text": "中岳は警戒レベルによって火口のふちまで行けないことがあり、日帰りツアーも当日に行程が変わることがあります。",
+          "style": "bullet"
+        },
+        {
+          "text": "日帰りツアーと空港の往復の移動時間は、通常の 30% を超えます。阿蘇までの距離によるものです。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記のデータ",
+          "style": "heading"
+        },
+        {
+          "text": "宿泊はエリアのみ記載：旅行記の筆者は水前寺のホテルに泊まりましたが評価が低かったため、熊本城への路面電車に乗りやすい通町筋・下通周辺としました。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出発前のご案内",
+      "paragraphs": [
+        {
+          "text": "入国とネット",
+          "style": "heading"
+        },
+        {
+          "text": "出発前に Visit Japan Web で入国審査と税関申告を登録：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "ネットは物理 SIM か eSIM が使えます。",
+          "style": "bullet"
+        },
+        {
+          "text": "空港から市内へ",
+          "style": "heading"
+        },
+        {
+          "text": "阿蘇くまもと空港からリムジンバス（九州産交）：桜町バスターミナルまで特快約 45 分、普通便約 50 分。熊本駅まで約 60–65 分。水前寺公園前まで約 35 分。桜町と熊本駅は約 1,400 円、水前寺公園前は約 1,000 円。",
+          "style": "bullet"
+        },
+        {
+          "text": "公式サイトでは 1 日に特快が約 31 本、熊本駅行きが 41 本、2026/11/01 から時刻改正と案内されています。出発前に最新の時刻を確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "タクシーは熊本駅まで約 45 分・約 6,100 円、桜町まで約 40 分・約 5,700 円（公式の目安、高速料金別）。",
+          "style": "bullet"
+        },
+        {
+          "text": "バスは遅れることがあります。旅行記には 2023 年に 10 分近く遅れた記録あり。",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本市内の移動",
+          "style": "heading"
+        },
+        {
+          "text": "市内は路面電車とバスが中心。旅行記の 2024 年の更新では、熊本県内の複数のバス会社と熊本電鉄で Suica などの交通系 IC カードが使えなくなったとのこと。日本円の現金を用意し、現状を先に確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "バスは後ろ乗り・前降りが多く、整理券を取って降りるときに番号に応じた運賃を払います。運転手はおつりを出さないので、車内で両替します。",
+          "style": "bullet"
+        },
+        {
+          "text": "阿蘇日帰りツアー",
+          "style": "heading"
+        },
+        {
+          "text": "熊本発のこの日帰りツアーは複数の旅行会社が催行しています（阿蘇中岳、草千里、阿蘇神社周辺を回ります）。出発前に行程、集合場所、昼食付きかどうかを比べてください。",
+          "style": "bullet"
+        },
+        {
+          "text": "阿蘇中岳火口は火山の警戒レベルで立入が規制されます。公式サイトでは 2026/09 の警戒レベルは 2 で、火口から 1 km 以内は立入禁止。火口のふちまで行けるかは出発前に https://aso-volcano.jp/ で確認を。行けない場合、日帰りツアーでは遠くから眺めることになるのが一般的です。",
+          "style": "bullet"
+        },
+        {
+          "text": "公共交通で自分で行く方法：熊本交通センター（桜町バスターミナル）から九州産交の「阿蘇山上線」で阿蘇山上ターミナルへ。そこから「阿蘇山火口シャトル」に乗り換えて火口へ。または JR 豊肥本線で阿蘇駅まで行き、「阿蘇登山線」バスで山へ。本数と運賃は九州産交の公式サイト https://www.sankobus.jp/ で確認を。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記の筆者の場合：阿蘇駅から山上まで約 40 分で、草千里は途中。帰りは JR の普通で熊本まで約 1 時間 45 分。本数が少なく、乗り遅れると 1 時間待つことも。阿蘇は小さな駅で、JR の駅構内では電子決済が使えないかもしれません。",
+          "style": "bullet"
+        },
+        {
+          "text": "予約と時間",
+          "style": "heading"
+        },
+        {
+          "text": "日帰りツアーは出発の数日前までに予約するのがおすすめです。",
+          "style": "bullet"
+        },
+        {
+          "text": "くまモンスクエアの公演時刻は月ごとに違い、火曜は公演なし。公式サイトのカレンダーを見てから 3 日目の順番を決めてください：https://kumamon-land.jp/squares/",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本城の入場券は桜の馬場 城彩苑で先に買えて、天守閣入口の混雑を避けられます。天守閣にはスーツケースを持ち込めません。",
+          "style": "bullet"
+        },
+        {
+          "text": "その他",
+          "style": "heading"
+        },
+        {
+          "text": "日本円の現金は多めに。小さな店、バス、小さな駅ではカードが使えないことがあります。",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本城は一部の建物がまだ修復中。天守閣は修復を終えて公開されています。",
+          "style": "bullet"
+        },
+        {
+          "text": "3 日目の最後の空港の時刻は実際のフライトに合わせて調整。旅行記では 2023 年は国際線カウンターが出発の約 2 時間前にならないと開かず、3 階のレストランは保安検査のあと・出国の前にあったとのこと。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "旅のまとめ：熊本・阿蘇 3 日間の回り方",
+      "paragraphs": [
+        {
+          "image": "d1-03"
+        },
+        "阿蘇くまもと空港イン・アウトで、3 泊とも熊本市中心部に泊まります。市内は路面電車と徒歩、阿蘇は日帰りツアーなので運転は不要です。",
+        "1 日目：昼に空港に着き、リムジンバスで市内へ。昼は下通周辺で熊本ラーメン、午後は {@d1-03}、夕方は鶴屋百貨店でくまモングッズ、夜は下通の居酒屋で馬刺しと辛子蓮根。",
+        {
+          "image": "d2-02"
+        },
+        "2 日目：日帰りツアーで阿蘇へ。阿蘇中岳火口と草千里ヶ浜を回り、{@d2-04} と門前町商店街へ。熊本に戻ったら駅のアミュプラザで夕食。",
+        {
+          "image": "d3-01"
+        },
+        "3 日目：午前は {@d3-01}、続けてくまモンスクエアのステージショー、昼は勝烈亭のとんかつ、午後はサクラマチの屋上庭園でひと休みして、夕方にバスで空港へ。",
+        "宿泊：3 泊とも熊本市中心部の通町筋・下通周辺。路面電車で熊本城へ行きやすく、夜の食事や買い物にも近い場所です。",
+        "移動のポイント：空港と市内の間はリムジンバスで、降りる停留所により約 35〜65 分。市内は路面電車とバスが中心で、交通系 IC カードが使えないバスもあるので日本円の現金を多めに。阿蘇の日帰りツアーは数日前までに予約を。火口のそばまで行けるかはその日の火山警戒レベル次第です。出発前に最新の時刻表を確認してください。",
+        "こんな人に：運転せずに、3 日間で熊本城・くまモン・阿蘇の火山をまとめて回りたい人。1 人でも少人数でも合い、市内は歩く距離が短め、阿蘇の日はバス移動が長めです。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "くまモングッズ",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "サクラマチクマモト 2 階、鶴屋百貨店周辺の店、熊本県物産館"
+    },
+    {
+      "key": "s-02",
+      "title": "くまモン大福",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "サクラマチクマモト"
+    },
+    {
+      "key": "s-03",
+      "title": "熊本産いちごのお酒",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "熊本駅 アミュプラザくまもと"
+    },
+    {
+      "key": "s-04",
+      "title": "熊本の地酒",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "鶴屋百貨店の地下食品街"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "熊本市",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "熊本市",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "熊本市",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "熊本市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "阿蘇くまもと空港に到着",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "airport",
+          "place": {
+            "name": "阿蘇くまもと空港",
+            "latitude": 32.8346902,
+            "longitude": 130.8590123,
+            "applePlaceID": "I2B58A48AF4EC0EEA",
+            "address": "〒861-2204, 熊本県上益城郡益城町, 小谷1802-2",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "昼食：下通周辺（熊本ラーメン）",
+          "start": "13:20",
+          "end": "14:20",
+          "category": "dining",
+          "place": {
+            "name": "下通アーケード周辺のラーメン店",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "空港リムジンバス（特快）で桜町バスターミナルまで約 45 分、普通便で約 50 分、約 1,400 円。そこから下通まで徒歩約 10 分"
+          },
+          "todos": [
+            {
+              "text": "空港リムジンバスの最新時刻を調べる",
+              "note": "https://www.sankobus.jp/bus/ap-limousine/ 2026/11/01 から時刻改正"
+            }
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "熊本城：天守閣と桜の馬場 城彩苑",
+          "start": "15:10",
+          "end": "16:50",
+          "category": "castle",
+          "place": {
+            "name": "熊本城",
+            "latitude": 32.8061302,
+            "longitude": 130.7058477,
+            "applePlaceID": "IB6C8BF152D7893CA",
+            "address": "〒860-0002, 熊本県熊本市中央区, 本丸1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–17:00（公園の最終入園 16:00、天守閣の最終入場 16:30）。12/29 休み",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "徒歩約 20 分。または路面電車で熊本城・市役所前まで行って徒歩。城彩苑でチケットを先に買えば、天守閣入口の混雑を避けられる"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "鶴屋百貨店：くまモングッズと地下の食品街",
+          "start": "17:30",
+          "end": "18:30",
+          "category": "shopping",
+          "place": {
+            "name": "鶴屋百貨店",
+            "latitude": 32.8023754,
+            "longitude": 130.7110398,
+            "applePlaceID": "I996FD5224AC14B45",
+            "address": "〒860-0808, 熊本県熊本市中央区, 手取本町6-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "路面電車で熊本城・市役所前から通町筋まで約 10 分（徒歩と待ち時間込み）"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "夕食：下通周辺の居酒屋（熊本の馬刺し、辛子蓮根）",
+          "start": "19:00",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "下通周辺の居酒屋",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "徒歩約 10 分。馬肉は熊本の名物。苦手なら他の料理を"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "熊本市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "日帰りツアーに参加：集合・出発（熊本→阿蘇）",
+          "start": "09:00",
+          "end": "09:15",
+          "category": "transport",
+          "place": {
+            "name": "日帰りツアーの集合場所（旅行会社の手配による）",
+            "latitude": 32.7887502,
+            "longitude": 130.6881132,
+            "address": "熊本県熊本市西区春日3丁目15",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "路面電車か徒歩で集合場所へ。集合場所は選んだツアーによる"
+          },
+          "todos": [
+            {
+              "text": "阿蘇日帰りツアーを予約する",
+              "note": "催行する旅行会社は複数あります。集合場所と昼食付きかどうかを比べて、数日前までに予約"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "日帰りツアー：阿蘇中岳火口",
+          "start": "10:45",
+          "end": "11:45",
+          "category": "mountain",
+          "place": {
+            "name": "阿蘇中岳火口",
+            "latitude": 32.8829803,
+            "longitude": 131.0837699,
+            "applePlaceID": "IAB4F7F79B7CD452A",
+            "address": "〒869-2225, 熊本県阿蘇市, 黒川808-5",
+            "addressIsApproximate": false
+          },
+          "notes": "夏期（3/20–10/31）8:30–18:00、ゲートは 17:30 閉鎖。冬期の時間は出発前に確認。火山の警戒やガス濃度が高いと火口周辺は立入規制",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "driving",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "観光バスで、熊本から阿蘇山上まで約 1 時間 15 分。先に草千里を通ってから山上へ"
+          },
+          "todos": [
+            {
+              "text": "出発前に阿蘇中岳火口に入れるか調べる",
+              "note": "https://aso-volcano.jp/ 火山の警戒レベルとガス濃度で火口周辺の開放が変わります"
+            }
+          ],
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "日帰りツアー：草千里ヶ浜と昼食",
+          "start": "12:10",
+          "end": "13:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "草千里ヶ浜",
+            "latitude": 32.8830677,
+            "longitude": 131.0527771,
+            "applePlaceID": "I32739B7CA93978E0",
+            "address": "〒869-1404，熊本県阿蘇市，草千里ヶ浜",
+            "addressIsApproximate": true
+          },
+          "notes": "終日見学可。昼食の場所は行程による。営業時間は出発前に確認",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "観光バスで約 10 分。高原の草原では乗馬体験ができる（有料）"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "日帰りツアー：阿蘇神社と門前町商店街",
+          "start": "14:15",
+          "end": "15:45",
+          "category": "temple",
+          "place": {
+            "name": "阿蘇神社",
+            "latitude": 32.947986,
+            "longitude": 131.116113,
+            "applePlaceID": "IA26CD6FD0F19EA9C",
+            "address": "〒869-2612, 熊本県阿蘇市, 一の宮町宮地3083-1",
+            "addressIsApproximate": false
+          },
+          "notes": "境内の開放時間は出発前に確認。御札所は 9:00–17:00",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "観光バスで約 30 分。参拝のあとは表参道で食べ歩き"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "熊本駅 アミュプラザくまもとで夕食、肥後よかもん市場",
+          "start": "17:45",
+          "end": "19:45",
+          "category": "shopping",
+          "place": {
+            "name": "アミュプラザくまもと",
+            "latitude": 32.7887053,
+            "longitude": 130.6888303,
+            "applePlaceID": "IFC0031666C9C8550",
+            "address": "〒860-0047",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "driving",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "観光バスで熊本へ戻るのに約 1 時間 25 分。多くは熊本駅周辺で降りる。ツアー終了後はアミュプラザまで徒歩"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "熊本市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "水前寺成趣園：出水神社",
+          "start": "09:00",
+          "end": "10:15",
+          "category": "park",
+          "place": {
+            "name": "水前寺成趣園",
+            "latitude": 32.7908282,
+            "longitude": 130.7351375,
+            "applePlaceID": "I1F8F63642EEF0314",
+            "address": "〒862-0956, 熊本県熊本市, 水前寺公園8-1",
+            "addressIsApproximate": false
+          },
+          "notes": "8:30–17:00（最終入園 16:30）、年中無休。入園 500 円",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "路面電車で水前寺公園まで約 20–25 分、そこから徒歩約 5 分"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "くまモンスクエア：ステージショー",
+          "start": "11:15",
+          "end": "12:15",
+          "category": "show",
+          "place": {
+            "name": "くまモンスクエア",
+            "latitude": 32.8019121,
+            "longitude": 130.7124031,
+            "applePlaceID": "IEF206FB2463DBE22",
+            "address": "〒860-0808, 熊本県熊本市中央区, 手取本町8-2, テトリアくまもとビル 1階",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00–19:00。公演時刻は公式サイトのカレンダーによる。週末は 11:30、平日は 14:00 が多く、火曜は公演なし（2026/11 の公式情報）",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "路面電車で水前寺公園から辛島町か水道町まで行って徒歩。鶴屋百貨店のとなり"
+          },
+          "todos": [
+            {
+              "text": "くまモンスクエアの公演時刻を調べる（火曜は公演なし）",
+              "note": "公式サイトのカレンダー https://kumamon-land.jp/squares/ 公演時間に合わせて 3 日目の順番を調整"
+            }
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "昼食：勝烈亭 新市街本店のとんかつ",
+          "start": "12:40",
+          "end": "13:40",
+          "category": "dining",
+          "place": {
+            "name": "勝烈亭 新市街本店",
+            "latitude": 32.7986401,
+            "longitude": 130.7058016,
+            "applePlaceID": "I222583EFB7CCE9DC",
+            "address": "〒860-0803, 熊本県熊本市中央区, 新市街8-18",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認。旅行記ではご飯・お茶・味噌汁・キャベツがおかわり自由とのこと",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "徒歩約 10 分。下通アーケードを通る"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "サクラマチクマモト：屋上庭園とくまモングッズ",
+          "start": "14:05",
+          "end": "15:50",
+          "category": "shopping",
+          "place": {
+            "name": "サクラマチクマモト",
+            "latitude": 32.8002618,
+            "longitude": 130.703246,
+            "applePlaceID": "I27890492F38FBECC",
+            "address": "〒860-0805, 熊本県熊本市中央区, 桜町3-10",
+            "addressIsApproximate": false
+          },
+          "notes": "ショップ 10:00–20:00、レストラン 10:00–22:00。店舗により異なる",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "徒歩約 10 分。2 階にくまモングッズ、となりに熊本県産品の店"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "阿蘇くまもと空港から出国",
+          "start": "16:40",
+          "end": "18:40",
+          "category": "airport",
+          "place": {
+            "name": "阿蘇くまもと空港",
+            "latitude": 32.8346902,
+            "longitude": 130.8590123,
+            "applePlaceID": "I2B58A48AF4EC0EEA",
+            "address": "〒861-2204, 熊本県上益城郡益城町, 小谷1802-2",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "空港リムジンバスで桜町バスターミナルから空港へ。特快約 45 分、普通便約 50 分、約 1,400 円。実際のフライトに合わせ、チェックインと保安検査の時間を見込む"
+          }
+        }
+      ]
+    }
+  ]
+}

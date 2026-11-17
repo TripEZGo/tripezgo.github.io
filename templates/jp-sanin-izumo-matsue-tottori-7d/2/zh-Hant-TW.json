@@ -1,0 +1,1395 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-sanin-izumo-matsue-tottori-7d",
+  "revision": 2,
+  "contentLocale": "zh-Hant-TW",
+  "title": "山陰 7 日｜出雲・松江・境港・鳥取",
+  "subtitle": "米子進、關西出：出雲大社、松江城、境港鬼太郎與鳥取砂丘",
+  "summary": "七天走完山陰，米子機場進、關西機場出：境港的鬼太郎與柯南、松江城與宍道湖遊覽船日落班、出雲大社與日御碕、安來的足立美術館與清水寺，最後到鳥取砂丘。青山剛昌故鄉館預計 2027 年 1 月 11 日之後遷館，出發前要確認。日御碕燈塔、浦富海岸與倉吉白壁土藏群放在備選。",
+  "destination": "日本 島根・鳥取",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 7,
+  "coverColour": "taupe",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "雙人",
+    "初訪",
+    "神社",
+    "動漫"
+  ],
+  "todos": [
+    {
+      "text": "登錄 Visit Japan Web（入境審查與海關申報）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 機票與訂房完成後即可填寫"
+    }
+  ],
+  "images": {
+    "d2-01": "images/jp-sanin-izumo-matsue-tottori-7d/d2-01.jpg",
+    "d2-02": "images/jp-sanin-izumo-matsue-tottori-7d/d2-02.jpg",
+    "d2-05": "images/jp-sanin-izumo-matsue-tottori-7d/d2-05.jpg",
+    "d3-01": "images/jp-sanin-izumo-matsue-tottori-7d/d3-01.jpg",
+    "d3-04": "images/jp-sanin-izumo-matsue-tottori-7d/d3-04.jpg",
+    "d4-01": "images/jp-sanin-izumo-matsue-tottori-7d/d4-01.jpg",
+    "d6-01": "images/jp-sanin-izumo-matsue-tottori-7d/d6-01.jpg",
+    "d6-02": "images/jp-sanin-izumo-matsue-tottori-7d/d6-02.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：松江站周邊（連住 3 晚）",
+      "fromDay": 1,
+      "toDay": 4,
+      "category": "lodging",
+      "place": {
+        "name": "松江",
+        "latitude": 35.4640317,
+        "longitude": 133.063745,
+        "applePlaceID": "I5D030EBE00248ED3",
+        "address": "島根県松江市, 朝日町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3,
+        4
+      ],
+      "closingDays": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "key": "ad4-04",
+      "title": "住宿：鳥取站周邊（連住 3 晚；遊記住過：東橫INN 鳥取站南口）",
+      "fromDay": 4,
+      "toDay": 7,
+      "category": "lodging",
+      "place": {
+        "name": "東橫INN鳥取驛南口",
+        "latitude": 35.4925256,
+        "longitude": 134.2279042,
+        "applePlaceID": "I6FC9DF0721926300",
+        "address": "〒680-0845, 鳥取県鳥取市, 富安町2丁目153番3号",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        5,
+        6,
+        7
+      ],
+      "closingDays": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "備選：日御碕燈塔（日御碕灯台）",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "出雲日御碕灯台 灯台資料展示室",
+        "latitude": 35.433758,
+        "longitude": 132.62921,
+        "applePlaceID": "I699E1B4D89D6C0C6",
+        "address": "〒699-0763, 島根県出雲市, 大社町日御碕1478",
+        "addressIsApproximate": false
+      },
+      "notes": "營業時間請出發前確認；在日御碕神社旁，可登塔俯瞰日本海"
+    },
+    {
+      "key": "u-02",
+      "title": "備選：浦富海岸（浦富海岸）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "浦富海岸",
+        "latitude": 35.5933653,
+        "longitude": 134.3167331,
+        "applePlaceID": "IB8771D69C2D28321",
+        "address": "日本鳥取縣岩美郡岩美町, 田後",
+        "addressIsApproximate": true
+      },
+      "notes": "營業時間請出發前確認；遊覽船航班與季節請查官方"
+    },
+    {
+      "key": "u-03",
+      "title": "備選：倉吉白壁土藏群（倉吉白壁土蔵群）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "倉吉白壁土藏群",
+        "latitude": 35.4313405,
+        "longitude": 133.8247995,
+        "applePlaceID": "I9566BE86167A79A8",
+        "address": "〒682-0821, 鳥取県倉吉市, 魚町2568, 赤瓦十号館内",
+        "addressIsApproximate": false
+      },
+      "notes": "街區可自由步行；各店家營業時間請出發前確認；在鳥取與由良之間，可與柯南行程串聯"
+    },
+    {
+      "key": "u-04",
+      "title": "備選：島根縣立美術館（島根県立美術館）",
+      "durationMinutes": 60,
+      "category": "museum",
+      "place": {
+        "name": "島根縣立美術館",
+        "latitude": 35.4596261,
+        "longitude": 133.0523682,
+        "applePlaceID": "IFF85C100929B7E73",
+        "address": "〒690-0049, 島根県松江市, 袖師町1-5",
+        "addressIsApproximate": false
+      },
+      "notes": "營業時間請出發前確認；遊記說宍道湖夕日觀景階梯平台在館旁，傍晚有咖啡店"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "資料來源與查證",
+      "paragraphs": [
+        {
+          "text": "來源遊記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/aacd5f5cacd1/",
+          "style": "bullet"
+        },
+        {
+          "text": "查證（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "米子鬼太郎機場（巴士、JR 車資）：https://www.yonago-air.com/en/access/bus/ 與 https://www.yonago-air.com/en/access/train/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "虎航桃園－米子班次與頻率：https://chugoku.letsgojp.com/archives/691561/ 、https://www.funtime.com.tw/blog/funtime/tigerair-introduce 與 AeroRoutes 報導（查證 2026-11-17，來源為搜尋結果，未取得官方班表）",
+          "style": "bullet"
+        },
+        {
+          "text": "水木茂紀念館（9:30–17:00，最終入館 16:30，年中無休）：https://mizuki.sakaiminato.net/faq/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "松江城（天守時間、年中無休、1,200 日圓）：https://www.matsue-castle.jp/userguide/index （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "宍道湖遊覽船（日落班與時刻）：https://hakuchougo.jp/timetable/ （查證 2026-11-17；票價頁未取得）",
+          "style": "bullet"
+        },
+        {
+          "text": "足立美術館（開館時間、2,500 日圓）：https://www.adachi-museum.or.jp/en/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "青山剛昌故鄉館（9:30–17:30、休館日、700 日圓、2027/1/11 閉館與新館）：https://www.gamf.jp/42.html （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "砂之美術館（9:00–18:00、800 日圓、第 17 期到 2027/1/3）：https://www.sand-museum.jp/ （查證 2026-11-17，來源為搜尋結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "日御碕巴士（約 20–25 分、約 510 日圓、約 7 往復）：https://izumo-kankou.gr.jp/16116 與 NAVITIME 路線搜尋（查證 2026-11-17，來源為搜尋結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "堀川遊覽船（約 50 分；2025–26 年票價 1,600 日圓，另有 2,000 日圓的刊載）：https://www.matsue-horikawameguri.jp/ 與觀光資訊網站（查證 2026-11-17，來源為搜尋結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "安來清水寺（開山時間、三重塔預約制、黃巴士約 15 分）：https://tabi.torisetsu-shimane.com/kiyomizudera/ 與 rurubu.jp（查證 2026-11-17，來源為搜尋結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "特急スーパーはくと（大阪－鳥取約 2 小時 30 分、指定席約 7,000 日圓上下）：https://jr-group.jp/hakuto-ryokin/ 等整理頁（查證 2026-11-17，來源為搜尋結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "未能從官方確認，請出發前確認",
+          "style": "heading"
+        },
+        {
+          "text": "出雲大社、日御碕神社、塩見繩手與小泉八雲舊居、久松公園與仁風閣、白兔神社、鳥取砂丘展望台的營業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "水木茂之路各店家營業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "米子→松江、松江→出雲市、鳥取→由良、鳥取→白兔神社與砂丘的實際班次與車資。",
+          "style": "bullet"
+        },
+        {
+          "text": "宍道湖遊覽船票價；堀川遊覽船現行票價與冬季是否運航「こたつ船」。",
+          "style": "bullet"
+        },
+        {
+          "text": "各景點座標為估計值。",
+          "style": "bullet"
+        },
+        {
+          "text": "已變動與取捨",
+          "style": "heading"
+        },
+        {
+          "text": "遊記原本從岡山機場進出，第 5、6 天接姬路、神戶，另成範本；這份只留島根與鳥取，並新增境港、出雲日御碕、宍道湖遊覽船日落班、安來清水寺、柯南行程。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記說因時間不夠沒到稻佐之濱的日落與柯南車站，這份範本補上。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記的足立美術館、堀川遊覽船、宍道湖遊覽船是用周遊券免費兌換，這份改寫為原價資訊以供參考。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出發前須知",
+      "paragraphs": [
+        {
+          "text": "路線與機場選擇",
+          "style": "heading"
+        },
+        {
+          "text": "這份範本是米子（鳥取米子鬼太郎機場）進、關西國際機場出的開口行程：境港 → 松江 → 出雲 → 安來 → 鳥取，一路由西往東，不走回頭路。",
+          "style": "bullet"
+        },
+        {
+          "text": "去程選米子鬼太郎機場（YGJ）：台灣虎航桃園－米子是目前唯一的台灣直飛航線，每週一、五各一班（去程 IT724、回程 IT725）。週一班 08:35 左右起飛、12:00 抵達；週五班 13:30 左右起飛、16:50 抵達。本範本的第 1 天以週一 12:00 抵達設計。",
+          "style": "bullet"
+        },
+        {
+          "text": "回程選關西國際機場（KIX）：鳥取搭特急スーパーはくと到大阪約 2 小時 30 分，再轉機場線，台灣直飛班次多、時段選擇多。",
+          "style": "bullet"
+        },
+        {
+          "text": "為什麼不直接米子進米子出：虎航米子班只有週一、週五，週一進、週五出只有 5 天，週一進、下週一出是 8 天，都不是 7 天；想米子進出的人可改 5 天或 8 天。",
+          "style": "bullet"
+        },
+        {
+          "text": "出雲縁結機場（IZO）與鳥取沙丘柯南機場（TTJ）沒有台灣直飛班次，需從東京或大阪轉機，這份範本不採用。",
+          "style": "bullet"
+        },
+        {
+          "text": "虎航時刻表 2026/10/24 以後的冬季班表我沒有查到官方資料，訂票前請看台灣虎航官網。",
+          "style": "bullet"
+        },
+        {
+          "text": "機場進出市區",
+          "style": "heading"
+        },
+        {
+          "text": "米子鬼太郎機場到境港：機場旁有 JR 境線「米子鬼太郎機場站」，到境港站 190 日圓；官方列出的另一個方式是機場巴士到米子站約 25 分、640 日圓，或到松江站約 45 分、1,200 日圓（官方：航班取消時巴士可能停駛）。",
+          "style": "bullet"
+        },
+        {
+          "text": "本範本第 1 天先到境港逛水木茂之路，再搭 JR 到米子、轉特急到松江住宿。行李可寄放在境港站的置物櫃（請確認空位）。想直接進松江的人，改搭機場巴士到松江站約 45 分、1,200 日圓。",
+          "style": "bullet"
+        },
+        {
+          "text": "關西機場：最後一天從鳥取搭特急スーパーはくと到新大阪，再轉關空特急はるか到關西機場，全程含轉乘約 5 小時；請選 19:30 以後起飛的班機。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通票券",
+          "style": "heading"
+        },
+        {
+          "text": "山陰地區範圍較廣，行程前可比較單買車票與「關西&山陰地區鐵路周遊券」或「山陰山陽地區 PASS」：https://www.westjr.co.jp/global/tc/ticket/pass/",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記 2024 年提醒：JR Pass 可兌換宍道湖遊覽船、松江城、足立美術館、鳥取沙丘美術館等設施入場，需先在 Discover Another Japan App 輸入序號啟用；兌換內容與價格請查現況。",
+          "style": "bullet"
+        },
+        {
+          "text": "鳥取的巴士無法使用電子支付與交通 IC 卡，只收現金（遊記 2024 年資料），請準備零錢；一畑電車也無法刷交通 IC 卡，先在站內購票。",
+          "style": "bullet"
+        },
+        {
+          "text": "預約與季節注意",
+          "style": "heading"
+        },
+        {
+          "text": "宍道湖日落遊覽船：日落班出發時間隨季節變動，請依日出日落預報訂時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "稻佐之濱日落：夏季可晚到 19:30 左右，冬季約 17:00，行程以 11 月為基準，請依季節調整出雲日的時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "日御碕巴士一天約 7 往復，出發前請查一畑巴士時刻，並確認回程末班。",
+          "style": "bullet"
+        },
+        {
+          "text": "青山剛昌故鄉館現館營業到 2027/1/11，之後遷建新館，預計 2027 春開幕；舊館停業後的柯南行程請看官網。",
+          "style": "bullet"
+        },
+        {
+          "text": "足立美術館：進館後先到入口櫃檯領取回程接駁巴士的整理券，不然不保證有位子（遊記提醒）。",
+          "style": "bullet"
+        },
+        {
+          "text": "出雲大社的參拜是二拜四拍手一拜。",
+          "style": "bullet"
+        },
+        {
+          "text": "神在祭約在國曆 11 月，期間出雲大社人潮多。",
+          "style": "bullet"
+        },
+        {
+          "text": "行程節奏",
+          "style": "heading"
+        },
+        {
+          "text": "第 1 天（抵達日）與第 4、5、6 天交通比重較高：山陰線班次少，請先查時刻再決定出發時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "第 3 天出雲日若想從容看日落，可考慮改住出雲市站周邊。",
+          "style": "bullet"
+        },
+        {
+          "text": "其他",
+          "style": "heading"
+        },
+        {
+          "text": "日幣現金要備足：部分小店、巴士與小車站不收刷卡。",
+          "style": "bullet"
+        },
+        {
+          "text": "入境前先在 Visit Japan Web 登錄：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "網路可用實體 SIM 卡或 eSIM。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "旅程總覽：山陰 7 日怎麼走",
+      "paragraphs": [
+        {
+          "image": "d3-01"
+        },
+        "從米子鬼太郎機場進、關西國際機場出，一路由西往東，不走回頭路：境港、松江、出雲、安來，最後到鳥取。前三晚住松江，後三晚住鳥取，白天靠 JR 與巴士，每個據點各自往外跑。",
+        "第 1 天：米子落地，先到境港吃海鮮午餐，逛 {@d1-03} 與 {@d1-04}，傍晚搭車到松江住下。",
+        "第 2 天：上午搭堀川遊覽船、登 {@d2-02}，午餐吃出雲蕎麥麵或鄉土料理，下午走塩見繩手與小泉八雲舊居，傍晚搭 {@d2-05}。",
+        {
+          "image": "d2-05"
+        },
+        "第 3 天：到 {@d3-01} 看大注連繩與表參道，神門通吃出雲蕎麥麵，下午搭巴士去 {@d3-03}，傍晚到 {@d3-04} 看日落。",
+        "第 4 天：上午在 {@d4-01} 看日本第一庭園、在館內喫茶室吃午餐，下午去 {@d4-03} 看三重塔與紅葉，傍晚搭車到鳥取，換住鳥取站周邊。",
+        "第 5 天：一早到由良的柯南車站與柯南通り，逛 {@d5-03}，午餐在米花商店街一帶，下午回鳥取走 {@d5-05}。",
+        "第 6 天：先到白兔神社，再去 {@d6-02}，午餐在沙丘展望台餐廳並吃沙丘布丁，下午看 {@d6-04} 的沙雕展。",
+        {
+          "image": "d6-02"
+        },
+        "第 7 天：在鳥取站周邊買沙丘布丁與二十世紀梨當伴手禮，下午搭特急往大阪，再轉機場線到關西國際機場。",
+        "住宿：松江站周邊連住 3 晚，第 4 天換到鳥取站周邊連住 3 晚；想從容看出雲的日落，第 3 天可考慮改住出雲市站周邊。",
+        "交通重點：米子鬼太郎機場旁就有 JR 境線機場站，到境港站 190 日圓；去關西機場那天從鳥取搭特急スーパーはくと到新大阪，再轉特急はるか，含轉乘約 5 小時，請選 19:30 以後起飛的班機。山陰線班次少，日御碕巴士一天約 7 往復，要先查時刻與回程末班；鳥取的巴士只收現金，一畑電車不能刷交通 IC 卡。出發前請自己再查一次最新時刻表。",
+        "適合誰：想把出雲大社、松江城、足立美術館、柯南與鳥取沙丘串在一條不回頭的路線上的人。山陰的班次少，要先查時刻再決定出發時間；零錢要備足。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "牛骨湯拉麵（牛骨ラーメン）",
+      "category": "food",
+      "productType": "instant_meal",
+      "store": "松江站一樓伴手禮店（遊記說山陰特色，一般是豚骨）"
+    },
+    {
+      "key": "s-02",
+      "title": "出雲大社參拜紀念餅乾與海鮮煎餅餅乾",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "松江站一樓伴手禮店；遊記說鹹的海鮮煎餅餅乾好吃"
+    },
+    {
+      "key": "s-03",
+      "title": "鳥取沙丘布丁（砂丘プリン）",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "鳥取砂丘周邊與鳥取站商店"
+    },
+    {
+      "key": "s-04",
+      "title": "出雲大社與白兔神社御守、姻緣石",
+      "category": "souvenir",
+      "productType": "charm_badge",
+      "store": "出雲大社、白兔神社（遊記說神在祭期間有限定御守）"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "境港市",
+      "latitude": 35.5395987,
+      "longitude": 133.2316492,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "松江市",
+      "latitude": 35.4677618,
+      "longitude": 133.0486072,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "出雲市",
+      "latitude": 35.3669642,
+      "longitude": 132.7546165,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "安來市",
+      "latitude": 35.4309659,
+      "longitude": 133.2510978,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "鳥取市",
+      "latitude": 35.4944183,
+      "longitude": 134.2221779,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "鳥取市",
+      "latitude": 35.4944183,
+      "longitude": 134.2221779,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "鳥取市",
+      "latitude": 35.4944183,
+      "longitude": 134.2221779,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "境港市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵達米子鬼太郎機場（米子鬼太郎空港）",
+          "start": "12:00",
+          "end": "13:15",
+          "category": "airport",
+          "place": {
+            "name": "米子機場(米子鬼太郎機場)航廈國內線出境口",
+            "latitude": 35.5004251,
+            "longitude": 133.2437275,
+            "applePlaceID": "I8F8B001001AF1238",
+            "address": "鳥取県境港市, 佐斐神町",
+            "addressIsApproximate": true
+          },
+          "todos": [
+            {
+              "text": "確認虎航桃園－米子班次與機票",
+              "note": "https://www.tigerairtw.com/ 週一、週五班，冬季班表請看官網"
+            }
+          ]
+        },
+        {
+          "key": "d1-02",
+          "title": "午餐：境港站周邊（海鮮）",
+          "start": "13:45",
+          "end": "14:40",
+          "category": "dining",
+          "place": {
+            "name": "馬場崎町",
+            "latitude": 35.5385346,
+            "longitude": 133.2264666,
+            "applePlaceID": "I7E3816E56200E664",
+            "address": "鳥取県境港市, 馬場崎町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "機場旁的 JR 境線「米子鬼太郎機場站」搭到境港站，車資 190 日圓；班次不多，出關後先查下一班"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "水木茂之路（水木しげるロード）：鬼太郎妖怪銅像街",
+          "start": "14:55",
+          "end": "15:35",
+          "category": "sight",
+          "place": {
+            "name": "水木しげるロード",
+            "latitude": 35.545729369944496,
+            "longitude": 133.2258653941916,
+            "address": "日本鳥取縣境港市",
+            "addressIsApproximate": true
+          },
+          "notes": "街道可自由步行；各店家營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從境港站沿水木茂之路步行，沿路約 177 座妖怪銅像"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "水木茂紀念館（水木しげる記念館）",
+          "start": "15:50",
+          "end": "16:50",
+          "category": "museum",
+          "place": {
+            "name": "水木Shigeru記念館",
+            "latitude": 35.5464038,
+            "longitude": 133.2311489,
+            "applePlaceID": "IEA23DD0812E07659",
+            "address": "〒684-0025, 鳥取県境港市, 本町5",
+            "addressIsApproximate": false
+          },
+          "notes": "9:30–17:00（最終入館 16:30），年中無休（官方 FAQ）",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "沿水木茂之路步行至另一端，約 10 分"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "晚餐：松江站周邊",
+          "start": "18:30",
+          "end": "19:40",
+          "category": "dining",
+          "place": {
+            "name": "松江",
+            "latitude": 35.4640317,
+            "longitude": 133.063745,
+            "applePlaceID": "I5D030EBE00248ED3",
+            "address": "島根県松江市, 朝日町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "境港站搭 JR 境線到米子約 40 分，轉特急（やくも等）到松江約 25 分；含候車"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從晚餐地點步行回松江站周邊飯店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "松江市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "松江堀川遊覽船（ぐるっと松江堀川めぐり）",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "sight",
+          "place": {
+            "name": "松江堀川遊覽船(Gurutto松江堀川Meguri)",
+            "latitude": 35.4782712,
+            "longitude": 133.0460977,
+            "applePlaceID": "I5FAC807C89DA4356",
+            "address": "〒690-0876, 島根県松江市, 黒田町507-1 松江堀川遊覧船(ぐるっと松江堀川めぐり)",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；全程約 50 分，上船脫鞋，過橋時船身會降低",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "松江站 2 號月台搭公車到縣民會館前，步行到大手前乘船場；遊記 2024 年資料"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "松江城（松江城）",
+          "start": "10:45",
+          "end": "12:15",
+          "category": "castle",
+          "place": {
+            "name": "松江城",
+            "latitude": 35.4751288,
+            "longitude": 133.0507619,
+            "applePlaceID": "IBB9E4CCB38DDC75C",
+            "address": "〒690-0887, 島根県松江市, 殿町1-5",
+            "addressIsApproximate": false
+          },
+          "notes": "天守 4/1–9/30 8:30–18:00（受付 17:30），10/1–3/31 8:30–17:00（受付 16:30）；年中無休，天守大人 1,200 日圓（官網）",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "從堀川乘船場步行上坡到天守入口，約 5 分"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "午餐：松江城周邊（出雲蕎麥麵或鄉土料理）",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "松江城",
+            "latitude": 35.4751288,
+            "longitude": 133.0507619,
+            "applePlaceID": "IBB9E4CCB38DDC75C",
+            "address": "〒690-0887, 島根県松江市, 殿町1-5",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分到塩見繩手一帶"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "塩見繩手與小泉八雲舊居（塩見縄手・小泉八雲旧居）",
+          "start": "13:45",
+          "end": "15:15",
+          "category": "sight",
+          "place": {
+            "name": "武家屋敷",
+            "latitude": 35.4785942,
+            "longitude": 133.0506986,
+            "applePlaceID": "I69BBF920F882A99D",
+            "address": "〒690-0888, 島根県松江市, 北堀町305",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；繩手為武家屋敷街道，可自由步行",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "宍道湖遊覽船：日落航班（宍道湖遊覧船「白鳥号」夕日クルーズ）",
+          "start": "16:15",
+          "end": "17:15",
+          "category": "ferry",
+          "place": {
+            "name": "宍道湖遊覧船乗場",
+            "latitude": 35.466821,
+            "longitude": 133.061187,
+            "applePlaceID": "I4080A359C3D6BA63",
+            "address": "島根県松江市, 伊勢宮町",
+            "addressIsApproximate": true
+          },
+          "notes": "日落班出發時間隨日期變動（12 月約 16:20、6–7 月約 18:40 自第 1 乘船場出發），全程約 60 分；請看官網時刻表 https://hakuchougo.jp/timetable/",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "從塩見繩手搭公車或步行到松江站東側的乘船場，再候船；請依日落時間倒推"
+          },
+          "todos": [
+            {
+              "text": "查宍道湖遊覽船日落班出發時間並預約",
+              "note": "https://hakuchougo.jp/timetable/ 日落時間隨季節變動；電話 0852-24-3218"
+            }
+          ],
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "晚餐：松江站周邊",
+          "start": "17:45",
+          "end": "19:00",
+          "category": "dining",
+          "place": {
+            "name": "松江",
+            "latitude": 35.4640317,
+            "longitude": 133.063745,
+            "applePlaceID": "I5D030EBE00248ED3",
+            "address": "島根県松江市, 朝日町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "從乘船場步行回松江站周邊"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回飯店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "出雲市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "出雲大社（出雲大社）：神樂殿大注連繩與表參道",
+          "start": "10:15",
+          "end": "12:15",
+          "category": "temple",
+          "place": {
+            "name": "出雲大社",
+            "latitude": 35.4019987,
+            "longitude": 132.6854567,
+            "applePlaceID": "IF395D2F40C7AF3EE",
+            "address": "〒699-0701, 島根県出雲市, 大社町杵築東195",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；參拜為二拜四拍手一拜",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "松江站搭特急八雲到出雲市約 30 分，轉一畑巴士到出雲大社約 30 分；含候車；遊記說一畑電車也可到達，總時間差不多"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "午餐：神門通（出雲蕎麥麵）",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "出雲大社前",
+            "latitude": 35.3933531,
+            "longitude": 132.6876942,
+            "applePlaceID": "IBFADB70A8CC8F83",
+            "address": "島根県出雲市, 大社町杵築南",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "步行到神門通"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "日御碕神社（日御碕神社）：朱紅社殿與鳥居",
+          "start": "14:15",
+          "end": "15:30",
+          "category": "temple",
+          "place": {
+            "name": "日御碕神社",
+            "latitude": 35.4295648,
+            "longitude": 132.6292276,
+            "applePlaceID": "I676A96AAA5CF4E67",
+            "address": "〒699-0763, 島根県出雲市, 大社町日御碕455",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "出雲大社巴士總站搭一畑巴士日御碕線到日御碕，約 20–25 分、約 510 日圓；每日約 7 往復，請先查時刻"
+          },
+          "todos": [
+            {
+              "text": "查日御碕巴士時刻與回程末班",
+              "note": "一畑巴士日御碕線；約每日 7 往復"
+            }
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "稻佐之濱日落（稲佐の浜）：弁天島與日沒聖地",
+          "start": "16:15",
+          "end": "17:45",
+          "category": "beach",
+          "place": {
+            "name": "稻佐之濱海水浴場",
+            "latitude": 35.4000699,
+            "longitude": 132.6724005,
+            "applePlaceID": "I7363992FA78AD40B",
+            "address": "島根県出雲市, 国道431号",
+            "addressIsApproximate": false
+          },
+          "notes": "全天開放；日落時間請查官方日落預報 https://www.kankou-shimane.com/",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "日御碕搭同一路線一畑巴士往出雲大社方向，稻佐之濱下車，約 25–30 分、約 500 日圓（遊記旅客曾搭 16:17 班）；需確認末班"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "晚餐：出雲市站周邊",
+          "start": "18:30",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "出雲市",
+            "latitude": 35.3607016,
+            "longitude": 132.7562549,
+            "applePlaceID": "I12A12B3FA5C51D71",
+            "address": "島根県出雲市, 駅北町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "稻佐之濱搭巴士到出雲市站約 25–30 分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "出雲市站搭特急八雲或普通列車回松江，約 30–50 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "安來市",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "足立美術館（足立美術館）：日本第一庭園",
+          "start": "10:00",
+          "end": "12:30",
+          "category": "museum",
+          "place": {
+            "name": "足立美術館",
+            "latitude": 35.3814847,
+            "longitude": 133.1963774,
+            "applePlaceID": "I5CC81BFF73177018",
+            "address": "〒692-0064, 島根県安来市, 古川町320",
+            "addressIsApproximate": false
+          },
+          "notes": "4–9 月 9:00–17:30、10–3 月 9:00–17:00；休館日官網未列，請出發前確認；大人 2,500 日圓；館內禁止拍照",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "松江搭 JR 到安來約 15–20 分，在安來站轉免費接駁巴士約 20 分；記得先在入口櫃檯領回程接駁整理券（遊記提醒）"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "午餐：足立美術館內喫茶室",
+          "start": "12:40",
+          "end": "13:40",
+          "category": "dining",
+          "place": {
+            "name": "足立美術館",
+            "latitude": 35.3814847,
+            "longitude": 133.1963774,
+            "applePlaceID": "I5CC81BFF73177018",
+            "address": "〒692-0064, 島根県安来市, 古川町320",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；遊記提到館內有兩家喫茶室",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "館內步行"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "安來清水寺（安来清水寺）：三重塔與紅葉",
+          "start": "14:45",
+          "end": "16:15",
+          "category": "temple",
+          "place": {
+            "name": "清水寺",
+            "latitude": 35.4021879,
+            "longitude": 133.2819171,
+            "applePlaceID": "IC9C4B296B332AC17",
+            "address": "〒692-0033, 島根県安来市, 清水町528",
+            "addressIsApproximate": false
+          },
+          "notes": "開山 8:30–17:00（最終入山 16:30），本堂 9:00–16:30；三重塔與寶物館需預約、大人 500 日圓，12/1–3/31 停止預約（資料來自觀光資訊網站）",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "接駁巴士回安來站約 20 分，轉安來市黃巴士「清水」線約 15 分到終點，再步行約 8 分；班次少，需先查時刻"
+          },
+          "todos": [
+            {
+              "text": "確認安來清水寺三重塔預約與黃巴士時刻",
+              "note": "三重塔與寶物館需預約；12/1–3/31 停止預約；黃巴士班次少"
+            }
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "晚餐：鳥取站北口周邊（遊記推薦鳥取和牛餐廳「肉料理 Nick」）",
+          "start": "18:30",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "鳥取",
+            "latitude": 35.4940203,
+            "longitude": 134.2259149,
+            "applePlaceID": "IBEB42912389ED68",
+            "address": "鳥取県鳥取市, 東品治町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認；遊記說鳥取和牛三吃飯約 3,500 日圓（2024 年資料）",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "黃巴士回安來站，搭特急スーパーまつかぜ／スーパーおき到鳥取約 70–80 分"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從晚餐地點步行回飯店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "鳥取市",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "柯南車站（コナン駅／由良駅）",
+          "start": "09:45",
+          "end": "10:15",
+          "category": "station",
+          "place": {
+            "name": "由良駅",
+            "latitude": 35.4904561,
+            "longitude": 133.7543796,
+            "applePlaceID": "IB9242A51CDDBA1EB",
+            "address": "鳥取県東伯郡北栄町, 由良宿",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認；站內與月台有柯南主題裝飾",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "鳥取站搭 JR 山陰本線到由良站，約 45–60 分；班次少，請先查時刻（未取得官方班次）"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "柯南小鎮：柯南通り（コナン通り）",
+          "start": "10:25",
+          "end": "11:15",
+          "category": "sight",
+          "place": {
+            "name": "由良駅",
+            "latitude": 35.4904561,
+            "longitude": 133.7543796,
+            "applePlaceID": "IB9242A51CDDBA1EB",
+            "address": "鳥取県東伯郡北栄町, 由良宿",
+            "addressIsApproximate": true
+          },
+          "notes": "街道可自由步行；各店家營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "從由良站沿柯南通往青山剛昌ふるさと館方向步行；全程約 1.4 公里、約 20 分，沿路有柯南銅像與角色看板"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "青山剛昌故鄉館（青山剛昌ふるさと館）：名偵探柯南作者的故鄉",
+          "start": "11:25",
+          "end": "12:45",
+          "category": "museum",
+          "place": {
+            "name": "青山剛昌Furusato館",
+            "latitude": 35.4980087,
+            "longitude": 133.7618119,
+            "applePlaceID": "I5EC42F63654B929",
+            "address": "〒689-2221, 鳥取県東伯郡北栄町, 由良宿1414",
+            "addressIsApproximate": false
+          },
+          "notes": "9:30–17:30（最終受付 17:00），館休日：2026 年 11/30；大人 700 日圓；現館營業到 2027/1/11，之後遷建新館（預計 2027 春）",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分抵達（柯南通尾端）"
+          },
+          "todos": [
+            {
+              "text": "確認青山剛昌故鄉館休館日與現館營業期限",
+              "note": "https://www.gamf.jp/42.html 現館到 2027/1/11"
+            }
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "午餐：米花商店街（米花商店街）周邊",
+          "start": "12:55",
+          "end": "13:50",
+          "category": "dining",
+          "place": {
+            "name": "由良駅",
+            "latitude": 35.4904561,
+            "longitude": 133.7543796,
+            "applePlaceID": "IB9242A51CDDBA1EB",
+            "address": "鳥取県東伯郡北栄町, 由良宿",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行到館旁的米花商店街"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "久松公園與仁風閣（久松公園・仁風閣）：鳥取城跡",
+          "start": "15:30",
+          "end": "17:00",
+          "category": "park",
+          "place": {
+            "name": "仁風閣",
+            "latitude": 35.5071745,
+            "longitude": 134.2375069,
+            "applePlaceID": "I181889439869B454",
+            "address": "〒680-0011, 鳥取県鳥取市, 東町2丁目121",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；公園全天可散步",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "由良站搭 JR 回鳥取站約 45 分，再搭巴士或步行約 20 分到久松公園；班次少"
+          }
+        },
+        {
+          "key": "d5-06",
+          "title": "晚餐：鳥取站北口商店街周邊",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "dining",
+          "place": {
+            "name": "鳥取",
+            "latitude": 35.4940203,
+            "longitude": 134.2259149,
+            "applePlaceID": "IBEB42912389ED68",
+            "address": "鳥取県鳥取市, 東品治町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "從久松公園步行回站前商店街"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回飯店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "鳥取市",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "白兔神社（白兔神社）：因幡之白兔傳說，姻緣",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "temple",
+          "place": {
+            "name": "白兔神社",
+            "latitude": 35.5242042,
+            "longitude": 134.1150668,
+            "applePlaceID": "IBF6FD6B78E092305",
+            "address": "〒689-0206, 鳥取県鳥取市, 白兎603",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；鳥取巴士只收現金，請備零錢",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "鳥取站巴士總站 4 號月台搭白兔海岸線巴士（41 系統）到白兔神社前，約 40–45 分、約 610 日圓（遊記 2024 年資料，只收現金；拿整理券、下車依號碼付費）"
+          },
+          "todos": [
+            {
+              "text": "查鳥取往白兔神社與砂丘的巴士時刻",
+              "note": "鳥取巴士只收現金，備零錢；遊記路線需在相生町轉乘"
+            }
+          ],
+          "images": [
+            "d6-01"
+          ]
+        },
+        {
+          "key": "d6-02",
+          "title": "鳥取沙丘（鳥取砂丘）：日本第一沙丘",
+          "start": "11:50",
+          "end": "13:00",
+          "category": "sight",
+          "place": {
+            "name": "鳥取砂丘Jio Park中心",
+            "latitude": 35.5440428,
+            "longitude": 134.2366272,
+            "applePlaceID": "ID75E63B64E53B549",
+            "address": "〒689-0105, 鳥取県鳥取市, 福部町湯山2164-971",
+            "addressIsApproximate": false
+          },
+          "notes": "全天開放，無公休；禁止在沙上作畫",
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "白兔神社搭巴士到相生町轉乘往鳥取沙丘方向，在沙丘東口下車再走上去，約 60–70 分（遊記 2024 年路線，班次少，需先查時刻）"
+          },
+          "images": [
+            "d6-02"
+          ]
+        },
+        {
+          "key": "d6-03",
+          "title": "午餐：鳥取沙丘展望台餐廳（遊記吃了牡蠣套餐）與沙丘布丁",
+          "start": "13:10",
+          "end": "14:05",
+          "category": "dining",
+          "place": {
+            "name": "鳥取砂丘Jio Park中心",
+            "latitude": 35.5440428,
+            "longitude": 134.2366272,
+            "applePlaceID": "ID75E63B64E53B549",
+            "address": "〒689-0105, 鳥取県鳥取市, 福部町湯山2164-971",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；遊記說先在販賣機買餐券再入座",
+          "leg": {
+            "fromKey": "d6-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從沙丘步行上坡約 15 分，或搭纜車到展望台"
+          }
+        },
+        {
+          "key": "d6-04",
+          "title": "砂之美術館（砂の美術館）：沙雕展",
+          "start": "14:20",
+          "end": "15:20",
+          "category": "museum",
+          "place": {
+            "name": "鳥取砂丘砂之美術館",
+            "latitude": 35.5396298,
+            "longitude": 134.2383733,
+            "applePlaceID": "I6B86B039CECD0764",
+            "address": "〒689-0105, 鳥取県鳥取市, 福部町湯山2083-17",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–18:00（最終入場 17:30）；會期中無休，展期交替時休館；現展「砂で世界旅行・スペイン」到 2027/1/3，下一期為「絲路」；一般 800 日圓",
+          "leg": {
+            "fromKey": "d6-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從展望台往下走約 10 分到 2 號入口"
+          }
+        },
+        {
+          "key": "d6-05",
+          "title": "晚餐：鳥取站周邊（鳥取和牛或海鮮）",
+          "start": "17:15",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "鳥取",
+            "latitude": 35.4940203,
+            "longitude": 134.2259149,
+            "applePlaceID": "IBEB42912389ED68",
+            "address": "鳥取県鳥取市, 東品治町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d6-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "砂丘搭巴士回鳥取站約 25–30 分（遊記搭 14:42 班；末班請查）；返站後休息"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回飯店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "鳥取市",
+      "events": [
+        {
+          "key": "d7-01",
+          "title": "鳥取站周邊買伴手禮（沙丘布丁、二十世紀梨）",
+          "start": "09:30",
+          "end": "11:00",
+          "category": "shopping",
+          "place": {
+            "name": "東橫INN鳥取驛南口",
+            "latitude": 35.4925256,
+            "longitude": 134.2279042,
+            "applePlaceID": "I6FC9DF0721926300",
+            "address": "〒680-0845, 鳥取県鳥取市, 富安町2丁目153番3号",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；車站商店可買沙丘布丁（遊記說站內也有賣）",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從飯店步行到站"
+          }
+        },
+        {
+          "key": "d7-02",
+          "title": "關西國際機場出發（関西国際空港）",
+          "start": "17:00",
+          "end": "18:00",
+          "category": "airport",
+          "place": {
+            "name": "關西國際機場",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d7-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 300,
+            "durationSource": "user",
+            "note": "鳥取站搭特急スーパーはくと到新大阪約 2 小時 30 分（指定席約 7,000 日圓上下，請查 JR 西日本），轉關空特急はるか到關西機場約 50 分；含轉乘與緩衝。建議選 19:30 以後起飛的班機"
+          }
+        }
+      ]
+    }
+  ]
+}

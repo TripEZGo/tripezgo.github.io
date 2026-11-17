@@ -1,0 +1,710 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-himeji-kobe-3d",
+  "revision": 2,
+  "contentLocale": "ko",
+  "title": "히메지·고베 3일｜히메지성·쇼샤산·고베",
+  "subtitle": "히메지성, 쇼샤산, 고베를 도는 간사이 인/아웃 3일",
+  "summary": "사흘 동안 두 도시를 돕니다. 히메지성과 고코엔, 쇼샤산 엔교지, 마지막 날은 고베 동물왕국과 산노미야. 간사이 공항으로 드나들며, 오사카는 별도 템플릿이 있어 여기서는 겹치지 않았어요. 나루토 소용돌이, 아카시 해협 대교, 우오노타나 상점가, 기타노 이진칸은 후보로 넣어 두었습니다.",
+  "destination": "일본 히메지·고베",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "첫 방문",
+    "성",
+    "세계유산"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록 (입국 심사와 세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권과 숙소 예약을 마치면 작성할 수 있어요"
+    }
+  ],
+  "images": {
+    "d2-01": "images/jp-himeji-kobe-3d/d2-01.jpg",
+    "d2-03": "images/jp-himeji-kobe-3d/d2-03.jpg",
+    "d3-01": "images/jp-himeji-kobe-3d/d3-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 도요코 INN 히메지역 신칸센 북쪽 출구 (2박 연박, 여행기에서 묵은 곳)",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "도요코 INN 히메지역 신칸센 북쪽 출구",
+        "latitude": 34.8290758,
+        "longitude": 134.687892,
+        "applePlaceID": "I37FF38DFE3D7C49D",
+        "address": "〒670-0913, 兵庫県姫路市, 西駅前町52-2, 東横INN姫路駅新幹線北口",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ],
+      "todos": [
+        {
+          "text": "히메지역 주변 숙소 예약하기 (2박 연박)",
+          "note": "여행기에서는 도요코 INN 히메지역 신칸센 북쪽 출구에 묵었어요. 일찍 예약하세요"
+        }
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "후보: 아카시 해협 대교 (明石海峡大橋)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "마이코 해상 프롬나드",
+        "latitude": 34.6311542,
+        "longitude": 135.0333488,
+        "applePlaceID": "IEBBA6657C47FECE5",
+        "address": "〒655-0047, 兵庫県神戸市垂水区, 東舞子町2051",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 여행기에서는 날씨가 나빠 가지 못했어요"
+    },
+    {
+      "key": "u-02",
+      "title": "후보: 아카시 우오노타나 상점가 (魚の棚商店街)",
+      "durationMinutes": 60,
+      "category": "market",
+      "place": {
+        "name": "우오노타나 상점가",
+        "latitude": 34.6471415,
+        "longitude": 134.9922966,
+        "applePlaceID": "I553319624A303DB7",
+        "address": "〒673-0892, 兵庫県明石市, 本町1丁目1-16",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 아카시 해산물과 아카시야키(달걀 반죽 문어빵)"
+    },
+    {
+      "key": "u-03",
+      "title": "후보: 기타노 이진칸 거리 (北野異人館街)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "스타벅스 커피 고베 기타노 이진칸점",
+        "latitude": 34.6999465,
+        "longitude": 135.1902397,
+        "applePlaceID": "IA93CC49FDC3714D7",
+        "address": "〒650-0002, 兵庫県神戸市中央区, 北野町3丁目1-31 北野物語館",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 건물마다 영업시간과 휴관일이 달라요"
+    },
+    {
+      "key": "u-04",
+      "title": "후보: 나루토 소용돌이 (鳴門の渦潮)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "오나루토 대교 산책로 우즈노미치",
+        "latitude": 34.2361894,
+        "longitude": 134.6420344,
+        "applePlaceID": "I3D88C4E703AF446",
+        "address": "〒772-0053",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 소용돌이를 보기 좋은 시간은 조수에 따라 바뀌니 물때표를 따로 확인하세요. 여행기에서는 날씨가 나빠 가지 못했어요"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "자료 출처와 확인",
+      "paragraphs": [
+        {
+          "text": "원본 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/aacd5f5cacd1/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인 (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "히메지성 (9:00~17:00, 최종 입성 16:00, 12/29~30 휴무, 2,500엔, 고코엔 세트권 2,600엔): https://himejicastle.jp/en/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "고코엔 (9:00~17:00, 12/29~30 휴원, 요금은 자료마다 달라 300~400엔): 검색 결과와 https://www.himeji-machishin.jp/ryokka/kokoen/en/guidance/index.html (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "쇼샤산 엔교지 (8:30~17:00쯤, 시납금 500엔, 로프웨이 왕복 1,200엔, 셔틀버스 500엔): https://www.hyogo-tourism.jp/world/spot/detail_1050.html 와 https://mt-shosha.info/en.html (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "고베 동물왕국 (10:00~17:00, 2,400엔, 포트 라이너 약 14분): https://www.kobe-oukoku.com/en/tickets 와 https://www.kobe-oukoku.com/en/access (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "간사이공항에서 산노미야까지 리무진 버스 (약 65~75분, 약 2,200엔), 공항에서 히메지까지 (하루카+신칸센 약 95~120분, 직행 버스 약 3,400~3,700엔): 여러 정리 페이지 (확인 2026-11-17, 출처는 검색 결과, 공식 시간표는 확보하지 못함)",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못한 항목이니 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "쇼샤산 공식 사이트를 확보하지 못해 영업시간과 요금은 검색 결과를 따랐습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "고베 동물왕국 휴원일, 고베규 깃쇼키치 영업시간, 피오레와 산노미야 상점의 영업시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "히메지에서 산노미야까지 JR 신쾌속 요금과 운행 편수, 공항 버스의 현행 시간표와 요금.",
+          "style": "bullet"
+        },
+        {
+          "text": "각 명소의 좌표는 추정값입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "바뀐 점과 취사선택",
+          "style": "heading"
+        },
+        {
+          "text": "여행기의 5, 6일 차는 오사카(난바 야사카 신사, 쓰텐카쿠, 우메다)와 고베 항구 지역을 포함하지만, 오사카는 별도 템플릿이 있어 이 템플릿에는 히메지, 쇼샤산, 고베 동물왕국, 산노미야만 남겼습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "고코엔과 히메지역 야경은 여행기에서 가지 않았지만 가는 길에 있어 보충했습니다. 여행기에서 히메지 시립동물원에는 가지 않았으므로 넣지 않았습니다.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 안내",
+      "paragraphs": [
+        {
+          "text": "경로",
+          "style": "heading"
+        },
+        {
+          "text": "이 템플릿은 간사이공항으로 드나드는 히메지와 고베 일정입니다. 1일 차 공항에서 히메지로, 2일 차 쇼샤산과 히메지성, 3일 차 고베 동물왕국과 산노미야, 오후에 공항으로 돌아갑니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "고베는 동물왕국과 산노미야만 남겼습니다. 모토마치 상점가, 메리켄 파크, 하버랜드는 교토·오사카·고베 템플릿을 보세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항과 시내 이동",
+          "style": "heading"
+        },
+        {
+          "text": "갈 때: 간사이공항에서 특급 하루카로 신오사카까지 약 50분, 산요 신칸센으로 갈아타 히메지까지 약 30분. 환승 포함 약 2시간, 합계 약 5,400엔(오래된 정보).",
+          "style": "bullet"
+        },
+        {
+          "text": "갈 때 대안: 공항 직행 버스로 히메지역까지 약 1.5~2시간, 약 3,400~3,700엔. 운행 편수가 적으니 버스 회사 시간표를 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "돌아올 때: 산노미야에서 공항 리무진 버스로 간사이공항까지 약 65~75분, 약 2,200엔. 19:30 이후 출발하는 항공편을 고르세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "명소 포인트",
+          "style": "heading"
+        },
+        {
+          "text": "쇼샤산 엔교지: 시납금에 셔틀버스는 포함되지 않습니다. 버스는 약 5분, 걸어서 올라가면 약 20분(여행기는 돈을 더 내고 버스를 타서 체력을 아끼라고 권해요). 다 돌아보려면 최소 2시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "히메지성: 안에 들어갈 때 신발을 벗고, 계단이 가팔라 줄이 길 때가 많아요. 날씨가 나쁘면 실내 일정으로 바꾸세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "고코엔과 히메지성에는 세트권(2,600엔)이 있어요. 사용 기한은 공식 사이트에서 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "히메지역 주변은 가게가 많지 않고 밤에는 일찍 닫아요. 드럭스토어의 면세 시간은 영업시간보다 일찍 끝나는 경우가 많아요.",
+          "style": "bullet"
+        },
+        {
+          "text": "고베 동물왕국의 펭귄 먹이 주기와 동물 체험 구역은 정리권이 필요해요. 입장하면 먼저 받으세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "산노미야에서 동물왕국에 갈 때는 포트 라이너 '고베공항' 방면을 타세요. '기타후토' 행은 기타후토에서 되돌아가요.",
+          "style": "bullet"
+        },
+        {
+          "text": "일정 리듬",
+          "style": "heading"
+        },
+        {
+          "text": "1, 3일 차는 간사이공항을 오가야 해서 이동 비중이 높아요.",
+          "style": "bullet"
+        },
+        {
+          "text": "템플릿은 11월 기준이라 일몰과 영업시간은 계절에 따라 달라져요.",
+          "style": "bullet"
+        },
+        {
+          "text": "기타",
+          "style": "heading"
+        },
+        {
+          "text": "엔화 현금은 넉넉히 준비하세요. 입국 전에 Visit Japan Web에 등록하세요: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "여행 개요: 히메지·고베 3일 코스",
+      "paragraphs": [
+        {
+          "image": "d2-03"
+        },
+        "간사이 공항으로 들어가 간사이 공항으로 나오며, 앞의 2박은 히메지를 거점으로 하고 마지막 날 고베로 이동해 저녁에 산노미야에서 공항버스로 공항에 돌아갑니다. 이동은 단순해서 히메지는 주로 도보, 쇼샤산은 버스와 로프웨이, 고베는 전철과 포트 라이너를 씁니다.",
+        "1일차: 낮에 간사이 공항에 도착해 특급과 신칸센으로 히메지로 이동하고, 점심 뒤 {@d1-03}을 걷고, 저녁은 역 앞에서 먹은 뒤 북쪽 출구 2층 데크에서 히메지성 야경을 찍습니다.",
+        "2일차: 오전에 쇼샤산에서 {@d2-01}을 보고, 점심 뒤 {@d2-03}에 들어가며, 오후에는 히메지역에서 피오레와 상점가를 둘러봅니다.",
+        {
+          "image": "d2-01"
+        },
+        "3일차: JR로 산노미야에 가서 포트 라이너로 갈아타고 {@d3-01}에서 카피바라를 만지고, 점심은 고베규, 오후에는 산노미야 센터가이를 걷다가 공항버스로 간사이 공항에 돌아옵니다.",
+        {
+          "image": "d3-01"
+        },
+        "숙소: 히메지에서는 도요코 INN 히메지역 신칸센 북쪽 출구에서 2박 연박하고, 3일차에는 체크아웃해 고베로 가므로 숙박은 없습니다.",
+        "교통 포인트: 공항에서 히메지까지는 특급 하루카와 산요 신칸센으로 환승 포함 약 2시간이 걸립니다(편수가 적은 직행 공항버스도 있습니다). 히메지역에서 쇼샤산은 신키 버스와 로프웨이, 히메지에서 산노미야는 JR 신쾌속, 산노미야에서 동물왕국은 포트 라이너 '고베 공항' 방면입니다. 돌아올 때는 산노미야에서 공항 리무진 버스로 약 65~75분 걸리니 19:30 이후 출발하는 항공편을 고르세요. 출발 전에 최신 시간표를 확인하세요.",
+        "이런 분께: 히메지성과 가볍게 동물을 만지는 하루를 함께 즐기고 싶은 분. 혼자나 두세 명이 함께해도 좋습니다. 1·3일차는 이동이 많고 2일차는 산길과 가파른 계단이 있어 편한 신발이 필수입니다."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "고베 프란츠 초콜릿 (Kobe Frantz)",
+      "category": "souvenir",
+      "productType": "chocolate_candy",
+      "store": "고베 차이나타운 근처와 고베역 주변 (여행기에서는 차이나타운에서 구입)"
+    },
+    {
+      "key": "s-02",
+      "title": "쇼샤산 갓 구운 팥떡",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "쇼샤산 마니덴 옆 가게 (갓 구워 껍질이 바삭, 그 자리에서 먹기)"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "히메지시",
+      "latitude": 34.8154234,
+      "longitude": 134.6854576,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "히메지시",
+      "latitude": 34.8154234,
+      "longitude": 134.6854576,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "고베시",
+      "latitude": 34.6894277,
+      "longitude": 135.1957571,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "히메지시",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "간사이 국제공항 도착 (関西国際空港)",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "airport",
+          "place": {
+            "name": "간사이 국제공항",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "점심: 히메지역 주변 (히메지 오뎅, 아나고 덮밥, 소바)",
+          "start": "14:15",
+          "end": "15:00",
+          "category": "dining",
+          "place": {
+            "name": "히메지 (姫路)",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 130,
+            "durationSource": "user",
+            "note": "간사이공항에서 특급 하루카로 신오사카까지 약 50분, 산요 신칸센으로 갈아타 히메지까지 약 30분. 환승 포함 약 2시간, 합계 약 5,400엔(오래된 정보이니 JR 니시니혼에서 확인). 공항 직행 버스로 히메지역까지 약 1.5~2시간, 약 3,400~3,700엔인 방법도 있지만 운행 편수가 적어요"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "고코엔 (好古園): 히메지성 서쪽의 일본 정원",
+          "start": "15:25",
+          "end": "16:30",
+          "category": "park",
+          "place": {
+            "name": "고코엔",
+            "latitude": 34.8378515,
+            "longitude": 134.6895777,
+            "applePlaceID": "I780D49712BA53B3D",
+            "address": "〒670-0012, 兵庫県姫路市, 本町68",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00~17:00 (최종 입장 16:30, 4/27~8/31은 18:00까지 연장), 12/29~30 휴원 (공식 자료 정리)",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "히메지역에서 오테마에 거리를 따라 걸어서 약 20분. 먼저 호텔에 짐을 맡기면 더 편해요"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "저녁: 히메지역 앞 상점가 (고베규 또는 이자카야)",
+          "start": "17:15",
+          "end": "18:30",
+          "category": "dining",
+          "place": {
+            "name": "히메지 (姫路)",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "고코엔에서 오테마에 거리를 따라 역 앞 상점가로 걸어 돌아옴"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "히메지역 북쪽 출구 2층 데크: 히메지성 야경 (姫路駅北口2階デッキ)",
+          "start": "18:50",
+          "end": "19:20",
+          "category": "viewpoint",
+          "place": {
+            "name": "히메지 (姫路)",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "종일 통행 가능. 겨울 히메지성 조명 시간은 공식 사이트에서 확인하세요",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "역 앞까지 걸어서 돌아옴. 북쪽 출구 2층 데크에서 히메지성이 정면으로 보여요"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "히메지시",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "쇼샤산 엔교지 (書寫山圓教寺): 마니덴과 대강당",
+          "start": "09:45",
+          "end": "11:45",
+          "category": "temple",
+          "place": {
+            "name": "엔교지",
+            "latitude": 34.892341,
+            "longitude": 134.6544041,
+            "applePlaceID": "I3B9417AC51896122",
+            "address": "〒671-2201, 兵庫県姫路市, 書写2968",
+            "addressIsApproximate": false
+          },
+          "notes": "8:30~17:00쯤 (계절에 따라 다르며 로프웨이 막차는 별도), 출발 전에 확인하세요. 입산 시납금 약 500엔, 로프웨이 왕복 약 1,200엔",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "히메지역 북쪽 출구 10번 승차장에서 신키 버스로 쇼샤산 로프웨이까지 약 25분, 약 280엔. 로프웨이는 약 4분이고 약 15분 간격으로 운행"
+          },
+          "todos": [
+            {
+              "text": "쇼샤산 버스와 로프웨이 시간표를 확인하고 셔틀버스를 살지 정하기",
+              "note": "로프웨이는 약 15분 간격. 시납금에 셔틀버스는 포함되지 않아요"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "점심: 히메지성 앞 (오테마에 거리) 주변",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "오테마에 거리",
+            "latitude": 34.82905903288856,
+            "longitude": 134.69068729919022,
+            "address": "日本兵庫縣姬路市",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "쇼샤산 버스 정류장에서 히메지 시내로 돌아와 히메지성 오테마에 거리 근처에서 하차, 약 30분. 돌아오는 시간표를 먼저 확인하세요"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "히메지성 (姫路城): 세계유산 백로성",
+          "start": "13:30",
+          "end": "15:30",
+          "category": "castle",
+          "place": {
+            "name": "히메지성",
+            "latitude": 34.8393609,
+            "longitude": 134.6939937,
+            "applePlaceID": "I4824F228D574E9FD",
+            "address": "〒670-0012, 兵庫県姫路市, 本町68",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00~17:00 (최종 입성 16:00, 여름은 18:00까지), 12/29~30 휴무. 어른 2,500엔, 고코엔과의 세트권 2,600엔 (공식 사이트)",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "산노마루 광장을 지나 걸어서 약 10분. 안에 들어갈 때는 신발을 벗으며, 계단이 가팔라 줄이 길 때가 많아요"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "히메지역 쇼핑: 피오레 히메지와 역 앞 상점가",
+          "start": "16:00",
+          "end": "17:15",
+          "category": "shopping",
+          "place": {
+            "name": "피오레 히메지",
+            "latitude": 34.8273504,
+            "longitude": 134.6910604,
+            "applePlaceID": "ICE4D383EB876A881",
+            "address": "〒670-0927, 兵庫県姫路市, 駅前町188-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 드럭스토어의 면세 시간은 영업시간보다 일찍 끝나는 경우가 많아요",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "히메지성에서 오테마에 거리를 따라 역 앞으로 걸어 돌아옴"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "저녁: 히메지역 주변 (고베규)",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "히메지 (姫路)",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "역 앞 상점가를 걸어서"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "고베시",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "고베 동물왕국 (神戸どうぶつ王国): 카피바라 만져 보기",
+          "start": "10:00",
+          "end": "12:30",
+          "category": "zoo",
+          "place": {
+            "name": "고베 동물왕국",
+            "latitude": 34.6546652,
+            "longitude": 135.2225884,
+            "applePlaceID": "I621C3224B7AE814",
+            "address": "〒650-0047, 兵庫県神戸市中央区, 港島南町7丁目1-9",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00~17:00 (공식 사이트의 당일 표시), 휴원일은 공식 캘린더에서 확인하세요. 어른 2,400엔",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "히메지에서 JR 신쾌속으로 산노미야까지 약 40~50분. 산노미야역 2층에서 포트 라이너 '고베공항' 방면으로 갈아타 '계산과학센터(計算科学センター)'까지 약 14분. 기타후토 행을 타지 않도록 주의"
+          },
+          "todos": [
+            {
+              "text": "고베 동물왕국 휴원일을 확인하고 정리권 받기",
+              "note": "https://www.kobe-oukoku.com/en/ 펭귄 먹이 주기와 체험 구역은 정리권이 필요해요"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "점심: 고베규 깃쇼키치 (神戸牛 吉祥吉) 산노미야 센터가이점",
+          "start": "13:00",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "고베규 깃쇼키치 (神戸牛 吉祥吉)",
+            "latitude": 34.6911948,
+            "longitude": 135.1939327,
+            "applePlaceID": "I230C2CD6BFDB70CC",
+            "address": "〒650-0021, 兵庫県神戸市中央区, 三宮町1丁目3-10 2F",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기(2024년)에서 안심 스테이크 220g이 약 7,700엔(세금 별도)",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "계산과학센터역에서 포트 라이너로 산노미야까지 약 14분, 도보 포함"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "산노미야 센터가이와 키디랜드 고베 (さんちか／センター街)",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "shopping",
+          "place": {
+            "name": "산노미야 센터가이",
+            "latitude": 34.6921353,
+            "longitude": 135.1943526,
+            "address": "日本兵庫縣神戶市",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 거리는 자유롭게 걸을 수 있어요",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "산노미야 센터가이와 센터 플라자(캡슐 토이, 중고 가게, 서점)를 걸으며 구경"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "간사이 국제공항 출발 (関西国際空港)",
+          "start": "17:00",
+          "end": "18:00",
+          "category": "airport",
+          "place": {
+            "name": "간사이 국제공항",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "산노미야(고베 산노미야 버스터미널)에서 공항 리무진 버스로 간사이공항까지 직행 약 65~75분, 약 2,200엔 (자료마다 1,800~2,200엔). 19:30 이후 출발하는 항공편을 권해요"
+          }
+        }
+      ]
+    }
+  ]
+}
