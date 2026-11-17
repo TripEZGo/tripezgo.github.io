@@ -110,7 +110,7 @@
     <header class="legal-header">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="legal-meta">Applies to the TripEZGo iOS app and tripezgo.com　·　Effective: 16 August 2026　·　Last updated: 8 November 2026</p>
+      <p class="legal-meta">Applies to the TripEZGo iOS app and tripezgo.com　·　Effective: 16 August 2026　·　Last updated: 17 November 2026</p>
     </header>
 
     <nav class="toc" aria-label="Table of contents">
@@ -181,8 +181,9 @@
     <p>Information handled by the App is used only to provide, maintain and improve the App’s functionality; to sync and back up your content according to your settings, and to share it with the companions you invite; to process your purchases and entitlement status; to find the causes of crashes and understand how features are used (section 2.3); to show ads in the free version (section 2.4); and to respond to your enquiries and provide necessary technical support.</p>
 
     <h2 id="s5">5. Where your data is stored</h2>
-    <p>Your content is stored <strong>on your device</strong>, and — if you enable sync or backup — also in <strong>your own cloud account</strong> (for example the iCloud storage associated with your Apple ID).</p>
+    <p>Your content is stored <strong>on your device</strong>, and — if you enable sync or backup — also in <strong>your own cloud account</strong> (the iCloud storage associated with your Apple ID, or the Google Drive you choose).</p>
     <ul>
+      <li><strong>Google Drive backup (optional)</strong>: after you switch the backup method to Google Drive in Settings, your trips, notes, attachments and photos are stored in a hidden folder in your Google Drive that belongs to this App alone. Only the App can read or write that folder, and the App cannot see any other file in your Drive. Google Drive does not support shared trips, so you must first stop sharing or leave shared trips before switching.</li>
       <li><strong>Shared trips</strong>: a trip you share with companions is kept in a shared area of your iCloud that only the members you invite can read. Once you stop sharing, members can no longer access it.</li>
       <li><strong>Share My Location</strong>: while it is on, your location and the time it was updated are written to that shared trip’s shared area so members can see you on the map. They are removed when you turn sharing off or the trip stops being shared.</li>
       <li><strong>Public links</strong>: when you create a public link, the trip is encrypted on your device and then stored in Apple’s iCloud public database. The decryption key exists only in the link itself (the part after “#”) and is never sent to any server. Anyone with the link can read that trip, and you can stop publishing it in the App at any time.</li>
@@ -196,9 +197,11 @@
       <li><strong>Firebase Crashlytics and Firebase Analytics (Google)</strong>: crash reporting and usage statistics — see section 2.3.</li>
       <li><strong>Google AdMob and Google’s consent management platform (Google)</strong>: ads in the free version — see section 2.4. For how Google uses data from partner apps, see <a href="https://policies.google.com/technologies/partner-sites" rel="noopener" target="_blank">this page</a>.</li>
       <li><strong>Google Calendar (Google, optional)</strong>: used only if you link a Google account in Settings. Access is limited to calendars the App itself creates, the titles of your calendar list, and your account email (to show which account is linked). The authorisation token is kept in your device’s keychain, and events are written by your device directly to your Google Calendar without passing through us.</li>
+      <li><strong>Google Drive (Google, optional)</strong>: used only if you switch the backup method to Google Drive. Access is limited to this App’s own hidden folder (drive.appdata) and your account email (to show which account is linked). It shares one authorisation token with Google Calendar, kept in your device’s keychain. Your data is uploaded by your device directly to your Google Drive and downloaded directly from it, without passing through us.</li>
       <li><strong>Exchange rates (Frankfurter)</strong>: currency conversion downloads the latest rates from a public exchange-rate service. The request contains none of your content.</li>
       <li><strong>Shop data (GitHub)</strong>: the convenience-store and shop data on the map is downloaded as a public data file from GitHub. The request contains none of your content.</li>
     </ul>
+    <p>TripEZGo’s use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener" target="_blank">Google API Services User Data Policy</a>, including the Limited Use requirements. Specifically, data obtained from Google Calendar and Google Drive is used only to provide and improve the features you use in the App; it is not transferred to third parties except as necessary to provide those features or as required by law; it is not used for advertising; it is not read by humans (except with your consent or as required by law); and it is not used to develop or train generalised artificial-intelligence or machine-learning models.</p>
     <p>Google’s handling of data for the Google services above is governed by the <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google Privacy Policy</a>. The third-party services used may change between versions, and we will update this Policy accordingly.</p>
 
     <h2 id="s7">7. Sharing and disclosure</h2>
@@ -207,7 +210,7 @@
     <p>The diagnostic, usage and advertising data described in sections 2.3 and 2.4 is sent directly to Google by the Google SDKs in the App.</p>
 
     <h2 id="s8">8. Network connections</h2>
-    <p>The App’s core features are designed to work offline. The App may connect to the network in order to sync or back up to your cloud account; to share a trip or your location with companions; to create a public link; to provide map or location-related features; to get the weather (the Home weather card sends the coordinates of a trip place, or of your current location, to Apple’s weather service; they are not otherwise stored or synced); to download exchange rates and shop data; to sync Google Calendar (if you have linked it); to process purchases and restores; to send crash reports and usage statistics; to load ads (free version); and — when you paste or share an external link yourself — to retrieve preview information from the site that link belongs to.</p>
+    <p>The App’s core features are designed to work offline. The App may connect to the network in order to sync or back up to your cloud account; to share a trip or your location with companions; to create a public link; to provide map or location-related features; to get the weather (the Home weather card sends the coordinates of a trip place, or of your current location, to Apple’s weather service; they are not otherwise stored or synced); to download exchange rates and shop data; to sync Google Calendar and back up to Google Drive (if you have linked them); to process purchases and restores; to send crash reports and usage statistics; to load ads (free version); and — when you paste or share an external link yourself — to retrieve preview information from the site that link belongs to.</p>
     <p>These requests are made directly by your device and <strong>do not pass through any server of ours</strong>. Third-party sites or services that receive such requests handle that information under their own privacy policies.</p>
 
     <h2 id="s9">9. Purchases and payment</h2>
@@ -220,6 +223,7 @@
       <li>You can delete individual content in the App at any time. Some items may first move to a trash or holding area and be permanently removed after a period; you may also delete them permanently yourself at any time.</li>
       <li>Deleting the App removes the data stored on that device.</li>
       <li>Data held in your cloud account can be deleted by you in that cloud service’s settings, or by turning sync off in the App. Only you can perform this.</li>
+      <li>Data stored in Google Drive: on a computer, open Google Drive, go to “Settings” › “Manage apps”, find TripEZGo, open “Options” and choose “Delete hidden app data”. To revoke the App’s access, remove TripEZGo under <a href="https://myaccount.google.com/permissions" rel="noopener" target="_blank">your Google Account’s third-party access</a>.</li>
       <li>The data described in sections 2.3 and 2.4 is retained and deleted under Google’s retention policies.</li>
     </ul>
 
