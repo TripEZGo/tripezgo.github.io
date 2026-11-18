@@ -1,0 +1,799 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-naha-3d",
+  "revision": 1,
+  "contentLocale": "ko",
+  "title": "나하 3일｜국제거리・슈리성・세나가지마 (차 없이)",
+  "subtitle": "차 없이: 유이레일로 국제거리, 슈리성, 세나가지마를 연결",
+  "summary": "나하에서 보내는 사흘, 렌터카는 전혀 쓰지 않습니다. 마키시 공설시장과 쓰보야 도자기 거리, 국제거리, 슈리성 공원과 다마우둔, 나미노우에 궁, 마지막은 세나가지마. 준비 사항에는 공항과 시내 이동, 유이레일 승차권, 슈리성 현황, 세나가지마 가는 법을 적어 두었습니다. 후쿠슈엔, 시키나엔, 긴조초 돌길은 대안으로 두었습니다.",
+  "destination": "일본 나하",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "첫 방문",
+    "차 없이",
+    "성하마을"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록 (입국 심사와 세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권과 숙소 예약이 끝나면 바로 작성할 수 있습니다"
+    }
+  ],
+  "images": {
+    "d1-04": "images/jp-naha-3d/d1-04.jpg",
+    "d2-04": "images/jp-naha-3d/d2-04.jpg",
+    "d3-01": "images/jp-naha-3d/d3-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 마키시・국제거리 주변 (2박 연속)",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "마키시역 앞",
+        "latitude": 26.2172382,
+        "longitude": 127.6924535,
+        "applePlaceID": "I5D7964AF52104406",
+        "address": "沖縄県那覇市, 牧志",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "대안: 후쿠슈엔 (福州園)",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "후쿠슈엔",
+        "latitude": 26.2178612,
+        "longitude": 127.6757643,
+        "applePlaceID": "IFFF6FABA8D32C489",
+        "address": "〒900-0005, 沖縄県那覇市, 久米2丁目29-19",
+        "addressIsApproximate": false
+      },
+      "notes": "중국풍 정원. 겐초마에역 근처, 성인 ¥200 (유이레일 공식 사이트). 영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-02",
+      "title": "대안: 시키나엔 (識名園)",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "시키나엔",
+        "latitude": 26.2041211,
+        "longitude": 127.7146734,
+        "applePlaceID": "IF8DA34208B2B5A64",
+        "address": "〒902-0072, 沖縄県那覇市, 真地421-7",
+        "addressIsApproximate": false
+      },
+      "notes": "류큐 왕가 별장의 정원. 성인 ¥400 (유이레일 공식 사이트). 영업시간은 출발 전에 확인하세요"
+    },
+    {
+      "key": "u-03",
+      "title": "대안: 긴조초 돌길 (金城町石畳道)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "슈리 긴조초 돌길",
+        "latitude": 26.2157629,
+        "longitude": 127.7148682,
+        "applePlaceID": "ID33AB7140FDC17B9",
+        "address": "〒903-0815, 沖縄県那覇市, 首里金城町2丁目35",
+        "addressIsApproximate": false
+      },
+      "notes": "슈리성 근처에 류큐 돌길이 남아 있는 언덕길로, 하루 종일 산책할 수 있습니다. 가게 영업시간은 출발 전에 확인하세요"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "출처와 확인 사항",
+      "paragraphs": [
+        {
+          "text": "참고한 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/2cbc121a1b7c/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인함 (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "유이레일 요금 (공항역, 마키시역)과 1일권·2일권, 제휴 시설 혜택: https://www.yui-rail.co.jp/ticketinfo-ticket/ticketinfo/1day-pass/ (확인 2026-11-17); https://www.yui-rail.co.jp/routemap/nahakuko/?t=fare (확인 2026-11-17); https://www.yui-rail.co.jp/routemap/makishi/?t=fare (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "유이레일 신용카드 비접촉 결제: https://ryukyushimpo.jp/news/economics/entry-4099337.html (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "슈리성 공원: 공식 홈페이지 (개원 시간, 정전 2026/11 완공, 11/23 공개, 11/22 임시 휴원): https://oki-park.jp/shurijo/ (확인 2026-11-17); 정전 예약과 새 요금은 제3자 정리이며 공식 관련 페이지를 가져오지 못했으니 출발 전에 확인하세요: https://www.iwafu.com/jp/events/1167204 (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "나미노우에 궁: 수여소와 사무소 9:00~16:30, 주차장 20면, 공항과 택시 정보: https://naminouegu.jp/ , https://naminouegu.jp/map.html (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "세나가지마 우미카지 테라스: 영업시간과 주소 https://umikajiterrace.com/ ; 공항 셔틀버스와 우미카지 라이너 https://www.umikajiterrace.com/accessguide/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "쓰보야 야치문 거리: 가장 가까운 유이레일 역은 마키시역, 도보 약 10~15분: https://www.tsuboya-yachimun.com/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "추라산 6: 공식 사이트 https://www.churasun6.com/ , 1부 20:30, 2부 22:30 (같은 시리즈 자가운전 템플릿에서 2026-11-17에 한 확인을 그대로 사용)",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못함. 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "다마우둔, 쓰보야 각 가게, 국제거리 각 가게, 다이이치 마키시 공설시장, 나카무라야, 류큐노우시, 다마야, ASHIBINAA, 블루씰의 영업시간과 휴무일.",
+          "style": "bullet"
+        },
+        {
+          "text": "슈리성의 7~11월 외 개원 시간과 휴원일, 정전 내부 예약 마감 여부와 새 요금.",
+          "style": "bullet"
+        },
+        {
+          "text": "국제거리에서 세나가지마로 가는 우미카지 라이너의 시간표와 요금, 세나가지마와 국제거리까지의 택시 요금.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 준비 사항",
+      "paragraphs": [
+        {
+          "text": "이 템플릿의 성격",
+          "style": "heading"
+        },
+        {
+          "text": "차 없이 다니는 템플릿: 유이레일, 버스, 택시, 도보만으로 마키시・국제거리 일대에 묵으며 나하 시내와 세나가지마를 돌아봅니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "오키나와 본섬 중부와 북부 (추라우미, 온나, 차탄)는 별도의 자가운전 템플릿을 참고하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항과 시내 이동 (나하 공항 OKA)",
+          "style": "heading"
+        },
+        {
+          "text": "유이레일: 공항역에서 마키시역까지 편도 ¥320, 약 13~15분 (시간표는 공식 사이트에서). 공항역에서 아사히바시역까지 약 10분, 슈리역까지 ¥360. 공식 요금표: https://www.yui-rail.co.jp/routemap/nahakuko/?t=fare",
+          "style": "bullet"
+        },
+        {
+          "text": "택시: 공항에서 아사히바시, 나미노우에 궁 일대까지 약 10분, 약 ¥1,200 (나미노우에 궁 공식 사이트). 국제거리까지의 요금은 호출 앱의 예상 금액을 기준으로 하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "귀국일: 택시로 공항까지 약 15분. 유이레일로 공항역까지 가도 됩니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "유이레일 승차권 (2026-11-17 공식 사이트 확인)",
+          "style": "heading"
+        },
+        {
+          "text": "편도권: 마키시~슈리 ¥290, 마키시~아사히바시 ¥250, 공항~슈리 ¥360.",
+          "style": "bullet"
+        },
+        {
+          "text": "1일권 (24시간) 성인 ¥1,000, 어린이 ¥500. 2일권 (48시간) 성인 ¥1,800, 어린이 ¥900. 어느 역에서든 구입할 수 있고 구입 시점부터 계산합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "신용카드 비접촉 결제: 2025/3/28부터 시행. 류큐신보 보도에 따르면 하루 최대 ¥800 (최신 공식 공지를 기준으로 하세요).",
+          "style": "bullet"
+        },
+        {
+          "text": "이 템플릿은 하루에 유이레일을 2~3번 타는 정도라 1일권보다 저렴합니다. 편도권이나 IC 카드 (OKICA, Suica)가 더 이득이고, 1일권의 제휴 시설 할인도 수십 엔 수준입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "슈리성 현황 (2026-11-17 공식 사이트 확인)",
+          "style": "heading"
+        },
+        {
+          "text": "2019년 화재 이후 재건 중: 공식 사이트에 따르면 정전 (正殿)은 2026년 11월에 완공되어 2026/11/23 (월・공휴일) 정오부터 공개됩니다. 당일 오전과 11/22 종일은 임시 휴원입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "정전 내부 관람에는 일시 지정 (30분마다 1회) 온라인 예약이 필요합니다. 정전 외 유료 구역은 예약이 필요 없습니다 (제3자 정리, 공식 사이트를 기준으로 하세요).",
+          "style": "bullet"
+        },
+        {
+          "text": "입장료는 2026/11/23부터 조정: 공식 요금 페이지는 확인하지 못했고, 제3자 정리로는 성인 ¥1,000, 고등학생 ¥760, 초중학생 ¥370. 조정 전은 성인 ¥400 (유이레일 공식 사이트).",
+          "style": "bullet"
+        },
+        {
+          "text": "무료 구역과 슈레이몬 일대는 무료로 들어갈 수 있습니다. 정전 내부 예약을 못 잡아도 성곽과 다른 유료 구역은 볼 수 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "다른 구역의 복원 진행과 출입 가능 범위는 https://oki-park.jp/shurijo/ 에서 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "예약과 티켓 구입",
+          "style": "heading"
+        },
+        {
+          "text": "슈리성 정전 내부: 공식 사이트에서 일시를 지정해 예약. 성수기와 공개 초기에는 마감되기 쉬우니 일찍 하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "야키니쿠 류큐노우시: 예약 필수.",
+          "style": "bullet"
+        },
+        {
+          "text": "추라산 6: 공식 사이트 https://www.churasun6.com/ 에서 예약. 20세 이상만 입장, 1부 요금은 약 ¥6,500부터 (음료 한 잔 포함). 하이파이브와 기념 촬영 외에는 댄서의 몸에 손대는 것이 엄격히 금지됩니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "세나가지마 가는 법",
+          "style": "heading"
+        },
+        {
+          "text": "공항에서: 주말과 공휴일에 세나가지마 공항 셔틀버스 (TK04, 도쿄버스)가 있으며 성인 ¥250. 평일은 운행 없음. 공항에서 세나가지마까지 탑승 약 10분.",
+          "style": "bullet"
+        },
+        {
+          "text": "국제거리에서: 우미카지 라이너 (ウミカジライナー, TK02) 이토만행. 자세한 시간표와 요금은 https://www.umikajiterrace.com/accessguide/ 또는 도쿄버스 098-850-0011로 문의.",
+          "style": "bullet"
+        },
+        {
+          "text": "택시가 가장 간단합니다. 돌아올 때도 섬에서 부를 수 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "계절",
+          "style": "heading"
+        },
+        {
+          "text": "이 템플릿은 7월 여름 여행기를 기준으로 합니다. 나하의 여름은 매우 덥고 자외선이 강하니 야외 명소 (나미노우에 궁 육교, 세나가지마, 아울렛)는 이른 아침이나 저녁에 넣고 자외선 차단제와 물을 챙기세요. 다른 계절에도 똑같이 다닐 수 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "쓰보야 야치문 거리는 오후에 일찍 닫는 가게가 많아 14시 무렵까지 도착하도록 짰습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "쓰보야 도기 박물관은 2026/9/1~2027/3/31 휴관. 거리만 구경하고 관 안에는 들어가지 않습니다.",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "지이카와 시사 굿즈 (ちいかわ シーサー)",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "국제거리의 전문 매장에서 판매. 여행기에서는 훌라 토끼를 샀습니다"
+    },
+    {
+      "key": "s-02",
+      "title": "블루씰 동전지갑 (ブルーシール)",
+      "category": "clothing",
+      "productType": "bag_wallet",
+      "store": "세나가지마와 도요사키의 블루씰 매장에서 판매. 여행기에서는 기념 동전지갑을 샀습니다"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "나하시",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "나하시",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "나하시",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "나하시",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "나하 공항 도착 (那覇空港)",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "airport",
+          "place": {
+            "name": "나하 공항",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "점심: 다이이치 마키시 공설시장 주변 (第一牧志公設市場)",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "market",
+          "place": {
+            "name": "다이이치 마키시 공설시장",
+            "latitude": 26.2145489,
+            "longitude": 127.6882674,
+            "applePlaceID": "IC5383C58AD3469EA",
+            "address": "〒900-0014, 沖縄県那覇市, 松尾2丁目10-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "공항역에서 유이레일 (ゆいレール)로 마키시역까지 약 13~15분, 편도 ¥320. 역에서 도보 약 10분. 짐은 먼저 호텔에 맡길 수 있습니다"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "쓰보야 야치문 거리 (壺屋やちむん通り)",
+          "start": "14:00",
+          "end": "15:45",
+          "category": "sight",
+          "place": {
+            "name": "쓰보야 야치문 거리",
+            "latitude": 26.2130862,
+            "longitude": 127.691306,
+            "applePlaceID": "I6A995B686ACA42DA",
+            "address": "〒902-0065",
+            "addressIsApproximate": true
+          },
+          "notes": "가게마다 영업시간이 다르고 오후 일찍 닫는 곳이 많으니 출발 전에 확인하세요. 쓰보야 도기 박물관은 외벽 보수로 2026/9/1~2027/3/31 휴관 (유이레일 공식 사이트)",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "공설시장에서 도보 약 10~15분. 돌길 골목에 도기 가게, 가마, 카페가 늘어서 있습니다"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "국제거리 (国際通り): 드러그스토어와 기념품 산책",
+          "start": "16:00",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "나하 국제거리 상점가",
+            "latitude": 26.2160938,
+            "longitude": 127.689231,
+            "applePlaceID": "IAA939DC0B8514F67",
+            "address": "〒900-0013, 沖縄県那覇市, 牧志3丁目2-10",
+            "addressIsApproximate": false
+          },
+          "notes": "전체 길이 약 1.6km. 가게마다 영업시간이 다르고 대부분 21:00 무렵까지 영업하니 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "쓰보야에서 국제거리까지 도보 약 15분. 저녁까지 거리를 따라 구경하며 걷습니다"
+          },
+          "images": [
+            "d1-04"
+          ]
+        },
+        {
+          "key": "d1-05",
+          "title": "저녁: 이자카야 나카무라야 (なかむら家)",
+          "start": "18:00",
+          "end": "19:30",
+          "category": "dining",
+          "place": {
+            "name": "나카무라야",
+            "latitude": 26.2159698,
+            "longitude": 127.6821636,
+            "applePlaceID": "ICA3891BE7AB3D242",
+            "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目15 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "현금만 받음. 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "국제거리 주변에서 도보 약 10분"
+          }
+        },
+        {
+          "key": "d1-06",
+          "title": "돈키호테 국제거리점 (ドン・キホーテ 国際通り店)",
+          "start": "19:45",
+          "end": "20:45",
+          "category": "shopping",
+          "place": {
+            "name": "돈키호테 국제거리점",
+            "latitude": 26.2159386,
+            "longitude": 127.6877135,
+            "applePlaceID": "IBDB33462100C5694",
+            "address": "〒900-0014, 沖縄県那覇市, 松尾2丁目8-19",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 면세 카운터는 4층, 줄은 길지만 처리는 빠릅니다",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분. 국제거리에는 돈키호테가 크고 작은 두 곳 있습니다"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "숙소까지 걸어서 돌아갑니다. 국제거리 주변은 밤에도 사람이 많지만 큰길로 다니면 됩니다"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "나하시",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "슈리성 공원 (首里城公園)",
+          "start": "09:45",
+          "end": "12:15",
+          "category": "castle",
+          "place": {
+            "name": "슈리성 정전 (슈리성 공원)",
+            "latitude": 26.2170379,
+            "longitude": 127.7194829,
+            "applePlaceID": "IC97D4775995DCEAA",
+            "address": "〒903-0815, 沖縄県那覇市, 首里金城町1-2",
+            "addressIsApproximate": false
+          },
+          "notes": "공식 사이트: 7~11월 무료 구역 8:00~19:30, 유료 구역 8:30~19:00 (18:30 매표 마감). 다른 달의 시간과 휴원일은 공식 사이트 확인. 2026/11/22 종일과 11/23 오전은 임시 휴원",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "숙소에서 마키시역까지 걸어서 유이레일로 슈리역까지 (¥290, 약 17분). 역에서 슈레이몬까지 도보 약 15분, 가는 길 내내 오르막입니다"
+          },
+          "todos": [
+            {
+              "text": "슈리성 정전 내부 관람 예약",
+              "note": "일시 지정 (30분마다 1회) 온라인 예약. 2026/11/23부터 관람 가능. 공식 사이트 https://oki-park.jp/shurijo/"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "다마우둔 (玉陵)",
+          "start": "12:30",
+          "end": "13:15",
+          "category": "sight",
+          "place": {
+            "name": "다마우둔",
+            "latitude": 26.2182059,
+            "longitude": 127.7147027,
+            "applePlaceID": "I194BD0E6509F2CF2",
+            "address": "〒903-0815, 沖縄県那覇市, 首里金城町1丁目3",
+            "addressIsApproximate": false
+          },
+          "notes": "개방 시간과 휴관일은 출발 전에 확인하세요. 유이레일 공식 사이트에는 성인 입장료 ¥300",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "슈리성에서 도보 약 10~15분"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "점심: 슈리역 주변 (首里駅)",
+          "start": "13:30",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "슈리",
+            "latitude": 26.2191196,
+            "longitude": 127.72549,
+            "applePlaceID": "I1DFEBCED69086C9D",
+            "address": "沖縄県那覇市, 首里汀良町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "슈리역 쪽으로 걸어서 돌아갑니다. 슈리는 오키나와 소바와 전통 간식의 발상지입니다"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "나미노우에 궁 (波上宮): 나미노우에 해변, 고코쿠지 포함",
+          "start": "15:15",
+          "end": "17:00",
+          "category": "temple",
+          "place": {
+            "name": "나미노우에 궁",
+            "latitude": 26.220688,
+            "longitude": 127.6711195,
+            "applePlaceID": "I403C23C7EBE9131F",
+            "address": "〒900-0031, 沖縄県那覇市, 若狭1丁目25-11",
+            "addressIsApproximate": false
+          },
+          "notes": "수여소와 사무소 9:00~16:30, 기도 접수 10:00~15:30 (공식 사이트 2026/1 공지). 16:30 전에 참배하길 권합니다. 경내에 무료 주차장이 약 20면 있습니다",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "슈리역에서 유이레일로 아사히바시역까지 약 22분, 거기서 신사까지 도보 약 15분. 신사 반대편 언덕을 내려가면 해변이 나오며 육교를 건너는 것보다 가깝습니다"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "저녁: 야키니쿠 류큐노우시 (焼肉 琉球の牛 那覇久茂地店)",
+          "start": "17:30",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "야키니쿠 류큐노우시 나하 구모지",
+            "latitude": 26.2155533,
+            "longitude": 127.6819627,
+            "applePlaceID": "I849648257EA60142",
+            "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目16-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 예약 필수이며 음식이 느리게 나오니 약 2시간을 잡으세요",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "나미노우에 궁에서 아사히바시 방향으로 도보 약 20분, 또는 택시 약 10분"
+          },
+          "todos": [
+            {
+              "text": "야키니쿠 류큐노우시 (나하 구모지) 예약",
+              "note": "여행기에서는 예약함. 음식이 느리게 나오니 약 2시간을 잡을 것"
+            }
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "추라산 6 오키나와 (ちゅらさん6) 걸스 바 쇼",
+          "start": "20:15",
+          "end": "21:30",
+          "category": "bar",
+          "place": {
+            "name": "추라산 6 오키나와",
+            "latitude": 26.2183985,
+            "longitude": 127.6801257,
+            "applePlaceID": "I230A443A8401DEFB",
+            "address": "〒900-0032, 沖縄県那覇市, 松山1丁目5-1 2F",
+            "addressIsApproximate": false
+          },
+          "notes": "공식 사이트: 1부 20:30 시작 (20:00 입장), 2부 22:30 시작. 휴무일은 출발 전에 확인. 20세 미만 입장 불가. 공연 종료는 약 21:30으로 다른 날의 21:00보다 늦음",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "도보 약 15분. 1층 클럽 옆 입구로 들어가 끝까지 직진해 좌회전, 2층이 추라산 6입니다. 1층은 클럽이니 헷갈리지 마세요"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "숙소까지 걸어서 돌아갑니다. 마쓰야마 일대는 밤에 좀 복잡하니 일행과 함께 큰길로 다니길 권합니다"
+          },
+          "todos": [
+            {
+              "text": "추라산 6 공연 예약",
+              "note": "공식 사이트 https://www.churasun6.com/ ; 20세 이상만 가능. 1부는 20:30 시작"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "나하시",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "세나가지마 (瀬長島ウミカジテラス)",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "sight",
+          "place": {
+            "name": "세나가지마 우미카지 테라스",
+            "latitude": 26.1764709,
+            "longitude": 127.6404074,
+            "applePlaceID": "IC9B0D0C2786C14A4",
+            "address": "〒901-0233, 沖縄県豊見城市, 瀬長174-6",
+            "addressIsApproximate": false
+          },
+          "notes": "공식 사이트: 시설 10:00~21:00, 매장 10:00~20:00, 식당 11:00~21:00 (주문 마감 20:30), 연중무휴. 주차 무료",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "체크아웃 후 택시로 약 25~30분 (요금은 호출 앱의 예상 금액 기준). 절약하려면 국제거리에서 우미카지 라이너 (ウミカジライナー, 도쿄버스 TK02, 이토만행)로 세나가지마까지. 시간표와 요금은 https://www.umikajiterrace.com/accessguide/ 에서 확인"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "파친코 체험 (P-Time 쓰카잔)",
+          "start": "11:50",
+          "end": "12:30",
+          "category": "show",
+          "place": {
+            "name": "파친코 P타임",
+            "latitude": 26.1809003,
+            "longitude": 127.7153955,
+            "applePlaceID": "I9F0293E1440584FB",
+            "address": "〒901-1117, 沖縄県島尻郡南風原町, 字津嘉山1718-2",
+            "addressIsApproximate": false
+          },
+          "notes": "일본 파친코 매장. 18세 미만 입장 불가. 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "세나가지마에서 택시로 약 20분 (차 없이: 노선버스는 배차 간격이 길어 택시 권장)"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "점심: 오키나와 소바 다마야 도요사키점 (そば処 玉家 豊崎店)",
+          "start": "12:45",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "소바도코로 다마야 도요사키점",
+            "latitude": 26.1549155,
+            "longitude": 127.661911,
+            "applePlaceID": "I7B5CBC327B28BBE5",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-1069",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 식권 자판기에서 식권을 산 뒤 자리에 앉습니다",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "택시로 약 15분, 도요사키까지"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "나하 ASHIBINAA 아울렛 (あしびなー)",
+          "start": "13:45",
+          "end": "14:45",
+          "category": "shopping",
+          "place": {
+            "name": "코브라 푸마 골프 아울렛 아시비나",
+            "latitude": 26.1590816,
+            "longitude": 127.6562155,
+            "applePlaceID": "ID2B7B6F4D2760D9",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-188",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00~20:00 무렵이 일반적. 영업시간은 출발 전에 확인하세요. 야외는 햇볕이 강하고 2층에 드러그스토어가 있습니다",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "다마야에서 도보 약 10분"
+          }
+        },
+        {
+          "key": "d3-05",
+          "title": "블루씰 도요사키점 (ブルーシール)",
+          "start": "15:00",
+          "end": "15:20",
+          "category": "dessert",
+          "place": {
+            "name": "블루씰 도요사키",
+            "latitude": 26.1591407,
+            "longitude": 127.6597059,
+            "applePlaceID": "IA99C4322896EB6C9",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-411",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기 추천은 류큐 홍차 맛",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "아울렛에서 맞은편으로 걸어서"
+          }
+        },
+        {
+          "key": "d3-06",
+          "title": "나하 공항 (那覇空港): 체크인, 출국, 기념품",
+          "start": "15:45",
+          "end": "17:45",
+          "category": "airport",
+          "place": {
+            "name": "나하 공항",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "택시로 약 15분 (블루씰에서 공항). 국제선은 출발 2시간 전 도착 권장. 이날 시간은 실제 항공편에 맞춰 조정하세요. 터미널 상점가에 기념품점, 무인양품, 드러그스토어가 있습니다"
+          }
+        }
+      ]
+    }
+  ]
+}

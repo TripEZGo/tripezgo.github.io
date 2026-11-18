@@ -1,0 +1,1300 @@
+{
+  "formatVersion": 3,
+  "templateID": "kr-busan-6d",
+  "revision": 2,
+  "contentLocale": "ko",
+  "title": "부산 6일｜해운대·기장·남포·영도",
+  "subtitle": "해운대 3박, 남포 2박. 기장, 영도, 바다 카페까지",
+  "summary": "김해공항으로 드나드는 부산 6일. 해운대, 기장 바닷가와 복천사, 남포동과 영도를 돕니다. 부산 패스, 교통카드, 버스 탑승 규정, 세금 환급은 안내에 정리했어요. 영도대교 도개 시간은 공식 발표인 토요일 14:00 기준이고, 토요일이 아니면 다리 구경만 해요. 전포 카페거리, 태종대, 광안리는 후보로 넣어 두었습니다.",
+  "destination": "한국 부산",
+  "regionCodes": [
+    "KR"
+  ],
+  "dayCount": 6,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Seoul",
+  "tags": [
+    "둘이서",
+    "첫 방문",
+    "바다",
+    "맛집"
+  ],
+  "images": {
+    "d1-03": "images/kr-busan-6d/d1-03.jpg",
+    "d1-05": "images/kr-busan-6d/d1-05.jpg",
+    "d2-01": "images/kr-busan-6d/d2-01.jpg",
+    "d2-02": "images/kr-busan-6d/d2-02.jpg",
+    "d2-06": "images/kr-busan-6d/d2-06.jpg",
+    "d3-04": "images/kr-busan-6d/d3-04.jpg",
+    "d4-02": "images/kr-busan-6d/d4-02.jpg",
+    "d4-03": "images/kr-busan-6d/d4-03.jpg",
+    "d4-05": "images/kr-busan-6d/d4-05.jpg",
+    "d5-01": "images/kr-busan-6d/d5-01.jpg",
+    "d5-03": "images/kr-busan-6d/d5-03.jpg",
+    "d5-04": "images/kr-busan-6d/d5-04.jpg",
+    "d5-05": "images/kr-busan-6d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 해운대역 주변 (3박 연박, 여행기에서는 베니키아 해운대 호텔에 묵음)",
+      "fromDay": 1,
+      "toDay": 4,
+      "category": "lodging",
+      "place": {
+        "name": "어반스테이 해운대역",
+        "latitude": 35.162884,
+        "longitude": 129.15852,
+        "applePlaceID": "ICE654B0F96298CCB",
+        "address": "대한민국 부산광역시 구남로8번길",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3,
+        4
+      ],
+      "closingDays": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "key": "ad4-04",
+      "title": "숙박: 자갈치역 주변 (2박 연박, 여행기에서는 Hotel Noah에 묵음, 맞은편이 BIFF 광장)",
+      "fromDay": 4,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "자갈치시장",
+        "latitude": 35.0967691,
+        "longitude": 129.0311048,
+        "applePlaceID": "IF5CA9EEE2623435D",
+        "address": "대한민국 부산광역시 Nampodong 자갈치해안로",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        5,
+        6
+      ],
+      "closingDays": [
+        4,
+        5
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "후보: 전포카페거리",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "연운당 - 전포카페거리점",
+        "latitude": 35.155045,
+        "longitude": 129.06445,
+        "applePlaceID": "IC758428305DBEBDB",
+        "address": "대한민국 부산광역시 전포대로209번길",
+        "addressIsApproximate": false
+      },
+      "notes": "가게마다 영업시간이 다르니 출발 전에 확인하세요. 카페와 작은 가게가 모여 있고 지하철 전포역 바로 옆"
+    },
+    {
+      "key": "u-02",
+      "title": "후보: 꽃살집 전포점",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "전포대로209번길",
+        "latitude": 35.15538116159487,
+        "longitude": 129.06383055315845,
+        "address": "南韓釜山廣域市",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 여행기는 CatchTable로 미리 예약했어요. 한우 세트는 가격이 높은 편"
+    },
+    {
+      "key": "u-03",
+      "title": "후보: 태종대",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "태종대",
+        "latitude": 35.05,
+        "longitude": 129.083,
+        "applePlaceID": "IB1F79FC82E37717A",
+        "address": "대한민국 부산광역시",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 부산 패스에 태종대가 있었지만 여행기에서는 가지 않았어요"
+    },
+    {
+      "key": "u-04",
+      "title": "후보: 영주 하늘눈 전망대",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "영주로88번길",
+        "latitude": 35.1140109138675,
+        "longitude": 129.0317555952759,
+        "address": "南韓釜山廣域市",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 부산항과 남포가 내려다보여요"
+    },
+    {
+      "key": "u-05",
+      "title": "후보: 광안리해수욕장",
+      "durationMinutes": 60,
+      "category": "beach",
+      "place": {
+        "name": "광안리해수욕장",
+        "latitude": 35.1541667,
+        "longitude": 129.1205556,
+        "applePlaceID": "IF0825929203AB00B",
+        "address": "대한민국 부산광역시 광안해변로",
+        "addressIsApproximate": true
+      },
+      "notes": "종일 개방, 휴무일 없음. 광안대교 야경을 볼 수 있어요"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "자료 출처와 확인",
+      "paragraphs": [
+        {
+          "text": "원본 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/8ace34a1a3d8/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인 (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "공항 리무진 버스 (2개 노선, 요금, 첫차와 막차, 구입 방법): https://www.busan.go.kr/eng/bsnews01/1691463 (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "부산김해경전철 (요금 1,600~1,800원, 지하철과 30분 이내 환승 무료. 공식 페이지에는 공항에서 사상까지 약 9분이라고 되어 있으나 대부분의 자료에서 약 20~30분이라 맞지 않으니 현장 시간을 따르세요): https://busannavi.net/en/?p=4384 (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "경전철과 2호선으로 해운대까지 (약 55분, 약 2,800원): https://mileasia.com/korea/busan-airport-to-haeundae-beach/ (확인 2026-11-17, 출처는 정리 페이지)",
+          "style": "bullet"
+        },
+        {
+          "text": "송도해상케이블카 (약 9:00~21:00, 티켓 판매는 종료 30분 전까지. 크리스탈 캐빈 왕복 24,000원, 일반 캐빈 왕복 19,000원): https://www.busanaircruise.co.kr (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "스카이라인 루지 부산 (평일 약 10:00~19:00, 주말·공휴일 약 10:00~20:00): https://busan.skylineluge.com/en/visiting-us/faqs (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "영도대교 도개 (토요일 14:00~14:15, 날씨가 나쁘면 취소될 수 있음): https://www.busan.go.kr/eng/bsnews01/1743033 (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "스파랜드 영업시간은 자료마다 다르니(약 9:00부터 22:00 또는 23:00) 공식 사이트를 따르세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못한 항목이니 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "해동용궁사, 부산 엑스더스카이, 스카이캡슐, 해변열차 시간표, 부산타워, 감천동 상점, 롯데백화점 광복점, 부평깡통시장, 복천사, 각 식당의 영업시간과 휴무일.",
+          "style": "bullet"
+        },
+        {
+          "text": "리무진 버스 소요 시간 (공식 미표기), 스카이라인 루지 휴무일.",
+          "style": "bullet"
+        },
+        {
+          "text": "각 명소의 좌표는 추정값입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "바뀐 점과 취사선택",
+          "style": "heading"
+        },
+        {
+          "text": "여행기 1일 차는 저녁 20:05에야 부산에 도착했지만, 이 템플릿은 낮에 도착하는 것으로 바꾸어 일정을 앞당겼습니다. 여행기 8일 차는 10:50 이른 비행기로 돌아와서 템플릿도 맞췄어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 7일 차의 서면(롯데백화점 부산본점, 전포카페거리, 꽃살집)은 6일 차 롯데백화점 광복점과 쇼핑이 겹쳐 광복점과 영도만 남기고 서면은 후보로 돌렸습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 5일 차는 영도대교가 오후에 도개할 예정이었으나 여름에는 밤으로 바뀐 적이 있었어요. 템플릿에는 공식 토요일 14:00으로 적었으며, 토요일이 아니면 다리 구경만 하는 것으로 생각하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "복천사는 여행기에서 도착했을 때 이미 문을 닫아 들어가지 못했기 때문에, 템플릿에서는 오후로 앞당겼습니다. 그래도 먼저 개방 시간을 확인하세요.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 안내",
+      "paragraphs": [
+        {
+          "text": "경로",
+          "style": "heading"
+        },
+        {
+          "text": "이 템플릿은 8일 7박 여행기를 6일로 압축했습니다. 1일 차 공항에서 해운대로, 2일 차 기장과 청사포, 3일 차 스파랜드, 센텀시티, 요트, 4일 차 남포와 송도, 감천동, 부산타워, 5일 차 부평과 영도, 6일 차 공항으로 돌아갑니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기의 서면 일정(전포카페거리, 롯데백화점 부산본점, 꽃살집)과 태종대는 넣지 않았습니다. 전포카페거리와 꽃살집은 후보로 두었어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항과 시내 이동 (김해국제공항 PUS)",
+          "style": "heading"
+        },
+        {
+          "text": "부산김해경전철과 지하철: 공항역까지 걸어서 약 5분, 경전철로 사상역까지 가서 지하철 2호선(초록 노선)으로 갈아타 해운대역까지. 환승 포함 약 55분, 약 2,800원 (여러 정리 페이지, 2026년 자료, 경전철 구간은 약 20~30분이나 자료마다 다름).",
+          "style": "bullet"
+        },
+        {
+          "text": "공항 리무진 버스 1번 (해운대·기장): 광안대교를 지나 해운대해변역에 정차, 60분마다 1대, 성인 9,500원, 환승 할인 없음, 현금 불가·카드만 가능. 공항 출발 첫차 07:10, 막차 21:40. 소요 시간은 공식 미표기이며 여러 정리 페이지에는 약 60~80분이라고 나와 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항 리무진 버스 2번 (서면·부전): 성인 7,500원, 서면역(롯데백화점)에 정차, 공항 출발 첫차 07:00, 막차 22:00.",
+          "style": "bullet"
+        },
+        {
+          "text": "리무진은 Bustago 앱으로 예약하거나 공항 1층 4번 게이트의 발매기에서 구입할 수 있어요. 좌석은 지정되지 않고 만석이면 탈 수 없습니다 (부산시 공지, 2025년 7월).",
+          "style": "bullet"
+        },
+        {
+          "text": "돌아올 때 참고: 자갈치역 출발은 약 85분. 리무진을 타려면 먼저 서면(2호선)에서 갈아타야 해요.",
+          "style": "bullet"
+        },
+        {
+          "text": "부산 패스와 티켓",
+          "style": "heading"
+        },
+        {
+          "text": "여행기에서는 '부산 패스 VISIT BUSAN PASS'로 스카이라인 루지, 스파랜드, 송도 케이블카, 부산타워, 해변열차 등을 교환했어요. 자신의 명소 조합에 맞춰 이득인지 비교해 보세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "스카이캡슐은 패스에 포함되지 않으며 따로 구입해 시간대를 예약해야 해요. 인기가 매우 많아요.",
+          "style": "bullet"
+        },
+        {
+          "text": "요트 투어는 선사에 미리 예약해야 해요. 야간 출항은 1인당 5,000원이 추가되며 (여행기는 2025년 자료), 집합 장소에 30분 일찍 도착하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "탑승 규정과 교통카드",
+          "style": "heading"
+        },
+        {
+          "text": "부산 버스 규정: 20인치보다 큰 캐리어와 손에 든 음료 컵은 탈 수 없어요. 앞문으로 타고 뒷문으로 내려요.",
+          "style": "bullet"
+        },
+        {
+          "text": "교통카드는 T-money 실물 카드나 iPhone 지갑의 T-money를 쓸 수 있어요. 먼저 대만에서 충전하거나 현금을 가져가 기계에서 충전하세요 (기계는 1,000원 단위).",
+          "style": "bullet"
+        },
+        {
+          "text": "한국에서는 대중교통을 Naver Map으로 검색하세요. 한국에서는 구글 지도 내비게이션이 정확하지 않아요.",
+          "style": "bullet"
+        },
+        {
+          "text": "명소 포인트",
+          "style": "heading"
+        },
+        {
+          "text": "해동용궁사: 현판이 있는 입구의 계단은 가파르지만, 오른쪽에 본전까지 곧장 내려가는 완만한 내리막이 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "스카이캡슐과 해변열차는 서로 다른 표예요. 패스로 교환한 해변열차 표는 당일 각 역에서 한 번 탈 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "복천사는 조용한 사찰이라 저녁 이후에는 문을 닫을 수 있으니, 야경은 부산타워에서 보세요. 산길이 가파르고 버스는 산 아래까지만 가요.",
+          "style": "bullet"
+        },
+        {
+          "text": "영도대교 도개: 토요일 14:00 (공식 공지). 여름에 밤으로 바뀐 적이 있으니 출발 전에 최신 공지를 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "부산의 공공장소에서는 공항 활주로 촬영이 금지돼요 (군민 공용 공항).",
+          "style": "bullet"
+        },
+        {
+          "text": "세금 환급",
+          "style": "heading"
+        },
+        {
+          "text": "한국의 세금 환급은 여러 회사의 기계로 나뉘어 있어요. 영수증에 적힌 환급 회사를 확인하고 해당 기계로 가세요. 현장에서 환급받지 않았다면 출국 전에 공항에서 현금으로 환급받아야 해요.",
+          "style": "bullet"
+        },
+        {
+          "text": "입국",
+          "style": "heading"
+        },
+        {
+          "text": "무비자로 입국할 수 있어요. 출발 3일 전부터 온라인 입국 신고서(e-Arrival Card)를 작성할 수 있어요: https://www.e-arrivalcard.go.kr",
+          "style": "bullet"
+        },
+        {
+          "text": "일정 리듬",
+          "style": "heading"
+        },
+        {
+          "text": "1, 6일 차는 공항을 오가야 해서 이동 비중이 높아요.",
+          "style": "bullet"
+        },
+        {
+          "text": "템플릿은 7~8월 여름 여행기를 기준으로 해서 일몰 시간, 도개 시간, 영업시간은 계절에 따라 달라져요.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "여행 개요: 부산 6일 코스",
+      "paragraphs": [
+        {
+          "image": "d1-05"
+        },
+        "김해국제공항으로 들어가 김해국제공항으로 나오고, 앞의 3박은 해운대, 뒤의 2박은 자갈치역 주변의 남포에서 묵습니다. 해운대, 기장, 청사포는 지하철·버스·열차로, 남포와 영도는 지하철과 버스로 이동합니다.",
+        "1일차: 낮에 도착해 경전철과 지하철로 해운대로 이동. 점심은 해운대전통시장, 해운대해수욕장을 걷고, 저녁에는 {@d1-05}, 저녁 식사는 장어구이.",
+        {
+          "image": "d2-02"
+        },
+        "2일차: 오전에는 기장에서 스카이라인 루지, 이어서 {@d2-02}, 오후에는 해변열차로 청사포에 가서 스카이캡슐로 미포로 돌아오고, 저녁은 소금구이.",
+        "3일차: 오전에 신세계 스파랜드 찜질방, 점심은 신세계백화점 센텀시티 푸드코트, 오후에는 백화점, 저녁에는 부산 요트 투어, 밤에는 해운대 구남로 주변에서 야식과 산책.",
+        {
+          "image": "d4-03"
+        },
+        "4일차: 남포로 옮겨서 점심은 홍콩0410, 오후에는 송도해상케이블카와 송도용궁구름다리, 이어서 {@d4-03}, 저녁은 뚜껑 구이, 밤에는 용두산공원과 부산타워.",
+        "5일차: 오전에는 부평깡통시장, 점심과 쇼핑은 롯데백화점 광복점, 오후에는 영도대교 도개를 보고 {@d5-04}과 복천사로. 저녁은 남포 BIFF 광장 주변.",
+        "6일차: 아침 일찍 자갈치역에서 지하철과 경전철로 공항에 가서 체크인하고 출국.",
+        "숙소: 해운대역 주변에서 3박 연박, 4일차부터 자갈치역 주변에서 2박 연박합니다. 맞은편이 BIFF 광장입니다.",
+        "교통 포인트: 공항에서 해운대까지는 부산김해경전철에서 지하철 2호선으로 갈아타며, 환승 포함 약 55분, 약 2,800원입니다. 공항 리무진 버스도 있습니다. 시내는 지하철과 버스가 중심이고 교통카드는 T-money를 씁니다. 버스에는 20인치보다 큰 캐리어를 가지고 탈 수 없습니다. 스카이캡슐은 별도 티켓과 시간대 예약이 필요하고, 요트 투어는 업체에 미리 예약해야 하며, 영도대교 도개 시간은 최신 공지를 확인하세요. 돌아올 때 자갈치역에서 공항까지 약 85분 걸리므로 6일차는 일찍 나서세요. 출발 전에 최신 시간표를 확인하세요.",
+        "이런 분께: 해운대 해변, 기장과 청사포, 남포 옛 도심과 영도를 한 번에 돌고 싶은 분. 매일 지하철, 버스, 도보를 쓰므로 체력이 필요합니다. 여름에는 매우 더우니 야외 명소는 아침저녁에 돕니다."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "HBAF 아몬드",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "용두산공원 입구 근처 전문점의 맛 종류가 가장 다양해요 (여행기 추천)"
+    },
+    {
+      "key": "s-02",
+      "title": "팥 버터 쑥 찹쌀떡 (밀곳)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "부평깡통시장 (밀곳), 집에 가져가면 냉장 보관하고 먹기 전에 상온에 두세요"
+    },
+    {
+      "key": "s-03",
+      "title": "올리브영 스킨케어와 간식",
+      "category": "drugstore",
+      "productType": "skincare",
+      "store": "해운대, BIFF 광장, 서면에 모두 지점이 있고, 일정 금액 이상은 현장에서 세금 환급 가능"
+    },
+    {
+      "key": "s-04",
+      "title": "부기와 부산 기념품",
+      "category": "other",
+      "productType": "other_product",
+      "store": "남포동 부산 기념품 전문점 (빅샵)"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "부산광역시",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "부산광역시",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "부산광역시",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "부산광역시",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "부산광역시",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "부산광역시",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "부산광역시",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "김해국제공항 도착",
+          "start": "12:00",
+          "end": "13:00",
+          "category": "airport",
+          "place": {
+            "name": "김해국제공항",
+            "latitude": 35.1729576,
+            "longitude": 128.9470804,
+            "applePlaceID": "IE960D9814668060",
+            "address": "46718 대한민국 부산광역시 강서구 공항진입로 108",
+            "addressIsApproximate": false
+          },
+          "todos": [
+            {
+              "text": "한국 입국 신고서(e-Arrival Card) 작성하기",
+              "note": "https://www.e-arrivalcard.go.kr 출발 3일 전부터 작성할 수 있어요"
+            }
+          ]
+        },
+        {
+          "key": "d1-02",
+          "title": "점심: 해운대전통시장",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "market",
+          "place": {
+            "name": "해운대시장",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "가게마다 영업시간이 다르니 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "공항에서 걸어서 약 5분이면 부산김해경전철 공항역. 경전철로 사상역까지(약 20~30분, 자료마다 다름) 가서 지하철 2호선으로 갈아타 해운대역까지(약 25분). 먼저 호텔에 짐을 맡기는 시간을 포함해 전체 약 55분, 약 2,800원"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "해운대해수욕장",
+          "start": "15:45",
+          "end": "17:00",
+          "category": "beach",
+          "place": {
+            "name": "해운대해수욕장",
+            "latitude": 35.1588479,
+            "longitude": 129.1614766,
+            "applePlaceID": "IE45CABD32BDF74DE",
+            "address": "대한민국 부산",
+            "addressIsApproximate": true
+          },
+          "notes": "종일 개방, 휴무일 없음",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "해운대전통시장에서 해변까지 걸어서 약 10분"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "소금빵: 자연도 소금빵 해운대점",
+          "start": "17:20",
+          "end": "17:50",
+          "category": "bakery",
+          "place": {
+            "name": "해운대시장",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "해안을 따라 걷거나 미포 방면 버스로 약 20분"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "부산 엑스더스카이",
+          "start": "18:05",
+          "end": "19:15",
+          "category": "viewpoint",
+          "place": {
+            "name": "부산 엑스더스카이",
+            "latitude": 35.159485,
+            "longitude": 129.17017,
+            "applePlaceID": "I651F216A2DD2455D",
+            "address": "48099 대한민국 부산광역시 해운대구 달맞이길 30",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 입장권은 따로 사야 하며, 출발 전에 공식 사이트나 여행 플랫폼에서 예약할 수 있어요",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "소금빵 가게에서 바다 쪽으로 걸어서 약 10분"
+          },
+          "images": [
+            "d1-05"
+          ]
+        },
+        {
+          "key": "d1-06",
+          "title": "저녁: 장어구이 풍천만 해운대점",
+          "start": "19:40",
+          "end": "20:40",
+          "category": "dining",
+          "place": {
+            "name": "해운대시장",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "미포에서 버스나 지하철로 해운대로 돌아오기, 약 25분"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "저녁 식당에서 호텔까지 해운대전통시장을 지나 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "부산광역시",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "기장 스카이라인 루지 (스카이라인 루지 부산)",
+          "start": "10:00",
+          "end": "11:40",
+          "category": "sight",
+          "place": {
+            "name": "스카이라인 루지 부산",
+            "latitude": 35.1941211,
+            "longitude": 129.2191261,
+            "applePlaceID": "IEBA0E08CDCEE6A12",
+            "address": "619902 대한민국 부산광역시 기장군 기장읍 시랑리 산60-1",
+            "addressIsApproximate": false
+          },
+          "notes": "평일 약 10:00~19:00, 주말·공휴일 약 10:00~20:00, 티켓 판매는 종료 30분 전까지 (공식 사이트)",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "해운대 호텔 앞에서 기장 방면 버스로 약 40분 (여행기는 2025년 자료, 노선은 Naver Map으로 확인)"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "해동용궁사",
+          "start": "12:00",
+          "end": "13:00",
+          "category": "temple",
+          "place": {
+            "name": "해동용궁사",
+            "latitude": 35.1884104,
+            "longitude": 129.2230755,
+            "applePlaceID": "I359B3BF00E45933C",
+            "address": "대한민국 부산광역시 갈맷길",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "루지 맞은편에서 걸어서 약 10분, 오르막길. 입구 오른쪽에 본전까지 곧장 내려가는 완만한 내리막이 있어요"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "점심: 송정역 주변",
+          "start": "13:45",
+          "end": "14:25",
+          "category": "dining",
+          "place": {
+            "name": "송정정거장",
+            "latitude": 35.1809,
+            "longitude": 129.2,
+            "applePlaceID": "I11BD5A83E7537B56",
+            "address": "48073 대한민국 부산광역시 해운대구 송정중앙로8번길 60",
+            "addressIsApproximate": false
+          },
+          "notes": "역 옆 편의점과 해수욕장 주변의 작은 가게. 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "용궁사 버스 정류장에서 송정까지 버스, 이후 걸어서 약 10분, 합계 약 40분"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "해변열차: 송정→청사포",
+          "start": "14:40",
+          "end": "15:10",
+          "category": "train",
+          "place": {
+            "name": "송정해수욕장",
+            "latitude": 35.17915,
+            "longitude": 129.20024,
+            "applePlaceID": "IFCEC0F6807C4E51D",
+            "address": "대한민국 부산광역시 송정해변로",
+            "addressIsApproximate": true
+          },
+          "notes": "차편별 지정석이니 시간표는 출발 전에 확인하세요. 표는 당일 각 역에서 한 번 탈 수 있어요",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "역 승강장에서 표를 확인하고 기다려요. 일찍 줄을 서면 좋은 자리를 잡기 쉬워요"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "허니버터 토스트: 디아트 커피 청사포",
+          "start": "15:25",
+          "end": "16:00",
+          "category": "cafe",
+          "place": {
+            "name": "디아트",
+            "latitude": 35.16074,
+            "longitude": 129.1919,
+            "applePlaceID": "I53A7026903DD571E",
+            "address": "대한민국 부산광역시 청사포로128번길",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "청사포역에서 걸어서 약 5분. 근처 식당에서 점심도 먹을 수 있어요"
+          }
+        },
+        {
+          "key": "d2-06",
+          "title": "해운대 블루라인파크 스카이캡슐: 청사포→미포",
+          "start": "16:15",
+          "end": "17:00",
+          "category": "sight",
+          "place": {
+            "name": "해운대블루라인파크",
+            "latitude": 35.1612314,
+            "longitude": 129.1913974,
+            "applePlaceID": "I591A9DF0E6187835",
+            "address": "48116 대한민국 부산광역시 해운대구 청사포로 116",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간과 시간대는 출발 전에 확인하세요. 미리 표를 사고 시간대를 예약해야 해요",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "청사포역 승강장에서 2층으로 가는 계단을 올라가 표를 보여 주고 번호표를 받아 줄을 서요"
+          },
+          "todos": [
+            {
+              "text": "해운대 블루라인파크 스카이캡슐 표를 사고 시간대 예약하기",
+              "note": "인기가 매우 많으니 출발 전에 예약하세요. 청사포 출발 시간대인지 확인"
+            }
+          ],
+          "images": [
+            "d2-06"
+          ]
+        },
+        {
+          "key": "d2-07",
+          "title": "저녁: 맛찬들왕소금구이 해운대점",
+          "start": "17:45",
+          "end": "19:00",
+          "category": "dining",
+          "place": {
+            "name": "해운대시장",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 입구의 기계로 대기 등록을 할 수 있어요",
+          "leg": {
+            "fromKey": "d2-06",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "미포에서 버스로 해운대로 돌아오기, 약 15분. 일찍 대기 번호를 뽑는 것을 권해요"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "저녁 식당에서 호텔까지 걸어서 돌아옴, 가는 길에 해운대 거리를 둘러볼 수 있어요"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "부산광역시",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "신세계 스파랜드 찜질방",
+          "start": "10:00",
+          "end": "13:30",
+          "category": "sight",
+          "place": {
+            "name": "신세계 센텀시티 스파랜드",
+            "latitude": 35.168285,
+            "longitude": 129.12898,
+            "applePlaceID": "I5647C11FC6C138EC",
+            "address": "48058 대한민국 부산광역시 해운대구 센텀남대로 35",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "해운대에서 지하철 2호선으로 센텀시티역까지, 걸어서 약 5분"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "점심: 신세계백화점 센텀시티 푸드코트",
+          "start": "13:45",
+          "end": "14:45",
+          "category": "dining",
+          "place": {
+            "name": "신세계 센텀시티 스파랜드",
+            "latitude": 35.168285,
+            "longitude": 129.12898,
+            "applePlaceID": "I5647C11FC6C138EC",
+            "address": "48058 대한민국 부산광역시 해운대구 센텀남대로 35",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "같은 건물 안에서 이동"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "신세계백화점 센텀시티",
+          "start": "15:00",
+          "end": "17:00",
+          "category": "shopping",
+          "place": {
+            "name": "신세계 센텀시티 스파랜드",
+            "latitude": 35.168285,
+            "longitude": 129.12898,
+            "applePlaceID": "I5647C11FC6C138EC",
+            "address": "48058 대한민국 부산광역시 해운대구 센텀남대로 35",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 기네스 인증 세계 최대 백화점",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "같은 건물 안에서 이동"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "부산 요트 투어 Y Holic (Yacht Holic)",
+          "start": "17:45",
+          "end": "19:30",
+          "category": "sight",
+          "place": {
+            "name": "수영만요트경기장",
+            "latitude": 35.159416,
+            "longitude": 129.13898,
+            "applePlaceID": "IFBDB4F956D3132C8",
+            "address": "대한민국 부산광역시",
+            "addressIsApproximate": true
+          },
+          "notes": "야간 출항은 약 18:30. 영업시간과 시간대는 선사에 확인하세요",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "센텀시티에서 지하철 2호선으로 동백역까지, 이후 걸어서 약 15분이면 선착장. 집합 장소에 30분 일찍 도착해야 해요"
+          },
+          "todos": [
+            {
+              "text": "부산 요트 투어 예약하기 (Y Holic 또는 다른 선사)",
+              "note": "선사에 먼저 예약해야 해요. 야간 출항은 추가 요금이 있고, 집합 장소에 30분 일찍 도착하세요"
+            }
+          ],
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "야식과 산책: 해운대 구남로 주변",
+          "start": "20:00",
+          "end": "21:00",
+          "category": "dining",
+          "place": {
+            "name": "개미집",
+            "latitude": 35.16139,
+            "longitude": 129.16083,
+            "applePlaceID": "I89636C1EDFCC9761",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "가게마다 영업시간이 다르니 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "선착장에서 버스로 해운대로 돌아오기, 약 25분"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "해운대 거리에서 호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "부산광역시",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "점심: 홍콩0410 남포1호점",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "dining",
+          "place": {
+            "name": "홍콩반점0410",
+            "latitude": 35.09886,
+            "longitude": 129.02968,
+            "applePlaceID": "IBFE99096445E067B",
+            "address": "대한민국 부산광역시 Nampodong 남포길",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "해운대역에서 2호선으로 서면까지 가서 1호선으로 갈아타 자갈치역까지 약 60분. 먼저 남포 호텔에 짐을 맡기면 약 75분"
+          }
+        },
+        {
+          "key": "d4-02",
+          "title": "송도해상케이블카와 송도용궁구름다리",
+          "start": "12:55",
+          "end": "14:55",
+          "category": "sight",
+          "place": {
+            "name": "송도해상케이블카",
+            "latitude": 35.076576,
+            "longitude": 129.023513,
+            "applePlaceID": "IF229B75B3ADDB44A",
+            "address": "49269 대한민국 부산광역시 서구 송도해변로 171",
+            "addressIsApproximate": false
+          },
+          "notes": "약 9:00~21:00, 티켓 판매는 종료 30분 전까지, 날씨가 나쁘면 일찍 운행을 멈출 수 있어요 (공식, 2026년 11월 공지). 용궁구름다리 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "남포동에서 버스로 송도 케이블카 정류장까지 간 뒤 걸어서 약 10분, 합계 약 40분"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "감천문화마을",
+          "start": "15:55",
+          "end": "17:20",
+          "category": "sight",
+          "place": {
+            "name": "감천문화마을",
+            "latitude": 35.0976014,
+            "longitude": 129.0089655,
+            "applePlaceID": "I8310C55F2CE28F79",
+            "address": "대한민국 부산광역시 감내2로",
+            "addressIsApproximate": false
+          },
+          "notes": "마을은 자유롭게 걸을 수 있어요. 가게 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "송도에서 버스나 마을버스로 갈아타 감천동까지 약 55분. 마을버스는 자주 오지만 차 안이 붐벼요"
+          },
+          "images": [
+            "d4-03"
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "저녁: 목구멍 남포점 뚜껑 구이",
+          "start": "18:05",
+          "end": "19:05",
+          "category": "dining",
+          "place": {
+            "name": "남포 오션투헤븐 호텔 & 스파",
+            "latitude": 35.09663,
+            "longitude": 129.026645,
+            "applePlaceID": "I18AF8BE9E1EDECB",
+            "address": "대한민국 부산광역시 Nampodong 자갈치로",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 고기는 최소 3인분부터 주문",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "감천동에서 버스로 남포로 돌아오기, 약 40분"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "용두산공원과 부산타워",
+          "start": "19:25",
+          "end": "20:40",
+          "category": "viewpoint",
+          "place": {
+            "name": "부산타워",
+            "latitude": 35.1012275,
+            "longitude": 129.0324283,
+            "applePlaceID": "ID3C417E53F9FD110",
+            "address": "대한민국 부산광역시 용두산길",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 야경과 일몰 시간은 계절에 따라 달라져요",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "남포에서 걸어서 약 20분. 내비게이션에 '용두산공원 입구'를 찍으면 에스컬레이터로 올라갈 수 있어요"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "부산타워에서 걸어 내려와 BIFF 광장을 지나 호텔로"
+          },
+          "images": [
+            "d4-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "부산광역시",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "부평깡통시장",
+          "start": "09:45",
+          "end": "11:15",
+          "category": "market",
+          "place": {
+            "name": "부평깡통시장",
+            "latitude": 35.101433,
+            "longitude": 129.02588,
+            "applePlaceID": "ICB481987C8311691",
+            "address": "48977 대한민국 부산광역시 중구 중구로47번길 31-13",
+            "addressIsApproximate": false
+          },
+          "notes": "가게마다 영업시간이 다르니 출발 전에 확인하세요",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "자갈치역 주변에서 걸어서 약 15분"
+          },
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "점심과 쇼핑: 롯데백화점 광복점",
+          "start": "11:40",
+          "end": "13:10",
+          "category": "shopping",
+          "place": {
+            "name": "롯데백화점 광복점",
+            "latitude": 35.098286,
+            "longitude": 129.03665,
+            "applePlaceID": "IB027D4897C932119",
+            "address": "대한민국 부산광역시 중앙대로",
+            "addressIsApproximate": true
+          },
+          "notes": "약 10:30부터 영업, 휴무일은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "부평깡통시장에서 걸어서 약 20분"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "영도대교 도개",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "sight",
+          "place": {
+            "name": "영도대교",
+            "latitude": 35.0955202,
+            "longitude": 129.0364731,
+            "address": "南韓釜山廣域市",
+            "addressIsApproximate": true
+          },
+          "notes": "토요일 14:00~14:15 도개 (공식 공지), 날씨가 나쁘면 취소될 수 있어요. 다른 날에는 다리 위를 자유롭게 걸을 수 있어요",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "롯데백화점 광복점에서 걸어서 약 10분"
+          },
+          "todos": [
+            {
+              "text": "영도대교 도개 공지 확인하기",
+              "note": "https://www.busan.go.kr/eng/bsnews01/1743033 토요일 14:00, 날씨가 나쁘면 취소될 수 있어요"
+            }
+          ],
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "흰여울문화마을",
+          "start": "15:00",
+          "end": "16:30",
+          "category": "sight",
+          "place": {
+            "name": "흰여울문화마을",
+            "latitude": 35.078556,
+            "longitude": 129.04497,
+            "applePlaceID": "I7862CB99E6223017",
+            "address": "대한민국 부산광역시 절영로",
+            "addressIsApproximate": true
+          },
+          "notes": "마을과 해안 산책로는 자유롭게 걸을 수 있어요. 가게 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "영도대교에서 버스로 흰여울까지, 약 25분"
+          },
+          "images": [
+            "d5-04"
+          ]
+        },
+        {
+          "key": "d5-05",
+          "title": "복천사 (영도)",
+          "start": "17:05",
+          "end": "17:50",
+          "category": "temple",
+          "place": {
+            "name": "영도 해수탕",
+            "latitude": 35.083714,
+            "longitude": 129.03828,
+            "applePlaceID": "I33A22280D2B01BDB",
+            "address": "대한민국 부산광역시 남항남로",
+            "addressIsApproximate": true
+          },
+          "notes": "저녁 이후에는 들어가기만 하고 나올 수 없으며, 문 닫는 시간이 지나면 다시 열지 않아요 (여행기는 2025년 자료). 반드시 해가 지기 전에 도착하고 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "버스로 한 정거장 가서 신선초등학교에서 내려 오르막길을 걸어 약 20분, 전체 약 30분 (여행기는 2025년 자료)"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "저녁: 남포 BIFF 광장 주변",
+          "start": "18:45",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "BIFF 광장",
+            "latitude": 35.098785,
+            "longitude": 129.029,
+            "applePlaceID": "IB69D243EB6734EF",
+            "address": "48953 대한민국 부산광역시 중구 구덕로 44",
+            "addressIsApproximate": false
+          },
+          "notes": "가게마다 영업시간이 다르니 출발 전에 확인하세요. 여행기 추천은 BHC 치킨 남포점과 막걸리",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "복천사 아래에서 버스로 남포로 돌아오기, 약 40분"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "BIFF 광장에서 호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "부산광역시",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "김해국제공항 체크인 및 출국",
+          "start": "08:30",
+          "end": "10:30",
+          "category": "airport",
+          "place": {
+            "name": "김해국제공항",
+            "latitude": 35.1729576,
+            "longitude": 128.9470804,
+            "applePlaceID": "IE960D9814668060",
+            "address": "46718 대한민국 부산광역시 강서구 공항진입로 108",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "자갈치역에서 1호선으로 서면까지 가서 2호선으로 갈아타 사상역, 다시 부산김해경전철로 공항역까지 약 85분, 약 2,800원. 07:00 전에 출발하길 권해요. 대안: 서면(롯데백화점)에서 공항 리무진 2번(약 7,500원)을 타는 방법, 첫차 06:00부터 60분 간격"
+          },
+          "todos": [
+            {
+              "text": "Bustago에서 공항 리무진 버스 예약하기 (선택)",
+              "note": "좌석은 지정되지 않고 만석이면 탈 수 없어요. 지하철과 경전철을 타는 방법도 있어요"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

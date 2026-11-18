@@ -1,0 +1,805 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kumamoto-aso-3d",
+  "revision": 2,
+  "contentLocale": "zh-Hant-TW",
+  "title": "熊本阿蘇 3 日｜熊本城・阿蘇・水前寺",
+  "subtitle": "熊本城、阿蘇一日遊與水前寺，從阿蘇熊本機場進出",
+  "summary": "三天熊本：熊本城、水前寺成趣園與市區美食，中間一天參加阿蘇一日遊，須知附自己搭大眾運輸的替代方式。中岳火口依警戒等級可能無法靠近，一日遊當天行程也可能調整。住宿寫在通町筋、下通周邊，方便搭路面電車。",
+  "destination": "日本 熊本・阿蘇",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "雙人",
+    "初訪",
+    "一日遊",
+    "自然"
+  ],
+  "todos": [
+    {
+      "text": "登錄 Visit Japan Web（入境審查與海關申報）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 機票與訂房完成後即可填寫"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kumamoto-aso-3d/d1-03.jpg",
+    "d2-02": "images/jp-kumamoto-aso-3d/d2-02.jpg",
+    "d2-03": "images/jp-kumamoto-aso-3d/d2-03.jpg",
+    "d2-04": "images/jp-kumamoto-aso-3d/d2-04.jpg",
+    "d3-01": "images/jp-kumamoto-aso-3d/d3-01.jpg",
+    "d3-04": "images/jp-kumamoto-aso-3d/d3-04.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：熊本市中心（通町筋・下通周邊）",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "通町筋",
+        "latitude": 32.8029362,
+        "longitude": 130.7111486,
+        "applePlaceID": "IBE2A5C0EDC247D00",
+        "address": "熊本県熊本市中央区, 上通町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "備選：熊本市役所 14 樓展望廊（熊本市役所）",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "熊本市役所",
+        "latitude": 32.8032049,
+        "longitude": 130.7080236,
+        "applePlaceID": "IE798B2B4DB566952",
+        "address": "〒860-8601",
+        "addressIsApproximate": true
+      },
+      "notes": "營業時間請出發前確認；遊記說可免費鳥瞰熊本城，新年假期休"
+    },
+    {
+      "key": "u-02",
+      "title": "備選：加藤神社（加藤神社）",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "加藤神社",
+        "latitude": 32.807117,
+        "longitude": 130.7053761,
+        "applePlaceID": "I831099B0902FAA97",
+        "address": "〒860-0002, 熊本県熊本市中央区, 本丸2-1",
+        "addressIsApproximate": false
+      },
+      "notes": "營業時間請出發前確認；遊記說從熊本城走約 20 分、有坡道，可從後方看熊本城"
+    },
+    {
+      "key": "u-03",
+      "title": "備選：魯夫銅像（ルフィ像）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "熊本縣廳",
+        "latitude": 32.7898029,
+        "longitude": 130.7415739,
+        "applePlaceID": "I9D3D945CF9ABD15A",
+        "address": "〒862-0950, 熊本県熊本市中央区, 水前寺6丁目18-1",
+        "addressIsApproximate": false
+      },
+      "notes": "營業時間請出發前確認；位於熊本縣廳前"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "資料來源與查證",
+      "paragraphs": [
+        {
+          "text": "來源遊記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "查證（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "阿蘇熊本機場到市區的巴士與計程車（時間、車資）：https://www.kumamoto-airport.co.jp/en/access/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "利木津巴士班數與時刻調整公告：https://www.sankobus.jp/bus/ap-limousine/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本城（9:00–17:00、12/29 休、800 日圓、三館 1,100 日圓）：https://castle.kumamoto-guide.jp/en/info/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "水前寺成趣園（8:30–17:00、無休、500 日圓）：https://suizenji.or.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本熊廣場（10:00–19:00、2026/11 表演月曆）：https://kumamon-land.jp/squares/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "阿蘇中岳火口（警戒等級 2、夏季開放時間 8:30–18:00）：https://aso-volcano.jp/ 、https://www.aso-visitorcenter.com/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "阿蘇神社（御札所 9:00–17:00、樓門修復完成）：https://www.asojinja.or.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "櫻町購物中心（商店 10:00–20:00、餐廳 10:00–22:00）：https://www.sakuramachi-kumamoto.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "阿蘇山上線、阿蘇登山線、阿蘇山火口接駁的路線名稱：https://www.sankobus.jp/bus/aso/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "未能從官方確認，請出發前確認",
+          "style": "heading"
+        },
+        {
+          "text": "阿蘇中岳火口冬季開放時間與當日是否可進入、一日遊行程細節與價格。",
+          "style": "bullet"
+        },
+        {
+          "text": "鶴屋百貨、勝烈亭 新市街本店、熊本站 AMU PLAZA 熊本、阿蘇神社境內開放時間、草千里餐廳、熊本市役所展望廊、加藤神社、魯夫銅像的營業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "利木津巴士各班實際時刻與車資（官網車資頁無法讀取，採機場官網 2026 年資料）。",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本縣內巴士與電車是否收交通 IC 卡：遊記 2024-11 更新為只收現金，未另查官方。",
+          "style": "bullet"
+        },
+        {
+          "text": "已變動與取捨",
+          "style": "heading"
+        },
+        {
+          "text": "本範本只取遊記的熊本與阿蘇段（D5 後半到 D10），福岡段已有另一份範本。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記原本第 1 天搭 JR 從福岡來，這份改成從阿蘇熊本機場進出；遊記共 5 天熊本，壓縮成 3 天。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記作者自行搭巴士與 JR 上阿蘇，這份依規則改為參加一日遊，並在須知附上大眾運輸替代方式。",
+          "style": "bullet"
+        },
+        {
+          "text": "阿蘇中岳目前依警戒等級可能無法到火口邊；一日遊的當天行程也可能調整。",
+          "style": "bullet"
+        },
+        {
+          "text": "一日遊與機場往返的交通時間佔比會超過一般 30%，這是阿蘇距離使然。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記資料",
+          "style": "heading"
+        },
+        {
+          "text": "住宿只寫區域：遊記作者住水前寺的飯店，但評價不佳，所以改寫為通町筋・下通周邊，方便搭路面電車去熊本城。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出發前須知",
+      "paragraphs": [
+        {
+          "text": "入境與網路",
+          "style": "heading"
+        },
+        {
+          "text": "出發前先在 Visit Japan Web 登錄入境審查與海關申報：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "網路可用實體 SIM 卡或 eSIM。",
+          "style": "bullet"
+        },
+        {
+          "text": "機場到市區",
+          "style": "heading"
+        },
+        {
+          "text": "阿蘇熊本機場（阿蘇くまもと空港）搭利木津巴士（九州產交）：櫻町巴士總站特別快速約 45 分、一般班約 50 分；熊本站約 60–65 分；水前寺公園前約 35 分。櫻町與熊本站車資約 1,400 日圓，水前寺公園前約 1,000 日圓。",
+          "style": "bullet"
+        },
+        {
+          "text": "官網顯示每日約 31 班特別快速、41 班熊本站線，並公告 2026/11/01 起時刻調整，請出發前查最新時刻。",
+          "style": "bullet"
+        },
+        {
+          "text": "計程車到熊本站約 45 分、約 6,100 日圓；到櫻町約 40 分、約 5,700 日圓（官網估算，不含過路費）。",
+          "style": "bullet"
+        },
+        {
+          "text": "巴士可能延誤；遊記 2023 年記載實際晚到近 10 分鐘。",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本市區交通",
+          "style": "heading"
+        },
+        {
+          "text": "市區以路面電車與巴士為主。遊記 2024 年更新提到熊本縣內多家巴士與熊本電鐵已不再收 Suica 等交通 IC 卡，請準備日幣現金，並先確認現況。",
+          "style": "bullet"
+        },
+        {
+          "text": "巴士多為後門上車、前門下車，抽整理券、下車依號碼付費；公車不找零，可在車上換零錢。",
+          "style": "bullet"
+        },
+        {
+          "text": "阿蘇一日遊",
+          "style": "heading"
+        },
+        {
+          "text": "多家旅行社都有開這條一日遊（熊本出發，含阿蘇中岳、草千里、阿蘇神社一帶），出發前自行比較行程、集合點與是否含午餐。",
+          "style": "bullet"
+        },
+        {
+          "text": "阿蘇中岳火山口依火山警戒等級限制進入；官網 2026/09 的警戒為 2 級，火口周邊 1 公里內禁止進入，是否能到火口邊請出發前看 https://aso-volcano.jp/ ，不能去時一日遊通常改在遠處眺望。",
+          "style": "bullet"
+        },
+        {
+          "text": "自己搭大眾運輸的替代方式：從熊本交通中心（櫻町巴士總站）搭九州產交「阿蘇山上線」到阿蘇山上轉運站，再換「阿蘇山火口接駁」到火口；或搭 JR 豐肥本線到阿蘇站，再轉「阿蘇登山線」巴士上山。班次、車資請查九州產交官網 https://www.sankobus.jp/ 。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記作者自行搭乘：阿蘇站→山上約 40 分、草千里在路上；回程搭 JR 區間車回熊本約 1 小時 45 分，班次少，錯過可能要等一小時。阿蘇是小站，JR 站內可能沒有電子支付。",
+          "style": "bullet"
+        },
+        {
+          "text": "預約與時間",
+          "style": "heading"
+        },
+        {
+          "text": "一日遊建議出發前數天預約。",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本熊廣場表演時刻每月不同，週二無表演，出發前看官網月曆再決定第 3 天的順序：https://kumamon-land.jp/squares/",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本城門票可在櫻之馬場城彩苑先買，避開天守閣入口人潮；天守閣不能帶行李箱入內。",
+          "style": "bullet"
+        },
+        {
+          "text": "其他",
+          "style": "heading"
+        },
+        {
+          "text": "日幣現金要備足：部分小店、巴士與小車站不收刷卡。",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本城的部分建築仍在修復中；天守閣已修復開放。",
+          "style": "bullet"
+        },
+        {
+          "text": "第 3 天最後的機場時間依實際航班調整；遊記 2023 年記載國際線櫃檯約起飛前 2 小時才開放，3 樓餐廳在安檢之後、出境之前。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "旅程總覽：熊本・阿蘇 3 日怎麼走",
+      "paragraphs": [
+        {
+          "image": "d1-03"
+        },
+        "從阿蘇熊本機場進出，三晚都住熊本市中心，市區靠路面電車與步行；阿蘇不用自己開車，直接參加一日遊。",
+        "第 1 天：中午抵達機場，搭利木津巴士進市區，午餐吃下通周邊的熊本拉麵，下午逛 {@d1-03}，傍晚去鶴屋百貨買熊本熊周邊，晚上在下通的居酒屋吃馬肉與辛子蓮藕。",
+        {
+          "image": "d2-02"
+        },
+        "第 2 天：參加一日遊上阿蘇，看阿蘇中岳火山口、草千里濱，再到 {@d2-04} 與門前商店街，回到熊本站後在 AMU PLAZA 吃晚餐。",
+        {
+          "image": "d3-01"
+        },
+        "第 3 天：早上逛 {@d3-01}，接著到熊本熊廣場看舞台表演，中午吃勝烈亭的炸豬排，下午在櫻町購物中心的屋頂庭園休息，傍晚搭巴士回機場。",
+        "住宿：三晚都在熊本市中心的通町筋・下通周邊，搭路面電車去熊本城很方便，晚上吃飯逛街也近。",
+        "交通重點：機場與市區之間搭利木津巴士，約 35 到 65 分鐘，依下車站而定；市區以路面電車與巴士為主，部分巴士不收交通 IC 卡，請備足日幣現金；阿蘇一日遊建議出發前數天預約，阿蘇中岳火山口能不能走到火口邊要看當天的火山警戒。出發前請自己再查一次最新時刻表。",
+        "適合誰：想用三天把熊本城、熊本熊與阿蘇火山一次逛完，又不想自己開車的人。一個人或兩三個人都適合，市區步行不多，阿蘇當天坐車時間長。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "熊本熊周邊（くまモングッズ）",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "櫻町購物中心 2 樓、鶴屋百貨周邊店、熊本縣物產館"
+    },
+    {
+      "key": "s-02",
+      "title": "熊本熊大福",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "櫻町購物中心"
+    },
+    {
+      "key": "s-03",
+      "title": "熊本產草莓酒",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "熊本站 AMU PLAZA 熊本"
+    },
+    {
+      "key": "s-04",
+      "title": "熊本地酒",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "鶴屋百貨地下食品街"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "熊本市",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "熊本市",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "熊本市",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "熊本市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵達阿蘇熊本機場（阿蘇くまもと空港）",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "airport",
+          "place": {
+            "name": "熊本機場(阿蘇熊本機場)",
+            "latitude": 32.8346902,
+            "longitude": 130.8590123,
+            "applePlaceID": "I2B58A48AF4EC0EEA",
+            "address": "〒861-2204, 熊本県上益城郡益城町, 小谷1802-2",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "午餐：下通周邊（熊本拉麵）",
+          "start": "13:20",
+          "end": "14:20",
+          "category": "dining",
+          "place": {
+            "name": "下通商店街周邊拉麵店",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "機場利木津巴士（特別快速）到櫻町巴士總站約 45 分、一般班約 50 分，約 1,400 日圓；再步行約 10 分到下通"
+          },
+          "todos": [
+            {
+              "text": "查機場利木津巴士最新時刻",
+              "note": "https://www.sankobus.jp/bus/ap-limousine/ 2026/11/01 起時刻調整"
+            }
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "熊本城（熊本城）：天守閣與櫻之馬場城彩苑",
+          "start": "15:10",
+          "end": "16:50",
+          "category": "castle",
+          "place": {
+            "name": "熊本城",
+            "latitude": 32.8061302,
+            "longitude": 130.7058477,
+            "applePlaceID": "IB6C8BF152D7893CA",
+            "address": "〒860-0002, 熊本県熊本市中央区, 本丸1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–17:00（公園最後入園 16:00、天守閣最後入場 16:30）；12/29 休",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "步行約 20 分，或搭路面電車到熊本城・市役所前站再步行；城彩苑可先買票，避開天守閣入口人潮"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "鶴屋百貨（鶴屋百貨店）：熊本熊周邊與地下食品街",
+          "start": "17:30",
+          "end": "18:30",
+          "category": "shopping",
+          "place": {
+            "name": "鶴屋百貨公司",
+            "latitude": 32.8023754,
+            "longitude": 130.7110398,
+            "applePlaceID": "I996FD5224AC14B45",
+            "address": "〒860-0808, 熊本県熊本市中央区, 手取本町6-1",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "路面電車在熊本城・市役所前站上車到通町筋站，約 10 分，含步行與候車"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "晚餐：下通周邊居酒屋（熊本馬肉、辛子蓮根）",
+          "start": "19:00",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "下通周邊居酒屋",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分；馬肉為熊本名物，不敢吃可改點其他料理"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "熊本市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "參加一日遊：集合出發（熊本→阿蘇）",
+          "start": "09:00",
+          "end": "09:15",
+          "category": "transport",
+          "place": {
+            "name": "一日遊集合地點（依旅行社安排）",
+            "latitude": 32.7887502,
+            "longitude": 130.6881132,
+            "address": "熊本県熊本市西区春日3丁目15",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "搭路面電車或步行到集合地點，集合點依所選行程而定"
+          },
+          "todos": [
+            {
+              "text": "預約阿蘇一日遊",
+              "note": "多家旅行社都有開；比較集合點與是否含午餐，建議數天前預約"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "一日遊：阿蘇中岳火山口（阿蘇中岳火口）",
+          "start": "10:45",
+          "end": "11:45",
+          "category": "mountain",
+          "place": {
+            "name": "阿蘇中岳火山口",
+            "latitude": 32.8829803,
+            "longitude": 131.0837699,
+            "applePlaceID": "IAB4F7F79B7CD452A",
+            "address": "〒869-2225, 熊本県阿蘇市, 黒川808-5",
+            "addressIsApproximate": false
+          },
+          "notes": "夏季（3/20–10/31）8:30–18:00，閘門 17:30 關；冬季時段請出發前確認。火山警戒與氣體濃度高時火口周邊會限制進入",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "driving",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "遊覽車，熊本到阿蘇山上約 1 小時 15 分；會先經過草千里再到山上"
+          },
+          "todos": [
+            {
+              "text": "出發前查阿蘇中岳火口是否可進入",
+              "note": "https://aso-volcano.jp/ 火山警戒與氣體濃度會影響火口周邊開放"
+            }
+          ],
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "一日遊：草千里濱（草千里ヶ浜）與午餐",
+          "start": "12:10",
+          "end": "13:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "草千里濱",
+            "latitude": 32.8830677,
+            "longitude": 131.0527771,
+            "applePlaceID": "I32739B7CA93978E0",
+            "address": "〒869-1404，熊本県阿蘇市，草千里ヶ浜",
+            "addressIsApproximate": true
+          },
+          "notes": "全天開放；午餐地點依行程安排，營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "遊覽車，約 10 分；高原草原有騎馬體驗，可自費"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "一日遊：阿蘇神社（阿蘇神社）與門前商店街",
+          "start": "14:15",
+          "end": "15:45",
+          "category": "temple",
+          "place": {
+            "name": "阿蘇神社",
+            "latitude": 32.947986,
+            "longitude": 131.116113,
+            "applePlaceID": "IA26CD6FD0F19EA9C",
+            "address": "〒869-2612, 熊本県阿蘇市, 一の宮町宮地3083-1",
+            "addressIsApproximate": false
+          },
+          "notes": "境內開放時間請出發前確認；御札所 9:00–17:00",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "遊覽車，約 30 分；參拜後可逛表參道小吃"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "熊本站 AMU PLAZA 熊本（アミュプラザくまもと）晚餐與肥後市場",
+          "start": "17:45",
+          "end": "19:45",
+          "category": "shopping",
+          "place": {
+            "name": "Amu Plaza熊本",
+            "latitude": 32.7887053,
+            "longitude": 130.6888303,
+            "applePlaceID": "IFC0031666C9C8550",
+            "address": "〒860-0047",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "driving",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "遊覽車返回熊本約 1 小時 25 分，多在熊本站周邊下車；一日遊結束後步行到 AMU PLAZA"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "熊本市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "水前寺成趣園（水前寺成趣園）：出水神社",
+          "start": "09:00",
+          "end": "10:15",
+          "category": "park",
+          "place": {
+            "name": "水前寺成趣園",
+            "latitude": 32.7908282,
+            "longitude": 130.7351375,
+            "applePlaceID": "I1F8F63642EEF0314",
+            "address": "〒862-0956, 熊本県熊本市, 水前寺公園8-1",
+            "addressIsApproximate": false
+          },
+          "notes": "8:30–17:00（最後入園 16:30），全年無休；入園 500 日圓",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "路面電車到水前寺公園站，約 20–25 分，再步行約 5 分"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "熊本熊廣場（くまモンスクエア）：舞台表演",
+          "start": "11:15",
+          "end": "12:15",
+          "category": "show",
+          "place": {
+            "name": "熊本熊之家",
+            "latitude": 32.8019121,
+            "longitude": 130.7124031,
+            "applePlaceID": "IEF206FB2463DBE22",
+            "address": "〒860-0808, 熊本県熊本市中央区, 手取本町8-2, テトリアくまもとビル 1階",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00–19:00；表演時刻依官網月曆，週末多為 11:30、平日多為 14:00，週二無表演（2026/11 官網資料）",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "路面電車水前寺公園站到辛島町或水道町，再步行；鶴屋百貨隔壁"
+          },
+          "todos": [
+            {
+              "text": "查熊本熊廣場表演時刻（週二無表演）",
+              "note": "官網月曆 https://kumamon-land.jp/squares/ 依表演時間調整第 3 天順序"
+            }
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "午餐：勝烈亭 新市街本店（勝烈亭 新市街本店）炸豬排",
+          "start": "12:40",
+          "end": "13:40",
+          "category": "dining",
+          "place": {
+            "name": "勝亭新街總店",
+            "latitude": 32.7986401,
+            "longitude": 130.7058016,
+            "applePlaceID": "I222583EFB7CCE9DC",
+            "address": "〒860-0803, 熊本県熊本市中央区, 新市街8-18",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；遊記記載飯、茶、湯、高麗菜可續",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分，過下通商店街"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "櫻町購物中心（サクラマチクマモト）：屋頂庭園與熊本熊周邊",
+          "start": "14:05",
+          "end": "15:50",
+          "category": "shopping",
+          "place": {
+            "name": "Sakuramachi Kumamoto",
+            "latitude": 32.8002618,
+            "longitude": 130.703246,
+            "applePlaceID": "I27890492F38FBECC",
+            "address": "〒860-0805, 熊本県熊本市中央区, 桜町3-10",
+            "addressIsApproximate": false
+          },
+          "notes": "商店 10:00–20:00、餐廳 10:00–22:00；各店不同",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分；2 樓有熊本熊周邊，旁邊是熊本縣物產館"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "阿蘇熊本機場出境（阿蘇くまもと空港）",
+          "start": "16:40",
+          "end": "18:40",
+          "category": "airport",
+          "place": {
+            "name": "熊本機場(阿蘇熊本機場)",
+            "latitude": 32.8346902,
+            "longitude": 130.8590123,
+            "applePlaceID": "I2B58A48AF4EC0EEA",
+            "address": "〒861-2204, 熊本県上益城郡益城町, 小谷1802-2",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "機場利木津巴士 櫻町巴士總站→機場，特別快速約 45 分、一般班約 50 分，約 1,400 日圓；請依實際航班調整，預留報到與安檢時間"
+          }
+        }
+      ]
+    }
+  ]
+}

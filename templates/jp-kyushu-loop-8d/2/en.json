@@ -1,0 +1,1648 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kyushu-loop-8d",
+  "revision": 2,
+  "contentLocale": "en",
+  "title": "Kyūshū Loop in 8 Days — Fukuoka, Yufuin, Beppu, Takachiho, Kumamoto",
+  "subtitle": "In and out of Fukuoka, with Yufuin, Beppu, Kumamoto and a Takachiho day tour, then back to Fukuoka and Itoshima",
+  "summary": "Eight days around Kyūshū: Fukuoka, Yufuin, the Beppu hot springs, Kumamoto and a Takachiho day tour, then back to Fukuoka for a trip out to Itoshima. Takachiho is written as a joined day tour, with no agency named. On day 5 (the day tour) and day 7 (Itoshima), travel will take more than a third of the day — that is simply the distance. Karatsu, Yūtoku Inari and Takeo sit in the alternates.",
+  "destination": "Japan: Fukuoka, Yufuin, Beppu, Kumamoto, Takachiho",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 8,
+  "coverColour": "green",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Couple",
+    "First visit",
+    "Hot springs",
+    "Day tour"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in as soon as flights and hotels are booked"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kyushu-loop-8d/d1-03.jpg",
+    "d1-04": "images/jp-kyushu-loop-8d/d1-04.jpg",
+    "d2-02": "images/jp-kyushu-loop-8d/d2-02.jpg",
+    "d2-03": "images/jp-kyushu-loop-8d/d2-03.jpg",
+    "d2-04": "images/jp-kyushu-loop-8d/d2-04.jpg",
+    "d3-01": "images/jp-kyushu-loop-8d/d3-01.jpg",
+    "d3-02": "images/jp-kyushu-loop-8d/d3-02.jpg",
+    "d3-04": "images/jp-kyushu-loop-8d/d3-04.jpg",
+    "d3-05": "images/jp-kyushu-loop-8d/d3-05.jpg",
+    "d5-02": "images/jp-kyushu-loop-8d/d5-02.jpg",
+    "d5-04": "images/jp-kyushu-loop-8d/d5-04.jpg",
+    "d5-05": "images/jp-kyushu-loop-8d/d5-05.jpg",
+    "d5-06": "images/jp-kyushu-loop-8d/d5-06.jpg",
+    "d6-01": "images/jp-kyushu-loop-8d/d6-01.jpg",
+    "d6-03": "images/jp-kyushu-loop-8d/d6-03.jpg",
+    "d7-01": "images/jp-kyushu-loop-8d/d7-01.jpg",
+    "d8-01": "images/jp-kyushu-loop-8d/d8-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Stay: around Hakata Station (the travelogue stayed at Toyoko Inn Hakata-guchi Ekimae)",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "Toyoko Inn Hakata-guchi Ekimae",
+        "latitude": 33.5919297,
+        "longitude": 130.4188355,
+        "applePlaceID": "IAB8D758F1F33DBFB",
+        "address": "〒812-0011, 福岡県福岡市博多区, 博多駅前1丁目15-5",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "Stay: around Beppu Station",
+      "fromDay": 2,
+      "toDay": 4,
+      "category": "lodging",
+      "place": {
+        "name": "Beppu",
+        "latitude": 33.2795901,
+        "longitude": 131.5002405,
+        "applePlaceID": "IF23E7F677FFDB0E7",
+        "address": "大分県別府市, 駅前町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        3,
+        4
+      ],
+      "closingDays": [
+        2,
+        3
+      ]
+    },
+    {
+      "key": "ad4-04",
+      "title": "Stay: around Kumamoto Station",
+      "fromDay": 4,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "Kumamoto",
+        "latitude": 32.7894252,
+        "longitude": 130.6884708,
+        "applePlaceID": "I1FA3C2930A533584",
+        "address": "熊本県熊本市西区, 春日",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        5,
+        6
+      ],
+      "closingDays": [
+        4,
+        5
+      ]
+    },
+    {
+      "key": "ad6-06",
+      "title": "Stay: around Hakata Station (the travelogue stayed at Toyoko Inn Hakata-guchi Ekimae)",
+      "fromDay": 6,
+      "toDay": 8,
+      "category": "lodging",
+      "place": {
+        "name": "Toyoko Inn Hakata-guchi Ekimae",
+        "latitude": 33.5919297,
+        "longitude": 130.4188355,
+        "applePlaceID": "IAB8D758F1F33DBFB",
+        "address": "〒812-0011, 福岡県福岡市博多区, 博多駅前1丁目15-5",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        7,
+        8
+      ],
+      "closingDays": [
+        6,
+        7
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Yufuin Shōwakan (湯布院昭和館)",
+      "durationMinutes": 60,
+      "category": "museum",
+      "place": {
+        "name": "Yufuin Showakan",
+        "latitude": 33.2683602,
+        "longitude": 131.3663107,
+        "applePlaceID": "IFAD0F247A5DD5081",
+        "address": "〒879-5102, 大分県由布市, 湯布院町川上1479-1",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go; the travelogue says it has a strongly traditional Japanese feel, in the Yunotsubo Street area"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Jūjiyama Observatory (十字山展望台)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "Myōban Onsen",
+        "latitude": 33.3191799,
+        "longitude": 131.4513029,
+        "address": "日本大分縣別府市",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go; the travelogue says it suits night views, is very sunny by day, and has toilets but no shops"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: Karatsu Castle (唐津城)",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "Karatsu Castle Keep",
+        "latitude": 33.4535116,
+        "longitude": 129.9781644,
+        "applePlaceID": "I56BB50D32FAEA4E4",
+        "address": "〒847-0016, 佐賀県唐津市, 東城内8-1 唐津城本丸",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go; the travelogue says the lift from Maizuru Park costs ¥100 one way and the keep is already closed in the evening; the bus from Hakata Tenjin Highway Bus Stop to Karatsu costs about ¥1,100 (travelogue, 2024 data)"
+    },
+    {
+      "key": "u-04",
+      "title": "Alternate: Yūtoku Inari Shrine (祐徳稲荷神社)",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "Yūtoku Inari",
+        "latitude": 33.0734186,
+        "longitude": 130.1081926,
+        "applePlaceID": "ID3DB480A2105D1E3",
+        "address": "〒849-1321　, 佐賀県鹿島市, 古枝",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go; the travelogue says you change to a bus at Hizen-Kashima Station, most shops on the approach are closed on weekdays, and you can pay for a lift"
+    },
+    {
+      "key": "u-05",
+      "title": "Alternate: Takeo Shrine and the Takeo Great Camphor (武雄神社)",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "Takeo Shrine",
+        "latitude": 33.1881218,
+        "longitude": 130.0209047,
+        "applePlaceID": "IDC0AA1E9D3F9DFA2",
+        "address": "〒843-0022, 佐賀県武雄市, 武雄町大字武雄5327",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go; the travelogue says the great camphor is estimated to be 3,000 years old, with the Hōrai Yu gate tower and the hot spring town next to it"
+    },
+    {
+      "key": "u-06",
+      "title": "Alternate: Fukuoka City Art Museum (福岡市美術館)",
+      "durationMinutes": 60,
+      "category": "artgallery",
+      "place": {
+        "name": "Fukuoka City Art Museum",
+        "latitude": 33.5839631,
+        "longitude": 130.3795624,
+        "applePlaceID": "I76CEBD6F922445B4",
+        "address": "〒810-0051, 福岡県福岡市中央区, 大濠公園1-6",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go; the travelogue mentions it is closed on Mondays, and Yayoi Kusama's pumpkin stands outside"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and checks",
+      "paragraphs": [
+        {
+          "text": "Source travelogues",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/cb65fd5ab770/",
+          "style": "bullet"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "Checked (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Kyushu Odan limited express timetable (Kumamoto–Beppu, 3 round trips a day; no. 2 leaves Beppu 7:44, Aso 10:08, arrives Kumamoto 11:21): https://www.jrkyushu.co.jp/chinese/train/odan.html (a search excerpt of the JR Kyushu site's January 2026 timetable, checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Yufuin no Mori (Hakata 9:17, Yufuin 11:31, about 2 hours 14 minutes, all seats reserved): https://www.jrkyushu.co.jp/trains/yufuinnomori/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Limited express fare from Hakata to Yufuin is about ¥6,130 (limited express charge included): https://ekitan.com/zh-tw/article/yufuinnomori-jikoku-ryoukin (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kamenoi Bus routes between Yufuin and Beppu (route 36, Kankō Kaisoku Yufurin): https://mb.jorudan.co.jp/os/bus/4405/stop/159315.html (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Beppu Jigoku (8:00–17:00, open all year): https://www.beppu-jigoku.com/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Takachiho Gorge boat booking rules (opens 2 weeks before at 9:00, closes 2 days before at 9:00): https://takachiho-kanko.info/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Fukuoka Airport to Hakata Station (subway about 5 minutes, ¥260): https://travelist.jp/airport_FUK/guide/posts/p309 (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kyushu Shinkansen from Kumamoto to Hakata (about 38 minutes, unreserved about ¥5,310, compiled by a private site): https://jr-shinkansen.net/articles/hakata-kumamoto/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "LaLaport Fukuoka (10:00–21:00, bus about 20 minutes, life-size νGundam): https://ja.wikipedia.org/wiki/ららぽーと福岡 (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Highway bus from Kumamoto Station to Takachiho about ¥2,700 (old data); no buses to Amano Iwato and Ama no Yasugawara on weekdays: https://www.bring-you.info/?p=39864 (compiled online, checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Could not be confirmed from an official source; check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "Opening hours and closing days of Tōchō-ji, Ōhori Park, Yunotsubo Street, Lake Kinrin, Beppu Tower, Myōban Jigoku, Katō Shrine, the Kamitori and Shimotori arcades, Takachiho Shrine, Amano Iwato Shrine, Ama no Yasugawara, the Luffy statue, Sakurai Futamigaura, Sakurai Shrine and Nanzō-in.",
+          "style": "bullet"
+        },
+        {
+          "text": "Bus times, fares and last bus from Yufuin to Beppu; the itinerary, meeting point and price of the Takachiho day tour.",
+          "style": "bullet"
+        },
+        {
+          "text": "Current highway bus times from Kumamoto Station to Takachiho.",
+          "style": "bullet"
+        },
+        {
+          "text": "Changes and trade-offs",
+          "style": "heading"
+        },
+        {
+          "text": "The travelogue is an 11-day trip that arrives at Hakata by cruise ship from Busan; the Busan and cruise parts are not used, and this becomes a Kyūshū loop in and out of Fukuoka Airport.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue has no Kumamoto section (the 2023 Kyūshū travelogue does), so this adds that travelogue's Katō Shrine, Kamitori and Shimotori and the Luffy statue in Kumamoto, ordered as Beppu → Kumamoto → Takachiho → Fukuoka around the loop.",
+          "style": "bullet"
+        },
+        {
+          "text": "In the travelogue Takachiho is a day tour from Fukuoka; this version departs from Kumamoto (written, by rule, as joining a day tour with no operator named).",
+          "style": "bullet"
+        },
+        {
+          "text": "Karatsu, Yūtoku Inari, Takeo Onsen, Shimonoseki and Sasebo from the travelogue are not on the loop; Karatsu, Yūtoku Inari and Takeo are kept as alternates.",
+          "style": "bullet"
+        },
+        {
+          "text": "This version deliberately avoids spots already used by the Kita-Kyūshū and Kumamoto–Aso templates (Mojikō, Dazaifu, Yanagawa, Kumamoto Castle, Aso, Suizenji and others).",
+          "style": "bullet"
+        },
+        {
+          "text": "On day 5 (the day tour) and day 7 (Itoshima), the share of travel time goes above the usual 30%; that is simply the distance.",
+          "style": "bullet"
+        },
+        {
+          "text": "From the travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "Lodging is written by area only: the travelogue stayed at Toyoko Inn Hakata-guchi Ekimae, Toyoko Inn Ōita Ekimae and APA Fukuoka Watanabe-dōri; for Beppu and Kumamoto the author recommends nothing, so only the area around the station is written.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Route",
+          "style": "heading"
+        },
+        {
+          "text": "A Kyūshū loop in and out of Fukuoka: Fukuoka → Yufuin → Beppu → Kumamoto → Takachiho (day tour) → Fukuoka.",
+          "style": "bullet"
+        },
+        {
+          "text": "Nights: Fukuoka 1, Beppu 2, Kumamoto 2, Fukuoka 2.",
+          "style": "bullet"
+        },
+        {
+          "text": "Entry and internet",
+          "style": "heading"
+        },
+        {
+          "text": "Before you leave, register for immigration and customs on Visit Japan Web: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "For internet, use a physical SIM card or an eSIM.",
+          "style": "bullet"
+        },
+        {
+          "text": "Airport to the city",
+          "style": "heading"
+        },
+        {
+          "text": "The international terminal at Fukuoka Airport has no subway station: first take the free shuttle bus, about 10 minutes, to the domestic terminal, then the Kūkō Line subway to Hakata Station, about 5 minutes and ¥260, transit IC cards accepted; with baggage claim and walking, allow a cautious 30–40 minutes.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue says the shuttle runs every 5–10 minutes, and from the subway station back to the international departure hall you should add about 30 minutes.",
+          "style": "bullet"
+        },
+        {
+          "text": "Transport passes",
+          "style": "heading"
+        },
+        {
+          "text": "This route uses many limited expresses (Hakata → Yufuin, Beppu → Kumamoto), so before you go compare single tickets with a JR Kyushu rail pass: https://www.jrkyushu.co.jp/chinese/",
+          "style": "bullet"
+        },
+        {
+          "text": "Reminder from the 2024 travelogue: if you reserve seats online with a JR pass, you must show the same credit card when exchanging; the pass does not cover the San'yō Shinkansen and some Shinkansen trains, so check at the Shinkansen gates (travelogue, 2024 data).",
+          "style": "bullet"
+        },
+        {
+          "text": "Yufuin no Mori has all seats reserved; the unreserved seats on the Kyushu Odan limited express are in car 2.",
+          "style": "bullet"
+        },
+        {
+          "text": "At unstaffed small stations, get off from the first car and show your pass directly; at an unstaffed JR station, do not drop the pass into the ticket collection box on exit (travelogue).",
+          "style": "bullet"
+        },
+        {
+          "text": "Yufuin to Beppu",
+          "style": "heading"
+        },
+        {
+          "text": "Kamenoi Bus runs the ‘Kankō Kaisoku Yufurin’ and route 36 between Yufuin Station and Beppu Station; check the Kamenoi Bus website for the time and fare, or take JR with a change at Ōita.",
+          "style": "bullet"
+        },
+        {
+          "text": "Beppu Jigoku is open about 8:00–17:00 all year; Myōban Jigoku, planned for the afternoon, must be left by 17:00 at the latest.",
+          "style": "bullet"
+        },
+        {
+          "text": "Takachiho day tour",
+          "style": "heading"
+        },
+        {
+          "text": "Several agencies run this day tour (from both Kumamoto and Fukuoka, covering Takachiho Shrine, Takachiho Gorge, Amano Iwato Shrine and Ama no Yasugawara); before you go compare itineraries, meeting points and whether lunch is included.",
+          "style": "bullet"
+        },
+        {
+          "text": "To go by public transport on your own: take the highway bus ‘Takachiho-gō’ from in front of Kumamoto Station to Takachiho Bus Center, about ¥2,700 one way (old data compiled online — check times and fare before you go); there are no buses to Amano Iwato Shrine and Ama no Yasugawara on weekdays, so take a taxi, while weekends and peak season have a loop bus.",
+          "style": "bullet"
+        },
+        {
+          "text": "Boats on Takachiho Gorge are booked online only: the booking opens 2 weeks before the ride day at 9:00 and closes 2 days before at 9:00, and sells out quickly in peak season. If you want a boat, ask the agency first whether it can fit your time.",
+          "style": "bullet"
+        },
+        {
+          "text": "Around Kumamoto",
+          "style": "heading"
+        },
+        {
+          "text": "The city mostly runs on trams and buses. The 2024 travelogue update says several bus operators in Kumamoto Prefecture and Kumamoto Electric Railway no longer take Suica and other transit IC cards, so carry yen in cash and check the current situation first.",
+          "style": "bullet"
+        },
+        {
+          "text": "Other",
+          "style": "heading"
+        },
+        {
+          "text": "Carry plenty of yen in cash: some small shops, buses and small stations do not take cards.",
+          "style": "bullet"
+        },
+        {
+          "text": "On days 6 and 8 you use the hotel's luggage storage; hotels such as Toyoko Inn will usually hold bags at the desk.",
+          "style": "bullet"
+        },
+        {
+          "text": "The lockers at Yufuin Station have few spaces for suitcases; the travelogue advises going straight there on arrival.",
+          "style": "bullet"
+        },
+        {
+          "text": "Adjust the airport time on the last day to your actual flight.",
+          "style": "bullet"
+        },
+        {
+          "text": "About the route: this template focuses on moving around Kyūshū; the Fukuoka spots on days 1, 7 and 8 do not repeat the Kita-Kyūshū (Mojikō, Dazaifu, Yanagawa) or Kumamoto–Aso templates.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "Trip overview: how the 8 days run",
+      "paragraphs": [
+        {
+          "image": "d5-04"
+        },
+        "In and out of Fukuoka, with a loop around Kyushu: Fukuoka, Yufuin, Beppu, Kumamoto and Takachiho, then back to Fukuoka and a day out to Itoshima. You change bases four times: one night in Fukuoka, two in Beppu, two in Kumamoto and two back in Fukuoka. JR limited expresses and the Kyushu Shinkansen carry most of the travel, and Takachiho is done as a day tour.",
+        "Day 1: land in the morning, take the subway to Hakata for lunch and to leave your bags, visit {@d1-03} in the afternoon, then walk around the lake at {@d1-04}, and have dinner in Tenjin.",
+        "Day 2: the Yufuin no Mori limited express from Hakata in the morning, lunch in Yufuin, then {@d2-02} and Lake Kinrin, a bus to Beppu in the evening, and the night view from {@d2-04}.",
+        "Day 3: a full day of the Beppu hells, starting with {@d3-01} and Kamado Jigoku, hell curry for lunch, {@d3-04} in the afternoon, then Myoban Jigoku, and the bus back to Beppu Station at dusk.",
+        {
+          "image": "d3-01"
+        },
+        "Day 4: the early Kyushu Odan limited express from Beppu through Aso to Kumamoto, then {@d4-02} after lunch for the view of Kumamoto Castle from behind, and {@d4-03}, with dinner in Shimotori.",
+        "Day 5: a full day tour to Takachiho for {@d5-02} and its wedded cedars and a walk through {@d5-04}, then Amano Iwato Shrine and Ama no Yasugawara, and back to Kumamoto at night.",
+        "Day 6: the {@d6-01} in front of the prefectural office in the morning, the Kyushu Shinkansen back to Hakata, and a bus to {@d6-03} in the afternoon to see the life-size Gundam.",
+        "Day 7: out to Itoshima for {@d7-01} and Sakurai Shrine, back to Hakata after lunch, and anime goods and toy shops around Tenjin in the evening.",
+        {
+          "image": "d7-01"
+        },
+        "Day 8: check out, then JR Sasaguri Line to {@d8-01} for the reclining Buddha, lunch in Hakata, collect your bags and take the subway and the shuttle bus to the airport.",
+        "Where to sleep: the first night near Hakata Station, two nights near Beppu Station, two nights near Kumamoto Station, and the last two nights back near Hakata Station; on days 6 and 8 you leave your bags at the hotel.",
+        "Getting around: Hakata to Yufuin is the Yufuin no Mori, all reserved seats; Yufuin to Beppu is the Kamenoi bus, or JR with a change at Oita; Beppu to Kumamoto is the Kyushu Odan limited express; Kumamoto to Hakata is the Kyushu Shinkansen; Takachiho is a day tour, about 2.5 hours each way; Itoshima takes JR and a bus from Hakata, about 80 to 90 minutes each way; since you ride a lot of limited expresses, compare single tickets with the JR Kyushu rail pass. On day 5 (the day tour) and day 7 (Itoshima) more than a third of the time goes on transit, which is simply the distance. Buses and trams in Kumamoto may not take transport IC cards, so carry yen in cash. Check the latest timetables before you go.",
+        "Who it suits: anyone who wants the big Kyushu sights in one trip and accepts long transfers for the hot springs, the gorge and the shrines. You move or ride for hours most days, so wear comfortable shoes and pack light; at Nanzo-in, wear long trousers and cover your shoulders."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Yufuin pudding dorayaki (プリンどら焼き)",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "Shops along Yunotsubo Street"
+    },
+    {
+      "key": "s-02",
+      "title": "Ground sesame (Yufuin souvenir)",
+      "category": "food",
+      "productType": "seasoning",
+      "store": "Shops along Yunotsubo Street"
+    },
+    {
+      "key": "s-03",
+      "title": "Hell-steamed pudding (Okamotoya)",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "The Okamotoya pudding shop across from Myōban Jigoku"
+    },
+    {
+      "key": "s-04",
+      "title": "Yunohana bath salts (湯の花)",
+      "category": "drugstore",
+      "productType": "bath_hair",
+      "store": "The shop at Myōban Jigoku and the Yunohana huts"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Fukuoka",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Yufu",
+      "latitude": 33.1800158,
+      "longitude": 131.426733,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Beppu",
+      "latitude": 33.2844521,
+      "longitude": 131.491172,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Kumamoto",
+      "latitude": 32.8032049,
+      "longitude": 130.7080236,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Takachiho",
+      "latitude": 32.7116801,
+      "longitude": 131.3077912,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Fukuoka",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Fukuoka",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Fukuoka",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Fukuoka",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Fukuoka Airport (Fukuoka Kūkō)",
+          "start": "11:30",
+          "end": "12:30",
+          "category": "airport",
+          "place": {
+            "name": "Fukuoka Airport",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Lunch: around Hakata Station, Chikushi Exit",
+          "start": "13:10",
+          "end": "14:10",
+          "category": "dining",
+          "place": {
+            "name": "Hakata",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "From the international terminal, the free shuttle bus to the domestic terminal takes about 10 minutes; then the Kūkō Line subway to Hakata Station takes about 5 minutes and costs ¥260 (transit IC cards work). Immigration and baggage claim at the international terminal are extra"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "Tōchō-ji (東長寺): the Fukuoka Buddha and the five-story pagoda",
+          "start": "14:45",
+          "end": "15:30",
+          "category": "temple",
+          "place": {
+            "name": "Tōchō-ji",
+            "latitude": 33.5952774,
+            "longitude": 130.4142118,
+            "applePlaceID": "IEB6531DAB0C8DB00",
+            "address": "〒812-0037, 福岡県福岡市博多区, 御供所町2-4",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue says seeing the Fukuoka Buddha on the second floor costs ¥50 (2024 data)",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "First drop your bags at the hotel (Toyoko Inn Hakata-guchi Ekimae, about 10 minutes on foot), then walk about 15 minutes to Tōchō-ji in Gion"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "Ōhori Park (大濠公園): a walk around the lake",
+          "start": "16:00",
+          "end": "17:30",
+          "category": "park",
+          "place": {
+            "name": "Ōhori Park",
+            "latitude": 33.5863808,
+            "longitude": 130.3763008,
+            "applePlaceID": "ICE1436AE72C1A84",
+            "address": "〒810-0051, 福岡県福岡市中央区, 大濠公園1",
+            "addressIsApproximate": false
+          },
+          "notes": "The park is open all day; a loop of the lake takes about 45 minutes (travelogue, 2024 data); Fukuoka City Art Museum is closed on Mondays",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "The Kūkō Line subway from Gion Station to Ōhori-kōen Station takes about 10 minutes and costs about ¥210; the park is right outside the exit"
+          },
+          "images": [
+            "d1-04"
+          ]
+        },
+        {
+          "key": "d1-05",
+          "title": "Dinner: around Tenjin",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "Restaurants around Tenjin Station",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Kūkō Line subway from Ōhori-kōen Station to Tenjin Station takes about 6 minutes"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "Kūkō Line subway from Tenjin Station to Hakata Station takes about 5 minutes, then about 10 minutes on foot to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Yufu",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Lunch: around Yufuin Station (Bungo beef)",
+          "start": "11:50",
+          "end": "12:50",
+          "category": "dining",
+          "place": {
+            "name": "Yufuin Station",
+            "latitude": 33.2626525,
+            "longitude": 131.3551252,
+            "applePlaceID": "I7467AB095BE51661",
+            "address": "〒879-5114, 大分県由布市, 湯布院町川北8-2",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the shop the travelogue recommends at the station exit (Yufu Mabushi Kokoro) was closed on the day, so check its days off first",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 165,
+            "durationSource": "user",
+            "note": "After checking out, walk about 10 minutes to Hakata Station. The JR limited express Yufuin no Mori no. 1 leaves at 9:17 and arrives at 11:31, about 2 hours 14 minutes, all seats reserved; if you cannot get a seat, take the regular limited express Yufu instead. On arrival, leave your bags in a coin locker in the station (¥1,000 in the travelogue; few spaces for suitcases)"
+          },
+          "todos": [
+            {
+              "text": "Reserve a seat on Yufuin no Mori (or the limited express Yufu)",
+              "note": "Book online with JR Kyushu; the travelogue says Yufuin no Mori fills up if you book late, leaving only the regular limited express. All seats reserved https://www.jrkyushu.co.jp/trains/yufuinnomori/"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "Yunotsubo Street (湯の坪街道): Yufuin's shopping street",
+          "start": "13:05",
+          "end": "14:15",
+          "category": "sight",
+          "place": {
+            "name": "Yunotsubo Kaidō",
+            "latitude": 33.26667426444787,
+            "longitude": 131.3628757917489,
+            "address": "日本大分縣由布市",
+            "addressIsApproximate": true
+          },
+          "notes": "You can walk the street freely; check each shop's opening hours before you go",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "From Yufuin Station walk along the street toward Lake Kinrin; along the way are souvenir shops, sweets and small craft stores"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "Lake Kinrin (金鱗湖)",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "sight",
+          "place": {
+            "name": "Lake Kinrin",
+            "latitude": 33.2665347,
+            "longitude": 131.3686421,
+            "applePlaceID": "IFBF00B68422CC487",
+            "address": "〒879-5102, 大分県由布市, 湯布院町川上1796",
+            "addressIsApproximate": false
+          },
+          "notes": "Open all day, no closing days",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "Follow Yunotsubo Street to the end and you reach Lake Kinrin, about 15 minutes on foot"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "Beppu Tower (別府タワー): night and city views",
+          "start": "17:45",
+          "end": "18:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "Beppu Tower",
+            "latitude": 33.2817659,
+            "longitude": 131.5059048,
+            "applePlaceID": "I69180B9495484F45",
+            "address": "〒874-0920, 大分県別府市, 北浜3丁目10-2 別府タワー",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 135,
+            "durationSource": "user",
+            "note": "Walk about 25 minutes back to Yufuin Station to collect your bags. The Kamenoi Bus ‘Kankō Kaisoku Yufurin’ or route 36 takes about 1 hour to Beppu Station (check times and fares before you go; you can also take JR via Ōita). Then walk about 10 minutes to Beppu Tower"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "Dinner: around Beppu Station",
+          "start": "19:00",
+          "end": "20:00",
+          "category": "dining",
+          "place": {
+            "name": "Beppu",
+            "latitude": 33.2795901,
+            "longitude": 131.5002405,
+            "applePlaceID": "IF23E7F677FFDB0E7",
+            "address": "大分県別府市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk from Beppu Tower back to the area in front of Beppu Station"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel from dinner"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Beppu",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Umi Jigoku (海地獄): the bright blue spring",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "onsen",
+          "place": {
+            "name": "Umi Jigoku",
+            "latitude": 33.3158752,
+            "longitude": 131.4696389,
+            "applePlaceID": "I79696E21A55C8805",
+            "address": "〒874-0045",
+            "addressIsApproximate": true
+          },
+          "notes": "8:00–17:00, open all year (Beppu Jigoku website); the travelogue suggests buying the Seven Hells pass at the Umi Jigoku entrance — check the price before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "From Beppu Station take a Kamenoi Bus to Umi Jigoku (in the Kannawa area), about 25–30 minutes; check times before you go"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "Kamado Jigoku (かまど地獄): steam shows and a foot bath",
+          "start": "10:50",
+          "end": "11:50",
+          "category": "onsen",
+          "place": {
+            "name": "Kamado Jigoku",
+            "latitude": 33.3163959,
+            "longitude": 131.4723898,
+            "applePlaceID": "IA5FA3543EFBBD764",
+            "address": "〒874-0045, 大分県別府市, 大字鉄輪621",
+            "addressIsApproximate": false
+          },
+          "notes": "8:00–17:00, open all year (Beppu Jigoku website)",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Follow the signs on foot, passing Oniishi Bōzu Jigoku on the way; Kamado Jigoku has a foot bath, hot spring water to drink and a face steam"
+          },
+          "images": [
+            "d3-02"
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "Lunch: Gokuraku-tei at Chinoike Jigoku (hell curry)",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "Chinoike Jigoku",
+            "latitude": 33.3271913,
+            "longitude": 131.4781603,
+            "applePlaceID": "I73FD155ED979A8F7",
+            "address": "〒874-0016, 大分県別府市, 野田778",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "From the Kannawa bus stop take a bus to Chinoike Jigoku, about 10 minutes"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "Chinoike Jigoku and Tatsumaki Jigoku (血の池地獄・龍巻地獄)",
+          "start": "13:30",
+          "end": "14:45",
+          "category": "onsen",
+          "place": {
+            "name": "Chinoike Jigoku",
+            "latitude": 33.3271913,
+            "longitude": 131.4781603,
+            "applePlaceID": "I73FD155ED979A8F7",
+            "address": "〒874-0016, 大分県別府市, 野田778",
+            "addressIsApproximate": false
+          },
+          "notes": "8:00–17:00, open all year (Beppu Jigoku website); Tatsumaki Jigoku erupts about every 30–40 minutes, each time for about 6–10 minutes — ask the staff first",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Walk downhill from Chinoike Jigoku to reach Tatsumaki Jigoku; check the eruption times to decide which to see first"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "Myōban Jigoku and the Yunohana huts (明礬地獄・湯の花小屋)",
+          "start": "15:10",
+          "end": "16:15",
+          "category": "onsen",
+          "place": {
+            "name": "Myōban Yu no Sato",
+            "latitude": 33.319525,
+            "longitude": 131.4540748,
+            "applePlaceID": "IA5690AFE1A8F1151",
+            "address": "〒874-0843, 大分県別府市, 明礬温泉6組",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue says the ticket counter is at the Okamotoya pudding shop across the road",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "From Chinoike Jigoku take a bus toward Umi Jigoku and then uphill to Myōban; the travelogue suggests going up first and walking down, but you can reverse the order"
+          },
+          "images": [
+            "d3-05"
+          ]
+        },
+        {
+          "key": "d3-06",
+          "title": "Dinner: around Beppu Station",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "Beppu",
+            "latitude": 33.2795901,
+            "longitude": 131.5002405,
+            "applePlaceID": "IF23E7F677FFDB0E7",
+            "address": "大分県別府市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "A bus back to Beppu Station takes about 30–40 minutes; check the last bus first"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel from dinner"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Kumamoto",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "Lunch: around Kumamoto Station",
+          "start": "11:45",
+          "end": "12:45",
+          "category": "dining",
+          "place": {
+            "name": "Restaurants around Kumamoto Station",
+            "latitude": 32.79096,
+            "longitude": 130.6878509,
+            "address": "熊本県熊本市西区春日3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 237,
+            "durationSource": "user",
+            "note": "After checking out, walk to Beppu Station. The JR Kyushu Odan limited express no. 2 leaves Beppu at 7:44, passes Aso at 10:08 and reaches Kumamoto at 11:21 (JR Kyushu website, January 2026 timetable — check before you go); unreserved seats are in car 2. The whole ride takes about 3 hours 40 minutes"
+          },
+          "todos": [
+            {
+              "text": "Reserve a seat on Kyushu Odan limited express no. 2 (Beppu to Kumamoto)",
+              "note": "Only 3 round trips a day; no. 2 leaves Beppu at 7:44. Timetable https://www.jrkyushu.co.jp/chinese/train/odan.html"
+            }
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "Katō Shrine (加藤神社): Kumamoto Castle from behind",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "temple",
+          "place": {
+            "name": "Katō Shrine",
+            "latitude": 32.807117,
+            "longitude": 130.7053761,
+            "applePlaceID": "I831099B0902FAA97",
+            "address": "〒860-0002, 熊本県熊本市中央区, 本丸2-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue says some halls are under repair",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "First leave your bags at the hotel; the tram from Kumamoto Station to Tōrichō-suji or the Kumamoto Castle area takes about 20 minutes, then it is about 20 minutes on foot, uphill (travelogue)"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "Kamitori and Shimotori shopping arcades (上通・下通アーケード)",
+          "start": "15:00",
+          "end": "16:30",
+          "category": "shopping",
+          "place": {
+            "name": "Shimotori Arcade",
+            "latitude": 32.80199538213618,
+            "longitude": 130.70906498323706,
+            "address": "日本熊本縣熊本市",
+            "addressIsApproximate": true
+          },
+          "notes": "You can walk the arcades freely; check each shop's opening hours before you go",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "From Katō Shrine, take a bus or walk to Tōrichō-suji, about 30 minutes. The travelogue warns that Kumamoto city buses and trams no longer take transit IC cards, so carry yen in cash"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "Dinner: around Shimotori (fried chicken wings and skewers)",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "Izakaya around Shimotori",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Walk within the arcade"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "The tram from Shimotori back to Kumamoto Station takes about 20 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Takachiho",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "Join a day tour: meet and depart (Kumamoto to Takachiho)",
+          "start": "09:00",
+          "end": "09:20",
+          "category": "other",
+          "place": {
+            "name": "Kumamoto",
+            "latitude": 32.7894252,
+            "longitude": 130.6884708,
+            "applePlaceID": "I1FA3C2930A533584",
+            "address": "熊本県熊本市西区, 春日",
+            "addressIsApproximate": true
+          },
+          "notes": "Meeting point and time follow the agency's notice; check opening hours before you go",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk from the hotel to the meeting point, about 10 minutes (as the agency notifies you)"
+          },
+          "todos": [
+            {
+              "text": "Book the Takachiho day tour",
+              "note": "Several agencies run it; compare meeting points, whether lunch is included and whether you can add a boat ride, and book a few days ahead"
+            }
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "Takachiho Shrine (高千穂神社): the Meoto-sugi",
+          "start": "11:45",
+          "end": "12:25",
+          "category": "temple",
+          "place": {
+            "name": "Takachiho Shrine",
+            "latitude": 32.7064748,
+            "longitude": 131.3019346,
+            "applePlaceID": "I73B4EC96A6D7C512",
+            "address": "〒882-1101",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go; the travelogue says it is ringed by sacred trees, and couples can hold hands and walk three times around the Meoto-sugi",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "driving",
+            "durationMinutes": 145,
+            "durationSource": "user",
+            "note": "The coach from Kumamoto to Takachiho takes about 2.5 hours (about 3 hours from Fukuoka in the travelogue), with a rest stop on the way; the actual schedule depends on the agency"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "Lunch: Takachiho cuisine (as arranged by the day tour)",
+          "start": "12:40",
+          "end": "13:25",
+          "category": "dining",
+          "place": {
+            "name": "Takachiho Shrine Kagura Hall",
+            "latitude": 32.7064814,
+            "longitude": 131.301935,
+            "applePlaceID": "ID8ED2F9278942B6C",
+            "address": "〒882-1101, 宮崎県西臼杵郡高千穂町, 三田井1037",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "The restaurant is arranged by the agency, usually near the shrine"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "Takachiho Gorge (高千穂峡)",
+          "start": "13:45",
+          "end": "14:35",
+          "category": "sight",
+          "place": {
+            "name": "Gokase River Gorge (Takachiho Gorge)",
+            "latitude": 32.7032163,
+            "longitude": 131.299885,
+            "applePlaceID": "ID39D10310E5C61AC",
+            "address": "宮崎県西臼杵郡高千穂町, 向山",
+            "addressIsApproximate": true
+          },
+          "notes": "You can walk the gorge all day; whether boats run, and their hours, are updated around 8:00 each morning — check before you go",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "After lunch follow the path downhill for about 20 minutes to the gorge; if you have booked a boat or are tired, the guide may arrange a shuttle"
+          },
+          "todos": [
+            {
+              "text": "Book a boat on Takachiho Gorge (only if you want to ride)",
+              "note": "The official site takes online bookings only, opening 2 weeks before the ride day at 9:00 and closing 2 days before at 9:00; popular dates sell out long before, so ask the agency whether it can fit your time https://takachiho-kanko.info/"
+            }
+          ],
+          "images": [
+            "d5-04"
+          ]
+        },
+        {
+          "key": "d5-05",
+          "title": "Amano Iwato Shrine, Nishi Hongū (天岩戸神社)",
+          "start": "15:00",
+          "end": "15:40",
+          "category": "temple",
+          "place": {
+            "name": "Amano Iwato Shrine",
+            "latitude": 32.7344288,
+            "longitude": 131.3504925,
+            "applePlaceID": "IA4D011E91CF2BB05",
+            "address": "〒882-1621, 宮崎県西臼杵郡高千穂町, 岩戸1073-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "The coach from the gorge to Amano Iwato Shrine takes about 15–20 minutes; after getting off, walk about 5 minutes to the Nishi Hongū"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "Ama no Yasugawara (天安河原): a cave of stacked stones",
+          "start": "15:55",
+          "end": "16:40",
+          "category": "sight",
+          "place": {
+            "name": "Ama no Yasugawara Shrine",
+            "latitude": 32.742666,
+            "longitude": 131.351087,
+            "applePlaceID": "ID7527595A6DDBA52",
+            "address": "〒882-1621, 宮崎県西臼杵郡高千穂町, 岩戸2404-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; it lies about 500 meters upstream of the Nishi Hongū",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "From the Nishi Hongū walk about 15 minutes to Ama no Yasugawara; there are ice cream shops on the way back"
+          },
+          "images": [
+            "d5-06"
+          ]
+        },
+        {
+          "key": "d5-07",
+          "title": "Dinner: around Kumamoto Station",
+          "start": "19:30",
+          "end": "20:30",
+          "category": "dining",
+          "place": {
+            "name": "Restaurants around Kumamoto Station",
+            "latitude": 32.79096,
+            "longitude": 130.6878509,
+            "address": "熊本県熊本市西区春日3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "driving",
+            "durationMinutes": 170,
+            "durationSource": "user",
+            "note": "The coach back takes about 2.5–3 hours, with a rest stop on the way; the actual arrival time depends on the agency"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel from Kumamoto Station"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Fukuoka",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "Luffy statue (ルフィ像): in front of the Kumamoto Prefectural Office",
+          "start": "09:45",
+          "end": "10:15",
+          "category": "sight",
+          "place": {
+            "name": "Kumamoto Prefectural Office",
+            "latitude": 32.7898029,
+            "longitude": 130.7415739,
+            "applePlaceID": "I9D3D945CF9ABD15A",
+            "address": "〒862-0950, 熊本県熊本市中央区, 水前寺6丁目18-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "Leave your bags at the hotel; the tram or a bus to the Prefectural Office area takes about 30–35 minutes — follow your navigation app"
+          },
+          "images": [
+            "d6-01"
+          ]
+        },
+        {
+          "key": "d6-02",
+          "title": "Lunch: around Hakata Station",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "Hakata",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "Go back to the hotel for your bags and on to Kumamoto Station, about 30 minutes; the Kyushu Shinkansen from Kumamoto to Hakata takes about 38 minutes, and an unreserved seat costs about ¥5,310 (compiled by a private site — check the JR website)"
+          }
+        },
+        {
+          "key": "d6-03",
+          "title": "LaLaport Fukuoka (ららぽーと福岡): the life-size νGundam",
+          "start": "14:45",
+          "end": "17:30",
+          "category": "shopping",
+          "place": {
+            "name": "LaLaport Fukuoka",
+            "latitude": 33.5647786,
+            "longitude": 130.4402293,
+            "applePlaceID": "I23ED44362FD515EC",
+            "address": "〒812-8627",
+            "addressIsApproximate": true
+          },
+          "notes": "10:00–21:00 (the mall's hours as given on Wikipedia); check each shop's hours before you go",
+          "leg": {
+            "fromKey": "d6-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "First go back to the hotel to leave your bags (about 10 minutes on foot), then take a Nishitetsu bus from Hakata Bus Terminal to ‘LaLaport Fukuoka’, about 20 minutes; the stop is right at the mall"
+          },
+          "images": [
+            "d6-03"
+          ]
+        },
+        {
+          "key": "d6-04",
+          "title": "Dinner: around Hakata Station",
+          "start": "18:15",
+          "end": "19:30",
+          "category": "dining",
+          "place": {
+            "name": "Hakata",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d6-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Take a Nishitetsu bus back to Hakata, about 20 minutes"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel from dinner"
+          }
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "Fukuoka",
+      "events": [
+        {
+          "key": "d7-01",
+          "title": "Sakurai Futamigaura and the Wedded Rocks (桜井二見ヶ浦)",
+          "start": "10:30",
+          "end": "11:20",
+          "category": "beach",
+          "place": {
+            "name": "Sakurai Futamigaura",
+            "latitude": 33.6397261,
+            "longitude": 130.1978507,
+            "applePlaceID": "IEB39ADAB4A321F34",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井",
+            "addressIsApproximate": true
+          },
+          "notes": "Open all day; the sea torii and the Wedded Rocks look different with the weather and tide",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "Leave around 8:15: JR from Hakata to Kyudai-Gakkentoshi Station takes about 35–40 minutes, then a bus (the Nishinoura line in the travelogue) takes about 30 minutes and costs ¥730 (travelogue, 2024 data; check times before you go)"
+          },
+          "images": [
+            "d7-01"
+          ]
+        },
+        {
+          "key": "d7-02",
+          "title": "Sakurai Shrine (桜井神社)",
+          "start": "11:35",
+          "end": "12:05",
+          "category": "temple",
+          "place": {
+            "name": "Sakurai Shrine",
+            "latitude": 33.6283792,
+            "longitude": 130.1920845,
+            "applePlaceID": "I400B8E51901E47E1",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井4227",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d7-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot from behind the Wedded Rocks (the travelogue says you can go farther back)"
+          }
+        },
+        {
+          "key": "d7-03",
+          "title": "Lunch: around Sakurai Futamigaura",
+          "start": "12:20",
+          "end": "13:20",
+          "category": "dining",
+          "place": {
+            "name": "Sakurai Futamigaura",
+            "latitude": 33.6397261,
+            "longitude": 130.1978507,
+            "applePlaceID": "IEB39ADAB4A321F34",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d7-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Look for a restaurant along the coast; the travelogue says the direct bus back to Hakata runs hourly in the afternoon"
+          }
+        },
+        {
+          "key": "d7-04",
+          "title": "Shopping in Tenjin (天神): anime goods and toy shops",
+          "start": "15:30",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "Tenjin shopping district",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d7-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "Bus and JR back to Hakata take about 80–90 minutes, then the subway to Tenjin about 5 minutes; Itoshima is far, so this day has a higher share of travel time"
+          }
+        },
+        {
+          "key": "d7-05",
+          "title": "Dinner: around Tenjin",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "Restaurants around Tenjin",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d7-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk within the shopping district"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "Kūkō Line subway from Tenjin Station to Hakata Station takes about 5 minutes, then about 10 minutes on foot"
+          }
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "title": "Fukuoka",
+      "events": [
+        {
+          "key": "d8-01",
+          "title": "Nanzō-in (南蔵院): the reclining Buddha",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "temple",
+          "place": {
+            "name": "Nanzō-in",
+            "latitude": 33.6198728,
+            "longitude": 130.5729067,
+            "applePlaceID": "I968AADFBBA808E5D",
+            "address": "〒811-2405",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go; the travelogue says sleeveless tops and shorts that bare the midriff or shoulders, playing music, dancing and photography in some areas are not allowed",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "After checking out, leave your bags at the hotel desk; from Hakata Station take the JR Sasaguri Line to Nanzōin-mae Station, about 30–35 minutes; from the exit go past Kōjin Chaya and cross the road to the entrance (travelogue)"
+          },
+          "images": [
+            "d8-01"
+          ]
+        },
+        {
+          "key": "d8-02",
+          "title": "Lunch: around Hakata Station",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "Hakata",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d8-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "JR back to Hakata Station takes about 35 minutes"
+          }
+        },
+        {
+          "key": "d8-03",
+          "title": "Depart from Fukuoka Airport (Fukuoka Kūkō)",
+          "start": "14:30",
+          "end": "16:00",
+          "category": "airport",
+          "place": {
+            "name": "Fukuoka Airport",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d8-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "Go back to the hotel for your bags (about 5 minutes on foot); the Kūkō Line subway from Hakata to the domestic terminal takes about 5 minutes, then the free shuttle bus to the international terminal about 10 minutes; the travelogue advises reaching the departure hall with 30 extra minutes; adjust to your actual flight"
+          }
+        }
+      ]
+    }
+  ]
+}

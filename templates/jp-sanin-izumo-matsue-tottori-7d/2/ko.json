@@ -1,0 +1,1395 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-sanin-izumo-matsue-tottori-7d",
+  "revision": 2,
+  "contentLocale": "ko",
+  "title": "산인 7일｜이즈모·마쓰에·사카이미나토·돗토리",
+  "subtitle": "요나고 인, 간사이 아웃: 이즈모 다이샤, 마쓰에성, 사카이미나토의 게게게노 기타로, 돗토리 사구",
+  "summary": "7일 동안 산인을 돌아봅니다. 요나고 공항으로 들어가 간사이 공항으로 나옵니다. 사카이미나토의 기타로와 코난, 마쓰에성과 신지호 유람선 석양 편, 이즈모 다이샤와 히노미사키, 야스기의 아다치 미술관과 기요미즈데라, 마지막은 돗토리 사구. 아오야마 고쇼 고향관은 2027년 1월 11일 이후 이전할 예정이니 출발 전에 확인하세요. 히노미사키 등대, 우라도메 해안, 구라요시 백벽 토장 거리는 후보에 넣었습니다.",
+  "destination": "일본 시마네·돗토리",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 7,
+  "coverColour": "taupe",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "첫 방문",
+    "신사",
+    "애니메이션"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록하기 (입국 심사와 세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권과 숙소 예약이 끝나면 바로 작성할 수 있음"
+    }
+  ],
+  "images": {
+    "d2-01": "images/jp-sanin-izumo-matsue-tottori-7d/d2-01.jpg",
+    "d2-02": "images/jp-sanin-izumo-matsue-tottori-7d/d2-02.jpg",
+    "d2-05": "images/jp-sanin-izumo-matsue-tottori-7d/d2-05.jpg",
+    "d3-01": "images/jp-sanin-izumo-matsue-tottori-7d/d3-01.jpg",
+    "d3-04": "images/jp-sanin-izumo-matsue-tottori-7d/d3-04.jpg",
+    "d4-01": "images/jp-sanin-izumo-matsue-tottori-7d/d4-01.jpg",
+    "d6-01": "images/jp-sanin-izumo-matsue-tottori-7d/d6-01.jpg",
+    "d6-02": "images/jp-sanin-izumo-matsue-tottori-7d/d6-02.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 마쓰에역 주변 (연박 3박)",
+      "fromDay": 1,
+      "toDay": 4,
+      "category": "lodging",
+      "place": {
+        "name": "마쓰에",
+        "latitude": 35.4640317,
+        "longitude": 133.063745,
+        "applePlaceID": "I5D030EBE00248ED3",
+        "address": "島根県松江市, 朝日町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3,
+        4
+      ],
+      "closingDays": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "key": "ad4-04",
+      "title": "숙박: 돗토리역 주변 (연박 3박, 여행기에서 묵은 곳: 도요코인 돗토리역 남쪽 출구)",
+      "fromDay": 4,
+      "toDay": 7,
+      "category": "lodging",
+      "place": {
+        "name": "도요코인 돗토리역 남쪽 출구",
+        "latitude": 35.4925256,
+        "longitude": 134.2279042,
+        "applePlaceID": "I6FC9DF0721926300",
+        "address": "〒680-0845, 鳥取県鳥取市, 富安町2丁目153番3号",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        5,
+        6,
+        7
+      ],
+      "closingDays": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "후보: 히노미사키 등대 (日御碕灯台)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "이즈모 히노미사키 등대 등대 자료 전시실",
+        "latitude": 35.433758,
+        "longitude": 132.62921,
+        "applePlaceID": "I699E1B4D89D6C0C6",
+        "address": "〒699-0763, 島根県出雲市, 大社町日御碕1478",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 히노미사키 신사 옆에 있고, 탑에 올라 동해를 내려다볼 수 있음"
+    },
+    {
+      "key": "u-02",
+      "title": "후보: 우라도메 해안 (浦富海岸)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "우라도메 해안",
+        "latitude": 35.5933653,
+        "longitude": 134.3167331,
+        "applePlaceID": "IB8771D69C2D28321",
+        "address": "日本鳥取縣岩美郡岩美町, 田後",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 유람선 운항과 계절은 공식 사이트에서 확인"
+    },
+    {
+      "key": "u-03",
+      "title": "후보: 구라요시 백벽 토장 거리 (倉吉白壁土蔵群)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "구라요시 백벽 토장 거리",
+        "latitude": 35.4313405,
+        "longitude": 133.8247995,
+        "applePlaceID": "I9566BE86167A79A8",
+        "address": "〒682-0821, 鳥取県倉吉市, 魚町2568, 赤瓦十号館内",
+        "addressIsApproximate": false
+      },
+      "notes": "거리는 자유롭게 걸을 수 있습니다. 가게별 영업시간은 출발 전에 확인하세요. 돗토리와 유라 사이에 있어 코난 일정과 이어서 갈 수 있음"
+    },
+    {
+      "key": "u-04",
+      "title": "후보: 시마네현립미술관 (島根県立美術館)",
+      "durationMinutes": 60,
+      "category": "museum",
+      "place": {
+        "name": "시마네현립미술관",
+        "latitude": 35.4596261,
+        "longitude": 133.0523682,
+        "applePlaceID": "IFF85C100929B7E73",
+        "address": "〒690-0049, 島根県松江市, 袖師町1-5",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 신지호 석양 계단 테라스는 미술관 옆에 있고 저녁에 카페가 열림"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "자료 출처와 확인",
+      "paragraphs": [
+        {
+          "text": "출처 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/aacd5f5cacd1/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인 (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "요나고 기타로 공항 (버스, JR 운임): https://www.yonago-air.com/en/access/bus/ 와 https://www.yonago-air.com/en/access/train/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "타이거에어 타이완 도원–요나고 운항과 빈도: https://chugoku.letsgojp.com/archives/691561/ , https://www.funtime.com.tw/blog/funtime/tigerair-introduce 와 AeroRoutes 보도 (확인 2026-11-17, 출처는 검색 결과, 공식 시간표는 확인하지 못함)",
+          "style": "bullet"
+        },
+        {
+          "text": "미즈키 시게루 기념관 (9:30~17:00, 마지막 입관 16:30, 연중무휴): https://mizuki.sakaiminato.net/faq/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "마쓰에성 (덴슈 시간, 연중무휴, 1,200엔): https://www.matsue-castle.jp/userguide/index (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "신지호 유람선 (석양 편과 시각): https://hakuchougo.jp/timetable/ (확인 2026-11-17, 요금 페이지는 확인하지 못함)",
+          "style": "bullet"
+        },
+        {
+          "text": "아다치 미술관 (개관 시간, 2,500엔): https://www.adachi-museum.or.jp/en/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "아오야마 고쇼 고향관 (9:30~17:30, 휴관일, 700엔, 2027/1/11 폐관과 새 건물): https://www.gamf.jp/42.html (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "모래 미술관 (9:00~18:00, 800엔, 제17기는 2027/1/3까지): https://www.sand-museum.jp/ (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "히노미사키 버스 (약 20~25분, 약 510엔, 약 7왕복): https://izumo-kankou.gr.jp/16116 와 NAVITIME 경로 검색 (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "호리카와 유람선 (약 50분, 2025~26년 요금 1,600엔, 2,000엔이라는 게재도 있음): https://www.matsue-horikawameguri.jp/ 와 관광 정보 사이트 (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "야스기 기요미즈데라 (개산 시간, 삼층탑 예약제, 노란 버스 약 15분): https://tabi.torisetsu-shimane.com/kiyomizudera/ 와 rurubu.jp (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "특급 슈퍼하쿠토 (오사카–돗토리 약 2시간 30분, 지정석 약 7,000엔 안팎): https://jr-group.jp/hakuto-ryokin/ 등의 정리 페이지 (확인 2026-11-17, 출처는 검색 결과)",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못했습니다. 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "이즈모 다이샤, 히노미사키 신사, 시오미나와테와 고이즈미 야쿠모 구거, 히사마쓰 공원과 진푸카쿠, 하쿠토 신사, 돗토리 사구 전망대의 영업시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "미즈키 시게루 로드 각 가게의 영업시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "요나고→마쓰에, 마쓰에→이즈모시, 돗토리→유라, 돗토리→하쿠토 신사와 사구의 실제 배차와 운임.",
+          "style": "bullet"
+        },
+        {
+          "text": "신지호 유람선 요금. 호리카와 유람선의 현재 요금과 겨울에 '고타쓰 배'가 운항하는지.",
+          "style": "bullet"
+        },
+        {
+          "text": "각 명소의 좌표는 추정값.",
+          "style": "bullet"
+        },
+        {
+          "text": "변경한 점과 취사선택",
+          "style": "heading"
+        },
+        {
+          "text": "여행기는 원래 오카야마 공항으로 드나들며 5, 6일차에 히메지와 고베를 갔고, 그 부분은 별도 템플릿으로 뺐습니다. 여기서는 시마네와 돗토리만 남기고, 사카이미나토, 이즈모 히노미사키, 신지호 유람선 석양 편, 야스기 기요미즈데라, 코난 일정을 더했습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기에는 시간이 부족해 이나사노하마의 석양과 코난 역은 가지 못했다고 되어 있어서, 이 템플릿에서 보충했습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기의 아다치 미술관, 호리카와 유람선, 신지호 유람선은 패스로 무료 교환한 것인데, 여기서는 참고용으로 정가 정보로 고쳐 썼습니다.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 알아 둘 것",
+      "paragraphs": [
+        {
+          "text": "경로와 공항 선택",
+          "style": "heading"
+        },
+        {
+          "text": "이 템플릿은 요나고 (돗토리 요나고 기타로 공항) 인, 간사이 국제공항 아웃의 오픈조 일정입니다: 사카이미나토 → 마쓰에 → 이즈모 → 야스기 → 돗토리, 서쪽에서 동쪽으로 되돌아가지 않고 이동합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "갈 때는 요나고 기타로 공항 (YGJ): 대만 타이거에어 도원–요나고가 현재 유일한 대만 직항이며, 매주 월·금 각 1편입니다 (가는 편 IT724, 오는 편 IT725). 월요일 편은 08:35쯤 출발해 12:00 도착, 금요일 편은 13:30쯤 출발해 16:50 도착. 이 템플릿의 1일차는 월요일 12:00 도착을 전제로 짰습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "돌아올 때는 간사이 국제공항 (KIX): 돗토리에서 특급 슈퍼하쿠토로 오사카까지 약 2시간 30분, 다시 공항선으로 갈아탑니다. 대만 직항 편이 많고 시간대 선택지도 많습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "요나고 인·요나고 아웃으로 하지 않은 이유: 타이거에어 요나고 편은 월·금뿐이라, 월요일에 들어가 금요일에 나오면 5일, 월요일에 들어가 다음 주 월요일에 나오면 8일이어서 둘 다 7일이 되지 않습니다. 요나고로 드나들고 싶다면 5일이나 8일로 바꾸세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "이즈모 엔무스비 공항 (IZO)과 돗토리 사구 코난 공항 (TTJ)은 대만 직항이 없어 도쿄나 오사카에서 갈아타야 하므로 이 템플릿에서는 쓰지 않았습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "타이거에어의 2026/10/24 이후 겨울 시간표는 공식 자료를 찾지 못했으니, 예매 전에 타이거에어 타이완 공식 사이트를 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항과 시내 이동",
+          "style": "heading"
+        },
+        {
+          "text": "요나고 기타로 공항에서 사카이미나토: 공항 옆에 JR 사카이선 '요나고 기타로 공항역'이 있고 사카이미나토역까지 190엔. 공식 사이트에 나온 다른 방법은 공항 버스로 요나고역까지 약 25분·640엔, 또는 마쓰에역까지 약 45분·1,200엔입니다 (공식: 항공편이 결항되면 버스가 운휴할 수 있음).",
+          "style": "bullet"
+        },
+        {
+          "text": "이 템플릿의 1일차는 먼저 사카이미나토에서 미즈키 시게루 로드를 걷고, JR로 요나고에 가서 특급으로 갈아타 마쓰에에서 묵습니다. 짐은 사카이미나토역 보관함에 맡길 수 있습니다 (빈 칸은 확인). 바로 마쓰에로 가고 싶다면 공항 버스로 마쓰에역까지 약 45분·1,200엔.",
+          "style": "bullet"
+        },
+        {
+          "text": "간사이 공항: 마지막 날 돗토리에서 특급 슈퍼하쿠토로 신오사카까지 가서 간쿠 특급 하루카로 갈아타 간사이 공항으로 갑니다. 환승 포함 전체 약 5시간이니 19:30 이후 출발하는 항공편으로 하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "교통 패스",
+          "style": "heading"
+        },
+        {
+          "text": "산인은 범위가 넓으니, 출발 전에 표를 따로 사는 경우와 '간사이&산인 지역 패스' 또는 '산인산요 지역 패스'를 비교해 보세요: https://www.westjr.co.jp/global/tc/ticket/pass/",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 2024년 당부: JR 패스로 신지호 유람선, 마쓰에성, 아다치 미술관, 돗토리 사구 모래 미술관 등의 입장을 교환할 수 있으며, 먼저 Discover Another Japan 앱에 일련번호를 입력해 활성화해야 합니다. 교환 내용과 가격은 현재 상황을 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "돗토리 버스는 전자 결제와 교통 IC 카드를 쓸 수 없고 현금만 받으니 (여행기 2024년 정보) 잔돈을 준비하세요. 이치바타 전철도 교통 IC 카드를 쓸 수 없어 먼저 역에서 표를 사야 합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "예약과 계절 주의",
+          "style": "heading"
+        },
+        {
+          "text": "신지호 석양 유람선: 석양 편 출발 시각은 계절에 따라 달라지니, 일출·일몰 예보를 보고 시간을 정하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "이나사노하마의 석양: 여름에는 19:30쯤까지 늦어지고 겨울에는 약 17:00입니다. 이 일정은 11월을 기준으로 했으니, 계절에 맞춰 이즈모 날의 시간을 조정하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "히노미사키 버스는 하루 약 7왕복입니다. 출발 전에 이치바타 버스 시각표를 확인하고 돌아오는 막차도 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "아오야마 고쇼 고향관의 현관은 2027/1/11까지 영업하고 그 후 새 건물로 이전해 2027년 봄 개관 예정입니다. 구관이 문을 닫은 뒤의 코난 일정은 공식 사이트를 보세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "아다치 미술관: 입관하면 먼저 입구 카운터에서 돌아가는 셔틀버스 정리권을 받으세요. 그렇지 않으면 자리가 보장되지 않습니다 (여행기의 당부).",
+          "style": "bullet"
+        },
+        {
+          "text": "이즈모 다이샤의 참배는 두 번 절하고 네 번 손뼉 치고 한 번 절하기입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "가미아리사이는 양력 11월쯤이고, 그 기간에는 이즈모 다이샤에 사람이 많습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "일정의 호흡",
+          "style": "heading"
+        },
+        {
+          "text": "1일차 (도착일)와 4, 5, 6일차는 이동 비중이 높습니다. 산인선은 배차가 적으니 먼저 시각표를 확인한 뒤 출발 시간을 정하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "3일차 이즈모의 날에 여유롭게 일몰을 보고 싶다면 이즈모시역 주변에서 묵는 것도 고려해 보세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "기타",
+          "style": "heading"
+        },
+        {
+          "text": "현금 엔화를 넉넉히 챙기세요. 일부 작은 가게, 버스, 작은 역에서는 카드를 받지 않습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "입국 전에 Visit Japan Web에 등록하세요: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "인터넷은 물리 SIM 카드나 eSIM을 쓸 수 있습니다.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "여행 개요: 산인 7일 코스",
+      "paragraphs": [
+        {
+          "image": "d3-01"
+        },
+        "요나고 기타로 공항으로 들어가서 간사이 국제공항으로 나오며, 서쪽에서 동쪽으로 되돌아가지 않고 갑니다. 사카이미나토, 마쓰에, 이즈모, 야스기, 마지막으로 돗토리. 앞의 3박은 마쓰에, 뒤의 3박은 돗토리에서 묵고, 낮에는 JR과 버스로 각 거점에서 나갑니다.",
+        "1일차: 요나고에 도착해 사카이미나토에서 해산물 점심을 먹고, {@d1-03}와 {@d1-04}를 둘러본 뒤 저녁에 전철로 마쓰에로 이동합니다.",
+        "2일차: 오전에는 호리카와 유람선과 {@d2-02}, 점심은 이즈모 소바나 향토 요리, 오후에는 시오미나와테와 고이즈미 야쿠모 구거, 저녁에는 {@d2-05}.",
+        {
+          "image": "d2-05"
+        },
+        "3일차: {@d3-01}에서 대형 시메나와와 오모테산도, 신몬도리에서 이즈모 소바. 오후에는 버스로 {@d3-03}, 저녁에는 {@d3-04}에서 석양을 봅니다.",
+        "4일차: 오전에는 {@d4-01}에서 일본 제일의 정원, 점심은 관내 다방. 오후에는 {@d4-03}에서 삼층탑과 단풍을 보고, 전철로 돗토리로 이동해 숙소를 옮깁니다.",
+        "5일차: 아침 일찍 유라의 코난 역과 코난 거리, {@d5-03}, 점심은 요네카 상점가 주변. 오후에는 돗토리로 돌아와 {@d5-05}.",
+        "6일차: 먼저 하쿠토 신사, 이어서 {@d6-02}. 점심은 사구 전망대 식당에서 사구 푸딩, 오후에는 {@d6-04}의 모래 조각전.",
+        {
+          "image": "d6-02"
+        },
+        "7일차: 돗토리역 주변에서 사구 푸딩과 20세기 배를 기념품으로 사고, 오후에 특급으로 오사카로 가서 공항선으로 갈아타 간사이 국제공항으로 갑니다.",
+        "숙소: 마쓰에역 주변에서 3박, 4일차부터 돗토리역 주변에서 3박. 이즈모의 석양을 여유 있게 보고 싶다면 3일차에 이즈모시역 주변에서 묵는 것도 고려해 보세요.",
+        "교통 포인트: 요나고 기타로 공항 바로 옆에 JR 사카이선 공항역이 있고 사카이미나토역까지 190엔입니다. 간사이 공항으로 가는 날은 돗토리에서 특급 슈퍼 하쿠토로 신오사카까지 간 뒤 특급 하루카로 갈아타며, 환승 포함 약 5시간이 걸리니 19:30 이후 출발 항공편을 고르세요. 산인선은 운행 편수가 적고, 히노미사키 버스도 하루 약 7왕복이라 시간과 돌아오는 막차를 먼저 확인해야 합니다. 돗토리 버스는 현금만 받고, 이치하타 전철은 교통 IC 카드를 쓸 수 없습니다. 출발 전에 최신 시간표를 확인하세요.",
+        "이런 분께: 이즈모 다이샤, 마쓰에성, 아다치 미술관, 코난, 돗토리 사구를 되돌아가지 않는 한 길로 잇고 싶은 분. 산인은 운행 편수가 적으니 먼저 시간을 조사한 뒤 출발 시간을 정하고, 동전도 넉넉히 챙기세요."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "소뼈 국물 라멘 (牛骨ラーメン)",
+      "category": "food",
+      "productType": "instant_meal",
+      "store": "마쓰에역 1층 기념품 가게 (여행기에 따르면 산인 특색으로, 보통은 돼지뼈)"
+    },
+    {
+      "key": "s-02",
+      "title": "이즈모 다이샤 참배 기념 쿠키와 해산물 센베이 쿠키",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "마쓰에역 1층 기념품 가게. 여행기에 따르면 짭짤한 해산물 센베이 쿠키가 맛있음"
+    },
+    {
+      "key": "s-03",
+      "title": "돗토리 사구 푸딩 (砂丘プリン)",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "돗토리 사구 주변과 돗토리역 가게"
+    },
+    {
+      "key": "s-04",
+      "title": "이즈모 다이샤와 하쿠토 신사의 부적, 인연 돌",
+      "category": "souvenir",
+      "productType": "charm_badge",
+      "store": "이즈모 다이샤, 하쿠토 신사 (여행기에 따르면 가미아리사이 기간에는 한정 부적이 있음)"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "사카이미나토시",
+      "latitude": 35.5395987,
+      "longitude": 133.2316492,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "마쓰에시",
+      "latitude": 35.4677618,
+      "longitude": 133.0486072,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "이즈모시",
+      "latitude": 35.3669642,
+      "longitude": 132.7546165,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "야스기시",
+      "latitude": 35.4309659,
+      "longitude": 133.2510978,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "돗토리시",
+      "latitude": 35.4944183,
+      "longitude": 134.2221779,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "돗토리시",
+      "latitude": 35.4944183,
+      "longitude": 134.2221779,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "돗토리시",
+      "latitude": 35.4944183,
+      "longitude": 134.2221779,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "사카이미나토시",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "요나고 기타로 공항 도착 (米子鬼太郎空港)",
+          "start": "12:00",
+          "end": "13:15",
+          "category": "airport",
+          "place": {
+            "name": "요나고 공항 (요나고 기타로 공항) 터미널 국내선 출발 입구",
+            "latitude": 35.5004251,
+            "longitude": 133.2437275,
+            "applePlaceID": "I8F8B001001AF1238",
+            "address": "鳥取県境港市, 佐斐神町",
+            "addressIsApproximate": true
+          },
+          "todos": [
+            {
+              "text": "타이거에어 타이완 도원–요나고 항공편과 항공권 확인하기",
+              "note": "https://www.tigerairtw.com/ 월요일, 금요일 운항. 겨울 시간표는 공식 사이트에서 확인"
+            }
+          ]
+        },
+        {
+          "key": "d1-02",
+          "title": "점심: 사카이미나토역 주변 (해산물)",
+          "start": "13:45",
+          "end": "14:40",
+          "category": "dining",
+          "place": {
+            "name": "바바자키초",
+            "latitude": 35.5385346,
+            "longitude": 133.2264666,
+            "applePlaceID": "I7E3816E56200E664",
+            "address": "鳥取県境港市, 馬場崎町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "공항 옆 JR 사카이선 '요나고 기타로 공항역'에서 사카이미나토역까지 운임 190엔. 배차가 적으니 입국 수속을 마치면 먼저 다음 열차를 확인하세요"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "미즈키 시게루 로드 (水木しげるロード): 기타로 요괴 동상 거리",
+          "start": "14:55",
+          "end": "15:35",
+          "category": "sight",
+          "place": {
+            "name": "미즈키 시게루 로드",
+            "latitude": 35.545729369944496,
+            "longitude": 133.2258653941916,
+            "address": "日本鳥取縣境港市",
+            "addressIsApproximate": true
+          },
+          "notes": "거리는 자유롭게 걸을 수 있습니다. 가게별 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "사카이미나토역에서 미즈키 시게루 로드를 따라 걷습니다. 길가에 요괴 동상이 약 177개"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "미즈키 시게루 기념관 (水木しげる記念館)",
+          "start": "15:50",
+          "end": "16:50",
+          "category": "museum",
+          "place": {
+            "name": "미즈키 시게루 기념관",
+            "latitude": 35.5464038,
+            "longitude": 133.2311489,
+            "applePlaceID": "IEA23DD0812E07659",
+            "address": "〒684-0025, 鳥取県境港市, 本町5",
+            "addressIsApproximate": false
+          },
+          "notes": "9:30~17:00 (마지막 입관 16:30), 연중무휴 (공식 FAQ)",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "미즈키 시게루 로드를 반대쪽 끝까지 걸어서 약 10분"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "저녁: 마쓰에역 주변",
+          "start": "18:30",
+          "end": "19:40",
+          "category": "dining",
+          "place": {
+            "name": "마쓰에",
+            "latitude": 35.4640317,
+            "longitude": 133.063745,
+            "applePlaceID": "I5D030EBE00248ED3",
+            "address": "島根県松江市, 朝日町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "사카이미나토역에서 JR 사카이선으로 요나고까지 약 40분, 특급 (야쿠모 등)으로 갈아타 마쓰에까지 약 25분. 기다리는 시간 포함"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "저녁 식당에서 마쓰에역 주변 호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "마쓰에시",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "마쓰에 호리카와 유람선 (ぐるっと松江堀川めぐり)",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "sight",
+          "place": {
+            "name": "ぐるっと松江堀川めぐり",
+            "latitude": 35.4782712,
+            "longitude": 133.0460977,
+            "applePlaceID": "I5FAC807C89DA4356",
+            "address": "〒690-0876, 島根県松江市, 黒田町507-1 松江堀川遊覧船(ぐるっと松江堀川めぐり)",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 전 구간 약 50분, 배에 오를 때 신발을 벗고, 다리 밑을 지날 때는 배의 지붕이 낮아짐",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "마쓰에역 2번 승강장에서 버스를 타고 겐민카이칸마에까지 가서 오테마에 승선장까지 걸어갑니다. 여행기 2024년 정보"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "마쓰에성 (松江城)",
+          "start": "10:45",
+          "end": "12:15",
+          "category": "castle",
+          "place": {
+            "name": "마쓰에성",
+            "latitude": 35.4751288,
+            "longitude": 133.0507619,
+            "applePlaceID": "IBB9E4CCB38DDC75C",
+            "address": "〒690-0887, 島根県松江市, 殿町1-5",
+            "addressIsApproximate": false
+          },
+          "notes": "덴슈는 4/1~9/30 8:30~18:00 (접수 17:30), 10/1~3/31 8:30~17:00 (접수 16:30). 연중무휴, 덴슈 어른 1,200엔 (공식 사이트)",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "호리카와 승선장에서 오르막길을 걸어 덴슈 입구까지 약 5분"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "점심: 마쓰에성 주변 (이즈모 소바 또는 향토 요리)",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "마쓰에성",
+            "latitude": 35.4751288,
+            "longitude": 133.0507619,
+            "applePlaceID": "IBB9E4CCB38DDC75C",
+            "address": "〒690-0887, 島根県松江市, 殿町1-5",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "시오미나와테 일대까지 도보 약 10분"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "시오미나와테와 고이즈미 야쿠모 구거 (塩見縄手・小泉八雲旧居)",
+          "start": "13:45",
+          "end": "15:15",
+          "category": "sight",
+          "place": {
+            "name": "무사 저택",
+            "latitude": 35.4785942,
+            "longitude": 133.0506986,
+            "applePlaceID": "I69BBF920F882A99D",
+            "address": "〒690-0888, 島根県松江市, 北堀町305",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 나와테는 무사 저택이 늘어선 거리로 자유롭게 걸을 수 있음",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "신지호 유람선: 석양 편 (宍道湖遊覧船「白鳥号」夕日クルーズ)",
+          "start": "16:15",
+          "end": "17:15",
+          "category": "ferry",
+          "place": {
+            "name": "신지호 유람선 승선장",
+            "latitude": 35.466821,
+            "longitude": 133.061187,
+            "applePlaceID": "I4080A359C3D6BA63",
+            "address": "島根県松江市, 伊勢宮町",
+            "addressIsApproximate": true
+          },
+          "notes": "석양 편의 출발 시각은 날짜에 따라 달라집니다 (12월은 약 16:20, 6~7월은 약 18:40, 제1 승선장 출발). 전체 약 60분. 공식 사이트의 시각표를 보세요 https://hakuchougo.jp/timetable/",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "시오미나와테에서 버스나 도보로 마쓰에역 동쪽 승선장까지 가서 승선을 기다립니다. 일몰 시각에서 거꾸로 계산하세요"
+          },
+          "todos": [
+            {
+              "text": "신지호 유람선 석양 편 출발 시각을 조회하고 예약하기",
+              "note": "https://hakuchougo.jp/timetable/ 일몰 시각은 계절에 따라 달라집니다. 전화 0852-24-3218"
+            }
+          ],
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "저녁: 마쓰에역 주변",
+          "start": "17:45",
+          "end": "19:00",
+          "category": "dining",
+          "place": {
+            "name": "마쓰에",
+            "latitude": 35.4640317,
+            "longitude": 133.063745,
+            "applePlaceID": "I5D030EBE00248ED3",
+            "address": "島根県松江市, 朝日町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "승선장에서 마쓰에역 주변까지 걸어서 돌아옴"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "이즈모시",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "이즈모 다이샤 (出雲大社): 가구라덴의 대형 시메나와와 오모테산도",
+          "start": "10:15",
+          "end": "12:15",
+          "category": "temple",
+          "place": {
+            "name": "이즈모 다이샤",
+            "latitude": 35.4019987,
+            "longitude": 132.6854567,
+            "applePlaceID": "IF395D2F40C7AF3EE",
+            "address": "〒699-0701, 島根県出雲市, 大社町杵築東195",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 참배는 두 번 절하고 네 번 손뼉 치고 한 번 절하기",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "마쓰에역에서 특급 야쿠모로 이즈모시까지 약 30분, 이치바타 버스로 갈아타 이즈모 다이샤까지 약 30분. 기다리는 시간 포함. 여행기에 따르면 이치바타 전철로도 갈 수 있고 총 시간은 비슷함"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "점심: 신몬도리 (이즈모 소바)",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "이즈모 다이샤 앞",
+            "latitude": 35.3933531,
+            "longitude": 132.6876942,
+            "applePlaceID": "IBFADB70A8CC8F83",
+            "address": "島根県出雲市, 大社町杵築南",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "신몬도리까지 걸어감"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "히노미사키 신사 (日御碕神社): 주홍빛 전각과 도리이",
+          "start": "14:15",
+          "end": "15:30",
+          "category": "temple",
+          "place": {
+            "name": "히노미사키 신사",
+            "latitude": 35.4295648,
+            "longitude": 132.6292276,
+            "applePlaceID": "I676A96AAA5CF4E67",
+            "address": "〒699-0763, 島根県出雲市, 大社町日御碕455",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "이즈모 다이샤 버스터미널에서 이치바타 버스 히노미사키선으로 히노미사키까지 약 20~25분, 약 510엔. 하루 약 7왕복이니 먼저 시각표를 확인하세요"
+          },
+          "todos": [
+            {
+              "text": "히노미사키 버스 시각과 돌아오는 막차 확인하기",
+              "note": "이치바타 버스 히노미사키선. 하루 약 7왕복"
+            }
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "이나사노하마의 석양 (稲佐の浜): 벤텐지마와 해가 지는 성지",
+          "start": "16:15",
+          "end": "17:45",
+          "category": "beach",
+          "place": {
+            "name": "이나사노하마 해수욕장",
+            "latitude": 35.4000699,
+            "longitude": 132.6724005,
+            "applePlaceID": "I7363992FA78AD40B",
+            "address": "島根県出雲市, 国道431号",
+            "addressIsApproximate": false
+          },
+          "notes": "하루 종일 개방. 일몰 시각은 공식 일몰 예보를 확인하세요 https://www.kankou-shimane.com/",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "히노미사키에서 같은 이치바타 버스 노선을 타고 이즈모 다이샤 방면으로 가다 이나사노하마에서 하차. 약 25~30분, 약 500엔 (여행기의 여행자는 16:17 버스를 탐). 막차 확인 필요"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "저녁: 이즈모시역 주변",
+          "start": "18:30",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "이즈모",
+            "latitude": 35.3607016,
+            "longitude": 132.7562549,
+            "applePlaceID": "I12A12B3FA5C51D71",
+            "address": "島根県出雲市, 駅北町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "이나사노하마에서 버스로 이즈모시역까지 약 25~30분"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "이즈모시역에서 특급 야쿠모나 보통 열차로 마쓰에에 돌아오는 데 약 30~50분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "야스기시",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "아다치 미술관 (足立美術館): 일본 제일의 정원",
+          "start": "10:00",
+          "end": "12:30",
+          "category": "museum",
+          "place": {
+            "name": "아다치 미술관",
+            "latitude": 35.3814847,
+            "longitude": 133.1963774,
+            "applePlaceID": "I5CC81BFF73177018",
+            "address": "〒692-0064, 島根県安来市, 古川町320",
+            "addressIsApproximate": false
+          },
+          "notes": "4~9월 9:00~17:30, 10~3월 9:00~17:00. 휴관일은 공식 사이트에 없으니 출발 전에 확인하세요. 어른 2,500엔. 관내 촬영 금지",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "마쓰에에서 JR로 야스기까지 약 15~20분, 야스기역에서 무료 셔틀버스로 갈아타 약 20분. 입구 카운터에서 돌아가는 셔틀버스 정리권을 미리 받아 두세요 (여행기의 당부)"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "점심: 아다치 미술관 안 다방",
+          "start": "12:40",
+          "end": "13:40",
+          "category": "dining",
+          "place": {
+            "name": "아다치 미술관",
+            "latitude": 35.3814847,
+            "longitude": 133.1963774,
+            "applePlaceID": "I5CC81BFF73177018",
+            "address": "〒692-0064, 島根県安来市, 古川町320",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 관내에 다방이 두 곳 있음",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "관내에서 도보 이동"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "야스기 기요미즈데라 (安来清水寺): 삼층탑과 단풍",
+          "start": "14:45",
+          "end": "16:15",
+          "category": "temple",
+          "place": {
+            "name": "기요미즈데라",
+            "latitude": 35.4021879,
+            "longitude": 133.2819171,
+            "applePlaceID": "IC9C4B296B332AC17",
+            "address": "〒692-0033, 島根県安来市, 清水町528",
+            "addressIsApproximate": false
+          },
+          "notes": "개산 8:30~17:00 (마지막 입산 16:30), 본당 9:00~16:30. 삼층탑과 보물관은 예약제로 어른 500엔, 12/1~3/31은 예약 중지 (관광 정보 사이트 자료)",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "셔틀버스로 야스기역에 돌아오는 데 약 20분, 야스기시 노란 버스 '기요미즈'선으로 갈아타 종점까지 약 15분, 다시 도보 약 8분. 배차가 적으니 먼저 시각표를 확인하세요"
+          },
+          "todos": [
+            {
+              "text": "야스기 기요미즈데라 삼층탑 예약과 노란 버스 시각 확인하기",
+              "note": "삼층탑과 보물관은 예약제. 12/1~3/31은 예약 중지. 노란 버스는 배차가 적음"
+            }
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "저녁: 돗토리역 북쪽 출구 주변 (여행기가 추천한 돗토리 와규 식당 '니쿠료리 Nick')",
+          "start": "18:30",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "돗토리",
+            "latitude": 35.4940203,
+            "longitude": 134.2259149,
+            "applePlaceID": "IBEB42912389ED68",
+            "address": "鳥取県鳥取市, 東品治町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 돗토리 와규 삼종 덮밥이 약 3,500엔 (2024년 정보)",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "노란 버스로 야스기역에 돌아와 특급 슈퍼마쓰카제/슈퍼오키로 돗토리까지 약 70~80분"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "저녁 식당에서 호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "돗토리시",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "코난 역 (コナン駅／由良駅)",
+          "start": "09:45",
+          "end": "10:15",
+          "category": "station",
+          "place": {
+            "name": "유라역",
+            "latitude": 35.4904561,
+            "longitude": 133.7543796,
+            "applePlaceID": "IB9242A51CDDBA1EB",
+            "address": "鳥取県東伯郡北栄町, 由良宿",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 역 안과 승강장에 코난 테마 장식이 있음",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "돗토리역에서 JR 산인 본선으로 유라역까지 약 45~60분. 배차가 적으니 먼저 시각표를 확인하세요 (공식 배차는 확인하지 못함)"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "코난 마을: 코난 거리 (コナン通り)",
+          "start": "10:25",
+          "end": "11:15",
+          "category": "sight",
+          "place": {
+            "name": "유라역",
+            "latitude": 35.4904561,
+            "longitude": 133.7543796,
+            "applePlaceID": "IB9242A51CDDBA1EB",
+            "address": "鳥取県東伯郡北栄町, 由良宿",
+            "addressIsApproximate": true
+          },
+          "notes": "거리는 자유롭게 걸을 수 있습니다. 가게별 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "유라역에서 코난 거리를 따라 아오야마 고쇼 고향관 방향으로 걷습니다. 전체 약 1.4킬로미터, 약 20분, 길가에 코난 동상과 캐릭터 간판이 있음"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "아오야마 고쇼 고향관 (青山剛昌ふるさと館): 명탐정 코난 작가의 고향",
+          "start": "11:25",
+          "end": "12:45",
+          "category": "museum",
+          "place": {
+            "name": "아오야마 고쇼 고향관",
+            "latitude": 35.4980087,
+            "longitude": 133.7618119,
+            "applePlaceID": "I5EC42F63654B929",
+            "address": "〒689-2221, 鳥取県東伯郡北栄町, 由良宿1414",
+            "addressIsApproximate": false
+          },
+          "notes": "9:30~17:30 (마지막 접수 17:00), 휴관일: 2026년 11/30. 어른 700엔. 현관은 2027/1/11까지 영업, 이후 새 건물로 이전 (2027년 봄 예정)",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분이면 도착 (코난 거리 끝)"
+          },
+          "todos": [
+            {
+              "text": "아오야마 고쇼 고향관의 휴관일과 현관 영업 기한 확인하기",
+              "note": "https://www.gamf.jp/42.html 현관은 2027/1/11까지"
+            }
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "점심: 요네카 상점가 (米花商店街) 주변",
+          "start": "12:55",
+          "end": "13:50",
+          "category": "dining",
+          "place": {
+            "name": "유라역",
+            "latitude": 35.4904561,
+            "longitude": 133.7543796,
+            "applePlaceID": "IB9242A51CDDBA1EB",
+            "address": "鳥取県東伯郡北栄町, 由良宿",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "관 옆의 요네카 상점가까지 걸어감"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "히사마쓰 공원과 진푸카쿠 (久松公園・仁風閣): 돗토리성 터",
+          "start": "15:30",
+          "end": "17:00",
+          "category": "park",
+          "place": {
+            "name": "진푸카쿠",
+            "latitude": 35.5071745,
+            "longitude": 134.2375069,
+            "applePlaceID": "I181889439869B454",
+            "address": "〒680-0011, 鳥取県鳥取市, 東町2丁目121",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 공원은 하루 종일 산책할 수 있음",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "유라역에서 JR로 돗토리역에 돌아오는 데 약 45분, 다시 버스나 도보 약 20분으로 히사마쓰 공원. 배차가 적음"
+          }
+        },
+        {
+          "key": "d5-06",
+          "title": "저녁: 돗토리역 북쪽 출구 상점가 주변",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "dining",
+          "place": {
+            "name": "돗토리",
+            "latitude": 35.4940203,
+            "longitude": 134.2259149,
+            "applePlaceID": "IBEB42912389ED68",
+            "address": "鳥取県鳥取市, 東品治町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "히사마쓰 공원에서 역 앞 상점가까지 걸어서 돌아옴"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "돗토리시",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "하쿠토 신사 (白兎神社): 이나바의 흰 토끼 전설, 인연",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "temple",
+          "place": {
+            "name": "하쿠토 신사",
+            "latitude": 35.5242042,
+            "longitude": 134.1150668,
+            "applePlaceID": "IBF6FD6B78E092305",
+            "address": "〒689-0206, 鳥取県鳥取市, 白兎603",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 돗토리 버스는 현금만 받으니 잔돈을 준비하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "돗토리역 버스터미널 4번 승강장에서 하쿠토 해안선 버스 (41번 노선)로 하쿠토 신사 앞까지 약 40~45분, 약 610엔 (여행기 2024년 정보, 현금만 가능. 정리권을 뽑고 내릴 때 번호대로 지불)"
+          },
+          "todos": [
+            {
+              "text": "돗토리에서 하쿠토 신사와 사구로 가는 버스 시각 확인하기",
+              "note": "돗토리 버스는 현금만 받으니 잔돈을 준비. 여행기의 경로는 아이오이초에서 갈아타야 함"
+            }
+          ],
+          "images": [
+            "d6-01"
+          ]
+        },
+        {
+          "key": "d6-02",
+          "title": "돗토리 사구 (鳥取砂丘): 일본 제일의 사구",
+          "start": "11:50",
+          "end": "13:00",
+          "category": "sight",
+          "place": {
+            "name": "돗토리 사구 지오파크 센터",
+            "latitude": 35.5440428,
+            "longitude": 134.2366272,
+            "applePlaceID": "ID75E63B64E53B549",
+            "address": "〒689-0105, 鳥取県鳥取市, 福部町湯山2164-971",
+            "addressIsApproximate": false
+          },
+          "notes": "하루 종일 개방, 휴무일 없음. 모래 위에 그림을 그리는 것은 금지",
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "하쿠토 신사에서 버스로 아이오이초까지 가서 돗토리 사구 방면으로 갈아타고, 사구 동쪽 입구에서 내려 걸어 올라갑니다. 약 60~70분 (여행기 2024년 경로, 배차가 적으니 먼저 시각표를 확인하세요)"
+          },
+          "images": [
+            "d6-02"
+          ]
+        },
+        {
+          "key": "d6-03",
+          "title": "점심: 돗토리 사구 전망대 식당 (여행기에서는 굴 정식)과 사구 푸딩",
+          "start": "13:10",
+          "end": "14:05",
+          "category": "dining",
+          "place": {
+            "name": "돗토리 사구 지오파크 센터",
+            "latitude": 35.5440428,
+            "longitude": 134.2366272,
+            "applePlaceID": "ID75E63B64E53B549",
+            "address": "〒689-0105, 鳥取県鳥取市, 福部町湯山2164-971",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 먼저 자판기에서 식권을 사고 자리에 앉음",
+          "leg": {
+            "fromKey": "d6-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "사구에서 오르막길로 도보 약 15분, 또는 리프트로 전망대까지"
+          }
+        },
+        {
+          "key": "d6-04",
+          "title": "모래 미술관 (砂の美術館): 모래 조각전",
+          "start": "14:20",
+          "end": "15:20",
+          "category": "museum",
+          "place": {
+            "name": "돗토리 사구 모래 미술관",
+            "latitude": 35.5396298,
+            "longitude": 134.2383733,
+            "applePlaceID": "I6B86B039CECD0764",
+            "address": "〒689-0105, 鳥取県鳥取市, 福部町湯山2083-17",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00~18:00 (마지막 입장 17:30). 전시 기간에는 연중무휴이고 전시 교체 기간에는 휴관. 현재 전시 '모래로 세계 여행·스페인'은 2027/1/3까지, 다음은 '실크로드'. 일반 800엔",
+          "leg": {
+            "fromKey": "d6-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "전망대에서 내려가 도보 약 10분이면 2번 입구"
+          }
+        },
+        {
+          "key": "d6-05",
+          "title": "저녁: 돗토리역 주변 (돗토리 와규 또는 해산물)",
+          "start": "17:15",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "돗토리",
+            "latitude": 35.4940203,
+            "longitude": 134.2259149,
+            "applePlaceID": "IBEB42912389ED68",
+            "address": "鳥取県鳥取市, 東品治町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d6-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "사구에서 버스로 돗토리역까지 약 25~30분 (여행기에서는 14:42 버스를 탐, 막차는 확인). 역에 돌아오면 휴식"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "돗토리시",
+      "events": [
+        {
+          "key": "d7-01",
+          "title": "돗토리역 주변에서 기념품 사기 (사구 푸딩, 20세기 배)",
+          "start": "09:30",
+          "end": "11:00",
+          "category": "shopping",
+          "place": {
+            "name": "도요코인 돗토리역 남쪽 출구",
+            "latitude": 35.4925256,
+            "longitude": 134.2279042,
+            "applePlaceID": "I6FC9DF0721926300",
+            "address": "〒680-0845, 鳥取県鳥取市, 富安町2丁目153番3号",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 역 안 가게에서 사구 푸딩을 살 수 있음 (여행기에 따르면 역 안에서도 팖)",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "호텔에서 역까지 걸어감"
+          }
+        },
+        {
+          "key": "d7-02",
+          "title": "간사이 국제공항 출발 (関西国際空港)",
+          "start": "17:00",
+          "end": "18:00",
+          "category": "airport",
+          "place": {
+            "name": "간사이 국제공항",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d7-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 300,
+            "durationSource": "user",
+            "note": "돗토리역에서 특급 슈퍼하쿠토로 신오사카까지 약 2시간 30분 (지정석 약 7,000엔 안팎, JR 서일본에서 확인), 간쿠 특급 하루카로 갈아타 간사이 공항까지 약 50분. 환승과 여유 시간 포함. 19:30 이후 출발하는 항공편을 권장"
+          }
+        }
+      ]
+    }
+  ]
+}

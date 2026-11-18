@@ -1,0 +1,710 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-himeji-kobe-3d",
+  "revision": 2,
+  "contentLocale": "en",
+  "title": "Himeji & Kobe in 3 Days — Himeji Castle, Shoshazan, Kobe",
+  "subtitle": "Himeji Castle, Shoshazan and Kobe: three days in and out of Kansai",
+  "summary": "Three days, two cities: Himeji Castle and Kōko-en Garden, Engyō-ji on Mt. Shosha, and on the last day Kobe Animal Kingdom and Sannomiya. You fly in and out of Kansai Airport. Osaka has its own template, so it is not repeated here. The Naruto whirlpools, the Akashi Kaikyō Bridge, Uonotana Market and the Kitano Ijinkan district sit in the alternates.",
+  "destination": "Himeji & Kobe, Japan",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Two travellers",
+    "First visit",
+    "Castles",
+    "World Heritage"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in once your flights and rooms are booked"
+    }
+  ],
+  "images": {
+    "d2-01": "images/jp-himeji-kobe-3d/d2-01.jpg",
+    "d2-03": "images/jp-himeji-kobe-3d/d2-03.jpg",
+    "d3-01": "images/jp-himeji-kobe-3d/d3-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Stay: Toyoko Inn Himeji Station Shinkansen North Exit (2 nights in a row; the travelogue stayed here)",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "Toyoko Inn Himeji Station Shinkansen North Exit",
+        "latitude": 34.8290758,
+        "longitude": 134.687892,
+        "applePlaceID": "I37FF38DFE3D7C49D",
+        "address": "〒670-0913, 兵庫県姫路市, 西駅前町52-2, 東横INN姫路駅新幹線北口",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ],
+      "todos": [
+        {
+          "text": "Book a hotel near Himeji Station (2 nights in a row)",
+          "note": "The travelogue stayed at Toyoko Inn Himeji Station Shinkansen North Exit. Book early"
+        }
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Akashi Kaikyō Bridge (明石海峡大橋)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Maiko Marine Promenade",
+        "latitude": 34.6311542,
+        "longitude": 135.0333488,
+        "applePlaceID": "IEBBA6657C47FECE5",
+        "address": "〒655-0047, 兵庫県神戸市垂水区, 東舞子町2051",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go. The travelogue skipped it because of bad weather"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Akashi Uonotana Market (魚の棚商店街)",
+      "durationMinutes": 60,
+      "category": "market",
+      "place": {
+        "name": "Uonotana Shopping Street",
+        "latitude": 34.6471415,
+        "longitude": 134.9922966,
+        "applePlaceID": "I553319624A303DB7",
+        "address": "〒673-0892, 兵庫県明石市, 本町1丁目1-16",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go. Akashi seafood and akashiyaki (egg-batter octopus balls)"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: Kitano Ijinkan district (北野異人館街)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Starbucks Coffee Kobe Kitano Ijinkan",
+        "latitude": 34.6999465,
+        "longitude": 135.1902397,
+        "applePlaceID": "IA93CC49FDC3714D7",
+        "address": "〒650-0002, 兵庫県神戸市中央区, 北野町3丁目1-31 北野物語館",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go. Each house has its own hours and closed days"
+    },
+    {
+      "key": "u-04",
+      "title": "Alternate: Naruto whirlpools (鳴門の渦潮)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Uzu-no-michi, Onaruto Bridge Promenade",
+        "latitude": 34.2361894,
+        "longitude": 134.6420344,
+        "applePlaceID": "I3D88C4E703AF446",
+        "address": "〒772-0053",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go. The best viewing times follow the tides, so look up a tide table. The travelogue skipped it because of bad weather"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and fact-checking",
+      "paragraphs": [
+        {
+          "text": "Source travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/aacd5f5cacd1/",
+          "style": "bullet"
+        },
+        {
+          "text": "Checked (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Himeji Castle (9:00–17:00, last entry 16:00, closed 12/29–30, ¥2,500, combined ticket with Kōko-en ¥2,600): https://himejicastle.jp/en/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kōko-en (9:00–17:00, closed 12/29–30; sources disagree on the fee, ¥300–400): search results and https://www.himeji-machishin.jp/ryokka/kokoen/en/guidance/index.html (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Shoshazan Engyō-ji (about 8:30–17:00, donation ¥500, ropeway round trip ¥1,200, shuttle bus ¥500): https://www.hyogo-tourism.jp/world/spot/detail_1050.html and https://mt-shosha.info/en.html (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kobe Animal Kingdom (10:00–17:00, ¥2,400, Port Liner about 14 min): https://www.kobe-oukoku.com/en/tickets and https://www.kobe-oukoku.com/en/access (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Airport limousine bus to Sannomiya (about 65–75 min, about ¥2,200) and the airport to Himeji (Haruka plus Shinkansen about 95–120 min, direct bus about ¥3,400–3,700): several roundup pages (checked 2026-11-17, from search results; no official timetable found)",
+          "style": "bullet"
+        },
+        {
+          "text": "Could not be confirmed from official sources, so check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "The official Shoshazan site was not reachable, so the opening hours and fees come from search results.",
+          "style": "bullet"
+        },
+        {
+          "text": "Kobe Animal Kingdom's closed days, the opening hours of Kobe Beef Kisshōkichi, and the opening hours of Piole and the Sannomiya shops.",
+          "style": "bullet"
+        },
+        {
+          "text": "The JR Special Rapid fare and timetable from Himeji to Sannomiya, and the current airport bus timetable and fare.",
+          "style": "bullet"
+        },
+        {
+          "text": "The coordinates for each spot are estimates.",
+          "style": "bullet"
+        },
+        {
+          "text": "What changed and what was cut",
+          "style": "heading"
+        },
+        {
+          "text": "Days 5 and 6 of the travelogue covered Osaka (Namba Yasaka Shrine, Tsūtenkaku, Umeda) and the Kobe harbour area. Osaka has its own template, so this one keeps only Himeji, Shoshazan, Kobe Animal Kingdom and Sannomiya.",
+          "style": "bullet"
+        },
+        {
+          "text": "Kōko-en and the night view from Himeji Station were not visited in the travelogue but are on the way, so they were added. The travelogue did not go to Himeji Municipal Zoo, so it is left out.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Route",
+          "style": "heading"
+        },
+        {
+          "text": "This template is a Himeji and Kobe trip in and out of Kansai Airport: day 1 from the airport to Himeji, day 2 Shoshazan and Himeji Castle, day 3 Kobe Animal Kingdom and Sannomiya, then back to the airport in the afternoon.",
+          "style": "bullet"
+        },
+        {
+          "text": "Kobe is only Animal Kingdom and Sannomiya. For Motomachi, Meriken Park and Harborland, see the Kyoto–Osaka–Kobe template.",
+          "style": "bullet"
+        },
+        {
+          "text": "Getting between the airport and the city",
+          "style": "heading"
+        },
+        {
+          "text": "Outbound: Limited Express Haruka from Kansai Airport to Shin-Osaka takes about 50 min, then the Sanyō Shinkansen to Himeji about 30 min. With the change it is about 2 hours and around ¥5,400 in all (old data).",
+          "style": "bullet"
+        },
+        {
+          "text": "Outbound alternative: a direct airport bus to Himeji Station takes about 1.5–2 hours and costs about ¥3,400–3,700. Departures are few, so check the bus company's timetable.",
+          "style": "bullet"
+        },
+        {
+          "text": "Return: take the airport limousine bus from Sannomiya to Kansai Airport, about 65–75 min and about ¥2,200. Choose a flight that leaves after 19:30.",
+          "style": "bullet"
+        },
+        {
+          "text": "Highlights",
+          "style": "heading"
+        },
+        {
+          "text": "Shoshazan Engyō-ji: the donation does not include the shuttle bus. The bus takes about 5 min, while walking up takes about 20 min (the travelogue suggests spending the money on the bus to save your legs). Allow at least 2 hours to see everything.",
+          "style": "bullet"
+        },
+        {
+          "text": "Himeji Castle: you take your shoes off inside, and the steep stairs often have a queue. If the weather is bad, switch to an indoor plan.",
+          "style": "bullet"
+        },
+        {
+          "text": "A combined ticket for Kōko-en and Himeji Castle costs ¥2,600. Check the official site for how long it stays valid.",
+          "style": "bullet"
+        },
+        {
+          "text": "There are not many shops around Himeji Station and they close early in the evening. Tax-free hours at drugstores usually end earlier than their opening hours.",
+          "style": "bullet"
+        },
+        {
+          "text": "The penguin feeding and the hands-on animal areas at Kobe Animal Kingdom need a numbered ticket. Pick it up first thing after you enter.",
+          "style": "bullet"
+        },
+        {
+          "text": "From Sannomiya, take the Port Liner toward Kobe Airport to get to Animal Kingdom. The train toward Kita-futō turns back at Kita-futō.",
+          "style": "bullet"
+        },
+        {
+          "text": "Pacing",
+          "style": "heading"
+        },
+        {
+          "text": "Days 1 and 3 are heavy on travel because of the trips to and from Kansai Airport.",
+          "style": "bullet"
+        },
+        {
+          "text": "The template is based on November, so sunset and opening hours change with the season.",
+          "style": "bullet"
+        },
+        {
+          "text": "Other",
+          "style": "heading"
+        },
+        {
+          "text": "Carry enough yen in cash. Register on Visit Japan Web before you arrive: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "Trip overview: how the 3 days run",
+      "paragraphs": [
+        {
+          "image": "d2-03"
+        },
+        "In and out of Kansai Airport, with the first two nights based in Himeji and the last day moved to Kobe, ending with the airport bus from Sannomiya in the evening. The transport plan is simple: mostly walking in Himeji, a bus plus ropeway up Shoshazan, and trains plus the Port Liner in Kobe.",
+        "Day 1: land at the airport around noon, take the limited express and Shinkansen to Himeji, visit {@d1-03} after lunch, then have dinner by the station and photograph the castle at night from the deck at the north exit.",
+        "Day 2: the morning goes to {@d2-01} up on Shoshazan, then {@d2-03} after lunch, and the afternoon is for shopping at Piole and the streets around Himeji Station.",
+        {
+          "image": "d2-01"
+        },
+        "Day 3: JR to Sannomiya, then the Port Liner to {@d3-01} to pet the capybaras, Kobe beef for lunch, a wander through Sannomiya Center-gai, and the airport bus back to Kansai Airport.",
+        {
+          "image": "d3-01"
+        },
+        "Where to sleep: two nights in a row at Toyoko Inn Himeji Station Shinkansen North Exit; on day 3 you check out and head to Kobe, so there is no further stay.",
+        "Getting around: from the airport to Himeji, take the Haruka limited express and change to the Sanyo Shinkansen, about 2 hours with the transfer (a direct airport bus also runs, with few departures); from Himeji Station to Shoshazan, take the Shinki Bus and then the ropeway; Himeji to Sannomiya is the JR Special Rapid; from Sannomiya the Port Liner toward Kobe Airport reaches the zoo; the way back is the airport limousine bus from Sannomiya, about 65 to 75 minutes, so choose a flight that leaves after 19:30. Check the latest timetables before you go.",
+        "Who it suits: anyone who wants Himeji Castle plus an easy animal-petting day, solo or in a group of two or three. Days 1 and 3 are heavy on transport, and day 2 has a mountain path and steep stairs, so wear comfortable shoes."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Kobe Frantz Chocolate (神戸フランツ)",
+      "category": "souvenir",
+      "productType": "chocolate_candy",
+      "store": "Near Kobe Chinatown and around Kobe Station (the travelogue bought it in Chinatown)"
+    },
+    {
+      "key": "s-02",
+      "title": "Freshly baked red bean mochi from Shoshazan",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "A shop beside Maniden Hall on Shoshazan (baked to order, crisp skin; eat it on the spot)"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Himeji",
+      "latitude": 34.8154234,
+      "longitude": 134.6854576,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Himeji",
+      "latitude": 34.8154234,
+      "longitude": 134.6854576,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Kobe",
+      "latitude": 34.6894277,
+      "longitude": 135.1957571,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Himeji",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Kansai International Airport (関西国際空港)",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "airport",
+          "place": {
+            "name": "Kansai International Airport",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Lunch: around Himeji Station (Himeji oden, anago rice or soba)",
+          "start": "14:15",
+          "end": "15:00",
+          "category": "dining",
+          "place": {
+            "name": "Himeji (姫路)",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 130,
+            "durationSource": "user",
+            "note": "Limited Express Haruka from the airport to Shin-Osaka takes about 50 min, then the Sanyō Shinkansen to Himeji about 30 min. With the change it is about 2 hours and around ¥5,400 in all (old data, check JR West). A direct airport bus to Himeji Station takes 1.5–2 hours and costs about ¥3,400–3,700, with few departures"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "Kōko-en Garden (好古園): the Japanese garden on the west side of Himeji Castle",
+          "start": "15:25",
+          "end": "16:30",
+          "category": "park",
+          "place": {
+            "name": "Koko-en Garden",
+            "latitude": 34.8378515,
+            "longitude": 134.6895777,
+            "applePlaceID": "I780D49712BA53B3D",
+            "address": "〒670-0012, 兵庫県姫路市, 本町68",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–17:00 (last entry 16:30; extended to 18:00 from 4/27 to 8/31), closed 12/29–30 (compiled from official sources)",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "About 20 min on foot along Otemae-dōri from Himeji Station. It is easier if you leave your bags at the hotel first"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "Dinner: the shopping street in front of Himeji Station (Kobe beef or an izakaya)",
+          "start": "17:15",
+          "end": "18:30",
+          "category": "dining",
+          "place": {
+            "name": "Himeji (姫路)",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "Walk back along Otemae-dōri from Kōko-en to the shopping street by the station"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "Second-floor deck at Himeji Station's north exit: night view of Himeji Castle (姫路駅北口2階デッキ)",
+          "start": "18:50",
+          "end": "19:20",
+          "category": "viewpoint",
+          "place": {
+            "name": "Himeji (姫路)",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "Open all day; check the official site for the winter illumination times at Himeji Castle",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the station. The second-floor deck at the north exit faces the castle head-on"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Himeji",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Shoshazan Engyō-ji (書写山圓教寺): Maniden Hall and Daikōdō",
+          "start": "09:45",
+          "end": "11:45",
+          "category": "temple",
+          "place": {
+            "name": "Engyo-ji Temple",
+            "latitude": 34.892341,
+            "longitude": 134.6544041,
+            "applePlaceID": "I3B9417AC51896122",
+            "address": "〒671-2201, 兵庫県姫路市, 書写2968",
+            "addressIsApproximate": false
+          },
+          "notes": "About 8:30–17:00 (varies by season; the last ropeway is separate), check before you go. Admission donation about ¥500, ropeway round trip about ¥1,200",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Take the Shinki Bus from Stop 10 at Himeji Station's north exit to Shosha Ropeway, about 25 min and ¥280. The ropeway takes about 4 min and runs about every 15 min"
+          },
+          "todos": [
+            {
+              "text": "Check the Shoshazan bus and ropeway timetables and decide whether to buy the shuttle ticket",
+              "note": "The ropeway runs about every 15 min. The donation does not include the shuttle bus"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "Lunch: around the front of Himeji Castle (Otemae-dōri)",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "Otemae-dori Street",
+            "latitude": 34.82905903288856,
+            "longitude": 134.69068729919022,
+            "address": "日本兵庫縣姬路市",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Take the bus back to central Himeji from the Shoshazan stop and get off near Otemae-dōri by the castle, about 30 min. Check the return timetable first"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "Himeji Castle (姫路城): the World Heritage White Heron Castle",
+          "start": "13:30",
+          "end": "15:30",
+          "category": "castle",
+          "place": {
+            "name": "Himeji Castle",
+            "latitude": 34.8393609,
+            "longitude": 134.6939937,
+            "applePlaceID": "I4824F228D574E9FD",
+            "address": "〒670-0012, 兵庫県姫路市, 本町68",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–17:00 (last entry 16:00; until 18:00 in summer), closed 12/29–30. Adults ¥2,500, combined ticket with Kōko-en ¥2,600 (official site)",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot across the Sannomaru Plaza. You take your shoes off to go inside, and the stairs are steep and often have a queue"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "Shopping at Himeji Station: Piole Himeji and the shopping street in front",
+          "start": "16:00",
+          "end": "17:15",
+          "category": "shopping",
+          "place": {
+            "name": "Piole Himeji",
+            "latitude": 34.8273504,
+            "longitude": 134.6910604,
+            "applePlaceID": "ICE4D383EB876A881",
+            "address": "〒670-0927, 兵庫県姫路市, 駅前町188-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go. Tax-free hours at drugstores usually end earlier than their opening hours",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "Walk back from Himeji Castle along Otemae-dōri to the station"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "Dinner: around Himeji Station (Kobe beef)",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "Himeji (姫路)",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On foot along the shopping street in front of the station"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Kobe",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Kobe Animal Kingdom (神戸どうぶつ王国): petting the capybaras",
+          "start": "10:00",
+          "end": "12:30",
+          "category": "zoo",
+          "place": {
+            "name": "Kobe Animal Kingdom",
+            "latitude": 34.6546652,
+            "longitude": 135.2225884,
+            "applePlaceID": "I621C3224B7AE814",
+            "address": "〒650-0047, 兵庫県神戸市中央区, 港島南町7丁目1-9",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00–17:00 (as shown on the official site that day); check the official calendar for closed days. Adults ¥2,400",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "JR Special Rapid from Himeji to Sannomiya takes about 40–50 min. At Sannomiya, change on the second floor to the Port Liner toward Kobe Airport and ride about 14 min to Computational Science Center (計算科学センター). Make sure you do not board a train toward Kita-futō"
+          },
+          "todos": [
+            {
+              "text": "Check Kobe Animal Kingdom's closed days and pick up a numbered ticket",
+              "note": "https://www.kobe-oukoku.com/en/ The penguin feeding and the hands-on areas need a numbered ticket"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "Lunch: Kobe Beef Kisshōkichi (神戸牛 吉祥吉), Sannomiya Center-gai branch",
+          "start": "13:00",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "Kobe Beef Kisshokichi (神戸牛 吉祥吉)",
+            "latitude": 34.6911948,
+            "longitude": 135.1939327,
+            "applePlaceID": "I230C2CD6BFDB70CC",
+            "address": "〒650-0021, 兵庫県神戸市中央区, 三宮町1丁目3-10 2F",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go. In the 2024 travelogue, a 220 g lean steak cost about ¥7,700 (before tax)",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Port Liner from Computational Science Center back to Sannomiya takes about 14 min, walking included"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "Sannomiya Center-gai and Kiddy Land Kobe (さんちか／センター街)",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "shopping",
+          "place": {
+            "name": "Sannomiya Center-gai Shopping Street",
+            "latitude": 34.6921353,
+            "longitude": 135.1943526,
+            "address": "日本兵庫縣神戶市",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go. The street is open to walk at any time",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Stroll Sannomiya Center-gai and Center Plaza (capsule toys, second-hand shops, a bookshop)"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "Depart from Kansai International Airport (関西国際空港)",
+          "start": "17:00",
+          "end": "18:00",
+          "category": "airport",
+          "place": {
+            "name": "Kansai International Airport",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "The airport limousine bus from Sannomiya (Kobe Sannomiya Bus Terminal) runs direct to Kansai Airport in about 65–75 min for about ¥2,200 (sources differ, ¥1,800–2,200). Pick a flight that leaves after 19:30"
+          }
+        }
+      ]
+    }
+  ]
+}

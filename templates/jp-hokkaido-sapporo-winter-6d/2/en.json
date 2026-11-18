@@ -1,0 +1,1579 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-hokkaido-sapporo-winter-6d",
+  "revision": 2,
+  "contentLocale": "en",
+  "title": "Hokkaido in 6 Days | Sapporo, Jōzankei, Otaru, Furano and Biei (Winter)",
+  "subtitle": "Winter: one night at Jōzankei Onsen, four in Sapporo, with day trips to Otaru and to Furano and Biei",
+  "summary": "Six winter days in and out of New Chitose Airport: one night at Jōzankei Onsen and the rest in Sapporo, with the Otaru Canal, Hokkaido Shrine and the city's food, plus a day tour to Furano and Biei with no particular tour company named. The notes cover snowy roads, short daylight and transport delays. Shiraito Falls and the Jōzankei product hall are held as alternates.",
+  "destination": "Sapporo, Jōzankei, Otaru, Furano and Biei, Japan",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 6,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Couple",
+    "Winter",
+    "Hot springs",
+    "Snow scenery"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in as soon as your flights and hotel are booked"
+    }
+  ],
+  "images": {
+    "d2-03": "images/jp-hokkaido-sapporo-winter-6d/d2-03.jpg",
+    "d2-09": "images/jp-hokkaido-sapporo-winter-6d/d2-09.jpg",
+    "d2-12": "images/jp-hokkaido-sapporo-winter-6d/d2-12.jpg",
+    "d3-02": "images/jp-hokkaido-sapporo-winter-6d/d3-02.jpg",
+    "d3-04": "images/jp-hokkaido-sapporo-winter-6d/d3-04.jpg",
+    "d3-06": "images/jp-hokkaido-sapporo-winter-6d/d3-06.jpg",
+    "d4-03": "images/jp-hokkaido-sapporo-winter-6d/d4-03.jpg",
+    "d4-06": "images/jp-hokkaido-sapporo-winter-6d/d4-06.jpg",
+    "d4-07": "images/jp-hokkaido-sapporo-winter-6d/d4-07.jpg",
+    "d4-08": "images/jp-hokkaido-sapporo-winter-6d/d4-08.jpg",
+    "d5-01": "images/jp-hokkaido-sapporo-winter-6d/d5-01.jpg",
+    "d5-05": "images/jp-hokkaido-sapporo-winter-6d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Lodging: Yuraku Sōan (Jozankei Yurakusoan), at the entrance to Jōzankei Onsen street, 1 night (the travelogue's author stayed here)",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "Jozankei Yuraku Soan",
+        "latitude": 42.9674373,
+        "longitude": 141.1673866,
+        "applePlaceID": "IEB53DA3AE1107F9E",
+        "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目228-1",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "Lodging: Keio Prelia Hotel Sapporo (京王プレリアホテル札幌), Sapporo Station north exit, 4 nights in a row (the travelogue's author stayed here)",
+      "fromDay": 2,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "Keio Prelia Hotel Sapporo",
+        "latitude": 43.0701426,
+        "longitude": 141.348337,
+        "applePlaceID": "ID6A37439075B56AB",
+        "address": "〒060-0808, 北海道札幌市北区, 北8条西4丁目11-1",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "closingDays": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Shiraito Falls (白糸の滝)",
+      "durationMinutes": 60,
+      "category": "waterfall",
+      "place": {
+        "name": "Shiraito Falls",
+        "latitude": 42.9690862,
+        "longitude": 141.1699254,
+        "applePlaceID": "IE4305C4887E65D0E",
+        "address": "〒061-2302，北海道札幌市南区，定山渓温泉東2丁目107",
+        "addressIsApproximate": false
+      },
+      "notes": "Near the hotel; closed in the travelogue because of snow and ice; check opening hours before you go"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Jōzankei Product Hall, Chūō Store (定山渓物産館 中央店)",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "Jozankei Gensen Park",
+        "latitude": 42.9650293,
+        "longitude": 141.1632451,
+        "applePlaceID": "I5196F29D69C0FD98",
+        "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目",
+        "addressIsApproximate": false
+      },
+      "notes": "You can buy onsen eggs to boil at the Gensen Park; check opening hours before you go"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and verification",
+      "paragraphs": [
+        {
+          "text": "Source travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/055527a739dd/",
+          "style": "bullet"
+        },
+        {
+          "text": "Verified (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "JR Rapid Airport from New Chitose Airport to Sapporo (about 33–43 minutes, about 6 trains an hour at peak 9:00–16:00, IC cards accepted, car 4 reserved seating): https://www.jrhokkaido.co.jp/global/chinese/travel/airport.html (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kappa Liner (about 60 minutes, all seats reserved, ¥1,700 one way, ¥1,460 online price, booking closes at 17:00 the day before, Sapporo Station boarding point 27): https://www.jotetsu.co.jp/bus/kappa_liner/index.html (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Other routes from Sapporo to Jōzankei and the Esta bus terminal renovation (from 2025/12): https://jozankei.jp/tw/news/newaccess/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Otaru Aquarium winter 2026/12/12–2027/2/23 10:00–16:00, closed 2026/11/24–12/11, winter adult ¥1,300: https://uu-beihaidao.tw/corporate/otaru-aq.shtml (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Sapporo TV Tower 9:00–22:00, last entry 21:50: https://www.tv-tower.co.jp/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Not confirmed from official sources; please check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "The actual fares and first and last trains of the JR Rapid Airport; times and fares of ordinary airport buses to Sapporo.",
+          "style": "bullet"
+        },
+        {
+          "text": "Opening hours of Jōzankei Shrine, the Kappa Family Wishing Foot Bath and Jōzankei Gensen Park, Furukawa Kajitsu J.glacée and Iwato Kannon Hall.",
+          "style": "bullet"
+        },
+        {
+          "text": "Winter opening hours of Sapporo Yodobashi, Genghis Khan Daruma main branch, Tanukikōji, Sapporo PARCO, Daimaru Sapporo, Hokkaido Shrine, Jingū Chaya, Toriton Maruyama, Yakiniku Bar Tamura, the Former Hokkaido Government Office Building and Sandria.",
+          "style": "bullet"
+        },
+        {
+          "text": "LeTAO Otaru Canal Store, Sakaimachi-dōri shops, and the times the Otaru steam clock sounds on the hour.",
+          "style": "bullet"
+        },
+        {
+          "text": "Opening hours of the day tour's stops: Furano Ningle Terrace, Furano Herb Garden, Biei Station, the Biei Christmas Tree, Shirahige Falls, and the winter illumination period at Shirogane Blue Pond.",
+          "style": "bullet"
+        },
+        {
+          "text": "The day tour's meeting point, price and itinerary details; the travelogue followed a midday-departure plan B, and each operator differs.",
+          "style": "bullet"
+        },
+        {
+          "text": "Snow closures at sights in Sapporo from mid-March into winter (in the travelogue Shiraito Falls and the suspension bridge were closed by snow).",
+          "style": "bullet"
+        },
+        {
+          "text": "What changed and what was left out",
+          "style": "heading"
+        },
+        {
+          "text": "The travelogue covers a mid-March trip; this template is marked as winter and adds reminders about snowy roads, short daylight and transport delays, while keeping the order of the travelogue's itinerary.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue's choice and prices for the day tour are not used; by the rules no company is named, so only the order of stops is listed, with a way to get there yourself.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue's Sapporo Tsunagu Yokochō (open only until March) and its Le Labo price reference are not used.",
+          "style": "bullet"
+        },
+        {
+          "text": "On day 5, the travelogue's order of Hokkaido Shrine and Maruyama Park is changed to go to the shrine first and then eat lunch, because daylight is short in winter and the shrine should be visited in daytime.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue browsed Sapporo Tōkyū Department Store, but its trading status could not be confirmed, so this template leaves it out.",
+          "style": "bullet"
+        },
+        {
+          "text": "Travelogue details",
+          "style": "heading"
+        },
+        {
+          "text": "Lodging: the travelogue's author stayed at Yuraku Sōan in Jōzankei (1 night) and Keio Prelia Hotel Sapporo by the Sapporo Station north exit (4 nights), both the author's actual stays; room rates and location are in the travelogue.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Winter reminders",
+          "style": "heading"
+        },
+        {
+          "text": "Snow and road conditions: from December to February central Sapporo has snow and ice, and the countryside is deeper. The paths and bridges at Jōzankei, Furano, Biei and Shirahige Falls are often icy, so walk slowly. In the mid-March travelogue the snow in town was already thin but the countryside still had snow, and Shiraito Falls and the suspension bridge were closed by it; deep winter will be worse than the travelogue.",
+          "style": "bullet"
+        },
+        {
+          "text": "Shoes: wear snow boots with non-slip soles or add ice cleats; do not wear ordinary sneakers. Security at Japanese airports is strict and boots must come off for the X-ray, so choose a pair that is easy to take off.",
+          "style": "bullet"
+        },
+        {
+          "text": "Clothing: a warm coat, thermal underwear, gloves, a hat and a scarf. It gets colder after dark, and the travelogue notes it stays very cold after the sun goes down.",
+          "style": "bullet"
+        },
+        {
+          "text": "Short daylight: around the winter solstice it is dark by about 16:00, so most sights need to be done early in the afternoon. Check Sapporo's sunrise and sunset times before you go and put outdoor sights in the daytime.",
+          "style": "bullet"
+        },
+        {
+          "text": "Transport delays: in heavy snow, JR Hokkaido, buses and flights at New Chitose Airport may be delayed or suspended. Do not pack the schedule too tight, leave a buffer for important reserved departures, and check JR Hokkaido and airline notices before you leave.",
+          "style": "bullet"
+        },
+        {
+          "text": "Daily transport is mainly JR and buses; the day tour on day 4 is a long ride, and winter roads may make it slower.",
+          "style": "bullet"
+        },
+        {
+          "text": "Between the airport and town (New Chitose Airport, CTS)",
+          "style": "heading"
+        },
+        {
+          "text": "First choice is the JR Rapid Airport (快速エアポート): the airport station is on B1, follow the signs for \"Domestic Terminal, JR Line\". It takes as little as about 33 minutes to Sapporo Station (special rapid), about 37 minutes for the ordinary rapid and about 43 minutes for the section rapid; about 6 trains an hour from 9:00 to 16:00. You can tap a transit IC card straight through the gate without queuing at a ticket machine. Cars 1–3 and 5–6 are unreserved seating, and car 4 is reserved.",
+          "style": "bullet"
+        },
+        {
+          "text": "Fare: not listed on the official page and not in the travelogue; check the fare page of the JR Hokkaido website.",
+          "style": "bullet"
+        },
+        {
+          "text": "Some trains run through to Otaru, but not every one, so check the train's destination before boarding. Local trains marked \"Local\" do not go to Otaru.",
+          "style": "bullet"
+        },
+        {
+          "text": "Backup: an airport bus, for example the Hokuto Kotsu airport bus to Makomanai Station, where you can change to a Jōzankei bus, takes about 120 minutes in all; for ordinary airport buses to Sapporo, check the official site.",
+          "style": "bullet"
+        },
+        {
+          "text": "On day 6 the travelogue took the 11:19 JR Rapid Airport from Sapporo Station to the airport, about 38 minutes, arriving at 12:00.",
+          "style": "bullet"
+        },
+        {
+          "text": "Getting around Sapporo and Jōzankei",
+          "style": "heading"
+        },
+        {
+          "text": "The smoothest way from Sapporo Station to Jōzankei is the Kappa Liner (かっぱライナー号): about 60 minutes, all seats reserved (no assigned seats), booked on the official site, boarding at Sapporo Station boarding point 27. The fare is ¥1,700 one way, ¥1,460 at the online booking discount; the travelogue paid ¥2,920 return. Booking opens about one month before the ride and closes at 17:00 the day before; the e-ticket is activated on your phone and shown to the driver, with no ticket to collect.",
+          "style": "bullet"
+        },
+        {
+          "text": "The 16:00 and 17:00 departures from Sapporo Station are autumn and winter only and run only as far as the Jōzankei garage; choose your boarding and alighting stops when you book. The travelogue's author chose to get off at Shiraito Falls stop, the closest to the hotel; you can also ride on to Jōzankei Onsen Higashi 2-chōme stop, right at the hotel door.",
+          "style": "bullet"
+        },
+        {
+          "text": "Two other routes (Jōzankei Tourism Association information from 2025/12): from Sapporo Station take the Namboku Line subway to Makomanai Station and change to a Jōzankei bus, about 70 minutes, no reservation needed, roughly every 30 minutes; Sapporo's bus terminal (Esta) is under renovation, and ordinary Jōzankei buses from the station front run only a few times in the morning, so the subway plus bus or the Kappa Liner is more practical.",
+          "style": "bullet"
+        },
+        {
+          "text": "The subway is very convenient in Sapporo: on the Namboku Line it takes about 3–5 minutes from Sapporo Station to Ōdōri and Susukino, and for Maruyama-kōen Station you change to the Tōzai Line at Ōdōri. Transit IC cards work throughout.",
+          "style": "bullet"
+        },
+        {
+          "text": "Reservations and tickets",
+          "style": "heading"
+        },
+        {
+          "text": "Kappa Liner: reserve on the official site; the address is in the sources.",
+          "style": "bullet"
+        },
+        {
+          "text": "Otaru Aquarium: tickets can be bought online on the official site, and you show the QR code at the entrance.",
+          "style": "bullet"
+        },
+        {
+          "text": "Day tour: several travel agencies run this tour from Sapporo (Furano's Ningle Terrace, Biei, Shirahige Falls and Blue Pond illumination); before you go, compare the meeting points, whether lunch is included and the winter illumination period. The travelogue's author chose a plan leaving at 11:50 in the middle of the day and returned to Sapporo's Ōdōri Station around 21:00 that evening.",
+          "style": "bullet"
+        },
+        {
+          "text": "Doing it by public transport yourself: take the JR Hakodate Main Line from Sapporo Station to Asahikawa and change to the Furano Line to Furano, about 2–3 hours; from Furano to Biei you can take the JR Furano Line; Biei's Blue Pond and Shirahige Falls are far from the station, so in winter you mostly rely on taxis or a rental car. If you drive in winter, assess the risk of snowy roads yourself, and driving is not recommended if you are not used to snow. For times and fares, check the JR Hokkaido website.",
+          "style": "bullet"
+        },
+        {
+          "text": "Blue Pond illumination: only at night in winter, with dates and times that differ each year; check the Biei Town tourism association.",
+          "style": "bullet"
+        },
+        {
+          "text": "Entry and internet",
+          "style": "heading"
+        },
+        {
+          "text": "Register on Visit Japan Web before you leave; immigration and customs share one QR code: https://www.vjw.digital.go.jp/main/#/vjwpco001 .",
+          "style": "bullet"
+        },
+        {
+          "text": "For the internet you can use a physical SIM card or an eSIM; an eSIM has to be activated somewhere with a connection, so it is best to set it up in Taiwan before you leave. The travelogue's author briefly lost signal only deep in the hills of Biei.",
+          "style": "bullet"
+        },
+        {
+          "text": "You can check in online and choose seats three days before your return flight, saving time in the airport queue; see the airline's website.",
+          "style": "bullet"
+        },
+        {
+          "text": "Pace of the trip",
+          "style": "heading"
+        },
+        {
+          "text": "Days 1 and 6 include airport transfers and day 4 is a full day of transport for the day tour, so transport takes a larger share than the usual 30%. On day 4 the return to Sapporo is at about 21:00.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Otaru Aquarium is open only until 16:00 in winter, so on day 3 visit the aquarium first, then the canal and Sakaimachi-dōri.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "Trip overview: how the 6 days run",
+      "paragraphs": [
+        {
+          "image": "d4-08"
+        },
+        "In and out of New Chitose Airport, with the first night at Jōzankei Onsen and the next four based at Sapporo Station's north exit. Otaru, Furano and Biei are all out-and-back from Sapporo in a day. This is a winter trip with short daylight and icy ground, so outdoor sights are kept to the daytime.",
+        "Day 1: land at New Chitose, take JR to Sapporo Station, then the reserved Kappa Liner from boarding point 27 to Jōzankei, check in at the onsen inn, and have an izakaya dinner on the hot-spring street.",
+        "Day 2: {@d2-02}, the Kappa Family Wishing Foot Bath and Jōzankei Gensen Park in the morning, with a bakery stop and Iwato Kannon Hall, then collect your luggage at noon and take the bus back to Sapporo to check in; in the evening {@d2-09}, Genghis Khan grilled lamb, Tanukikōji, and the night view from {@d2-12}.",
+        {
+          "image": "d2-12"
+        },
+        "Day 3: the train to Otaru, first {@d3-02} (it closes at 16:00 in winter), lunch at the Sanbanko café, then {@d3-04}, Sakaimachi-dōri and the {@d3-06}, and soup curry to take away for dinner back in Sapporo.",
+        {
+          "image": "d3-04"
+        },
+        "Day 4: after breakfast meet at Ōdōri Station exit 31 for the Furano and Biei day tour from Sapporo: {@d4-03}, the herb garden, Biei Station, the Biei Christmas Tree and Shirahige Falls, then {@d4-08} at dusk, back in Sapporo around 21:00.",
+        "Day 5: daylight is short in winter, so start at {@d5-01}, then milk ice cream and conveyor-belt seafood sushi in Maruyama, Daimaru Sapporo and the {@d5-05} in the afternoon, and wagyu yakiniku at night.",
+        "Day 6: JR to New Chitose Airport, souvenirs and food at the domestic terminal, then check in and depart at {@d6-02}.",
+        "Where to sleep: the first night at Yuraku Sōan at the entrance to Jōzankei's onsen street, then four nights from day 2 at Keio Prelia Hotel Sapporo by Sapporo Station's north exit.",
+        "Getting around: the JR Rapid Airport runs from the airport to Sapporo in about 33 to 43 minutes and takes a transit IC card; the Kappa Liner from Sapporo Station to Jōzankei takes about 60 minutes and every seat must be reserved; in Sapporo you mostly ride the subway. Heavy snow can delay JR, buses and flights, so leave a buffer for any fixed booking; the day tour on day 4 is a long drive and winter roads may slow it further. Check the latest timetables before you go.",
+        "Who it suits: anyone who wants onsen, the Otaru canal, Furano and Biei in one winter trip. Wear non-slip snow boots and pack warm clothes; you get back to Sapporo around 21:00 on day 4, so save your energy for that day."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Rokkatei rum raisin butter sandwich cookies (六花亭 ラム酒入りレーズンバターサンド)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "Buy at Otaru's Sakaimachi-dōri or the airport; the travelogue says the shelf life is short and they taste better chilled"
+    },
+    {
+      "key": "s-02",
+      "title": "Rokkatei liqueur chocolate bonbons (六花亭 ボンボンショコラ洋酒入り)",
+      "category": "souvenir",
+      "productType": "chocolate_candy",
+      "store": "Recommended by the travelogue, and the liqueur is real; buy at Otaru's Sakaimachi-dōri or the airport"
+    },
+    {
+      "key": "s-03",
+      "title": "LeTAO cookies and a tin of dried-strawberry chocolate (ルタオ)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "Otaru Canal Store; the travelogue found the cookies good and the dried-strawberry chocolate rather sweet"
+    },
+    {
+      "key": "s-04",
+      "title": "Sapporo Agricultural College milk cookies (札幌農学校)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "Buy at the airport or a department store (the travelogue's haul)"
+    },
+    {
+      "key": "s-05",
+      "title": "Grilled corn-flavoured snack (焼きとうもろこし風味のお菓子)",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "Airport souvenir area (the travelogue says it is good)"
+    },
+    {
+      "key": "s-06",
+      "title": "Kitaichi Glass Hokkaido local sake and melon liqueur (北一硝子)",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "Free tastings at the Kitaichi Glass outlet in Otaru; the travelogue's author bought the melon liqueur, to drink with ice or soda water"
+    },
+    {
+      "key": "s-07",
+      "title": "Handmade wooden musician figurines",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "Handmade goods at the log cabins of Furano's Ningle Terrace; photography is not allowed in the shop"
+    },
+    {
+      "key": "s-08",
+      "title": "Hokkaido Shrine traffic-safety charm and sticker (交通安全守)",
+      "category": "souvenir",
+      "productType": "charm_badge",
+      "store": "Hokkaido Shrine; the charm can hang in a car, and the sticker goes on a motorbike, bicycle or helmet"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Sapporo",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Sapporo",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Otaru",
+      "latitude": 43.1906335,
+      "longitude": 140.9944389,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Sapporo",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Sapporo",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Sapporo",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Sapporo",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at New Chitose Airport (新千歳空港)",
+          "start": "13:15",
+          "end": "14:20",
+          "category": "airport",
+          "place": {
+            "name": "New Chitose Airport International Terminal",
+            "latitude": 42.78662,
+            "longitude": 141.6766,
+            "applePlaceID": "I6EBDB85749A9452",
+            "address": "北海道千歳市, 美々",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Sapporo Station: wait at boarding point 27 (札幌駅 27番のりば)",
+          "start": "15:10",
+          "end": "15:45",
+          "category": "station",
+          "place": {
+            "name": "Sapporo",
+            "latitude": 43.068593,
+            "longitude": 141.3507724,
+            "applePlaceID": "I50F4652462F771D9",
+            "address": "北海道札幌市北区, 北6条西",
+            "addressIsApproximate": false
+          },
+          "notes": "Check station opening hours before you go",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "Take the JR Rapid Airport (快速エアポート) from the B1 level of the airport station, as fast as about 33–41 minutes to Sapporo; you can tap a transit IC card straight through the gate; unreserved seats are in cars 1–3 and 5–6"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "Arrive at Jōzankei Onsen and check in: Yuraku Sōan (Jozankei Yurakusoan)",
+          "start": "17:00",
+          "end": "17:30",
+          "category": "hotel",
+          "place": {
+            "name": "Jozankei Yuraku Soan",
+            "latitude": 42.9674373,
+            "longitude": 141.1673866,
+            "applePlaceID": "IEB53DA3AE1107F9E",
+            "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目228-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check check-in and check-out times before you go",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "Kappa Liner (かっぱライナー号) from Sapporo Station boarding point 27, direct in about 60 minutes, all seats reserved; get off at Shiraito Falls (白糸の滝) stop, and the hotel is across the road; show your e-ticket when boarding and getting off, and hand your luggage to the staff to load"
+          },
+          "todos": [
+            {
+              "text": "Reserve Kappa Liner from Sapporo Station to Jōzankei (return included)",
+              "note": "Official site https://www.jotetsu.co.jp/bus/kappa_liner/index.html ; booking opens one month before the ride and closes at 17:00 the day before; the e-ticket is activated on your phone"
+            }
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "Dinner: Kita no Kuni Izakaya (3rd floor, 定山渓万世閣ホテルミリオーネ)",
+          "start": "18:10",
+          "end": "19:30",
+          "category": "dining",
+          "place": {
+            "name": "Jozankei Manseikaku Hotel Milione",
+            "latitude": 42.9642083,
+            "longitude": 141.1635384,
+            "applePlaceID": "IA3379425E5189323",
+            "address": "〒061-2302",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot from the hotel; wear non-slip shoes on the snowy road"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel; it is cold at night and the road may be icy"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Sapporo",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Breakfast: Japanese breakfast at the hotel",
+          "start": "09:00",
+          "end": "09:50",
+          "category": "dining",
+          "place": {
+            "name": "Jozankei Yuraku Soan",
+            "latitude": 42.9674373,
+            "longitude": 141.1673866,
+            "applePlaceID": "IEB53DA3AE1107F9E",
+            "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目228-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check breakfast hours before you go",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 2,
+            "durationSource": "user",
+            "note": "Eat in the hotel"
+          }
+        },
+        {
+          "key": "d2-02",
+          "title": "Jōzankei Shrine (定山渓神社)",
+          "start": "10:05",
+          "end": "10:35",
+          "category": "temple",
+          "place": {
+            "name": "Jozankei Shrine",
+            "latitude": 42.9649277,
+            "longitude": 141.1671937,
+            "applePlaceID": "I30D94C38550067DE",
+            "address": "〒061-2301, 北海道札幌市南区, 定山渓温泉3丁目218",
+            "addressIsApproximate": false
+          },
+          "notes": "Check whether the grounds are open before you go; the steps are snowy and icy in winter",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot from the hotel; the uphill steps freeze easily in winter"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "Kappa Family Wishing Foot Bath and Jōzankei Gensen Park (河童家族の祈願足湯・定山源泉公園)",
+          "start": "10:50",
+          "end": "11:40",
+          "category": "park",
+          "place": {
+            "name": "Jozankei Gensen Park",
+            "latitude": 42.9650293,
+            "longitude": 141.1632451,
+            "applePlaceID": "I5196F29D69C0FD98",
+            "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Free; check opening hours before you go; the park has public foot baths and a spring outlet where you can boil onsen eggs, and parts may be closed in winter",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot from the shrine; the slope next to it leads down to Gensen Park"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "Bakery and sweets: Furukawa Kajitsu J.glacée (ふる川果日 J.glacée), Jōzankei",
+          "start": "11:55",
+          "end": "12:20",
+          "category": "bakery",
+          "place": {
+            "name": "J•glacée",
+            "latitude": 42.9659773,
+            "longitude": 141.1611764,
+            "applePlaceID": "I2DD452F5679637EA",
+            "address": "〒061-2303, 北海道札幌市南区, 定山渓温泉西4丁目356",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 8,
+            "durationSource": "user",
+            "note": "About 8 minutes walking uphill along the onsen street; the travelogue recommends the freshly baked apple croissant"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "Iwato Kannon Hall (岩戸観音堂)",
+          "start": "12:35",
+          "end": "12:55",
+          "category": "temple",
+          "place": {
+            "name": "Iwato Kannon",
+            "latitude": 42.9664674,
+            "longitude": 141.1608122,
+            "applePlaceID": "I2A38F02C369DB8E5",
+            "address": "〒061-2303",
+            "addressIsApproximate": true
+          },
+          "notes": "Open for worship at any time; take care in the winter snow",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 12,
+            "durationSource": "user",
+            "note": "About 12 minutes on foot, along the onsen street and a snow-covered suspension bridge"
+          }
+        },
+        {
+          "key": "d2-06",
+          "title": "Collect your luggage and wait at Shiraito Falls bus stop (白糸の滝バス停)",
+          "start": "13:10",
+          "end": "13:30",
+          "category": "station",
+          "place": {
+            "name": "Shiraito Falls",
+            "latitude": 42.9690862,
+            "longitude": 141.1699254,
+            "applePlaceID": "IE4305C4887E65D0E",
+            "address": "〒061-2302，北海道札幌市南区，定山渓温泉東2丁目107",
+            "addressIsApproximate": false
+          },
+          "notes": "Check the bus departure time on the e-ticket you reserved",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "Go back to the hotel for the luggage you left, then cross the road to the stop opposite the one you arrived at; the reserved return bus reaches the stop at about 13:31"
+          }
+        },
+        {
+          "key": "d2-07",
+          "title": "Check in: Keio Prelia Hotel Sapporo (京王プレリアホテル札幌)",
+          "start": "14:50",
+          "end": "15:20",
+          "category": "hotel",
+          "place": {
+            "name": "Keio Prelia Hotel Sapporo",
+            "latitude": 43.0701426,
+            "longitude": 141.348337,
+            "applePlaceID": "ID6A37439075B56AB",
+            "address": "〒060-0808, 北海道札幌市北区, 北8条西4丁目11-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check check-in and check-out times before you go",
+          "leg": {
+            "fromKey": "d2-06",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "The Kappa Liner back to Sapporo Station takes about 60 minutes (see your e-ticket for times; the return service and stops must be reserved in advance), then about 5 minutes on foot from the station to the north exit and the hotel"
+          }
+        },
+        {
+          "key": "d2-08",
+          "title": "Sapporo Yodobashi capsule toys and toys (ヨドバシカメラ マルチメディア札幌)",
+          "start": "15:35",
+          "end": "16:05",
+          "category": "shopping",
+          "place": {
+            "name": "Yodobashi Camera Multimedia Sapporo",
+            "latitude": 43.068333,
+            "longitude": 141.3476752,
+            "applePlaceID": "IBD9DA5EA3549CF8",
+            "address": "〒060-0806, 北海道札幌市北区, 北6条西5丁目1-22",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-07",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes on foot from the hotel toward the south exit of JR Sapporo Station"
+          }
+        },
+        {
+          "key": "d2-09",
+          "title": "Susukino Crossing (すすきの交差点)",
+          "start": "16:25",
+          "end": "16:55",
+          "category": "sight",
+          "place": {
+            "name": "Susukino Free Information Center, Susukino Crossing",
+            "latitude": 43.0559525,
+            "longitude": 141.3535483,
+            "applePlaceID": "I87F015F4ED47ECDB",
+            "address": "〒064-0804, 北海道札幌市中央区, 南4条西3丁目9-5",
+            "addressIsApproximate": false
+          },
+          "notes": "Visible all day",
+          "leg": {
+            "fromKey": "d2-08",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "About 5 minutes by subway on the Namboku Line from Sapporo Station to Susukino Station, about 20 minutes including walking and waiting"
+          },
+          "images": [
+            "d2-09"
+          ]
+        },
+        {
+          "key": "d2-10",
+          "title": "Dinner: Genghis Khan Daruma, main branch (成吉思汗 だるま 本店)",
+          "start": "17:00",
+          "end": "18:00",
+          "category": "dining",
+          "place": {
+            "name": "Sapporo Jingisukan Yukidaruma Susukino Main Branch",
+            "latitude": 43.0525874,
+            "longitude": 141.3526282,
+            "applePlaceID": "IDDDFD4EF638AA2EB",
+            "address": "〒064-0806, 北海道札幌市中央区, 南6条西4 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue warns that by the time you finish eating, a long queue has formed outside, and there are other branches nearby",
+          "leg": {
+            "fromKey": "d2-09",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "About 5 minutes on foot from the crossing"
+          }
+        },
+        {
+          "key": "d2-11",
+          "title": "A stroll through Tanukikōji Shopping Street (狸小路商店街)",
+          "start": "18:15",
+          "end": "18:45",
+          "category": "shopping",
+          "place": {
+            "name": "Tanukikoji Shopping Street",
+            "latitude": 43.0572554,
+            "longitude": 141.3527691,
+            "applePlaceID": "I95C7EBDAA769D5FC",
+            "address": "〒060-0062",
+            "addressIsApproximate": true
+          },
+          "notes": "You can walk the arcade all day; opening hours differ by shop, so check before you go",
+          "leg": {
+            "fromKey": "d2-10",
+            "mode": "walking",
+            "durationMinutes": 8,
+            "durationSource": "user",
+            "note": "About 8 minutes on foot from Susukino toward Ōdōri"
+          }
+        },
+        {
+          "key": "d2-12",
+          "title": "Night view from the Sapporo TV Tower (さっぽろテレビ塔)",
+          "start": "19:00",
+          "end": "19:50",
+          "category": "viewpoint",
+          "place": {
+            "name": "Sapporo TV Tower",
+            "latitude": 43.0611553,
+            "longitude": 141.3564238,
+            "applePlaceID": "IB4FF172F48C5B9BC",
+            "address": "〒060-0042, 北海道札幌市中央区, 大通西1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "About 9:00–22:00, last entry about 21:50 (official site tv-tower.co.jp, verified 2026-11-17); you can stamp a souvenir seal inside the observation deck",
+          "leg": {
+            "fromKey": "d2-11",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes on foot east from Tanukikōji to Ōdōri Park"
+          },
+          "images": [
+            "d2-12"
+          ]
+        },
+        {
+          "key": "d2-13",
+          "title": "Browse Sapporo PARCO (札幌PARCO)",
+          "start": "20:05",
+          "end": "20:45",
+          "category": "shopping",
+          "place": {
+            "name": "Muji Sapporo Parco",
+            "latitude": 43.0587429,
+            "longitude": 141.3531098,
+            "applePlaceID": "IEA4EA202B6CE869A",
+            "address": "〒060-0061",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-12",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot southwest from the TV tower, at the next intersection"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "About 6 minutes by subway from Ōdōri Station to Sapporo Station, plus walking to the north exit and the hotel, about 25 minutes in all"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Otaru",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Otaru Station bus terminal (小樽駅前バスターミナル)",
+          "start": "10:45",
+          "end": "11:00",
+          "category": "station",
+          "place": {
+            "name": "Otaru",
+            "latitude": 43.197135,
+            "longitude": 140.9937207,
+            "applePlaceID": "I889A120FB5A8AD1D",
+            "address": "北海道小樽市, 稲穂",
+            "addressIsApproximate": true
+          },
+          "notes": "Check station opening hours before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "JR Hakodate Main Line from Sapporo Station takes about 40–60 minutes (about 40 for the rapid; local trains are slower and often standing-room in winter); leave the station, cross the road, and the bus stop is on your right"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "Otaru Aquarium (おたる水族館): Kaijū Park and the penguin walk",
+          "start": "11:25",
+          "end": "13:40",
+          "category": "aquarium",
+          "place": {
+            "name": "Otaru Aquarium",
+            "latitude": 43.2370258,
+            "longitude": 141.0116485,
+            "applePlaceID": "I2D2DA6DFBC661C60",
+            "address": "〒047-0047, 北海道小樽市, 祝津3丁目303",
+            "addressIsApproximate": false
+          },
+          "notes": "Winter 2026/12/12–2027/2/23 10:00–16:00 (go by the official site for last entry); closed 2026/11/24–12/11; hours from March onward change each season, so see the official site uu-beihaidao.tw",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "From boarding point 3 in front of Otaru Station, Hokkaido Chuo Bus line 10 (Otaru Aquarium) goes direct in about 20 minutes; line 11 (Shukutsu) also goes there but takes about 30 minutes"
+          },
+          "todos": [
+            {
+              "text": "Reserve Otaru Aquarium tickets",
+              "note": "Tickets can be bought online on the official site, and you show the QR code at the entrance; winter hours 10:00–16:00, closed 2026/11/24–12/11: https://uu-beihaidao.tw/corporate/otaru-aq.shtml"
+            }
+          ],
+          "images": [
+            "d3-02"
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "Lunch: LeTAO Otaru Canal Store, Sanbanko café (ルタオ小樽運河店 三番庫カフェ)",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "cafe",
+          "place": {
+            "name": "LeTAO Unga Plaza Store",
+            "latitude": 43.2003192,
+            "longitude": 141.0003805,
+            "applePlaceID": "I4F761A5F6B738BD1",
+            "address": "〒047-0031, 北海道小樽市, 色内2丁目1-20",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "About 20 minutes by bus back to Otaru Station (including the wait, with fewer buses in winter), then about 15 minutes along the station-front avenue to the canal"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "Otaru Canal (小樽運河)",
+          "start": "15:45",
+          "end": "16:25",
+          "category": "sight",
+          "place": {
+            "name": "Otaru Canal Tourist Information Center",
+            "latitude": 43.1979983,
+            "longitude": 141.0032716,
+            "applePlaceID": "I832E860AC996B492",
+            "address": "〒047-0007, 北海道小樽市, 港町5",
+            "addressIsApproximate": false
+          },
+          "notes": "Open all day",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "About 5 minutes on foot"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "Shopping on Sakaimachi-dōri: Rokkatei and Kitaichi Glass (六花亭・北一硝子)",
+          "start": "16:40",
+          "end": "17:20",
+          "category": "shopping",
+          "place": {
+            "name": "Sakaimachi Hondori",
+            "latitude": 43.19427936731942,
+            "longitude": 141.0061036116922,
+            "address": "日本北海道小樽市",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go; the Kitaichi Glass outlet offers free tastings of Hokkaido local sake (travelogue)",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 12,
+            "durationSource": "user",
+            "note": "Walk along the canal and Sakaimachi-dōri toward the steam clock, with shops all the way"
+          }
+        },
+        {
+          "key": "d3-06",
+          "title": "Otaru Steam Clock (小樽蒸気時計)",
+          "start": "17:35",
+          "end": "17:55",
+          "category": "sight",
+          "place": {
+            "name": "Otaru Orgel Hall",
+            "latitude": 43.1905274,
+            "longitude": 141.0079933,
+            "applePlaceID": "I7854E0806E990114",
+            "address": "〒047-0015, 北海道小樽市, 住吉町4-1",
+            "addressIsApproximate": false
+          },
+          "notes": "The steam clock sounds its whistle on the hour, so check before you go; the exterior is visible all day",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk to the end of Sakaimachi-dōri"
+          },
+          "images": [
+            "d3-06"
+          ]
+        },
+        {
+          "key": "d3-07",
+          "title": "Dinner: Hokkaido soup curry to take away (Savoy, Sapporo Station North Exit Branch)",
+          "start": "19:15",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "Curry Savoy",
+            "latitude": 43.0711749,
+            "longitude": 141.3492145,
+            "applePlaceID": "IF12D261DD619DA7C",
+            "address": "〒060-0808, 北海道札幌市北区, 北8条西4, 稲津ビルB1F",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue's author took it back to the hotel to eat",
+          "leg": {
+            "fromKey": "d3-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "About 25 minutes' walk back to Otaru Station, then JR back to Sapporo in about 40–60 minutes (if you miss the rapid, take a local)"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot back to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Sapporo",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "Breakfast: Komeda's Coffee, Ōdōri Nishi 2-chōme Branch (コメダ珈琲店 大通西2丁目店)",
+          "start": "10:30",
+          "end": "11:15",
+          "category": "cafe",
+          "place": {
+            "name": "Komeda's Coffee Odori Nishi 2-chome Branch",
+            "latitude": 43.0600811,
+            "longitude": 141.3540977,
+            "applePlaceID": "IEBAB0F64D775C39E",
+            "address": "〒060-0042, 北海道札幌市中央区, 大通西2丁目5 ほくほく札幌ビル",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 3 minutes by subway on the Namboku Line from Sapporo Station to Ōdōri Station, about 15 minutes including walking"
+          }
+        },
+        {
+          "key": "d4-02",
+          "title": "Join a day tour: meeting point and departure (Sapporo to Furano and Biei): Ōdōri Station exit 31",
+          "start": "11:40",
+          "end": "11:50",
+          "category": "other",
+          "place": {
+            "name": "Odori",
+            "latitude": 43.060133,
+            "longitude": 141.3521003,
+            "applePlaceID": "ID4D40B56EED1493D",
+            "address": "北海道札幌市中央区, 大通西",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot; a pre-departure notice usually arrives the day before"
+          },
+          "todos": [
+            {
+              "text": "Reserve a Furano and Biei day tour departing from Sapporo",
+              "note": "Several operators run one; confirm the meeting point, the departure time, whether the Blue Pond illumination is included and the winter season dates"
+            }
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "Day tour: Furano Ningle Terrace (ニングルテラス)",
+          "start": "13:30",
+          "end": "14:20",
+          "category": "shopping",
+          "place": {
+            "name": "Ningle Terrace",
+            "latitude": 43.3232668,
+            "longitude": 142.3563319,
+            "applePlaceID": "I1BD87D631F91F3F6",
+            "address": "〒076-0016, 北海道富良野市, 中御料 新富良野プリンスホテル内",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "driving",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "By coach, about 1 hour 40 minutes from Sapporo to Furano, expressway and mountain road; the travelogue's tour was a small group of 6"
+          },
+          "images": [
+            "d4-03"
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "Day tour: Furano Herb Garden (ハーブガーデン富良野), rest and shopping",
+          "start": "14:50",
+          "end": "15:20",
+          "category": "shopping",
+          "place": {
+            "name": "Herb Garden Furano",
+            "latitude": 43.4767859,
+            "longitude": 142.456069,
+            "applePlaceID": "IFE8C7F0CB66946CD",
+            "address": "〒071-0503, 北海道上富良野町, 空知郡, 西3線北27",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "By coach, about 30 minutes"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "Day tour: Biei Station (美瑛駅)",
+          "start": "15:40",
+          "end": "16:30",
+          "category": "station",
+          "place": {
+            "name": "In front of Biei Station",
+            "latitude": 43.5908242,
+            "longitude": 142.4629629,
+            "applePlaceID": "I4C77A7B74A95C144",
+            "address": "北海道上川郡美瑛町, 本町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "By coach, about 20 minutes"
+          }
+        },
+        {
+          "key": "d4-06",
+          "title": "Day tour: Biei Christmas Tree (クリスマスツリーの木)",
+          "start": "16:40",
+          "end": "17:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "Christmas Tree",
+            "latitude": 43.554906,
+            "longitude": 142.444779,
+            "applePlaceID": "IA60552C27BD92613",
+            "address": "〒071-0471, 北海道上川郡美瑛町, 美馬牛1258-17",
+            "addressIsApproximate": false
+          },
+          "notes": "Visible all day",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "By coach, about 10 minutes"
+          },
+          "images": [
+            "d4-06"
+          ]
+        },
+        {
+          "key": "d4-07",
+          "title": "Day tour: Shirahige Falls (白ひげの滝)",
+          "start": "17:30",
+          "end": "17:50",
+          "category": "waterfall",
+          "place": {
+            "name": "Shirahige Falls",
+            "latitude": 43.4746092,
+            "longitude": 142.6393959,
+            "applePlaceID": "I9350E2156999C85B",
+            "address": "〒071-0235, 北海道上川郡美瑛町, 白金",
+            "addressIsApproximate": true
+          },
+          "notes": "Visible all day",
+          "leg": {
+            "fromKey": "d4-06",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "By coach, about 30 minutes"
+          },
+          "images": [
+            "d4-07"
+          ]
+        },
+        {
+          "key": "d4-08",
+          "title": "Day tour: Shirogane Blue Pond (白金青い池), evening illumination",
+          "start": "17:55",
+          "end": "18:25",
+          "category": "sight",
+          "place": {
+            "name": "Blue Pond Car Park",
+            "latitude": 43.4927509,
+            "longitude": 142.6124775,
+            "applePlaceID": "I3E38C2FC7DFAF0A0",
+            "address": "北海道上川郡美瑛町, 道道966号",
+            "addressIsApproximate": false
+          },
+          "notes": "Winter illumination hours and dates differ each year, so check before you go",
+          "leg": {
+            "fromKey": "d4-07",
+            "mode": "driving",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "By coach, about 5 minutes"
+          },
+          "images": [
+            "d4-08"
+          ]
+        },
+        {
+          "key": "d4-09",
+          "title": "Day tour: return to Sapporo (Ōdōri Station exit 31)",
+          "start": "20:55",
+          "end": "21:00",
+          "category": "other",
+          "place": {
+            "name": "Odori",
+            "latitude": 43.060133,
+            "longitude": 141.3521003,
+            "applePlaceID": "ID4D40B56EED1493D",
+            "address": "北海道札幌市中央区, 大通西",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-08",
+            "mode": "driving",
+            "durationMinutes": 150,
+            "durationSource": "user",
+            "note": "By coach, about 2 hours 30 minutes, with a toilet stop at a roadside station around 20:00; winter roads and weather may cause delays"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "About 6 minutes by subway from Ōdōri Station to Sapporo Station, about 25 minutes including walking; most restaurants are closed by the time you return, so you can buy a late snack at a convenience store near the station"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Sapporo",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "Hokkaido Shrine (北海道神宮)",
+          "start": "10:15",
+          "end": "11:45",
+          "category": "temple",
+          "place": {
+            "name": "Hokkaido Jingu",
+            "latitude": 43.0542509,
+            "longitude": 141.307759,
+            "applePlaceID": "I2389099864CF42DA",
+            "address": "〒064-8505, 北海道札幌市中央区, 宮ケ丘474",
+            "addressIsApproximate": false
+          },
+          "notes": "Opening hours are shorter in winter, so check before you go; no eating or drinking in the grounds",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "Subway on the Namboku Line from Sapporo Station to Ōdōri, change to the Tōzai Line to Maruyama-kōen Station, about 20 minutes; from exit 3 it is about 15 minutes on foot through Maruyama Park, snowy and icy in winter"
+          },
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "Jingū Chaya: Hokkaido milk ice cream (神宮茶屋)",
+          "start": "12:00",
+          "end": "12:30",
+          "category": "dessert",
+          "place": {
+            "name": "Jingu Chaya Tea House",
+            "latitude": 43.0560054,
+            "longitude": 141.3086439,
+            "applePlaceID": "IA225B526E784F4AD",
+            "address": "〒064-0959, 北海道札幌市中央区, 宮ケ丘3-10",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Beside the shrine approach; eating is not allowed inside the shrine, so finish at the tea house before going in or out"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "Lunch: Hokkaido seafood conveyor-belt sushi at Toriton Maruyama (トリトン 円山店)",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "dining",
+          "place": {
+            "name": "Toriton Maruyama Branch",
+            "latitude": 43.0624592,
+            "longitude": 141.3205112,
+            "applePlaceID": "I62421FAE817B5508",
+            "address": "〒064-0824, 北海道札幌市中央区, 北4条西23丁目2番17号",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; recommended by the travelogue, with queues at peak times",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes on foot from the shrine back to the area around Maruyama-kōen Station"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "Daimaru Sapporo (大丸札幌店) and department store browsing and eating",
+          "start": "14:30",
+          "end": "15:45",
+          "category": "shopping",
+          "place": {
+            "name": "Daimaru Sapporo",
+            "latitude": 43.0676755,
+            "longitude": 141.3495392,
+            "applePlaceID": "IA4557664496F8EB4",
+            "address": "〒060-0005, 北海道札幌市中央区, 北5条西4丁目7",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Tōzai Line from Maruyama-kōen Station to Ōdōri, change to the Namboku Line to Sapporo Station, about 20 minutes, about 25 minutes including walking"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "Former Hokkaido Government Office Building (北海道庁旧本庁舎, the red-brick building)",
+          "start": "16:00",
+          "end": "16:40",
+          "category": "sight",
+          "place": {
+            "name": "Former Hokkaido Government Office Building",
+            "latitude": 43.063938,
+            "longitude": 141.3480029,
+            "applePlaceID": "I8B34F2FBD4B6C0C7",
+            "address": "〒060-0003",
+            "addressIsApproximate": true
+          },
+          "notes": "Check the building's opening hours before you go; the exterior is visible all day",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 12,
+            "durationSource": "user",
+            "note": "About 12 minutes on foot from the south exit of Sapporo Station; the road is slippery in winter"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "Dinner: Hokkaido wagyu yakiniku at Yakiniku Bar Tamura (焼肉Bar Tamura)",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "Yakiniku Bar Tamura",
+            "latitude": 43.0638731,
+            "longitude": 141.3503823,
+            "applePlaceID": "IFDAFAED1CED7325B",
+            "address": "〒060-0002, 北海道札幌市中央区, 北2条西4丁目1, 札幌三井JPビルディング",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; it is in the Sapporo Mitsui JP Tower area, and since it is popular, check whether you need a reservation",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot from the red-brick building, in the next building over"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "Sapporo Station sandwich vending machine (サンドイッチ工房 Sandria)",
+          "start": "19:15",
+          "end": "19:45",
+          "category": "bakery",
+          "place": {
+            "name": "Sandria Sandwich Vending Machine",
+            "latitude": 43.0685488,
+            "longitude": 141.3500869,
+            "applePlaceID": "I4D4A1F7F6DA2A01C",
+            "address": "〒060-0806",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go; the travelogue warns of a limit of two per person and frequent long queues",
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes on foot to Sapporo Station"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot back to the hotel by the north exit"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Sapporo",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "New Chitose Airport domestic terminal: souvenirs and food (新千歳空港 国内線ターミナル)",
+          "start": "12:00",
+          "end": "12:50",
+          "category": "shopping",
+          "place": {
+            "name": "New Chitose Airport Domestic Terminal Building",
+            "latitude": 42.7877125,
+            "longitude": 141.681506,
+            "applePlaceID": "IB8EC0A7848DC63FE",
+            "address": "〒066-0012, 北海道千歳市, 美々987-22, 新千歳空港",
+            "addressIsApproximate": false
+          },
+          "notes": "Check each shop's opening hours before you go; the 1st floor of the terminal has plenty of food and souvenirs",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "JR Rapid Airport from Sapporo Station takes about 38–41 minutes to New Chitose Airport Station, about 55 minutes including walking and exiting; the travelogue's author took the 11:19 and arrived around 12:00"
+          }
+        },
+        {
+          "key": "d6-02",
+          "title": "New Chitose Airport international terminal: check-in and departure",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "airport",
+          "place": {
+            "name": "New Chitose Airport International Terminal",
+            "latitude": 42.78662,
+            "longitude": 141.6766,
+            "applePlaceID": "I6EBDB85749A9452",
+            "address": "北海道千歳市, 美々",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk from the domestic terminal to the international terminal; the travelogue warns that the farthest counters are an extra 165 metres' walk; security at Japanese airports is strict, and boots must come off for the X-ray"
+          },
+          "todos": [
+            {
+              "text": "Check in online and choose seats three days before your return flight",
+              "note": "Do it on the airline's website to save time in the airport queue"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

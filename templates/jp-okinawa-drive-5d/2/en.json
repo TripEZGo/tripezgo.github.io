@@ -1,0 +1,1166 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-okinawa-drive-5d",
+  "revision": 2,
+  "contentLocale": "en",
+  "title": "Okinawa Road Trip in 5 Days | Churaumi, Onna, Chatan, Naha",
+  "subtitle": "Pick up and return the car at Naha Airport; stay in Chatan, Onna and Naha, with the Churaumi Aquarium and Gyokusendo Cave",
+  "summary": "Five days driving Okinawa: one night in Chatan, one in Onna, two in Naha, taking in the Churaumi Aquarium, Gyokusendo Cave and the sea. The notes cover the rental rules for a Taiwan licence with a Japanese translation, driving rules in Japan and Okinawa, getting between the airport and town, and seasonal reminders. Chatan's sunset beach, Manzamō and an izakaya are held as alternates.",
+  "destination": "Okinawa, Japan",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Couple",
+    "First visit",
+    "Self-drive",
+    "Island"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in as soon as your flights and hotel are booked"
+    }
+  ],
+  "images": {
+    "d1-05": "images/jp-okinawa-drive-5d/d1-05.jpg",
+    "d2-01": "images/jp-okinawa-drive-5d/d2-01.jpg",
+    "d2-03": "images/jp-okinawa-drive-5d/d2-03.jpg",
+    "d2-05": "images/jp-okinawa-drive-5d/d2-05.jpg",
+    "d3-03": "images/jp-okinawa-drive-5d/d3-03.jpg",
+    "d5-02": "images/jp-okinawa-drive-5d/d5-02.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Lodging: Chatan (around American Village), 1 night",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "Mihama American Village",
+        "latitude": 26.315892,
+        "longitude": 127.7540097,
+        "applePlaceID": "I5D8B83A65A512700",
+        "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "Lodging: around Onna Village, 1 night",
+      "fromDay": 2,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "Onna Village Office",
+        "latitude": 26.4972582,
+        "longitude": 127.8536835,
+        "applePlaceID": "I751A7DBA455D4A02",
+        "address": "〒904-0411, 沖縄県国頭郡恩納村, 恩納2451",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        3
+      ],
+      "closingDays": [
+        2
+      ]
+    },
+    {
+      "key": "ad3-03",
+      "title": "Lodging: Naha, around Kokusai-dōri, 2 nights in a row",
+      "fromDay": 3,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "In front of Makishi Station",
+        "latitude": 26.2172382,
+        "longitude": 127.6924535,
+        "applePlaceID": "I5D7964AF52104406",
+        "address": "沖縄県那覇市, 牧志",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        4,
+        5
+      ],
+      "closingDays": [
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Chatan Sunset Beach (北谷サンセットビーチ)",
+      "durationMinutes": 60,
+      "category": "beach",
+      "place": {
+        "name": "Chatan Park Sunset Beach Shop",
+        "latitude": 26.3148718,
+        "longitude": 127.7549454,
+        "applePlaceID": "ID337B2091332A6FD",
+        "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜2",
+        "addressIsApproximate": false
+      },
+      "notes": "The travelogue says the best place to watch the American Village fireworks is around the Chatan Sunset Promenade; check opening hours before you go"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Manzamō (万座毛)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "SHOP MANZAMO",
+        "latitude": 26.503949,
+        "longitude": 127.850873,
+        "applePlaceID": "I4288C70B8C0B50BB",
+        "address": "沖縄県国頭郡恩納村, 恩納",
+        "addressIsApproximate": true
+      },
+      "notes": "The elephant-trunk rock coast in Onna Village; not in the travelogue, added by the template as an alternate; check opening hours before you go"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: izakaya Nakamura-ya (なかむら家)",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "Nakamura-ya",
+        "latitude": 26.2159698,
+        "longitude": 127.6821636,
+        "applePlaceID": "ICA3891BE7AB3D242",
+        "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目15 1F",
+        "addressIsApproximate": false
+      },
+      "notes": "The travelogue's dinner, near the Kokusai-dōri car parks; cash only; check opening hours before you go"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and verification",
+      "paragraphs": [
+        {
+          "text": "Source travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/2cbc121a1b7c/",
+          "style": "bullet"
+        },
+        {
+          "text": "Verified (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Gyokusendo Cave (Okinawa World): adult ¥2,000 (official fee page); open about 9:00–17:30 with last entry usually at 16:00 (third-party summary, sources disagree, so check before you go): https://en.gyokusendo.co.jp/okinawaworld/?p=635 (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "CAVE OKINAWA: usually 9:00–17:30 (last admission 17:00); special hours 2026/7/1–9/23 9:00–18:30 (last admission 18:00); open all year; adult ¥1,200; address 479-1 Ishikawa Kadekaru, Uruma (official brochure PDF and search results): https://www.cave.okinawa/wp-content/themes/cave/img/pdf/panf_jp.pdf (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Okinawa Churaumi Aquarium: usually 8:30–18:30 (last entry 17:30), longer in summer, adult ¥2,180, closed the first Wednesday of December and the following day (third-party summary; the official page could not be retrieved, so check before you go): https://churaumi.okinawa/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Churasun 6 Okinawa: first show 20:30 (doors 20:00), second show 22:30; tickets from ¥6,500 including one drink; under 20 not admitted; address Namura Plaza Bldg. 2F, 1-5-1 Matsuyama, Naha (official site): https://www.churasun6.com/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "RYUKYU BEACH CLUB: Seragaki, Onna Village, 9:00–19:30, last food order 18:00, drinks 19:00 (listed on HotPepper): https://www.hotpepper.jp/strJ004469320/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Japanese translation of a Taiwan driving licence and its one-year validity after entering Japan: https://www.roc-taiwan.org/uploads/sites/54/2026/07/臺灣駕照之日文譯本申請表-橫濱20260721.pdf (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Not confirmed from official sources; please check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "Opening hours and exact location of Divers Steak (the travelogue says it opens at 10:30 and the author left at Kyoda IC) could not be confirmed.",
+          "style": "bullet"
+        },
+        {
+          "text": "Opening hours of Naminoue Shrine, American Village, PARCO CITY Urasoe, ASHIBINAA, Senagajima, Blue Seal, Tamaya, the agu pork shabu-shabu place, Ryūkyū no Ushi, Shintoku Ramen and the pachinko parlour.",
+          "style": "bullet"
+        },
+        {
+          "text": "The latest opening hours and closing days of the Churaumi Aquarium and Gyokusendo Cave, and parking at hotels around Kokusai-dōri.",
+          "style": "bullet"
+        },
+        {
+          "text": "The hours of the Route 58 bus-priority lane, and whether a Taiwan-issued international driving permit is valid in Japan; please confirm with the motor vehicles office and the rental company.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Licence and car rental (for Taiwan travellers)",
+          "style": "heading"
+        },
+        {
+          "text": "Taiwan travellers who drive in Japan need an original Taiwan licence plus its Japanese translation, and must carry both together; several third-party summaries say international driving permits issued in Taiwan are not valid in Japan, so confirm with the motor vehicles office.",
+          "style": "bullet"
+        },
+        {
+          "text": "Japanese translation: apply over the counter at any motor vehicles office or station in Taiwan; several third-party summaries put the fee at about NT$100 each, with collection in about 1 hour on the spot; if you are already in Japan, apply through the Taipei Economic and Cultural Representative Office (about 3 to 7 working days) or JAF.",
+          "style": "bullet"
+        },
+        {
+          "text": "The July 2026 application form of the Yokohama representative office states that driving on a Taiwan licence with its Japanese translation is limited to within one year of entering Japan. Application form: https://www.roc-taiwan.org/uploads/sites/54/2026/07/臺灣駕照之日文譯本申請表-橫濱20260721.pdf",
+          "style": "bullet"
+        },
+        {
+          "text": "Get the Japanese translation done before you leave: at the counter the rental company checks the documents one by one, and without the translation you cannot take the car.",
+          "style": "bullet"
+        },
+        {
+          "text": "Book the car online in advance and choose a depot with a free airport shuttle; in this template you take the shuttle to pick up the car after arriving on day 1 and take the shuttle back to the airport after returning it on day 5, about 15 minutes each way.",
+          "style": "bullet"
+        },
+        {
+          "text": "When you pick up the car, walk around it together and film it, recording any scratches; whether to add collision damage waiver (insurance) is your own decision, so check it on the booking page.",
+          "style": "bullet"
+        },
+        {
+          "text": "ETC card and navigation: when you book, confirm whether Japanese and Chinese navigation is included and whether you need to rent an ETC card separately.",
+          "style": "bullet"
+        },
+        {
+          "text": "Driving rules in Japan and Okinawa",
+          "style": "heading"
+        },
+        {
+          "text": "Japan drives on the left, with the driver's seat on the right; after a turn it is easy to end up in the wrong lane, so remind yourself to keep left every time you pull away.",
+          "style": "bullet"
+        },
+        {
+          "text": "Everyone in the car must wear a seat belt; do not hold a phone while driving; zero tolerance for drunk driving.",
+          "style": "bullet"
+        },
+        {
+          "text": "There is no turning right on red in Japan; pedestrians have priority when you turn, so stop for them.",
+          "style": "bullet"
+        },
+        {
+          "text": "Speed limits on ordinary roads are mostly 40 to 60 km/h and on the Okinawa Expressway 80 km/h; follow the roadside signs.",
+          "style": "bullet"
+        },
+        {
+          "text": "Parking: do not park on yellow kerb lines or where no-parking signs stand; city car parks charge by the hour, and spots reserved for kei cars (yellow plates) are off limits.",
+          "style": "bullet"
+        },
+        {
+          "text": "On Route 58 in central Naha, bus-priority or bus-only lanes apply at peak hours; check the latest rules before you go.",
+          "style": "bullet"
+        },
+        {
+          "text": "Rural Okinawa has few street lights at night and is very dark, so drive slowly after dark; on the nights of days 1 and 2, avoid driving mountain roads too late.",
+          "style": "bullet"
+        },
+        {
+          "text": "Fuel: most stations are self-service, so confirm the fuel type in advance (the rental company will tell you), and fill the tank before returning the car.",
+          "style": "bullet"
+        },
+        {
+          "text": "Between the airport and town (Naha Airport, OKA)",
+          "style": "heading"
+        },
+        {
+          "text": "This template: after immigration, walk toward the airport bus stop and wait at the rental shuttle meeting point for the shuttle to the depot, about 15 minutes; the travelogue's author waited about 40 minutes, so leave extra time.",
+          "style": "bullet"
+        },
+        {
+          "text": "If you are not picking up a car: the Okinawa Urban Monorail (Yui Rail) from Naha Airport Station to Makishi Station near Kokusai-dōri takes about 12 to 15 minutes, with fares on the official site https://www.yui-rail.co.jp/ ; a taxi to Kokusai-dōri takes about 10 to 15 minutes.",
+          "style": "bullet"
+        },
+        {
+          "text": "Reservations and tickets",
+          "style": "heading"
+        },
+        {
+          "text": "Blue Cave snorkelling: book with a snorkelling operator in advance; meeting time is usually 15 minutes before the boat leaves, and the car park forms long queues in peak season, so arrive at least 45 minutes early.",
+          "style": "bullet"
+        },
+        {
+          "text": "Yakiniku Ryūkyū no Ushi and the agu pork shabu-shabu place: the travelogue's author booked ahead, so reserve in advance.",
+          "style": "bullet"
+        },
+        {
+          "text": "Churasun 6: reserve on the official site https://www.churasun6.com/ ; ages 20 and over only, with first-show tickets listed at about ¥6,500 including one drink; the travelogue warns that apart from high-fives and photos, touching the dancers is strictly forbidden, and tips are only given when a dancer offers.",
+          "style": "bullet"
+        },
+        {
+          "text": "Okinawa Churaumi Aquarium: you can buy e-tickets in advance; details and prices are on the official site https://churaumi.okinawa/ .",
+          "style": "bullet"
+        },
+        {
+          "text": "Gyokusendo Cave (Okinawa World): about ¥2,000 for adults (official fee page), tickets available on the spot.",
+          "style": "bullet"
+        },
+        {
+          "text": "CAVE OKINAWA: about ¥1,200 for adults, buy on the spot.",
+          "style": "bullet"
+        },
+        {
+          "text": "Entry",
+          "style": "heading"
+        },
+        {
+          "text": "For visa-free entry, register on Visit Japan Web beforehand; check the official site for the latest process.",
+          "style": "bullet"
+        },
+        {
+          "text": "Pace of the trip",
+          "style": "heading"
+        },
+        {
+          "text": "This is a self-drive template with sights spread from north to south, so driving takes up more of the day than in a typical city itinerary; on day 3 the drive from Onna to Naha is about 75 minutes.",
+          "style": "bullet"
+        },
+        {
+          "text": "On day 4 the first Churasun 6 show starts at 20:30 and lets out around 21:30, later than the 21:00 on other days.",
+          "style": "bullet"
+        },
+        {
+          "text": "Season",
+          "style": "heading"
+        },
+        {
+          "text": "The template is based on a July summer travelogue: Okinawa is very hot in summer with strong UV, so a long-sleeved swimsuit is advised for snorkelling and outdoor sights go early or late in the day; the itinerary works in other seasons, but sea activities should be adjusted to water temperature and weather.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "Trip overview: how the 5 days run",
+      "paragraphs": [
+        {
+          "image": "d1-05"
+        },
+        "In and out of Naha Airport, pick up the car on day 1 and return it on day 5, and drive the whole way yourself. Four nights at three bases: Chatan on night 1, Onna Village on night 2, then the last two nights back around Kokusai-dōri in Naha.",
+        "Day 1: take the rental shuttle to your car, drive south to Okinawa World for Gyokusendo Cave, then up to Chatan for {@d1-05} and agu pork shabu-shabu for dinner.",
+        "Day 2: snorkel at the Blue Cave at Cape Maeda in the morning, lunch at Blue Entrance Kitchen, the limestone cave at CAVE OKINAWA, then about 55 minutes north to {@d2-05}, and dinner back in Onna Village.",
+        {
+          "image": "d2-05"
+        },
+        "Day 3: lunch at Divers Steak, a seaside café at RYUKYU BEACH CLUB, then about 75 minutes south to Naha for Naminoue Shrine, yakiniku for dinner and a stroll on Kokusai-dōri.",
+        "Day 4: shopping at PARCO CITY Urasoe with conveyor-belt sushi, Shintoku ramen for dinner, {@d4-03}, and the Churasun 6 gal-bar show in the evening.",
+        {
+          "image": "d5-02"
+        },
+        "Day 5: {@d5-02} first, Okinawa soba for lunch, Naha ASHIBINAA Outlet, and Blue Seal ice cream before returning the car; then check-in, departure and souvenirs at the airport.",
+        "Where to sleep: Chatan (around American Village) on night 1, around Onna Village on night 2, then two nights in a row around Kokusai-dōri in Naha.",
+        "Getting around: this is a self-drive route. Travellers from Taiwan need the original Taiwanese licence plus a Japanese translation, arranged before departure, since you cannot pick up the car without it. Book the rental ahead and choose a depot with a free airport shuttle, about 15 minutes. Traffic keeps left, rural Okinawa is very dark at night, so drive slowly, and fill the tank before you return the car. The sights are spread from south to north, so driving takes a bigger share than on a city trip; day 3 from Onna to Naha is about 75 minutes. Check the latest rules and timetables before you go.",
+        "Who it suits: anyone who wants to drive in Okinawa and take in beaches, a limestone cave, the aquarium and Naha in one trip. Someone has to be comfortable at the wheel; summer is very hot, so put outdoor sights early or late, and wear a long-sleeve swimsuit for snorkelling."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Chiikawa Shisa merchandise (ちいかわ シーサー)",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "Sold at the specialty shops in PARCO CITY and on Kokusai-dōri; the travelogue's author bought the hula bunny"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Chatan",
+      "latitude": 26.319996,
+      "longitude": 127.7639911,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Onna Village",
+      "latitude": 26.4972582,
+      "longitude": 127.8536835,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Nago",
+      "latitude": 26.5915875,
+      "longitude": 127.9774374,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Naha",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Naha",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Chatan",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Naha Airport (那覇空港)",
+          "start": "11:30",
+          "end": "12:30",
+          "category": "airport",
+          "place": {
+            "name": "Naha Airport",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Pick up the car: a rental depot near the airport (shuttle about 15 minutes)",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "carrental",
+          "place": {
+            "name": "Naha Airport",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "notes": "Opening hours differ by rental depot, so check before you go; the travelogue's author took the rental shop's shuttle and waited about 40 minutes",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "After immigration, head toward the airport bus stop and wait at the rental shuttle meeting point; the depot is about 15 minutes from the airport; at the counter you show your passport, your original Taiwan licence and the Japanese translation, and you record a video of the car's condition"
+          },
+          "todos": [
+            {
+              "text": "Get a Japanese translation of your Taiwan driving licence",
+              "note": "Apply at any motor vehicles office or station in Taiwan; collection takes about 1 hour; get it done before you leave, and show it together with your original licence when you pick up the car"
+            },
+            {
+              "text": "Book a rental car with airport transfer",
+              "note": "Choose a depot with a free airport shuttle, and confirm the pick-up time, the return time and whether you need to rent an ETC card separately"
+            }
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "Lunch: inside Okinawa World (おきなわワールド)",
+          "start": "14:30",
+          "end": "15:10",
+          "category": "dining",
+          "place": {
+            "name": "Okinawa World (Culture Kingdom and Gyokusendo Cave)",
+            "latitude": 26.1403898,
+            "longitude": 127.7489161,
+            "applePlaceID": "I2AE8FC6380DFF2F0",
+            "address": "〒901-0616, 沖縄県南城市, 玉城字前川1336番地",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "About 30 minutes' drive from the rental depot to Nanjō; the park has a free car park"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "Gyokusendo Cave (玉泉洞): Okinawa World Culture Kingdom",
+          "start": "15:15",
+          "end": "16:30",
+          "category": "sight",
+          "place": {
+            "name": "Okinawa World (Culture Kingdom and Gyokusendo Cave)",
+            "latitude": 26.1403898,
+            "longitude": 127.7489161,
+            "applePlaceID": "I2AE8FC6380DFF2F0",
+            "address": "〒901-0616, 沖縄県南城市, 玉城字前川1336番地",
+            "addressIsApproximate": false
+          },
+          "notes": "About 9:00–17:30, with last entry usually at 16:00 (third-party summary, so check before you go); about 30–40 minutes inside the cave",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Walk from the restaurant area to the cave entrance inside the park"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "American Village (アメリカンビレッジ): browsing at Village House and other shops",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "shopping",
+          "place": {
+            "name": "Mihama American Village",
+            "latitude": 26.315892,
+            "longitude": 127.7540097,
+            "applePlaceID": "I5D8B83A65A512700",
+            "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜",
+            "addressIsApproximate": true
+          },
+          "notes": "Opening hours differ by shop, and most stay open until around 21:00, so check before you go",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "driving",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "Take the Naha Airport Expressway and Route 58 to Chatan, about 50 minutes, possibly with traffic in the evening; there are many car parks near American Village, but take care not to park in a spot reserved for kei cars (yellow plates)"
+          },
+          "images": [
+            "d1-05"
+          ]
+        },
+        {
+          "key": "d1-06",
+          "title": "Dinner: agu pork shabu-shabu (阿古の隠れ家 北谷店)",
+          "start": "19:15",
+          "end": "20:45",
+          "category": "dining",
+          "place": {
+            "name": "Agu no Kakurega",
+            "latitude": 26.3140042,
+            "longitude": 127.7602128,
+            "applePlaceID": "IE7F8F959A529536E",
+            "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜2丁目2-2",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue's author booked ahead",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes on foot from American Village"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Drive back to your lodging; choose a place with parking"
+          },
+          "todos": [
+            {
+              "text": "Reserve the agu pork shabu-shabu (Chatan)",
+              "note": "A small place; the travelogue's author booked ahead"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Onna Village",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Cape Maeda (真栄田岬): snorkelling at the Blue Cave",
+          "start": "09:40",
+          "end": "11:50",
+          "category": "beach",
+          "place": {
+            "name": "Cape Maeda Viewpoint",
+            "latitude": 26.4439607,
+            "longitude": 127.7721875,
+            "applePlaceID": "IB86A8F8DCF0BE49F",
+            "address": "〒904-0417, 沖縄県国頭郡恩納村, 真栄田469-1 真栄田岬展望台",
+            "addressIsApproximate": false
+          },
+          "notes": "The cape and car park are open all day; snorkelling times depend on the operator you book, so check before you go",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "About 35 minutes' drive from Chatan (take the Okinawa Expressway and exit at Ishikawa IC, then about 15 more minutes); Cape Maeda's car park is the only one near the Blue Cave and is very crowded in diving season, so get there early"
+          },
+          "todos": [
+            {
+              "text": "Reserve Blue Cave snorkelling",
+              "note": "Meeting time is usually 15 minutes before the boat leaves; Cape Maeda's car park is crowded in peak season, so get there early"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "Lunch: Blue Entrance Kitchen Okinawa flagship (tacos and burritos)",
+          "start": "12:10",
+          "end": "13:10",
+          "category": "dining",
+          "place": {
+            "name": "Blue Entrance Kitchen Okinawa Main Store",
+            "latitude": 26.448239,
+            "longitude": 127.8030995,
+            "applePlaceID": "I889B013ABBF22778",
+            "address": "〒904-0414, 沖縄県国頭郡恩納村, 前兼久32-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes' drive from Cape Maeda; parking on the open ground by the fishing port is forbidden, so use the nearby Maekane fishing port car park"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "CAVE OKINAWA limestone cave (ケイブオキナワ)",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "sight",
+          "place": {
+            "name": "Cave Okinawa, 479-1 Ishikawa Kadekaru",
+            "latitude": 26.4203964,
+            "longitude": 127.8093417,
+            "address": "日本沖繩縣宇流麻市",
+            "addressIsApproximate": true
+          },
+          "notes": "Usually about 9:00–17:30 (last admission 17:00); special summer hours in 2026 until 18:30; open all year; check before you go",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "About 20 minutes' drive from Maekane to Ishikawa in Uruma; the car park is free"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "FOREST CAFE By CAVE OKINAWA (the café above the cave exit)",
+          "start": "14:45",
+          "end": "15:15",
+          "category": "cafe",
+          "place": {
+            "name": "FOREST CAFE By CAVE OKINAWA",
+            "latitude": 26.419953,
+            "longitude": 127.8097835,
+            "applePlaceID": "I2A44B358E70D260D",
+            "address": "〒904-1114, 沖縄県うるま市, 石川嘉手苅479-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "A short walk uphill after you leave the cave"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "Okinawa Churaumi Aquarium (沖縄美ら海水族館)",
+          "start": "16:15",
+          "end": "18:15",
+          "category": "aquarium",
+          "place": {
+            "name": "Ocean Expo Park Management Center, Okinawa Churaumi Aquarium, Aquarium Operations Division",
+            "latitude": 26.694383,
+            "longitude": 127.8780132,
+            "applePlaceID": "IC016F4DB4F2866FB",
+            "address": "〒905-0206, 沖縄県国頭郡本部町, 石川424, 沖縄美ら海水族館",
+            "addressIsApproximate": false
+          },
+          "notes": "About 8:30–18:30 (last entry 17:30), longer in summer; closed the first Wednesday of December and the following day (third-party summary); check before you go",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "driving",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "About 55 minutes' drive north from Ishikawa on the Okinawa Expressway; the aquarium has a large free multi-storey car park; the late afternoon is quieter, but the Kuroshio Sea feeding at about 15:00 and 15:30 will be missed, so go by the official timetable"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "Dinner: around Onna Village",
+          "start": "19:00",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "Onna Village Office",
+            "latitude": 26.4972582,
+            "longitude": 127.8536835,
+            "applePlaceID": "I751A7DBA455D4A02",
+            "address": "〒904-0411, 沖縄県国頭郡恩納村, 恩納2451",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "driving",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "About 35 minutes' drive from Churaumi back to Onna; rural Okinawa has few street lights at night, so drive slowly"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Drive back to your lodging; choose a place with parking"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Nago",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Lunch: Divers Steak (ダイバーズステーキ)",
+          "start": "10:30",
+          "end": "12:00",
+          "category": "dining",
+          "place": {
+            "name": "Nago",
+            "latitude": 26.5915875,
+            "longitude": 127.9774374,
+            "address": "日本沖繩縣",
+            "addressIsApproximate": true
+          },
+          "notes": "The travelogue says it opens at 10:30; it is popular and may be full or sold out at midday; check opening hours before you go",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "About 40 minutes' drive from Onna; the travelogue's author left at Kyoda IC; the car park fills easily, and the large FamilyMart car park nearby can be used; search the shop's location on a map to be sure"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "Seaside café (RYUKYU BEACH CLUB)",
+          "start": "12:45",
+          "end": "14:15",
+          "category": "cafe",
+          "place": {
+            "name": "RYUKYU BEACH CLUB",
+            "latitude": 26.5080132,
+            "longitude": 127.8662199,
+            "applePlaceID": "I92D42DA9EF4ACED0",
+            "address": "〒904-0404, 沖縄県国頭郡恩納村, 瀬良垣1523",
+            "addressIsApproximate": false
+          },
+          "notes": "About 9:00–19:30, last food order 18:00, drinks 19:00 (listed on HotPepper; check before you go)",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "driving",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "Drive south back to Seragaki in Onna Village, about 35 minutes; there is parking at the entrance; watch for hermit crabs underfoot on the beach"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "Naminoue Shrine (波上宮) and the photo spot at Naminoue Beach",
+          "start": "15:30",
+          "end": "16:30",
+          "category": "temple",
+          "place": {
+            "name": "Naminoue Shrine",
+            "latitude": 26.220688,
+            "longitude": 127.6711195,
+            "applePlaceID": "I403C23C7EBE9131F",
+            "address": "〒900-0031, 沖縄県那覇市, 若狭1丁目25-11",
+            "addressIsApproximate": false
+          },
+          "notes": "The grounds are open all day; check the hours of the shrine office and the amulet office",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "driving",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "About 75 minutes south on the Okinawa Expressway to Naha; there is a car park opposite Naminoue Shrine; going down to the beach from the other side of the shrine is closer than taking the pedestrian bridge, and there is almost no shade in summer"
+          },
+          "images": [
+            "d3-03"
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "Dinner: Yakiniku Ryūkyū no Ushi (焼肉 琉球の牛 那覇久茂地店)",
+          "start": "18:00",
+          "end": "20:00",
+          "category": "dining",
+          "place": {
+            "name": "Yakiniku Ryukyu no Ushi Naha Kumoji",
+            "latitude": 26.2155533,
+            "longitude": 127.6819627,
+            "applePlaceID": "I849648257EA60142",
+            "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目16-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; reservation required",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes' drive from Naminoue Shrine; there are many pay car parks around Kokusai-dōri, but take care not to park in a yellow-plate-only spot"
+          },
+          "todos": [
+            {
+              "text": "Reserve Yakiniku Ryūkyū no Ushi (Naha Kumoji)",
+              "note": "The travelogue's author reserved; food comes slowly, so allow about 2 hours"
+            }
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "A stroll on Kokusai-dōri: drugstores and the small Don Quijote (ドン・キホーテ)",
+          "start": "20:15",
+          "end": "21:00",
+          "category": "shopping",
+          "place": {
+            "name": "Naha Kokusai-dōri Shopping Street",
+            "latitude": 26.2160938,
+            "longitude": 127.689231,
+            "applePlaceID": "IAA939DC0B8514F67",
+            "address": "〒900-0013, 沖縄県那覇市, 牧志3丁目2-10",
+            "addressIsApproximate": false
+          },
+          "notes": "Opening hours differ by shop, so check before you go",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk from the restaurant to Kokusai-dōri"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to your lodging; confirm parking in advance (hotels in the city centre mostly charge extra for it)"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Naha",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "PARCO CITY Urasoe (パルコシティ): shopping, conveyor-belt sushi for lunch on the 2nd floor",
+          "start": "11:00",
+          "end": "16:30",
+          "category": "shopping",
+          "place": {
+            "name": "PARCO CITY",
+            "latitude": 26.2620438,
+            "longitude": 127.6983297,
+            "applePlaceID": "IC0D65FDE3728F523",
+            "address": "〒901-2507, 沖縄県浦添市, 西洲3丁目1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "About 10:00–21:00 is the usual range; check opening hours before you go",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "About 20 minutes' drive from Naha; free multi-storey car park; tax refunds are all handled at the TAX FREE COUNTER on the 1st floor"
+          }
+        },
+        {
+          "key": "d4-02",
+          "title": "Dinner: Shintoku Ramen (麺場 神徳)",
+          "start": "17:30",
+          "end": "18:30",
+          "category": "dining",
+          "place": {
+            "name": "Menba Shintoku",
+            "latitude": 26.2178232,
+            "longitude": 127.6791991,
+            "applePlaceID": "I85905A384D46F9F9",
+            "address": "〒900-0032, 沖縄県那覇市, 松山1丁目12-17, 大城アパート 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; buy a ticket at the vending machine before you sit down",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "driving",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "About 25 minutes' drive from Urasoe, longer in evening traffic; there is a car park next door"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "Don Quijote Kokusai-dōri (ドン・キホーテ 国際通り店)",
+          "start": "18:45",
+          "end": "20:00",
+          "category": "shopping",
+          "place": {
+            "name": "Don Quijote Nampo Kokusai-dōri Branch",
+            "latitude": 26.215874,
+            "longitude": 127.6877932,
+            "applePlaceID": "IFCF33B4E0906C93B",
+            "address": "〒900-0014",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go; the tax-free counter is on the 4th floor, with a long queue but a quick process",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes on foot from Matsuyama (the travelogue's author drove and parked in the car park opposite)"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "Churasun 6 Okinawa (ちゅらさん6) gal-bar show",
+          "start": "20:15",
+          "end": "21:30",
+          "category": "bar",
+          "place": {
+            "name": "Churasun 6 Okinawa",
+            "latitude": 26.2183985,
+            "longitude": 127.6801257,
+            "applePlaceID": "I230A443A8401DEFB",
+            "address": "〒900-0032, 沖縄県那覇市, 松山1丁目5-1 2F",
+            "addressIsApproximate": false
+          },
+          "notes": "Official site: first show 20:30 (doors 20:00), second show 22:30; check days off before you go",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes on foot; take the entrance beside the nightclub on the ground floor, go straight to the end and turn left, then up to the 2nd floor, which is Churasun 6 (the 1st floor is a nightclub, so don't mix them up)"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "Walk back to your lodging; the Matsuyama area is rougher at night, so go with a companion and keep to the main streets"
+          },
+          "todos": [
+            {
+              "text": "Reserve the Churasun 6 show",
+              "note": "Official site https://www.churasun6.com/ ; ages 20 and over only; the first show starts at 20:30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Naha",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "Try pachinko (P-Time Tsukazan)",
+          "start": "10:30",
+          "end": "11:30",
+          "category": "other",
+          "place": {
+            "name": "Pachinko P Time",
+            "latitude": 26.1809003,
+            "longitude": 127.7153955,
+            "applePlaceID": "I9F0293E1440584FB",
+            "address": "〒901-1117, 沖縄県島尻郡南風原町, 字津嘉山1718-2",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "After check-out, drive south to Tomigusuku, about 30 minutes; leave your bags in the car"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "Senagajima (瀬長島ウミカジテラス)",
+          "start": "11:50",
+          "end": "12:40",
+          "category": "sight",
+          "place": {
+            "name": "Senagajima Umikaji Terrace",
+            "latitude": 26.1764709,
+            "longitude": 127.6404074,
+            "applePlaceID": "IC9B0D0C2786C14A4",
+            "address": "〒901-0233, 沖縄県豊見城市, 瀬長174-6",
+            "addressIsApproximate": false
+          },
+          "notes": "Shop hours vary, so check before you go; you can watch planes take off and land up close",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes' drive; very sunny in summer"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "Lunch: Okinawa soba at Tamaya Toyosaki (そば処 玉家 豊崎店)",
+          "start": "12:50",
+          "end": "13:35",
+          "category": "dining",
+          "place": {
+            "name": "Soba-dokoro Tamaya Toyosaki Branch",
+            "latitude": 26.1549155,
+            "longitude": 127.661911,
+            "applePlaceID": "I7B5CBC327B28BBE5",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-1069",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; buy a ticket before you sit down",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes' drive; free car park next door"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "Naha ASHIBINAA Outlet (あしびなー)",
+          "start": "13:55",
+          "end": "14:50",
+          "category": "shopping",
+          "place": {
+            "name": "AS KNOW AS Outlet Okinawa Outlet Mall Ashibinaa",
+            "latitude": 26.1590816,
+            "longitude": 127.6562155,
+            "applePlaceID": "I93FD6FA30CCF9C64",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-188 沖縄アウトレットモール あしびなー",
+            "addressIsApproximate": false
+          },
+          "notes": "About 10:00–20:00 is the usual range; check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "driving",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "About 5 minutes' drive"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "Blue Seal Toyosaki (ブルーシール)",
+          "start": "15:05",
+          "end": "15:25",
+          "category": "dessert",
+          "place": {
+            "name": "Blue Seal Toyosaki",
+            "latitude": 26.1591407,
+            "longitude": 127.6597059,
+            "applePlaceID": "IA99C4322896EB6C9",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-411",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On foot from the outlet to the other side of the street"
+          }
+        },
+        {
+          "key": "d5-06",
+          "title": "Return the car: the rental depot near the airport",
+          "start": "15:45",
+          "end": "16:15",
+          "category": "carrental",
+          "place": {
+            "name": "Naha Airport",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "notes": "Opening hours differ by rental depot, so check before you go",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "Fill the tank before you return the car; after returning it, the rental shuttle to the airport takes about 15 minutes"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "Naha Airport (那覇空港): check-in, departure, souvenirs",
+          "start": "16:30",
+          "end": "18:30",
+          "category": "airport",
+          "place": {
+            "name": "Naha Airport",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "The rental shuttle to the terminal takes about 15 minutes; for international flights we recommend arriving 2 hours before departure; the travelogue's author queued about 1 hour 20 minutes at the check-in counter"
+          }
+        }
+      ]
+    }
+  ]
+}

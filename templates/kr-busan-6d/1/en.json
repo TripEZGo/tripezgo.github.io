@@ -1,0 +1,1274 @@
+{
+  "formatVersion": 3,
+  "templateID": "kr-busan-6d",
+  "revision": 1,
+  "contentLocale": "en",
+  "title": "Busan in 6 Days — Haeundae, Gijang, Nampo, Yeongdo",
+  "subtitle": "Three nights in Haeundae and two in Nampo, with Gijang, Yeongdo and seaside cafés",
+  "summary": "Six days in Busan, flying in and out of Gimhae Airport: Haeundae, the Gijang coast and Bokcheonsa, then Nampo-dong and Yeongdo. The notes cover the Busan Pass, transit cards, bus rules and tax refunds. The Yeongdo Bridge lifts at 14:00 on Saturdays by the official schedule, so on any other day you only see the bridge. Jeonpo Café Street, Taejongdae and Gwangalli sit in the alternates.",
+  "destination": "Busan, South Korea",
+  "regionCodes": [
+    "KR"
+  ],
+  "dayCount": 6,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Seoul",
+  "tags": [
+    "Two travellers",
+    "First visit",
+    "Seaside",
+    "Food"
+  ],
+  "images": {
+    "d1-03": "images/kr-busan-6d/d1-03.jpg",
+    "d1-05": "images/kr-busan-6d/d1-05.jpg",
+    "d2-01": "images/kr-busan-6d/d2-01.jpg",
+    "d2-02": "images/kr-busan-6d/d2-02.jpg",
+    "d2-06": "images/kr-busan-6d/d2-06.jpg",
+    "d3-04": "images/kr-busan-6d/d3-04.jpg",
+    "d4-02": "images/kr-busan-6d/d4-02.jpg",
+    "d4-03": "images/kr-busan-6d/d4-03.jpg",
+    "d4-05": "images/kr-busan-6d/d4-05.jpg",
+    "d5-01": "images/kr-busan-6d/d5-01.jpg",
+    "d5-03": "images/kr-busan-6d/d5-03.jpg",
+    "d5-04": "images/kr-busan-6d/d5-04.jpg",
+    "d5-05": "images/kr-busan-6d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Stay: near Haeundae Station (3 nights in a row; the travelogue stayed at Benikea Haeundae Hotel)",
+      "fromDay": 1,
+      "toDay": 4,
+      "category": "lodging",
+      "place": {
+        "name": "Urban Stay Haeundae Station",
+        "latitude": 35.162884,
+        "longitude": 129.15852,
+        "applePlaceID": "ICE654B0F96298CCB",
+        "address": "대한민국 부산광역시 구남로8번길",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3,
+        4
+      ],
+      "closingDays": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "key": "ad4-04",
+      "title": "Stay: near Jagalchi Station (2 nights in a row; the travelogue stayed at Hotel Noah, opposite BIFF Square)",
+      "fromDay": 4,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "Jagalchi Market",
+        "latitude": 35.0967691,
+        "longitude": 129.0311048,
+        "applePlaceID": "IF5CA9EEE2623435D",
+        "address": "대한민국 부산광역시 Nampodong 자갈치해안로",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        5,
+        6
+      ],
+      "closingDays": [
+        4,
+        5
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Jeonpo Café Street (전포카페거리)",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "Yeonundang, Jeonpo Café Street branch",
+        "latitude": 35.155045,
+        "longitude": 129.06445,
+        "applePlaceID": "IC758428305DBEBDB",
+        "address": "대한민국 부산광역시 전포대로209번길",
+        "addressIsApproximate": false
+      },
+      "notes": "Each shop keeps its own hours, so check opening hours before you go. Cafés and small shops are packed together right by Jeonpo Station"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Kkotsalzip, Jeonpo branch (꽃살집)",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "Jeonpo-daero 209beon-gil",
+        "latitude": 35.15538116159487,
+        "longitude": 129.06383055315845,
+        "address": "南韓釜山廣域市",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go. The travelogue booked ahead on CatchTable. The Korean beef set is on the pricey side"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: Taejongdae (태종대)",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "Taejongdae",
+        "latitude": 35.05,
+        "longitude": 129.083,
+        "applePlaceID": "IB1F79FC82E37717A",
+        "address": "대한민국 부산광역시",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go. The Busan Pass includes Taejongdae, but the travelogue did not go"
+    },
+    {
+      "key": "u-04",
+      "title": "Alternate: Yeongju Haneulnun Observatory (영주 하늘눈 전망대)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "Yeongju-ro 88beon-gil",
+        "latitude": 35.1140109138675,
+        "longitude": 129.0317555952759,
+        "address": "南韓釜山廣域市",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go. It looks out over Busan Harbour and Nampo"
+    },
+    {
+      "key": "u-05",
+      "title": "Alternate: Gwangalli Beach (광안리해수욕장)",
+      "durationMinutes": 60,
+      "category": "beach",
+      "place": {
+        "name": "Gwangalli Beach",
+        "latitude": 35.1541667,
+        "longitude": 129.1205556,
+        "applePlaceID": "IF0825929203AB00B",
+        "address": "대한민국 부산광역시 광안해변로",
+        "addressIsApproximate": true
+      },
+      "notes": "Open all day, no closed days. You can see the Gwangan Bridge lit up at night"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and fact-checking",
+      "paragraphs": [
+        {
+          "text": "Source travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/8ace34a1a3d8/",
+          "style": "bullet"
+        },
+        {
+          "text": "Checked (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Airport limousine buses (2 routes, fares, first and last departures, how to buy): https://www.busan.go.kr/eng/bsnews01/1691463 (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Busan–Gimhae Light Rail (fare ₩1,600–1,800, free transfer to the subway within 30 min; the official page says the airport to Sasang takes about 9 min, which does not match most sources' 20–30 min, so go by the times on site): https://busannavi.net/en/?p=4384 (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Light rail plus Line 2 to Haeundae (about 55 min, about ₩2,800): https://mileasia.com/korea/busan-airport-to-haeundae-beach/ (checked 2026-11-17, from a roundup page)",
+          "style": "bullet"
+        },
+        {
+          "text": "Songdo Marine Cable Car (about 9:00–21:00, tickets sold until 30 min before closing; crystal cabin round trip ₩24,000, regular cabin round trip ₩19,000): https://www.busanaircruise.co.kr (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Skyline Luge Busan (weekdays about 10:00–19:00, weekends and holidays about 10:00–20:00): https://busan.skylineluge.com/en/visiting-us/faqs (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Yeongdo Bridge lifting (Saturdays 14:00–14:15, may be cancelled in bad weather): https://www.busan.go.kr/eng/bsnews01/1743033 (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Spa Land's opening hours differ between sources (about 9:00 to 22:00 or 23:00), so go by the official site.",
+          "style": "bullet"
+        },
+        {
+          "text": "Could not be confirmed from official sources, so check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "The opening hours and closed days of Haedong Yonggungsa, Busan X the SKY, the Sky Capsule, the Beach Train timetable, Busan Tower, the Gamcheon shops, Lotte Department Store Gwangbok, Bupyeong Kkangtong Market, Bokcheonsa and each restaurant.",
+          "style": "bullet"
+        },
+        {
+          "text": "The limousine bus travel time (not listed officially) and Skyline Luge's closed days.",
+          "style": "bullet"
+        },
+        {
+          "text": "The coordinates for each spot are estimates.",
+          "style": "bullet"
+        },
+        {
+          "text": "What changed and what was cut",
+          "style": "heading"
+        },
+        {
+          "text": "On day 1 of the travelogue you only reached Busan at 20:05. This template has you arrive around midday and moves everything earlier. On day 8 the travelogue took an early 10:50 flight home, and the template follows that.",
+          "style": "bullet"
+        },
+        {
+          "text": "Day 7 of the travelogue (Seomyeon: Lotte Department Store Busan flagship, Jeonpo Café Street, Kkotsalzip) overlaps with the shopping at Lotte Gwangbok on day 6, so only Gwangbok and Yeongdo are kept and Seomyeon goes to the alternates.",
+          "style": "bullet"
+        },
+        {
+          "text": "On day 5 of the travelogue, the Yeongdo Bridge was meant to lift in the afternoon and had been moved to the evening in summer. The template records the official Saturday 14:00 time; on any other day treat it as just seeing the bridge.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue did not get into Bokcheonsa because it had closed by the time they arrived. The template moves it to the afternoon, but still check the opening hours first.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Route",
+          "style": "heading"
+        },
+        {
+          "text": "This template squeezes the 8-day, 7-night travelogue into 6 days: day 1 airport to Haeundae, day 2 Gijang and Cheongsapo, day 3 Spa Land, Centum City and the yacht, day 4 Nampo with Songdo, Gamcheon and Busan Tower, day 5 Bupyeong and Yeongdo, day 6 back to the airport.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue's Seomyeon plans (Jeonpo Café Street, Lotte Department Store Busan flagship, Kkotsalzip) and Taejongdae were not scheduled. Jeonpo Café Street and Kkotsalzip are in the alternates.",
+          "style": "bullet"
+        },
+        {
+          "text": "Getting between the airport and the city (Gimhae International Airport, PUS)",
+          "style": "heading"
+        },
+        {
+          "text": "Light rail plus subway: about 5 min on foot to Airport Station, light rail to Sasang Station, then Subway Line 2 (the green line) to Haeundae Station. With the change it is about 55 min and about ₩2,800 (several roundup pages, 2026 data; the light-rail leg takes about 20–30 min but sources differ).",
+          "style": "bullet"
+        },
+        {
+          "text": "Airport Limousine No. 1 (Haeundae and Gijang): it goes over the Gwangan Bridge and stops at Haeundae Beach Station, with a bus every 60 min. Adults pay ₩9,500, with no transfer discount, and you must pay by card, not cash. The first bus from the airport is 07:10 and the last is 21:40. The travel time is not listed officially, and several roundup pages say about 60–80 min.",
+          "style": "bullet"
+        },
+        {
+          "text": "Airport Limousine No. 2 (Seomyeon and Jeonpo): adults pay ₩7,500. It stops at Seomyeon Station (Lotte Department Store), with the first bus from the airport at 07:00 and the last at 22:00.",
+          "style": "bullet"
+        },
+        {
+          "text": "You can reserve the limousine on the Bustago app, or buy at the ticket machine by Gate 4 on the first floor of the airport. Seats are not assigned, and when the bus is full you cannot board (Busan city announcement, 2025-07).",
+          "style": "bullet"
+        },
+        {
+          "text": "For the return trip: leaving from Jagalchi Station takes about 85 min. To take the limousine you need to change at Seomyeon (Line 2) first.",
+          "style": "bullet"
+        },
+        {
+          "text": "Busan Pass and tickets",
+          "style": "heading"
+        },
+        {
+          "text": "The travelogue used the VISIT BUSAN PASS for Skyline Luge, Spa Land, the Songdo cable car, Busan Tower, the Beach Train and more. Compare it against your own mix of sights to see if it is worth it.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Sky Capsule is not covered by the pass. You buy it separately and reserve a time slot, and it is very popular.",
+          "style": "bullet"
+        },
+        {
+          "text": "The yacht tour must be booked with the operator in advance. The night departure costs an extra ₩5,000 per person (from the 2025 travelogue), and you should be at the meeting point 30 min early.",
+          "style": "bullet"
+        },
+        {
+          "text": "Bus rules and transit cards",
+          "style": "heading"
+        },
+        {
+          "text": "Busan bus rules: suitcases larger than 20 inches and hand-held drink cups are not allowed on board. Get on at the front door and off at the back.",
+          "style": "bullet"
+        },
+        {
+          "text": "For a transit card use a physical T-money card or T-money in Apple Wallet. Top it up in Taiwan first, or bring cash for the machines (they take ₩1,000 units).",
+          "style": "bullet"
+        },
+        {
+          "text": "In Korea use Naver Map for public transport. Google Maps navigation is not accurate there.",
+          "style": "bullet"
+        },
+        {
+          "text": "Highlights",
+          "style": "heading"
+        },
+        {
+          "text": "Haedong Yonggungsa: the stairs at the signboard entrance are steep, and a gentle downhill path on the right leads straight to the main hall.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Sky Capsule and the Beach Train are two different tickets. The Beach Train ticket you get from the pass lets you board once at any stop that day.",
+          "style": "bullet"
+        },
+        {
+          "text": "Bokcheonsa is a quiet temple and may close in the evening, so for a night view go to Busan Tower instead. The mountain road is steep, and the bus only goes to the foot of the hill.",
+          "style": "bullet"
+        },
+        {
+          "text": "Yeongdo Bridge lifting: Saturdays at 14:00 (official announcement). It was moved to the evening in summer once, so check the latest announcement before you go.",
+          "style": "bullet"
+        },
+        {
+          "text": "Photographing the airport runway in public spaces in Busan is prohibited (it is a joint civil and military airport).",
+          "style": "bullet"
+        },
+        {
+          "text": "Tax refunds",
+          "style": "heading"
+        },
+        {
+          "text": "Korean tax refunds go through several companies' machines. Check which refund company is on your receipt and go to the matching machine. If you did not get the refund on the spot, you must claim your cash refund at the airport before you leave the country.",
+          "style": "bullet"
+        },
+        {
+          "text": "Entry",
+          "style": "heading"
+        },
+        {
+          "text": "You can enter without a visa. Within 3 days before departure, fill in the online arrival card (e-Arrival Card): https://www.e-arrivalcard.go.kr",
+          "style": "bullet"
+        },
+        {
+          "text": "Pacing",
+          "style": "heading"
+        },
+        {
+          "text": "Days 1 and 6 are airport days, so they are heavy on travel.",
+          "style": "bullet"
+        },
+        {
+          "text": "The template is based on a July–August summer travelogue, so sunset, the bridge lifting and opening hours change with the season.",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "HBAF almonds (HBAF 아몬드)",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "The specialty shop near the Yongdusan Park entrance has the fullest range of flavours (the travelogue's pick)"
+    },
+    {
+      "key": "s-02",
+      "title": "Red bean cream mugwort rice cake (Milgot)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "Bupyeong Kkangtong Market (Milgot). Keep it chilled at home and let it thaw before eating"
+    },
+    {
+      "key": "s-03",
+      "title": "Olive Young skincare and snacks",
+      "category": "drugstore",
+      "productType": "skincare",
+      "store": "There are branches in Haeundae, BIFF Square and Seomyeon, and you get the tax refund on the spot above the minimum"
+    },
+    {
+      "key": "s-04",
+      "title": "Boogi and Busan souvenirs",
+      "category": "other",
+      "productType": "other_product",
+      "store": "A Busan souvenir shop in Nampo-dong (Big Shop)"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Busan Metropolitan City",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "Busan Metropolitan City",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "Busan Metropolitan City",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "Busan Metropolitan City",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "Busan Metropolitan City",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    },
+    {
+      "name": "Busan Metropolitan City",
+      "latitude": 35.1788178,
+      "longitude": 129.0759121,
+      "timeZoneID": "Asia/Seoul",
+      "countryCode": "KR"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Busan Metropolitan City",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Gimhae International Airport (김해국제공항)",
+          "start": "12:00",
+          "end": "13:00",
+          "category": "airport",
+          "place": {
+            "name": "Gimhae International Airport",
+            "latitude": 35.1729576,
+            "longitude": 128.9470804,
+            "applePlaceID": "IE960D9814668060",
+            "address": "46718 대한민국 부산광역시 강서구 공항진입로 108",
+            "addressIsApproximate": false
+          },
+          "todos": [
+            {
+              "text": "Fill in the Korean arrival card (e-Arrival Card)",
+              "note": "https://www.e-arrivalcard.go.kr You can fill it in within 3 days before departure"
+            }
+          ]
+        },
+        {
+          "key": "d1-02",
+          "title": "Lunch: Haeundae Traditional Market (해운대전통시장)",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "market",
+          "place": {
+            "name": "Haeundae Market",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "Each stall keeps its own hours, so check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "About 5 min on foot from the airport to Airport Station on the Busan–Gimhae Light Rail. Ride the light rail to Sasang Station (about 20–30 min, sources differ), then Line 2 to Haeundae Station (about 25 min). Dropping your bags at the hotel first is included; the whole trip is about 55 min and about ₩2,800"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "Haeundae Beach (해운대해수욕장)",
+          "start": "15:45",
+          "end": "17:00",
+          "category": "beach",
+          "place": {
+            "name": "Haeundae Beach",
+            "latitude": 35.1588479,
+            "longitude": 129.1614766,
+            "applePlaceID": "IE45CABD32BDF74DE",
+            "address": "대한민국 부산",
+            "addressIsApproximate": true
+          },
+          "notes": "Open all day, no closed days",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot from Haeundae Traditional Market to the beach"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "Salt bread: Jayeondo Salt Bread (자연도 소금빵), Haeundae branch",
+          "start": "17:20",
+          "end": "17:50",
+          "category": "bakery",
+          "place": {
+            "name": "Haeundae Market",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "Walk along the coast or take a bus toward Mipo, about 20 min"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "Busan X the SKY (부산 엑스더스카이)",
+          "start": "18:05",
+          "end": "19:15",
+          "category": "viewpoint",
+          "place": {
+            "name": "Busan X the SKY",
+            "latitude": 35.159485,
+            "longitude": 129.17017,
+            "applePlaceID": "I651F216A2DD2455D",
+            "address": "48099 대한민국 부산광역시 해운대구 달맞이길 30",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go. Tickets are bought separately, so book on the official site or a travel platform before the trip",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot from the salt bread shop, heading toward the sea"
+          },
+          "images": [
+            "d1-05"
+          ]
+        },
+        {
+          "key": "d1-06",
+          "title": "Dinner: grilled eel at Pungcheonman (풍천만), Haeundae branch",
+          "start": "19:40",
+          "end": "20:40",
+          "category": "dining",
+          "place": {
+            "name": "Haeundae Market",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Bus or subway from Mipo back to Haeundae, about 25 min"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "Walk back to the hotel from dinner, through Haeundae Traditional Market"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Busan Metropolitan City",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Gijang Skyline Luge (스카이라인 루지 부산)",
+          "start": "10:00",
+          "end": "11:40",
+          "category": "sight",
+          "place": {
+            "name": "Skyline Luge Busan",
+            "latitude": 35.1941211,
+            "longitude": 129.2191261,
+            "applePlaceID": "IEBA0E08CDCEE6A12",
+            "address": "619902 대한민국 부산광역시 기장군 기장읍 시랑리 산60-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Weekdays about 10:00–19:00, weekends and holidays about 10:00–20:00, tickets sold until 30 min before closing (official site)",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Take a bus toward Gijang from in front of your Haeundae hotel, about 40 min (from the 2025 travelogue; confirm the route on Naver Map)"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "Haedong Yonggungsa Temple (해동용궁사)",
+          "start": "12:00",
+          "end": "13:00",
+          "category": "temple",
+          "place": {
+            "name": "Haedong Yonggungsa Temple",
+            "latitude": 35.1884104,
+            "longitude": 129.2230755,
+            "applePlaceID": "I359B3BF00E45933C",
+            "address": "대한민국 부산광역시 갈맷길",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot from across the road from the luge, uphill. A gentle downhill path on the right of the entrance leads straight to the main hall"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "Lunch: around Songjeong Station (송정역)",
+          "start": "13:45",
+          "end": "14:25",
+          "category": "dining",
+          "place": {
+            "name": "Songjeong Station",
+            "latitude": 35.1809,
+            "longitude": 129.2,
+            "applePlaceID": "I11BD5A83E7537B56",
+            "address": "48073 대한민국 부산광역시 해운대구 송정중앙로8번길 60",
+            "addressIsApproximate": false
+          },
+          "notes": "Convenience stores by the station and small shops around the beach. Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Take a bus from the Yonggungsa stop to Songjeong, then walk about 10 min, about 40 min in all"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "Beach Train: Songjeong to Cheongsapo (해변열차)",
+          "start": "14:40",
+          "end": "15:10",
+          "category": "train",
+          "place": {
+            "name": "Songjeong Beach",
+            "latitude": 35.17915,
+            "longitude": 129.20024,
+            "applePlaceID": "IFCEC0F6807C4E51D",
+            "address": "대한민국 부산광역시 송정해변로",
+            "addressIsApproximate": true
+          },
+          "notes": "Seats are assigned by departure, so check the timetable before you go. The ticket lets you board once at any stop that day",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Tickets are checked on the platform. Queue early for a better seat"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "Honey butter toast: DIART COFFEE, Cheongsapo (청사포)",
+          "start": "15:25",
+          "end": "16:00",
+          "category": "cafe",
+          "place": {
+            "name": "DIART Coffee",
+            "latitude": 35.16074,
+            "longitude": 129.1919,
+            "applePlaceID": "I53A7026903DD571E",
+            "address": "대한민국 부산광역시 청사포로128번길",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "About 5 min on foot from Cheongsapo Station. There are restaurants nearby for lunch too"
+          }
+        },
+        {
+          "key": "d2-06",
+          "title": "Haeundae Blueline Park Sky Capsule: Cheongsapo to Mipo (스카이캡슐)",
+          "start": "16:15",
+          "end": "17:00",
+          "category": "sight",
+          "place": {
+            "name": "Haeundae Blueline Park",
+            "latitude": 35.1612314,
+            "longitude": 129.1913974,
+            "applePlaceID": "I591A9DF0E6187835",
+            "address": "48116 대한민국 부산광역시 해운대구 청사포로 116",
+            "addressIsApproximate": false
+          },
+          "notes": "Check hours and time slots before you go. You need to buy a ticket and reserve a slot in advance",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Take the stairs up to the second floor from the Cheongsapo platform and queue with a numbered tag you get with your ticket"
+          },
+          "todos": [
+            {
+              "text": "Buy and reserve a Haeundae Blueline Park Sky Capsule time slot",
+              "note": "Very popular, so reserve before you go. Make sure the slot departs from Cheongsapo"
+            }
+          ],
+          "images": [
+            "d2-06"
+          ]
+        },
+        {
+          "key": "d2-07",
+          "title": "Dinner: Matchandeul Wang Sogeum Gui (맛찬들왕소금구이 해운대점), Haeundae branch, salt-grilled pork",
+          "start": "17:45",
+          "end": "19:00",
+          "category": "dining",
+          "place": {
+            "name": "Haeundae Market",
+            "latitude": 35.160686,
+            "longitude": 129.16142,
+            "applePlaceID": "I6F0D30F1F27A4754",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go. There is a kiosk at the door to get in the queue",
+          "leg": {
+            "fromKey": "d2-06",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "Bus from Mipo back to Haeundae, about 15 min. Take a queue number early"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "Walk back to the hotel from dinner, with a stroll along Haeundae's main street on the way"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Busan Metropolitan City",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Shinsegae Spa Land jjimjilbang (스파랜드 센텀시티)",
+          "start": "10:00",
+          "end": "13:30",
+          "category": "sight",
+          "place": {
+            "name": "Shinsegae Centum City Spa Land",
+            "latitude": 35.168285,
+            "longitude": 129.12898,
+            "applePlaceID": "I5647C11FC6C138EC",
+            "address": "48058 대한민국 부산광역시 해운대구 센텀남대로 35",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Subway Line 2 from Haeundae to Centum City Station, then about 5 min on foot"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "Lunch: Shinsegae Department Store Centum City food court (센텀시티 신세계)",
+          "start": "13:45",
+          "end": "14:45",
+          "category": "dining",
+          "place": {
+            "name": "Shinsegae Centum City Spa Land",
+            "latitude": 35.168285,
+            "longitude": 129.12898,
+            "applePlaceID": "I5647C11FC6C138EC",
+            "address": "48058 대한민국 부산광역시 해운대구 센텀남대로 35",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Moving around inside the same building"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "Shinsegae Department Store Centum City (신세계 센텀시티)",
+          "start": "15:00",
+          "end": "17:00",
+          "category": "shopping",
+          "place": {
+            "name": "Shinsegae Centum City Spa Land",
+            "latitude": 35.168285,
+            "longitude": 129.12898,
+            "applePlaceID": "I5647C11FC6C138EC",
+            "address": "48058 대한민국 부산광역시 해운대구 센텀남대로 35",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go. Certified by Guinness as the largest department store in the world",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Moving around inside the same building"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "Busan yacht tour: Y Holic (Yacht Holic)",
+          "start": "17:45",
+          "end": "19:30",
+          "category": "sight",
+          "place": {
+            "name": "Suyeongman Yacht Center",
+            "latitude": 35.159416,
+            "longitude": 129.13898,
+            "applePlaceID": "IFBDB4F956D3132C8",
+            "address": "대한민국 부산광역시",
+            "addressIsApproximate": true
+          },
+          "notes": "The night departure leaves around 18:30. Confirm hours and slots with the operator",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "Subway Line 2 from Centum City to Dongbaek Station, then about 15 min on foot to the pier. Arrive at the meeting point 30 min early"
+          },
+          "todos": [
+            {
+              "text": "Book a Busan yacht tour (Y Holic or another operator)",
+              "note": "You must book with the operator first. The night departure costs extra, and you should be at the meeting point 30 min early"
+            }
+          ],
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "Late-night snacks and a walk: around Haeundae Gunam-ro (해운대 구남로)",
+          "start": "20:00",
+          "end": "21:00",
+          "category": "dining",
+          "place": {
+            "name": "Gaemijip",
+            "latitude": 35.16139,
+            "longitude": 129.16083,
+            "applePlaceID": "I89636C1EDFCC9761",
+            "address": "대한민국 부산광역시 구남로",
+            "addressIsApproximate": true
+          },
+          "notes": "Each shop keeps its own hours, so check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Bus from the pier back to Haeundae, about 25 min"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel from Haeundae's main street"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Busan Metropolitan City",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "Lunch: Hong Kong Banjeom 0410, Nampo Branch No. 1 (홍콩0410 남포1호점)",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "dining",
+          "place": {
+            "name": "Hong Kong Banjeom 0410",
+            "latitude": 35.09886,
+            "longitude": 129.02968,
+            "applePlaceID": "IBFE99096445E067B",
+            "address": "대한민국 부산광역시 Nampodong 남포길",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "Line 2 from Haeundae Station to Seomyeon, then Line 1 to Jagalchi Station, about 60 min. Going first to the Nampo hotel to drop your bags makes it about 75 min"
+          }
+        },
+        {
+          "key": "d4-02",
+          "title": "Songdo Marine Cable Car and Songdo Yonggung Cloud Bridge (송도해상케이블카・송도용궁구름다리)",
+          "start": "12:55",
+          "end": "14:55",
+          "category": "sight",
+          "place": {
+            "name": "Songdo Marine Cable Car",
+            "latitude": 35.076576,
+            "longitude": 129.023513,
+            "applePlaceID": "IF229B75B3ADDB44A",
+            "address": "49269 대한민국 부산광역시 서구 송도해변로 171",
+            "addressIsApproximate": false
+          },
+          "notes": "About 9:00–21:00, tickets sold until 30 min before closing, and service may stop early in bad weather (official, announced 2026-11). Check the Yonggung Cloud Bridge's hours before you go",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Bus from Nampo-dong to the Songdo cable car station, then about 10 min on foot, about 40 min in all"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "Gamcheon Culture Village (감천문화마을)",
+          "start": "15:55",
+          "end": "17:20",
+          "category": "sight",
+          "place": {
+            "name": "Gamcheon Culture Village",
+            "latitude": 35.0976014,
+            "longitude": 129.0089655,
+            "applePlaceID": "I8310C55F2CE28F79",
+            "address": "대한민국 부산광역시 감내2로",
+            "addressIsApproximate": false
+          },
+          "notes": "The neighbourhood is open to walk freely. Check shop hours before you go",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "Change to a bus or village minibus from Songdo to Gamcheon, about 55 min. The minibuses run often but are crowded"
+          },
+          "images": [
+            "d4-03"
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "Dinner: Mokgumeong Nampo branch (목구멍 남포점), lid-grilled pork",
+          "start": "18:05",
+          "end": "19:05",
+          "category": "dining",
+          "place": {
+            "name": "Nampo Ocean2Heaven Hotel & Spa",
+            "latitude": 35.09663,
+            "longitude": 129.026645,
+            "applePlaceID": "I18AF8BE9E1EDECB",
+            "address": "대한민국 부산광역시 Nampodong 자갈치로",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go. You must order at least 3 portions of meat",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Bus from Gamcheon back to Nampo, about 40 min"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "Yongdusan Park and Busan Tower (용두산공원・부산타워)",
+          "start": "19:25",
+          "end": "20:40",
+          "category": "viewpoint",
+          "place": {
+            "name": "Busan Tower",
+            "latitude": 35.1012275,
+            "longitude": 129.0324283,
+            "applePlaceID": "ID3C417E53F9FD110",
+            "address": "대한민국 부산광역시 용두산길",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go. The night view and sunset times change with the season",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "About 20 min on foot from Nampo. Set your navigation to the Yongdusan Park entrance to take the escalators up"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "Walk down from Busan Tower to the hotel, through BIFF Square"
+          },
+          "images": [
+            "d4-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Busan Metropolitan City",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "Bupyeong Kkangtong Market (부평깡통시장)",
+          "start": "09:45",
+          "end": "11:15",
+          "category": "market",
+          "place": {
+            "name": "Bupyeong Kkangtong Market",
+            "latitude": 35.101433,
+            "longitude": 129.02588,
+            "applePlaceID": "ICB481987C8311691",
+            "address": "48977 대한민국 부산광역시 중구 중구로47번길 31-13",
+            "addressIsApproximate": false
+          },
+          "notes": "Each stall keeps its own hours, so check opening hours before you go",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 min on foot from around Jagalchi Station"
+          },
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "Lunch and shopping: Lotte Department Store Gwangbok branch (롯데백화점 광복점)",
+          "start": "11:40",
+          "end": "13:10",
+          "category": "shopping",
+          "place": {
+            "name": "Lotte Department Store Gwangbok",
+            "latitude": 35.098286,
+            "longitude": 129.03665,
+            "applePlaceID": "IB027D4897C932119",
+            "address": "대한민국 부산광역시 중앙대로",
+            "addressIsApproximate": true
+          },
+          "notes": "Opens around 10:30. Check closed days before you go",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "About 20 min on foot from Bupyeong Kkangtong Market"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "Yeongdo Bridge lifting (영도대교)",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "sight",
+          "place": {
+            "name": "Yeongdo Bridge",
+            "latitude": 35.0955202,
+            "longitude": 129.0364731,
+            "address": "南韓釜山廣域市",
+            "addressIsApproximate": true
+          },
+          "notes": "The bridge lifts on Saturdays 14:00–14:15 (official announcement) and may be cancelled in bad weather. On other days you can walk across it freely",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot from Lotte Department Store Gwangbok"
+          },
+          "todos": [
+            {
+              "text": "Check the Yeongdo Bridge lifting announcement",
+              "note": "https://www.busan.go.kr/eng/bsnews01/1743033 Saturdays at 14:00, and it may be cancelled in bad weather"
+            }
+          ],
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "Huinnyeoul Culture Village (흰여울문화마을)",
+          "start": "15:00",
+          "end": "16:30",
+          "category": "sight",
+          "place": {
+            "name": "Huinnyeoul Culture Village, Yeongdo",
+            "latitude": 35.078556,
+            "longitude": 129.04497,
+            "applePlaceID": "I7862CB99E6223017",
+            "address": "대한민국 부산광역시 절영로",
+            "addressIsApproximate": true
+          },
+          "notes": "The village and the coastal path are open to walk freely. Check shop hours before you go",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Bus from Yeongdo Bridge to Huinnyeoul, about 25 min"
+          },
+          "images": [
+            "d5-04"
+          ]
+        },
+        {
+          "key": "d5-05",
+          "title": "Bokcheonsa Temple (복천사), Yeongdo",
+          "start": "17:05",
+          "end": "17:50",
+          "category": "temple",
+          "place": {
+            "name": "Yeongdo Haesutang Bathhouse",
+            "latitude": 35.083714,
+            "longitude": 129.03828,
+            "applePlaceID": "I33A22280D2B01BDB",
+            "address": "대한민국 부산광역시 남항남로",
+            "addressIsApproximate": true
+          },
+          "notes": "After late afternoon you can only go in, not out, and it does not reopen after closing time (from the 2025 travelogue). Arrive before sunset and check the hours before you go",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Ride one stop by bus to Sinseon Elementary School (신선초등학교), then walk uphill about 20 min, about 30 min in all (from the 2025 travelogue)"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "Dinner: around BIFF Square in Nampo (BIFF 광장)",
+          "start": "18:45",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "BIFF Square",
+            "latitude": 35.098785,
+            "longitude": 129.029,
+            "applePlaceID": "IB69D243EB6734EF",
+            "address": "48953 대한민국 부산광역시 중구 구덕로 44",
+            "addressIsApproximate": false
+          },
+          "notes": "Each stall keeps its own hours, so check opening hours before you go. The travelogue recommends BHC fried chicken at the Nampo branch and makgeolli",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Bus from the foot of Bokcheonsa back to Nampo, about 40 min"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel from BIFF Square"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Busan Metropolitan City",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "Check in and depart from Gimhae International Airport (김해국제공항)",
+          "start": "08:30",
+          "end": "10:30",
+          "category": "airport",
+          "place": {
+            "name": "Gimhae International Airport",
+            "latitude": 35.1729576,
+            "longitude": 128.9470804,
+            "applePlaceID": "IE960D9814668060",
+            "address": "46718 대한민국 부산광역시 강서구 공항진입로 108",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "Line 1 from Jagalchi Station to Seomyeon, Line 2 to Sasang Station, then the Busan–Gimhae Light Rail to the airport, about 85 min and about ₩2,800. Aim to leave before 07:00. Alternative: take Airport Limousine No. 2 (about ₩7,500) from Seomyeon (Lotte Department Store), with the first bus from 06:00 and one every 60 min"
+          },
+          "todos": [
+            {
+              "text": "Reserve the airport limousine bus on Bustago (optional)",
+              "note": "Seats are not assigned, and when the bus is full you cannot board. The subway plus light rail is also an option"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

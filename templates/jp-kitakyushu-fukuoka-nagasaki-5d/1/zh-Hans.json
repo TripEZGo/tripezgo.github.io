@@ -1,0 +1,1176 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kitakyushu-fukuoka-nagasaki-5d",
+  "revision": 1,
+  "contentLocale": "zh-Hans",
+  "title": "北九州 5 日｜福冈・长崎・太宰府・柳川・门司港",
+  "subtitle": "福冈当基地，一天长崎、一天太宰府与柳川、一天门司港",
+  "summary": "住福冈五天，每天从博多出发：太宰府与柳川、长崎一日往返、门司港怀旧街区，加上福冈市区。长崎一日往返的交通时间占比偏高，这是距离使然。福冈塔、长崎眼镜桥与太宰府星巴克放在备选。",
+  "destination": "日本 福冈・长崎・北九州",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "green",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "双人",
+    "初次到访",
+    "美食",
+    "历史"
+  ],
+  "todos": [
+    {
+      "text": "登录 Visit Japan Web（入境审查与海关申报）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 机票与订房完成后即可填写"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d1-03.jpg",
+    "d1-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d1-05.jpg",
+    "d2-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-01.jpg",
+    "d2-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-04.jpg",
+    "d2-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-05.jpg",
+    "d2-06": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-06.jpg",
+    "d3-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-01.jpg",
+    "d3-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-04.jpg",
+    "d3-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-05.jpg",
+    "d4-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-01.jpg",
+    "d4-02": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-02.jpg",
+    "d4-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-04.jpg",
+    "d4-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-05.jpg",
+    "d5-02": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d5-02.jpg",
+    "d5-03": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d5-03.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：福冈天神周边",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "天神",
+        "latitude": 33.5913835,
+        "longitude": 130.3989064,
+        "applePlaceID": "IE9F4B2EE1A6F4F8D",
+        "address": "福岡県福岡市中央区, 天神",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "备选：福冈塔（福岡タワー）",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "福冈塔",
+        "latitude": 33.5932849,
+        "longitude": 130.3514528,
+        "applePlaceID": "ID097EC5E453200F5",
+        "address": "〒814-0001, 福岡県福岡市早良区, 百道浜2丁目3-26",
+        "addressIsApproximate": false
+      },
+      "notes": "09:30–22:00（最后入馆 21:30）；距市区较远，游记觉得景色普通，但外观镜面设计很美"
+    },
+    {
+      "key": "u-02",
+      "title": "备选：太宰府表参道星巴克（スターバックス）",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "星巴克咖啡太宰府天满宫表参道店",
+        "latitude": 33.5196319,
+        "longitude": 130.5334179,
+        "applePlaceID": "ICFD12966FE79BA8D",
+        "address": "〒818-0117, 福岡県太宰府市, 宰府3丁目2-43",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记说人多"
+    },
+    {
+      "key": "u-03",
+      "title": "备选：长崎眼镜桥（眼鏡橋）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "眼镜桥",
+        "latitude": 32.7471779,
+        "longitude": 129.8800814,
+        "applePlaceID": "IB8CAB7EB65560E8C",
+        "address": "長崎県長崎市",
+        "addressIsApproximate": true
+      },
+      "notes": "营业时间请出发前确认；游记建议从正面拍水中倒影"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "资料来源与查证",
+      "paragraphs": [
+        {
+          "text": "来源游记",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "查证（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "哥拉巴园开园时间与票价（08:00–18:00，2026/11–12 延长到 20:00，一般 1,300 日元）：https://glover-garden.jp/guide/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "长崎原爆资料馆（入馆费 200 日元、休馆 12/29–12/31、常设展部分暂停）：https://nabmuseum.jp/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "长崎原爆资料馆开馆时间（市政府页面，9–4 月 08:30–17:30、5–8 月至 18:30）：https://www.city.nagasaki.lg.jp/heiwa/3030000/3030300/p005150.html （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "柳川游船（松月乘船场 09:30–15:00、约 60 分、成人 2,200 日元）：https://www.yanagawakk.co.jp/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "西铁太宰府柳川套票（电子票 3,620 日元、站务柜台 3,730 日元、两日有效）：https://www.ensen24.jp/kippu/tc/dazaifu-yanagawa/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "太宰府天满宫参拜时间：https://www.dazaifutenmangu.or.jp/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "博多运河城营业时间：https://www.canalcity.co.jp/service/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "天神地下街营业时间：https://www.tenchika.com/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "小仓城天守阁开馆时间：https://www.kokura-castle.jp/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "福冈塔展望台 09:30–22:00（最后入馆 21:30）：https://www.fukuokatower.co.jp/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "福冈软银鹰主场赛程（官网例 18:00 开赛，みずほPayPayドーム福岡）：https://www.softbankhawks.co.jp/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "福冈市地铁机场线（天神与机场、唐人町同线）：https://subway.city.fukuoka.lg.jp/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "第三方资料，非官方，请出发前确认",
+          "style": "heading"
+        },
+        {
+          "text": "栉田神社参拜 04:00–22:00、稻佐山缆车 09:00–22:00、门司港蓝翼吊桥开合时刻与展望室 10:00–22:00、博多宫崎牛营业时间、天神到机场地铁约 11 分与票价约 260 日元。",
+          "style": "bullet"
+        },
+        {
+          "text": "博多到长崎车程：西九州新干线开通后最快约 1 小时 20 分，游记写约 1 小时 50 分；本行程按约 1 小时 30–50 分估算。",
+          "style": "bullet"
+        },
+        {
+          "text": "未能从官方确认，请出发前确认",
+          "style": "heading"
+        },
+        {
+          "text": "哥拉巴园休园日、大浦天主堂、和平公园、住吉神社、一兰太宰府参道店、梅枝饼、烤咖喱、博多祇园铁锅煎饺的营业时间。",
+          "style": "bullet"
+        },
+        {
+          "text": "小仓城休馆日、门司港怀旧展望室休馆日、稻佐山缆车票价。",
+          "style": "bullet"
+        },
+        {
+          "text": "已变动",
+          "style": "heading"
+        },
+        {
+          "text": "本模板只取游记的福冈与北九州段（游记 D1–D5 前半），熊本与阿苏段另做模板。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记原本第 1 天晚上 21:00 才出机场，这份改成下午抵达，晚上加入博多运河城与中洲屋台（原本在游记第 3 天晚上）。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记的 LaLaport 福冈（福冈高达）未排入，备选请出发前确认该展示是否仍在。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记资料",
+          "style": "heading"
+        },
+        {
+          "text": "住宿依游记，福冈天神一带连住 4 晚；游记作者住过渡边通站附近的酒店，但觉得偏旧，所以只写区域。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出发前须知",
+      "paragraphs": [
+        {
+          "text": "入境与网络",
+          "style": "heading"
+        },
+        {
+          "text": "出发前先在 Visit Japan Web 登录入境审查与海关申报：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "网络可用实体 SIM 卡或 eSIM。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通",
+          "style": "heading"
+        },
+        {
+          "text": "福冈地铁、公交、JR、西铁多数可用 Suica 等全国交通 IC 卡；JR 与西铁特急可能另需购买特急券或套票。",
+          "style": "bullet"
+        },
+        {
+          "text": "机场到市区：福冈机场国内航站楼直达地铁机场线，到天神约 11 分、到博多约 5 分；国际航站楼需先搭免费接驳巴士到国内航站楼（票价与班次请出发前确认）。",
+          "style": "bullet"
+        },
+        {
+          "text": "西铁太宰府柳川套票：只能从福冈（天神）或药院站出发，路线二选一（福冈→柳川→太宰府→福冈，或福冈→太宰府→柳川→福冈）；不能使用自动闸机，要走有人窗口；使用期间含开始当天共两天；中途只能在太宰府站与西铁柳川站出站，在其他站出站或提早回到出发站，车票即失效。",
+          "style": "bullet"
+        },
+        {
+          "text": "柳川游船约 60–70 分，松月乘船场受理到 15:00，所以建议照「福冈→柳川→太宰府→福冈」的顺序，上午先搭船。",
+          "style": "bullet"
+        },
+        {
+          "text": "长崎是长程一日往返：特急海鸥号接西九州新干线，在武雄温泉同站台换车；请先查往返最后一班车，回博多可能超过 21:00。",
+          "style": "bullet"
+        },
+        {
+          "text": "JR 九州北九州周游券（游记作者 2023 年买 5 日券）不含新干线；博多到小仓搭新干线要另付，搭 JR 特急 Sonic 或普通车则可用。这份行程搬运量大，是否划算请自行试算。",
+          "style": "bullet"
+        },
+        {
+          "text": "预订",
+          "style": "heading"
+        },
+        {
+          "text": "西铁太宰府柳川套票可在天神或药院站现场购买，也可在线购买电子票。",
+          "style": "bullet"
+        },
+        {
+          "text": "柳川游船建议预订，旺季与周末可能久候。",
+          "style": "bullet"
+        },
+        {
+          "text": "福冈软银鹰队棒球赛：先查赛程，有主场赛才排第 4 天晚上；现场也买得到票，但座位选择有限。",
+          "style": "bullet"
+        },
+        {
+          "text": "稻佐山夜景要配合日落时间，第 2 天下午的行程可前后调整。",
+          "style": "bullet"
+        },
+        {
+          "text": "其他",
+          "style": "heading"
+        },
+        {
+          "text": "日元现金要备足：部分接驳车、小店与屋台不收刷卡。",
+          "style": "bullet"
+        },
+        {
+          "text": "长崎蛋糕保质期约 12 天；梅枝饼当天要吃。",
+          "style": "bullet"
+        },
+        {
+          "text": "长崎原爆资料馆 2026/09–2027/03 部分常设展不开放，请出发前确认。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "小鸡饼干（ひよ子）",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "天神地下街买得到"
+    },
+    {
+      "key": "s-02",
+      "title": "长崎蛋糕（カステラ）",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "长崎站或博多都买得到，保质期约 12 天"
+    },
+    {
+      "key": "s-03",
+      "title": "明太子（辛子明太子）",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "博多站与机场都有售"
+    },
+    {
+      "key": "s-04",
+      "title": "福冈软银鹰队毛巾",
+      "category": "other",
+      "productType": "other_product",
+      "store": "みずほPayPayドーム福岡球场内销售"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "福冈市",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福冈市",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福冈市",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福冈市",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福冈市",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "福冈市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵达福冈机场（福岡空港）",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "airport",
+          "place": {
+            "name": "福冈机场",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "寄存行李、办理入住：福冈天神周边酒店",
+          "start": "15:00",
+          "end": "15:30",
+          "category": "hotel",
+          "place": {
+            "name": "天神",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "notes": "入住时间请以酒店为准",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "国际航站楼搭免费接驳巴士到国内航站楼约 10 分，再搭福冈市地铁机场线到天神约 11 分（票价约 260 日元，请出发前确认），再步行到酒店"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "博多运河城（キャナルシティ博多）",
+          "start": "16:15",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "博多运河城（住吉 1-2-1）",
+            "latitude": 33.5908098,
+            "longitude": 130.4106146,
+            "address": "日本福岡縣福岡市博多區",
+            "addressIsApproximate": true
+          },
+          "notes": "商店 10:00–21:00、餐厅 11:00–23:00，部分店家不同；全年无休（官网）",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "步行约 25–30 分，或搭公交／地铁到博多方向再步行"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "晚餐：博多祇园铁锅煎饺（博多祇園 鉄なべ）",
+          "start": "18:15",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "博多 祇园 铁なべ",
+            "latitude": 33.592484,
+            "longitude": 130.4139834,
+            "applePlaceID": "IC5F6C83099E71F6E",
+            "address": "〒812-0861, 福岡県福岡市博多区, 祇園町2-20",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；游记建议两份才吃得饱（一份 8 个）",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从运河城步行约 15 分"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "中洲屋台（中洲屋台）夜景与路边摊",
+          "start": "19:45",
+          "end": "20:45",
+          "category": "market",
+          "place": {
+            "name": "一龙拉面中洲屋台",
+            "latitude": 33.5900202,
+            "longitude": 130.4055095,
+            "applePlaceID": "IA698F48C2255DD56",
+            "address": "〒810-0002, 福岡県福岡市中央区, 西中洲1-14 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "屋台多半傍晚开店，各摊营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "步行约 15 分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "地铁中洲川端到天神 1 站约 3 分，再步行到酒店"
+          },
+          "images": [
+            "d1-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "福冈市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "哥拉巴园（グラバー園）",
+          "start": "10:30",
+          "end": "11:45",
+          "category": "sight",
+          "place": {
+            "name": "哥拉巴园",
+            "latitude": 32.7362511,
+            "longitude": 129.8687273,
+            "applePlaceID": "IE18B35E51782C33F",
+            "address": "長崎県長崎市, 松が枝町",
+            "addressIsApproximate": true
+          },
+          "notes": "官网标准时间 08:00–18:00（最后入园为闭园前 20 分），随季节延长；2026 年 11–12 月为 08:00–20:00；休园日请出发前确认",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 135,
+            "durationSource": "user",
+            "note": "到博多站后搭特急海鸥号（リレーかもめ）到武雄温泉，同站台换乘西九州新干线到长崎，全程约 1 小时 30–50 分；到长崎站搭有轨电车（约 140 日元，请确认）到大浦天主堂下，再步行上坡约 10 分"
+          },
+          "todos": [
+            {
+              "text": "确认长崎往返列车时刻与座位",
+              "note": "JR 九州官网 https://www.jrkyushu.co.jp/ 查特急海鸥号与西九州新干线；先查回程最后一班"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "大浦天主堂（大浦天主堂）",
+          "start": "12:00",
+          "end": "12:20",
+          "category": "temple",
+          "place": {
+            "name": "大浦教堂",
+            "latitude": 32.734929,
+            "longitude": 129.8700393,
+            "applePlaceID": "IDD4FA4732AB27012",
+            "address": "〒850-0931, 長崎県長崎市, 南山手町2-18",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；游记仅在外观拍照",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从哥拉巴园下山步行约 10 分"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "午餐：长崎新地中华街（新地中華街）",
+          "start": "12:40",
+          "end": "13:40",
+          "category": "dining",
+          "place": {
+            "name": "长崎新地中华街",
+            "latitude": 32.7417012,
+            "longitude": 129.8756011,
+            "applePlaceID": "I95158EC3722DC86E",
+            "address": "〒850-0842, 長崎県長崎市, 新地町10-13",
+            "addressIsApproximate": false
+          },
+          "notes": "各店营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "步行约 15 分"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "长崎原爆资料馆（長崎原爆資料館）",
+          "start": "14:15",
+          "end": "15:35",
+          "category": "museum",
+          "place": {
+            "name": "长崎原爆资料馆",
+            "latitude": 32.7725849,
+            "longitude": 129.8645474,
+            "applePlaceID": "IBCDCE060473CBA74",
+            "address": "〒852-8117, 長崎県長崎市, 平野町7-8",
+            "addressIsApproximate": false
+          },
+          "notes": "9 月至 4 月 08:30–17:30（最后入馆 17:00），5 至 8 月至 18:30（最后入馆 18:00）；12/29–12/31 休馆；2026/09–2027/03 常设展部分暂停开放",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "步行到有轨电车站，搭电车到浜口町约 15 分（约 140 日元，请确认），再步行"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "长崎和平公园・爆心地（平和公園）",
+          "start": "15:50",
+          "end": "16:30",
+          "category": "park",
+          "place": {
+            "name": "和平公园",
+            "latitude": 32.7758255,
+            "longitude": 129.8634034,
+            "applePlaceID": "ID03370EADD799C66",
+            "address": "〒852-8118",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "出资料馆往前步行约 10 分"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "稻佐山夜景（稲佐山展望台）",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "稻佐山",
+            "latitude": 32.7527,
+            "longitude": 129.8495,
+            "applePlaceID": "IE2A6A6ABE502618C",
+            "address": "〒852-8011, 長崎県長崎市, 稲佐町",
+            "addressIsApproximate": true
+          },
+          "notes": "缆车 09:00–22:00（第三方资料，请出发前确认）；观景台免门票；日落时间依季节不同，请自行调整这一段的开始时间；强风或恶劣天气缆车可能停运",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "搭有轨电车或公交到渊神社站附近，步行到稻佐山缆车渊神社站，缆车约 5 分；公交班次少，请先查时刻；买往返票较便宜，太晚缆车会停运"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 150,
+            "durationSource": "user",
+            "note": "缆车下山，搭公交或电车到长崎站，搭新干线与特急海鸥号回博多（约 1 小时 30–50 分），再搭地铁回天神；末班车时间请先确认"
+          },
+          "images": [
+            "d2-06"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "福冈市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "柳川游船（柳川川下り）",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "sight",
+          "place": {
+            "name": "柳川观光游船咨询处",
+            "latitude": 33.1596523,
+            "longitude": 130.3984069,
+            "applePlaceID": "I85FC89796B37BDF0",
+            "address": "〒832-0068, 福岡県柳川市, 城隅町18-9",
+            "addressIsApproximate": false
+          },
+          "notes": "松月乘船场 09:30–15:00，全年运营（官网）；冬季（12–2 月）为暖桌船；2 月中旬排水期间改短程路线",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "步行到西铁福冈（天神）站，搭西铁特急约 50 分到西铁柳川站，再搭接驳巴士或步行约 5–10 分；使用西铁太宰府柳川套票"
+          },
+          "todos": [
+            {
+              "text": "购买西铁太宰府柳川套票",
+              "note": "官网 https://www.ensen24.jp/kippu/tc/dazaifu-yanagawa/ 可在线买电子票，或在天神、药院站柜台购买"
+            },
+            {
+              "text": "预订柳川游船",
+              "note": "官网 https://www.yanagawakk.co.jp/ 建议预订；受理到 15:00，电话 0944-72-6177"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "午餐：一兰拉面 太宰府参道店（一蘭 太宰府参道店）",
+          "start": "13:00",
+          "end": "13:50",
+          "category": "dining",
+          "place": {
+            "name": "一兰 太宰府参道店",
+            "latitude": 33.5190531,
+            "longitude": 130.5316896,
+            "applePlaceID": "I45C12655D5F294DD",
+            "address": "〒818-0117, 福岡県太宰府市, 宰府2丁目6-2",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "柳川下船后搭接驳巴士回西铁柳川站，搭西铁到二日市站换乘太宰府线到太宰府站，约 1 小时"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "梅枝饼（梅ヶ枝餅）",
+          "start": "14:05",
+          "end": "14:25",
+          "category": "dessert",
+          "place": {
+            "name": "太宰府表参道梅枝饼店",
+            "latitude": 33.5178371,
+            "longitude": 130.5324315,
+            "address": "福岡県太宰府市宰府2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；现做的当天食用，保质期约一天",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "表参道上步行"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "太宰府天满宫（太宰府天満宮）",
+          "start": "14:45",
+          "end": "16:30",
+          "category": "temple",
+          "place": {
+            "name": "太宰府天满宫",
+            "latitude": 33.5214755,
+            "longitude": 130.5348435,
+            "applePlaceID": "ID92BE18ADFBB28C5",
+            "address": "〒818-0195, 福岡県太宰府市, 宰府4丁目7-1",
+            "addressIsApproximate": false
+          },
+          "notes": "开门 06:30（春分日起 06:00）；闭门 9–11 月与 4–5 月 19:00、6–8 月 19:30、12–3 月 18:30；全年无休（官网）",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "沿表参道步行约 15 分"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "天神地下街（天神地下街）",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "shopping",
+          "place": {
+            "name": "福冈银行天神地下街",
+            "latitude": 33.5911981,
+            "longitude": 130.3994536,
+            "applePlaceID": "I565EA2C4FA433D60",
+            "address": "〒810-0001, 福岡県中央区, 福岡市, 天神1丁目11番17号, 天神地下街東ー4・福岡ビル口中地階",
+            "addressIsApproximate": false
+          },
+          "notes": "商店 10:00–20:00、餐厅 10:00–21:00，部分店家不同（官网）；定休日请出发前确认",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "西铁太宰府线到二日市换乘到西铁福冈（天神）站约 30–35 分；套票必须回到福冈（天神）站出站"
+          },
+          "images": [
+            "d3-05"
+          ]
+        },
+        {
+          "key": "d3-06",
+          "title": "晚餐：博多宫崎牛（博多 みやちく）",
+          "start": "19:15",
+          "end": "20:30",
+          "category": "dining",
+          "place": {
+            "name": "博多宫崎牛 Miyachiku",
+            "latitude": 33.5937392,
+            "longitude": 130.404962,
+            "applePlaceID": "I31CED493AB8B250F",
+            "address": "〒810-0801, 福岡県福岡市博多区, 中洲5丁目2番1号, ジェイパーク中洲ビル2F",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认（第三方资料显示午餐 11:00–15:00、晚餐 17:00 起）",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "从天神步行约 20 分，或搭地铁 1 站到中洲川端"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "地铁中洲川端到天神 1 站约 3 分，再步行到酒店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "福冈市",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "门司港怀旧区与蓝翼门司吊桥（門司港レトロ・ブルーウイングもじ）",
+          "start": "09:45",
+          "end": "11:15",
+          "category": "sight",
+          "place": {
+            "name": "门司港怀旧区",
+            "latitude": 33.9461413,
+            "longitude": 130.9630072,
+            "applePlaceID": "IB8EB6FE0A4781857",
+            "address": "〒801-0852, 福岡県北九州市門司区, 港町",
+            "addressIsApproximate": true
+          },
+          "notes": "吊桥每日开合 6 次（第三方资料列 10:00、11:00、13:00、14:00、15:00、16:00，请出发前确认）；开桥时可看桥面升起",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 95,
+            "durationSource": "user",
+            "note": "到博多站搭 JR 新干线到小仓约 17–20 分（JR 北九州周游券不含新干线，游记误搭需补票 2,160 日元），再转 JR 鹿儿岛本线到门司港约 15 分；也可搭 JR 特急 Sonic 约 1 小时"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "门司港怀旧展望室（門司港レトロ展望室）",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "viewpoint",
+          "place": {
+            "name": "门司港怀旧展望室",
+            "latitude": 33.94853,
+            "longitude": 130.9641574,
+            "applePlaceID": "I75C45BE9429A34EA",
+            "address": "〒801-0853, 福岡県北九州市門司区, 東港町1-32 門司港レトロハイマート",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00–22:00（最后入馆 21:30），不定休（第三方资料，每年约 4 次休馆），请出发前确认",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行约 10 分"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "午餐：门司港烤咖喱（焼きカレー）",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "门司港站 出租车乘车处",
+            "latitude": 33.9448865,
+            "longitude": 130.962049,
+            "applePlaceID": "I9ADD2D39314D10C9",
+            "address": "〒801-0841",
+            "addressIsApproximate": true
+          },
+          "notes": "各店营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "步行"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "小仓城（小倉城）",
+          "start": "14:15",
+          "end": "15:30",
+          "category": "castle",
+          "place": {
+            "name": "小仓城",
+            "latitude": 33.8844402,
+            "longitude": 130.8742289,
+            "applePlaceID": "I34703FF158E11AF6",
+            "address": "〒803-0813, 福岡県北九州市小倉北区, 城内2-1",
+            "addressIsApproximate": false
+          },
+          "notes": "天守阁 09:00–18:00（官网）；休馆日与最后入场请出发前确认",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "JR 门司港到小仓约 15 分，再步行约 15 分；入口在小仓站外购物中心那一侧"
+          },
+          "images": [
+            "d4-04"
+          ]
+        },
+        {
+          "key": "d4-05",
+          "title": "福冈软银鹰队棒球赛（みずほPayPayドーム福岡）",
+          "start": "17:15",
+          "end": "21:00",
+          "category": "show",
+          "place": {
+            "name": "福冈 Yafuoku Dome（福冈 Dome）",
+            "latitude": 33.5952912,
+            "longitude": 130.3620958,
+            "applePlaceID": "IDDF234C6592D00E3",
+            "address": "〒810-0065，福岡県福岡市中央区，地行浜2丁目2-2",
+            "addressIsApproximate": false
+          },
+          "notes": "需配合赛程（官网例：工作日主场 18:00 开赛），开赛时间与有无比赛以官网为准；球赛约 3 小时",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "小仓搭新干线回博多约 20 分，地铁机场线到唐人町站，再步行约 15 分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "地铁唐人町站到天神约 6 分；散场人多，可步行到站慢慢走"
+          },
+          "todos": [
+            {
+              "text": "购买福冈软银鹰队比赛门票（需配合赛程）",
+              "note": "官网 https://www.softbankhawks.co.jp/ 先确认第 4 天晚上有无主场赛；现场也买得到票，座位可先在官网看座位图"
+            }
+          ],
+          "images": [
+            "d4-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "福冈市",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "退房并寄存行李：福冈天神周边酒店",
+          "start": "09:00",
+          "end": "09:20",
+          "category": "hotel",
+          "place": {
+            "name": "天神",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "notes": "请向前台确认寄存行李时间",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "同栋"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "住吉神社（住吉神社）",
+          "start": "10:00",
+          "end": "11:00",
+          "category": "temple",
+          "place": {
+            "name": "住吉神社",
+            "latitude": 33.5859073,
+            "longitude": 130.4136965,
+            "address": "福岡県福岡市博多区住吉3丁目1-51",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "步行约 25 分；也可搭公交或地铁再步行"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "栉田神社（櫛田神社）",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "temple",
+          "place": {
+            "name": "栉田神社",
+            "latitude": 33.5929732,
+            "longitude": 130.4105131,
+            "applePlaceID": "ID7A9C3758718EF9A",
+            "address": "〒812-0026, 福岡県福岡市博多区, 上川端町1-41",
+            "addressIsApproximate": false
+          },
+          "notes": "参拜时间 04:00–22:00（第三方旅游网站，非官方，请出发前确认）；展示博多祇园山笠神轿",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "步行约 20 分，途经博多运河城"
+          },
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "午餐：博多车站周边",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行约 10 分到博多站"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "博多车站买伴手礼（博多駅）",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "station",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "各店营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "站内步行"
+          }
+        },
+        {
+          "key": "d5-06",
+          "title": "回酒店取行李：福冈天神周边酒店",
+          "start": "15:00",
+          "end": "15:15",
+          "category": "hotel",
+          "place": {
+            "name": "天神",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "地铁博多到天神约 5 分，再步行到酒店"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "福冈机场出境（福岡空港）",
+          "start": "16:15",
+          "end": "17:45",
+          "category": "airport",
+          "place": {
+            "name": "福冈机场",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          },
+          "notes": "航班时间依实际机票调整，国际航班建议起飞前 2 小时抵达",
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "地铁机场线天神到国内航站楼约 11 分，再搭免费接驳巴士到国际航站楼约 10 分（票价约 260 日元，请出发前确认）"
+          }
+        }
+      ]
+    }
+  ]
+}

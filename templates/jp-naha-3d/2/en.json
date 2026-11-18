@@ -1,0 +1,822 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-naha-3d",
+  "revision": 2,
+  "contentLocale": "en",
+  "title": "Naha in 3 Days | Kokusai-dōri, Shuri Castle, Senagajima (No Car)",
+  "subtitle": "No car needed: Yui Rail links Kokusai-dōri, Shuri Castle and Senagajima",
+  "summary": "Three days in Naha without ever renting a car: Makishi Public Market and Tsuboya Pottery Street, Kokusai-dōri, Shuri Castle Park and Tamaudun, Naminoue Shrine, and finally Senagajima. The notes cover getting between the airport and town, Yui Rail tickets, the current state of Shuri Castle and getting to Senagajima. Fukushū-en, Shikina-en and the Kinjō stone-paved road are held as alternates.",
+  "destination": "Naha, Japan",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Couple",
+    "First visit",
+    "No car",
+    "Castle town"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in as soon as your flights and hotel are booked"
+    }
+  ],
+  "images": {
+    "d1-04": "images/jp-naha-3d/d1-04.jpg",
+    "d2-04": "images/jp-naha-3d/d2-04.jpg",
+    "d3-01": "images/jp-naha-3d/d3-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Lodging: Makishi and Kokusai-dōri area (2 nights in a row)",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "In front of Makishi Station",
+        "latitude": 26.2172382,
+        "longitude": 127.6924535,
+        "applePlaceID": "I5D7964AF52104406",
+        "address": "沖縄県那覇市, 牧志",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Fukushū-en (福州園)",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "Fukushu-en Garden",
+        "latitude": 26.2178612,
+        "longitude": 127.6757643,
+        "applePlaceID": "IFFF6FABA8D32C489",
+        "address": "〒900-0005, 沖縄県那覇市, 久米2丁目29-19",
+        "addressIsApproximate": false
+      },
+      "notes": "A Chinese-style garden near Prefectural Office Station, adult ¥200 (Yui Rail website); check opening hours before you go"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Shikina-en (識名園)",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "Shikina-en Garden",
+        "latitude": 26.2041211,
+        "longitude": 127.7146734,
+        "applePlaceID": "IF8DA34208B2B5A64",
+        "address": "〒902-0072, 沖縄県那覇市, 真地421-7",
+        "addressIsApproximate": false
+      },
+      "notes": "The garden of a Ryukyu royal villa, adult ¥400 (Yui Rail website); check opening hours before you go"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: Kinjō-chō stone-paved road (金城町石畳道)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Shuri Kinjo-cho Ishidatami-michi",
+        "latitude": 26.2157629,
+        "longitude": 127.7148682,
+        "applePlaceID": "ID33AB7140FDC17B9",
+        "address": "〒903-0815, 沖縄県那覇市, 首里金城町2丁目35",
+        "addressIsApproximate": false
+      },
+      "notes": "A slope near Shuri Castle that keeps its Ryukyu stone paving, open for a walk all day; check shop opening hours before you go"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and verification",
+      "paragraphs": [
+        {
+          "text": "Source travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/2cbc121a1b7c/",
+          "style": "bullet"
+        },
+        {
+          "text": "Verified (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Yui Rail fares (Airport Station, Makishi Station), 1-day and 2-day passes and partner-facility discounts: https://www.yui-rail.co.jp/ticketinfo-ticket/ticketinfo/1day-pass/ (verified 2026-11-17); https://www.yui-rail.co.jp/routemap/nahakuko/?t=fare (verified 2026-11-17); https://www.yui-rail.co.jp/routemap/makishi/?t=fare (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Yui Rail contactless credit card payment: https://ryukyushimpo.jp/news/economics/entry-4099337.html (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Shuri Castle Park: official home page (opening hours, Main Hall completed 2026/11, opening 11/23, temporary closure 11/22): https://oki-park.jp/shurijo/ (verified 2026-11-17); Main Hall reservations and the new admission fees come from a third-party summary, as the relevant official pages could not be retrieved, so confirm before you go: https://www.iwafu.com/jp/events/1167204 (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Naminoue Shrine: amulet and shrine offices 9:00–16:30, 20-space car park, airport and taxi information: https://naminouegu.jp/ , https://naminouegu.jp/map.html (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Senagajima Umikaji Terrace: opening hours and address https://umikajiterrace.com/ ; airport shuttle bus and Umikaji Liner https://www.umikajiterrace.com/accessguide/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Tsuboya Pottery Street: the nearest Yui Rail station is Makishi, about 10 to 15 minutes on foot: https://www.tsuboya-yachimun.com/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Churasun 6: official site https://www.churasun6.com/ , first show 20:30, second show 22:30 (carried over from the check done for the sister self-drive template on 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Not confirmed from official sources; please check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "Opening hours and days off for Tamaudun, the shops on Tsuboya, the shops on Kokusai-dōri, Daiichi Makishi Public Market, Nakamura-ya, Ryūkyū no Ushi, Tamaya, ASHIBINAA and Blue Seal.",
+          "style": "bullet"
+        },
+        {
+          "text": "Shuri Castle's opening hours and closing days outside July to November, whether Main Hall interior slots are full, and the new admission fees.",
+          "style": "bullet"
+        },
+        {
+          "text": "Umikaji Liner times and fares from Kokusai-dōri to Senagajima, and taxi fares to Senagajima and Kokusai-dōri.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "What this template is",
+          "style": "heading"
+        },
+        {
+          "text": "A no-car template: only Yui Rail (ゆいレール), buses, taxis and walking, staying around Makishi and Kokusai-dōri and moving about central Naha and Senagajima.",
+          "style": "bullet"
+        },
+        {
+          "text": "For central and northern Okinawa (Churaumi, Onna, Chatan), see the separate self-drive template.",
+          "style": "bullet"
+        },
+        {
+          "text": "Between the airport and town (Naha Airport, OKA)",
+          "style": "heading"
+        },
+        {
+          "text": "Yui Rail: Airport Station to Makishi Station is ¥320 one way, about 13 to 15 minutes (see the official site for times); Airport Station to Asahibashi Station is about 10 minutes; to Shuri Station is ¥360. Official fare table: https://www.yui-rail.co.jp/routemap/nahakuko/?t=fare",
+          "style": "bullet"
+        },
+        {
+          "text": "Taxi: from the airport to Asahibashi and the Naminoue Shrine area takes about 10 minutes and about ¥1,200 (Naminoue Shrine website); for fares to Kokusai-dōri, go by your ride-hailing app's estimate.",
+          "style": "bullet"
+        },
+        {
+          "text": "Departure day: take a taxi, about 15 minutes to the airport; you can also take Yui Rail to Airport Station.",
+          "style": "bullet"
+        },
+        {
+          "text": "Yui Rail tickets (checked on the official site, 2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Single tickets: Makishi to Shuri ¥290, Makishi to Asahibashi ¥250; airport to Shuri ¥360.",
+          "style": "bullet"
+        },
+        {
+          "text": "1-day pass (24 hours) adult ¥1,000, child ¥500; 2-day pass (48 hours) adult ¥1,800, child ¥900; buy at any station, counted from the time of purchase.",
+          "style": "bullet"
+        },
+        {
+          "text": "Contactless credit card payment: in use since 2025/3/28; according to the Ryukyu Shimpo, it charges at most ¥800 per day (follow the latest notice on the official site).",
+          "style": "bullet"
+        },
+        {
+          "text": "This template rides Yui Rail about 2 to 3 times a day, for less than a 1-day pass; single tickets or an IC card (OKICA, Suica) work out cheaper, and the 1-day pass's partner-facility discounts are only a few dozen yen.",
+          "style": "bullet"
+        },
+        {
+          "text": "Shuri Castle today (checked on the official site, 2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Being rebuilt since the 2019 fire: according to the official site the Main Hall (正殿) is completed in November 2026 and opens to visitors from midday on 2026/11/23 (Monday, public holiday); the morning that day and all of 11/22 are temporary closures.",
+          "style": "bullet"
+        },
+        {
+          "text": "Going inside the Main Hall requires an online reservation for a set date and time slot (one every 30 minutes); paid areas other than the Main Hall need no reservation (third-party summary; go by the official site).",
+          "style": "bullet"
+        },
+        {
+          "text": "Admission changes from 2026/11/23: the official fee page could not be retrieved, and a third-party summary gives adult ¥1,000, high-school student ¥760, elementary and junior-high student ¥370; before the change, adult ¥400 (Yui Rail website).",
+          "style": "bullet"
+        },
+        {
+          "text": "The free area and the Shureimon Gate area can be entered at no charge; if you cannot get a reservation for the Main Hall interior, you can still see the castle walls and the other paid areas.",
+          "style": "bullet"
+        },
+        {
+          "text": "For restoration progress and what can be entered in other areas, see https://oki-park.jp/shurijo/ .",
+          "style": "bullet"
+        },
+        {
+          "text": "Reservations and tickets",
+          "style": "heading"
+        },
+        {
+          "text": "Shuri Castle Main Hall interior: reserve a date and time on the official site; peak season and the early days after opening fill up easily, so book early.",
+          "style": "bullet"
+        },
+        {
+          "text": "Yakiniku Ryūkyū no Ushi: reservation required.",
+          "style": "bullet"
+        },
+        {
+          "text": "Churasun 6: reserve on the official site https://www.churasun6.com/ ; ages 20 and over only, first-show tickets from about ¥6,500 including one drink; apart from high-fives and photos, touching the dancers is strictly forbidden.",
+          "style": "bullet"
+        },
+        {
+          "text": "Getting to Senagajima",
+          "style": "heading"
+        },
+        {
+          "text": "From the airport: on weekends and public holidays there is a Senagajima airport shuttle bus (TK04, Tokyo Bus), adult ¥250; none on weekdays; about 10 minutes from the airport to Senagajima.",
+          "style": "bullet"
+        },
+        {
+          "text": "From Kokusai-dōri: the Umikaji Liner (ウミカジライナー, TK02) bound for Itoman; for detailed times and fares see https://www.umikajiterrace.com/accessguide/ , or call Tokyo Bus on 098-850-0011.",
+          "style": "bullet"
+        },
+        {
+          "text": "A taxi is the simplest; you can also call one from the island for the return trip.",
+          "style": "bullet"
+        },
+        {
+          "text": "Season",
+          "style": "heading"
+        },
+        {
+          "text": "The template is based on a July summer travelogue: Naha is very hot in summer with strong UV, so outdoor stops (the Naminoue Shrine pedestrian bridge, Senagajima, the outlet) go early or late in the day, with sun protection and water; other seasons work just as well.",
+          "style": "bullet"
+        },
+        {
+          "text": "Many shops on Tsuboya Pottery Street close early in the afternoon, so plan to arrive around 14:00.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Tsuboya Pottery Museum is closed 2026/9/1 to 2027/3/31; just stroll the street and skip the museum.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "Trip overview: how the 3 days run",
+      "paragraphs": [
+        {
+          "image": "d1-04"
+        },
+        "In and out of Naha Airport, with both nights around Makishi and Kokusai-dōri and no car: Yui Rail, taxis and walking take you around Naha and out to Senagajima.",
+        "Day 1: ride Yui Rail to Makishi Station, lunch around the public market, Tsuboya Pottery Street in the afternoon, then {@d1-04}, an izakaya dinner and a last stop at Don Quijote.",
+        {
+          "image": "d2-04"
+        },
+        "Day 2: Yui Rail to Shuri for Shuri Castle Park and Tamaudun, lunch around Shuri Station, then {@d2-04} in the afternoon, yakiniku for dinner and the Churasun 6 gal-bar show in the evening.",
+        {
+          "image": "d3-01"
+        },
+        "Day 3: after check-out, a taxi to {@d3-01}, then pachinko, Okinawa soba, the ASHIBINAA Outlet and Blue Seal, and a taxi to the airport in the afternoon.",
+        "Where to sleep: two nights in a row around Makishi and Kokusai-dōri, a walk from the market, the main street and Makishi Station.",
+        "Getting around: Yui Rail from the airport to Makishi Station takes about 13 to 15 minutes, ¥320 one way. For Shuri you ride Yui Rail from Makishi and then walk about 15 minutes uphill to Shureimon. A taxi is the simplest way to Senagajima and on departure day, and the Umikaji Liner also runs from Kokusai-dōri; check the official sites for times and fares. The main hall of Shuri Castle needs an online reservation, and the yakiniku place and Churasun 6 need bookings too. Check the latest timetables before you go.",
+        "Who it suits: anyone who wants Naha's market, Shuri Castle, Kokusai-dōri and Senagajima without renting a car. It works solo or with a small group; summer is very hot, so outdoor sights go early or late."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Chiikawa Shisa merchandise (ちいかわ シーサー)",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "Sold at the specialty shop on Kokusai-dōri; the travelogue's author bought the hula bunny there"
+    },
+    {
+      "key": "s-02",
+      "title": "Blue Seal coin purse (ブルーシール)",
+      "category": "clothing",
+      "productType": "bag_wallet",
+      "store": "Sold at the Blue Seal shops on Senagajima and in Toyosaki; the travelogue's author bought a commemorative coin purse"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Naha",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Naha",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Naha",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Naha",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Naha Airport (那覇空港)",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "airport",
+          "place": {
+            "name": "Naha Airport",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Lunch: around Daiichi Makishi Public Market (第一牧志公設市場)",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "market",
+          "place": {
+            "name": "Daiichi Makishi Public Market",
+            "latitude": 26.2145489,
+            "longitude": 127.6882674,
+            "applePlaceID": "IC5383C58AD3469EA",
+            "address": "〒900-0014, 沖縄県那覇市, 松尾2丁目10-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Yui Rail (ゆいレール) from Naha Airport Station to Makishi Station takes about 13 to 15 minutes, ¥320 one way; then about 10 minutes on foot from the station. You can leave your bags at the hotel first"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "Tsuboya Pottery Street (壺屋やちむん通り)",
+          "start": "14:00",
+          "end": "15:45",
+          "category": "sight",
+          "place": {
+            "name": "Tsuboya Yachimun Street",
+            "latitude": 26.2130862,
+            "longitude": 127.691306,
+            "applePlaceID": "I6A995B686ACA42DA",
+            "address": "〒902-0065",
+            "addressIsApproximate": true
+          },
+          "notes": "Opening hours differ by shop and many close early in the afternoon, so check before you go; the Tsuboya Pottery Museum is closed 2026/9/1 to 2027/3/31 for exterior-wall repairs (Yui Rail website)",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 to 15 minutes on foot from the public market; the stone-paved lanes are lined with pottery shops, kilns and cafés"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "Kokusai-dōri (国際通り): a stroll past drugstores and souvenir shops",
+          "start": "16:00",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "Naha Kokusai-dōri Shopping Street",
+            "latitude": 26.2160938,
+            "longitude": 127.689231,
+            "applePlaceID": "IAA939DC0B8514F67",
+            "address": "〒900-0013, 沖縄県那覇市, 牧志3丁目2-10",
+            "addressIsApproximate": false
+          },
+          "notes": "About 1.6 km long; opening hours differ by shop, and most stay open until around 21:00, so check before you go",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes on foot from Tsuboya to Kokusai-dōri; browse your way along the street until dinner"
+          },
+          "images": [
+            "d1-04"
+          ]
+        },
+        {
+          "key": "d1-05",
+          "title": "Dinner: izakaya Nakamura-ya (なかむら家)",
+          "start": "18:00",
+          "end": "19:30",
+          "category": "dining",
+          "place": {
+            "name": "Nakamura-ya",
+            "latitude": 26.2159698,
+            "longitude": 127.6821636,
+            "applePlaceID": "ICA3891BE7AB3D242",
+            "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目15 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "Cash only; check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot around Kokusai-dōri"
+          }
+        },
+        {
+          "key": "d1-06",
+          "title": "Don Quijote Kokusai-dōri (ドン・キホーテ 国際通り店)",
+          "start": "19:45",
+          "end": "20:45",
+          "category": "shopping",
+          "place": {
+            "name": "Don Quijote Kokusai-dōri Branch",
+            "latitude": 26.2159386,
+            "longitude": 127.6877135,
+            "applePlaceID": "IBDB33462100C5694",
+            "address": "〒900-0014, 沖縄県那覇市, 松尾2丁目8-19",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the tax-free counter is on the 4th floor, with a long queue but a quick process",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot; there are two Don Quijote stores on Kokusai-dōri, one large and one small"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to your lodging; the Kokusai-dōri area is still busy at night, so just keep to the main streets"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Naha",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Shuri Castle Park (首里城公園)",
+          "start": "09:45",
+          "end": "12:15",
+          "category": "castle",
+          "place": {
+            "name": "Shuri Castle Main Hall (Shurijo Park)",
+            "latitude": 26.2170379,
+            "longitude": 127.7194829,
+            "applePlaceID": "IC97D4775995DCEAA",
+            "address": "〒903-0815, 沖縄県那覇市, 首里金城町1-2",
+            "addressIsApproximate": false
+          },
+          "notes": "Official site: July to November, free area 8:00–19:30, paid area 8:30–19:00 (tickets sold until 18:30); for hours in other months and closing days, see the official site; closed all day 2026/11/22 and the morning of 11/23 (temporary closure)",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "Walk from your lodging to Makishi Station and take Yui Rail to Shuri Station, ¥290, about 17 minutes; from the station it is about 15 minutes on foot to Shureimon Gate, uphill all the way"
+          },
+          "todos": [
+            {
+              "text": "Reserve interior admission to the Shuri Castle Main Hall",
+              "note": "Online reservation for a set date and time slot (one every 30 minutes); the hall opens to visitors from 2026/11/23; official site https://oki-park.jp/shurijo/"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "Tamaudun (玉陵)",
+          "start": "12:30",
+          "end": "13:15",
+          "category": "sight",
+          "place": {
+            "name": "Tamaudun Royal Mausoleum",
+            "latitude": 26.2182059,
+            "longitude": 127.7147027,
+            "applePlaceID": "I194BD0E6509F2CF2",
+            "address": "〒903-0815, 沖縄県那覇市, 首里金城町1丁目3",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours and closing days before you go; the Yui Rail website lists adult admission at ¥300",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 10 to 15 minutes on foot from Shuri Castle"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "Lunch: around Shuri Station (首里駅)",
+          "start": "13:30",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "Shuri",
+            "latitude": 26.2191196,
+            "longitude": 127.72549,
+            "applePlaceID": "I1DFEBCED69086C9D",
+            "address": "沖縄県那覇市, 首里汀良町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back toward Shuri Station; Shuri is where Okinawa soba and traditional snacks began"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "Naminoue Shrine (波上宮): with Naminoue Beach and Gokoku-ji",
+          "start": "15:15",
+          "end": "17:00",
+          "category": "temple",
+          "place": {
+            "name": "Naminoue Shrine",
+            "latitude": 26.220688,
+            "longitude": 127.6711195,
+            "applePlaceID": "I403C23C7EBE9131F",
+            "address": "〒900-0031, 沖縄県那覇市, 若狭1丁目25-11",
+            "addressIsApproximate": false
+          },
+          "notes": "Amulet office and shrine office 9:00–16:30, prayer reception 10:00–15:30 (official site, announced 2026/1); we suggest visiting before 16:30; the grounds have a free car park of about 20 spaces",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Yui Rail from Shuri Station to Asahibashi Station takes about 22 minutes, then about 15 minutes on foot to the shrine; you can also go down the slope on the other side of the shrine to the beach, which is closer than taking the pedestrian bridge"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "Dinner: Yakiniku Ryūkyū no Ushi (焼肉 琉球の牛 那覇久茂地店)",
+          "start": "17:30",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "Yakiniku Ryukyu no Ushi Naha Kumoji",
+            "latitude": 26.2155533,
+            "longitude": 127.6819627,
+            "applePlaceID": "I849648257EA60142",
+            "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目16-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; reservation required, and food comes slowly, so allow about 2 hours",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "About 20 minutes on foot from Naminoue Shrine toward Asahibashi, or about 10 minutes by taxi"
+          },
+          "todos": [
+            {
+              "text": "Reserve Yakiniku Ryūkyū no Ushi (Naha Kumoji)",
+              "note": "The travelogue's author reserved; food comes slowly, so allow about 2 hours"
+            }
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "Churasun 6 Okinawa (ちゅらさん6) gal-bar show",
+          "start": "20:15",
+          "end": "21:30",
+          "category": "bar",
+          "place": {
+            "name": "Churasun 6 Okinawa",
+            "latitude": 26.2183985,
+            "longitude": 127.6801257,
+            "applePlaceID": "I230A443A8401DEFB",
+            "address": "〒900-0032, 沖縄県那覇市, 松山1丁目5-1 2F",
+            "addressIsApproximate": false
+          },
+          "notes": "Official site: first show 20:30 (doors 20:00), second show 22:30; check days off before you go; under 20 not admitted; the show lets out around 21:30, later than the 21:00 on other days",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes on foot; take the entrance beside the nightclub on the ground floor, go straight to the end and turn left, then up to the 2nd floor, which is Churasun 6 (the 1st floor is a nightclub, so don't mix them up)"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to your lodging; the Matsuyama area is rougher at night, so go with a companion and keep to the main streets"
+          },
+          "todos": [
+            {
+              "text": "Reserve the Churasun 6 show",
+              "note": "Official site https://www.churasun6.com/ ; ages 20 and over only; the first show starts at 20:30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Naha",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Senagajima (瀬長島ウミカジテラス)",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "sight",
+          "place": {
+            "name": "Senagajima Umikaji Terrace",
+            "latitude": 26.1764709,
+            "longitude": 127.6404074,
+            "applePlaceID": "IC9B0D0C2786C14A4",
+            "address": "〒901-0233, 沖縄県豊見城市, 瀬長174-6",
+            "addressIsApproximate": false
+          },
+          "notes": "Official site: facilities 10:00–21:00, shops 10:00–20:00, restaurants 11:00–21:00 (last order 20:30), open every day of the year; free parking",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "After check-out, about 25 to 30 minutes by taxi (go by the fare your ride-hailing app estimates); the budget way is the Umikaji Liner (ウミカジライナー, Tokyo Bus TK02, bound for Itoman) from Kokusai-dōri to Senagajima; check times and fares at https://www.umikajiterrace.com/accessguide/"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "Try pachinko (P-Time Tsukazan)",
+          "start": "11:50",
+          "end": "12:30",
+          "category": "show",
+          "place": {
+            "name": "Pachinko P Time",
+            "latitude": 26.1809003,
+            "longitude": 127.7153955,
+            "applePlaceID": "I9F0293E1440584FB",
+            "address": "〒901-1117, 沖縄県島尻郡南風原町, 字津嘉山1718-2",
+            "addressIsApproximate": false
+          },
+          "notes": "A Japanese pachinko parlour; under 18 not admitted; check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "About 20 minutes by taxi from Senagajima (without a car: local buses are infrequent, so a taxi is the best choice)"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "Lunch: Okinawa soba at Tamaya Toyosaki (そば処 玉家 豊崎店)",
+          "start": "12:45",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "Soba-dokoro Tamaya Toyosaki Branch",
+            "latitude": 26.1549155,
+            "longitude": 127.661911,
+            "applePlaceID": "I7B5CBC327B28BBE5",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-1069",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; buy a ticket at the vending machine before you sit down",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes by taxi to Toyosaki"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "Naha ASHIBINAA Outlet (あしびなー)",
+          "start": "13:45",
+          "end": "14:45",
+          "category": "shopping",
+          "place": {
+            "name": "Cobra Puma Golf Outlet Ashibinaa",
+            "latitude": 26.1590816,
+            "longitude": 127.6562155,
+            "applePlaceID": "ID2B7B6F4D2760D9",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-188",
+            "addressIsApproximate": false
+          },
+          "notes": "Around 10:00–20:00 is the usual range; check opening hours before you go; it is very sunny outdoors, and there is a drugstore on the 2nd floor",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot from Tamaya"
+          }
+        },
+        {
+          "key": "d3-05",
+          "title": "Blue Seal Toyosaki (ブルーシール)",
+          "start": "15:00",
+          "end": "15:20",
+          "category": "dessert",
+          "place": {
+            "name": "Blue Seal Toyosaki",
+            "latitude": 26.1591407,
+            "longitude": 127.6597059,
+            "applePlaceID": "IA99C4322896EB6C9",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-411",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue recommends the Ryukyu black tea flavour",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On foot from the outlet to the other side of the street"
+          }
+        },
+        {
+          "key": "d3-06",
+          "title": "Naha Airport (那覇空港): check-in, departure, souvenirs",
+          "start": "15:45",
+          "end": "17:45",
+          "category": "airport",
+          "place": {
+            "name": "Naha Airport",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 minutes by taxi (Blue Seal to the airport); for international flights we recommend arriving 2 hours before departure; adjust the day's timing to your actual flight; the terminal shopping street has souvenir shops, Muji and drugstores"
+          }
+        }
+      ]
+    }
+  ]
+}

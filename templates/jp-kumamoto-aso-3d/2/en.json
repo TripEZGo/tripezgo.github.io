@@ -1,0 +1,805 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kumamoto-aso-3d",
+  "revision": 2,
+  "contentLocale": "en",
+  "title": "Kumamoto & Aso in 3 Days — Kumamoto Castle, Aso, Suizenji",
+  "subtitle": "Kumamoto Castle, a day tour to Aso and Suizenji, in and out of Aso Kumamoto Airport",
+  "summary": "Three days in Kumamoto: Kumamoto Castle, Suizenji Jōjuen Garden and the city's food, with one day in the middle on a day tour to Aso. The notes include how to do Aso yourself by public transport. Depending on the alert level, Nakadake crater may not be approachable, and the day tour's itinerary can change on the day. The stay is written as the Tōrichō-suji and Shimotōri area, handy for the streetcar.",
+  "destination": "Kumamoto & Aso, Japan",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Couple",
+    "First visit",
+    "Day tour",
+    "Nature"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in once flights and hotel are booked"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kumamoto-aso-3d/d1-03.jpg",
+    "d2-02": "images/jp-kumamoto-aso-3d/d2-02.jpg",
+    "d2-03": "images/jp-kumamoto-aso-3d/d2-03.jpg",
+    "d2-04": "images/jp-kumamoto-aso-3d/d2-04.jpg",
+    "d3-01": "images/jp-kumamoto-aso-3d/d3-01.jpg",
+    "d3-04": "images/jp-kumamoto-aso-3d/d3-04.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Stay: central Kumamoto (around Tōrichō-suji and Shimotōri)",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "Tōrichō-suji",
+        "latitude": 32.8029362,
+        "longitude": 130.7111486,
+        "applePlaceID": "IBE2A5C0EDC247D00",
+        "address": "熊本県熊本市中央区, 上通町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Kumamoto City Hall 14th-floor observation corridor (熊本市役所)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "Kumamoto City Hall",
+        "latitude": 32.8032049,
+        "longitude": 130.7080236,
+        "applePlaceID": "IE798B2B4DB566952",
+        "address": "〒860-8601",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go; the travel log says it gives a free bird's-eye view of Kumamoto Castle; closed over the New Year holiday"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Katō Shrine (加藤神社)",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "Katō Shrine",
+        "latitude": 32.807117,
+        "longitude": 130.7053761,
+        "applePlaceID": "I831099B0902FAA97",
+        "address": "〒860-0002, 熊本県熊本市中央区, 本丸2-1",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go; the travel log says it is about 20 min on foot from Kumamoto Castle, uphill, with a view of the castle from behind"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: Luffy statue (ルフィ像)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Kumamoto Prefectural Office",
+        "latitude": 32.7898029,
+        "longitude": 130.7415739,
+        "applePlaceID": "I9D3D945CF9ABD15A",
+        "address": "〒862-0950, 熊本県熊本市中央区, 水前寺6丁目18-1",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go; it stands in front of the Kumamoto Prefectural Office"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and fact-checking",
+      "paragraphs": [
+        {
+          "text": "Source travel log",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "Verified (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Buses and taxis from Aso Kumamoto Airport to the city (times, fares): https://www.kumamoto-airport.co.jp/en/access/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Limousine bus frequency and timetable change notice: https://www.sankobus.jp/bus/ap-limousine/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kumamoto Castle (9:00–17:00, closed 29 Dec, ¥800, ¥1,100 for the three halls): https://castle.kumamoto-guide.jp/en/info/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Suizenji Jōjuen Garden (8:30–17:00, open every day, ¥500): https://suizenji.or.jp/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kumamon Square (10:00–19:00, Nov 2026 show calendar): https://kumamon-land.jp/squares/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Aso Nakadake Crater (alert level 2, summer hours 8:30–18:00): https://aso-volcano.jp/ , https://www.aso-visitorcenter.com/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Aso Shrine (amulet office 9:00–17:00, tower gate restoration complete): https://www.asojinja.or.jp/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Sakuramachi Kumamoto (shops 10:00–20:00, restaurants 10:00–22:00): https://www.sakuramachi-kumamoto.jp/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Route names for the Asosan-jō line, Aso Tozan line and Aso crater shuttle: https://www.sankobus.jp/bus/aso/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Could not be confirmed from official sources — check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "Winter opening hours for Aso Nakadake Crater and whether it is open on the day; day-tour itinerary details and prices.",
+          "style": "bullet"
+        },
+        {
+          "text": "Opening hours for Tsuruya, Katsuretei Shinshigai Main Branch, AMU PLAZA Kumamoto, the grounds of Aso Shrine, restaurants at Kusasenri, the Kumamoto City Hall observation corridor, Katō Shrine and the Luffy statue.",
+          "style": "bullet"
+        },
+        {
+          "text": "Actual limousine bus times and fares (the fare page on the official site could not be loaded, so the airport site's 2026 figures are used).",
+          "style": "bullet"
+        },
+        {
+          "text": "Whether buses and trains in Kumamoto Prefecture take transit IC cards: the travel log's Nov 2024 update says cash only; not checked against an official source.",
+          "style": "bullet"
+        },
+        {
+          "text": "Changes and trade-offs",
+          "style": "heading"
+        },
+        {
+          "text": "This template takes only the Kumamoto and Aso part of the travel log (second half of day 5 to day 10); the Fukuoka part has its own template.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travel log began on day 1 by JR from Fukuoka; this one flies in and out of Aso Kumamoto Airport instead, and squeezes the log's 5 days in Kumamoto into 3.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travel log's author took buses and JR up Aso alone; by our rules this uses a day tour, with the public-transport alternative in the notes.",
+          "style": "bullet"
+        },
+        {
+          "text": "Depending on the alert level, Nakadake may be closed to the crater rim, and the day tour's itinerary can change on the day.",
+          "style": "bullet"
+        },
+        {
+          "text": "Travel time on the day tour and airport transfers exceeds the usual 30% share; that is the distance to Aso.",
+          "style": "bullet"
+        },
+        {
+          "text": "Travel log details",
+          "style": "heading"
+        },
+        {
+          "text": "The stay is written as an area only: the log's author stayed at a hotel in Suizenji but rated it poorly, so it is written as the Tōrichō-suji and Shimotōri area, handy for the streetcar to Kumamoto Castle.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Entry and data",
+          "style": "heading"
+        },
+        {
+          "text": "Register your immigration and customs declaration on Visit Japan Web before you leave: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "For data, use a physical SIM or an eSIM.",
+          "style": "bullet"
+        },
+        {
+          "text": "Airport to the city",
+          "style": "heading"
+        },
+        {
+          "text": "From Aso Kumamoto Airport take the limousine bus (Kyushu Sanko): about 45 min to Sakuramachi Bus Terminal by express, about 50 min by regular service; about 60–65 min to Kumamoto Station; about 35 min to Suizenji-kōen-mae. The fare to Sakuramachi and Kumamoto Station is around ¥1,400, to Suizenji-kōen-mae around ¥1,000.",
+          "style": "bullet"
+        },
+        {
+          "text": "The official site shows about 31 express and 41 Kumamoto Station services a day, and a timetable change from 1 Nov 2026 — check the latest timetable before you go.",
+          "style": "bullet"
+        },
+        {
+          "text": "A taxi takes about 45 min and around ¥6,100 to Kumamoto Station, and about 40 min and around ¥5,700 to Sakuramachi (official estimates, tolls not included).",
+          "style": "bullet"
+        },
+        {
+          "text": "Buses can run late; the travel log recorded one arriving nearly 10 minutes late in 2023.",
+          "style": "bullet"
+        },
+        {
+          "text": "Getting around Kumamoto",
+          "style": "heading"
+        },
+        {
+          "text": "The city runs mainly on streetcars and buses. The travel log's 2024 update says many bus companies in Kumamoto Prefecture and Kumamoto Electric Railway no longer take transit IC cards such as Suica, so carry yen in cash and check the current situation.",
+          "style": "bullet"
+        },
+        {
+          "text": "Buses are mostly boarded at the rear and exited at the front: take a numbered ticket and pay by number when you get off; the driver gives no change, but you can change money on board.",
+          "style": "bullet"
+        },
+        {
+          "text": "Aso day tour",
+          "style": "heading"
+        },
+        {
+          "text": "Several operators run this day tour from Kumamoto (covering Nakadake, Kusasenri and Aso Shrine); compare itineraries, meeting points and whether lunch is included before you go.",
+          "style": "bullet"
+        },
+        {
+          "text": "Access to Aso Nakadake Crater is restricted by the volcanic alert level; the official site showed level 2 in Sep 2026, with entry within 1 km of the crater banned. Check https://aso-volcano.jp/ before you go to see whether you can reach the rim; when you cannot, the day tour usually views it from a distance.",
+          "style": "bullet"
+        },
+        {
+          "text": "Doing it yourself by public transport: from Kumamoto Kōtsū Center (Sakuramachi Bus Terminal) take the Kyushu Sanko Asosan-jō line to Asosan-jō bus terminal, then the Aso crater shuttle to the crater; or take the JR Hōhi Line to Aso Station and then the Aso Tozan line bus up. Check frequencies and fares on the Kyushu Sanko site https://www.sankobus.jp/ .",
+          "style": "bullet"
+        },
+        {
+          "text": "What the travel log's author did: Aso Station to the top took about 40 min, with Kusasenri on the way; the JR local back to Kumamoto took about 1 h 45 min, with few trains, and missing one could mean a one-hour wait. Aso is a small station and the JR station may not take electronic payment.",
+          "style": "bullet"
+        },
+        {
+          "text": "Booking and timing",
+          "style": "heading"
+        },
+        {
+          "text": "Book the day tour a few days before you go.",
+          "style": "bullet"
+        },
+        {
+          "text": "Kumamon Square show times change every month, with no show on Tuesdays; check the calendar before deciding the order of day 3: https://kumamon-land.jp/squares/",
+          "style": "bullet"
+        },
+        {
+          "text": "Kumamoto Castle tickets can be bought in advance at Sakura-no-baba Jōsaien to skip the queue at the keep entrance; suitcases are not allowed inside the keep.",
+          "style": "bullet"
+        },
+        {
+          "text": "Other",
+          "style": "heading"
+        },
+        {
+          "text": "Carry enough yen in cash: some small shops, buses and small stations do not take cards.",
+          "style": "bullet"
+        },
+        {
+          "text": "Parts of Kumamoto Castle are still under restoration; the main keep has been restored and is open.",
+          "style": "bullet"
+        },
+        {
+          "text": "Adjust the airport time on the last day to your actual flight; the travel log says in 2023 the international counters opened only about 2 hours before departure, and the 3rd-floor restaurants are after security but before departure.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "Trip overview: how the 3 days run",
+      "paragraphs": [
+        {
+          "image": "d1-03"
+        },
+        "In and out of Aso Kumamoto Airport, with all three nights in central Kumamoto. You get around the city by streetcar and on foot, and Aso is a day tour, so nobody has to drive.",
+        "Day 1: land around midday, take the airport limousine bus into town, have Kumamoto ramen around Shimotōri, then spend the afternoon at {@d1-03}. Tsuruya for Kumamon goods at dusk, and horse sashimi and karashi renkon at an izakaya in the evening.",
+        {
+          "image": "d2-02"
+        },
+        "Day 2: a day tour up to Aso for the Nakadake Crater and Kusasenri-ga-hama, then {@d2-04} and the shopping street in front of it. Back in Kumamoto, dinner at AMU PLAZA by the station.",
+        {
+          "image": "d3-01"
+        },
+        "Day 3: {@d3-01} in the morning, the Kumamon Square stage show, tonkatsu at Katsuretei for lunch, and a rest in the Sakuramachi rooftop garden before the bus back to the airport.",
+        "Where to sleep: all three nights around Tōrichō-suji and Shimotōri in central Kumamoto, a short streetcar ride from the castle and close to dinner and shopping.",
+        "Getting around: the limousine bus links the airport and the city in about 35 to 65 minutes depending on your stop. In town it is streetcars and buses, and some buses do not take transit IC cards, so carry yen in cash. Book the Aso day tour a few days ahead; whether you can walk to the crater rim depends on the volcano alert level that day. Check the latest timetables before you go.",
+        "Who it suits: anyone who wants Kumamoto Castle, Kumamon and the Aso volcano in three days without driving. It works solo or with a small group; the city days are light on walking, while the Aso day is mostly on the coach."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Kumamon goods (くまモングッズ)",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "Sakuramachi Kumamoto 2nd floor, Tsuruya shops nearby, the Kumamoto prefectural products shop"
+    },
+    {
+      "key": "s-02",
+      "title": "Kumamon daifuku",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "Sakuramachi Kumamoto"
+    },
+    {
+      "key": "s-03",
+      "title": "Kumamoto strawberry liqueur",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "AMU PLAZA Kumamoto at the station"
+    },
+    {
+      "key": "s-04",
+      "title": "Kumamoto local sake",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "Tsuruya Department Store food hall"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Kumamoto City",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Kumamoto City",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Kumamoto City",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Kumamoto City",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Aso Kumamoto Airport (阿蘇くまもと空港)",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "airport",
+          "place": {
+            "name": "Kumamoto Airport (Aso Kumamoto Airport)",
+            "latitude": 32.8346902,
+            "longitude": 130.8590123,
+            "applePlaceID": "I2B58A48AF4EC0EEA",
+            "address": "〒861-2204, 熊本県上益城郡益城町, 小谷1802-2",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Lunch: around Shimotōri (Kumamoto ramen)",
+          "start": "13:20",
+          "end": "14:20",
+          "category": "dining",
+          "place": {
+            "name": "Ramen shops around Shimotōri Arcade",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "The airport limousine bus (express) takes about 45 min to Sakuramachi Bus Terminal, the regular service about 50 min, around ¥1,400; then about 10 min on foot to Shimotōri"
+          },
+          "todos": [
+            {
+              "text": "Check the latest airport limousine bus timetable",
+              "note": "https://www.sankobus.jp/bus/ap-limousine/ Timetable changes from 1 Nov 2026"
+            }
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "Kumamoto Castle (熊本城): the main keep and Sakura-no-baba Jōsaien",
+          "start": "15:10",
+          "end": "16:50",
+          "category": "castle",
+          "place": {
+            "name": "Kumamoto Castle",
+            "latitude": 32.8061302,
+            "longitude": 130.7058477,
+            "applePlaceID": "IB6C8BF152D7893CA",
+            "address": "〒860-0002, 熊本県熊本市中央区, 本丸1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–17:00 (park last entry 16:00, keep last entry 16:30); closed 29 Dec",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "About 20 min on foot, or take the streetcar to Kumamoto-jō / Shiyakusho-mae and walk; buy Jōsaien tickets ahead to skip the queue at the keep entrance"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "Tsuruya Department Store (鶴屋百貨店): Kumamon goods and the food hall",
+          "start": "17:30",
+          "end": "18:30",
+          "category": "shopping",
+          "place": {
+            "name": "Tsuruya Department Store",
+            "latitude": 32.8023754,
+            "longitude": 130.7110398,
+            "applePlaceID": "I996FD5224AC14B45",
+            "address": "〒860-0808, 熊本県熊本市中央区, 手取本町6-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Streetcar from Kumamoto-jō / Shiyakusho-mae to Tōrichō-suji, about 10 min including walking and waiting"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "Dinner: izakaya around Shimotōri (Kumamoto horse sashimi, karashi renkon)",
+          "start": "19:00",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "Izakaya around Shimotōri",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot; horse meat is a Kumamoto specialty, so order something else if it is not for you"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Kumamoto City",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Join the day tour: meet and depart (Kumamoto → Aso)",
+          "start": "09:00",
+          "end": "09:15",
+          "category": "transport",
+          "place": {
+            "name": "Day-tour meeting point (set by the tour operator)",
+            "latitude": 32.7887502,
+            "longitude": 130.6881132,
+            "address": "熊本県熊本市西区春日3丁目15",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "Take the streetcar or walk to the meeting point, which depends on the tour you choose"
+          },
+          "todos": [
+            {
+              "text": "Book the Aso day tour",
+              "note": "Several operators run it; compare meeting points and whether lunch is included, and book a few days ahead"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "Day tour: Aso Nakadake Crater (阿蘇中岳火口)",
+          "start": "10:45",
+          "end": "11:45",
+          "category": "mountain",
+          "place": {
+            "name": "Aso Nakadake Crater",
+            "latitude": 32.8829803,
+            "longitude": 131.0837699,
+            "applePlaceID": "IAB4F7F79B7CD452A",
+            "address": "〒869-2225, 熊本県阿蘇市, 黒川808-5",
+            "addressIsApproximate": false
+          },
+          "notes": "Summer (20 Mar–31 Oct) 8:30–18:00, gate closes 17:30; check winter hours before you go. Access around the crater is restricted when volcanic alert levels or gas concentrations are high",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "driving",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "Tour coach, about 1 h 15 min from Kumamoto to the top of Aso; it passes Kusasenri first, then goes up the mountain"
+          },
+          "todos": [
+            {
+              "text": "Check whether Aso Nakadake Crater is open before you go",
+              "note": "https://aso-volcano.jp/ Volcanic alert level and gas concentration decide whether the crater rim is open"
+            }
+          ],
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "Day tour: Kusasenri-ga-hama (草千里ヶ浜) and lunch",
+          "start": "12:10",
+          "end": "13:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "Kusasenri-ga-hama",
+            "latitude": 32.8830677,
+            "longitude": 131.0527771,
+            "applePlaceID": "I32739B7CA93978E0",
+            "address": "〒869-1404，熊本県阿蘇市，草千里ヶ浜",
+            "addressIsApproximate": true
+          },
+          "notes": "Open all day; the lunch spot depends on the tour, so check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Tour coach, about 10 min; there is horse riding on the highland meadow, at your own cost"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "Day tour: Aso Shrine (阿蘇神社) and the shopping street in front",
+          "start": "14:15",
+          "end": "15:45",
+          "category": "temple",
+          "place": {
+            "name": "Aso Shrine",
+            "latitude": 32.947986,
+            "longitude": 131.116113,
+            "applePlaceID": "IA26CD6FD0F19EA9C",
+            "address": "〒869-2612, 熊本県阿蘇市, 一の宮町宮地3083-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check the grounds' opening hours before you go; the amulet office is open 9:00–17:00",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Tour coach, about 30 min; after your visit you can browse snacks along the approach"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "Dinner at AMU PLAZA Kumamoto (アミュプラザくまもと) and Higo Market, at the station",
+          "start": "17:45",
+          "end": "19:45",
+          "category": "shopping",
+          "place": {
+            "name": "Amu Plaza Kumamoto",
+            "latitude": 32.7887053,
+            "longitude": 130.6888303,
+            "applePlaceID": "IFC0031666C9C8550",
+            "address": "〒860-0047",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "driving",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "The coach takes about 1 h 25 min back to Kumamoto and mostly drops off around Kumamoto Station; after the tour, walk to AMU PLAZA"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Kumamoto City",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Suizenji Jōjuen Garden (水前寺成趣園): Izumi Shrine",
+          "start": "09:00",
+          "end": "10:15",
+          "category": "park",
+          "place": {
+            "name": "Suizenji Jōjuen Garden",
+            "latitude": 32.7908282,
+            "longitude": 130.7351375,
+            "applePlaceID": "I1F8F63642EEF0314",
+            "address": "〒862-0956, 熊本県熊本市, 水前寺公園8-1",
+            "addressIsApproximate": false
+          },
+          "notes": "8:30–17:00 (last entry 16:30), open every day; admission ¥500",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Streetcar to Suizenji-kōen, about 20–25 min, then about 5 min on foot"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "Kumamon Square (くまモンスクエア): stage show",
+          "start": "11:15",
+          "end": "12:15",
+          "category": "show",
+          "place": {
+            "name": "Kumamon Square",
+            "latitude": 32.8019121,
+            "longitude": 130.7124031,
+            "applePlaceID": "IEF206FB2463DBE22",
+            "address": "〒860-0808, 熊本県熊本市中央区, 手取本町8-2, テトリアくまもとビル 1階",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00–19:00; show times follow the calendar on the official site, usually 11:30 at weekends and 14:00 on weekdays, no show on Tuesdays (official site, Nov 2026)",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Streetcar from Suizenji-kōen to Karashima-chō or Suidō-chō, then walk; it is next door to Tsuruya"
+          },
+          "todos": [
+            {
+              "text": "Check the Kumamon Square show times (no show on Tuesdays)",
+              "note": "Calendar on the official site https://kumamon-land.jp/squares/ Adjust the order of day 3 around the show"
+            }
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "Lunch: Katsuretei Shinshigai Main Branch (勝烈亭 新市街本店) tonkatsu",
+          "start": "12:40",
+          "end": "13:40",
+          "category": "dining",
+          "place": {
+            "name": "Katsuretei Shinshigai Main Branch",
+            "latitude": 32.7986401,
+            "longitude": 130.7058016,
+            "applePlaceID": "I222583EFB7CCE9DC",
+            "address": "〒860-0803, 熊本県熊本市中央区, 新市街8-18",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travel log says rice, tea, soup and cabbage are refillable",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot, through Shimotōri Arcade"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "Sakuramachi Kumamoto (サクラマチクマモト): rooftop garden and Kumamon goods",
+          "start": "14:05",
+          "end": "15:50",
+          "category": "shopping",
+          "place": {
+            "name": "Sakuramachi Kumamoto",
+            "latitude": 32.8002618,
+            "longitude": 130.703246,
+            "applePlaceID": "I27890492F38FBECC",
+            "address": "〒860-0805, 熊本県熊本市中央区, 桜町3-10",
+            "addressIsApproximate": false
+          },
+          "notes": "Shops 10:00–20:00, restaurants 10:00–22:00; varies by store",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot; Kumamon goods on the 2nd floor, with the Kumamoto prefectural products shop next door"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "Depart from Aso Kumamoto Airport (阿蘇くまもと空港)",
+          "start": "16:40",
+          "end": "18:40",
+          "category": "airport",
+          "place": {
+            "name": "Kumamoto Airport (Aso Kumamoto Airport)",
+            "latitude": 32.8346902,
+            "longitude": 130.8590123,
+            "applePlaceID": "I2B58A48AF4EC0EEA",
+            "address": "〒861-2204, 熊本県上益城郡益城町, 小谷1802-2",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "Airport limousine bus from Sakuramachi Bus Terminal to the airport, express about 45 min, regular about 50 min, around ¥1,400; adjust to your actual flight and leave time for check-in and security"
+          }
+        }
+      ]
+    }
+  ]
+}

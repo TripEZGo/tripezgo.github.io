@@ -1,0 +1,1040 @@
+{
+  "formatVersion": 3,
+  "templateID": "th-bangkok-5d",
+  "revision": 1,
+  "contentLocale": "zh-Hans",
+  "title": "曼谷 5 日｜大皇宫・郑王庙・洽图洽・ICONSIAM",
+  "subtitle": "大皇宫、郑王庙、洽图洽周末市集与 ICONSIAM",
+  "summary": "曼谷五天：第一天抵达机场后去酒店酒吧，之后是大皇宫、郑王庙、洽图洽、ICONSIAM 与乔德夜市，最后一天早晨逛完公园后出境。洽图洽需要排在周末。须知写了 TDAC 入境卡、机场进出市区、交通卡、网络与现金。唐人街、Old Siam 与 Central Rama 9 放在备选。",
+  "destination": "泰国 曼谷",
+  "regionCodes": [
+    "TH"
+  ],
+  "dayCount": 5,
+  "coverColour": "amber",
+  "defaultTimeZoneID": "Asia/Bangkok",
+  "tags": [
+    "双人",
+    "初访",
+    "市集",
+    "夜市"
+  ],
+  "todos": [
+    {
+      "text": "填写泰国数位入境卡（TDAC）",
+      "note": "https://tdac.immigration.go.th 抵达前 3 天内免费填写，每次入境都要重填"
+    }
+  ],
+  "images": {
+    "d2-01": "images/th-bangkok-5d/d2-01.jpg",
+    "d2-02": "images/th-bangkok-5d/d2-02.jpg",
+    "d2-04": "images/th-bangkok-5d/d2-04.jpg",
+    "d2-05": "images/th-bangkok-5d/d2-05.jpg",
+    "d3-01": "images/th-bangkok-5d/d3-01.jpg",
+    "d3-03": "images/th-bangkok-5d/d3-03.jpg",
+    "d3-04": "images/th-bangkok-5d/d3-04.jpg",
+    "d4-01": "images/th-bangkok-5d/d4-01.jpg",
+    "d4-04": "images/th-bangkok-5d/d4-04.jpg",
+    "d5-01": "images/th-bangkok-5d/d5-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：沙吞（游记住过：JC 凯文沙吞酒店 JC Kevin Sathorn Bangkok Hotel）",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "JC Kevin Sathorn Bangkok Hotel",
+        "latitude": 13.716456,
+        "longitude": 100.531506,
+        "applePlaceID": "ID1CD506260F5CC3E",
+        "address": "36 ถนนนราธิวาสราชนครินทร์, แขวงทุ่งวัดดอน เขตสาทร, กรุงเทพมหานคร 10120, ประเทศไทย",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "备选：老城区暹罗古城广场购物中心（The Old Siam Shopping Plaza）",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "ดิ โอลด์ สยาม พลาซ่า",
+        "latitude": 13.7457087,
+        "longitude": 100.4999517,
+        "applePlaceID": "IABC9B0FBF57AF31F",
+        "address": "12 ถนนตรีเพชร",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记在卧佛寺后来此换钱（SuperRich）并吃一楼泰式煎饼"
+    },
+    {
+      "key": "u-02",
+      "title": "备选：唐人街（เยาวราช）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "ถนนเยาวราช",
+        "latitude": 13.7408881,
+        "longitude": 100.5087729,
+        "address": "แขวงจักรวรรดิ, เขตสัมพันธวงศ์, 曼谷, 泰國",
+        "addressIsApproximate": true
+      },
+      "notes": "营业时间请出发前确认；游记搭车路过，夜晚霓虹很有赛博庞克感"
+    },
+    {
+      "key": "u-03",
+      "title": "备选：拉玛九中央商场（เซ็นทรัล พระราม 9）",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "Central",
+        "latitude": 13.7583493,
+        "longitude": 100.5662375,
+        "applePlaceID": "IEE9FD7290329464A",
+        "address": "9/9 ถนนรัชดาภิเษก, แขวงห้วยขวาง เขตห้วยขวาง, กรุงเทพมหานคร 10310, ประเทศไทย",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记乔德夜市后顺路逛，有 NaRaYa 曼谷包"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "资料来源与查证",
+      "paragraphs": [
+        {
+          "text": "来源游记",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/b7e7c0938985/",
+          "style": "bullet"
+        },
+        {
+          "text": "查证（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "大皇宫（每日 8:30–16:30、售票到 15:30、门票 THB 500）：https://www.royalgrandpalace.th/en/home （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "洽图洽市集（周六日 9:00–18:00 全区；周三四植物区；周五批发）：https://www.chatuchakmarket.org/opening-times/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "中央世界（每日 10:00–22:00）：https://www.centralworld.co.th/en （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "ICONSIAM（每日 10:00–22:00）：https://www.iconsiam.com/en/getting-here （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "机场快线（约 26–30 分钟、THB 15–45、约 05:30–午夜）：未能从官方网站取得，来自旅游信息整理（查证 2026-11-17，来源为搜寻结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "机场出租车（服务费 THB 50、过路费、一般车费范围）：机场官网 https://suvarnabhumi.airportthai.co.th/service/transportation/detail/304 与旅游信息整理（查证 2026-11-17，来源为搜寻结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "王权玛哈纳功大厦（10:00–19:00、日间场与日落场）：官网未取得，来自售票平台整理（查证 2026-11-17，来源为搜寻结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "郑王庙（约 8:00–18:00、THB 200）与卧佛寺（开放时间各来源不一）：未能从官方确认（查证 2026-11-17，来源为搜寻结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "The Rock Pub（地址帕蓬乐沁路 1011/3-4）：Time Out 曼谷与名录资料（查证 2026-11-17，来源为搜寻结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "LHAO LHAO（帕蓬乐沁路 1271/6-7、约 15:00–03:00）：名录资料（查证 2026-11-17，来源为搜寻结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "JC 凯文沙吞酒店地址：https://jckevin.com/ （查证 2026-11-17）；座标来自 OpenStreetMap 资料",
+          "style": "bullet"
+        },
+        {
+          "text": "泰国数位入境卡 TDAC（外国旅客必填、抵达前 3 天内、免费、每次入境重填）：https://tdac.immigration.go.th/manual/en/ 与泰国驻外使馆公告（查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "未能从官方确认，请出发前确认",
+          "style": "heading"
+        },
+        {
+          "text": "卧佛寺、郑王庙、伦批尼公园、Terminal 21 美食街、班嘉奇蒂公园、乔德夜市、Zoom Sky Bar、Big C、Shake Shack、LHAO LHAO、The Rock Pub 的营业时间与公休日。",
+          "style": "bullet"
+        },
+        {
+          "text": "卧佛寺与王权玛哈纳功大厦的现行门票（游记 2024 年资料：卧佛寺 THB 300、王权 THB 1,080）。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记 2024 年资料：塔恰码头到郑王庙船票 THB 30、郑王庙到 ICONSIAM 船票 THB 40、按摩一小时 THB 250–270。",
+          "style": "bullet"
+        },
+        {
+          "text": "已变动与取舍",
+          "style": "heading"
+        },
+        {
+          "text": "游记原本 5 天含出发日与回程日，这份把第 1 天排成机场抵达加酒店酒吧，第 5 天只留早晨公园与出境。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记早餐王春盛牛肉火锅与酒店早餐省略；推广连结已拿掉，只留官方连结。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出发前须知",
+      "paragraphs": [
+        {
+          "text": "入境",
+          "style": "heading"
+        },
+        {
+          "text": "泰国数位入境卡（TDAC）：所有外国旅客入境前都要在官方网站 https://tdac.immigration.go.th 免费填写，抵达日前 3 天内（含抵达当天）提交；每次入境都要重填。只用官方网站，要收费的都是假网站。",
+          "style": "bullet"
+        },
+        {
+          "text": "机场进出市区",
+          "style": "heading"
+        },
+        {
+          "text": "机场快线（Airport Rail Link）：素万那普机场到帕亚泰（Phaya Thai）约 26–30 分钟，票价 THB 15–45，机场到帕亚泰约 THB 45；约 05:30 到午夜，10–15 分钟一班。机场快线只能买单程票，不能用兔子卡。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记 2024 年走法：机场快线到帕亚泰，转 BTS 素坤逸线到暹罗（Siam），再转 BTS 席隆线到钟囊西（Chong Nonsi），出站走天桥再步行约 15 分钟到酒店；晚上路灯少，一个人走会害怕。",
+          "style": "bullet"
+        },
+        {
+          "text": "出租车：一楼公共出租车排班处（Public Taxi）依跳表计费，加机场服务费 THB 50，另付高速公路过路费约 THB 70–80，到市区一般约 THB 400–575；搭 Grab 也可，游记回程从酒店到机场 Grab THB 577 含过路费。",
+          "style": "bullet"
+        },
+        {
+          "text": "出租车到酒店前，因双向道回转，司机要开过头再回转，会多绕一小段。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通票券",
+          "style": "heading"
+        },
+        {
+          "text": "BTS 可在人工窗口买兔子卡（Rabbit Card）储值并刷卡进出站；兔子卡只能用在 BTS，不能用在 MRT 与机场快线。",
+          "style": "bullet"
+        },
+        {
+          "text": "MRT 要买票，或用 VISA 非接触式信用卡直接刷卡进出站（游记实测可行，银行是否支援请自行确认）。",
+          "style": "bullet"
+        },
+        {
+          "text": "出发前在台湾注册 Grab 并绑定信用卡。",
+          "style": "bullet"
+        },
+        {
+          "text": "昭披耶河码头有官方售票柜台，不要搭码头外拉客的私人船。",
+          "style": "bullet"
+        },
+        {
+          "text": "网络与现金",
+          "style": "heading"
+        },
+        {
+          "text": "游记用 eSIM（AIS），启用需先联网，建议在台湾先启用；机场有免费 Wi-Fi。",
+          "style": "bullet"
+        },
+        {
+          "text": "换泰铢：游记在卧佛寺附近 The Old Siam Shopping Plaza 的 SuperRich 换，钞票不能有污渍或笔记；SuperRich 有营业时间，太早或太晚到会换不到。",
+          "style": "bullet"
+        },
+        {
+          "text": "预约",
+          "style": "heading"
+        },
+        {
+          "text": "The Rock Pub：游记当晚票价 THB 350 含一杯酒，需提前购票。",
+          "style": "bullet"
+        },
+        {
+          "text": "王权玛哈纳功大厦：线上购票通常比现场便宜，请先确认日间场与日落场。",
+          "style": "bullet"
+        },
+        {
+          "text": "Zoom Sky Bar：想吃晚餐建议先订座，晚到可能只剩下酒菜。",
+          "style": "bullet"
+        },
+        {
+          "text": "住宿",
+          "style": "heading"
+        },
+        {
+          "text": "4 晚住沙吞（Sathorn）：游记住 JC 凯文沙吞酒店（JC Kevin Sathorn Bangkok Hotel），公寓式套房；离 BTS 钟囊西站约 1 公里，步行约 15 分钟。游记因太晚订而价格偏高，早订可便宜很多。",
+          "style": "bullet"
+        },
+        {
+          "text": "天候与季节",
+          "style": "heading"
+        },
+        {
+          "text": "游记 8 月到访，下午常有雷阵雨，寺庙行程尽量排在上午。",
+          "style": "bullet"
+        },
+        {
+          "text": "洽图洽周末市集只在周六、周日全区营业。这份范本排在第 3 天，套用日期时请让第 3 天落在周六或周日，否则请与第 4 天对调并改去别的行程。",
+          "style": "bullet"
+        },
+        {
+          "text": "泰国卖酒时间限制：11:00–14:00、17:00–24:00，佛教节日全天禁售酒（游记资料）。",
+          "style": "bullet"
+        },
+        {
+          "text": "服装与安全",
+          "style": "heading"
+        },
+        {
+          "text": "大皇宫、卧佛寺、郑王庙都有服装规定：不能穿短裤、露肩衣服、破洞牛仔裤、七分裤、短裙。",
+          "style": "bullet"
+        },
+        {
+          "text": "人多的地方小心扒手；景点外有人说景点关门、介绍你搭嘟嘟车或黑船，都是骗局。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记遇到搭讪要看钞票、换钱的诈骗，不要理会。",
+          "style": "bullet"
+        },
+        {
+          "text": "外国人专用紧急救助电话 1155。",
+          "style": "bullet"
+        },
+        {
+          "text": "泰国不是小费文化，按摩时游记给 THB 20 意思意思。",
+          "style": "bullet"
+        },
+        {
+          "text": "其他",
+          "style": "heading"
+        },
+        {
+          "text": "游记提醒：芒果糯米饭不能带回台湾。",
+          "style": "bullet"
+        },
+        {
+          "text": "备选：老城区暹罗古城广场、唐人街（耀华力路）、拉玛九中央商场放在备选景点。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "泰国薄荷鼻通棒",
+      "category": "other",
+      "productType": "other_product",
+      "store": "洽图洽较便宜（游记 2024 年资料：6 支 THB 99，Big C 6 支 THB 140）　约 99 泰铢"
+    },
+    {
+      "key": "s-02",
+      "title": "鹅牌清凉膏",
+      "category": "other",
+      "productType": "other_product",
+      "store": "泰国当地推荐的清凉膏，药妆店或超市"
+    },
+    {
+      "key": "s-03",
+      "title": "普妲旺（Phutawan）室内扩香",
+      "category": "other",
+      "productType": "other_product",
+      "store": "洽图洽与市区百货公司"
+    },
+    {
+      "key": "s-04",
+      "title": "榴莲干",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "Big C 或百货公司"
+    },
+    {
+      "key": "s-05",
+      "title": "NaRaYa 曼谷包",
+      "category": "clothing",
+      "productType": "bag_wallet",
+      "store": "拉玛九中央商场等百货"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "曼谷",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "曼谷",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "曼谷",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "曼谷",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "曼谷",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "曼谷",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵达素万那普机场（ท่าอากาศยานสุวรรณภูมิ）",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "airport",
+          "place": {
+            "name": "苏凡纳布机场",
+            "latitude": 13.6923807,
+            "longitude": 100.7504675,
+            "applePlaceID": "IFDAB6455B3E20B5D",
+            "address": "999 ถนน สุวรรณภูมิ 6, อำเภอบางพลี, สมุทรปราการ 10540, ประเทศไทย",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "午餐：机场泰式餐厅",
+          "start": "13:45",
+          "end": "14:45",
+          "category": "dining",
+          "place": {
+            "name": "苏凡纳布机场",
+            "latitude": 13.6923807,
+            "longitude": 100.7504675,
+            "applePlaceID": "IFDAB6455B3E20B5D",
+            "address": "999 ถนน สุวรรณภูมิ 6, อำเภอบางพลี, สมุทรปราการ 10540, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；游记在机场吃了打抛猪配蔬菜汤",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "领完行李、办完 eSIM 或 SIM 卡后在入境楼层觅食；eSIM 启用需先联网，机场有 Wi-Fi"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "曼谷萨通 JC 凯文酒店 Zoom 高空酒吧（Zoom Sky Bar）：晚餐与夜景",
+          "start": "18:30",
+          "end": "20:30",
+          "category": "bar",
+          "place": {
+            "name": "ズーム スカイバーアンドレストラン",
+            "latitude": 13.7130168,
+            "longitude": 100.5343349,
+            "applePlaceID": "I343CCA9BF4111217",
+            "address": "36 ถนนนราธิวาสราชนครินทร์, แขวงทุ่งวัดดอน เขตสาทร, กรุงเทพมหานคร 10120, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；游记晚到只剩下酒菜、串烧，想吃晚餐请先订座",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "机场快线（Airport Rail Link）素万那普到帕亚泰（Phaya Thai）约 26 分钟，转 BTS 素坤逸线到暹罗（Siam），再转 BTS 席隆线到钟囊西（Chong Nonsi），步行约 15 分钟到酒店寄存行李、办理入住；含等车与入住约 2 小时"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "高空酒吧在同一栋酒店顶楼，搭电梯即可"
+          },
+          "todos": [
+            {
+              "text": "预订 Zoom Sky Bar 座位",
+              "note": "在 JC 凯文沙吞酒店顶楼；想吃晚餐请先订座，游记晚到只剩下酒菜"
+            },
+            {
+              "text": "确认机场快线与出租车行情",
+              "note": "机场快线约 26–30 分钟、THB 15–45；出租车加 THB 50 服务费与过路费"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "曼谷",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "卧佛寺（วัดโพธิ์）：卧佛与彩色佛塔",
+          "start": "09:00",
+          "end": "10:30",
+          "category": "temple",
+          "place": {
+            "name": "卧佛寺",
+            "latitude": 13.7465708,
+            "longitude": 100.4933274,
+            "applePlaceID": "I67AD50C514533DFA",
+            "address": "2 ถ.สนามไชย, แขวงพระบรมมหาราชวัง เขตพระนคร, กรุงเทพมหานคร 10200, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认（各来源标示约 8:00 起，傍晚关门时间不一）；须脱鞋进殿，服装规定同大皇宫",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Grab 或出租车约 30 分钟，游记 Grab 车费 THB 135"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "大皇宫与玉佛寺（พระบรมมหาราชวัง）",
+          "start": "10:45",
+          "end": "12:45",
+          "category": "sight",
+          "place": {
+            "name": "大皇宫",
+            "latitude": 13.7498484,
+            "longitude": 100.4912996,
+            "applePlaceID": "IC2442E04BCA25F52",
+            "address": "ถนน หน้าพระลาน, แขวงพระบรมมหาราชวัง เขตพระนคร, กรุงเทพมหานคร 10200, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "每日 8:30–16:30，售票到 15:30（官网 royalgrandpalace.th）",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从卧佛寺步行约 10 分钟到大皇宫；门票 THB 500（官网）；入内不可穿短裤、露肩、破洞牛仔裤、短裙；玉佛禁止拍照"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "午餐：大皇宫到塔恰码头之间的餐厅",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "dining",
+          "place": {
+            "name": "Pad Thai tha Chang Pier",
+            "latitude": 13.7522966,
+            "longitude": 100.4890399,
+            "address": "เขตพระนคร, กรุงเทพมหานคร 10200, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "游记在出大皇宫往码头的路上找了间西餐厅"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "郑王庙（วัดอรุณราชวราราม）",
+          "start": "14:25",
+          "end": "15:40",
+          "category": "temple",
+          "place": {
+            "name": "郑王庙",
+            "latitude": 13.7437622,
+            "longitude": 100.4888971,
+            "applePlaceID": "I966ACCBC23B8B32D",
+            "address": "ถนนวังเดิม",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认（多数来源标示约 8:00–18:00）；游记门票 THB 200；不可露肩、短裤、露肚、短裙，可穿泰服",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "到塔恰码头（Tha Chang）找官方售票柜台，游记船票 THB 30、冷气新船；码头外拉客的私人船要价 THB 500–1,000，不要理会"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "ICONSIAM（ไอคอนสยาม）：河畔百货与水上市场美食街",
+          "start": "16:10",
+          "end": "17:40",
+          "category": "shopping",
+          "place": {
+            "name": "Icon Siam",
+            "latitude": 13.7264875,
+            "longitude": 100.5107734,
+            "applePlaceID": "I678AEEF4439CA40B",
+            "address": "299 ถนนเจริญนคร, แขวงคลองต้นไทร เขตคลองสาน, กรุงเทพมหานคร 10600, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "每日 10:00–22:00（官网）",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "从郑王庙回码头，先到 2 号码头（PIER 2）售票亭买往 ICONSIAM 的船票（游记 THB 40），再到 1 号码头搭乘"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "晚餐：LHAO LHAO（เหลาเหลา）泰式中式料理",
+          "start": "18:45",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "lhaolhao",
+            "latitude": 13.782148,
+            "longitude": 100.545261,
+            "applePlaceID": "ICA7ED9CC9ED29EAA",
+            "address": "1271/4 ถนนพหลโยธิน, แขวงพญาไท เขตพญาไท, กรุงเทพมหานคร 10400, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认（名录资料标示约 15:00–03:00，未能从官方确认）；游记推荐咖喱螃蟹、炸蚵仔煎、橄榄菜炒碎肉",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "driving",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "Grab 或出租车约 50 分钟（傍晚塞车）；也可搭 BTS 回暹罗转素坤逸线到阿力（Ari）站，再步行一小段，约 70 分钟"
+          }
+        },
+        {
+          "key": "d2-07",
+          "title": "摇滚酒吧 The Rock Pub：现场摇滚演唱",
+          "start": "20:00",
+          "end": "21:00",
+          "category": "bar",
+          "place": {
+            "name": "The Rock Pub",
+            "latitude": 13.7714658,
+            "longitude": 100.5415173,
+            "applePlaceID": "IB95CFC463B07BF09",
+            "address": "1011/3-4 ถนนพหลโยธิน",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认（各来源标示不一，周一可能公休）；游记当晚 20:00 开演共四组乐团，票 THB 350 含一杯酒，需提前购票；可听到更晚（游记听到约 23:00）；需配合演出日程",
+          "leg": {
+            "fromKey": "d2-06",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从 LHAO LHAO 沿帕蓬乐沁路（Phahon Yothin）步行或搭一站 BTS 到沙南邦（Sanam Pao）"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "Grab 或出租车约 45 分钟；搭 BTS 到钟囊西站后还要步行约 15 分钟，路灯少，夜间不建议独行"
+          },
+          "todos": [
+            {
+              "text": "提前购买 The Rock Pub 演出票",
+              "note": "游记票价 THB 350 含一杯酒，需提前购票；到访日是否有演出请先查酒吧官方粉专"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "曼谷",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "洽图洽周末市集（ตลาดนัดจตุจักร）",
+          "start": "10:00",
+          "end": "13:15",
+          "category": "market",
+          "place": {
+            "name": "ตลาดนัดจตุจักร",
+            "latitude": 13.7999235,
+            "longitude": 100.5508672,
+            "applePlaceID": "I9CD59BBA5B87475E",
+            "address": "290 ถนน กำแพงเพชร 3",
+            "addressIsApproximate": false
+          },
+          "notes": "周六、周日 9:00–18:00 全区营业；周三、周四只有植物区，周五只有批发（官网 chatuchakmarket.org，周五时间官网写法不明确）；市集外围厕所收费 THB 5，Mixt Chatuchak 商场有免费厕所",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "Grab 或出租车约 45 分钟，游记 Uber THB 374（从市区另一端出发）；也可搭 BTS 到 Mo Chit 站或 MRT 到 Chatuchak Park 站"
+          },
+          "todos": [
+            {
+              "text": "确认第 3 天落在周六或周日",
+              "note": "洽图洽周六、周日 9:00–18:00 全区营业 https://www.chatuchakmarket.org/opening-times/"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "午餐：Mixt Chatuchak 商场",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "dining",
+          "place": {
+            "name": "มิกซ์ จตุจักร",
+            "latitude": 13.802724,
+            "longitude": 100.551246,
+            "applePlaceID": "I9F5BF15006E467D0",
+            "address": "8 ถนนกำแพงเพชร 3, แขวงจตุจักร เขตจตุจักร, กรุงเทพมหานคร 10900, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "市集外围的商场，游记吃海鲜饭、榴莲果汁 THB 89"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "王权玛哈纳功大厦（คิงเพาเวอร์ มหานคร）：天空步道与观景台",
+          "start": "16:00",
+          "end": "17:45",
+          "category": "viewpoint",
+          "place": {
+            "name": "คิงพาวเวอร์ มหานคร",
+            "latitude": 13.723656,
+            "longitude": 100.528302,
+            "applePlaceID": "IA19CCE33A63A7D29",
+            "address": "114 ถนนนราธิวาสราชนครินทร์, แขวงสีลม เขตบางรัก, กรุงเทพมหานคร 10500, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "多数来源标示每日 10:00–19:00，日间场约到 16:00、日落场 16:00–19:00 最后入场 18:30（未能从官方确认，请出发前确认）；游记门票 THB 1,080，背包不可带上去，玻璃走廊禁带手机",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "步行约 15 分钟到 BTS 沙潘昆（Saphan Khwai）站，搭 BTS 到钟囊西（Chong Nonsi）站，出站就是大厦；兔子卡（Rabbit Card）可用于 BTS"
+          },
+          "todos": [
+            {
+              "text": "线上购买王权玛哈纳功大厦门票",
+              "note": "确认日间场或日落场；现场购票通常较贵"
+            }
+          ],
+          "images": [
+            "d3-03"
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "乔德夜市（Jodd Fairs）：火山排骨与夜市小吃",
+          "start": "18:45",
+          "end": "20:30",
+          "category": "market",
+          "place": {
+            "name": "จ๊อดแฟร์",
+            "latitude": 13.7680888,
+            "longitude": 100.5711691,
+            "applePlaceID": "I5DF5E52AD54C4FD5",
+            "address": "แขวงดินแดง เขตดินแดง, กรุงเทพมหานคร 10400, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认（各来源多标示傍晚到深夜）；游记晚餐吃火山排骨、海鲜烧、椰子冰淇淋",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "BTS 到沙拉丹（Sala Daeng）换 MRT 席隆（Silom）站，搭 MRT 到帕蓝九（Phra Ram 9）站；MRT 不能用兔子卡，要买票或刷 VISA 非接触式信用卡进出站（游记实测可行）"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Grab 或出租车约 40 分钟，回程可顺路买 7-Eleven 热压吐司当宵夜"
+          },
+          "images": [
+            "d3-04"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "曼谷",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "中央世界购物中心（เซ็นทรัลเวิลด์）",
+          "start": "10:30",
+          "end": "12:15",
+          "category": "shopping",
+          "place": {
+            "name": "Central",
+            "latitude": 13.746558,
+            "longitude": 100.539148,
+            "applePlaceID": "I40CE84432F27B0C2",
+            "address": "999/9 ถนนพระราม 1, แขวงปทุมวัน เขตปทุมวัน, กรุงเทพมหานคร 10330, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "每日 10:00–22:00（官网）",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "BTS 席隆线钟囊西站到暹罗站约 15 分钟，再步行或走天桥约 10 分钟到中央世界"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "午餐：中央世界 SHAKE SHACK",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "fastfood",
+          "place": {
+            "name": "Shake Shack",
+            "latitude": 13.7473212,
+            "longitude": 100.5402392,
+            "applePlaceID": "IDE718A176EEB9ED0",
+            "address": "ชั้น 1 999/9 ถนน ราชดำริ, แขวงลุมพินี เขตปทุมวัน, กรุงเทพมหานคร 10330, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；游记试了曼谷限定椰奶口味奶昔",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "馆内一楼"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "Big C 超市（บิ๊กซี ราชดำริ）：零食与伴手礼",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "shopping",
+          "place": {
+            "name": "Big C Ratchadamri",
+            "latitude": 13.7470124,
+            "longitude": 100.5407032,
+            "applePlaceID": "I8CD6893AE7BC9D33",
+            "address": "เขตปทุมวัน, กรุงเทพมหานคร, ประเทศไทย",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认；游记说现在不提供塑料袋，要自备或购买环保袋",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从中央世界走到对面的 Big C"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "Terminal 21 航站百货（เทอร์มินอล 21 อโศก）",
+          "start": "15:15",
+          "end": "17:30",
+          "category": "shopping",
+          "place": {
+            "name": "Terminal 21购物中心",
+            "latitude": 13.737569,
+            "longitude": 100.560395,
+            "applePlaceID": "IC871E1341A101156",
+            "address": "88 ซอยสุขุมวิท 19 ถนนสุขุมวิท",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认（官网未列）；每层楼以不同城市为主题",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "BTS 奇隆（Chit Lom）站到阿索克（Asok）站，约 15 分钟，出站连通百货"
+          },
+          "images": [
+            "d4-04"
+          ]
+        },
+        {
+          "key": "d4-05",
+          "title": "晚餐：Terminal 21 楼上美食街（Pier 21）",
+          "start": "17:45",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "Pier 21 Food Court",
+            "latitude": 13.7380042,
+            "longitude": 100.5602643,
+            "applePlaceID": "IF5BD4E6BD3ECD559",
+            "address": "ชั้น 5, 88 ถนน สุขุมวิท",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；先到柜台用现金换食物卡，用食物卡 QR Code 结帐，吃完回柜台退剩余金额（游记，不需押金与手续费）",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "馆内搭扶梯上楼"
+          }
+        },
+        {
+          "key": "d4-06",
+          "title": "班嘉奇蒂公园（สวนเบญจกิติ）：夜间散步",
+          "start": "19:05",
+          "end": "20:15",
+          "category": "park",
+          "place": {
+            "name": "本加凯弟公园",
+            "latitude": 13.7300105,
+            "longitude": 100.5573946,
+            "applePlaceID": "IEECC3E9C5A209A40",
+            "address": "ถนนรัชดาภิเษก",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认；游记夜晚去没看到大蜥蜴",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "从 Terminal 21 往后方步行约 20 分钟；游记回程在 BTS 站台遇到搭讪换钱、看钞票的诈骗，不要理会"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Grab 或出租车约 30 分钟"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "曼谷",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "伦批尼公园（สวนลุมพินี）：晨间散步找水巨蜥",
+          "start": "09:15",
+          "end": "10:45",
+          "category": "park",
+          "place": {
+            "name": "仑披尼公园",
+            "latitude": 13.731312,
+            "longitude": 100.541644,
+            "applePlaceID": "IB331CA74B843D834",
+            "address": "192 ถนนวิทยุ, แขวงลุมพินี เขตปทุมวัน, กรุงเทพมหานคร 10330, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "每日清晨到晚间开放，确切时间请出发前确认；游记早上在湖边只看到一只水巨蜥，当地人不喜欢也不要接触",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "退房后 Grab 或出租车约 20 分钟；行李可寄存酒店"
+          },
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "素万那普机场出境（ท่าอากาศยานสุวรรณภูมิ）",
+          "start": "12:30",
+          "end": "15:00",
+          "category": "airport",
+          "place": {
+            "name": "苏凡纳布机场",
+            "latitude": 13.6923807,
+            "longitude": 100.7504675,
+            "applePlaceID": "IFDAB6455B3E20B5D",
+            "address": "999 ถนน สุวรรณภูมิ 6, อำเภอบางพลี, สมุทรปราการ 10540, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "driving",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "回酒店取行李后搭 Grab 或出租车到机场约 50–60 分钟，游记从酒店 Grab 车费 THB 577、走高速公路，过路费约 THB 50 事后加在车费；也可搭 BTS 到帕亚泰转机场快线，约 26 分钟、票价约 THB 45"
+          }
+        }
+      ]
+    }
+  ]
+}

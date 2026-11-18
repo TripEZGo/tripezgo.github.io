@@ -1,0 +1,1040 @@
+{
+  "formatVersion": 3,
+  "templateID": "th-bangkok-5d",
+  "revision": 1,
+  "contentLocale": "ja",
+  "title": "バンコク 5 日間｜王宮・ワット・アルン・チャトゥチャック・アイコンサイアム",
+  "subtitle": "王宮、ワット・アルン、チャトゥチャック週末市場、アイコンサイアム",
+  "summary": "バンコク 5 日間：1 日目は空港に着いてホテルのスカイバーへ、そのあと王宮、ワット・アルン、チャトゥチャック、アイコンサイアム、ジョッドフェアズ夜市をめぐり、最終日は朝に公園を歩いて出国します。チャトゥチャックは週末に合わせる必要があります。注意事項には TDAC 入国カード、空港と市内の移動、交通カード、ネット、現金を書きました。チャイナタウン、オールドサイアム、セントラル・ラマ 9 は候補に入れています。",
+  "destination": "タイ バンコク",
+  "regionCodes": [
+    "TH"
+  ],
+  "dayCount": 5,
+  "coverColour": "amber",
+  "defaultTimeZoneID": "Asia/Bangkok",
+  "tags": [
+    "ふたり旅",
+    "初めて",
+    "市場",
+    "夜市"
+  ],
+  "todos": [
+    {
+      "text": "タイ電子入国カード（TDAC）を入力する",
+      "note": "https://tdac.immigration.go.th 到着前 3 日以内に無料で入力。入国のたびに入力し直す"
+    }
+  ],
+  "images": {
+    "d2-01": "images/th-bangkok-5d/d2-01.jpg",
+    "d2-02": "images/th-bangkok-5d/d2-02.jpg",
+    "d2-04": "images/th-bangkok-5d/d2-04.jpg",
+    "d2-05": "images/th-bangkok-5d/d2-05.jpg",
+    "d3-01": "images/th-bangkok-5d/d3-01.jpg",
+    "d3-03": "images/th-bangkok-5d/d3-03.jpg",
+    "d3-04": "images/th-bangkok-5d/d3-04.jpg",
+    "d4-01": "images/th-bangkok-5d/d4-01.jpg",
+    "d4-04": "images/th-bangkok-5d/d4-04.jpg",
+    "d5-01": "images/th-bangkok-5d/d5-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "宿泊：サトーン（旅行記で泊まった宿：JC ケビン サトーン ホテル JC Kevin Sathorn Bangkok Hotel）",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "JC Kevin Sathorn Bangkok Hotel",
+        "latitude": 13.716456,
+        "longitude": 100.531506,
+        "applePlaceID": "ID1CD506260F5CC3E",
+        "address": "36 ถนนนราธิวาสราชนครินทร์, แขวงทุ่งวัดดอน เขตสาทร, กรุงเทพมหานคร 10120, ประเทศไทย",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "候補：オールドサイアム・ショッピングプラザ（The Old Siam Shopping Plaza）旧市街",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "ดิ โอลด์ สยาม พลาซ่า",
+        "latitude": 13.7457087,
+        "longitude": 100.4999517,
+        "applePlaceID": "IABC9B0FBF57AF31F",
+        "address": "12 ถนนตรีเพชร",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記では、ワット・ポーのあとここで両替（SuperRich）し、1 階でタイ風クレープを食べた"
+    },
+    {
+      "key": "u-02",
+      "title": "候補：チャイナタウン（เยาวราช）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "ถนนเยาวราช",
+        "latitude": 13.7408881,
+        "longitude": 100.5087729,
+        "address": "แขวงจักรวรรดิ, เขตสัมพันธวงศ์, 曼谷, 泰國",
+        "addressIsApproximate": true
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記では車で通り過ぎただけだが、夜のネオンはサイバーパンクのよう"
+    },
+    {
+      "key": "u-03",
+      "title": "候補：セントラル・ラマ 9（เซ็นทรัล พระราม 9）",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "Central",
+        "latitude": 13.7583493,
+        "longitude": 100.5662375,
+        "applePlaceID": "IEE9FD7290329464A",
+        "address": "9/9 ถนนรัชดาภิเษก, แขวงห้วยขวาง เขตห้วยขวาง, กรุงเทพมหานคร 10310, ประเทศไทย",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記ではジョッドフェアズのあとに立ち寄った。NaRaYa のバンコクバッグがある"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "情報源と確認",
+      "paragraphs": [
+        {
+          "text": "元の旅行記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/b7e7c0938985/",
+          "style": "bullet"
+        },
+        {
+          "text": "確認（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "王宮（毎日 8:30～16:30、チケット販売は 15:30 まで、入場料 THB 500）：https://www.royalgrandpalace.th/en/home （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "チャトゥチャック市場（土日 9:00～18:00 全エリア、水木は植物エリア、金は卸売）：https://www.chatuchakmarket.org/opening-times/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "セントラルワールド（毎日 10:00～22:00）：https://www.centralworld.co.th/en （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "アイコンサイアム（毎日 10:00～22:00）：https://www.iconsiam.com/en/getting-here （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "エアポート・レール・リンク（約 26～30 分、THB 15～45、約 05:30～深夜）：公式サイトでは確認できず、旅行情報のまとめによる（確認 2026-11-17、情報源は検索結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "空港のタクシー（サービス料 THB 50、通行料、一般的な料金の範囲）：空港の公式サイト https://suvarnabhumi.airportthai.co.th/service/transportation/detail/304 と旅行情報のまとめ（確認 2026-11-17、情報源は検索結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "キングパワー・マハナコン（10:00～19:00、昼の回と夕日の回）：公式サイトでは取得できず、チケット販売サイトのまとめによる（確認 2026-11-17、情報源は検索結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "ワット・アルン（約 8:00～18:00、THB 200）とワット・ポー（開園時間は情報源によって違う）：公式には確認できていません（確認 2026-11-17、情報源は検索結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "The Rock Pub（住所：パホンヨーティン通り 1011/3-4）：Time Out バンコクとディレクトリ情報（確認 2026-11-17、情報源は検索結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "LHAO LHAO（パホンヨーティン通り 1271/6-7、約 15:00～03:00）：ディレクトリ情報（確認 2026-11-17、情報源は検索結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "JC ケビン サトーン ホテルの住所：https://jckevin.com/ （確認 2026-11-17）。座標は OpenStreetMap のデータによる",
+          "style": "bullet"
+        },
+        {
+          "text": "タイ電子入国カード TDAC（外国人旅行者は必須、到着前 3 日以内、無料、入国のたびに入力し直し）：https://tdac.immigration.go.th/manual/en/ とタイ在外公館の告知（確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "公式な情報で確認できていません。出発前に確認してください",
+          "style": "heading"
+        },
+        {
+          "text": "ワット・ポー、ワット・アルン、ルンピニー公園、ターミナル 21 のフードコート、ベンジャキティ公園、ジョッドフェアズ、Zoom Sky Bar、Big C、Shake Shack、LHAO LHAO、The Rock Pub の営業時間と定休日。",
+          "style": "bullet"
+        },
+        {
+          "text": "ワット・ポーとキングパワー・マハナコンの現在の入場料（旅行記 2024 年の情報：ワット・ポー THB 300、キングパワー THB 1,080）。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記 2024 年の情報：ターチャーン船着場からワット・アルンの船賃 THB 30、ワット・アルンからアイコンサイアムの船賃 THB 40、マッサージ 1 時間 THB 250～270。",
+          "style": "bullet"
+        },
+        {
+          "text": "変更点と取捨",
+          "style": "heading"
+        },
+        {
+          "text": "旅行記はもともと出発日と帰国日を含む 5 日間。ここでは 1 日目を空港到着とホテルのスカイバーにし、5 日目は朝の公園と出国だけにした。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記の朝食（王春盛の牛肉火鍋とホテルの朝食）は省いた。宣伝用リンクは外し、公式リンクだけを残した。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出発前に知っておくこと",
+      "paragraphs": [
+        {
+          "text": "入国",
+          "style": "heading"
+        },
+        {
+          "text": "タイ電子入国カード（TDAC）：外国人旅行者は全員、入国前に公式サイト https://tdac.immigration.go.th で無料入力し、到着日の 3 日前から（到着当日を含む）の間に提出する。入国のたびに入力し直す。公式サイトだけを使うこと。有料のものはすべて偽サイト。",
+          "style": "bullet"
+        },
+        {
+          "text": "空港と市内の移動",
+          "style": "heading"
+        },
+        {
+          "text": "エアポート・レール・リンク：スワンナプーム空港からパヤータイ（Phaya Thai）まで約 26～30 分、料金 THB 15～45（空港からパヤータイは約 THB 45）。約 05:30 から深夜まで、10～15 分おき。エアポート・レール・リンクは片道切符しか買えず、ラビットカードは使えない。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記 2024 年の行き方：エアポート・レール・リンクでパヤータイへ、BTS スクンビット線に乗り換えてサイアム（Siam）へ、さらに BTS シーロム線に乗り換えてチョンノンシー（Chong Nonsi）へ。駅を出て歩道橋を渡り、徒歩約 15 分でホテル。夜は街灯が少なく、一人で歩くのは怖い。",
+          "style": "bullet"
+        },
+        {
+          "text": "タクシー：1 階の公共タクシー乗り場（Public Taxi）はメーター制で、空港サービス料 THB 50 がかかり、高速道路の通行料約 THB 70～80 は別払い。市内までは一般に約 THB 400～575。Grab も使え、旅行記の帰りのホテルから空港までの Grab は通行料込みで THB 577。",
+          "style": "bullet"
+        },
+        {
+          "text": "ホテルの前で、対面通行のため、運転手は行きすぎてから U ターンするので、少し遠回りになる。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通パス",
+          "style": "heading"
+        },
+        {
+          "text": "BTS は有人窓口でラビットカード（Rabbit Card）を買ってチャージし、タッチして乗り降りできる。ラビットカードは BTS 専用で、MRT とエアポート・レール・リンクには使えない。",
+          "style": "bullet"
+        },
+        {
+          "text": "MRT は切符を買うか、VISA のタッチ決済クレジットカードでそのまま改札を通る（旅行記の実測では可能。銀行が対応しているかは各自で確認）。",
+          "style": "bullet"
+        },
+        {
+          "text": "出発前に台湾で Grab に登録し、クレジットカードを紐づけておく。",
+          "style": "bullet"
+        },
+        {
+          "text": "チャオプラヤー川の船着場には公式の切符売り場がある。船着場の外で客引きをする私営の船には乗らないこと。",
+          "style": "bullet"
+        },
+        {
+          "text": "ネットと現金",
+          "style": "heading"
+        },
+        {
+          "text": "旅行記では eSIM（AIS）を使った。開通には通信が必要なので、台湾で先に開通しておくのがおすすめ。空港には無料 Wi-Fi がある。",
+          "style": "bullet"
+        },
+        {
+          "text": "バーツへの両替：旅行記ではワット・ポーの近くの The Old Siam Shopping Plaza の SuperRich で両替した。紙幣に汚れや書き込みがあると不可。SuperRich には営業時間があり、早すぎても遅すぎても両替できない。",
+          "style": "bullet"
+        },
+        {
+          "text": "予約",
+          "style": "heading"
+        },
+        {
+          "text": "The Rock Pub：旅行記の夜のチケットは THB 350 でドリンク 1 杯つき、事前購入が必要。",
+          "style": "bullet"
+        },
+        {
+          "text": "キングパワー・マハナコン：オンライン購入のほうが現地より安いのが普通。先に昼の回か夕日の回かを確認する。",
+          "style": "bullet"
+        },
+        {
+          "text": "Zoom Sky Bar：夕食を食べたいなら先に予約を。遅く着くとおつまみしか残っていないことがある。",
+          "style": "bullet"
+        },
+        {
+          "text": "宿泊",
+          "style": "heading"
+        },
+        {
+          "text": "4 泊はサトーン（Sathorn）：旅行記では JC ケビン サトーン ホテル（JC Kevin Sathorn Bangkok Hotel）に泊まった。アパートメント型のスイートで、BTS チョンノンシー駅から約 1 キロ、徒歩約 15 分。旅行記は予約が遅く値段が高めだった。早めに予約すればかなり安くなる。",
+          "style": "bullet"
+        },
+        {
+          "text": "天候と季節",
+          "style": "heading"
+        },
+        {
+          "text": "旅行記は 8 月に訪れ、午後はよく雷雨になる。寺院はなるべく午前に回す。",
+          "style": "bullet"
+        },
+        {
+          "text": "チャトゥチャック週末市場は土日だけ全エリアが営業する。このテンプレートは 3 日目に入れているので、日付を当てはめるときは 3 日目を土曜か日曜にする。そうでなければ 4 日目と入れ替えて、別の行き先にする。",
+          "style": "bullet"
+        },
+        {
+          "text": "タイの酒類販売の時間制限：11:00～14:00、17:00～24:00。仏教の祝日は終日販売禁止（旅行記の情報）。",
+          "style": "bullet"
+        },
+        {
+          "text": "服装と安全",
+          "style": "heading"
+        },
+        {
+          "text": "王宮、ワット・ポー、ワット・アルンには服装の決まりがある。短パン、肩の出る服、破れたジーンズ、七分丈パンツ、ミニスカートは不可。",
+          "style": "bullet"
+        },
+        {
+          "text": "人の多い場所ではスリに注意。観光地の外で、閉まっていると言ってトゥクトゥクや私営の船を勧めてくる人は、みな詐欺。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記では、話しかけてきて両替をしようと札を見せてほしいと言う詐欺にあった。相手にしないこと。",
+          "style": "bullet"
+        },
+        {
+          "text": "外国人向けの緊急連絡先は 1155。",
+          "style": "bullet"
+        },
+        {
+          "text": "タイはチップの文化ではなく、旅行記ではマッサージで THB 20 を気持ちとして渡した。",
+          "style": "bullet"
+        },
+        {
+          "text": "その他",
+          "style": "heading"
+        },
+        {
+          "text": "旅行記の注意：マンゴーともち米は台湾に持ち帰れない。",
+          "style": "bullet"
+        },
+        {
+          "text": "候補：旧市街のオールドサイアム・ショッピングプラザ、チャイナタウン（ヤワラート通り）、セントラル・ラマ 9 は候補のスポットに入れてある。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "タイのミント鼻スティック",
+      "category": "other",
+      "productType": "other_product",
+      "store": "チャトゥチャックのほうが安い（旅行記 2024 年の情報：6 本 THB 99、Big C は 6 本 THB 140）　約 99 バーツ"
+    },
+    {
+      "key": "s-02",
+      "title": "ガチョウ印のクールバーム",
+      "category": "other",
+      "productType": "other_product",
+      "store": "タイで地元のおすすめのクールバーム。ドラッグストアかスーパー"
+    },
+    {
+      "key": "s-03",
+      "title": "プタワン（Phutawan）ルームディフューザー",
+      "category": "other",
+      "productType": "other_product",
+      "store": "チャトゥチャックと市内のデパート"
+    },
+    {
+      "key": "s-04",
+      "title": "ドライドリアン",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "Big C かデパート"
+    },
+    {
+      "key": "s-05",
+      "title": "NaRaYa バンコクバッグ",
+      "category": "clothing",
+      "productType": "bag_wallet",
+      "store": "セントラル・ラマ 9 などのデパート"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "バンコク",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "バンコク",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "バンコク",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "バンコク",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    },
+    {
+      "name": "バンコク",
+      "latitude": 13.7537858,
+      "longitude": 100.4985251,
+      "timeZoneID": "Asia/Bangkok",
+      "countryCode": "TH"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "バンコク",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "スワンナプーム空港に到着（ท่าอากาศยานสุวรรณภูมิ）",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "airport",
+          "place": {
+            "name": "スワンナプーム国際空港",
+            "latitude": 13.6923807,
+            "longitude": 100.7504675,
+            "applePlaceID": "IFDAB6455B3E20B5D",
+            "address": "999 ถนน สุวรรณภูมิ 6, อำเภอบางพลี, สมุทรปราการ 10540, ประเทศไทย",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "昼食：空港のタイ料理店",
+          "start": "13:45",
+          "end": "14:45",
+          "category": "dining",
+          "place": {
+            "name": "スワンナプーム国際空港",
+            "latitude": 13.6923807,
+            "longitude": 100.7504675,
+            "applePlaceID": "IFDAB6455B3E20B5D",
+            "address": "999 ถนน สุวรรณภูมิ 6, อำเภอบางพลี, สมุทรปราการ 10540, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記では、空港でガパオ（豚肉のバジル炒め）と野菜スープを食べた",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "荷物を受け取り、eSIM か SIM カードの手続きを済ませたあと、到着階で食事の店を探す。eSIM の開通には通信が必要で、空港には Wi-Fi がある"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "バンコク サトーン JC ケビン ホテル ズーム・スカイバー（Zoom Sky Bar）：夕食と夜景",
+          "start": "18:30",
+          "end": "20:30",
+          "category": "bar",
+          "place": {
+            "name": "ズーム スカイバーアンドレストラン",
+            "latitude": 13.7130168,
+            "longitude": 100.5343349,
+            "applePlaceID": "I343CCA9BF4111217",
+            "address": "36 ถนนนราธิวาสราชนครินทร์, แขวงทุ่งวัดดอน เขตสาทร, กรุงเทพมหานคร 10120, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記では遅く着いたため、おつまみと串焼きしか残っていなかった。夕食を食べたいなら先に予約を",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "エアポート・レール・リンクでスワンナプームからパヤータイまで約 26 分、BTS スクンビット線に乗り換えてサイアムへ、さらに BTS シーロム線に乗り換えてチョンノンシーへ。そこからホテルまで徒歩約 15 分で荷物を預けてチェックイン。待ち時間とチェックインを含めて約 2 時間"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "スカイバーは同じホテルの最上階。エレベーターで行ける"
+          },
+          "todos": [
+            {
+              "text": "Zoom Sky Bar の席を予約する",
+              "note": "JC ケビン サトーン ホテルの最上階。夕食を食べたいなら先に予約を。旅行記では遅く着いたため、おつまみしか残っていなかった"
+            },
+            {
+              "text": "エアポート・レール・リンクとタクシーの相場を確認する",
+              "note": "エアポート・レール・リンクは約 26～30 分、THB 15～45。タクシーはサービス料 THB 50 と通行料が別"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "バンコク",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "ワット・ポー（วัดโพธิ์）：涅槃仏とカラフルな仏塔",
+          "start": "09:00",
+          "end": "10:30",
+          "category": "temple",
+          "place": {
+            "name": "ワット・ポー",
+            "latitude": 13.7465708,
+            "longitude": 100.4933274,
+            "applePlaceID": "I67AD50C514533DFA",
+            "address": "2 ถ.สนามไชย, แขวงพระบรมมหาราชวัง เขตพระนคร, กรุงเทพมหานคร 10200, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください（各情報源では 8:00 ごろから、夕方の閉まる時間はまちまち）。堂内では靴を脱ぐ。服装の決まりは王宮と同じ",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Grab またはタクシーで約 30 分。旅行記の Grab 料金は THB 135"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "王宮とワット・プラケーオ（พระบรมมหาราชวัง）",
+          "start": "10:45",
+          "end": "12:45",
+          "category": "sight",
+          "place": {
+            "name": "王宮",
+            "latitude": 13.7498484,
+            "longitude": 100.4912996,
+            "applePlaceID": "IC2442E04BCA25F52",
+            "address": "ถนน หน้าพระลาน, แขวงพระบรมมหาราชวัง เขตพระนคร, กรุงเทพมหานคร 10200, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "毎日 8:30～16:30、チケット販売は 15:30 まで（公式サイト royalgrandpalace.th）",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "ワット・ポーから王宮まで徒歩約 10 分。入場料 THB 500（公式サイト）。短パン、肩の出る服、破れたジーンズ、ミニスカートでは入れない。エメラルド仏は撮影禁止"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "昼食：王宮とターチャーン船着場のあいだの店",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "dining",
+          "place": {
+            "name": "Pad Thai tha Chang Pier",
+            "latitude": 13.7522966,
+            "longitude": 100.4890399,
+            "address": "เขตพระนคร, กรุงเทพมหานคร 10200, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "旅行記では、王宮から船着場へ向かう道で洋食レストランを見つけた"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "ワット・アルン（วัดอรุณราชวราราม）",
+          "start": "14:25",
+          "end": "15:40",
+          "category": "temple",
+          "place": {
+            "name": "ワット・アルン",
+            "latitude": 13.7437622,
+            "longitude": 100.4888971,
+            "applePlaceID": "I966ACCBC23B8B32D",
+            "address": "ถนนวังเดิม",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください（多くの情報源で約 8:00～18:00）。旅行記の入場料は THB 200。肩、短パン、おなか、ミニスカートの露出は不可で、タイの衣装なら可",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "ターチャーン船着場（Tha Chang）で公式の切符売り場を探す。旅行記の船賃は THB 30、冷房つきの新しい船。船着場の外で客引きをする私営の船は THB 500～1,000 を請求するので、相手にしない"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "アイコンサイアム（ไอคอนสยาม）：川沿いのデパートと水上マーケット風フードコート",
+          "start": "16:10",
+          "end": "17:40",
+          "category": "shopping",
+          "place": {
+            "name": "Icon Siam",
+            "latitude": 13.7264875,
+            "longitude": 100.5107734,
+            "applePlaceID": "I678AEEF4439CA40B",
+            "address": "299 ถนนเจริญนคร, แขวงคลองต้นไทร เขตคลองสาน, กรุงเทพมหานคร 10600, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "毎日 10:00～22:00（公式サイト）",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "ワット・アルンから船着場へ戻り、まず 2 番桟橋（PIER 2）の切符売り場でアイコンサイアム行きの切符を買い（旅行記では THB 40）、1 番桟橋から乗る"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "夕食：LHAO LHAO（เหลาเหลา）タイ・中華料理",
+          "start": "18:45",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "lhaolhao",
+            "latitude": 13.782148,
+            "longitude": 100.545261,
+            "applePlaceID": "ICA7ED9CC9ED29EAA",
+            "address": "1271/4 ถนนพหลโยธิน, แขวงพญาไท เขตพญาไท, กรุงเทพมหานคร 10400, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください（ディレクトリ情報では約 15:00～03:00、公式には未確認）。旅行記のおすすめは、カニのカレー、牡蠣のオムレツ揚げ、オリーブ菜と豚ひき肉の炒め",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "driving",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "Grab またはタクシーで約 50 分（夕方は渋滞）。BTS でサイアムに戻り、スクンビット線に乗り換えてアーリー（Ari）駅まで行き、少し歩く方法もあり、約 70 分"
+          }
+        },
+        {
+          "key": "d2-07",
+          "title": "ロックパブ The Rock Pub：ライブのロック演奏",
+          "start": "20:00",
+          "end": "21:00",
+          "category": "bar",
+          "place": {
+            "name": "The Rock Pub",
+            "latitude": 13.7714658,
+            "longitude": 100.5415173,
+            "applePlaceID": "IB95CFC463B07BF09",
+            "address": "1011/3-4 ถนนพหลโยธิน",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください（情報源によって違い、月曜は休みの可能性）。旅行記の夜は 20:00 開演で 4 バンド、チケットは THB 350 でドリンク 1 杯つき、事前購入が必要。もっと遅くまで聴ける（旅行記では約 23:00 まで）。公演日程に合わせる必要がある",
+          "leg": {
+            "fromKey": "d2-06",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "LHAO LHAO からパホンヨーティン通り（Phahon Yothin）を歩くか、BTS 1 駅でサナームパオ（Sanam Pao）へ"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "Grab またはタクシーで約 45 分。BTS でチョンノンシー駅まで行くと、さらに徒歩約 15 分で、街灯が少ないので夜の一人歩きはおすすめしない"
+          },
+          "todos": [
+            {
+              "text": "The Rock Pub の公演チケットを事前に買う",
+              "note": "旅行記のチケットは THB 350 でドリンク 1 杯つき、事前購入が必要。訪れる日に公演があるかは、パブの公式ページで先に確認"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "バンコク",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "チャトゥチャック週末市場（ตลาดนัดจตุจักร）",
+          "start": "10:00",
+          "end": "13:15",
+          "category": "market",
+          "place": {
+            "name": "ตลาดนัดจตุจักร",
+            "latitude": 13.7999235,
+            "longitude": 100.5508672,
+            "applePlaceID": "I9CD59BBA5B87475E",
+            "address": "290 ถนน กำแพงเพชร 3",
+            "addressIsApproximate": false
+          },
+          "notes": "土日 9:00～18:00 は全エリア営業。水・木は植物エリアのみ、金は卸売のみ（公式サイト chatuchakmarket.org、金曜の時間は公式の書き方がはっきりしない）。市場の外側のトイレは有料で THB 5、Mixt Chatuchak モールには無料のトイレがある",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "Grab またはタクシーで約 45 分。旅行記の Uber は THB 374（市内の反対側から出発）。BTS でモーチット駅、または MRT でチャトゥチャック・パーク駅へも行ける"
+          },
+          "todos": [
+            {
+              "text": "3 日目が土曜か日曜に当たるか確認する",
+              "note": "チャトゥチャックは土日 9:00～18:00 が全エリア営業 https://www.chatuchakmarket.org/opening-times/"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "昼食：Mixt Chatuchak モール",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "dining",
+          "place": {
+            "name": "มิกซ์ จตุจักร",
+            "latitude": 13.802724,
+            "longitude": 100.551246,
+            "applePlaceID": "I9F5BF15006E467D0",
+            "address": "8 ถนนกำแพงเพชร 3, แขวงจตุจักร เขตจตุจักร, กรุงเทพมหานคร 10900, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "市場の外側にあるモール。旅行記ではシーフードライスとドリアンジュース（THB 89）を食べた"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "キングパワー・マハナコン（คิงเพาเวอร์ มหานคร）：スカイウォークと展望台",
+          "start": "16:00",
+          "end": "17:45",
+          "category": "viewpoint",
+          "place": {
+            "name": "คิงพาวเวอร์ มหานคร",
+            "latitude": 13.723656,
+            "longitude": 100.528302,
+            "applePlaceID": "IA19CCE33A63A7D29",
+            "address": "114 ถนนนราธิวาสราชนครินทร์, แขวงสีลม เขตบางรัก, กรุงเทพมหานคร 10500, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "多くの情報源では毎日 10:00～19:00、昼の回は約 16:00 まで、夕日の回は 16:00～19:00 で最終入場 18:30（公式には未確認。出発前に確認）。旅行記の入場料は THB 1,080、リュックは持ち込めず、ガラスの通路はスマートフォン禁止",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "徒歩約 15 分で BTS サパーンクワイ（Saphan Khwai）駅へ、BTS でチョンノンシー（Chong Nonsi）駅まで行くと、駅を出てすぐビル。ラビットカード（Rabbit Card）は BTS で使える"
+          },
+          "todos": [
+            {
+              "text": "キングパワー・マハナコンのチケットをオンラインで買う",
+              "note": "昼の回か夕日の回かを確認。現地で買うと通常は高い"
+            }
+          ],
+          "images": [
+            "d3-03"
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "ジョッドフェアズ（Jodd Fairs）：火山リブと夜市のグルメ",
+          "start": "18:45",
+          "end": "20:30",
+          "category": "market",
+          "place": {
+            "name": "จ๊อดแฟร์",
+            "latitude": 13.7680888,
+            "longitude": 100.5711691,
+            "applePlaceID": "I5DF5E52AD54C4FD5",
+            "address": "แขวงดินแดง เขตดินแดง, กรุงเทพมหานคร 10400, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください（多くの情報源で夕方から深夜）。旅行記の夕食は、火山リブ、海鮮焼き、ココナッツアイス",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "BTS でサラデーン（Sala Daeng）まで行き、MRT シーロム（Silom）駅に乗り換えて、MRT でプラ・ラーム 9（Phra Ram 9）駅へ。MRT ではラビットカードは使えず、切符を買うか VISA のタッチ決済クレジットカードで改札を通る（旅行記の実測では可能）"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Grab またはタクシーで約 40 分。帰りに 7-Eleven のホットサンドを夜食に買うのもよい"
+          },
+          "images": [
+            "d3-04"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "バンコク",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "セントラルワールド（เซ็นทรัลเวิลด์）",
+          "start": "10:30",
+          "end": "12:15",
+          "category": "shopping",
+          "place": {
+            "name": "Central",
+            "latitude": 13.746558,
+            "longitude": 100.539148,
+            "applePlaceID": "I40CE84432F27B0C2",
+            "address": "999/9 ถนนพระราม 1, แขวงปทุมวัน เขตปทุมวัน, กรุงเทพมหานคร 10330, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "毎日 10:00～22:00（公式サイト）",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "BTS シーロム線でチョンノンシー駅からサイアム駅まで約 15 分、そこから徒歩または歩道橋で約 10 分でセントラルワールド"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "昼食：セントラルワールドの SHAKE SHACK",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "fastfood",
+          "place": {
+            "name": "Shake Shack",
+            "latitude": 13.7473212,
+            "longitude": 100.5402392,
+            "applePlaceID": "IDE718A176EEB9ED0",
+            "address": "ชั้น 1 999/9 ถนน ราชดำริ, แขวงลุมพินี เขตปทุมวัน, กรุงเทพมหานคร 10330, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記ではバンコク限定のココナッツミルク味のシェイクを試した",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "館内 1 階"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "Big C スーパー（บิ๊กซี ราชดำริ）：お菓子とお土産",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "shopping",
+          "place": {
+            "name": "Big C Ratchadamri",
+            "latitude": 13.7470124,
+            "longitude": 100.5407032,
+            "applePlaceID": "I8CD6893AE7BC9D33",
+            "address": "เขตปทุมวัน, กรุงเทพมหานคร, ประเทศไทย",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記によると、今はレジ袋がないので、自分で持参するかエコバッグを買う",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "セントラルワールドから向かいの Big C へ歩く"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "ターミナル 21（เทอร์มินอล 21 อโศก）",
+          "start": "15:15",
+          "end": "17:30",
+          "category": "shopping",
+          "place": {
+            "name": "ターミナル 21 ショッピングモール",
+            "latitude": 13.737569,
+            "longitude": 100.560395,
+            "applePlaceID": "IC871E1341A101156",
+            "address": "88 ซอยสุขุมวิท 19 ถนนสุขุมวิท",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください（公式サイトに記載なし）。階ごとに別の都市がテーマ",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "BTS でチットロム（Chit Lom）駅からアソーク（Asok）駅まで約 15 分、駅を出るとデパートにつながっている"
+          },
+          "images": [
+            "d4-04"
+          ]
+        },
+        {
+          "key": "d4-05",
+          "title": "夕食：ターミナル 21 上階のフードコート（Pier 21）",
+          "start": "17:45",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "Pier 21 Food Court",
+            "latitude": 13.7380042,
+            "longitude": 100.5602643,
+            "applePlaceID": "IF5BD4E6BD3ECD559",
+            "address": "ชั้น 5, 88 ถนน สุขุมวิท",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。先にカウンターで現金をフードカードに換え、カードの QR コードで支払い、食べ終わったらカウンターで残額を返金してもらう（旅行記、保証金も手数料も不要）",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "館内のエスカレーターで上階へ"
+          }
+        },
+        {
+          "key": "d4-06",
+          "title": "ベンジャキティ公園（สวนเบญจกิติ）：夜の散歩",
+          "start": "19:05",
+          "end": "20:15",
+          "category": "park",
+          "place": {
+            "name": "ベンジャキティ公園",
+            "latitude": 13.7300105,
+            "longitude": 100.5573946,
+            "applePlaceID": "IEECC3E9C5A209A40",
+            "address": "ถนนรัชดาภิเษก",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記では夜に行ったので、オオトカゲは見かけなかった",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "ターミナル 21 の裏手へ徒歩約 20 分。旅行記では、帰りに BTS のホームで、話しかけてきて両替をしようと札を見せてほしいと言う詐欺にあった。相手にしないこと"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Grab またはタクシーで約 30 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "バンコク",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "ルンピニー公園（สวนลุมพินี）：朝の散歩でミズオオトカゲを探す",
+          "start": "09:15",
+          "end": "10:45",
+          "category": "park",
+          "place": {
+            "name": "ルンピニー公園",
+            "latitude": 13.731312,
+            "longitude": 100.541644,
+            "applePlaceID": "IB331CA74B843D834",
+            "address": "192 ถนนวิทยุ, แขวงลุมพินี เขตปทุมวัน, กรุงเทพมหานคร 10330, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "notes": "毎日、早朝から夜まで開園。正確な時間は出発前に確認してください。旅行記では朝、湖畔でミズオオトカゲを 1 匹だけ見かけた。地元の人は好まないので、触らないこと",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "チェックアウト後、Grab またはタクシーで約 20 分。荷物はホテルに預けられる"
+          },
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "スワンナプーム空港から出国（ท่าอากาศยานสุวรรณภูมิ）",
+          "start": "12:30",
+          "end": "15:00",
+          "category": "airport",
+          "place": {
+            "name": "スワンナプーム国際空港",
+            "latitude": 13.6923807,
+            "longitude": 100.7504675,
+            "applePlaceID": "IFDAB6455B3E20B5D",
+            "address": "999 ถนน สุวรรณภูมิ 6, อำเภอบางพลี, สมุทรปราการ 10540, ประเทศไทย",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "driving",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "ホテルに荷物を取りに戻ってから、Grab またはタクシーで空港まで約 50～60 分。旅行記では、ホテルからの Grab 料金は THB 577 で高速道路を使い、通行料約 THB 50 があとから料金に加算された。BTS でパヤータイまで行き、エアポート・レール・リンクに乗り換える方法もあり、約 26 分、料金は約 THB 45"
+          }
+        }
+      ]
+    }
+  ]
+}

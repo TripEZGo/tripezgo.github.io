@@ -1,0 +1,1553 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-hokkaido-sapporo-winter-6d",
+  "revision": 1,
+  "contentLocale": "zh-Hant-TW",
+  "title": "北海道 6 日｜札幌・定山溪・小樽・富良野美瑛（冬季）",
+  "subtitle": "冬季：定山溪溫泉一晚、札幌四晚，小樽與富良野美瑛一日遊",
+  "summary": "新千歲機場進出的冬季六天：定山溪溫泉住一晚，其餘住札幌，走小樽運河、北海道神宮與市區美食，富良野與美瑛參加一日遊，不指定旅行社。須知列了雪路、日照短與交通延誤的提醒。白絲瀑布與定山溪物產館放在備選。",
+  "destination": "日本 札幌・定山溪・小樽・富良野美瑛",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 6,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "雙人",
+    "冬季",
+    "溫泉",
+    "雪景"
+  ],
+  "todos": [
+    {
+      "text": "登錄 Visit Japan Web（入境審查與海關申報）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 機票與訂房完成後即可填寫"
+    }
+  ],
+  "images": {
+    "d2-03": "images/jp-hokkaido-sapporo-winter-6d/d2-03.jpg",
+    "d2-09": "images/jp-hokkaido-sapporo-winter-6d/d2-09.jpg",
+    "d2-12": "images/jp-hokkaido-sapporo-winter-6d/d2-12.jpg",
+    "d3-02": "images/jp-hokkaido-sapporo-winter-6d/d3-02.jpg",
+    "d3-04": "images/jp-hokkaido-sapporo-winter-6d/d3-04.jpg",
+    "d3-06": "images/jp-hokkaido-sapporo-winter-6d/d3-06.jpg",
+    "d4-03": "images/jp-hokkaido-sapporo-winter-6d/d4-03.jpg",
+    "d4-06": "images/jp-hokkaido-sapporo-winter-6d/d4-06.jpg",
+    "d4-07": "images/jp-hokkaido-sapporo-winter-6d/d4-07.jpg",
+    "d4-08": "images/jp-hokkaido-sapporo-winter-6d/d4-08.jpg",
+    "d5-01": "images/jp-hokkaido-sapporo-winter-6d/d5-01.jpg",
+    "d5-05": "images/jp-hokkaido-sapporo-winter-6d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：ゆらく草庵（Jozankei Yurakusoan），定山溪溫泉街入口，連住 1 晚（遊記住過）",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "定山渓 ゆらく草庵",
+        "latitude": 42.9674373,
+        "longitude": 141.1673866,
+        "applePlaceID": "IEB53DA3AE1107F9E",
+        "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目228-1",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "住宿：京王普雷利亞飯店札幌（京王プレリアホテル札幌），札幌站北口，連住 4 晚（遊記住過）",
+      "fromDay": 2,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "京王プレリアホテル 札幌",
+        "latitude": 43.0701426,
+        "longitude": 141.348337,
+        "applePlaceID": "ID6A37439075B56AB",
+        "address": "〒060-0808, 北海道札幌市北区, 北8条西4丁目11-1",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "closingDays": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "備選：白絲瀑布（白糸の滝）",
+      "durationMinutes": 60,
+      "category": "waterfall",
+      "place": {
+        "name": "白糸の滝",
+        "latitude": 42.9690862,
+        "longitude": 141.1699254,
+        "applePlaceID": "IE4305C4887E65D0E",
+        "address": "〒061-2302，北海道札幌市南区，定山渓温泉東2丁目107",
+        "addressIsApproximate": false
+      },
+      "notes": "在飯店附近，遊記因積雪結冰封閉；營業時間請出發前確認"
+    },
+    {
+      "key": "u-02",
+      "title": "備選：定山渓物產館 中央店（定山渓物産館 中央店）",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "定山源泉公園",
+        "latitude": 42.9650293,
+        "longitude": 141.1632451,
+        "applePlaceID": "I5196F29D69C0FD98",
+        "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目",
+        "addressIsApproximate": false
+      },
+      "notes": "可買溫泉蛋到源泉公園煮；營業時間請出發前確認"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "資料來源與查證",
+      "paragraphs": [
+        {
+          "text": "來源遊記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/055527a739dd/",
+          "style": "bullet"
+        },
+        {
+          "text": "查證（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "新千歲機場到札幌的 JR 快速 Airport（約 33–43 分、尖峰 9:00–16:00 每小時約 6 班、IC 卡可用、4 號車廂指定席）：https://www.jrhokkaido.co.jp/global/chinese/travel/airport.html （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "Kappa Liner（約 60 分、全車需預約、單程 1,700 日圓、網路價 1,460 日圓、預約截止前一天 17:00、札幌站 27 號乘車處）：https://www.jotetsu.co.jp/bus/kappa_liner/index.html （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "札幌到定山溪的其他路線與 Esta 巴士總站整修（2025/12 起）：https://jozankei.jp/tw/news/newaccess/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "小樽水族館冬季 2026/12/12–2027/2/23 10:00–16:00，2026/11/24–12/11 休館，冬季成人 1,300 日圓：https://uu-beihaidao.tw/corporate/otaru-aq.shtml （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "札幌電視塔 9:00–22:00、最後入場 21:50：https://www.tv-tower.co.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "未能從官方確認，請出發前確認",
+          "style": "heading"
+        },
+        {
+          "text": "JR 快速 Airport 的實際票價與首末班；一般機場巴士到札幌的時刻與票價。",
+          "style": "bullet"
+        },
+        {
+          "text": "定山溪神社、河童家族祈願手湯與定山源泉公園、ふる川果日 J.glacée、岩戶觀音堂的開放時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "札幌 Yodobashi、成吉思汗達摩本店、狸小路、札幌 PARCO、札幌大丸、北海道神宮、神宮茶屋、Toriton 圓山店、Yakiniku Bar Tamura、北海道廳舊本廳舍、Sandria 的營業時間與冬季時段。",
+          "style": "bullet"
+        },
+        {
+          "text": "小樽運河店 LeTAO、堺町通店家、小樽蒸汽鐘整點鳴笛時刻。",
+          "style": "bullet"
+        },
+        {
+          "text": "一日遊的各景點營業時間：富良野森林精靈露台、富良野香草園、美瑛站、美瑛聖誕樹、白鬚瀑布、白金青池冬季點燈期間。",
+          "style": "bullet"
+        },
+        {
+          "text": "一日遊的集合點、價格與行程細節；遊記為中午出發 B 方案，各家不同。",
+          "style": "bullet"
+        },
+        {
+          "text": "札幌 3 月中旬到冬季各景點的積雪封閉狀況（遊記白絲瀑布與吊橋因雪封閉）。",
+          "style": "bullet"
+        },
+        {
+          "text": "已變動與取捨",
+          "style": "heading"
+        },
+        {
+          "text": "遊記是 3 月中旬的行程；本範本改標冬季，並加上雪路、日照短、交通延誤等提醒，行程內容順序維持遊記。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記一日遊的選購與價格不採用，依規則不指定廠商，只列景點順序並附自行前往方式。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記的札幌つなぐ橫町（只營業到 3 月）與 Le Labo 價格參考不採用。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記第 5 天的北海道神宮與圓山公園順序改為先去神宮再吃午餐，因為冬季日照短，神宮要趁白天去。",
+          "style": "bullet"
+        },
+        {
+          "text": "札幌東急百貨遊記有逛，但營業狀況未能確認，本範本不排入。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記資料",
+          "style": "heading"
+        },
+        {
+          "text": "住宿：遊記住過定山溪的ゆらく草庵（1 晚）與札幌站北口的京王普雷利亞飯店札幌（4 晚），均為作者實際住宿，房價與位置見遊記。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出發前須知",
+      "paragraphs": [
+        {
+          "text": "冬季提醒",
+          "style": "heading"
+        },
+        {
+          "text": "雪況與路況：12 月到 2 月札幌市區積雪結冰，郊外更深。定山溪、富良野、美瑛、白鬚瀑布的步道與橋面常結冰，走路慢一點。遊記 3 月中旬市區雪已少，郊外仍有積雪，白絲瀑布與吊橋因積雪封閉；深冬會比遊記更嚴重。",
+          "style": "bullet"
+        },
+        {
+          "text": "鞋子：請穿防滑鞋底的雪靴或加裝冰爪，不要穿一般運動鞋。日本機場安檢嚴格，靴子要脫下過 X 光，選好脫的款式。",
+          "style": "bullet"
+        },
+        {
+          "text": "衣物：保暖外套、發熱衣、手套、帽子、圍巾。入夜後氣溫更低，遊記提醒太陽下山後仍很冷。",
+          "style": "bullet"
+        },
+        {
+          "text": "日照短：冬至前後約 16:00 就天黑，景點多半要在下午早點看完。請出發前查札幌日出日落時間，把戶外景點排在白天。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通延誤：大雪時 JR 北海道、巴士、新千歲機場航班都可能延誤或停駛。行程不要排得太緊，重要的預約班次預留緩衝，出發前看 JR 北海道與航空公司公告。",
+          "style": "bullet"
+        },
+        {
+          "text": "每日交通以 JR 與巴士為主，第 4 天一日遊車程長，冬季路況可能更慢。",
+          "style": "bullet"
+        },
+        {
+          "text": "機場進出市區（新千歲機場 CTS）",
+          "style": "heading"
+        },
+        {
+          "text": "首選 JR 快速 Airport（快速エアポート）：機場站在 B1，順著「國內線、JR 線」指標走。到札幌站最快約 33 分（特別快速），一般快速約 37 分，區間快速約 43 分；9:00–16:00 每小時約 6 班。可直接刷交通 IC 卡進站，不必排自動售票機。1–3、5–6 號車廂為自由席，4 號車廂為指定席。",
+          "style": "bullet"
+        },
+        {
+          "text": "票價：官網頁面沒有列，遊記也沒寫，請查 JR 北海道官網票價頁。",
+          "style": "bullet"
+        },
+        {
+          "text": "部分班次直通小樽，但不是每班都到，上車前看列車目的地。標示 Local 的區間車不會到小樽。",
+          "style": "bullet"
+        },
+        {
+          "text": "備案：機場巴士，例如到真駒內站的北斗交通機場巴士，可轉搭定山溪的巴士，全程約 120 分；一般到札幌的機場巴士請查官網。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記第 6 天札幌站 11:19 搭 JR 快速 Airport 到機場，約 38 分，12:00 抵達。",
+          "style": "bullet"
+        },
+        {
+          "text": "札幌與定山溪交通",
+          "style": "heading"
+        },
+        {
+          "text": "札幌站到定山溪最順的是 Kappa Liner（かっぱライナー号）：約 60 分，全車需預約（座位不指定），官網預約，從札幌站 27 號乘車處上車。車資單程 1,700 日圓，網路預約優惠價 1,460 日圓；遊記來回 2,920 日圓。預約約在乘車日前一個月開放，前一天 17:00 截止，電子車票直接在手機啟用給司機看，不必領票。",
+          "style": "bullet"
+        },
+        {
+          "text": "札幌站 16:00 與 17:00 的班次為秋冬限定，只開到定山溪車庫前；上下車站要在預約時選好。遊記選在白絲瀑布站下車，離飯店最近；也可坐到「定山溪溫泉東 2 丁目」站，就在飯店門口。",
+          "style": "bullet"
+        },
+        {
+          "text": "另兩條路線（定山溪觀光協會 2025/12 資訊）：札幌站搭地下鐵南北線到真駒內站轉定山溪巴士約 70 分，不用預約，約每 30 分一班；札幌站的巴士總站（Esta）整修中，站前一般定山溪巴士只剩早上幾班，因此地下鐵加巴士或 Kappa Liner 較實際。",
+          "style": "bullet"
+        },
+        {
+          "text": "札幌市區搭地下鐵很方便：南北線札幌站到大通、薄野各約 3–5 分，圓山公園站要在大通轉東西線。交通 IC 卡可通用。",
+          "style": "bullet"
+        },
+        {
+          "text": "預約與購票",
+          "style": "heading"
+        },
+        {
+          "text": "Kappa Liner：請在官網預約，網址見資料來源。",
+          "style": "bullet"
+        },
+        {
+          "text": "小樽水族館：官網有線上購票，入場出示 QR Code。",
+          "style": "bullet"
+        },
+        {
+          "text": "一日遊：多家旅行社都有開這條一日遊（札幌出發，富良野精靈露台、美瑛、白鬚瀑布、青池點燈一帶），出發前自行比較集合點、是否含午餐與冬季點燈期間。遊記選的是中午 11:50 出發的方案，晚上 21:00 前後回札幌大通站。",
+          "style": "bullet"
+        },
+        {
+          "text": "自己搭大眾運輸的替代方式：札幌站搭 JR 函館本線到旭川，轉富良野線到富良野，約 2–3 小時；富良野到美瑛可搭 JR 富良野線；美瑛的青池、白鬚瀑布離車站遠，冬季多靠計程車或租車。冬季開車請自行評估雪路駕駛風險，不建議不熟悉雪路者自駕。班次與票價請查 JR 北海道官網。",
+          "style": "bullet"
+        },
+        {
+          "text": "青池點燈：冬季夜間才有，日期與時間每年不同，請查美瑛町觀光協會。",
+          "style": "bullet"
+        },
+        {
+          "text": "入境與網路",
+          "style": "heading"
+        },
+        {
+          "text": "出發前先在 Visit Japan Web 登錄，入境審查與海關申報共用同一個 QR Code：https://www.vjw.digital.go.jp/main/#/vjwpco001 。",
+          "style": "bullet"
+        },
+        {
+          "text": "網路可用實體 SIM 卡或 eSIM；eSIM 要在有網路的地方啟用，最好在台灣出發前先設定。遊記只有在美瑛深山曾短暫收不到訊號。",
+          "style": "bullet"
+        },
+        {
+          "text": "回程前三天可網路報到、選位，節省機場排隊時間，請查所搭航空公司官網。",
+          "style": "bullet"
+        },
+        {
+          "text": "行程節奏",
+          "style": "heading"
+        },
+        {
+          "text": "第 1 天與第 6 天含機場進出，第 4 天一日遊全天交通，交通比重高於一般的 30%。第 4 天回札幌時間約 21:00。",
+          "style": "bullet"
+        },
+        {
+          "text": "小樽水族館冬季只開到 16:00，所以第 3 天先去水族館再逛運河與堺町通。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "六花亭 萊姆酒葡萄奶油夾心餅乾（六花亭 ラム酒入りレーズンバターサンド）",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "小樽堺町通或機場買；遊記說保存期限短，冰過比較好吃"
+    },
+    {
+      "key": "s-02",
+      "title": "六花亭 酒心糖（六花亭 ボンボンショコラ洋酒入り）",
+      "category": "souvenir",
+      "productType": "chocolate_candy",
+      "store": "遊記推薦，是真的酒；小樽堺町通或機場買"
+    },
+    {
+      "key": "s-03",
+      "title": "LeTAO 餅乾與鐵盒草莓乾巧克力（ルタオ）",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "小樽運河店；遊記餅乾好吃，草莓乾巧克力偏甜"
+    },
+    {
+      "key": "s-04",
+      "title": "札幌農學校 牛奶餅乾（札幌農学校）",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "機場或百貨公司買（遊記戰利品）"
+    },
+    {
+      "key": "s-05",
+      "title": "烤玉米餅乾（焼きとうもろこし風味のお菓子）",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "機場伴手禮區（遊記說不錯）"
+    },
+    {
+      "key": "s-06",
+      "title": "北一硝子 北海道地酒與哈密瓜酒（北一硝子）",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "小樽北一硝子 Outlet 可免費試喝；遊記買了哈密瓜酒，加冰塊或氣泡水"
+    },
+    {
+      "key": "s-07",
+      "title": "木製手作樂手擺飾",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "富良野森林精靈露台小木屋手作商品；店內禁止攝影"
+    },
+    {
+      "key": "s-08",
+      "title": "北海道神宮交通御守與貼紙（交通安全守）",
+      "category": "souvenir",
+      "productType": "charm_badge",
+      "store": "北海道神宮；可掛車內，貼紙可貼機車、腳踏車或安全帽"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "札幌市",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "札幌市",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "小樽市",
+      "latitude": 43.1906335,
+      "longitude": 140.9944389,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "札幌市",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "札幌市",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "札幌市",
+      "latitude": 43.0620372,
+      "longitude": 141.3543688,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "札幌市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵達新千歲機場（新千歳空港）",
+          "start": "13:15",
+          "end": "14:20",
+          "category": "airport",
+          "place": {
+            "name": "新千歳空港国際線ターミナル",
+            "latitude": 42.78662,
+            "longitude": 141.6766,
+            "applePlaceID": "I6EBDB85749A9452",
+            "address": "北海道千歳市, 美々",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "札幌站：27 號乘車處候車（札幌駅 27番のりば）",
+          "start": "15:10",
+          "end": "15:45",
+          "category": "station",
+          "place": {
+            "name": "札幌",
+            "latitude": 43.068593,
+            "longitude": 141.3507724,
+            "applePlaceID": "I50F4652462F771D9",
+            "address": "北海道札幌市北区, 北6条西",
+            "addressIsApproximate": false
+          },
+          "notes": "車站營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "機場站 B1 搭 JR 快速 Airport（快速エアポート），最快約 33–41 分到札幌；可直接刷交通 IC 卡進站；自由席在 1–3、5–6 號車廂"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "抵達定山溪溫泉、入住：ゆらく草庵（Jozankei Yurakusoan）",
+          "start": "17:00",
+          "end": "17:30",
+          "category": "hotel",
+          "place": {
+            "name": "定山渓 ゆらく草庵",
+            "latitude": 42.9674373,
+            "longitude": 141.1673866,
+            "applePlaceID": "IEB53DA3AE1107F9E",
+            "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目228-1",
+            "addressIsApproximate": false
+          },
+          "notes": "入住與退房時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "札幌站 27 號乘車處搭 Kappa Liner（かっぱライナー号）直達約 60 分，全車需預約；到白絲瀑布（白糸の滝）站下車，過馬路即飯店；上下車出示電子車票，行李交給工作人員放車廂"
+          },
+          "todos": [
+            {
+              "text": "預約 Kappa Liner 札幌站→定山溪（含回程）",
+              "note": "官網 https://www.jotetsu.co.jp/bus/kappa_liner/index.html ，乘車日前一個月開放、前一天 17:00 截止；電子車票在手機啟用"
+            }
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "晚餐：北の国居酒屋（定山渓万世閣ホテルミリオーネ 3 樓）",
+          "start": "18:10",
+          "end": "19:30",
+          "category": "dining",
+          "place": {
+            "name": "定山溪萬世閣Hotel Milione",
+            "latitude": 42.9642083,
+            "longitude": 141.1635384,
+            "applePlaceID": "IA3379425E5189323",
+            "address": "〒061-2302",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從飯店步行約 10 分；雪地路面請穿防滑鞋"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回飯店；夜間氣溫低、路面可能結冰"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "札幌市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "早餐：飯店日式早餐",
+          "start": "09:00",
+          "end": "09:50",
+          "category": "dining",
+          "place": {
+            "name": "定山渓 ゆらく草庵",
+            "latitude": 42.9674373,
+            "longitude": 141.1673866,
+            "applePlaceID": "IEB53DA3AE1107F9E",
+            "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目228-1",
+            "addressIsApproximate": false
+          },
+          "notes": "早餐時段請出發前確認",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 2,
+            "durationSource": "user",
+            "note": "在飯店內用餐"
+          }
+        },
+        {
+          "key": "d2-02",
+          "title": "定山溪神社（定山渓神社）",
+          "start": "10:05",
+          "end": "10:35",
+          "category": "temple",
+          "place": {
+            "name": "定山溪神社",
+            "latitude": 42.9649277,
+            "longitude": 141.1671937,
+            "applePlaceID": "I30D94C38550067DE",
+            "address": "〒061-2301, 北海道札幌市南区, 定山渓温泉3丁目218",
+            "addressIsApproximate": false
+          },
+          "notes": "境內請出發前確認開放情況；冬季階梯積雪結冰",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從飯店步行約 10 分；上坡階梯冬季容易結冰"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "河童家族的祈願手湯與定山源泉公園（河童家族の祈願足湯・定山源泉公園）",
+          "start": "10:50",
+          "end": "11:40",
+          "category": "park",
+          "place": {
+            "name": "定山源泉公園",
+            "latitude": 42.9650293,
+            "longitude": 141.1632451,
+            "applePlaceID": "I5196F29D69C0FD98",
+            "address": "〒061-2302, 北海道札幌市南区, 定山渓温泉東3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "免費，營業時間請出發前確認；公園內有公共泡腳池與可煮溫泉蛋的湧口，冬季可能部分封閉",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從神社步行約 10 分，旁邊斜坡往下即源泉公園"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "麵包甜點：ふる川果日 J.glacée（定山溪）",
+          "start": "11:55",
+          "end": "12:20",
+          "category": "bakery",
+          "place": {
+            "name": "J•glacée",
+            "latitude": 42.9659773,
+            "longitude": 141.1611764,
+            "applePlaceID": "I2DD452F5679637EA",
+            "address": "〒061-2303, 北海道札幌市南区, 定山渓温泉西4丁目356",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 8,
+            "durationSource": "user",
+            "note": "沿溫泉街往上走，約 8 分；遊記推薦剛出爐的蘋果可頌"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "岩戶觀音堂（岩戸観音堂）",
+          "start": "12:35",
+          "end": "12:55",
+          "category": "temple",
+          "place": {
+            "name": "岩戶觀世音",
+            "latitude": 42.9664674,
+            "longitude": 141.1608122,
+            "applePlaceID": "I2A38F02C369DB8E5",
+            "address": "〒061-2303",
+            "addressIsApproximate": true
+          },
+          "notes": "境內可自由參拜，冬季積雪請小心",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 12,
+            "durationSource": "user",
+            "note": "步行約 12 分，沿路是溫泉街與雪封的吊橋"
+          }
+        },
+        {
+          "key": "d2-06",
+          "title": "取行李、白絲瀑布巴士站候車（白糸の滝バス停）",
+          "start": "13:10",
+          "end": "13:30",
+          "category": "station",
+          "place": {
+            "name": "白糸の滝",
+            "latitude": 42.9690862,
+            "longitude": 141.1699254,
+            "applePlaceID": "IE4305C4887E65D0E",
+            "address": "〒061-2302，北海道札幌市南区，定山渓温泉東2丁目107",
+            "addressIsApproximate": false
+          },
+          "notes": "巴士發車時刻請看預約的電子車票",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "先回飯店拿寄放的行李，再過馬路到來時對面的站牌；預約回程巴士約 13:31 到站"
+          }
+        },
+        {
+          "key": "d2-07",
+          "title": "入住：京王普雷利亞飯店札幌（京王プレリアホテル札幌）",
+          "start": "14:50",
+          "end": "15:20",
+          "category": "hotel",
+          "place": {
+            "name": "京王プレリアホテル 札幌",
+            "latitude": 43.0701426,
+            "longitude": 141.348337,
+            "applePlaceID": "ID6A37439075B56AB",
+            "address": "〒060-0808, 北海道札幌市北区, 北8条西4丁目11-1",
+            "addressIsApproximate": false
+          },
+          "notes": "入住與退房時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-06",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "Kappa Liner 回札幌站約 60 分（班次請看電子車票，回程班次與停靠站需事先預約），出站後步行到札幌站北口約 5 分"
+          }
+        },
+        {
+          "key": "d2-08",
+          "title": "札幌 Yodobashi 扭蛋與玩具（ヨドバシカメラ マルチメディア札幌）",
+          "start": "15:35",
+          "end": "16:05",
+          "category": "shopping",
+          "place": {
+            "name": "Yodobashi Camera Multimedia札幌",
+            "latitude": 43.068333,
+            "longitude": 141.3476752,
+            "applePlaceID": "IBD9DA5EA3549CF8",
+            "address": "〒060-0806, 北海道札幌市北区, 北6条西5丁目1-22",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-07",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "從飯店走到 JR 札幌站南口方向約 15 分"
+          }
+        },
+        {
+          "key": "d2-09",
+          "title": "薄野十字路口（すすきの交差点）",
+          "start": "16:25",
+          "end": "16:55",
+          "category": "sight",
+          "place": {
+            "name": "薄野免費資訊處 薄野交叉口",
+            "latitude": 43.0559525,
+            "longitude": 141.3535483,
+            "applePlaceID": "I87F015F4ED47ECDB",
+            "address": "〒064-0804, 北海道札幌市中央区, 南4条西3丁目9-5",
+            "addressIsApproximate": false
+          },
+          "notes": "全天可見",
+          "leg": {
+            "fromKey": "d2-08",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "札幌站搭地下鐵南北線到薄野站約 5 分，含步行與等車約 20 分"
+          },
+          "images": [
+            "d2-09"
+          ]
+        },
+        {
+          "key": "d2-10",
+          "title": "晚餐：成吉思汗達摩本店（成吉思汗 だるま 本店）",
+          "start": "17:00",
+          "end": "18:00",
+          "category": "dining",
+          "place": {
+            "name": "札幌成吉思汗雪だるま すすきの本店",
+            "latitude": 43.0525874,
+            "longitude": 141.3526282,
+            "applePlaceID": "IDDDFD4EF638AA2EB",
+            "address": "〒064-0806, 北海道札幌市中央区, 南6条西4 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；遊記提醒吃完走出來店外已大排長龍，附近另有分店",
+          "leg": {
+            "fromKey": "d2-09",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "從十字路口步行約 5 分"
+          }
+        },
+        {
+          "key": "d2-11",
+          "title": "狸小路商店街（狸小路商店街）散步",
+          "start": "18:15",
+          "end": "18:45",
+          "category": "shopping",
+          "place": {
+            "name": "狸小路商店街",
+            "latitude": 43.0572554,
+            "longitude": 141.3527691,
+            "applePlaceID": "I95C7EBDAA769D5FC",
+            "address": "〒060-0062",
+            "addressIsApproximate": true
+          },
+          "notes": "商店街全天可走，各店營業時間不一，請出發前確認",
+          "leg": {
+            "fromKey": "d2-10",
+            "mode": "walking",
+            "durationMinutes": 8,
+            "durationSource": "user",
+            "note": "從薄野往大通方向步行約 8 分"
+          }
+        },
+        {
+          "key": "d2-12",
+          "title": "札幌電視塔夜景（さっぽろテレビ塔）",
+          "start": "19:00",
+          "end": "19:50",
+          "category": "viewpoint",
+          "place": {
+            "name": "札幌電視塔",
+            "latitude": 43.0611553,
+            "longitude": 141.3564238,
+            "applePlaceID": "IB4FF172F48C5B9BC",
+            "address": "〒060-0042, 北海道札幌市中央区, 大通西1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "約 9:00–22:00，最後入場約 21:50（官網 tv-tower.co.jp，查證 2026-11-17）；展望台內可蓋紀念印章",
+          "leg": {
+            "fromKey": "d2-11",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "從狸小路往東步行約 15 分到大通公園"
+          },
+          "images": [
+            "d2-12"
+          ]
+        },
+        {
+          "key": "d2-13",
+          "title": "札幌 PARCO（札幌PARCO）逛街",
+          "start": "20:05",
+          "end": "20:45",
+          "category": "shopping",
+          "place": {
+            "name": "無印良品 札幌パルコ",
+            "latitude": 43.0587429,
+            "longitude": 141.3531098,
+            "applePlaceID": "IEA4EA202B6CE869A",
+            "address": "〒060-0061",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-12",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從電視塔往西南步行約 10 分，下一個路口即是"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "大通站搭地下鐵到札幌站約 6 分，加步行到北口與飯店約 25 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "小樽市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "小樽站前巴士站（小樽駅前バスターミナル）",
+          "start": "10:45",
+          "end": "11:00",
+          "category": "station",
+          "place": {
+            "name": "小樽",
+            "latitude": 43.197135,
+            "longitude": 140.9937207,
+            "applePlaceID": "I889A120FB5A8AD1D",
+            "address": "北海道小樽市, 稲穂",
+            "addressIsApproximate": true
+          },
+          "notes": "車站營業時間請出發前確認",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "札幌站搭 JR 函館本線約 40–60 分（快速約 40 分，區間車較慢且冬季常站立）；出站過馬路右手邊巴士站"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "小樽水族館（おたる水族館）：海獸公園與企鵝散步",
+          "start": "11:25",
+          "end": "13:40",
+          "category": "aquarium",
+          "place": {
+            "name": "Otaru水族館",
+            "latitude": 43.2370258,
+            "longitude": 141.0116485,
+            "applePlaceID": "I2D2DA6DFBC661C60",
+            "address": "〒047-0047, 北海道小樽市, 祝津3丁目303",
+            "addressIsApproximate": false
+          },
+          "notes": "冬季 2026/12/12–2027/2/23 10:00–16:00（最後入場以官網為準）；2026/11/24–12/11 休館；3 月以後時段每季不同，請看官網 uu-beihaidao.tw",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "小樽站前 3 號乘車處搭北海道中央巴士 10 小樽水族館線，直達約 20 分；11 祝津線也到但約 30 分"
+          },
+          "todos": [
+            {
+              "text": "預約小樽水族館門票",
+              "note": "官網有線上購票，入場出示 QR Code；冬季 10:00–16:00，2026/11/24–12/11 休館：https://uu-beihaidao.tw/corporate/otaru-aq.shtml"
+            }
+          ],
+          "images": [
+            "d3-02"
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "午餐：LeTAO 小樽運河店 三番庫咖啡廳（ルタオ小樽運河店 三番庫カフェ）",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "cafe",
+          "place": {
+            "name": "LeTAO 運河プラザ店",
+            "latitude": 43.2003192,
+            "longitude": 141.0003805,
+            "applePlaceID": "I4F761A5F6B738BD1",
+            "address": "〒047-0031, 北海道小樽市, 色内2丁目1-20",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "搭巴士回小樽站約 20 分（等車含冬季班次少），走站前大道到運河約 15 分"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "小樽運河（小樽運河）",
+          "start": "15:45",
+          "end": "16:25",
+          "category": "sight",
+          "place": {
+            "name": "小樽運河旅遊問訊處",
+            "latitude": 43.1979983,
+            "longitude": 141.0032716,
+            "applePlaceID": "I832E860AC996B492",
+            "address": "〒047-0007, 北海道小樽市, 港町5",
+            "addressIsApproximate": false
+          },
+          "notes": "全天開放",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "步行約 5 分"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "堺町通購物：六花亭與北一硝子（六花亭・北一硝子）",
+          "start": "16:40",
+          "end": "17:20",
+          "category": "shopping",
+          "place": {
+            "name": "堺町本通り",
+            "latitude": 43.19427936731942,
+            "longitude": 141.0061036116922,
+            "address": "日本北海道小樽市",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認；北一硝子 Outlet 有北海道地酒可免費試喝（遊記）",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 12,
+            "durationSource": "user",
+            "note": "沿運河與堺町通往蒸汽鐘方向步行，沿路都是店家"
+          }
+        },
+        {
+          "key": "d3-06",
+          "title": "小樽蒸汽鐘（小樽蒸気時計）",
+          "start": "17:35",
+          "end": "17:55",
+          "category": "sight",
+          "place": {
+            "name": "小樽Orugoru堂",
+            "latitude": 43.1905274,
+            "longitude": 141.0079933,
+            "applePlaceID": "I7854E0806E990114",
+            "address": "〒047-0015, 北海道小樽市, 住吉町4-1",
+            "addressIsApproximate": false
+          },
+          "notes": "蒸汽鐘整點鳴笛，請出發前確認；外觀全天可見",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "沿堺町通走到底"
+          },
+          "images": [
+            "d3-06"
+          ]
+        },
+        {
+          "key": "d3-07",
+          "title": "晚餐：北海道湯咖喱外帶（Savoy 札幌站北口店）",
+          "start": "19:15",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "Curry Savoy",
+            "latitude": 43.0711749,
+            "longitude": 141.3492145,
+            "applePlaceID": "IF12D261DD619DA7C",
+            "address": "〒060-0808, 北海道札幌市北区, 北8条西4, 稲津ビルB1F",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；遊記外帶回飯店吃",
+          "leg": {
+            "fromKey": "d3-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "走回小樽站約 25 分，搭 JR 回札幌約 40–60 分（沒搭到快速可搭區間車）"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回飯店約 10 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "札幌市",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "早餐：客美多咖啡 大通西二丁目店（コメダ珈琲店 大通西2丁目店）",
+          "start": "10:30",
+          "end": "11:15",
+          "category": "cafe",
+          "place": {
+            "name": "Komeda珈啡店大通西2丁目店",
+            "latitude": 43.0600811,
+            "longitude": 141.3540977,
+            "applePlaceID": "IEBAB0F64D775C39E",
+            "address": "〒060-0042, 北海道札幌市中央区, 大通西2丁目5 ほくほく札幌ビル",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "札幌站搭地下鐵南北線到大通站約 3 分，含步行約 15 分"
+          }
+        },
+        {
+          "key": "d4-02",
+          "title": "參加一日遊：集合出發（札幌→富良野・美瑛）：大通站 31 號出口",
+          "start": "11:40",
+          "end": "11:50",
+          "category": "other",
+          "place": {
+            "name": "大通",
+            "latitude": 43.060133,
+            "longitude": 141.3521003,
+            "applePlaceID": "ID4D40B56EED1493D",
+            "address": "北海道札幌市中央区, 大通西",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分，前一天通常會收到行前通知"
+          },
+          "todos": [
+            {
+              "text": "預約札幌出發的富良野美瑛一日遊",
+              "note": "多家旅行社有開，確認集合點、出發時間、是否含青池點燈與冬季行程期間"
+            }
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "一日遊：富良野森林精靈露台（ニングルテラス）",
+          "start": "13:30",
+          "end": "14:20",
+          "category": "shopping",
+          "place": {
+            "name": "Ningle Terrace",
+            "latitude": 43.3232668,
+            "longitude": 142.3563319,
+            "applePlaceID": "I1BD87D631F91F3F6",
+            "address": "〒076-0016, 北海道富良野市, 中御料 新富良野プリンスホテル内",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "driving",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "遊覽車，札幌到富良野約 1 小時 40 分，高速公路加山路；遊記為 6 人小團"
+          },
+          "images": [
+            "d4-03"
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "一日遊：富良野香草園（ハーブガーデン富良野）休息購物",
+          "start": "14:50",
+          "end": "15:20",
+          "category": "shopping",
+          "place": {
+            "name": "ハーブガーデン富良野",
+            "latitude": 43.4767859,
+            "longitude": 142.456069,
+            "applePlaceID": "IFE8C7F0CB66946CD",
+            "address": "〒071-0503, 北海道上富良野町, 空知郡, 西3線北27",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "遊覽車，約 30 分"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "一日遊：美瑛車站（美瑛駅）",
+          "start": "15:40",
+          "end": "16:30",
+          "category": "station",
+          "place": {
+            "name": "美瑛駅前",
+            "latitude": 43.5908242,
+            "longitude": 142.4629629,
+            "applePlaceID": "I4C77A7B74A95C144",
+            "address": "北海道上川郡美瑛町, 本町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "遊覽車，約 20 分"
+          }
+        },
+        {
+          "key": "d4-06",
+          "title": "一日遊：美瑛聖誕樹（クリスマスツリーの木）",
+          "start": "16:40",
+          "end": "17:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "聖誕樹",
+            "latitude": 43.554906,
+            "longitude": 142.444779,
+            "applePlaceID": "IA60552C27BD92613",
+            "address": "〒071-0471, 北海道上川郡美瑛町, 美馬牛1258-17",
+            "addressIsApproximate": false
+          },
+          "notes": "全天可見",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "遊覽車，約 10 分"
+          },
+          "images": [
+            "d4-06"
+          ]
+        },
+        {
+          "key": "d4-07",
+          "title": "一日遊：白鬚瀑布（白ひげの滝）",
+          "start": "17:30",
+          "end": "17:50",
+          "category": "waterfall",
+          "place": {
+            "name": "白ひげの滝",
+            "latitude": 43.4746092,
+            "longitude": 142.6393959,
+            "applePlaceID": "I9350E2156999C85B",
+            "address": "〒071-0235, 北海道上川郡美瑛町, 白金",
+            "addressIsApproximate": true
+          },
+          "notes": "全天可見",
+          "leg": {
+            "fromKey": "d4-06",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "遊覽車，約 30 分"
+          },
+          "images": [
+            "d4-07"
+          ]
+        },
+        {
+          "key": "d4-08",
+          "title": "一日遊：白金青池（白金青い池）夜間點燈",
+          "start": "17:55",
+          "end": "18:25",
+          "category": "sight",
+          "place": {
+            "name": "青い池 駐車場",
+            "latitude": 43.4927509,
+            "longitude": 142.6124775,
+            "applePlaceID": "I3E38C2FC7DFAF0A0",
+            "address": "北海道上川郡美瑛町, 道道966号",
+            "addressIsApproximate": false
+          },
+          "notes": "冬季點燈時段與日期每年不同，請出發前確認",
+          "leg": {
+            "fromKey": "d4-07",
+            "mode": "driving",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "遊覽車，約 5 分"
+          },
+          "images": [
+            "d4-08"
+          ]
+        },
+        {
+          "key": "d4-09",
+          "title": "一日遊：返回札幌（大通站 31 號出口）",
+          "start": "20:55",
+          "end": "21:00",
+          "category": "other",
+          "place": {
+            "name": "大通",
+            "latitude": 43.060133,
+            "longitude": 141.3521003,
+            "applePlaceID": "ID4D40B56EED1493D",
+            "address": "北海道札幌市中央区, 大通西",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-08",
+            "mode": "driving",
+            "durationMinutes": 150,
+            "durationSource": "user",
+            "note": "遊覽車，約 2 小時 30 分，中途約 20:00 會停休息站上廁所；冬季路況與天氣可能延誤"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "大通站搭地下鐵到札幌站約 6 分，加步行約 25 分；回程晚了大多餐廳已打烊，可在站前超商買宵夜"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "札幌市",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "北海道神宮（北海道神宮）",
+          "start": "10:15",
+          "end": "11:45",
+          "category": "temple",
+          "place": {
+            "name": "北海道神宮",
+            "latitude": 43.0542509,
+            "longitude": 141.307759,
+            "applePlaceID": "I2389099864CF42DA",
+            "address": "〒064-8505, 北海道札幌市中央区, 宮ケ丘474",
+            "addressIsApproximate": false
+          },
+          "notes": "開放時間冬季較短，請出發前確認；境內不能飲食",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "札幌站搭地下鐵南北線到大通站，轉東西線到圓山公園站約 20 分；3 號出口穿過圓山公園步行約 15 分，冬季積雪結冰"
+          },
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "神宮茶屋：北海道牛奶冰淇淋（神宮茶屋）",
+          "start": "12:00",
+          "end": "12:30",
+          "category": "dessert",
+          "place": {
+            "name": "Jingu Chaya",
+            "latitude": 43.0560054,
+            "longitude": 141.3086439,
+            "applePlaceID": "IA225B526E784F4AD",
+            "address": "〒064-0959, 北海道札幌市中央区, 宮ケ丘3-10",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "在神宮參道旁，神宮內不能吃東西，在茶屋吃完再進出"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "午餐：北海道海產迴轉壽司 Toriton 圓山店（トリトン 円山店）",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "dining",
+          "place": {
+            "name": "Tri Ton圓山店",
+            "latitude": 43.0624592,
+            "longitude": 141.3205112,
+            "applePlaceID": "I62421FAE817B5508",
+            "address": "〒064-0824, 北海道札幌市中央区, 北4条西23丁目2番17号",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；遊記推薦，熱門時段需排隊",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "從神宮步行回圓山公園站附近約 15 分"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "札幌大丸（大丸札幌店）與百貨逛吃",
+          "start": "14:30",
+          "end": "15:45",
+          "category": "shopping",
+          "place": {
+            "name": "大丸札幌店",
+            "latitude": 43.0676755,
+            "longitude": 141.3495392,
+            "applePlaceID": "IA4557664496F8EB4",
+            "address": "〒060-0005, 北海道札幌市中央区, 北5条西4丁目7",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "圓山公園站搭東西線到大通站，轉南北線到札幌站約 20 分，含步行約 25 分"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "北海道廳舊本廳舍（北海道庁旧本庁舎，紅磚廳舍）",
+          "start": "16:00",
+          "end": "16:40",
+          "category": "sight",
+          "place": {
+            "name": "北海道廳舊本廳舍",
+            "latitude": 43.063938,
+            "longitude": 141.3480029,
+            "applePlaceID": "I8B34F2FBD4B6C0C7",
+            "address": "〒060-0003",
+            "addressIsApproximate": true
+          },
+          "notes": "建築開放時間請出發前確認；外觀全天可見",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 12,
+            "durationSource": "user",
+            "note": "從札幌站南口步行約 12 分，冬天路面溼滑"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "晚餐：北海道和牛燒肉 Yakiniku Bar Tamura（焼肉Bar Tamura）",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "燒肉・巴魯・塔姆拉",
+            "latitude": 43.0638731,
+            "longitude": 141.3503823,
+            "applePlaceID": "IFDAFAED1CED7325B",
+            "address": "〒060-0002, 北海道札幌市中央区, 北2条西4丁目1, 札幌三井JPビルディング",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；位於札幌三井 JP Tower 一帶，熱門請先確認是否需訂位",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從紅磚廳舍步行約 10 分，在隔壁大樓"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "札幌車站三明治販賣機（サンドイッチ工房 Sandria）",
+          "start": "19:15",
+          "end": "19:45",
+          "category": "bakery",
+          "place": {
+            "name": "サンドリア サンドイッチ自動販売機",
+            "latitude": 43.0685488,
+            "longitude": 141.3500869,
+            "applePlaceID": "I4D4A1F7F6DA2A01C",
+            "address": "〒060-0806",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認；遊記提醒一人限購兩個，常大排長龍",
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "步行到札幌站約 15 分"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回北口飯店約 10 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "札幌市",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "新千歲機場國內線航廈：伴手禮與美食（新千歳空港 国内線ターミナル）",
+          "start": "12:00",
+          "end": "12:50",
+          "category": "shopping",
+          "place": {
+            "name": "新千歳空港 国内線ターミナルビル",
+            "latitude": 42.7877125,
+            "longitude": 141.681506,
+            "applePlaceID": "IB8EC0A7848DC63FE",
+            "address": "〒066-0012, 北海道千歳市, 美々987-22, 新千歳空港",
+            "addressIsApproximate": false
+          },
+          "notes": "各店營業時間請出發前確認；航廈 1 樓有大量美食與伴手禮",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "札幌站搭 JR 快速 Airport 約 38–41 分到新千歲機場站，加步行與出站約 55 分；11:19 發車的班次遊記約 12:00 到"
+          }
+        },
+        {
+          "key": "d6-02",
+          "title": "新千歲機場國際線航廈：報到、出境（離開）",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "airport",
+          "place": {
+            "name": "新千歳空港国際線ターミナル",
+            "latitude": 42.78662,
+            "longitude": 141.6766,
+            "applePlaceID": "I6EBDB85749A9452",
+            "address": "北海道千歳市, 美々",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從國內線航廈走到國際線航廈，遊記提醒櫃台最邊邊要多走 165 公尺；日本機場安檢嚴格，靴子要脫下過 X 光"
+          },
+          "todos": [
+            {
+              "text": "回程前三天網路報到、選位",
+              "note": "到航空公司官網辦理，節省機場排隊時間"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1141 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-okinawa-drive-5d",
+  "revision": 1,
+  "contentLocale": "ja",
+  "title": "沖縄ドライブ 5 日｜美ら海・恩納・北谷・那覇",
+  "subtitle": "那覇空港で借りて返す。北谷・恩納・那覇に泊まり、美ら海水族館と玉泉洞へ",
+  "summary": "沖縄ドライブの 5 日間：北谷に 1 泊、恩納に 1 泊、那覇に 2 泊して、美ら海水族館、玉泉洞、海辺を巡ります。心得には、台湾の運転免許証と日本語訳を使うレンタカーの決まり、日本と沖縄の運転ルール、空港と市内の移動、季節ごとの注意をまとめました。北谷のサンセットビーチ、万座毛、居酒屋は予備にしてあります。",
+  "destination": "日本 沖縄",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "ふたり旅",
+    "初めて",
+    "ドライブ",
+    "島旅"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web に登録する（入国審査と税関申告）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 航空券と宿の予約が済めばすぐ入力できます"
+    }
+  ],
+  "images": {
+    "d1-05": "images/jp-okinawa-drive-5d/d1-05.jpg",
+    "d2-01": "images/jp-okinawa-drive-5d/d2-01.jpg",
+    "d2-03": "images/jp-okinawa-drive-5d/d2-03.jpg",
+    "d2-05": "images/jp-okinawa-drive-5d/d2-05.jpg",
+    "d3-03": "images/jp-okinawa-drive-5d/d3-03.jpg",
+    "d5-02": "images/jp-okinawa-drive-5d/d5-02.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "宿泊：北谷（アメリカンビレッジ周辺）1 泊",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "美浜アメリカンビレッジ",
+        "latitude": 26.315892,
+        "longitude": 127.7540097,
+        "applePlaceID": "I5D8B83A65A512700",
+        "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "宿泊：恩納村周辺 1 泊",
+      "fromDay": 2,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "恩納村役場",
+        "latitude": 26.4972582,
+        "longitude": 127.8536835,
+        "applePlaceID": "I751A7DBA455D4A02",
+        "address": "〒904-0411, 沖縄県国頭郡恩納村, 恩納2451",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        3
+      ],
+      "closingDays": [
+        2
+      ]
+    },
+    {
+      "key": "ad3-03",
+      "title": "宿泊：那覇国際通り周辺（2 連泊）",
+      "fromDay": 3,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "牧志駅前",
+        "latitude": 26.2172382,
+        "longitude": 127.6924535,
+        "applePlaceID": "I5D7964AF52104406",
+        "address": "沖縄県那覇市, 牧志",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        4,
+        5
+      ],
+      "closingDays": [
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "予備：北谷サンセットビーチ",
+      "durationMinutes": 60,
+      "category": "beach",
+      "place": {
+        "name": "北谷公園サンセットビーチショップ",
+        "latitude": 26.3148718,
+        "longitude": 127.7549454,
+        "applePlaceID": "ID337B2091332A6FD",
+        "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜2",
+        "addressIsApproximate": false
+      },
+      "notes": "旅行記によると、アメリカンビレッジの花火のベストポジションは北谷サンセットプロムナード付近。営業時間は出発前に確認してください"
+    },
+    {
+      "key": "u-02",
+      "title": "予備：万座毛",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "SHOP MANZAMO",
+        "latitude": 26.503949,
+        "longitude": 127.850873,
+        "applePlaceID": "I4288C70B8C0B50BB",
+        "address": "沖縄県国頭郡恩納村, 恩納",
+        "addressIsApproximate": true
+      },
+      "notes": "恩納村の象の鼻の形をした岩の海岸。旅行記にはなく、テンプレートが追加した予備です。営業時間は出発前に確認してください"
+    },
+    {
+      "key": "u-03",
+      "title": "予備：居酒屋 なかむら家",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "なかむら家",
+        "latitude": 26.2159698,
+        "longitude": 127.6821636,
+        "applePlaceID": "ICA3891BE7AB3D242",
+        "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目15 1F",
+        "addressIsApproximate": false
+      },
+      "notes": "旅行記の夕食。国際通りの駐車場の近くで、現金のみ。営業時間は出発前に確認してください"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "出典と確認事項",
+      "paragraphs": [
+        {
+          "text": "もとにした旅行記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/2cbc121a1b7c/",
+          "style": "bullet"
+        },
+        {
+          "text": "確認済み（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "玉泉洞（おきなわワールド）：大人 ¥2,000（公式の料金ページ）。営業は 9:00〜17:30 ごろ、最終入場は 16:00 が多い（第三者のまとめで情報源により食い違いあり。出発前に確認を）：https://en.gyokusendo.co.jp/okinawaworld/?p=635 （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "ケイブオキナワ：通常 9:00〜17:30（最終受付 17:00）。2026/7/1〜9/23 は特別営業で 9:00〜18:30（最終受付 18:00）。年中無休。大人 ¥1,200。住所はうるま市石川嘉手苅479-1（公式パンフレット PDF と検索結果）：https://www.cave.okinawa/wp-content/themes/cave/img/pdf/panf_jp.pdf （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "沖縄美ら海水族館：通常 8:30〜18:30（最終入館 17:30）、夏季は延長、大人 ¥2,180、12 月の第 1 水曜とその翌日は休館（第三者のまとめ。公式ページは取得できなかったので出発前に確認を）：https://churaumi.okinawa/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "ちゅらさん6 沖縄：第 1 部 20:30 開演（20:00 開場）、第 2 部 22:30 開演。料金は ¥6,500 から（ワンドリンク付き）。20 歳未満は入場不可。住所は那覇市松山1-5-1 ナムラプラザビル2F（公式サイト）：https://www.churasun6.com/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "RYUKYU BEACH CLUB：恩納村瀬良垣、9:00〜19:30、料理のラストオーダー 18:00、ドリンク 19:00（ホットペッパー掲載）：https://www.hotpepper.jp/strJ004469320/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "台湾の運転免許証の日本語訳と、入国後 1 年間の有効期間：https://www.roc-taiwan.org/uploads/sites/54/2026/07/臺灣駕照之日文譯本申請表-橫濱20260721.pdf （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "公式には確認できなかった点。出発前にご確認ください",
+          "style": "heading"
+        },
+        {
+          "text": "ダイバーズステーキの営業時間と正確な場所（旅行記では 10:30 開店、許田 IC で降りた）は確認できませんでした。",
+          "style": "bullet"
+        },
+        {
+          "text": "波上宮、アメリカンビレッジ、PARCO CITY 浦添、ASHIBINAA、瀬長島、ブルーシール、玉家、あぐーしゃぶしゃぶの店、琉球の牛、神徳ラーメン、パチンコ店の営業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "美ら海水族館と玉泉洞の最新の営業時間と休館日、国際通り周辺ホテルの駐車場。",
+          "style": "bullet"
+        },
+        {
+          "text": "国道 58 号のバス優先レーンの時間帯、台湾発行の国際運転免許証が日本で有効かどうかは、監理所とレンタカー会社に確認してください。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出発前の心得",
+      "paragraphs": [
+        {
+          "text": "免許証とレンタカー（台湾からの旅行者）",
+          "style": "heading"
+        },
+        {
+          "text": "台湾からの旅行者が日本で運転するには、台湾の運転免許証の原本と日本語訳の両方が必要で、必ず一緒に携帯します。複数の第三者のまとめでは、台湾発行の国際運転免許証は日本では無効とされているので、監理所に確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "日本語訳：台湾国内の監理所または監理站の窓口で申請します。複数の第三者のまとめでは 1 通約 NT$100、その場で約 1 時間で受け取れるとされています。すでに日本にいる場合は駐日代表処（約 3〜7 営業日）または JAF で申請できます。",
+          "style": "bullet"
+        },
+        {
+          "text": "駐横浜代表処の 2026 年 7 月の申請書には、台湾の免許証と日本語訳で運転できる期間は日本入国後 1 年以内に限る、と記されています。申請書：https://www.roc-taiwan.org/uploads/sites/54/2026/07/臺灣駕照之日文譯本申請表-橫濱20260721.pdf",
+          "style": "bullet"
+        },
+        {
+          "text": "日本語訳は出発前に取得してください。窓口ではレンタカー会社が 1 点ずつ確認し、訳がないと車を借りられません。",
+          "style": "bullet"
+        },
+        {
+          "text": "レンタカーは事前にオンラインで予約し、空港への無料送迎がある営業所を選びます。このテンプレートは 1 日目に到着後、送迎車で車を受け取り、5 日目に返却後は送迎車で空港へ戻ります。送迎は約 15 分です。",
+          "style": "bullet"
+        },
+        {
+          "text": "受け取り時は一緒に車を一周して動画を撮り、傷を記録します。免責補償（保険）を付けるかは自分で決め、予約ページで確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "ETC カードとナビ：予約時に、日本語と中国語のナビが付くか、ETC カードを別に借りる必要があるかを確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "日本と沖縄の運転ルール",
+          "style": "heading"
+        },
+        {
+          "text": "日本は左側通行で運転席は右側です。曲がったあとに逆車線へ入りやすいので、発進のたびに「左側」と自分に言い聞かせましょう。",
+          "style": "bullet"
+        },
+        {
+          "text": "全席シートベルト着用。運転中の携帯電話の手持ち使用は禁止。飲酒運転は一切許されません。",
+          "style": "bullet"
+        },
+        {
+          "text": "日本に赤信号での右折はありません。曲がるときは歩行者が優先なので、歩行者がいたら止まります。",
+          "style": "bullet"
+        },
+        {
+          "text": "一般道の制限速度は 40〜60 km が多く、沖縄自動車道は 80 km です。道路標識に従ってください。",
+          "style": "bullet"
+        },
+        {
+          "text": "駐車：路肩の黄線と駐車禁止の標識のある場所は停められません。市街地の駐車場は時間制で、軽自動車（黄色ナンバー）専用枠には停められません。",
+          "style": "bullet"
+        },
+        {
+          "text": "那覇市内の国道 58 号は、ラッシュ時にバス優先またはバス専用レーンになります。出発前に最新の規則を確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "沖縄の郊外は夜に街灯が少なくとても暗いので、夜の運転はゆっくりと。1 日目と 2 日目の夜は、あまり遅い時間に山道を走らないでください。",
+          "style": "bullet"
+        },
+        {
+          "text": "給油：多くはセルフ式です。油種は事前に確認し（レンタカー会社が教えてくれます）、返却前に満タンにします。",
+          "style": "bullet"
+        },
+        {
+          "text": "空港と市内の移動（那覇空港 OKA）",
+          "style": "heading"
+        },
+        {
+          "text": "このテンプレート：入国後、空港バス乗り場の方へ歩き、レンタカーの送迎集合場所で営業所行きの送迎車を待ちます。約 15 分。旅行記では約 40 分待ったので、余裕を見てください。",
+          "style": "bullet"
+        },
+        {
+          "text": "車を借りない場合：沖縄都市モノレール（ゆいレール）の那覇空港駅から国際通り周辺の牧志駅まで約 12〜15 分。運賃は公式サイト https://www.yui-rail.co.jp/ で確認を。国際通りまでタクシーで約 10〜15 分。",
+          "style": "bullet"
+        },
+        {
+          "text": "予約と購入",
+          "style": "heading"
+        },
+        {
+          "text": "青の洞窟シュノーケリング：事前にシュノーケリング業者へ予約が必要。集合時間は通常、出船の 15 分前で、繁忙期は駐車場に長い列ができるので、少なくとも 45 分前に着くのがおすすめです。",
+          "style": "bullet"
+        },
+        {
+          "text": "焼肉 琉球の牛、あぐーしゃぶしゃぶ：旅行記では予約済みなので、早めに予約してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "ちゅらさん6：公式サイト https://www.churasun6.com/ で予約。20 歳以上のみ入場可、第 1 部の料金は公式表示で約 ¥6,500 から（ワンドリンク付き）。旅行記の注意：ハイタッチと記念撮影以外はダンサーに触れることは固く禁止で、チップはダンサーから求められたときだけ渡します。",
+          "style": "bullet"
+        },
+        {
+          "text": "沖縄美ら海水族館：電子チケットを事前に購入できます。詳細と料金は公式サイト https://churaumi.okinawa/ へ。",
+          "style": "bullet"
+        },
+        {
+          "text": "玉泉洞（おきなわワールド）：大人約 ¥2,000（公式の料金ページ）。当日窓口で購入できます。",
+          "style": "bullet"
+        },
+        {
+          "text": "ケイブオキナワ：大人約 ¥1,200。当日窓口で購入すれば大丈夫です。",
+          "style": "bullet"
+        },
+        {
+          "text": "入国",
+          "style": "heading"
+        },
+        {
+          "text": "ビザなしで入国する場合は、事前に Visit Japan Web に登録してください。最新の手順は公式サイトで確認を。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅のペース",
+          "style": "heading"
+        },
+        {
+          "text": "これはドライブ版のテンプレートで、スポットが南北に分かれているため、市内中心の旅程より運転時間の割合が高くなります。3 日目は恩納から那覇まで車で約 75 分。",
+          "style": "bullet"
+        },
+        {
+          "text": "4 日目のちゅらさん6 は第 1 部が 20:30 開演で、終演は約 21:30。ほかの日の 21:00 より遅くなります。",
+          "style": "bullet"
+        },
+        {
+          "text": "季節",
+          "style": "heading"
+        },
+        {
+          "text": "このテンプレートは 7 月の夏の旅行記が基準：沖縄の夏はとても暑く紫外線も強いので、シュノーケリングは長袖の水着がおすすめ、屋外のスポットは朝か夕方に回します。ほかの季節でも回れますが、海のアクティビティは水温と天候に合わせて調整してください。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "ちいかわ シーサーグッズ",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "PARCO CITY と国際通りの専門店にあります。旅行記ではフラのうさぎを買いました"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "北谷町",
+      "latitude": 26.319996,
+      "longitude": 127.7639911,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "恩納村",
+      "latitude": 26.4972582,
+      "longitude": 127.8536835,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "名護市",
+      "latitude": 26.5915875,
+      "longitude": 127.9774374,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "那覇市",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "那覇市",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "北谷町",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "那覇空港に到着",
+          "start": "11:30",
+          "end": "12:30",
+          "category": "airport",
+          "place": {
+            "name": "那覇空港",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "レンタカーの受け取り：空港周辺の営業所（送迎車で約 15 分）",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "carrental",
+          "place": {
+            "name": "那覇空港",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "notes": "営業所ごとに営業時間が異なるので出発前に確認してください。旅行記ではレンタカー会社の送迎車を利用し、約 40 分待ちました",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "入国後、空港バス乗り場の方へ進み、レンタカーの送迎集合場所で送迎車を待ちます。営業所は空港から約 15 分。手続きではパスポート、台湾の運転免許証の原本、日本語訳を提示し、車の状態を動画で記録します"
+          },
+          "todos": [
+            {
+              "text": "台湾の運転免許証の日本語訳を取得する",
+              "note": "台湾国内の監理所または監理站の窓口で申請し、受け取りまで約 1 時間。出発前に済ませ、車の受け取り時に免許証原本と一緒に提示します"
+            },
+            {
+              "text": "空港送迎付きのレンタカーを予約する",
+              "note": "空港への無料送迎がある営業所を選び、受け取りと返却の時刻、ETC カードを別に借りる必要があるかを確認します"
+            }
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "昼食：おきなわワールド園内",
+          "start": "14:30",
+          "end": "15:10",
+          "category": "dining",
+          "place": {
+            "name": "おきなわワールド（文化王国・玉泉洞）",
+            "latitude": 26.1403898,
+            "longitude": 127.7489161,
+            "applePlaceID": "I2AE8FC6380DFF2F0",
+            "address": "〒901-0616, 沖縄県南城市, 玉城字前川1336番地",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "営業所から南城市まで車で約 30 分。園内に無料駐車場があります"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "玉泉洞：おきなわワールド 文化王国",
+          "start": "15:15",
+          "end": "16:30",
+          "category": "sight",
+          "place": {
+            "name": "おきなわワールド（文化王国・玉泉洞）",
+            "latitude": 26.1403898,
+            "longitude": 127.7489161,
+            "applePlaceID": "I2AE8FC6380DFF2F0",
+            "address": "〒901-0616, 沖縄県南城市, 玉城字前川1336番地",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00〜17:30 ごろ、最終入場は 16:00 が多い（第三者のまとめ。出発前に確認を）。洞内は約 30〜40 分",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "園内をレストランエリアから玉泉洞の入口まで歩きます"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "アメリカンビレッジ：Village House などでショッピング",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "shopping",
+          "place": {
+            "name": "美浜アメリカンビレッジ",
+            "latitude": 26.315892,
+            "longitude": 127.7540097,
+            "applePlaceID": "I5D8B83A65A512700",
+            "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜",
+            "addressIsApproximate": true
+          },
+          "notes": "店ごとに営業時間が異なり、多くは 21:00 ごろまで。出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "driving",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "那覇空港自動車道と国道 58 号で北谷へ、約 50 分。夕方は渋滞することも。アメリカンビレッジ周辺は駐車場が多いですが、軽自動車（黄色ナンバー）専用枠に停めないように"
+          },
+          "images": [
+            "d1-05"
+          ]
+        },
+        {
+          "key": "d1-06",
+          "title": "夕食：あぐーしゃぶしゃぶ（阿古の隠れ家 北谷店）",
+          "start": "19:15",
+          "end": "20:45",
+          "category": "dining",
+          "place": {
+            "name": "あぐーの隠れ家",
+            "latitude": 26.3140042,
+            "longitude": 127.7602128,
+            "applePlaceID": "IE7F8F959A529536E",
+            "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜2丁目2-2",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記では予約済み",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "アメリカンビレッジから徒歩約 15 分"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "車で宿へ戻ります。駐車場付きの宿を選んでください"
+          },
+          "todos": [
+            {
+              "text": "あぐーしゃぶしゃぶ（北谷）を予約する",
+              "note": "小さな店。旅行記では予約済み"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "恩納村",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "真栄田岬：青の洞窟シュノーケリング",
+          "start": "09:40",
+          "end": "11:50",
+          "category": "beach",
+          "place": {
+            "name": "真栄田岬展望台",
+            "latitude": 26.4439607,
+            "longitude": 127.7721875,
+            "applePlaceID": "IB86A8F8DCF0BE49F",
+            "address": "〒904-0417, 沖縄県国頭郡恩納村, 真栄田469-1 真栄田岬展望台",
+            "addressIsApproximate": false
+          },
+          "notes": "岬と駐車場は一日中入れます。シュノーケリングの時間は予約した業者によるので、出発前に確認してください",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "北谷から車で約 35 分（沖縄自動車道の石川 IC で降りてさらに約 15 分）。真栄田岬の駐車場は青の洞窟付近で唯一の駐車場で、ダイビングの繁忙期はとても混むので早めに"
+          },
+          "todos": [
+            {
+              "text": "青の洞窟シュノーケリングを予約する",
+              "note": "集合は通常、出船の 15 分前。真栄田岬の駐車場は繁忙期に混むので早めに"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "昼食：ブルーエントランスキッチン 沖縄総本店（タコライス）",
+          "start": "12:10",
+          "end": "13:10",
+          "category": "dining",
+          "place": {
+            "name": "Blue Entrance Kitchen 沖縄総本店",
+            "latitude": 26.448239,
+            "longitude": 127.8030995,
+            "applePlaceID": "I889B013ABBF22778",
+            "address": "〒904-0414, 沖縄県国頭郡恩納村, 前兼久32-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "真栄田岬から車で約 10 分。漁港の空き地は駐車禁止なので、近くの前兼久漁港の駐車場に停めます"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "ケイブオキナワ 鍾乳洞",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "sight",
+          "place": {
+            "name": "ケイブオキナワ 石川嘉手刈479-1",
+            "latitude": 26.4203964,
+            "longitude": 127.8093417,
+            "address": "日本沖繩縣宇流麻市",
+            "addressIsApproximate": true
+          },
+          "notes": "通常 9:00〜17:30 ごろ（最終受付 17:00）。2026 年の夏季特別営業は 18:30 まで。年中無休。出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "前兼久から車で約 20 分、うるま市石川へ。駐車場は無料"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "FOREST CAFE By CAVE OKINAWA（洞窟出口の上にあるカフェ）",
+          "start": "14:45",
+          "end": "15:15",
+          "category": "cafe",
+          "place": {
+            "name": "フォレストカフェ バイ ケイブオキナワ",
+            "latitude": 26.419953,
+            "longitude": 127.8097835,
+            "applePlaceID": "I2A44B358E70D260D",
+            "address": "〒904-1114, 沖縄県うるま市, 石川嘉手苅479-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "洞窟を出て少し坂を上ります"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "沖縄美ら海水族館",
+          "start": "16:15",
+          "end": "18:15",
+          "category": "aquarium",
+          "place": {
+            "name": "海洋博公園管理センター・沖縄美ら海水族館・水族館事業課",
+            "latitude": 26.694383,
+            "longitude": 127.8780132,
+            "applePlaceID": "IC016F4DB4F2866FB",
+            "address": "〒905-0206, 沖縄県国頭郡本部町, 石川424, 沖縄美ら海水族館",
+            "addressIsApproximate": false
+          },
+          "notes": "8:30〜18:30 ごろ（最終入館 17:30）、夏季は延長。12 月の第 1 水曜とその翌日は休館（第三者のまとめ）。出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "driving",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "石川から沖縄自動車道を北上して車で約 55 分。水族館には無料の大型立体駐車場があります。夕方は人が少なめですが、黒潮の海の餌やり（15:00 と 15:30 ごろ）には間に合わないので、公式の時刻表で確認を"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "夕食：恩納村周辺",
+          "start": "19:00",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "恩納村役場",
+            "latitude": 26.4972582,
+            "longitude": 127.8536835,
+            "applePlaceID": "I751A7DBA455D4A02",
+            "address": "〒904-0411, 沖縄県国頭郡恩納村, 恩納2451",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "driving",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "美ら海から恩納へ車で約 35 分。沖縄の郊外は夜に街灯が少ないので、ゆっくり運転してください"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "車で宿へ戻ります。駐車場付きの宿を選んでください"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "名護市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "昼食：ダイバーズステーキ",
+          "start": "10:30",
+          "end": "12:00",
+          "category": "dining",
+          "place": {
+            "name": "名護市",
+            "latitude": 26.5915875,
+            "longitude": 127.9774374,
+            "address": "日本沖繩縣",
+            "addressIsApproximate": true
+          },
+          "notes": "旅行記では 10:30 開店。人気で、昼どきは満席や売り切れの可能性があります。営業時間は出発前に確認してください",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "恩納から車で約 40 分。旅行記では許田 IC で降りました。駐車場は満車になりやすく、近くの大型ファミリーマートの駐車場も利用できます。店の場所は地図検索で確認してください"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "海辺のカフェ（RYUKYU BEACH CLUB）",
+          "start": "12:45",
+          "end": "14:15",
+          "category": "cafe",
+          "place": {
+            "name": "RYUKYU BEACH CLUB",
+            "latitude": 26.5080132,
+            "longitude": 127.8662199,
+            "applePlaceID": "I92D42DA9EF4ACED0",
+            "address": "〒904-0404, 沖縄県国頭郡恩納村, 瀬良垣1523",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00〜19:30 ごろ、料理のラストオーダー 18:00、ドリンク 19:00（ホットペッパー掲載。出発前に確認を）",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "driving",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "南へ車で恩納村瀬良垣まで戻り、約 35 分。入口に駐車スペースあり。ビーチに下りるとヤドカリが足元にいるので注意"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "波上宮と波の上ビーチの撮影スポット",
+          "start": "15:30",
+          "end": "16:30",
+          "category": "temple",
+          "place": {
+            "name": "波上宮",
+            "latitude": 26.220688,
+            "longitude": 127.6711195,
+            "applePlaceID": "I403C23C7EBE9131F",
+            "address": "〒900-0031, 沖縄県那覇市, 若狭1丁目25-11",
+            "addressIsApproximate": false
+          },
+          "notes": "境内は一日中入れます。社務所と授与所の時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "driving",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "沖縄自動車道を南下して那覇まで約 75 分。波上宮の向かいに駐車場があります。宮の反対側からビーチへ下りる方が陸橋を渡るより近く、夏はほとんど日陰がありません"
+          },
+          "images": [
+            "d3-03"
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "夕食：焼肉 琉球の牛 那覇久茂地店",
+          "start": "18:00",
+          "end": "20:00",
+          "category": "dining",
+          "place": {
+            "name": "焼肉 琉球の牛 那覇久茂地",
+            "latitude": 26.2155533,
+            "longitude": 127.6819627,
+            "applePlaceID": "I849648257EA60142",
+            "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目16-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。予約が必要です",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "波上宮から車で約 15 分。国際通り周辺には有料駐車場が多いですが、黄色ナンバー専用枠に停めないように"
+          },
+          "todos": [
+            {
+              "text": "焼肉 琉球の牛（那覇久茂地）を予約する",
+              "note": "旅行記では予約済み。提供が遅いので約 2 時間を見込む"
+            }
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "国際通りさんぽ：ドラッグストアと小さなドン・キホーテ",
+          "start": "20:15",
+          "end": "21:00",
+          "category": "shopping",
+          "place": {
+            "name": "那覇国際通り商店街",
+            "latitude": 26.2160938,
+            "longitude": 127.689231,
+            "applePlaceID": "IAA939DC0B8514F67",
+            "address": "〒900-0013, 沖縄県那覇市, 牧志3丁目2-10",
+            "addressIsApproximate": false
+          },
+          "notes": "店ごとに営業時間が異なるので出発前に確認してください",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "レストランから国際通りまで歩きます"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "宿へ歩いて戻ります。駐車場は事前に確認を（市街地のホテルの駐車場は別料金のことが多い）"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "那覇市",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "PARCO CITY 浦添：ショッピング、2 階の回転寿司で昼食",
+          "start": "11:00",
+          "end": "16:30",
+          "category": "shopping",
+          "place": {
+            "name": "PARCO CITY",
+            "latitude": 26.2620438,
+            "longitude": 127.6983297,
+            "applePlaceID": "IC0D65FDE3728F523",
+            "address": "〒901-2507, 沖縄県浦添市, 西洲3丁目1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00〜21:00 ごろが一般的。営業時間は出発前に確認してください",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "那覇から車で約 20 分。無料の立体駐車場あり。免税手続きは 1 階の TAX FREE COUNTER でまとめて行います"
+          }
+        },
+        {
+          "key": "d4-02",
+          "title": "夕食：神徳ラーメン（麺場 神徳）",
+          "start": "17:30",
+          "end": "18:30",
+          "category": "dining",
+          "place": {
+            "name": "麺場 神徳",
+            "latitude": 26.2178232,
+            "longitude": 127.6791991,
+            "applePlaceID": "I85905A384D46F9F9",
+            "address": "〒900-0032, 沖縄県那覇市, 松山1丁目12-17, 大城アパート 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。券売機で食券を買ってから席へ",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "driving",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "浦添から車で約 25 分、夕方の渋滞時はもっとかかります。隣に駐車場あり"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "ドン・キホーテ 国際通り店",
+          "start": "18:45",
+          "end": "20:00",
+          "category": "shopping",
+          "place": {
+            "name": "ドン・キホーテ 国際通り店",
+            "latitude": 26.215874,
+            "longitude": 127.6877932,
+            "applePlaceID": "IFCF33B4E0906C93B",
+            "address": "〒900-0014",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください。免税カウンターは 4 階。行列は長いですが手続きは早いです",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "松山から徒歩約 15 分（旅行記は車で、向かいの駐車場に停めました）"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "ちゅらさん6 ギャルズバーのショー",
+          "start": "20:15",
+          "end": "21:30",
+          "category": "bar",
+          "place": {
+            "name": "ちゅらさん6 沖縄",
+            "latitude": 26.2183985,
+            "longitude": 127.6801257,
+            "applePlaceID": "I230A443A8401DEFB",
+            "address": "〒900-0032, 沖縄県那覇市, 松山1丁目5-1 2F",
+            "addressIsApproximate": false
+          },
+          "notes": "公式サイト：第 1 部 20:30 開演（20:00 開場）、第 2 部 22:30 開演。定休日は出発前に確認を",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "徒歩約 15 分。1 階のクラブ横の入口からまっすぐ奥へ進んで左折、2 階がちゅらさん6 です。1 階はクラブなので間違えないように"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "宿へ歩いて戻ります。松山周辺は夜に少し入り組むので、連れ立って大通りを歩くのがおすすめです"
+          },
+          "todos": [
+            {
+              "text": "ちゅらさん6 のショーを予約する",
+              "note": "公式サイト https://www.churasun6.com/ ；20 歳以上のみ。第 1 部は 20:30 開演"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "那覇市",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "パチンコ体験（P-Time 津嘉山）",
+          "start": "10:30",
+          "end": "11:30",
+          "category": "other",
+          "place": {
+            "name": "パチンコ Pタイム",
+            "latitude": 26.1809003,
+            "longitude": 127.7153955,
+            "applePlaceID": "I9F0293E1440584FB",
+            "address": "〒901-1117, 沖縄県島尻郡南風原町, 字津嘉山1718-2",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "チェックアウト後、車で南へ豊見城まで約 30 分。荷物は車に積んだままで"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "瀬長島ウミカジテラス",
+          "start": "11:50",
+          "end": "12:40",
+          "category": "sight",
+          "place": {
+            "name": "瀬長島ウミカジテラス",
+            "latitude": 26.1764709,
+            "longitude": 127.6404074,
+            "applePlaceID": "IC9B0D0C2786C14A4",
+            "address": "〒901-0233, 沖縄県豊見城市, 瀬長174-6",
+            "addressIsApproximate": false
+          },
+          "notes": "店ごとに営業時間が異なるので出発前に確認してください。飛行機の離着陸を間近に見られます",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "車で約 10 分。夏はとても日差しが強いです"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "昼食：沖縄そば そば処 玉家 豊崎店",
+          "start": "12:50",
+          "end": "13:35",
+          "category": "dining",
+          "place": {
+            "name": "そば処 玉家 豊崎店",
+            "latitude": 26.1549155,
+            "longitude": 127.661911,
+            "applePlaceID": "I7B5CBC327B28BBE5",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-1069",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。先に食券を買ってから席へ",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "車で約 15 分。隣に無料駐車場あり"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "那覇 ASHIBINAA アウトレット（あしびなー）",
+          "start": "13:55",
+          "end": "14:50",
+          "category": "shopping",
+          "place": {
+            "name": "AS KNOW AS outlet 沖縄アウトレットモールあしびなー",
+            "latitude": 26.1590816,
+            "longitude": 127.6562155,
+            "applePlaceID": "I93FD6FA30CCF9C64",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-188 沖縄アウトレットモール あしびなー",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00〜20:00 ごろが一般的。営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "driving",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "車で約 5 分"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "ブルーシール 豊崎店",
+          "start": "15:05",
+          "end": "15:25",
+          "category": "dessert",
+          "place": {
+            "name": "ブルーシール 豊崎",
+            "latitude": 26.1591407,
+            "longitude": 127.6597059,
+            "applePlaceID": "IA99C4322896EB6C9",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-411",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "アウトレットから向かい側へ歩きます"
+          }
+        },
+        {
+          "key": "d5-06",
+          "title": "レンタカー返却：空港周辺の営業所",
+          "start": "15:45",
+          "end": "16:15",
+          "category": "carrental",
+          "place": {
+            "name": "那覇空港",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "notes": "営業所ごとに営業時間が異なるので出発前に確認してください",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "返却前に満タンにします。返却後は送迎車で空港まで約 15 分"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "那覇空港：チェックイン、出国、お土産",
+          "start": "16:30",
+          "end": "18:30",
+          "category": "airport",
+          "place": {
+            "name": "那覇空港",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "送迎車でターミナルまで約 15 分。国際線は出発 2 時間前の到着がおすすめ。旅行記ではチェックインカウンターで約 1 時間 20 分並びました"
+          }
+        }
+      ]
+    }
+  ]
+}

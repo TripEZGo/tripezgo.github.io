@@ -1,0 +1,1648 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kyushu-loop-8d",
+  "revision": 2,
+  "contentLocale": "ja",
+  "title": "九州一周 8 日間｜福岡・由布院・別府・高千穂・熊本",
+  "subtitle": "福岡イン／アウト。由布院、別府、熊本、高千穂の日帰りツアーを経て、福岡と糸島へ戻る",
+  "summary": "8 日間で九州をぐるりと一周します。福岡、由布院、別府温泉、熊本、高千穂の日帰りツアー、最後は福岡に戻って糸島へ。高千穂は旅行会社を指定せず、日帰りツアーへの参加として書いています。5 日目の日帰りツアーと 7 日目の糸島は、移動時間が全体の 3 割を超えますが、距離なので仕方がありません。唐津、祐徳稲荷、武雄は候補に入れています。",
+  "destination": "日本 福岡・由布院・別府・熊本・高千穂",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 8,
+  "coverColour": "green",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "ふたり旅",
+    "初めて",
+    "温泉",
+    "日帰りツアー"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web に登録する（入国審査と税関申告）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 航空券と宿の予約が済めば入力できます"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kyushu-loop-8d/d1-03.jpg",
+    "d1-04": "images/jp-kyushu-loop-8d/d1-04.jpg",
+    "d2-02": "images/jp-kyushu-loop-8d/d2-02.jpg",
+    "d2-03": "images/jp-kyushu-loop-8d/d2-03.jpg",
+    "d2-04": "images/jp-kyushu-loop-8d/d2-04.jpg",
+    "d3-01": "images/jp-kyushu-loop-8d/d3-01.jpg",
+    "d3-02": "images/jp-kyushu-loop-8d/d3-02.jpg",
+    "d3-04": "images/jp-kyushu-loop-8d/d3-04.jpg",
+    "d3-05": "images/jp-kyushu-loop-8d/d3-05.jpg",
+    "d5-02": "images/jp-kyushu-loop-8d/d5-02.jpg",
+    "d5-04": "images/jp-kyushu-loop-8d/d5-04.jpg",
+    "d5-05": "images/jp-kyushu-loop-8d/d5-05.jpg",
+    "d5-06": "images/jp-kyushu-loop-8d/d5-06.jpg",
+    "d6-01": "images/jp-kyushu-loop-8d/d6-01.jpg",
+    "d6-03": "images/jp-kyushu-loop-8d/d6-03.jpg",
+    "d7-01": "images/jp-kyushu-loop-8d/d7-01.jpg",
+    "d8-01": "images/jp-kyushu-loop-8d/d8-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "宿泊：博多駅周辺（旅行記で泊まった宿：東横INN 博多口駅前）",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "東横INN博多口駅前",
+        "latitude": 33.5919297,
+        "longitude": 130.4188355,
+        "applePlaceID": "IAB8D758F1F33DBFB",
+        "address": "〒812-0011, 福岡県福岡市博多区, 博多駅前1丁目15-5",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "宿泊：別府駅周辺",
+      "fromDay": 2,
+      "toDay": 4,
+      "category": "lodging",
+      "place": {
+        "name": "別府",
+        "latitude": 33.2795901,
+        "longitude": 131.5002405,
+        "applePlaceID": "IF23E7F677FFDB0E7",
+        "address": "大分県別府市, 駅前町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        3,
+        4
+      ],
+      "closingDays": [
+        2,
+        3
+      ]
+    },
+    {
+      "key": "ad4-04",
+      "title": "宿泊：熊本駅周辺",
+      "fromDay": 4,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "熊本",
+        "latitude": 32.7894252,
+        "longitude": 130.6884708,
+        "applePlaceID": "I1FA3C2930A533584",
+        "address": "熊本県熊本市西区, 春日",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        5,
+        6
+      ],
+      "closingDays": [
+        4,
+        5
+      ]
+    },
+    {
+      "key": "ad6-06",
+      "title": "宿泊：博多駅周辺（旅行記で泊まった宿：東横INN 博多口駅前）",
+      "fromDay": 6,
+      "toDay": 8,
+      "category": "lodging",
+      "place": {
+        "name": "東横INN博多口駅前",
+        "latitude": 33.5919297,
+        "longitude": 130.4188355,
+        "applePlaceID": "IAB8D758F1F33DBFB",
+        "address": "〒812-0011, 福岡県福岡市博多区, 博多駅前1丁目15-5",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        7,
+        8
+      ],
+      "closingDays": [
+        6,
+        7
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "候補：湯布院昭和館（湯布院昭和館）",
+      "durationMinutes": 60,
+      "category": "museum",
+      "place": {
+        "name": "湯布院昭和館",
+        "latitude": 33.2683602,
+        "longitude": 131.3663107,
+        "applePlaceID": "IFAD0F247A5DD5081",
+        "address": "〒879-5102, 大分県由布市, 湯布院町川上1479-1",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記によると、和の伝統を強く感じられる場所で、湯の坪街道のあたり"
+    },
+    {
+      "key": "u-02",
+      "title": "候補：十字山展望台（十字山展望台）",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "明礬温泉",
+        "latitude": 33.3191799,
+        "longitude": 131.4513029,
+        "address": "日本大分縣別府市",
+        "addressIsApproximate": true
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記によると、夜景向き。昼間は日差しが強く、トイレのみで売店はない"
+    },
+    {
+      "key": "u-03",
+      "title": "候補：唐津城（唐津城）",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "唐津城天守閣",
+        "latitude": 33.4535116,
+        "longitude": 129.9781644,
+        "applePlaceID": "I56BB50D32FAEA4E4",
+        "address": "〒847-0016, 佐賀県唐津市, 東城内8-1 唐津城本丸",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記によると、舞鶴公園からのエレベーターは片道 100 円、夕方には天守閣は閉まっている。博多天神高速バスのりばから唐津までバスで約 1,100 円（旅行記 2024 年の情報）"
+    },
+    {
+      "key": "u-04",
+      "title": "候補：祐徳稲荷神社（祐徳稲荷神社）",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "祐徳稲荷",
+        "latitude": 33.0734186,
+        "longitude": 130.1081926,
+        "applePlaceID": "ID3DB480A2105D1E3",
+        "address": "〒849-1321　, 佐賀県鹿島市, 古枝",
+        "addressIsApproximate": true
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記によると、肥前鹿島駅でバスに乗り換え、表参道の店は平日はほとんど閉まっている。有料でエレベーターに乗れる"
+    },
+    {
+      "key": "u-05",
+      "title": "候補：武雄神社と武雄の大楠（武雄神社）",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "武雄神社",
+        "latitude": 33.1881218,
+        "longitude": 130.0209047,
+        "applePlaceID": "IDC0AA1E9D3F9DFA2",
+        "address": "〒843-0022, 佐賀県武雄市, 武雄町大字武雄5327",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記によると、大楠は樹齢 3,000 年と推定され、隣に蓬莱湯の楼門と温泉街がある"
+    },
+    {
+      "key": "u-06",
+      "title": "候補：福岡市美術館（福岡市美術館）",
+      "durationMinutes": 60,
+      "category": "artgallery",
+      "place": {
+        "name": "福岡市美術館",
+        "latitude": 33.5839631,
+        "longitude": 130.3795624,
+        "applePlaceID": "I76CEBD6F922445B4",
+        "address": "〒810-0051, 福岡県福岡市中央区, 大濠公園1-6",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記によると月曜休館で、館の外に草間彌生のかぼちゃがある"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "情報源と確認",
+      "paragraphs": [
+        {
+          "text": "元の旅行記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/cb65fd5ab770/",
+          "style": "bullet"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "確認（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "九州横断特急の時刻（熊本～別府、1 日 3 往復。2 号は別府 7:44 発、阿蘇 10:08、熊本 11:21 着）：https://www.jrkyushu.co.jp/chinese/train/odan.html （検索で抜粋した JR 九州公式サイトの 2026 年 1 月のダイヤ、確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "ゆふいんの森（博多 9:17 発、由布院 11:31 着、約 2 時間 14 分、全車指定席）：https://www.jrkyushu.co.jp/trains/yufuinnomori/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "博多から由布院までの特急運賃は約 6,130 円（特急料金込み）：https://ekitan.com/zh-tw/article/yufuinnomori-jikoku-ryoukin （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "由布院と別府を結ぶ亀の井バスの路線（36 系統、観光快速ゆふりん）：https://mb.jorudan.co.jp/os/bus/4405/stop/159315.html （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "別府地獄（8:00～17:00、年中無休）：https://www.beppu-jigoku.com/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "高千穂峡のボート予約ルール（2 週間前の 9:00 に開始、2 日前の 9:00 に締め切り）：https://takachiho-kanko.info/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "福岡空港から博多駅（地下鉄約 5 分、260 円）：https://travelist.jp/airport_FUK/guide/posts/p309 （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本から博多までの九州新幹線（約 38 分、自由席約 5,310 円、民間のまとめ）：https://jr-shinkansen.net/articles/hakata-kumamoto/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "ららぽーと福岡（10:00～21:00、バス約 20 分、実物大 νガンダム）：https://ja.wikipedia.org/wiki/ららぽーと福岡 （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本駅前から高千穂までの高速バスは約 2,700 円（古い情報）、天岩戸と天安河原は平日バスなし：https://www.bring-you.info/?p=39864 （ネットのまとめ、確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "公式な情報で確認できていません。出発前に確認してください",
+          "style": "heading"
+        },
+        {
+          "text": "東長寺、大濠公園、湯の坪街道、金鱗湖、別府タワー、明礬地獄、加藤神社、上通・下通アーケード、高千穂神社、天岩戸神社、天安河原、ルフィ像、桜井二見ヶ浦、桜井神社、南蔵院の開園時間と休業日。",
+          "style": "bullet"
+        },
+        {
+          "text": "由布院から別府までのバスの時刻、運賃、最終便。高千穂日帰りツアーの内容、集合場所、料金。",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本駅から高千穂までの高速バスの現在の便。",
+          "style": "bullet"
+        },
+        {
+          "text": "変更点と取捨",
+          "style": "heading"
+        },
+        {
+          "text": "旅行記は釜山からクルーズ船で博多に入る 11 日間の旅。釜山とクルーズの部分は採用せず、福岡空港を出入りする九州一周にした。",
+          "style": "bullet"
+        },
+        {
+          "text": "この旅行記には熊本の区間がない（2023 年の九州の旅行記にはある）。ここでは 2023 年の旅行記から熊本の加藤神社、上通・下通、ルフィ像を加え、別府→熊本→高千穂→福岡の順に並べた。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記の高千穂は福岡出発の日帰りツアー。ここでは熊本出発に変更した（ルールに従い、事業者を指定せず日帰りツアーへの参加として書いた）。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記の唐津、祐徳稲荷、武雄温泉、下関、佐世保は周遊ルートから外れるので、唐津、祐徳稲荷、武雄は候補にした。",
+          "style": "bullet"
+        },
+        {
+          "text": "北九州のテンプレートと熊本・阿蘇のテンプレートで使った場所（門司港、太宰府、柳川、熊本城、阿蘇、水前寺など）は意図的に避けた。",
+          "style": "bullet"
+        },
+        {
+          "text": "5 日目の日帰りツアーと 7 日目の糸島は、移動時間の割合が通常の 30% を超える。これは距離によるもの。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記の情報",
+          "style": "heading"
+        },
+        {
+          "text": "宿泊は地域だけを書いた。旅行記では東横INN 博多口駅前、東横INN 大分駅前、APA 福岡渡辺通に泊まっている。別府と熊本には筆者おすすめの宿がないので、駅周辺とだけ書いた。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出発前に知っておくこと",
+      "paragraphs": [
+        {
+          "text": "ルート",
+          "style": "heading"
+        },
+        {
+          "text": "福岡イン・福岡アウトの九州一周：福岡 → 由布院 → 別府 → 熊本 → 高千穂（日帰りツアー）→ 福岡。",
+          "style": "bullet"
+        },
+        {
+          "text": "宿泊の順：福岡 1 泊、別府 2 泊、熊本 2 泊、福岡 2 泊。",
+          "style": "bullet"
+        },
+        {
+          "text": "入国とネット",
+          "style": "heading"
+        },
+        {
+          "text": "出発前に Visit Japan Web で入国審査と税関申告を登録：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "ネットは物理 SIM か eSIM が使えます。",
+          "style": "bullet"
+        },
+        {
+          "text": "空港から市内へ",
+          "style": "heading"
+        },
+        {
+          "text": "福岡空港の国際線ターミナルには地下鉄の駅がありません。まず無料シャトルバスで約 10 分かけて国内線ターミナルへ行き、地下鉄空港線で博多駅まで約 5 分・260 円（交通系 IC カード可）。荷物の受け取りと歩く時間を含めて、余裕を見て 30～40 分。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記によると、シャトルバスは 5～10 分おきに運行。地下鉄の駅から国際線の出発ロビーまで戻るには、さらに約 30 分見ておく。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通パス",
+          "style": "heading"
+        },
+        {
+          "text": "このルートは特急に乗る機会が多い（博多→由布院、別府→熊本）ので、出発前に切符を個別に買う場合と JR 九州のレールパスを比べておくとよい：https://www.jrkyushu.co.jp/chinese/",
+          "style": "bullet"
+        },
+        {
+          "text": "旅行記 2024 年の注意：JR パスでオンライン座席予約をした場合、引き換えには同じクレジットカードの提示が必要。パスは山陽新幹線と一部の新幹線には使えないので、新幹線の改札を通る前に確認を（旅行記 2024 年の情報）。",
+          "style": "bullet"
+        },
+        {
+          "text": "ゆふいんの森は全車指定席。九州横断特急の自由席は 2 号車。",
+          "style": "bullet"
+        },
+        {
+          "text": "無人の小さな駅では先頭車両から降り、パスをそのまま見せる。無人の JR の駅を出るとき、パスを切符回収箱に入れないこと（旅行記）。",
+          "style": "bullet"
+        },
+        {
+          "text": "由布院から別府へ",
+          "style": "heading"
+        },
+        {
+          "text": "亀の井バスが「観光快速ゆふりん」と 36 系統で由布院駅前と別府駅を結んでいる。所要時間と運賃は亀の井バスの公式サイトで確認。JR で大分乗り換えも可。",
+          "style": "bullet"
+        },
+        {
+          "text": "別府地獄は約 8:00～17:00、年中無休。午後に組んだ明礬地獄は遅くとも 17:00 までに出ること。",
+          "style": "bullet"
+        },
+        {
+          "text": "高千穂の日帰りツアー",
+          "style": "heading"
+        },
+        {
+          "text": "この日帰りツアーは複数の旅行会社が催行している（熊本・福岡どちらの出発もあり、高千穂神社、高千穂峡、天岩戸神社、天安河原を含む）。出発前に行程、集合場所、昼食込みかを自分で比べてください。",
+          "style": "bullet"
+        },
+        {
+          "text": "公共交通で自力で行く場合：熊本駅前から高速バス「たかちほ号」で高千穂バスセンターまで、片道約 2,700 円（ネットのまとめの古い情報。本数と運賃は出発前に確認）。天岩戸神社と天安河原は平日はバスがないのでタクシーで。週末と繁忙期は循環バスがある。",
+          "style": "bullet"
+        },
+        {
+          "text": "高千穂峡のボートはネット予約のみ。乗船日の 2 週間前の 9:00 に受付開始、2 日前の 9:00 に締め切り。繁忙期はすぐ売り切れる。乗りたい人は、先に旅行会社に時間を合わせられるか聞いてください。",
+          "style": "bullet"
+        },
+        {
+          "text": "熊本市内",
+          "style": "heading"
+        },
+        {
+          "text": "市内は路面電車とバスが中心。旅行記 2024 年の更新によると、熊本県内の複数のバス会社と熊本電鉄は Suica などの交通系 IC カードをもう受け付けていない。現金の日本円を用意し、最新の状況を先に確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "その他",
+          "style": "heading"
+        },
+        {
+          "text": "現金の日本円は多めに。小さな店、バス、小さな駅ではカードが使えないところもある。",
+          "style": "bullet"
+        },
+        {
+          "text": "6 日目と 8 日目はホテルで荷物を預かってもらう。東横INN などは通常フロントで預かってくれる。",
+          "style": "bullet"
+        },
+        {
+          "text": "由布院駅のコインロッカーはスーツケース用が少ない。旅行記では、着いたらすぐ預けに行くのがおすすめ。",
+          "style": "bullet"
+        },
+        {
+          "text": "最終日の空港での時間は、実際の航空便に合わせて調整してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "ルートの説明：このテンプレートは九州を一周する移動に重きを置いている。1・7・8 日目の福岡のスポットは、北九州（門司港、太宰府、柳川）や熊本・阿蘇のテンプレートと重ならない。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "旅のまとめ：九州一周 8 日間の回り方",
+      "paragraphs": [
+        {
+          "image": "d5-04"
+        },
+        "福岡イン・福岡アウトで九州をぐるりと一周します。福岡、由布院、別府、熊本、高千穂を回り、最後は福岡に戻って糸島へ。宿は 4 か所で、福岡 1 泊、別府 2 泊、熊本 2 泊、福岡 2 泊。移動は JR の特急と九州新幹線が中心で、高千穂は日帰りツアーに参加して行きます。",
+        "1 日目：午前に福岡空港へ到着し、地下鉄で博多へ。昼食と荷物預けのあと、午後は {@d1-03}、続いて {@d1-04} を一周して、夕食は天神です。",
+        "2 日目：朝に博多から特急「ゆふいんの森」で由布院へ。昼食のあと {@d2-02} と金鱗湖を歩き、夕方はバスで別府へ移動して {@d2-04} から夜景を見ます。",
+        "3 日目：一日かけて別府の地獄めぐり。{@d3-01} とかまど地獄から始め、昼は地獄極楽カレー、午後は {@d3-04}、そして明礬地獄へ。夕方はバスで別府駅に戻ります。",
+        {
+          "image": "d3-01"
+        },
+        "4 日目：朝いちばんの九州横断特急で別府から阿蘇を経て熊本へ。昼食のあと {@d4-02} で熊本城を後ろ側から眺め、{@d4-03} を歩いて、夕食は下通です。",
+        "5 日目：一日かけて高千穂の日帰りツアーへ。{@d5-02} の夫婦杉と {@d5-04} を歩き、天岩戸神社と天安河原を回って、夜に熊本へ戻ります。",
+        "6 日目：午前は県庁前の {@d6-01}、九州新幹線で博多へ戻り、午後はバスで {@d6-03} へ行って実物大のガンダムを見ます。",
+        "7 日目：糸島へ行き {@d7-01} と桜井神社、昼食のあと博多に戻り、夕方は天神でアニメグッズとおもちゃ屋巡りです。",
+        {
+          "image": "d7-01"
+        },
+        "8 日目：チェックアウトして JR 篠栗線で {@d8-01} へ行き、釈迦涅槃像を見ます。昼食のあと博多で荷物を受け取り、地下鉄とシャトルバスで空港へ。",
+        "宿泊：1 泊目は博多駅周辺、別府駅周辺に 2 連泊、熊本駅周辺に 2 連泊、最後の 2 泊は博多駅周辺に戻ります。6 日目と 8 日目はホテルに荷物を預けます。",
+        "移動のポイント：博多から由布院は全席指定の「ゆふいんの森」、由布院から別府は亀の井バスか、JR で大分乗り換え。別府から熊本は九州横断特急、熊本から博多は九州新幹線。高千穂は日帰りツアーで片道約 2.5 時間、糸島は博多から JR とバスで片道約 80〜90 分。特急に乗る機会が多いので、きっぷを個別に買う場合と JR 九州のレールパスを比べてみてください。5 日目のツアーと 7 日目の糸島は移動時間の割合が 3 割を超えますが、距離なので仕方ありません。熊本市内のバスや市電は交通系 IC カードが使えないことがあるので、現金も用意してください。出発前に最新の時刻表を確認してください。",
+        "こんな人に：九州の大きな見どころを一度に回りたい人で、温泉や渓谷、神社のために長い移動も受け入れられる人。ほぼ毎日移動か長い乗車があるので、歩きやすい靴で荷物は軽く。南蔵院では長ズボンで肩も隠してください。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "由布院プリンどら焼き（プリンどら焼き）",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "湯の坪街道沿いの店"
+    },
+    {
+      "key": "s-02",
+      "title": "ごま粉（由布院みやげ）",
+      "category": "food",
+      "productType": "seasoning",
+      "store": "湯の坪街道沿いの店"
+    },
+    {
+      "key": "s-03",
+      "title": "地獄蒸しプリン（岡本屋）",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "明礬地獄の向かいにある岡本屋のプリンの店"
+    },
+    {
+      "key": "s-04",
+      "title": "湯の花入浴剤（湯の花）",
+      "category": "drugstore",
+      "productType": "bath_hair",
+      "store": "明礬地獄と湯の花小屋の売店"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "福岡市",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "由布市",
+      "latitude": 33.1800158,
+      "longitude": 131.426733,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "別府市",
+      "latitude": 33.2844521,
+      "longitude": 131.491172,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "熊本市",
+      "latitude": 32.8032049,
+      "longitude": 130.7080236,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "高千穂町",
+      "latitude": 32.7116801,
+      "longitude": 131.3077912,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福岡市",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福岡市",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福岡市",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "福岡市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "福岡空港に到着（福岡空港）",
+          "start": "11:30",
+          "end": "12:30",
+          "category": "airport",
+          "place": {
+            "name": "福岡空港",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "昼食：博多駅筑紫口周辺",
+          "start": "13:10",
+          "end": "14:10",
+          "category": "dining",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "国際線ターミナルから無料シャトルバスで国内線ターミナルまで約 10 分、そこから地下鉄空港線で博多駅まで約 5 分・260 円（交通系 IC カード可）。国際線の入国手続きと荷物の受け取りは別です"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "東長寺（東長寺）：福岡大仏と五重塔",
+          "start": "14:45",
+          "end": "15:30",
+          "category": "temple",
+          "place": {
+            "name": "東長寺",
+            "latitude": 33.5952774,
+            "longitude": 130.4142118,
+            "applePlaceID": "IEB6531DAB0C8DB00",
+            "address": "〒812-0037, 福岡県福岡市博多区, 御供所町2-4",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記によると、2 階の福岡大仏の参拝は 50 円（2024 年の情報）",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "まずホテル（東横INN 博多口駅前、徒歩約 10 分）に荷物を預け、祇園の東長寺まで徒歩約 15 分"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "大濠公園（大濠公園）：池のまわりを散策",
+          "start": "16:00",
+          "end": "17:30",
+          "category": "park",
+          "place": {
+            "name": "大濠公園",
+            "latitude": 33.5863808,
+            "longitude": 130.3763008,
+            "applePlaceID": "ICE1436AE72C1A84",
+            "address": "〒810-0051, 福岡県福岡市中央区, 大濠公園1",
+            "addressIsApproximate": false
+          },
+          "notes": "公園は終日開放。池を 1 周するのに約 45 分（旅行記、2024 年の情報）。福岡市美術館は月曜休館",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "地下鉄空港線で祇園駅から大濠公園駅まで約 10 分・約 210 円。駅を出るとすぐ公園"
+          },
+          "images": [
+            "d1-04"
+          ]
+        },
+        {
+          "key": "d1-05",
+          "title": "夕食：天神周辺",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "天神駅周辺のレストラン",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "地下鉄空港線で大濠公園駅から天神駅まで約 6 分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "地下鉄空港線で天神駅から博多駅まで約 5 分、そこからホテルまで徒歩約 10 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "由布市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "昼食：由布院駅周辺（豊後牛）",
+          "start": "11:50",
+          "end": "12:50",
+          "category": "dining",
+          "place": {
+            "name": "由布院駅",
+            "latitude": 33.2626525,
+            "longitude": 131.3551252,
+            "applePlaceID": "I7467AB095BE51661",
+            "address": "〒879-5114, 大分県由布市, 湯布院町川北8-2",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記おすすめの「由布まぶし 心」（駅の出口にある店）はその日休みだったので、定休日を先に確認してください",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 165,
+            "durationSource": "user",
+            "note": "チェックアウト後、博多駅まで徒歩約 10 分。JR 特急「ゆふいんの森」1 号は 9:17 発、11:31 着で約 2 時間 14 分、全車指定席。取れなければ一般の特急「ゆふ」に変更できます。着いたら駅構内のコインロッカーに荷物を預けます（旅行記では 1,000 円、スーツケース用は少なめ）"
+          },
+          "todos": [
+            {
+              "text": "ゆふいんの森（または特急ゆふ）の座席を予約する",
+              "note": "JR 九州のネット予約。旅行記によると、ゆふいんの森は予約が遅いと満席になり、一般の特急しか残らない。全車指定席 https://www.jrkyushu.co.jp/trains/yufuinnomori/"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "湯の坪街道（湯の坪街道）：由布院の商店街",
+          "start": "13:05",
+          "end": "14:15",
+          "category": "sight",
+          "place": {
+            "name": "湯の坪街道",
+            "latitude": 33.26667426444787,
+            "longitude": 131.3628757917489,
+            "address": "日本大分縣由布市",
+            "addressIsApproximate": true
+          },
+          "notes": "街道は自由に歩けます。各店の営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "由布院駅から金鱗湖の方向へ通りを歩く。沿道にはお土産、スイーツ、雑貨の小さな店が並ぶ"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "金鱗湖（金鱗湖）",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "sight",
+          "place": {
+            "name": "金鱗湖",
+            "latitude": 33.2665347,
+            "longitude": 131.3686421,
+            "applePlaceID": "IFBF00B68422CC487",
+            "address": "〒879-5102, 大分県由布市, 湯布院町川上1796",
+            "addressIsApproximate": false
+          },
+          "notes": "終日開放、定休日なし",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "湯の坪街道を突き当たりまで歩くと金鱗湖、徒歩約 15 分"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "別府タワー（別府タワー）：夜景と街の眺め",
+          "start": "17:45",
+          "end": "18:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "別府タワー",
+            "latitude": 33.2817659,
+            "longitude": 131.5059048,
+            "applePlaceID": "I69180B9495484F45",
+            "address": "〒874-0920, 大分県別府市, 北浜3丁目10-2 別府タワー",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 135,
+            "durationSource": "user",
+            "note": "徒歩約 25 分で由布院駅に戻って荷物を受け取る。亀の井バス「観光快速ゆふりん」または 36 系統で別府駅まで約 1 時間（本数と運賃は出発前に確認。JR で大分経由も可）。そこから別府タワーまで徒歩約 10 分"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "夕食：別府駅周辺",
+          "start": "19:00",
+          "end": "20:00",
+          "category": "dining",
+          "place": {
+            "name": "別府",
+            "latitude": 33.2795901,
+            "longitude": 131.5002405,
+            "applePlaceID": "IF23E7F677FFDB0E7",
+            "address": "大分県別府市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "別府タワーから別府駅前あたりまで歩いて戻る"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "夕食の店からホテルまで歩いて戻る"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "別府市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "海地獄（海地獄）：コバルトブルーの湯",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "onsen",
+          "place": {
+            "name": "海地獄",
+            "latitude": 33.3158752,
+            "longitude": 131.4696389,
+            "applePlaceID": "I79696E21A55C8805",
+            "address": "〒874-0045",
+            "addressIsApproximate": true
+          },
+          "notes": "8:00～17:00、年中無休（別府地獄公式サイト）。旅行記では、七地獄の共通券は海地獄の入口で買うのがおすすめ。料金は出発前に確認してください",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "別府駅から亀の井バスで海地獄（鉄輪エリア）まで約 25～30 分。本数は出発前に確認してください"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "かまど地獄（かまど地獄）：噴気のショーと足湯",
+          "start": "10:50",
+          "end": "11:50",
+          "category": "onsen",
+          "place": {
+            "name": "かまど地獄",
+            "latitude": 33.3163959,
+            "longitude": 131.4723898,
+            "applePlaceID": "IA5FA3543EFBBD764",
+            "address": "〒874-0045, 大分県別府市, 大字鉄輪621",
+            "addressIsApproximate": false
+          },
+          "notes": "8:00～17:00、年中無休（別府地獄公式サイト）",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "案内に従って歩く。途中で鬼石坊主地獄の前を通る。かまど地獄には足湯、温泉水の飲用、顔の蒸しがある"
+          },
+          "images": [
+            "d3-02"
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "昼食：血の池地獄 極楽亭（地獄極楽カレー）",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "血の池地獄",
+            "latitude": 33.3271913,
+            "longitude": 131.4781603,
+            "applePlaceID": "I73FD155ED979A8F7",
+            "address": "〒874-0016, 大分県別府市, 野田778",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "鉄輪のバス停からバスで血の池地獄まで約 10 分"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "血の池地獄と龍巻地獄（血の池地獄・龍巻地獄）",
+          "start": "13:30",
+          "end": "14:45",
+          "category": "onsen",
+          "place": {
+            "name": "血の池地獄",
+            "latitude": 33.3271913,
+            "longitude": 131.4781603,
+            "applePlaceID": "I73FD155ED979A8F7",
+            "address": "〒874-0016, 大分県別府市, 野田778",
+            "addressIsApproximate": false
+          },
+          "notes": "8:00～17:00、年中無休（別府地獄公式サイト）。龍巻地獄は約 30～40 分おきに噴出し、1 回あたり約 6～10 分。先に係員に聞いておくとよい",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "血の池地獄から坂を下りると龍巻地獄。噴出の時刻を見て、先に行く方を決める"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "明礬地獄と湯の花小屋（明礬地獄・湯の花小屋）",
+          "start": "15:10",
+          "end": "16:15",
+          "category": "onsen",
+          "place": {
+            "name": "明礬 湯の里",
+            "latitude": 33.319525,
+            "longitude": 131.4540748,
+            "applePlaceID": "IA5690AFE1A8F1151",
+            "address": "〒874-0843, 大分県別府市, 明礬温泉6組",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記によると、券売所は向かいの岡本屋プリンの店",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "血の池地獄から海地獄方面のバスに乗り、さらに坂を上って明礬へ。旅行記では先に上ってから下りるのがおすすめだが、順番は逆でもよい"
+          },
+          "images": [
+            "d3-05"
+          ]
+        },
+        {
+          "key": "d3-06",
+          "title": "夕食：別府駅周辺",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "別府",
+            "latitude": 33.2795901,
+            "longitude": 131.5002405,
+            "applePlaceID": "IF23E7F677FFDB0E7",
+            "address": "大分県別府市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "バスで別府駅へ戻るのに約 30～40 分。最終バスを先に確認してください"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "夕食の店からホテルまで歩いて戻る"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "熊本市",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "昼食：熊本駅周辺",
+          "start": "11:45",
+          "end": "12:45",
+          "category": "dining",
+          "place": {
+            "name": "熊本駅周辺のレストラン",
+            "latitude": 32.79096,
+            "longitude": 130.6878509,
+            "address": "熊本県熊本市西区春日3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 237,
+            "durationSource": "user",
+            "note": "チェックアウト後、別府駅まで歩く。JR 九州横断特急 2 号は別府 7:44 発、阿蘇 10:08 通過、熊本 11:21 着（JR 九州公式サイト 2026 年 1 月のダイヤ。出発前に確認）。自由席は 2 号車。全行程で約 3 時間 40 分"
+          },
+          "todos": [
+            {
+              "text": "九州横断特急 2 号（別府→熊本）の座席を予約する",
+              "note": "1 日 3 往復のみ。2 号は別府を 7:44 に発車。時刻表 https://www.jrkyushu.co.jp/chinese/train/odan.html"
+            }
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "加藤神社（加藤神社）：熊本城を後ろ側から眺める",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "temple",
+          "place": {
+            "name": "加藤神社",
+            "latitude": 32.807117,
+            "longitude": 130.7053761,
+            "applePlaceID": "I831099B0902FAA97",
+            "address": "〒860-0002, 熊本県熊本市中央区, 本丸2-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記によると、一部の社殿は修理中",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "先にホテルへ荷物を預ける。熊本駅から市電で通町筋または熊本城周辺まで約 20 分、そこから徒歩約 20 分、上り坂（旅行記）"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "上通・下通アーケード（上通・下通アーケード）",
+          "start": "15:00",
+          "end": "16:30",
+          "category": "shopping",
+          "place": {
+            "name": "下通りアーケード",
+            "latitude": 32.80199538213618,
+            "longitude": 130.70906498323706,
+            "address": "日本熊本縣熊本市",
+            "addressIsApproximate": true
+          },
+          "notes": "アーケードは自由に歩けます。各店の営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "加藤神社からバスまたは徒歩で通町筋まで約 30 分。旅行記では、熊本市内のバスと市電はもう交通系 IC カードを使えないとのこと。現金の日本円を用意してください"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "夕食：下通周辺（手羽先と串焼き）",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "下通周辺の居酒屋",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "アーケード内を歩く"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "下通から市電で熊本駅まで約 20 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "高千穂町",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "日帰りツアーに参加：集合・出発（熊本→高千穂）",
+          "start": "09:00",
+          "end": "09:20",
+          "category": "other",
+          "place": {
+            "name": "熊本",
+            "latitude": 32.7894252,
+            "longitude": 130.6884708,
+            "applePlaceID": "I1FA3C2930A533584",
+            "address": "熊本県熊本市西区, 春日",
+            "addressIsApproximate": true
+          },
+          "notes": "集合場所と時刻は旅行会社の案内に従う。営業時間は出発前に確認してください",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "ホテルから集合場所まで歩いて約 10 分（旅行会社の案内による）"
+          },
+          "todos": [
+            {
+              "text": "高千穂の日帰りツアーを予約する",
+              "note": "催行している旅行会社は複数。集合場所、昼食込みか、舟遊びを追加できるかを比べ、数日前までに予約するのがおすすめ"
+            }
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "高千穂神社（高千穂神社）：夫婦杉",
+          "start": "11:45",
+          "end": "12:25",
+          "category": "temple",
+          "place": {
+            "name": "高千穂神社",
+            "latitude": 32.7064748,
+            "longitude": 131.3019346,
+            "applePlaceID": "I73B4EC96A6D7C512",
+            "address": "〒882-1101",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記によると、神木に囲まれていて、夫婦杉は手をつないで 3 周できる",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "driving",
+            "durationMinutes": 145,
+            "durationSource": "user",
+            "note": "観光バスで熊本から高千穂まで約 2.5 時間（旅行記では福岡出発で約 3 時間）。途中で休憩あり。実際は旅行会社の手配による"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "昼食：高千穂料理（日帰りツアーの手配による）",
+          "start": "12:40",
+          "end": "13:25",
+          "category": "dining",
+          "place": {
+            "name": "高千穂神社神楽殿",
+            "latitude": 32.7064814,
+            "longitude": 131.301935,
+            "applePlaceID": "ID8ED2F9278942B6C",
+            "address": "〒882-1101, 宮崎県西臼杵郡高千穂町, 三田井1037",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "旅行会社が手配した店。多くは神社の近く"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "高千穂峡（高千穂峡）",
+          "start": "13:45",
+          "end": "14:35",
+          "category": "sight",
+          "place": {
+            "name": "五ヶ瀬川峡谷(高千穂峡)",
+            "latitude": 32.7032163,
+            "longitude": 131.299885,
+            "applePlaceID": "ID39D10310E5C61AC",
+            "address": "宮崎県西臼杵郡高千穂町, 向山",
+            "addressIsApproximate": true
+          },
+          "notes": "終日散策できる。舟の運航時間と運航の有無は毎朝 8:00 ごろ更新されるので、出発前に確認してください",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "昼食後、遊歩道を下って約 20 分で峡谷へ。舟を予約している場合や疲れた場合は、ガイドが送迎を手配してくれることも"
+          },
+          "todos": [
+            {
+              "text": "高千穂峡のボートを予約する（乗りたい場合のみ）",
+              "note": "公式サイトはネット予約のみ。乗船日の 2 週間前の 9:00 に受付開始、2 日前の 9:00 に締め切り。人気の日はとっくに売り切れなので、旅行会社に時間を合わせられるか先に聞く https://takachiho-kanko.info/"
+            }
+          ],
+          "images": [
+            "d5-04"
+          ]
+        },
+        {
+          "key": "d5-05",
+          "title": "天岩戸神社 西本宮（天岩戸神社）",
+          "start": "15:00",
+          "end": "15:40",
+          "category": "temple",
+          "place": {
+            "name": "天岩戸神社",
+            "latitude": 32.7344288,
+            "longitude": 131.3504925,
+            "applePlaceID": "IA4D011E91CF2BB05",
+            "address": "〒882-1621, 宮崎県西臼杵郡高千穂町, 岩戸1073-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "観光バスで峡谷から天岩戸神社まで約 15～20 分。降りてから西本宮まで徒歩約 5 分"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "天安河原（天安河原）：石を積み上げた洞窟",
+          "start": "15:55",
+          "end": "16:40",
+          "category": "sight",
+          "place": {
+            "name": "天安河原宮",
+            "latitude": 32.742666,
+            "longitude": 131.351087,
+            "applePlaceID": "ID7527595A6DDBA52",
+            "address": "〒882-1621, 宮崎県西臼杵郡高千穂町, 岩戸2404-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。西本宮から上流へ約 500 メートル",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "西本宮から天安河原まで徒歩約 15 分。帰り道にアイスの店がある"
+          },
+          "images": [
+            "d5-06"
+          ]
+        },
+        {
+          "key": "d5-07",
+          "title": "夕食：熊本駅周辺",
+          "start": "19:30",
+          "end": "20:30",
+          "category": "dining",
+          "place": {
+            "name": "熊本駅周辺のレストラン",
+            "latitude": 32.79096,
+            "longitude": 130.6878509,
+            "address": "熊本県熊本市西区春日3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "driving",
+            "durationMinutes": 170,
+            "durationSource": "user",
+            "note": "観光バスでの帰りは約 2.5～3 時間、途中で休憩あり。実際の到着時刻は旅行会社の手配による"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "熊本駅からホテルまで歩いて戻る"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "福岡市",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "ルフィ像（ルフィ像）：熊本県庁前",
+          "start": "09:45",
+          "end": "10:15",
+          "category": "sight",
+          "place": {
+            "name": "熊本県庁",
+            "latitude": 32.7898029,
+            "longitude": 130.7415739,
+            "applePlaceID": "I9D3D945CF9ABD15A",
+            "address": "〒862-0950, 熊本県熊本市中央区, 水前寺6丁目18-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "ホテルに荷物を預ける。熊本市電またはバスで県庁周辺まで約 30～35 分、ナビに従ってください"
+          },
+          "images": [
+            "d6-01"
+          ]
+        },
+        {
+          "key": "d6-02",
+          "title": "昼食：博多駅周辺",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "ホテルに荷物を取りに戻り、熊本駅まで約 30 分。九州新幹線で熊本から博多まで約 38 分、普通車自由席は約 5,310 円（民間のまとめ。JR 公式サイトで確認を）"
+          }
+        },
+        {
+          "key": "d6-03",
+          "title": "ららぽーと福岡（ららぽーと福岡）：実物大 νガンダム",
+          "start": "14:45",
+          "end": "17:30",
+          "category": "shopping",
+          "place": {
+            "name": "ららぽーと福岡",
+            "latitude": 33.5647786,
+            "longitude": 130.4402293,
+            "applePlaceID": "I23ED44362FD515EC",
+            "address": "〒812-8627",
+            "addressIsApproximate": true
+          },
+          "notes": "10:00～21:00（Wikipedia 記載の商業施設の営業時間）。各店の営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d6-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "先にホテルへ戻って荷物を預け（徒歩約 10 分）、博多バスターミナルから西鉄バスで「ららぽーと福岡」まで約 20 分。降りるとすぐ施設"
+          },
+          "images": [
+            "d6-03"
+          ]
+        },
+        {
+          "key": "d6-04",
+          "title": "夕食：博多駅周辺",
+          "start": "18:15",
+          "end": "19:30",
+          "category": "dining",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d6-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "西鉄バスで博多へ戻る、約 20 分"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "夕食の店からホテルまで歩いて戻る"
+          }
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "福岡市",
+      "events": [
+        {
+          "key": "d7-01",
+          "title": "桜井二見ヶ浦の夫婦岩（桜井二見ヶ浦）",
+          "start": "10:30",
+          "end": "11:20",
+          "category": "beach",
+          "place": {
+            "name": "桜井二見ヶ浦",
+            "latitude": 33.6397261,
+            "longitude": 130.1978507,
+            "applePlaceID": "IEB39ADAB4A321F34",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井",
+            "addressIsApproximate": true
+          },
+          "notes": "終日開放。海に立つ鳥居と夫婦岩。天気と潮位で景色が変わる",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "8:15 ごろ出発：JR で博多から九大学研都市駅まで約 35～40 分、バスに乗り換えて（旅行記では西の浦線）約 30 分・730 円（旅行記 2024 年の情報。本数は出発前に確認）"
+          },
+          "images": [
+            "d7-01"
+          ]
+        },
+        {
+          "key": "d7-02",
+          "title": "桜井神社（桜井神社）",
+          "start": "11:35",
+          "end": "12:05",
+          "category": "temple",
+          "place": {
+            "name": "桜井神社",
+            "latitude": 33.6283792,
+            "longitude": 130.1920845,
+            "applePlaceID": "I400B8E51901E47E1",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井4227",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d7-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "夫婦岩の裏手から徒歩約 10 分（旅行記では、さらに奥まで歩けるとのこと）"
+          }
+        },
+        {
+          "key": "d7-03",
+          "title": "昼食：桜井二見ヶ浦周辺",
+          "start": "12:20",
+          "end": "13:20",
+          "category": "dining",
+          "place": {
+            "name": "桜井二見ヶ浦",
+            "latitude": 33.6397261,
+            "longitude": 130.1978507,
+            "applePlaceID": "IEB39ADAB4A321F34",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d7-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "海岸沿いで店を探す。旅行記によると、博多への直通バスは午後は 1 時間に 1 本"
+          }
+        },
+        {
+          "key": "d7-04",
+          "title": "天神でお買い物（天神）：アニメグッズとおもちゃ屋",
+          "start": "15:30",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "天神エリア",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d7-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "バスと JR で博多まで約 80～90 分、さらに地下鉄で天神まで約 5 分。糸島は遠いので、この日は移動時間の割合が高め"
+          }
+        },
+        {
+          "key": "d7-05",
+          "title": "夕食：天神周辺",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "天神周辺のレストラン",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d7-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "商業エリア内を歩く"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "地下鉄空港線で天神駅から博多駅まで約 5 分、そこから徒歩約 10 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "title": "福岡市",
+      "events": [
+        {
+          "key": "d8-01",
+          "title": "南蔵院（南蔵院）：釈迦涅槃像",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "temple",
+          "place": {
+            "name": "南蔵院",
+            "latitude": 33.6198728,
+            "longitude": 130.5729067,
+            "applePlaceID": "I968AADFBBA808E5D",
+            "address": "〒811-2405",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記によると、袖なしや短パンでおなかや肩を出す服装、音楽を流すこと、踊ること、一部の場所での撮影は禁止",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "チェックアウト後、荷物はホテルのフロントに預ける。博多駅から JR 篠栗線で南蔵院前駅まで約 30～35 分。駅を出たら荒神茶屋の前を通り、道路を渡って入口へ（旅行記）"
+          },
+          "images": [
+            "d8-01"
+          ]
+        },
+        {
+          "key": "d8-02",
+          "title": "昼食：博多駅周辺",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d8-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "JR で博多駅へ戻る、約 35 分"
+          }
+        },
+        {
+          "key": "d8-03",
+          "title": "福岡空港から出国（福岡空港）",
+          "start": "14:30",
+          "end": "16:00",
+          "category": "airport",
+          "place": {
+            "name": "福岡空港",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d8-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "ホテルに荷物を取りに戻る（徒歩約 5 分）。地下鉄空港線で博多から国内線ターミナルまで約 5 分、そこから無料シャトルバスで国際線まで約 10 分。旅行記では、出発ロビーに着く時刻にさらに 30 分足すのがおすすめ。実際の時間は航空便に合わせて調整してください"
+          }
+        }
+      ]
+    }
+  ]
+}

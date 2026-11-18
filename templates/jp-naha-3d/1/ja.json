@@ -1,0 +1,799 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-naha-3d",
+  "revision": 1,
+  "contentLocale": "ja",
+  "title": "那覇 3 日｜国際通り・首里城・瀬長島（車なし）",
+  "subtitle": "車なし：ゆいレールで国際通り、首里城、瀬長島をつなぐ",
+  "summary": "那覇で過ごす 3 日間、レンタカーは一切なし。第一牧志公設市場と壺屋やちむん通り、国際通り、首里城公園と玉陵、波上宮、最後は瀬長島へ。心得には空港と市内の移動、ゆいレールの乗車券、首里城の現況、瀬長島への行き方をまとめています。福州園、識名園、金城町石畳道は予備にしてあります。",
+  "destination": "日本 那覇",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "ふたり旅",
+    "初めて",
+    "車なし",
+    "城下町"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web に登録する（入国審査と税関申告）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 航空券と宿の予約が済めばすぐ入力できます"
+    }
+  ],
+  "images": {
+    "d1-04": "images/jp-naha-3d/d1-04.jpg",
+    "d2-04": "images/jp-naha-3d/d2-04.jpg",
+    "d3-01": "images/jp-naha-3d/d3-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "宿泊：牧志・国際通り周辺（2 連泊）",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "牧志駅前",
+        "latitude": 26.2172382,
+        "longitude": 127.6924535,
+        "applePlaceID": "I5D7964AF52104406",
+        "address": "沖縄県那覇市, 牧志",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "予備：福州園",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "福州園",
+        "latitude": 26.2178612,
+        "longitude": 127.6757643,
+        "applePlaceID": "IFFF6FABA8D32C489",
+        "address": "〒900-0005, 沖縄県那覇市, 久米2丁目29-19",
+        "addressIsApproximate": false
+      },
+      "notes": "中国風庭園。県庁前駅の近くで、大人 ¥200（ゆいレール公式サイト）。営業時間は出発前に確認してください"
+    },
+    {
+      "key": "u-02",
+      "title": "予備：識名園",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "識名園",
+        "latitude": 26.2041211,
+        "longitude": 127.7146734,
+        "applePlaceID": "IF8DA34208B2B5A64",
+        "address": "〒902-0072, 沖縄県那覇市, 真地421-7",
+        "addressIsApproximate": false
+      },
+      "notes": "琉球王家の別邸の庭園。大人 ¥400（ゆいレール公式サイト）。営業時間は出発前に確認してください"
+    },
+    {
+      "key": "u-03",
+      "title": "予備：金城町石畳道",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "首里金城町石畳道",
+        "latitude": 26.2157629,
+        "longitude": 127.7148682,
+        "applePlaceID": "ID33AB7140FDC17B9",
+        "address": "〒903-0815, 沖縄県那覇市, 首里金城町2丁目35",
+        "addressIsApproximate": false
+      },
+      "notes": "首里城の近くに琉球の石畳が残る坂道。一日中散策できます。店の営業時間は出発前に確認してください"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "出典と確認事項",
+      "paragraphs": [
+        {
+          "text": "もとにした旅行記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/2cbc121a1b7c/",
+          "style": "bullet"
+        },
+        {
+          "text": "確認済み（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "ゆいレール運賃（空港駅、牧志駅）と 1 日券・2 日券、提携施設の特典：https://www.yui-rail.co.jp/ticketinfo-ticket/ticketinfo/1day-pass/ （確認 2026-11-17）；https://www.yui-rail.co.jp/routemap/nahakuko/?t=fare （確認 2026-11-17）；https://www.yui-rail.co.jp/routemap/makishi/?t=fare （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "ゆいレールのクレジットカードのタッチ決済：https://ryukyushimpo.jp/news/economics/entry-4099337.html （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "首里城公園：公式トップページ（開園時間、正殿は 2026/11 完成、11/23 公開、11/22 臨時休園）：https://oki-park.jp/shurijo/ （確認 2026-11-17）；正殿の予約と新料金は第三者のまとめによるもので、公式の該当ページは取得できませんでした。出発前に確認してください：https://www.iwafu.com/jp/events/1167204 （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "波上宮：授与所・社務所 9:00〜16:30、駐車場 20 台分、空港とタクシーの情報：https://naminouegu.jp/ 、https://naminouegu.jp/map.html （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "瀬長島ウミカジテラス：営業時間と住所 https://umikajiterrace.com/ ；空港シャトルバスとウミカジライナー https://www.umikajiterrace.com/accessguide/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "壺屋やちむん通り：最寄りのゆいレール駅は牧志駅、徒歩約 10〜15 分：https://www.tsuboya-yachimun.com/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "ちゅらさん6：公式サイト https://www.churasun6.com/ 、第 1 部 20:30、第 2 部 22:30（同シリーズのドライブ版テンプレートで 2026-11-17 に行った確認をそのまま使用）",
+          "style": "bullet"
+        },
+        {
+          "text": "公式には確認できなかった点。出発前にご確認ください",
+          "style": "heading"
+        },
+        {
+          "text": "玉陵、壺屋の各店、国際通りの各店、第一牧志公設市場、なかむら家、琉球の牛、玉家、ASHIBINAA、ブルーシールの営業時間と定休日。",
+          "style": "bullet"
+        },
+        {
+          "text": "首里城の 7〜11 月以外の開園時間と休園日、正殿内部予約の満席状況と新料金。",
+          "style": "bullet"
+        },
+        {
+          "text": "国際通りから瀬長島へのウミカジライナーの時刻と運賃、瀬長島・国際通りへのタクシー料金。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出発前の心得",
+      "paragraphs": [
+        {
+          "text": "このテンプレートの位置づけ",
+          "style": "heading"
+        },
+        {
+          "text": "車なしのテンプレート：ゆいレール、バス、タクシー、徒歩だけで、牧志・国際通り周辺に泊まり、那覇市内と瀬長島を巡ります。",
+          "style": "bullet"
+        },
+        {
+          "text": "沖縄本島の中部・北部（美ら海、恩納、北谷）は別のドライブ版テンプレートをご覧ください。",
+          "style": "bullet"
+        },
+        {
+          "text": "空港と市内の移動（那覇空港 OKA）",
+          "style": "heading"
+        },
+        {
+          "text": "ゆいレール：空港駅から牧志駅まで片道 ¥320、約 13〜15 分（時刻は公式サイトで）。空港駅から旭橋駅までは約 10 分、首里駅までは ¥360。公式の運賃表：https://www.yui-rail.co.jp/routemap/nahakuko/?t=fare",
+          "style": "bullet"
+        },
+        {
+          "text": "タクシー：空港から旭橋・波上宮方面まで約 10 分、約 ¥1,200（波上宮公式サイト）。国際通りまでの料金は配車アプリの見積りを基準にしてください。",
+          "style": "bullet"
+        },
+        {
+          "text": "出発日：タクシーで空港まで約 15 分。ゆいレールで空港駅まで行くこともできます。",
+          "style": "bullet"
+        },
+        {
+          "text": "ゆいレールの乗車券（2026-11-17 に公式サイトで確認）",
+          "style": "heading"
+        },
+        {
+          "text": "片道券：牧志〜首里 ¥290、牧志〜旭橋 ¥250、空港〜首里 ¥360。",
+          "style": "bullet"
+        },
+        {
+          "text": "1 日券（24 時間）大人 ¥1,000、子ども ¥500。2 日券（48 時間）大人 ¥1,800、子ども ¥900。どの駅でも購入でき、購入時から起算します。",
+          "style": "bullet"
+        },
+        {
+          "text": "クレジットカードのタッチ決済：2025/3/28 から開始。琉球新報の報道では 1 日の上限は ¥800（最新の公式告知に従ってください）。",
+          "style": "bullet"
+        },
+        {
+          "text": "このテンプレートは 1 日にゆいレールを 2〜3 回乗る程度で、1 日券より安く済みます。片道券か IC カード（OKICA、Suica）の方がお得で、1 日券の提携施設の割引も数十円程度です。",
+          "style": "bullet"
+        },
+        {
+          "text": "首里城の現況（2026-11-17 に公式サイトで確認）",
+          "style": "heading"
+        },
+        {
+          "text": "2019 年の火災後、再建中：公式サイトによれば正殿は 2026 年 11 月に完成し、2026/11/23（月・祝）の正午から公開されます。当日の午前と 11/22 は終日臨時休園です。",
+          "style": "bullet"
+        },
+        {
+          "text": "正殿の内部見学には日時指定（30 分ごとに 1 枠）のネット予約が必要です。正殿以外の有料区域は予約不要です（第三者のまとめ。公式サイトに従ってください）。",
+          "style": "bullet"
+        },
+        {
+          "text": "入場料は 2026/11/23 から改定：公式の料金ページは取得できず、第三者のまとめでは大人 ¥1,000、高校生 ¥760、小中学生 ¥370。改定前は大人 ¥400（ゆいレール公式サイト）。",
+          "style": "bullet"
+        },
+        {
+          "text": "無料区域と守礼門周辺は無料で入れます。正殿内部の予約が取れなくても、城郭とほかの有料区域は見学できます。",
+          "style": "bullet"
+        },
+        {
+          "text": "ほかの区域の復元の進み具合と立ち入れる範囲は https://oki-park.jp/shurijo/ で確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "予約と購入",
+          "style": "heading"
+        },
+        {
+          "text": "首里城正殿の内部：公式サイトで日時を指定して予約。繁忙期と公開直後は満席になりやすいので早めに。",
+          "style": "bullet"
+        },
+        {
+          "text": "焼肉 琉球の牛：予約が必要です。",
+          "style": "bullet"
+        },
+        {
+          "text": "ちゅらさん6：公式サイト https://www.churasun6.com/ で予約。20 歳以上のみ入場可、第 1 部の料金は約 ¥6,500 から（ワンドリンク付き）。ハイタッチと記念撮影以外は、ダンサーに触れることは固く禁じられています。",
+          "style": "bullet"
+        },
+        {
+          "text": "瀬長島への行き方",
+          "style": "heading"
+        },
+        {
+          "text": "空港から：土日祝は瀬長島空港シャトルバス（TK04、東京バス）があり、大人 ¥250。平日は運行なし。空港から瀬長島まで乗車約 10 分。",
+          "style": "bullet"
+        },
+        {
+          "text": "国際通りから：ウミカジライナー（TK02）糸満行き。詳しい時刻と運賃は https://www.umikajiterrace.com/accessguide/ か、東京バス 098-850-0011 へ。",
+          "style": "bullet"
+        },
+        {
+          "text": "タクシーがいちばん簡単です。帰りも島内で呼べます。",
+          "style": "bullet"
+        },
+        {
+          "text": "季節",
+          "style": "heading"
+        },
+        {
+          "text": "このテンプレートは 7 月の夏の旅行記が基準：那覇の夏はとても暑く紫外線も強いので、屋外のスポット（波上宮の陸橋、瀬長島、アウトレット）は朝か夕方に回し、日焼け対策と水を用意してください。ほかの季節でも問題なく回れます。",
+          "style": "bullet"
+        },
+        {
+          "text": "壺屋やちむん通りは午後に早く閉まる店が多いので、14 時ごろまでに着くように組んでいます。",
+          "style": "bullet"
+        },
+        {
+          "text": "壺屋焼物博物館は 2026/9/1〜2027/3/31 休館。通りの散策だけにして、館内には入りません。",
+          "style": "bullet"
+        }
+      ]
+    }
+  ],
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "ちいかわ シーサーグッズ",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "国際通りの専門店にあります。旅行記ではフラのうさぎを買いました"
+    },
+    {
+      "key": "s-02",
+      "title": "ブルーシール 小銭入れ",
+      "category": "clothing",
+      "productType": "bag_wallet",
+      "store": "瀬長島と豊崎のブルーシールで販売。旅行記では記念の小銭入れを買いました"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "那覇市",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "那覇市",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "那覇市",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "那覇市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "那覇空港に到着",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "airport",
+          "place": {
+            "name": "那覇空港",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "昼食：第一牧志公設市場周辺",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "market",
+          "place": {
+            "name": "第一牧志公設市場",
+            "latitude": 26.2145489,
+            "longitude": 127.6882674,
+            "applePlaceID": "IC5383C58AD3469EA",
+            "address": "〒900-0014, 沖縄県那覇市, 松尾2丁目10-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "空港駅からゆいレールで牧志駅まで約 13〜15 分、片道 ¥320。駅から徒歩約 10 分。荷物は先にホテルへ預けられます"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "壺屋やちむん通り",
+          "start": "14:00",
+          "end": "15:45",
+          "category": "sight",
+          "place": {
+            "name": "壺屋やちむん通り",
+            "latitude": 26.2130862,
+            "longitude": 127.691306,
+            "applePlaceID": "I6A995B686ACA42DA",
+            "address": "〒902-0065",
+            "addressIsApproximate": true
+          },
+          "notes": "店ごとに営業時間が異なり、午後早めに閉まる店が多いので出発前に確認してください。壺屋焼物博物館は外壁改修のため 2026/9/1〜2027/3/31 休館（ゆいレール公式サイト）",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "公設市場から徒歩約 10〜15 分。石畳の小道に焼物の店、窯元、カフェが並びます"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "国際通り：ドラッグストアとお土産さんぽ",
+          "start": "16:00",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "那覇国際通り商店街",
+            "latitude": 26.2160938,
+            "longitude": 127.689231,
+            "applePlaceID": "IAA939DC0B8514F67",
+            "address": "〒900-0013, 沖縄県那覇市, 牧志3丁目2-10",
+            "addressIsApproximate": false
+          },
+          "notes": "全長約 1.6 km。店ごとに営業時間が異なり、多くは 21:00 ごろまで。出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "壺屋から国際通りまで徒歩約 15 分。夕食まで通り沿いを歩きながら見て回ります"
+          },
+          "images": [
+            "d1-04"
+          ]
+        },
+        {
+          "key": "d1-05",
+          "title": "夕食：居酒屋 なかむら家",
+          "start": "18:00",
+          "end": "19:30",
+          "category": "dining",
+          "place": {
+            "name": "なかむら家",
+            "latitude": 26.2159698,
+            "longitude": 127.6821636,
+            "applePlaceID": "ICA3891BE7AB3D242",
+            "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目15 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "現金のみ。営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "国際通り周辺から徒歩約 10 分"
+          }
+        },
+        {
+          "key": "d1-06",
+          "title": "ドン・キホーテ 国際通り店",
+          "start": "19:45",
+          "end": "20:45",
+          "category": "shopping",
+          "place": {
+            "name": "ドン・キホーテ国際通り店",
+            "latitude": 26.2159386,
+            "longitude": 127.6877135,
+            "applePlaceID": "IBDB33462100C5694",
+            "address": "〒900-0014, 沖縄県那覇市, 松尾2丁目8-19",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。免税カウンターは 4 階。行列は長いですが手続きは早いです",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "徒歩約 10 分。国際通りにはドン・キホーテが大小 2 店あります"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "宿へ歩いて戻ります。国際通り周辺は夜も人通りがありますが、大通りを歩けば大丈夫です"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "那覇市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "首里城公園",
+          "start": "09:45",
+          "end": "12:15",
+          "category": "castle",
+          "place": {
+            "name": "首里城正殿（首里城公園）",
+            "latitude": 26.2170379,
+            "longitude": 127.7194829,
+            "applePlaceID": "IC97D4775995DCEAA",
+            "address": "〒903-0815, 沖縄県那覇市, 首里金城町1-2",
+            "addressIsApproximate": false
+          },
+          "notes": "公式サイト：7〜11 月は無料区域 8:00〜19:30、有料区域 8:30〜19:00（18:30 で販売終了）。ほかの月の時間と休園日は公式サイトで確認を。2026/11/22 は終日、11/23 は午前が臨時休園",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "宿から牧志駅まで歩き、ゆいレールで首里駅へ（¥290、約 17 分）。駅から守礼門まで徒歩約 15 分、道中は上り坂です"
+          },
+          "todos": [
+            {
+              "text": "首里城正殿の内部見学を予約する",
+              "note": "日時指定（30 分ごとに 1 枠）のネット予約。2026/11/23 から見学可能。公式サイト https://oki-park.jp/shurijo/"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "玉陵",
+          "start": "12:30",
+          "end": "13:15",
+          "category": "sight",
+          "place": {
+            "name": "玉陵",
+            "latitude": 26.2182059,
+            "longitude": 127.7147027,
+            "applePlaceID": "I194BD0E6509F2CF2",
+            "address": "〒903-0815, 沖縄県那覇市, 首里金城町1丁目3",
+            "addressIsApproximate": false
+          },
+          "notes": "開館時間と休館日は出発前に確認してください。ゆいレール公式サイトでは大人の入場料 ¥300",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "首里城から徒歩約 10〜15 分"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "昼食：首里駅周辺",
+          "start": "13:30",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "首里",
+            "latitude": 26.2191196,
+            "longitude": 127.72549,
+            "applePlaceID": "I1DFEBCED69086C9D",
+            "address": "沖縄県那覇市, 首里汀良町",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "首里駅の方へ歩いて戻ります。首里は沖縄そばと伝統の軽食の発祥の地です"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "波上宮：波の上ビーチ、護国寺も",
+          "start": "15:15",
+          "end": "17:00",
+          "category": "temple",
+          "place": {
+            "name": "波上宮",
+            "latitude": 26.220688,
+            "longitude": 127.6711195,
+            "applePlaceID": "I403C23C7EBE9131F",
+            "address": "〒900-0031, 沖縄県那覇市, 若狭1丁目25-11",
+            "addressIsApproximate": false
+          },
+          "notes": "授与所・社務所 9:00〜16:30、祈祷受付 10:00〜15:30（公式サイト 2026/1 告知）。16:30 までの参拝がおすすめ。境内に無料駐車場が約 20 台分あります",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "首里駅からゆいレールで旭橋駅まで約 22 分、そこから神社まで徒歩約 15 分。神社の反対側の坂を下ればビーチへ出られ、陸橋を渡るより近道です"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "夕食：焼肉 琉球の牛 那覇久茂地店",
+          "start": "17:30",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "焼肉 琉球の牛 那覇久茂地",
+            "latitude": 26.2155533,
+            "longitude": 127.6819627,
+            "applePlaceID": "I849648257EA60142",
+            "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目16-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。予約が必要で、料理の提供が遅めなので約 2 時間を見込んでください",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "波上宮から旭橋方面へ徒歩約 20 分、またはタクシーで約 10 分"
+          },
+          "todos": [
+            {
+              "text": "焼肉 琉球の牛（那覇久茂地）を予約する",
+              "note": "旅行記では予約済み。提供が遅いので約 2 時間を見込む"
+            }
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "ちゅらさん6 ギャルズバーのショー",
+          "start": "20:15",
+          "end": "21:30",
+          "category": "bar",
+          "place": {
+            "name": "ちゅらさん6 沖縄",
+            "latitude": 26.2183985,
+            "longitude": 127.6801257,
+            "applePlaceID": "I230A443A8401DEFB",
+            "address": "〒900-0032, 沖縄県那覇市, 松山1丁目5-1 2F",
+            "addressIsApproximate": false
+          },
+          "notes": "公式サイト：第 1 部 20:30 開演（20:00 開場）、第 2 部 22:30 開演。定休日は出発前に確認を。20 歳未満は入場不可。終演は約 21:30 で、ほかの日の 21:00 より遅め",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "徒歩約 15 分。1 階のクラブ横の入口からまっすぐ奥へ進んで左折、2 階がちゅらさん6 です。1 階はクラブなので間違えないように"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "宿へ歩いて戻ります。松山周辺は夜に少し入り組むので、連れ立って大通りを歩くのがおすすめです"
+          },
+          "todos": [
+            {
+              "text": "ちゅらさん6 のショーを予約する",
+              "note": "公式サイト https://www.churasun6.com/ ；20 歳以上のみ。第 1 部は 20:30 開演"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "那覇市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "瀬長島ウミカジテラス",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "sight",
+          "place": {
+            "name": "瀬長島ウミカジテラス",
+            "latitude": 26.1764709,
+            "longitude": 127.6404074,
+            "applePlaceID": "IC9B0D0C2786C14A4",
+            "address": "〒901-0233, 沖縄県豊見城市, 瀬長174-6",
+            "addressIsApproximate": false
+          },
+          "notes": "公式サイト：施設 10:00〜21:00、店舗 10:00〜20:00、飲食 11:00〜21:00（ラストオーダー 20:30）、年中無休。駐車場は無料",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "チェックアウト後、タクシーで約 25〜30 分（料金は配車アプリの見積りを基準に）。節約するなら、国際通りからウミカジライナー（東京バス TK02、糸満行き）で瀬長島へ。時刻と運賃は https://www.umikajiterrace.com/accessguide/ で確認を"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "パチンコ体験（P-Time 津嘉山）",
+          "start": "11:50",
+          "end": "12:30",
+          "category": "show",
+          "place": {
+            "name": "パチンコ Pタイム",
+            "latitude": 26.1809003,
+            "longitude": 127.7153955,
+            "applePlaceID": "I9F0293E1440584FB",
+            "address": "〒901-1117, 沖縄県島尻郡南風原町, 字津嘉山1718-2",
+            "addressIsApproximate": false
+          },
+          "notes": "日本のパチンコ店。18 歳未満は入場不可。営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "瀬長島からタクシーで約 20 分（車なしの場合：路線バスは本数が少ないのでタクシーがおすすめ）"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "昼食：沖縄そば そば処 玉家 豊崎店",
+          "start": "12:45",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "そば処 玉家 豊崎店",
+            "latitude": 26.1549155,
+            "longitude": 127.661911,
+            "applePlaceID": "I7B5CBC327B28BBE5",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-1069",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。券売機で食券を買ってから席へ",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "タクシーで約 15 分、豊崎へ"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "那覇 ASHIBINAA アウトレット（あしびなー）",
+          "start": "13:45",
+          "end": "14:45",
+          "category": "shopping",
+          "place": {
+            "name": "コブラ プーマ ゴルフ アウトレット あしびなー",
+            "latitude": 26.1590816,
+            "longitude": 127.6562155,
+            "applePlaceID": "ID2B7B6F4D2760D9",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-188",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00〜20:00 ごろが一般的。営業時間は出発前に確認してください。屋外は日差しが強く、2 階にドラッグストアがあります",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "玉家から徒歩約 10 分"
+          }
+        },
+        {
+          "key": "d3-05",
+          "title": "ブルーシール 豊崎店",
+          "start": "15:00",
+          "end": "15:20",
+          "category": "dessert",
+          "place": {
+            "name": "ブルーシール 豊崎",
+            "latitude": 26.1591407,
+            "longitude": 127.6597059,
+            "applePlaceID": "IA99C4322896EB6C9",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-411",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記のおすすめは琉球紅茶味",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "アウトレットから向かい側へ歩きます"
+          }
+        },
+        {
+          "key": "d3-06",
+          "title": "那覇空港：チェックイン、出国、お土産",
+          "start": "15:45",
+          "end": "17:45",
+          "category": "airport",
+          "place": {
+            "name": "那覇空港",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "タクシーで約 15 分（ブルーシールから空港）。国際線は出発 2 時間前の到着がおすすめ。この日の時間は実際の便に合わせて調整を。ターミナルの商店街にはお土産店、無印良品、ドラッグストアがあります"
+          }
+        }
+      ]
+    }
+  ]
+}
