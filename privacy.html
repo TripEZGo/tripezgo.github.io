@@ -110,7 +110,7 @@
     <header class="legal-header">
       <p class="eyebrow">法律文件</p>
       <h1>隱私權政策</h1>
-      <p class="legal-meta">適用於 TripEZGo iOS App 與 tripezgo.com　·　生效日期：2026 年 8 月 16 日　·　最後更新：2026 年 11 月 8 日</p>
+      <p class="legal-meta">適用於 TripEZGo iOS App 與 tripezgo.com　·　生效日期：2026 年 8 月 16 日　·　最後更新：2026 年 11 月 19 日</p>
     </header>
 
     <nav class="toc" aria-label="目錄">
@@ -181,8 +181,9 @@
     <p>本 App 處理資訊的目的，僅限於：提供、維持與改善本 App 的功能；依你的設定同步與備份你的內容，以及與你邀請的旅伴共享；處理你的購買與權利狀態；找出當機原因並了解功能的使用情形（第 2.3 節）；於免費版顯示廣告（第 2.4 節）；以及回覆你的來信與提供必要之技術支援。</p>
 
     <h2 id="s5">5. 資料的儲存位置</h2>
-    <p>你的內容儲存於<strong>你的裝置</strong>；若你啟用同步或備份功能，亦會儲存於<strong>你自己的雲端帳號</strong>（例如與你 Apple ID 綁定的 iCloud 空間）。</p>
+    <p>你的內容儲存於<strong>你的裝置</strong>；若你啟用同步或備份功能，亦會儲存於<strong>你自己的雲端帳號</strong>（與你 Apple ID 綁定的 iCloud 空間，或你選擇的 Google 雲端硬碟）。</p>
     <ul>
+      <li><strong>Google 雲端硬碟備份（選用）</strong>：你在設定中開啟「備份至 Google Drive」後，本 App 會把這台裝置上你自己的旅程（含筆記、靈感、購物清單、附件與相片），以及不屬於任何旅程的資料，加密後上傳到你 Google 雲端硬碟中專屬於本 App 的隱藏資料夾。這是單向備份：只從你的裝置上傳，用途是在你刪除或重新安裝 App 後，把旅程匯入回來；同步、共享旅程與位置分享仍只透過 iCloud。你加入的他人共享旅程不會被備份。這個資料夾只有本 App 能讀寫，本 App 也無法看到你雲端硬碟裡的其他檔案。</li>
       <li><strong>共享旅程</strong>：你分享給旅伴的旅程，存放於你 iCloud 中的共享空間，只有你邀請的成員能讀取；你停止分享後，成員即無法再存取。</li>
       <li><strong>分享我的位置</strong>：開啟後，你的位置與更新時間會寫入該趟共享旅程的共享空間，供成員在地圖上看到；關閉分享或結束共享後即一併移除。</li>
       <li><strong>公開連結</strong>：你建立公開連結時，旅程會先在你的裝置上加密，再存入 Apple 的 iCloud 公開資料庫；解密金鑰只存在連結本身（網址「#」之後的部分），不會傳送到任何伺服器。持有連結的人都能閱讀該旅程，你可以隨時在 App 內停止公開。</li>
@@ -196,9 +197,11 @@
       <li><strong>Firebase Crashlytics 與 Firebase Analytics（Google）</strong>：當機回報與使用統計，見第 2.3 節。</li>
       <li><strong>Google AdMob 與 Google 同意管理平台（Google）</strong>：免費版的廣告，見第 2.4 節。Google 如何使用來自合作夥伴 App 的資料，請見<a href="https://policies.google.com/technologies/partner-sites" rel="noopener" target="_blank">這份說明</a>。</li>
       <li><strong>Google 日曆（Google，選用）</strong>：只有在你於設定中連結 Google 帳號時才會使用。授權範圍僅限本 App 自己建立的日曆、你的日曆清單標題，以及你的帳號電子郵件（用於顯示你連結的是哪個帳號）；授權憑證保存在你裝置的鑰匙圈中，行程由你的裝置直接寫入你的 Google 日曆，不經過我們。</li>
+      <li><strong>Google 雲端硬碟（Google，選用）</strong>：只有在你開啟「備份至 Google Drive」或「從 Google Drive 備份匯入」時才會使用。授權範圍僅限本 App 專屬的隱藏資料夾（drive.appdata），以及你的帳號電子郵件（用於顯示你連結的是哪個帳號）。這組授權與 Google 日曆的授權分開保存，都存在你裝置的鑰匙圈中；關閉備份時，本 App 只會刪除這台裝置上的那一組授權。你的資料由你的裝置直接上傳到你的 Google 雲端硬碟、直接從那裡下載，不經過我們。</li>
       <li><strong>匯率資料（Frankfurter）</strong>：匯率換算會向公開的匯率服務下載最新匯率，請求中不包含你的任何內容。</li>
       <li><strong>店家圖資（GitHub）</strong>：地圖上的超商與店家資料，由 GitHub 下載公開的資料檔，請求中不包含你的任何內容。</li>
     </ul>
+    <p>本 App 使用與轉移自 Google API 取得之資訊時，將遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener" target="_blank">Google API 服務使用者資料政策</a>，包括其「有限使用」（Limited Use）規定：自 Google 日曆與 Google 雲端硬碟取得的資料，只用於提供與改善你在本 App 中使用的功能；除提供這些功能所必需、或法律要求外，不會轉移給第三方；不會用於廣告；不會由人員讀取（經你同意或法律要求者除外）；也不會用來開發或訓練通用的人工智慧或機器學習模型。</p>
     <p>上述 Google 服務對資料的處理，適用 <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google 隱私權政策</a>。所使用之第三方服務可能隨版本調整，我們會隨之更新本政策。</p>
 
     <h2 id="s7">7. 資訊的分享與揭露</h2>
@@ -207,7 +210,7 @@
     <p>第 2.3 節與第 2.4 節所述之診斷、使用與廣告相關資料，由本 App 內的 Google SDK 直接傳送給 Google。</p>
 
     <h2 id="s8">8. 網路連線</h2>
-    <p>本 App 的核心功能設計為可離線使用。在下列情形下，本 App 可能會連線至網路：與你的雲端帳號同步或備份、與旅伴共享旅程或位置、建立公開連結、使用地圖或地點相關功能、取得天氣（主頁天氣卡會把旅程地點或你目前位置的座標傳給 Apple 天氣服務查詢，不另外儲存或同步）、下載匯率與店家圖資、同步 Google 日曆（若你已連結）、處理購買與還原購買、傳送當機回報與使用統計、載入廣告（免費版），以及當你主動貼上或分享外部連結時，向該連結所屬網站取得預覽資訊。</p>
+    <p>本 App 的核心功能設計為可離線使用。在下列情形下，本 App 可能會連線至網路：與你的雲端帳號同步或備份、與旅伴共享旅程或位置、建立公開連結、使用地圖或地點相關功能、取得天氣（主頁天氣卡會把旅程地點或你目前位置的座標傳給 Apple 天氣服務查詢，不另外儲存或同步）、下載匯率與店家圖資、同步 Google 日曆與 Google 雲端硬碟備份（若你已連結）、處理購買與還原購買、傳送當機回報與使用統計、載入廣告（免費版），以及當你主動貼上或分享外部連結時，向該連結所屬網站取得預覽資訊。</p>
     <p>上述請求由你的裝置直接發出，<strong>不會經過我們的伺服器</strong>。相關第三方網站或服務對其所接收之資訊，適用其自身之隱私政策。</p>
 
     <h2 id="s9">9. 購買與付款</h2>
@@ -220,6 +223,7 @@
       <li>你可以隨時在本 App 中刪除個別內容。部分項目可能先進入暫存或垃圾桶區域，於一定期間後自動永久刪除，你也可以隨時手動永久刪除。</li>
       <li>刪除本 App 即可移除儲存於該裝置上的資料。</li>
       <li>儲存於你雲端帳號中的資料，可由你在該雲端服務的設定中自行刪除，或於本 App 中關閉同步功能。此項操作僅你本人能夠執行。</li>
+      <li>存在 Google 雲端硬碟的資料：在 App 的「設定」›「備份至 Google Drive」關閉備份後，可以刪除這台裝置在 Google 雲端硬碟上的備份；在「從 Google Drive 備份匯入」頁面，可以刪除任一台裝置或任一趟旅程的備份。也可以在電腦版 Google 雲端硬碟的「設定」›「管理應用程式」找到 TripEZGo，在「選項」選「刪除隱藏的應用程式資料」，一次刪除全部；在 <a href="https://myaccount.google.com/permissions" rel="noopener" target="_blank">Google 帳戶的第三方存取權</a>移除 TripEZGo，即可撤銷本 App 的授權。</li>
       <li>第 2.3 節與第 2.4 節所述之資料，依 Google 的保存政策保存與刪除。</li>
     </ul>
 
