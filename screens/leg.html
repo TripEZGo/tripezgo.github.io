@@ -161,7 +161,7 @@ const RAIL = 'M 3 1 C 2.4477 1 2 1.4477 2 2 L 2 10 C 2 10.5523 2.4477 11 3 11 L 
 const d = document.getElementById('d');
 const trip = await loadTrip();
 if (interactive) applyState(trip);   // 在行事曆拖過的時刻、選過的班次（demo-state.js）
-const key = params.get('event') || 'd1-jrpass';
+const key = params.get('event') || 'd3-03';   // 網路範本：宮島纜車（前一段是從牡蠣屋步行）
 let to, dayNo;
 for (const day of trip.days) { const e = day.events.find(x => x.key === key); if (e) { to = e; dayNo = day.day; break; } }
 const backTo = () => go('calendar', { day: params.get('day') || dayNo || 2 });
@@ -201,7 +201,7 @@ function planHTML() {
 }
 
 // 背景：行事曆（同一天），整片壓暗 20%
-const q = new URLSearchParams({ lang, day: dayNo, ...(params.get('start') ? { start: params.get('start') } : {}), ...(interactive ? { interactive: 1, sid } : {}), ...(params.get('embed') === '1' ? { embed: 1 } : {}) });
+const q = new URLSearchParams({ lang, day: dayNo, ...(params.get('today') ? { today: params.get('today') } : {}), ...(params.get('start') ? { start: params.get('start') } : {}), ...(interactive ? { interactive: 1, sid } : {}), ...(params.get('embed') === '1' ? { embed: 1 } : {}) });
 if (ipad) q.set('device', 'ipad');
 if (duo) q.set('device', 'duo');
 for (const k of ['theme', 'embed', 'still']) if (params.get(k)) q.set(k, params.get(k));   // 深色、打包進 App 的示範

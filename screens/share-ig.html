@@ -60,7 +60,7 @@ import { mountShare } from './share-ext.js';
 const d = document.getElementById('d');
 const trip = await loadTrip();
 await loadCategories();
-const place = trip.days.find(x => x.day === 2).events.find(e => e.key === 'd2-itsukushima').title;
+const place = trip.days.find(x => x.day === 3).events.find(e => e.key === 'd3-01').title;
 
 // 虛構的社群 App 網域（示意字，不是任何一家的服務）
 const HOST = 'photos.example';

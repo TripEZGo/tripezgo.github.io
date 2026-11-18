@@ -1,0 +1,413 @@
+{
+ "_note": "v3 範本沒有的畫面資料。inspirations 沿用 App 內建舊範本（照片與行程順序來自原文遊記）那份靈感，五語；範本本身沒有靈感。",
+ "inspirations": {
+  "zh-Hant-TW": [
+   {
+    "key": "i-place",
+    "title": "西條酒藏通（廣島縣 東廣島市）",
+    "summary": "JR 西條站走幾步就到，一整排清酒酒藏，多數可以試飲。",
+    "category": "sight",
+    "place": {
+     "name": "西條酒藏通（廣島縣 東廣島市）",
+     "latitude": 34.43,
+     "longitude": 132.7437
+    }
+   },
+   {
+    "key": "i-link",
+    "title": "廣島縣官方觀光網站 Dive! Hiroshima",
+    "summary": "整個廣島縣的活動、景點與交通資訊都在這裡。",
+    "url": "https://dive-hiroshima.com/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-text",
+    "text": "廣島燒直接在鐵板上吃\n坐吧台位，用小鏟子（ヘラ）邊切邊吃，才是在地人的吃法。",
+    "category": "dining"
+   },
+   {
+    "key": "i-link-kurashiki",
+    "title": "倉敷觀光 WEB（倉敷市官方觀光網站）",
+    "summary": "景點、餐廳、購物與住宿依地區查找，也有模範行程與交通資訊。",
+    "url": "https://www.kurashiki-tabi.jp/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-link-okayama",
+    "title": "岡山觀光 WEB（官方）",
+    "summary": "岡山縣觀光聯盟營運的官方網站，季節資訊、景點、模範行程與活動都在這裡。",
+    "url": "https://www.okayama-kanko.jp/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-link-harezushi",
+    "title": "「晴壽司」你知道嗎？自由風格品嚐岡山鄉土料理",
+    "summary": "岡山節慶料理「散壽司」的現代版「晴壽司」，文中介紹岡山市與倉敷兒島的兩家店。",
+    "url": "https://www.okayama-kanko.jp/okatabi/1247/page",
+    "category": "dining"
+   },
+   {
+    "key": "i-place-ivy",
+    "title": "倉敷常春藤廣場（岡山縣 倉敷市）",
+    "summary": "大正時期的紡織廠改建，紅磚配長春藤，傍晚拍照最好看。",
+    "category": "sight",
+    "place": {
+     "name": "倉敷常春藤廣場（岡山縣 倉敷市）",
+     "latitude": 34.594597,
+     "longitude": 133.773391
+    },
+    "image": "kurashiki-canal"
+   },
+   {
+    "key": "i-text-hanpu",
+    "text": "倉敷帆布美觀地區店 17:30 關門\n營業時間 10:00～17:30，年末年始休息。第 5 天逛完美觀地區還要去後樂園，記得 17:30 前進店。",
+    "category": "shopping"
+   },
+   {
+    "key": "i-photo-deer",
+    "title": "宮島的鹿",
+    "summary": "島上的野生鹿不怕人，會亂咬紙袋、地圖和外套，吃的東西要收好。",
+    "category": "park",
+    "image": "miyajima-deer"
+   },
+   {
+    "key": "i-photo-cat",
+    "title": "咖啡廳的店貓",
+    "summary": "貓之細道上還在營業的咖啡廳有一隻很黏人的店貓，會自己跑來坐在旁邊貼貼。",
+    "category": "cafe",
+    "image": "cafe-cat"
+   }
+  ],
+  "zh-Hans": [
+   {
+    "key": "i-place",
+    "title": "西条酒藏通（广岛县 东广岛市）",
+    "summary": "JR 西条站走几步就到，一整排清酒酒藏，多数可以试饮。",
+    "category": "sight",
+    "place": {
+     "name": "西条酒藏通（广岛县 东广岛市）",
+     "latitude": 34.43,
+     "longitude": 132.7437
+    }
+   },
+   {
+    "key": "i-link",
+    "title": "广岛县官方观光网站 Dive! Hiroshima",
+    "summary": "整个广岛县的活动、景点与交通信息都在这里。",
+    "url": "https://dive-hiroshima.com/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-text",
+    "text": "广岛烧直接在铁板上吃\n坐吧台位，用小铲子（ヘラ）切着吃，才是当地人的吃法。",
+    "category": "dining"
+   },
+   {
+    "key": "i-link-kurashiki",
+    "title": "仓敷观光 WEB（仓敷市官方观光网站）",
+    "summary": "景点、餐厅、购物与住宿按地区查找，还有模范行程与交通信息。",
+    "url": "https://www.kurashiki-tabi.jp/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-link-okayama",
+    "title": "冈山观光 WEB（官方）",
+    "summary": "冈山县观光联盟运营的官方网站，季节信息、景点、模范行程与活动都在这里。",
+    "url": "https://www.okayama-kanko.jp/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-link-harezushi",
+    "title": "「晴寿司」你知道吗？自由风格品尝冈山乡土料理",
+    "summary": "冈山节庆料理「散寿司」的现代版「晴寿司」，文中介绍了冈山市与仓敷儿岛的两家店。",
+    "url": "https://www.okayama-kanko.jp/okatabi/1247/page",
+    "category": "dining"
+   },
+   {
+    "key": "i-place-ivy",
+    "title": "仓敷常春藤广场（冈山县 仓敷市）",
+    "summary": "大正时期的纺织厂改建，红砖配常春藤，傍晚拍照最好看。",
+    "category": "sight",
+    "place": {
+     "name": "仓敷常春藤广场（冈山县 仓敷市）",
+     "latitude": 34.594597,
+     "longitude": 133.773391
+    },
+    "image": "kurashiki-canal"
+   },
+   {
+    "key": "i-text-hanpu",
+    "text": "仓敷帆布美观地区店 17:30 关门\n营业时间 10:00～17:30，年末年初休息。第 5 天逛完美观地区还要去后乐园，记得 17:30 前进店。",
+    "category": "shopping"
+   },
+   {
+    "key": "i-photo-deer",
+    "title": "宫岛的鹿",
+    "summary": "岛上的野生鹿不怕人，会乱咬纸袋、地图和外套，吃的东西要收好。",
+    "category": "park",
+    "image": "miyajima-deer"
+   },
+   {
+    "key": "i-photo-cat",
+    "title": "咖啡厅的店猫",
+    "summary": "猫之细道上还在营业的咖啡厅有一只很黏人的店猫，会自己跑来坐在旁边贴贴。",
+    "category": "cafe",
+    "image": "cafe-cat"
+   }
+  ],
+  "en": [
+   {
+    "key": "i-place",
+    "title": "Saijō Sake Brewery Street (Higashi-Hiroshima, Hiroshima Pref.)",
+    "summary": "A row of sake breweries a short walk from JR Saijō Station; most offer tastings.",
+    "category": "sight",
+    "place": {
+     "name": "Saijō Sake Brewery Street (Higashi-Hiroshima, Hiroshima Pref.)",
+     "latitude": 34.43,
+     "longitude": 132.7437
+    }
+   },
+   {
+    "key": "i-link",
+    "title": "Dive! Hiroshima — the prefecture's official tourism site",
+    "summary": "Seasonal events, sights and getting-around tips for all of Hiroshima Prefecture.",
+    "url": "https://dive-hiroshima.com/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-text",
+    "text": "Eat okonomiyaki straight off the griddle\nSit at the counter and cut it with the little spatula (hera) — that's how locals do it.",
+    "category": "dining"
+   },
+   {
+    "key": "i-link-kurashiki",
+    "title": "Kurashiki Kankō WEB — the city's official tourism site",
+    "summary": "Sights, dining, shopping and lodging by area, plus model itineraries and access information.",
+    "url": "https://www.kurashiki-tabi.jp/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-link-okayama",
+    "title": "Okayama Kankō WEB — the official site",
+    "summary": "Run by the Okayama Prefecture Tourism Federation: seasonal information, sights, model courses and events.",
+    "url": "https://www.okayama-kanko.jp/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-link-harezushi",
+    "title": "Ever heard of “Hare-zushi”? Okayama's local cuisine, served freestyle",
+    "summary": "A modern take on Okayama's festive bara-zushi. The article names two places to try it, one in Okayama City and one in Kojima, Kurashiki.",
+    "url": "https://www.okayama-kanko.jp/okatabi/1247/page",
+    "category": "dining"
+   },
+   {
+    "key": "i-place-ivy",
+    "title": "Kurashiki Ivy Square, Kurashiki, Okayama Pref.",
+    "summary": "A Taishō-era spinning mill turned into a complex — red brick under ivy, best photographed late in the afternoon.",
+    "category": "sight",
+    "place": {
+     "name": "Kurashiki Ivy Square, Kurashiki, Okayama Pref.",
+     "latitude": 34.594597,
+     "longitude": 133.773391
+    },
+    "image": "kurashiki-canal"
+   },
+   {
+    "key": "i-text-hanpu",
+    "text": "Kurashiki Hanpu's Bikan store closes at 17:30\nOpen 10:00–17:30, closed over New Year. On day 5 you go on to Korakuen after the Bikan quarter, so get to the shop before 17:30.",
+    "category": "shopping"
+   },
+   {
+    "key": "i-photo-deer",
+    "title": "The deer of Miyajima",
+    "summary": "The wild deer on the island are not shy and will chew paper bags, maps and coats, so keep your food put away.",
+    "category": "park",
+    "image": "miyajima-deer"
+   },
+   {
+    "key": "i-photo-cat",
+    "title": "The café cat",
+    "summary": "The café still open on Cat Alley has a very clingy house cat that comes over and snuggles up beside you.",
+    "category": "cafe",
+    "image": "cafe-cat"
+   }
+  ],
+  "ja": [
+   {
+    "key": "i-place",
+    "title": "西条酒蔵通り（広島県 東広島市）",
+    "summary": "JR 西条駅から歩いてすぐ、酒蔵が軒を連ねる通り。多くの蔵で試飲できます。",
+    "category": "sight",
+    "place": {
+     "name": "西条酒蔵通り（広島県 東広島市）",
+     "latitude": 34.43,
+     "longitude": 132.7437
+    }
+   },
+   {
+    "key": "i-link",
+    "title": "広島県公式観光サイト Dive! Hiroshima",
+    "summary": "広島県全域のイベント、見どころ、交通情報をまとめた公式サイト。",
+    "url": "https://dive-hiroshima.com/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-text",
+    "text": "お好み焼きは鉄板から直接食べる\nカウンター席に座って、小さなヘラで切りながら食べるのが地元流。",
+    "category": "dining"
+   },
+   {
+    "key": "i-link-kurashiki",
+    "title": "倉敷観光WEB（倉敷市公式観光サイト）",
+    "summary": "観光・グルメ・買い物・宿泊をエリア別に探せて、モデルコースやアクセス情報もあります。",
+    "url": "https://www.kurashiki-tabi.jp/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-link-okayama",
+    "title": "岡山観光WEB【公式】",
+    "summary": "岡山県観光連盟が運営する公式サイト。季節の情報、見どころ、モデルコース、イベントをまとめて見られます。",
+    "url": "https://www.okayama-kanko.jp/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-link-harezushi",
+    "title": "「晴寿司」って知ってる? 自由なスタイルで味わう岡山の郷土料理",
+    "summary": "岡山のハレの日の料理ばら寿司を今に伝える「晴寿司」。岡山市と倉敷・児島のお店が紹介されています。",
+    "url": "https://www.okayama-kanko.jp/okatabi/1247/page",
+    "category": "dining"
+   },
+   {
+    "key": "i-place-ivy",
+    "title": "倉敷アイビースクエア（岡山県倉敷市）",
+    "summary": "大正時代の紡績工場を改装した施設。赤レンガと蔦、夕方の写真がきれいです。",
+    "category": "sight",
+    "place": {
+     "name": "倉敷アイビースクエア（岡山県倉敷市）",
+     "latitude": 34.594597,
+     "longitude": 133.773391
+    },
+    "image": "kurashiki-canal"
+   },
+   {
+    "key": "i-text-hanpu",
+    "text": "倉敷帆布 美観地区店は 17:30 まで\n営業時間は 10:00～17:30、年末年始は休み。5 日目は美観地区のあと後楽園へ移動するので、17:30 までに店へ。",
+    "category": "shopping"
+   },
+   {
+    "key": "i-photo-deer",
+    "title": "宮島の鹿",
+    "summary": "島の野生の鹿は人を怖がらず、紙袋や地図、上着をかじります。食べ物はしまっておきましょう。",
+    "category": "park",
+    "image": "miyajima-deer"
+   },
+   {
+    "key": "i-photo-cat",
+    "title": "カフェの看板猫",
+    "summary": "猫の細道で営業を続けているカフェには人なつこい看板猫がいて、自分から隣に来て寄り添ってくれます。",
+    "category": "cafe",
+    "image": "cafe-cat"
+   }
+  ],
+  "ko": [
+   {
+    "key": "i-place",
+    "title": "사이조 양조장 거리(히로시마현 히가시히로시마시)",
+    "summary": "JR 사이조역에서 걸어서 금방인 사케 양조장 거리. 대부분 시음할 수 있어요.",
+    "category": "sight",
+    "place": {
+     "name": "사이조 양조장 거리(히로시마현 히가시히로시마시)",
+     "latitude": 34.43,
+     "longitude": 132.7437
+    }
+   },
+   {
+    "key": "i-link",
+    "title": "히로시마현 공식 관광 사이트 Dive! Hiroshima",
+    "summary": "히로시마현 전역의 행사, 볼거리, 교통 정보를 모은 공식 사이트.",
+    "url": "https://dive-hiroshima.com/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-text",
+    "text": "오코노미야키는 철판에서 바로 먹기\n카운터석에 앉아 작은 뒤집개(헤라)로 잘라 먹는 게 현지 방식이에요.",
+    "category": "dining"
+   },
+   {
+    "key": "i-link-kurashiki",
+    "title": "구라시키 관광 WEB (구라시키시 공식 관광 사이트)",
+    "summary": "관광·맛집·쇼핑·숙박을 지역별로 찾을 수 있고 추천 코스와 교통 정보도 있어요.",
+    "url": "https://www.kurashiki-tabi.jp/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-link-okayama",
+    "title": "오카야마 관광 WEB (공식)",
+    "summary": "오카야마현 관광연맹이 운영하는 공식 사이트. 계절 정보, 볼거리, 추천 코스, 행사를 한곳에서.",
+    "url": "https://www.okayama-kanko.jp/",
+    "category": "touristinfo"
+   },
+   {
+    "key": "i-link-harezushi",
+    "title": "'하레즈시'를 아시나요? 자유로운 스타일로 즐기는 오카야마 향토 요리",
+    "summary": "오카야마 명절 요리 바라즈시를 오늘에 전하는 '하레즈시'. 오카야마시와 구라시키 고지마의 가게가 소개돼요.",
+    "url": "https://www.okayama-kanko.jp/okatabi/1247/page",
+    "category": "dining"
+   },
+   {
+    "key": "i-place-ivy",
+    "title": "구라시키 아이비 스퀘어 (오카야마현 구라시키시)",
+    "summary": "다이쇼 시대 방적 공장을 개조한 시설. 붉은 벽돌과 담쟁이, 해 질 무렵 사진이 가장 좋아요.",
+    "category": "sight",
+    "place": {
+     "name": "구라시키 아이비 스퀘어 (오카야마현 구라시키시)",
+     "latitude": 34.594597,
+     "longitude": 133.773391
+    },
+    "image": "kurashiki-canal"
+   },
+   {
+    "key": "i-text-hanpu",
+    "text": "구라시키 한푸 미칸지구점은 17:30까지\n영업시간 10:00~17:30, 연말연시 휴무. 5일차는 미칸지구 다음에 고라쿠엔으로 이동하니 17:30 전에 매장에 들를 것.",
+    "category": "shopping"
+   },
+   {
+    "key": "i-photo-deer",
+    "title": "미야지마의 사슴",
+    "summary": "섬의 야생 사슴은 사람을 무서워하지 않아 종이봉투와 지도, 외투를 물어뜯어요. 먹을 것은 잘 챙겨 두세요.",
+    "category": "park",
+    "image": "miyajima-deer"
+   },
+   {
+    "key": "i-photo-cat",
+    "title": "카페의 고양이",
+    "summary": "고양이 골목에서 아직 영업 중인 카페에는 사람을 잘 따르는 고양이가 있어, 스스로 와서 옆에 앉아 붙어 있어요.",
+    "category": "cafe",
+    "image": "cafe-cat"
+   }
+  ]
+ },
+ "events": {
+  "d3-02": {
+   "all": {
+    "images": [
+     "oyster-rice"
+    ]
+   }
+  },
+  "d2-06": {
+   "all": {
+    "images": [
+     "okonomiyaki"
+    ]
+   }
+  },
+  "d5-02": {
+   "all": {
+    "images": [
+     "onomichi-ramen"
+    ]
+   }
+  }
+ }
+}

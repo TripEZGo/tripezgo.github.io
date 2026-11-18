@@ -78,7 +78,7 @@ d.insertAdjacentHTML('beforeend', `<div class="chips">${chips}</div>
 
 // 卡片
 if (card === 'place') {
-  const ev = trip.days.find(x => x.day === dayNo).events.find(e => e.key === 'd2-itsukushima');
+  const ev = trip.days.find(x => x.day === 3).events.find(e => e.key === 'd3-01');
   d.insertAdjacentHTML('beforeend', `<div class="card" id="card">
     <div class="c-head"><div class="c-text"><div class="c-title">${fmt(ev.title)}</div>
       <div class="c-sub">${fmt(ev.place.name)}</div>

@@ -10,7 +10,8 @@ import { chromium } from 'playwright';
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml' };
-const TARGETS = ['s162', 'd2-omotesando', 'd2-itsukushima', 'd2-momijidani'];   // 示範裡會按步行鈕的那幾個
+const TARGETS = [];   // 1.11.0：示範的路線是當天（第 3 天宮島）行程之間的步行段，載入時 legsFor 會自己問；再另外問「渡輪碼頭 → 第一站」
+const PIER = [34.302095, 132.322247], FIRST = [34.2960364, 132.31969];   // 宮島碼頭、嚴島神社（d3-01）
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 402, height: 874 }, deviceScaleFactor: 1 });
 await page.addInitScript(() => {
@@ -40,7 +41,7 @@ await page.route('https://tripezgo.com/**', (route) => {
   if (!fs.existsSync(p) || fs.statSync(p).isDirectory()) return route.fulfill({ status: 404, body: '' });
   route.fulfill({ status: 200, contentType: TYPES[path.extname(p)] || 'application/octet-stream', body: fs.readFileSync(p) });
 });
-await page.goto('https://tripezgo.com/screens/map-live.html?lang=zh-Hant-TW&interactive=1&nav=0&today=2&start=2026-10-09&pan=0');
+await page.goto('https://tripezgo.com/screens/map-live.html?lang=zh-Hant-TW&interactive=1&nav=0&today=3&start=2026-10-09&pan=0');
 await page.waitForSelector('body[data-ready="1"]', { timeout: 30000 });
 await page.waitForTimeout(3000);
 for (const id of TARGETS) {
@@ -56,6 +57,8 @@ for (const id of TARGETS) {
   await page.evaluate(() => document.querySelector('#alert [data-a="end"]')?.click());
   await page.waitForTimeout(1500);
 }
+await page.evaluate(([a, b]) => new Promise((res) => { const mk = window.mapkit; new mk.Directions().route({ origin: new mk.Coordinate(a[0], a[1]), destination: new mk.Coordinate(b[0], b[1]), transportType: mk.Directions.Transport.Walking }, () => res()); }), [PIER, FIRST]);
+await page.waitForTimeout(1500);
 const rec = await page.evaluate(() => window.__rec);
 const uniq = new Map(rec.map((r) => [`${r.from}>${r.to}`, r]));
 console.log('recorded', rec.length, 'unique', uniq.size);

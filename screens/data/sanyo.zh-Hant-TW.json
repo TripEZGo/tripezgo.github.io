@@ -1,1702 +1,1191 @@
 {
-  "formatVersion": 3,
-  "templateID": "jp-sanyo-hiroshima-okayama-6d",
-  "revision": 5,
-  "contentLocale": "zh-Hant-TW",
-  "title": "山陽 6 日｜廣島、宮島、尾道、倉敷、岡山",
-  "subtitle": "岡山進出、廣島當基地，一張 JR Pass 走透透",
-  "summary": "十一月的獨旅：虎航岡山進出，前三晚住廣島車站附近當基地，一天宮島嚴島神社、一天尾道千光寺與鞆之浦、一天吳市大和博物館與廣島市區，最後兩天移到倉敷與岡山。全程靠「岡山＆廣島＆山口地區 JR Pass」，連宮島渡輪都含在內。照片與行程順序都來自原文；每一段交通的班次，是 2026 年 11 月照現行時刻表（平日）重新查過的——照著走得動，但出發前仍請自己再查一次。",
-  "destination": "日本 廣島縣・岡山縣",
-  "regionCodes": [
-    "JP"
-  ],
-  "dayCount": 6,
-  "coverColour": "red",
-  "defaultTimeZoneID": "Asia/Tokyo",
-  "sourceURL": "https://blog.zhgchg.li/31b9b3a63abc",
-  "sourceTitle": "[遊記] 2023 山陽地區 廣島岡山 6 日自由行",
-  "tags": [
-    "獨旅",
-    "世界遺產",
-    "JR Pass",
-    "秋季",
-    "瀨戶內海"
-  ],
-  "todos": [
+ "formatVersion": 3,
+ "templateID": "jp-sanyo-okayama-hiroshima-6d",
+ "revision": 2,
+ "contentLocale": "zh-Hant-TW",
+ "title": "山陽 6 日｜廣島・宮島・尾道・倉敷・岡山",
+ "subtitle": "岡山進出，倉敷一晚、廣島三晚、尾道回岡山",
+ "summary": "從岡山桃太郎機場進出：第一天到倉敷，接著三晚住廣島，走宮島、原爆圓頂與吳市，第五天繞尾道回岡山，最後逛岡山城與後樂園。第五天尾道往返與轉車的交通時間佔比超過三成，想放鬆可以刪掉尾道午餐後的行程。鞆之浦、福山城與吉備津神社放在備選。",
+ "destination": "日本 岡山・廣島",
+ "regionCodes": [
+  "JP"
+ ],
+ "dayCount": 6,
+ "coverColour": "red",
+ "defaultTimeZoneID": "Asia/Tokyo",
+ "tags": [
+  "雙人",
+  "初訪",
+  "世界遺產",
+  "瀨戶內海"
+ ],
+ "todos": [
+  {
+   "text": "登錄 Visit Japan Web（入境審查與海關申報）",
+   "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 機票與訂房完成後即可填寫"
+  }
+ ],
+ "cover": "cover",
+ "allDayEvents": [
+  {
+   "key": "ad1-01",
+   "title": "住宿：倉敷站周邊（遊記住過：HOTEL LiVEMAX 岡山倉敷站前）",
+   "category": "lodging",
+   "place": {
+    "name": "倉敷",
+    "latitude": 34.6017124,
+    "longitude": 133.7654347,
+    "applePlaceID": "IC254A9932624F965",
+    "address": "岡山県倉敷市, 阿知",
+    "addressIsApproximate": true
+   },
+   "todos": [
     {
-      "text": "買「岡山＆廣島＆山口地區 JR Pass」——岡山↔廣島單程就要 ¥6,460，加上宮島、尾道、吳市幾趟很快就回本",
-      "note": "第 1 天在岡山車站領票；去廣島的新幹線和宮島渡輪都靠這張。",
-      "colour": "move"
-    },
-    {
-      "text": "兌換 JR Pass 要按機器左下角黃色的「QRコードの読取り」再掃 QR；教學文寫的藍色那顆在新版機器上會一直說 QR 無效",
-      "colour": "move"
-    },
-    {
-      "text": "進出站刷的是 JR Pass 那張票，劃位票只是座位與時間的參考，刷不進閘門",
-      "colour": "move"
-    },
-    {
-      "text": "虎航不允許帶自己的食物上飛機（樂桃沒這條規定）——起飛前先吃完",
-      "colour": "eat"
-    },
-    {
-      "text": "肉類食品不能帶進日本；頂呱呱那一整包在岡山機場當場被銷毀",
-      "colour": "eat"
-    },
-    "十一月的廣島夜裡只有 4 度上下，厚外套要帶夠",
-    {
-      "text": "宮島訪問稅 ¥100 要另外付，JR Pass 不含；碼頭有站務人員指引",
-      "note": "第 2 天搭 JR 宮島渡輪時，在碼頭付。",
-      "colour": "misc"
-    },
-    "岡山機場安檢穿靴子要脫下來，換一雙好脫的鞋",
-    "飯店洗衣機很搶手，晚上回去就先去看有沒有空機",
-    {
-      "text": "iPhone 錢包先開一張 Suica，市區公車與便利商店都刷得動",
-      "colour": "move"
+     "text": "確認飯店櫃檯時間（倉敷飯店沒有 24 小時櫃檯）",
+     "note": "遊記說需在櫃檯關閉前入住"
     }
-  ],
-  "links": [
-    {
-      "url": "https://www.westjr.co.jp/global/tc/ticket/pass/okayama_hiroshima_yamaguchi/",
-      "title": "JR 西日本 岡山＆廣島＆山口地區鐵路周遊券"
-    },
-    {
-      "url": "https://vjw-lp.digital.go.jp/zh-hant/",
-      "title": "Visit Japan Web 入境手續"
-    },
-    {
-      "url": "https://www.jnto.go.jp/safety-tips/tchi/index.html",
-      "title": "Safety tips 日本旅遊防災資訊"
-    },
-    {
-      "url": "https://dive-hiroshima.com/",
-      "title": "廣島縣官方觀光網站 Dive! Hiroshima"
-    }
-  ],
-  "images": {
-    "cafe-cat": "images/jp-sanyo-hiroshima-okayama-6d/cafe-cat.jpg",
-    "genbaku-dome": "images/jp-sanyo-hiroshima-okayama-6d/genbaku-dome.jpg",
-    "jmsdf-submarine": "images/jp-sanyo-hiroshima-okayama-6d/jmsdf-submarine.jpg",
-    "jrpass-machine": "images/jp-sanyo-hiroshima-okayama-6d/jrpass-machine.jpg",
-    "kibidango": "images/jp-sanyo-hiroshima-okayama-6d/kibidango.jpg",
-    "kibitsu-corridor": "images/jp-sanyo-hiroshima-okayama-6d/kibitsu-corridor.jpg",
-    "korakuen-night": "images/jp-sanyo-hiroshima-okayama-6d/korakuen-night.jpg",
-    "kurashiki-bikan": "images/jp-sanyo-hiroshima-okayama-6d/kurashiki-bikan.jpg",
-    "kurashiki-canal": "images/jp-sanyo-hiroshima-okayama-6d/kurashiki-canal.jpg",
-    "loop-bus-stop": "images/jp-sanyo-hiroshima-okayama-6d/loop-bus-stop.jpg",
-    "miyajima-deer": "images/jp-sanyo-hiroshima-okayama-6d/miyajima-deer.jpg",
-    "miyajima-ropeway": "images/jp-sanyo-hiroshima-okayama-6d/miyajima-ropeway.jpg",
-    "miyajima-torii": "images/jp-sanyo-hiroshima-okayama-6d/miyajima-torii.jpg",
-    "miyajima-visitor-tax": "images/jp-sanyo-hiroshima-okayama-6d/miyajima-visitor-tax.jpg",
-    "momiji-manju": "images/jp-sanyo-hiroshima-okayama-6d/momiji-manju.jpg",
-    "navy-curry": "images/jp-sanyo-hiroshima-okayama-6d/navy-curry.jpg",
-    "okonomiyaki": "images/jp-sanyo-hiroshima-okayama-6d/okonomiyaki.jpg",
-    "onomichi-ramen": "images/jp-sanyo-hiroshima-okayama-6d/onomichi-ramen.jpg",
-    "oyster-rice": "images/jp-sanyo-hiroshima-okayama-6d/oyster-rice.jpg",
-    "oyster-senbei": "images/jp-sanyo-hiroshima-okayama-6d/oyster-senbei.jpg",
-    "senkoji-view": "images/jp-sanyo-hiroshima-okayama-6d/senkoji-view.jpg",
-    "shukkeien-bamboo": "images/jp-sanyo-hiroshima-okayama-6d/shukkeien-bamboo.jpg",
-    "souvenirs-haul": "images/jp-sanyo-hiroshima-okayama-6d/souvenirs-haul.jpg",
-    "tomonoura-harbor": "images/jp-sanyo-hiroshima-okayama-6d/tomonoura-harbor.jpg",
-    "torii-souvenir": "images/jp-sanyo-hiroshima-okayama-6d/torii-souvenir.jpg",
-    "toyoko-route-map": "images/jp-sanyo-hiroshima-okayama-6d/toyoko-route-map.jpg",
-    "tram-night": "images/jp-sanyo-hiroshima-okayama-6d/tram-night.jpg",
-    "yamato-museum": "images/jp-sanyo-hiroshima-okayama-6d/yamato-museum.jpg"
+   ],
+   "fromDay": 1,
+   "toDay": 2,
+   "openingDays": [
+    2
+   ],
+   "closingDays": [
+    1
+   ]
   },
-  "files": [
+  {
+   "key": "ad2-02",
+   "title": "住宿：廣島站周邊（遊記住過：東橫INN 廣島站棒球場前）",
+   "category": "lodging",
+   "place": {
+    "name": "広島",
+    "latitude": 34.3987106,
+    "longitude": 132.4750239,
+    "applePlaceID": "I558EEBEC59B3D890",
+    "address": "広島県広島市南区, 松原町",
+    "addressIsApproximate": true
+   },
+   "fromDay": 2,
+   "toDay": 5,
+   "openingDays": [
+    3,
+    4,
+    5
+   ],
+   "closingDays": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "key": "ad5-05",
+   "title": "住宿：岡山站周邊（站前，方便搭隔天機場巴士）",
+   "category": "lodging",
+   "place": {
+    "name": "岡山",
+    "latitude": 34.666644,
+    "longitude": 133.9183193,
+    "applePlaceID": "I93FED519C6CEADFD",
+    "address": "岡山県岡山市北区, 駅元町",
+    "addressIsApproximate": true
+   },
+   "fromDay": 5,
+   "toDay": 6,
+   "openingDays": [
+    6
+   ],
+   "closingDays": [
+    5
+   ]
+  }
+ ],
+ "unscheduledEvents": [
+  {
+   "key": "u-01",
+   "title": "備選：鞆之浦（鞆の浦）",
+   "category": "sight",
+   "place": {
+    "name": "福山市鞆之浦歷史民俗資料館",
+    "latitude": 34.3842872,
+    "longitude": 133.3817812,
+    "applePlaceID": "I3C61CF436A2D46BA",
+    "address": "〒720-0202, 広島県福山市, 鞆町後地7536-1",
+    "addressIsApproximate": false
+   },
+   "notes": "營業時間請出發前確認；遊記說福山站前搭巴士約 40 分，有常夜燈與日落港景，需預留半天",
+   "durationMinutes": 60
+  },
+  {
+   "key": "u-02",
+   "title": "備選：福山城（福山城）",
+   "category": "castle",
+   "place": {
+    "name": "筋鉄御門",
+    "latitude": 34.4898953,
+    "longitude": 133.360955,
+    "applePlaceID": "I309799357674FB95",
+    "address": "〒720-0061",
+    "addressIsApproximate": true
+   },
+   "notes": "營業時間請出發前確認；遊記只在福山站後站遠看",
+   "durationMinutes": 60
+  },
+  {
+   "key": "u-03",
+   "title": "備選：吉備津神社（吉備津神社）",
+   "category": "temple",
+   "place": {
+    "name": "吉備津神社 回廊",
+    "latitude": 34.670828,
+    "longitude": 133.845825,
+    "applePlaceID": "IB405E8D6690FC293",
+    "address": "〒701-1341, 岡山県岡山市北区, 吉備津1716-1",
+    "addressIsApproximate": false
+   },
+   "notes": "營業時間請出發前確認；遊記說岡山站搭車約 30 分、下車再走約 15 分，有檜木長廊與銀杏",
+   "durationMinutes": 60
+  },
+  {
+   "key": "u-04",
+   "title": "備選：三宅商店（三宅商店）咖哩套餐",
+   "category": "dining",
+   "place": {
+    "name": "三宅商店",
+    "latitude": 34.5963058,
+    "longitude": 133.7722686,
+    "applePlaceID": "I6BA238D4BAD93333",
+    "address": "〒710-0054, 岡山県倉敷市, 本町3-11",
+    "addressIsApproximate": false
+   },
+   "notes": "營業時間請出發前確認；遊記推薦的倉敷午餐咖哩套餐",
+   "durationMinutes": 60
+  },
+  {
+   "key": "u-05",
+   "title": "備選：水果小町（パーラー果物小町）",
+   "category": "dessert",
+   "place": {
+    "name": "帕拉・水果小町",
+    "latitude": 34.5949755,
+    "longitude": 133.7710575,
+    "applePlaceID": "IE046F142B5340870",
+    "address": "〒710-0046, 岡山県倉敷市, 中央1丁目4-22 きび美ミュージアム",
+    "addressIsApproximate": false
+   },
+   "notes": "營業時間請出發前確認；遊記推薦的岡山晴王葡萄水果聖代",
+   "durationMinutes": 60
+  },
+  {
+   "key": "u-06",
+   "title": "備選：大聖院（大聖院）",
+   "category": "temple",
+   "place": {
+    "name": "大聖院",
+    "latitude": 34.2919436,
+    "longitude": 132.3185366,
+    "applePlaceID": "IC89052627BBC1008",
+    "address": "〒739-0592",
+    "addressIsApproximate": true
+   },
+   "notes": "營業時間請出發前確認；宮島紅葉谷公園一帶的古寺",
+   "durationMinutes": 60
+  },
+  {
+   "key": "u-07",
+   "title": "備選：廣島折鶴塔（おりづるタワー）",
+   "category": "viewpoint",
+   "place": {
+    "name": "おりづるタワー",
+    "latitude": 34.3957122,
+    "longitude": 132.4545106,
+    "applePlaceID": "I6D0E302BFD43D260",
+    "address": "〒730-0051, 広島県広島市中区, 大手町1丁目2-1",
+    "addressIsApproximate": false
+   },
+   "notes": "營業時間請出發前確認；遊記說就在原爆圓頂旁，高度不高沒進去",
+   "durationMinutes": 60
+  },
+  {
+   "key": "u-08",
+   "title": "備選：Bouquet d'arbres 咖啡廳（ブーケ ダルブル）",
+   "category": "cafe",
+   "place": {
+    "name": "ショコラティエ ブーケダルブル",
+    "latitude": 34.4102048,
+    "longitude": 133.1998666,
+    "applePlaceID": "I254843C667D8C7B4",
+    "address": "〒722-0033, 広島県尾道市, 東土堂町19-18",
+    "addressIsApproximate": false
+   },
+   "notes": "營業時間請出發前確認；遊記說千光寺下山途中營業的咖啡廳，店貓很黏人",
+   "durationMinutes": 60
+  }
+ ],
+ "markers": [],
+ "notes": [
+  {
+   "key": "n-01",
+   "title": "資料來源與查證",
+   "paragraphs": [
+    "來源遊記",
+    "https://zhgchg.li/posts/31b9b3a63abc/",
+    "查證（2026-11-17）",
+    "岡山機場巴士（時間、車資、加開車、倉敷直達）：https://www.okayama-airport.org/tw/access/bus （查證 2026-11-17）",
+    "廣島和平紀念資料館（開館時間、休館日、200 日圓）：https://hpmmuseum.jp/ （查證 2026-11-17）",
+    "岡山後樂園（開園時間；入園料各資料標示不一）：https://okayama-korakuen.jp/ 與岡山市公告資料（查證 2026-11-17，來源為搜尋結果）",
+    "岡山城天守（9:00–17:30，入場至 17:00，12/29–31 休）：https://okayama-castle.jp/ 與岡山市公告資料（查證 2026-11-17，來源為搜尋結果）",
+    "縮景園（開園時間、12/29–31 休）：https://shukkeien.jp/ （查證 2026-11-17，來源為搜尋結果）",
+    "大和博物館（週二休、9:00–18:00）：https://www.yamato-museum.com/ ；開館時間來自博物館資訊網 https://www.museum.or.jp/museum/13101 （查證 2026-11-17，官網未列時間）",
+    "宮島纜車（上行 9:00–16:00、下行 9:20–16:30，料金）：https://www.miyajima.or.jp/ 的料金頁與名錄資料（查證 2026-11-17，來源為搜尋結果）",
+    "千光寺山纜車（9:00–17:15、15 分一班）：觀光資訊網站（查證 2026-11-17；官方電話 0848-22-4900）",
+    "廣電路面電車車資 240 日圓：https://www.hiroden.co.jp/en/s-fares.html （查證 2026-11-17）",
+    "岡山・廣島・山口地區鐵路周遊券：https://www.westjr.co.jp/global/tc/ticket/pass/okayama_hiroshima_yamaguchi/ （查證 2026-11-17，來源為搜尋結果）",
+    "未能從官方確認，請出發前確認",
+    "阿智神社、倉敷美觀地區店家、廣島城天守（遊記 2023 年公告牌 9:00–18:00）、嚴島神社拜觀時間與拜觀料（約 300 日圓）、海上自衛隊吳史料館、尾道各店、廣島御好物語、牡蠣屋、AEON Mall 岡山的營業時間。",
+    "宮島訪問稅 100 日圓：遊記 2023 年資料，官網未查到。",
+    "新幹線岡山↔廣島的現行單程票價。",
+    "已變動與取捨",
+    "遊記原本從廣島進出（實際從岡山機場進出，第 1 天搭車到廣島、最後一天回岡山），這份改成岡山進出並重排：倉敷搬到第 1 天、廣島三晚、尾道改為第 5 天回岡山途中、岡山城與後樂園拆到第 5、6 天。",
+    "遊記的福山、鞆之浦、仙醉島、吉備津神社、倉敷小店放備選景點。",
+    "第 5 天尾道往返與轉車的交通時間佔比超過 30%，這是廣島到岡山必經的移動日；想放鬆可刪掉尾道午餐後的行程。",
+    "遊記原本一個人旅行；範本以 2 位成人安排，時間節奏已拉鬆。"
+   ]
+  },
+  {
+   "key": "n-02",
+   "title": "出發前須知",
+   "paragraphs": [
+    "交通票券",
+    "岡山・廣島・山口地區鐵路周遊券（JR 西日本）：5 天連續、大人 17,000 日圓（官網顯示，價格可能調整），含山陽新幹線岡山～博多指定席、JR 在來線與 JR 宮島渡輪。本行程第 1 天在岡山站搭 JR 到倉敷起算，第 1–5 天剛好用滿；第 6 天機場巴士不含。",
+    "沒有買周遊券時，遊記 2023 年資料：岡山↔廣島新幹線單程約 6,460 日圓，加上宮島、尾道、吳市往返，買周遊券較划算，請依出發前票價自行試算。",
+    "廣電路面電車市區一律 240 日圓、下車付費；宮島訪問稅每人 100 日圓，上島時在宮島口碼頭站務人員指引下購買。",
+    "岡山桃太郎機場進出市區",
+    "機場巴士到岡山站：約 30 分、岡山站西口 1,000 日圓（運動公園前、岡山大學通 950 日圓），可刷 ICOCA、Suica 等交通 IC 卡；時刻表 2026/10/25–2027/01/31 有效。",
+    "台北、高雄來的國際線抵達後，岡山站方向另有加開巴士，不在時刻表內，出關後直接去站牌排隊；遊記 2023 年說滿人即發車。",
+    "機場直達倉敷站：約 35 分、1,400 日圓；機場出發 12 班、其中 5 班每日行駛，其餘只在特定日期，倉敷出發到機場每日 9 班。時刻請查官網。",
+    "第 6 天回機場：岡山站西口搭同一條機場巴士，遊記說國際線出發前人多但會加開車。",
+    "官網：https://www.okayama-airport.org/tw/access/bus",
+    "住宿",
+    "第 1 晚倉敷：遊記住「HOTEL LiVEMAX 岡山倉敷站前」，在倉敷站外步行約 5 分；遊記說這家沒有 24 小時櫃檯，要在櫃檯關閉前回到飯店。",
+    "第 2–4 晚廣島：遊記住「東橫INN 廣島站棒球場前」，在 Mazda 球場外；從車站走約 15 分，要過平交道；房間面向鐵道，火車經過有聲音。",
+    "第 5 晚岡山：住岡山站周邊，隔天直接搭機場巴士。",
+    "天候與季節",
+    "11 月中下旬岡山後樂園與岡山城有秋季點燈活動（日期請查岡山觀光網）；遊記作者 11 月到訪時廣島夜晚約 4 度，需帶保暖衣物。",
+    "嚴島神社的退潮時間每天不同，想拍退潮的神社與鳥居要先查潮汐表；遊記 11 月到訪時退潮在凌晨 3 點與傍晚 5 點。",
+    "預約與提醒",
+    "第 2 天原爆資料館 7:30–8:30 與傍晚部分時段需線上預約，白天一般時段不需。",
+    "大和博物館週二休，第 4 天行程可依星期對調。",
+    "虎航機上不能自帶食物（遊記說），入境日本不要帶肉類製品。",
+    "日幣現金與交通 IC 卡都要準備。",
+    "備選",
+    "鞆之浦、福山城、吉備津神社、倉敷小店等放在備選景點，視時間與天氣加入。"
+   ]
+  },
+  {
+   "key": "n-overview",
+   "title": "旅程總覽：山陽（岡山進出）6 日怎麼走",
+   "paragraphs": [
     {
-      "image": "jrpass-machine",
-      "title": "岡山車站的 JR Pass 兌換機：要按左下黃色的「QRコードの読取り」"
+     "image": "d3-01"
+    },
+    "從岡山桃太郎機場進、岡山桃太郎機場出：第 1 晚住倉敷，接著把廣島當基地住三晚，最後一晚回岡山。山陽新幹線與 JR 是主軸，廣島市區搭路面電車，宮島搭 JR 宮島渡輪。",
+    "第 1 天：下午抵達機場，搭機場巴士與 JR 到倉敷，傍晚上阿智神社，再到 {@d1-03} 散步，晚餐在倉敷站周邊。",
+    "第 2 天：搭 JR 與山陽新幹線到廣島，先看 {@d2-01} 與和平紀念資料館，午餐吃廣島燒，下午逛廣島城，傍晚去 {@d2-05}。",
+    {
+     "image": "d2-01"
+    },
+    "第 3 天：整天在宮島，看 {@d3-01}、吃牡蠣午餐，下午搭 {@d3-03} 到獅子岩展望台，傍晚回廣島站周邊吃晚餐。",
+    "第 4 天：搭 JR 吳線到吳市，逛 {@d4-01} 與海上自衛隊吳史料館，吃吳冷麵，傍晚回廣島站購物。",
+    "第 5 天：從廣島往岡山，中途到尾道走 {@d5-01}、吃尾道拉麵，傍晚回岡山先寄行李，再逛 {@d5-03}。",
+    {
+     "image": "d6-01"
+    },
+    "第 6 天：早上逛 {@d6-01}，再到岡山站前 {@d6-02} 補伴手禮、吃天婦羅蕎麥麵，下午從站西口搭機場巴士回機場。",
+    "住宿：第 1 晚住倉敷站周邊，第 2 到 4 晚住廣島站周邊，第 5 晚住岡山站前，隔天直接搭機場巴士。",
+    "交通重點：機場到岡山站搭機場巴士約 30 分，也有直達倉敷站的班次；岡山、倉敷、廣島、尾道、吳市之間以 JR 與山陽新幹線為主，可評估岡山・廣島・山口地區鐵路周遊券是否划算，請依出發前票價自行試算；廣島市區搭廣電路面電車；宮島搭 JR 宮島渡輪，上島另付宮島訪問稅。第 5 天尾道往返與轉車的交通時間佔比超過三成，想放鬆可以刪掉尾道午餐後的行程。出發前請自己再查一次最新時刻表。",
+    "適合誰：想從岡山進出、把倉敷、廣島、宮島、吳市、尾道與岡山串成一趟的人，兩位成人的節奏。每天步行量不小，穿好走的鞋；第 2 天的資料館內容沉重，時間排鬆一點。"
+   ]
+  }
+ ],
+ "overviewNoteKey": "n-overview",
+ "inspirations": [
+  {
+   "key": "i-place",
+   "title": "西條酒藏通（廣島縣 東廣島市）",
+   "summary": "JR 西條站走幾步就到，一整排清酒酒藏，多數可以試飲。",
+   "category": "sight",
+   "place": {
+    "name": "西條酒藏通（廣島縣 東廣島市）",
+    "latitude": 34.43,
+    "longitude": 132.7437
+   }
+  },
+  {
+   "key": "i-link",
+   "title": "廣島縣官方觀光網站 Dive! Hiroshima",
+   "summary": "整個廣島縣的活動、景點與交通資訊都在這裡。",
+   "url": "https://dive-hiroshima.com/",
+   "category": "touristinfo"
+  },
+  {
+   "key": "i-text",
+   "text": "廣島燒直接在鐵板上吃\n坐吧台位，用小鏟子（ヘラ）邊切邊吃，才是在地人的吃法。",
+   "category": "dining"
+  },
+  {
+   "key": "i-link-kurashiki",
+   "title": "倉敷觀光 WEB（倉敷市官方觀光網站）",
+   "summary": "景點、餐廳、購物與住宿依地區查找，也有模範行程與交通資訊。",
+   "url": "https://www.kurashiki-tabi.jp/",
+   "category": "touristinfo"
+  },
+  {
+   "key": "i-link-okayama",
+   "title": "岡山觀光 WEB（官方）",
+   "summary": "岡山縣觀光聯盟營運的官方網站，季節資訊、景點、模範行程與活動都在這裡。",
+   "url": "https://www.okayama-kanko.jp/",
+   "category": "touristinfo"
+  },
+  {
+   "key": "i-link-harezushi",
+   "title": "「晴壽司」你知道嗎？自由風格品嚐岡山鄉土料理",
+   "summary": "岡山節慶料理「散壽司」的現代版「晴壽司」，文中介紹岡山市與倉敷兒島的兩家店。",
+   "url": "https://www.okayama-kanko.jp/okatabi/1247/page",
+   "category": "dining"
+  },
+  {
+   "key": "i-place-ivy",
+   "title": "倉敷常春藤廣場（岡山縣 倉敷市）",
+   "summary": "大正時期的紡織廠改建，紅磚配長春藤，傍晚拍照最好看。",
+   "category": "sight",
+   "place": {
+    "name": "倉敷常春藤廣場（岡山縣 倉敷市）",
+    "latitude": 34.594597,
+    "longitude": 133.773391
+   },
+   "image": "kurashiki-canal"
+  },
+  {
+   "key": "i-text-hanpu",
+   "text": "倉敷帆布美觀地區店 17:30 關門\n營業時間 10:00～17:30，年末年始休息。第 5 天逛完美觀地區還要去後樂園，記得 17:30 前進店。",
+   "category": "shopping"
+  },
+  {
+   "key": "i-photo-deer",
+   "title": "宮島的鹿",
+   "summary": "島上的野生鹿不怕人，會亂咬紙袋、地圖和外套，吃的東西要收好。",
+   "category": "park",
+   "image": "miyajima-deer"
+  },
+  {
+   "key": "i-photo-cat",
+   "title": "咖啡廳的店貓",
+   "summary": "貓之細道上還在營業的咖啡廳有一隻很黏人的店貓，會自己跑來坐在旁邊貼貼。",
+   "category": "cafe",
+   "image": "cafe-cat"
+  }
+ ],
+ "links": [],
+ "shopping": [
+  {
+   "key": "s-01",
+   "title": "海軍咖啡與海軍咖哩（呉海軍コーヒー・呉海自カレー）",
+   "category": "food",
+   "productType": "tea_coffee",
+   "store": "吳市商店街的咖啡店"
+  },
+  {
+   "key": "s-02",
+   "title": "岡山水果果凍（GOHOBI 膠原蛋白水果果凍）",
+   "category": "souvenir",
+   "productType": "cake_dessert",
+   "store": "倉敷美觀地區（遊記推薦的倉敷特產）"
+  },
+  {
+   "key": "s-03",
+   "title": "嚴島神社鳥居小模型",
+   "category": "souvenir",
+   "productType": "charm_badge",
+   "store": "宮島表參道商店"
+  },
+  {
+   "key": "s-04",
+   "title": "廣島與岡山伴手禮",
+   "category": "souvenir",
+   "productType": "cookie",
+   "store": "廣島站 ekie、岡山站與 AEON Mall 岡山（遊記說岡山站或百貨公司才有伴手禮）"
+  }
+ ],
+ "dayPlaces": [
+  {
+   "name": "倉敷市",
+   "latitude": 34.58333,
+   "longitude": 133.76667,
+   "timeZoneID": "Asia/Tokyo",
+   "countryCode": "JP"
+  },
+  {
+   "name": "廣島市",
+   "latitude": 34.4,
+   "longitude": 132.45,
+   "timeZoneID": "Asia/Tokyo",
+   "countryCode": "JP"
+  },
+  {
+   "name": "廣島市",
+   "latitude": 34.4,
+   "longitude": 132.45,
+   "timeZoneID": "Asia/Tokyo",
+   "countryCode": "JP"
+  },
+  {
+   "name": "廣島市",
+   "latitude": 34.4,
+   "longitude": 132.45,
+   "timeZoneID": "Asia/Tokyo",
+   "countryCode": "JP"
+  },
+  {
+   "name": "岡山市",
+   "latitude": 34.65,
+   "longitude": 133.93333,
+   "timeZoneID": "Asia/Tokyo",
+   "countryCode": "JP"
+  },
+  {
+   "name": "岡山市",
+   "latitude": 34.65,
+   "longitude": 133.93333,
+   "timeZoneID": "Asia/Tokyo",
+   "countryCode": "JP"
+  }
+ ],
+ "days": [
+  {
+   "day": 1,
+   "title": "倉敷市",
+   "events": [
+    {
+     "key": "d1-01",
+     "title": "抵達岡山桃太郎機場（岡山桃太郎空港）",
+     "start": "14:00",
+     "end": "15:00",
+     "category": "airport",
+     "place": {
+      "name": "岡山機場",
+      "latitude": 34.760098,
+      "longitude": 133.8532645,
+      "applePlaceID": "I7E27BF1F5E5B283F",
+      "address": "〒701-1131, 岡山県岡山市北区, 日応寺1277",
+      "addressIsApproximate": false
+     }
     },
     {
-      "image": "loop-bus-stop",
-      "title": "廣島車站的定期觀光巴士站牌與路線圖（JR Pass 可搭）"
-    }
-  ],
-  "allDayEvents": [
-    {
-      "key": "stay-toyoko",
-      "title": "東橫INN 廣島站棒球場前（3 晚）",
-      "fromDay": 1,
-      "toDay": 4,
-      "category": "hotel",
-      "colour": "taupe",
-      "place": {
-        "name": "東橫INN 廣島站棒球場前（廣島縣 廣島市）",
-        "latitude": 34.393721,
-        "longitude": 132.481499
-      },
-      "notes": "單人禁菸房，這趟三間裡 CP 值最高的一間，一晚約 NT$1,537。從廣島車站走過去比地圖看起來遠——施工中又要跨平交道，一個人拖行李抓 18 分鐘。飯店在 MAZDA 球場外，沒比賽的日子整條路很冷清，夜歸要有心理準備。Check-in 從 16:00 開始，單人房不大但該有的都有。櫃檯有免費的洗衣券可以問——一個人帶的衣服少，中途洗一次就夠撐完六天。",
-      "openingDays": [
-        2,
-        3,
-        4
-      ],
-      "closingDays": [
-        1,
-        2,
-        3
-      ],
-      "todos": [
-        "訂房確認信與護照放同一個夾層，Check-in 要出示",
-        "退房前檢查抽屜與插座，充電器最容易留在牆上"
-      ],
-      "links": [
-        {
-          "url": "https://www.toyoko-inn.com/china/search/detail/00202/",
-          "title": "東橫INN 廣島站棒球場前 官網"
-        }
-      ],
-      "files": [
-        {
-          "image": "toyoko-route-map",
-          "title": "東橫INN 廣島站棒球場前：從廣島車站走過去的路線（地圖截圖，實際要多走一些）"
-        }
-      ]
-    },
-    {
-      "key": "stay-apa",
-      "title": "APA 飯店 廣島站前大橋（1 晚）",
-      "fromDay": 4,
-      "toDay": 5,
-      "category": "hotel",
-      "colour": "taupe",
-      "place": {
-        "name": "APA 飯店 廣島站前大橋（廣島縣 廣島市）",
-        "latitude": 34.395364,
-        "longitude": 132.471991
-      },
-      "notes": "東橫INN 訂不到第四晚，單人房改住這裡。離廣島車站比較近，但要過大馬路再過橋，實際走約 10 分鐘；從東橫INN 走過來 15 分鐘，一個人搬行李還算輕鬆。APA 的退房是 11:00，不趕。一個人沒有人幫忙看行李，直接拖去車站最省事——今天整天都在移動。今晚換到 APA，兩間飯店走路 15 分鐘。一個人搬行李，先拖過去寄放最省事，櫃檯收得很乾脆，不必等到下午 Check-in。",
-      "openingDays": [
-        5
-      ],
-      "closingDays": [
-        4
-      ]
-    },
-    {
-      "key": "stay-livemax",
-      "title": "Livemax 飯店 岡山倉敷站前（1 晚）",
-      "fromDay": 5,
-      "toDay": 6,
-      "category": "hotel",
-      "colour": "taupe",
-      "place": {
-        "name": "Livemax 飯店 岡山倉敷站前（岡山縣 倉敷市）",
-        "latitude": 34.602529,
-        "longitude": 133.768515
-      },
-      "notes": "岡山市區已經找不到一個人住還划算的房間，往 JR 沿線找到倉敷。就在倉敷車站外走五分鐘，而且倉敷也有直達岡山機場的交通車，隔天自己趕飛機不必再繞回岡山。",
-      "openingDays": [
-        6
-      ],
-      "closingDays": [
-        5
-      ],
-      "todos": [
-        "櫃檯不是 24 小時：Check-in 前先確認櫃檯關門時間，夜歸要在那之前回到飯店"
-      ]
-    },
-    {
-      "key": "jr-pass",
-      "title": "岡山＆廣島＆山口地區 JR Pass（5 日）",
-      "fromDay": 1,
-      "toDay": 5,
-      "category": "train",
-      "colour": "green",
-      "notes": "¥17,000，涵蓋山陽新幹線岡山↔廣島、宮島口的 JR 山陽本線與 JR 宮島渡輪。一個人的行程可以說改就改，這張票讓「臨時多跳一站」不必再算一次錢——光是岡山↔廣島來回就要 ¥12,920。第 6 天回程走機場巴士，用不到它。",
-      "todos": [
-        {
-          "text": "出發前先在網站上劃好新幹線的位子，尖峰時段自由席會站著",
-          "colour": "move"
-        },
-        {
-          "text": "第一次使用當天到綠色窗口或兌換機領實體票",
-          "colour": "move"
-        }
-      ],
-      "links": [
-        {
-          "url": "https://www.westjr.co.jp/global/tc/ticket/pass/okayama_hiroshima_yamaguchi/",
-          "title": "JR 西日本 岡山＆廣島＆山口地區鐵路周遊券"
-        }
-      ]
-    }
-  ],
-  "unscheduledEvents": [
-    {
-      "key": "u-okunoshima",
-      "title": "大久野島（兔島）",
-      "durationMinutes": 300,
-      "category": "sight",
-      "colour": "green",
-      "place": {
-        "name": "大久野島・兔島（廣島縣 竹原市）",
-        "latitude": 34.309121,
-        "longitude": 132.993759
-      },
-      "notes": "行前就列在參考名單上，車程太遠沒排進來。要從忠海港搭渡輪，來回連玩至少半天——一個人時間全是自己的，但半天就是半天。下次把它跟尾道排在同一趟。"
-    },
-    {
-      "key": "u-daishoin",
-      "title": "宮島 大聖院",
-      "durationMinutes": 45,
-      "category": "temple",
-      "colour": "none",
-      "place": {
-        "name": "大聖院（廣島縣 廿日市市）",
-        "latitude": 34.291729,
-        "longitude": 132.318578
-      },
-      "notes": "嚴島神社往山上走五分鐘，宮島最古老的寺院。坡緩、人少，一個人慢慢走剛好。這次時間都給了纜車，留著下次。"
-    },
-    {
-      "key": "u-onomichi-u2",
-      "title": "ONOMICHI U2 海邊倉庫",
+     "key": "d1-02",
+     "title": "阿智神社（阿智神社）：高處俯瞰倉敷",
+     "start": "16:30",
+     "end": "17:20",
+     "category": "temple",
+     "place": {
+      "name": "阿智神社",
+      "latitude": 34.5974588,
+      "longitude": 133.7734768,
+      "applePlaceID": "IC4617BF6EA7D33DE",
+      "address": "〒710-0054, 岡山県倉敷市, 本町12-1",
+      "addressIsApproximate": false
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "bus",
       "durationMinutes": 90,
-      "category": "cafe",
-      "colour": "amber",
-      "place": {
-        "name": "ONOMICHI U2（廣島縣 尾道市）",
-        "latitude": 34.401959,
-        "longitude": 133.189908
-      },
-      "notes": "海運倉庫改建的複合設施，麵包店與自行車旅館都在裡面。離尾道車站走路 10 分鐘，一個人等回程列車時很適合塞進去。"
-    },
-    {
-      "key": "u-kibitsuhiko",
-      "title": "吉備津彥神社",
-      "durationMinutes": 45,
-      "category": "temple",
-      "colour": "none",
-      "place": {
-        "name": "吉備津彥神社（岡山縣 岡山市）",
-        "latitude": 34.676572,
-        "longitude": 133.863513
-      },
-      "notes": "跟吉備津神社只差一站，桃太郎傳說的另一半。趕飛機那天沒排進去——一個人沒有人幫忙顧行李，繞路的成本比想像中高。"
-    },
-    {
-      "key": "u-fukuyama-castle",
-      "title": "福山城（車站後站遠眺）",
-      "durationMinutes": 40,
-      "category": "castle",
-      "colour": "none",
-      "place": {
-        "name": "福山城（廣島縣 福山市）",
-        "latitude": 34.490996,
-        "longitude": 133.361146
-      },
-      "notes": "從尾道回程在福山轉車時，天守閣就貼在車站後站，不進去也拍得到。原作者只遠遠拍了一張就走；這一天尾道到鞆之浦的班次已經很緊，所以放在待排，有空檔再插進去。要進去的話門票 ¥500。"
-    },
-    {
-      "key": "u-sensuijima",
-      "title": "仙醉島",
-      "durationMinutes": 60,
-      "category": "sight",
-      "colour": "green",
-      "place": {
-        "name": "仙醉島（廣島縣 福山市）",
-        "latitude": 34.383117,
-        "longitude": 133.397853
-      },
-      "notes": "從福山市營渡船場搭「平成伊呂波丸」過去約 5～10 分鐘，船本身仿的是坂本龍馬那艘，約每 20 分鐘一班（官方時刻表沒查到，以現場為準）。島上是五色岩海岸，不過原作者去的時候遊客中心已關閉準備拆除、通往山上海岸的步道因落石封閉，只在沙灘待了 15 分鐘，所以放在待排。末班船很早，上島前先看好回程時刻。"
-    },
-    {
-      "key": "u-hiroshima-castle",
-      "title": "廣島城",
-      "durationMinutes": 50,
-      "category": "castle",
-      "colour": "green",
-      "place": {
-        "name": "廣島城（廣島縣 廣島市）",
-        "latitude": 34.402146,
-        "longitude": 132.45954
-      },
-      "notes": "重建的天守閣，內部是歷史博物館，門票 ¥370。原作者從縮景園漫步過來，覺得整體很新、天守不高、看不到什麼風景。這一天下午要在縮景園與資料館（11 月 19:00 閉館）之間分配時間，所以放在待排；從縮景園走過來約 12 分鐘。"
-    },
-    {
-      "key": "u-kibitsu-shrine",
-      "title": "吉備津神社",
-      "durationMinutes": 90,
-      "category": "temple",
-      "colour": "red",
-      "place": {
-        "name": "吉備津神社（岡山縣 岡山市）",
-        "latitude": 34.670682,
-        "longitude": 133.850611
-      },
-      "notes": "桃太郎傳說的起點，本殿是國寶。最有名的是 360 公尺長的迴廊，順著山勢一路延伸下去，早上人少的時候整條都是自己的——一個人走這一段最值得。",
-      "images": [
-        "kibitsu-corridor"
-      ]
-    }
-  ],
-  "markers": [
-    {
-      "key": "m-mazda-stadium",
-      "name": "MAZDA Zoom-Zoom 廣島棒球場（廣島縣 廣島市）",
-      "latitude": 34.391912,
-      "longitude": 132.48462,
-      "category": "sight",
-      "notes": "飯店就在球場旁。有比賽的日子這一帶會完全變一個樣子，而且一個人反而最容易買到單張票。"
-    },
-    {
-      "key": "m-hondori",
-      "name": "本通商店街（廣島縣 廣島市）",
-      "latitude": 34.39382,
-      "longitude": 132.456974,
-      "category": "shopping",
-      "notes": "廣島市區最熱鬧的有頂商店街，藥妝與伴手禮一次買齊。買完就是自己提，行李重量要自己算。"
-    },
-    {
-      "key": "m-okonomimura",
-      "name": "御好燒村（廣島縣 廣島市）",
-      "latitude": 34.391289,
-      "longitude": 132.461894,
-      "category": "dining",
-      "notes": "一整棟樓都是廣島燒攤位，每一家都是鐵板前一排吧台位——一個人反而最好坐。站前廣場排不進去就來這裡。"
-    },
-    {
-      "key": "m-orizuru",
-      "name": "折鶴塔（廣島縣 廣島市）",
-      "latitude": 34.39567,
-      "longitude": 132.454686,
-      "category": "viewpoint",
-      "notes": "屋頂展望台看得到原爆圓頂與整片市區，晴天連宮島的彌山都看得見。一個人看夜景不必配合誰的體力，想待多久就待多久。"
-    },
-    {
-      "key": "m-misen",
-      "name": "彌山（廣島縣 廿日市市）",
-      "latitude": 34.279592,
-      "longitude": 132.319611,
-      "category": "mountain",
-      "notes": "宮島最高點，從獅子岩展望台再走 30 分鐘上去。山路一個人走，回程纜車的末班要先記下來。"
-    },
-    {
-      "key": "m-senjokaku",
-      "name": "千疊閣・豐國神社（廣島縣 廿日市市）",
-      "latitude": 34.297304,
-      "longitude": 132.320269,
-      "category": "temple",
-      "notes": "嚴島神社旁的大殿與五重塔，木地板赤腳走很涼快。人少的時候坐在邊上發呆，是一個人才做得成的事。"
-    },
-    {
-      "key": "m-miyajima-aquarium",
-      "name": "宮島水族館（廣島縣 廿日市市）",
-      "latitude": 34.295476,
-      "longitude": 132.315651,
-      "category": "aquarium",
-      "notes": "宮島唯一的水族館，一個人看完約一小時。這趟時間全給了纜車與神社，跳過了。"
-    },
-    {
-      "key": "m-tennei-ji",
-      "name": "天寧寺 三重塔（廣島縣 尾道市）",
-      "latitude": 34.409566,
-      "longitude": 133.200793,
-      "category": "temple",
-      "notes": "從貓之細道往下拍尾道水道，最有名的那個構圖就在這裡。一個人沒有人幫忙按快門，腳架或自拍桿帶著比較實在。"
-    },
-    {
-      "key": "m-senkoji-park",
-      "name": "千光寺公園展望台（廣島縣 尾道市）",
-      "latitude": 34.409818,
-      "longitude": 133.196308,
-      "category": "viewpoint",
-      "notes": "纜車山頂站旁的展望台，尾道水道與對岸向島一覽無遺。長椅不少，一個人待多久都沒人催。"
-    },
-    {
-      "key": "m-iou-ji",
-      "name": "醫王寺（廣島縣 福山市）",
-      "latitude": 34.383183,
-      "longitude": 133.37681,
-      "category": "temple",
-      "notes": "鞆之浦的高處，爬一段石階就能俯瞰整個港口。遊客很少，一個人上去要自己留意天黑的時間。"
-    },
-    {
-      "key": "m-alley",
-      "name": "アレイからすこじま 潛艦碼頭（廣島縣 吳市）",
-      "latitude": 34.225681,
-      "longitude": 132.549211,
-      "category": "harbor",
-      "notes": "全日本唯一看得到潛艦停泊的公園，離大和博物館走路 25 分鐘。單程就要半小時，一個人排行程前先想清楚划不划算。"
-    },
-    {
-      "key": "m-ohara",
-      "name": "大原美術館（岡山縣 倉敷市）",
-      "latitude": 34.596032,
-      "longitude": 133.770439,
-      "category": "artgallery",
-      "notes": "日本第一座西洋美術館，葛雷柯與莫內都在裡面。一個人逛美術館可以停在同一幅畫前面很久，這裡值得。"
-    },
-    {
-      "key": "m-mingeikan",
-      "name": "倉敷民藝館（岡山縣 倉敷市）",
-      "latitude": 34.595482,
-      "longitude": 133.771504,
-      "category": "museum",
-      "notes": "米倉改建，白牆與海鼠牆本身就是展品。館不大，一個人 40 分鐘走得完。"
-    },
-    {
-      "key": "m-ivy-square",
-      "name": "倉敷常春藤廣場（岡山縣 倉敷市）",
-      "latitude": 34.594597,
-      "longitude": 133.773391,
-      "category": "sight",
-      "notes": "大正時期的紡織廠改建，紅磚配長春藤，傍晚拍照最好看。腹地大、人不多，一個人繞一圈很舒服。"
-    },
-    {
-      "key": "m-yumeji",
-      "name": "夢二鄉土美術館（岡山縣 岡山市）",
-      "latitude": 34.670712,
-      "longitude": 133.934643,
-      "category": "artgallery",
-      "notes": "後樂園對面，竹久夢二的故鄉美術館。從後樂園走過去五分鐘，一個人順路補一站剛好。"
-    },
-    {
-      "key": "m-pref-museum",
-      "name": "岡山縣立美術館（岡山縣 岡山市）",
-      "latitude": 34.667669,
-      "longitude": 133.929811,
-      "category": "artgallery",
-      "notes": "從後樂園走回市區的路上。一個人遇到下雨時，這裡是最近的備案。"
-    },
-    {
-      "key": "m-omotecho",
-      "name": "表町商店街（岡山縣 岡山市）",
-      "latitude": 34.658174,
-      "longitude": 133.930313,
-      "category": "shopping",
-      "notes": "岡山市區的老商店街，從岡山城走過去約 15 分鐘。晚上還開著的店不少，一個人吃飯有得挑。"
-    }
-  ],
-  "notes": [
-    {
-      "key": "n-example",
-      "title": "範例：前兩天怎麼走",
-      "paragraphs": [
-        "下午先到 {@d1-jrpass}，換好票再搭新幹線去廣島。",
-        "晚餐在 {@d1-okonomiyaki}，人多要排隊，早點去。",
-        "隔天一早去 {@d2-itsukushima}，漲潮時的大鳥居最好看。",
-        "在筆記裡打 @ 就能連到行程與購物項目，點一下直接打開。"
-      ]
-    },
-    {
-      "key": "n-transport",
-      "title": "範例：JR Pass 與交通怎麼接",
-      "paragraphs": [
-        "{@d1-jrpass}：先把實體票領到手，之後去宮島渡輪、尾道、吳市都靠這張。",
-        "{@d2-ferry}：JR Pass 含，不用另外買船票；只有宮島訪問稅 ¥100 要在碼頭另外付。",
-        "進出站刷的是 JR Pass 那張票，劃位票只是座位與時間的參考，刷不進閘門",
-        "最後一天從 {@d6-aeon} 搭巴士去機場，班次寫在 {@d6-flight-okj-tpe} 的路程裡。",
-        "市區移動靠廣島的廣電與岡山的岡電兩種路面電車，IC 卡都能刷。下面是廣島夜裡的電車。",
-        {
-          "image": "tram-night"
-        }
-      ]
-    },
-    {
-      "key": "n-souvenirs",
-      "title": "範例：伴手禮在哪裡買",
-      "paragraphs": [
-        "第 2 天宮島的 {@d2-itsukushima} 店很多，先看看就好，伴手禮回程再買，不用一路提著走。",
-        "第 4 天回到廣島車站：購物清單裡的牡蠣仙貝、熊野化妝刷在車站的 ekie 買得到，順便也能挑一盒紅葉饅頭、一個穴子飯便當。",
-        "第 5 天 {@d5-bikan}：倉敷帆布的店營業到 17:30，先進店，再趕後樂園的夜間點燈。",
-        "吉備糰子在岡山車站買；最後一天在 {@d6-aeon} 補貨，肉類製品不能帶回台灣。",
-        "第 4 天 {@d4-kure-lunch}：吳市商店街有賣海軍咖啡與海軍咖哩的小店，店員很親切，是這趟最有特色的伴手禮。下面是這趟帶回來的戰利品。",
-        {
-          "image": "souvenirs-haul"
-        }
-      ]
-    },
-    {
-      "key": "n-pitfalls",
-      "title": "範例：踩雷與提醒",
-      "paragraphs": [
-        "尾道與鞆之浦的班次很疏：{@d3-senkoji} 與 {@d3-tomonoura} 的路程出發前先看好時刻，錯過一班常常要乾等 30 分鐘。",
-        "{@d4-peace-museum} 11 月開到 19:00（最後入館 18:30），傍晚時段要先在官網預約網路票；12–2 月只開到 18:00。",
-        "APA 整棟一千多間房只有 7 台洗衣機，要洗衣服就在洗衣機快結束時下樓排隊——原作者洗到晚上 11 點多才洗好烘好。",
-        "Livemax 飯店沒有 24 小時櫃檯：{@d5-korakuen} 之後的末班車，要抓在關櫃檯之前。",
-        "岡山機場的 X 光機在大廳，安檢完貼上封條才去報到；穿靴子安檢要脫。{@d6-flight-okj-tpe} 前把行李整理好，別在櫃檯前再打開。"
-      ]
-    },
-    {
-      "key": "n-overview",
-      "title": "旅程總覽：山陽 6 日怎麼走",
-      "paragraphs": [
-        {
-          "image": "miyajima-torii"
-        },
-        "從岡山進、岡山出，中間把廣島當基地住三晚，最後兩晚移到倉敷與岡山。全程只靠一張 {@jr-pass}，連宮島渡輪都含在內，不必每天再想買哪種票。",
-        "第 1 天：岡山落地，兌換 JR Pass 搭車到廣島，晚餐吃廣島燒。",
-        "第 2 天：一整天在宮島，逛 {@d2-itsukushima}、搭纜車上獅子岩，傍晚回廣島看原爆圓頂與和平公園。",
-        "第 3 天：到尾道走千光寺與貓之細道，午餐吃尾道拉麵，下午去鞆之浦的港邊散步。",
-        {
-          "image": "senkoji-view"
-        },
-        "第 4 天：到吳市看大和博物館與鐵鯨館，下午回廣島市區逛縮景園與和平紀念資料館。",
-        "第 5 天：移到倉敷，逛 {@d5-bikan}、吃咖哩、看美術館，晚上趕岡山後樂園的夜間點燈。",
-        {
-          "image": "kurashiki-bikan"
-        },
-        "第 6 天：在岡山 AEON 補伴手禮、吃午餐，下午搭機回程。",
-        "住宿：{@stay-toyoko}當基地，第四晚換到 {@stay-apa}，最後一晚住 {@stay-livemax}，隔天直接搭交通車去機場。",
-        "交通重點：岡山機場與岡山車站之間搭機場交通車；廣島、尾道、吳、倉敷、岡山之間的移動與宮島渡輪都在 JR Pass 範圍內；廣島市區以步行與市電為主；鞆之浦要從福山轉搭巴士，不在 JR Pass 範圍。出發前請自己再查一次最新時刻表。",
-        "適合誰：想用一張票把廣島、宮島、尾道、倉敷、岡山一次走完的人。一個人或兩三個人都走得動，每天步行量不小，穿好走的鞋。"
-      ]
-    }
-  ],
-  "overviewNoteKey": "n-overview",
-  "inspirations": [
-    {
-      "key": "i-place",
-      "title": "西條酒藏通（廣島縣 東廣島市）",
-      "summary": "JR 西條站走幾步就到，一整排清酒酒藏，多數可以試飲。",
-      "category": "sight",
-      "place": {
-        "name": "西條酒藏通（廣島縣 東廣島市）",
-        "latitude": 34.43,
-        "longitude": 132.7437
+      "durationSource": "user",
+      "fromKey": "d1-01",
+      "note": "機場巴士到岡山站約 30 分、1,000 日圓（國際線抵達後出口有加開車）；轉 JR 山陽本線到倉敷約 17 分；再步行約 15 分到阿智神社"
+     },
+     "todos": [
+      {
+       "text": "確認機場巴士時刻與倉敷直達班次",
+       "note": "https://www.okayama-airport.org/tw/access/bus 2026/10/25 起時刻表"
       }
+     ],
+     "images": [
+      "d1-02"
+     ]
     },
     {
-      "key": "i-link",
-      "title": "廣島縣官方觀光網站 Dive! Hiroshima",
-      "summary": "整個廣島縣的活動、景點與交通資訊都在這裡。",
-      "url": "https://dive-hiroshima.com/",
-      "category": "touristinfo"
+     "key": "d1-03",
+     "title": "倉敷美觀地區（倉敷美観地区）：傍晚散步",
+     "start": "17:35",
+     "end": "19:00",
+     "category": "sight",
+     "place": {
+      "name": "倉敷美觀地區",
+      "latitude": 34.5957059,
+      "longitude": 133.7716304,
+      "applePlaceID": "IAB89652100DAF584",
+      "address": "〒710-0046, 岡山県倉敷市, 中央",
+      "addressIsApproximate": true
+     },
+     "notes": "街區可自由步行；各店家營業時間請出發前確認",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 10,
+      "durationSource": "user",
+      "fromKey": "d1-02",
+      "note": "從阿智神社沿石階下山，步行約 10 分"
+     },
+     "images": [
+      "d1-03"
+     ]
     },
     {
-      "key": "i-text",
-      "text": "廣島燒直接在鐵板上吃\n坐吧台位，用小鏟子（ヘラ）邊切邊吃，才是在地人的吃法。",
-      "category": "dining"
-    },
-    {
-      "key": "i-link-kurashiki",
-      "title": "倉敷觀光 WEB（倉敷市官方觀光網站）",
-      "summary": "景點、餐廳、購物與住宿依地區查找，也有模範行程與交通資訊。",
-      "url": "https://www.kurashiki-tabi.jp/",
-      "category": "touristinfo"
-    },
-    {
-      "key": "i-link-okayama",
-      "title": "岡山觀光 WEB（官方）",
-      "summary": "岡山縣觀光聯盟營運的官方網站，季節資訊、景點、模範行程與活動都在這裡。",
-      "url": "https://www.okayama-kanko.jp/",
-      "category": "touristinfo"
-    },
-    {
-      "key": "i-link-harezushi",
-      "title": "「晴壽司」你知道嗎？自由風格品嚐岡山鄉土料理",
-      "summary": "岡山節慶料理「散壽司」的現代版「晴壽司」，文中介紹岡山市與倉敷兒島的兩家店。",
-      "url": "https://www.okayama-kanko.jp/okatabi/1247/page",
-      "category": "dining"
-    },
-    {
-      "key": "i-place-ivy",
-      "title": "倉敷常春藤廣場（岡山縣 倉敷市）",
-      "summary": "大正時期的紡織廠改建，紅磚配長春藤，傍晚拍照最好看。",
-      "category": "sight",
-      "place": {
-        "name": "倉敷常春藤廣場（岡山縣 倉敷市）",
-        "latitude": 34.594597,
-        "longitude": 133.773391
-      },
-      "image": "kurashiki-canal"
-    },
-    {
-      "key": "i-text-hanpu",
-      "text": "倉敷帆布美觀地區店 17:30 關門\n營業時間 10:00～17:30，年末年始休息。第 5 天逛完美觀地區還要去後樂園，記得 17:30 前進店。",
-      "category": "shopping"
-    },
-    {
-      "key": "i-photo-deer",
-      "title": "宮島的鹿",
-      "summary": "島上的野生鹿不怕人，會亂咬紙袋、地圖和外套，吃的東西要收好。",
-      "category": "park",
-      "image": "miyajima-deer"
-    },
-    {
-      "key": "i-photo-cat",
-      "title": "咖啡廳的店貓",
-      "summary": "貓之細道上還在營業的咖啡廳有一隻很黏人的店貓，會自己跑來坐在旁邊貼貼。",
-      "category": "cafe",
-      "image": "cafe-cat"
+     "key": "d1-04",
+     "title": "晚餐：倉敷站周邊",
+     "start": "19:15",
+     "end": "20:15",
+     "category": "dining",
+     "place": {
+      "name": "倉敷站周邊餐廳",
+      "latitude": 34.6015261,
+      "longitude": 133.7660173,
+      "address": "岡山県倉敷市阿知1丁目",
+      "addressIsApproximate": false
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 15,
+      "durationSource": "user",
+      "fromKey": "d1-03",
+      "note": "從美觀地區步行約 15 分回倉敷站前"
+     }
     }
-  ],
-  "shopping": [
+   ]
+  },
+  {
+   "day": 2,
+   "title": "廣島市",
+   "events": [
     {
-      "key": "s-momiji",
-      "title": "紅葉饅頭 細豆沙 8 入（藤い屋）",
-      "category": "souvenir",
-      "productType": "wagashi",
-      "priceJPY": 1120,
-      "store": "藤い屋 宮島本店、廣島車站商店",
-      "image": "momiji-manju"
+     "key": "d2-01",
+     "title": "原爆圓頂與平和紀念公園（原爆ドーム・平和記念公園）",
+     "start": "10:45",
+     "end": "11:45",
+     "category": "sight",
+     "place": {
+      "name": "原爆Dome",
+      "latitude": 34.3954753,
+      "longitude": 132.4535978,
+      "applePlaceID": "I5E095211678C6A0E",
+      "address": "〒730-0051, 広島県広島市中区, 大手町1丁目10",
+      "addressIsApproximate": false
+     },
+     "notes": "圓頂與公園全天可參觀",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "train",
+      "durationMinutes": 120,
+      "durationSource": "user",
+      "note": "JR 到岡山約 20 分，轉山陽新幹線到廣島約 40 分（先到廣島站寄放行李），再搭廣電路面電車到原爆圓頂前站約 15 分、240 日圓"
+     },
+     "todos": [
+      {
+       "text": "購買岡山・廣島・山口地區鐵路周遊券",
+       "note": "JR 西日本官網或代理商；第 1 天起算 5 天，到岡山站兌換（遊記說要用「QRコードの読取り」按鈕掃描 QR Code）"
+      }
+     ],
+     "images": [
+      "d2-01"
+     ]
     },
     {
-      "key": "s-oyster-senbei",
-      "title": "牡蠣整顆仙貝 8 片裝（マルイチ商店）",
-      "category": "food",
-      "productType": "savory_snack",
-      "priceJPY": 702,
-      "store": "オイスターキッチン・マルイチ 広島ekie店",
-      "image": "oyster-senbei"
+     "key": "d2-02",
+     "title": "廣島和平紀念資料館（広島平和記念資料館）",
+     "start": "12:00",
+     "end": "13:15",
+     "category": "museum",
+     "place": {
+      "name": "広島平和記念資料館",
+      "latitude": 34.3917983,
+      "longitude": 132.4520946,
+      "applePlaceID": "I994A655E4AB1C1B",
+      "address": "〒730-0811, 広島県広島市中区, 中島町1-2",
+      "addressIsApproximate": false
+     },
+     "notes": "3–7 月與 9–11 月 7:30–19:00，12–2 月 7:30–18:00（閉館前 30 分停止入場）；12/30–31 休，2027 年 2/15–20 閉館換展",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 10,
+      "durationSource": "user",
+      "fromKey": "d2-01",
+      "note": "在平和紀念公園內步行約 10 分；參觀約 60–75 分，內容沉重"
+     },
+     "images": [
+      "d2-02"
+     ]
     },
     {
-      "key": "s-navy-curry",
-      "title": "吳海自咖哩 調理包",
-      "category": "food",
-      "productType": "instant_meal",
-      "priceJPY": 700,
-      "store": "吳阪急飯店咖啡廳等吳市店家；海軍咖啡在 subarucoffee 等小店也買得到（未標價）",
-      "image": "navy-curry"
+     "key": "d2-03",
+     "title": "午餐：本通周邊（廣島燒或牡蠣料理）",
+     "start": "13:30",
+     "end": "14:30",
+     "category": "dining",
+     "place": {
+      "name": "薩莉亞紙屋町本通驛前店",
+      "latitude": 34.393559,
+      "longitude": 132.4567828,
+      "applePlaceID": "IC18D7460724901E8",
+      "address": "〒730-0031, 広島県広島市中区, 紙屋町2丁目3番26号",
+      "addressIsApproximate": false
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 15,
+      "durationSource": "user",
+      "fromKey": "d2-02",
+      "note": "步行約 15 分到本通一帶"
+     }
     },
     {
-      "key": "s-torii",
-      "title": "嚴島神社鳥居 小擺飾",
-      "category": "souvenir",
-      "productType": "charm_badge",
-      "priceJPY": 1600,
-      "store": "宮島 表參道商店街；依尺寸 ¥1,600 起",
-      "image": "torii-souvenir"
+     "key": "d2-04",
+     "title": "廣島城（広島城）",
+     "start": "14:50",
+     "end": "15:40",
+     "category": "castle",
+     "place": {
+      "name": "広島城",
+      "latitude": 34.4006005,
+      "longitude": 132.4622016,
+      "applePlaceID": "IAE7DD45211BC54E0",
+      "address": "広島県広島市中区, 上八丁堀",
+      "addressIsApproximate": true
+     },
+     "notes": "天守閣 9:00–18:00（遊記 2023 年公告牌資料）；冬季時段與公休請出發前確認",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 15,
+      "durationSource": "user",
+      "fromKey": "d2-03",
+      "note": "從本通步行約 15 分；廣島城原址在原爆中消失，現為戰後重建"
+     },
+     "images": [
+      "d2-04"
+     ]
     },
     {
-      "key": "s-misago",
-      "title": "宮島御砂燒 紅葉紋系列（対厳堂）※起價",
-      "category": "goods",
-      "productType": "stationery_goods",
-      "priceJPY": 5280,
-      "store": "折鶴塔、嚴島神社、大聖院等"
+     "key": "d2-05",
+     "title": "縮景園（縮景園）",
+     "start": "16:05",
+     "end": "16:55",
+     "category": "park",
+     "place": {
+      "name": "縮景園",
+      "latitude": 34.3999784,
+      "longitude": 132.4675333,
+      "applePlaceID": "IBF206682E734C6FB",
+      "address": "〒730-0014, 広島県広島市中区, 上幟町2-11",
+      "addressIsApproximate": false
+     },
+     "notes": "9:00–17:00（9/16–3/15，入園至 16:30）、9:00–18:00（3/16–9/15）；12/29–31 休",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "bus",
+      "durationMinutes": 20,
+      "durationSource": "user",
+      "fromKey": "d2-04",
+      "note": "步行約 20 分，或搭廣電到縮景園前站再步行；秋冬 17:00 閉園，請提早入園"
+     },
+     "images": [
+      "d2-05"
+     ]
     },
     {
-      "key": "s-kumano",
-      "title": "熊野化妝刷 SOMELL GARDEN（晃祐堂）※起價",
-      "category": "drugstore",
-      "productType": "makeup",
-      "priceJPY": 5280,
-      "store": "廣島車站大樓 ekie、折鶴塔、和平紀念資料館"
-    },
-    {
-      "key": "s-kibidango",
-      "title": "元祖吉備糰子 10 入（廣榮堂）",
-      "category": "souvenir",
-      "productType": "wagashi",
-      "priceJPY": 540,
-      "store": "廣榮堂 さんすて岡山店、岡山車站內",
-      "image": "kibidango"
-    },
-    {
-      "key": "s-hanpu",
-      "title": "倉敷帆布 基帆托特包 小直式",
-      "category": "clothing",
-      "productType": "bag_wallet",
-      "priceJPY": 6380,
-      "store": "倉敷帆布 美觀地區店"
+     "key": "d2-06",
+     "title": "晚餐：廣島御好物語 站前廣場（廣島御好物語 駅前ひろば，廣島燒）",
+     "start": "18:00",
+     "end": "19:15",
+     "category": "dining",
+     "place": {
+      "name": "Hiroshima O好Mi物語站前廣場",
+      "latitude": 34.396848,
+      "longitude": 132.4729265,
+      "applePlaceID": "I5A5941CECA87DA87",
+      "address": "〒732-0822, 広島県広島市南区, 松原町10-1, 広島フルフォーカスビル6F",
+      "addressIsApproximate": false
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "train",
+      "durationMinutes": 20,
+      "durationSource": "user",
+      "fromKey": "d2-05",
+      "note": "廣電到廣島站約 15 分；店在廣島站出口右手邊大樓 6 樓，整層都是廣島燒店"
+     },
+     "images": [
+      "okonomiyaki"
+     ]
     }
-  ],
-  "dayPlaces": [
+   ]
+  },
+  {
+   "day": 3,
+   "title": "廣島市",
+   "events": [
     {
-      "name": "廣島市",
-      "latitude": 34.3853,
-      "longitude": 132.4553,
-      "timeZoneID": "Asia/Tokyo"
+     "key": "d3-01",
+     "title": "嚴島神社與海上鳥居（厳島神社）",
+     "start": "10:15",
+     "end": "11:30",
+     "category": "temple",
+     "place": {
+      "name": "嚴島神社",
+      "latitude": 34.2960364,
+      "longitude": 132.31969,
+      "applePlaceID": "I7EA0EDCABFD8E819",
+      "address": "〒739-0588, 広島県廿日市市, 宮島町1-1",
+      "addressIsApproximate": false
+     },
+     "notes": "約 6:30 開放至傍晚，閉門時間依季節而異，請出發前確認",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "ferry",
+      "durationMinutes": 70,
+      "durationSource": "user",
+      "note": "JR 山陽本線到宮島口約 30 分；JR 宮島渡輪約 10 分（JR 周遊券可搭）；上島另付宮島訪問稅 100 日圓；從碼頭步行約 10–15 分到神社"
+     },
+     "todos": [
+      {
+       "text": "查嚴島神社當日潮汐與開放時間",
+       "note": "https://www.miyajima.or.jp/ 想看退潮的神社與鳥居要先查表"
+      }
+     ],
+     "images": [
+      "d3-01"
+     ]
     },
     {
-      "name": "廣島市",
-      "latitude": 34.3853,
-      "longitude": 132.4553,
-      "timeZoneID": "Asia/Tokyo"
+     "key": "d3-02",
+     "title": "午餐：牡蠣屋（牡蠣屋，牡蠣飯與炸牡蠣）",
+     "start": "11:45",
+     "end": "12:45",
+     "category": "dining",
+     "place": {
+      "name": "牡蛎屋",
+      "latitude": 34.2985639,
+      "longitude": 132.3216529,
+      "applePlaceID": "IA41DD48BF72B0DFE",
+      "address": "〒739-0588, 広島県廿日市市, 宮島町539",
+      "addressIsApproximate": false
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 10,
+      "durationSource": "user",
+      "fromKey": "d3-01",
+      "note": "沿表參道步行約 10 分"
+     },
+     "images": [
+      "oyster-rice"
+     ]
     },
     {
-      "name": "廣島市",
-      "latitude": 34.3853,
-      "longitude": 132.4553,
-      "timeZoneID": "Asia/Tokyo"
+     "key": "d3-03",
+     "title": "宮島纜車與獅子岩展望台（宮島ロープウェー・獅子岩展望台）",
+     "start": "13:15",
+     "end": "15:15",
+     "category": "cablecar",
+     "place": {
+      "name": "紅葉谷",
+      "latitude": 34.2932995,
+      "longitude": 132.3267853,
+      "applePlaceID": "I6113F6876A0754CF",
+      "address": "広島県廿日市市, 宮島町",
+      "addressIsApproximate": true
+     },
+     "notes": "約 9:00–16:00（下行末班 16:30），季節與強風停駛請出發前確認",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 25,
+      "durationSource": "user",
+      "fromKey": "d3-02",
+      "note": "步行約 25 分到紅葉谷站（或搭免費接駁巴士）；纜車分兩段，到獅子岩站再步行約 30 分"
+     },
+     "images": [
+      "d3-03"
+     ]
     },
     {
-      "name": "廣島市",
-      "latitude": 34.3853,
-      "longitude": 132.4553,
-      "timeZoneID": "Asia/Tokyo"
-    },
-    {
-      "name": "岡山市",
-      "latitude": 34.6551,
-      "longitude": 133.9195,
-      "timeZoneID": "Asia/Tokyo"
-    },
-    {
-      "name": "岡山市",
-      "latitude": 34.6551,
-      "longitude": 133.9195,
-      "timeZoneID": "Asia/Tokyo"
+     "key": "d3-04",
+     "title": "晚餐：廣島站周邊（遊記推薦外帶燒肉餐盒：炭火焼肉 敏 猿猴橋店）",
+     "start": "17:30",
+     "end": "18:45",
+     "category": "dining",
+     "place": {
+      "name": "広島駅",
+      "latitude": 34.39641,
+      "longitude": 132.4758,
+      "applePlaceID": "IE1D566D5D88F7A02",
+      "address": "〒732-0822, 広島県広島市南区, 松原町2-37",
+      "addressIsApproximate": false
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "ferry",
+      "durationMinutes": 70,
+      "durationSource": "user",
+      "fromKey": "d3-03",
+      "note": "步行下山到碼頭、渡輪回宮島口再搭 JR 到廣島站"
+     }
     }
-  ],
-  "days": [
+   ]
+  },
+  {
+   "day": 4,
+   "title": "廣島市",
+   "events": [
     {
-      "day": 1,
-      "title": "岡山落地，移動到廣島",
-      "events": [
-        {
-          "key": "d1-flight-tpe-okj",
-          "title": "虎航 桃園 → 岡山",
-          "start": "11:10",
-          "end": "14:11",
-          "startTimeZoneID": "Asia/Taipei",
-          "endTimeZoneID": "Asia/Tokyo",
-          "category": "flight",
-          "colour": "teal",
-          "place": {
-            "name": "桃園國際機場 第一航廈（臺灣 桃園市）",
-            "latitude": 25.082083,
-            "longitude": 121.237757
-          },
-          "notes": "去程 11:10 起飛、14:11 落地，是這條線最好的時段——落地還有一整個下午可以移動。實際飛約 2 小時，時差一小時，所以時刻表上看起來差 3 小時。沒有指定座位，一個人劃到走道位比較好進出。虎航櫃檯開放後人潮很快排開，一個人抓兩小時綽綽有餘。管制區內吃的選擇不多，機上又不能帶自己的食物，過安檢前先解決一餐。岡山機場很小，一個人入境到出關 30 分鐘綽綽有餘。出關後右手邊就是機場巴士售票機，可以刷 IC 卡。時刻是原文 2023 年的班次；2026 年冬季班表（10/25–3/27）查不到岡山線現行的班號與時刻，訂票時以航空公司公布為準。",
-          "todos": [
-            {
-              "text": "Visit Japan Web 的 QR 先截圖存相簿，落地時網路不一定通",
-              "colour": "misc"
-            },
-            {
-              "text": "託運行李 20 KG，磅秤在櫃檯旁邊自己先秤一次",
-              "colour": "misc"
-            }
-          ],
-          "links": [
-            {
-              "url": "https://vjw-lp.digital.go.jp/zh-hant/",
-              "title": "Visit Japan Web 入境手續"
-            }
-          ]
-        },
-        {
-          "key": "d1-jrpass",
-          "title": "岡山車站 兌換 JR Pass",
-          "start": "16:40",
-          "end": "17:50",
-          "category": "station",
-          "colour": "green",
-          "place": {
-            "name": "岡山車站（岡山縣 岡山市）",
-            "latitude": 34.665409,
-            "longitude": 133.917825
-          },
-          "notes": "兌換機在中央口附近，尖峰時間要排 10 分鐘。一個人劃位很好處理，順手把明天宮島與後天尾道那兩段的位子一起劃掉。",
-          "leg": {
-            "fromKey": "d1-flight-tpe-okj",
-            "mode": "transit",
-            "transitKind": "bus",
-            "durationMinutes": 30,
-            "note": "岡山空港リムジンバス 到岡山車站西口，車程 30 分、¥1,000，不用預約。班次照 2026 年 10 月 25 日起的時刻表，岡電與中鉄輪流發車，落地後最早的一班是 16:05。原作者落地後現場有加開班次（坐滿即發），最早約 15:20 就到得了岡山站，但那不在班表上，所以預設排 16:05；要不要賭加開班次，落地後到乘車處看現場",
-            "routeURL": "https://okayama-kido.co.jp/bus/kuukou.html",
-            "runs": [
-              {
-                "name": "岡電巴士 特急",
-                "departure": "16:05",
-                "arrival": "16:35"
-              },
-              {
-                "name": "岡電巴士 特急",
-                "departure": "17:25",
-                "arrival": "17:55"
-              },
-              {
-                "name": "中鐵巴士 特急",
-                "departure": "18:30",
-                "arrival": "19:00"
-              }
-            ],
-            "selectedRunIndex": 0,
-            "links": [
-              {
-                "url": "https://okayama-kido.co.jp/bus/kuukou.html",
-                "title": "岡山機場 巴士時刻表"
-              }
-            ]
-          },
-          "todos": [
-            {
-              "text": "領票時順便拿一張山陽本線的紙本時刻表，離線也看得到",
-              "colour": "move"
-            }
-          ]
-        },
-        {
-          "key": "d1-okonomiyaki",
-          "title": "晚餐：廣島御好燒物語 站前廣場",
-          "start": "19:20",
-          "end": "20:30",
-          "category": "dining",
-          "colour": "amber",
-          "place": {
-            "name": "廣島御好燒物語 站前廣場（廣島縣 廣島市）",
-            "latitude": 34.396944,
-            "longitude": 132.473056
-          },
-          "notes": "一整層樓十幾家廣島燒攤位，全部是鐵板前的吧台位，一個人坐下來完全不尷尬。麵可以選そば或うどん，加牡蠣是廣島的正確答案。",
-          "leg": {
-            "fromKey": "d1-jrpass",
-            "mode": "transit",
-            "transitKind": "train",
-            "durationMinutes": 40,
-            "note": "山陽新幹線 岡山 → 廣島，さくら 40 分、こだま 77 分、のぞみ 36 分；のぞみ、みずほ能不能用 JR Pass 以 JR 西日本當時的規則為準（原文的車票照片上就是のぞみ，JR 西日本英文頁沒有明講），出發前請再確認。餐廳就在廣島車站旁的商場 6 樓，下車走幾分鐘就到",
-            "routeURL": "https://www.jr-odekake.net/",
-            "runs": [
-              {
-                "name": "櫻花號 765",
-                "departure": "18:11",
-                "arrival": "18:51"
-              },
-              {
-                "name": "櫻花號 767",
-                "departure": "18:32",
-                "arrival": "19:11"
-              },
-              {
-                "name": "櫻花號 769",
-                "departure": "19:11",
-                "arrival": "19:51"
-              }
-            ],
-            "selectedRunIndex": 0
-          },
-          "closingLeg": {
-            "mode": "walking",
-            "durationMinutes": 18,
-            "note": "走回東橫INN，夜裡只有 4 度，外套穿好"
-          },
-          "todos": [
-            "先看門口的候位板，熱門那幾攤晚上七點會排隊"
-          ],
-          "images": [
-            "okonomiyaki"
-          ]
-        }
-      ]
+     "key": "d4-01",
+     "title": "大和博物館（大和ミュージアム）",
+     "start": "10:15",
+     "end": "12:15",
+     "category": "museum",
+     "place": {
+      "name": "吳市海事歷史科學館 大和Museum",
+      "latitude": 34.2411912,
+      "longitude": 132.5558263,
+      "applePlaceID": "I77D335EE33A1FDFB",
+      "address": "〒737-0029, 広島県呉市, 宝町5-20",
+      "addressIsApproximate": false
+     },
+     "notes": "9:00–18:00（入館至 17:30）；週二休（週二遇假日改隔日；4/29–5/5、7/21–8/31、12/29–1/3 無休）",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "train",
+      "durationMinutes": 70,
+      "durationSource": "user",
+      "note": "JR 吳線約 35–50 分到吳站；出站走天橋步行約 5 分到博物館"
+     },
+     "todos": [
+      {
+       "text": "查大和博物館休館日（週二）",
+       "note": "https://www.yamato-museum.com/ 依星期調整第 4 天順序"
+      }
+     ],
+     "images": [
+      "d4-01"
+     ]
     },
     {
-      "day": 2,
-      "title": "宮島一整天，傍晚原爆圓頂",
-      "events": [
-        {
-          "key": "d2-ferry",
-          "title": "JR 宮島渡輪 宮島口 → 宮島",
-          "start": "09:10",
-          "end": "09:20",
-          "category": "ferry",
-          "colour": "teal",
-          "place": {
-            "name": "宮島棧橋（廣島縣 廿日市市）",
-            "latitude": 34.302095,
-            "longitude": 132.322247
-          },
-          "notes": "10 分鐘的航程，JR Pass 含。挑 09:10–16:10 之間的班次會繞到大鳥居前面，甲板右側視野最好；一個人上船就直接往右舷站，位子好卡。",
-          "leg": {
-            "mode": "transit",
-            "transitKind": "train",
-            "durationMinutes": 26,
-            "note": "從飯店走 18 分到廣島車站，JR 山陽本線 26 分到宮島口，再走幾分鐘就是碼頭；搭往岩國、大野浦方向的普通車",
-            "runs": [
-              {
-                "name": "山陽本線 岩國行",
-                "departure": "08:21",
-                "arrival": "08:47"
-              },
-              {
-                "name": "山陽本線 岩國行",
-                "departure": "08:35",
-                "arrival": "09:01"
-              },
-              {
-                "name": "山陽本線 岩國行",
-                "departure": "08:53",
-                "arrival": "09:19"
-              }
-            ],
-            "selectedRunIndex": 0
-          },
-          "todos": [
-            {
-              "text": "宮島訪問稅 ¥100 在碼頭另外付，現金或 IC 卡都可以",
-              "colour": "misc"
-            }
-          ],
-          "files": [
-            {
-              "image": "miyajima-visitor-tax",
-              "title": "宮島訪問稅的海報：¥100，碼頭有站務人員指引購買"
-            }
-          ]
-        },
-        {
-          "key": "d2-itsukushima",
-          "title": "宮島：表參道、嚴島神社、紅葉谷",
-          "start": "09:45",
-          "end": "12:30",
-          "category": "temple",
-          "colour": "red",
-          "place": {
-            "name": "嚴島神社（廣島縣 廿日市市）",
-            "latitude": 34.296534,
-            "longitude": 132.319005
-          },
-          "notes": "世界遺產。看大鳥居要看潮汐——漲潮時鳥居浮在海上，退潮才走得到鳥居腳下，兩種完全不同的畫面，出發前先查當天的潮汐表。迴廊是單向動線，走進去就不能回頭，一個人反而好抓自己的節奏。碼頭到神社這一段全是店：現烤牡蠣、炸紅葉饅頭、星鰻包子。一個人吃不完幾樣，挑兩三攤淺嘗就好；伴手禮回程再買，不然一路提著走。十一月中是紅葉最好的時候，整條溪谷都是楓樹。往裡走到底就是纜車的紅葉谷站，入口也有免費接駁車，一個人走不動就搭。",
-          "leg": {
-            "fromKey": "d2-ferry",
-            "mode": "walking",
-            "durationMinutes": 12,
-            "note": "沿海岸走，途中會先經過千疊閣與五重塔"
-          },
-          "links": [
-            {
-              "url": "https://www.itsukushimajinja.jp/",
-              "title": "嚴島神社 官網（含潮汐表）"
-            }
-          ],
-          "images": [
-            "miyajima-torii"
-          ]
-        },
-        {
-          "key": "d2-ropeway",
-          "title": "宮島纜車 → 獅子岩展望台",
-          "start": "13:00",
-          "end": "14:05",
-          "category": "cablecar",
-          "colour": "green",
-          "place": {
-            "name": "獅子岩展望台（廣島縣 廿日市市）",
-            "latitude": 34.278782,
-            "longitude": 132.325421
-          },
-          "notes": "兩段纜車，中間要換車。展望台看得到整片瀨戶內海與散落的島；再往上走 30 分鐘是彌山山頂，這次沒走。官網現行時間是上行 9:00–16:00、下行 9:20–16:30，一個人上山一定要先把 16:30 這個數字記下來；部分假日要提前在官網預約。",
-          "leg": {
-            "fromKey": "d2-itsukushima",
-            "mode": "other",
-            "durationMinutes": 20,
-            "note": "紅葉谷站搭循環式纜車到榧谷，再換交走式纜車上獅子岩",
-            "routeURL": "https://miyajima-ropeway.info/"
-          },
-          "images": [
-            "miyajima-ropeway"
-          ]
-        },
-        {
-          "key": "d2-oyster",
-          "title": "午餐：牡蠣屋",
-          "start": "14:35",
-          "end": "15:20",
-          "category": "dining",
-          "colour": "amber",
-          "place": {
-            "name": "牡蠣屋（廣島縣 廿日市市）",
-            "latitude": 34.298559,
-            "longitude": 132.321705
-          },
-          "notes": "表參道上最有名的牡蠣專門店，烤牡蠣、炸牡蠣、牡蠣飯都在菜單上。中午一定要排隊，一個人先寫名字再去旁邊逛，回來通常就輪到了。",
-          "leg": {
-            "fromKey": "d2-ropeway",
-            "mode": "walking",
-            "durationMinutes": 20,
-            "note": "纜車下山後沿原路走回表參道"
-          },
-          "images": [
-            "oyster-rice"
-          ]
-        },
-        {
-          "key": "d2-genbaku-dome",
-          "title": "原爆圓頂與和平紀念公園",
-          "start": "17:00",
-          "end": "18:15",
-          "category": "sight",
-          "colour": "red",
-          "place": {
-            "name": "原爆圓頂（廣島縣 廣島市）",
-            "latitude": 34.395466,
-            "longitude": 132.453524
-          },
-          "notes": "從外面繞一圈就好，內部不開放。傍晚的光線打在殘骸上，跟白天完全是兩種感受。旁邊有免費的英日文導覽志工，一個人聽反而問得多。從圓頂走過相生橋就是公園。慰靈碑、和平之燈、原爆之子像連成一直線，站在慰靈碑前正好把圓頂框在中間——這一段最適合一個人慢慢走。",
-          "leg": {
-            "fromKey": "d2-oyster",
-            "mode": "transit",
-            "transitKind": "ferry",
-            "durationMinutes": 70,
-            "note": "渡輪回宮島口，JR 山陽本線回廣島，再轉路面電車（2 號線或 6 號線）到原爆圓頂前，電車約 15 分；電車約每 5～10 分鐘一班（沒有對過廣電的時刻表，以現場為準）",
-            "runs": [
-              {
-                "name": "JR 宮島渡輪 + 山陽本線 白市行 + 廣電",
-                "departure": "15:25",
-                "arrival": "16:35"
-              },
-              {
-                "name": "JR 宮島渡輪 + 山陽本線 糸崎行 + 廣電",
-                "departure": "15:40",
-                "arrival": "16:50"
-              },
-              {
-                "name": "JR 宮島渡輪 + 山陽本線 白市行 + 廣電",
-                "departure": "15:55",
-                "arrival": "17:05"
-              }
-            ],
-            "selectedRunIndex": 1
-          },
-          "images": [
-            "genbaku-dome"
-          ]
-        },
-        {
-          "key": "d2-orizuru",
-          "title": "折鶴塔 展望台",
-          "start": "18:30",
-          "end": "19:00",
-          "category": "viewpoint",
-          "colour": "none",
-          "place": {
-            "name": "折鶴塔（廣島縣 廣島市）",
-            "latitude": 34.39567,
-            "longitude": 132.454686
-          },
-          "notes": "原本排在傍晚上去看夜景，走了一整天宮島實在沒力氣了，取消。一個人的行程沒有人可以商量，累了就是自己喊停。門票 ¥2,200，下次一定要去。",
-          "isCancelled": true,
-          "leg": {
-            "fromKey": "d2-genbaku-dome",
-            "mode": "walking",
-            "durationMinutes": 5
-          },
-          "links": [
-            {
-              "url": "https://www.orizurutower.jp/",
-              "title": "折鶴塔 官網"
-            }
-          ]
-        },
-        {
-          "key": "d2-yakiniku",
-          "title": "晚餐：炭火燒肉 敏（外帶燒肉便當）",
-          "start": "19:10",
-          "end": "19:50",
-          "category": "dining",
-          "colour": "amber",
-          "place": {
-            "name": "炭火燒肉 敏 猿猴橋店（廣島縣 廣島市）",
-            "latitude": 34.395374,
-            "longitude": 132.478677
-          },
-          "notes": "猿猴橋町的老店，晚上有外帶的燒肉便當，比堂食便宜一半。一個人吃燒肉本來就尷尬，買回飯店配啤酒剛剛好，也不用再應付店裡的座位。",
-          "leg": {
-            "fromKey": "d2-genbaku-dome",
-            "mode": "transit",
-            "transitKind": "train",
-            "durationMinutes": 15,
-            "note": "路面電車回廣島車站，出站往猿猴橋町走"
-          },
-          "closingLeg": {
-            "mode": "walking",
-            "durationMinutes": 14,
-            "note": "提著便當走回飯店"
-          }
-        }
-      ]
+     "key": "d4-02",
+     "title": "海上自衛隊吳史料館（海上自衛隊呉史料館 てつのくじら館）",
+     "start": "12:30",
+     "end": "13:30",
+     "category": "museum",
+     "place": {
+      "name": "海上自衛隊吳史料館(Tetsu之Kujira館)",
+      "latitude": 34.2422422,
+      "longitude": 132.555365,
+      "applePlaceID": "I77CBF5EE2D518548",
+      "address": "〒737-0029",
+      "addressIsApproximate": true
+     },
+     "notes": "免費入館；營業時間與公休日請出發前確認",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 5,
+      "durationSource": "user",
+      "fromKey": "d4-01",
+      "note": "從大和博物館後方步行約 5 分；可進入實際退役潛艦參觀"
+     },
+     "images": [
+      "d4-02"
+     ]
     },
     {
-      "day": 3,
-      "title": "尾道千光寺與鞆之浦",
-      "events": [
-        {
-          "key": "d3-senkoji",
-          "title": "千光寺與貓之細道（含纜車、咖啡廳）",
-          "start": "09:50",
-          "end": "13:20",
-          "category": "temple",
-          "colour": "red",
-          "place": {
-            "name": "千光寺（廣島縣 尾道市）",
-            "latitude": 34.410365,
-            "longitude": 133.198685
-          },
-          "notes": "大同元年（806 年）創建，紅色的本堂就掛在崖邊。這裡是俯瞰尾道水道最好的位置，對岸的向島與來往的渡輪都看得一清二楚。單程 3 分鐘就到山頂，¥500。建議搭上去、走下來——下山那條路會經過千光寺、貓之細道與一堆展望點，反過來走就全變成爬坡。一個人不必配合誰的腳程，慢慢下最好。沿路藏著 100 多顆手繪的「福石貓」，找貓比看貓多。石階窄又陡，一個人拖著行李上不來——先寄在車站再上山。貓之細道半路上的老屋咖啡廳，露台正對尾道水道。吧台與單人座都有，爬完坡在這裡喝一杯，是這一段最舒服的 40 分鐘。",
-          "leg": {
-            "mode": "transit",
-            "transitKind": "train",
-            "durationMinutes": 61,
-            "note": "從飯店走 18 分到廣島車站，新幹線こだま 廣島 → 三原 24～28 分，轉山陽本線經糸崎到尾道（含轉車等候約 30 分），再走 15 分到纜車山麓站。原作者就是在三原換車時乾等了 30 幾分鐘",
-            "runs": [
-              {
-                "name": "回聲號 938 + 山陽本線 福山行",
-                "departure": "07:39",
-                "arrival": "08:35"
-              },
-              {
-                "name": "回聲號 940 + 山陽本線 岡山行",
-                "departure": "08:02",
-                "arrival": "09:03"
-              },
-              {
-                "name": "回聲號 942 + 山陽本線 相生行",
-                "departure": "08:40",
-                "arrival": "09:40"
-              }
-            ],
-            "selectedRunIndex": 1
-          },
-          "todos": [
-            "三原轉山陽本線的班次很疏，先把轉乘那一班的發車時刻截圖存起來"
-          ],
-          "images": [
-            "senkoji-view"
-          ]
-        },
-        {
-          "key": "d3-ramen",
-          "title": "午餐：尾道拉麵",
-          "start": "13:45",
-          "end": "14:15",
-          "category": "dining",
-          "colour": "amber",
-          "place": {
-            "name": "尾道本通商店街（廣島縣 尾道市）",
-            "latitude": 34.406467,
-            "longitude": 133.197693
-          },
-          "notes": "湯頭是瀨戶內小魚乾加醬油，上面浮一層豬背脂，配扁平的直麵。商店街上好幾家老店都是吧台位，一個人隨到隨坐；人少的那家通常也不會踩雷。",
-          "leg": {
-            "fromKey": "d3-senkoji",
-            "mode": "walking",
-            "durationMinutes": 12,
-            "note": "從貓之細道走下山，接上本通商店街"
-          },
-          "images": [
-            "onomichi-ramen"
-          ]
-        },
-        {
-          "key": "d3-tomonoura",
-          "title": "鞆之浦：港邊散步與常夜燈",
-          "start": "16:30",
-          "end": "17:45",
-          "category": "sight",
-          "colour": "green",
-          "place": {
-            "name": "鞆之浦（廣島縣 福山市）",
-            "latitude": 34.380877,
-            "longitude": 133.380327
-          },
-          "notes": "《崖上的波妞》的取景地，也是日本第一個現代港都、坂本龍馬談判的地方。福山站前站就有往鞆之浦的公車指示，非常清楚，一個人也不會迷路，坐到底站就是。港邊那座 1859 年的石燈籠，是鞆之浦的正字標記。傍晚點燈後配上海面，這一趟臨時起意的行程反而是整天最好的一段。",
-          "leg": {
-            "fromKey": "d3-ramen",
-            "mode": "transit",
-            "transitKind": "bus",
-            "durationMinutes": 83,
-            "note": "從尾道搭山陽本線到福山（約 20 分，一小時只有一兩班），再到福山站前 5 號乘車處搭鞆鐵巴士到底站鞆港，車程約 40 分（原文實測）；巴士約每 30 分一班",
-            "routeURL": "https://tomotetsu.co.jp/bus/",
-            "runs": [
-              {
-                "name": "山陽本線 福山行 + 鞆鐵巴士",
-                "departure": "14:05",
-                "arrival": "15:40"
-              },
-              {
-                "name": "山陽本線 岡山行 + 鞆鐵巴士",
-                "departure": "14:47",
-                "arrival": "16:10"
-              },
-              {
-                "name": "山陽本線 福山行 + 鞆鐵巴士",
-                "departure": "15:26",
-                "arrival": "16:40"
-              }
-            ],
-            "selectedRunIndex": 1
-          },
-          "images": [
-            "tomonoura-harbor"
-          ]
-        },
-        {
-          "key": "d3-dinner",
-          "title": "晚餐：炭火燒肉 敏（外帶）",
-          "start": "20:30",
-          "end": "21:15",
-          "category": "dining",
-          "colour": "amber",
-          "place": {
-            "name": "炭火燒肉 敏 猿猴橋店（廣島縣 廣島市）",
-            "latitude": 34.395374,
-            "longitude": 132.478677
-          },
-          "notes": "回到廣島已經八點多，又去買了一次外帶便當。從鞆之浦回廣島要兩小時，回程的公車班次比去程更疏——一個人在海邊小鎮錯過末班就真的沒轍，離開前先看好。",
-          "leg": {
-            "fromKey": "d3-tomonoura",
-            "mode": "transit",
-            "transitKind": "bus",
-            "durationMinutes": 113,
-            "note": "鞆鐵巴士回福山站前約 40 分，轉搭新幹線さくら 福山 → 廣島 22～24 分，再走 8 分到燒肉店；巴士班次到傍晚越來越疏，上車前先確認末班",
-            "routeURL": "https://tomotetsu.co.jp/bus/",
-            "runs": [
-              {
-                "name": "鞆鐵巴士 + 櫻花號 767",
-                "departure": "17:43",
-                "arrival": "19:11"
-              },
-              {
-                "name": "鞆鐵巴士 + 櫻花號 769",
-                "departure": "17:58",
-                "arrival": "19:51"
-              },
-              {
-                "name": "鞆鐵巴士 + 回聲號 963",
-                "departure": "18:38",
-                "arrival": "20:46"
-              }
-            ],
-            "selectedRunIndex": 1
-          },
-          "closingLeg": {
-            "mode": "walking",
-            "durationMinutes": 14,
-            "note": "走回飯店"
-          }
-        }
-      ]
+     "key": "d4-03",
+     "title": "午餐：吳市商店街（吳冷麵）",
+     "start": "14:00",
+     "end": "15:00",
+     "category": "dining",
+     "place": {
+      "name": "吳市商店街周邊（吳冷麵）",
+      "latitude": 34.2459288,
+      "longitude": 132.5649722,
+      "address": "広島県呉市中通3丁目",
+      "addressIsApproximate": false
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 30,
+      "durationSource": "user",
+      "fromKey": "d4-02",
+      "note": "遊記說走到商店街約 30 分；可改搭計程車或公車縮短"
+     }
     },
     {
-      "day": 4,
-      "title": "吳市大和博物館，廣島市區巡禮",
-      "events": [
-        {
-          "key": "d4-yamato",
-          "title": "吳市：大和博物館與鐵鯨館",
-          "start": "10:30",
-          "end": "12:55",
-          "category": "museum",
-          "colour": "red",
-          "place": {
-            "name": "大和博物館・吳市海事歷史科學館（廣島縣 吳市）",
-            "latitude": 34.241185,
-            "longitude": 132.55588
-          },
-          "notes": "館內那艘 1/10 的大和模型有 26 公尺長，光繞一圈就值回票價。門票 ¥500，二樓的零式戰機與人間魚雷回天也在同一層。9:00–18:00 開放、最後入館 17:30，週二休館（遇假日順延；4/29–5/5、7/21–8/31、12/29–1/3 不休）。一個人看展，想停多久就停多久。免費，10:00–18:00 開放（最後入館 17:30），週二休館，而且可以走進真正的潛艦「秋潮」內部——那艘就擺在門口的陸地上。艙間很窄，一個人穿行反而順。掃雷艇的展示在一樓，潛艦艙間在最上層。",
-          "leg": {
-            "mode": "transit",
-            "transitKind": "train",
-            "durationMinutes": 36,
-            "note": "退房後先把行李拖去 APA 寄放（兩間飯店走路 15 分鐘），再走 10 分到廣島車站，JR 吳線 安藝路 Liner 約 36 分到吳車站；出站走空橋直達，不必過馬路",
-            "runs": [
-              {
-                "name": "安藝路 Liner 往廣站（經吳）",
-                "departure": "09:29",
-                "arrival": "10:05"
-              },
-              {
-                "name": "安藝路 Liner 往廣站（經吳）",
-                "departure": "10:00",
-                "arrival": "10:35"
-              },
-              {
-                "name": "安藝路 Liner 往廣站（經吳）",
-                "departure": "10:30",
-                "arrival": "11:05"
-              }
-            ],
-            "selectedRunIndex": 0
-          },
-          "links": [
-            {
-              "url": "https://yamato-museum.com/",
-              "title": "大和博物館 官網"
-            }
-          ],
-          "images": [
-            "yamato-museum",
-            "jmsdf-submarine"
-          ]
-        },
-        {
-          "key": "d4-kure-lunch",
-          "title": "午餐：吳冷麵",
-          "start": "13:25",
-          "end": "14:20",
-          "category": "dining",
-          "colour": "amber",
-          "place": {
-            "name": "吳市 紅磚通商店街（廣島縣 吳市）",
-            "latitude": 34.246508,
-            "longitude": 132.566174
-          },
-          "notes": "吳的名物是冷麵，醬汁偏甜、麵條扁平，跟韓式冷麵完全兩回事。紅磚通商店街上好幾家老店都做這一味，中午一個人幾乎不用等位。",
-          "leg": {
-            "fromKey": "d4-yamato",
-            "mode": "walking",
-            "durationMinutes": 18
-          }
-        },
-        {
-          "key": "d4-shukkeien",
-          "title": "縮景園",
-          "start": "16:00",
-          "end": "16:40",
-          "category": "park",
-          "colour": "green",
-          "place": {
-            "name": "縮景園（廣島縣 廣島市）",
-            "latitude": 34.400338,
-            "longitude": 132.467449
-          },
-          "notes": "1620 年建的迴遊式庭園，園中央十座大小島，繞一圈約 40 分。門票 ¥350，9:00–17:00 開放、16:30 最後入園，跟隔壁縣立美術館的共通券比較划算。十一月中楓葉正紅，一個人慢慢繞剛好。",
-          "leg": {
-            "fromKey": "d4-kure-lunch",
-            "mode": "transit",
-            "transitKind": "train",
-            "durationMinutes": 35,
-            "note": "吳線 安藝路 Liner 吳 → 廣島 約 35 分，出站再搭路面電車或走路約 25 分到縮景園",
-            "runs": [
-              {
-                "name": "安藝路 Liner 廣島行",
-                "departure": "13:45",
-                "arrival": "14:20"
-              },
-              {
-                "name": "安藝路 Liner 廣島行",
-                "departure": "14:16",
-                "arrival": "14:51"
-              },
-              {
-                "name": "安藝路 Liner 廣島行",
-                "departure": "14:45",
-                "arrival": "15:20"
-              }
-            ],
-            "selectedRunIndex": 2
-          },
-          "images": [
-            "shukkeien-bamboo"
-          ]
-        },
-        {
-          "key": "d4-peace-museum",
-          "title": "廣島和平紀念資料館",
-          "start": "17:20",
-          "end": "19:00",
-          "category": "museum",
-          "colour": "red",
-          "place": {
-            "name": "廣島和平紀念資料館（廣島縣 廣島市）",
-            "latitude": 34.391812,
-            "longitude": 132.452105
-          },
-          "notes": "門票 ¥200，本館與東館連在一起。11 月 7:30–19:00 開放、最後入館 18:30（12–2 月只開到 18:00），傍晚時段官網標示要先預約網路票，出發前請上官網確認。這一館值得留足 90 分鐘；裡面非常沈重，一個人看完，通常需要一段安靜的路才走得出來。紅葉饅頭、牡蠣醬油、熊野筆都在這一層。明天要移動一整天，順手買一個廣島名物的穴子飯便當。一個人買伴手禮要記得：最後全部都是自己提上飛機。",
-          "leg": {
-            "fromKey": "d4-shukkeien",
-            "mode": "walking",
-            "durationMinutes": 27,
-            "note": "從縮景園走到和平紀念資料館約 27 分鐘；怕趕時間可改搭路面電車到原爆圓頂前再走，電車約每 5～10 分鐘一班"
-          },
-          "todos": [
-            "先上官網確認當天的閉館時間與最後入館時刻",
-            {
-              "text": "伴手禮店多半 21:00 打烊，別逛到最後才想起來",
-              "colour": "shop"
-            }
-          ],
-          "links": [
-            {
-              "url": "https://hpmmuseum.jp/",
-              "title": "廣島和平紀念資料館 官網"
-            }
-          ]
-        }
-      ]
+     "key": "d4-04",
+     "title": "廣島站購物與伴手禮（ekie）",
+     "start": "16:30",
+     "end": "17:45",
+     "category": "shopping",
+     "place": {
+      "name": "Avance Ekie廣島站店",
+      "latitude": 34.397971,
+      "longitude": 132.4760597,
+      "applePlaceID": "IFE0D78E6E12E9D03",
+      "address": "〒732-0822, 広島県広島市南区, 松原町1-2",
+      "addressIsApproximate": false
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "train",
+      "durationMinutes": 40,
+      "durationSource": "user",
+      "fromKey": "d4-03",
+      "note": "JR 吳線回廣島站約 35–50 分"
+     }
     },
     {
-      "day": 5,
-      "title": "倉敷美觀地區，岡山後樂園點燈",
-      "events": [
-        {
-          "key": "d5-bikan",
-          "title": "倉敷美觀地區與阿智神社",
-          "start": "11:20",
-          "end": "12:50",
-          "category": "sight",
-          "colour": "red",
-          "place": {
-            "name": "倉敷美觀地區（岡山縣 倉敷市）",
-            "latitude": 34.596525,
-            "longitude": 133.772586
-          },
-          "notes": "白牆倉庫、海鼠牆與垂柳夾著倉敷川，江戶時代的米倉區完整留了下來。川舟遊船一趟 20 分鐘 ¥500，一個人也上得了船，售票在觀光案內所。美觀地區旁小山丘上的神社，石階有點陡但爬上去就能俯瞰整片白牆老街。境內那棵阿知的藤樹據說有 500 年。遊客很少，一個人上來很安靜。車站有投幣置物櫃，大型的很快就滿；今晚的飯店就在站外五分鐘，一個人直接拖去櫃檯寄放更保險。",
-          "leg": {
-            "mode": "transit",
-            "transitKind": "train",
-            "durationMinutes": 70,
-            "note": "從 APA 走 10 分到廣島車站，新幹線さくら 廣島 → 岡山 40 分，在岡山轉山陽本線普通車 17 分到倉敷，再走 15 分到阿智神社。行李可以寄倉敷站的置物櫃（大型的很快滿），或直接拖去站外五分鐘的飯店櫃檯",
-            "runs": [
-              {
-                "name": "櫻花號 740 + 山陽本線 三原行",
-                "departure": "08:10",
-                "arrival": "09:20"
-              },
-              {
-                "name": "櫻花號 742 + 山陽本線 倉敷行",
-                "departure": "09:33",
-                "arrival": "10:43"
-              },
-              {
-                "name": "櫻花號 744 + 山陽本線 金光行",
-                "departure": "10:33",
-                "arrival": "11:46"
-              }
-            ],
-            "selectedRunIndex": 1
-          },
-          "todos": [
-            "置物櫃只吃 ¥100 硬幣，先在便利商店換好"
-          ],
-          "images": [
-            "kurashiki-bikan"
-          ]
-        },
-        {
-          "key": "d5-miyake",
-          "title": "午餐：三宅商店 咖哩",
-          "start": "12:52",
-          "end": "13:50",
-          "category": "dining",
-          "colour": "amber",
-          "place": {
-            "name": "三宅商店（岡山縣 倉敷市）",
-            "latitude": 34.596325,
-            "longitude": 133.772286
-          },
-          "notes": "老町屋改建的咖啡廳，招牌是咖哩飯與季節水果聖代。中午一定要排隊，一個人先去登記名字再去逛美術館，回來剛好輪到。",
-          "leg": {
-            "fromKey": "d5-bikan",
-            "mode": "walking",
-            "durationMinutes": 3
-          }
-        },
-        {
-          "key": "d5-ohara",
-          "title": "大原美術館與水果聖代",
-          "start": "14:15",
-          "end": "16:30",
-          "category": "artgallery",
-          "colour": "green",
-          "place": {
-            "name": "大原美術館（岡山縣 倉敷市）",
-            "latitude": 34.596032,
-            "longitude": 133.770439
-          },
-          "notes": "1930 年開館，日本第一座西洋美術館。本館有葛雷柯的《受胎告知》與莫內的《睡蓮》，門票 ¥2,000，週一休館——排行程前先確認。一個人看展沒有人催，一小時只夠走一輪。岡山是水果王國，白桃與麝香葡萄的聖代是這一區的標配。價格不低但份量很實在，一個人吃一份剛好，當下午茶。",
-          "leg": {
-            "fromKey": "d5-miyake",
-            "mode": "walking",
-            "durationMinutes": 5
-          },
-          "links": [
-            {
-              "url": "https://www.ohara.or.jp/",
-              "title": "大原美術館 官網"
-            }
-          ]
-        },
-        {
-          "key": "d5-outlet",
-          "title": "三井 OUTLET PARK 倉敷",
-          "start": "16:50",
-          "end": "17:35",
-          "category": "shopping",
-          "colour": "none",
-          "place": {
-            "name": "三井 OUTLET PARK 倉敷（岡山縣 倉敷市）",
-            "latitude": 34.60371,
-            "longitude": 133.762007
-          },
-          "notes": "行前排在美觀地區之後，實際走完老街已經下午四點，時間全用完了，取消——一個人走走停停比想像中慢。它就在倉敷車站北口，下次安排在抵達當天。",
-          "isCancelled": true,
-          "leg": {
-            "fromKey": "d5-ohara",
-            "mode": "walking",
-            "durationMinutes": 20
-          }
-        },
-        {
-          "key": "d5-korakuen",
-          "title": "後樂園點燈、岡山城夜景與晚餐",
-          "start": "18:00",
-          "end": "21:30",
-          "category": "park",
-          "colour": "red",
-          "place": {
-            "name": "岡山後樂園（岡山縣 岡山市）",
-            "latitude": 34.66633,
-            "longitude": 133.937395
-          },
-          "notes": "日本三名園之一。2026 年秋季的「幻想庭園」是 11 月 20 日到 29 日，17:00–20:30 開放（最後入園 20:00），夜間門票 ¥500，跟白天完全兩種樣子；不在這段期間就看不到點燈，出發前先確認當年日程。同一時期岡山城也有「烏城灯源郷」點燈。一個人夜遊，人不多、很安靜。黑色外牆的天守閣，人稱「烏城」，跟後樂園隔著旭川對望。夜間點燈時從月見橋那一側看過去最好看，橋上人不多，一個人架手機也不擋路。走了一整天，找一碗熱的收尾——拉麵店的吧台位對一個人最友善。從岡山城沿著市區走回車站約 25 分鐘，路上會經過表町商店街。",
-          "leg": {
-            "fromKey": "d5-ohara",
-            "mode": "transit",
-            "transitKind": "train",
-            "durationMinutes": 17,
-            "note": "山陽本線 倉敷 → 岡山 17 分，出站搭路面電車（岡電東山線）到城下，再走約 10 分到後樂園，這一段約 25 分；電車約每 5～10 分鐘一班",
-            "runs": [
-              {
-                "name": "山陽本線 備前片上行",
-                "departure": "16:39",
-                "arrival": "16:56"
-              },
-              {
-                "name": "山陽本線 播州赤穗行",
-                "departure": "17:00",
-                "arrival": "17:17"
-              },
-              {
-                "name": "山陽本線 岡山行",
-                "departure": "17:12",
-                "arrival": "17:29"
-              }
-            ],
-            "selectedRunIndex": 1
-          },
-          "closingLeg": {
-            "mode": "transit",
-            "transitKind": "train",
-            "durationMinutes": 17,
-            "note": "走回岡山車站，山陽本線 岡山 → 倉敷 17 分，下車走五分鐘就是飯店；Livemax 的櫃檯不是 24 小時，先確認幾點關",
-            "runs": [
-              {
-                "name": "山陽本線 福山行",
-                "departure": "21:54",
-                "arrival": "22:11"
-              },
-              {
-                "name": "山陽本線 三原行",
-                "departure": "22:18",
-                "arrival": "22:35"
-              },
-              {
-                "name": "山陽本線 福山行",
-                "departure": "22:51",
-                "arrival": "23:08"
-              }
-            ],
-            "selectedRunIndex": 0
-          },
-          "links": [
-            {
-              "url": "https://okayama-korakuen.jp/",
-              "title": "岡山後樂園 官網"
-            }
-          ],
-          "images": [
-            "korakuen-night"
-          ]
-        }
-      ]
-    },
-    {
-      "day": 6,
-      "title": "岡山 AEON，下午返程",
-      "events": [
-        {
-          "key": "d6-aeon",
-          "title": "AEON MALL 岡山 伴手禮、午餐",
-          "start": "10:30",
-          "end": "12:40",
-          "category": "shopping",
-          "colour": "amber",
-          "place": {
-            "name": "AEON MALL 岡山（岡山縣 岡山市）",
-            "latitude": 34.66202,
-            "longitude": 133.917354
-          },
-          "notes": "跟岡山車站空橋直接相連，下雨也不用出去。伴手禮、藥妝與美食街一次解決，最後的日幣零錢在這裡花光；一個人買多少提多少，別買過頭。今天要趕下午的飛機，一個人沒有人幫忙顧行李，先搭山陽本線到岡山把它寄進置物櫃，再到 AEON 慢慢逛、吃午餐。吉備津神社原本排在上午，但桃太郎線平日白天約每 50 分鐘一班，來回加參拜要兩個多小時，所以放在待排。",
-          "leg": {
-            "mode": "transit",
-            "transitKind": "train",
-            "durationMinutes": 17,
-            "note": "從倉敷車站搭山陽本線到岡山，17 分；09:23 這班 09:40 到岡山。先把行李寄進岡山站置物櫃，再走空橋進 AEON，約 10 分",
-            "runs": [
-              {
-                "name": "山陽本線 岡山行",
-                "departure": "08:43",
-                "arrival": "09:00"
-              },
-              {
-                "name": "山陽本線 岡山行",
-                "departure": "09:23",
-                "arrival": "09:40"
-              },
-              {
-                "name": "山陽本線 岡山行",
-                "departure": "09:42",
-                "arrival": "09:59"
-              }
-            ],
-            "selectedRunIndex": 1
-          },
-          "todos": [
-            {
-              "text": "肉類製品不能帶回台灣，別買肉包或滷味當伴手禮",
-              "colour": "eat"
-            }
-          ]
-        },
-        {
-          "key": "d6-flight-okj-tpe",
-          "title": "虎航 岡山 → 桃園",
-          "start": "15:25",
-          "end": "17:35",
-          "startTimeZoneID": "Asia/Tokyo",
-          "endTimeZoneID": "Asia/Taipei",
-          "category": "flight",
-          "colour": "teal",
-          "place": {
-            "name": "岡山桃太郎機場（岡山縣 岡山市）",
-            "latitude": 34.756973,
-            "longitude": 133.853869
-          },
-          "notes": "15:25 起飛、17:35 落地，回到台北天還沒黑，隔天休息一天再上班剛剛好。一個人的旅程收尾很乾脆，不必再跟誰對行程。機場很小，一個人報到與安檢很快。免稅店選擇不多，要買的在市區就先買齊。二樓有展望台可以看飛機，候機時間一個人也不無聊。時刻是原文 2023 年的班次；2026 年冬季班表（10/25–3/27）查不到岡山線現行的班號與時刻，訂票時以航空公司公布為準。",
-          "leg": {
-            "fromKey": "d6-aeon",
-            "mode": "transit",
-            "transitKind": "bus",
-            "durationMinutes": 30,
-            "note": "機場巴士從岡山站西口到岡山桃太郎機場，車程 30 分、¥1,000；班次取自 2026 年 10 月 25 日起的時刻表，12:55 這班最保險（13:25 到，起飛前兩小時）",
-            "routeURL": "https://okayama-kido.co.jp/bus/kuukou.html",
-            "runs": [
-              {
-                "name": "中鐵巴士 特急",
-                "departure": "10:30",
-                "arrival": "11:00"
-              },
-              {
-                "name": "岡電巴士 特急",
-                "departure": "11:10",
-                "arrival": "11:40"
-              },
-              {
-                "name": "岡電巴士 特急",
-                "departure": "12:55",
-                "arrival": "13:25"
-              }
-            ],
-            "selectedRunIndex": 2
-          },
-          "todos": [
-            "安檢穿靴子要脫下來，提前換一雙好脫的",
-            {
-              "text": "退稅單與商品收據在出境前先整理好",
-              "colour": "misc"
-            },
-            "岡山機場的 X 光機放在大廳：先過安檢、貼上封條，再去報到；封好的行李打開就要重新過一次"
-          ]
-        }
-      ]
+     "key": "d4-05",
+     "title": "晚餐：廣島站周邊",
+     "start": "18:00",
+     "end": "19:15",
+     "category": "dining",
+     "place": {
+      "name": "広島駅",
+      "latitude": 34.39641,
+      "longitude": 132.4758,
+      "applePlaceID": "IE1D566D5D88F7A02",
+      "address": "〒732-0822, 広島県広島市南区, 松原町2-37",
+      "addressIsApproximate": false
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 5,
+      "durationSource": "user",
+      "fromKey": "d4-04"
+     }
     }
-  ]
+   ]
+  },
+  {
+   "day": 5,
+   "title": "岡山市",
+   "events": [
+    {
+     "key": "d5-01",
+     "title": "千光寺與貓之細道（千光寺・猫の細道）",
+     "start": "10:30",
+     "end": "12:30",
+     "category": "temple",
+     "place": {
+      "name": "千光寺",
+      "latitude": 34.41045,
+      "longitude": 133.19871,
+      "applePlaceID": "I4FF7648391C3D757",
+      "address": "〒722-0033, 広島県尾道市, 東土堂町15-1",
+      "addressIsApproximate": false
+     },
+     "notes": "千光寺山纜車 9:00–17:15、約 15 分一班；寺院開放時間請出發前確認",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "train",
+      "durationMinutes": 100,
+      "durationSource": "user",
+      "note": "山陽新幹線到福山約 25–40 分，轉 JR 山陽本線到尾道約 20 分，再搭巴士或步行到纜車站；遊記提醒轉車空等可到 30 分以上"
+     },
+     "images": [
+      "d5-01"
+     ]
+    },
+    {
+     "key": "d5-02",
+     "title": "午餐：尾道拉麵（尾道ラーメン）",
+     "start": "12:45",
+     "end": "13:45",
+     "category": "dining",
+     "place": {
+      "name": "尾道站周邊商店街拉麵店",
+      "latitude": 34.4063786,
+      "longitude": 133.1984852,
+      "address": "広島県尾道市土堂1丁目",
+      "addressIsApproximate": false
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 25,
+      "durationSource": "user",
+      "fromKey": "d5-01",
+      "note": "下山走商店街回尾道站；遊記吃的是台灣人創始的 Onomichi Ramen Shoya"
+     },
+     "images": [
+      "onomichi-ramen"
+     ]
+    },
+    {
+     "key": "d5-03",
+     "title": "岡山城（岡山城）",
+     "start": "16:10",
+     "end": "17:15",
+     "category": "castle",
+     "place": {
+      "name": "岡山城",
+      "latitude": 34.6651516,
+      "longitude": 133.936075,
+      "applePlaceID": "IB1053247CF420A0C",
+      "address": "〒700-0823, 岡山県岡山市北区, 丸の内2丁目3番1号",
+      "addressIsApproximate": false
+     },
+     "notes": "天守 9:00–17:30（入場至 17:00）；12/29–31 休",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "train",
+      "durationMinutes": 110,
+      "durationSource": "user",
+      "fromKey": "d5-02",
+      "note": "JR 到福山，山陽新幹線到岡山約 20 分；先到飯店寄行李，再搭路面電車到城下站步行約 10 分"
+     },
+     "images": [
+      "d5-03"
+     ]
+    },
+    {
+     "key": "d5-04",
+     "title": "晚餐：岡山站周邊",
+     "start": "18:00",
+     "end": "19:15",
+     "category": "dining",
+     "place": {
+      "name": "岡山",
+      "latitude": 34.666644,
+      "longitude": 133.9183193,
+      "applePlaceID": "I93FED519C6CEADFD",
+      "address": "岡山県岡山市北区, 駅元町",
+      "addressIsApproximate": true
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "train",
+      "durationMinutes": 15,
+      "durationSource": "user",
+      "fromKey": "d5-03",
+      "note": "路面電車回岡山站前"
+     }
+    }
+   ]
+  },
+  {
+   "day": 6,
+   "title": "岡山市",
+   "events": [
+    {
+     "key": "d6-01",
+     "title": "岡山後樂園（岡山後楽園）",
+     "start": "08:30",
+     "end": "10:00",
+     "category": "park",
+     "place": {
+      "name": "岡山後樂園",
+      "latitude": 34.6672584,
+      "longitude": 133.9361393,
+      "applePlaceID": "I21A7C8A0D8035A78",
+      "address": "〒703-8257, 岡山県岡山市北区, 後楽園1-5",
+      "addressIsApproximate": false
+     },
+     "notes": "3/20–9/30 7:30–18:00（入園至 17:45）；10/1–3/19 8:00–17:00（入園至 16:45）；行事期間可能調整",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "bus",
+      "durationMinutes": 25,
+      "durationSource": "user",
+      "note": "路面電車到城下站步行約 10 分，或從岡山站走路約 25 分；入園費約 500 日圓（官方資料各處標示不一）"
+     },
+     "images": [
+      "d6-01"
+     ]
+    },
+    {
+     "key": "d6-02",
+     "title": "岡山站前購物（イオンモール岡山）：伴手禮",
+     "start": "10:45",
+     "end": "12:00",
+     "category": "shopping",
+     "place": {
+      "name": "永旺夢樂城岡山",
+      "latitude": 34.6622566,
+      "longitude": 133.917743,
+      "applePlaceID": "I5183DF830F1B7373",
+      "address": "〒700-0907, 岡山県岡山市北区, 下石井1丁目2-1",
+      "addressIsApproximate": false
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "transit",
+      "transitKind": "train",
+      "durationMinutes": 30,
+      "durationSource": "user",
+      "fromKey": "d6-01",
+      "note": "路面電車或步行回岡山站前"
+     }
+    },
+    {
+     "key": "d6-03",
+     "title": "午餐：天婦羅蕎麥麵（岡山站周邊）",
+     "start": "12:00",
+     "end": "12:40",
+     "category": "dining",
+     "place": {
+      "name": "岡山",
+      "latitude": 34.666644,
+      "longitude": 133.9183193,
+      "applePlaceID": "I93FED519C6CEADFD",
+      "address": "岡山県岡山市北区, 駅元町",
+      "addressIsApproximate": true
+     },
+     "notes": "營業時間請出發前確認",
+     "leg": {
+      "mode": "walking",
+      "durationMinutes": 5,
+      "durationSource": "user",
+      "fromKey": "d6-02"
+     }
+    },
+    {
+     "key": "d6-04",
+     "title": "岡山桃太郎機場報到離境（岡山桃太郎空港）",
+     "start": "13:30",
+     "end": "15:30",
+     "category": "airport",
+     "place": {
+      "name": "岡山機場",
+      "latitude": 34.760098,
+      "longitude": 133.8532645,
+      "applePlaceID": "I7E27BF1F5E5B283F",
+      "address": "〒701-1131, 岡山県岡山市北区, 日応寺1277",
+      "addressIsApproximate": false
+     },
+     "leg": {
+      "mode": "transit",
+      "transitKind": "bus",
+      "durationMinutes": 45,
+      "durationSource": "user",
+      "fromKey": "d6-03",
+      "note": "岡山站西口搭機場巴士約 30 分、1,000 日圓；國際線班機出發前有班次，依班機時間提早到站候車；機場小，X 光機在大廳"
+     }
+    }
+   ]
+  }
+ ]
 }

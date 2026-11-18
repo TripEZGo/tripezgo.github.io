@@ -7,16 +7,16 @@ const close = { tap: '#card [data-act="close"]' };
 const backToStart = [{ call: 'home' }, { call: 'reset' }];
 
 export const STORIES = {
-  // 05 左：打開地圖的預設樣子（今天＝第 2 天早上，人在宮島表參道）。點行程圖釘 → 卡片 → 關；點商家 → 商家卡 → 關；
+  // 05 左：打開地圖的預設樣子（今天＝第 3 天，人在宮島表參道）。點行程圖釘 → 卡片 → 關；點商家 → 商家卡 → 關；
   // 換到第 3 天再回今天。
   'map-route': [
-    { tap: '[data-auto="d2-momijidani"]' },     // 5 紅葉谷公園 → 行程卡
+    { tap: '[data-auto="d3-03"]' },             // 宮島纜車與獅子岩展望台 → 行程卡
     close,
     { tap: '[data-auto="s162"]' },              // Lawson（宮島）→ 商家卡
     close,
-    { tap: '.chip[data-day="3"]' },             // 換到第 3 天（尾道）
+    { tap: '.chip[data-day="4"]' },             // 換到第 4 天
     { wait: 1200 },
-    { tap: '.chip[data-day="2"]' },             // 回到今天（frameDay 動畫回到同一個取景）
+    { tap: '.chip[data-day="3"]' },             // 回到今天（frameDay 動畫回到同一個取景）
     { wait: 1000 },
     ...backToStart,
   ],

@@ -284,7 +284,7 @@ if (ADDED) {
   else { const { ADDED_EVENT, N, URL_ } = await import('./inspiration-data.js'); trip.days.find(x => x.day === 2).events.push({ ...ADDED_EVENT, notes: `${N.desc}\n\n${URL_}` }); }
 }
 const LEGACY = { 'd1-airport': 'd1-flight-tpe-okj', 'd1-jrpass-pickup': 'd1-jrpass' };   // 第 3 版的行程 key
-const key0 = params.get('event') || 'jr-pass', key = LEGACY[key0] || key0;
+const key0 = params.get('event') || 'd3-01', key = LEGACY[key0] || key0;
 const start = new Date((params.get('start') || '2026-10-10') + 'T00:00:00');
 const dateOf = n => new Date(start.getTime() + (n - 1) * 864e5);
 
@@ -709,7 +709,7 @@ if (interactive) {
 chrome(d);
 if (ipad || duo) {
   // iPad：sheet 底下是同一天的行事曆（iPhone 的 large detent 把後面整片壓成灰，看不到——那邊不畫）
-  const q = new URLSearchParams({ lang, day: backDay, device: ipad ? 'ipad' : 'duo', ...(params.get('start') ? { start: params.get('start') } : {}) });
+  const q = new URLSearchParams({ lang, day: backDay, device: ipad ? 'ipad' : 'duo', ...(params.get('today') ? { today: params.get('today') } : {}), ...(params.get('start') ? { start: params.get('start') } : {}) });
   d.insertAdjacentHTML('afterbegin', `<iframe class="bg" id="bg" src="calendar.html?${q}"></iframe><div class="dim"></div>`);
   const bg = document.getElementById('bg');
   await new Promise(res => { const tick = () => bg.contentDocument?.body?.dataset.ready === '1' ? res() : setTimeout(tick, 50); tick(); });

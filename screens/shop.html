@@ -170,7 +170,7 @@ if (interactive) {
 const persist = () => saved?.set(state);
 
 const count = st => state.status.filter(x => x === st).length;
-const yen = v => `${s.yen}${v.toLocaleString('en-US')}`;
+const yen = v => v == null ? '' : `${s.yen}${v.toLocaleString('en-US')}`;
 const shown = i => state.paid[i] ?? ITEMS[i].price;
 
 // 牆：ShoppingViewModel.rebuild → 分類（多選，空＝全部）× 狀態（多選）篩，sortedByItinerary 排：
@@ -191,7 +191,7 @@ const card = i => {
   return `<div class="card ${st}${it.linked ? ' linked' : ''}" data-i="${i}">
   <div class="media"><div class="content">${it.img ? `<img src="img/tpl/${it.img}.jpg" alt="">` : `<div class="noimg">${[...it.name][0]}</div>`}${it.linked ? `<span class="flag">${s.flag}</span>` : ''}</div>
     ${st === 'bought' ? `<div class="badge">${ic('shoppingBag')}</div>` : st === 'skipped' ? `<div class="badge">${ic('ban')}</div>` : ''}</div>
-  <div class="cap"><div class="n">${fmt(it.name)}</div><div class="p"><span class="mono">${yen(shown(i))}</span>${s.sep}${productName(it.pt)}</div></div></div>`;
+  <div class="cap"><div class="n">${fmt(it.name)}</div><div class="p">${shown(i) != null ? `<span class="mono">${yen(shown(i))}</span>${s.sep}` : ''}${productName(it.pt)}</div></div></div>`;   // 網路範本的購物清單沒有參考價：沒有就不畫價格
 };
 const wallHTML = () => {
   const list = visible();

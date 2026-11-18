@@ -494,7 +494,7 @@ async function live(mk) {
   }
   // 朝向扇：HeadingConeView（84×84、往正上方開 60°、從半徑 18 才開始畫、tzAccentInk 0.22 往外淡出、壓在藍點底下）。
   // 方向＝這一刻面向哪裡：導航時朝目的地、宮島早上朝嚴島神社、位置共享朝小雯。
-  const faceTo = { nav: byId['d2-genbaku-dome'].at, route: byId['d2-itsukushima'].at, mates: MATES[0].at }[ME_MODE];
+  const faceTo = { nav: byId['d2-01'].at, route: byId['d3-01'].at, mates: MATES[0].at }[ME_MODE];
   const coneSvg = (() => {
     const R = 42, r = 18, h = 30 * Math.PI / 180, pt = (rad, a) => `${(42 + rad * Math.sin(a)).toFixed(2)} ${(42 - rad * Math.cos(a)).toFixed(2)}`;
     return `<svg class="cone" viewBox="0 0 84 84" style="transform:rotate(${bearing(ME, faceTo).toFixed(1)}deg)" aria-hidden="true">
@@ -689,7 +689,7 @@ async function live(mk) {
   }
   function fitPadding() {
     // walkingRouteFitPadding 48；上面讓過搜尋列與圖層晶片列（絕對座標，地圖現在從 0 起），下面讓過面板，右邊讓過浮動鈕
-    return new mk.Padding(G.chipTop + 40 + 6, 20 + 30 + (DEV.bar || 0), 16, 20);
+    return new mk.Padding(G.chipTop + 40 + 6 + 64, 20 + 30 + (DEV.bar || 0), 16, 20);   // +36：圖釘從座標往上長 34，不然最上面那顆的頭會躲到圖層晶片列底下
   }
   async function startNav(target) {
     const route = await walkingDirections(ME, target.at);
@@ -772,7 +772,7 @@ async function live(mk) {
   drawPins();
   map.addAnnotations([...Object.values(mateAnn).map(x => x.ann), meAnn]);
   // nav=0：不導航，只看這一天的路程標記（首頁 05 的第二支手機）
-  const target = byId['d2-genbaku-dome'];
+  const target = byId['d2-01'];
   const ok = params.get('nav') === '0' ? false : await startNav({ kind: 'place', id: target.id, at: target.at, name: target.ev.title });
   if (!ok) { drawLegs(await legsFor(day)); if (params.get('focus') !== 'mates') frameDay(); }
   // focus=mates：首頁 06「位置共享」——鏡頭只框旅伴與自己，拉近看，不開任何卡片

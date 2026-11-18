@@ -4,7 +4,7 @@ export const STORIES = {
   // 引導頁（ADR-0050）：點嚴島神社圖釘 → 步行鈕開始導航 → 停在導航卡（頁面以 nowalk=1 載入，導航不模擬移動）→ 一輪結束
   'map-pin-walk': [
     { wait: 1300 },
-    { tap: '[data-auto="d2-itsukushima"]' },
+    { tap: '[data-auto="d3-02"]' },
     { wait: 1300 },
     { tap: '#card [data-act="walk"]' },
     { wait: 3500 },
@@ -18,7 +18,7 @@ export const STORIES = {
   // 地圖：第 2 天的圖釘與步行路程 → 點嚴島神社的圖釘（卡片）→ 步行鈕開始導航（藍點沿路走、導航卡數字跟著變）→ ✕ 結束（先問、確認）
   'demo-map': [
     { wait: 1300 },
-    { tap: '[data-auto="d2-itsukushima"]' },
+    { tap: '[data-auto="d3-02"]' },
     { wait: 1300 },
     { tap: '#card [data-act="walk"]' },
     { wait: 3600 },

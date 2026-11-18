@@ -18,7 +18,7 @@ const [trip, bounds, routes] = await Promise.all([loadTrip(), fetch('./data/mapd
 const theme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
 const IMG_LANG = ['zh-Hant-TW', 'en', 'ja'].includes(lang) ? lang : 'en';
 const IMG = `img/mapdemo-${IMG_LANG}-${theme}.webp`;
-const todayNo = 2, start = new Date('2026-10-10T00:00:00');
+const todayNo = 3, start = new Date('2026-10-10T00:00:00');
 const dateOf = (n) => new Date(start.getTime() + (n - 1) * 864e5);
 const today = dateOf(todayNo);
 const dayLabel = (n) => (lang === 'ja' ? `${n} 日目` : t.day(n));
@@ -94,7 +94,8 @@ for (let i = 1; i < dayEvents.length; i++) {
   const a = byId[dayEvents[i - 1].key], b = byId[dayEvents[i].key];
   const r = a && b && routeBy(a, b); if (r) legs.push({ path: r.path, metres: r.distance });
 }
-const NAV_ROUTES = Object.fromEntries(places.map((p, i) => [p.id, i ? routeBy(places[i - 1], p) : null]).filter(([, r]) => r));
+const PIER = { at: [34.302095, 132.322247] };   // 宮島碼頭：第一站（嚴島神社）的步行從這裡出發
+const NAV_ROUTES = Object.fromEntries(places.map((p, i) => [p.id, routeBy(i ? places[i - 1] : PIER, p)]).filter(([, r]) => r));
 
 // ── 旅伴樣本（名字與顏色同 share-location.html；位置擺在表參道到嚴島神社之間，圖上的點） ──
 const MATE_NAMES = { 'zh-Hant-TW': ['小雯', '凱文', '美琪'], en: ['Mia', 'Ken', 'Sara'], ja: ['美咲', '健太', 'さくら'] }[lang] || ['Mia', 'Ken', 'Sara'];
@@ -106,7 +107,7 @@ const MATES = [
 const COLD_MIN = 60;   // LivePosition.coldAfter
 const rtf = new Intl.RelativeTimeFormat(LOCALE, { numeric: 'always', style: 'long' });
 const ago = (m) => (m < 60 ? rtf.format(-m, 'minute') : rtf.format(-Math.floor(m / 60), 'hour'));
-const ME_AT = MATES_MODE ? null : [34.29945, 132.32215];   // 剛走完表參道，面向嚴島神社
+const ME_AT = MATES_MODE ? null : [34.296036, 132.31969];   // 剛走到嚴島神社（第一站），接著步行去牡蠣屋——藍點在路線的起點上，導航卡才從頭算
 const ME_PX = MATES_MODE ? [300, 350] : toPx(ME_AT);   // 引導頁（ADR-0050）：旅伴示範的自己與旅伴都擺在陸地上（原本 小雯 與藍點落在海裡）
 
 // ── 介面層（同 map-live.js） ──
@@ -177,7 +178,7 @@ if (MATES_MODE) for (const m of MATES) {
   mateEls[m.id] = addPin(`mate sw-${m.colour}${stale ? ' stale' : ''}${m.wiu ? ' dashed' : ''}`, `<div class="h">${esc([...m.name][0].toUpperCase())}</div><i class="pr"></i><span class="bub">${fmt(m.name)}</span>`, m.px, interactive ? { 'data-auto': m.id } : {});
 }
 // 朝向扇（HeadingConeView）：面向嚴島神社（地圖示範）、面向小雯（旅伴示範）
-const faceTo = MATES_MODE ? MATES[0].px : toPx(byId['d2-itsukushima'].at);
+const faceTo = MATES_MODE ? MATES[0].px : toPx(byId['d3-01'].at);
 const coneDeg = (() => { const dx = faceTo[0] - ME_PX[0], dy = faceTo[1] - ME_PX[1]; return (Math.atan2(dx, -dy) * 180 / Math.PI).toFixed(1); })();
 const ACCENT_INK = getComputedStyle(document.documentElement).getPropertyValue('--teal300').trim() || '#1d7370';
 const coneSvg = (() => {
@@ -387,7 +388,8 @@ function endNav() {
   walkStop(); nav = null; setNavChrome(false);
   moveMe(ME_PX); drawWalk(null); drawLegs(true); showCard(); frameHome();
 }
-const HOME = MATES_MODE ? { cx: 260, cy: 430, z: 1 } : { cx: 300, cy: 393, z: 1 };
+// 滿版地圖只有搜尋列與晶片列下面、面板上面那一條（y 214–333）看得到：第 3 天三個圖釘在圖的下半部，放大 1.15 倍、鏡頭貼到圖的下緣才擺得進去
+const HOME = MATES_MODE ? { cx: 270, cy: 572, z: 1 } : { cx: 322, cy: 664, z: 1.15 };
 const frameHome = () => setCam(HOME);
 
 // ── 初始 ──
@@ -396,7 +398,7 @@ drawLegs(true);
 showCard();
 if (still) {   // 減少動態：地圖示範停在導航進行中、旅伴示範停在點開小雯
   if (MATES_MODE) { sel = { kind: 'mate', id: 'm0' }; showCard(); centerAt(MATES[0].px, VW / 2, (G.liveTop + 31 + G.panelTop) / 2); }
-  else startNav(byId['d2-itsukushima'], { animate: false, progress: 0.3 });
+  else startNav(byId['d3-02'], { animate: false, progress: 0.3 });
 }
 await mkEl.querySelector('img').decode().catch(() => {});
 // 載入那一幀不要有轉場；之後的鏡頭移動才緩動

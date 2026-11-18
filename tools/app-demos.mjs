@@ -178,7 +178,7 @@ for (const p of [...pages].sort()) {
 
 // 圖：JS／HTML／CSS 裡寫到的 img/ 路徑；有 ${…} 樣板的（shop-${it.img}.svg、img/${lang}/…）展開成整個前綴
 // 主頁（1.6.0）的封面照片在 covers/，不在 screens/img/：home.html 寫的是 ../covers/…，照同樣的相對位置帶進去
-if (pages.has('home')) copy('covers/itsukushima-torii.42b883d9.jpg', path.join(root, 'covers/itsukushima-torii.42b883d9.jpg'));
+// 1.11.0：主頁封面是網路範本的封面（screens/img/tpl/cover.jpg，home.html 寫 img/tpl/cover.jpg），不再帶 covers/ 那張
 const imgDir = path.join(SCREENS, 'img');
 const allImgs = [];
 (function walk(d) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p) : allImgs.push(path.relative(imgDir, p)); } })(imgDir);

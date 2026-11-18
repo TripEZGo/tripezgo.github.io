@@ -23,16 +23,16 @@ if (!outDir) { console.log('usage: node tools/store/make.mjs <輸出目錄>'); p
 // 第 10 張掛 Premium，見 shots.html）。iPad／Duo 同序、同名，query 多帶 device=。第 6 張有第二張：raw 檔存成 06a／06b。
 // 主頁那一格的版面＝全站主頁同一份：即時動態（中）、待辦（小）、匯率（小）、總覽（中）；範本旅程、第 1 天＝2026-10-10。
 const SLOTS = [
-  ['home', 'home', 'layout=live:m,todo:s,fx:s,overview:m'],
-  ['calendar', 'calendar', 'day=2'],
+  ['home', 'home', 'layout=live:m,todo:s,fx:s,overview:m&today=3&now=10:41'],   // 今天＝第 3 天（宮島），現在 10:41＝嚴島神社進行中
+  ['calendar', 'calendar', 'today=3&day=2'],   // 選第 2 天（六則行程最滿），「今天」那顆在第 3 天
   ['overview', 'overview', ''],
   ['inspiration', 'inspiration', ''],
-  ['map', 'map-live', 'nav=0&today=2'],   // 1.11.0：滿版地圖＋底部面板，第 2 天的輪播（不開步行導航，面板才看得到每天的行程）
-  ['event-leg', 'event', 'event=d1-flight-tpe-okj', ['leg', '']],
+  ['map', 'map-live', 'nav=0&today=3'],   // 1.11.0：滿版地圖＋底部面板，第 2 天的輪播（不開步行導航，面板才看得到每天的行程）
+  ['event-leg', 'event', 'event=d3-01&today=3', ['leg', 'event=d3-03&today=3']],   // 嚴島神社（他的照片、待辦）＋宮島纜車前一段步行
   ['library', 'shop', ''],
   ['collaboration', 'members', ''],
   ['location-sharing', 'map-live', 'nav=0&today=2&focus=mates&sel=m0'],   // 旅伴頁：選著小雯（頭像針、名牌、「更新於 2 分鐘前」）
-  ['live-activity', 'lock', ''],
+  ['live-activity', 'lock', 'day=3'],
 ];
 const LOCALES = { zh: 'zh-Hant', hans: 'zh-Hans', en: 'en-US', ja: 'ja', ko: 'ko' };
 const RENDER_LANG = {};   // zh-Hans 自己渲染（screens 的 ?lang=zh-Hans：簡體字典＋範本 zh-Hans 資料）
@@ -40,10 +40,10 @@ const TEMPLATE_LANG = { zh: 'zh-Hant', hans: 'zh-Hans', en: 'en', ja: 'ja', ko: 
 // screens.mjs 的輸出：iPad 那一張叫 ipad-<頁>.png；商城檔名 iPad 加 ipad- 前綴
 const DEVICES = {
   // pageOf：這個裝置某一格改畫別的頁。總覽那一格 iPhone 先換成 1.7.0 新總覽（overview-170，day=1：停在第 1 天，行程卡、封面、待辦、路程都看得到）；iPad／Duo 的新總覽版面還沒有稿（見 .scratch/v170-todo 票 33），先沿用舊的
-  iphone: { query: '', prefix: '', viewport: { width: 1320, height: 2868 }, pageOf: { overview: 'overview-170' }, queryOf: { overview: 'day=1' } },
-  ipad: { slotQuery: { map: 'nav=0&today=2&day=all' }, query: 'device=ipad', prefix: 'ipad-', viewport: { width: 2064, height: 2752 }, pageOf: { overview: 'overview-170-wide' }, queryOf: { overview: 'day=1' } },
+  iphone: { query: '', prefix: '', viewport: { width: 1320, height: 2868 }, pageOf: { overview: 'overview-170' }, queryOf: { overview: 'day=2' } },
+  ipad: { slotQuery: { map: 'nav=0&today=3&day=all' }, query: 'device=ipad', prefix: 'ipad-', viewport: { width: 2064, height: 2752 }, pageOf: { overview: 'overview-170-wide' }, queryOf: { overview: 'day=2' } },
   // iPhone Duo 內側螢幕橫放：951×669pt @3x ＝ 2853×2007（screens/ 的 ?device=duo）；商城檔名加 duo- 前綴
-  duo: { query: 'device=duo', prefix: 'duo-', viewport: { width: 2853, height: 2007 }, pageOf: { overview: 'overview-170-wide' }, queryOf: { overview: 'day=1' } },
+  duo: { query: 'device=duo', prefix: 'duo-', viewport: { width: 2853, height: 2007 }, pageOf: { overview: 'overview-170-wide' }, queryOf: { overview: 'day=2' } },
 };
 
 // 地圖那幾格要連 MapKit 的圖磚，偶爾等不到 data-ready（15 秒）——同一格最多再試八次（MapKit 圖磚偶爾載不齊，iPad 的位置共享那格尤其常等不到）

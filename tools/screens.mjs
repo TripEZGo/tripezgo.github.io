@@ -22,16 +22,16 @@ const LANGS = { zh: 'zh-Hant-TW', hans: 'zh-Hans', en: 'en', ja: 'ja', ko: 'ko' 
 
 // 官網用到的畫面：[檔名, 頁面, 參數]
 export const SHOTS = [
-  ['home', 'home', 'layout=live:m,todo:s,fx:s,overview:m'],
+  ['home', 'home', 'layout=live:m,todo:s,fx:s,overview:m&today=3&now=10:41'],
   ['home-scan', 'home', 'layout=scan:s,todo:s,live:m,fx:s,agenda:s'], ['home-fx', 'home', 'layout=fx:m,live:m,todo:s,scan:s'],
   ['calendar', 'calendar', 'day=2'],
-  ['timeline', 'timeline', 'day=2'], ['overview', 'overview-170', 'day=1'], ['overview-files', 'overview', 'tab=files'], ['overview-todos', 'overview', 'tab=todos'],
+  ['timeline', 'timeline', 'day=2'], ['overview', 'overview-170', 'day=2'], ['overview-files', 'overview', 'tab=files'], ['overview-todos', 'overview', 'tab=todos'],
   ['notes', 'notes', ''], ['note', 'note', ''], ['scan', 'scan', ''], ['fx', 'fx', ''], ['shop', 'shop', ''],
   ['scan-history', 'scan', 'hist=1'], ['fx-nokbd', 'fx', 'kbd=0'],
-  ['event', 'event', ''], ['event-extra', 'event', 'extra=1'], ['event-airport', 'event', 'event=d1-flight-tpe-okj'], ['leg', 'leg', ''],
-  ['map-live', 'map-live', ''], ['map-route', 'map-live', 'nav=0&today=2'], ['map-mates', 'map-live', 'nav=0&today=2&focus=mates'], ['map', 'map', ''], ['map-place', 'map-live', 'nav=0&today=2&sel=d2-itsukushima'], ['map-store', 'map-store', ''], ['map-nav', 'map-nav', ''],
+  ['event', 'event', ''], ['event-extra', 'event', 'extra=1'], ['event-airport', 'event', 'event=d1-01'], ['leg', 'leg', 'event=d3-03&today=3'],
+  ['map-live', 'map-live', ''], ['map-route', 'map-live', 'nav=0&today=3'], ['map-mates', 'map-live', 'nav=0&today=2&focus=mates'], ['map', 'map', ''], ['map-place', 'map-live', 'nav=0&today=3&sel=d3-01'], ['map-store', 'map-store', ''], ['map-nav', 'map-nav', ''],
   ['share-ig', 'share-ig', ''], ['share-gmap', 'share-gmap', ''], ['inspiration-flow', 'share-web', 'step=post'], ['inspiration', 'inspiration', ''], ['apple-calendar', 'apple-calendar', ''], ['siri', 'siri', ''],
-  ['members', 'members', ''], ['share-location', 'share-location', ''], ['lock', 'lock', ''], ['widget', 'widget', ''],
+  ['members', 'members', ''], ['share-location', 'share-location', ''], ['lock', 'lock', 'day=3'], ['widget', 'widget', 'day=3'],
 ];
 
 const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml' };
@@ -84,7 +84,7 @@ async function shoot(_page, port, name, query, lang) {
   if (!page._routed) { await routeSite(page); page._routed = true; }
   const url = `https://tripezgo.com/screens/${name}.html?lang=${LANGS[lang]}&${query || ''}`;
   await page.goto(url);
-  await page.waitForSelector('body[data-ready="1"]', { timeout: 30000 });
+  await page.waitForSelector('body[data-ready="1"]', { timeout: 120000 });
   return page.locator('#d').screenshot();
 }
 

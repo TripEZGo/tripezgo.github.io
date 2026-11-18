@@ -35,7 +35,7 @@
 
   數字：畫布 4 欄、格距 12、左右留白 20、上緣 12（HomeCanvasMetrics）；一格邊長 ＝ (402 − 40 − 36) ÷ 4 ＝ 81.5；
   卡片圓角 20、細框 borderSoft、陰影 0 4 6 ink 16%（CanvasCardFrame）；封面總高 ＝ 狀態列 62 ＋ 260（HomeCoverMetrics）。
-  封面照片＝範本封面（covers/itsukushima-torii）。
+  封面照片＝網路範本的封面（img/tpl/cover.jpg）。
   未驗證：地點籌碼的字（Trip.placeList，MapKit 反查出來的城市名，範本檔裡沒有）——繁中照基準圖，其餘三語是照慣用寫法寫的。
 -->
 <link rel="stylesheet" href="screen.css?v=7e1e128cfb">
@@ -488,7 +488,7 @@ const todayText = `${new Intl.DateTimeFormat(loc, { year: 'numeric', month: 'sho
 const last = dateOf(trip.dayCount);
 const range = `${t.shortDate(start.getMonth() + 1, start.getDate())} – ${t.shortDate(last.getMonth() + 1, last.getDate())} · ${S.count(trip.dayCount)}`;
 const cells = Array.from({ length: trip.dayCount }, (_, i) => `<i${i < todayNo ? ' class="on"' : ''}></i>`).join('');
-const cover = '../covers/itsukushima-torii.42b883d9.jpg';
+const cover = 'img/tpl/cover.jpg';   // 網路範本的封面（他拍的，tools/sync-template-data.py 從 App repo 的範本複製）
 
 if (!solo) d.insertAdjacentHTML('beforeend', `
 <div class="cv"><div class="cv-img" style="background-image:url(${cover})"></div><div class="cv-scrim"></div>
