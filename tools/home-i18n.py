@@ -597,6 +597,7 @@ T = {
   '一天一頁，行程卡、交通與待辦一次看完': ('One page per day, with event cards, travel and to-dos all in one place', '1日1ページで、予定カード・移動・ToDo をまとめて確認', '하루 한 페이지로 일정 카드, 이동, 할 일을 한곳에서'),
   # 藍圖改版（2026-11-11）
   '@ 行程或購物項目，點了直接打開': ('@-mention an event or shopping item; tap it to open it', '予定や買い物アイテムを @ で指定。タップですぐ開けます', '일정이나 쇼핑 항목을 @로 지정하고, 누르면 바로 열려요'),
+  'AI 排行程': ('AI trip planning', 'AI で旅程づくり', 'AI로 일정 짜기'),
   'App 內 AI 排行程': ('AI trip planning inside the app', 'アプリ内の AI で旅程づくり', '앱 안에서 AI로 일정 짜기'),
   'Apple 行事曆、Google 日曆': ('Apple Calendar, Google Calendar', 'Apple カレンダー、Google カレンダー', 'Apple 캘린더, Google 캘린더'),
   'iCloud 備份同步': ('iCloud backup and sync', 'iCloud のバックアップと同期', 'iCloud 백업·동기화'),
