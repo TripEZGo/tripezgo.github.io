@@ -22,12 +22,13 @@ export function geom() {
   const bar = DEV.bar || 0;
   const searchTop = 72 + DEV.top;
   return { panelH, panelTop: top, searchTop, chipTop: searchTop + 52, liveTop: searchTop + 97, right: bar, fabLeft: DEV.w - bar - 16 - 52,
-    fabLoc: top - 16 - 52, fabPlus: top - 16 - 52 - 12 - 52 };
+    fabLoc: top - 16 - 52 };
 }
 
 const SLIDERS = '<path d="M6 4v16M12 4v16M18 4v16"/><circle cx="6" cy="14" r="2.2" fill="var(--card)"/><circle cx="12" cy="8" r="2.2" fill="var(--card)"/><circle cx="18" cy="15" r="2.2" fill="var(--card)"/>';
 const CAL = '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/>';
 
+// 1.11.0 起浮動鈕只剩定位（＋鈕在 ADR-0091 C13／C14 刪掉了，放位置模式取代）
 // 搜尋列、圖層晶片列、分享藥丸（地圖上面那一疊）。MAKI 是 trip/icons.js 的圖示表（可能還沒載到，沒有就只畫字）
 export function topHtml({ lang, searchText, liveText, liveOn, MAKI }) {
   const S = STR[lang] || STR.en, g = geom();

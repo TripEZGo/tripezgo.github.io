@@ -228,7 +228,7 @@ function drawWalk(path) {
 
 // ── 卡片（同 map-live.js） ──
 const fabSlot = document.getElementById('fabSlot');
-fabSlot.innerHTML = `<div class="fab" style="left:${G.fabLeft}px;top:${G.fabPlus}px">${icon('plus')}</div><div class="fab loc" style="left:${G.fabLeft}px;top:${G.fabLoc}px">${icon('locate')}</div>`;
+fabSlot.innerHTML = `<div class="fab loc" style="left:${G.fabLeft}px;top:${G.fabLoc}px">${icon('locate')}</div>`;
 const tap = interactive ? ' data-tap' : '';
 const navCardHtml = (n) => `<div class="card" id="card" data-kind="nav">
   <div class="n-head"><div class="n-ico">${icon(MAN_ICON[n.man] || 'turnStraight')}</div>

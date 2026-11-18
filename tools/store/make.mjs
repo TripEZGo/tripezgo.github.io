@@ -31,7 +31,7 @@ const SLOTS = [
   ['event-leg', 'event', 'event=d1-flight-tpe-okj', ['leg', '']],
   ['library', 'shop', ''],
   ['collaboration', 'members', ''],
-  ['location-sharing', 'map-live', 'nav=0&today=2&focus=mates'],
+  ['location-sharing', 'map-live', 'nav=0&today=2&focus=mates&sel=m0'],   // 旅伴頁：選著小雯（頭像針、名牌、「更新於 2 分鐘前」）
   ['live-activity', 'lock', ''],
 ];
 const LOCALES = { zh: 'zh-Hant', hans: 'zh-Hans', en: 'en-US', ja: 'ja', ko: 'ko' };
@@ -41,7 +41,7 @@ const TEMPLATE_LANG = { zh: 'zh-Hant', hans: 'zh-Hans', en: 'en', ja: 'ja', ko: 
 const DEVICES = {
   // pageOf：這個裝置某一格改畫別的頁。總覽那一格 iPhone 先換成 1.7.0 新總覽（overview-170，day=1：停在第 1 天，行程卡、封面、待辦、路程都看得到）；iPad／Duo 的新總覽版面還沒有稿（見 .scratch/v170-todo 票 33），先沿用舊的
   iphone: { query: '', prefix: '', viewport: { width: 1320, height: 2868 }, pageOf: { overview: 'overview-170' }, queryOf: { overview: 'day=1' } },
-  ipad: { query: 'device=ipad', prefix: 'ipad-', viewport: { width: 2064, height: 2752 }, pageOf: { overview: 'overview-170-wide' }, queryOf: { overview: 'day=1' } },
+  ipad: { slotQuery: { map: 'nav=0&today=2&day=all' }, query: 'device=ipad', prefix: 'ipad-', viewport: { width: 2064, height: 2752 }, pageOf: { overview: 'overview-170-wide' }, queryOf: { overview: 'day=1' } },
   // iPhone Duo 內側螢幕橫放：951×669pt @3x ＝ 2853×2007（screens/ 的 ?device=duo）；商城檔名加 duo- 前綴
   duo: { query: 'device=duo', prefix: 'duo-', viewport: { width: 2853, height: 2007 }, pageOf: { overview: 'overview-170-wide' }, queryOf: { overview: 'day=1' } },
 };
@@ -67,7 +67,8 @@ for (const l of LKEYS) {
   for (const [dev, D] of Object.entries(DEVICES)) {
     const raw = path.join(here, 'raw', TEMPLATE_LANG[l], dev);
     fs.mkdirSync(raw, { recursive: true });
-    SLOTS.forEach(([, page, q, second], i) => {
+    SLOTS.forEach(([slotName, page, q0, second], i) => {
+      const q = (D.slotQuery && D.slotQuery[slotName]) || q0;   // iPad 的地圖那格選「全部」（每天一列，面板才是滿的）
       const n = String(i + 1).padStart(2, '0');
       if (!wanted(n)) return;
       for (const [k, [pg, qq]] of (second ? [[`${n}a`, [page, q]], [`${n}b`, second]] : [[n, [page, q]]])) {

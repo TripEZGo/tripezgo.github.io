@@ -240,7 +240,7 @@ d.insertAdjacentHTML('beforeend', `<div class="mk" id="mk"></div>`);
 // 藥丸換主色底、字換成「正在分享位置」（UI.json ui.liveshare.on，畫面上不寫人數）、點呼吸＋流光（樣式在 map-live.html）
 const LIVE_ON = params.get('focus') === 'mates';
 // nav=0 是「打開地圖的預設樣子」：選在今天，看今天的路線與標記（App 開地圖時預選今天）
-let day = params.get('nav') === '0' ? todayNo : NAV_DAY;
+let day = params.get('day') === 'all' ? null : params.get('nav') === '0' ? todayNo : NAV_DAY;   // day=all：載入時選「全部」（iPad 商城圖）
 const chipHtml = () => [`<div class="chip all${day == null ? ' on' : ''}" data-day=""${interactive ? ' data-tap' : ''}><b>${S.all}</b></div>`].concat(Array.from({ length: trip.dayCount }, (_, i) => {
   const n = i + 1, dt = dateOf(n), isToday = n === todayNo;
   return `<div class="chip${n === day ? ' on' : ''}" data-day="${n}"${interactive ? ' data-tap' : ''}><b>${isToday ? '<i></i>' : ''}${isToday ? t.today : dayLabel(n)}</b>
@@ -263,7 +263,7 @@ d.style.setProperty('--legal', '8px');
 
 // ── 卡片 ──
 const fabSlot = document.getElementById('fabSlot');
-fabSlot.innerHTML = `<div class="fab" style="left:${G.fabLeft}px;top:${G.fabPlus}px">${icon('plus')}</div><div class="fab loc" style="left:${G.fabLeft}px;top:${G.fabLoc}px">${icon('locate')}</div>`;
+fabSlot.innerHTML = `<div class="fab loc" style="left:${G.fabLeft}px;top:${G.fabLoc}px">${icon('locate')}</div>`;
 const tap = interactive ? ' data-tap' : '';
 function navCardHtml(n) {
   return `<div class="card" id="card" data-kind="nav">
@@ -778,7 +778,9 @@ async function live(mk) {
   // focus=mates：首頁 06「位置共享」——鏡頭只框旅伴與自己，拉近看，不開任何卡片
   if (params.get('focus') === 'mates') frameMates();
   // sel=<行程 key>：載入時就選著那一站（面板換成那一站的頁；官網首頁的地點截圖用）
-  const selKey = params.get('sel'); if (selKey && byId[selKey]) { sel = { kind: 'place', id: selKey }; showCard(); }
+  const selKey = params.get('sel');
+  if (selKey && byId[selKey]) { sel = { kind: 'place', id: selKey }; showCard(); }
+  else if (selKey && mateAnn[selKey]) { sel = { kind: 'mate', id: selKey }; showCard(); centerAt(mateAnn[selKey].m.at, mkEl.getBoundingClientRect().width / 2 - 20, (G.liveTop + 31 + G.panelTop) / 2 + 10, false); }   // 旅伴頁（商城第 9 格）
   map.addEventListener('region-change-end', () => { syncShops(); placeChevrons(); });
   // 第一次取景完成才把地圖露出來：不讓人看到 MapKit 預設的世界地圖再跳到目標
   requestAnimationFrame(() => setTimeout(() => mkEl.dataset.framed = '1', 350));
