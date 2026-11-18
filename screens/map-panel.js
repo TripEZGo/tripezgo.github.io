@@ -5,7 +5,7 @@
 // 待排行程 ui.map.carousel.unscheduled、還沒設地點 · N ui.map.placeless.row。
 // 版面數字量自實機截圖（agent-notes/map-bottom-panel/ticket-04，iPhone 17 Pro 402×874）：搜尋列 y 72–116、
 // 晶片列 y 124–164、分享藥丸 y 169–200、面板「中」＝容器 60%（容器寬大於高的畫面 45%，ADR-0091 §1）。
-import { DEV } from './chrome.js';
+import { DEV, params } from './chrome.js';
 
 const STR = {
   'zh-Hant-TW': { trips: '行程', restaurant: '餐廳', cafe: '咖啡', museum: '博物館', unscheduled: '待排行程', placeless: n => `還沒設地點 · ${n}` },
@@ -17,7 +17,9 @@ const STR = {
 // 幾何（座標都是畫面上的 pt）。iPad 同一塊全寬面板；Duo 橫放（寬大於高）面板 45%、右邊讓出垂直列
 export function geom() {
   const landscape = DEV.w > DEV.h;
-  const panelH = Math.round(DEV.h * (landscape ? 0.45 : 0.6) * 10) / 10;
+  // panel=small：「小」只露頁標題列（抓手＋頭像／名字＋步行＋✕），高度＝分頁列底下那一段＋標題列；其餘照「中」＝容器 60%（橫放 45%）
+  const small = params.get('panel') === 'small';
+  const panelH = small ? DEV.bottom + 96 : Math.round(DEV.h * (landscape ? 0.45 : 0.6) * 10) / 10;
   const top = DEV.h - panelH;
   const bar = DEV.bar || 0;
   const searchTop = 72 + DEV.top;
@@ -45,7 +47,7 @@ export function topHtml({ lang, searchText, liveText, liveOn, MAKI }) {
 // 面板外殼：grabber ＋ 內容（#pbody 由呼叫端換內容）
 export function shellHtml() {
   const g = geom();
-  return `<div class="panel" id="panel" style="top:${g.panelTop}px;height:${g.panelH + 40}px;right:${g.right}px"><div class="grab"></div><div class="pbody" id="pbody"></div></div>`;
+  return `<div class="panel${params.get('panel') === 'small' ? ' small' : ''}" id="panel" style="top:${g.panelTop}px;height:${g.panelH + 40}px;right:${g.right}px"><div class="grab"></div><div class="pbody" id="pbody"></div></div>`;
 }
 
 const glyphOf = (MAKI, MAKI_OF_TYPE, DEFAULT_ICON_ID, cat) => `<svg class="tg" viewBox="0 0 15 15" aria-hidden="true"><path fill="#fff" fill-rule="evenodd" d="${MAKI[MAKI_OF_TYPE[cat] || DEFAULT_ICON_ID] || MAKI.marker}"/></svg>`;

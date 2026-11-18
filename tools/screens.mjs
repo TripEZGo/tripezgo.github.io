@@ -29,7 +29,7 @@ export const SHOTS = [
   ['notes', 'notes', ''], ['note', 'note', ''], ['scan', 'scan', ''], ['fx', 'fx', ''], ['shop', 'shop', ''],
   ['scan-history', 'scan', 'hist=1'], ['fx-nokbd', 'fx', 'kbd=0'],
   ['event', 'event', ''], ['event-extra', 'event', 'extra=1'], ['event-airport', 'event', 'event=d1-01'], ['leg', 'leg', 'event=d3-03&today=3'],
-  ['map-live', 'map-live', ''], ['map-route', 'map-live', 'nav=0&today=3'], ['map-mates', 'map-live', 'nav=0&today=2&focus=mates'], ['map', 'map', ''], ['map-place', 'map-live', 'nav=0&today=3&sel=d3-01'], ['map-store', 'map-store', ''], ['map-nav', 'map-nav', ''],
+  ['map-live', 'map-live', ''], ['map-route', 'map-live', 'nav=0&today=3'], ['map-mates', 'map-live', 'nav=0&today=2&focus=mates&sel=m0&panel=small'], ['map', 'map', ''], ['map-place', 'map-live', 'nav=0&today=3&sel=d3-01'], ['map-store', 'map-store', ''], ['map-nav', 'map-nav', ''],
   ['share-ig', 'share-ig', ''], ['share-gmap', 'share-gmap', ''], ['inspiration-flow', 'share-web', 'step=post'], ['inspiration', 'inspiration', ''], ['apple-calendar', 'apple-calendar', ''], ['siri', 'siri', ''],
   ['members', 'members', ''], ['share-location', 'share-location', ''], ['lock', 'lock', 'day=3'], ['widget', 'widget', 'day=3'],
 ];

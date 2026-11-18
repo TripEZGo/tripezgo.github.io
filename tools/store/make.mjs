@@ -31,7 +31,7 @@ const SLOTS = [
   ['event-leg', 'event', 'event=d3-01&today=3', ['leg', 'event=d3-03&today=3']],   // 嚴島神社（他的照片、待辦）＋宮島纜車前一段步行
   ['library', 'shop', ''],
   ['collaboration', 'members', ''],
-  ['location-sharing', 'map-live', 'nav=0&today=2&focus=mates&sel=m0'],   // 旅伴頁：選著小雯（頭像針、名牌、「更新於 2 分鐘前」）
+  ['location-sharing', 'map-live', 'nav=0&today=2&focus=mates&sel=m0&panel=small'],   // 旅伴頁：選著小雯（頭像針、名牌、「更新於 2 分鐘前」）
   ['live-activity', 'lock', 'day=3'],
 ];
 const LOCALES = { zh: 'zh-Hant', hans: 'zh-Hans', en: 'en-US', ja: 'ja', ko: 'ko' };

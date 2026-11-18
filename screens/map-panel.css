@@ -68,3 +68,6 @@
 .dest-sec { margin: 14px 20px 0; padding-top: 14px; border-top: 1px solid var(--border-soft); }
 .dest-sec .c-tag { margin-top: 8px; display: inline-block; }
 .dest-sec .c-tag + .c-notes, .dest-sec .c-text + .c-notes { margin-top: 8px; }
+
+/* 「小」：只露頁標題列（頭像／名字＋步行＋✕），下面的內容不畫（分頁列是半透明的，不然會透出來） */
+.panel.small .pbody { bottom: auto; height: 46px; overflow: hidden; }
