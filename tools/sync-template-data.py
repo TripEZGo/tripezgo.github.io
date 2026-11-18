@@ -92,6 +92,7 @@ def build(lang):
         if x.get('storeKey'): o['store'] = T(x['storeKey'])
         o.update(extras.get('shopping', {}).get(x['key'], {}).get('all', {}))
         shopping.append(o)
+    shopping += extras.get('shoppingExtra', {}).get(lang, [])   # 範本只有 4 項：再加舊內建範本（原文遊記買的東西）有照片與價格的 3 項
 
     def dayplace(dp):
         pid = dp['place']

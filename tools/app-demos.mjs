@@ -16,6 +16,7 @@
  *
  * 來源只有一份：screens/*.html、autoplay.js、stories*.js。畫面改了重跑這支，不手抄。 */
 import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
@@ -190,7 +191,7 @@ for (const m of blob.matchAll(IMG_RE)) {
   const re = new RegExp('^' + ref.replace(/[.]/g, '\\.').replace(/\$\{[^}]*\}/g, '[^/]*') + '$');
   for (const f of allImgs) if (re.test(f)) want.add(f);
 }
-for (const m of blob.matchAll(/url\(["']?(?:\.\/)?img\/([A-Za-z0-9_\-/.]+)/g)) want.add(m[1]);
+for (const m of blob.matchAll(/url\(["']?(?:\.\/)?img\/([A-Za-z0-9_\-/.]+)/g)) if (!m[1].endsWith('/')) want.add(m[1]);   // url(img/tpl/${…}.jpg) 的樣板只截到「tpl/」：不是檔案，上面 ${…} 那條已展開
 // 地圖那幾張（map.js 用 `img/${{…}[x]}` 的寫法）：整個 map*.jpg、map-*.png 都帶
 if (/img\/\$\{\{/.test(blob)) for (const f of allImgs) if (/^(?:\w+\/)?map[\w-]*\.(jpg|png)$/.test(f)) want.add(f);
 for (const f of want) if (f.startsWith('ko/')) want.delete(f);
@@ -221,6 +222,8 @@ write('manifest.json', JSON.stringify({
   defaults: Object.fromEntries(Object.entries(spec).map(([id, d]) => [id, { mode: d.mode || 'loop', crop: d.crop || 'none', nohand: !!d.nohand, step: !!d.step }])),
 }, null, 2) + '\n');
 
+// 範本照片縮小再帶進 App（sips：長邊 800、品質 70）：原圖約 290 KB，20 多張會撐爆 8 MB 預算；示範畫面寬 402pt
+{ const td = path.join(OUT, 'screens/img/tpl'); if (process.platform === 'darwin' && fs.existsSync(td)) for (const f of fs.readdirSync(td)) if (f.endsWith('.jpg')) execFileSync('sips', ['-Z', '800', '-s', 'format', 'jpeg', '-s', 'formatOptions', '70', path.join(td, f)], { stdio: 'ignore' }); }
 let bytes = 0; const files = [];
 (function walk(d) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); if (fs.statSync(p).isDirectory()) walk(p); else { const n = fs.statSync(p).size; bytes += n; files.push([n, path.relative(OUT, p)]); } } })(OUT);
 if (process.env.APP_DEMOS_LIST) files.sort((a, b) => b[0] - a[0]).slice(0, 25).forEach(([n, f]) => console.log(String(n).padStart(9), f));

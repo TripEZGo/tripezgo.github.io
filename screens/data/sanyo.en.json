@@ -394,7 +394,9 @@
    "title": "Navy coffee and navy curry (呉海軍コーヒー・呉海自カレー)",
    "category": "food",
    "productType": "tea_coffee",
-   "store": "Cafés in Kure's shopping street"
+   "store": "Cafés in Kure's shopping street",
+   "image": "navy-curry",
+   "priceJPY": 700
   },
   {
    "key": "s-02",
@@ -408,14 +410,44 @@
    "title": "Small Itsukushima torii model",
    "category": "souvenir",
    "productType": "charm_badge",
-   "store": "Shops on Miyajima's Omotesandō"
+   "store": "Shops on Miyajima's Omotesandō",
+   "image": "torii-souvenir",
+   "priceJPY": 1600
   },
   {
    "key": "s-04",
    "title": "Hiroshima and Okayama souvenirs",
    "category": "souvenir",
    "productType": "cookie",
-   "store": "Hiroshima Station ekie, Okayama Station and AEON Mall Okayama (the travel log says Okayama souvenirs are found at the station or department stores)"
+   "store": "Hiroshima Station ekie, Okayama Station and AEON Mall Okayama (the travel log says Okayama souvenirs are found at the station or department stores)",
+   "image": "souvenirs-haul"
+  },
+  {
+   "key": "s-momiji",
+   "title": "Momiji manju, smooth red bean, box of 8 (Fujiiya)",
+   "category": "souvenir",
+   "productType": "wagashi",
+   "priceJPY": 1120,
+   "store": "Fujiiya Miyajima Honten; shops at Hiroshima Station",
+   "image": "momiji-manju"
+  },
+  {
+   "key": "s-oyster-senbei",
+   "title": "Whole-oyster rice crackers, 8 pieces (Maruichi Shoten)",
+   "category": "food",
+   "productType": "savory_snack",
+   "priceJPY": 702,
+   "store": "Oyster Kitchen Maruichi, Hiroshima ekie",
+   "image": "oyster-senbei"
+  },
+  {
+   "key": "s-kibidango",
+   "title": "Gansō Kibi dango, 10 pieces (Kōeidō)",
+   "category": "souvenir",
+   "productType": "wagashi",
+   "priceJPY": 540,
+   "store": "Kōeidō Sunste Okayama; inside Okayama Station",
+   "image": "kibidango"
   }
  ],
  "dayPlaces": [

@@ -394,7 +394,9 @@
    "title": "呉海軍コーヒーと呉海自カレー",
    "category": "food",
    "productType": "tea_coffee",
-   "store": "呉市商店街のコーヒー店"
+   "store": "呉市商店街のコーヒー店",
+   "image": "navy-curry",
+   "priceJPY": 700
   },
   {
    "key": "s-02",
@@ -408,14 +410,44 @@
    "title": "厳島神社の鳥居のミニチュア",
    "category": "souvenir",
    "productType": "charm_badge",
-   "store": "宮島表参道のお店"
+   "store": "宮島表参道のお店",
+   "image": "torii-souvenir",
+   "priceJPY": 1600
   },
   {
    "key": "s-04",
    "title": "広島と岡山のお土産",
    "category": "souvenir",
    "productType": "cookie",
-   "store": "広島駅 ekie、岡山駅、イオンモール岡山（旅行記では岡山のお土産は駅かデパートにあるとのこと）"
+   "store": "広島駅 ekie、岡山駅、イオンモール岡山（旅行記では岡山のお土産は駅かデパートにあるとのこと）",
+   "image": "souvenirs-haul"
+  },
+  {
+   "key": "s-momiji",
+   "title": "もみじまんじゅう こしあん 8個入（藤い屋）",
+   "category": "souvenir",
+   "productType": "wagashi",
+   "priceJPY": 1120,
+   "store": "藤い屋 宮島本店、広島駅の売店",
+   "image": "momiji-manju"
+  },
+  {
+   "key": "s-oyster-senbei",
+   "title": "牡蠣まるごとせんべい 8枚入り（マルイチ商店）",
+   "category": "food",
+   "productType": "savory_snack",
+   "priceJPY": 702,
+   "store": "オイスターキッチン・マルイチ 広島ekie店",
+   "image": "oyster-senbei"
+  },
+  {
+   "key": "s-kibidango",
+   "title": "元祖きびだんご 10個入（廣榮堂）",
+   "category": "souvenir",
+   "productType": "wagashi",
+   "priceJPY": 540,
+   "store": "廣榮堂 さんすて岡山店、岡山駅構内",
+   "image": "kibidango"
   }
  ],
  "dayPlaces": [

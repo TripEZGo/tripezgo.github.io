@@ -394,7 +394,9 @@
    "title": "구레 해군 커피와 해자대 카레 (呉海軍コーヒー・呉海自カレー)",
    "category": "food",
    "productType": "tea_coffee",
-   "store": "구레시 상점가의 커피숍"
+   "store": "구레시 상점가의 커피숍",
+   "image": "navy-curry",
+   "priceJPY": 700
   },
   {
    "key": "s-02",
@@ -408,14 +410,44 @@
    "title": "이쓰쿠시마 신사 도리이 미니 모형",
    "category": "souvenir",
    "productType": "charm_badge",
-   "store": "미야지마 오모테산도 상점"
+   "store": "미야지마 오모테산도 상점",
+   "image": "torii-souvenir",
+   "priceJPY": 1600
   },
   {
    "key": "s-04",
    "title": "히로시마와 오카야마 기념품",
    "category": "souvenir",
    "productType": "cookie",
-   "store": "히로시마역 ekie, 오카야마역, 이온몰 오카야마(여행기에 따르면 오카야마 기념품은 역이나 백화점에 있음)"
+   "store": "히로시마역 ekie, 오카야마역, 이온몰 오카야마(여행기에 따르면 오카야마 기념품은 역이나 백화점에 있음)",
+   "image": "souvenirs-haul"
+  },
+  {
+   "key": "s-momiji",
+   "title": "모미지 만주 고운 팥앙금 8개입 (후지이야)",
+   "category": "souvenir",
+   "productType": "wagashi",
+   "priceJPY": 1120,
+   "store": "후지이야 미야지마 본점, 히로시마역 매점",
+   "image": "momiji-manju"
+  },
+  {
+   "key": "s-oyster-senbei",
+   "title": "굴 통째 센베이 8장입 (마루이치 상점)",
+   "category": "food",
+   "productType": "savory_snack",
+   "priceJPY": 702,
+   "store": "오이스터 키친 마루이치 히로시마 ekie점",
+   "image": "oyster-senbei"
+  },
+  {
+   "key": "s-kibidango",
+   "title": "원조 기비당고 10개입 (고에이도)",
+   "category": "souvenir",
+   "productType": "wagashi",
+   "priceJPY": 540,
+   "store": "고에이도 산스테 오카야마점, 오카야마역 구내",
+   "image": "kibidango"
   }
  ],
  "dayPlaces": [

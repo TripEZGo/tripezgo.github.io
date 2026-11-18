@@ -394,7 +394,9 @@
    "title": "海军咖啡与海军咖喱（呉海軍コーヒー・呉海自カレー）",
    "category": "food",
    "productType": "tea_coffee",
-   "store": "吴市商店街的咖啡店"
+   "store": "吴市商店街的咖啡店",
+   "image": "navy-curry",
+   "priceJPY": 700
   },
   {
    "key": "s-02",
@@ -408,14 +410,44 @@
    "title": "严岛神社鸟居小模型",
    "category": "souvenir",
    "productType": "charm_badge",
-   "store": "宫岛表参道商店"
+   "store": "宫岛表参道商店",
+   "image": "torii-souvenir",
+   "priceJPY": 1600
   },
   {
    "key": "s-04",
    "title": "广岛与冈山伴手礼",
    "category": "souvenir",
    "productType": "cookie",
-   "store": "广岛站 ekie、冈山站与 AEON Mall 冈山（游记说冈山站或百货公司才有伴手礼）"
+   "store": "广岛站 ekie、冈山站与 AEON Mall 冈山（游记说冈山站或百货公司才有伴手礼）",
+   "image": "souvenirs-haul"
+  },
+  {
+   "key": "s-momiji",
+   "title": "红叶馒头 细豆沙 8 个装（藤い屋）",
+   "category": "souvenir",
+   "productType": "wagashi",
+   "priceJPY": 1120,
+   "store": "藤い屋 宫岛本店、广岛站商店",
+   "image": "momiji-manju"
+  },
+  {
+   "key": "s-oyster-senbei",
+   "title": "牡蛎整只仙贝 8 片装（マルイチ商店）",
+   "category": "food",
+   "productType": "savory_snack",
+   "priceJPY": 702,
+   "store": "オイスターキッチン・マルイチ 広島ekie店",
+   "image": "oyster-senbei"
+  },
+  {
+   "key": "s-kibidango",
+   "title": "元祖吉备团子 10 个装（廣榮堂）",
+   "category": "souvenir",
+   "productType": "wagashi",
+   "priceJPY": 540,
+   "store": "廣榮堂 さんすて岡山店、冈山站内",
+   "image": "kibidango"
   }
  ],
  "dayPlaces": [

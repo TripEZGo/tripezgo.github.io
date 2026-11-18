@@ -57,7 +57,9 @@ export function rootHtml({ lang, h, day, chipHtml, trip, routes, places, placele
     const ev = p.ev, grey = p.kind === 'marker' || p.cancelled;
     const fill = grey ? 'var(--muted)' : h.swatchBase(ev.category);
     const time = p.kind === 'event' && ev.start ? `<div class="tm">${h.esc(ev.start)}</div>` : '';
-    return `<div class="tcard" data-pid="${p.id}"${h.tap}><div class="tile" style="background:${fill}">${MAKI ? glyphOf(MAKI, MAKI_OF_TYPE, DEFAULT_ICON_ID, ev.category) : ''}</div>
+    const photo = (ev.images || [])[0];   // 範本行程的封面（描述的第一張圖）
+    const inner = photo ? '' : (MAKI ? glyphOf(MAKI, MAKI_OF_TYPE, DEFAULT_ICON_ID, ev.category) : '');
+    return `<div class="tcard" data-pid="${p.id}"${h.tap}><div class="tile" style="background:${photo ? `center / cover url(img/tpl/${photo}.jpg)` : fill}">${inner}</div>
       <div class="tt">${h.fmt(ev.title)}</div>${time}</div>`;
   };
   const row = list => `<div class="trow">${list.map(tile).join('')}</div>`;

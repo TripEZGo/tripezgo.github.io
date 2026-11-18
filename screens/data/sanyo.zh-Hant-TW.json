@@ -394,7 +394,9 @@
    "title": "海軍咖啡與海軍咖哩（呉海軍コーヒー・呉海自カレー）",
    "category": "food",
    "productType": "tea_coffee",
-   "store": "吳市商店街的咖啡店"
+   "store": "吳市商店街的咖啡店",
+   "image": "navy-curry",
+   "priceJPY": 700
   },
   {
    "key": "s-02",
@@ -408,14 +410,44 @@
    "title": "嚴島神社鳥居小模型",
    "category": "souvenir",
    "productType": "charm_badge",
-   "store": "宮島表參道商店"
+   "store": "宮島表參道商店",
+   "image": "torii-souvenir",
+   "priceJPY": 1600
   },
   {
    "key": "s-04",
    "title": "廣島與岡山伴手禮",
    "category": "souvenir",
    "productType": "cookie",
-   "store": "廣島站 ekie、岡山站與 AEON Mall 岡山（遊記說岡山站或百貨公司才有伴手禮）"
+   "store": "廣島站 ekie、岡山站與 AEON Mall 岡山（遊記說岡山站或百貨公司才有伴手禮）",
+   "image": "souvenirs-haul"
+  },
+  {
+   "key": "s-momiji",
+   "title": "紅葉饅頭 細豆沙 8 入（藤い屋）",
+   "category": "souvenir",
+   "productType": "wagashi",
+   "priceJPY": 1120,
+   "store": "藤い屋 宮島本店、廣島車站商店",
+   "image": "momiji-manju"
+  },
+  {
+   "key": "s-oyster-senbei",
+   "title": "牡蠣整顆仙貝 8 片裝（マルイチ商店）",
+   "category": "food",
+   "productType": "savory_snack",
+   "priceJPY": 702,
+   "store": "オイスターキッチン・マルイチ 広島ekie店",
+   "image": "oyster-senbei"
+  },
+  {
+   "key": "s-kibidango",
+   "title": "元祖吉備糰子 10 入（廣榮堂）",
+   "category": "souvenir",
+   "productType": "wagashi",
+   "priceJPY": 540,
+   "store": "廣榮堂 さんすて岡山店、岡山車站內",
+   "image": "kibidango"
   }
  ],
  "dayPlaces": [

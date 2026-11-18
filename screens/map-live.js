@@ -759,12 +759,25 @@ async function live(mk) {
   }
 
   // ── 鏡頭：這一天最大的一串相近站（相鄰 3 公里內）框進來 ──
+  // 截圖用的取景（showItems 的 padding 對得不準）：直接算 region，讓這幾點整組落在「晶片列下緣＋圖釘高 ～ 面板上緣」「左 20 ～ 浮動鈕左邊」的框裡、置中。
+  // 地圖的 padding 已把底邊讓給面板，所以可視區＝0～面板上緣，region 的中心在可視區正中。
+  function frameBand(pts) {
+    const lat = pts.map(a => a[0]), lon = pts.map(a => a[1]);
+    const cLat = (Math.min(...lat) + Math.max(...lat)) / 2, cLon = (Math.min(...lon) + Math.max(...lon)) / 2, cos = Math.cos(rad(cLat));
+    const V = G.panelTop, W = DEV.w - (DEV.bar || 0);
+    const top = G.chipTop + 40 + 8 + 34, bottom = G.panelTop - 16, xL = 20, xR = G.fabLeft - 8;
+    const sY = (Math.max(...lat) - Math.min(...lat)) / (bottom - top), sX = (Math.max(...lon) - Math.min(...lon)) * cos / (xR - xL);
+    const s = Math.max(sY, sX, 0.0025 / V);   // 度（緯）／pt；至少 0.0025° 的高，單一個點也不會拉到看不到街
+    const yc = (top + bottom) / 2, xc = (xL + xR) / 2;
+    map.region = new mk.CoordinateRegion(new mk.Coordinate(cLat + (yc - V / 2) * s, cLon - (xc - W / 2) * s / cos), new mk.CoordinateSpan(s * V, s * W / cos));
+  }
   function frameDay() {
     const seq = day == null ? trip.days.flatMap(x => routes[x.day]) : routes[day];
     let best = [], cur = [];
     for (const p of seq) { if (cur.length && metresBetween(cur[cur.length - 1].at, p.at) > 3000) { if (cur.length > best.length) best = cur; cur = []; } cur.push(p); }
     if (cur.length > best.length) best = cur;
     const anns = best.map(p => pinAnn[p.id]?.ann).filter(Boolean);
+    if (anns.length && !interactive) return frameBand(best.map(p => p.at));
     if (anns.length) frame(anns, { padding: fitPadding(), minimumSpan: new mk.CoordinateSpan(0.004, 0.004) }, day === todayNo && ME_MODE === 'route' ? [ME] : best.map(p => p.at), interactive && ready.done);
   }
 

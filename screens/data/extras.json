@@ -409,5 +409,171 @@
     ]
    }
   }
+ },
+ "shopping": {
+  "s-01": {
+   "all": {
+    "image": "navy-curry",
+    "priceJPY": 700
+   }
+  },
+  "s-03": {
+   "all": {
+    "image": "torii-souvenir",
+    "priceJPY": 1600
+   }
+  },
+  "s-04": {
+   "all": {
+    "image": "souvenirs-haul"
+   }
+  }
+ },
+ "shoppingExtra": {
+  "zh-Hant-TW": [
+   {
+    "key": "s-momiji",
+    "title": "紅葉饅頭 細豆沙 8 入（藤い屋）",
+    "category": "souvenir",
+    "productType": "wagashi",
+    "priceJPY": 1120,
+    "store": "藤い屋 宮島本店、廣島車站商店",
+    "image": "momiji-manju"
+   },
+   {
+    "key": "s-oyster-senbei",
+    "title": "牡蠣整顆仙貝 8 片裝（マルイチ商店）",
+    "category": "food",
+    "productType": "savory_snack",
+    "priceJPY": 702,
+    "store": "オイスターキッチン・マルイチ 広島ekie店",
+    "image": "oyster-senbei"
+   },
+   {
+    "key": "s-kibidango",
+    "title": "元祖吉備糰子 10 入（廣榮堂）",
+    "category": "souvenir",
+    "productType": "wagashi",
+    "priceJPY": 540,
+    "store": "廣榮堂 さんすて岡山店、岡山車站內",
+    "image": "kibidango"
+   }
+  ],
+  "zh-Hans": [
+   {
+    "key": "s-momiji",
+    "title": "红叶馒头 细豆沙 8 个装（藤い屋）",
+    "category": "souvenir",
+    "productType": "wagashi",
+    "priceJPY": 1120,
+    "store": "藤い屋 宫岛本店、广岛站商店",
+    "image": "momiji-manju"
+   },
+   {
+    "key": "s-oyster-senbei",
+    "title": "牡蛎整只仙贝 8 片装（マルイチ商店）",
+    "category": "food",
+    "productType": "savory_snack",
+    "priceJPY": 702,
+    "store": "オイスターキッチン・マルイチ 広島ekie店",
+    "image": "oyster-senbei"
+   },
+   {
+    "key": "s-kibidango",
+    "title": "元祖吉备团子 10 个装（廣榮堂）",
+    "category": "souvenir",
+    "productType": "wagashi",
+    "priceJPY": 540,
+    "store": "廣榮堂 さんすて岡山店、冈山站内",
+    "image": "kibidango"
+   }
+  ],
+  "en": [
+   {
+    "key": "s-momiji",
+    "title": "Momiji manju, smooth red bean, box of 8 (Fujiiya)",
+    "category": "souvenir",
+    "productType": "wagashi",
+    "priceJPY": 1120,
+    "store": "Fujiiya Miyajima Honten; shops at Hiroshima Station",
+    "image": "momiji-manju"
+   },
+   {
+    "key": "s-oyster-senbei",
+    "title": "Whole-oyster rice crackers, 8 pieces (Maruichi Shoten)",
+    "category": "food",
+    "productType": "savory_snack",
+    "priceJPY": 702,
+    "store": "Oyster Kitchen Maruichi, Hiroshima ekie",
+    "image": "oyster-senbei"
+   },
+   {
+    "key": "s-kibidango",
+    "title": "Gansō Kibi dango, 10 pieces (Kōeidō)",
+    "category": "souvenir",
+    "productType": "wagashi",
+    "priceJPY": 540,
+    "store": "Kōeidō Sunste Okayama; inside Okayama Station",
+    "image": "kibidango"
+   }
+  ],
+  "ja": [
+   {
+    "key": "s-momiji",
+    "title": "もみじまんじゅう こしあん 8個入（藤い屋）",
+    "category": "souvenir",
+    "productType": "wagashi",
+    "priceJPY": 1120,
+    "store": "藤い屋 宮島本店、広島駅の売店",
+    "image": "momiji-manju"
+   },
+   {
+    "key": "s-oyster-senbei",
+    "title": "牡蠣まるごとせんべい 8枚入り（マルイチ商店）",
+    "category": "food",
+    "productType": "savory_snack",
+    "priceJPY": 702,
+    "store": "オイスターキッチン・マルイチ 広島ekie店",
+    "image": "oyster-senbei"
+   },
+   {
+    "key": "s-kibidango",
+    "title": "元祖きびだんご 10個入（廣榮堂）",
+    "category": "souvenir",
+    "productType": "wagashi",
+    "priceJPY": 540,
+    "store": "廣榮堂 さんすて岡山店、岡山駅構内",
+    "image": "kibidango"
+   }
+  ],
+  "ko": [
+   {
+    "key": "s-momiji",
+    "title": "모미지 만주 고운 팥앙금 8개입 (후지이야)",
+    "category": "souvenir",
+    "productType": "wagashi",
+    "priceJPY": 1120,
+    "store": "후지이야 미야지마 본점, 히로시마역 매점",
+    "image": "momiji-manju"
+   },
+   {
+    "key": "s-oyster-senbei",
+    "title": "굴 통째 센베이 8장입 (마루이치 상점)",
+    "category": "food",
+    "productType": "savory_snack",
+    "priceJPY": 702,
+    "store": "오이스터 키친 마루이치 히로시마 ekie점",
+    "image": "oyster-senbei"
+   },
+   {
+    "key": "s-kibidango",
+    "title": "원조 기비당고 10개입 (고에이도)",
+    "category": "souvenir",
+    "productType": "wagashi",
+    "priceJPY": 540,
+    "store": "고에이도 산스테 오카야마점, 오카야마역 구내",
+    "image": "kibidango"
+   }
+  ]
  }
 }

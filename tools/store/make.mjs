@@ -24,7 +24,7 @@ if (!outDir) { console.log('usage: node tools/store/make.mjs <輸出目錄>'); p
 // 主頁那一格的版面＝全站主頁同一份：即時動態（中）、待辦（小）、匯率（小）、總覽（中）；範本旅程、第 1 天＝2026-10-10。
 const SLOTS = [
   ['home', 'home', 'layout=live:m,todo:s,fx:s,overview:m&today=3&now=10:41'],   // 今天＝第 3 天（宮島），現在 10:41＝嚴島神社進行中
-  ['calendar', 'calendar', 'today=3&day=2'],   // 選第 2 天（六則行程最滿），「今天」那顆在第 3 天
+  ['calendar', 'calendar', 'today=3&day=2&top=10'],   // 從 10 點起（第一則 10:45），畫面不留空白時段   // 選第 2 天（六則行程最滿），「今天」那顆在第 3 天
   ['overview', 'overview', ''],
   ['inspiration', 'inspiration', ''],
   ['map', 'map-live', 'nav=0&today=3'],   // 1.11.0：滿版地圖＋底部面板，第 2 天的輪播（不開步行導航，面板才看得到每天的行程）
