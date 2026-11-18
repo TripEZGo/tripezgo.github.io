@@ -96,7 +96,10 @@ test('時區名：系統的短名字；短名字是縮寫（JST、ET）就退回
   assert.equal(zoneName('Asia/Tokyo', 'zh'), '日本時間');
   assert.equal(zoneName('Asia/Tokyo', 'en'), 'Japan Time');
   assert.equal(zoneName('Asia/Tokyo', 'ja'), '日本標準時');
-  assert.equal(zoneName('America/New_York', 'zh'), '東部時間');
+  // 縮寫退回完整名字：英文的紐約短名是「ET」。中文的紐約短名隨 CLDR 版本不同（48 以前是「ET」→ 東部時間，
+  // 49 起是「紐約時間」），訪客的瀏覽器兩種都有，所以這條規則用每一版都是縮寫的英文來測。
+  assert.equal(zoneName('America/New_York', 'en'), 'Eastern Time');
+  assert.equal(zoneName('America/Los_Angeles', 'en'), 'Pacific Time');
 });
 
 test('時差：旅程減瀏覽器、負號 U+2212；是 0 的那一半不寫', () => {
@@ -157,8 +160,9 @@ test('過了午夜的刻度讀隔天的時差：第 1 天 26:00 是 11/1 02:00�
 
 test('時差會變的說明：第一段不為 0 的時差，再加「部分日子不同」，三語', () => {
   const shifts = nyDays[0];
+  // 中文時區名隨 CLDR 版本不同（見上面「時區名」那條），這裡只驗句子怎麼組、後綴有沒有加
   assert.equal(zoneNote('America/New_York', shifts, 'zh', S.zh, Date.UTC(2026, 9, 31), true),
-    '目前為東部時間，與裝置時間差 −12 小時（部分日子不同，以每一天欄內左側的裝置時刻為準）');
+    `目前為${zoneName('America/New_York', 'zh', Date.UTC(2026, 9, 31))}，與裝置時間差 −12 小時（部分日子不同，以每一天欄內左側的裝置時刻為準）`);
   assert.equal(zoneNote('America/New_York', shifts, 'en', S.en, Date.UTC(2026, 9, 31), true),
     'Times are in Eastern Time, −12 h from your device’s time (varies on some days — each day shows its own device time on its left)');
   assert.equal(zoneNote('America/New_York', shifts, 'ja', S.ja, Date.UTC(2026, 9, 31), true),

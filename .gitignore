@@ -11,3 +11,5 @@ screens/out/
 screens/.mapkit-dev-token.js
 # 商城截圖的原始畫面（node tools/store/make.mjs 產生）
 tools/store/raw/
+# 本機的 git worktree（各 session 開的功能分支）——不進 repo、不發佈
+.worktrees/

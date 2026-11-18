@@ -42,7 +42,7 @@ export function shareStylesFilter(src) {
 }
 
 /** 工具與瀏覽器留下的、不在版本控制裡的東西。 */
-const IGNORED = ['.git', '.DS_Store', 'node_modules', 'test-results', 'playwright-report', '_site'];
+const IGNORED = ['.git', '.DS_Store', 'node_modules', 'test-results', 'playwright-report', '_site', '.worktrees'];
 
 /** → `{ unclassified: [...], missing: [...] }`，兩個都空才算過。 */
 export function audit(entries) {
