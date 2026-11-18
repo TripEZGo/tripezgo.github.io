@@ -27,7 +27,7 @@ const SLOTS = [
   ['calendar', 'calendar', 'day=2'],
   ['overview', 'overview', ''],
   ['inspiration', 'inspiration', ''],
-  ['map', 'map-live', ''],
+  ['map', 'map-live', 'nav=0&today=2'],   // 1.11.0：滿版地圖＋底部面板，第 2 天的輪播（不開步行導航，面板才看得到每天的行程）
   ['event-leg', 'event', 'event=d1-flight-tpe-okj', ['leg', '']],
   ['library', 'shop', ''],
   ['collaboration', 'members', ''],
@@ -60,6 +60,8 @@ function render(page, query, l) {
 }
 
 const ONLY = (process.env.ONLY || '').split(',').filter(Boolean);   // ONLY=hans：只出這幾個語系（key：zh、hans、en、ja、ko）
+const SLOTS_ONLY = (process.env.SLOTS_ONLY || '').split(',').filter(Boolean);   // SLOTS_ONLY=05,09：只出這幾格（例：只有地圖那兩格換了）
+const wanted = (n) => !SLOTS_ONLY.length || SLOTS_ONLY.includes(n);
 const LKEYS = Object.keys(LOCALES).filter((l) => !ONLY.length || ONLY.includes(l));
 for (const l of LKEYS) {
   for (const [dev, D] of Object.entries(DEVICES)) {
@@ -67,6 +69,7 @@ for (const l of LKEYS) {
     fs.mkdirSync(raw, { recursive: true });
     SLOTS.forEach(([, page, q, second], i) => {
       const n = String(i + 1).padStart(2, '0');
+      if (!wanted(n)) return;
       for (const [k, [pg, qq]] of (second ? [[`${n}a`, [page, q]], [`${n}b`, second]] : [[n, [page, q]]])) {
         if (process.env.RESUME && fs.existsSync(path.join(raw, `${k}.png`))) continue;   // RESUME=1：已經有的 raw 不重出（地圖那幾格偶爾要重跑）
         const pg2 = (D.pageOf && D.pageOf[pg]) || pg;
@@ -89,9 +92,10 @@ try {
       fs.mkdirSync(dest, { recursive: true });
       // 順序換過（1.4.0：分享那格併進靈感）：舊的 NN-名稱.png 不清掉就會跟新的並存，一起被傳上去
       const stale = new RegExp(`^${D.prefix}\\d\\d-[\\w-]+\\.png$`);   // 只清這個裝置自己的前綴：'' → NN-名稱.png、ipad-、duo-
-      for (const f of fs.readdirSync(dest)) if (stale.test(f)) fs.rmSync(path.join(dest, f));
+      for (const f of fs.readdirSync(dest)) if (stale.test(f) && wanted(f.replace(D.prefix, '').slice(0, 2))) fs.rmSync(path.join(dest, f));
       for (const [i, [name]] of SLOTS.entries()) {
         const n = String(i + 1).padStart(2, '0');
+        if (!wanted(n)) continue;
         await page.goto(pathToFileURL(path.join(here, 'shots.html')).href + `?only=${dev}-${TEMPLATE_LANG[l]}-${n}`);
         await page.waitForSelector('html[data-ready="true"]', { timeout: 30000 });
         await page.waitForFunction(() => [...document.images].every((im) => im.complete && im.naturalWidth));

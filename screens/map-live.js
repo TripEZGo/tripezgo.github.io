@@ -28,6 +28,7 @@
 // - 旅伴：LiveMateAnnotation.swift、MapPlaceCard.configure(_ mate:)、ShopCardSection.configure(mateNamed:)；
 //   一小時沒更新（LivePosition.coldAfter）整顆灰、照樣點得開；「更新於 X」是 RelativeDateTimeFormatter(.full)。
 //   名字與顏色同 share-location.html 的樣本。自己那一顆是系統藍點，不當旅伴畫。
+import { geom, topHtml, shellHtml, rootHtml } from './map-panel.js';
 import { fmt, params, lang, t, loadTrip, loadCategories, categoryName, chrome, swatchClass, ready, ICON, interactive, toMin, duration, DEV } from './chrome.js';
 // trip/config.js（MapKit token）與 trip/icons.js（類型圖示）在 screens/ 外面：截圖工具只服務 screens/，所以動態載入，
 // 拿不到就走底圖那一條。
@@ -233,10 +234,8 @@ const byId = Object.fromEntries(places.map(p => [p.id, p]));
 const routes = Object.fromEntries(trip.days.map(dd => [dd.day, dd.events
   .filter(e => e.place && !e.isCancelled && e.start).sort((a, b) => toMin(a.start) - toMin(b.start)).map(e => byId[e.key])]));
 
-// ── 介面層：頁首、日期列、搜尋、分享藥丸、i 鈕（同 map.js） ──
-d.insertAdjacentHTML('beforeend', `<div class="mk" id="mk"></div>
-  <div class="head"><div class="greet">${`${t.monthDay(today.getMonth() + 1, today.getDate())} · ${t.weekday[today.getDay()]}`.replace(/[0-9]+/g, m => lang === 'ja' ? m : `<span lang="en">${m}</span>`)}</div>
-  <div class="title" data-fit>${fmt(trip.title).replace(/[　-鿿＀-￯]+/g, m => `<span class="cjk">${m}</span>`)}</div></div>`);
+// ── 介面層（1.11.0 起：地圖滿版，搜尋列、圖層晶片列、分享藥丸浮在上面，天數晶片與輪播住進底部面板；map-panel.js） ──
+d.insertAdjacentHTML('beforeend', `<div class="mk" id="mk"></div>`);
 // focus=mates（首頁 06 位置共享）：「分享我的位置」是開著的——LiveShareChip.configure(isOn: true)：
 // 藥丸換主色底、字換成「正在分享位置」（UI.json ui.liveshare.on，畫面上不寫人數）、點呼吸＋流光（樣式在 map-live.html）
 const LIVE_ON = params.get('focus') === 'mates';
@@ -247,19 +246,24 @@ const chipHtml = () => [`<div class="chip all${day == null ? ' on' : ''}" data-d
   return `<div class="chip${n === day ? ' on' : ''}" data-day="${n}"${interactive ? ' data-tap' : ''}><b>${isToday ? '<i></i>' : ''}${isToday ? t.today : dayLabel(n)}</b>
     <span>${t.shortDate(dt.getMonth() + 1, dt.getDate())} ${t.weekday[dt.getDay()]}</span></div>`;
 })).join('');
-d.insertAdjacentHTML('beforeend', `<div class="chips" id="chips">${chipHtml()}</div>
-  <div class="search">${S.search}</div>
-  <div class="live${LIVE_ON ? ' on' : ''}"><i></i>${LIVE_ON ? S.liveOn : S.live}</div>
-  <div class="fab on" style="top:${242 + DEV.top}px">${icon('infoFill')}</div>
-  <div id="cardSlot"></div><div id="fabSlot"></div>`);
-['chips', 'search', 'live'].forEach(c => jaWrap(d.querySelector(c === 'chips' ? '#chips' : '.' + c)));
+const G = geom();
+// 晶片列的圖示要等 trip/icons.js 載進來（loadMapKit 裡動態載入）；先畫字，載到再補
+const paintTop = () => {
+  d.querySelectorAll('.search, .frow, .live').forEach(el => el.remove());
+  d.insertAdjacentHTML('beforeend', topHtml({ lang, searchText: S.search, liveText: LIVE_ON ? S.liveOn : S.live, liveOn: LIVE_ON, MAKI }));
+  ['.search', '.live', '.frow'].forEach(c => jaWrap(d.querySelector(c)));
+};
+d.insertAdjacentHTML('beforeend', `${shellHtml()}<div id="fabSlot"></div>`);
+paintTop();
 chrome(d, { tab: 3 });
-if (lang === 'ja') d.querySelectorAll('.tab span').forEach((el, i) => { el.textContent = TABS_JA[i]; });
 const mkEl = document.getElementById('mk');
+const panelEl = document.getElementById('panel'), pbody = document.getElementById('pbody');
+// MapKit 的 Apple 標誌與法律資訊：抬到面板上緣之上（地圖的 padding 讓出面板高度，map-panel.css 讀 --legal）
+d.style.setProperty('--legal', '8px');
 
 // ── 卡片 ──
-const cardSlot = document.getElementById('cardSlot');
 const fabSlot = document.getElementById('fabSlot');
+fabSlot.innerHTML = `<div class="fab" style="left:${G.fabLeft}px;top:${G.fabPlus}px">${icon('plus')}</div><div class="fab loc" style="left:${G.fabLeft}px;top:${G.fabLoc}px">${icon('locate')}</div>`;
 const tap = interactive ? ' data-tap' : '';
 function navCardHtml(n) {
   return `<div class="card" id="card" data-kind="nav">
@@ -281,6 +285,15 @@ function placeCardHtml(p) {
       ${p.kind !== 'marker' && ev.place?.name ? `<div class="c-sub">${fmt(ev.place.name)}</div>` : ''}
       ${detail ? `<div class="c-detail">${fmt(detail)}</div>` : ''}</div>
       <div class="c-btn" data-act="walk"${tap}>${icon('walking')}</div><div class="c-btn" data-act="close"${tap}>${icon('close')}</div></div>
+    ${ev.category ? `<div class="c-tag ${p.kind === 'marker' ? 'sw-misc' : swatchClass(ev.category)}">${categoryName(ev.category)}</div>` : ''}
+    ${ev.notes ? `<div class="c-notes">${fmt(ev.notes)}</div>` : ''}
+    ${p.kind === 'event' ? `<div class="c-action">${S.openEvent}</div>` : ''}</div>`;
+}
+// 步行導航頁的下半（ADR-0091 §4：導航頁下半直接是終點的內容，「開啟終點」拿掉）：終點是行程時，標題、地點、類別、描述、開啟行程細節
+function destSectionHtml(p) {
+  const ev = p.ev;
+  return `<div class="dest-sec"><div class="c-text"><div class="c-title">${fmt(ev.title)}</div>
+      ${p.kind !== 'marker' && ev.place?.name ? `<div class="c-sub">${fmt(ev.place.name)}</div>` : ''}</div>
     ${ev.category ? `<div class="c-tag ${p.kind === 'marker' ? 'sw-misc' : swatchClass(ev.category)}">${categoryName(ev.category)}</div>` : ''}
     ${ev.notes ? `<div class="c-notes">${fmt(ev.notes)}</div>` : ''}
     ${p.kind === 'event' ? `<div class="c-action">${S.openEvent}</div>` : ''}</div>`;
@@ -338,24 +351,26 @@ function jaWrap(root) {
   }
 }
 let isPoster = false;
-function setCard(html) {
-  cardSlot.innerHTML = html || '';
-  fabSlot.innerHTML = '';
-  const card = document.getElementById('card');
-  if (card) {
-    clampNotes();
-    const top = card.getBoundingClientRect().top - d.getBoundingClientRect().top;
-    const locTop = top - 40.33 - 52, nearTop = locTop - 12 - 52;
-    // 底圖那一條：定位鈕與 ⌄ 已經烤在 map-nav.jpg 裡（同 map.js 只畫「附近」）
-    fabSlot.innerHTML = `<div class="fab" style="top:${nearTop}px">${icon('nearby')}</div>` + (isPoster ? '' :
-      `<div class="fab loc" style="top:${locTop}px">${icon('locate')}</div>
-      <div class="deck-toggle" style="top:${top - 26.6}px">${icon('chevDown')}</div>`);
-  } else {
-    fabSlot.innerHTML = `<div class="fab" style="top:${DEV.h - DEV.bottom - 196}px">${icon('plus')}</div>
-      <div class="fab" style="top:${DEV.h - DEV.bottom - 132}px">${icon('nearby')}</div>
-      <div class="fab loc" style="top:${DEV.h - DEV.bottom - 68}px">${icon('locate')}</div>`;
+// 面板根頁：天數晶片＋輪播。卡片（地點、商家、旅伴、步行導航）打開時整塊換成那一張（面板裡的頁），✕ 回根頁
+const placelessCount = [...trip.days.flatMap(x => x.events), ...(trip.allDayEvents || []), ...(trip.unscheduledEvents || [])].filter(e => !e.place).length;
+const swatchBaseTop = (() => { const probe = document.createElement('span'); d.appendChild(probe);
+  const memo = {}; return cat => { const k = swatchClass(cat); if (!memo[k]) { probe.className = k; probe.style.color = 'var(--sw-base)'; memo[k] = getComputedStyle(probe).color; } return memo[k]; }; })();
+let cardHtml = '';
+function renderPanel() {
+  if (cardHtml) pbody.innerHTML = cardHtml;
+  else {
+    pbody.innerHTML = rootHtml({ lang, h: { fmt, esc, swatchBase: swatchBaseTop, tap }, day, chipHtml, trip, routes, places, placelessCount, MAKI, MAKI_OF_TYPE, DEFAULT_ICON_ID,
+      dayHeader: n => { const dt = dateOf(n); return fmt(`${dayLabel(n)} · ${t.shortDate(dt.getMonth() + 1, dt.getDate())} ${t.weekday[dt.getDay()]}`); } });
+    pbody.querySelector('.pscroll').classList.toggle('day', day != null);
+    jaWrap(pbody);
   }
-  // 日文與英文的字距處理同 map.js
+}
+renderPanelInit();
+function renderPanelInit() { setTimeout(() => { if (!cardHtml) renderPanel(); }, 0); }
+function setCard(html) {
+  cardHtml = html || '';
+  renderPanel();
+  if (cardHtml) clampNotes();
   jaWrap(document.getElementById('card'));
   if (lang === 'en') d.querySelectorAll('.c-detail, .n-status').forEach(el => { el.innerHTML = el.innerHTML.replace(/ · /g, '<span class="mdot"> · </span>'); });
 }
@@ -410,6 +425,7 @@ async function loadMapKit(timeoutMs = 9000) {
 
 let mk;
 try { mk = await loadMapKit(); } catch (err) { poster(); }
+paintTop(); renderPanel();
 if (mk) await live(mk);
 
 async function live(mk) {
@@ -421,7 +437,7 @@ async function live(mk) {
     isRotationEnabled: false, isScrollEnabled: interactive && params.get('pan') !== '0', isZoomEnabled: interactive && params.get('pan') !== '0',
     colorScheme: mk.Map.ColorSchemes.Light,
     // Apple 標誌與法律資訊放在分頁列上面（基準圖也是）：底邊讓出分頁列那一段
-    padding: new mk.Padding(0, 0, DEV.legal, 0),
+    padding: new mk.Padding(0, 0, G.panelH, 0),
   });
   const css = getComputedStyle(document.documentElement);
   const ACCENT_INK = css.getPropertyValue('--teal300').trim() || '#1d7370';
@@ -624,7 +640,7 @@ async function live(mk) {
     if (sel?.kind === 'place') setCard(placeCardHtml(byId[sel.id]));
     else if (sel?.kind === 'shop') setCard(shopCardHtml(SHOPS.find(s => s.id === sel.id)));
     else if (sel?.kind === 'mate') setCard(mateCardHtml(MATES.find(m => m.id === sel.id)));
-    else if (nav) setCard(navCardHtml(nav.card));
+    else if (nav) setCard(navCardHtml(nav.card) + (nav.target.kind === 'place' && byId[nav.target.id] ? destSectionHtml(byId[nav.target.id]) : ''));
     else setCard('');
   }
 
@@ -672,11 +688,8 @@ async function live(mk) {
       progress: Math.min(Math.max((n.total - remaining) / n.total, 0), 1) };
   }
   function fitPadding() {
-    // walkingRouteFitPadding 48；上面讓過日期列＋搜尋＋藥丸，下面讓過卡片
-    const card = document.getElementById('card');
-    const cardTop = card ? card.getBoundingClientRect().top - d.getBoundingClientRect().top : DEV.h - DEV.bottom - 16;
-    // 首頁放大需求（2026-10-12）：留白收小、鏡頭拉近——上面只讓過日期列＋搜尋＋藥丸，左右 20
-    return new mk.Padding(265 - 128 + 14, 20 + 30 + (DEV.bar || 0), DEV.h - cardTop + 16, 20);
+    // walkingRouteFitPadding 48；上面讓過搜尋列與圖層晶片列（絕對座標，地圖現在從 0 起），下面讓過面板，右邊讓過浮動鈕
+    return new mk.Padding(G.chipTop + 40 + 6, 20 + 30 + (DEV.bar || 0), 16, 20);
   }
   async function startNav(target) {
     const route = await walkingDirections(ME, target.at);
@@ -731,7 +744,7 @@ async function live(mk) {
   }
 
   // 把一點移到地圖可見區的正中偏上（卡片打開也蓋不到）：首頁位置共享那一支逐一看旅伴時用
-  function centerOn(at, animate) { centerAt(at, mkEl.getBoundingClientRect().width / 2, 300, animate); }
+  function centerOn(at, animate) { centerAt(at, mkEl.getBoundingClientRect().width / 2, (G.liveTop + 31 + G.panelTop) / 2, animate); }
   // 把 at 移到地圖區裡 (x, y) 那一點（地圖區左上為原點），跨度不變
   function centerAt(at, x, y, animate) {
     const r = map.region, mr = mkEl.getBoundingClientRect();
@@ -741,7 +754,7 @@ async function live(mk) {
   }
   // focus=mates：鏡頭框旅伴與自己，拉近看。近一級之後三位擺不進同一幀（相距約 650 公尺），從第一位（小雯）開始
   function frameMates() {
-    frame([...Object.values(mateAnn).map(x => x.ann), meAnn], { padding: new mk.Padding(175, 36 + (DEV.bar || 0), 130, 36), minimumSpan: new mk.CoordinateSpan(0.0025, 0.0025) }, MATES.map(m => m.at), false);
+    frame([...Object.values(mateAnn).map(x => x.ann), meAnn], { padding: new mk.Padding(G.liveTop + 31 + 14, 36 + (DEV.bar || 0), 24, 36), minimumSpan: new mk.CoordinateSpan(0.0025, 0.0025) }, MATES.map(m => m.at), false);
     if (ZOOM_IN) centerOn(MATES[0].at, false);
   }
 
@@ -764,6 +777,8 @@ async function live(mk) {
   if (!ok) { drawLegs(await legsFor(day)); if (params.get('focus') !== 'mates') frameDay(); }
   // focus=mates：首頁 06「位置共享」——鏡頭只框旅伴與自己，拉近看，不開任何卡片
   if (params.get('focus') === 'mates') frameMates();
+  // sel=<行程 key>：載入時就選著那一站（面板換成那一站的頁；官網首頁的地點截圖用）
+  const selKey = params.get('sel'); if (selKey && byId[selKey]) { sel = { kind: 'place', id: selKey }; showCard(); }
   map.addEventListener('region-change-end', () => { syncShops(); placeChevrons(); });
   // 第一次取景完成才把地圖露出來：不讓人看到 MapKit 預設的世界地圖再跳到目標
   requestAnimationFrame(() => setTimeout(() => mkEl.dataset.framed = '1', 350));
@@ -780,7 +795,9 @@ async function live(mk) {
     sel = { kind: data.kind, id: data.id }; showCard();
   });
   const closeCard = () => { const a = selAnn(); sel = null; if (a) a.selected = false; if (!shopsOn) syncShops(); showCard(); };
-  cardSlot.addEventListener('click', async e => {
+  panelEl.addEventListener('click', async e => {
+    const tc = e.target.closest('[data-pid]');
+    if (tc) { const a = pinAnn[tc.dataset.pid]?.ann; if (a) a.selected = true; else { sel = { kind: 'place', id: tc.dataset.pid }; showCard(); } return; }
     const act = e.target.closest('[data-act]')?.dataset.act; if (!act) return;
     if (act === 'close') closeCard();
     else if (act === 'end') confirmEnd();
@@ -808,7 +825,7 @@ async function live(mk) {
   }
   // 首頁自動示範（autoplay.js）一輪播完在原地從頭再來（stories.js 的 INPLACE）：回到載入時那一幀——
   // 收卡片、關警示、回到原本那一天、導航回到初始那一趟（nav=0 就關掉）、鏡頭照初始取景，全部不帶動畫。
-  const chipsScroll0 = document.getElementById('chips').scrollLeft;
+  const chipsScroll0 = document.getElementById('chips')?.scrollLeft || 0;
   const home0 = map.region;   // 載入時的取景（一輪播完先動畫回到這裡，再 reset）
   const settle = () => new Promise(r => setTimeout(r, 900));
   window.__auto = {
@@ -822,24 +839,24 @@ async function live(mk) {
       const wasDone = ready.done; ready.done = false;   // startNav／frameDay 只在 ready.done 時帶動畫
       try {
         const day0 = params.get('nav') === '0' ? todayNo : NAV_DAY;
-        if (day !== day0) { day = day0; document.getElementById('chips').innerHTML = chipHtml(); jaWrap(document.getElementById('chips')); drawPins(); }
-        document.getElementById('chips').scrollLeft = chipsScroll0;
+        if (day !== day0) { day = day0; drawPins(); }
+        cardHtml = ''; renderPanel();
+        const ch = document.getElementById('chips'); if (ch) ch.scrollLeft = chipsScroll0;
         if (nav) { nav = null; walkPath = null; if (walkOverlay) map.removeOverlay(walkOverlay); walkOverlay = null; setNavChrome(false); }
         const ok = params.get('nav') === '0' ? false : await startNav({ kind: 'place', id: target.id, at: target.at, name: target.ev.title });
         // 載入時不導航的那兩支沒畫過卡片也沒畫浮動鈕（初始那一幀就是這樣），照樣清空；導航那一支 startNav 已經畫好導航卡
-        if (!ok) { cardSlot.innerHTML = ''; fabSlot.innerHTML = ''; paintSelection(); }
+        if (!ok) { cardHtml = ''; renderPanel(); paintSelection(); }
         if (!ok) { drawLegs(await legsFor(day)); if (params.get('focus') !== 'mates') frameDay(); }
         if (params.get('focus') === 'mates') frameMates();
         syncShops(); placeChevrons();
       } finally { ready.done = wasDone; }
     },
   };
-  document.getElementById('chips').addEventListener('click', async e => {
-    const c = e.target.closest('[data-day]'); if (!c) return;
+  panelEl.addEventListener('click', async e => {
+    const c = e.target.closest('.chip[data-day]'); if (!c) return;
     const n = c.dataset.day ? +c.dataset.day : null;
     if (n === day) return;
     day = n;
-    document.getElementById('chips').innerHTML = chipHtml(); jaWrap(document.getElementById('chips'));
     const a = selAnn(); if (a) a.selected = false; sel = null;
     // 離開導航那一天就結束導航
     if (nav && (nav.target.kind !== 'place' || byId[nav.target.id]?.day !== day)) { nav = null; walkPath = null; if (walkOverlay) map.removeOverlay(walkOverlay); walkOverlay = null; setNavChrome(false); }
