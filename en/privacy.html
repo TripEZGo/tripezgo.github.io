@@ -110,7 +110,7 @@
     <header class="legal-header">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="legal-meta">Applies to the TripEZGo iOS app and tripezgo.com　·　Effective: 16 August 2026　·　Last updated: 17 November 2026</p>
+      <p class="legal-meta">Applies to the TripEZGo iOS app and tripezgo.com　·　Effective: 16 August 2026　·　Last updated: 19 November 2026</p>
     </header>
 
     <nav class="toc" aria-label="Table of contents">
@@ -183,7 +183,7 @@
     <h2 id="s5">5. Where your data is stored</h2>
     <p>Your content is stored <strong>on your device</strong>, and — if you enable sync or backup — also in <strong>your own cloud account</strong> (the iCloud storage associated with your Apple ID, or the Google Drive you choose).</p>
     <ul>
-      <li><strong>Google Drive backup (optional)</strong>: after you switch the backup method to Google Drive in Settings, your trips, notes, attachments and photos are stored in a hidden folder in your Google Drive that belongs to this App alone. Only the App can read or write that folder, and the App cannot see any other file in your Drive. Google Drive does not support shared trips, so you must first stop sharing or leave shared trips before switching.</li>
+      <li><strong>Google Drive backup (optional)</strong>: after you turn on “Back up to Google Drive” in Settings, the App encrypts your own trips on this device (including their notes, inspirations, shopping lists, attachments and photos), together with data that belongs to no trip, and uploads them to a hidden folder in your Google Drive that belongs to this App alone. This is a one-way backup: it is only uploaded from your device, so that you can import your trips back after deleting or reinstalling the App. Sync, shared trips and location sharing still go through iCloud only. Trips other people shared with you are not backed up. Only the App can read or write that folder, and the App cannot see any other file in your Drive.</li>
       <li><strong>Shared trips</strong>: a trip you share with companions is kept in a shared area of your iCloud that only the members you invite can read. Once you stop sharing, members can no longer access it.</li>
       <li><strong>Share My Location</strong>: while it is on, your location and the time it was updated are written to that shared trip’s shared area so members can see you on the map. They are removed when you turn sharing off or the trip stops being shared.</li>
       <li><strong>Public links</strong>: when you create a public link, the trip is encrypted on your device and then stored in Apple’s iCloud public database. The decryption key exists only in the link itself (the part after “#”) and is never sent to any server. Anyone with the link can read that trip, and you can stop publishing it in the App at any time.</li>
@@ -197,7 +197,7 @@
       <li><strong>Firebase Crashlytics and Firebase Analytics (Google)</strong>: crash reporting and usage statistics — see section 2.3.</li>
       <li><strong>Google AdMob and Google’s consent management platform (Google)</strong>: ads in the free version — see section 2.4. For how Google uses data from partner apps, see <a href="https://policies.google.com/technologies/partner-sites" rel="noopener" target="_blank">this page</a>.</li>
       <li><strong>Google Calendar (Google, optional)</strong>: used only if you link a Google account in Settings. Access is limited to calendars the App itself creates, the titles of your calendar list, and your account email (to show which account is linked). The authorisation token is kept in your device’s keychain, and events are written by your device directly to your Google Calendar without passing through us.</li>
-      <li><strong>Google Drive (Google, optional)</strong>: used only if you switch the backup method to Google Drive. Access is limited to this App’s own hidden folder (drive.appdata) and your account email (to show which account is linked). It shares one authorisation token with Google Calendar, kept in your device’s keychain. Your data is uploaded by your device directly to your Google Drive and downloaded directly from it, without passing through us.</li>
+      <li><strong>Google Drive (Google, optional)</strong>: used only when you turn on “Back up to Google Drive” or use “Import from a Google Drive backup”. Access is limited to this App’s own hidden folder (drive.appdata) and your account email (to show which account is linked). This authorisation is kept separately from the Google Calendar one, both in your device’s keychain; when you turn the backup off, the App deletes only this device’s Drive authorisation. Your data is uploaded by your device directly to your Google Drive and downloaded directly from it, without passing through us.</li>
       <li><strong>Exchange rates (Frankfurter)</strong>: currency conversion downloads the latest rates from a public exchange-rate service. The request contains none of your content.</li>
       <li><strong>Shop data (GitHub)</strong>: the convenience-store and shop data on the map is downloaded as a public data file from GitHub. The request contains none of your content.</li>
     </ul>
@@ -223,7 +223,7 @@
       <li>You can delete individual content in the App at any time. Some items may first move to a trash or holding area and be permanently removed after a period; you may also delete them permanently yourself at any time.</li>
       <li>Deleting the App removes the data stored on that device.</li>
       <li>Data held in your cloud account can be deleted by you in that cloud service’s settings, or by turning sync off in the App. Only you can perform this.</li>
-      <li>Data stored in Google Drive: on a computer, open Google Drive, go to “Settings” › “Manage apps”, find TripEZGo, open “Options” and choose “Delete hidden app data”. To revoke the App’s access, remove TripEZGo under <a href="https://myaccount.google.com/permissions" rel="noopener" target="_blank">your Google Account’s third-party access</a>.</li>
+      <li>Data stored in Google Drive: after turning the backup off in the App under Settings › “Back up to Google Drive”, you can delete this device’s backup from Google Drive; on the “Import from a Google Drive backup” page you can delete the backup of any device or any single trip. You can also delete everything at once: on a computer, open Google Drive, go to “Settings” › “Manage apps”, find TripEZGo, open “Options” and choose “Delete hidden app data”. To revoke the App’s access, remove TripEZGo under <a href="https://myaccount.google.com/permissions" rel="noopener" target="_blank">your Google Account’s third-party access</a>.</li>
       <li>The data described in sections 2.3 and 2.4 is retained and deleted under Google’s retention policies.</li>
     </ul>
 
