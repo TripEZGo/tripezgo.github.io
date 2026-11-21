@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=08431e6552","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=40b4ea05f9","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=8fe86e1dbc","/screens/map-static.js":"/screens/map-static.js?v=83a50a3033","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=1ff6396919","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=ead80965c2","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=49f922643b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=35b75e7a8a"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=08431e6552","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=40b4ea05f9","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=bb21fd44b6","/screens/map-static.js":"/screens/map-static.js?v=f45b3cec5f","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=1ff6396919","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=ead80965c2","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=49f922643b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=35b75e7a8a"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>地圖</title>
 <!--
@@ -14,16 +14,17 @@
 -->
 <link rel="stylesheet" href="screen.css?v=7e1e128cfb">
 <link rel="stylesheet" href="map.css?v=32c4142c07">
+<link rel="stylesheet" href="map-panel.css?v=8423bffb6b">
 <style>
-  /* 真的地圖：跟 map.css 的 .map 同一塊（y=128 往下），MapKit 自己畫底圖 */
-  .mk { position: absolute; left: 0; top: 128px; width: 402px; height: 746px; background: #f3efe8; }
-  .head, .chips, .search, .live, .fab, .card, .deck-toggle { z-index: 6; }
-  .chips { z-index: 7; }
-  .card { z-index: 8; }
-  .tabbar { z-index: 9; }
-  /* MapKit 的 Apple 標誌與法律資訊要看得到：抬到分頁列上面（App 的基準圖也是在分頁列上方） */
+  /* 1.10.0（ADR-0091）：地圖滿版，畫到狀態列底下 */
+  .mk { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #f3efe8; }
+  .search, .lrail, .live, .fab { z-index: 6; }
+  .pnl { z-index: 8; }
+  .tabbar { z-index: 40; }
+  /* MapKit 的 Apple 標誌與法律資訊：跟著面板頂緣（setPanel 設 --legal-bottom） */
   .mk .mk-controls-container .mk-bottom-left-controls-container,
-  .mk .mk-controls-container .mk-bottom-right-controls-container { bottom: 96px !important; }
+  .mk .mk-controls-container .mk-bottom-right-controls-container { bottom: var(--legal-bottom, 96px) !important; }
+
 
   /* ── 行程圖釘：TripMapPinView（MKMarkerAnnotationView）— 圓頭＋短尖尾、頭裡是類型圖示，
         單日時右上角掛站號（badgeSize 18、一半掛在外面、1.5 白邊、等寬數字） ── */
@@ -134,16 +135,6 @@
   .is-interactive [data-tap] { cursor: pointer; }
   /* 第一次取景完成才露出地圖（map-live.js 設 data-framed；不用 class，MapKit 會蓋掉容器的 class） */
   #mk { opacity:0; transition:opacity .3s; } #mk[data-framed], #mk[data-mode="poster"] { opacity:1; }
-  /* iPad（?device=ipad）：地圖從 162（128＋34）鋪到底；Apple 標誌那一條離底 46（模擬器量：「法律資訊」底 1330；map-live.js 的 padding 同一個數 DEV.legal） */
-  .ipad .mk { top: 162px; width: 1032px; height: 1214px; }
-  .ipad .mk .mk-controls-container .mk-bottom-left-controls-container,
-  .ipad .mk .mk-controls-container .mk-bottom-right-controls-container { bottom: 46px !important; }
-  .ipad .deck-toggle { left: 505px; }
-  /* iPhone Duo（?device=duo）：地圖從 66 鋪滿整個寬度，在垂直列底下也畫；Apple 標誌那一條離底 60（安全區底 34＋26，同 iPad 的算法；map-live.js 的 padding 同一個數 DEV.legal） */
-  .duo .mk { top: 66px; width: 951px; height: 603px; }
-  .duo .mk .mk-controls-container .mk-bottom-left-controls-container,
-  .duo .mk .mk-controls-container .mk-bottom-right-controls-container { bottom: 60px !important; }
-  .duo .deck-toggle { left: 422.5px; }
 </style>
 </head>
 <body>

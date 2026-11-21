@@ -1,0 +1,87 @@
+/* 1.10.0 地圖（ADR-0091）：搜尋列、圖層晶片、分享藥丸、定位鈕、底部面板（根頁輪播、地點頁、步行導航頁）。
+   map-live.html（真 MapKit）與 map-demo.html（離線底圖，引導頁）共用。 */
+  /* 搜尋列：浮在地圖上的一塊 view（MapSearchBarView）——左右 20、44 高、圓角 12、放大鏡 tzMuted、字 base */
+  .search, .ipad .search, .duo .search { top: var(--search-top); right: calc(20px + var(--right-inset, 0px)); padding: 0 0 0 12px; gap: 8px; color: var(--muted); }
+  .search svg { width: 20px; height: 20px; flex: none; color: var(--muted); }
+  /* 圖層晶片（MapLayerChipRail）：搜尋列下 12、橫向可滑、間距 8；開＝tzAccent 實心白字、關＝白底細框；內距 8/12、icon 與字隔 6、字 sm */
+  .lrail { position: absolute; left: 0; right: var(--right-inset, 0px); top: calc(var(--search-top) + 56px); overflow: hidden; }
+  .lrail-in { display: flex; gap: 8px; padding: 0 20px; white-space: nowrap; align-items: center; }
+  .lchip { flex: none; height: 31px; display: flex; align-items: center; gap: 6px; padding: 0 12px; border-radius: 99px;
+    background: var(--card); border: 1px solid var(--border); color: var(--ink); font: 400 var(--t-sm)/16px var(--font);
+    box-shadow: 0 2px 6px rgba(36,29,23,.12); }
+  .lchip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .lchip svg { width: 16px; height: 16px; flex: none; }
+  .lchip svg + span + svg { width: 12px; height: 12px; margin-left: -2px; }
+  .lchip.ic { width: 39px; height: 39px; padding: 0; justify-content: center; }
+  .lchip.ic svg { width: 20px; height: 20px; }
+  /* 分享我的位置：晶片列下 10、靠左 */
+  .live, .ipad .live, .duo .live { top: calc(var(--search-top) + 97px); }
+  /* 定位鈕（MKUserTrackingButton）：右 16、跟著面板頂緣 */
+  .fab.loc, .ipad .fab.loc, .duo .fab.loc { left: auto; right: calc(16px + var(--right-inset, 0px)); }
+
+  /* ── 底部面板（MapPanelViewController）：tzCard、上緣圓角、grabber 36×5、上下 12 ── */
+  .pnl { position: absolute; left: 0; right: var(--right-inset, 0px); bottom: 0; background: var(--card); border-radius: 16px 16px 0 0;
+    box-shadow: 0 -2px 16px rgba(36,29,23,.12); overflow: hidden; }
+  .grab { width: 36px; height: 5px; border-radius: 3px; background: var(--border); margin: 12px auto 20px; }   /* 分段控制上緣離面板頂 37（參考圖 04-map） */
+  /* 依日程／附近：系統分段控制（31 高、左右 20） */
+  .seg { margin: 0 20px; height: 31px; border-radius: 99px; background: var(--sunken); display: flex; padding: 2px; }
+  .seg b { flex: 1; display: grid; place-items: center; border-radius: 99px; font: 400 var(--t-sm)/16px var(--font); color: var(--muted); }
+  .seg b.on { background: var(--card); color: var(--ink); font-weight: 600; box-shadow: 0 2px 6px rgba(0,0,0,.12); }
+  .pchips { display: flex; gap: 8px; padding: 0 20px; margin-top: 8px; white-space: nowrap; overflow: hidden; }
+  .pchips .chip { flex: none; }
+  .pbody { padding-top: 16px; }
+  .pnl.page .seg, .pnl.page .pchips { display: none; }
+  .pnl.page .pbody { padding-top: 0; }
+  .pnl.small .pbody { visibility: hidden; }
+  .pg-sec { margin: 16px 16px 0; }
+  .pg-sec-h { font: 600 var(--t-sm)/15.51px var(--font); color: var(--muted); }
+  .pg-sec-b { margin-top: 6px; font: 400 var(--t-base)/20px var(--font); color: var(--muted); }
+  /* 輪播（MapCarouselView）：列標題 base 粗體、下 8；卡 150 寬、間距 10、4:3 圖圓角 12；名稱 sm semibold 2 行、時刻 xs 等寬 muted；列底 16 */
+  .prow-h { margin: 0 20px 8px; font: 700 var(--t-base)/17.9px var(--font); color: var(--ink); }
+  .prow { overflow: hidden; margin-bottom: 16px; }
+  .prow-in { display: flex; gap: 10px; padding: 0 20px; }
+  .pcard { flex: none; width: 150px; }
+  .pimg { width: 150px; height: 112.5px; border-radius: 12px; overflow: hidden; }
+  .pimg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pimg .tile { width: 100%; height: 100%; display: grid; place-items: center; background: var(--sw-base); }
+  .pimg .tile .glyph { position: static; width: 32px; height: 32px; fill: #fff; }
+  .pname { margin-top: 8px; font: 600 var(--t-sm)/15.51px var(--font); color: var(--ink);
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .ptime { margin-top: 4px; font: 400 var(--t-xs)/14.32px var(--font); font-variant-numeric: tabular-nums; color: var(--muted); }
+  .pcard.cancelled .pimg { opacity: .55; }
+  .pcard.cancelled .pname { color: var(--muted); text-decoration: line-through; }
+
+  /* ── 面板裡的地點頁（MapPlaceCard）：內距 16；標題 lg semibold、副標 base muted；右上 40 圓鈕（步行、ⓘ、✕）；
+        一排等寬動作鈕（第一顆實心 accentInk）；照片列 150×112、間距 8 ── */
+  .pg-head { display: flex; gap: 12px; padding: 4px 16px 0; }
+  .pg-text { flex: 1; min-width: 0; }
+  .pg-title { font: 600 var(--t-lg)/19.09px var(--font); color: var(--ink); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .pg-sub { margin-top: 4px; font: 400 var(--t-base)/17.9px var(--font); color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .pg-btns { display: flex; gap: 8px; flex: none; }
+  .rbtn { width: 40px; height: 40px; border-radius: 50%; background: var(--sunken); color: var(--ink); display: grid; place-items: center; flex: none; }
+  .rbtn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+  .pg-tagrow { display: flex; align-items: center; gap: 8px; padding: 8px 16px 0; font: 400 var(--t-sm)/15.51px var(--font); color: var(--muted); }
+  .pg-tagrow .c-tag { margin: 0; }
+  .pg-acts { display: flex; gap: 8px; padding: 16px 16px 0; }
+  .pact { flex: 1; height: 43px; border-radius: 8px; background: color-mix(in srgb, var(--sunken) 55%, var(--card)); color: var(--ink); display: grid; place-items: center;
+    font: 600 var(--t-base)/17.9px var(--font); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 8px; }
+  .pact.primary { background: var(--accent-ink); color: #fff; }
+  .pg-photos { display: flex; gap: 8px; padding: 12px 16px 0; }
+  .pg-photos img { width: 150px; height: 112px; object-fit: cover; border-radius: 12px; }
+  .pg-note { padding: 12px 16px 0; font: 400 var(--t-xs)/14.32px var(--font); color: var(--muted); }
+  /* 步行導航頁（MapNavigationHeaderView／DetailView）：‹、48 圓的動作徽章（accentInk）、動作 lg semibold、距離 xl 等寬＋單位 sm muted、✕；
+     進度條、狀態 sm muted、分隔線，下面直接接終點的資訊 */
+  .nv-head { display: flex; align-items: center; gap: 12px; padding: 4px 16px 12px; }
+  .nv-badge { width: 48px; height: 48px; border-radius: 50%; background: var(--accent-ink); color: #fff; display: grid; place-items: center; flex: none; }
+  .nv-badge svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+  .nv-text { flex: 1; min-width: 0; }
+  .nv-man { font: 600 var(--t-lg)/19.09px var(--font); color: var(--ink); white-space: nowrap; }
+  .nv-dist { display: flex; align-items: baseline; gap: 4px; margin-top: 2px; }
+  .nv-dist b { font: 600 var(--t-xl)/26px var(--font); font-variant-numeric: tabular-nums; color: var(--ink); }
+  .nv-dist span { font: 400 var(--t-sm)/15.51px var(--font); color: var(--muted); }
+  .nv-bar { margin: 4px 16px 0; height: 4px; border-radius: 2px; background: var(--sunken); overflow: hidden; position: relative; }
+  .nv-bar b { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent-ink); }
+  .nv-status { margin: 8px 16px 0; font: 400 var(--t-sm)/15.51px var(--font); color: var(--muted); }
+  .nv-line { margin-top: 12px; height: 1px; background: var(--border-soft, var(--border)); margin-bottom: 12px; }
+  .mate-ic { width: 40px; height: 40px; flex: none; display: grid; place-items: center; }
+  .pg-head .mate-ic + .pg-text { align-self: center; }

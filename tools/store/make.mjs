@@ -27,7 +27,7 @@ const SLOTS = [
   ['calendar', 'calendar', 'day=2'],
   ['overview', 'overview', ''],
   ['inspiration', 'inspiration', ''],
-  ['map', 'map-live', ''],
+  ['map', 'map-live', 'nav=0&today=2'],   // 1.10.0：地圖滿版＋底部面板到中，今天的行程排成照片卡（ADR-0091）
   ['event-leg', 'event', 'event=d1-flight-tpe-okj', ['leg', '']],
   ['library', 'shop', ''],
   ['collaboration', 'members', ''],
