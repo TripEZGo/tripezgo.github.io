@@ -1,0 +1,1150 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kansai-kyoto-osaka-kobe-6d",
+  "revision": 3,
+  "contentLocale": "en",
+  "title": "Kansai in 6 Days — Kyoto, Osaka, Kobe",
+  "subtitle": "Three nights in Kyoto, three in Osaka: temples, Universal Studios and Dotonbori in six days",
+  "summary": "An eight-day travelogue squeezed into six: three days based in Kyoto for Kiyomizu-dera, Kinkaku-ji and Arashiyama, then three based in Osaka for Dotonbori, Universal Studios and Kobe. At most four main sights a day, with Osaka Castle, Tsuruhashi, Nintendo OSAKA and Koshien kept as alternates. The notes cover entry, transit cards, Universal Studios reservations and tax-refund reminders.",
+  "destination": "Kyoto, Osaka and Kobe, Japan",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 6,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Two travelers",
+    "First visit",
+    "Temples and shrines",
+    "Universal Studios"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in once your flights and hotels are booked"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kansai-kyoto-osaka-kobe-6d/d1-03.jpg",
+    "d2-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d2-01.jpg",
+    "d2-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d2-02.jpg",
+    "d2-04": "images/jp-kansai-kyoto-osaka-kobe-6d/d2-04.jpg",
+    "d3-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d3-01.jpg",
+    "d3-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d3-02.jpg",
+    "d3-04": "images/jp-kansai-kyoto-osaka-kobe-6d/d3-04.jpg",
+    "d4-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d4-01.jpg",
+    "d4-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d4-02.jpg",
+    "d4-04": "images/jp-kansai-kyoto-osaka-kobe-6d/d4-04.jpg",
+    "d5-01": "images/jp-kansai-kyoto-osaka-kobe-6d/d5-01.jpg",
+    "d5-02": "images/jp-kansai-kyoto-osaka-kobe-6d/d5-02.jpg",
+    "d5-05": "images/jp-kansai-kyoto-osaka-kobe-6d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Stay: Toyoko Inn Kyoto Shijo-Omiya (東横INN京都四条大宮)",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "Toyoko Inn Kyoto Shijo-Omiya",
+        "latitude": 35.0037169,
+        "longitude": 135.7473422,
+        "applePlaceID": "IBCA9C49A7B39459C",
+        "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "Stay: Toyoko Inn Kyoto Shijo-Omiya (東横INN京都四条大宮)",
+      "fromDay": 2,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "Toyoko Inn Kyoto Shijo-Omiya, Kyoto",
+        "latitude": 35.0037169,
+        "longitude": 135.7473422,
+        "applePlaceID": "IBCA9C49A7B39459C",
+        "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        3
+      ],
+      "closingDays": [
+        2
+      ]
+    },
+    {
+      "key": "ad3-03",
+      "title": "Stay: APA Hotel & Resort Osaka Umeda Eki Tower (アパホテル&リゾート 大阪梅田駅タワー)",
+      "fromDay": 3,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "APA Hotel & Resort Osaka Umeda Eki Tower",
+        "latitude": 34.7000083,
+        "longitude": 135.5016043,
+        "applePlaceID": "I89646F39C1562D81",
+        "address": "〒530-0057, 大阪府大阪市北区, 曾根崎2丁目8-32",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        4,
+        5,
+        6
+      ],
+      "closingDays": [
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Osaka Castle (大阪城)",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "Osaka Castle",
+        "latitude": 34.6872339,
+        "longitude": 135.5258417,
+        "applePlaceID": "IB3018F8341616AC5",
+        "address": "〒540-0002, 大阪府大阪市中央区, 大阪城1-1",
+        "addressIsApproximate": false
+      },
+      "notes": "Check the keep's opening hours before you go; the ticket-counter queue is long, so you can buy an online ticket first"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Nintendo OSAKA",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "Nintendo OSAKA",
+        "latitude": 34.7017999,
+        "longitude": 135.4967532,
+        "applePlaceID": "IB8F10D98C49B2EBB",
+        "address": "〒530-0001",
+        "addressIsApproximate": true
+      },
+      "notes": "Inside Daimaru Umeda; check opening hours before you go"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: Hanshin Koshien Stadium (阪神甲子園球場)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Hanshin Koshien Stadium",
+        "latitude": 34.7212093,
+        "longitude": 135.3616261,
+        "applePlaceID": "I844277B44C5A0C7D",
+        "address": "〒663-8152, 兵庫県西宮市, 甲子園町1-82",
+        "addressIsApproximate": false
+      },
+      "notes": "Depends on the Hanshin Tigers schedule, and tickets sell out fast, so buy early; check opening hours before you go"
+    },
+    {
+      "key": "u-04",
+      "title": "Alternate: Tsuruhashi (鶴橋コリアタウン)",
+      "durationMinutes": 60,
+      "category": "market",
+      "place": {
+        "name": "Tsuruhashi Station, West Exit",
+        "latitude": 34.6655849,
+        "longitude": 135.5300792,
+        "applePlaceID": "I8D15846FED98658C",
+        "address": "大阪府大阪市天王寺区, 下味原町",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and fact-checking",
+      "paragraphs": [
+        {
+          "text": "Source travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/76d66c2e34af/",
+          "style": "bullet"
+        },
+        {
+          "text": "Checked (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "JR limited express Haruka one-way fare: https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kansai Airport limousine bus timetable and fare from Umeda: https://www.kate.co.jp/en/timetable/detail/UM (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kyoto Tower observation deck hours: https://www.kyoto-tower.jp/en/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kinkaku-ji hours: https://www.shokoku-ji.jp/en/kinkakuji/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kiyomizu-dera opening time: https://www.kiyomizudera.or.jp/en/location/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Tenryu-ji hours: https://www.tenryuji.com/en/visit/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Universal Studios Japan operating calendar: https://www.usj.co.jp/web/en/us/area/information/calendar (checked 2026-11-17; the page lists no hours, so check before you go)",
+          "style": "bullet"
+        },
+        {
+          "text": "Could not be confirmed from official sources; check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "Arashiyama Monkey Park: the official site would not open, and sources disagree on the hours.",
+          "style": "bullet"
+        },
+        {
+          "text": "Opening hours of Yasaka Shrine, Dotonbori, Motomachi Shopping Street, the Kobe harbor facilities and the restaurants.",
+          "style": "bullet"
+        },
+        {
+          "text": "Actual bus and train times and journey durations.",
+          "style": "bullet"
+        },
+        {
+          "text": "Travelogue details",
+          "style": "heading"
+        },
+        {
+          "text": "Hotels and the order of stops follow the author's trip in May 2023; the original 8 days are squeezed into 6, and Osaka Castle, Tsuruhashi and Nintendo Osaka are left out (see the alternates).",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Entry and internet",
+          "style": "heading"
+        },
+        {
+          "text": "Before you leave, register your immigration and customs declaration on Visit Japan Web and show the QR code on arrival: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "Remember your account password or write it down, so you are not locked out at immigration.",
+          "style": "bullet"
+        },
+        {
+          "text": "For data, use a physical SIM or an eSIM, and switch it on after landing.",
+          "style": "bullet"
+        },
+        {
+          "text": "Getting around",
+          "style": "heading"
+        },
+        {
+          "text": "Trains, subways and buses take Suica or ICOCA transit cards; on an iPhone you can add Suica to Wallet. From the 2023 travelogue: top-up needed a Mastercard, so load it in Taiwan before you leave.",
+          "style": "bullet"
+        },
+        {
+          "text": "Airport to Kyoto: the JR Haruka limited express, about ¥2,700 one way (official site; fares change from November 2026, so check before you go); the travelogue gives about 1.5 hours, so go by the timetable. Buy your ticket at a ticket machine to be sure of a seat.",
+          "style": "bullet"
+        },
+        {
+          "text": "Osaka-Umeda to Kansai Airport: the Kansai Airport limousine bus from Hankyu Sanbangai takes about 60 min, ¥1,800 one way, no reservation needed, and runs roughly every 10 to 15 min. With luggage the bus is easier than changing trains.",
+          "style": "bullet"
+        },
+        {
+          "text": "Around Kyoto you mostly use buses and the Hankyu line; check bus routes and times with your navigation app before you go.",
+          "style": "bullet"
+        },
+        {
+          "text": "Reservations",
+          "style": "heading"
+        },
+        {
+          "text": "Buy Universal Studios Japan tickets early; popular dates can sell out.",
+          "style": "bullet"
+        },
+        {
+          "text": "Super Nintendo World needs an area timed-entry ticket; see the official site and the park's app for how to get one.",
+          "style": "bullet"
+        },
+        {
+          "text": "Other",
+          "style": "heading"
+        },
+        {
+          "text": "Carry plenty of yen in cash: temple admissions, souvenirs, amulets and some reserved-seat tickets take cash only.",
+          "style": "bullet"
+        },
+        {
+          "text": "Hanshin Tigers games at Koshien sell out fast; if you want to see one, buy early to match the schedule (see the alternate to-dos).",
+          "style": "bullet"
+        },
+        {
+          "text": "The tax-refund rules have changed in recent years; check the Japan Tourism Agency's explanation before you leave.",
+          "style": "bullet"
+        },
+        {
+          "text": "When taking photos, avoid people's faces; shoot temples at an angle; you usually have to carry your rubbish back to the hotel.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "Trip overview: how the 6 days run",
+      "paragraphs": [
+        {
+          "image": "d2-02"
+        },
+        "In and out of Kansai Airport, with two nights in Kyoto and three in Osaka, and Kobe and Universal Studios done as day trips from Osaka. Each day holds at most four main stops; Kyoto runs on buses and the Hankyu line, Osaka and Kobe on JR and Hanshin, with one transport card for the lot.",
+        "Day 1: land at the airport in the afternoon, ride the Haruka limited express to Kyoto, drop your bags, then go up {@d1-03} in the evening and have ramen at Kyoto Ramen Koji in the station building.",
+        "Day 2: a full day in eastern and northern Kyoto, from Yasaka Shrine to {@d2-02}, snacking along Ninenzaka and Sannenzaka, then a bus out to {@d2-04} in the afternoon.",
+        "Day 3: Tenryu-ji in Arashiyama and the {@d3-02}, soba for lunch, the monkey park in the afternoon, then back for your bags and the Hankyu line to Osaka Umeda, with yakitori in Sonezaki for dinner.",
+        {
+          "image": "d3-02"
+        },
+        "Day 4: JR to Kobe for {@d4-01} and the waterfront at Meriken Park and Harborland, back to Osaka in the afternoon, then kushikatsu and Don Quijote around {@d4-04} in the evening.",
+        "Day 5: all day at {@d5-01}, with the Harry Potter area and the parade, and {@d5-05} in the early evening.",
+        {
+          "image": "d5-05"
+        },
+        "Day 6: the limousine bus from Hankyu Sanbangai to Kansai Airport in the morning, and straight through departures.",
+        "Where to sleep: two nights at Toyoko Inn Kyoto Shijo-Omiya, then on day 3 a move to APA Hotel & Resort Osaka Umeda Eki Tower for three nights, with the airport reached straight from Osaka on the last morning.",
+        "Getting around: the JR Haruka limited express takes about 80 minutes from the airport to Kyoto; in Kyoto you mostly use buses and the Hankyu line; Osaka to Kobe is the JR Special Rapid, about 22 minutes, and you can return on the Hanshin Main Line through to Osaka Namba; for Universal Studios change to the JR Yumesaki Line from Osaka Station; for the airport, take the limousine bus from Hankyu Sanbangai, about 60 minutes, no reservation needed. Check the latest timetables before you go.",
+        "Who it suits: first-timers who want Kyoto's temples, Osaka's food, Kobe's waterfront and Universal Studios in one trip. Book the Universal Studios ticket and the Super Nintendo World area ticket early, and wear comfortable shoes, since the days involve a lot of walking."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "dayPlaces": [
+    {
+      "name": "Kyoto",
+      "latitude": 35.02107,
+      "longitude": 135.75385,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Kyoto",
+      "latitude": 35.02107,
+      "longitude": 135.75385,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Kyoto",
+      "latitude": 35.02107,
+      "longitude": 135.75385,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Osaka",
+      "latitude": 34.69379,
+      "longitude": 135.50107,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Osaka",
+      "latitude": 34.69379,
+      "longitude": 135.50107,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Osaka",
+      "latitude": 34.69379,
+      "longitude": 135.50107,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Kyoto",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Kansai International Airport (関西国際空港)",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "airport",
+          "place": {
+            "name": "Kansai International Airport",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Drop your bags and check in: Toyoko Inn Kyoto Shijo-Omiya (東横INN京都四条大宮)",
+          "start": "16:30",
+          "end": "17:00",
+          "category": "hotel",
+          "place": {
+            "name": "Toyoko Inn Kyoto Shijo-Omiya",
+            "latitude": 35.0037169,
+            "longitude": 135.7473422,
+            "applePlaceID": "IBCA9C49A7B39459C",
+            "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+            "addressIsApproximate": false
+          },
+          "notes": "Check-in time is set by the hotel",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "JR Haruka (Kansai Airport → Kyoto, about 80 min, about ¥2,700 one way), then the subway or a taxi from Kyoto Station to the hotel"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "Kyoto Tower observation deck (京都タワー)",
+          "start": "17:45",
+          "end": "19:00",
+          "category": "sight",
+          "place": {
+            "name": "Kyoto Tower",
+            "latitude": 34.9875399,
+            "longitude": 135.7593633,
+            "applePlaceID": "IB477000AA8B21F20",
+            "address": "〒600-8216, 京都府京都市下京区, 烏丸通七条下る東塩小路町721-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Observation deck 10:00–21:00 (last entry 20:30); hours may change at short notice",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Walk to Shijo Station on the Karasuma Line subway and ride to Kyoto Station (about 5 min), then walk to Kyoto Tower"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "Dinner: Kyoto Ramen Koji (京都拉麺小路)",
+          "start": "19:30",
+          "end": "20:45",
+          "category": "dining",
+          "place": {
+            "name": "Kyoto Ramen Koji",
+            "latitude": 34.98567,
+            "longitude": 135.757991,
+            "applePlaceID": "I81879431E0925E7E",
+            "address": "〒600-8216, 京都府京都市下京区, 東塩小路町657",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "On the 10th floor of Kyoto Station Building, about 10 min on foot from Kyoto Tower"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Take the Karasuma Line subway back to Shijo Station, then walk about 10 min"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Kyoto",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Yasaka Shrine (八坂神社)",
+          "start": "09:30",
+          "end": "10:15",
+          "category": "temple",
+          "place": {
+            "name": "Yasaka Shrine",
+            "latitude": 35.0036515,
+            "longitude": 135.7785541,
+            "applePlaceID": "IF3DD6C93CCB05636",
+            "address": "〒605-0073, 京都府京都市東山区, 祇園町北側625",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Hankyu Kyoto Line, Omiya → Kawaramachi, about 6 min, then about 15 min on foot"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "Kiyomizu-dera (清水寺)",
+          "start": "11:00",
+          "end": "12:30",
+          "category": "temple",
+          "place": {
+            "name": "Kiyomizu-dera",
+            "latitude": 34.9947926,
+            "longitude": 135.7850021,
+            "applePlaceID": "I8C491B25C0D2CC13",
+            "address": "〒605-0862, 京都府京都市東山区, 清水1丁目294",
+            "addressIsApproximate": false
+          },
+          "notes": "Opens at 06:00, closing time varies with the season; check closing days before you go",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "About 1.5 km on foot along Ninen-zaka and Sannen-zaka (二寧坂・産寧坂); you can have matcha ice cream and dango on the way"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "Lunch: around Kiyomizu-dera (rice bowls)",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "dining",
+          "place": {
+            "name": "Restaurants around Kiyomizu-dera",
+            "latitude": 34.9958553,
+            "longitude": 135.7807147,
+            "address": "京都府京都市東山区清水2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk down the hill"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "Kinkaku-ji (鹿苑寺)",
+          "start": "15:15",
+          "end": "16:30",
+          "category": "temple",
+          "place": {
+            "name": "Kinkaku-ji",
+            "latitude": 35.0395125,
+            "longitude": 135.7284424,
+            "applePlaceID": "IC4F6609AF49EBC33",
+            "address": "〒603-8361, 京都府京都市北区, 金閣寺町1",
+            "addressIsApproximate": false
+          },
+          "notes": "09:00–17:00; check closing days before you go",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "Kyoto City Bus (from the Gion area to Kinkakuji-michi, about 40–45 min), then about 15 min on foot"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "Dinner: around Shijo-Omiya (izakaya)",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "Shijo-Omiya",
+            "latitude": 35.0033133,
+            "longitude": 135.7485501,
+            "applePlaceID": "IE68D13DF449EA6A0",
+            "address": "京都府京都市下京区, 四条大宮町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Kyoto City Bus back to the Shijo-Omiya area; confirm the route with your navigation app"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Kyoto",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Tenryu-ji (天龍寺)",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "temple",
+          "place": {
+            "name": "Tenryu-ji",
+            "latitude": 35.0156201,
+            "longitude": 135.6737414,
+            "applePlaceID": "IFA8991BF9FF43769",
+            "address": "〒616-8385, 京都府京都市右京区, 嵯峨天龍寺芒ノ馬場町68",
+            "addressIsApproximate": false
+          },
+          "notes": "08:30–17:00 (last entry 16:50); occasionally closed at short notice",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Hankyu Kyoto Line, Omiya → Katsura, then the Hankyu Arashiyama Line to Arashiyama (the travelogue says a direct train runs from Omiya, but on weekdays you usually change at Katsura)"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "Arashiyama Bamboo Grove (嵯峨野の竹林)",
+          "start": "10:50",
+          "end": "11:30",
+          "category": "park",
+          "place": {
+            "name": "Arashiyama Bamboo Grove",
+            "latitude": 35.0168217,
+            "longitude": 135.6713167,
+            "applePlaceID": "I2150E2A73D2902CD",
+            "address": "〒616-8394",
+            "addressIsApproximate": true
+          },
+          "notes": "Open all day, no closing days",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Walk straight to the grove from Tenryu-ji's north exit"
+          },
+          "images": [
+            "d3-02"
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "Lunch: Arashiyama (soba, tempura)",
+          "start": "12:00",
+          "end": "13:00",
+          "category": "dining",
+          "place": {
+            "name": "Togetsukyo Bridge",
+            "latitude": 35.0127929,
+            "longitude": 135.6777513,
+            "applePlaceID": "ICB75BE0B9C432E3B",
+            "address": "〒616-8383, 京都府京都市右京区, 嵯峨中ノ島町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the Togetsukyo Bridge area"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "Arashiyama Monkey Park Iwatayama (嵐山モンキーパークいわたやま)",
+          "start": "13:30",
+          "end": "15:15",
+          "category": "park",
+          "place": {
+            "name": "Arashiyama Monkey Park Iwatayama",
+            "latitude": 35.0113875,
+            "longitude": 135.6766429,
+            "applePlaceID": "IEE1B5A6498912271",
+            "address": "〒616-0004, 京都府京都市西京区, 嵐山中尾下町61",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go (sources disagree: opens around 9:00, with an earlier last entry in winter; closed at short notice in bad weather)",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "Walk to the entrance on the south side of Togetsukyo Bridge; the climb takes about 30–45 min (included in the time at the stop)"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "Back to the hotel for your bags: Toyoko Inn Kyoto Shijo-Omiya (東横INN京都四条大宮)",
+          "start": "16:15",
+          "end": "16:30",
+          "category": "hotel",
+          "place": {
+            "name": "Toyoko Inn Kyoto Shijo-Omiya",
+            "latitude": 35.0037169,
+            "longitude": 135.7473422,
+            "applePlaceID": "IBCA9C49A7B39459C",
+            "address": "〒604-8804, 京都府京都市中京区, 壬生坊城町6-2",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Hankyu Arashiyama Line and Kyoto Line, Arashiyama → Katsura → Omiya, about 25 min including walking"
+          }
+        },
+        {
+          "key": "d3-06",
+          "title": "Check in: APA Hotel & Resort Osaka Umeda Eki Tower (アパホテル&リゾート 大阪梅田駅タワー)",
+          "start": "17:45",
+          "end": "18:15",
+          "category": "hotel",
+          "place": {
+            "name": "APA Hotel & Resort Osaka Umeda Eki Tower",
+            "latitude": 34.7000083,
+            "longitude": 135.5016043,
+            "applePlaceID": "I89646F39C1562D81",
+            "address": "〒530-0057, 大阪府大阪市北区, 曾根崎2丁目8-32",
+            "addressIsApproximate": false
+          },
+          "notes": "Check-in time is set by the hotel",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "Hankyu Kyoto Line limited express, Omiya → Osaka-Umeda, about 45 min, then walk to the hotel"
+          }
+        },
+        {
+          "key": "d3-07",
+          "title": "Dinner: Tengu Sakaba Sonezaki Ohatsutenjin-dori (テング酒場 曽根崎お初天神通り店), yakitori izakaya",
+          "start": "18:45",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "Tengu Oh-hall Sonezaki Ohatsutenjin-dori",
+            "latitude": 34.7011984,
+            "longitude": 135.5005634,
+            "applePlaceID": "IB32F0215EA412694",
+            "address": "〒530-0057",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-06",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Osaka",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "Kobe Motomachi Shopping Street (元町商店街): Kobe beef croquettes",
+          "start": "09:45",
+          "end": "11:15",
+          "category": "shopping",
+          "place": {
+            "name": "Kobe Motomachi Shopping Street Association",
+            "latitude": 34.6881288,
+            "longitude": 135.1851714,
+            "applePlaceID": "IA1EC235AC77B005B",
+            "address": "〒650-0022",
+            "addressIsApproximate": true
+          },
+          "notes": "The street is open all day; check each shop's opening hours before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "JR Kobe Line Special Rapid, Osaka → Sannomiya, about 22 min (or the Hankyu Kobe Line, Umeda → Kobe-Sannomiya), then about 10 min on foot"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "Kobe Harbor area: Meriken Park and Harborland (メリケンパーク・ハーバーランド)",
+          "start": "11:50",
+          "end": "13:15",
+          "category": "park",
+          "place": {
+            "name": "Meriken Park",
+            "latitude": 34.6821699,
+            "longitude": 135.1887417,
+            "applePlaceID": "I404195BB0FA8E7B2",
+            "address": "〒650-0042",
+            "addressIsApproximate": true
+          },
+          "notes": "An outdoor park, open all day; check opening hours for Kobe Port Tower and other facilities before you go",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "About 20 min on foot along the waterfront from Motomachi"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "Lunch and coffee: Kobe harbor area",
+          "start": "13:40",
+          "end": "14:40",
+          "category": "dining",
+          "place": {
+            "name": "Restaurants and cafés in the Kobe harbor area",
+            "latitude": 34.6777779,
+            "longitude": 135.1792483,
+            "address": "兵庫県神戸市中央区東川崎町1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "On foot"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "Dotonbori (道頓堀): the Glico sign, Kani Doraku",
+          "start": "16:00",
+          "end": "18:00",
+          "category": "sight",
+          "place": {
+            "name": "Dotonbori Glico Sign",
+            "latitude": 34.6689236,
+            "longitude": 135.5010784,
+            "applePlaceID": "I3F64FE06319B949C",
+            "address": "〒542-0071, 大阪府大阪市中央区, 道頓堀1丁目10-4",
+            "addressIsApproximate": false
+          },
+          "notes": "The district is open all day; check each shop's opening hours before you go",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "Hanshin Main Line through service, Kobe-Sannomiya → Osaka-Namba, about 50 min, then about 10 min on foot"
+          },
+          "images": [
+            "d4-04"
+          ]
+        },
+        {
+          "key": "d4-05",
+          "title": "Dinner: Kushikatsu Ittoku (串かつ いっとく), fried skewers",
+          "start": "18:30",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "Shinsekai Kushikatsu Ittoku Dotonbori",
+            "latitude": 34.6687747,
+            "longitude": 135.5030622,
+            "applePlaceID": "I87B4426659227D48",
+            "address": "〒542-0071",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot"
+          }
+        },
+        {
+          "key": "d4-06",
+          "title": "Don Quijote Dotonbori (ドン・キホーテ 道頓堀店)",
+          "start": "20:05",
+          "end": "21:00",
+          "category": "shopping",
+          "place": {
+            "name": "Don Quijote",
+            "latitude": 34.6694034,
+            "longitude": 135.5026747,
+            "applePlaceID": "I9C2AF11E4F40D9E2",
+            "address": "〒542-0084, 大阪府大阪市中央区, 宗右衛門町7-13",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "About 5 min on foot"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Midosuji Line subway, Namba → Umeda, about 10 min, then walk to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Osaka",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "Universal Studios Japan (ユニバーサル・スタジオ・ジャパン)",
+          "start": "09:30",
+          "end": "11:15",
+          "category": "sight",
+          "place": {
+            "name": "Universal Studios Japan, 2-1-33 Sakurajima",
+            "latitude": 34.666476,
+            "longitude": 135.4361984,
+            "address": "日本大阪府大阪市此花區",
+            "addressIsApproximate": true
+          },
+          "notes": "Hours differ every day; check the official calendar",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "JR Osaka → Nishikujo, then the JR Yumesaki Line to Universal City Station, and walk to the gate (the time includes the walk to Osaka Station)"
+          },
+          "todos": [
+            {
+              "text": "Buy Universal Studios Japan tickets (for a set date)",
+              "note": "Official site https://www.usj.co.jp/web/en/us/ Popular dates can sell out, so buy as soon as your date is fixed"
+            }
+          ],
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "The Wizarding World of Harry Potter (ウィザーディング・ワールド・オブ・ハリー・ポッター)",
+          "start": "11:40",
+          "end": "13:10",
+          "category": "sight",
+          "place": {
+            "name": "The Wizarding World of Harry Potter",
+            "latitude": 34.6677813,
+            "longitude": 135.431436,
+            "applePlaceID": "I35D71F76166D04C6",
+            "address": "〒554-0031, 大阪府大阪市此花区, 桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "Follows the park's hours; check the official calendar",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "On foot inside the park"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "Lunch: inside the park",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "dining",
+          "place": {
+            "name": "Restaurants inside Universal Studios Japan",
+            "latitude": 34.6629006,
+            "longitude": 135.4323564,
+            "applePlaceID": "IB6A4744E52DDD6AD",
+            "address": "大阪府大阪市此花区桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "Follows the park's hours",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On foot inside the park"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "Park parade",
+          "start": "14:50",
+          "end": "15:35",
+          "category": "show",
+          "place": {
+            "name": "Parade route in Universal Studios Japan",
+            "latitude": 34.6629006,
+            "longitude": 135.4323564,
+            "applePlaceID": "IB6A4744E52DDD6AD",
+            "address": "大阪府大阪市此花区桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "Show times differ every day; check in the park's app",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On foot inside the park"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "SUPER NINTENDO WORLD (スーパー・ニンテンドー・ワールド)",
+          "start": "16:30",
+          "end": "18:30",
+          "category": "sight",
+          "place": {
+            "name": "Super Nintendo World",
+            "latitude": 34.6679191,
+            "longitude": 135.430367,
+            "applePlaceID": "I19B2A609EF7804EC",
+            "address": "〒554-0031, 大阪府大阪市此花区, 桜島2丁目1-33",
+            "addressIsApproximate": false
+          },
+          "notes": "Needs an area timed-entry ticket and entry in your assigned slot; follows the park's hours",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "On foot inside the park"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "JR Yumesaki Line, then the JR Loop Line back to Osaka Station, and walk to the hotel"
+          },
+          "todos": [
+            {
+              "text": "Check how entry to Super Nintendo World works (area timed-entry ticket)",
+              "note": "Get your entry slot under the latest rules on the official site and in the park's app"
+            }
+          ],
+          "images": [
+            "d5-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Osaka",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "Depart from Kansai International Airport (関西国際空港)",
+          "start": "09:15",
+          "end": "10:15",
+          "category": "airport",
+          "place": {
+            "name": "Kansai International Airport",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "Kansai Airport limousine bus, Hankyu Sanbangai → Kansai Airport Terminal 1, about 60 min, ¥1,800 one way"
+          }
+        }
+      ]
+    }
+  ]
+}

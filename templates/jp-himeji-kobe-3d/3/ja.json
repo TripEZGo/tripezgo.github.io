@@ -1,0 +1,710 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-himeji-kobe-3d",
+  "revision": 3,
+  "contentLocale": "ja",
+  "title": "姫路・神戸 3 日間｜姫路城・書写山・神戸",
+  "subtitle": "姫路城、書写山、神戸をめぐる関西イン／アウトの3日間",
+  "summary": "3日間で2つの街をめぐります。姫路城と好古園、書写山圓教寺、最終日は神戸どうぶつ王国と三宮へ。関西空港の出入りで、大阪は別のテンプレートがあるのでここでは重ねません。鳴門の渦潮、明石海峡大橋、魚の棚商店街、北野異人館は候補に入れてあります。",
+  "destination": "日本 姫路・神戸",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "ふたり旅",
+    "初めて",
+    "お城",
+    "世界遺産"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web に登録する（入国審査・税関申告）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 航空券と宿の予約が済めば入力できます"
+    }
+  ],
+  "images": {
+    "d2-01": "images/jp-himeji-kobe-3d/d2-01.jpg",
+    "d2-03": "images/jp-himeji-kobe-3d/d2-03.jpg",
+    "d3-01": "images/jp-himeji-kobe-3d/d3-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "宿泊：東横INN姫路駅新幹線北口（2連泊。旅行記で泊まった宿）",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "東横INN姫路駅新幹線北口",
+        "latitude": 34.8290758,
+        "longitude": 134.687892,
+        "applePlaceID": "I37FF38DFE3D7C49D",
+        "address": "〒670-0913, 兵庫県姫路市, 西駅前町52-2, 東横INN姫路駅新幹線北口",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ],
+      "todos": [
+        {
+          "text": "姫路駅周辺の宿を予約する（2連泊）",
+          "note": "旅行記では東横INN姫路駅新幹線北口に泊まりました。早めに予約を"
+        }
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "候補：明石海峡大橋",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "舞子海上プロムナード",
+        "latitude": 34.6311542,
+        "longitude": 135.0333488,
+        "applePlaceID": "IEBBA6657C47FECE5",
+        "address": "〒655-0047, 兵庫県神戸市垂水区, 東舞子町2051",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認してください。旅行記では天候が悪く行かなかった"
+    },
+    {
+      "key": "u-02",
+      "title": "候補：明石の魚の棚商店街",
+      "durationMinutes": 60,
+      "category": "market",
+      "place": {
+        "name": "魚の棚商店街",
+        "latitude": 34.6471415,
+        "longitude": 134.9922966,
+        "applePlaceID": "I553319624A303DB7",
+        "address": "〒673-0892, 兵庫県明石市, 本町1丁目1-16",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認してください。明石の海鮮と明石焼（玉子焼）"
+    },
+    {
+      "key": "u-03",
+      "title": "候補：北野異人館街",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "スターバックス コーヒー 神戸北野異人館店",
+        "latitude": 34.6999465,
+        "longitude": 135.1902397,
+        "applePlaceID": "IA93CC49FDC3714D7",
+        "address": "〒650-0002, 兵庫県神戸市中央区, 北野町3丁目1-31 北野物語館",
+        "addressIsApproximate": false
+      },
+      "notes": "営業時間は出発前に確認してください。各館で営業時間と休館日が違います"
+    },
+    {
+      "key": "u-04",
+      "title": "候補：鳴門の渦潮",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "大鳴門橋遊歩道 渦の道",
+        "latitude": 34.2361894,
+        "longitude": 134.6420344,
+        "applePlaceID": "I3D88C4E703AF446",
+        "address": "〒772-0053",
+        "addressIsApproximate": true
+      },
+      "notes": "営業時間は出発前に確認してください。観潮の時間は潮の満ち引きで変わるので、潮見表を別に調べること。旅行記では天候が悪く行かなかった"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "情報源と確認",
+      "paragraphs": [
+        {
+          "text": "元の旅行記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/aacd5f5cacd1/",
+          "style": "bullet"
+        },
+        {
+          "text": "確認（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "姫路城（9:00〜17:00、最終入城16:00、12/29〜30休、2,500円、好古園との共通券2,600円）：https://himejicastle.jp/en/ （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "好古園（9:00〜17:00、12/29〜30休。料金は情報源により異なり300〜400円）：検索結果と https://www.himeji-machishin.jp/ryokka/kokoen/en/guidance/index.html （確認 2026-11-17、検索結果より）",
+          "style": "bullet"
+        },
+        {
+          "text": "書写山圓教寺（8:30〜17:00頃、志納金500円、ロープウェイ往復1,200円、シャトルバス500円）：https://www.hyogo-tourism.jp/world/spot/detail_1050.html と https://mt-shosha.info/en.html （確認 2026-11-17、検索結果より）",
+          "style": "bullet"
+        },
+        {
+          "text": "神戸どうぶつ王国（10:00〜17:00、2,400円、ポートライナー約14分）：https://www.kobe-oukoku.com/en/tickets と https://www.kobe-oukoku.com/en/access （確認 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "関西空港から三宮へのリムジンバス（約65〜75分、約2,200円）、空港から姫路（はるか＋新幹線で約95〜120分、直通バス約3,400〜3,700円）：複数のまとめページ（確認 2026-11-17、検索結果より、公式の時刻表は入手できず）",
+          "style": "bullet"
+        },
+        {
+          "text": "公式で確認できなかった項目。出発前に確認してください",
+          "style": "heading"
+        },
+        {
+          "text": "書写山の公式サイトは入手できず、営業時間と料金は検索結果によります。",
+          "style": "bullet"
+        },
+        {
+          "text": "神戸どうぶつ王国の休園日、神戸牛 吉祥吉の営業時間、ピオレと三宮の店の営業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "姫路から三宮までの JR 新快速の運賃と本数、空港バスの現行の時刻と運賃。",
+          "style": "bullet"
+        },
+        {
+          "text": "各スポットの座標は推定値です。",
+          "style": "bullet"
+        },
+        {
+          "text": "変更と取捨選択",
+          "style": "heading"
+        },
+        {
+          "text": "旅行記の5・6日目は大阪（難波八阪神社、通天閣、梅田）と神戸港エリアを含みますが、大阪は別のテンプレートがあるため、ここでは姫路、書写山、神戸どうぶつ王国、三宮だけを残しました。",
+          "style": "bullet"
+        },
+        {
+          "text": "好古園と姫路駅の夜景は旅行記では行っていませんが、道すがらなので追加しました。姫路市立動物園には行っていないので入れていません。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出発前のご案内",
+      "paragraphs": [
+        {
+          "text": "ルート",
+          "style": "heading"
+        },
+        {
+          "text": "関西空港の出入りで、姫路と神戸をめぐるテンプレートです。1日目は空港から姫路へ、2日目は書写山と姫路城、3日目は神戸どうぶつ王国と三宮、午後に空港へ戻ります。",
+          "style": "bullet"
+        },
+        {
+          "text": "神戸はどうぶつ王国と三宮だけです。元町商店街、メリケンパーク、ハーバーランドは京阪神のテンプレートをご覧ください。",
+          "style": "bullet"
+        },
+        {
+          "text": "空港と市内の移動",
+          "style": "heading"
+        },
+        {
+          "text": "行き：関空から特急はるかで新大阪まで約50分、山陽新幹線に乗り換えて姫路まで約30分。乗り換え込みで約2時間、合計約5,400円（古い情報）。",
+          "style": "bullet"
+        },
+        {
+          "text": "行きの別ルート：空港直行バスで姫路駅まで約1.5〜2時間、約3,400〜3,700円。本数が少ないので、バス会社の時刻表を調べてください。",
+          "style": "bullet"
+        },
+        {
+          "text": "帰り：三宮から空港リムジンバスで関西空港まで約65〜75分、約2,200円。19:30以降発の便を選んでください。",
+          "style": "bullet"
+        },
+        {
+          "text": "見どころのポイント",
+          "style": "heading"
+        },
+        {
+          "text": "書写山圓教寺：志納金にシャトルバスは含まれません。バスは約5分、歩いて登ると約20分（旅行記ではバス代を払って体力を温存するのをすすめています）。全部まわるには最低2時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "姫路城：城内は靴を脱いで上がり、階段は急で行列になりがちです。天気が悪い日は屋内の予定に切り替えましょう。",
+          "style": "bullet"
+        },
+        {
+          "text": "好古園と姫路城には共通券（2,600円）があります。有効期限は公式サイトで確認してください。",
+          "style": "bullet"
+        },
+        {
+          "text": "姫路駅周辺は店が少なく、夜は早く閉まります。ドラッグストアの免税受付は、営業時間より早く終わることが多いです。",
+          "style": "bullet"
+        },
+        {
+          "text": "神戸どうぶつ王国のペンギンの餌やりと動物とのふれあいエリアは整理券が必要です。入園したらまず受け取りましょう。",
+          "style": "bullet"
+        },
+        {
+          "text": "三宮からどうぶつ王国へは、ポートライナーの「神戸空港」方面に乗ります。「北埠頭」行きは北埠頭で折り返します。",
+          "style": "bullet"
+        },
+        {
+          "text": "旅のペース",
+          "style": "heading"
+        },
+        {
+          "text": "1・3日目は関西空港との往復があるため、移動の比重が高めです。",
+          "style": "bullet"
+        },
+        {
+          "text": "テンプレートは11月を基準にしているので、日没と営業時間は季節で変わります。",
+          "style": "bullet"
+        },
+        {
+          "text": "その他",
+          "style": "heading"
+        },
+        {
+          "text": "日本円の現金は多めに。入国前に Visit Japan Web に登録しておきましょう：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "旅のまとめ：姫路・神戸 3 日間の回り方",
+      "paragraphs": [
+        {
+          "image": "d2-03"
+        },
+        "関西空港イン・関西空港アウトで、最初の 2 泊は姫路を拠点に、最終日に神戸へ移動し、夕方に三宮から空港バスで空港へ戻ります。移動はシンプルで、姫路は徒歩が中心、書写山はバスとロープウェー、神戸は電車とポートライナーです。",
+        "1 日目：昼に関西空港へ到着し、特急と新幹線で姫路へ。昼食のあと {@d1-03} を歩き、夜は駅前で食事をして、北口 2 階デッキから姫路城の夜景を撮ります。",
+        "2 日目：午前は書写山で {@d2-01}、昼食のあと {@d2-03}、午後は姫路駅でピオレと商店街を回ります。",
+        {
+          "image": "d2-01"
+        },
+        "3 日目：JR で三宮へ行き、ポートライナーに乗り換えて {@d3-01} でカピバラにさわります。昼は神戸牛、午後は三宮センター街を歩いて、空港バスで関西空港へ戻ります。",
+        {
+          "image": "d3-01"
+        },
+        "宿泊：姫路では東横INN姫路駅新幹線北口に 2 連泊。3 日目はチェックアウトして神戸へ向かうので宿泊はありません。",
+        "移動のポイント：空港から姫路へは特急はるかと山陽新幹線で、乗り換え込み約 2 時間（本数の少ない直通空港バスもあります）。姫路駅から書写山は神姫バスとロープウェー、姫路から三宮は JR 新快速、三宮からはポートライナーの「神戸空港」方面で動物王国へ。帰りは三宮から空港リムジンバスで約 65〜75 分なので、19:30 以降発の便を選んでください。出発前に最新の時刻表を確認してください。",
+        "こんな人に：姫路城と、気軽に動物にさわれる日を組み合わせたい人。1 人でも 2、3 人でも。1・3 日目は移動が多く、2 日目は山道と急な階段があるので、歩きやすい靴で。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "神戸フランツ チョコレート（Kobe Frantz）",
+      "category": "souvenir",
+      "productType": "chocolate_candy",
+      "store": "神戸中華街の近くと神戸駅周辺（旅行記では中華街で購入）"
+    },
+    {
+      "key": "s-02",
+      "title": "書写山の焼きたてあずきもち",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "書写山の摩尼殿そばの店（焼きたてで皮がパリッ。その場で食べる）"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "姫路市",
+      "latitude": 34.8154234,
+      "longitude": 134.6854576,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "姫路市",
+      "latitude": 34.8154234,
+      "longitude": 134.6854576,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "神戸市",
+      "latitude": 34.6894277,
+      "longitude": 135.1957571,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "姫路市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "関西国際空港に到着",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "airport",
+          "place": {
+            "name": "関西国際空港",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "昼食：姫路駅周辺（姫路おでん、あなご飯、そば）",
+          "start": "14:15",
+          "end": "15:00",
+          "category": "dining",
+          "place": {
+            "name": "姫路",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 130,
+            "durationSource": "user",
+            "note": "関空から特急はるかで新大阪まで約50分、山陽新幹線に乗り換えて姫路まで約30分。乗り換え込みで約2時間、合計約5,400円（古い情報なので JR西日本で確認を）。空港直行バスで姫路駅まで約1.5〜2時間、約3,400〜3,700円という手もありますが、本数は少なめです"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "好古園：姫路城の西にある日本庭園",
+          "start": "15:25",
+          "end": "16:30",
+          "category": "park",
+          "place": {
+            "name": "好古園",
+            "latitude": 34.8378515,
+            "longitude": 134.6895777,
+            "applePlaceID": "I780D49712BA53B3D",
+            "address": "〒670-0012, 兵庫県姫路市, 本町68",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00〜17:00（最終入園16:30、4/27〜8/31は18:00まで延長）、12/29〜30休園（公式情報より）",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "姫路駅から大手前通りを歩いて約20分。先に荷物をホテルに預けておくと楽です"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "夕食：姫路駅前商店街（神戸牛か居酒屋）",
+          "start": "17:15",
+          "end": "18:30",
+          "category": "dining",
+          "place": {
+            "name": "姫路",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "好古園から大手前通りを歩いて駅前商店街へ戻る"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "姫路駅北口2階デッキ：姫路城の夜景",
+          "start": "18:50",
+          "end": "19:20",
+          "category": "viewpoint",
+          "place": {
+            "name": "姫路",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "終日通行可。冬の姫路城ライトアップの時間は公式サイトで確認してください",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "駅前まで歩いて戻る。北口の2階デッキからは姫路城がまっすぐ見えます"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "ホテルまで歩いて戻る"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "姫路市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "書写山圓教寺：摩尼殿と大講堂",
+          "start": "09:45",
+          "end": "11:45",
+          "category": "temple",
+          "place": {
+            "name": "圓教寺",
+            "latitude": 34.892341,
+            "longitude": 134.6544041,
+            "applePlaceID": "I3B9417AC51896122",
+            "address": "〒671-2201, 兵庫県姫路市, 書写2968",
+            "addressIsApproximate": false
+          },
+          "notes": "8:30〜17:00頃（季節による。ロープウェイの最終は別）、出発前に確認を。入山志納金は約500円、ロープウェイ往復は約1,200円",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "姫路駅北口10番のりばから神姫バスで書写山ロープウェイへ、約25分、約280円。ロープウェイは約4分、約15分おきの運行"
+          },
+          "todos": [
+            {
+              "text": "書写山のバスとロープウェイの時刻を調べ、シャトルバスを買うか決める",
+              "note": "ロープウェイは約15分おき。志納金にシャトルバスは含まれません"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "昼食：姫路城前（大手前通り）周辺",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "大手前通り",
+            "latitude": 34.82905903288856,
+            "longitude": 134.69068729919022,
+            "address": "日本兵庫縣姬路市",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "書写山のバス停から姫路市街へ戻り、姫路城の大手前通り付近で下車、約30分。先に帰りの時刻を調べておく"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "姫路城：世界遺産・白鷺城",
+          "start": "13:30",
+          "end": "15:30",
+          "category": "castle",
+          "place": {
+            "name": "姫路城",
+            "latitude": 34.8393609,
+            "longitude": 134.6939937,
+            "applePlaceID": "I4824F228D574E9FD",
+            "address": "〒670-0012, 兵庫県姫路市, 本町68",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00〜17:00（最終入城16:00、夏季は18:00まで）、12/29〜30休。大人2,500円、好古園との共通券は2,600円（公式サイト）",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "三の丸広場を抜けて徒歩約10分。城内は靴を脱いで上がり、階段は急で行列になりがち"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "姫路駅でお買い物：ピオレ姫路と駅前商店街",
+          "start": "16:00",
+          "end": "17:15",
+          "category": "shopping",
+          "place": {
+            "name": "ピオレ姫路",
+            "latitude": 34.8273504,
+            "longitude": 134.6910604,
+            "applePlaceID": "ICE4D383EB876A881",
+            "address": "〒670-0927, 兵庫県姫路市, 駅前町188-1",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。ドラッグストアの免税受付は、営業時間より早く終わることが多い",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "姫路城から大手前通りを歩いて駅前へ戻る"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "夕食：姫路駅周辺（神戸牛）",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "姫路",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "駅前商店街を歩いて"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "ホテルまで歩いて戻る"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "神戸市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "神戸どうぶつ王国：カピバラにさわる",
+          "start": "10:00",
+          "end": "12:30",
+          "category": "zoo",
+          "place": {
+            "name": "神戸どうぶつ王国",
+            "latitude": 34.6546652,
+            "longitude": 135.2225884,
+            "applePlaceID": "I621C3224B7AE814",
+            "address": "〒650-0047, 兵庫県神戸市中央区, 港島南町7丁目1-9",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00〜17:00（公式サイトのその日の表示）、休園日は公式カレンダーで確認を。大人2,400円",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "姫路から JR 新快速で三宮まで約40〜50分。三宮駅の2階でポートライナー「神戸空港」方面に乗り換え、「計算科学センター」まで約14分。北埠頭行きに乗らないよう注意"
+          },
+          "todos": [
+            {
+              "text": "神戸どうぶつ王国の休園日を確認し、整理券を受け取る",
+              "note": "https://www.kobe-oukoku.com/en/ ペンギンの餌やりとふれあいエリアは整理券が必要です"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "昼食：神戸牛 吉祥吉 三宮センター街店",
+          "start": "13:00",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "神戸牛 吉祥吉",
+            "latitude": 34.6911948,
+            "longitude": 135.1939327,
+            "applePlaceID": "I230C2CD6BFDB70CC",
+            "address": "〒650-0021, 兵庫県神戸市中央区, 三宮町1丁目3-10 2F",
+            "addressIsApproximate": false
+          },
+          "notes": "営業時間は出発前に確認してください。旅行記（2024年）では赤身ステーキ220gが約7,700円（税抜）",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "計算科学センター駅からポートライナーで三宮へ戻り約14分、徒歩込み"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "三宮センター街とキデイランド神戸（さんちか／センター街）",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "shopping",
+          "place": {
+            "name": "三宮センター街",
+            "latitude": 34.6921353,
+            "longitude": 135.1943526,
+            "address": "日本兵庫縣神戶市",
+            "addressIsApproximate": true
+          },
+          "notes": "営業時間は出発前に確認してください。通りは自由に歩けます",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "三宮センター街とセンタープラザ（ガチャガチャ、古着屋、書店）を歩いて回る"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "関西国際空港から出発",
+          "start": "17:00",
+          "end": "18:00",
+          "category": "airport",
+          "place": {
+            "name": "関西国際空港",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "三宮（神戸三宮バスターミナル）から空港リムジンバスで関西空港まで直通、約65〜75分、約2,200円（情報源により1,800〜2,200円）。19:30以降発の便がおすすめ"
+          }
+        }
+      ]
+    }
+  ]
+}

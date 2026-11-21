@@ -1,0 +1,1160 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-tokyo-5d",
+  "revision": 3,
+  "contentLocale": "zh-Hant-TW",
+  "title": "東京 5 日｜澀谷・台場・迪士尼・淺草",
+  "subtitle": "澀谷、台場、迪士尼與淺草，初訪東京的經典五天",
+  "summary": "整篇遊記的五天東京：澀谷與原宿、台場、東京迪士尼、淺草與晴空塔都排在裡面。鋼彈工廠與獨角獸鋼彈已經結束，改排 teamLab Planets。龜有、秋葉原、DiverCity 與芝公園放在備選。出發前須知寫了入境、交通卡與預約提醒。",
+  "destination": "日本 東京",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "雙人",
+    "初訪",
+    "迪士尼",
+    "都會"
+  ],
+  "todos": [
+    {
+      "text": "登錄 Visit Japan Web（入境審查與海關申報）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 機票與訂房完成後即可填寫"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-tokyo-5d/d1-03.jpg",
+    "d1-05": "images/jp-tokyo-5d/d1-05.jpg",
+    "d2-02": "images/jp-tokyo-5d/d2-02.jpg",
+    "d2-04": "images/jp-tokyo-5d/d2-04.jpg",
+    "d2-05": "images/jp-tokyo-5d/d2-05.jpg",
+    "d3-01": "images/jp-tokyo-5d/d3-01.jpg",
+    "d4-01": "images/jp-tokyo-5d/d4-01.jpg",
+    "d4-02": "images/jp-tokyo-5d/d4-02.jpg",
+    "d4-05": "images/jp-tokyo-5d/d4-05.jpg",
+    "d4-07": "images/jp-tokyo-5d/d4-07.jpg",
+    "d5-02": "images/jp-tokyo-5d/d5-02.jpg",
+    "d5-03": "images/jp-tokyo-5d/d5-03.jpg",
+    "d5-05": "images/jp-tokyo-5d/d5-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：Hotel Villa Fontaine Grand 東京汐留（ホテルヴィラフォンテーヌグランド東京汐留）",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "Hotel Villa Fontaine汐留",
+        "latitude": 35.6619383,
+        "longitude": 139.7599978,
+        "applePlaceID": "ID6E5F2FC0A58ABF1",
+        "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "備選：龜有（亀有公園）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "亀有",
+        "latitude": 35.7665751,
+        "longitude": 139.8477718,
+        "applePlaceID": "I4A90016323A0CF14",
+        "address": "東京都葛飾区, 亀有",
+        "addressIsApproximate": true
+      },
+      "notes": "烏龍派出所人像在車站前；遊記 2023 年造訪時周邊多半僅剩佈景，營業時間請出發前確認"
+    },
+    {
+      "key": "u-02",
+      "title": "備選：秋葉原（秋葉原電気街）",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "秋叶原",
+        "latitude": 35.6983512,
+        "longitude": 139.7729252,
+        "applePlaceID": "I2552F15E78F49592",
+        "address": "東京都千代田区, 神田花岡町",
+        "addressIsApproximate": true
+      },
+      "notes": "營業時間請出發前確認"
+    },
+    {
+      "key": "u-03",
+      "title": "備選：DiverCity Tokyo Plaza（ダイバーシティ東京プラザ）",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "Diver City東京Plaza",
+        "latitude": 35.6251924,
+        "longitude": 139.7755015,
+        "applePlaceID": "I9E847CDBACD2B144",
+        "address": "〒135-0064, 東京都江東区, 青海1丁目1-10",
+        "addressIsApproximate": false
+      },
+      "notes": "實物大獨角獸鋼彈像已於 2026/08/31 結束展示；商場營業時間請出發前確認"
+    },
+    {
+      "key": "u-04",
+      "title": "備選：東京都立芝公園（芝公園）",
+      "durationMinutes": 60,
+      "category": "park",
+      "place": {
+        "name": "芝公園",
+        "latitude": 35.6546533,
+        "longitude": 139.7486025,
+        "address": "日本東京港區",
+        "addressIsApproximate": true
+      },
+      "notes": "可從樹間遠望東京鐵塔，全天開放"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "資料來源與查證",
+      "paragraphs": [
+        {
+          "text": "來源遊記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/9da2c51fa4f2/",
+          "style": "bullet"
+        },
+        {
+          "text": "查證（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "東京鐵塔展望台時間：https://www.tokyotower.co.jp/en/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "東京晴空塔展望台時間（當日顯示）：https://en.tokyo-skytree.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "明治神宮開放時間：https://www.meijijingu.or.jp/en/visit/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "皇居東御苑時間與休園：https://www.kunaicho.go.jp/e-event/higashigyoen02.html （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "淺草寺本堂時間：https://www.senso-ji.jp/about/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "已變動",
+          "style": "heading"
+        },
+        {
+          "text": "橫濱鋼彈工廠（GUNDAM FACTORY YOKOHAMA）已於 2024/03 結束，原行程改為 teamLab Planets 與台場一帶。",
+          "style": "bullet"
+        },
+        {
+          "text": "台場實物大獨角獸鋼彈像已於 2026/08/31 結束展示（營運方 TOKYO GUNDAM PROJECT 公告；報導 https://dengekionline.com/article/202608/85200 ，查證 2026-11-17），因此未排入。",
+          "style": "bullet"
+        },
+        {
+          "text": "日本科學未來館整修中（官網載明 2027/04/23 重新開幕），未排入。",
+          "style": "bullet"
+        },
+        {
+          "text": "未能從官方確認，請出發前確認",
+          "style": "heading"
+        },
+        {
+          "text": "SHIBUYA SKY 時間與預約規則（官網頁面未取得）。",
+          "style": "bullet"
+        },
+        {
+          "text": "東京迪士尼海洋當日營業時間與夜間表演（官網逾時）。",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Planets 營業時間（官方頁面未取得，第三方來源互相矛盾）。",
+          "style": "bullet"
+        },
+        {
+          "text": "富士電視台球體展望室、國會議事堂參觀規定、LE LABO、極味屋與各餐廳營業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "成田特快與淺草線機場快特的票價與車程（官網無法開啟，採遊記 2023 年資料）。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記資料",
+          "style": "heading"
+        },
+        {
+          "text": "住宿依作者 2023 年 6 月的旅程：汐留，連住 4 晚。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記的龜有烏龍派出所、秋葉原未排入每日行程（見備選標記）。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出發前須知",
+      "paragraphs": [
+        {
+          "text": "入境與網路",
+          "style": "heading"
+        },
+        {
+          "text": "出發前先在 Visit Japan Web 登錄入境審查與海關申報：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "網路可用實體 SIM 卡或 eSIM。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通",
+          "style": "heading"
+        },
+        {
+          "text": "電車、地鐵、公車可用 Suica 或 PASMO；iPhone 可在錢包加入 Suica。遊記作者 2023 年用 iPhone 西瓜卡；Android 用戶可在成田機場買 Welcome Suica。",
+          "style": "bullet"
+        },
+        {
+          "text": "機場到市區：成田特快（成田エクスプレス）全車指定席，若直接刷交通卡進站會被擋下，需先買指定席券（遊記經驗，詳情請看 JR 東日本官網）。",
+          "style": "bullet"
+        },
+        {
+          "text": "汐留站出站就是百合海鷗號與大江戶線；去其他區要走約 10 分鐘到新橋站（JR、銀座線、淺草線）。",
+          "style": "bullet"
+        },
+        {
+          "text": "回成田：新橋搭都營淺草線機場快特約 1 小時 15 分直達；遊記提到該段車票當時不能刷卡或用 Suica，請備足現金。",
+          "style": "bullet"
+        },
+        {
+          "text": "東京公車上車刷卡付費（與京都下車付費不同）。",
+          "style": "bullet"
+        },
+        {
+          "text": "預約",
+          "style": "heading"
+        },
+        {
+          "text": "SHIBUYA SKY、東京迪士尼海洋、teamLab Planets、東京晴空塔建議提早訂票與預約時段，熱門日期現場多半已無票。",
+          "style": "bullet"
+        },
+        {
+          "text": "迪士尼海洋入口在園內電車之後；遊記買的是海洋單園票，沒有城堡與遊行；夜間水上表演前排席另購。",
+          "style": "bullet"
+        },
+        {
+          "text": "展望台與迪士尼的營業時間每天不同，出發前請查官網。",
+          "style": "bullet"
+        },
+        {
+          "text": "其他",
+          "style": "heading"
+        },
+        {
+          "text": "日幣現金要備足：藥妝店、機場快線車票等處遇過無法刷卡或刷不過的情況，遊記建議隨身至少 1 萬日圓。",
+          "style": "bullet"
+        },
+        {
+          "text": "免稅與退稅規定近年有調整，請出發前確認日本觀光廳說明。",
+          "style": "bullet"
+        },
+        {
+          "text": "行李可寄放飯店，遊記作者最後一天在飯店寄放行李再輕裝逛街。",
+          "style": "bullet"
+        },
+        {
+          "text": "迪士尼園區餐廳常客滿，遊記建議自備輕食。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "旅程總覽：東京 5 日怎麼走",
+      "paragraphs": [
+        {
+          "image": "d1-03"
+        },
+        "從成田進、成田出，四晚都住汐留同一間飯店當基地，不必搬行李。每天從汐留搭電車出發，行李第一天與最後一天都可以寄放在飯店，輕裝逛街。",
+        "第 1 天：成田落地，先到汐留放行李，傍晚到澀谷看 {@d1-03}，晚餐吃神戶牛排與漢堡排，再上 {@d1-05} 看夜景。",
+        "第 2 天：早上先去 {@d2-01}，接著到台場看自由女神像、吃章魚燒，再看富士電視台大樓；下午轉到新宿逛百貨與藥妝，晚上吃居酒屋。",
+        "第 3 天：整天在東京迪士尼海洋，上午玩玩具總動員與翱翔，下午玩地心探險與印第安納瓊斯，晚上留到 {@d3-04}。",
+        {
+          "image": "d3-01"
+        },
+        "第 4 天：從 {@d4-01} 開始，接著到明治神宮，原宿、表參道一帶吃午餐、逛 LE LABO；下午到淺草逛 {@d4-05}，晚餐在晴空塔城，最後上 {@d4-07} 看夜景。",
+        {
+          "image": "d4-05"
+        },
+        "第 5 天：退房並寄放行李，上午看 {@d5-02} 與皇居東御苑，中午在東京車站吃天婦羅蕎麥麵，拍 {@d5-05}，回飯店取行李後前往成田出境。",
+        "住宿：Hotel Villa Fontaine Grand 東京汐留連住 4 晚，一個基地走到底；汐留站出站就是百合海鷗號與大江戶線。",
+        "交通重點：電車、地鐵、公車可用 Suica 或 PASMO；成田特快全車指定席，要先買指定席券；回成田可從新橋搭都營淺草線機場快特，約 1 小時 15 分直達，該段車票當時不能刷卡，請備足現金。汐留站去其他區要走約 10 分鐘到新橋站。出發前請自己再查一次最新時刻表。",
+        "適合誰：第一次或想把東京經典景點一次逛完的人。含一整天的迪士尼，體力要夠；SHIBUYA SKY、迪士尼海洋、teamLab Planets 與晴空塔建議提早訂票。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "獺祭（旭酒造）",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "東京車站或成田機場免稅店都買得到，遊記說兩處價格差不多"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "東京",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "東京",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "東京",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "東京",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "東京",
+      "latitude": 35.6895,
+      "longitude": 139.69171,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵達成田國際機場（成田国際空港）",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "airport",
+          "place": {
+            "name": "成田國際機場",
+            "latitude": 35.7632517,
+            "longitude": 140.3829322,
+            "applePlaceID": "IAB50389A6079F824",
+            "address": "千葉県成田市, 三里塚御料牧場",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "放行李、辦理入住：Hotel Villa Fontaine Grand 東京汐留（ホテルヴィラフォンテーヌグランド東京汐留）",
+          "start": "15:45",
+          "end": "16:15",
+          "category": "hotel",
+          "place": {
+            "name": "Hotel Villa Fontaine汐留",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "notes": "入住時間請以飯店為準",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "JR 成田特快（成田エクスプレス）到東京車站約 60 分，全車指定席，月台或售票機先劃位；轉 JR 或地鐵到新橋，再步行約 10 分到飯店。各段票價請出發前確認"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "澀谷十字路口（渋谷スクランブル交差点）",
+          "start": "17:00",
+          "end": "17:30",
+          "category": "sight",
+          "place": {
+            "name": "澀谷十字路口",
+            "latitude": 35.6591944,
+            "longitude": 139.6975155,
+            "address": "東京都渋谷区道玄坂2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "全天開放，無公休",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "步行約 10 分到新橋站，搭 JR 山手線或地鐵銀座線到澀谷約 25 分"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "晚餐：極味屋 澀谷 PARCO 店（極味や 渋谷パルコ店）神戶牛排與漢堡排",
+          "start": "17:45",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "極味や 渋谷パルコ店",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I27C7C5F97CC5C83B",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1 渋谷パルコB1F",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；熱門時段需排隊（遊記約排 45 分）",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "從十字路口步行約 10 分"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "SHIBUYA SKY 展望台（渋谷スカイ）",
+          "start": "19:30",
+          "end": "20:45",
+          "category": "viewpoint",
+          "place": {
+            "name": "SHIBUYA SKY",
+            "latitude": 35.658351,
+            "longitude": 139.7024167,
+            "applePlaceID": "I26904022D636B068",
+            "address": "〒150-0002, 東京都渋谷区, 渋谷2丁目24-12, 渋谷スクランブルスクエア 14F-45F, 46F 屋上",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；需先預約入場時段，現場多半已無票；不可攜帶包包上展望台（有付費置物櫃）",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "PARCO 步行到澀谷 Scramble Square 約 10 分"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "搭 JR 山手線或地鐵銀座線到新橋，再步行約 10 分"
+          },
+          "todos": [
+            {
+              "text": "預約 SHIBUYA SKY 入場時段",
+              "note": "官網 https://www.shibuya-scramble-square.com/sky/ 現場多半已無票，確定日期後盡早預約"
+            }
+          ],
+          "images": [
+            "d1-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "teamLab Planets TOKYO（チームラボプラネッツ）",
+          "start": "09:30",
+          "end": "11:00",
+          "category": "artgallery",
+          "place": {
+            "name": "チームラボプラネッツ TOKYO DMM",
+            "latitude": 35.6492824,
+            "longitude": 139.789685,
+            "applePlaceID": "I96F6ACCAB28133E",
+            "address": "〒135-0061",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間與公休請出發前確認；需先預約時段",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "百合海鷗號（ゆりかもめ）汐留→新豊洲約 15 分，再步行約 5 分"
+          },
+          "todos": [
+            {
+              "text": "預約 teamLab Planets 入場時段",
+              "note": "官網 https://www.teamlab.art/e/planets/ 依日期預約時段"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "台場自由女神像（お台場海浜公園）",
+          "start": "11:30",
+          "end": "12:00",
+          "category": "sight",
+          "place": {
+            "name": "自由女神像",
+            "latitude": 35.6278608,
+            "longitude": 139.7718434,
+            "applePlaceID": "IDD964C09F6F6B4",
+            "address": "〒135-0091, 東京都港区, 台場1-4-1",
+            "addressIsApproximate": false
+          },
+          "notes": "戶外園區，全天可進入",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "百合海鷗號 新豊洲→お台場海浜公園約 15 分，再步行約 5 分；沿途可看富士電視台與台場景觀"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "午餐：DECKS 東京海濱商場（デックス東京ビーチ）章魚燒與炸雞",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "東京狄克斯海濱",
+            "latitude": 35.6290897,
+            "longitude": 139.7757831,
+            "applePlaceID": "IB3FCC15C9C5C542C",
+            "address": "〒135-0091, 東京都港区, 台場1丁目6-1",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "從自由女神像步行約 5 分"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "富士電視台總部大樓（フジテレビ本社ビル）",
+          "start": "13:30",
+          "end": "14:15",
+          "category": "sight",
+          "place": {
+            "name": "富士電視台",
+            "latitude": 35.6265943,
+            "longitude": 139.7742811,
+            "applePlaceID": "IB2A7C7313DF391A",
+            "address": "〒137-8088, 東京都港区, 台場2丁目4-8",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認（球體展望室另有開放時間與公休）",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "新宿逛街（新宿駅周邊）：百貨公司與藥妝",
+          "start": "15:15",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "新宿三丁目",
+            "latitude": 35.6908591,
+            "longitude": 139.7048661,
+            "applePlaceID": "I5B743E919E124DD5",
+            "address": "東京都新宿区, 新宿",
+            "addressIsApproximate": true
+          },
+          "notes": "各店營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "步行到東京テレポート站，搭臨海線（りんかい線）直通 JR 埼京線到新宿約 35 分；請以導航確認班次"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "晚餐：新宿（居酒屋）",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "新宿車站周邊居酒屋",
+            "latitude": 35.6913159,
+            "longitude": 139.7034026,
+            "address": "東京都新宿区新宿3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "都營大江戶線 新宿→汐留約 20 分，再步行到飯店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "東京迪士尼海洋（東京ディズニーシー）上午：玩具總動員瘋狂遊戲屋、翱翔：夢幻奇航",
+          "start": "09:15",
+          "end": "13:00",
+          "category": "sight",
+          "place": {
+            "name": "東京迪士尼海洋",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間每日不同，請查官網行事曆",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "JR 新橋→東京，轉京葉線到舞濱，再搭迪士尼度假區線（リゾートライン）到東京迪士尼海洋站"
+          },
+          "todos": [
+            {
+              "text": "購買東京迪士尼海洋門票",
+              "note": "官網 https://www.tokyodisneyresort.jp/en/tds/ 確定日期後購買；夜間表演前排席與快速通關另購"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "午餐：園區內",
+          "start": "13:15",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "東京迪士尼海洋",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "隨園區營業時間；餐廳常客滿，可備輕食",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "園內步行"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "東京迪士尼海洋下午：地心探險之旅、海底兩萬哩、印第安納瓊斯冒險旅程、購物",
+          "start": "14:30",
+          "end": "19:00",
+          "category": "sight",
+          "place": {
+            "name": "東京迪士尼海洋",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "隨園區營業時間，請查官網行事曆",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "園內步行"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "夜間水上表演（地中海港灣）",
+          "start": "19:15",
+          "end": "20:45",
+          "category": "show",
+          "place": {
+            "name": "東京迪士尼海洋",
+            "latitude": 35.6257549,
+            "longitude": 139.8843348,
+            "applePlaceID": "IDD016BB0A2E2682A",
+            "address": "〒279-8511",
+            "addressIsApproximate": true
+          },
+          "notes": "演出內容與時間依當期公告，請於官網或園區 App 確認；前排座位為付費指定",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "園內步行至港灣"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "JR 京葉線 舞濱→東京，轉 JR 到新橋，再步行約 10 分"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "東京鐵塔（東京タワー）",
+          "start": "09:15",
+          "end": "10:45",
+          "category": "sight",
+          "place": {
+            "name": "東京鐵塔",
+            "latitude": 35.6585581,
+            "longitude": 139.7455037,
+            "applePlaceID": "I9F5C79B7A59D296F",
+            "address": "2-8, Shibakoen 4-Chōme, Minato, Tokyo, Japan",
+            "addressIsApproximate": false
+          },
+          "notes": "大展望台 09:00–23:00（最後入場 22:30）；特別展望台導覽 09:00–22:45（最後入場 22:15）",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "都營大江戶線 汐留→赤羽橋約 5 分，再步行約 7 分（也可從新橋步行約 20 分）"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "明治神宮",
+          "start": "11:30",
+          "end": "12:45",
+          "category": "temple",
+          "place": {
+            "name": "明治神宮",
+            "latitude": 35.6762064,
+            "longitude": 139.699375,
+            "applePlaceID": "I65EB06A821AE2921",
+            "address": "〒151-8557, 東京都渋谷区, 代々木神園町1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "日出開門、日落關門，全年無休；實際時間依月份而異，免費入場",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "都營大江戶線 赤羽橋→代代木約 17 分，再步行到南參道入口約 5 分"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "午餐：原宿、表參道一帶",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "dining",
+          "place": {
+            "name": "原宿表參道周邊餐廳",
+            "latitude": 35.6687322,
+            "longitude": 139.7085394,
+            "address": "東京都渋谷区神宮前4丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "沿參道步行出原宿方向，約 15 分"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "LE LABO 青山店（ル ラボ 青山店）",
+          "start": "14:15",
+          "end": "15:15",
+          "category": "shopping",
+          "place": {
+            "name": "ル ラボ 青山",
+            "latitude": 35.6635812,
+            "longitude": 139.7129256,
+            "applePlaceID": "I40419DBE1F059E9C",
+            "address": "〒107-0062, 東京都港区, 南青山5丁目5-24",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；香水現場封裝、貼標約需等 15–20 分",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "淺草寺與雷門（浅草寺・雷門）",
+          "start": "16:00",
+          "end": "17:15",
+          "category": "temple",
+          "place": {
+            "name": "淺草寺",
+            "latitude": 35.7146948,
+            "longitude": 139.7967499,
+            "applePlaceID": "I24702A862C9B16DC",
+            "address": "〒111-0032, 東京都台東区, 浅草2丁目3-1",
+            "addressIsApproximate": false
+          },
+          "notes": "本堂 06:00–17:00（10 至 3 月 06:30 開）；境內與仲見世商店街營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "東京メトロ銀座線 表參道→淺草直達約 32 分，再步行到雷門"
+          },
+          "images": [
+            "d4-05"
+          ]
+        },
+        {
+          "key": "d4-06",
+          "title": "晚餐：晴空塔城（東京ソラマチ）",
+          "start": "17:45",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "東京Soramachi",
+            "latitude": 35.7099596,
+            "longitude": 139.8095184,
+            "applePlaceID": "I698159AE84ABBDF0",
+            "address": "〒131-0045, 東京都墨田区, 押上1丁目1-13",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "沿隅田川步行約 25 分；也可搭東武線或地鐵到押上"
+          }
+        },
+        {
+          "key": "d4-07",
+          "title": "東京晴空塔展望台（東京スカイツリー）",
+          "start": "19:00",
+          "end": "20:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "東京晴空塔",
+            "latitude": 35.7100211,
+            "longitude": 139.8107243,
+            "applePlaceID": "IF4B9F085287510CE",
+            "address": "〒131-0045, 東京都墨田区, 押上1丁目1-81",
+            "addressIsApproximate": false
+          },
+          "notes": "官網顯示當日 10:00–22:00（最後入場 21:00），時間依日期調整，請出發前確認；建議預約入場時段",
+          "leg": {
+            "fromKey": "d4-06",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "同棟，步行至展望台入口"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "都營淺草線 押上→新橋約 25 分，再步行約 10 分"
+          },
+          "todos": [
+            {
+              "text": "預約東京晴空塔入場時段",
+              "note": "官網 https://en.tokyo-skytree.jp/ 遊記因提早未買到最高層，建議提早購買"
+            }
+          ],
+          "images": [
+            "d4-07"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "東京",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "退房並寄放行李：Hotel Villa Fontaine Grand 東京汐留（ホテルヴィラフォンテーヌグランド東京汐留）",
+          "start": "09:00",
+          "end": "09:30",
+          "category": "hotel",
+          "place": {
+            "name": "Hotel Villa Fontaine汐留",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "notes": "請向櫃檯確認寄放行李時間",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "同棟"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "國會議事堂（国会議事堂）",
+          "start": "10:15",
+          "end": "11:00",
+          "category": "sight",
+          "place": {
+            "name": "國會議事堂",
+            "latitude": 35.6759144,
+            "longitude": 139.7448921,
+            "applePlaceID": "ICCECE2B497EBB942",
+            "address": "〒100-0014, 東京都千代田区, 永田町1丁目7-1",
+            "addressIsApproximate": false
+          },
+          "notes": "外觀可在外圍拍照；內部參觀僅限開放日與預約，請查眾議院與參議院官網確認",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "東京メトロ銀座線 新橋→溜池山王，再步行約 10 分；請以導航確認"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "皇居東御苑",
+          "start": "11:30",
+          "end": "12:45",
+          "category": "park",
+          "place": {
+            "name": "皇居東御苑",
+            "latitude": 35.6866161,
+            "longitude": 139.7572947,
+            "applePlaceID": "I3FE13000298EBF54",
+            "address": "〒100-0001, 東京都千代田区, 千代田1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "11 月至 2 月 09:00–16:00（最後入園 15:30）；週一、週五與 12/28–1/3 休園；免費",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "地鐵到大手町站，再步行到大手門入口；請以導航確認"
+          },
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "午餐：東京車站（天婦羅蕎麥麵）",
+          "start": "13:15",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "立食壽司 函太郎 東京站一番街店",
+            "latitude": 35.6809358,
+            "longitude": 139.7683535,
+            "applePlaceID": "I652EEAAA71949961",
+            "address": "〒100-0005",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "從大手門步行約 15 分"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "東京車站丸之內站舍（東京駅丸の内駅舎）",
+          "start": "14:30",
+          "end": "15:00",
+          "category": "station",
+          "place": {
+            "name": "東京駅丸の内駅前広場",
+            "latitude": 35.6815007,
+            "longitude": 139.7652769,
+            "applePlaceID": "IB46F08B4D007506F",
+            "address": "〒100-0005, 東京都千代田区, 丸の内1丁目9",
+            "addressIsApproximate": false
+          },
+          "notes": "全天可從外觀欣賞；站內店家營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "站內步行"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "回飯店取行李：Hotel Villa Fontaine Grand 東京汐留（ホテルヴィラフォンテーヌグランド東京汐留）",
+          "start": "15:30",
+          "end": "15:45",
+          "category": "hotel",
+          "place": {
+            "name": "Hotel Villa Fontaine汐留",
+            "latitude": 35.6619383,
+            "longitude": 139.7599978,
+            "applePlaceID": "ID6E5F2FC0A58ABF1",
+            "address": "〒105-0021, 東京都港区, 東新橋1丁目9-2, 汐留住友ビル内",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "JR 東京→新橋約 5 分，再步行約 10 分"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "成田國際機場出境（成田国際空港）",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "airport",
+          "place": {
+            "name": "成田國際機場",
+            "latitude": 35.7632517,
+            "longitude": 140.3829322,
+            "applePlaceID": "IAB50389A6079F824",
+            "address": "千葉県成田市, 三里塚御料牧場",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "新橋搭都營淺草線機場快特直達成田機場，約 1 小時 15 分（遊記 2023 年資料）；該段車票遊記記為無法刷卡或用 Suica，請備現金並出發前確認"
+          }
+        }
+      ]
+    }
+  ]
+}

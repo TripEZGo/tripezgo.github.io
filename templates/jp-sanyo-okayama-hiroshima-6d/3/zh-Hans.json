@@ -1,0 +1,1281 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-sanyo-okayama-hiroshima-6d",
+  "revision": 3,
+  "contentLocale": "zh-Hans",
+  "title": "山阳 6 日｜广岛・宫岛・尾道・仓敷・冈山",
+  "subtitle": "冈山进出，仓敷一晚、广岛三晚、尾道回冈山",
+  "summary": "从冈山桃太郎机场进出：第一天到仓敷，接着三晚住广岛，走宫岛、原爆圆顶与吴市，第五天绕尾道回冈山，最后逛冈山城与后乐园。第五天尾道往返与转车的交通时间占比超过三成，想放松可以删掉尾道午餐后的行程。鞆之浦、福山城与吉备津神社放在备选。",
+  "destination": "日本 冈山・广岛",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 6,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "双人",
+    "初次到访",
+    "世界遗产",
+    "濑户内海"
+  ],
+  "todos": [
+    {
+      "text": "登录 Visit Japan Web（入境审查与海关申报）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 机票与订房完成后即可填写"
+    }
+  ],
+  "images": {
+    "d1-02": "images/jp-sanyo-okayama-hiroshima-6d/d1-02.jpg",
+    "d1-03": "images/jp-sanyo-okayama-hiroshima-6d/d1-03.jpg",
+    "d2-01": "images/jp-sanyo-okayama-hiroshima-6d/d2-01.jpg",
+    "d2-02": "images/jp-sanyo-okayama-hiroshima-6d/d2-02.jpg",
+    "d2-04": "images/jp-sanyo-okayama-hiroshima-6d/d2-04.jpg",
+    "d2-05": "images/jp-sanyo-okayama-hiroshima-6d/d2-05.jpg",
+    "d3-01": "images/jp-sanyo-okayama-hiroshima-6d/d3-01.jpg",
+    "d3-03": "images/jp-sanyo-okayama-hiroshima-6d/d3-03.jpg",
+    "d4-01": "images/jp-sanyo-okayama-hiroshima-6d/d4-01.jpg",
+    "d4-02": "images/jp-sanyo-okayama-hiroshima-6d/d4-02.jpg",
+    "d5-01": "images/jp-sanyo-okayama-hiroshima-6d/d5-01.jpg",
+    "d5-03": "images/jp-sanyo-okayama-hiroshima-6d/d5-03.jpg",
+    "d6-01": "images/jp-sanyo-okayama-hiroshima-6d/d6-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：仓敷站周边（游记住过：HOTEL LiVEMAX 冈山仓敷站前）",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "仓敷",
+        "latitude": 34.6017124,
+        "longitude": 133.7654347,
+        "applePlaceID": "IC254A9932624F965",
+        "address": "岡山県倉敷市, 阿知",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ],
+      "todos": [
+        {
+          "text": "确认酒店前台时间（仓敷酒店没有 24 小时前台）",
+          "note": "游记说需在前台关闭前入住"
+        }
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "住宿：广岛站周边（游记住过：东横INN 广岛站棒球场前）",
+      "fromDay": 2,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "广岛",
+        "latitude": 34.3987106,
+        "longitude": 132.4750239,
+        "applePlaceID": "I558EEBEC59B3D890",
+        "address": "広島県広島市南区, 松原町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "key": "ad5-05",
+      "title": "住宿：冈山站周边（站前，方便搭隔天机场大巴）",
+      "fromDay": 5,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "冈山",
+        "latitude": 34.666644,
+        "longitude": 133.9183193,
+        "applePlaceID": "I93FED519C6CEADFD",
+        "address": "岡山県岡山市北区, 駅元町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        6
+      ],
+      "closingDays": [
+        5
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "备选：鞆之浦（鞆の浦）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "福山市鞆之浦历史民俗资料馆",
+        "latitude": 34.3842872,
+        "longitude": 133.3817812,
+        "applePlaceID": "I3C61CF436A2D46BA",
+        "address": "〒720-0202, 広島県福山市, 鞆町後地7536-1",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记说福山站前搭巴士约 40 分，有常夜灯与日落港景，需预留半天"
+    },
+    {
+      "key": "u-02",
+      "title": "备选：福山城",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "筋铁御门",
+        "latitude": 34.4898953,
+        "longitude": 133.360955,
+        "applePlaceID": "I309799357674FB95",
+        "address": "〒720-0061",
+        "addressIsApproximate": true
+      },
+      "notes": "营业时间请出发前确认；游记只在福山站后站远看"
+    },
+    {
+      "key": "u-03",
+      "title": "备选：吉备津神社（吉備津神社）",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "吉备津神社 回廊",
+        "latitude": 34.670828,
+        "longitude": 133.845825,
+        "applePlaceID": "IB405E8D6690FC293",
+        "address": "〒701-1341, 岡山県岡山市北区, 吉備津1716-1",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记说冈山站搭车约 30 分、下车再走约 15 分，有桧木长廊与银杏"
+    },
+    {
+      "key": "u-04",
+      "title": "备选：三宅商店咖喱套餐",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "三宅商店",
+        "latitude": 34.5963058,
+        "longitude": 133.7722686,
+        "applePlaceID": "I6BA238D4BAD93333",
+        "address": "〒710-0054, 岡山県倉敷市, 本町3-11",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记推荐的仓敷午餐咖喱套餐"
+    },
+    {
+      "key": "u-05",
+      "title": "备选：水果小町（パーラー果物小町）",
+      "durationMinutes": 60,
+      "category": "dessert",
+      "place": {
+        "name": "帕拉・水果小町",
+        "latitude": 34.5949755,
+        "longitude": 133.7710575,
+        "applePlaceID": "IE046F142B5340870",
+        "address": "〒710-0046, 岡山県倉敷市, 中央1丁目4-22 きび美ミュージアム",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记推荐的冈山晴王葡萄水果圣代"
+    },
+    {
+      "key": "u-06",
+      "title": "备选：大圣院（大聖院）",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "大圣院",
+        "latitude": 34.2919436,
+        "longitude": 132.3185366,
+        "applePlaceID": "IC89052627BBC1008",
+        "address": "〒739-0592",
+        "addressIsApproximate": true
+      },
+      "notes": "营业时间请出发前确认；宫岛红叶谷公园一带的古寺"
+    },
+    {
+      "key": "u-07",
+      "title": "备选：广岛折鹤塔（おりづるタワー）",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "折鹤塔",
+        "latitude": 34.3957122,
+        "longitude": 132.4545106,
+        "applePlaceID": "I6D0E302BFD43D260",
+        "address": "〒730-0051, 広島県広島市中区, 大手町1丁目2-1",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记说就在原爆圆顶旁，高度不高没进去"
+    },
+    {
+      "key": "u-08",
+      "title": "备选：Bouquet d'arbres 咖啡馆（ブーケ ダルブル）",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "巧克力店 Bouquet d'Arbres",
+        "latitude": 34.4102048,
+        "longitude": 133.1998666,
+        "applePlaceID": "I254843C667D8C7B4",
+        "address": "〒722-0033, 広島県尾道市, 東土堂町19-18",
+        "addressIsApproximate": false
+      },
+      "notes": "营业时间请出发前确认；游记说千光寺下山途中营业的咖啡馆，店猫很黏人"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "资料来源与查证",
+      "paragraphs": [
+        {
+          "text": "来源游记",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/31b9b3a63abc/",
+          "style": "bullet"
+        },
+        {
+          "text": "查证（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "冈山机场大巴（时间、车费、加开班次、仓敷直达）：https://www.okayama-airport.org/tw/access/bus （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "广岛和平纪念资料馆（开馆时间、休馆日、200 日元）：https://hpmmuseum.jp/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "冈山后乐园（开园时间；门票各资料标示不一）：https://okayama-korakuen.jp/ 与冈山市公告资料（查证 2026-11-17，来源为搜索结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "冈山城天守（9:00–17:30，入场至 17:00，12/29–31 休）：https://okayama-castle.jp/ 与冈山市公告资料（查证 2026-11-17，来源为搜索结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "缩景园（开园时间、12/29–31 休）：https://shukkeien.jp/ （查证 2026-11-17，来源为搜索结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "大和博物馆（周二休、9:00–18:00）：https://www.yamato-museum.com/ ；开馆时间来自博物馆信息网 https://www.museum.or.jp/museum/13101 （查证 2026-11-17，官网未列时间）",
+          "style": "bullet"
+        },
+        {
+          "text": "宫岛缆车（上行 9:00–16:00、下行 9:20–16:30，票价）：https://www.miyajima.or.jp/ 的票价页与名录资料（查证 2026-11-17，来源为搜索结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "千光寺山缆车（9:00–17:15、15 分一班）：旅游信息网站（查证 2026-11-17；官方电话 0848-22-4900）",
+          "style": "bullet"
+        },
+        {
+          "text": "广电有轨电车车费 240 日元：https://www.hiroden.co.jp/en/s-fares.html （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "冈山・广岛・山口地区铁路周游券：https://www.westjr.co.jp/global/tc/ticket/pass/okayama_hiroshima_yamaguchi/ （查证 2026-11-17，来源为搜索结果）",
+          "style": "bullet"
+        },
+        {
+          "text": "未能从官方确认，请出发前确认",
+          "style": "heading"
+        },
+        {
+          "text": "阿智神社、仓敷美观地区店家、广岛城天守（游记 2023 年公告牌 9:00–18:00）、严岛神社拜观时间与拜观费（约 300 日元）、海上自卫队吴史料馆、尾道各店、广岛好烧物语、牡蛎屋、AEON Mall 冈山的营业时间。",
+          "style": "bullet"
+        },
+        {
+          "text": "宫岛访问税 100 日元：游记 2023 年资料，官网未查到。",
+          "style": "bullet"
+        },
+        {
+          "text": "新干线冈山↔广岛的现行单程票价。",
+          "style": "bullet"
+        },
+        {
+          "text": "已变动与取舍",
+          "style": "heading"
+        },
+        {
+          "text": "游记原本从广岛进出（实际从冈山机场进出，第 1 天搭车到广岛、最后一天回冈山），这份改成冈山进出并重排：仓敷搬到第 1 天、广岛三晚、尾道改为第 5 天回冈山途中、冈山城与后乐园拆到第 5、6 天。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记的福山、鞆之浦、仙醉岛、吉备津神社、仓敷小店放备选景点。",
+          "style": "bullet"
+        },
+        {
+          "text": "第 5 天尾道往返与转车的交通时间占比超过 30%，这是广岛到冈山必经的移动日；想放松可删掉尾道午餐后的行程。",
+          "style": "bullet"
+        },
+        {
+          "text": "游记原本一个人旅行；模板以 2 位成人安排，时间节奏已放松。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出发前须知",
+      "paragraphs": [
+        {
+          "text": "交通票券",
+          "style": "heading"
+        },
+        {
+          "text": "冈山・广岛・山口地区铁路周游券（JR 西日本）：5 天连续、成人 17,000 日元（官网显示，价格可能调整），含山阳新干线冈山～博多指定席、JR 普通线路与 JR 宫岛渡轮。本行程第 1 天在冈山站搭 JR 到仓敷起算，第 1–5 天刚好用满；第 6 天机场大巴不含。",
+          "style": "bullet"
+        },
+        {
+          "text": "没有买周游券时，游记 2023 年资料：冈山↔广岛新干线单程约 6,460 日元，加上宫岛、尾道、吴市往返，买周游券较划算，请依出发前票价自行试算。",
+          "style": "bullet"
+        },
+        {
+          "text": "广电有轨电车市区一律 240 日元、下车付费；宫岛访问税每人 100 日元，上岛时在宫岛口码头工作人员指引下购买。",
+          "style": "bullet"
+        },
+        {
+          "text": "冈山桃太郎机场进出市区",
+          "style": "heading"
+        },
+        {
+          "text": "机场大巴到冈山站：约 30 分、冈山站西口 1,000 日元（运动公园前、冈山大学通 950 日元），可刷 ICOCA、Suica 等交通 IC 卡；时刻表 2026/10/25–2027/01/31 有效。",
+          "style": "bullet"
+        },
+        {
+          "text": "台北、高雄来的国际航班抵达后，冈山站方向另有加开大巴，不在时刻表内，出关后直接去站牌排队；游记 2023 年说满人即发车。",
+          "style": "bullet"
+        },
+        {
+          "text": "机场直达仓敷站：约 35 分、1,400 日元；机场出发 12 班、其中 5 班每日行驶，其余只在特定日期，仓敷出发到机场每日 9 班。时刻请查官网。",
+          "style": "bullet"
+        },
+        {
+          "text": "第 6 天回机场：冈山站西口搭同一条机场大巴，游记说国际航班出发前人多但会加开班次。",
+          "style": "bullet"
+        },
+        {
+          "text": "官网：https://www.okayama-airport.org/tw/access/bus",
+          "style": "bullet"
+        },
+        {
+          "text": "住宿",
+          "style": "heading"
+        },
+        {
+          "text": "第 1 晚仓敷：游记住「HOTEL LiVEMAX 冈山仓敷站前」，在仓敷站外步行约 5 分；游记说这家没有 24 小时前台，要在前台关闭前回到酒店。",
+          "style": "bullet"
+        },
+        {
+          "text": "第 2–4 晚广岛：游记住「东横INN 广岛站棒球场前」，在 Mazda 球场外；从车站走约 15 分，要过平交道口；房间面向铁道，火车经过有声音。",
+          "style": "bullet"
+        },
+        {
+          "text": "第 5 晚冈山：住冈山站周边，隔天直接搭机场大巴。",
+          "style": "bullet"
+        },
+        {
+          "text": "天气与季节",
+          "style": "heading"
+        },
+        {
+          "text": "11 月中下旬冈山后乐园与冈山城有秋季点灯活动（日期请查冈山旅游网）；游记作者 11 月到访时广岛夜晚约 4 度，需带保暖衣物。",
+          "style": "bullet"
+        },
+        {
+          "text": "严岛神社的退潮时间每天不同，想拍退潮的神社与鸟居要先查潮汐表；游记 11 月到访时退潮在凌晨 3 点与傍晚 5 点。",
+          "style": "bullet"
+        },
+        {
+          "text": "预订与提醒",
+          "style": "heading"
+        },
+        {
+          "text": "第 2 天原爆资料馆 7:30–8:30 与傍晚部分时段需在线预约，白天一般时段不需。",
+          "style": "bullet"
+        },
+        {
+          "text": "大和博物馆周二休，第 4 天行程可依星期对调。",
+          "style": "bullet"
+        },
+        {
+          "text": "虎航机上不能自带食物（游记说），入境日本不要带肉类制品。",
+          "style": "bullet"
+        },
+        {
+          "text": "日元现金与交通 IC 卡都要准备。",
+          "style": "bullet"
+        },
+        {
+          "text": "备选",
+          "style": "heading"
+        },
+        {
+          "text": "鞆之浦、福山城、吉备津神社、仓敷小店等放在备选景点，视时间与天气加入。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "行程总览：山阳（冈山进出）6 日怎么走",
+      "paragraphs": [
+        {
+          "image": "d3-01"
+        },
+        "从冈山桃太郎机场进、冈山桃太郎机场出：第 1 晚住仓敷，接着把广岛当基地住三晚，最后一晚回冈山。山阳新干线与 JR 是主轴，广岛市区坐有轨电车，宫岛坐 JR 宫岛渡轮。",
+        "第 1 天：下午抵达机场，坐机场大巴和 JR 到仓敷，傍晚上阿智神社，再到 {@d1-03} 散步，晚饭在仓敷站周边。",
+        "第 2 天：坐 JR 与山阳新干线到广岛，先看 {@d2-01} 与和平纪念资料馆，午饭吃广岛烧，下午逛广岛城，傍晚去 {@d2-05}。",
+        {
+          "image": "d2-01"
+        },
+        "第 3 天：整天在宫岛，看 {@d3-01}、吃牡蛎午餐，下午坐 {@d3-03} 到狮子岩展望台，傍晚回广岛站周边吃晚饭。",
+        "第 4 天：坐 JR 吴线到吴市，逛 {@d4-01} 与海上自卫队吴史料馆，吃吴冷面，傍晚回广岛站购物。",
+        "第 5 天：从广岛往冈山，中途到尾道走 {@d5-01}、吃尾道拉面，傍晚回冈山先寄存行李，再逛 {@d5-03}。",
+        {
+          "image": "d6-01"
+        },
+        "第 6 天：早上逛 {@d6-01}，再到冈山站前 {@d6-02} 补伴手礼、吃天妇罗荞麦面，下午从站西口坐机场大巴回机场。",
+        "住宿：第 1 晚住仓敷站周边，第 2 到 4 晚住广岛站周边，第 5 晚住冈山站前，第二天直接坐机场大巴。",
+        "交通重点：机场到冈山站坐机场大巴约 30 分钟，也有直达仓敷站的班次；冈山、仓敷、广岛、尾道、吴市之间以 JR 与山阳新干线为主，可评估冈山・广岛・山口地区铁路周游券是否划算，请按出发前票价自行试算；广岛市区坐广电有轨电车；宫岛坐 JR 宫岛渡轮，上岛另付宫岛访问税。第 5 天尾道往返与转乘的交通时间占比超过三成，想放松可以删掉尾道午餐后的行程。出发前请自己再查一次最新时刻表。",
+        "适合谁：想从冈山进出、把仓敷、广岛、宫岛、吴市、尾道与冈山串成一趟的人，按两位成人的节奏安排。每天步行量不小，穿好走的鞋；第 2 天的资料馆内容沉重，时间排松一点。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "海军咖啡与海军咖喱（呉海軍コーヒー・呉海自カレー）",
+      "category": "food",
+      "productType": "tea_coffee",
+      "store": "吴市商店街的咖啡店"
+    },
+    {
+      "key": "s-02",
+      "title": "冈山水果果冻（GOHOBI 胶原蛋白水果果冻）",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "仓敷美观地区（游记推荐的仓敷特产）"
+    },
+    {
+      "key": "s-03",
+      "title": "严岛神社鸟居小模型",
+      "category": "souvenir",
+      "productType": "charm_badge",
+      "store": "宫岛表参道商店"
+    },
+    {
+      "key": "s-04",
+      "title": "广岛与冈山伴手礼",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "广岛站 ekie、冈山站与 AEON Mall 冈山（游记说冈山站或百货公司才有伴手礼）"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "仓敷市",
+      "latitude": 34.58333,
+      "longitude": 133.76667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "广岛市",
+      "latitude": 34.4,
+      "longitude": 132.45,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "广岛市",
+      "latitude": 34.4,
+      "longitude": 132.45,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "广岛市",
+      "latitude": 34.4,
+      "longitude": 132.45,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "冈山市",
+      "latitude": 34.65,
+      "longitude": 133.93333,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "冈山市",
+      "latitude": 34.65,
+      "longitude": 133.93333,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "仓敷市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵达冈山桃太郎机场（岡山桃太郎空港）",
+          "start": "14:00",
+          "end": "15:00",
+          "category": "airport",
+          "place": {
+            "name": "冈山机场",
+            "latitude": 34.760098,
+            "longitude": 133.8532645,
+            "applePlaceID": "I7E27BF1F5E5B283F",
+            "address": "〒701-1131, 岡山県岡山市北区, 日応寺1277",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "阿智神社：高处俯瞰仓敷",
+          "start": "16:30",
+          "end": "17:20",
+          "category": "temple",
+          "place": {
+            "name": "阿智神社",
+            "latitude": 34.5974588,
+            "longitude": 133.7734768,
+            "applePlaceID": "IC4617BF6EA7D33DE",
+            "address": "〒710-0054, 岡山県倉敷市, 本町12-1",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "机场大巴到冈山站约 30 分、1,000 日元（国际航班抵达后出口有加开班次）；转 JR 山阳本线到仓敷约 17 分；再步行约 15 分到阿智神社"
+          },
+          "todos": [
+            {
+              "text": "确认机场大巴时刻与仓敷直达班次",
+              "note": "https://www.okayama-airport.org/tw/access/bus 2026/10/25 起时刻表"
+            }
+          ],
+          "images": [
+            "d1-02"
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "仓敷美观地区（倉敷美観地区）：傍晚散步",
+          "start": "17:35",
+          "end": "19:00",
+          "category": "sight",
+          "place": {
+            "name": "仓敷美观地区",
+            "latitude": 34.5957059,
+            "longitude": 133.7716304,
+            "applePlaceID": "IAB89652100DAF584",
+            "address": "〒710-0046, 岡山県倉敷市, 中央",
+            "addressIsApproximate": true
+          },
+          "notes": "街区可自由步行；各店家营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从阿智神社沿石阶下山，步行约 10 分"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "晚餐：仓敷站周边",
+          "start": "19:15",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "仓敷站周边餐厅",
+            "latitude": 34.6015261,
+            "longitude": 133.7660173,
+            "address": "岡山県倉敷市阿知1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从美观地区步行约 15 分回仓敷站前"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "广岛市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "原爆圆顶与和平纪念公园（原爆ドーム・平和記念公園）",
+          "start": "10:45",
+          "end": "11:45",
+          "category": "sight",
+          "place": {
+            "name": "原爆圆顶",
+            "latitude": 34.3954753,
+            "longitude": 132.4535978,
+            "applePlaceID": "I5E095211678C6A0E",
+            "address": "〒730-0051, 広島県広島市中区, 大手町1丁目10",
+            "addressIsApproximate": false
+          },
+          "notes": "圆顶与公园全天可参观",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "JR 到冈山约 20 分，转山阳新干线到广岛约 40 分（先到广岛站寄存行李），再搭广电有轨电车到原爆圆顶前站约 15 分、240 日元"
+          },
+          "todos": [
+            {
+              "text": "购买冈山・广岛・山口地区铁路周游券",
+              "note": "JR 西日本官网或代理商；第 1 天起算 5 天，到冈山站兑换（游记说要用「QRコードの読取り」按钮扫描二维码）"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "广岛和平纪念资料馆（広島平和記念資料館）",
+          "start": "12:00",
+          "end": "13:15",
+          "category": "museum",
+          "place": {
+            "name": "广岛和平纪念资料馆",
+            "latitude": 34.3917983,
+            "longitude": 132.4520946,
+            "applePlaceID": "I994A655E4AB1C1B",
+            "address": "〒730-0811, 広島県広島市中区, 中島町1-2",
+            "addressIsApproximate": false
+          },
+          "notes": "3–7 月与 9–11 月 7:30–19:00，12–2 月 7:30–18:00（闭馆前 30 分停止入场）；12/30–31 休，2027 年 2/15–20 闭馆换展",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "在和平纪念公园内步行约 10 分；参观约 60–75 分，内容沉重"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "午餐：本通周边（广岛烧或牡蛎料理）",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "dining",
+          "place": {
+            "name": "萨莉亚 纸屋町本通站前店",
+            "latitude": 34.393559,
+            "longitude": 132.4567828,
+            "applePlaceID": "IC18D7460724901E8",
+            "address": "〒730-0031, 広島県広島市中区, 紙屋町2丁目3番26号",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "步行约 15 分到本通一带"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "广岛城（広島城）",
+          "start": "14:50",
+          "end": "15:40",
+          "category": "castle",
+          "place": {
+            "name": "广岛城",
+            "latitude": 34.4006005,
+            "longitude": 132.4622016,
+            "applePlaceID": "IAE7DD45211BC54E0",
+            "address": "広島県広島市中区, 上八丁堀",
+            "addressIsApproximate": true
+          },
+          "notes": "天守阁 9:00–18:00（游记 2023 年公告牌资料）；冬季时段与休息日请出发前确认",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从本通步行约 15 分；广岛城原址在原爆中消失，现为战后重建"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "缩景园（縮景園）",
+          "start": "16:05",
+          "end": "16:55",
+          "category": "park",
+          "place": {
+            "name": "缩景园",
+            "latitude": 34.3999784,
+            "longitude": 132.4675333,
+            "applePlaceID": "IBF206682E734C6FB",
+            "address": "〒730-0014, 広島県広島市中区, 上幟町2-11",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–17:00（9/16–3/15，入园至 16:30）、9:00–18:00（3/16–9/15）；12/29–31 休",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "步行约 20 分，或搭广电到缩景园前站再步行；秋冬 17:00 闭园，请提早入园"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "晚餐：广岛好烧物语 站前广场（広島お好み物語 駅前ひろば，广岛烧）",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "广岛好烧物语 站前广场",
+            "latitude": 34.396848,
+            "longitude": 132.4729265,
+            "applePlaceID": "I5A5941CECA87DA87",
+            "address": "〒732-0822, 広島県広島市南区, 松原町10-1, 広島フルフォーカスビル6F",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "广电到广岛站约 15 分；店在广岛站出口右手边大楼 6 楼，整层都是广岛烧店"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "游记说从车站走约 15 分，要过平交道口"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "广岛市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "严岛神社与海上鸟居（厳島神社）",
+          "start": "10:15",
+          "end": "11:30",
+          "category": "temple",
+          "place": {
+            "name": "严岛神社",
+            "latitude": 34.2960364,
+            "longitude": 132.31969,
+            "applePlaceID": "I7EA0EDCABFD8E819",
+            "address": "〒739-0588, 広島県廿日市市, 宮島町1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "约 6:30 开放至傍晚，闭门时间依季节而异，请出发前确认",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "JR 山阳本线到宫岛口约 30 分；JR 宫岛渡轮约 10 分（JR 周游券可搭）；上岛另付宫岛访问税 100 日元；从码头步行约 10–15 分到神社"
+          },
+          "todos": [
+            {
+              "text": "查严岛神社当日潮汐与开放时间",
+              "note": "https://www.miyajima.or.jp/ 想看退潮的神社与鸟居要先查表"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "午餐：牡蛎屋（牡蠣屋，牡蛎饭与炸牡蛎）",
+          "start": "11:45",
+          "end": "12:45",
+          "category": "dining",
+          "place": {
+            "name": "牡蛎屋",
+            "latitude": 34.2985639,
+            "longitude": 132.3216529,
+            "applePlaceID": "IA41DD48BF72B0DFE",
+            "address": "〒739-0588, 広島県廿日市市, 宮島町539",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "沿表参道步行约 10 分"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "宫岛缆车与狮子岩展望台（宮島ロープウェー・獅子岩展望台）",
+          "start": "13:15",
+          "end": "15:15",
+          "category": "cablecar",
+          "place": {
+            "name": "红叶谷",
+            "latitude": 34.2932995,
+            "longitude": 132.3267853,
+            "applePlaceID": "I6113F6876A0754CF",
+            "address": "広島県廿日市市, 宮島町",
+            "addressIsApproximate": true
+          },
+          "notes": "约 9:00–16:00（下行末班 16:30），季节与强风停运请出发前确认",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "步行约 25 分到红叶谷站（或搭免费接驳巴士）；缆车分两段，到狮子岩站再步行约 30 分"
+          },
+          "images": [
+            "d3-03"
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "晚餐：广岛站周边（游记推荐外带烧肉便当：炭火焼肉 敏 猿猴桥店）",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "广岛站",
+            "latitude": 34.39641,
+            "longitude": 132.4758,
+            "applePlaceID": "IE1D566D5D88F7A02",
+            "address": "〒732-0822, 広島県広島市南区, 松原町2-37",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "ferry",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "步行下山到码头、渡轮回宫岛口再搭 JR 到广岛站"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "广岛市",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "大和博物馆（大和ミュージアム）",
+          "start": "10:15",
+          "end": "12:15",
+          "category": "museum",
+          "place": {
+            "name": "吴市海事历史科学馆 大和博物馆",
+            "latitude": 34.2411912,
+            "longitude": 132.5558263,
+            "applePlaceID": "I77D335EE33A1FDFB",
+            "address": "〒737-0029, 広島県呉市, 宝町5-20",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–18:00（入馆至 17:30）；周二休（周二遇假日改隔日；4/29–5/5、7/21–8/31、12/29–1/3 无休）",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "JR 吴线约 35–50 分到吴站；出站走天桥步行约 5 分到博物馆"
+          },
+          "todos": [
+            {
+              "text": "查大和博物馆休馆日（周二）",
+              "note": "https://www.yamato-museum.com/ 依星期调整第 4 天顺序"
+            }
+          ],
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "海上自卫队吴史料馆（海上自衛隊呉史料館 てつのくじら館）",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "museum",
+          "place": {
+            "name": "海上自卫队吴史料馆（铁鲸馆）",
+            "latitude": 34.2422422,
+            "longitude": 132.555365,
+            "applePlaceID": "I77CBF5EE2D518548",
+            "address": "〒737-0029",
+            "addressIsApproximate": true
+          },
+          "notes": "免费入馆；营业时间与休息日请出发前确认",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "从大和博物馆后方步行约 5 分；可进入实际退役潜艇参观"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "午餐：吴市商店街（吴冷面）",
+          "start": "14:00",
+          "end": "15:00",
+          "category": "dining",
+          "place": {
+            "name": "吴市商店街周边（吴冷面）",
+            "latitude": 34.2459288,
+            "longitude": 132.5649722,
+            "address": "広島県呉市中通3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "游记说走到商店街约 30 分；可改搭出租车或公交缩短"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "广岛站购物与伴手礼（ekie）",
+          "start": "16:30",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "Avance Ekie 广岛站店",
+            "latitude": 34.397971,
+            "longitude": 132.4760597,
+            "applePlaceID": "IFE0D78E6E12E9D03",
+            "address": "〒732-0822, 広島県広島市南区, 松原町1-2",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "JR 吴线回广岛站约 35–50 分"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "晚餐：广岛站周边",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "广岛站",
+            "latitude": 34.39641,
+            "longitude": 132.4758,
+            "applePlaceID": "IE1D566D5D88F7A02",
+            "address": "〒732-0822, 広島県広島市南区, 松原町2-37",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "冈山市",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "千光寺与猫之细道（千光寺・猫の細道）",
+          "start": "10:30",
+          "end": "12:30",
+          "category": "temple",
+          "place": {
+            "name": "千光寺",
+            "latitude": 34.41045,
+            "longitude": 133.19871,
+            "applePlaceID": "I4FF7648391C3D757",
+            "address": "〒722-0033, 広島県尾道市, 東土堂町15-1",
+            "addressIsApproximate": false
+          },
+          "notes": "千光寺山缆车 9:00–17:15、约 15 分一班；寺院开放时间请出发前确认",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "山阳新干线到福山约 25–40 分，转 JR 山阳本线到尾道约 20 分，再搭巴士或步行到缆车站；游记提醒转车空等可到 30 分以上"
+          },
+          "images": [
+            "d5-01"
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "午餐：尾道拉面（尾道ラーメン）",
+          "start": "12:45",
+          "end": "13:45",
+          "category": "dining",
+          "place": {
+            "name": "尾道站周边商店街拉面店",
+            "latitude": 34.4063786,
+            "longitude": 133.1984852,
+            "address": "広島県尾道市土堂1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "下山走商店街回尾道站；游记吃的是台湾人创始的 Onomichi Ramen Shoya"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "冈山城（岡山城）",
+          "start": "16:10",
+          "end": "17:15",
+          "category": "castle",
+          "place": {
+            "name": "冈山城",
+            "latitude": 34.6651516,
+            "longitude": 133.936075,
+            "applePlaceID": "IB1053247CF420A0C",
+            "address": "〒700-0823, 岡山県岡山市北区, 丸の内2丁目3番1号",
+            "addressIsApproximate": false
+          },
+          "notes": "天守 9:00–17:30（入场至 17:00）；12/29–31 休",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 110,
+            "durationSource": "user",
+            "note": "JR 到福山，山阳新干线到冈山约 20 分；先到酒店寄存行李，再搭有轨电车到城下站步行约 10 分"
+          },
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "晚餐：冈山站周边",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "冈山",
+            "latitude": 34.666644,
+            "longitude": 133.9183193,
+            "applePlaceID": "I93FED519C6CEADFD",
+            "address": "岡山県岡山市北区, 駅元町",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "有轨电车回冈山站前"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "冈山市",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "冈山后乐园（岡山後楽園）",
+          "start": "08:30",
+          "end": "10:00",
+          "category": "park",
+          "place": {
+            "name": "冈山后乐园",
+            "latitude": 34.6672584,
+            "longitude": 133.9361393,
+            "applePlaceID": "I21A7C8A0D8035A78",
+            "address": "〒703-8257, 岡山県岡山市北区, 後楽園1-5",
+            "addressIsApproximate": false
+          },
+          "notes": "3/20–9/30 7:30–18:00（入园至 17:45）；10/1–3/19 8:00–17:00（入园至 16:45）；活动期间可能调整",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "有轨电车到城下站步行约 10 分，或从冈山站走路约 25 分；门票约 500 日元（官方资料各处标示不一）"
+          },
+          "images": [
+            "d6-01"
+          ]
+        },
+        {
+          "key": "d6-02",
+          "title": "冈山站前购物（イオンモール岡山）：伴手礼",
+          "start": "10:45",
+          "end": "12:00",
+          "category": "shopping",
+          "place": {
+            "name": "冈山永旺梦乐城",
+            "latitude": 34.6622566,
+            "longitude": 133.917743,
+            "applePlaceID": "I5183DF830F1B7373",
+            "address": "〒700-0907, 岡山県岡山市北区, 下石井1丁目2-1",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "有轨电车或步行回冈山站前"
+          }
+        },
+        {
+          "key": "d6-03",
+          "title": "午餐：天妇罗荞麦面（冈山站周边）",
+          "start": "12:00",
+          "end": "12:40",
+          "category": "dining",
+          "place": {
+            "name": "冈山",
+            "latitude": 34.666644,
+            "longitude": 133.9183193,
+            "applePlaceID": "I93FED519C6CEADFD",
+            "address": "岡山県岡山市北区, 駅元町",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d6-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user"
+          }
+        },
+        {
+          "key": "d6-04",
+          "title": "冈山桃太郎机场值机离境（岡山桃太郎空港）",
+          "start": "13:30",
+          "end": "15:30",
+          "category": "airport",
+          "place": {
+            "name": "冈山机场",
+            "latitude": 34.760098,
+            "longitude": 133.8532645,
+            "applePlaceID": "I7E27BF1F5E5B283F",
+            "address": "〒701-1131, 岡山県岡山市北区, 日応寺1277",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d6-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "冈山站西口搭机场大巴约 30 分、1,000 日元；国际航班出发前有班次，依航班时间提早到站候车；机场小，X 光机在大厅"
+          }
+        }
+      ]
+    }
+  ]
+}

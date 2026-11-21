@@ -1,0 +1,710 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-himeji-kobe-3d",
+  "revision": 3,
+  "contentLocale": "zh-Hant-TW",
+  "title": "姬路神戶 3 日｜姬路城・書寫山・神戶",
+  "subtitle": "姬路城、書寫山與神戶，關西進出的三天",
+  "summary": "三天兩個城市：姬路城與好古園、書寫山圓教寺，最後一天到神戶動物王國與三宮。從關西機場進出，大阪另有範本，這份不重複。鳴門漩渦、明石大橋、魚棚商店街與北野異人館放在備選。",
+  "destination": "日本 姬路・神戶",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "雙人",
+    "初訪",
+    "城堡",
+    "世界遺產"
+  ],
+  "todos": [
+    {
+      "text": "登錄 Visit Japan Web（入境審查與海關申報）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 機票與訂房完成後即可填寫"
+    }
+  ],
+  "images": {
+    "d2-01": "images/jp-himeji-kobe-3d/d2-01.jpg",
+    "d2-03": "images/jp-himeji-kobe-3d/d2-03.jpg",
+    "d3-01": "images/jp-himeji-kobe-3d/d3-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：東橫INN 姬路站新幹線北口（連住 2 晚；遊記住過）",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "東橫INN姬路站新幹線北口",
+        "latitude": 34.8290758,
+        "longitude": 134.687892,
+        "applePlaceID": "I37FF38DFE3D7C49D",
+        "address": "〒670-0913, 兵庫県姫路市, 西駅前町52-2, 東横INN姫路駅新幹線北口",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ],
+      "todos": [
+        {
+          "text": "訂姬路站周邊住宿（連住 2 晚）",
+          "note": "遊記住東橫INN 姬路站新幹線北口，請提早訂房"
+        }
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "備選：明石海峽大橋（明石海峡大橋）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "舞子海上Promenade",
+        "latitude": 34.6311542,
+        "longitude": 135.0333488,
+        "applePlaceID": "IEBBA6657C47FECE5",
+        "address": "〒655-0047, 兵庫県神戸市垂水区, 東舞子町2051",
+        "addressIsApproximate": false
+      },
+      "notes": "營業時間請出發前確認；遊記因天候不佳沒去"
+    },
+    {
+      "key": "u-02",
+      "title": "備選：明石魚棧（魚の棚商店街）",
+      "durationMinutes": 60,
+      "category": "market",
+      "place": {
+        "name": "魚の棚商店街",
+        "latitude": 34.6471415,
+        "longitude": 134.9922966,
+        "applePlaceID": "I553319624A303DB7",
+        "address": "〒673-0892, 兵庫県明石市, 本町1丁目1-16",
+        "addressIsApproximate": false
+      },
+      "notes": "營業時間請出發前確認；明石海鮮與明石燒（玉子燒）"
+    },
+    {
+      "key": "u-03",
+      "title": "備選：北野異人館街",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "星巴克咖啡神戶北野異人館店",
+        "latitude": 34.6999465,
+        "longitude": 135.1902397,
+        "applePlaceID": "IA93CC49FDC3714D7",
+        "address": "〒650-0002, 兵庫県神戸市中央区, 北野町3丁目1-31 北野物語館",
+        "addressIsApproximate": false
+      },
+      "notes": "營業時間請出發前確認；各館營業時間與公休不同"
+    },
+    {
+      "key": "u-04",
+      "title": "備選：鳴門漩渦（鳴門の渦潮）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "大鳴門橋遊步道渦之道",
+        "latitude": 34.2361894,
+        "longitude": 134.6420344,
+        "applePlaceID": "I3D88C4E703AF446",
+        "address": "〒772-0053",
+        "addressIsApproximate": true
+      },
+      "notes": "營業時間請出發前確認；觀潮時間隨潮汐變動，需另查潮汐表；遊記因天候不佳沒去"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "資料來源與查證",
+      "paragraphs": [
+        {
+          "text": "來源遊記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/aacd5f5cacd1/",
+          "style": "bullet"
+        },
+        {
+          "text": "查證（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "姬路城（9:00–17:00、最終入城 16:00、12/29–30 休、2,500 日圓、好古園套票 2,600 日圓）：https://himejicastle.jp/en/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "好古園（9:00–17:00、12/29–30 休；票價各來源不一，300–400 日圓）：搜尋結果與 https://www.himeji-machishin.jp/ryokka/kokoen/en/guidance/index.html （查證 2026-11-17，來源為搜尋結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "書寫山圓教寺（約 8:30–17:00、志納金 500、纜車來回 1,200、交通車 500）：https://www.hyogo-tourism.jp/world/spot/detail_1050.html 與 https://mt-shosha.info/en.html （查證 2026-11-17，來源為搜尋結果）",
+          "style": "bullet"
+        },
+        {
+          "text": "神戶動物王國（10:00–17:00、2,400 日圓、Port Liner 約 14 分）：https://www.kobe-oukoku.com/en/tickets 與 https://www.kobe-oukoku.com/en/access （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "關西機場到三宮利木津巴士（約 65–75 分、約 2,200 日圓）、機場到姬路（はるか＋新幹線約 95–120 分、直達巴士約 3,400–3,700 日圓）：多個整理頁（查證 2026-11-17，來源為搜尋結果，未取得官方時刻表）",
+          "style": "bullet"
+        },
+        {
+          "text": "未能從官方確認，請出發前確認",
+          "style": "heading"
+        },
+        {
+          "text": "書寫山官網未取得，營業時間與票價以搜尋結果為準。",
+          "style": "bullet"
+        },
+        {
+          "text": "神戶動物王國休園日、神戶牛吉祥吉營業時間、Piole 與三宮商店營業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "姬路到三宮 JR 新快速車資與班次、機場巴士現行時刻與車資。",
+          "style": "bullet"
+        },
+        {
+          "text": "各景點座標為估計值。",
+          "style": "bullet"
+        },
+        {
+          "text": "已變動與取捨",
+          "style": "heading"
+        },
+        {
+          "text": "遊記第 5、6 天含大阪（難波八阪神社、通天閣、梅田）與神戶港區，大阪另有範本；這份只留姬路、書寫山、神戶動物王國與三宮。",
+          "style": "bullet"
+        },
+        {
+          "text": "好古園與姬路站夜景為遊記未走但順路的補充；遊記沒進姬路市立動物園，不收。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出發前須知",
+      "paragraphs": [
+        {
+          "text": "路線",
+          "style": "heading"
+        },
+        {
+          "text": "這份範本是關西機場進出的姬路加神戶行程：第 1 天機場到姬路，第 2 天書寫山與姬路城，第 3 天神戶動物王國與三宮，下午回機場。",
+          "style": "bullet"
+        },
+        {
+          "text": "神戶只留動物王國與三宮，元町商店街、美利堅公園、海港樂園請看京阪神範本。",
+          "style": "bullet"
+        },
+        {
+          "text": "機場進出市區",
+          "style": "heading"
+        },
+        {
+          "text": "去程：關空特急はるか到新大阪約 50 分，轉山陽新幹線到姬路約 30 分，含轉乘約 2 小時，合計約 5,400 日圓（舊資料）。",
+          "style": "bullet"
+        },
+        {
+          "text": "去程替代：機場直達巴士到姬路站約 1.5–2 小時、約 3,400–3,700 日圓，班次少，請查巴士公司時刻。",
+          "style": "bullet"
+        },
+        {
+          "text": "回程：三宮搭機場利木津巴士到關西機場約 65–75 分、約 2,200 日圓，請選 19:30 以後起飛的班機。",
+          "style": "bullet"
+        },
+        {
+          "text": "景點重點",
+          "style": "heading"
+        },
+        {
+          "text": "書寫山圓教寺：入山志納金不含交通車；車約 5 分，走路上山約 20 分（遊記建議多花錢搭車省體力）。全部走完至少 2 小時。",
+          "style": "bullet"
+        },
+        {
+          "text": "姬路城：入內脫鞋，樓梯陡峭常排隊；日本天氣不好時改去室內行程。",
+          "style": "bullet"
+        },
+        {
+          "text": "好古園與姬路城有套票 2,600 日圓，使用期限請看官網。",
+          "style": "bullet"
+        },
+        {
+          "text": "姬路站周邊商店不多，晚上早關；藥妝店免稅時間通常比營業時間早結束。",
+          "style": "bullet"
+        },
+        {
+          "text": "神戶動物王國的企鵝餵食與動物互動區需領整理券，入園後先領。",
+          "style": "bullet"
+        },
+        {
+          "text": "三宮搭 Port Liner 往動物王國要搭往「神戶空港」方向，往「北埠頭」的車會在北埠頭折返。",
+          "style": "bullet"
+        },
+        {
+          "text": "行程節奏",
+          "style": "heading"
+        },
+        {
+          "text": "第 1、3 天交通比重高，因為要往返關西機場。",
+          "style": "bullet"
+        },
+        {
+          "text": "範本以 11 月為基準，日落與營業時間隨季節變動。",
+          "style": "bullet"
+        },
+        {
+          "text": "其他",
+          "style": "heading"
+        },
+        {
+          "text": "日幣現金要備足；入境前先在 Visit Japan Web 登錄：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "旅程總覽：姬路神戶 3 日怎麼走",
+      "paragraphs": [
+        {
+          "image": "d2-03"
+        },
+        "從關西機場進、關西機場出，前兩晚都住在姬路當基地，最後一天才移到神戶，傍晚從三宮搭機場巴士回機場。交通策略很單純：姬路市內以步行為主，往書寫山搭巴士加纜車，神戶用電車加 Port Liner。",
+        "第 1 天：中午抵達關西機場，搭特急與新幹線到姬路，午餐後逛 {@d1-03}，晚上在站前吃飯，再到北口二樓天橋夜拍姬路城。",
+        "第 2 天：早上上書寫山看 {@d2-01}，午餐後進 {@d2-03}，下午回姬路站逛 Piole 與商店街。",
+        {
+          "image": "d2-01"
+        },
+        "第 3 天：搭 JR 到三宮，轉 Port Liner 去 {@d3-01} 摸卡皮巴拉，午餐吃神戶牛，下午逛三宮中心街，再搭機場巴士回關西機場。",
+        {
+          "image": "d3-01"
+        },
+        "住宿：姬路連住兩晚東橫INN 姬路站新幹線北口，第 3 天退房後前往神戶，不再住宿。",
+        "交通重點：機場到姬路搭特急はるか轉山陽新幹線，含轉乘約 2 小時（也可搭機場直達巴士，班次少）；姬路站到書寫山搭神姬巴士再轉纜車；姬路到三宮搭 JR 新快速；三宮搭 Port Liner 往「神戶空港」方向到動物王國；回程從三宮搭機場利木津巴士約 65 到 75 分，請選 19:30 以後起飛的班機。出發前請自己再查一次最新時刻表。",
+        "適合誰：想看姬路城、又想輕鬆摸動物的人，一個人或兩三個人都適合。第 1、3 天交通比重高，第 2 天有山路與陡樓梯，穿好走的鞋。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "神戶フランツ巧克力（Kobe Frantz）",
+      "category": "souvenir",
+      "productType": "chocolate_candy",
+      "store": "神戶中華街附近與神戶車站周邊（遊記在中華街買）"
+    },
+    {
+      "key": "s-02",
+      "title": "書寫山現烤紅豆麻糬",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "書寫山摩尼殿旁商店（現烤、皮脆；當場吃）"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "姬路市",
+      "latitude": 34.8154234,
+      "longitude": 134.6854576,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "姬路市",
+      "latitude": 34.8154234,
+      "longitude": 134.6854576,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "神戶市",
+      "latitude": 34.6894277,
+      "longitude": 135.1957571,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "姬路市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵達關西國際機場（関西国際空港）",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "airport",
+          "place": {
+            "name": "關西國際機場",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "午餐：姬路站周邊（姬路關東煮、穴子飯或蕎麥麵）",
+          "start": "14:15",
+          "end": "15:00",
+          "category": "dining",
+          "place": {
+            "name": "姫路",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 130,
+            "durationSource": "user",
+            "note": "關空特急はるか到新大阪約 50 分，轉山陽新幹線到姬路約 30 分；含轉乘約 2 小時，合計約 5,400 日圓（舊資料，請查 JR 西日本）。也可搭機場直達巴士到姬路站約 1.5–2 小時、約 3,400–3,700 日圓，班次少"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "好古園：姬路城西側的日本庭園",
+          "start": "15:25",
+          "end": "16:30",
+          "category": "park",
+          "place": {
+            "name": "好古園",
+            "latitude": 34.8378515,
+            "longitude": 134.6895777,
+            "applePlaceID": "I780D49712BA53B3D",
+            "address": "〒670-0012, 兵庫県姫路市, 本町68",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–17:00（最終入園 16:30；4/27–8/31 延長到 18:00），12/29–30 休園（官方來源整理）",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "從姬路站沿大手前通步行約 20 分，先寄放行李到飯店更輕鬆"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "晚餐：姬路站前商店街（神戶牛或居酒屋）",
+          "start": "17:15",
+          "end": "18:30",
+          "category": "dining",
+          "place": {
+            "name": "姫路",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "從好古園沿大手前通走回站前商店街"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "姬路站北口二樓天橋：夜拍姬路城（姬路駅北口2階デッキ）",
+          "start": "18:50",
+          "end": "19:20",
+          "category": "viewpoint",
+          "place": {
+            "name": "姫路",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "全天可通行；冬季姬路城點燈活動時間請查官網",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回站前，從北口二樓看台正對姬路城"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回飯店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "姬路市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "書寫山圓教寺（書写山圓教寺）：摩尼殿與大講堂",
+          "start": "09:45",
+          "end": "11:45",
+          "category": "temple",
+          "place": {
+            "name": "圓教寺",
+            "latitude": 34.892341,
+            "longitude": 134.6544041,
+            "applePlaceID": "I3B9417AC51896122",
+            "address": "〒671-2201, 兵庫県姫路市, 書写2968",
+            "addressIsApproximate": false
+          },
+          "notes": "約 8:30–17:00（依季節，纜車末班另計），請出發前確認；入山志納金約 500 日圓、纜車來回約 1,200 日圓",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "姬路站北口 10 號乘車處搭神姬巴士往書寫山纜車，約 25 分、約 280 日圓；再搭纜車約 4 分，約 15 分一班"
+          },
+          "todos": [
+            {
+              "text": "查書寫山巴士與纜車時刻、決定是否買交通車",
+              "note": "纜車約 15 分一班；志納金不含交通車"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "午餐：姬路城前（大手前通）周邊",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "大手前通り",
+            "latitude": 34.82905903288856,
+            "longitude": 134.69068729919022,
+            "address": "日本兵庫縣姬路市",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "書寫山巴士站搭回姬路市區，在姬路城大手前通附近下車約 30 分；先查回程時刻"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "姬路城（姫路城）：世界遺產白鷺城",
+          "start": "13:30",
+          "end": "15:30",
+          "category": "castle",
+          "place": {
+            "name": "姬路城",
+            "latitude": 34.8393609,
+            "longitude": 134.6939937,
+            "applePlaceID": "I4824F228D574E9FD",
+            "address": "〒670-0012, 兵庫県姫路市, 本町68",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–17:00（最終入城 16:00；夏季到 18:00），12/29–30 休；大人 2,500 日圓，與好古園套票 2,600 日圓（官網）",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分穿過三之丸廣場；入內脫鞋，樓梯陡且常排隊"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "姬路站購物：Piole 姬路與站前商店街",
+          "start": "16:00",
+          "end": "17:15",
+          "category": "shopping",
+          "place": {
+            "name": "piole姬路",
+            "latitude": 34.8273504,
+            "longitude": 134.6910604,
+            "applePlaceID": "ICE4D383EB876A881",
+            "address": "〒670-0927, 兵庫県姫路市, 駅前町188-1",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；藥妝店免稅時間通常比營業時間早結束",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "從姬路城沿大手前通走回站前"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "晚餐：姬路站周邊（神戶牛）",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "姫路",
+            "latitude": 34.8264466,
+            "longitude": 134.6904916,
+            "applePlaceID": "ICBF85AA076B57DB1",
+            "address": "兵庫県姫路市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "站前商店街步行"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回飯店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "神戶市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "神戶動物王國（神戸どうぶつ王国）：摸卡皮巴拉",
+          "start": "10:00",
+          "end": "12:30",
+          "category": "zoo",
+          "place": {
+            "name": "神戶動物王國",
+            "latitude": 34.6546652,
+            "longitude": 135.2225884,
+            "applePlaceID": "I621C3224B7AE814",
+            "address": "〒650-0047, 兵庫県神戸市中央区, 港島南町7丁目1-9",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00–17:00（官網當日顯示），休園日請看官網日曆；大人 2,400 日圓",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "姬路站搭 JR 新快速到三宮約 40–50 分，三宮站二樓轉港灣人工島線（Port Liner）往「神戶空港」方向到「計算科學中心（計算科学センター）」約 14 分；注意不要搭到往北埠頭的車"
+          },
+          "todos": [
+            {
+              "text": "確認神戶動物王國休園日並領整理券",
+              "note": "https://www.kobe-oukoku.com/en/ 企鵝餵食與互動區需整理券"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "午餐：神戶牛吉祥吉（神戸牛 吉祥吉）三宮中心街店",
+          "start": "13:00",
+          "end": "14:15",
+          "category": "dining",
+          "place": {
+            "name": "神戸牛 吉祥吉",
+            "latitude": 34.6911948,
+            "longitude": 135.1939327,
+            "applePlaceID": "I230C2CD6BFDB70CC",
+            "address": "〒650-0021, 兵庫県神戸市中央区, 三宮町1丁目3-10 2F",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；遊記 2024 年赤身牛排 220g 約 7,700 日圓（未稅）",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "計算科學中心站搭 Port Liner 回三宮約 14 分；含步行"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "三宮中心街與 Kiddy Land 神戶（さんちか／センター街）",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "shopping",
+          "place": {
+            "name": "三宮センター街",
+            "latitude": 34.6921353,
+            "longitude": 135.1943526,
+            "address": "日本兵庫縣神戶市",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認；街道可自由步行",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行逛三宮中心街、Center Plaza（扭蛋、二手店、書店）"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "關西國際機場出發（関西国際空港）",
+          "start": "17:00",
+          "end": "18:00",
+          "category": "airport",
+          "place": {
+            "name": "關西國際機場",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "三宮（神戶三宮バスターミナル）搭機場利木津巴士直達關西機場約 65–75 分、約 2,200 日圓（資料來源不一，1,800–2,200）；建議選 19:30 以後起飛的班機"
+          }
+        }
+      ]
+    }
+  ]
+}

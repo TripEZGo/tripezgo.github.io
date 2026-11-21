@@ -1,0 +1,1648 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kyushu-loop-8d",
+  "revision": 3,
+  "contentLocale": "ko",
+  "title": "규슈 일주 8일｜후쿠오카·유후인·벳푸·다카치호·구마모토",
+  "subtitle": "후쿠오카 인/아웃, 유후인·벳푸·구마모토·다카치호 당일 투어를 거쳐 다시 후쿠오카와 이토시마로",
+  "summary": "8일 동안 규슈를 한 바퀴 돕니다. 후쿠오카, 유후인, 벳푸 온천, 구마모토, 다카치호 당일 투어를 거쳐 마지막에 후쿠오카로 돌아와 이토시마까지 다녀옵니다. 다카치호는 여행사를 지정하지 않고 당일 투어에 참가하는 것으로 적었습니다. 5일차 당일 투어와 7일차 이토시마는 이동 시간 비중이 3할을 넘는데, 거리 때문이니 어쩔 수 없습니다. 가라쓰, 유토쿠 이나리, 다케오는 후보에 넣었습니다.",
+  "destination": "일본 후쿠오카·유후인·벳푸·구마모토·다카치호",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 8,
+  "coverColour": "green",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "첫 방문",
+    "온천",
+    "당일 투어"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록하기 (입국 심사와 세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권과 숙소 예약이 끝나면 바로 작성할 수 있음"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kyushu-loop-8d/d1-03.jpg",
+    "d1-04": "images/jp-kyushu-loop-8d/d1-04.jpg",
+    "d2-02": "images/jp-kyushu-loop-8d/d2-02.jpg",
+    "d2-03": "images/jp-kyushu-loop-8d/d2-03.jpg",
+    "d2-04": "images/jp-kyushu-loop-8d/d2-04.jpg",
+    "d3-01": "images/jp-kyushu-loop-8d/d3-01.jpg",
+    "d3-02": "images/jp-kyushu-loop-8d/d3-02.jpg",
+    "d3-04": "images/jp-kyushu-loop-8d/d3-04.jpg",
+    "d3-05": "images/jp-kyushu-loop-8d/d3-05.jpg",
+    "d5-02": "images/jp-kyushu-loop-8d/d5-02.jpg",
+    "d5-04": "images/jp-kyushu-loop-8d/d5-04.jpg",
+    "d5-05": "images/jp-kyushu-loop-8d/d5-05.jpg",
+    "d5-06": "images/jp-kyushu-loop-8d/d5-06.jpg",
+    "d6-01": "images/jp-kyushu-loop-8d/d6-01.jpg",
+    "d6-03": "images/jp-kyushu-loop-8d/d6-03.jpg",
+    "d7-01": "images/jp-kyushu-loop-8d/d7-01.jpg",
+    "d8-01": "images/jp-kyushu-loop-8d/d8-01.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 하카타역 주변 (여행기에서 묵은 곳: 도요코인 하카타구치 에키마에)",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "도요코인 하카타구치 에키마에",
+        "latitude": 33.5919297,
+        "longitude": 130.4188355,
+        "applePlaceID": "IAB8D758F1F33DBFB",
+        "address": "〒812-0011, 福岡県福岡市博多区, 博多駅前1丁目15-5",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "숙박: 벳푸역 주변",
+      "fromDay": 2,
+      "toDay": 4,
+      "category": "lodging",
+      "place": {
+        "name": "벳푸",
+        "latitude": 33.2795901,
+        "longitude": 131.5002405,
+        "applePlaceID": "IF23E7F677FFDB0E7",
+        "address": "大分県別府市, 駅前町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        3,
+        4
+      ],
+      "closingDays": [
+        2,
+        3
+      ]
+    },
+    {
+      "key": "ad4-04",
+      "title": "숙박: 구마모토역 주변",
+      "fromDay": 4,
+      "toDay": 6,
+      "category": "lodging",
+      "place": {
+        "name": "구마모토",
+        "latitude": 32.7894252,
+        "longitude": 130.6884708,
+        "applePlaceID": "I1FA3C2930A533584",
+        "address": "熊本県熊本市西区, 春日",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        5,
+        6
+      ],
+      "closingDays": [
+        4,
+        5
+      ]
+    },
+    {
+      "key": "ad6-06",
+      "title": "숙박: 하카타역 주변 (여행기에서 묵은 곳: 도요코인 하카타구치 에키마에)",
+      "fromDay": 6,
+      "toDay": 8,
+      "category": "lodging",
+      "place": {
+        "name": "도요코인 하카타구치 에키마에",
+        "latitude": 33.5919297,
+        "longitude": 130.4188355,
+        "applePlaceID": "IAB8D758F1F33DBFB",
+        "address": "〒812-0011, 福岡県福岡市博多区, 博多駅前1丁目15-5",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        7,
+        8
+      ],
+      "closingDays": [
+        6,
+        7
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "후보: 유후인 쇼와칸 (湯布院昭和館)",
+      "durationMinutes": 60,
+      "category": "museum",
+      "place": {
+        "name": "유후인 쇼와칸",
+        "latitude": 33.2683602,
+        "longitude": 131.3663107,
+        "applePlaceID": "IFAD0F247A5DD5081",
+        "address": "〒879-5102, 大分県由布市, 湯布院町川上1479-1",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 일본 전통의 느낌이 강하고, 유노쓰보 거리 일대에 있음"
+    },
+    {
+      "key": "u-02",
+      "title": "후보: 주지야마 전망대 (十字山展望台)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "묘반 온천",
+        "latitude": 33.3191799,
+        "longitude": 131.4513029,
+        "address": "日本大分縣別府市",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 야경 보기에 좋고, 낮에는 햇볕이 강하며, 화장실만 있고 가게는 없음"
+    },
+    {
+      "key": "u-03",
+      "title": "후보: 가라쓰성 (唐津城)",
+      "durationMinutes": 60,
+      "category": "castle",
+      "place": {
+        "name": "가라쓰성 덴슈카쿠",
+        "latitude": 33.4535116,
+        "longitude": 129.9781644,
+        "applePlaceID": "I56BB50D32FAEA4E4",
+        "address": "〒847-0016, 佐賀県唐津市, 東城内8-1 唐津城本丸",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 마이즈루 공원에서 타는 엘리베이터는 편도 100엔, 저녁에는 덴슈카쿠가 이미 닫혀 있음. 하카타 텐진 고속버스 정류장에서 가라쓰까지 버스로 약 1,100엔 (여행기 2024년 정보)"
+    },
+    {
+      "key": "u-04",
+      "title": "후보: 유토쿠 이나리 신사 (祐徳稲荷神社)",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "유토쿠 이나리",
+        "latitude": 33.0734186,
+        "longitude": 130.1081926,
+        "applePlaceID": "ID3DB480A2105D1E3",
+        "address": "〒849-1321　, 佐賀県鹿島市, 古枝",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 히젠카시마역에서 버스로 갈아타고, 오모테산도의 가게는 평일에 대부분 문을 닫으며, 유료 엘리베이터를 탈 수 있음"
+    },
+    {
+      "key": "u-05",
+      "title": "후보: 다케오 신사와 다케오 큰 녹나무 (武雄神社)",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "다케오 신사",
+        "latitude": 33.1881218,
+        "longitude": 130.0209047,
+        "applePlaceID": "IDC0AA1E9D3F9DFA2",
+        "address": "〒843-0022, 佐賀県武雄市, 武雄町大字武雄5327",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 큰 녹나무는 수령이 3,000년으로 추정되며, 옆에 호라이유 누문과 온천 거리가 있음"
+    },
+    {
+      "key": "u-06",
+      "title": "후보: 후쿠오카시 미술관 (福岡市美術館)",
+      "durationMinutes": 60,
+      "category": "artgallery",
+      "place": {
+        "name": "후쿠오카시 미술관",
+        "latitude": 33.5839631,
+        "longitude": 130.3795624,
+        "applePlaceID": "I76CEBD6F922445B4",
+        "address": "〒810-0051, 福岡県福岡市中央区, 大濠公園1-6",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인하세요. 여행기에 월요일 휴관이라고 나와 있고, 건물 밖에 쿠사마 야요이의 호박이 있음"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "자료 출처와 확인",
+      "paragraphs": [
+        {
+          "text": "출처 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/cb65fd5ab770/",
+          "style": "bullet"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인 (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "규슈 횡단 특급 시각 (구마모토–벳푸 하루 3왕복, 2호는 벳푸 7:44 출발, 아소 10:08, 구마모토 11:21 도착): https://www.jrkyushu.co.jp/chinese/train/odan.html (검색으로 발췌한 JR 규슈 공식 사이트 2026년 1월 시각표, 확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "유후인노모리 (하카타 9:17 출발, 유후인 11:31 도착, 약 2시간 14분, 전석 지정석): https://www.jrkyushu.co.jp/trains/yufuinnomori/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "하카타에서 유후인까지 특급 운임은 약 6,130엔 (특급료 포함): https://ekitan.com/zh-tw/article/yufuinnomori-jikoku-ryoukin (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "유후인과 벳푸를 잇는 가메노이 버스 노선 (36번 노선, 관광쾌속 유후린): https://mb.jorudan.co.jp/os/bus/4405/stop/159315.html (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "벳푸 지고쿠 (8:00~17:00, 연중무휴): https://www.beppu-jigoku.com/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "다카치호 협곡 보트 예약 규칙 (2주 전 9:00 시작, 2일 전 9:00 마감): https://takachiho-kanko.info/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "후쿠오카 공항에서 하카타역 (지하철 약 5분, 260엔): https://travelist.jp/airport_FUK/guide/posts/p309 (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "구마모토에서 하카타까지 규슈 신칸센 (약 38분, 자유석 약 5,310엔, 민간 정리): https://jr-shinkansen.net/articles/hakata-kumamoto/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "라라포트 후쿠오카 (10:00~21:00, 버스 약 20분, 실물 크기 ν건담): https://ja.wikipedia.org/wiki/ららぽーと福岡 (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "구마모토역 앞에서 다카치호까지 고속버스 약 2,700엔 (오래된 자료), 아마노이와토와 아마노야스가와라는 평일 버스 없음: https://www.bring-you.info/?p=39864 (인터넷 정리, 확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못했습니다. 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "도초지, 오호리 공원, 유노쓰보 거리, 긴린호, 벳푸 타워, 묘반지고쿠, 가토 신사, 가미도리・시모도리 상점가, 다카치호 신사, 아마노이와토 신사, 아마노야스가와라, 루피 동상, 사쿠라이 후타미가우라, 사쿠라이 신사, 난조인의 개방 시간과 휴무일.",
+          "style": "bullet"
+        },
+        {
+          "text": "유후인에서 벳푸까지 버스 시각, 요금, 막차. 다카치호 당일 투어의 일정, 집합 장소, 가격.",
+          "style": "bullet"
+        },
+        {
+          "text": "구마모토역에서 다카치호까지 고속버스의 현재 배차.",
+          "style": "bullet"
+        },
+        {
+          "text": "변경한 점과 취사선택",
+          "style": "heading"
+        },
+        {
+          "text": "여행기는 부산에서 크루즈로 하카타에 들어가는 11일 일정입니다. 부산과 크루즈 구간은 쓰지 않고, 후쿠오카 공항으로 드나드는 규슈 일주로 바꿨습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "이 여행기에는 구마모토 구간이 없어서 (2023년 규슈 여행기에는 있음), 2023년 여행기의 구마모토 가토 신사, 가미도리・시모도리, 루피 동상을 더하고 벳푸→구마모토→다카치호→후쿠오카 순으로 배치했습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기의 다카치호는 후쿠오카에서 출발하는 당일 투어입니다. 여기서는 구마모토 출발로 바꿨습니다 (규칙에 따라 업체를 지정하지 않고 당일 투어에 참가하는 것으로 적음).",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기의 가라쓰, 유토쿠 이나리, 다케오 온천, 시모노세키, 사세보는 일주 경로에서 벗어나 있어서, 가라쓰, 유토쿠 이나리, 다케오는 후보로 두었습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "기타규슈 템플릿과 구마모토・아소 템플릿에서 이미 쓴 명소 (모지코, 다자이후, 야나가와, 구마모토성, 아소, 스이젠지 등)는 일부러 피했습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "5일차 당일 투어와 7일차 이토시마는 이동 시간 비중이 보통의 30%를 넘는데, 거리 때문입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 자료",
+          "style": "heading"
+        },
+        {
+          "text": "숙소는 지역만 적었습니다. 여행기에서는 도요코인 하카타구치 에키마에, 도요코인 오이타 에키마에, APA 후쿠오카 와타나베도리에 묵었고, 벳푸와 구마모토에는 필자가 추천한 숙소가 없어서 역 주변이라고만 적었습니다.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 알아 둘 것",
+      "paragraphs": [
+        {
+          "text": "경로",
+          "style": "heading"
+        },
+        {
+          "text": "후쿠오카 인, 후쿠오카 아웃의 규슈 일주: 후쿠오카 → 유후인 → 벳푸 → 구마모토 → 다카치호 (당일 투어) → 후쿠오카.",
+          "style": "bullet"
+        },
+        {
+          "text": "숙박 순서: 후쿠오카 1박, 벳푸 2박, 구마모토 2박, 후쿠오카 2박.",
+          "style": "bullet"
+        },
+        {
+          "text": "입국과 인터넷",
+          "style": "heading"
+        },
+        {
+          "text": "출발 전에 Visit Japan Web에서 입국 심사와 세관 신고를 등록하세요: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "인터넷은 물리 SIM 카드나 eSIM을 쓸 수 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항에서 시내로",
+          "style": "heading"
+        },
+        {
+          "text": "후쿠오카 공항 국제선 터미널에는 지하철역이 없습니다. 먼저 무료 셔틀버스로 약 10분 걸려 국내선 터미널로 간 뒤, 지하철 공항선으로 하카타역까지 약 5분·260엔, 교통 IC 카드 가능. 짐 찾기와 걷는 시간까지 넉넉히 30~40분을 잡으세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기에 따르면 셔틀버스는 5~10분마다 운행하고, 지하철역에서 국제선 출국장까지 돌아가려면 약 30분을 더 잡아야 합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "교통 패스",
+          "style": "heading"
+        },
+        {
+          "text": "이 경로는 특급 이용이 많으니 (하카타→유후인, 벳푸→구마모토) 출발 전에 표를 따로 사는 경우와 JR 규슈 레일 패스를 비교해 보세요: https://www.jrkyushu.co.jp/chinese/",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 2024년 주의: JR 패스로 온라인 좌석 예약을 했다면 교환할 때 같은 신용카드를 제시해야 합니다. 패스는 산요 신칸센과 일부 신칸센에는 쓸 수 없으니 신칸센 개찰구를 지나기 전에 확인하세요 (여행기 2024년 정보).",
+          "style": "bullet"
+        },
+        {
+          "text": "유후인노모리는 전석 지정석이고, 규슈 횡단 특급의 자유석은 2호차입니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "무인 작은 역에서는 첫 번째 차량에서 내려 패스를 그대로 보여 줍니다. 무인 JR 역에서 나갈 때 패스를 승차권 회수함에 넣지 마세요 (여행기).",
+          "style": "bullet"
+        },
+        {
+          "text": "유후인에서 벳푸로",
+          "style": "heading"
+        },
+        {
+          "text": "가메노이 버스가 '관광쾌속 유후린'과 36번 노선으로 유후인역 앞과 벳푸역을 잇습니다. 소요 시간과 요금은 가메노이 버스 공식 사이트에서 확인하세요. JR로 오이타에서 갈아타도 됩니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "벳푸 지고쿠는 약 8:00~17:00 운영, 연중무휴. 오후에 넣은 묘반지고쿠는 늦어도 17:00 전에 나와야 합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "다카치호 당일 투어",
+          "style": "heading"
+        },
+        {
+          "text": "이 당일 투어는 여러 여행사가 운영합니다 (구마모토, 후쿠오카 출발 모두 있으며 다카치호 신사, 다카치호 협곡, 아마노이와토 신사, 아마노야스가와라 일대 포함). 출발 전에 일정, 집합 장소, 점심 포함 여부를 직접 비교하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "대중교통으로 직접 가는 방법: 구마모토역 앞에서 고속버스 '다카치호호'를 타고 다카치호 버스센터까지 편도 약 2,700엔 (인터넷에 정리된 오래된 자료, 배차와 요금은 출발 전에 확인). 아마노이와토 신사와 아마노야스가와라는 평일에 버스가 없어 택시를 타야 하고, 주말과 성수기에는 순환버스가 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "다카치호 협곡 보트는 인터넷 예약만 받습니다. 승선일 2주 전 9:00에 시작해 2일 전 9:00에 마감하고, 성수기에는 금방 매진됩니다. 타고 싶다면 먼저 여행사에 시간을 맞출 수 있는지 물어보세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "구마모토 시내",
+          "style": "heading"
+        },
+        {
+          "text": "시내는 노면 전차와 버스가 중심입니다. 여행기 2024년 업데이트에 따르면 구마모토현 내 여러 버스와 구마모토 전철은 더 이상 Suica 같은 교통 IC 카드를 받지 않으니, 현금 엔화를 준비하고 현재 상황을 먼저 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "기타",
+          "style": "heading"
+        },
+        {
+          "text": "현금 엔화를 넉넉히 챙기세요. 일부 작은 가게, 버스, 작은 역에서는 카드를 받지 않습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "6일차와 8일차에는 호텔에 짐을 맡깁니다. 도요코인 같은 호텔은 보통 프런트에서 맡아 줍니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "유후인역 보관함은 캐리어용 칸이 적어서, 여행기에서는 도착하자마자 먼저 맡기러 가라고 권합니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "마지막 날 공항에 가는 시간은 실제 항공편에 맞춰 조정하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "경로 설명: 이 템플릿은 규슈 일주의 이동에 무게를 두었고, 1·7·8일차의 후쿠오카 명소는 기타규슈 (모지코, 다자이후, 야나가와), 구마모토・아소 템플릿과 겹치지 않습니다.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "여행 개요: 규슈 일주 8일 코스",
+      "paragraphs": [
+        {
+          "image": "d5-04"
+        },
+        "후쿠오카로 들어가 후쿠오카로 나오며 규슈를 한 바퀴 돕니다. 후쿠오카, 유후인, 벳푸, 구마모토, 다카치호를 거쳐 다시 후쿠오카로 돌아와 이토시마까지 다녀옵니다. 숙소는 네 곳으로 후쿠오카 1박, 벳푸 2박, 구마모토 2박, 후쿠오카 2박이며, 이동은 JR 특급과 규슈 신칸센이 중심이고 다카치호는 당일 투어에 참가해 갑니다.",
+        "1일차: 오전에 후쿠오카 공항에 도착해 지하철로 하카타에 가서 점심을 먹고 짐을 맡기고, 오후에 {@d1-03}을 보고 {@d1-04}을 한 바퀴 돈 뒤, 저녁은 텐진에서 먹습니다.",
+        "2일차: 아침에 하카타에서 특급 유후인노모리를 타고 유후인으로 가서 점심 뒤 {@d2-02}와 긴린호를 걷고, 저녁에 버스로 벳푸로 이동해 {@d2-04}에서 야경을 봅니다.",
+        "3일차: 하루 종일 벳푸 지옥 순례입니다. {@d3-01}과 가마도지고쿠로 시작해 점심은 지옥 극락 카레, 오후에는 {@d3-04}, 이어서 묘반지고쿠를 보고 저녁에 버스로 벳푸역에 돌아옵니다.",
+        {
+          "image": "d3-01"
+        },
+        "4일차: 이른 아침 규슈 횡단 특급으로 벳푸에서 아소를 거쳐 구마모토로 이동합니다. 점심 뒤 {@d4-02}에서 구마모토성을 뒤쪽에서 보고 {@d4-03}를 걷고, 저녁은 시모도리에서 먹습니다.",
+        "5일차: 하루 종일 다카치호 당일 투어에 참가합니다. {@d5-02}의 부부삼나무를 보고 {@d5-04}을 걸은 뒤 아마노이와토 신사와 아마노야스가와라를 보고 밤에 구마모토로 돌아옵니다.",
+        "6일차: 오전에 현청 앞 {@d6-01}을 보고 규슈 신칸센으로 하카타에 돌아와, 오후에 버스로 {@d6-03}에 가서 실물 크기 건담을 봅니다.",
+        "7일차: 이토시마로 가서 {@d7-01}와 사쿠라이 신사를 보고, 점심 뒤 하카타로 돌아와 저녁에 텐진에서 애니메이션 굿즈와 장난감 가게를 둘러봅니다.",
+        {
+          "image": "d7-01"
+        },
+        "8일차: 체크아웃한 뒤 JR 사사구리선으로 {@d8-01}에 가서 석가 열반상을 보고, 점심 뒤 하카타에서 짐을 찾아 지하철과 셔틀버스로 공항에 갑니다.",
+        "숙소: 첫째 밤은 하카타역 주변, 벳푸역 주변 2박 연박, 구마모토역 주변 2박 연박, 마지막 2박은 다시 하카타역 주변입니다. 6일차와 8일차에는 호텔에 짐을 맡깁니다.",
+        "교통 포인트: 하카타에서 유후인은 전석 지정석인 유후인노모리, 유후인에서 벳푸는 가메노이 버스나 JR 오이타 환승, 벳푸에서 구마모토는 규슈 횡단 특급, 구마모토에서 하카타는 규슈 신칸센입니다. 다카치호는 당일 투어로 편도 약 2시간 30분, 이토시마는 하카타에서 JR과 버스로 편도 약 80~90분입니다. 특급을 많이 타므로 표를 따로 사는 경우와 JR 규슈 레일 패스를 비교해 보세요. 5일차 투어와 7일차 이토시마는 이동 시간 비중이 3할을 넘는데 거리 때문입니다. 구마모토 시내 버스와 시영 전차는 교통 IC 카드가 안 될 수 있으니 엔화 현금을 준비하세요. 출발 전에 최신 시간표를 확인하세요.",
+        "이런 분께: 규슈의 큰 명소를 한 번에 돌고 싶고, 온천과 협곡과 신사를 위해 긴 이동을 감수할 수 있는 분. 거의 매일 이동하거나 오래 타므로 편한 신발과 가벼운 짐이 좋고, 난조인에서는 긴바지를 입고 어깨를 가리세요."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "유후인 푸딩 도라야키 (プリンどら焼き)",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "유노쓰보 거리 일대 가게"
+    },
+    {
+      "key": "s-02",
+      "title": "깨가루 (유후인 기념품)",
+      "category": "food",
+      "productType": "seasoning",
+      "store": "유노쓰보 거리 일대 가게"
+    },
+    {
+      "key": "s-03",
+      "title": "지옥찜 푸딩 (오카모토야)",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "묘반지고쿠 맞은편 오카모토야 푸딩 가게"
+    },
+    {
+      "key": "s-04",
+      "title": "유노하나 입욕제 (湯の花)",
+      "category": "drugstore",
+      "productType": "bath_hair",
+      "store": "묘반지고쿠와 유노하나 오두막의 매점"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "후쿠오카시",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "유후시",
+      "latitude": 33.1800158,
+      "longitude": 131.426733,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "벳푸시",
+      "latitude": 33.2844521,
+      "longitude": 131.491172,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "구마모토시",
+      "latitude": 32.8032049,
+      "longitude": 130.7080236,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "다카치호정",
+      "latitude": 32.7116801,
+      "longitude": 131.3077912,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "후쿠오카시",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "후쿠오카시",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "후쿠오카시",
+      "latitude": 33.5900962,
+      "longitude": 130.4016746,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "후쿠오카시",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "후쿠오카 공항 도착 (福岡空港)",
+          "start": "11:30",
+          "end": "12:30",
+          "category": "airport",
+          "place": {
+            "name": "후쿠오카 공항",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "점심: 하카타역 지쿠시 출구 주변",
+          "start": "13:10",
+          "end": "14:10",
+          "category": "dining",
+          "place": {
+            "name": "하카타",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "국제선 터미널에서 무료 셔틀버스로 국내선 터미널까지 약 10분, 거기서 지하철 공항선으로 하카타역까지 약 5분·260엔 (교통 IC 카드 가능). 국제선 입국 심사와 짐 찾는 시간은 별도"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "도초지 (東長寺): 후쿠오카 대불과 오층탑",
+          "start": "14:45",
+          "end": "15:30",
+          "category": "temple",
+          "place": {
+            "name": "도초지",
+            "latitude": 33.5952774,
+            "longitude": 130.4142118,
+            "applePlaceID": "IEB6531DAB0C8DB00",
+            "address": "〒812-0037, 福岡県福岡市博多区, 御供所町2-4",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 2층 후쿠오카 대불 참배는 50엔 (2024년 정보)",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "먼저 호텔 (도요코인 하카타구치 에키마에, 도보 약 10분)에 짐을 맡기고, 기온에 있는 도초지까지 도보 약 15분"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "오호리 공원 (大濠公園): 호수 둘레 산책",
+          "start": "16:00",
+          "end": "17:30",
+          "category": "park",
+          "place": {
+            "name": "오호리 공원",
+            "latitude": 33.5863808,
+            "longitude": 130.3763008,
+            "applePlaceID": "ICE1436AE72C1A84",
+            "address": "〒810-0051, 福岡県福岡市中央区, 大濠公園1",
+            "addressIsApproximate": false
+          },
+          "notes": "공원은 하루 종일 개방. 호수를 한 바퀴 도는 데 약 45분 (여행기, 2024년 정보). 후쿠오카시 미술관은 월요일 휴관",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "지하철 공항선으로 기온역에서 오호리코엔역까지 약 10분·약 210엔, 역을 나오면 바로 공원"
+          },
+          "images": [
+            "d1-04"
+          ]
+        },
+        {
+          "key": "d1-05",
+          "title": "저녁: 텐진 주변",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "텐진역 주변 식당",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "지하철 공항선으로 오호리코엔역에서 텐진역까지 약 6분"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "지하철 공항선으로 텐진역에서 하카타역까지 약 5분, 거기서 호텔까지 도보 약 10분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "유후시",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "점심: 유후인역 주변 (분고규)",
+          "start": "11:50",
+          "end": "12:50",
+          "category": "dining",
+          "place": {
+            "name": "유후인역",
+            "latitude": 33.2626525,
+            "longitude": 131.3551252,
+            "applePlaceID": "I7467AB095BE51661",
+            "address": "〒879-5114, 大分県由布市, 湯布院町川北8-2",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기가 추천한 '유후 마부시 코코로' (역 출구에 있는 가게)는 그날 쉬었으니 휴무일을 먼저 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 165,
+            "durationSource": "user",
+            "note": "체크아웃 후 하카타역까지 도보 약 10분. JR 특급 '유후인노모리' 1호는 9:17 출발, 11:31 도착으로 약 2시간 14분, 전석 지정석. 예약하지 못하면 일반 특급 '유후'로 바꿀 수 있습니다. 도착 후 역 안 동전 보관함에 짐을 맡깁니다 (여행기에서는 1,000엔, 캐리어용 칸은 적음)"
+          },
+          "todos": [
+            {
+              "text": "유후인노모리 (또는 특급 유후) 좌석 예약하기",
+              "note": "JR 규슈 인터넷 예약. 여행기에 따르면 유후인노모리는 늦게 예약하면 매진되어 일반 특급만 남는다. 전석 지정석 https://www.jrkyushu.co.jp/trains/yufuinnomori/"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "유노쓰보 거리 (湯の坪街道): 유후인의 상점가",
+          "start": "13:05",
+          "end": "14:15",
+          "category": "sight",
+          "place": {
+            "name": "유노쓰보 가도",
+            "latitude": 33.26667426444787,
+            "longitude": 131.3628757917489,
+            "address": "日本大分縣由布市",
+            "addressIsApproximate": true
+          },
+          "notes": "거리는 자유롭게 걸을 수 있습니다. 가게별 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "유후인역에서 긴린호 방향으로 거리를 따라 걷습니다. 길가에 기념품, 디저트, 소품 가게가 늘어서 있음"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "긴린호 (金鱗湖)",
+          "start": "14:30",
+          "end": "15:30",
+          "category": "sight",
+          "place": {
+            "name": "긴린호",
+            "latitude": 33.2665347,
+            "longitude": 131.3686421,
+            "applePlaceID": "IFBF00B68422CC487",
+            "address": "〒879-5102, 大分県由布市, 湯布院町川上1796",
+            "addressIsApproximate": false
+          },
+          "notes": "하루 종일 개방, 휴무일 없음",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "유노쓰보 거리를 끝까지 걸으면 긴린호, 도보 약 15분"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "벳푸 타워 (別府タワー): 야경과 시내 전망",
+          "start": "17:45",
+          "end": "18:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "벳푸 타워",
+            "latitude": 33.2817659,
+            "longitude": 131.5059048,
+            "applePlaceID": "I69180B9495484F45",
+            "address": "〒874-0920, 大分県別府市, 北浜3丁目10-2 別府タワー",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 135,
+            "durationSource": "user",
+            "note": "도보 약 25분으로 유후인역에 돌아와 짐을 찾습니다. 가메노이 버스 '관광쾌속 유후린' 또는 36번 노선으로 벳푸역까지 약 1시간 (배차와 요금은 출발 전에 확인, JR로 오이타를 거쳐도 됨). 거기서 벳푸 타워까지 도보 약 10분"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "저녁: 벳푸역 주변",
+          "start": "19:00",
+          "end": "20:00",
+          "category": "dining",
+          "place": {
+            "name": "벳푸",
+            "latitude": 33.2795901,
+            "longitude": 131.5002405,
+            "applePlaceID": "IF23E7F677FFDB0E7",
+            "address": "大分県別府市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "벳푸 타워에서 벳푸역 앞 일대까지 걸어서 돌아옴"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "저녁 식당에서 호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "벳푸시",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "우미지고쿠 (海地獄): 코발트블루 온천수",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "onsen",
+          "place": {
+            "name": "우미지고쿠",
+            "latitude": 33.3158752,
+            "longitude": 131.4696389,
+            "applePlaceID": "I79696E21A55C8805",
+            "address": "〒874-0045",
+            "addressIsApproximate": true
+          },
+          "notes": "8:00~17:00, 연중무휴 (벳푸 지고쿠 공식 사이트). 여행기에서는 일곱 지옥 공통권을 우미지고쿠 입구에서 사라고 권함. 요금은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "벳푸역에서 가메노이 버스로 우미지고쿠 (간나와 일대)까지 약 25~30분. 배차는 출발 전에 확인하세요"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "가마도지고쿠 (かまど地獄): 증기 쇼와 족욕",
+          "start": "10:50",
+          "end": "11:50",
+          "category": "onsen",
+          "place": {
+            "name": "가마도지고쿠",
+            "latitude": 33.3163959,
+            "longitude": 131.4723898,
+            "applePlaceID": "IA5FA3543EFBBD764",
+            "address": "〒874-0045, 大分県別府市, 大字鉄輪621",
+            "addressIsApproximate": false
+          },
+          "notes": "8:00~17:00, 연중무휴 (벳푸 지고쿠 공식 사이트)",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "표지판을 따라 걷습니다. 도중에 오니이시보즈 지고쿠를 지나요. 가마도지고쿠에는 족욕, 온천수 마시기, 얼굴 찜 체험이 있음"
+          },
+          "images": [
+            "d3-02"
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "점심: 지노이케지고쿠 고쿠라쿠테이 (지옥 극락 카레)",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "지노이케지고쿠",
+            "latitude": 33.3271913,
+            "longitude": 131.4781603,
+            "applePlaceID": "I73FD155ED979A8F7",
+            "address": "〒874-0016, 大分県別府市, 野田778",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "간나와 정류장에서 버스로 지노이케지고쿠까지 약 10분"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "지노이케지고쿠와 다쓰마키지고쿠 (血の池地獄・龍巻地獄)",
+          "start": "13:30",
+          "end": "14:45",
+          "category": "onsen",
+          "place": {
+            "name": "지노이케지고쿠",
+            "latitude": 33.3271913,
+            "longitude": 131.4781603,
+            "applePlaceID": "I73FD155ED979A8F7",
+            "address": "〒874-0016, 大分県別府市, 野田778",
+            "addressIsApproximate": false
+          },
+          "notes": "8:00~17:00, 연중무휴 (벳푸 지고쿠 공식 사이트). 다쓰마키지고쿠는 약 30~40분마다 분출하고, 한 번에 약 6~10분. 먼저 직원에게 물어보면 좋아요",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "지노이케지고쿠에서 내리막길로 내려가면 다쓰마키지고쿠. 분출 시각을 보고 어디를 먼저 갈지 정하세요"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "묘반지고쿠와 유노하나 오두막 (明礬地獄・湯の花小屋)",
+          "start": "15:10",
+          "end": "16:15",
+          "category": "onsen",
+          "place": {
+            "name": "묘반 유노사토",
+            "latitude": 33.319525,
+            "longitude": 131.4540748,
+            "applePlaceID": "IA5690AFE1A8F1151",
+            "address": "〒874-0843, 大分県別府市, 明礬温泉6組",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 매표소는 맞은편 오카모토야 푸딩 가게",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "지노이케지고쿠에서 우미지고쿠 방면 버스를 타고 다시 언덕을 올라 묘반으로. 여행기에서는 먼저 올라갔다가 내려오기를 권하지만 순서는 반대로 해도 됨"
+          },
+          "images": [
+            "d3-05"
+          ]
+        },
+        {
+          "key": "d3-06",
+          "title": "저녁: 벳푸역 주변",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "벳푸",
+            "latitude": 33.2795901,
+            "longitude": 131.5002405,
+            "applePlaceID": "IF23E7F677FFDB0E7",
+            "address": "大分県別府市, 駅前町",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "버스로 벳푸역까지 돌아오는 데 약 30~40분. 막차를 먼저 확인하세요"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "저녁 식당에서 호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "구마모토시",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "점심: 구마모토역 주변",
+          "start": "11:45",
+          "end": "12:45",
+          "category": "dining",
+          "place": {
+            "name": "구마모토역 주변 식당",
+            "latitude": 32.79096,
+            "longitude": 130.6878509,
+            "address": "熊本県熊本市西区春日3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 237,
+            "durationSource": "user",
+            "note": "체크아웃 후 벳푸역까지 걸어갑니다. JR 규슈 횡단 특급 2호는 벳푸 7:44 출발, 아소 10:08 통과, 구마모토 11:21 도착 (JR 규슈 공식 사이트 2026년 1월 시각표, 출발 전에 확인). 자유석은 2호차. 전체 약 3시간 40분"
+          },
+          "todos": [
+            {
+              "text": "규슈 횡단 특급 2호 (벳푸→구마모토) 좌석 예약하기",
+              "note": "하루 3왕복뿐이고, 2호는 7:44에 벳푸를 출발. 시각표 https://www.jrkyushu.co.jp/chinese/train/odan.html"
+            }
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "가토 신사 (加藤神社): 뒤쪽에서 본 구마모토성",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "temple",
+          "place": {
+            "name": "가토 신사",
+            "latitude": 32.807117,
+            "longitude": 130.7053761,
+            "applePlaceID": "I831099B0902FAA97",
+            "address": "〒860-0002, 熊本県熊本市中央区, 本丸2-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 일부 전각은 수리 중",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "먼저 호텔에 짐을 맡깁니다. 구마모토역에서 시영 전차로 도리초스지 또는 구마모토성 일대까지 약 20분, 거기서 도보 약 20분, 오르막 (여행기)"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "가미도리・시모도리 상점가 (上通・下通アーケード)",
+          "start": "15:00",
+          "end": "16:30",
+          "category": "shopping",
+          "place": {
+            "name": "시모도리 아케이드",
+            "latitude": 32.80199538213618,
+            "longitude": 130.70906498323706,
+            "address": "日本熊本縣熊本市",
+            "addressIsApproximate": true
+          },
+          "notes": "상점가는 자유롭게 걸을 수 있습니다. 가게별 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "가토 신사에서 버스 또는 도보로 도리초스지까지 약 30분. 여행기는 구마모토 시내 버스와 시영 전차가 더 이상 교통 IC 카드를 받지 않는다고 알려 주니, 현금 엔화를 준비하세요"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "저녁: 시모도리 주변 (닭날개와 꼬치구이)",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "시모도리 주변 이자카야",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "상점가 안에서 도보 이동"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "시모도리에서 시영 전차로 구마모토역까지 약 20분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "다카치호정",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "당일 투어 참가: 집합·출발 (구마모토→다카치호)",
+          "start": "09:00",
+          "end": "09:20",
+          "category": "other",
+          "place": {
+            "name": "구마모토",
+            "latitude": 32.7894252,
+            "longitude": 130.6884708,
+            "applePlaceID": "I1FA3C2930A533584",
+            "address": "熊本県熊本市西区, 春日",
+            "addressIsApproximate": true
+          },
+          "notes": "집합 장소와 시각은 여행사 안내에 따릅니다. 영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "호텔에서 집합 장소까지 도보 약 10분 (여행사 안내에 따름)"
+          },
+          "todos": [
+            {
+              "text": "다카치호 당일 투어 예약하기",
+              "note": "운영하는 여행사가 여럿입니다. 집합 장소, 점심 포함 여부, 보트 추가 가능 여부를 비교하고, 며칠 전에 예약하는 것이 좋아요"
+            }
+          ]
+        },
+        {
+          "key": "d5-02",
+          "title": "다카치호 신사 (高千穂神社): 부부삼나무",
+          "start": "11:45",
+          "end": "12:25",
+          "category": "temple",
+          "place": {
+            "name": "다카치호 신사",
+            "latitude": 32.7064748,
+            "longitude": 131.3019346,
+            "applePlaceID": "I73B4EC96A6D7C512",
+            "address": "〒882-1101",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 신목에 둘러싸여 있고, 부부삼나무는 손을 잡고 세 바퀴 돌 수 있음",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "driving",
+            "durationMinutes": 145,
+            "durationSource": "user",
+            "note": "관광버스로 구마모토에서 다카치호까지 약 2.5시간 (여행기에서는 후쿠오카 출발 약 3시간), 도중에 휴게소에서 쉽니다. 실제로는 여행사 일정에 따름"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "점심: 다카치호 요리 (당일 투어 일정에 따름)",
+          "start": "12:40",
+          "end": "13:25",
+          "category": "dining",
+          "place": {
+            "name": "다카치호 신사 가구라덴",
+            "latitude": 32.7064814,
+            "longitude": 131.301935,
+            "applePlaceID": "ID8ED2F9278942B6C",
+            "address": "〒882-1101, 宮崎県西臼杵郡高千穂町, 三田井1037",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "여행사가 정한 식당으로, 대부분 신사 근처"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "다카치호 협곡 (高千穂峡)",
+          "start": "13:45",
+          "end": "14:35",
+          "category": "sight",
+          "place": {
+            "name": "고카세강 협곡 (다카치호 협곡)",
+            "latitude": 32.7032163,
+            "longitude": 131.299885,
+            "applePlaceID": "ID39D10310E5C61AC",
+            "address": "宮崎県西臼杵郡高千穂町, 向山",
+            "addressIsApproximate": true
+          },
+          "notes": "하루 종일 산책할 수 있습니다. 보트 운영 시간과 운영 여부는 매일 아침 8:00쯤 갱신되니 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "점심 후 산책로를 따라 내리막길로 약 20분 걸어 협곡에 도착. 보트를 예약했거나 체력이 부족하면 가이드가 셔틀을 마련해 주기도 함"
+          },
+          "todos": [
+            {
+              "text": "다카치호 협곡 보트 예약하기 (타고 싶을 때만)",
+              "note": "공식 사이트는 인터넷 예약만 받습니다. 승선일 2주 전 9:00에 시작해 2일 전 9:00에 마감. 인기 있는 날짜는 훨씬 전에 매진되니 여행사에 시간을 맞출 수 있는지 먼저 물어보세요 https://takachiho-kanko.info/"
+            }
+          ],
+          "images": [
+            "d5-04"
+          ]
+        },
+        {
+          "key": "d5-05",
+          "title": "아마노이와토 신사 니시혼구 (天岩戸神社)",
+          "start": "15:00",
+          "end": "15:40",
+          "category": "temple",
+          "place": {
+            "name": "아마노이와토 신사",
+            "latitude": 32.7344288,
+            "longitude": 131.3504925,
+            "applePlaceID": "IA4D011E91CF2BB05",
+            "address": "〒882-1621, 宮崎県西臼杵郡高千穂町, 岩戸1073-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "관광버스로 협곡에서 아마노이와토 신사까지 약 15~20분. 내린 뒤 니시혼구까지 도보 약 5분"
+          },
+          "images": [
+            "d5-05"
+          ]
+        },
+        {
+          "key": "d5-06",
+          "title": "아마노야스가와라 (天安河原): 돌을 쌓아 올린 동굴",
+          "start": "15:55",
+          "end": "16:40",
+          "category": "sight",
+          "place": {
+            "name": "아마노야스가와라궁",
+            "latitude": 32.742666,
+            "longitude": 131.351087,
+            "applePlaceID": "ID7527595A6DDBA52",
+            "address": "〒882-1621, 宮崎県西臼杵郡高千穂町, 岩戸2404-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 니시혼구에서 상류로 약 500미터",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "니시혼구에서 아마노야스가와라까지 도보 약 15분. 돌아오는 길에 아이스크림 가게가 있음"
+          },
+          "images": [
+            "d5-06"
+          ]
+        },
+        {
+          "key": "d5-07",
+          "title": "저녁: 구마모토역 주변",
+          "start": "19:30",
+          "end": "20:30",
+          "category": "dining",
+          "place": {
+            "name": "구마모토역 주변 식당",
+            "latitude": 32.79096,
+            "longitude": 130.6878509,
+            "address": "熊本県熊本市西区春日3丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "driving",
+            "durationMinutes": 170,
+            "durationSource": "user",
+            "note": "관광버스로 돌아오는 데 약 2.5~3시간, 도중에 휴게소에서 쉽니다. 실제 도착 시각은 여행사 일정에 따름"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "구마모토역에서 호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "후쿠오카시",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "루피 동상 (ルフィ像): 구마모토 현청 앞",
+          "start": "09:45",
+          "end": "10:15",
+          "category": "sight",
+          "place": {
+            "name": "구마모토 현청",
+            "latitude": 32.7898029,
+            "longitude": 130.7415739,
+            "applePlaceID": "I9D3D945CF9ABD15A",
+            "address": "〒862-0950, 熊本県熊本市中央区, 水前寺6丁目18-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "호텔에 짐을 맡깁니다. 구마모토 시영 전차 또는 버스로 현청 일대까지 약 30~35분, 내비게이션을 따르세요"
+          },
+          "images": [
+            "d6-01"
+          ]
+        },
+        {
+          "key": "d6-02",
+          "title": "점심: 하카타역 주변",
+          "start": "12:15",
+          "end": "13:15",
+          "category": "dining",
+          "place": {
+            "name": "하카타",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "호텔에 돌아가 짐을 찾고 구마모토역까지 약 30분. 규슈 신칸센으로 구마모토에서 하카타까지 약 38분, 보통차 자유석 약 5,310엔 (민간 정리 자료이니 JR 공식 사이트 기준으로 확인)"
+          }
+        },
+        {
+          "key": "d6-03",
+          "title": "라라포트 후쿠오카 (ららぽーと福岡): 실물 크기 ν건담",
+          "start": "14:45",
+          "end": "17:30",
+          "category": "shopping",
+          "place": {
+            "name": "라라포트 후쿠오카",
+            "latitude": 33.5647786,
+            "longitude": 130.4402293,
+            "applePlaceID": "I23ED44362FD515EC",
+            "address": "〒812-8627",
+            "addressIsApproximate": true
+          },
+          "notes": "10:00~21:00 (위키백과에 적힌 쇼핑몰 영업시간). 가게별 시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d6-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "먼저 호텔에 돌아가 짐을 맡기고 (도보 약 10분), 하카타 버스터미널에서 니시테쓰 버스로 '라라포트 후쿠오카'까지 약 20분. 내리면 바로 쇼핑몰"
+          },
+          "images": [
+            "d6-03"
+          ]
+        },
+        {
+          "key": "d6-04",
+          "title": "저녁: 하카타역 주변",
+          "start": "18:15",
+          "end": "19:30",
+          "category": "dining",
+          "place": {
+            "name": "하카타",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d6-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "니시테쓰 버스로 하카타까지 약 20분"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "저녁 식당에서 호텔까지 걸어서 돌아옴"
+          }
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "후쿠오카시",
+      "events": [
+        {
+          "key": "d7-01",
+          "title": "사쿠라이 후타미가우라 부부바위 (桜井二見ヶ浦)",
+          "start": "10:30",
+          "end": "11:20",
+          "category": "beach",
+          "place": {
+            "name": "사쿠라이 후타미가우라",
+            "latitude": 33.6397261,
+            "longitude": 130.1978507,
+            "applePlaceID": "IEB39ADAB4A321F34",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井",
+            "addressIsApproximate": true
+          },
+          "notes": "하루 종일 개방. 바다 위 도리이와 부부바위, 날씨와 조수 높이에 따라 경치가 달라짐",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "8:15쯤 출발: JR로 하카타에서 규다이가쿠켄토시역까지 약 35~40분, 버스로 갈아타 (여행기에서는 니시노우라선) 약 30분·730엔 (여행기 2024년 정보, 배차는 출발 전에 확인)"
+          },
+          "images": [
+            "d7-01"
+          ]
+        },
+        {
+          "key": "d7-02",
+          "title": "사쿠라이 신사 (桜井神社)",
+          "start": "11:35",
+          "end": "12:05",
+          "category": "temple",
+          "place": {
+            "name": "사쿠라이 신사",
+            "latitude": 33.6283792,
+            "longitude": 130.1920845,
+            "applePlaceID": "I400B8E51901E47E1",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井4227",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d7-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "부부바위 뒤쪽에서 도보 약 10분 (여행기에 따르면 더 안쪽까지 걸을 수 있음)"
+          }
+        },
+        {
+          "key": "d7-03",
+          "title": "점심: 사쿠라이 후타미가우라 주변",
+          "start": "12:20",
+          "end": "13:20",
+          "category": "dining",
+          "place": {
+            "name": "사쿠라이 후타미가우라",
+            "latitude": 33.6397261,
+            "longitude": 130.1978507,
+            "applePlaceID": "IEB39ADAB4A321F34",
+            "address": "〒819-1304, 福岡県糸島市, 志摩桜井",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d7-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "해안 일대에서 식당을 찾습니다. 여행기에 따르면 하카타 직행 버스는 오후에 1시간에 한 대"
+          }
+        },
+        {
+          "key": "d7-04",
+          "title": "텐진 쇼핑 (天神): 애니메이션 굿즈와 장난감 가게",
+          "start": "15:30",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "텐진 상권",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d7-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "버스와 JR로 하카타까지 약 80~90분, 다시 지하철로 텐진까지 약 5분. 이토시마는 멀어서 이날은 이동 시간 비중이 높음"
+          }
+        },
+        {
+          "key": "d7-05",
+          "title": "저녁: 텐진 주변",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "텐진 주변 식당",
+            "latitude": 33.5898254,
+            "longitude": 130.3965671,
+            "address": "福岡県福岡市中央区天神2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d7-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "상권 안에서 도보 이동"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "지하철 공항선으로 텐진역에서 하카타역까지 약 5분, 거기서 도보 약 10분"
+          }
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "title": "후쿠오카시",
+      "events": [
+        {
+          "key": "d8-01",
+          "title": "난조인 (南蔵院): 석가 열반상",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "temple",
+          "place": {
+            "name": "난조인",
+            "latitude": 33.6198728,
+            "longitude": 130.5729067,
+            "applePlaceID": "I968AADFBBA808E5D",
+            "address": "〒811-2405",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요. 여행기에 따르면 민소매나 반바지처럼 배나 어깨가 드러나는 옷차림, 음악 재생, 춤, 일부 구역에서의 촬영은 금지",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "체크아웃 후 짐은 호텔 프런트에 맡깁니다. 하카타역에서 JR 사사구리선으로 난조인마에역까지 약 30~35분. 역을 나와 고진차야 앞을 지나 길을 건너면 입구 (여행기)"
+          },
+          "images": [
+            "d8-01"
+          ]
+        },
+        {
+          "key": "d8-02",
+          "title": "점심: 하카타역 주변",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "하카타",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인하세요",
+          "leg": {
+            "fromKey": "d8-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "JR로 하카타역까지 돌아오는 데 약 35분"
+          }
+        },
+        {
+          "key": "d8-03",
+          "title": "후쿠오카 공항 출국 (福岡空港)",
+          "start": "14:30",
+          "end": "16:00",
+          "category": "airport",
+          "place": {
+            "name": "후쿠오카 공항",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d8-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "호텔로 돌아가 짐을 찾습니다 (도보 약 5분). 지하철 공항선으로 하카타에서 국내선 터미널까지 약 5분, 거기서 무료 셔틀버스로 국제선까지 약 10분. 여행기에서는 출국장에 도착하는 시각에 30분을 더 잡기를 권합니다. 실제 시간은 항공편에 맞춰 조정하세요"
+          }
+        }
+      ]
+    }
+  ]
+}

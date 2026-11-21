@@ -1,0 +1,1144 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-tokyo-suburbs-summer-5d",
+  "revision": 3,
+  "contentLocale": "en",
+  "title": "Greater Tokyo in 5 Days — Kawagoe, Atami Fireworks, Harajuku (Summer)",
+  "subtitle": "Summer only: Kawagoe's Little Edo, the Atami fireworks and Harajuku, in and out of Narita",
+  "summary": "Five summer days around Tokyo: the old streets of Kawagoe, the Atami sea fireworks, SHIBUYA SKY and Harajuku. The Atami fireworks only go off on set dates, so check the official site for the dates before you book flights. Tokyo Tower and other city sights are already in the Tokyo template, so they are not repeated here. Chiikawa ramen, the otter café and Yodobashi in Ueno sit in the alternates.",
+  "destination": "Tokyo, Kawagoe & Atami, Japan",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "amber",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Two travellers",
+    "Summer",
+    "Fireworks",
+    "Day trips"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in once your flights and rooms are booked"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-tokyo-suburbs-summer-5d/d1-03.jpg",
+    "d2-01": "images/jp-tokyo-suburbs-summer-5d/d2-01.jpg",
+    "d2-02": "images/jp-tokyo-suburbs-summer-5d/d2-02.jpg",
+    "d2-04": "images/jp-tokyo-suburbs-summer-5d/d2-04.jpg",
+    "d3-05": "images/jp-tokyo-suburbs-summer-5d/d3-05.jpg",
+    "d4-01": "images/jp-tokyo-suburbs-summer-5d/d4-01.jpg",
+    "d4-03": "images/jp-tokyo-suburbs-summer-5d/d4-03.jpg",
+    "d4-05": "images/jp-tokyo-suburbs-summer-5d/d4-05.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Stay: Daiwa Roynet Hotel Tokyo Shimbashi (ダイワロイネットホテル東京新橋), 4 nights in a row (the travelogue stayed here)",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "Shimbashi",
+        "latitude": 35.6663462,
+        "longitude": 139.7581631,
+        "applePlaceID": "IFB85061A18C087FF",
+        "address": "東京都港区, 新橋",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Chiikawa Ramen Buta (ちいかわラーメン 豚), Ikebukuro",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "Chiikawa Land Ikebukuro Parco (ちいかわらんど 池袋パルコ店)",
+        "latitude": 35.7308315,
+        "longitude": 139.7123843,
+        "applePlaceID": "IB5AB546D925C398B",
+        "address": "〒171-0022, 東京都豊島区, 南池袋1丁目28-2 池袋PARCO",
+        "addressIsApproximate": false
+      },
+      "notes": "From the travelogue: you can just queue on the spot. Check opening hours before you go"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: I'm donut? Harajuku (アイムドーナツ 原宿)",
+      "durationMinutes": 60,
+      "category": "dessert",
+      "place": {
+        "name": "I'm donut? harajuku",
+        "latitude": 35.6698281,
+        "longitude": 139.7032186,
+        "applePlaceID": "I4A423C8BF4E252B8",
+        "address": "〒150-0001, 東京都渋谷区, 神宮前1丁目14-24",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: Yodobashi Camera Ueno (ヨドバシカメラ 上野店)",
+      "durationMinutes": 60,
+      "category": "shopping",
+      "place": {
+        "name": "Yodobashi Camera Multimedia Ueno",
+        "latitude": 35.711101,
+        "longitude": 139.7744334,
+        "applePlaceID": "I6934612917EACD58",
+        "address": "〒110-0005, 東京都台東区, 上野4丁目10-10",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go. The travelogue mentions a second shop next door"
+    },
+    {
+      "key": "u-04",
+      "title": "Alternate: Otter café (カワウソ 若林の家)",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "Wakabayashi",
+        "latitude": 35.6459667,
+        "longitude": 139.6599438,
+        "applePlaceID": "IEEB18A3AC40A0A56",
+        "address": "東京都世田谷区, 若林",
+        "addressIsApproximate": true
+      },
+      "notes": "After looking it up, the travelogue felt the hands-on time was longer here. Check opening hours before you go"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and fact-checking",
+      "paragraphs": [
+        {
+          "text": "Source travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/958599363857/",
+          "style": "bullet"
+        },
+        {
+          "text": "Checked (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Atami Sea Fireworks Festival (launched from Atami Port, 7.5 m quay to the sea-fishing facility; see the official site for dates, where several 2026 dates are listed and the 2027 dates are already announced): https://www.ataminews.gr.jp/event/8 (checked 2026-11-17). Start times come from the travelogue and third-party roundups; the official page does not list them.",
+          "style": "bullet"
+        },
+        {
+          "text": "Keisei Skyliner (Narita Terminal 2 to Keisei Ueno about 41 min; fare ¥1,280 plus ¥1,300 reserved seat, while the official Ueno page shows ¥2,470, so the two disagree): https://www.keisei.co.jp/keisei/tetudou/skyliner/us/directions/ueno.html (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "HARRY Harajuku terrace (weekdays 13:00–18:00, weekends and holidays 11:00–18:00, last order 17:30, no closed days, reservations at least 60 min): https://harinezumi-cafe.com/store/harajuku-terrace/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "SHIBUYA SKY (about 10:00–22:30, last entry about 21:20, from third-party roundups; the official page could not be reached): https://www.shibuya-scramble-square.com/sky/ (checked 2026-11-17, confirm before you go)",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Borderless (about 10:00–21:00, closed the 1st and 3rd Tuesday of each month, ticket prices differ between sources): https://www.teamlab.art/e/borderless-azabudai/ (checked 2026-11-17; the full official page could not be reached, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kawagoe Hikawa Shrine (En-musubi wind chimes 6/27–9/6 9:00–20:00 in 2026, shrine office 049-224-0589): https://www.kawagoehikawa.jp/ (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Chiikawa Mogumogu Honpo Kawagoe (about 9:30–17:30, open every day, address: 2-7-9 Motomachi, Kawagoe, from the opening press release): https://chiikawamogumogu.jp/ (checked 2026-11-17, confirm before you go)",
+          "style": "bullet"
+        },
+        {
+          "text": "Tokyo to Atami Shinkansen (Kodama about 50 min, Hikari about 40 min; reserved seat about ¥4,270, non-reserved about ¥3,740): search roundup pages (checked 2026-11-17, not official)",
+          "style": "bullet"
+        },
+        {
+          "text": "Tobu Tojo Line Ikebukuro to Kawagoe about 30 min: https://www.tobu.co.jp/en/access/kawagoe/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Could not be confirmed from official sources, so check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "The opening hours and closed days of each restaurant, the shopping malls, the former Hachijūgo Bank Head Office Main Building, Sunshine City, Tokyu Plaza Omotesando Harajuku and others.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Kawagoe bus fares and timetables, and the coordinates for each spot, are estimates.",
+          "style": "bullet"
+        },
+        {
+          "text": "What changed and what was cut",
+          "style": "heading"
+        },
+        {
+          "text": "On day 1 of the travelogue, SHIBUYA SKY and dinner are kept. The travelogue only passed Tokyo Tower, so it is not scheduled (template 02 already covers it).",
+          "style": "bullet"
+        },
+        {
+          "text": "The Chiikawa café, Chiikawa ramen, Chiikawa Park, rice crackers and sweet potato sticks on days 2, 3 and 5 of the travelogue are cut down to Ikebukuro's beef tongue and the Gashapon department store. Chiikawa ramen goes to the alternates.",
+          "style": "bullet"
+        },
+        {
+          "text": "Yodobashi in Ueno on day 5 of the travelogue is folded into the Ueno Marui stop and mentioned briefly.",
+          "style": "bullet"
+        },
+        {
+          "text": "Private shopping on day 4 of the travelogue, such as drugstore buys, perfume and bakery gifts, is left out.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Prerequisite: fit your dates to the Atami fireworks",
+          "style": "heading"
+        },
+        {
+          "text": "The point of this trip is the Atami Sea Fireworks Festival (熱海海上花火大会) on day 3. It only goes off on set dates, so fix the date first and then plan the whole trip around it.",
+          "style": "bullet"
+        },
+        {
+          "text": "Check the dates on the Atami Tourist Association site: https://www.ataminews.gr.jp/event/8 . Do not assume a date, and do not work it out from dates of a past year.",
+          "style": "bullet"
+        },
+        {
+          "text": "Start times change with the season: the travelogue says about 20:15 in July and August and about 20:20 in other months, for about 20–25 min. Go by the official site.",
+          "style": "bullet"
+        },
+        {
+          "text": "The template is based on a summer travelogue from mid-September, so weather and daylight vary by season.",
+          "style": "bullet"
+        },
+        {
+          "text": "Getting between the airport and the city (Narita International Airport NRT)",
+          "style": "heading"
+        },
+        {
+          "text": "Keisei Skyliner: Narita Terminal 2 to Keisei Ueno takes about 41 min, all seats reserved with no unreserved cars, about ¥2,580 (¥1,280 fare plus ¥1,300 reserved-seat fee, from the Keisei FAQ). The official Keisei Ueno page lists ¥2,470, which does not match, so check the Keisei site before you go.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Keisei Main Line (Limited Express, Rapid or Access Express) is cheaper but slower. Check the Keisei site for timetables and fares.",
+          "style": "bullet"
+        },
+        {
+          "text": "The JR Narita Express goes direct to Tokyo Station, Shinagawa, Shinjuku and Ikebukuro. Check the JR East site for timetables and fares.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue took the Skyliner to Keisei Ueno and changed to the Ginza Line for Shimbashi. After immigration, follow the signs for the railway to the SKYLINER & KEISEI INFORMATION CENTER to exchange your ticket, and note that other railways have their own counters.",
+          "style": "bullet"
+        },
+        {
+          "text": "This template picks Narita because the travelogue flew in and out of Narita and the Skyliner is fastest to Ueno. You could use Haneda instead; look up the Keikyu line or the Tokyo Monorail separately.",
+          "style": "bullet"
+        },
+        {
+          "text": "Transport tickets",
+          "style": "heading"
+        },
+        {
+          "text": "For a transit card use Suica, including Suica in an iPhone. The airport stations have machines for Welcome Suica and regular Suica top-ups.",
+          "style": "bullet"
+        },
+        {
+          "text": "Kawagoe Discount Pass (train plus Tobu Bus): round trip on the Tobu Tojo Line from Ikebukuro to Kawagoe, plus all-day Tobu Bus (including the Tobu Koedo loop bus). There are two bus companies, Seibu and Tobu, and this pass only covers Tobu. Do not tap Suica when you use the pass.",
+          "style": "bullet"
+        },
+        {
+          "text": "Seibu's \"Koedo Loop Bus\" does not accept the Tobu pass. You can pay with a transit card or buy Seibu's own pass.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Tōkaidō Shinkansen between Tokyo and Atami is run by JR Central and JR West, and you can book early online. The travelogue bought tickets about 4 weeks before travel (2025 data) and went through the gates with the e-ticket QR code.",
+          "style": "bullet"
+        },
+        {
+          "text": "Reservations and tickets",
+          "style": "heading"
+        },
+        {
+          "text": "SHIBUYA SKY: the official site https://www.shibuya-scramble-square.com/sky/ is very popular, so buy early. The travelogue bought the 18:40 night slot. You must store your selfie stick before entering, and there are free lockers upstairs.",
+          "style": "bullet"
+        },
+        {
+          "text": "teamLab Borderless: official site https://www.teamlab.art/e/borderless-azabudai/ . Buying ahead is recommended. There is no map inside, but there is an official leaflet at the entrance.",
+          "style": "bullet"
+        },
+        {
+          "text": "Chiikawa Mogumogu Honpo Kawagoe: entry is limited all day. You can scan the QR code on site to reserve the next slot, or reserve online to be safe. One phone and one account can reserve only once a day.",
+          "style": "bullet"
+        },
+        {
+          "text": "HARRY Harajuku terrace otter café: reserve on the official site https://harinezumi-cafe.com/store/harajuku-terrace/ . Reservations are at least 60 min, and going on the day may leave you empty-handed.",
+          "style": "bullet"
+        },
+        {
+          "text": "Atami: the beach is free and has no paid seating, so bring your own picnic mat. Buy the return Shinkansen ahead, because the station is crowded after the fireworks.",
+          "style": "bullet"
+        },
+        {
+          "text": "Entry",
+          "style": "heading"
+        },
+        {
+          "text": "You can enter without a visa. Register on Visit Japan Web before you arrive. The immigration and customs QR codes are now combined (from the 2025 travelogue; check the Visit Japan Web site).",
+          "style": "bullet"
+        },
+        {
+          "text": "Pacing",
+          "style": "heading"
+        },
+        {
+          "text": "Days 1 and 5 include the airport, day 2 is a round trip to Kawagoe and day 3 a round trip to Atami, so there is a lot of travel. On day 3 you are back at the hotel around 22:45 after the fireworks, later than 21:00.",
+          "style": "bullet"
+        },
+        {
+          "text": "You stay 4 nights in a row at Daiwa Roynet Hotel Tokyo Shimbashi, about 2 min on foot from Shimbashi Station. The rooms are on the small side.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "Trip overview: how the 5 days run",
+      "paragraphs": [
+        {
+          "image": "d3-05"
+        },
+        "In and out of Narita Terminal 2, with one hotel in Shimbashi as the base for all four nights, plus a day trip to Kawagoe and another to Atami, both by train and back the same day. The heart of this trip is the Atami Sea Fireworks Festival on day 3. The fireworks run only on set dates, so confirm the date first and then plan the whole trip around it.",
+        "Day 1: land at Narita, drop your bags in Shimbashi, then go to Shibuya for the night view from {@d1-03} and kushikatsu for dinner at the Shibuya PARCO food hall.",
+        "Day 2: Kawagoe for {@d2-01}, then the Chiikawa Mogumogu Honpo Kawagoe branch for its Kawagoe-only sweet potato items, lunch at the second-floor café of the former Hachijūgo Bank main building, and an afternoon along {@d2-04}; back in Ikebukuro for beef tongue and the capsule toy store at Sunshine City.",
+        {
+          "image": "d2-04"
+        },
+        "Day 3: Kobe beef for lunch at Tokyo Station and the character shops on Ichibangai, then the train to Atami for a stock-up on the shopping street by the station and at a convenience store; in the evening settle in at {@d3-04} and wait for {@d3-05}, getting back to the hotel around 22:45.",
+        "Day 4: {@d4-01} at Azabudai Hills in the morning with a fruit mille-feuille at HARBS for lunch; in the afternoon Harajuku for Tokyu Plaza and KIDDY LAND, wagyu sliders, then {@d4-05}, and Imari beef steak for dinner at Shibuya PARCO.",
+        {
+          "image": "d4-01"
+        },
+        "Day 5: {@d5-01} in Ueno, lunch near Ueno Station, collect your bags and buy gifts at {@d5-03}, then Narita Terminal 2 for duty-free shopping before you depart.",
+        "Where to sleep: Daiwa Roynet Hotel Tokyo Shimbashi for all four nights, about a 2-minute walk from Shimbashi Station; the rooms are small.",
+        "Getting around: from Narita Terminal 2 to Keisei Ueno take the Keisei Skyliner, about 41 minutes, all reserved seats, with the fare on the Keisei website; Ikebukuro to Kawagoe is about 30 minutes on the Tobu Tojo Line, and the Kawagoe pass covers Tobu buses only; Tokyo to Atami is the Tokaido Shinkansen, which you can book online ahead; Suica works as your transit card. Check the fireworks date on the Atami tourism association website and never assume one. Check the latest timetables before you go.",
+        "Who it suits: anyone who wants Kawagoe, the Atami fireworks, Harajuku and Chiikawa spots in a single trip. Days 2 and 3 are Kawagoe and Atami round trips, so travel time is heavy, and you get back to the hotel late on fireworks night; confirm the fireworks date before you book flights and hotel."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Sugar Butter Tree (シュガーバターの木)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "Buy it inside Ueno Station (the travelogue's souvenir)"
+    },
+    {
+      "key": "s-02",
+      "title": "Kawagoe senbei (川越せんべい)",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "Souvenir shops on Kawagoe's Little Edo street. The travelogue recommends the seafood flavour, as the plain one is harder"
+    },
+    {
+      "key": "s-03",
+      "title": "Brown sugar sweet potato sticks (黒糖いもスティック)",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "Souvenir shops on Kawagoe's Little Edo street"
+    },
+    {
+      "key": "s-04",
+      "title": "Chiikawa Mogumogu Kawagoe-only sweet potato items",
+      "category": "goods",
+      "productType": "figure_plush",
+      "priceJPY": 2970,
+      "store": "Chiikawa Mogumogu Honpo Kawagoe. Some items have purchase limits. The travelogue paid ¥2,970 for the large sweet potato Usagi and ¥1,870 for the small sweet potato Chiikawa (2025 data)"
+    },
+    {
+      "key": "s-05",
+      "title": "Chiikawa Mogumogu Kawagoe-only sweet potato items",
+      "category": "goods",
+      "productType": "figure_plush",
+      "priceJPY": 2970,
+      "store": "Chiikawa Mogumogu Honpo Kawagoe. Some items have purchase limits. The travelogue paid ¥2,970 for the large sweet potato Usagi and ¥1,870 for the small sweet potato Chiikawa (2025 data)"
+    },
+    {
+      "key": "s-06",
+      "title": "Shinkansen ticket voice keychain capsule toy (東海道新幹線 チケット音声キーホルダー)",
+      "category": "other",
+      "productType": "other_product",
+      "store": "The capsule toy area on the second floor of Ueno Marui (from the travelogue)"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Tokyo",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Kawagoe",
+      "latitude": 35.9251449,
+      "longitude": 139.4857811,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Atami",
+      "latitude": 35.0963585,
+      "longitude": 139.0717294,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Tokyo",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Tokyo",
+      "latitude": 35.689506,
+      "longitude": 139.6917,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Tokyo",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Narita International Airport Terminal 2 (成田国際空港)",
+          "start": "14:40",
+          "end": "15:40",
+          "category": "airport",
+          "place": {
+            "name": "Narita Airport Terminal 2 Central Plaza (第2旅客ターミナルビル前中央広場)",
+            "latitude": 35.7727875,
+            "longitude": 140.3867587,
+            "applePlaceID": "ICD95BF7CCD2E115A",
+            "address": "〒286-0104, 千葉県成田市, 古込1-1, 成田国際空港第2ターミナル B1F",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Drop your bags and check in: Daiwa Roynet Hotel Tokyo Shimbashi (ダイワロイネットホテル東京新橋)",
+          "start": "17:00",
+          "end": "17:30",
+          "category": "hotel",
+          "place": {
+            "name": "Daiwa Roynet Hotel Shimbashi",
+            "latitude": 35.6684836,
+            "longitude": 139.7570966,
+            "applePlaceID": "I3D58F9FFA532BB30",
+            "address": "〒105-0004, 東京都港区, 新橋1丁目17-2",
+            "addressIsApproximate": false
+          },
+          "notes": "Check check-in and check-out times before you go",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "Inside the airport, follow the signs toward the railway to the SKYLINER & KEISEI INFORMATION CENTER to exchange your ticket. The Skyliner to Keisei Ueno takes about 41 min, all seats reserved, about ¥2,580 (¥1,280 fare plus ¥1,300 reserved-seat fee). At Keisei Ueno change to the Tokyo Metro Ginza Line (toward Shibuya) for about 20 min to Shimbashi, then about 2 min on foot from the exit"
+          },
+          "todos": [
+            {
+              "text": "Buy the Skyliner ticket (outbound) and reserve the return seat",
+              "note": "You can buy online ahead and exchange it at Narita Airport Station. Reserve the return seat at Keisei Ueno Station"
+            }
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "SHIBUYA SKY observatory (渋谷スカイ): the night-view slot",
+          "start": "18:40",
+          "end": "20:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "SHIBUYA SKY Ticket Counter (SHIBUYA SKYチケットカウンター)",
+            "latitude": 35.6586113,
+            "longitude": 139.7023452,
+            "applePlaceID": "I3BB50A8AC3225E97",
+            "address": "〒150-0002",
+            "addressIsApproximate": true
+          },
+          "notes": "About 10:00–22:30 (last entry about 21:20), closed only on New Year's Day. Go by the official site and check hours before you go",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "Ginza Line from Shimbashi to Shibuya takes about 15 min, then about 5 min on foot to Shibuya Scramble Square. Before you go up, find the dedicated lift on the first floor"
+          },
+          "todos": [
+            {
+              "text": "Buy SHIBUYA SKY tickets (night-view slot)",
+              "note": "Official site https://www.shibuya-scramble-square.com/sky/ . The travelogue says tickets go on sale about 2 weeks before the visit date (2025 data)"
+            }
+          ],
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "Dinner: kushikatsu at Kushikatsu Arata (串カツあらた 渋谷パルコ店), Shibuya PARCO food hall",
+          "start": "20:15",
+          "end": "21:00",
+          "category": "dining",
+          "place": {
+            "name": "Kushikatsu Arata Shibuya Parco (串カツあらた 渋谷パルコ店)",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I4E0C674AF1360F12",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go. A note from the travelogue: kushikatsu places charge a small cover for appetizers (otōshi)",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 10–15 min on foot from Scramble Square to PARCO"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Tokyo Metro Ginza Line from Shibuya Station back to Shimbashi takes about 15 min, or about 30 min with walking and waiting"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Kawagoe",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Kawagoe Hikawa Shrine (川越氷川神社): En-musubi wind chimes and the sea bream fortunes",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "temple",
+          "place": {
+            "name": "Hikawa Shrine",
+            "latitude": 35.9275637,
+            "longitude": 139.4885561,
+            "applePlaceID": "IB61C9ABDE4FF6D05",
+            "address": "〒350-0052",
+            "addressIsApproximate": true
+          },
+          "notes": "You can visit the grounds freely. The summer-only En-musubi wind chimes run 6/27–9/6 in 2026, 9:00–20:00, and the dates change each year. Shrine office phone 049-224-0589",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "JR Yamanote Line from Shimbashi to Ikebukuro takes about 30 min. Tobu Tojo Line from Ikebukuro to Kawagoe takes about 30 min (Kawagoe Limited Express). From Stop 3 at Kawagoe Station take the Tobu Bus Mei 01 to Hikawa Shrine, about 20 min. If you have the Kawagoe Discount Pass (train plus Tobu Bus), show the QR code to the driver on the bus. Do not tap Suica"
+          },
+          "todos": [
+            {
+              "text": "Buy the Kawagoe Discount Pass (train plus Tobu Bus)",
+              "note": "Round trip Ikebukuro–Kawagoe plus all-day Tobu Bus. It only covers Tobu Bus, and you activate it on the day of use"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "Chiikawa Mogumogu Honpo, Kawagoe branch (ちいかわもぐもぐ本舗 川越店): Kawagoe-only sweet potato items",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "shopping",
+          "place": {
+            "name": "Chiikawa Mogumogu Honpo Kawagoe (ちいかわもぐもぐ本舗 川越店)",
+            "latitude": 35.9244889,
+            "longitude": 139.4814476,
+            "applePlaceID": "IEF60C1C73DD6B1DD",
+            "address": "〒350-0062",
+            "addressIsApproximate": true
+          },
+          "notes": "About 9:30–17:30, open every day (from the opening press release; check hours before you go)",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "Take the bus from Hikawa Shrine back to the Little Edo area, about 20 min, or walk about 20 min. The Seibu \"Koedo Loop Bus\" does not accept the Tobu pass and costs extra"
+          },
+          "todos": [
+            {
+              "text": "Reserve an entry slot at Chiikawa Mogumogu Honpo Kawagoe",
+              "note": "Entry is limited all day. One phone and one account can reserve once a day, and you can scan the QR code on the day to book"
+            }
+          ],
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "Lunch: the second-floor café at the former Hachijūgo Bank Head Office Main Building (旧第八十五銀行本店本館)",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "cafe",
+          "place": {
+            "name": "Asahi Bank Kawagoe Branch (former Hachijugo Bank Head Office Main Building)",
+            "latitude": 35.9225931,
+            "longitude": 139.4831352,
+            "applePlaceID": "I69356DB7102EE3E3",
+            "address": "〒350-0063, 埼玉県川越市, 幸町4-2",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go. The terrace is a public area, so you can go in without buying anything",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "About 5 min on foot"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "Toki no Kane bell tower and Taishō Roman Dream Street (時の鐘・大正浪漫夢通り)",
+          "start": "14:45",
+          "end": "16:00",
+          "category": "sight",
+          "place": {
+            "name": "Kawagoe Toki no Kane, Saiwaicho 15-1",
+            "latitude": 35.923497,
+            "longitude": 139.483188,
+            "address": "日本埼玉縣川越市",
+            "addressIsApproximate": true
+          },
+          "notes": "You can see the bell tower from outside all day. The shops along the way keep different hours, so check before you go",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot along Ichibangai and Taishō Roman Dream Street"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "Dinner: grilled beef tongue at Gyūtan-yaki Sendai Henmi, Ikebukuro Parco branch (牛たん焼き 仙台辺見 池袋パルコ店)",
+          "start": "17:30",
+          "end": "18:30",
+          "category": "dining",
+          "place": {
+            "name": "Ikebukuro Parco",
+            "latitude": 35.7308315,
+            "longitude": 139.7123843,
+            "applePlaceID": "I4470FCF4975CA9C5",
+            "address": "〒171-8557, 東京都豊島区, 南池袋1丁目28-2",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "The Koedo Loop Bus or a Tobu Bus back to Kawagoe Station takes about 15 min, and the Tobu Tojo Line back to Ikebukuro about 30 min, waiting and changing included"
+          }
+        },
+        {
+          "key": "d2-06",
+          "title": "Sunshine City Ikebukuro: Gashapon Department Store flagship (サンシャインシティ ガシャポンデパートメントストア)",
+          "start": "19:00",
+          "end": "20:00",
+          "category": "shopping",
+          "place": {
+            "name": "Gashapon Department Store Ikebukuro Flagship",
+            "latitude": 35.7288563,
+            "longitude": 139.7200754,
+            "applePlaceID": "I1EA870DC41AF85E2",
+            "address": "〒170-0013, 東京都豊島区, 東池袋3丁目1-3",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 10–15 min on foot from Ikebukuro Station to Sunshine City"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "Walk back to Ikebukuro Station, about 15 min, then the JR Yamanote Line to Shimbashi, about 30 min"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Atami",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Lunch: Kobe beef at Kobe Gyū Daia, Tokyo Station branch (神戸牛ダイア 東京駅店)",
+          "start": "11:30",
+          "end": "12:30",
+          "category": "dining",
+          "place": {
+            "name": "Kobe Beef Dia, Tokyo Grandsta Yaesu",
+            "latitude": 35.6800541,
+            "longitude": 139.7680557,
+            "applePlaceID": "I4E17865EF7248D83",
+            "address": "〒100-0005",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go. A note from the travelogue: on the same floor, Kiwami-ya already has a long queue before it opens at 11:00",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "JR from Shimbashi to Tokyo Station takes about 5 min, then walk to the Yaesu Underground Mall area"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "Tokyo Station Ichibangai (東京駅一番街): character shops and food street",
+          "start": "12:45",
+          "end": "14:15",
+          "category": "shopping",
+          "place": {
+            "name": "Tokyo Station Ichibangai",
+            "latitude": 35.68107,
+            "longitude": 139.76811,
+            "applePlaceID": "I1F15EEC1925C92ED",
+            "address": "〒100-0005, 東京都千代田区, 丸の内1丁目9-1 東京駅一番街",
+            "addressIsApproximate": false
+          },
+          "notes": "Each shop keeps its own hours, so check before you go. The baggage counter at Tokyo Station only stays open until about 20:00 (from the travelogue), so use a locker instead",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "About 5 min on foot"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "Atami: the shopping street in front of the station and a convenience store stock-up (熱海駅前・仲見世通り)",
+          "start": "15:45",
+          "end": "16:45",
+          "category": "shopping",
+          "place": {
+            "name": "Atami",
+            "latitude": 35.1036105,
+            "longitude": 139.0777622,
+            "applePlaceID": "ICC6D196498CD6208",
+            "address": "静岡県熱海市, 田原本町",
+            "addressIsApproximate": true
+          },
+          "notes": "Each shop keeps its own hours, so check before you go",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "Enter Tokyo Station through the Nihombashi exit gate for the Tōkaidō Shinkansen and take a Kodama to Atami, about 50 min (some Hikari trains stop there and take about 40 min). A reserved seat is about ¥4,270 and a non-reserved seat about ¥3,740 (from search roundups, not an official page). Buy your return ticket in advance, because the crowds after the fireworks are huge"
+          },
+          "todos": [
+            {
+              "text": "Book the round-trip Shinkansen from Tokyo to Atami",
+              "note": "Pick the fireworks date first, then buy tickets. The travelogue bought about 4 weeks before travel (2025 data). Choose a return train after the fireworks"
+            }
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "Atami Sun Beach (熱海サンビーチ): laying a picnic mat and waiting",
+          "start": "17:00",
+          "end": "19:45",
+          "category": "beach",
+          "place": {
+            "name": "Atami Sun Beach",
+            "latitude": 35.0980447,
+            "longitude": 139.0768168,
+            "applePlaceID": "I816B6250ACBFFDB1",
+            "address": "〒413-0012, 静岡県熱海市, 東海岸町",
+            "addressIsApproximate": true
+          },
+          "notes": "The beach is an open space with no closed days. Bring your own picnic mat. There are toilets around the beach, though the travelogue says to check the facilities first",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15–20 min on foot downhill from Atami Station to the beach. The way back is uphill, so save some energy"
+          }
+        },
+        {
+          "key": "d3-05",
+          "title": "Atami Sea Fireworks Festival (熱海海上花火大会)",
+          "start": "20:15",
+          "end": "20:45",
+          "category": "show",
+          "place": {
+            "name": "Atami Sun Beach",
+            "latitude": 35.0980447,
+            "longitude": 139.0768168,
+            "applePlaceID": "I816B6250ACBFFDB1",
+            "address": "〒413-0012, 静岡県熱海市, 東海岸町",
+            "addressIsApproximate": true
+          },
+          "notes": "Fireworks only go off on set dates, so plan the trip around the date. Find the dates on the Atami Tourist Association site https://www.ataminews.gr.jp/event/8 . Start times are mostly 20:15 or 20:20 for about 20–25 min (from the travelogue and third-party sources, so check the official site). Entry is free",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Watch from the back of the east side of the beach, about 5 min on foot from your picnic spot"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 120,
+            "durationSource": "user",
+            "note": "Leave around 20:45 and walk back to Atami Station, about 20–25 min. Take the Shinkansen you booked ahead at around 21:26 (the travelogue actually rode the 22:02, which ran almost 20 min late) and reach Tokyo in about 45 min. At Tokyo Station change to JR for Shimbashi. If you already hold a Shinkansen ticket you can go straight through the staffed gate on the right to the conventional-line gates"
+          },
+          "todos": [
+            {
+              "text": "Confirm the Atami Sea Fireworks Festival date, then decide the dates of the whole trip",
+              "note": "This trip must be planned around the fireworks date. Check the date on the official site: https://www.ataminews.gr.jp/event/8"
+            }
+          ],
+          "images": [
+            "d3-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Tokyo",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "teamLab Borderless: Azabudai Hills (teamLab Borderless: MORI Building DIGITAL ART MUSEUM)",
+          "start": "10:30",
+          "end": "12:45",
+          "category": "museum",
+          "place": {
+            "name": "teamLab Borderless (チームラボボーダレス)",
+            "latitude": 35.6620821,
+            "longitude": 139.7429831,
+            "applePlaceID": "I4D63FF6237C65D4D",
+            "address": "〒106-0041",
+            "addressIsApproximate": true
+          },
+          "notes": "About 10:00–21:00 according to several sources, closed on the 1st and 3rd Tuesday of each month. Go by the official site and check before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Take a bus or train from Shimbashi, about 20–25 min, to Kamiyacho Station or the Toranomon area, then walk into B1 of Azabudai Hills Garden Plaza B. There is no map inside, and there are free lockers to the right of the entrance"
+          },
+          "todos": [
+            {
+              "text": "Buy teamLab Borderless tickets",
+              "note": "Official site https://www.teamlab.art/e/borderless-azabudai/ . Buying ahead is recommended"
+            }
+          ],
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "Lunch: HARBS Azabudai Hills branch (ハーブス 麻布台ヒルズ店), fruit mille-feuille cake",
+          "start": "13:00",
+          "end": "13:45",
+          "category": "cafe",
+          "place": {
+            "name": "HARBS Azabudai Hills (HARBS 麻布台ヒルズ店)",
+            "latitude": 35.6617921,
+            "longitude": 139.7414455,
+            "applePlaceID": "ID342BB3415C34D12",
+            "address": "〒105-0001",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "About 5 min on foot within the same complex"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "Harajuku shopping: Tokyu Plaza Omotesando Harajuku (the Chiikawa bakery) and KIDDY LAND Harajuku",
+          "start": "14:30",
+          "end": "15:10",
+          "category": "shopping",
+          "place": {
+            "name": "Tokyu Plaza Omotesando Harajuku",
+            "latitude": 35.6686716,
+            "longitude": 139.7059169,
+            "applePlaceID": "I36622972312760EA",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前4丁目30-3",
+            "addressIsApproximate": false
+          },
+          "notes": "Each shop keeps its own hours, so check before you go. The bakery's dine-in side needs a numbered ticket, the merchandise shop does not",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Take the Tokyo Metro to Meiji-jingumae <Harajuku> Station, about 30 min with 1 change"
+          },
+          "images": [
+            "d4-03"
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "The Great Burger (ザ グレート バーガー): wagyu sliders",
+          "start": "15:20",
+          "end": "15:45",
+          "category": "fastfood",
+          "place": {
+            "name": "Ding Hao Burger (顶好汉堡店)",
+            "latitude": 35.6662251,
+            "longitude": 139.7046999,
+            "applePlaceID": "I19EDD305DB383DA5",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前6丁目12-5 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot within Harajuku"
+          }
+        },
+        {
+          "key": "d4-05",
+          "title": "HARRY Harajuku terrace otter café (ＨＡＲＲＹ原宿テラス店)",
+          "start": "16:05",
+          "end": "17:30",
+          "category": "cafe",
+          "place": {
+            "name": "Harry Harajuku Terrace",
+            "latitude": 35.6691599,
+            "longitude": 139.7079697,
+            "applePlaceID": "IBF8E3491E606B707",
+            "address": "〒150-0001, 東京都渋谷区, 神宮前4丁目26番5号, 神宮前426ビル 3F",
+            "addressIsApproximate": false
+          },
+          "notes": "Weekdays 13:00–18:00, weekends and holidays 11:00–18:00 (last order 17:30), no closed days. Reservations must be at least 60 min (official site)",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "About 5 min on foot. It is on the top floor of the building, up the side stairs"
+          },
+          "todos": [
+            {
+              "text": "Reserve the HARRY Harajuku terrace otter café",
+              "note": "Official site https://harinezumi-cafe.com/store/harajuku-terrace/ . Reservations are at least 60 min, and going on the day may leave you empty-handed"
+            }
+          ],
+          "images": [
+            "d4-05"
+          ]
+        },
+        {
+          "key": "d4-06",
+          "title": "Dinner: Imari beef steak at Kiwami-ya, Shibuya PARCO branch (極味や 渋谷パルコ店)",
+          "start": "18:00",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "Kiwami-ya Shibuya Parco (極味や 渋谷パルコ店)",
+            "latitude": 35.6619731,
+            "longitude": 139.6987299,
+            "applePlaceID": "I27C7C5F97CC5C83B",
+            "address": "〒150-0042, 東京都渋谷区, 宇田川町15-1 渋谷パルコB1F",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go. It sells out at popular times",
+          "leg": {
+            "fromKey": "d4-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "JR Yamanote Line from Harajuku Station to Shibuya, about 5 min, then walk to PARCO"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Tokyo Metro Ginza Line from Shibuya back to Shimbashi takes about 15 min, or about 25 min with walking"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Tokyo",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "Ueno Marui (上野マルイ), Loft and the second-floor capsule toy area",
+          "start": "11:00",
+          "end": "12:30",
+          "category": "shopping",
+          "place": {
+            "name": "Ueno Marui",
+            "latitude": 35.7107345,
+            "longitude": 139.7757649,
+            "applePlaceID": "I294F815904982079",
+            "address": "〒110-0005, 東京都台東区, 上野6丁目15-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "JR Yamanote Line from Shimbashi to Ueno takes about 20 min. After checkout you can leave your bags in a station locker"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "Lunch: around Ueno Station",
+          "start": "12:45",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "Ueno Station Park Exit",
+            "latitude": 35.7143877,
+            "longitude": 139.7763973,
+            "applePlaceID": "I7417813C5B65E03D",
+            "address": "東京都台東区, 上野公園",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "About 5 min on foot"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "Keisei Ueno Station: collect your bags and buy gifts (Sugar Butter Tree)",
+          "start": "13:45",
+          "end": "14:15",
+          "category": "station",
+          "place": {
+            "name": "Keisei Ueno Station Main Entrance",
+            "latitude": 35.7111645,
+            "longitude": 139.7740598,
+            "applePlaceID": "IFA2C7ED6B1A4396A",
+            "address": "東京都台東区, 上野公園",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go. Keisei Ueno is on the Shinobazu side of Ueno Station, and your bags are in the lockers inside the station",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 min on foot from Ueno Station to Keisei Ueno (the travelogue warns that it is easy to get lost in the station, so it suggests leaving your bags in the Keisei Ueno lockers)"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "Depart from Narita International Airport Terminal 2: Japan Food Hall and duty-free shopping (成田国際空港)",
+          "start": "15:05",
+          "end": "17:30",
+          "category": "airport",
+          "place": {
+            "name": "Narita Airport Terminal 2 Central Plaza (第2旅客ターミナルビル前中央広場)",
+            "latitude": 35.7727875,
+            "longitude": 140.3867587,
+            "applePlaceID": "ICD95BF7CCD2E115A",
+            "address": "〒286-0104, 千葉県成田市, 古込1-1, 成田国際空港第2ターミナル B1F",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "The Skyliner from Keisei Ueno to Narita Airport Terminal 2 takes about 41 min, all seats reserved, about ¥2,580. You can reserve the return seat early at Keisei Ueno Station (some staff speak Chinese)"
+          }
+        }
+      ]
+    }
+  ]
+}

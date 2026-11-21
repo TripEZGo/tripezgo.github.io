@@ -1,0 +1,1201 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kitakyushu-fukuoka-nagasaki-5d",
+  "revision": 3,
+  "contentLocale": "zh-Hant-HK",
+  "title": "北九州 5 日｜福岡・長崎・太宰府・柳川・門司港",
+  "subtitle": "福岡做基地，一日長崎、一日太宰府同柳川、一日門司港",
+  "summary": "住福岡五日，每日由博多出發：太宰府同柳川、長崎一日來回、門司港懷舊街區，再加福岡市區。長崎一日來回嘅交通時間佔比偏高，呢個係距離所致。福岡塔、長崎眼鏡橋同太宰府星巴克放咗做後備。",
+  "destination": "日本 福岡・長崎・北九州",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "green",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "二人同行",
+    "初次到訪",
+    "美食",
+    "歷史"
+  ],
+  "todos": [
+    {
+      "text": "登記 Visit Japan Web（入境審查同海關申報）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 機票同訂房搞掂之後就可以填"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d1-03.jpg",
+    "d1-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d1-05.jpg",
+    "d2-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-01.jpg",
+    "d2-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-04.jpg",
+    "d2-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-05.jpg",
+    "d2-06": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-06.jpg",
+    "d3-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-01.jpg",
+    "d3-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-04.jpg",
+    "d3-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-05.jpg",
+    "d4-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-01.jpg",
+    "d4-02": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-02.jpg",
+    "d4-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-04.jpg",
+    "d4-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-05.jpg",
+    "d5-02": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d5-02.jpg",
+    "d5-03": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d5-03.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：福岡天神一帶",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "天神",
+        "latitude": 33.5913835,
+        "longitude": 130.3989064,
+        "applePlaceID": "IE9F4B2EE1A6F4F8D",
+        "address": "福岡県福岡市中央区, 天神",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "後備：福岡塔（福岡タワー）",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "福岡塔",
+        "latitude": 33.5932849,
+        "longitude": 130.3514528,
+        "applePlaceID": "ID097EC5E453200F5",
+        "address": "〒814-0001, 福岡県福岡市早良区, 百道浜2丁目3-26",
+        "addressIsApproximate": false
+      },
+      "notes": "09:30–22:00（最後入館 21:30）；距離市區較遠，遊記覺得景色普通，但外觀鏡面設計好靚"
+    },
+    {
+      "key": "u-02",
+      "title": "後備：太宰府表參道星巴克（スターバックス）",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "星巴克咖啡太宰府天滿宮表參道店",
+        "latitude": 33.5196319,
+        "longitude": 130.5334179,
+        "applePlaceID": "ICFD12966FE79BA8D",
+        "address": "〒818-0117, 福岡県太宰府市, 宰府3丁目2-43",
+        "addressIsApproximate": false
+      },
+      "notes": "營業時間請出發前確認；遊記話人好多"
+    },
+    {
+      "key": "u-03",
+      "title": "後備：長崎眼鏡橋（眼鏡橋）",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "眼鏡橋",
+        "latitude": 32.7471779,
+        "longitude": 129.8800814,
+        "applePlaceID": "IB8CAB7EB65560E8C",
+        "address": "長崎県長崎市",
+        "addressIsApproximate": true
+      },
+      "notes": "營業時間請出發前確認；遊記建議由正面影水中倒影"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "資料來源與查證",
+      "paragraphs": [
+        {
+          "text": "來源遊記",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "查證（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "哥拉巴園開園時間同票價（08:00–18:00，2026/11–12 延長到 20:00，一般 1,300 日圓）：https://glover-garden.jp/guide/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "長崎原爆資料館（入館費 200 日圓、休館 12/29–12/31、常設展部分暫停）：https://nabmuseum.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "長崎原爆資料館開館時間（市政府頁面，9–4 月 08:30–17:30、5–8 月至 18:30）：https://www.city.nagasaki.lg.jp/heiwa/3030000/3030300/p005150.html （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "柳川遊船（松月乘船場 09:30–15:00、約 60 分鐘、成人 2,200 日圓）：https://www.yanagawakk.co.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "西鐵太宰府柳川套票（電子票 3,620 日圓、站務櫃檯 3,730 日圓、兩日有效）：https://www.ensen24.jp/kippu/tc/dazaifu-yanagawa/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "太宰府天滿宮參拜時間：https://www.dazaifutenmangu.or.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "博多運河城營業時間：https://www.canalcity.co.jp/service/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "天神地下街營業時間：https://www.tenchika.com/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "小倉城天守閣開館時間：https://www.kokura-castle.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "福岡塔展望台 09:30–22:00（最後入館 21:30）：https://www.fukuokatower.co.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "福岡軟銀鷹主場賽程（官網例 18:00 開賽，みずほPayPayドーム福岡）：https://www.softbankhawks.co.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "福岡市地下鐵機場線（天神同機場、唐人町同一條線）：https://subway.city.fukuoka.lg.jp/ （查證 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "第三方資料，非官方，請出發前確認",
+          "style": "heading"
+        },
+        {
+          "text": "櫛田神社參拜 04:00–22:00、稻佐山纜車 09:00–22:00、門司港藍翼吊橋開合時間同展望室 10:00–22:00、博多宮崎牛營業時間、天神到機場地鐵約 11 分鐘同車費約 260 日圓。",
+          "style": "bullet"
+        },
+        {
+          "text": "博多到長崎車程：西九州新幹線開通後最快約 1 小時 20 分鐘，遊記寫約 1 小時 50 分鐘；本行程按約 1 小時 30–50 分鐘估算。",
+          "style": "bullet"
+        },
+        {
+          "text": "未能從官方確認，請出發前確認",
+          "style": "heading"
+        },
+        {
+          "text": "哥拉巴園休園日、大浦天主堂、和平公園、住吉神社、一蘭太宰府參道店、梅枝餅、焗咖喱、博多祇園鐵鍋煎餃子嘅營業時間。",
+          "style": "bullet"
+        },
+        {
+          "text": "小倉城休館日、門司港懷舊展望室休館日、稻佐山纜車車費。",
+          "style": "bullet"
+        },
+        {
+          "text": "已變動",
+          "style": "heading"
+        },
+        {
+          "text": "本範本只取遊記嘅福岡同北九州部分（遊記 D1–D5 前半），熊本同阿蘇部分另外做範本。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記原本第 1 日晚上 21:00 先出機場，呢份改為下午抵達，晚上加入博多運河城同中洲屋台（原本喺遊記第 3 日晚上）。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記嘅 LaLaport 福岡（福岡高達）冇排入，後備請出發前確認嗰個展覽仲喺唔喺度。",
+          "style": "bullet"
+        },
+        {
+          "text": "遊記資料",
+          "style": "heading"
+        },
+        {
+          "text": "住宿按遊記，福岡天神一帶連住 4 晚；遊記作者住過渡邊通站附近嘅酒店，但覺得偏舊，所以只寫區域。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出發前須知",
+      "paragraphs": [
+        {
+          "text": "入境同網絡",
+          "style": "heading"
+        },
+        {
+          "text": "出發前先喺 Visit Japan Web 登記入境審查同海關申報：https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "網絡可以用實體 SIM 卡或者 eSIM。",
+          "style": "bullet"
+        },
+        {
+          "text": "交通",
+          "style": "heading"
+        },
+        {
+          "text": "福岡地鐵、巴士、JR、西鐵大部分可以用 Suica 等全國交通 IC 卡；JR 同西鐵特急可能要另外買特急券或者套票。",
+          "style": "bullet"
+        },
+        {
+          "text": "機場到市區：福岡機場國內線客運大樓直達地鐵機場線，到天神約 11 分鐘、到博多約 5 分鐘；國際線客運大樓要先搭免費接駁巴士到國內線（車費同班次請出發前確認）。",
+          "style": "bullet"
+        },
+        {
+          "text": "西鐵太宰府柳川套票：只可以由福岡（天神）或者藥院站出發，路線二選一（福岡→柳川→太宰府→福岡，或者福岡→太宰府→柳川→福岡）；唔可以用自動閘機，要行有人窗口；使用期間連開始嗰日共兩日；中途只可以喺太宰府站同西鐵柳川站出閘，喺其他站出閘或者提早返到出發站，車票即時失效。",
+          "style": "bullet"
+        },
+        {
+          "text": "柳川遊船約 60–70 分鐘，松月乘船場受理到 15:00，所以建議跟「福岡→柳川→太宰府→福岡」嘅次序，上午先搭船。",
+          "style": "bullet"
+        },
+        {
+          "text": "長崎係長途一日來回：特急海鷗號接西九州新幹線，喺武雄溫泉同一月台轉車；請先查來回最後一班車，返博多可能超過 21:00。",
+          "style": "bullet"
+        },
+        {
+          "text": "JR 九州北九州周遊券（遊記作者 2023 年買 5 日券）唔包新幹線；博多到小倉搭新幹線要另外付費，搭 JR 特急 Sonic 或者普通車就用得。呢個行程搬運量大，抵唔抵請自己試算。",
+          "style": "bullet"
+        },
+        {
+          "text": "預訂",
+          "style": "heading"
+        },
+        {
+          "text": "西鐵太宰府柳川套票可以喺天神或者藥院站現場購買，亦可以網上購買電子票。",
+          "style": "bullet"
+        },
+        {
+          "text": "柳川遊船建議預訂，旺季同週末可能要等好耐。",
+          "style": "bullet"
+        },
+        {
+          "text": "福岡軟銀鷹隊棒球賽：先查賽程，有主場賽先排第 4 日晚上；現場都買到票，不過座位選擇有限。",
+          "style": "bullet"
+        },
+        {
+          "text": "稻佐山夜景要配合日落時間，第 2 日下午嘅行程可以前後調整。",
+          "style": "bullet"
+        },
+        {
+          "text": "其他",
+          "style": "heading"
+        },
+        {
+          "text": "日圓現金要預備足夠：部分接駁車、小店同屋台唔收信用卡。",
+          "style": "bullet"
+        },
+        {
+          "text": "長崎蛋糕保存期限約 12 日；梅枝餅要即日食。",
+          "style": "bullet"
+        },
+        {
+          "text": "長崎原爆資料館 2026/09–2027/03 部分常設展唔開放，請出發前確認。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "旅程總覽：北九州 5 日點行",
+      "paragraphs": [
+        {
+          "image": "d3-04"
+        },
+        "福岡入、福岡出，五日都住喺福岡天神一帶，唔使轉酒店；每日由博多或者天神出發，長崎一日來回，太宰府同柳川、門司港同小倉各係一日。交通策略係以福岡為中心放射式出發，乘地鐵、西鐵同 JR。",
+        "第 1 日：下晝抵達福岡機場，乘地鐵去天神放行李，傍晚逛 {@d1-03}，晚餐食鐵鍋煎餃子，再去 {@d1-05} 睇夜景同路邊攤。",
+        "第 2 日：乘特急同西九州新幹線去長崎，先逛 {@d2-01} 同大浦天主堂，午餐喺新地中華街食，下晝睇 {@d2-04} 同和平公園，傍晚上稻佐山睇夜景，再返福岡。",
+        {
+          "image": "d2-06"
+        },
+        "第 3 日：由天神乘西鐵，朝早先搭 {@d3-01}，午餐後轉去太宰府，食梅枝餅、參拜 {@d3-04}，傍晚返天神地下街逛街，晚餐食宮崎牛。",
+        "第 4 日：乘新幹線去小倉轉 JR 去 {@d4-01}，上展望室、午餐食烤咖喱，下晝返小倉睇 {@d4-04}，夜晚如果啱啱有主場比賽，就去巨蛋睇福岡軟銀鷹隊嘅棒球賽。",
+        {
+          "image": "d4-01"
+        },
+        "第 5 日：朝早逛 {@d5-02} 同 {@d5-03}，午餐後喺博多站買手信，返酒店攞行李，下晝乘地鐵去機場。",
+        "住宿：福岡天神一帶連住四晚，第 5 日退房後寄存行李。",
+        "交通重點：機場國際線客運大樓要先乘免費接駁巴士去國內線，再乘地鐵空港線去天神，約 11 分鐘；太宰府同柳川用西鐵太宰府柳川套票，只可以由福岡（天神）或者藥院站出發，唔可以行自動閘機，建議照「福岡、柳川、太宰府、福岡」嘅次序；長崎係特急海鷗號接西九州新幹線嘅長途一日來回，交通時間佔比偏高，請先查來回最後一班車，返博多可能超過 21:00；JR 北九州周遊券唔包新幹線，博多去小倉乘新幹線要另外俾錢。出發前請自己再查一次最新時間表。",
+        "適合邊個：想住同一間酒店、唔想搬行李，每日由福岡出發探索長崎、太宰府、柳川同門司港嘅人。第 2 日來回長崎好攰，資料館內容亦都沉重，體力同時間要留啲餘裕。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "小雞餅乾（ひよ子）",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "天神地下街買到"
+    },
+    {
+      "key": "s-02",
+      "title": "長崎蛋糕（カステラ）",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "長崎站或者博多都買到，保存期限約 12 日"
+    },
+    {
+      "key": "s-03",
+      "title": "明太子（辛子明太子）",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "博多站同機場都有售"
+    },
+    {
+      "key": "s-04",
+      "title": "福岡軟銀鷹隊毛巾",
+      "category": "other",
+      "productType": "other_product",
+      "store": "みずほPayPayドーム福岡球場內有售"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "福岡市",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福岡市",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福岡市",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福岡市",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "福岡市",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "福岡市",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵達福岡機場（福岡空港）",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "airport",
+          "place": {
+            "name": "福岡機場",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "寄存行李、辦理入住：福岡天神一帶酒店",
+          "start": "15:00",
+          "end": "15:30",
+          "category": "hotel",
+          "place": {
+            "name": "天神",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "notes": "入住時間請以酒店為準",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "國際線客運大樓搭免費接駁巴士到國內線約 10 分鐘，再搭福岡市地下鐵機場線到天神約 11 分鐘（車費約 260 日圓，請出發前確認），再步行到酒店"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "博多運河城（キャナルシティ博多）",
+          "start": "16:15",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "キャナルシティ博多住吉1-2-1",
+            "latitude": 33.5908098,
+            "longitude": 130.4106146,
+            "address": "日本福岡縣福岡市博多區",
+            "addressIsApproximate": true
+          },
+          "notes": "商店 10:00–21:00、餐廳 11:00–23:00，部分店舖唔同；全年無休（官網）",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "步行約 25–30 分鐘，或者搭巴士／地鐵到博多方向再步行"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "晚餐：博多祇園鐵鍋煎餃子（博多祇園 鉄なべ）",
+          "start": "18:15",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "博多 祇園 鉄なべ",
+            "latitude": 33.592484,
+            "longitude": 130.4139834,
+            "applePlaceID": "IC5F6C83099E71F6E",
+            "address": "〒812-0861, 福岡県福岡市博多区, 祇園町2-20",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；遊記建議兩份先食得飽（一份 8 隻）",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "由運河城步行約 15 分鐘"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "中洲屋台夜景同路邊攤",
+          "start": "19:45",
+          "end": "20:45",
+          "category": "market",
+          "place": {
+            "name": "一龍拉麵中洲屋台",
+            "latitude": 33.5900202,
+            "longitude": 130.4055095,
+            "applePlaceID": "IA698F48C2255DD56",
+            "address": "〒810-0002, 福岡県福岡市中央区, 西中洲1-14 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "屋台多數黃昏開檔，每個檔嘅營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "步行約 15 分鐘"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "地鐵中洲川端到天神 1 站約 3 分鐘，再步行到酒店"
+          },
+          "images": [
+            "d1-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "福岡市",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "哥拉巴園（グラバー園）",
+          "start": "10:30",
+          "end": "11:45",
+          "category": "sight",
+          "place": {
+            "name": "グラバー園",
+            "latitude": 32.7362511,
+            "longitude": 129.8687273,
+            "applePlaceID": "IE18B35E51782C33F",
+            "address": "長崎県長崎市, 松が枝町",
+            "addressIsApproximate": true
+          },
+          "notes": "官網標準時間 08:00–18:00（最後入園為閉園前 20 分鐘），隨季節延長；2026 年 11–12 月為 08:00–20:00；休園日請出發前確認",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 135,
+            "durationSource": "user",
+            "note": "到博多站之後搭特急海鷗號（リレーかもめ）到武雄溫泉，同一月台轉乘西九州新幹線到長崎，全程約 1 小時 30–50 分鐘；到長崎站搭路面電車（約 140 日圓，請確認）到大浦天主堂下，再步行上斜約 10 分鐘"
+          },
+          "todos": [
+            {
+              "text": "確認長崎來回列車時間同座位",
+              "note": "JR 九州官網 https://www.jrkyushu.co.jp/ 查特急海鷗號同西九州新幹線；先查回程最後一班"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "大浦天主堂",
+          "start": "12:00",
+          "end": "12:20",
+          "category": "temple",
+          "place": {
+            "name": "大浦教會",
+            "latitude": 32.734929,
+            "longitude": 129.8700393,
+            "applePlaceID": "IDD4FA4732AB27012",
+            "address": "〒850-0931, 長崎県長崎市, 南山手町2-18",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；遊記只喺外面影相",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "由哥拉巴園落山步行約 10 分鐘"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "午餐：長崎新地中華街（新地中華街）",
+          "start": "12:40",
+          "end": "13:40",
+          "category": "dining",
+          "place": {
+            "name": "長崎新地中華街",
+            "latitude": 32.7417012,
+            "longitude": 129.8756011,
+            "applePlaceID": "I95158EC3722DC86E",
+            "address": "〒850-0842, 長崎県長崎市, 新地町10-13",
+            "addressIsApproximate": false
+          },
+          "notes": "各店營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "步行約 15 分鐘"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "長崎原爆資料館",
+          "start": "14:15",
+          "end": "15:35",
+          "category": "museum",
+          "place": {
+            "name": "長崎原爆資料館",
+            "latitude": 32.7725849,
+            "longitude": 129.8645474,
+            "applePlaceID": "IBCDCE060473CBA74",
+            "address": "〒852-8117, 長崎県長崎市, 平野町7-8",
+            "addressIsApproximate": false
+          },
+          "notes": "9 月至 4 月 08:30–17:30（最後入館 17:00），5 至 8 月至 18:30（最後入館 18:00）；12/29–12/31 休館；2026/09–2027/03 常設展部分暫停開放",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "步行到路面電車站，搭電車到浜口町約 15 分鐘（約 140 日圓，請確認），再步行"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "長崎和平公園・爆心地（平和公園）",
+          "start": "15:50",
+          "end": "16:30",
+          "category": "park",
+          "place": {
+            "name": "平和公園",
+            "latitude": 32.7758255,
+            "longitude": 129.8634034,
+            "applePlaceID": "ID03370EADD799C66",
+            "address": "〒852-8118",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "出咗資料館一直向前步行約 10 分鐘"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "稻佐山夜景（稲佐山展望台）",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "稻佐山",
+            "latitude": 32.7527,
+            "longitude": 129.8495,
+            "applePlaceID": "IE2A6A6ABE502618C",
+            "address": "〒852-8011, 長崎県長崎市, 稲佐町",
+            "addressIsApproximate": true
+          },
+          "notes": "纜車 09:00–22:00（第三方資料，請出發前確認）；展望台免費入場；日落時間按季節唔同，請自行調整呢一段嘅開始時間；強風或者惡劣天氣纜車可能停駛",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "搭路面電車或者巴士到淵神社站附近，步行到稻佐山纜車淵神社站，纜車約 5 分鐘；巴士班次少，請先查時間表；買來回票平啲，太夜纜車會停駛"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 150,
+            "durationSource": "user",
+            "note": "纜車落山，搭巴士或者電車到長崎站，搭新幹線同特急海鷗號返博多（約 1 小時 30–50 分鐘），再搭地鐵返天神；尾班車時間請先確認"
+          },
+          "images": [
+            "d2-06"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "福岡市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "柳川遊船（柳川川下り）",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "sight",
+          "place": {
+            "name": "柳川觀光遊船詢問處",
+            "latitude": 33.1596523,
+            "longitude": 130.3984069,
+            "applePlaceID": "I85FC89796B37BDF0",
+            "address": "〒832-0068, 福岡県柳川市, 城隅町18-9",
+            "addressIsApproximate": false
+          },
+          "notes": "松月乘船場 09:30–15:00，全年營運（官網）；冬季（12–2 月）係暖桌船；2 月中旬排水期間改行短程路線",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "步行到西鐵福岡（天神）站，搭西鐵特急約 50 分鐘到西鐵柳川站，再搭接駁巴士或者步行約 5–10 分鐘；使用西鐵太宰府柳川套票"
+          },
+          "todos": [
+            {
+              "text": "購買西鐵太宰府柳川套票",
+              "note": "官網 https://www.ensen24.jp/kippu/tc/dazaifu-yanagawa/ 可以網上買電子票，或者喺天神、藥院站櫃檯購買"
+            },
+            {
+              "text": "預訂柳川遊船",
+              "note": "官網 https://www.yanagawakk.co.jp/ 建議預訂；受理到 15:00，電話 0944-72-6177"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "午餐：一蘭拉麵 太宰府參道店（一蘭 太宰府参道店）",
+          "start": "13:00",
+          "end": "13:50",
+          "category": "dining",
+          "place": {
+            "name": "一蘭 太宰府參道店",
+            "latitude": 33.5190531,
+            "longitude": 130.5316896,
+            "applePlaceID": "I45C12655D5F294DD",
+            "address": "〒818-0117, 福岡県太宰府市, 宰府2丁目6-2",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "柳川落船後搭接駁巴士返西鐵柳川站，搭西鐵到二日市站轉乘太宰府線到太宰府站，約 1 小時"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "梅枝餅（梅ヶ枝餅）",
+          "start": "14:05",
+          "end": "14:25",
+          "category": "dessert",
+          "place": {
+            "name": "太宰府表參道梅枝餅店",
+            "latitude": 33.5178371,
+            "longitude": 130.5324315,
+            "address": "福岡県太宰府市宰府2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認；即日製作即日食用，保存期限約一日",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "喺表參道上步行"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "太宰府天滿宮（太宰府天満宮）",
+          "start": "14:45",
+          "end": "16:30",
+          "category": "temple",
+          "place": {
+            "name": "太宰府天滿宮",
+            "latitude": 33.5214755,
+            "longitude": 130.5348435,
+            "applePlaceID": "ID92BE18ADFBB28C5",
+            "address": "〒818-0195, 福岡県太宰府市, 宰府4丁目7-1",
+            "addressIsApproximate": false
+          },
+          "notes": "開門 06:30（春分日起 06:00）；閉門 9–11 月同 4–5 月 19:00、6–8 月 19:30、12–3 月 18:30；全年無休（官網）",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "沿表參道步行約 15 分鐘"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "天神地下街",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "shopping",
+          "place": {
+            "name": "福岡銀行天神地下街",
+            "latitude": 33.5911981,
+            "longitude": 130.3994536,
+            "applePlaceID": "I565EA2C4FA433D60",
+            "address": "〒810-0001, 福岡県中央区, 福岡市, 天神1丁目11番17号, 天神地下街東ー4・福岡ビル口中地階",
+            "addressIsApproximate": false
+          },
+          "notes": "商店 10:00–20:00、餐廳 10:00–21:00，部分店舖唔同（官網）；定休日請出發前確認",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "西鐵太宰府線到二日市轉乘到西鐵福岡（天神）站約 30–35 分鐘；套票必須返到福岡（天神）站先出閘"
+          },
+          "images": [
+            "d3-05"
+          ]
+        },
+        {
+          "key": "d3-06",
+          "title": "晚餐：博多宮崎牛（博多 みやちく）",
+          "start": "19:15",
+          "end": "20:30",
+          "category": "dining",
+          "place": {
+            "name": "博多Miyachiku",
+            "latitude": 33.5937392,
+            "longitude": 130.404962,
+            "applePlaceID": "I31CED493AB8B250F",
+            "address": "〒810-0801, 福岡県福岡市博多区, 中洲5丁目2番1号, ジェイパーク中洲ビル2F",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認（第三方資料顯示午餐 11:00–15:00、晚餐 17:00 起）",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "由天神步行約 20 分鐘，或者搭地鐵 1 站到中洲川端"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "地鐵中洲川端到天神 1 站約 3 分鐘，再步行到酒店"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "福岡市",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "門司港懷舊區同藍翼門司吊橋（門司港レトロ・ブルーウイングもじ）",
+          "start": "09:45",
+          "end": "11:15",
+          "category": "sight",
+          "place": {
+            "name": "門司港Retro",
+            "latitude": 33.9461413,
+            "longitude": 130.9630072,
+            "applePlaceID": "IB8EB6FE0A4781857",
+            "address": "〒801-0852, 福岡県北九州市門司区, 港町",
+            "addressIsApproximate": true
+          },
+          "notes": "吊橋每日開合 6 次（第三方資料列 10:00、11:00、13:00、14:00、15:00、16:00，請出發前確認）；開橋嗰陣可以睇橋面升起",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 95,
+            "durationSource": "user",
+            "note": "到博多站搭 JR 新幹線到小倉約 17–20 分鐘（JR 北九州周遊券唔包新幹線，遊記搭錯咗要補票 2,160 日圓），再轉 JR 鹿兒島本線到門司港約 15 分鐘；亦可以搭 JR 特急 Sonic 約 1 小時"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "門司港懷舊展望室（門司港レトロ展望室）",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "viewpoint",
+          "place": {
+            "name": "門司港Retro展望室",
+            "latitude": 33.94853,
+            "longitude": 130.9641574,
+            "applePlaceID": "I75C45BE9429A34EA",
+            "address": "〒801-0853, 福岡県北九州市門司区, 東港町1-32 門司港レトロハイマート",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00–22:00（最後入館 21:30），不定休（第三方資料，每年約 4 次休館），請出發前確認",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分鐘"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "午餐：門司港焗咖喱（焼きカレー）",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "門司港駅 タクシーのりば",
+            "latitude": 33.9448865,
+            "longitude": 130.962049,
+            "applePlaceID": "I9ADD2D39314D10C9",
+            "address": "〒801-0841",
+            "addressIsApproximate": true
+          },
+          "notes": "各店營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "步行"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "小倉城",
+          "start": "14:15",
+          "end": "15:30",
+          "category": "castle",
+          "place": {
+            "name": "小倉城",
+            "latitude": 33.8844402,
+            "longitude": 130.8742289,
+            "applePlaceID": "I34703FF158E11AF6",
+            "address": "〒803-0813, 福岡県北九州市小倉北区, 城内2-1",
+            "addressIsApproximate": false
+          },
+          "notes": "天守閣 09:00–18:00（官網）；休館日同最後入場請出發前確認",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "JR 門司港到小倉約 15 分鐘，再步行約 15 分鐘；入口喺小倉站外購物中心嗰邊"
+          },
+          "images": [
+            "d4-04"
+          ]
+        },
+        {
+          "key": "d4-05",
+          "title": "福岡軟銀鷹隊棒球賽（みずほPayPayドーム福岡）",
+          "start": "17:15",
+          "end": "21:00",
+          "category": "show",
+          "place": {
+            "name": "福岡Yafuoku Dome (福岡Dome)",
+            "latitude": 33.5952912,
+            "longitude": 130.3620958,
+            "applePlaceID": "IDDF234C6592D00E3",
+            "address": "〒810-0065，福岡県福岡市中央区，地行浜2丁目2-2",
+            "addressIsApproximate": false
+          },
+          "notes": "要配合賽程（官網例：平日主場 18:00 開賽），開賽時間同有冇比賽以官網為準；球賽約 3 小時",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "小倉搭新幹線返博多約 20 分鐘，地鐵機場線到唐人町站，再步行約 15 分鐘"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "地鐵唐人町站到天神約 6 分鐘；散場人多，可以步行到站慢慢行"
+          },
+          "todos": [
+            {
+              "text": "購買福岡軟銀鷹隊比賽門票（要配合賽程）",
+              "note": "官網 https://www.softbankhawks.co.jp/ 先確認第 4 日晚上有冇主場賽；現場都買到票，座位可以先喺官網睇座位圖"
+            }
+          ],
+          "images": [
+            "d4-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "福岡市",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "退房並寄存行李：福岡天神一帶酒店",
+          "start": "09:00",
+          "end": "09:20",
+          "category": "hotel",
+          "place": {
+            "name": "天神",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "notes": "請向櫃檯確認寄存行李時間",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "同一幢"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "住吉神社",
+          "start": "10:00",
+          "end": "11:00",
+          "category": "temple",
+          "place": {
+            "name": "住吉神社",
+            "latitude": 33.5859073,
+            "longitude": 130.4136965,
+            "address": "福岡県福岡市博多区住吉3丁目1-51",
+            "addressIsApproximate": false
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "步行約 25 分鐘；亦可以搭巴士或者地鐵再步行"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "櫛田神社",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "temple",
+          "place": {
+            "name": "櫛田神社",
+            "latitude": 33.5929732,
+            "longitude": 130.4105131,
+            "applePlaceID": "ID7A9C3758718EF9A",
+            "address": "〒812-0026, 福岡県福岡市博多区, 上川端町1-41",
+            "addressIsApproximate": false
+          },
+          "notes": "參拜時間 04:00–22:00（第三方旅遊網站，非官方，請出發前確認）；展示博多祇園山笠神轎",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "步行約 20 分鐘，途經博多運河城"
+          },
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "午餐：博多站附近",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行約 10 分鐘到博多站"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "博多站買手信（博多駅）",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "station",
+          "place": {
+            "name": "博多",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "各店營業時間請出發前確認",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "站內步行"
+          }
+        },
+        {
+          "key": "d5-06",
+          "title": "返酒店攞行李：福岡天神一帶酒店",
+          "start": "15:00",
+          "end": "15:15",
+          "category": "hotel",
+          "place": {
+            "name": "天神",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "地鐵博多到天神約 5 分鐘，再步行到酒店"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "福岡機場離境（福岡空港）",
+          "start": "16:15",
+          "end": "17:45",
+          "category": "airport",
+          "place": {
+            "name": "福岡機場",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          },
+          "notes": "航班時間按實際機票調整，國際線建議起飛前 2 小時抵達",
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "地鐵機場線天神到國內線客運大樓約 11 分鐘，再搭免費接駁巴士到國際線約 10 分鐘（車費約 260 日圓，請出發前確認）"
+          }
+        }
+      ]
+    }
+  ]
+}

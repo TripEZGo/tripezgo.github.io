@@ -1,0 +1,805 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kumamoto-aso-3d",
+  "revision": 3,
+  "contentLocale": "ko",
+  "title": "구마모토·아소 3일｜구마모토성·아소·스이젠지",
+  "subtitle": "구마모토성, 아소 당일 투어, 스이젠지. 아소구마모토 공항 인/아웃",
+  "summary": "구마모토 3일: 구마모토성, 스이젠지 조주엔, 시내 맛집에 가운데 하루는 아소 당일 투어를 넣었어요. 안내에는 대중교통으로 직접 가는 방법도 실었습니다. 나카다케 분화구는 경계 단계에 따라 가까이 못 갈 수 있고, 당일 투어 일정도 그날 바뀔 수 있어요. 숙소는 노면전차 타기 편한 도리초스지·시모토리 일대로 잡았습니다.",
+  "destination": "일본 구마모토・아소",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 3,
+  "coverColour": "red",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "둘이서",
+    "첫 방문",
+    "당일 투어",
+    "자연"
+  ],
+  "todos": [
+    {
+      "text": "Visit Japan Web 등록(입국 심사·세관 신고)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 항공권과 숙소 예약이 끝나면 바로 작성할 수 있어요"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kumamoto-aso-3d/d1-03.jpg",
+    "d2-02": "images/jp-kumamoto-aso-3d/d2-02.jpg",
+    "d2-03": "images/jp-kumamoto-aso-3d/d2-03.jpg",
+    "d2-04": "images/jp-kumamoto-aso-3d/d2-04.jpg",
+    "d3-01": "images/jp-kumamoto-aso-3d/d3-01.jpg",
+    "d3-04": "images/jp-kumamoto-aso-3d/d3-04.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "숙박: 구마모토 시내 중심(도리초스지·시모토리 일대)",
+      "fromDay": 1,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "도리초스지",
+        "latitude": 32.8029362,
+        "longitude": 130.7111486,
+        "applePlaceID": "IBE2A5C0EDC247D00",
+        "address": "熊本県熊本市中央区, 上通町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3
+      ],
+      "closingDays": [
+        1,
+        2
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "대체: 구마모토 시청 14층 전망 복도 (熊本市役所)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "구마모토 시청",
+        "latitude": 32.8032049,
+        "longitude": 130.7080236,
+        "applePlaceID": "IE798B2B4DB566952",
+        "address": "〒860-8601",
+        "addressIsApproximate": true
+      },
+      "notes": "영업시간은 출발 전에 확인. 여행기에 따르면 무료로 구마모토성을 내려다볼 수 있음. 연초 연휴 휴무"
+    },
+    {
+      "key": "u-02",
+      "title": "대체: 가토 신사 (加藤神社)",
+      "durationMinutes": 60,
+      "category": "temple",
+      "place": {
+        "name": "가토 신사",
+        "latitude": 32.807117,
+        "longitude": 130.7053761,
+        "applePlaceID": "I831099B0902FAA97",
+        "address": "〒860-0002, 熊本県熊本市中央区, 本丸2-1",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인. 여행기에 따르면 구마모토성에서 걸어서 약 20분, 오르막길이 있고 뒤쪽에서 구마모토성이 보임"
+    },
+    {
+      "key": "u-03",
+      "title": "대체: 루피 동상 (ルフィ像)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "구마모토 현청",
+        "latitude": 32.7898029,
+        "longitude": 130.7415739,
+        "applePlaceID": "I9D3D945CF9ABD15A",
+        "address": "〒862-0950, 熊本県熊本市中央区, 水前寺6丁目18-1",
+        "addressIsApproximate": false
+      },
+      "notes": "영업시간은 출발 전에 확인. 구마모토 현청 앞에 있음"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "자료 출처와 확인",
+      "paragraphs": [
+        {
+          "text": "원문 여행기",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "확인(2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "아소구마모토 공항에서 시내까지 버스와 택시(시간, 요금): https://www.kumamoto-airport.co.jp/en/access/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "리무진 버스 운행 편수와 시간표 변경 공지: https://www.sankobus.jp/bus/ap-limousine/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "구마모토성(9:00–17:00, 12/29 휴무, 800엔, 3관 통합 1,100엔): https://castle.kumamoto-guide.jp/en/info/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "스이젠지 조주엔(8:30–17:00, 연중무휴, 500엔): https://suizenji.or.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "구마몬 스퀘어(10:00–19:00, 2026/11 공연 캘린더): https://kumamon-land.jp/squares/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "아소 나카다케 분화구(경계 단계 2, 여름철 개방 8:30–18:00): https://aso-volcano.jp/ , https://www.aso-visitorcenter.com/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "아소 신사(오후다 판매소 9:00–17:00, 누문 복구 완료): https://www.asojinja.or.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "사쿠라마치 구마모토(상점 10:00–20:00, 식당 10:00–22:00): https://www.sakuramachi-kumamoto.jp/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "아소산 정상선, 아소 등산선, 아소산 분화구 셔틀 노선 이름: https://www.sankobus.jp/bus/aso/ (확인 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 자료로 확인하지 못한 것, 출발 전에 확인하세요",
+          "style": "heading"
+        },
+        {
+          "text": "아소 나카다케 분화구의 겨울철 개방 시간과 당일 출입 가능 여부, 당일 투어의 일정 세부와 가격.",
+          "style": "bullet"
+        },
+        {
+          "text": "쓰루야 백화점, 쇼레이테이 신시가이 본점, 아뮤 플라자 구마모토, 아소 신사 경내 개방 시간, 구사센리 식당, 구마모토 시청 전망 복도, 가토 신사, 루피 동상의 영업시간.",
+          "style": "bullet"
+        },
+        {
+          "text": "리무진 버스 각 편의 실제 시각과 요금(공식 사이트의 요금 페이지를 읽을 수 없어 공항 공식 사이트의 2026년 자료를 사용).",
+          "style": "bullet"
+        },
+        {
+          "text": "구마모토현 내 버스와 전철이 교통 IC 카드를 받는지: 여행기 2024-11 업데이트는 현금만 가능이라고 했고, 공식 자료로는 따로 확인하지 않음.",
+          "style": "bullet"
+        },
+        {
+          "text": "달라진 점과 취사선택",
+          "style": "heading"
+        },
+        {
+          "text": "이 템플릿은 여행기의 구마모토와 아소 구간(5일차 후반부터 10일차)만 가져왔고, 후쿠오카 구간은 별도 템플릿이 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기는 첫날 JR로 후쿠오카에서 왔지만 이 템플릿은 아소구마모토 공항 인/아웃으로 바꿨습니다. 여행기에서 구마모토 5일이던 것을 3일로 압축했어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 작성자는 버스와 JR로 직접 아소에 올랐지만, 이 템플릿은 규칙에 따라 당일 투어 참가로 바꾸고 안내에 대중교통 대안을 적었습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "나카다케는 경계 단계에 따라 분화구 가장자리까지 못 갈 수 있고, 당일 투어도 그날 일정이 바뀔 수 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "당일 투어와 공항 왕복의 이동 시간 비중은 보통의 30%를 넘습니다. 아소까지의 거리 때문이에요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 자료",
+          "style": "heading"
+        },
+        {
+          "text": "숙소는 지역만 표기: 여행기 작성자는 스이젠지의 호텔에 묵었지만 평가가 좋지 않아, 구마모토성까지 노면전차 타기 편한 도리초스지·시모토리 일대로 적었습니다.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "출발 전 안내",
+      "paragraphs": [
+        {
+          "text": "입국과 인터넷",
+          "style": "heading"
+        },
+        {
+          "text": "출발 전에 Visit Japan Web에서 입국 심사와 세관 신고를 등록하세요: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "인터넷은 물리 SIM이나 eSIM을 쓸 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "공항에서 시내로",
+          "style": "heading"
+        },
+        {
+          "text": "아소구마모토 공항에서 리무진 버스(규슈산코): 사쿠라마치 버스터미널까지 특급 약 45분, 일반편 약 50분, 구마모토역까지 약 60–65분, 스이젠지코엔마에까지 약 35분. 사쿠라마치와 구마모토역은 요금 약 1,400엔, 스이젠지코엔마에는 약 1,000엔.",
+          "style": "bullet"
+        },
+        {
+          "text": "공식 사이트에는 하루 특급 약 31편, 구마모토역 노선 41편이 나오고 2026/11/01부터 시간표가 바뀐다고 공지되어 있으니 출발 전에 최신 시간표를 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "택시는 구마모토역까지 약 45분·약 6,100엔, 사쿠라마치까지 약 40분·약 5,700엔(공식 추정치, 통행료 별도).",
+          "style": "bullet"
+        },
+        {
+          "text": "버스는 지연될 수 있어요. 여행기에는 2023년에 10분 가까이 늦게 도착한 기록이 있습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "구마모토 시내 교통",
+          "style": "heading"
+        },
+        {
+          "text": "시내는 노면전차와 버스가 중심입니다. 여행기 2024년 업데이트에 따르면 구마모토현 내 여러 버스 회사와 구마모토 전철은 더 이상 Suica 같은 교통 IC 카드를 받지 않으니, 엔화 현금을 준비하고 현황을 먼저 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "버스는 대부분 뒷문 승차·앞문 하차로, 정리권을 뽑고 내릴 때 번호에 맞는 요금을 냅니다. 거스름돈은 주지 않으니 차 안에서 잔돈으로 바꾸세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "아소 당일 투어",
+          "style": "heading"
+        },
+        {
+          "text": "여러 여행사가 구마모토 출발 이 당일 투어를 운영합니다(아소 나카다케, 구사센리, 아소 신사 일대 포함). 출발 전에 일정, 집합 장소, 점심 포함 여부를 비교하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "아소 나카다케 분화구는 화산 경계 단계에 따라 출입이 제한됩니다. 공식 사이트에는 2026/09 경계가 2단계이고 분화구 1km 이내는 출입 금지였어요. 분화구 가장자리에 갈 수 있는지는 출발 전에 https://aso-volcano.jp/ 에서 확인하세요. 못 갈 때는 당일 투어가 보통 멀리서 바라보는 것으로 바뀝니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "대중교통으로 직접 가는 방법: 구마모토 교통센터(사쿠라마치 버스터미널)에서 규슈산코 '아소산 정상선'을 타고 아소산 정상 터미널까지 간 뒤, '아소산 분화구 셔틀'로 갈아타고 분화구로. 또는 JR 호히 본선으로 아소역까지 가서 '아소 등산선' 버스로 산에 오르세요. 배차와 요금은 규슈산코 공식 사이트 https://www.sankobus.jp/ 에서 확인하세요.",
+          "style": "bullet"
+        },
+        {
+          "text": "여행기 작성자의 경우: 아소역에서 산 정상까지 약 40분, 구사센리는 가는 길에 있음. 돌아올 때는 JR 보통열차로 구마모토까지 약 1시간 45분, 배차가 적어 놓치면 한 시간을 기다릴 수도 있음. 아소는 작은 역이라 JR 역 안에서는 전자 결제가 안 될 수 있어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "예약과 시간",
+          "style": "heading"
+        },
+        {
+          "text": "당일 투어는 출발 며칠 전에 예약하는 것이 좋아요.",
+          "style": "bullet"
+        },
+        {
+          "text": "구마몬 스퀘어 공연 시각은 매달 다르고 화요일은 공연이 없습니다. 공식 사이트 캘린더를 보고 3일차 순서를 정하세요: https://kumamon-land.jp/squares/",
+          "style": "bullet"
+        },
+        {
+          "text": "구마모토성 입장권은 사쿠라노바바 조사이엔에서 미리 살 수 있어 천수각 입구의 혼잡을 피할 수 있습니다. 천수각에는 캐리어를 가지고 들어갈 수 없어요.",
+          "style": "bullet"
+        },
+        {
+          "text": "기타",
+          "style": "heading"
+        },
+        {
+          "text": "엔화 현금을 넉넉히 준비하세요. 일부 작은 가게, 버스, 작은 역은 카드를 받지 않습니다.",
+          "style": "bullet"
+        },
+        {
+          "text": "구마모토성의 일부 건물은 아직 복구 중입니다. 천수각은 복구를 마치고 개방 중이에요.",
+          "style": "bullet"
+        },
+        {
+          "text": "3일차 마지막 공항 시각은 실제 항공편에 맞춰 조정하세요. 여행기에는 2023년에 국제선 카운터가 출발 약 2시간 전에야 열렸고, 3층 식당은 보안 검색 이후·출국 이전에 있었다고 적혀 있습니다.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "여행 개요: 구마모토·아소 3일 코스",
+      "paragraphs": [
+        {
+          "image": "d1-03"
+        },
+        "아소구마모토 공항으로 들어가 같은 공항으로 나오고, 3박 모두 구마모토 시내 중심에서 묵습니다. 시내는 노면전차와 도보로, 아소는 당일 투어라 운전할 필요가 없습니다.",
+        "1일차: 낮에 공항에 도착해 리무진 버스로 시내로 이동, 점심은 시모토리 일대의 구마모토 라멘, 오후에는 {@d1-03}, 저녁에는 쓰루야 백화점에서 구마모토 곰 굿즈, 밤에는 시모토리 이자카야에서 말고기 회와 가라시 렌콘.",
+        {
+          "image": "d2-02"
+        },
+        "2일차: 당일 투어로 아소에 올라 아소 나카다케 분화구와 구사센리가하마를 보고, {@d2-04}와 몬젠마치 상점가를 둘러봅니다. 구마모토로 돌아와 역의 아뮤 플라자에서 저녁.",
+        {
+          "image": "d3-01"
+        },
+        "3일차: 오전에 {@d3-01}, 이어서 구마몬 스퀘어 무대 공연, 점심은 쇼레이테이의 돈카츠, 오후에는 사쿠라마치 옥상 정원에서 쉰 뒤 저녁에 버스로 공항으로 갑니다.",
+        "숙소: 3박 모두 구마모토 시내 중심의 도리초스지·시모토리 일대. 노면전차로 구마모토성에 가기 쉽고 저녁 식사와 쇼핑 장소도 가깝습니다.",
+        "교통 포인트: 공항과 시내 사이는 리무진 버스로 내리는 정류장에 따라 약 35~65분 걸립니다. 시내는 노면전차와 버스가 중심이며, 교통 IC 카드를 받지 않는 버스도 있으니 일본 엔 현금을 넉넉히 준비하세요. 아소 당일 투어는 며칠 전에 예약하세요. 분화구 가장자리까지 갈 수 있는지는 그날의 화산 경계 단계에 달려 있습니다. 출발 전에 최신 시간표를 확인하세요.",
+        "이런 분께: 운전 없이 3일 동안 구마모토성, 구마몬, 아소 화산을 한꺼번에 둘러보고 싶은 분. 혼자나 소규모로도 좋고, 시내는 걷는 거리가 짧은 편이며 아소 날은 버스 이동이 깁니다."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "구마모토 곰 굿즈 (くまモングッズ)",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "사쿠라마치 구마모토 2층, 쓰루야 백화점 주변 매장, 구마모토현 특산품관"
+    },
+    {
+      "key": "s-02",
+      "title": "구마몬 다이후쿠",
+      "category": "souvenir",
+      "productType": "wagashi",
+      "store": "사쿠라마치 구마모토"
+    },
+    {
+      "key": "s-03",
+      "title": "구마모토산 딸기주",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "구마모토역 아뮤 플라자 구마모토"
+    },
+    {
+      "key": "s-04",
+      "title": "구마모토 지역 사케",
+      "category": "food",
+      "productType": "bottled_alcohol",
+      "store": "쓰루야 백화점 지하 식품관"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "구마모토시",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "구마모토시",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "구마모토시",
+      "latitude": 32.80589,
+      "longitude": 130.69181,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "구마모토시",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "아소구마모토 공항 도착 (阿蘇くまもと空港)",
+          "start": "11:00",
+          "end": "12:00",
+          "category": "airport",
+          "place": {
+            "name": "구마모토 공항(아소구마모토 공항)",
+            "latitude": 32.8346902,
+            "longitude": 130.8590123,
+            "applePlaceID": "I2B58A48AF4EC0EEA",
+            "address": "〒861-2204, 熊本県上益城郡益城町, 小谷1802-2",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "점심: 시모토리 일대(구마모토 라멘)",
+          "start": "13:20",
+          "end": "14:20",
+          "category": "dining",
+          "place": {
+            "name": "시모토리 상점가 일대 라멘집",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "공항 리무진 버스(특급)로 사쿠라마치 버스터미널까지 약 45분, 일반편은 약 50분, 약 1,400엔. 거기서 시모토리까지 도보 약 10분"
+          },
+          "todos": [
+            {
+              "text": "공항 리무진 버스 최신 시간표 확인",
+              "note": "https://www.sankobus.jp/bus/ap-limousine/ 2026/11/01부터 시간표 변경"
+            }
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "구마모토성 (熊本城): 천수각과 사쿠라노바바 조사이엔",
+          "start": "15:10",
+          "end": "16:50",
+          "category": "castle",
+          "place": {
+            "name": "구마모토성",
+            "latitude": 32.8061302,
+            "longitude": 130.7058477,
+            "applePlaceID": "IB6C8BF152D7893CA",
+            "address": "〒860-0002, 熊本県熊本市中央区, 本丸1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–17:00(공원 마지막 입장 16:00, 천수각 마지막 입장 16:30). 12/29 휴무",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "도보 약 20분, 또는 노면전차로 구마모토성·시야쿠쇼마에역까지 가서 도보. 조사이엔에서 표를 미리 사면 천수각 입구의 혼잡을 피할 수 있음"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "쓰루야 백화점 (鶴屋百貨店): 구마모토 곰 굿즈와 지하 식품관",
+          "start": "17:30",
+          "end": "18:30",
+          "category": "shopping",
+          "place": {
+            "name": "쓰루야 백화점",
+            "latitude": 32.8023754,
+            "longitude": 130.7110398,
+            "applePlaceID": "I996FD5224AC14B45",
+            "address": "〒860-0808, 熊本県熊本市中央区, 手取本町6-1",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "노면전차로 구마모토성·시야쿠쇼마에역에서 도리초스지역까지 약 10분(도보와 대기 포함)"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "저녁: 시모토리 일대 이자카야(구마모토 말고기 회, 가라시 렌콘)",
+          "start": "19:00",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "시모토리 일대 이자카야",
+            "latitude": 32.8013708,
+            "longitude": 130.7082847,
+            "address": "熊本県熊本市中央区下通1丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분. 말고기는 구마모토 명물이니 못 먹으면 다른 요리로"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "구마모토시",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "당일 투어 참가: 집합·출발(구마모토→아소)",
+          "start": "09:00",
+          "end": "09:15",
+          "category": "transport",
+          "place": {
+            "name": "당일 투어 집합 장소(여행사 안내에 따름)",
+            "latitude": 32.7887502,
+            "longitude": 130.6881132,
+            "address": "熊本県熊本市西区春日3丁目15",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "노면전차나 도보로 집합 장소까지. 집합 장소는 고른 투어에 따라 다름"
+          },
+          "todos": [
+            {
+              "text": "아소 당일 투어 예약",
+              "note": "여러 여행사가 운영해요. 집합 장소와 점심 포함 여부를 비교해서 며칠 전에 예약"
+            }
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "당일 투어: 아소 나카다케 분화구 (阿蘇中岳火口)",
+          "start": "10:45",
+          "end": "11:45",
+          "category": "mountain",
+          "place": {
+            "name": "아소 나카다케 분화구",
+            "latitude": 32.8829803,
+            "longitude": 131.0837699,
+            "applePlaceID": "IAB4F7F79B7CD452A",
+            "address": "〒869-2225, 熊本県阿蘇市, 黒川808-5",
+            "addressIsApproximate": false
+          },
+          "notes": "여름철(3/20–10/31) 8:30–18:00, 게이트는 17:30에 닫음. 겨울철 시간은 출발 전에 확인. 화산 경계나 가스 농도가 높으면 분화구 주변은 출입 제한",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "driving",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "투어 버스로 구마모토에서 아소산 정상까지 약 1시간 15분. 먼저 구사센리를 지나 산 위로 올라감"
+          },
+          "todos": [
+            {
+              "text": "출발 전에 아소 나카다케 분화구 출입 가능 여부 확인",
+              "note": "https://aso-volcano.jp/ 화산 경계 단계와 가스 농도에 따라 분화구 주변 개방이 달라져요"
+            }
+          ],
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "당일 투어: 구사센리가하마 (草千里ヶ浜)와 점심",
+          "start": "12:10",
+          "end": "13:30",
+          "category": "viewpoint",
+          "place": {
+            "name": "구사센리가하마",
+            "latitude": 32.8830677,
+            "longitude": 131.0527771,
+            "applePlaceID": "I32739B7CA93978E0",
+            "address": "〒869-1404，熊本県阿蘇市，草千里ヶ浜",
+            "addressIsApproximate": true
+          },
+          "notes": "종일 개방. 점심 장소는 일정에 따름. 영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "투어 버스로 약 10분. 고원 초원에서 승마 체험 가능(유료)"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "당일 투어: 아소 신사 (阿蘇神社)와 몬젠마치 상점가",
+          "start": "14:15",
+          "end": "15:45",
+          "category": "temple",
+          "place": {
+            "name": "아소 신사",
+            "latitude": 32.947986,
+            "longitude": 131.116113,
+            "applePlaceID": "IA26CD6FD0F19EA9C",
+            "address": "〒869-2612, 熊本県阿蘇市, 一の宮町宮地3083-1",
+            "addressIsApproximate": false
+          },
+          "notes": "경내 개방 시간은 출발 전에 확인. 오후다(부적 판매소) 9:00–17:00",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "투어 버스로 약 30분. 참배 후 참배길에서 간식 구경"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "구마모토역 아뮤 플라자 구마모토 (アミュプラザくまもと) 저녁과 히고 시장",
+          "start": "17:45",
+          "end": "19:45",
+          "category": "shopping",
+          "place": {
+            "name": "아뮤 플라자 구마모토",
+            "latitude": 32.7887053,
+            "longitude": 130.6888303,
+            "applePlaceID": "IFC0031666C9C8550",
+            "address": "〒860-0047",
+            "addressIsApproximate": true
+          },
+          "notes": "영업시간은 출발 전에 확인",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "driving",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "투어 버스로 구마모토까지 돌아오는 데 약 1시간 25분, 대부분 구마모토역 일대에서 하차. 투어가 끝나면 아뮤 플라자까지 도보"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "구마모토시",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "스이젠지 조주엔 (水前寺成趣園): 이즈미 신사",
+          "start": "09:00",
+          "end": "10:15",
+          "category": "park",
+          "place": {
+            "name": "스이젠지 조주엔",
+            "latitude": 32.7908282,
+            "longitude": 130.7351375,
+            "applePlaceID": "I1F8F63642EEF0314",
+            "address": "〒862-0956, 熊本県熊本市, 水前寺公園8-1",
+            "addressIsApproximate": false
+          },
+          "notes": "8:30–17:00(마지막 입장 16:30), 연중무휴. 입장료 500엔",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "노면전차로 스이젠지코엔역까지 약 20–25분, 거기서 도보 약 5분"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "구마몬 스퀘어 (くまモンスクエア): 무대 공연",
+          "start": "11:15",
+          "end": "12:15",
+          "category": "show",
+          "place": {
+            "name": "구마몬 스퀘어",
+            "latitude": 32.8019121,
+            "longitude": 130.7124031,
+            "applePlaceID": "IEF206FB2463DBE22",
+            "address": "〒860-0808, 熊本県熊本市中央区, 手取本町8-2, テトリアくまもとビル 1階",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00–19:00. 공연 시각은 공식 사이트 캘린더에 따르며 주말은 11:30, 평일은 14:00이 많고 화요일은 공연 없음(2026/11 공식 사이트 정보)",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "노면전차로 스이젠지코엔역에서 가라시마초나 스이도초까지 가서 도보. 쓰루야 백화점 바로 옆"
+          },
+          "todos": [
+            {
+              "text": "구마몬 스퀘어 공연 시각 확인(화요일은 공연 없음)",
+              "note": "공식 사이트 캘린더 https://kumamon-land.jp/squares/ 공연 시간에 맞춰 3일차 순서를 조정"
+            }
+          ]
+        },
+        {
+          "key": "d3-03",
+          "title": "점심: 쇼레이테이 신시가이 본점 (勝烈亭 新市街本店) 돈카츠",
+          "start": "12:40",
+          "end": "13:40",
+          "category": "dining",
+          "place": {
+            "name": "쇼레이테이 신시가이 본점",
+            "latitude": 32.7986401,
+            "longitude": 130.7058016,
+            "applePlaceID": "I222583EFB7CCE9DC",
+            "address": "〒860-0803, 熊本県熊本市中央区, 新市街8-18",
+            "addressIsApproximate": false
+          },
+          "notes": "영업시간은 출발 전에 확인. 여행기에 따르면 밥·차·국·양배추 리필 가능",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분, 시모토리 상점가를 지나서"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "사쿠라마치 구마모토 (サクラマチクマモト): 옥상 정원과 구마모토 곰 굿즈",
+          "start": "14:05",
+          "end": "15:50",
+          "category": "shopping",
+          "place": {
+            "name": "사쿠라마치 구마모토",
+            "latitude": 32.8002618,
+            "longitude": 130.703246,
+            "applePlaceID": "I27890492F38FBECC",
+            "address": "〒860-0805, 熊本県熊本市中央区, 桜町3-10",
+            "addressIsApproximate": false
+          },
+          "notes": "상점 10:00–20:00, 식당 10:00–22:00. 매장마다 다름",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "도보 약 10분. 2층에 구마모토 곰 굿즈, 옆에 구마모토현 특산품관"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "아소구마모토 공항 출국 (阿蘇くまもと空港)",
+          "start": "16:40",
+          "end": "18:40",
+          "category": "airport",
+          "place": {
+            "name": "구마모토 공항(아소구마모토 공항)",
+            "latitude": 32.8346902,
+            "longitude": 130.8590123,
+            "applePlaceID": "I2B58A48AF4EC0EEA",
+            "address": "〒861-2204, 熊本県上益城郡益城町, 小谷1802-2",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "공항 리무진 버스로 사쿠라마치 버스터미널에서 공항까지, 특급 약 45분, 일반편 약 50분, 약 1,400엔. 실제 항공편에 맞추고 체크인과 보안 검색 시간을 넉넉히 잡을 것"
+          }
+        }
+      ]
+    }
+  ]
+}

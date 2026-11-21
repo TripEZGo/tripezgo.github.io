@@ -1,0 +1,1166 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-okinawa-drive-5d",
+  "revision": 3,
+  "contentLocale": "zh-Hans",
+  "title": "冲绳自驾 5 日｜美丽海・恩纳・北谷・那霸",
+  "subtitle": "那霸机场取还车，住北谷、恩纳与那霸，美丽海水族馆与玉泉洞",
+  "summary": "五天冲绳自驾：北谷住一晚、恩纳住一晚、那霸住两晚，走美丽海水族馆、玉泉洞与海边。须知写了台湾驾照加日文译本的租车规定、日本与冲绳开车规则、机场进出市区与季节提醒。北谷日落海滩、万座毛与居酒屋放在备选。",
+  "destination": "日本 冲绳",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "teal",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "双人",
+    "初访",
+    "自驾",
+    "海岛"
+  ],
+  "todos": [
+    {
+      "text": "登录 Visit Japan Web（入境审查与海关申报）",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 机票与订房完成后即可填写"
+    }
+  ],
+  "images": {
+    "d1-05": "images/jp-okinawa-drive-5d/d1-05.jpg",
+    "d2-01": "images/jp-okinawa-drive-5d/d2-01.jpg",
+    "d2-03": "images/jp-okinawa-drive-5d/d2-03.jpg",
+    "d2-05": "images/jp-okinawa-drive-5d/d2-05.jpg",
+    "d3-03": "images/jp-okinawa-drive-5d/d3-03.jpg",
+    "d5-02": "images/jp-okinawa-drive-5d/d5-02.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "住宿：北谷（美国村周边）连住 1 晚",
+      "fromDay": 1,
+      "toDay": 2,
+      "category": "lodging",
+      "place": {
+        "name": "美滨美国村",
+        "latitude": 26.315892,
+        "longitude": 127.7540097,
+        "applePlaceID": "I5D8B83A65A512700",
+        "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2
+      ],
+      "closingDays": [
+        1
+      ]
+    },
+    {
+      "key": "ad2-02",
+      "title": "住宿：恩纳村周边连住 1 晚",
+      "fromDay": 2,
+      "toDay": 3,
+      "category": "lodging",
+      "place": {
+        "name": "恩纳村公所",
+        "latitude": 26.4972582,
+        "longitude": 127.8536835,
+        "applePlaceID": "I751A7DBA455D4A02",
+        "address": "〒904-0411, 沖縄県国頭郡恩納村, 恩納2451",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        3
+      ],
+      "closingDays": [
+        2
+      ]
+    },
+    {
+      "key": "ad3-03",
+      "title": "住宿：那霸国际通周边连住 2 晚",
+      "fromDay": 3,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "牧志站前",
+        "latitude": 26.2172382,
+        "longitude": 127.6924535,
+        "applePlaceID": "I5D7964AF52104406",
+        "address": "沖縄県那覇市, 牧志",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        4,
+        5
+      ],
+      "closingDays": [
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "备选：北谷日落海滩（北谷サンセットビーチ）",
+      "durationMinutes": 60,
+      "category": "beach",
+      "place": {
+        "name": "北谷公园日落海滩商店",
+        "latitude": 26.3148718,
+        "longitude": 127.7549454,
+        "applePlaceID": "ID337B2091332A6FD",
+        "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜2",
+        "addressIsApproximate": false
+      },
+      "notes": "游记提到美国村烟火的最佳观看位置在北谷日落步道一带；营业时间请出发前确认"
+    },
+    {
+      "key": "u-02",
+      "title": "备选：万座毛",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "SHOP MANZAMO",
+        "latitude": 26.503949,
+        "longitude": 127.850873,
+        "applePlaceID": "I4288C70B8C0B50BB",
+        "address": "沖縄県国頭郡恩納村, 恩納",
+        "addressIsApproximate": true
+      },
+      "notes": "恩纳村的象鼻岩海岸；游记没有，范本新增的备选；营业时间请出发前确认"
+    },
+    {
+      "key": "u-03",
+      "title": "备选：居酒屋 なかむら家",
+      "durationMinutes": 60,
+      "category": "dining",
+      "place": {
+        "name": "なかむら家",
+        "latitude": 26.2159698,
+        "longitude": 127.6821636,
+        "applePlaceID": "ICA3891BE7AB3D242",
+        "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目15 1F",
+        "addressIsApproximate": false
+      },
+      "notes": "游记晚餐，国际通停车场附近，只收现金；营业时间请出发前确认"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "资料来源与查证",
+      "paragraphs": [
+        {
+          "text": "来源游记",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/2cbc121a1b7c/",
+          "style": "bullet"
+        },
+        {
+          "text": "查证（2026-11-17）",
+          "style": "heading"
+        },
+        {
+          "text": "玉泉洞（冲绳世界）：成人 ¥2,000（官网费用页）；营业约 9:00–17:30、最后入场多为 16:00（第三方整理，各来源不一致，请出发前确认）：https://en.gyokusendo.co.jp/okinawaworld/?p=635 （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "CAVE OKINAWA：一般 9:00–17:30（最终受付 17:00）；2026/7/1–9/23 特别营业 9:00–18:30（最终受付 18:00）；年中无休；成人 ¥1,200，住所 うるま市石川嘉手苅479-1（官方简介 PDF 与搜寻结果）：https://www.cave.okinawa/wp-content/themes/cave/img/pdf/panf_jp.pdf （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "冲绳美丽海水族馆：一般 8:30–18:30（最后入馆 17:30），夏季延长，成人 ¥2,180、12 月第一个周三与隔日休馆（第三方整理，官方页面未能取得，请出发前确认）：https://churaumi.okinawa/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "Churasun 6 冲绳：1 部 20:30 开演（20:00 开场）、2 部 22:30 开演；票价 ¥6,500 起含一杯饮料；未满 20 岁不可入场；地址那霸市松山1-5-1 ナムラプラザビル2F（官网）：https://www.churasun6.com/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "RYUKYU BEACH CLUB：恩纳村濑良垣，9:00–19:30，餐点最后点餐 18:00、饮料 19:00（HotPepper 刊载）：https://www.hotpepper.jp/strJ004469320/ （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "台湾驾照日文译本与入境后一年效期：https://www.roc-taiwan.org/uploads/sites/54/2026/07/臺灣駕照之日文譯本申請表-橫濱20260721.pdf （查证 2026-11-17）",
+          "style": "bullet"
+        },
+        {
+          "text": "未能从官方确认，请出发前确认",
+          "style": "heading"
+        },
+        {
+          "text": "潜水员牛排的营业时间与确切位置（游记写 10:30 开始营业、在许田 IC 下），未能确认。",
+          "style": "bullet"
+        },
+        {
+          "text": "波上宫、美国村、PARCO CITY 浦添、ASHIBINAA、濑长岛、Blue Seal、玉家、阿古猪涮涮锅、琉球的牛、神德拉面、柏青哥店的营业时间。",
+          "style": "bullet"
+        },
+        {
+          "text": "美丽海水族馆与玉泉洞的最新营业时间与休馆日、国际通周边酒店停车位。",
+          "style": "bullet"
+        },
+        {
+          "text": "国道 58 号公交车优先车道时段、台湾国际驾照在日本是否有效，请向监理站与租车公司确认。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "出发前须知",
+      "paragraphs": [
+        {
+          "text": "驾照与租车（台湾旅客）",
+          "style": "heading"
+        },
+        {
+          "text": "台湾旅客在日本开车，需要台湾驾照正本加日文译本，两者要一起带；多份第三方整理指出台湾核发的国际驾照在日本无效，请向监理站确认。",
+          "style": "bullet"
+        },
+        {
+          "text": "日文译本：到全国任一监理所或监理站临柜申请，多份第三方整理写每份约 NT$100、现场约 1 小时领件；已在日本时可向驻日代表处（约 3 至 7 个工作天）或 JAF 申请。",
+          "style": "bullet"
+        },
+        {
+          "text": "驻横滨代表处 2026 年 7 月申请表载明：持台湾驾照及日文译本开车的期间，限于入境日本后一年以内。申请表：https://www.roc-taiwan.org/uploads/sites/54/2026/07/臺灣駕照之日文譯本申請表-橫濱20260721.pdf",
+          "style": "bullet"
+        },
+        {
+          "text": "日文译本请出发前就办好，临柜取车时租车公司会逐笔查验，没有译本无法取车。",
+          "style": "bullet"
+        },
+        {
+          "text": "租车请事先在线上预订，选有机场免费接送的据点；本范本第 1 天抵达后搭接驳车取车、第 5 天还车后搭接驳车回机场，接驳车约 15 分。",
+          "style": "bullet"
+        },
+        {
+          "text": "取车时一起绕车一圈拍视频，记录刮痕；是否加购免责补偿（保险）依自己的决定，请在预订页面确认。",
+          "style": "bullet"
+        },
+        {
+          "text": "ETC 卡与导航：请在预订时确认是否附日文与中文导航、是否需要另租 ETC 卡。",
+          "style": "bullet"
+        },
+        {
+          "text": "日本与冲绳开车规则",
+          "style": "heading"
+        },
+        {
+          "text": "日本靠左行驶，驾驶座在右侧；转弯后容易开到错车道，每次起步先提醒自己靠左。",
+          "style": "bullet"
+        },
+        {
+          "text": "全车所有座位都要系安全带；开车时不可手持手机；酒驾零容忍。",
+          "style": "bullet"
+        },
+        {
+          "text": "日本没有红灯右转；转弯时行人优先，遇到行人要先停。",
+          "style": "bullet"
+        },
+        {
+          "text": "一般道路限速多为 40 至 60 公里，冲绳自动车道限速 80 公里，请以路边标志为准。",
+          "style": "bullet"
+        },
+        {
+          "text": "停车：路边黄线与禁止停车标志不可停；市区停车场按时计费，轻型车（黄牌）专用格不可停。",
+          "style": "bullet"
+        },
+        {
+          "text": "那霸市区的国道 58 号在尖峰时段设有公交车优先或专用车道，请出发前查最新规定。",
+          "style": "bullet"
+        },
+        {
+          "text": "冲绳郊区夜间路灯少，非常暗，晚上开车请放慢；第 1 天与第 2 天晚上请避免太晚才开山路。",
+          "style": "bullet"
+        },
+        {
+          "text": "加油：多数是自助式加油站，请事先确认油种（租车公司会告知），还车前加满油。",
+          "style": "bullet"
+        },
+        {
+          "text": "机场进出市区（那霸机场 OKA）",
+          "style": "heading"
+        },
+        {
+          "text": "本范本：入境后走到机场巴士站方向，在租车接驳集合点等接驳车去租车据点，约 15 分；游记等了约 40 分，请预留时间。",
+          "style": "bullet"
+        },
+        {
+          "text": "若不取车：冲绳都市单轨电车（Yui Rail）从那霸机场站到国际通周边的牧志站约 12 至 15 分，票价请查官网 https://www.yui-rail.co.jp/ ；出租车到国际通约 10 至 15 分。",
+          "style": "bullet"
+        },
+        {
+          "text": "预约与购票",
+          "style": "heading"
+        },
+        {
+          "text": "青之洞窟浮潜：需事先向浮潜业者预约，集合时间通常在开船前 15 分钟，停车场旺季会大排长龙，建议至少提前 45 分钟到。",
+          "style": "bullet"
+        },
+        {
+          "text": "烧肉 琉球的牛、阿古猪涮涮锅：游记有先订位，请提前预约。",
+          "style": "bullet"
+        },
+        {
+          "text": "Churasun 6：官网预约 https://www.churasun6.com/ ；限 20 岁以上入场，官网标示 1 部票价约 ¥6,500 起含一杯饮料；游记提醒除击掌与合照外严禁触碰舞者，小费要等舞者主动才可给。",
+          "style": "bullet"
+        },
+        {
+          "text": "冲绳美丽海水族馆：可事先买电子票，详情与票价见官网 https://churaumi.okinawa/ 。",
+          "style": "bullet"
+        },
+        {
+          "text": "玉泉洞（冲绳世界）：成人约 ¥2,000（官网费用页），可现场购票。",
+          "style": "bullet"
+        },
+        {
+          "text": "CAVE OKINAWA：成人约 ¥1,200，现场购票即可。",
+          "style": "bullet"
+        },
+        {
+          "text": "入境",
+          "style": "heading"
+        },
+        {
+          "text": "免签证入境前请先在 Visit Japan Web 登录，请查官网确认最新流程。",
+          "style": "bullet"
+        },
+        {
+          "text": "行程节奏",
+          "style": "heading"
+        },
+        {
+          "text": "这是自驾范本，景点南北分散，开车时间占比高于一般市区行程；第 3 天从恩纳开车到那霸约 75 分。",
+          "style": "bullet"
+        },
+        {
+          "text": "第 4 天 Churasun 6 的 1 部 20:30 开演，散场约 21:30，晚于其他天的 21:00。",
+          "style": "bullet"
+        },
+        {
+          "text": "季节",
+          "style": "heading"
+        },
+        {
+          "text": "范本以 7 月夏季游记为基准：冲绳夏天非常热、紫外线强，浮潜建议穿长袖泳衣，户外景点排在早晚；其他季节的行程可行，但海上活动依水温与天气调整。",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "行程总览：冲绳自驾 5 日怎么走",
+      "paragraphs": [
+        {
+          "image": "d1-05"
+        },
+        "从那霸机场进出，第 1 天取车、第 5 天还车，全程自己开。四晚换三个落脚点：第 1 晚北谷、第 2 晚恩纳村，最后两晚回那霸国际通周边。",
+        "第 1 天：抵达后坐接驳车取车，往南到冲绳世界逛玉泉洞，傍晚开到北谷逛 {@d1-05}，晚饭吃阿古猪涮涮锅。",
+        "第 2 天：上午到真荣田岬的青之洞窟浮潜，午饭吃 Blue Entrance Kitchen，下午看 CAVE OKINAWA 钟乳石洞，再往北开约 55 分钟到 {@d2-05}，晚上回恩纳村吃晚饭。",
+        {
+          "image": "d2-05"
+        },
+        "第 3 天：中午吃潜水员牛排，接着去海岸咖啡厅 RYUKYU BEACH CLUB，下午往南开约 75 分钟到那霸，逛波上宫，晚饭吃烧肉，再逛国际通。",
+        "第 4 天：白天在 PARCO CITY 浦添购物、吃回转寿司，晚饭吃神德拉面，再逛 {@d4-03}，晚上看 Churasun 6 的辣妹酒吧表演。",
+        {
+          "image": "d5-02"
+        },
+        "第 5 天：先到 {@d5-02}，午饭吃冲绳面，逛 ASHIBINAA Outlet，吃完 Blue Seal 冰淇淋就还车，下午在机场值机、买伴手礼、出境。",
+        "住宿：第 1 晚住北谷（美国村周边），第 2 晚住恩纳村周边，第 3、4 晚连住那霸国际通周边。",
+        "交通重点：这是自驾行程，台湾游客需要台湾驾照原件加日文翻译件，出发前就要办好，没有翻译件取不了车；租车请提前预订，选有机场免费接送的门店，接驳车约 15 分钟。日本靠左行驶，冲绳郊区夜里很黑，晚上请开慢一点；还车前把油加满。景点南北分散，开车时间比一般市区行程多，第 3 天从恩纳开到那霸约 75 分钟。出发前请自己再查一次最新规定与时刻。",
+        "适合谁：想在冲绳自己开车，把海边、钟乳石洞、水族馆和那霸市区一次逛完的人。需要有人能放心开车；夏天很热，户外景点排在早晚，浮潜建议穿长袖泳衣。"
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "吉伊卡哇师萨周边（ちいかわ シーサー）",
+      "category": "goods",
+      "productType": "figure_plush",
+      "store": "PARCO CITY 与国际通专卖店都有卖，游记买了草裙兔兔"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "北谷町",
+      "latitude": 26.319996,
+      "longitude": 127.7639911,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "恩纳村",
+      "latitude": 26.4972582,
+      "longitude": 127.8536835,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "名护市",
+      "latitude": 26.5915875,
+      "longitude": 127.9774374,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "那霸市",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "那霸市",
+      "latitude": 26.2123266,
+      "longitude": 127.6791632,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "北谷町",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "抵达那霸机场（那覇空港）",
+          "start": "11:30",
+          "end": "12:30",
+          "category": "airport",
+          "place": {
+            "name": "那霸机场",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "取车：机场周边租车据点（接驳车约 15 分钟）",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "carrental",
+          "place": {
+            "name": "那霸机场",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "notes": "各租车据点营业时间不同，请出发前确认；游记搭乘租车店接驳车，等车约 40 分钟",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "入境后往机场巴士站方向走，到租车接驳集合点等接驳车；租车据点离机场约 15 分钟；办手续时要出示护照、台湾驾照正本与日文译本，并录车况视频"
+          },
+          "todos": [
+            {
+              "text": "办台湾驾照日文译本",
+              "note": "到全国任一监理所或监理站办理，约 1 小时领件；出发前办好，取车时要与驾照正本一起出示"
+            },
+            {
+              "text": "预订机场接送的租车",
+              "note": "选有机场免费接送的据点，并确认取车时间、还车时间与是否需另租 ETC 卡"
+            }
+          ]
+        },
+        {
+          "key": "d1-03",
+          "title": "午餐：冲绳世界园区内（おきなわワールド）",
+          "start": "14:30",
+          "end": "15:10",
+          "category": "dining",
+          "place": {
+            "name": "Okinawa World(文化王国・玉泉洞)",
+            "latitude": 26.1403898,
+            "longitude": 127.7489161,
+            "applePlaceID": "I2AE8FC6380DFF2F0",
+            "address": "〒901-0616, 沖縄県南城市, 玉城字前川1336番地",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "从租车据点开车到南城市，约 30 分；园区有免费停车场"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "玉泉洞：冲绳世界文化王国",
+          "start": "15:15",
+          "end": "16:30",
+          "category": "sight",
+          "place": {
+            "name": "Okinawa World(文化王国・玉泉洞)",
+            "latitude": 26.1403898,
+            "longitude": 127.7489161,
+            "applePlaceID": "I2AE8FC6380DFF2F0",
+            "address": "〒901-0616, 沖縄県南城市, 玉城字前川1336番地",
+            "addressIsApproximate": false
+          },
+          "notes": "约 9:00–17:30，最后入场多为 16:00（第三方整理，请出发前确认）；洞内约 30–40 分",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "园区内从餐厅区步行到玉泉洞入口"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "美国村（アメリカンビレッジ）：Village House 等店逛街",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "shopping",
+          "place": {
+            "name": "美滨美国村",
+            "latitude": 26.315892,
+            "longitude": 127.7540097,
+            "applePlaceID": "I5D8B83A65A512700",
+            "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜",
+            "addressIsApproximate": true
+          },
+          "notes": "各店营业时间不同，多数营业到约 21:00，请出发前确认",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "driving",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "沿那霸机场自动车道与国道 58 号开到北谷，约 50 分，傍晚可能堵车；美国村附近停车场多，注意不要停进轻型车（黄牌）专用格"
+          },
+          "images": [
+            "d1-05"
+          ]
+        },
+        {
+          "key": "d1-06",
+          "title": "晚餐：阿古猪涮涮锅（阿古の隠れ家 北谷店）",
+          "start": "19:15",
+          "end": "20:45",
+          "category": "dining",
+          "place": {
+            "name": "あぐーの隠れ家",
+            "latitude": 26.3140042,
+            "longitude": 127.7602128,
+            "applePlaceID": "IE7F8F959A529536E",
+            "address": "〒904-0115, 沖縄県中頭郡北谷町, 美浜2丁目2-2",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；游记有先订位",
+          "leg": {
+            "fromKey": "d1-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从美国村步行约 15 分"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "开车回住宿；请选有附停车位的住宿"
+          },
+          "todos": [
+            {
+              "text": "订位阿古猪涮涮锅（北谷）",
+              "note": "店小，游记有先订位"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "恩纳村",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "真荣田岬（真栄田岬）：青之洞窟浮潜",
+          "start": "09:40",
+          "end": "11:50",
+          "category": "beach",
+          "place": {
+            "name": "真荣田岬观景台",
+            "latitude": 26.4439607,
+            "longitude": 127.7721875,
+            "applePlaceID": "IB86A8F8DCF0BE49F",
+            "address": "〒904-0417, 沖縄県国頭郡恩納村, 真栄田469-1 真栄田岬展望台",
+            "addressIsApproximate": false
+          },
+          "notes": "岬与停车场全天可进入；浮潜行程时间依预约业者，请出发前确认",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "从北谷开车约 35 分（走冲绳自动车道石川 IC 下，再约 15 分）；真荣田岬停车场是青之洞窟附近唯一的停车场，潜水旺季非常拥挤，请提早到"
+          },
+          "todos": [
+            {
+              "text": "预约青之洞窟浮潜",
+              "note": "集合通常在开船前 15 分钟；真荣田岬停车场旺季拥挤，请提早到"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "午餐：Blue Entrance Kitchen 冲绳本店（墨西哥卷饼）",
+          "start": "12:10",
+          "end": "13:10",
+          "category": "dining",
+          "place": {
+            "name": "Blue Entrance Kitchen 冲绳总本店",
+            "latitude": 26.448239,
+            "longitude": 127.8030995,
+            "applePlaceID": "I889B013ABBF22778",
+            "address": "〒904-0414, 沖縄県国頭郡恩納村, 前兼久32-1",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从真荣田岬开车约 10 分；渔港空地禁止停车，要停附近的前兼久渔港停车场"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "CAVE OKINAWA 钟乳石洞（ケイブオキナワ）",
+          "start": "13:30",
+          "end": "14:30",
+          "category": "sight",
+          "place": {
+            "name": "CAVE OKINAWA石川嘉手刈479-1",
+            "latitude": 26.4203964,
+            "longitude": 127.8093417,
+            "address": "日本沖繩縣宇流麻市",
+            "addressIsApproximate": true
+          },
+          "notes": "一般约 9:00–17:30（最后受付 17:00）；2026 夏季特别营业至 18:30；年中无休；请出发前确认",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "从前兼久开车约 20 分到うるま市石川；停车场免费"
+          },
+          "images": [
+            "d2-03"
+          ]
+        },
+        {
+          "key": "d2-04",
+          "title": "FOREST CAFE By CAVE OKINAWA（洞窟出口上方的咖啡厅）",
+          "start": "14:45",
+          "end": "15:15",
+          "category": "cafe",
+          "place": {
+            "name": "FOREST CAFE By CAVE OKINAWA",
+            "latitude": 26.419953,
+            "longitude": 127.8097835,
+            "applePlaceID": "I2A44B358E70D260D",
+            "address": "〒904-1114, 沖縄県うるま市, 石川嘉手苅479-1",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "出洞口后往上走一小段"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "冲绳美丽海水族馆（沖縄美ら海水族館）",
+          "start": "16:15",
+          "end": "18:15",
+          "category": "aquarium",
+          "place": {
+            "name": "海洋博公园管理中心・冲绳美丽海水族馆・水族馆事业课",
+            "latitude": 26.694383,
+            "longitude": 127.8780132,
+            "applePlaceID": "IC016F4DB4F2866FB",
+            "address": "〒905-0206, 沖縄県国頭郡本部町, 石川424, 沖縄美ら海水族館",
+            "addressIsApproximate": false
+          },
+          "notes": "约 8:30–18:30（最后入馆 17:30），夏季延长；12 月第一个周三与隔日休馆（第三方整理）；请出发前确认",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "driving",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "从石川开车约 55 分走冲绳自动车道北上；水族馆有大型免费停车塔；傍晚人较少，黑潮之海喂食约 15:00 与 15:30 这趟会赶不上，请以官网时刻表为准"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "晚餐：恩纳村周边",
+          "start": "19:00",
+          "end": "20:15",
+          "category": "dining",
+          "place": {
+            "name": "恩纳村公所",
+            "latitude": 26.4972582,
+            "longitude": 127.8536835,
+            "applePlaceID": "I751A7DBA455D4A02",
+            "address": "〒904-0411, 沖縄県国頭郡恩納村, 恩納2451",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "driving",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "从美丽海开车回恩纳约 35 分；冲绳郊区夜间路灯少，开车请放慢"
+          },
+          "closingLeg": {
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "开车回住宿；请选有附停车位的住宿"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "名护市",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "午餐：潜水员牛排（ダイバーズステーキ）",
+          "start": "10:30",
+          "end": "12:00",
+          "category": "dining",
+          "place": {
+            "name": "名护市",
+            "latitude": 26.5915875,
+            "longitude": 127.9774374,
+            "address": "日本沖繩縣",
+            "addressIsApproximate": true
+          },
+          "notes": "游记写 10:30 开始营业，热门、午间可能客满或售完；营业时间请出发前确认",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "从恩纳开车约 40 分；游记在许田 IC 下；停车场容易客满，附近有大型 FamilyMart 停车场可停；店家位置请以地图搜寻为准"
+          }
+        },
+        {
+          "key": "d3-02",
+          "title": "海岸咖啡厅（RYUKYU BEACH CLUB）",
+          "start": "12:45",
+          "end": "14:15",
+          "category": "cafe",
+          "place": {
+            "name": "RYUKYU BEACH CLUB",
+            "latitude": 26.5080132,
+            "longitude": 127.8662199,
+            "applePlaceID": "I92D42DA9EF4ACED0",
+            "address": "〒904-0404, 沖縄県国頭郡恩納村, 瀬良垣1523",
+            "addressIsApproximate": false
+          },
+          "notes": "约 9:00–19:30，餐点最后点餐 18:00、饮料 19:00（HotPepper 刊载，请出发前确认）",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "driving",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "往南开回恩纳村濑良垣，约 35 分；门口可停车；下沙滩注意脚下有寄居蟹"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "波上宫与波之上海滩拍摄点",
+          "start": "15:30",
+          "end": "16:30",
+          "category": "temple",
+          "place": {
+            "name": "波上宫",
+            "latitude": 26.220688,
+            "longitude": 127.6711195,
+            "applePlaceID": "I403C23C7EBE9131F",
+            "address": "〒900-0031, 沖縄県那覇市, 若狭1丁目25-11",
+            "addressIsApproximate": false
+          },
+          "notes": "境内全天可进入，社务所与授与所时间请出发前确认",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "driving",
+            "durationMinutes": 75,
+            "durationSource": "user",
+            "note": "沿冲绳自动车道南下到那霸约 75 分；波上宫对面有停车场；从宫内另一侧下去海滩比走陆桥近，夏天几乎没有遮荫"
+          },
+          "images": [
+            "d3-03"
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "晚餐：烧肉 琉球的牛（焼肉 琉球の牛 那覇久茂地店）",
+          "start": "18:00",
+          "end": "20:00",
+          "category": "dining",
+          "place": {
+            "name": "焼肉 琉球の牛 那覇久茂地",
+            "latitude": 26.2155533,
+            "longitude": 127.6819627,
+            "applePlaceID": "I849648257EA60142",
+            "address": "〒900-0015, 沖縄県那覇市, 久茂地3丁目16-1",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；需订位",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从波上宫开车约 15 分；国际通周边有很多收费停车场，注意不要停进黄牌专用格"
+          },
+          "todos": [
+            {
+              "text": "订位烧肉 琉球的牛（那霸久茂地）",
+              "note": "游记有订位；上菜慢，预留约 2 小时"
+            }
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "国际通散步：药妆与小型唐吉诃德（ドン・キホーテ）",
+          "start": "20:15",
+          "end": "21:00",
+          "category": "shopping",
+          "place": {
+            "name": "那覇国際通り商店街",
+            "latitude": 26.2160938,
+            "longitude": 127.689231,
+            "applePlaceID": "IAA939DC0B8514F67",
+            "address": "〒900-0013, 沖縄県那覇市, 牧志3丁目2-10",
+            "addressIsApproximate": false
+          },
+          "notes": "各店营业时间不同，请出发前确认",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "从餐厅步行到国际通"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "步行回住宿；停车位请事先确认（市区酒店停车多半另收费）"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "那霸市",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "PARCO CITY 浦添（パルコシティ）：购物、2 楼回转寿司午餐",
+          "start": "11:00",
+          "end": "16:30",
+          "category": "shopping",
+          "place": {
+            "name": "PARCO CITY",
+            "latitude": 26.2620438,
+            "longitude": 127.6983297,
+            "applePlaceID": "IC0D65FDE3728F523",
+            "address": "〒901-2507, 沖縄県浦添市, 西洲3丁目1-1",
+            "addressIsApproximate": false
+          },
+          "notes": "约 10:00–21:00 为常见时段；营业时间请出发前确认",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "从那霸开车约 20 分；有免费立体停车塔；退税统一在 1 楼 TAX FREE COUNTER"
+          }
+        },
+        {
+          "key": "d4-02",
+          "title": "晚餐：神德拉面（麺场 神徳）",
+          "start": "17:30",
+          "end": "18:30",
+          "category": "dining",
+          "place": {
+            "name": "面场神德",
+            "latitude": 26.2178232,
+            "longitude": 127.6791991,
+            "applePlaceID": "I85905A384D46F9F9",
+            "address": "〒900-0032, 沖縄県那覇市, 松山1丁目12-17, 大城アパート 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；先在餐券机买券再入座",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "driving",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "从浦添开车约 25 分，傍晚堵车时更久；旁边有停车场"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "唐吉诃德 国际通店（ドン・キホーテ 国際通り店）",
+          "start": "18:45",
+          "end": "20:00",
+          "category": "shopping",
+          "place": {
+            "name": "南浦唐吉诃德国际通店",
+            "latitude": 26.215874,
+            "longitude": 127.6877932,
+            "applePlaceID": "IFCF33B4E0906C93B",
+            "address": "〒900-0014",
+            "addressIsApproximate": true
+          },
+          "notes": "营业时间请出发前确认；免税柜台在 4 楼，排队长但流程快",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "从松山步行约 15 分（游记是开车，停对面停车场）"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "Churasun 6 冲绳（ちゅらさん6）辣妹酒吧表演",
+          "start": "20:15",
+          "end": "21:30",
+          "category": "bar",
+          "place": {
+            "name": "Churasun 6 Okinawa",
+            "latitude": 26.2183985,
+            "longitude": 127.6801257,
+            "applePlaceID": "I230A443A8401DEFB",
+            "address": "〒900-0032, 沖縄県那覇市, 松山1丁目5-1 2F",
+            "addressIsApproximate": false
+          },
+          "notes": "官网：1 部 20:30 开演（20:00 开场）、2 部 22:30 开演；公休请出发前确认",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "步行约 15 分；从一楼夜店旁入口直走到底左转，上 2 楼才是 Churasun 6，1 楼是夜店别走错"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "步行回住宿；松山一带夜间较复杂，建议结伴走大路"
+          },
+          "todos": [
+            {
+              "text": "预约 Churasun 6 表演",
+              "note": "官网 https://www.churasun6.com/ ；限 20 岁以上；1 部 20:30 开演"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "那霸市",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "体验柏青哥（P-Time Tsukazan）",
+          "start": "10:30",
+          "end": "11:30",
+          "category": "other",
+          "place": {
+            "name": "Pachinko P Time",
+            "latitude": 26.1809003,
+            "longitude": 127.7153955,
+            "applePlaceID": "I9F0293E1440584FB",
+            "address": "〒901-1117, 沖縄県島尻郡南風原町, 字津嘉山1718-2",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "mode": "driving",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "退房后开车往南到丰见城，约 30 分；行李先放车上"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "濑长岛（瀬長島ウミカジテラス）",
+          "start": "11:50",
+          "end": "12:40",
+          "category": "sight",
+          "place": {
+            "name": "瀬長島ウミカジテラス",
+            "latitude": 26.1764709,
+            "longitude": 127.6404074,
+            "applePlaceID": "IC9B0D0C2786C14A4",
+            "address": "〒901-0233, 沖縄県豊見城市, 瀬長174-6",
+            "addressIsApproximate": false
+          },
+          "notes": "店家营业时间各异，请出发前确认；可近看飞机起降",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "driving",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "开车约 10 分；夏天非常晒"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "午餐：冲绳面 玉家 丰崎店（そば処 玉家 豊崎店）",
+          "start": "12:50",
+          "end": "13:35",
+          "category": "dining",
+          "place": {
+            "name": "そば処 玉家 豊崎店",
+            "latitude": 26.1549155,
+            "longitude": 127.661911,
+            "applePlaceID": "I7B5CBC327B28BBE5",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-1069",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认；先买餐券再入座",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "driving",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "开车约 15 分；旁边有免费停车场"
+          }
+        },
+        {
+          "key": "d5-04",
+          "title": "那霸 ASHIBINAA Outlet（あしびなー）",
+          "start": "13:55",
+          "end": "14:50",
+          "category": "shopping",
+          "place": {
+            "name": "AS KNOW AS outlet 沖縄アウトレットモールあしびなー",
+            "latitude": 26.1590816,
+            "longitude": 127.6562155,
+            "applePlaceID": "I93FD6FA30CCF9C64",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-188 沖縄アウトレットモール あしびなー",
+            "addressIsApproximate": false
+          },
+          "notes": "约 10:00–20:00 为常见时段；营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "driving",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "开车约 5 分"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "Blue Seal 丰崎店（ブルーシール）",
+          "start": "15:05",
+          "end": "15:25",
+          "category": "dessert",
+          "place": {
+            "name": "Blue Seal 丰崎",
+            "latitude": 26.1591407,
+            "longitude": 127.6597059,
+            "applePlaceID": "IA99C4322896EB6C9",
+            "address": "〒901-0225, 沖縄県豊見城市, 豊崎1-411",
+            "addressIsApproximate": false
+          },
+          "notes": "营业时间请出发前确认",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "从 Outlet 步行到对面"
+          }
+        },
+        {
+          "key": "d5-06",
+          "title": "还车：机场周边租车据点",
+          "start": "15:45",
+          "end": "16:15",
+          "category": "carrental",
+          "place": {
+            "name": "那霸机场",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "notes": "各租车据点营业时间不同，请出发前确认",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "driving",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "先加满油再还车；还车后搭租车接驳车到机场约 15 分"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "那霸机场（那覇空港）：值机、出境、伴手礼",
+          "start": "16:30",
+          "end": "18:30",
+          "category": "airport",
+          "place": {
+            "name": "那霸机场",
+            "latitude": 26.2063209,
+            "longitude": 127.6507991,
+            "applePlaceID": "I3B6F8CB25C35A5D9",
+            "address": "〒901-0142, 沖縄県那覇市, 鏡水150",
+            "addressIsApproximate": false
+          },
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "租车接驳车到航站楼约 15 分；国际线建议起飞前 2 小时抵达；游记在值机柜台排了约 1 小时 20 分"
+          }
+        }
+      ]
+    }
+  ]
+}

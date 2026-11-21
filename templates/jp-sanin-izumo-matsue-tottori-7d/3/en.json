@@ -1,0 +1,1395 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-sanin-izumo-matsue-tottori-7d",
+  "revision": 3,
+  "contentLocale": "en",
+  "title": "San'in in 7 Days — Izumo, Matsue, Sakaiminato, Tottori",
+  "subtitle": "In at Yonago, out at Kansai: Izumo Taisha, Matsue Castle, Kitaro in Sakaiminato and the Tottori Sand Dunes",
+  "summary": "Seven days across San'in, in at Yonago Airport and out at Kansai Airport: Kitaro and Conan in Sakaiminato, Matsue Castle and the sunset cruise on Lake Shinji, Izumo Taisha and Hinomisaki, the Adachi Museum of Art and Kiyomizu-dera in Yasugi, and finally the Tottori Sand Dunes. The Gosho Aoyama Hometown Museum is due to move after January 11, 2027, so check before you go. Hinomisaki Lighthouse, the Uradome Coast and the Kurayoshi white-walled storehouses are in the alternates.",
+  "destination": "Japan: Shimane and Tottori",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 7,
+  "coverColour": "taupe",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Couple",
+    "First visit",
+    "Shrines",
+    "Anime"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in as soon as flights and hotels are booked"
+    }
+  ],
+  "images": {
+    "d2-01": "images/jp-sanin-izumo-matsue-tottori-7d/d2-01.jpg",
+    "d2-02": "images/jp-sanin-izumo-matsue-tottori-7d/d2-02.jpg",
+    "d2-05": "images/jp-sanin-izumo-matsue-tottori-7d/d2-05.jpg",
+    "d3-01": "images/jp-sanin-izumo-matsue-tottori-7d/d3-01.jpg",
+    "d3-04": "images/jp-sanin-izumo-matsue-tottori-7d/d3-04.jpg",
+    "d4-01": "images/jp-sanin-izumo-matsue-tottori-7d/d4-01.jpg",
+    "d6-01": "images/jp-sanin-izumo-matsue-tottori-7d/d6-01.jpg",
+    "d6-02": "images/jp-sanin-izumo-matsue-tottori-7d/d6-02.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Stay: around Matsue Station (3 nights in a row)",
+      "fromDay": 1,
+      "toDay": 4,
+      "category": "lodging",
+      "place": {
+        "name": "Matsue",
+        "latitude": 35.4640317,
+        "longitude": 133.063745,
+        "applePlaceID": "I5D030EBE00248ED3",
+        "address": "島根県松江市, 朝日町",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3,
+        4
+      ],
+      "closingDays": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "key": "ad4-04",
+      "title": "Stay: around Tottori Station (3 nights in a row; the travelogue stayed at Toyoko Inn Tottori-eki Minami-guchi)",
+      "fromDay": 4,
+      "toDay": 7,
+      "category": "lodging",
+      "place": {
+        "name": "Toyoko Inn Tottori-eki Minami-guchi",
+        "latitude": 35.4925256,
+        "longitude": 134.2279042,
+        "applePlaceID": "I6FC9DF0721926300",
+        "address": "〒680-0845, 鳥取県鳥取市, 富安町2丁目153番3号",
+        "addressIsApproximate": false
+      },
+      "openingDays": [
+        5,
+        6,
+        7
+      ],
+      "closingDays": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Hinomisaki Lighthouse (日御碕灯台)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "Izumo Hinomisaki Lighthouse Exhibition Room",
+        "latitude": 35.433758,
+        "longitude": 132.62921,
+        "applePlaceID": "I699E1B4D89D6C0C6",
+        "address": "〒699-0763, 島根県出雲市, 大社町日御碕1478",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go; beside Hinomisaki Shrine, and you can climb the tower for a view over the Sea of Japan"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Uradome Coast (浦富海岸)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Uradome Coast",
+        "latitude": 35.5933653,
+        "longitude": 134.3167331,
+        "applePlaceID": "IB8771D69C2D28321",
+        "address": "日本鳥取縣岩美郡岩美町, 田後",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go; check the official site for the sightseeing boat schedule and season"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: Kurayoshi white-walled storehouses (倉吉白壁土蔵群)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Kurayoshi Shirakabe Dozo-gun",
+        "latitude": 35.4313405,
+        "longitude": 133.8247995,
+        "applePlaceID": "I9566BE86167A79A8",
+        "address": "〒682-0821, 鳥取県倉吉市, 魚町2568, 赤瓦十号館内",
+        "addressIsApproximate": false
+      },
+      "notes": "The district is free to walk; check each shop's opening hours before you go; it lies between Tottori and Yura and can be joined to the Conan trip"
+    },
+    {
+      "key": "u-04",
+      "title": "Alternate: Shimane Art Museum (島根県立美術館)",
+      "durationMinutes": 60,
+      "category": "museum",
+      "place": {
+        "name": "Shimane Art Museum",
+        "latitude": 35.4596261,
+        "longitude": 133.0523682,
+        "applePlaceID": "IFF85C100929B7E73",
+        "address": "〒690-0049, 島根県松江市, 袖師町1-5",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go; the travelogue says the Lake Shinji sunset viewing terrace is beside the museum, with a café in the evening"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and checks",
+      "paragraphs": [
+        {
+          "text": "Source travelogue",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/aacd5f5cacd1/",
+          "style": "bullet"
+        },
+        {
+          "text": "Checked (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Yonago Kitaro Airport (bus and JR fares): https://www.yonago-air.com/en/access/bus/ and https://www.yonago-air.com/en/access/train/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Tigerair Taoyuan–Yonago flights and frequency: https://chugoku.letsgojp.com/archives/691561/ , https://www.funtime.com.tw/blog/funtime/tigerair-introduce and an AeroRoutes report (checked 2026-11-17, from search results; no official timetable obtained)",
+          "style": "bullet"
+        },
+        {
+          "text": "Mizuki Shigeru Museum (9:30–17:00, last entry 16:30, open all year): https://mizuki.sakaiminato.net/faq/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Matsue Castle (keep hours, open all year, ¥1,200): https://www.matsue-castle.jp/userguide/index (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Lake Shinji cruise (sunset sailings and times): https://hakuchougo.jp/timetable/ (checked 2026-11-17; fare page not obtained)",
+          "style": "bullet"
+        },
+        {
+          "text": "Adachi Museum of Art (opening hours, ¥2,500): https://www.adachi-museum.or.jp/en/ (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Gosho Aoyama Hometown Museum (9:30–17:30, closing days, ¥700, closing on 2027/1/11 and the new building): https://www.gamf.jp/42.html (checked 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Sand Museum (9:00–18:00, ¥800, the 17th exhibition until 2027/1/3): https://www.sand-museum.jp/ (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Hinomisaki bus (about 20–25 minutes, about ¥510, about 7 round trips): https://izumo-kankou.gr.jp/16116 and a NAVITIME route search (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Horikawa boat tour (about 50 minutes; 2025–26 fare ¥1,600, with ¥2,000 also published): https://www.matsue-horikawameguri.jp/ and tourism information sites (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Yasugi Kiyomizu-dera (mountain hours, reservation-only pagoda, yellow bus about 15 minutes): https://tabi.torisetsu-shimane.com/kiyomizudera/ and rurubu.jp (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Limited express Super Hakuto (Osaka–Tottori about 2 hours 30 minutes, reserved seat about ¥7,000): https://jr-group.jp/hakuto-ryokin/ and other summary pages (checked 2026-11-17, from search results)",
+          "style": "bullet"
+        },
+        {
+          "text": "Could not be confirmed from an official source; check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "Opening hours of Izumo Taisha, Hinomisaki Shrine, Shiomi Nawate and the Lafcadio Hearn Former Residence, Hisamatsu Park and Jinpūkaku, Hakuto Shrine and the Tottori Sand Dunes observation deck.",
+          "style": "bullet"
+        },
+        {
+          "text": "Opening hours of the shops on Mizuki Shigeru Road.",
+          "style": "bullet"
+        },
+        {
+          "text": "The actual times and fares of Yonago → Matsue, Matsue → Izumoshi, Tottori → Yura, and Tottori → Hakuto Shrine and the dunes.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Lake Shinji cruise fare; the current Horikawa boat fare and whether the winter kotatsu boat runs.",
+          "style": "bullet"
+        },
+        {
+          "text": "The coordinates of the sights are estimates.",
+          "style": "bullet"
+        },
+        {
+          "text": "Changes and trade-offs",
+          "style": "heading"
+        },
+        {
+          "text": "The travelogue originally flew in and out of Okayama Airport and spent days 5 and 6 in Himeji and Kobe, which became a separate template; this version keeps only Shimane and Tottori, and adds Sakaiminato, Hinomisaki in Izumo, the Lake Shinji sunset cruise, Yasugi Kiyomizu-dera and the Conan trip.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travelogue says it ran out of time for the Inasa-no-hama sunset and Conan Station; this template adds them.",
+          "style": "bullet"
+        },
+        {
+          "text": "In the travelogue the Adachi Museum of Art, the Horikawa boat tour and the Lake Shinji cruise were free with a rail pass; this version rewrites them with full-price information for reference.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Route and airports",
+          "style": "heading"
+        },
+        {
+          "text": "This template is an open-jaw trip, in at Yonago (Tottori Yonago Kitaro Airport) and out at Kansai International Airport: Sakaiminato → Matsue → Izumo → Yasugi → Tottori, moving from west to east with no backtracking.",
+          "style": "bullet"
+        },
+        {
+          "text": "For the outbound flight choose Yonago Kitaro Airport (YGJ): Tigerair Taiwan Taoyuan–Yonago is currently the only direct flight from Taiwan, one flight each on Monday and Friday (outbound IT724, return IT725). The Monday flight leaves about 08:35 and arrives at 12:00; the Friday flight leaves about 13:30 and arrives at 16:50. Day 1 of this template is designed around the Monday 12:00 arrival.",
+          "style": "bullet"
+        },
+        {
+          "text": "For the return choose Kansai International Airport (KIX): the limited express Super Hakuto from Tottori to Osaka takes about 2 hours 30 minutes, then the airport line; there are many direct flights from Taiwan and many time slots.",
+          "style": "bullet"
+        },
+        {
+          "text": "Why not in and out of Yonago: the Tigerair Yonago flights run only on Monday and Friday, so Monday in and Friday out is only 5 days, and Monday in and next Monday out is 8 days; neither is 7 days. If you want to use Yonago both ways, change it to 5 or 8 days.",
+          "style": "bullet"
+        },
+        {
+          "text": "Izumo Enmusubi Airport (IZO) and Tottori Sand Dunes Conan Airport (TTJ) have no direct flights from Taiwan and need a connection in Tokyo or Osaka, so this template does not use them.",
+          "style": "bullet"
+        },
+        {
+          "text": "I could not find official data for Tigerair's winter timetable from 2026/10/24 on; check the Tigerair Taiwan site before you book.",
+          "style": "bullet"
+        },
+        {
+          "text": "Between the airport and the city",
+          "style": "heading"
+        },
+        {
+          "text": "Yonago Kitaro Airport to Sakaiminato: the JR Sakai Line's Yonago Kitaro Airport Station is next to the airport, ¥190 to Sakaiminato Station; the other option the official site lists is the airport bus to Yonago Station, about 25 minutes and ¥640, or to Matsue Station, about 45 minutes and ¥1,200 (official: buses may not run when a flight is cancelled).",
+          "style": "bullet"
+        },
+        {
+          "text": "On day 1 this template goes to Sakaiminato first for Mizuki Shigeru Road, then takes JR to Yonago and a limited express to Matsue for the night. Your bags can go in the lockers at Sakaiminato Station (check for space). If you want to go straight to Matsue, take the airport bus to Matsue Station instead, about 45 minutes and ¥1,200.",
+          "style": "bullet"
+        },
+        {
+          "text": "Kansai Airport: on the last day take the limited express Super Hakuto from Tottori to Shin-Osaka, then the Kansai Airport limited express Haruka to Kansai Airport; the whole trip including transfers takes about 5 hours, so pick a flight that leaves after 19:30.",
+          "style": "bullet"
+        },
+        {
+          "text": "Transport passes",
+          "style": "heading"
+        },
+        {
+          "text": "San'in covers a wide area, so before you go compare single tickets with the Kansai & San'in area rail pass or the San'in-San'yō area pass: https://www.westjr.co.jp/global/tc/ticket/pass/",
+          "style": "bullet"
+        },
+        {
+          "text": "Reminder from the 2024 travelogue: a JR pass can be exchanged for admission to the Lake Shinji cruise, Matsue Castle, the Adachi Museum of Art and the Tottori Sand Dunes Sand Museum, and you must first enter the serial number in the Discover Another Japan app to activate it; check the current contents and prices.",
+          "style": "bullet"
+        },
+        {
+          "text": "Tottori buses do not take electronic payments or transit IC cards, only cash (2024 travelogue data), so bring change; the Ichibata Electric Railway does not take transit IC cards either, so buy a ticket in the station first.",
+          "style": "bullet"
+        },
+        {
+          "text": "Bookings and the season",
+          "style": "heading"
+        },
+        {
+          "text": "Lake Shinji sunset cruise: the sunset departure time changes with the season, so set your time from the sunrise and sunset forecast.",
+          "style": "bullet"
+        },
+        {
+          "text": "Sunset at Inasa-no-hama: in summer it can be as late as about 19:30 and in winter about 17:00; this itinerary is based on November, so adjust the Izumo day to the season.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Hinomisaki bus runs about 7 round trips a day; check the Ichibata Bus timetable before you go and confirm the last bus back.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Gosho Aoyama Hometown Museum's current building is open until 2027/1/11, after which it moves to a new building, expected to open in spring 2027; for the Conan trip after the old building closes, see the official site.",
+          "style": "bullet"
+        },
+        {
+          "text": "Adachi Museum of Art: after you enter, go to the entrance counter first to get a numbered ticket for the return shuttle, otherwise a seat is not guaranteed (travelogue reminder).",
+          "style": "bullet"
+        },
+        {
+          "text": "The prayer at Izumo Taisha is two bows, four claps and one bow.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Kamiarisai falls around November in the solar calendar, and Izumo Taisha is crowded then.",
+          "style": "bullet"
+        },
+        {
+          "text": "Pacing",
+          "style": "heading"
+        },
+        {
+          "text": "Day 1 (arrival) and days 4, 5 and 6 have a higher share of travel: San'in Line trains are infrequent, so check the timetable before deciding when to leave.",
+          "style": "bullet"
+        },
+        {
+          "text": "If you want to watch the sunset without rushing on the Izumo day (day 3), consider staying near Izumoshi Station instead.",
+          "style": "bullet"
+        },
+        {
+          "text": "Other",
+          "style": "heading"
+        },
+        {
+          "text": "Carry plenty of yen in cash: some small shops, buses and small stations do not take cards.",
+          "style": "bullet"
+        },
+        {
+          "text": "Register on Visit Japan Web before you enter: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "For internet, use a physical SIM card or an eSIM.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "Trip overview: how the 7 days run",
+      "paragraphs": [
+        {
+          "image": "d3-01"
+        },
+        "In through Yonago Kitaro Airport, out through Kansai International, running west to east with no backtracking: Sakaiminato, Matsue, Izumo, Yasugi and finally Tottori. Three nights in Matsue and then three in Tottori, with JR and buses for the days out from each base.",
+        "Day 1: land at Yonago, seafood lunch in Sakaiminato, then {@d1-03} and {@d1-04}, and a train to Matsue for the night.",
+        "Day 2: the Horikawa boat tour and {@d2-02} in the morning, Izumo soba or local cooking for lunch, an afternoon along Shiomi Nawate and the Lafcadio Hearn Former Residence, and {@d2-05} at dusk.",
+        {
+          "image": "d2-05"
+        },
+        "Day 3: {@d3-01} for the great shimenawa and the approach, Izumo soba on Shinmon-dōri, a bus out to {@d3-03}, and sunset at {@d3-04}.",
+        "Day 4: {@d4-01} in the morning for Japan's number one garden, lunch in the tea rooms inside, then {@d4-03} for the three-story pagoda and autumn leaves, and a train to Tottori, where you change base.",
+        "Day 5: early to Conan Station and Conan-dōri in Yura, {@d5-03}, lunch around Yonaka Shopping Street, then back in Tottori for {@d5-05}.",
+        "Day 6: Hakuto Shrine first, then {@d6-02}, lunch at the dune observation-deck restaurant with a dune pudding, and the sand sculpture exhibition at {@d6-04}.",
+        {
+          "image": "d6-02"
+        },
+        "Day 7: dune pudding and Nijisseiki pears as souvenirs around Tottori Station, then a limited express to Osaka and the airport line on to Kansai International Airport.",
+        "Where to sleep: around Matsue Station for three nights, then around Tottori Station for three more from day 4; to watch the Izumo sunset without rushing, consider staying around Izumoshi Station on day 3.",
+        "Getting around: Yonago Kitaro Airport has its own station on the JR Sakai Line, 190 yen to Sakaiminato Station; on the day you fly out, take the Super Hakuto limited express from Tottori to Shin-Osaka and then the Haruka, about 5 hours with transfers, so pick a flight that leaves after 19:30. San'in line trains are few, and the Hinomisaki bus runs about 7 round trips a day, so check times and the last return first; Tottori buses take cash only, and the Ichibata tram does not take transit IC cards. Check the latest timetables before you go.",
+        "Who it suits: anyone who wants Izumo Taisha, Matsue Castle, the Adachi Museum, Conan and the Tottori Sand Dunes on one route with no backtracking. Trains are infrequent in San'in, so check times before deciding when to leave, and carry plenty of coins."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Beef-bone broth ramen (牛骨ラーメン)",
+      "category": "food",
+      "productType": "instant_meal",
+      "store": "The souvenir shop on the ground floor of Matsue Station (the travelogue says it is a San'in specialty, whereas ramen is usually pork-bone)"
+    },
+    {
+      "key": "s-02",
+      "title": "Izumo Taisha prayer-souvenir biscuits and seafood-senbei biscuits",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "The souvenir shop on the ground floor of Matsue Station; the travelogue says the salty seafood-senbei biscuits are good"
+    },
+    {
+      "key": "s-03",
+      "title": "Tottori Sand Dunes pudding (砂丘プリン)",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "Around the Tottori Sand Dunes and the shops at Tottori Station"
+    },
+    {
+      "key": "s-04",
+      "title": "Charms and matchmaking stones from Izumo Taisha and Hakuto Shrine",
+      "category": "souvenir",
+      "productType": "charm_badge",
+      "store": "Izumo Taisha and Hakuto Shrine (the travelogue says there are limited-edition charms during the Kamiarisai)"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Sakaiminato",
+      "latitude": 35.5395987,
+      "longitude": 133.2316492,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Matsue",
+      "latitude": 35.4677618,
+      "longitude": 133.0486072,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Izumo",
+      "latitude": 35.3669642,
+      "longitude": 132.7546165,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Yasugi",
+      "latitude": 35.4309659,
+      "longitude": 133.2510978,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Tottori",
+      "latitude": 35.4944183,
+      "longitude": 134.2221779,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Tottori",
+      "latitude": 35.4944183,
+      "longitude": 134.2221779,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Tottori",
+      "latitude": 35.4944183,
+      "longitude": 134.2221779,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Sakaiminato",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Yonago Kitaro Airport (米子鬼太郎空港)",
+          "start": "12:00",
+          "end": "13:15",
+          "category": "airport",
+          "place": {
+            "name": "Yonago Airport (Yonago Kitaro Airport) terminal, domestic departures",
+            "latitude": 35.5004251,
+            "longitude": 133.2437275,
+            "applePlaceID": "I8F8B001001AF1238",
+            "address": "鳥取県境港市, 佐斐神町",
+            "addressIsApproximate": true
+          },
+          "todos": [
+            {
+              "text": "Confirm the Tigerair Taoyuan–Yonago flights and tickets",
+              "note": "https://www.tigerairtw.com/ Flights on Mondays and Fridays; for the winter schedule see the official site"
+            }
+          ]
+        },
+        {
+          "key": "d1-02",
+          "title": "Lunch: around Sakaiminato Station (seafood)",
+          "start": "13:45",
+          "end": "14:40",
+          "category": "dining",
+          "place": {
+            "name": "Babasakicho",
+            "latitude": 35.5385346,
+            "longitude": 133.2264666,
+            "applePlaceID": "I7E3816E56200E664",
+            "address": "鳥取県境港市, 馬場崎町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Take the JR Sakai Line from Yonago Kitaro Airport Station beside the airport to Sakaiminato Station, ¥190; trains are infrequent, so check the next one once you are through the airport"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "Mizuki Shigeru Road (水木しげるロード): the street of Kitaro yokai statues",
+          "start": "14:55",
+          "end": "15:35",
+          "category": "sight",
+          "place": {
+            "name": "Mizuki Shigeru Road",
+            "latitude": 35.545729369944496,
+            "longitude": 133.2258653941916,
+            "address": "日本鳥取縣境港市",
+            "addressIsApproximate": true
+          },
+          "notes": "You can walk the street freely; check each shop's opening hours before you go",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "From Sakaiminato Station walk along Mizuki Shigeru Road, passing about 177 yokai statues"
+          }
+        },
+        {
+          "key": "d1-04",
+          "title": "Mizuki Shigeru Museum (水木しげる記念館)",
+          "start": "15:50",
+          "end": "16:50",
+          "category": "museum",
+          "place": {
+            "name": "Mizuki Shigeru Memorial Museum",
+            "latitude": 35.5464038,
+            "longitude": 133.2311489,
+            "applePlaceID": "IEA23DD0812E07659",
+            "address": "〒684-0025, 鳥取県境港市, 本町5",
+            "addressIsApproximate": false
+          },
+          "notes": "9:30–17:00 (last entry 16:30), open all year (official FAQ)",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk to the other end of Mizuki Shigeru Road, about 10 minutes"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "Dinner: around Matsue Station",
+          "start": "18:30",
+          "end": "19:40",
+          "category": "dining",
+          "place": {
+            "name": "Matsue",
+            "latitude": 35.4640317,
+            "longitude": 133.063745,
+            "applePlaceID": "I5D030EBE00248ED3",
+            "address": "島根県松江市, 朝日町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 90,
+            "durationSource": "user",
+            "note": "JR Sakai Line from Sakaiminato Station to Yonago takes about 40 minutes, then a limited express (Yakumo and others) to Matsue about 25 minutes; including waiting"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk from dinner back to the hotel near Matsue Station"
+          }
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Matsue",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Horikawa boat tour in Matsue (ぐるっと松江堀川めぐり)",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "sight",
+          "place": {
+            "name": "Matsue Horikawa Boat Tour (Gurutto Matsue Horikawa Meguri)",
+            "latitude": 35.4782712,
+            "longitude": 133.0460977,
+            "applePlaceID": "I5FAC807C89DA4356",
+            "address": "〒690-0876, 島根県松江市, 黒田町507-1 松江堀川遊覧船(ぐるっと松江堀川めぐり)",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the whole ride takes about 50 minutes, you take your shoes off to board, and the boat lowers its roof under the bridges",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "From platform 2 at Matsue Station take a bus to Kenmin Kaikan-mae and walk to the Ōtemae boarding point; 2024 travelogue data"
+          },
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "Matsue Castle (松江城)",
+          "start": "10:45",
+          "end": "12:15",
+          "category": "castle",
+          "place": {
+            "name": "Matsue Castle",
+            "latitude": 35.4751288,
+            "longitude": 133.0507619,
+            "applePlaceID": "IBB9E4CCB38DDC75C",
+            "address": "〒690-0887, 島根県松江市, 殿町1-5",
+            "addressIsApproximate": false
+          },
+          "notes": "The keep: 4/1–9/30 8:30–18:00 (admission until 17:30), 10/1–3/31 8:30–17:00 (admission until 16:30); open all year; keep admission is ¥1,200 for adults (official site)",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Walk uphill from the Horikawa boarding point to the keep entrance, about 5 minutes"
+          },
+          "images": [
+            "d2-02"
+          ]
+        },
+        {
+          "key": "d2-03",
+          "title": "Lunch: around Matsue Castle (Izumo soba or local cooking)",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "Matsue Castle",
+            "latitude": 35.4751288,
+            "longitude": 133.0507619,
+            "applePlaceID": "IBB9E4CCB38DDC75C",
+            "address": "〒690-0887, 島根県松江市, 殿町1-5",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk about 10 minutes to the Shiomi Nawate area"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "Shiomi Nawate and the Lafcadio Hearn Former Residence (塩見縄手・小泉八雲旧居)",
+          "start": "13:45",
+          "end": "15:15",
+          "category": "sight",
+          "place": {
+            "name": "Samurai houses",
+            "latitude": 35.4785942,
+            "longitude": 133.0506986,
+            "applePlaceID": "I69BBF920F882A99D",
+            "address": "〒690-0888, 島根県松江市, 北堀町305",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; Nawate is a street of samurai houses, free to walk",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk about 10 minutes"
+          }
+        },
+        {
+          "key": "d2-05",
+          "title": "Lake Shinji cruise, sunset sailing (宍道湖遊覧船「白鳥号」夕日クルーズ)",
+          "start": "16:15",
+          "end": "17:15",
+          "category": "ferry",
+          "place": {
+            "name": "Lake Shinji cruise boarding point",
+            "latitude": 35.466821,
+            "longitude": 133.061187,
+            "applePlaceID": "I4080A359C3D6BA63",
+            "address": "島根県松江市, 伊勢宮町",
+            "addressIsApproximate": true
+          },
+          "notes": "The sunset departure time changes with the date (about 16:20 in December, about 18:40 in June–July, from boarding point 1), and the whole cruise takes about 60 minutes; see the timetable on the official site https://hakuchougo.jp/timetable/",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "From Shiomi Nawate take a bus or walk to the boarding point on the east side of Matsue Station, then wait for the boat; work backward from sunset time"
+          },
+          "todos": [
+            {
+              "text": "Check the Lake Shinji sunset cruise time and book",
+              "note": "https://hakuchougo.jp/timetable/ Sunset time changes with the season; phone 0852-24-3218"
+            }
+          ],
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "Dinner: around Matsue Station",
+          "start": "17:45",
+          "end": "19:00",
+          "category": "dining",
+          "place": {
+            "name": "Matsue",
+            "latitude": 35.4640317,
+            "longitude": 133.063745,
+            "applePlaceID": "I5D030EBE00248ED3",
+            "address": "島根県松江市, 朝日町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "Walk back from the boarding point to the Matsue Station area"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Izumo",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Izumo Taisha (出雲大社): the great shimenawa of the Kaguraden and the approach",
+          "start": "10:15",
+          "end": "12:15",
+          "category": "temple",
+          "place": {
+            "name": "Izumo Taisha",
+            "latitude": 35.4019987,
+            "longitude": 132.6854567,
+            "applePlaceID": "IF395D2F40C7AF3EE",
+            "address": "〒699-0701, 島根県出雲市, 大社町杵築東195",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the prayer is two bows, four claps and one bow",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 100,
+            "durationSource": "user",
+            "note": "The limited express Yakumo from Matsue Station to Izumoshi takes about 30 minutes, then an Ichibata bus to Izumo Taisha about 30 minutes; including waiting; the travelogue says the Ichibata Electric Railway also gets there, in about the same total time"
+          },
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "Lunch: Shinmon-dōri (Izumo soba)",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "In front of Izumo Taisha",
+            "latitude": 35.3933531,
+            "longitude": 132.6876942,
+            "applePlaceID": "IBFADB70A8CC8F83",
+            "address": "島根県出雲市, 大社町杵築南",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Walk to Shinmon-dōri"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "Hinomisaki Shrine (日御碕神社): vermilion halls and a torii",
+          "start": "14:15",
+          "end": "15:30",
+          "category": "temple",
+          "place": {
+            "name": "Hinomisaki Shrine",
+            "latitude": 35.4295648,
+            "longitude": 132.6292276,
+            "applePlaceID": "I676A96AAA5CF4E67",
+            "address": "〒699-0763, 島根県出雲市, 大社町日御碕455",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "From Izumo Taisha Bus Terminal take the Ichibata Bus Hinomisaki line to Hinomisaki, about 20–25 minutes and about ¥510; about 7 round trips a day, so check the timetable first"
+          },
+          "todos": [
+            {
+              "text": "Check the Hinomisaki bus times and the last bus back",
+              "note": "Ichibata Bus Hinomisaki line; about 7 round trips a day"
+            }
+          ]
+        },
+        {
+          "key": "d3-04",
+          "title": "Sunset at Inasa-no-hama (稲佐の浜): Bentenjima and the place where the sun goes down",
+          "start": "16:15",
+          "end": "17:45",
+          "category": "beach",
+          "place": {
+            "name": "Inasa-no-hama Beach",
+            "latitude": 35.4000699,
+            "longitude": 132.6724005,
+            "applePlaceID": "I7363992FA78AD40B",
+            "address": "島根県出雲市, 国道431号",
+            "addressIsApproximate": false
+          },
+          "notes": "Open all day; check the official sunset forecast for the time https://www.kankou-shimane.com/",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "From Hinomisaki take the same Ichibata Bus line toward Izumo Taisha and get off at Inasa-no-hama, about 25–30 minutes and about ¥500 (a traveler in the travelogue took the 16:17 bus); check the last bus"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "Dinner: around Izumoshi Station",
+          "start": "18:30",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "Izumo",
+            "latitude": 35.3607016,
+            "longitude": 132.7562549,
+            "applePlaceID": "I12A12B3FA5C51D71",
+            "address": "島根県出雲市, 駅北町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "A bus from Inasa-no-hama to Izumoshi Station takes about 25–30 minutes"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "From Izumoshi Station the limited express Yakumo or a local train back to Matsue takes about 30–50 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Yasugi",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "Adachi Museum of Art (足立美術館): Japan's number one garden",
+          "start": "10:00",
+          "end": "12:30",
+          "category": "museum",
+          "place": {
+            "name": "Adachi Museum of Art",
+            "latitude": 35.3814847,
+            "longitude": 133.1963774,
+            "applePlaceID": "I5CC81BFF73177018",
+            "address": "〒692-0064, 島根県安来市, 古川町320",
+            "addressIsApproximate": false
+          },
+          "notes": "April–September 9:00–17:30, October–March 9:00–17:00; closing days are not listed on the official site, so check before you go; ¥2,500 for adults; no photography inside",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "JR from Matsue to Yasugi takes about 15–20 minutes, then the free shuttle bus from Yasugi Station about 20 minutes; remember to pick up a numbered ticket for the return shuttle at the entrance counter (travelogue reminder)"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "Lunch: the tea rooms inside the Adachi Museum",
+          "start": "12:40",
+          "end": "13:40",
+          "category": "dining",
+          "place": {
+            "name": "Adachi Museum of Art",
+            "latitude": 35.3814847,
+            "longitude": 133.1963774,
+            "applePlaceID": "I5CC81BFF73177018",
+            "address": "〒692-0064, 島根県安来市, 古川町320",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue mentions two tea rooms inside the museum",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Walk inside the museum"
+          }
+        },
+        {
+          "key": "d4-03",
+          "title": "Yasugi Kiyomizu-dera (安来清水寺): the three-story pagoda and autumn leaves",
+          "start": "14:45",
+          "end": "16:15",
+          "category": "temple",
+          "place": {
+            "name": "Kiyomizu-dera",
+            "latitude": 35.4021879,
+            "longitude": 133.2819171,
+            "applePlaceID": "IC9C4B296B332AC17",
+            "address": "〒692-0033, 島根県安来市, 清水町528",
+            "addressIsApproximate": false
+          },
+          "notes": "Mountain open 8:30–17:00 (last entry 16:30), main hall 9:00–16:30; the three-story pagoda and treasure hall need a reservation, ¥500 for adults, and reservations stop from 12/1 to 3/31 (from a tourism information site)",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 65,
+            "durationSource": "user",
+            "note": "The shuttle bus back to Yasugi Station takes about 20 minutes, then the Yasugi City yellow bus ‘Kiyomizu’ line about 15 minutes to the terminus, then about 8 minutes on foot; few departures, so check the timetable first"
+          },
+          "todos": [
+            {
+              "text": "Check the Yasugi Kiyomizu-dera pagoda reservation and the yellow bus times",
+              "note": "The three-story pagoda and treasure hall need a reservation; no reservations 12/1–3/31; the yellow bus has few departures"
+            }
+          ]
+        },
+        {
+          "key": "d4-04",
+          "title": "Dinner: around the north exit of Tottori Station (the travelogue recommends the Tottori wagyu restaurant ‘Nikuryōri Nick’)",
+          "start": "18:30",
+          "end": "19:45",
+          "category": "dining",
+          "place": {
+            "name": "Tottori",
+            "latitude": 35.4940203,
+            "longitude": 134.2259149,
+            "applePlaceID": "IBEB42912389ED68",
+            "address": "鳥取県鳥取市, 東品治町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go; the travelogue says the Tottori wagyu three-way rice bowl is about ¥3,500 (2024 data)",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "Take the yellow bus back to Yasugi Station, then the limited express Super Matsukaze or Super Oki to Tottori, about 70–80 minutes"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel from dinner"
+          }
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Tottori",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "Conan Station (コナン駅／由良駅)",
+          "start": "09:45",
+          "end": "10:15",
+          "category": "station",
+          "place": {
+            "name": "Yura Station",
+            "latitude": 35.4904561,
+            "longitude": 133.7543796,
+            "applePlaceID": "IB9242A51CDDBA1EB",
+            "address": "鳥取県東伯郡北栄町, 由良宿",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go; the station and the platform have Conan decorations",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 60,
+            "durationSource": "user",
+            "note": "From Tottori Station take the JR San'in Main Line to Yura Station, about 45–60 minutes; few departures, so check the timetable first (official times not obtained)"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "Conan Town: Conan-dōri (コナン通り)",
+          "start": "10:25",
+          "end": "11:15",
+          "category": "sight",
+          "place": {
+            "name": "Yura Station",
+            "latitude": 35.4904561,
+            "longitude": 133.7543796,
+            "applePlaceID": "IB9242A51CDDBA1EB",
+            "address": "鳥取県東伯郡北栄町, 由良宿",
+            "addressIsApproximate": true
+          },
+          "notes": "You can walk the street freely; check each shop's opening hours before you go",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "From Yura Station walk along Conan-dōri toward the Gosho Aoyama Hometown Museum; about 1.4 kilometers and 20 minutes, with Conan statues and character signs all the way"
+          }
+        },
+        {
+          "key": "d5-03",
+          "title": "Gosho Aoyama Hometown Museum (青山剛昌ふるさと館): the home town of the Detective Conan author",
+          "start": "11:25",
+          "end": "12:45",
+          "category": "museum",
+          "place": {
+            "name": "Gosho Aoyama Furusato Museum",
+            "latitude": 35.4980087,
+            "longitude": 133.7618119,
+            "applePlaceID": "I5EC42F63654B929",
+            "address": "〒689-2221, 鳥取県東伯郡北栄町, 由良宿1414",
+            "addressIsApproximate": false
+          },
+          "notes": "9:30–17:30 (last admission 17:00), closed on 2026 November 30; ¥700 for adults; the current building is open until 2027/1/11, after which it moves to a new building (expected spring 2027)",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 minutes on foot (at the end of Conan-dōri)"
+          },
+          "todos": [
+            {
+              "text": "Check the Gosho Aoyama Hometown Museum's closing days and the end date of the current building",
+              "note": "https://www.gamf.jp/42.html The current building runs until 2027/1/11"
+            }
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "Lunch: around Yonaka Shopping Street (米花商店街)",
+          "start": "12:55",
+          "end": "13:50",
+          "category": "dining",
+          "place": {
+            "name": "Yura Station",
+            "latitude": 35.4904561,
+            "longitude": 133.7543796,
+            "applePlaceID": "IB9242A51CDDBA1EB",
+            "address": "鳥取県東伯郡北栄町, 由良宿",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk to Yonaka Shopping Street beside the museum"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "Hisamatsu Park and Jinpūkaku (久松公園・仁風閣): the Tottori Castle ruins",
+          "start": "15:30",
+          "end": "17:00",
+          "category": "park",
+          "place": {
+            "name": "Jinpūkaku",
+            "latitude": 35.5071745,
+            "longitude": 134.2375069,
+            "applePlaceID": "I181889439869B454",
+            "address": "〒680-0011, 鳥取県鳥取市, 東町2丁目121",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the park is open all day for a walk",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 50,
+            "durationSource": "user",
+            "note": "From Yura Station take JR back to Tottori Station, about 45 minutes, then a bus or about 20 minutes on foot to Hisamatsu Park; few departures"
+          }
+        },
+        {
+          "key": "d5-06",
+          "title": "Dinner: around the shopping street at the north exit of Tottori Station",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "dining",
+          "place": {
+            "name": "Tottori",
+            "latitude": 35.4940203,
+            "longitude": 134.2259149,
+            "applePlaceID": "IBEB42912389ED68",
+            "address": "鳥取県鳥取市, 東品治町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Walk from Hisamatsu Park back to the shopping street by the station"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Tottori",
+      "events": [
+        {
+          "key": "d6-01",
+          "title": "Hakuto Shrine (白兔神社): the legend of the White Hare of Inaba, for good matches",
+          "start": "09:30",
+          "end": "10:30",
+          "category": "temple",
+          "place": {
+            "name": "Hakuto Shrine",
+            "latitude": 35.5242042,
+            "longitude": 134.1150668,
+            "applePlaceID": "IBF6FD6B78E092305",
+            "address": "〒689-0206, 鳥取県鳥取市, 白兎603",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; Tottori buses take cash only, so bring small change",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "From platform 4 at Tottori Station bus terminal take the Hakuto Coast Line bus (route 41) to Hakuto Jinja-mae, about 40–45 minutes and about ¥610 (2024 travelogue data, cash only; take a numbered ticket and pay by the number when you get off)"
+          },
+          "todos": [
+            {
+              "text": "Check the Tottori bus times to Hakuto Shrine and the dunes",
+              "note": "Tottori buses take cash only, so bring change; the travelogue's route needs a change at Aioi-chō"
+            }
+          ],
+          "images": [
+            "d6-01"
+          ]
+        },
+        {
+          "key": "d6-02",
+          "title": "Tottori Sand Dunes (鳥取砂丘): Japan's number one dunes",
+          "start": "11:50",
+          "end": "13:00",
+          "category": "sight",
+          "place": {
+            "name": "Tottori Sand Dunes Geopark Center",
+            "latitude": 35.5440428,
+            "longitude": 134.2366272,
+            "applePlaceID": "ID75E63B64E53B549",
+            "address": "〒689-0105, 鳥取県鳥取市, 福部町湯山2164-971",
+            "addressIsApproximate": false
+          },
+          "notes": "Open all day, no closing days; drawing on the sand is forbidden",
+          "leg": {
+            "fromKey": "d6-01",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 70,
+            "durationSource": "user",
+            "note": "From Hakuto Shrine take a bus to Aioi-chō and change to a bus toward the Tottori Sand Dunes, getting off at Sakyū Higashi-guchi and walking up, about 60–70 minutes (2024 travelogue route; few departures, so check the timetable first)"
+          },
+          "images": [
+            "d6-02"
+          ]
+        },
+        {
+          "key": "d6-03",
+          "title": "Lunch: the observation-deck restaurant at the Tottori Sand Dunes (the travelogue had the oyster set) and the dune pudding",
+          "start": "13:10",
+          "end": "14:05",
+          "category": "dining",
+          "place": {
+            "name": "Tottori Sand Dunes Geopark Center",
+            "latitude": 35.5440428,
+            "longitude": 134.2366272,
+            "applePlaceID": "ID75E63B64E53B549",
+            "address": "〒689-0105, 鳥取県鳥取市, 福部町湯山2164-971",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travelogue says you buy a meal ticket from the vending machine before you sit down",
+          "leg": {
+            "fromKey": "d6-02",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk uphill from the dunes for about 15 minutes, or take the chairlift to the observation deck"
+          }
+        },
+        {
+          "key": "d6-04",
+          "title": "Sand Museum (砂の美術館): sand sculpture exhibition",
+          "start": "14:20",
+          "end": "15:20",
+          "category": "museum",
+          "place": {
+            "name": "Tottori Sand Dunes Sand Museum",
+            "latitude": 35.5396298,
+            "longitude": 134.2383733,
+            "applePlaceID": "I6B86B039CECD0764",
+            "address": "〒689-0105, 鳥取県鳥取市, 福部町湯山2083-17",
+            "addressIsApproximate": false
+          },
+          "notes": "9:00–18:00 (last entry 17:30); open all year during an exhibition and closed between exhibitions; the current show ‘A World Trip in Sand: Spain’ runs until 2027/1/3, and the next is ‘The Silk Road’; ¥800 for adults",
+          "leg": {
+            "fromKey": "d6-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "From the observation deck walk down about 10 minutes to entrance 2"
+          }
+        },
+        {
+          "key": "d6-05",
+          "title": "Dinner: around Tottori Station (Tottori wagyu or seafood)",
+          "start": "17:15",
+          "end": "18:45",
+          "category": "dining",
+          "place": {
+            "name": "Tottori",
+            "latitude": 35.4940203,
+            "longitude": 134.2259149,
+            "applePlaceID": "IBEB42912389ED68",
+            "address": "鳥取県鳥取市, 東品治町",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d6-04",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "A bus from the dunes back to Tottori Station takes about 25–30 minutes (the travelogue took the 14:42 bus; check the last bus); rest after you reach the station"
+          },
+          "closingLeg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk back to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "Tottori",
+      "events": [
+        {
+          "key": "d7-01",
+          "title": "Souvenir shopping around Tottori Station (dune pudding, Nijisseiki pears)",
+          "start": "09:30",
+          "end": "11:00",
+          "category": "shopping",
+          "place": {
+            "name": "Toyoko Inn Tottori-eki Minami-guchi",
+            "latitude": 35.4925256,
+            "longitude": 134.2279042,
+            "applePlaceID": "I6FC9DF0721926300",
+            "address": "〒680-0845, 鳥取県鳥取市, 富安町2丁目153番3号",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the station shops sell dune pudding (the travelogue says it is sold inside the station too)",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "Walk from the hotel to the station"
+          }
+        },
+        {
+          "key": "d7-02",
+          "title": "Depart from Kansai International Airport (関西国際空港)",
+          "start": "17:00",
+          "end": "18:00",
+          "category": "airport",
+          "place": {
+            "name": "Kansai International Airport",
+            "latitude": 34.4358183,
+            "longitude": 135.2434843,
+            "applePlaceID": "IC0AC0A0EFC8040D5",
+            "address": "〒549-8501",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d7-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 300,
+            "durationSource": "user",
+            "note": "The limited express Super Hakuto from Tottori Station to Shin-Osaka takes about 2 hours 30 minutes (reserved seat about ¥7,000, check JR West), then the Kansai Airport limited express Haruka to Kansai Airport about 50 minutes; including transfers and a buffer. Pick a flight that leaves after 19:30"
+          }
+        }
+      ]
+    }
+  ]
+}

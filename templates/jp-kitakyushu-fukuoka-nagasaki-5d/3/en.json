@@ -1,0 +1,1201 @@
+{
+  "formatVersion": 3,
+  "templateID": "jp-kitakyushu-fukuoka-nagasaki-5d",
+  "revision": 3,
+  "contentLocale": "en",
+  "title": "Northern Kyushu in 5 Days — Fukuoka, Nagasaki, Dazaifu, Yanagawa, Mojikō",
+  "subtitle": "Based in Fukuoka, with a day in Nagasaki, a day in Dazaifu and Yanagawa, and a day in Mojikō",
+  "summary": "Five days in Fukuoka, setting out from Hakata each day: Dazaifu and Yanagawa, Nagasaki as a day trip, the retro quarter of Mojikō, plus Fukuoka city itself. Travel takes a large share of the Nagasaki day trip; that is the distance. Fukuoka Tower, Nagasaki's Spectacles Bridge and the Dazaifu Starbucks are held as alternates.",
+  "destination": "Fukuoka, Nagasaki & Northern Kyushu, Japan",
+  "regionCodes": [
+    "JP"
+  ],
+  "dayCount": 5,
+  "coverColour": "green",
+  "defaultTimeZoneID": "Asia/Tokyo",
+  "tags": [
+    "Couple",
+    "First visit",
+    "Food",
+    "History"
+  ],
+  "todos": [
+    {
+      "text": "Register on Visit Japan Web (immigration and customs declaration)",
+      "note": "https://www.vjw.digital.go.jp/main/#/vjwpco001 You can fill it in once flights and hotel are booked"
+    }
+  ],
+  "images": {
+    "d1-03": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d1-03.jpg",
+    "d1-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d1-05.jpg",
+    "d2-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-01.jpg",
+    "d2-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-04.jpg",
+    "d2-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-05.jpg",
+    "d2-06": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d2-06.jpg",
+    "d3-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-01.jpg",
+    "d3-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-04.jpg",
+    "d3-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d3-05.jpg",
+    "d4-01": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-01.jpg",
+    "d4-02": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-02.jpg",
+    "d4-04": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-04.jpg",
+    "d4-05": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d4-05.jpg",
+    "d5-02": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d5-02.jpg",
+    "d5-03": "images/jp-kitakyushu-fukuoka-nagasaki-5d/d5-03.jpg"
+  },
+  "allDayEvents": [
+    {
+      "key": "ad1-01",
+      "title": "Stay: around Tenjin, Fukuoka",
+      "fromDay": 1,
+      "toDay": 5,
+      "category": "lodging",
+      "place": {
+        "name": "Tenjin",
+        "latitude": 33.5913835,
+        "longitude": 130.3989064,
+        "applePlaceID": "IE9F4B2EE1A6F4F8D",
+        "address": "福岡県福岡市中央区, 天神",
+        "addressIsApproximate": true
+      },
+      "openingDays": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "closingDays": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "unscheduledEvents": [
+    {
+      "key": "u-01",
+      "title": "Alternate: Fukuoka Tower (福岡タワー)",
+      "durationMinutes": 60,
+      "category": "viewpoint",
+      "place": {
+        "name": "Fukuoka Tower",
+        "latitude": 33.5932849,
+        "longitude": 130.3514528,
+        "applePlaceID": "ID097EC5E453200F5",
+        "address": "〒814-0001, 福岡県福岡市早良区, 百道浜2丁目3-26",
+        "addressIsApproximate": false
+      },
+      "notes": "09:30–22:00 (last entry 21:30); far from the city centre, and the travel log found the view ordinary, but the mirrored exterior is beautiful"
+    },
+    {
+      "key": "u-02",
+      "title": "Alternate: Starbucks on Dazaifu Omotesandō (スターバックス)",
+      "durationMinutes": 60,
+      "category": "cafe",
+      "place": {
+        "name": "Starbucks Coffee Dazaifu Tenmangū Omotesandō",
+        "latitude": 33.5196319,
+        "longitude": 130.5334179,
+        "applePlaceID": "ICFD12966FE79BA8D",
+        "address": "〒818-0117, 福岡県太宰府市, 宰府3丁目2-43",
+        "addressIsApproximate": false
+      },
+      "notes": "Check opening hours before you go; the travel log says it is crowded"
+    },
+    {
+      "key": "u-03",
+      "title": "Alternate: Nagasaki Spectacles Bridge (眼鏡橋)",
+      "durationMinutes": 60,
+      "category": "sight",
+      "place": {
+        "name": "Spectacles Bridge",
+        "latitude": 32.7471779,
+        "longitude": 129.8800814,
+        "applePlaceID": "IB8CAB7EB65560E8C",
+        "address": "長崎県長崎市",
+        "addressIsApproximate": true
+      },
+      "notes": "Check opening hours before you go; the travel log suggests photographing the reflection in the water from the front"
+    }
+  ],
+  "notes": [
+    {
+      "key": "n-01",
+      "title": "Sources and fact-checking",
+      "paragraphs": [
+        {
+          "text": "Source travel log",
+          "style": "heading"
+        },
+        {
+          "text": "https://zhgchg.li/posts/d78e0b15a08a/",
+          "style": "bullet"
+        },
+        {
+          "text": "Verified (2026-11-17)",
+          "style": "heading"
+        },
+        {
+          "text": "Glover Garden hours and price (08:00–18:00, extended to 20:00 in Nov–Dec 2026, ¥1,300 general): https://glover-garden.jp/guide/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Nagasaki Atomic Bomb Museum (¥200 admission, closed 29–31 Dec, part of the permanent exhibition closed): https://nabmuseum.jp/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Nagasaki Atomic Bomb Museum hours (city government page, Sep–Apr 08:30–17:30, May–Aug until 18:30): https://www.city.nagasaki.lg.jp/heiwa/3030000/3030300/p005150.html (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Yanagawa river cruise (Shōgetsu boarding point 09:30–15:00, about 60 min, ¥2,200 adult): https://www.yanagawakk.co.jp/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Nishitetsu Dazaifu Yanagawa Pass (¥3,620 digital, ¥3,730 at the station counter, valid for two days): https://www.ensen24.jp/kippu/tc/dazaifu-yanagawa/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Dazaifu Tenmangū visiting hours: https://www.dazaifutenmangu.or.jp/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Canal City Hakata opening hours: https://www.canalcity.co.jp/service/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Tenjin Underground Mall opening hours: https://www.tenchika.com/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Kokura Castle keep opening hours: https://www.kokura-castle.jp/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Fukuoka Tower observation deck 09:30–22:00 (last entry 21:30): https://www.fukuokatower.co.jp/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Fukuoka SoftBank Hawks home fixtures (official-site example 18:00 start, みずほPayPayドーム福岡): https://www.softbankhawks.co.jp/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Fukuoka City Subway Airport Line (Tenjin, the airport and Tōjin-machi are on the same line): https://subway.city.fukuoka.lg.jp/ (verified 2026-11-17)",
+          "style": "bullet"
+        },
+        {
+          "text": "Third-party information, unofficial — check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "Kushida Shrine visiting 04:00–22:00, Mount Inasa ropeway 09:00–22:00, Mojikō Blue Wing bridge opening times and the observation room 10:00–22:00, Hakata Miyazaki beef opening hours, the subway from Tenjin to the airport at about 11 min and a fare of about ¥260.",
+          "style": "bullet"
+        },
+        {
+          "text": "Hakata to Nagasaki travel time: since the Nishi-Kyushu Shinkansen opened the fastest is about 1 h 20 min, and the travel log says about 1 h 50 min; this itinerary estimates about 1 h 30–50 min.",
+          "style": "bullet"
+        },
+        {
+          "text": "Could not be confirmed from official sources — check before you go",
+          "style": "heading"
+        },
+        {
+          "text": "Closing days for Glover Garden; opening hours for Ōura Church, Peace Park, Sumiyoshi Shrine, Ichiran Dazaifu Sandō Branch, umegae mochi, baked curry and Hakata Gion Tetsunabe gyoza.",
+          "style": "bullet"
+        },
+        {
+          "text": "Kokura Castle closing days, Mojikō Retro Observation Room closing days, Mount Inasa ropeway fare.",
+          "style": "bullet"
+        },
+        {
+          "text": "Changes",
+          "style": "heading"
+        },
+        {
+          "text": "This template takes only the Fukuoka and Northern Kyushu part of the travel log (days 1 to the first half of day 5); the Kumamoto and Aso part has its own template.",
+          "style": "bullet"
+        },
+        {
+          "text": "The travel log's first evening left the airport only at 21:00; this one arrives in the afternoon and adds Canal City Hakata and Nakasu yatai in the evening (originally the evening of the log's day 3).",
+          "style": "bullet"
+        },
+        {
+          "text": "The log's LaLaport Fukuoka (the Fukuoka Gundam) is not scheduled; for the alternates, check before you go whether that display is still there.",
+          "style": "bullet"
+        },
+        {
+          "text": "Travel log details",
+          "style": "heading"
+        },
+        {
+          "text": "The stay follows the log: four nights in a row around Tenjin, Fukuoka; the log's author stayed at a hotel near Watanabe-dōri Station but found it dated, so only the area is written.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-02",
+      "title": "Before you go",
+      "paragraphs": [
+        {
+          "text": "Entry and data",
+          "style": "heading"
+        },
+        {
+          "text": "Register your immigration and customs declaration on Visit Japan Web before you leave: https://www.vjw.digital.go.jp/main/#/vjwpco001",
+          "style": "bullet"
+        },
+        {
+          "text": "For data, use a physical SIM or an eSIM.",
+          "style": "bullet"
+        },
+        {
+          "text": "Getting around",
+          "style": "heading"
+        },
+        {
+          "text": "Fukuoka's subway, buses, JR and Nishitetsu mostly take Suica and other nationwide transit IC cards; JR and Nishitetsu limited expresses may need a separate limited-express ticket or pass.",
+          "style": "bullet"
+        },
+        {
+          "text": "Airport to the city: the domestic terminal at Fukuoka Airport connects directly to the subway Airport Line, about 11 min to Tenjin and about 5 min to Hakata; from the international terminal take the free shuttle bus to the domestic terminal first (check fares and frequencies before you go).",
+          "style": "bullet"
+        },
+        {
+          "text": "Nishitetsu Dazaifu Yanagawa Pass: it can only start from Fukuoka (Tenjin) or Yakuin station and has two routes to choose from (Fukuoka → Yanagawa → Dazaifu → Fukuoka, or Fukuoka → Dazaifu → Yanagawa → Fukuoka); you cannot use the automatic gates and must use a staffed window; it is valid for two days including the first; you can only exit at Dazaifu and Nishitetsu Yanagawa along the way, and exiting at another station or returning early to the starting station voids the ticket.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Yanagawa cruise takes about 60–70 min and the Shōgetsu boarding point accepts people until 15:00, so follow the order Fukuoka → Yanagawa → Dazaifu → Fukuoka and take the boat in the morning.",
+          "style": "bullet"
+        },
+        {
+          "text": "Nagasaki is a long day trip: the Limited Express Kamome connects to the Nishi-Kyushu Shinkansen, changing on the same platform at Takeo-Onsen; look up the last train both ways first, because the return to Hakata may run past 21:00.",
+          "style": "bullet"
+        },
+        {
+          "text": "The JR Kyushu Northern Kyushu Pass (the travel log's author bought the 5-day pass in 2023) does not cover the Shinkansen; Hakata to Kokura by Shinkansen costs extra, while the JR Limited Express Sonic or local trains are covered. This itinerary moves a lot; work out whether it pays for itself yourself.",
+          "style": "bullet"
+        },
+        {
+          "text": "Booking",
+          "style": "heading"
+        },
+        {
+          "text": "The Nishitetsu Dazaifu Yanagawa Pass can be bought in person at Tenjin or Yakuin, or as a digital ticket online.",
+          "style": "bullet"
+        },
+        {
+          "text": "Book the Yanagawa cruise; in peak season and at weekends the wait can be long.",
+          "style": "bullet"
+        },
+        {
+          "text": "Fukuoka SoftBank Hawks game: check the fixtures first and only schedule the evening of day 4 if there is a home game; tickets can be bought on the day too, but the choice of seats is limited.",
+          "style": "bullet"
+        },
+        {
+          "text": "The Mount Inasa night view depends on sunset time, so the afternoon of day 2 can be shifted around it.",
+          "style": "bullet"
+        },
+        {
+          "text": "Other",
+          "style": "heading"
+        },
+        {
+          "text": "Carry enough yen in cash: some shuttles, small shops and yatai do not take cards.",
+          "style": "bullet"
+        },
+        {
+          "text": "Nagasaki castella keeps about 12 days; umegae mochi must be eaten the same day.",
+          "style": "bullet"
+        },
+        {
+          "text": "Part of the permanent exhibition at the Nagasaki Atomic Bomb Museum is closed from Sep 2026 to Mar 2027; check before you go.",
+          "style": "bullet"
+        }
+      ]
+    },
+    {
+      "key": "n-overview",
+      "title": "Trip overview: how the 5 days run",
+      "paragraphs": [
+        {
+          "image": "d3-04"
+        },
+        "In and out of Fukuoka, with all five nights in the same area near Tenjin, so you never change hotels. Every day starts from Hakata or Tenjin: Nagasaki is a day trip, Dazaifu with Yanagawa is one day, and Mojiko with Kokura is another. The plan is to fan out from Fukuoka on the subway, Nishitetsu and JR.",
+        "Day 1: land at Fukuoka Airport in the afternoon, take the subway to Tenjin to drop your bags, wander {@d1-03} in the evening, have iron-pan gyoza for dinner, then go to {@d1-05} for the night view and street stalls.",
+        "Day 2: the limited express and the Nishi-Kyushu Shinkansen to Nagasaki, first {@d2-01} and Oura Church, lunch in Shinchi Chinatown, then the {@d2-04} and Peace Park in the afternoon, the night view from Mount Inasa, and back to Fukuoka.",
+        {
+          "image": "d2-06"
+        },
+        "Day 3: Nishitetsu from Tenjin, with the {@d3-01} in the morning, then on to Dazaifu after lunch for umegae mochi and {@d3-04}, back to the Tenjin Underground Mall in the evening, and Miyazaki beef for dinner.",
+        "Day 4: the Shinkansen to Kokura and then JR to {@d4-01}, up to the observation room, grilled curry for lunch, back to Kokura for {@d4-04} in the afternoon, and, if there happens to be a home game, the SoftBank Hawks at the dome in the evening.",
+        {
+          "image": "d4-01"
+        },
+        "Day 5: {@d5-02} and {@d5-03} in the morning, souvenirs at Hakata Station after lunch, bags back from the hotel, and the subway to the airport in the afternoon.",
+        "Where to sleep: four nights in a row in the Fukuoka Tenjin area, and on day 5 you check out and leave your bags.",
+        "Getting around: from the international terminal take the free shuttle bus to the domestic terminal and then the Kuko Line to Tenjin, about 11 minutes; Dazaifu and Yanagawa use the Nishitetsu Dazaifu-Yanagawa pass, which starts only from Nishitetsu Fukuoka (Tenjin) or Yakuin, cannot go through the automatic gates, and is best done in the order Fukuoka, Yanagawa, Dazaifu, Fukuoka; Nagasaki is a long day trip on the Kamome limited express and the Nishi-Kyushu Shinkansen, so travel takes a large share of the day, and you should check the last train both ways because you may be back in Hakata after 21:00; the JR Kitakyushu pass does not cover the Shinkansen, so Hakata to Kokura costs extra. Check the latest timetables before you go.",
+        "Who it suits: anyone who wants one hotel and no moving bags, with daily trips out to Nagasaki, Dazaifu, Yanagawa and Mojiko. The Nagasaki day is tiring and the museum is heavy going, so leave some slack in your energy and your time."
+      ]
+    }
+  ],
+  "overviewNoteKey": "n-overview",
+  "shopping": [
+    {
+      "key": "s-01",
+      "title": "Hiyoko biscuits (ひよ子)",
+      "category": "souvenir",
+      "productType": "cookie",
+      "store": "Available at Tenjin Underground Mall"
+    },
+    {
+      "key": "s-02",
+      "title": "Nagasaki castella (カステラ)",
+      "category": "souvenir",
+      "productType": "cake_dessert",
+      "store": "Available at Nagasaki Station or in Hakata; keeps about 12 days"
+    },
+    {
+      "key": "s-03",
+      "title": "Mentaiko (辛子明太子)",
+      "category": "food",
+      "productType": "savory_snack",
+      "store": "Sold at Hakata Station and the airport"
+    },
+    {
+      "key": "s-04",
+      "title": "Fukuoka SoftBank Hawks towel",
+      "category": "other",
+      "productType": "other_product",
+      "store": "Sold inside Mizuho PayPay Dome Fukuoka"
+    }
+  ],
+  "dayPlaces": [
+    {
+      "name": "Fukuoka City",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Fukuoka City",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Fukuoka City",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Fukuoka City",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    },
+    {
+      "name": "Fukuoka City",
+      "latitude": 33.6,
+      "longitude": 130.41667,
+      "timeZoneID": "Asia/Tokyo",
+      "countryCode": "JP"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Fukuoka City",
+      "events": [
+        {
+          "key": "d1-01",
+          "title": "Arrive at Fukuoka Airport (福岡空港)",
+          "start": "13:00",
+          "end": "14:00",
+          "category": "airport",
+          "place": {
+            "name": "Fukuoka Airport",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          }
+        },
+        {
+          "key": "d1-02",
+          "title": "Drop bags and check in: hotel around Tenjin, Fukuoka",
+          "start": "15:00",
+          "end": "15:30",
+          "category": "hotel",
+          "place": {
+            "name": "Tenjin",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "notes": "Check-in time is whatever the hotel says",
+          "leg": {
+            "fromKey": "d1-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 55,
+            "durationSource": "user",
+            "note": "From the international terminal take the free shuttle bus to the domestic terminal, about 10 min, then the Fukuoka City Subway Airport Line to Tenjin, about 11 min (fare about ¥260, check before you go), then walk to the hotel"
+          }
+        },
+        {
+          "key": "d1-03",
+          "title": "Canal City Hakata (キャナルシティ博多)",
+          "start": "16:15",
+          "end": "17:45",
+          "category": "shopping",
+          "place": {
+            "name": "Canal City Hakata, Sumiyoshi 1-2-1",
+            "latitude": 33.5908098,
+            "longitude": 130.4106146,
+            "address": "日本福岡縣福岡市博多區",
+            "addressIsApproximate": true
+          },
+          "notes": "Shops 10:00–21:00, restaurants 11:00–23:00, varies by store; open every day (official site)",
+          "leg": {
+            "fromKey": "d1-02",
+            "mode": "walking",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "About 25–30 min on foot, or take a bus or the subway towards Hakata and walk the rest"
+          },
+          "images": [
+            "d1-03"
+          ]
+        },
+        {
+          "key": "d1-04",
+          "title": "Dinner: Hakata Gion Tetsunabe iron-pan gyoza (博多祇園 鉄なべ)",
+          "start": "18:15",
+          "end": "19:15",
+          "category": "dining",
+          "place": {
+            "name": "Hakata Gion Tetsunabe",
+            "latitude": 33.592484,
+            "longitude": 130.4139834,
+            "applePlaceID": "IC5F6C83099E71F6E",
+            "address": "〒812-0861, 福岡県福岡市博多区, 祇園町2-20",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travel log suggests two portions to be full (8 pieces each)",
+          "leg": {
+            "fromKey": "d1-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 min on foot from Canal City"
+          }
+        },
+        {
+          "key": "d1-05",
+          "title": "Nakasu yatai (中洲屋台): night view and street stalls",
+          "start": "19:45",
+          "end": "20:45",
+          "category": "market",
+          "place": {
+            "name": "Ichiryū Ramen, Nakasu Yatai",
+            "latitude": 33.5900202,
+            "longitude": 130.4055095,
+            "applePlaceID": "IA698F48C2255DD56",
+            "address": "〒810-0002, 福岡県福岡市中央区, 西中洲1-14 1F",
+            "addressIsApproximate": false
+          },
+          "notes": "Most yatai open in the early evening; check each stall's hours before you go",
+          "leg": {
+            "fromKey": "d1-04",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 min on foot"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "One subway stop from Nakasu-Kawabata to Tenjin, about 3 min, then walk to the hotel"
+          },
+          "images": [
+            "d1-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Fukuoka City",
+      "events": [
+        {
+          "key": "d2-01",
+          "title": "Glover Garden (グラバー園)",
+          "start": "10:30",
+          "end": "11:45",
+          "category": "sight",
+          "place": {
+            "name": "Glover Garden",
+            "latitude": 32.7362511,
+            "longitude": 129.8687273,
+            "applePlaceID": "IE18B35E51782C33F",
+            "address": "長崎県長崎市, 松が枝町",
+            "addressIsApproximate": true
+          },
+          "notes": "Standard hours on the official site are 08:00–18:00 (last entry 20 min before closing), extended by season; Nov–Dec 2026 is 08:00–20:00; check closing days before you go",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 135,
+            "durationSource": "user",
+            "note": "From Hakata Station take the Limited Express Relay Kamome to Takeo-Onsen, change on the same platform to the Nishi-Kyushu Shinkansen to Nagasaki, about 1 h 30–50 min in all; from Nagasaki Station take the streetcar (about ¥140, check) to Ōura Church, then walk uphill about 10 min"
+          },
+          "todos": [
+            {
+              "text": "Confirm train times and seats for the Nagasaki round trip",
+              "note": "Check the Limited Express Kamome and the Nishi-Kyushu Shinkansen on the JR Kyushu site https://www.jrkyushu.co.jp/ ; look up the last train back first"
+            }
+          ],
+          "images": [
+            "d2-01"
+          ]
+        },
+        {
+          "key": "d2-02",
+          "title": "Ōura Church (大浦天主堂)",
+          "start": "12:00",
+          "end": "12:20",
+          "category": "temple",
+          "place": {
+            "name": "Ōura Church",
+            "latitude": 32.734929,
+            "longitude": 129.8700393,
+            "applePlaceID": "IDD4FA4732AB27012",
+            "address": "〒850-0931, 長崎県長崎市, 南山手町2-18",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; the travel log only photographed the outside",
+          "leg": {
+            "fromKey": "d2-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot downhill from Glover Garden"
+          }
+        },
+        {
+          "key": "d2-03",
+          "title": "Lunch: Nagasaki Shinchi Chinatown (新地中華街)",
+          "start": "12:40",
+          "end": "13:40",
+          "category": "dining",
+          "place": {
+            "name": "Nagasaki Shinchi Chinatown",
+            "latitude": 32.7417012,
+            "longitude": 129.8756011,
+            "applePlaceID": "I95158EC3722DC86E",
+            "address": "〒850-0842, 長崎県長崎市, 新地町10-13",
+            "addressIsApproximate": false
+          },
+          "notes": "Check each shop's opening hours before you go",
+          "leg": {
+            "fromKey": "d2-02",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 min on foot"
+          }
+        },
+        {
+          "key": "d2-04",
+          "title": "Nagasaki Atomic Bomb Museum (長崎原爆資料館)",
+          "start": "14:15",
+          "end": "15:35",
+          "category": "museum",
+          "place": {
+            "name": "Nagasaki Atomic Bomb Museum",
+            "latitude": 32.7725849,
+            "longitude": 129.8645474,
+            "applePlaceID": "IBCDCE060473CBA74",
+            "address": "〒852-8117, 長崎県長崎市, 平野町7-8",
+            "addressIsApproximate": false
+          },
+          "notes": "Sep–Apr 08:30–17:30 (last entry 17:00), May–Aug until 18:30 (last entry 18:00); closed 29–31 Dec; part of the permanent exhibition is closed from Sep 2026 to Mar 2027",
+          "leg": {
+            "fromKey": "d2-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Walk to the streetcar stop and ride to Hamaguchi-machi, about 15 min (about ¥140, check), then walk"
+          },
+          "images": [
+            "d2-04"
+          ]
+        },
+        {
+          "key": "d2-05",
+          "title": "Nagasaki Peace Park and the Hypocenter (平和公園)",
+          "start": "15:50",
+          "end": "16:30",
+          "category": "park",
+          "place": {
+            "name": "Peace Park",
+            "latitude": 32.7758255,
+            "longitude": 129.8634034,
+            "applePlaceID": "ID03370EADD799C66",
+            "address": "〒852-8118",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d2-04",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot straight on from the museum"
+          },
+          "images": [
+            "d2-05"
+          ]
+        },
+        {
+          "key": "d2-06",
+          "title": "Mount Inasa night view (稲佐山展望台)",
+          "start": "17:30",
+          "end": "19:00",
+          "category": "viewpoint",
+          "place": {
+            "name": "Mount Inasa",
+            "latitude": 32.7527,
+            "longitude": 129.8495,
+            "applePlaceID": "IE2A6A6ABE502618C",
+            "address": "〒852-8011, 長崎県長崎市, 稲佐町",
+            "addressIsApproximate": true
+          },
+          "notes": "Ropeway 09:00–22:00 (third-party information, check before you go); no admission to the observation deck; sunset time varies by season, so adjust this stop's start time yourself; the ropeway may stop in strong wind or bad weather",
+          "leg": {
+            "fromKey": "d2-05",
+            "mode": "transit",
+            "transitKind": "bus",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "Take the streetcar or a bus to near Fuchi-jinja Station and walk to the Inasayama ropeway's Fuchi-jinja station; the ropeway takes about 5 min; buses are infrequent, so check times first; a return ticket is cheaper, and the ropeway stops late at night"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 150,
+            "durationSource": "user",
+            "note": "Ropeway down, then a bus or streetcar to Nagasaki Station, and the Shinkansen and Limited Express Kamome back to Hakata (about 1 h 30–50 min), then the subway to Tenjin; confirm the last train first"
+          },
+          "images": [
+            "d2-06"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Fukuoka City",
+      "events": [
+        {
+          "key": "d3-01",
+          "title": "Yanagawa river cruise (柳川川下り)",
+          "start": "10:00",
+          "end": "11:30",
+          "category": "sight",
+          "place": {
+            "name": "Yanagawa sightseeing boat information office",
+            "latitude": 33.1596523,
+            "longitude": 130.3984069,
+            "applePlaceID": "I85FC89796B37BDF0",
+            "address": "〒832-0068, 福岡県柳川市, 城隅町18-9",
+            "addressIsApproximate": false
+          },
+          "notes": "Shōgetsu boarding point 09:30–15:00, all year (official site); winter (Dec–Feb) boats have a kotatsu; mid-February the canals are drained and a shorter route runs instead",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "Walk to Nishitetsu Fukuoka (Tenjin) Station, take the Nishitetsu limited express about 50 min to Nishitetsu Yanagawa, then a shuttle bus or walk about 5–10 min; use the Nishitetsu Dazaifu Yanagawa Pass"
+          },
+          "todos": [
+            {
+              "text": "Buy the Nishitetsu Dazaifu Yanagawa Pass",
+              "note": "Digital tickets can be bought online at https://www.ensen24.jp/kippu/tc/dazaifu-yanagawa/ , or at the counters at Tenjin or Yakuin stations"
+            },
+            {
+              "text": "Book the Yanagawa river cruise",
+              "note": "https://www.yanagawakk.co.jp/ Booking is recommended; accepted until 15:00, phone 0944-72-6177"
+            }
+          ],
+          "images": [
+            "d3-01"
+          ]
+        },
+        {
+          "key": "d3-02",
+          "title": "Lunch: Ichiran Ramen Dazaifu Sandō Branch (一蘭 太宰府参道店)",
+          "start": "13:00",
+          "end": "13:50",
+          "category": "dining",
+          "place": {
+            "name": "Ichiran Dazaifu Sandō Branch",
+            "latitude": 33.5190531,
+            "longitude": 130.5316896,
+            "applePlaceID": "I45C12655D5F294DD",
+            "address": "〒818-0117, 福岡県太宰府市, 宰府2丁目6-2",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d3-01",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 85,
+            "durationSource": "user",
+            "note": "After the cruise take the shuttle bus back to Nishitetsu Yanagawa, the Nishitetsu line to Futsukaichi, then change to the Dazaifu Line to Dazaifu, about 1 hour"
+          }
+        },
+        {
+          "key": "d3-03",
+          "title": "Umegae mochi (梅ヶ枝餅)",
+          "start": "14:05",
+          "end": "14:25",
+          "category": "dessert",
+          "place": {
+            "name": "Umegae mochi shop on Dazaifu Omotesandō",
+            "latitude": 33.5178371,
+            "longitude": 130.5324315,
+            "address": "福岡県太宰府市宰府2丁目",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go; made fresh and eaten the same day, keeps about one day",
+          "leg": {
+            "fromKey": "d3-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On foot along the Omotesandō"
+          }
+        },
+        {
+          "key": "d3-04",
+          "title": "Dazaifu Tenmangū (太宰府天満宮)",
+          "start": "14:45",
+          "end": "16:30",
+          "category": "temple",
+          "place": {
+            "name": "Dazaifu Tenmangū",
+            "latitude": 33.5214755,
+            "longitude": 130.5348435,
+            "applePlaceID": "ID92BE18ADFBB28C5",
+            "address": "〒818-0195, 福岡県太宰府市, 宰府4丁目7-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Gate opens 06:30 (06:00 from the spring equinox); closes 19:00 in Sep–Nov and Apr–May, 19:30 in Jun–Aug, 18:30 in Dec–Mar; open every day (official site)",
+          "leg": {
+            "fromKey": "d3-03",
+            "mode": "walking",
+            "durationMinutes": 15,
+            "durationSource": "user",
+            "note": "About 15 min on foot along the Omotesandō"
+          },
+          "images": [
+            "d3-04"
+          ]
+        },
+        {
+          "key": "d3-05",
+          "title": "Tenjin Underground Mall (天神地下街)",
+          "start": "17:30",
+          "end": "18:45",
+          "category": "shopping",
+          "place": {
+            "name": "Fukuoka Bank Tenjin Underground Mall",
+            "latitude": 33.5911981,
+            "longitude": 130.3994536,
+            "applePlaceID": "I565EA2C4FA433D60",
+            "address": "〒810-0001, 福岡県中央区, 福岡市, 天神1丁目11番17号, 天神地下街東ー4・福岡ビル口中地階",
+            "addressIsApproximate": false
+          },
+          "notes": "Shops 10:00–20:00, restaurants 10:00–21:00, varies by store (official site); check closing days before you go",
+          "leg": {
+            "fromKey": "d3-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 45,
+            "durationSource": "user",
+            "note": "Nishitetsu Dazaifu Line, changing at Futsukaichi, to Nishitetsu Fukuoka (Tenjin) Station, about 30–35 min; the pass must be taken out at Fukuoka (Tenjin) Station"
+          },
+          "images": [
+            "d3-05"
+          ]
+        },
+        {
+          "key": "d3-06",
+          "title": "Dinner: Hakata Miyazaki beef (博多 みやちく)",
+          "start": "19:15",
+          "end": "20:30",
+          "category": "dining",
+          "place": {
+            "name": "Hakata Miyachiku",
+            "latitude": 33.5937392,
+            "longitude": 130.404962,
+            "applePlaceID": "I31CED493AB8B250F",
+            "address": "〒810-0801, 福岡県福岡市博多区, 中洲5丁目2番1号, ジェイパーク中洲ビル2F",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go (third-party information shows lunch 11:00–15:00, dinner from 17:00)",
+          "leg": {
+            "fromKey": "d3-05",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "About 20 min on foot from Tenjin, or one subway stop to Nakasu-Kawabata"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "One subway stop from Nakasu-Kawabata to Tenjin, about 3 min, then walk to the hotel"
+          }
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Fukuoka City",
+      "events": [
+        {
+          "key": "d4-01",
+          "title": "Mojikō Retro and the Blue Wing Moji bridge (門司港レトロ・ブルーウイングもじ)",
+          "start": "09:45",
+          "end": "11:15",
+          "category": "sight",
+          "place": {
+            "name": "Mojikō Retro",
+            "latitude": 33.9461413,
+            "longitude": 130.9630072,
+            "applePlaceID": "IB8EB6FE0A4781857",
+            "address": "〒801-0852, 福岡県北九州市門司区, 港町",
+            "addressIsApproximate": true
+          },
+          "notes": "The footbridge opens and closes 6 times a day (third-party information lists 10:00, 11:00, 13:00, 14:00, 15:00, 16:00; check before you go); you can watch the deck rise when it opens",
+          "leg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 95,
+            "durationSource": "user",
+            "note": "From Hakata Station take the JR Shinkansen to Kokura, about 17–20 min (the JR Kitakyushu Pass does not cover the Shinkansen; the travel log took it by mistake and paid ¥2,160 extra), then change to the JR Kagoshima Line to Mojikō, about 15 min; you can also take the JR Limited Express Sonic, about 1 hour"
+          },
+          "images": [
+            "d4-01"
+          ]
+        },
+        {
+          "key": "d4-02",
+          "title": "Mojikō Retro Observation Room (門司港レトロ展望室)",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "viewpoint",
+          "place": {
+            "name": "Mojikō Retro Observation Room",
+            "latitude": 33.94853,
+            "longitude": 130.9641574,
+            "applePlaceID": "I75C45BE9429A34EA",
+            "address": "〒801-0853, 福岡県北九州市門司区, 東港町1-32 門司港レトロハイマート",
+            "addressIsApproximate": false
+          },
+          "notes": "10:00–22:00 (last entry 21:30), irregular closing days (third-party information, about 4 closures a year); check before you go",
+          "leg": {
+            "fromKey": "d4-01",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot"
+          },
+          "images": [
+            "d4-02"
+          ]
+        },
+        {
+          "key": "d4-03",
+          "title": "Lunch: Mojikō baked curry (焼きカレー)",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "Mojikō Station taxi stand",
+            "latitude": 33.9448865,
+            "longitude": 130.962049,
+            "applePlaceID": "I9ADD2D39314D10C9",
+            "address": "〒801-0841",
+            "addressIsApproximate": true
+          },
+          "notes": "Check each shop's opening hours before you go",
+          "leg": {
+            "fromKey": "d4-02",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On foot"
+          }
+        },
+        {
+          "key": "d4-04",
+          "title": "Kokura Castle (小倉城)",
+          "start": "14:15",
+          "end": "15:30",
+          "category": "castle",
+          "place": {
+            "name": "Kokura Castle",
+            "latitude": 33.8844402,
+            "longitude": 130.8742289,
+            "applePlaceID": "I34703FF158E11AF6",
+            "address": "〒803-0813, 福岡県北九州市小倉北区, 城内2-1",
+            "addressIsApproximate": false
+          },
+          "notes": "Keep 09:00–18:00 (official site); check closing days and last entry before you go",
+          "leg": {
+            "fromKey": "d4-03",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 35,
+            "durationSource": "user",
+            "note": "JR from Mojikō to Kokura, about 15 min, then about 15 min on foot; the entrance is on the shopping-centre side outside Kokura Station"
+          },
+          "images": [
+            "d4-04"
+          ]
+        },
+        {
+          "key": "d4-05",
+          "title": "Fukuoka SoftBank Hawks baseball game (みずほPayPayドーム福岡)",
+          "start": "17:15",
+          "end": "21:00",
+          "category": "show",
+          "place": {
+            "name": "Fukuoka Yafuoku Dome (Fukuoka Dome)",
+            "latitude": 33.5952912,
+            "longitude": 130.3620958,
+            "applePlaceID": "IDDF234C6592D00E3",
+            "address": "〒810-0065，福岡県福岡市中央区，地行浜2丁目2-2",
+            "addressIsApproximate": false
+          },
+          "notes": "Depends on the fixtures (official-site example: weekday home games start at 18:00); whether there is a game and when it starts is as the official site says; a game lasts about 3 hours",
+          "leg": {
+            "fromKey": "d4-04",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 80,
+            "durationSource": "user",
+            "note": "Shinkansen from Kokura back to Hakata, about 20 min, then the subway Airport Line to Tōjin-machi Station and about 15 min on foot"
+          },
+          "closingLeg": {
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 30,
+            "durationSource": "user",
+            "note": "Subway from Tōjin-machi to Tenjin, about 6 min; the crowd leaving is big, so you can walk to the station slowly"
+          },
+          "todos": [
+            {
+              "text": "Buy tickets for a Fukuoka SoftBank Hawks game (depends on the fixtures)",
+              "note": "Check on the official site https://www.softbankhawks.co.jp/ whether there is a home game on the evening of day 4; tickets can also be bought on the day, and you can look at the seating chart on the official site first"
+            }
+          ],
+          "images": [
+            "d4-05"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Fukuoka City",
+      "events": [
+        {
+          "key": "d5-01",
+          "title": "Check out and leave luggage: hotel around Tenjin, Fukuoka",
+          "start": "09:00",
+          "end": "09:20",
+          "category": "hotel",
+          "place": {
+            "name": "Tenjin",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "notes": "Ask the front desk about leaving luggage",
+          "leg": {
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "Same building"
+          }
+        },
+        {
+          "key": "d5-02",
+          "title": "Sumiyoshi Shrine (住吉神社)",
+          "start": "10:00",
+          "end": "11:00",
+          "category": "temple",
+          "place": {
+            "name": "Sumiyoshi Shrine",
+            "latitude": 33.5859073,
+            "longitude": 130.4136965,
+            "address": "福岡県福岡市博多区住吉3丁目1-51",
+            "addressIsApproximate": false
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-01",
+            "mode": "walking",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "About 25 min on foot; you can also take a bus or the subway and walk the rest"
+          },
+          "images": [
+            "d5-02"
+          ]
+        },
+        {
+          "key": "d5-03",
+          "title": "Kushida Shrine (櫛田神社)",
+          "start": "11:30",
+          "end": "12:15",
+          "category": "temple",
+          "place": {
+            "name": "Kushida Shrine",
+            "latitude": 33.5929732,
+            "longitude": 130.4105131,
+            "applePlaceID": "ID7A9C3758718EF9A",
+            "address": "〒812-0026, 福岡県福岡市博多区, 上川端町1-41",
+            "addressIsApproximate": false
+          },
+          "notes": "Visiting hours 04:00–22:00 (third-party travel site, unofficial; check before you go); displays the Hakata Gion Yamakasa festival floats",
+          "leg": {
+            "fromKey": "d5-02",
+            "mode": "walking",
+            "durationMinutes": 20,
+            "durationSource": "user",
+            "note": "About 20 min on foot, passing Canal City Hakata"
+          },
+          "images": [
+            "d5-03"
+          ]
+        },
+        {
+          "key": "d5-04",
+          "title": "Lunch: around Hakata Station",
+          "start": "12:30",
+          "end": "13:30",
+          "category": "dining",
+          "place": {
+            "name": "Hakata",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "Check opening hours before you go",
+          "leg": {
+            "fromKey": "d5-03",
+            "mode": "walking",
+            "durationMinutes": 10,
+            "durationSource": "user",
+            "note": "About 10 min on foot to Hakata Station"
+          }
+        },
+        {
+          "key": "d5-05",
+          "title": "Souvenirs at Hakata Station (博多駅)",
+          "start": "13:45",
+          "end": "14:30",
+          "category": "station",
+          "place": {
+            "name": "Hakata",
+            "latitude": 33.5900753,
+            "longitude": 130.4207377,
+            "applePlaceID": "I4A46226579772331",
+            "address": "福岡県福岡市博多区, 博多駅中央街",
+            "addressIsApproximate": true
+          },
+          "notes": "Check each shop's opening hours before you go",
+          "leg": {
+            "fromKey": "d5-04",
+            "mode": "walking",
+            "durationMinutes": 5,
+            "durationSource": "user",
+            "note": "On foot inside the station"
+          }
+        },
+        {
+          "key": "d5-06",
+          "title": "Back to the hotel for your luggage: hotel around Tenjin, Fukuoka",
+          "start": "15:00",
+          "end": "15:15",
+          "category": "hotel",
+          "place": {
+            "name": "Tenjin",
+            "latitude": 33.5913835,
+            "longitude": 130.3989064,
+            "applePlaceID": "IE9F4B2EE1A6F4F8D",
+            "address": "福岡県福岡市中央区, 天神",
+            "addressIsApproximate": true
+          },
+          "leg": {
+            "fromKey": "d5-05",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 25,
+            "durationSource": "user",
+            "note": "Subway from Hakata to Tenjin, about 5 min, then walk to the hotel"
+          }
+        },
+        {
+          "key": "d5-07",
+          "title": "Depart from Fukuoka Airport (福岡空港)",
+          "start": "16:15",
+          "end": "17:45",
+          "category": "airport",
+          "place": {
+            "name": "Fukuoka Airport",
+            "latitude": 33.5972931,
+            "longitude": 130.447787,
+            "applePlaceID": "I3377FD518D34A525",
+            "address": "〒812-0000",
+            "addressIsApproximate": true
+          },
+          "notes": "Flight times follow your actual ticket; for international flights, arrive 2 hours before departure",
+          "leg": {
+            "fromKey": "d5-06",
+            "mode": "transit",
+            "transitKind": "train",
+            "durationMinutes": 40,
+            "durationSource": "user",
+            "note": "Subway Airport Line from Tenjin to the domestic terminal, about 11 min, then the free shuttle bus to the international terminal, about 10 min (fare about ¥260, check before you go)"
+          }
+        }
+      ]
+    }
+  ]
+}
