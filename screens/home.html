@@ -1354,7 +1354,10 @@ if (interactive) {
   });
 
   // 即時動態那一格：倒數每秒走（同鎖定畫面的 Countdown）
-  if (cur) { let sec = 0; setInterval(() => { sec += 1; const n = d.querySelector('.la-n'); if (n) n.textContent = hms(cur.e2 * 60 - nowSec - sec); }, 1000); }
+  // 引導頁示範（App 內）播完或長按暫停時，殼送 tz-auto-ctl pause：倒數跟著停，才真的停在最後一幀（同 pw-live.html）
+  if (cur) { let sec = 0, held = false;
+    addEventListener('message', e => { const m = e.data || {}; if (m.type === 'tz-auto-ctl') held = m.cmd === 'pause'; });
+    setInterval(() => { if (held) return; sec += 1; const n = d.querySelector('.la-n'); if (n) n.textContent = hms(cur.e2 * 60 - nowSec - sec); }, 1000); }
 
   // ── 給自動示範（autoplay 的 { call }）用的：鏡頭與解鎖。鏡頭＝整個畫面放大再平移（局部＋zoom in/out，不是縮小整支手機） ──
   const camTo = (fx, fy, k, ms = 700) => {

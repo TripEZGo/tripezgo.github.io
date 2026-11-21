@@ -62,6 +62,7 @@ async function open(id, lang, theme, still) {
 //   once    播一次：0.8s 與 4.5s 的截圖不同（在動）→ 之後停在最後一幀（連續幾秒不再變）→ 點一下重播（畫面又動了）→ 重播中長按暫停（按住期間不變）
 //   static  靜態畫面（行事曆）：播放時也一直不動；不准有動畫
 //   ambient 一直在動、沒有「播完」（隱私流向圖的虛線）：0.8s 與 4.5s 不同
+//   loop    循環（付費牆的主頁小工具頁數，mode=loop）：0.8s 與 4.5s 不同，30 秒後還在動（不會停在某一幀，也不吃點擊）
 //   still=1（全部）：兩張一模一樣
 async function runOne(id, lang, theme) {
   const kind = KINDS[id] || 'once';
@@ -147,6 +148,13 @@ async function runOne(id, lang, theme) {
       let adv = false; for (let t = 0; t < 120 && !adv; t++) { await page.waitForTimeout(250); adv = (await state()).n === at + 1; }
       if (!adv) row.problems.push('step：autoResume 之後沒有自己換頁');
     }
+    row.shot = `${tag}.b.png`;
+  } else if (kind === 'loop') {
+    if (same(a, b)) row.problems.push('loop：0.8s 與 4.5s 的截圖一樣（動畫沒跑？）');
+    await page.waitForTimeout(30000);
+    let moving = false; let prev = await page.screenshot();
+    for (let t = 0; t < 10 && !moving; t++) { await page.waitForTimeout(1200); const c = await page.screenshot(); moving = !same(c, prev); prev = c; }
+    if (!moving) row.problems.push('loop：30 秒後停住了（循環沒有接上）');
     row.shot = `${tag}.b.png`;
   } else if (kind === 'ambient') {
     if (same(a, b)) row.problems.push('ambient：0.8s 與 4.5s 的截圖一樣（虛線沒在流動？）');

@@ -212,8 +212,8 @@ const spec = Object.fromEntries(ids.filter((id) => !(DEMOS[id].flows || []).some
   const { pages: _pages, ...d } = DEMOS[id];
   return [id, d];
 }));
-// kind：once＝播一次停在最後一幀；static＝靜態畫面（沒有動畫）；ambient＝一直在動、不會「播完」（隱私流向圖的虛線）
-const kinds = Object.fromEntries(Object.entries(spec).map(([id, d]) => [id, d.flat ? 'ambient' : d.step ? 'step' : d.flows.every((f) => f.still === true) && d.flows.length === 1 ? 'static' : 'once']));
+// kind：once＝播一次停在最後一幀；static＝靜態畫面（沒有動畫）；ambient＝一直在動、不會「播完」（隱私流向圖的虛線）；loop＝循環播放（mode=loop，付費牆的主頁小工具頁數）
+const kinds = Object.fromEntries(Object.entries(spec).map(([id, d]) => [id, d.flat ? 'ambient' : d.step ? 'step' : d.mode === 'loop' ? 'loop' : d.flows.every((f) => f.still === true) && d.flows.length === 1 ? 'static' : 'once']));
 write('demo.html', fs.readFileSync(path.join(root, 'tools/app-demos-shell.html'), 'utf8').replace(/\/\*DEMOS\*\/\{\}\/\*END\*\//, () => JSON.stringify(spec)));
 write('manifest.json', JSON.stringify({
   adr: 'ADR-0050', entry: 'demo.html?demo=<id>&lang=<zh-Hant|en|ja>&theme=<light|dark>&still=<0|1>[&mode=<loop|once>&crop=<none|safe|box>&nohand=<0|1>&step=<0|1>]',
