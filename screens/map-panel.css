@@ -41,7 +41,20 @@
   .prow { overflow: hidden; margin-bottom: 16px; }
   .prow-in { display: flex; gap: 10px; padding: 0 20px; }
   .pcard { flex: none; width: 150px; }
-  .pimg { width: 150px; height: 112.5px; border-radius: 12px; overflow: hidden; }
+  .pimg { position: relative; width: 150px; height: 112.5px; border-radius: 12px; overflow: hidden; }
+  /* 距離牌（MapDistanceChip）：右上、內縮 8、高 24、圓角取高一半、卡片色 90%、xs medium 等寬數字 ink、左右內距 8 */
+  .pdist { position: absolute; top: 8px; right: 8px; max-width: calc(100% - 16px); min-height: 24px; box-sizing: border-box; padding: 2px 8px; border-radius: 99px; display: flex; align-items: center;
+    background: color-mix(in srgb, var(--card) 90%, transparent); color: var(--ink); font: 500 var(--t-xs)/14.32px var(--font); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pdist:empty { display: none; }
+  .pcard.cancelled .pdist { opacity: .55; }
+  /* 進行中（intensity 1）：圖外 2pt 主題色邊＋淡光、名字前一顆小點（9）、名字與時刻主題色（時刻 semibold） */
+  .pcard.lit .pimg { box-sizing: border-box; border: 2px solid color-mix(in srgb, var(--accent) calc(var(--k) * 100%), transparent); box-shadow: 0 0 6px color-mix(in srgb, var(--accent) calc(var(--k) * 55%), transparent); }
+  .pcard.lit .pimg img, .pcard.lit .pimg .tile { border-radius: 10px; }
+  .pcard.lit .pname { color: color-mix(in srgb, var(--accent-ink) calc(var(--k) * 100%), var(--ink)); display: flex; align-items: flex-start; overflow: visible; }
+  .pcard.lit .pname > span { min-width: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .pcard.lit .ptime { color: color-mix(in srgb, var(--accent-ink) calc(var(--k) * 100%), var(--muted)); }
+  .pcard.lit[style*="--k:1.000"] .ptime { font-weight: 600; }
+  .pcdot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--sw-base); margin-right: 4px; flex: none; margin-top: 3px; }
   .pimg img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .pimg .tile { width: 100%; height: 100%; display: grid; place-items: center; background: var(--sw-base); }
   .pimg .tile .glyph { position: static; width: 32px; height: 32px; fill: #fff; }

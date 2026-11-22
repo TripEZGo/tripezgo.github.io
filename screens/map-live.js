@@ -244,13 +244,13 @@ const G = DEV.w === 1032 ? { searchTop: 92, safeBottom: 20, ratio: .6, right: 0 
 const HEADER_H = 128;   // 分段上緣 37 ＋ 31 ＋ 間距 8 ＋ 晶片 44 ＋ 下 8（參考圖 04-map 量：小＝面板頂 663／874）
 const DETENT = { small: DEV.h - G.safeBottom - HEADER_H, medium: Math.round(DEV.h * (1 - G.ratio)) };
 const L10 = {
-  'zh-Hant-TW': { byDay: '依日程', nearby: '附近', morning: '上午', afternoon: '下午', evening: '晚上', allDay: '全日', pending: '待排',
+  'zh-Hant-TW': { byDay: '依日程', nearby: '附近', morning: '上午', afternoon: '下午', evening: '晚上', allDay: '全日', inProgressSuffix: '・進行中', upcomingSuffix: '・即將開始', pending: '待排',
     chips: ['行程', '餐廳', '咖啡', '博物館', '公園', '大眾運輸', '停車場', '購物'], openEvent: '開啟行程細節', inMaps: '在地圖開啟', viewInsp: '查看靈感', edit: '編輯' },
   en: { byDay: 'By Day', nearby: 'Nearby', morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening', allDay: 'All-day', pending: 'Unscheduled',
-    chips: ['Trip', 'Restaurants', 'Cafés', 'Museums', 'Parks', 'Transit', 'Parking', 'Shopping'], openEvent: 'Open event details', inMaps: 'Open in Maps', viewInsp: 'View Inspiration', edit: 'Edit' },
-  ja: { byDay: '日程順', nearby: '近く', morning: '午前', afternoon: '午後', evening: '夜', allDay: '終日', pending: '未定',
+    chips: ['Trip', 'Restaurants', 'Cafés', 'Museums', 'Parks', 'Transit', 'Parking', 'Shopping'], inProgressSuffix: ' · now', upcomingSuffix: ' · up next', openEvent: 'Open event details', inMaps: 'Open in Maps', viewInsp: 'View Inspiration', edit: 'Edit' },
+  ja: { byDay: '日程順', nearby: '近く', morning: '午前', afternoon: '午後', evening: '夜', allDay: '終日', inProgressSuffix: '・進行中', upcomingSuffix: '・まもなく開始', pending: '未定',
     chips: ['旅程', 'レストラン', 'カフェ', '博物館', '公園', '公共交通', '駐車場', 'ショッピング'], openEvent: '予定の詳細を開く', inMaps: 'マップで開く', viewInsp: 'インスピレーションを見る', edit: '編集' },
-  ko: { byDay: '일정별', nearby: '주변', morning: '오전', afternoon: '오후', evening: '저녁', allDay: '종일', pending: '미정',
+  ko: { byDay: '일정별', nearby: '주변', morning: '오전', afternoon: '오후', evening: '저녁', allDay: '종일', inProgressSuffix: ' · 진행 중', upcomingSuffix: ' · 곧 시작', pending: '미정',
     chips: ['일정', '음식점', '카페', '박물관', '공원', '대중교통', '주차장', '쇼핑'], openEvent: '일정 상세 열기', inMaps: '지도에서 열기', viewInsp: '영감 보기', edit: '편집' },
 }[lang] || {};
 const CHIP_ICON = [null, 'restaurant', 'cafe', 'museum', 'park', 'rail-metro', 'parking', 'shop'];
@@ -293,12 +293,31 @@ const fabSlot = document.getElementById('fabSlot');
 const tap = interactive ? ' data-tap' : '';
 const imgOf = e => (e.images && e.images[0] && trip.images?.[e.images[0]]) ? `img/tpl/${e.images[0]}.jpg` : null;
 const partOf = e => { const m = toMin(e.start); return m < 720 ? 'morning' : m < 1080 ? 'afternoon' : 'evening'; };
+// Domain.LiveIntensity：現在（畫面上的 9:41）落在今天某一則裡＝1；落在同一天兩則的空檔裡，剛結束的那一則 1−t、下一則 t；已取消、全日、待排不算
+const INTENSITY = (() => {
+  const out = {}; out.next = null;
+  const items = places.filter(p => p.kind === 'event' && !p.allDay && !p.cancelled && p.day === todayNo && p.ev.start && p.ev.end)
+    .map(p => ({ id: p.id, from: toMin(p.ev.start), to: toMin(p.ev.end) }));
+  const inside = items.filter(i => i.from <= NOW_MIN && NOW_MIN < i.to);
+  if (inside.length) { inside.forEach(i => out[i.id] = 1); return out; }
+  const before = items.filter(i => i.to <= NOW_MIN).sort((a, b) => b.to - a.to)[0];
+  const after = items.filter(i => i.from > NOW_MIN).sort((a, b) => a.from - b.from)[0];
+  if (before && after) { const t = (NOW_MIN - before.to) / (after.from - before.to); if (1 - t > 0) out[before.id] = 1 - t; if (t > 0) { out[after.id] = t; out.next = after.id; } }
+  return out;
+})();
 function cardHtml(p) {
   const ev = p.ev, src = imgOf(ev);
   const pic = src ? `<img src="${src}" alt="">` : `<div class="tile ${swatchClass(ev.category)}">${glyph(ev.category)}</div>`;
-  const when = p.allDay ? L10.allDay : p.kind === 'pending' ? L10.pending : ev.start;
-  return `<div class="pcard${p.cancelled ? ' cancelled' : ''}" data-id="${p.id}"${tap}><div class="pimg">${pic}</div>
-    <div class="pname">${fmt(ev.title)}</div><div class="ptime">${when}</div></div>`;
+  let when = p.allDay ? L10.allDay : p.kind === 'pending' ? L10.pending : ev.start;
+  // MapCarouselCardCell.secondLine：第二行只放「時刻・狀態」。「・進行中」只有 k = 1（真的在行程裡）；空檔裡只有下一則接「・即將開始」，前一則什麼都不接
+  const k = INTENSITY[p.id] || 0, live = k >= 1, upcoming = k > 0 && !live && INTENSITY.next === p.id;   // 空檔裡只有下一則接「・即將開始」，前一則什麼都不接
+  if (live) when += L10.inProgressSuffix; else if (upcoming) when += L10.upcomingSuffix;
+  // 距離牌（MapDistanceChip，定稿 c）：有使用者位置（複刻裡的「我」＝ME）才有，照片右上角；取消的牌子跟照片一起淡
+  const m = Math.round(metresBetween(ME, p.at));
+  const chip = `<div class="pdist">${legDistance(m) || ''}</div>`;
+  const dot = k > 0 ? `<i class="pcdot ${swatchClass(ev.category)}"></i>` : '';
+  return `<div class="pcard${p.cancelled ? ' cancelled' : ''}${k > 0 ? ' lit' : ''}"${k > 0 ? ` style="--k:${k.toFixed(3)}"` : ''} data-id="${p.id}"${tap}><div class="pimg">${pic}${chip}</div>
+    <div class="pname">${dot}<span>${fmt(ev.title)}</span></div><div class="ptime">${fmt(when)}</div></div>`;
 }
 function rowsHtml() {
   const rows = [];
