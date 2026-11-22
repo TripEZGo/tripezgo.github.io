@@ -639,7 +639,7 @@ T = {
   '行程調整選單：延後、提前、延長、縮短，可一併挪動後續行程': ('Adjust menu: push back, pull forward, extend or shorten, with the plans after it moving along if you like', '調整メニュー：後ろへ・前へ、長く・短く。以降の予定も一緒に動かせます', '조정 메뉴: 늦추기·당기기·늘리기·줄이기, 이후 일정도 함께 이동'),
   '「要延長嗎」提醒：時間到了人還在，推播問你要不要延長（需在設定開啟）': ('"Stay longer?" reminder: when time is up and you\'re still there, a notification offers to extend (turn it on in Settings)', '「延長しますか」のお知らせ：時間が来てもまだその場所にいるときに通知（設定でオンにします）', "'연장할까요?' 알림: 시간이 됐는데 아직 그 장소에 있으면 알려 줍니다 (설정에서 켜기)"),
   '時間選擇器：按完成才套用': ('Time picker: changes apply only when you tap Done', '時刻の選択：完了を押したときだけ反映', '시간 선택: 완료를 눌러야만 적용'),
-  '總覽移動卡片、調整時間後可以復原': ('Undo after moving a card in Overview or adjusting a time', '概要でカードを動かしたり時刻を調整したりしたあとに取り消し可能', '한눈에 보기에서 카드를 옮기거나 시간을 조정한 뒤 되돌리기 가능'),
+  '總覽移動卡片、調整時間後可以復原': ('Undo after moving a card in Overview or adjusting a time', '概要でカードを動かしたり時刻を調整したりしたあとに取り消し可能', '한눈에 보기에서 카드를 옮기거나 시간을 조정한 뒤 실행 취소 가능'),
   '「即將開始」高亮：總覽與地圖標出下一個行程': ('"Up next" highlight: Overview and the Map outline the next plan', '「まもなく開始」を強調：概要と地図で次の予定を枠で表示', "'곧 시작' 강조: 한눈에 보기와 지도에서 다음 일정을 테두리로 표시"),
   'Apple Private Cloud Compute AI 讀取訂位排行程': ('Apple Private Cloud Compute AI reads your bookings into your trip', 'Apple Private Cloud Compute の AI が予約を読み取って旅程に', 'Apple Private Cloud Compute AI로 예약을 읽어 일정에 추가'),
   '支援 Google Drive 備份同步': ('Google Drive backup and sync', 'Google ドライブでのバックアップと同期', 'Google 드라이브 백업·동기화'),
