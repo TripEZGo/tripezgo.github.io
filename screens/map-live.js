@@ -259,7 +259,7 @@ const LIVE_ON = params.get('focus') === 'mates';
 let day = params.get('nav') === '0' ? todayNo : NAV_DAY;
 const chipHtml = () => [`<div class="chip all${day == null ? ' on' : ''}" data-day=""${interactive ? ' data-tap' : ''}><b>${S.all}</b></div>`].concat(Array.from({ length: trip.dayCount }, (_, i) => {
   const n = i + 1, dt = dateOf(n), isToday = n === todayNo;
-  return `<div class="chip${n === day ? ' on' : ''}" data-day="${n}"${interactive ? ' data-tap' : ''}><b>${isToday ? '<i></i>' : ''}${isToday ? t.today : dayLabel(n)}</b>
+  return `<div class="chip${n === day ? ' on' : n < todayNo ? ' past' : ''}" data-day="${n}"${interactive ? ' data-tap' : ''}><b>${isToday ? '<i></i>' : ''}${isToday ? t.today : dayLabel(n)}</b>
     <span>${t.shortDate(dt.getMonth() + 1, dt.getDate())} ${t.weekday[dt.getDay()]}</span></div>`;
 })).join('');
 const sv = (inner, sw = 1.8) => `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${inner}</svg>`;
@@ -305,6 +305,15 @@ const INTENSITY = (() => {
   if (before && after) { const t = (NOW_MIN - before.to) / (after.from - before.to); if (1 - t > 0) out[before.id] = 1 - t; if (t > 0) { out[after.id] = t; out.next = after.id; } }
   return out;
 })();
+// 圖釘的 live 光環（LiveHighlight.paintHalo）：進行中／空檔前一則＝實線 2＋主色 14% 底、不透明度乘 k；即將開始＝1.5 虛線（4／3）、不填底；圈離圖釘圓頭 6
+function haloHtml(p) {
+  if (p.cancelled) return '';
+  const k = INTENSITY[p.id] || 0, upcoming = k > 0 && k < 1 && INTENSITY.next === p.id;
+  if (k <= 0) return '';
+  return upcoming
+    ? '<svg class="halo" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" style="fill:none;stroke:var(--accent);stroke-width:1.5;stroke-dasharray:4 3"/></svg>'
+    : `<svg class="halo" viewBox="0 0 40 40" aria-hidden="true" style="opacity:${k.toFixed(3)}"><circle cx="20" cy="20" r="20" style="fill:color-mix(in srgb, var(--accent) 14%, transparent);stroke:var(--accent);stroke-width:2"/></svg>`;
+}
 function cardHtml(p) {
   const ev = p.ev, src = imgOf(ev);
   const pic = src ? `<img src="${src}" alt="">` : `<div class="tile ${swatchClass(ev.category)}">${glyph(ev.category)}</div>`;
@@ -315,8 +324,11 @@ function cardHtml(p) {
   // 距離牌（MapDistanceChip，定稿 c）：有使用者位置（複刻裡的「我」＝ME）才有，照片右上角；取消的牌子跟照片一起淡
   const m = Math.round(metresBetween(ME, p.at));
   const chip = `<div class="pdist">${legDistance(m) || ''}</div>`;
+  // 即將開始的那一張不走淡入的實線那一套（強度當 0），畫的是虛線那一套（MapCarouselCardCell.configure，使用者 2026-11-22）
+  const lit = k > 0 && !upcoming;
   const dot = k > 0 ? `<i class="pcdot ${swatchClass(ev.category)}"></i>` : '';
-  return `<div class="pcard${p.cancelled ? ' cancelled' : ''}${k > 0 ? ' lit' : ''}"${k > 0 ? ` style="--k:${k.toFixed(3)}"` : ''} data-id="${p.id}"${tap}><div class="pimg">${pic}${chip}</div>
+  const dash = upcoming ? '<svg class="pupc" aria-hidden="true"><rect x="0.75" y="0.75" rx="11.25" style="width:calc(100% - 1.5px);height:calc(100% - 1.5px)"/></svg>' : '';
+  return `<div class="pcard${p.cancelled ? ' cancelled' : ''}${lit ? ' lit' : ''}${upcoming ? ' upcoming' : ''}"${lit ? ` style="--k:${k.toFixed(3)}"` : ''} data-id="${p.id}"${tap}><div class="pimg">${pic}${dash}${chip}</div>
     <div class="pname">${dot}<span>${fmt(ev.title)}</span></div><div class="ptime">${fmt(when)}</div></div>`;
 }
 function rowsHtml() {
@@ -478,6 +490,7 @@ async function live(mk) {
     if (!grey) el.style.color = swatchBase(p.ev.category);
     el.innerHTML = `<svg class="balloon" viewBox="0 0 28 34" aria-hidden="true"><path d="M14 34C12.6 30.9 10.4 28.4 8.6 26.9A14 14 0 1 1 19.4 26.9C17.6 28.4 15.4 30.9 14 34Z"/></svg>
       <i class="ring"></i>${glyph(p.ev.category)}${badge != null ? `<b class="badge">${badge}</b>` : ''}<span class="lbl">${fmt(p.ev.title)}</span>`;
+    el.insertAdjacentHTML('afterbegin', haloHtml(p));
     const ann = new mk.Annotation(C(p.at), () => el, {
       title: p.ev.title, data: { kind: 'place', id: p.id }, enabled: interactive, calloutEnabled: false,
       displayPriority: p.cancelled ? mk.Annotation.DisplayPriority.Low : mk.Annotation.DisplayPriority.Required,

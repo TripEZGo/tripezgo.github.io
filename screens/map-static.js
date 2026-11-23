@@ -84,6 +84,25 @@ const glyph = (cat) => `<svg class="glyph" viewBox="0 0 15 15" aria-hidden="true
 // ── 圖上的行程：第 2 天、落在這張圖裡的（MapViewModel.place(for:)；站號＝那一天的第幾站） ──
 const dayEvents = trip.days.find((x) => x.day === todayNo).events.filter((e) => e.place && !e.isCancelled && e.start).sort((a, b) => toMin(a.start) - toMin(b.start));
 const inImage = (p) => p[0] >= 0 && p[0] <= W && p[1] >= 0 && p[1] <= H;
+// Domain.LiveIntensity（同 map-live.js）：畫面上的 9:41 落在某一則裡＝1；落在兩則的空檔裡，剛結束的 1−t、下一則 t（下一則＝即將開始）
+const INTENSITY = (() => {
+  const out = { next: null }, NOW = 9 * 60 + 41;
+  const items = dayEvents.filter((e) => !e.isAllDay && e.end).map((e) => ({ id: e.key, from: toMin(e.start), to: toMin(e.end) }));
+  const inside = items.filter((i) => i.from <= NOW && NOW < i.to);
+  if (inside.length) { inside.forEach((i) => (out[i.id] = 1)); return out; }
+  const before = items.filter((i) => i.to <= NOW).sort((a, b) => b.to - a.to)[0];
+  const after = items.filter((i) => i.from > NOW).sort((a, b) => a.from - b.from)[0];
+  if (before && after) { const t = (NOW - before.to) / (after.from - before.to); if (1 - t > 0) out[before.id] = 1 - t; if (t > 0) { out[after.id] = t; out.next = after.id; } }
+  return out;
+})();
+// 圖釘的 live 光環（LiveHighlight.paintHalo）：進行中／空檔前一則＝實線 2＋主色 14% 底、不透明度乘 k；即將開始＝1.5 虛線（4／3）、不填底
+const haloHtml = (p) => {
+  const k = INTENSITY[p.id] || 0;
+  if (k <= 0) return '';
+  return k < 1 && INTENSITY.next === p.id
+    ? '<svg class="halo" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" style="fill:none;stroke:var(--accent);stroke-width:1.5;stroke-dasharray:4 3"/></svg>'
+    : `<svg class="halo" viewBox="0 0 40 40" aria-hidden="true" style="opacity:${k.toFixed(3)}"><circle cx="20" cy="20" r="20" style="fill:color-mix(in srgb, var(--accent) 14%, transparent);stroke:var(--accent);stroke-width:2"/></svg>`;
+};
 const places = dayEvents.map((e, i) => ({ id: e.key, ev: e, no: i + 1, at: [e.place.latitude, e.place.longitude] })).filter((p) => inImage(toPx(p.at)));
 const byId = Object.fromEntries(places.map((p) => [p.id, p]));
 // 行程線：錄下來的步行路段（渡輪 → 表參道 → 嚴島神社 → 紅葉谷）
@@ -134,7 +153,7 @@ const railHtml = `<div class="lchip ic">${sv(SLIDERS, 1.5)}</div>` + (P10.chips 
   `<div class="lchip on">${i === 0 ? sv(CAL_EVENT, 1.7) : maki(CHIP_ICON[i])}<span>${c}</span>${i === 7 ? sv('<path d="m7 10 5 5 5-5"/>', 2) : ''}</div>`).join('');
 const chipHtml = () => [`<div class="chip all"><b>${L.all}</b></div>`].concat(Array.from({ length: trip.dayCount }, (_, i) => {
   const n = i + 1, dt = dateOf(n), isToday = n === todayNo;
-  return `<div class="chip${isToday ? ' on' : ''}"><b>${isToday ? '<i></i>' : ''}${isToday ? t.today : dayLabel(n)}</b><span>${t.shortDate(dt.getMonth() + 1, dt.getDate())} ${t.weekday[dt.getDay()]}</span></div>`;
+  return `<div class="chip${isToday ? ' on' : n < todayNo ? ' past' : ''}"><b>${isToday ? '<i></i>' : ''}${isToday ? t.today : dayLabel(n)}</b><span>${t.shortDate(dt.getMonth() + 1, dt.getDate())} ${t.weekday[dt.getDay()]}</span></div>`;
 })).join('');
 d.insertAdjacentHTML('beforeend', `<div class="search">${sv('<circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/>', 2)}<span>${L.search}</span></div>
   <div class="lrail"><div class="lrail-in">${railHtml}</div></div>
@@ -188,7 +207,7 @@ const addPin = (cls, html, px, attrs = {}) => {
 };
 const placeEls = {}, mateEls = {};
 for (const p of places) {
-  const el = addPin('pin', `<svg class="balloon" viewBox="0 0 28 34" aria-hidden="true"><path d="M14 34C12.6 30.9 10.4 28.4 8.6 26.9A14 14 0 1 1 19.4 26.9C17.6 28.4 15.4 30.9 14 34Z"/></svg>
+  const el = addPin('pin', `${haloHtml(p)}<svg class="balloon" viewBox="0 0 28 34" aria-hidden="true"><path d="M14 34C12.6 30.9 10.4 28.4 8.6 26.9A14 14 0 1 1 19.4 26.9C17.6 28.4 15.4 30.9 14 34Z"/></svg>
     <i class="ring"></i>${glyph(p.ev.category)}<b class="badge">${p.no}</b><span class="lbl">${fmt(p.ev.title)}</span>`, toPx(p.at), interactive ? { 'data-auto': p.id } : {});
   el.style.color = swBase(p.ev.category); placeEls[p.id] = el;
 }

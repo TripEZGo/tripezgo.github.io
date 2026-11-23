@@ -29,6 +29,10 @@ html[lang="ja"] .title { word-spacing: -2.5px; }
 .chip.on b { color: var(--card); font-weight: 700; }
 .chip i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .chip.on i { background: var(--brand-teal); }
+/* DayChipAppearance（旅程分頁與地圖共用）：已過的天＝紙色底、淡邊、上行 mutedOnSunken；選取態下行字＝紙白 72%＋墨 28%（OKLCH） */
+.chip.past { background: var(--page); border-color: var(--border-soft); }
+.chip.past b { color: var(--muted-on-sunken); }
+.chip.on > span { color: color-mix(in oklab, var(--card) 72%, var(--ink)); }
 
 /* 搜尋卡：上距 chipRowBottomPadding 4、左右 20、一條邊、陰影 0 4 8 .18 */
 .search { position: absolute; left: 20px; right: 20px; top: 186px; height: 44px; border-radius: 12px;
