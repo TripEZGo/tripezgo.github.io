@@ -1,6 +1,14 @@
 {
  "zh": [
   {
+   "id": "2026-11-24-update-1100",
+   "date": "2026-11-24",
+   "title": "1.10.0 新功能：全新地圖、分享旅程與 Google Drive 備份",
+   "body": "地圖改成滿版，每天的行程依上午、下午、晚上排成照片卡，左右滑著看；切到「附近」依距離列出身邊的行程、標記與靈感，點地標就能看地點資訊與街景、一鍵加進行程。\n分享旅程：勾選要分享的內容，匯出成 PDF 或社群圖片。\n旅程可以備份到你自己的 Google Drive，換手機或重裝 App 也能匯入回來。",
+   "image": null,
+   "button": null
+  },
+  {
    "id": "2026-11-14-update-190",
    "date": "2026-11-14",
    "title": "1.9.0 新功能：天氣、步數與推薦景點",
@@ -50,6 +58,14 @@
   }
  ],
  "en": [
+  {
+   "id": "2026-11-24-update-1100",
+   "date": "2026-11-24",
+   "title": "New in 1.10.0: a new Map, trip sharing and Google Drive backup",
+   "body": "The Map is now full screen, with each day's plans as photo cards in Morning, Afternoon and Evening rows you swipe through. Switch to Nearby to see your plans, markers and inspiration by distance, and tap a landmark for its details and Look Around, then add it in one tap.\nShare your trip: pick what to include and export it as a PDF or social images.\nBack your trips up to your own Google Drive and import them back on a new phone or after reinstalling.",
+   "image": null,
+   "button": null
+  },
   {
    "id": "2026-11-14-update-190",
    "date": "2026-11-14",
@@ -101,6 +117,14 @@
  ],
  "ja": [
   {
+   "id": "2026-11-24-update-1100",
+   "date": "2026-11-24",
+   "title": "1.10.0 の新機能：新しい地図・旅程の共有・Google ドライブのバックアップ",
+   "body": "地図が全画面になり、1日の予定を午前・午後・夜ごとに写真カードで並べ、横にスワイプして見られます。「近く」では近くの予定・マーカー・インスピレーションを距離順に表示。ランドマークをタップすると場所の情報と Look Around を確認でき、そのまま予定に追加できます。\n旅程の共有：共有する内容を選んで、PDF や SNS 用の画像に書き出せます。\n旅程を自分の Google ドライブにバックアップ。機種変更やアプリの再インストール後も読み込んで戻せます。",
+   "image": null,
+   "button": null
+  },
+  {
    "id": "2026-11-14-update-190",
    "date": "2026-11-14",
    "title": "1.9.0 の新機能：天気・歩数・おすすめスポット",
@@ -150,6 +174,14 @@
   }
  ],
  "ko": [
+  {
+   "id": "2026-11-24-update-1100",
+   "date": "2026-11-24",
+   "title": "1.10.0 새 기능: 새로워진 지도, 여행 공유, Google 드라이브 백업",
+   "body": "지도가 전체 화면으로 바뀌고, 하루 일정을 오전·오후·저녁별 사진 카드로 넘겨 볼 수 있어요. '주변'에서는 가까운 일정, 마커, 영감을 거리순으로 보여 주고, 장소를 누르면 장소 정보와 Look Around를 보고 바로 일정에 추가할 수 있어요.\n여행 공유: 공유할 내용을 골라 PDF나 SNS 이미지로 내보낼 수 있어요.\n여행을 내 Google 드라이브에 백업하고, 휴대폰을 바꾸거나 앱을 다시 설치해도 가져올 수 있어요.",
+   "image": null,
+   "button": null
+  },
   {
    "id": "2026-11-14-update-190",
    "date": "2026-11-14",
