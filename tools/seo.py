@@ -14,8 +14,8 @@ R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 SITE = 'https://tripezgo.com'
 LANGS = {'zh': ('', 'zh-Hant', 'zh_TW'), 'en': ('en/', 'en', 'en_US'), 'ja': ('ja/', 'ja', 'ja_JP'), 'ko': ('ko/', 'ko', 'ko_KR')}
 LANGS_HOME = {**LANGS, 'zh-cn': ('zh-cn/', 'zh-Hans', 'zh_CN')}   # 簡體中文版（1.7.0）只有首頁：首頁的 hreflang／og:locale 五語互指，隱私、條款仍是四語
-ALT = {'zh-cn': 'TripEZGo：旅行规划、旅途所需一次搞定', 'zh': 'TripEZGo：旅行規劃、旅途所需一次搞定', 'en': 'TripEZGo: plan the trip, carry what it needs — all in one app',
-       'ja': 'TripEZGo：旅の計画も、旅先で要るものも、これひとつで', 'ko': 'TripEZGo: 여행 계획부터 여행길에 필요한 것까지, 앱 하나로'}
+ALT = {'zh-cn': 'TripEZGo：行程、路程、地图和旅伴共编', 'zh': 'TripEZGo：行程、路程、地圖與旅伴共編', 'en': 'TripEZGo: events, legs, maps and companion co-editing',
+       'ja': 'TripEZGo：予定、移動、地図、旅の仲間との共同編集', 'ko': 'TripEZGo: 일정, 이동, 지도, 동행과 공동 편집'}
 
 def meta(head, attr, key):
     m = re.search(rf'<meta {attr}="{re.escape(key)}" content="([^"]*)">', head)

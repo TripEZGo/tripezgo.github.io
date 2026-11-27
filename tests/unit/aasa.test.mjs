@@ -26,7 +26,7 @@ test('Apple 登入導回公開頁（帶 ckWebAuthToken）：不開 App，留在�
   assert.equal(opensTheApp('/trip', { ckWebAuthToken: 'abc' }), false);
 });
 
-test('一般的公開連結與「在 TripEZGo 建立這個旅程」照樣開 App', () => {
+test('一般的公開連結與「在 TripEZGo 建立這趟旅程」照樣開 App', () => {
   assert.equal(opensTheApp('/trip/', {}), true);
   assert.equal(opensTheApp('/trip/', { open: '1' }), true);
   assert.equal(opensTheApp('/join/', {}), true);

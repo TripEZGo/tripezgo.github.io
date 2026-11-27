@@ -164,7 +164,7 @@ test('時差會變的說明：第一段不為 0 的時差，再加「部分日�
   assert.equal(zoneNote('America/New_York', shifts, 'zh', S.zh, Date.UTC(2026, 9, 31), true),
     `目前為${zoneName('America/New_York', 'zh', Date.UTC(2026, 9, 31))}，與裝置時間差 −12 小時（部分日子不同，以每一天欄內左側的裝置時刻為準）`);
   assert.equal(zoneNote('America/New_York', shifts, 'en', S.en, Date.UTC(2026, 9, 31), true),
-    'Times are in Eastern Time, −12 h from your device’s time (varies on some days — each day shows its own device time on its left)');
+    'Times are in Eastern Time, −12 h from your device’s time (varies on some days. Each day shows its own device time on its left)');
   assert.equal(zoneNote('America/New_York', shifts, 'ja', S.ja, Date.UTC(2026, 9, 31), true),
     '現在はニューヨーク時間で表示しています。端末の時刻との差は −12時間（日によって異なります。各日の左側の端末の時刻を参照）');
 });

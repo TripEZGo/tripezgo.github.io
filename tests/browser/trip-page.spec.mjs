@@ -7,7 +7,7 @@ test('載入中：查 record 的時候先佔好版面，回來之後原地換上
   const ck = await fakeCloudKit(page, { stores: { production: { [dated.recordName]: recordOf(dated) } }, hold: true });
   await page.goto(pathOf(dated));
   await expect(page.getByTestId('loading')).toBeVisible();
-  await expect(page.getByTestId('loading')).toContainText('正在打開這趟行程');
+  await expect(page.getByTestId('loading')).toContainText('正在打開這趟旅程');
   ck.release();
   await expect(page.getByTestId('trip')).toBeVisible();
   await expect(page.getByTestId('loading')).toHaveCount(0);
@@ -28,7 +28,7 @@ test('正常：抬頭、時間表、全日橫條、路程標籤', async ({ page 
   await expect(page.getByTestId('day-1')).toContainText('第 1 天7/30（四）');
   await expect(page.getByTestId('day-1')).toContainText('台北 → 那霸');
   await expect(page.getByTestId('day-2')).toContainText('屋台村・宵夜');
-  await expect(page.getByTestId('day-3')).toContainText('這一天還沒有安排。');
+  await expect(page.getByTestId('day-3')).toContainText('這天還沒有安排。');
   await expect(page.getByTestId('allday')).toHaveText('租車（OTS 那霸店）');
   /* 路程：開車 40 分（國際通前面那一段）；空檔（mode null）不畫標籤 */
   await expect(page.getByTestId('leg')).toHaveCount(2);
@@ -74,7 +74,7 @@ test('失效：兩個環境都說沒有這一筆', async ({ page }) => {
   await fakeCloudKit(page, { stores: {} });
   await page.goto(pathOf(dated));
   await expect(page.getByTestId('gone')).toBeVisible();
-  await expect(page.locator('h1')).toHaveText('讀不到這趟行程');
+  await expect(page.locator('h1')).toHaveText('讀不到這趟旅程');
   await expect(page.getByTestId('gone').locator('a')).toHaveAttribute('href', '/');
 });
 
@@ -144,7 +144,7 @@ test('頁首頁尾跟首頁同一份：標誌回首頁、頁尾的連結與字�
   await expect(page.locator('header.site-header .brand')).toHaveAttribute('href', '/');
   await expect(page.locator('header.site-header .brand .m-mark')).toBeVisible();
   const foot = page.locator('footer.site-footer');
-  await expect(foot).toContainText('旅行規劃、旅途所需一次搞定。');
+  await expect(foot).toContainText('行程、路程、地圖與旅伴共編。');
   /* 頁尾 A 款（2026-11-09）把連結分成網站／條款／語言三組，網站組在最前面；隱私權政策是「條款」組的第一個 */
   await expect(foot.locator('.footer-group--legal a').first()).toHaveAttribute('href', '/privacy.html');
   await expect(foot).toContainText('© 2026 TripEZGo');
@@ -153,7 +153,7 @@ test('頁首頁尾跟首頁同一份：標誌回首頁、頁尾的連結與字�
 
   await page.locator('[data-lang="en"]').click();
   await expect(page.locator('header.site-header .brand')).toHaveAttribute('href', '/en/');
-  await expect(foot).toContainText('Plan the trip, carry what it needs — all in one app.');
+  await expect(foot).toContainText('Events, legs, maps and companion co-editing.');
   await expect(foot.locator('.footer-group--legal a').first()).toHaveAttribute('href', '/en/privacy.html');
   await page.locator('[data-lang="ja"]').click();
   await expect(foot.locator('.footer-group--legal a').first()).toHaveText('プライバシーポリシー');

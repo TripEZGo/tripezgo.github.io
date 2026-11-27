@@ -20,10 +20,10 @@ export const LANG_ENTRY = 'entry.986219665';
 
 export const PAGES = [
   { key: 'zh', pick: '繁體中文', htmlLang: 'zh-Hant', hl: 'zh-TW', locale: 'zh_TW', home: '/', out: 'contact/index.html',
-    title: '聯絡我們 — TripEZGo', h1: '聯絡我們', lede: '使用問題、功能建議、付費問題、合作提案，都可以從這裡告訴我們。我們會用你留下的 Email 回覆。',
+    title: '聯絡我們 — TripEZGo', h1: '聯絡我們', lede: '使用問題、功能建議、付費問題與合作提案，都從這裡寄給我們。我們用你留下的 Email 回覆。',
     cta: '開啟聯絡表單', fallback: '也可以直接寫信到' },
   { key: 'en', pick: 'English', htmlLang: 'en', hl: 'en', locale: 'en_US', home: '/en/', out: 'en/contact/index.html',
-    title: 'Contact us — TripEZGo', h1: 'Contact us', lede: "Problems, feature ideas, payment questions or partnerships — tell us here, and we'll reply to the email you leave.",
+    title: 'Contact us — TripEZGo', h1: 'Contact us', lede: 'Send problems, feature ideas, payment questions and partnership offers here. We reply to the email you leave.',
     cta: 'Open the contact form', fallback: 'Or email us at' },
   { key: 'ja', pick: '日本語', htmlLang: 'ja', hl: 'ja', locale: 'ja_JP', home: '/ja/', out: 'ja/contact/index.html',
     title: 'お問い合わせ — TripEZGo', h1: 'お問い合わせ', lede: '不具合、機能のご要望、お支払い、協業のご提案はこちらから。ご入力のメールアドレスへ返信します。',

@@ -5,21 +5,21 @@
  * 公開頁是在頁內切語言的，所以頁尾用這一支照當下的語言畫，而不是寫死在 HTML 裡。 */
 const FOOTER = {
   zh: {
-    home: '/', label: 'TripEZGo 首頁', tag: '旅行規劃、旅途所需一次搞定。', width: '32ch', nav: '頁尾導覽',
+    home: '/', label: 'TripEZGo 首頁', tag: '行程、路程、地圖與旅伴共編。', width: '32ch', nav: '頁尾導覽',
     links: [['/privacy.html', '隱私權政策'], ['/terms.html', '使用者條款'], ['/#about', '關於'], ['/contact/', '聯絡我們'],
       ['/en/', 'English', 'en'], ['/ja/', '日本語', 'ja'], ['/ko/', '한국어', 'ko']],
     author: 'https://zhgchg.li/',   // 頁尾「Produced by ZhgChg.Li」徽章連到的作者網站（同語言）
     heads: ['網站', '條款', '語言', '追蹤我們'],
   },
   en: {
-    home: '/en/', label: 'TripEZGo home', tag: 'Plan the trip, carry what it needs — all in one app.', width: '34ch', nav: 'Footer',
+    home: '/en/', label: 'TripEZGo home', tag: 'Events, legs, maps and companion co-editing.', width: '34ch', nav: 'Footer',
     links: [['/en/privacy.html', 'Privacy Policy'], ['/en/terms.html', 'Terms of Use'], ['/en/#about', 'About'], ['/en/contact/', 'Contact'],
       ['/', '繁體中文', 'zh-Hant'], ['/ja/', '日本語', 'ja'], ['/ko/', '한국어', 'ko']],
     author: 'https://en.zhgchg.li/',   // 頁尾「Produced by ZhgChg.Li」徽章連到的作者網站（同語言）
     heads: ['Site', 'Legal', 'Language', 'Follow'],
   },
   ja: {
-    home: '/ja/', label: 'TripEZGo ホーム', tag: '旅の計画も、旅先で要るものも、これひとつで。', width: '32ch', nav: 'フッター',
+    home: '/ja/', label: 'TripEZGo ホーム', tag: '予定、移動、地図、旅の仲間との共同編集。', width: '32ch', nav: 'フッター',
     links: [['/ja/privacy.html', 'プライバシーポリシー'], ['/ja/terms.html', '利用規約'], ['/ja/#about', 'このアプリについて'], ['/ja/contact/', 'お問い合わせ'],
       ['/', '繁體中文', 'zh-Hant'], ['/en/', 'English', 'en'], ['/ko/', '한국어', 'ko']],
     author: 'https://jp.zhgchg.li/',   // 頁尾「Produced by ZhgChg.Li」徽章連到的作者網站（同語言）

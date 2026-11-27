@@ -1,4 +1,4 @@
-/* 「在 TripEZGo 建立這個旅程」與加入共享：一個共用的跳轉頁 /open/（使用者要求 2026-09-26）。
+/* 「在 TripEZGo 建立這趟旅程」與加入共享：一個共用的跳轉頁 /open/（使用者要求 2026-09-26）。
  *
  * 已裝 App：按鈕是一條 www 的 Universal Link，直接進 App。
  * 沒裝：www 301 回裸網域，公開頁看到 ?open=1、加入頁（/join/）一律，轉去 /open/#<正式連結>；
@@ -38,12 +38,12 @@ async function setup(page) {
   await fakeCloudKit(page, { stores: { production: { [dated.recordName]: recordOf(dated) } } });
 }
 
-test('按鈕：「在 TripEZGo 建立這個旅程」與「複製」靠右；指向 www 的 Universal Link；說明那一段拿掉了', async ({ page }) => {
+test('按鈕：「在 TripEZGo 建立這趟旅程」與「複製」靠右；指向 www 的 Universal Link；說明那一段拿掉了', async ({ page }) => {
   await serveAs(page, 'tripezgo.com');
   await setup(page);
   await page.goto('https://tripezgo.com/trip/' + hash);
   const app = page.getByTestId('copy-app');
-  await expect(app).toHaveText('在 TripEZGo 建立這個旅程');
+  await expect(app).toHaveText('在 TripEZGo 建立這趟旅程');
   await expect(app).toHaveAttribute('href', 'https://www.tripezgo.com/trip/?open=1' + hash);
   await expect(page.getByTestId('copy-text')).toHaveText('複製');
   await expect(page.getByTestId('copy-app-note')).toHaveCount(0);
@@ -76,7 +76,7 @@ test.describe('iPhone、沒裝 App', () => {
     expect(decodeURIComponent(new URL(page.url()).hash.slice(1))).toBe(dated.url);
     await expect(page.getByTestId('open-kind')).toHaveText('公開旅程');
     /* 頁首頁尾跟首頁同一份 */
-    await expect(page.locator('footer.site-footer')).toContainText('旅行規劃、旅途所需一次搞定。');
+    await expect(page.locator('footer.site-footer')).toContainText('行程、路程、地圖與旅伴共編。');
     await expect(page.locator('header.site-header .brand')).toHaveAttribute('href', '/');
     await expect(page.getByTestId('open-app')).toHaveAttribute('href', dated.url);
 
@@ -84,7 +84,7 @@ test.describe('iPhone、沒裝 App', () => {
     await expect(get).toHaveText('取得 TripEZGo');
     await get.click();
     await expect(get).toHaveText('前往下載');
-    await expect(page.locator('h1')).toHaveText('連結已經存起來了');
+    await expect(page.locator('h1')).toHaveText('連結已存進剪貼簿');
     expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(dated.url);
     await expect(get).toHaveAttribute('href', 'https://apps.apple.com/app/id6801536372');
     await page.route('https://apps.apple.com/**', (route) => route.fulfill({ contentType: 'text/html', body: 'App Store' }));

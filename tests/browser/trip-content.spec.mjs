@@ -306,7 +306,7 @@ test('複製純文字行程：toast，剪貼簿裡跟 App 的純文字逐字相�
   await open(page, dated);
   await page.getByTestId('copy-text').click();
   await expect(page.locator('#toast')).toBeVisible();
-  await expect(page.locator('#toast')).toContainText('已複製純文字行程，貼進訊息或 LINE 就能讀');
+  await expect(page.locator('#toast')).toContainText('已複製純文字旅程');
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(dated.plainText.zh);
 
   await page.locator('[data-lang="ja"]').click();

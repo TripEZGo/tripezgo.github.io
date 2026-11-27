@@ -44,7 +44,7 @@ test('是建立者：登入跳轉掉了 # 也接得回來，出現「停止分�
   const { ck, apple } = await openAs(page, { token: 'tok-author' });
   await signIn(page);
   await expect(page.getByTestId('author-owner')).toBeVisible();
-  await expect(page.getByTestId('author-owner')).toContainText('你是這個連結的建立者');
+  await expect(page.getByTestId('author-owner')).toContainText('你建立了這個連結');
   /* 網址放回原本的 # 片段，查詢字串拿掉 */
   expect(new URL(page.url()).hash).toBe(new URL(dated.url).hash);
   expect(new URL(page.url()).search).toBe('');
@@ -80,7 +80,7 @@ test('停止分享：確認視窗裡才是紅色實心；返回不刪；確認�
   await page.getByTestId('author-stop').click();
   const dlg = page.getByTestId('stop-confirm');
   await expect(dlg).toBeVisible();
-  await expect(dlg.locator('h3')).toHaveText('停止分享這趟行程？');
+  await expect(dlg.locator('h3')).toHaveText('停止分享這趟旅程？');
   await expect(page.getByTestId('stop-go')).toHaveClass(/btn-danger/);
   await dlg.getByRole('button', { name: '返回' }).click();
   await expect(dlg).toHaveCount(0);
@@ -147,7 +147,7 @@ test('停止失敗：token 也立刻丟掉，回到登入卡、toast 說沒成�
     }));
   await page.getByTestId('author-stop').click();
   await page.getByTestId('stop-go').click();
-  await expect(page.locator('#toast')).toContainText('沒有停止成功，請再試一次');
+  await expect(page.locator('#toast')).toContainText('停止分享失敗。再試一次。');
   /* 用一次就登出：失敗也不留著 token，要再試得重新登入 */
   await expect(page.getByTestId('author-signin')).toBeVisible();
   await expect(page.getByTestId('author-stop')).toHaveCount(0);
