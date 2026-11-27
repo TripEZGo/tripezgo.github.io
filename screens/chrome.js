@@ -68,7 +68,7 @@ const STRINGS = {
   },
   en: {
     tabs: ['Home', 'Overview', 'Trip', 'Map', 'Library'],
-    today: 'Today', day: n => `Day ${n}`, allDay: 'All day',
+    today: 'Today', day: n => `Day ${n}`, allDay: 'All-day',
     weekday: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     monthDay: (m, d) => `${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m-1]} ${d}`,
     shortDate: (m, d) => `${m}/${d}`,
