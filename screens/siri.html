@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=08431e6552","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=40b4ea05f9","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=ab06fc179f","/screens/map-static.js":"/screens/map-static.js?v=fd214a64f9","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=1ff6396919","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=ead80965c2","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=49f922643b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=647d020fff"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=1190f691ed","/screens/chrome.js":"/screens/chrome.js?v=292f16ff00","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=61a7c515aa","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=963b6d1355","/screens/map-live.js":"/screens/map-live.js?v=229d142f64","/screens/map-static.js":"/screens/map-static.js?v=270410e88f","/screens/map.js":"/screens/map.js?v=0623c458ce","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=b64c731387","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=1ff6396919","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=ead80965c2","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=49f922643b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=647d020fff"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>Siri・下一個行程</title>
 <!--
@@ -91,23 +91,23 @@ const S = {
     phrases: ['下一個行程', '下一個行程是什麼', '今天的行程', '今天有什麼安排'],
     noTrip: '現在沒有進行中的旅程。', next: (a, b) => `下一個是${a}，${b} 開始。`, currentLast: a => `現在是${a}，今天之後沒有其他安排了。`,
     currentAndNext: (a, b, c) => `現在是${a}，接下來是${b}，${c} 開始。`, allDone: '今天的行程都走完了。',
-    tomorrow: (a, b) => `今天走完了，明天第一站是${a}，${b} 開始。`, countsWithLegs: (a, b) => `${a} 個安排、移動 ${b} 段`,
-    counts: a => `${a} 個安排`, day: (a, b) => `第 ${a} 天，共 ${b} 天`, summaryDone: (a, b) => `${a}。今天 ${b}，都走完了。`,
+    tomorrow: (a, b) => `今天走完了，明天第一站是${a}，${b} 開始。`, countsWithLegs: (a, b) => `${a} 個行程、${b} 段路程`,
+    counts: a => `${a} 個行程`, day: (a, b) => `第 ${a} 天，共 ${b} 天`, summaryDone: (a, b) => `${a}。今天 ${b}，都走完了。`,
     summary: (a, b) => `${a}。今天 ${b}。`, summaryCurrent: (a, b, c) => `${a}。今天 ${b}，現在是${c}。`,
-    summaryNext: (a, b, c, e) => `${a}。今天 ${b}，下一個是${c}，${e} 開始。`, fallback: '今天還有安排，但我看不出下一個是哪一件。',
+    summaryNext: (a, b, c, e) => `${a}。今天 ${b}，下一個是${c}，${e} 開始。`, fallback: '今天還有行程，但無法判斷下一個是哪一個。',
     date: dt => `${dt.getMonth() + 1}月${dt.getDate()}日 ${['星期日','星期一','星期二','星期三','星期四','星期五','星期六'][dt.getDay()]}` },
   en: {
     phrases: ['Next event', "What's my next event?", "Today's schedule", "What's on today?"],
-    noTrip: 'No trip is under way right now.', next: (a, b) => `${a} is next, starting at ${b}.`, currentLast: a => `You're at ${a}, and there's nothing else today.`,
-    currentAndNext: (a, b, c) => `You're at ${a}. Next is ${b} at ${c}.`, allDone: "That's the whole day done.",
+    noTrip: 'No trip is under way right now.', next: (a, b) => `${a} is next, starting at ${b}.`, currentLast: a => `You are at ${a}. Nothing else is planned today.`,
+    currentAndNext: (a, b, c) => `You are at ${a}. Next is ${b} at ${c}.`, allDone: "All of today's events are done.",
     tomorrow: (a, b) => `Today is done. Tomorrow starts with ${a} at ${b}.`, countsWithLegs: (a, b) => `${a} events and ${b} legs`,
     counts: a => `${a} events`, day: (a, b) => `day ${a} of ${b}`, summaryDone: (a, b) => `${a}. Today: ${b}, all done.`,
-    summary: (a, b) => `${a}. Today: ${b}.`, summaryCurrent: (a, b, c) => `${a}. Today: ${b}. You're at ${c}.`,
-    summaryNext: (a, b, c, e) => `${a}. Today: ${b}. Next is ${c} at ${e}.`, fallback: "There's more today, but I can't tell which one comes next.",
+    summary: (a, b) => `${a}. Today: ${b}.`, summaryCurrent: (a, b, c) => `${a}. Today: ${b}. You are at ${c}.`,
+    summaryNext: (a, b, c, e) => `${a}. Today: ${b}. Next is ${c} at ${e}.`, fallback: "More events remain today, but the next one is unknown.",
     date: dt => `${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][dt.getDay()]}, ${['January','February','March','April','May','June','July','August','September','October','November','December'][dt.getMonth()]} ${dt.getDate()}` },
   ja: {
     phrases: ['次の予定', '次の予定は何？', '今日の予定', '今日の予定は？'],
-    noTrip: 'いま進行中の旅行はありません。', next: (a, b) => `次は${a}で、${b} に始まります。`, currentLast: a => `いまは${a}で、今日はこのあとの予定はありません。`,
+    noTrip: 'いま進行中の旅程はありません。', next: (a, b) => `次は${a}で、${b} に始まります。`, currentLast: a => `いまは${a}で、今日はこのあとの予定はありません。`,
     currentAndNext: (a, b, c) => `いまは${a}で、次は${b}、${c} に始まります。`, allDone: '今日の予定はすべて終わりました。',
     tomorrow: (a, b) => `今日は終わりました。明日の最初は${a}で、${b} に始まります。`, countsWithLegs: (a, b) => `予定 ${a} 件、移動 ${b} 区間`,
     counts: a => `予定 ${a} 件`, day: (a, b) => `${b} 日中 ${a} 日目`, summaryDone: (a, b) => `${a}。今日は ${b}、すべて終わりました。`,
@@ -123,7 +123,7 @@ const S = {
     tomorrow: (a, b) => `오늘은 끝났습니다. 내일 첫 일정은 ${a}이고, ${b}에 시작합니다.`, countsWithLegs: (a, b) => `일정 ${a}개, 이동 ${b}구간`,
     counts: a => `일정 ${a}개`, day: (a, b) => `${b}일 중 ${a}일차`, summaryDone: (a, b) => `${a}. 오늘은 ${b}, 모두 마쳤습니다.`,
     summary: (a, b) => `${a}. 오늘은 ${b}.`, summaryCurrent: (a, b, c) => `${a}. 오늘은 ${b}, 지금은 ${c}입니다.`,
-    summaryNext: (a, b, c, e) => `${a}. 오늘은 ${b}, 다음은 ${c}, ${e}에 시작합니다.`, fallback: '오늘 남은 일정이 있지만, 다음이 무엇인지 알 수 없습니다.',
+    summaryNext: (a, b, c, e) => `${a}. 오늘은 ${b}, 다음은 ${c}, ${e}에 시작합니다.`, fallback: '오늘 남은 일정이 있지만 다음 일정을 알 수 없습니다.',
     date: dt => `${dt.getMonth() + 1}월 ${dt.getDate()}일 ${'일월화수목금토'[dt.getDay()]}요일` },
 }[lang] || null;
 const L = S;

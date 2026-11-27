@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=08431e6552","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=40b4ea05f9","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=ab06fc179f","/screens/map-static.js":"/screens/map-static.js?v=fd214a64f9","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=1ff6396919","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=ead80965c2","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=49f922643b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=647d020fff"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=1190f691ed","/screens/chrome.js":"/screens/chrome.js?v=292f16ff00","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=61a7c515aa","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=963b6d1355","/screens/map-live.js":"/screens/map-live.js?v=229d142f64","/screens/map-static.js":"/screens/map-static.js?v=270410e88f","/screens/map.js":"/screens/map.js?v=0623c458ce","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=b64c731387","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=1ff6396919","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=ead80965c2","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=49f922643b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=647d020fff"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>鎖定畫面・即時動態</title>
 <!--
@@ -253,27 +253,27 @@ d.insertAdjacentHTML('beforeend', `
    第 1 天那些逐則的通知視為已經看過（解鎖過），不列出；出發前三則與兩天的摘要留著，疊在最舊的那一疊。
    畫面：最新的在最上面，最多三則完整，更舊的疊在第三則底下（點一下展開整組）。相對時間照 iOS。 */
 const NT = {
-  'zh-Hant-TW': { lead7: '旅程快到了', body7: x => `${x}，都準備好了嗎？`, lead3: n => `還有 ${n} 項待辦沒完成`, body3: x => `出發前把 ${x} 的待辦清一清吧`,
-    lead1: '明天就出發了', body1: '明天就出發了，今天早點睡吧。', left: n => `還有 ${n} 項待辦。`,
+  'zh-Hant-TW': { lead7: '旅程快到了', body7: x => `${x} 準備好了嗎？`, lead3: n => `還有 ${n} 項待辦沒完成`, body3: x => `出發前清完 ${x} 的待辦`,
+    lead1: '明天出發', body1: '明天出發，今天早點睡。', left: n => `還有 ${n} 項待辦。`,
     digest: (n, r) => `今天有 ${n} 個行程，${r}`, nextT: x => `接下來：${x}`, nextB: (a, x) => `${a} 開始 · ${x}`,
     todoT: (x, n) => `下個行程 ${x} 尚有 ${n} 個待辦事項`, item: x => `・${x}`, more: n => `…還有 ${n} 項`, merged: n => ` · 還有 ${n} 項待辦`,
     depT: (r, a) => `${r} ${a} 開`, arrT: (r, a) => `${r} ${a} 到`, runB: (e, x) => `前往 ${e} · ${x}`, unnamed: '預計搭乘的班次',
     ago: m => m < 1 ? '現在' : m < 60 ? `${m}分鐘前` : m < 1440 ? `${Math.floor(m / 60)}小時前` : `${Math.floor(m / 1440)}天前`, less: '顯示較少' },
-  en: { lead7: 'Your trip is close', body7: x => `${x} — all set?`, lead3: n => `${n} to-dos still open`, body3: x => `Clear the to-dos for ${x} before you go`,
-    lead1: 'You leave tomorrow', body1: 'You leave tomorrow — get an early night.', left: n => `${n} to-dos left.`,
+  en: { lead7: 'Your trip starts soon', body7: x => `Is ${x} ready?`, lead3: n => `${n} to-do${n === 1 ? "" : "s"} still open`, body3: x => `Clear the to-dos for ${x} before you go`,
+    lead1: 'You leave tomorrow', body1: 'You leave tomorrow. Go to bed early today.', left: n => `${n} to-do${n === 1 ? "" : "s"} left.`,
     digest: (n, r) => `${n} events today, ${r}`, nextT: x => `Next: ${x}`, nextB: (a, x) => `Starts ${a} · ${x}`,
-    todoT: (x, n) => `${x}: ${n} to-dos left`, item: x => `・${x}`, more: n => `…and ${n} more`, merged: n => ` · ${n} to-dos left`,
+    todoT: (x, n) => `${x}: ${n} to-do${n === 1 ? "" : "s"} left`, item: x => `・${x}`, more: n => `…and ${n} more`, merged: n => ` · ${n} to-do${n === 1 ? "" : "s"} left`,
     depT: (r, a) => `${r} leaves at ${a}`, arrT: (r, a) => `${r} arrives at ${a}`, runB: (e, x) => `To ${e} · ${x}`, unnamed: 'Your ride',
     ago: m => m < 1 ? 'now' : m < 60 ? `${m}m ago` : m < 1440 ? `${Math.floor(m / 60)}h ago` : `${Math.floor(m / 1440)}d ago`, less: 'Show less' },
-  ja: { lead7: '旅行が近づいてきました', body7: x => `${x}、準備はできましたか？`, lead3: n => `やることがあと ${n} 件`, body3: x => `出発前に ${x} のやることを片づけましょう`,
+  ja: { lead7: '旅程が近づいてきました', body7: x => `${x}、準備はできましたか？`, lead3: n => `やることがあと ${n} 件`, body3: x => `出発前に ${x} のやることを片づけましょう`,
     lead1: '明日は出発です', body1: '明日は出発です。今日は早めに休みましょう。', left: n => `やることがあと ${n} 件あります。`,
     digest: (n, r) => `今日は予定が ${n} 件、${r}`, nextT: x => `このあと：${x}`, nextB: (a, x) => `${a} 開始 · ${x}`,
-    todoT: (x, n) => `次の予定「${x}」に未完了の ToDo が ${n} 件あります`, item: x => `・${x}`, more: n => `…ほか ${n} 件`, merged: n => ` · ToDo 残り ${n} 件`,
+    todoT: (x, n) => `次の予定「${x}」に未完了の やることが ${n} 件あります`, item: x => `・${x}`, more: n => `…ほか ${n} 件`, merged: n => ` · やること残り ${n} 件`,
     depT: (r, a) => `${r} は ${a} 発`, arrT: (r, a) => `${r} は ${a} 着`, runB: (e, x) => `${e} へ · ${x}`, unnamed: '乗車予定の便',
     ago: m => m < 1 ? '今' : m < 60 ? `${m}分前` : m < 1440 ? `${Math.floor(m / 60)}時間前` : `${Math.floor(m / 1440)}日前`, less: '表示を減らす' },
   // ko：UI.json ui.reminder.*／ui.remaining.todos／ui.digest.count／ui.nextup.*／ui.todoreminder.*／ui.run.*（逐字；
   // 跟 App 一樣直接接在後面，不補空白——TripReminderText.join）。ago／less 是 iOS 系統字，字串表沒有
-  ko: { lead7: '여행이 곧 시작됩니다', body7: x => `${x}, 준비는 다 되셨나요?`, lead3: n => `할 일이 ${n}건 남았습니다`, body3: x => `출발 전에 ${x}의 할 일을 정리해두세요`,
+  ko: { lead7: '여행이 곧 시작됩니다', body7: x => `${x}, 준비는 다 되셨나요?`, lead3: n => `할 일이 ${n}건 남았습니다`, body3: x => `출발 전에 ${x}의 할 일을 모두 끝내세요`,
     lead1: '내일 출발합니다', body1: '내일 출발합니다. 오늘은 일찍 쉬세요.', left: n => `할 일이 ${n}건 남았습니다.`,
     digest: (n, r) => `오늘 일정 ${n}개, ${r}`, nextT: x => `다음: ${x}`, nextB: (a, x) => `${a} 시작 · ${x}`,
     todoT: (x, n) => `다음 일정 ${x}에 할 일이 ${n}개 남았습니다`, item: x => `・${x}`, more: n => `…외 ${n}개`, merged: n => ` · 할 일 ${n}개 남음`,
@@ -382,15 +382,15 @@ if (interactive) {
       now: '現在', startsAt: x => `${x} 開始`, beforeLeaving: x => `出發前 · ${x}`, moving: '移動中', untilArrival: '後抵達',
       leavesAt: x => `${x} 出發`, arrivesAt: x => `${x} 抵達`, destination: x => `目的地 · ${x}`, tooTight: '趕不上',
       legTravel: x => `路程 ${x}`, runTravel: (k, x) => `${k} · 路程 ${x}`, nextRun: x => `下一班 ${x}`,
-      lateBy: x => `會比下一個行程晚 ${x}到`, noMoreRuns: '今天沒有別的班次了', done: '今日完成', doneTitle: '今天的旅程都走完了',
-      doneCounts: (a, b) => `${a} 個安排 · 移動 ${b} 段`, tomorrowFirstLabel: '明天第一站', tomorrowFirst: x => `明天 · ${x}`,
+      lateBy: x => `會比下一個行程晚 ${x}到`, noMoreRuns: '今天沒有別的班次了', done: '今日完成', doneTitle: '今天的行程都走完了',
+      doneCounts: (a, b) => `${a} 個行程 · ${b} 段路程`, tomorrowFirstLabel: '明天第一站', tomorrowFirst: x => `明天 · ${x}`,
       headingTo: x => `前往 ${x}`, waiting: '候車中', untilDeparture: '後發車', runWindow: (a, b, c) => `${a} → ${b} · ${c}`,
       mode: { walking: '步行', driving: '開車', cycling: '騎車', other: '其他', transit: '大眾運輸', idle: '空檔' },
       scrub: '時間' },
     en: { live: 'Now', remaining: 'Ends in', nextStop: x => `Next · ${x}`, upcoming: 'Up next', untilStart: 'till start',
       now: 'Now', startsAt: x => `Starts ${x}`, beforeLeaving: x => `Before leaving · ${x}`, moving: 'On the move', untilArrival: 'till arrival',
       leavesAt: x => `Leave ${x}`, arrivesAt: x => `Arrive ${x}`, destination: x => `Destination · ${x}`, tooTight: 'Running late',
-      legTravel: x => `${x} journey`, runTravel: (k, x) => `${k} · ${x} journey`, nextRun: x => `Next service ${x}`,
+      legTravel: x => `Leg ${x}`, runTravel: (k, x) => `${k} · Leg ${x}`, nextRun: x => `Next service ${x}`,
       lateBy: x => `${x} late for the next event`, noMoreRuns: 'No other services today', done: 'Done for today', doneTitle: 'That’s everything for today',
       doneCounts: (a, b) => `${a} events · ${b} legs`, tomorrowFirstLabel: 'till tomorrow’s first stop', tomorrowFirst: x => `Tomorrow · ${x}`,
       headingTo: x => `Heading to ${x}`, waiting: 'Waiting', untilDeparture: 'until departure', runWindow: (a, b, c) => `${a} → ${b} · ${c}`,
@@ -413,7 +413,7 @@ if (interactive) {
       lateBy: x => `다음 일정보다 ${x} 늦게 도착`, noMoreRuns: '오늘은 다른 편이 없습니다', done: '오늘 일정 완료', doneTitle: '오늘 일정을 모두 마쳤습니다',
       doneCounts: (a, b) => `일정 ${a}개 · 이동 ${b}구간`, tomorrowFirstLabel: '내일 첫 목적지', tomorrowFirst: x => `내일 · ${x}`,
       headingTo: x => `${x}(으)로 이동 중`, waiting: '대기 중', untilDeparture: '후 출발', runWindow: (a, b, c) => `${a} → ${b} · ${c}`,
-      mode: { walking: '도보', driving: '자동차', cycling: '자전거', other: '기타', transit: '대중교통', idle: '여유 시간' },
+      mode: { walking: '도보', driving: '자동차', cycling: '자전거', other: '기타', transit: '대중교통', idle: '빈 시간' },
       scrub: '시각' },
   };
   const S2 = LS[lang] || LS['zh-Hant-TW'];

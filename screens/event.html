@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=30d3082735","/screens/chrome.js":"/screens/chrome.js?v=08431e6552","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=40b4ea05f9","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=bab5354872","/screens/map-live.js":"/screens/map-live.js?v=ab06fc179f","/screens/map-static.js":"/screens/map-static.js?v=fd214a64f9","/screens/map.js":"/screens/map.js?v=43b07ea751","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=7e6fe9f1b0","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=1ff6396919","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=ead80965c2","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=49f922643b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=647d020fff"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=1190f691ed","/screens/chrome.js":"/screens/chrome.js?v=292f16ff00","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=61a7c515aa","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=963b6d1355","/screens/map-live.js":"/screens/map-live.js?v=229d142f64","/screens/map-static.js":"/screens/map-static.js?v=270410e88f","/screens/map.js":"/screens/map.js?v=0623c458ce","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=b64c731387","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=1ff6396919","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=ead80965c2","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=49f922643b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=647d020fff"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>檢視行程</title>
 <!--
@@ -233,7 +233,7 @@ const S = {
   'zh-Hant-TW': { allDay: s => `全日 · ${s}`, span: (a, b) => a === b ? `第 ${a} 天` : `第 ${a}–${b} 天`,
     todos: '待辦清單', addTodo: '新增待辦', files: '附件', desc: '描述', addFile: '新增附件', locale: 'zh-TW', hideDone: '收起已完成', showDone: '顯示已完成' },
   en: { allDay: s => `All-day · ${s}`, span: (a, b) => a === b ? `Day ${a}` : `Days ${a}–${b}`,
-    todos: 'To-Do List', addTodo: 'Add to-do', files: 'Files', desc: 'Notes', addFile: 'Add attachment', locale: 'en-US', hideDone: 'Hide finished', showDone: 'Show finished' },
+    todos: 'To-Do List', addTodo: 'Add to-do', files: 'Files', desc: 'Notes', addFile: 'Add file', locale: 'en-US', hideDone: 'Hide finished', showDone: 'Show finished' },
   ja: { allDay: s => `終日 · ${s}`, span: (a, b) => a === b ? `${a}日目` : `${a}〜${b} 日目`,
     todos: 'やることリスト', addTodo: 'やることを追加', files: '添付', desc: 'メモ', addFile: '添付を追加', locale: 'ja-JP', hideDone: '完了したものを隠す', showDone: '完了したものを表示' },
   // ko：trips.detail.allday、domain.itinerary.daylabel、ui.day.span、ui.todolist.title、ui.add.todo、ui.files.label、ui.hide/showcompleted
@@ -429,16 +429,16 @@ if (interactive) {
       del: '刪除行程', back: '返回', hideDone: '收起已完成', showDone: '顯示已完成', hours: '小時', mins: '分鐘', close: '關閉',
       cancel: '我不去了', uncancel: '改回要去', shift: '延後或提前', edit: '編輯行程',
       shifted: (later, n, len) => `${later ? '已延後' : '已提前'} ${n} 則 ${len}`, edge: later => later ? '最後' : '最前',
-      clamped: (n, e) => `，其中 ${n} 則只挪到這一天的${e}`, blocked: (n, e) => `，另有 ${n} 則已經貼在${e}、動不了`,
-      stuck: e => `已經貼在這一天的${e}，挪不動了`,
+      clamped: (n, e) => `，其中 ${n} 則只挪到這一天的${e}`, blocked: (n, e) => `，另有 ${n} 則已在${e}，不能再挪`,
+      stuck: e => `已在這一天的${e}，不能再挪`,
       pinSet: (dd, k) => `已設為${dd}的${k}行程`, pinUnset: (dd, k) => `已取消${dd}的${k}行程`, opening: '開始', closing: '結束' },
     en: { shiftTitle: 'Later / Earlier', later: 'Later', earlier: 'Earlier', scope: 'Later events shift with it.', apply: 'Apply',
       delAsk: 'Delete event?', delMsg: 'Deleting can\'t be undone, and attachments and the legs on either side go with it.\nIf the plan has only changed, “I\'m Not Going” keeps the record.',
       del: 'Delete Event', back: 'Back', hideDone: 'Hide finished', showDone: 'Show finished', hours: 'hours', mins: 'min', close: 'Close',
       cancel: 'I\'m Not Going', uncancel: 'I\'m Going After All', shift: 'Move later or earlier', edit: 'Edit Event',
       shifted: (later, n, len) => `Moved ${n} events ${later ? 'later' : 'earlier'} by ${len}`, edge: later => later ? 'the end' : 'the start',
-      clamped: (n, e) => `, though ${n} of them only reached ${e} of the day`, blocked: (n, e) => `, and ${n} more are already at ${e} and can't move`,
-      stuck: e => `Already at ${e} of the day, so it can't move`,
+      clamped: (n, e) => `, though ${n} of them only reached ${e} of the day`, blocked: (n, e) => `, and ${n} more are already at ${e} and cannot move`,
+      stuck: e => `Already at ${e} of the day, so it cannot move`,
       pinSet: (dd, k) => `Set as the ${k} event on ${dd}`, pinUnset: (dd, k) => `No longer the ${k} event on ${dd}`, opening: 'opening', closing: 'closing' },
     ja: { shiftTitle: '後ろへ／前へ', later: '後ろへ', earlier: '前へ', scope: '以降の予定もまとめて動きます。', apply: '適用',
       delAsk: '予定を削除しますか？', delMsg: '削除すると元に戻せません。添付や前後の移動の設定も一緒に外れます。\n予定が変わっただけなら、「行かないことにする」で記録を残せます。',
@@ -455,8 +455,8 @@ if (interactive) {
       del: '일정 삭제', back: '돌아가기', hideDone: '완료한 것 숨기기', showDone: '완료한 것 보기', hours: '시간', mins: '분', close: '닫기',
       cancel: '안 가기로 함', uncancel: '그래도 가기로', shift: '뒤로 또는 앞으로', edit: '일정 편집',
       shifted: (later, n, len) => `${n}개를 ${len} ${later ? '뒤로' : '앞으로'} 옮겼습니다`, edge: later => later ? '맨 뒤' : '맨 앞',
-      clamped: (n, e) => `, 그중 ${n}개는 이 날의 ${e}까지만 옮겨졌습니다`, blocked: (n, e) => `, 다른 ${n}개는 이미 ${e}에 붙어 있어 움직이지 않습니다`,
-      stuck: e => `이미 이 날의 ${e}에 붙어 있어 더 옮길 수 없습니다`,
+      clamped: (n, e) => `, 그중 ${n}개는 이 날의 ${e}까지만 옮겨졌습니다`, blocked: (n, e) => `, 다른 ${n}개는 이미 ${e}에 있어 옮길 수 없습니다`,
+      stuck: e => `이미 이 날의 ${e}에 있어 더 옮길 수 없습니다`,
       pinSet: (dd, k) => `${dd}의 ${k} 일정으로 지정했습니다`, pinUnset: (dd, k) => `${dd}의 ${k} 일정 지정을 해제했습니다`, opening: '처음', closing: '마지막' },
   }[lang] || null;
   const W = X || {};

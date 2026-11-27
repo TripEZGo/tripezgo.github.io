@@ -57,10 +57,10 @@ const S = {
   en: { all: 'All', search: 'Search a landmark or address', live: 'Share my location', liveOn: 'Sharing location', openEvent: 'Open event details', openInMaps: 'Open in Maps',
     open24: 'Open 24 hours', open: x => `Open · closes ${x}`, openNow: 'Open', soon: x => `Closing soon · ${x}`, closed: x => `Closed · opens ${x}`,
     closedNow: 'Closed', unknown: 'Hours unknown', note: s => `Data updated ${s}. Actual hours may differ.`, noteDate: '10/10/2026',
-    updated: s => `Updated ${s}`, wiu: 'They allowed location only while using the app. If iOS shuts TripEZGo down, you keep seeing their last known spot.',
+    updated: s => `Updated ${s}`, wiu: 'Their location access is While Using the App. If iOS closes TripEZGo, you see their last updated location.',
     man: { straight: 'Continue straight', slightLeft: 'Keep left', left: 'Turn left', slightRight: 'Keep right', right: 'Turn right', uTurn: 'Make a U-turn', arrive: 'Arrive' },
     then: u => `${u} ahead`, status: (a, b) => `Walking · ${a} · ${b} left`, headingTo: s => `Heading to ${s}`, openDest: 'Open destination',
-    endTitle: 'End walking navigation?', endMsg: 'The route on the map and the navigation will both stop.', cancel: 'Cancel', endConfirm: 'End navigation',
+    endTitle: 'End walking navigation?', endMsg: 'The route on the map and the navigation stop.', cancel: 'Cancel', endConfirm: 'End navigation',
     signage: { donki: 'Don Quijote', matsukiyo: 'Matsukiyo', daikoku: 'Daikoku Drug' },
     unit: { ft: 'feet', mi: 'miles' },
     poster: { man: 'Continue straight', dist: '0.2', unit: 'miles', status: 'Walking · 0.4 miles · 9 min left', dest: 'Heading to 広島若草町' } },
@@ -70,7 +70,7 @@ const S = {
     updated: s => `${s}に更新`, wiu: '相手の位置情報の許可は「App の使用中」までです。iOS が TripEZGo を終了させると、最後に更新された位置が表示され続けます。',
     man: { straight: '直進', slightLeft: '左寄り', left: '左折', slightRight: '右寄り', right: '右折', uTurn: 'Uターン', arrive: '到着' },
     then: u => `${u} 先`, status: (a, b) => `徒歩ナビ · 残り ${a} · ${b}`, headingTo: s => `${s} へ移動中`, openDest: '目的地を開く',
-    endTitle: '徒歩ナビを終了しますか？', endMsg: 'マップ上のルートとナビの両方が終了します。', cancel: 'キャンセル', endConfirm: 'ナビを終了',
+    endTitle: '徒歩ナビを終了しますか？', endMsg: '地図上のルートとナビの両方が終了します。', cancel: 'キャンセル', endConfirm: 'ナビを終了',
     signage: {},
     unit: { m: 'm', km: 'km' },
     poster: { man: '直進', dist: '360', unit: 'm', status: '徒歩ナビ · 残り 710 m · 9 分', dest: '広島若草町 へ移動中' } },
@@ -90,7 +90,7 @@ const S = {
 const LOCALE = { 'zh-Hant-TW': 'zh-TW', en: 'en-US', ja: 'ja', ko: 'ko-KR' }[lang] || 'zh-TW';
 const IMPERIAL = lang === 'en';   // 基準圖的英文是 en-US（英制），同 map.js
 const dayLabel = n => lang === 'ja' ? `${n} 日目` : t.day(n);
-const TABS_JA = ['概要', '旅行', 'マップ', '資料', '設定'];   // 1.3.0：ツール → 資料
+const TABS_JA = ['概要', '旅程', '地図', '資料', '設定'];   // 1.3.0：ツール → 資料
 
 // ── 旅伴樣本（同 share-location.html：名字、顏色）。位置在第 2 天下午的和平公園一帶，更新時間是相對於畫面上的 9:41 ──
 const MATE_NAMES = { 'zh-Hant-TW': ['小雯', '凱文', '美琪'], en: ['Mia', 'Ken', 'Sara'], ja: ['美咲', '健太', 'さくら'], ko: ['지우', '민준', '서연'] }[lang] || ['小雯', '凱文', '美琪'];
@@ -247,9 +247,9 @@ const L10 = {
   'zh-Hant-TW': { byDay: '依日程', nearby: '附近', morning: '上午', afternoon: '下午', evening: '晚上', allDay: '全日', inProgressSuffix: '・進行中', upcomingSuffix: '・即將開始', pending: '待排',
     chips: ['行程', '餐廳', '咖啡', '博物館', '公園', '大眾運輸', '停車場', '購物'], openEvent: '開啟行程細節', inMaps: '在地圖開啟', viewInsp: '查看靈感', edit: '編輯' },
   en: { byDay: 'By Day', nearby: 'Nearby', morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening', allDay: 'All-day', pending: 'Unscheduled',
-    chips: ['Trip', 'Restaurants', 'Cafés', 'Museums', 'Parks', 'Transit', 'Parking', 'Shopping'], inProgressSuffix: ' · now', upcomingSuffix: ' · up next', openEvent: 'Open event details', inMaps: 'Open in Maps', viewInsp: 'View Inspiration', edit: 'Edit' },
-  ja: { byDay: '日程順', nearby: '近く', morning: '午前', afternoon: '午後', evening: '夜', allDay: '終日', inProgressSuffix: '・進行中', upcomingSuffix: '・まもなく開始', pending: '未定',
-    chips: ['旅程', 'レストラン', 'カフェ', '博物館', '公園', '公共交通', '駐車場', 'ショッピング'], openEvent: '予定の詳細を開く', inMaps: 'マップで開く', viewInsp: 'インスピレーションを見る', edit: '編集' },
+    chips: ['Events', 'Restaurants', 'Cafés', 'Museums', 'Parks', 'Transit', 'Parking', 'Shopping'], inProgressSuffix: ' · now', upcomingSuffix: ' · up next', openEvent: 'Open event details', inMaps: 'Open in Maps', viewInsp: 'View Inspiration', edit: 'Edit' },
+  ja: { byDay: '日程順', nearby: '近く', morning: '午前', afternoon: '午後', evening: '夜', allDay: '終日', inProgressSuffix: '・進行中', upcomingSuffix: '・まもなく開始', pending: '待排',
+    chips: ['予定', 'レストラン', 'カフェ', '博物館', '公園', '公共交通', '駐車場', 'ショッピング'], openEvent: '予定の詳細を開く', inMaps: 'マップで開く', viewInsp: 'インスピレーションを見る', edit: '編集' },
   ko: { byDay: '일정별', nearby: '주변', morning: '오전', afternoon: '오후', evening: '저녁', allDay: '종일', inProgressSuffix: ' · 진행 중', upcomingSuffix: ' · 곧 시작', pending: '미정',
     chips: ['일정', '음식점', '카페', '박물관', '공원', '대중교통', '주차장', '쇼핑'], openEvent: '일정 상세 열기', inMaps: '지도에서 열기', viewInsp: '영감 보기', edit: '편집' },
 }[lang] || {};

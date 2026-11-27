@@ -75,7 +75,7 @@ const STRINGS = {
     minutes: m => `${m} min`, hours: h => `${h} h`, hm: (h, m) => `${h} h ${m} min`,
   },
   ja: {
-    tabs: ['ホーム', '概要', '旅行', 'マップ', '資料'],
+    tabs: ['ホーム', '概要', '旅程', '地図', '資料'],
     today: '今日', day: n => `${n} 日目`, allDay: '終日',
     weekday: ['日', '月', '火', '水', '木', '金', '土'],
     monthDay: (m, d) => `${m}月${d}日`, shortDate: (m, d) => `${m}/${d}`,
@@ -84,7 +84,7 @@ const STRINGS = {
   // 韓文：字照 App 字串表（overview/trips/map/widgets/settings.tab.title、ui.day.today、domain.itinerary.daylabel、
   // ui.allday、ui.duration.*）；日期照 DateFormatter 在 ko 的模板結果（TripTextFormatter：EEE→「토」、Md→「10. 10.」、MMMd→「10월 10일」）
   ko: {
-    tabs: ['홈', '한눈에 보기', '여행', '지도', '자료'],
+    tabs: ['홈', '개요', '여행', '지도', '자료'],
     today: '오늘', day: n => `${n}일차`, allDay: '종일',
     weekday: ['일', '월', '화', '수', '목', '금', '토'],
     monthDay: (m, d) => `${m}월 ${d}일`, shortDate: (m, d) => `${m}. ${d}.`,

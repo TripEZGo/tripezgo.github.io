@@ -85,6 +85,26 @@ async function shoot(_page, port, name, query, lang) {
   const url = `https://tripezgo.com/screens/${name}.html?lang=${LANGS[lang]}&${query || ''}`;
   await page.goto(url);
   await page.waitForSelector('body[data-ready="1"]', { timeout: 30000 });
+  if (process.env.TRUNC) {   // TRUNC=<檔案>：把畫面上被截斷（… 或被框裁掉）的文字追加寫進該檔，商城截圖出貨前自查用
+    const hits = await page.evaluate(() => {
+      const out = [];
+      for (const e of document.querySelectorAll('#d *')) {
+        if (!e.children.length || [...e.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim())) {
+          const t = [...e.childNodes].filter((n) => n.nodeType === 3).map((n) => n.textContent).join('').trim();
+          if (!t) continue;
+          const cs = getComputedStyle(e);
+          const r = e.getBoundingClientRect();
+          if (r.width === 0 || r.height === 0) continue;
+          const clampH = (cs.webkitLineClamp !== 'none' && e.scrollHeight > e.clientHeight + 1);
+          const clipW = (cs.overflow !== 'visible' || cs.overflowX !== 'visible') && cs.overflowX !== 'auto' && cs.overflowX !== 'scroll' && e.scrollWidth > e.clientWidth + 1;
+          if (clampH || clipW || t.includes('…')) out.push(t.slice(0, 80));
+        }
+      }
+      return out;
+    });
+    const tag = `${lang}|${isIpad(query) ? 'ipad' : isDuo(query) ? 'duo' : 'iphone'}|${name}|${query}`;
+    fs.appendFileSync(process.env.TRUNC, hits.map((h) => `${tag}|${h}\n`).join(''));
+  }
   return page.locator('#d').screenshot();
 }
 

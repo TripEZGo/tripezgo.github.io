@@ -3,7 +3,7 @@
   "templateID": "jp-sanyo-hiroshima-okayama-6d",
   "revision": 5,
   "contentLocale": "en",
-  "title": "San'yō in 6 Days — Hiroshima, Miyajima, Onomichi, Kurashiki, Okayama",
+  "title": "San'yō in 6 Days",
   "subtitle": "In and out of Okayama, based in Hiroshima, all of it on one JR pass",
   "summary": "A solo November trip: Tigerair into and out of Okayama, three nights at a base by Hiroshima Station, then a day on Miyajima's Itsukushima Shrine, a day in Onomichi (Senkō-ji) and Tomonoura, a day at the Yamato Museum in Kure and downtown Hiroshima, and the last two days in Kurashiki and Okayama. It all runs on the Okayama-Hiroshima-Yamaguchi area JR Pass, even the Miyajima ferry. Photos and the order of stops come from the original travelogue; every transit run was re-checked against the current weekday timetables in November 2026. It works on paper, but check again before you go.",
   "destination": "Hiroshima & Okayama Prefectures, Japan",
@@ -118,7 +118,7 @@
   "allDayEvents": [
     {
       "key": "stay-toyoko",
-      "title": "Toyoko Inn Hiroshima-eki Stadium-mae (3 nights)",
+      "title": "Toyoko Inn Hiroshima (3 nights)",
       "fromDay": 1,
       "toDay": 4,
       "category": "hotel",
@@ -201,7 +201,7 @@
     },
     {
       "key": "jr-pass",
-      "title": "Okayama–Hiroshima–Yamaguchi Area Pass (5 days)",
+      "title": "JR Area Pass (5 days)",
       "fromDay": 1,
       "toDay": 5,
       "category": "train",
@@ -757,11 +757,11 @@
           "notes": "Out at 11:10, down at 14:11 — the best slot on this route, because it leaves the whole afternoon to travel. The flight itself is about two hours; the one-hour time difference is why the timetable makes it look like three. Seats are not assigned, and on your own an aisle is easier to get in and out of. The Tigerair queue clears quickly once the desk opens, so two hours is more than enough for one person. There is little to eat airside and no bringing your own on board, so have a meal before security. The airport is small — 30 minutes is plenty from landing to the arrivals hall when it is just you. The coach ticket machine is immediately on the right as you come out, and it takes IC cards. The times are the original author's 2023 flights; the 2026 winter timetable (25 Oct–27 Mar) did not show the current flight number and times for the Okayama route, so go by what the airline publishes when you book.",
           "todos": [
             {
-              "text": "Screenshot the Visit Japan Web QR code — there may be no signal when you land",
+              "text": "Save entry QR code",
               "colour": "misc"
             },
             {
-              "text": "20 kg checked allowance; weigh the bag yourself on the scale beside the desk",
+              "text": "20 kg checked bag",
               "colour": "misc"
             }
           ],
@@ -774,7 +774,7 @@
         },
         {
           "key": "d1-jrpass",
-          "title": "Collect the JR pass at Okayama Station",
+          "title": "Collect the JR Pass",
           "start": "16:40",
           "end": "17:50",
           "category": "station",
@@ -819,14 +819,14 @@
           },
           "todos": [
             {
-              "text": "Pick up a paper San'yō Line timetable while you are at the counter — it still works offline",
+              "text": "Get paper timetable",
               "colour": "move"
             }
           ]
         },
         {
           "key": "d1-okonomiyaki",
-          "title": "Dinner: Hiroshima Okonomi-Monogatari, Ekimae Hiroba",
+          "title": "Dinner: Okonomi-Monogatari",
           "start": "19:20",
           "end": "20:30",
           "category": "dining",
@@ -883,7 +883,7 @@
       "events": [
         {
           "key": "d2-ferry",
-          "title": "JR Miyajima ferry, Miyajimaguchi → Miyajima",
+          "title": "JR Miyajima ferry",
           "start": "09:10",
           "end": "09:20",
           "category": "ferry",
@@ -901,17 +901,17 @@
             "note": "18 minutes on foot from the hotel to Hiroshima Station, then 26 minutes on the JR San'yō Line to Miyajimaguchi; the ferry pier is a few minutes' walk. Take a local bound for Iwakuni or Ōnoura",
             "runs": [
               {
-                "name": "San'yō Line for Iwakuni",
+                "name": "Iwakuni local",
                 "departure": "08:21",
                 "arrival": "08:47"
               },
               {
-                "name": "San'yō Line for Iwakuni",
+                "name": "Iwakuni local",
                 "departure": "08:35",
                 "arrival": "09:01"
               },
               {
-                "name": "San'yō Line for Iwakuni",
+                "name": "Iwakuni local",
                 "departure": "08:53",
                 "arrival": "09:19"
               }
@@ -933,7 +933,7 @@
         },
         {
           "key": "d2-itsukushima",
-          "title": "Miyajima: Omotesandō, Itsukushima Shrine and Momijidani",
+          "title": "Miyajima: Itsukushima",
           "start": "09:45",
           "end": "12:30",
           "category": "temple",
@@ -962,7 +962,7 @@
         },
         {
           "key": "d2-ropeway",
-          "title": "Miyajima Ropeway to the Shishiiwa Observatory",
+          "title": "Miyajima Ropeway, Shishiiwa",
           "start": "13:00",
           "end": "14:05",
           "category": "cablecar",

@@ -31,20 +31,20 @@ const S = {
     then: (u) => `${u}後`, status: (a, b) => `步行導航 · 還有 ${a} · ${b}`, headingTo: (s) => `前往 ${s}`, openDest: '開啟終點',
     endTitle: '結束步行導航？', endMsg: '圖上那條路線與導航都會收起來。', cancel: '取消', endConfirm: '結束導航', unit: { m: '公尺', km: '公里' } },
   en: { all: 'All', search: 'Search a landmark or address', live: 'Share my location', liveOn: 'Sharing location', openEvent: 'Open event details', openInMaps: 'Open in Maps',
-    updated: (s) => `Updated ${s}`, wiu: 'They allowed location only while using the app. If iOS shuts TripEZGo down, you keep seeing their last known spot.',
+    updated: (s) => `Updated ${s}`, wiu: 'Their location access is While Using the App. If iOS closes TripEZGo, you see their last updated location.',
     man: { straight: 'Continue straight', slightLeft: 'Keep left', left: 'Turn left', slightRight: 'Keep right', right: 'Turn right', uTurn: 'Make a U-turn', arrive: 'Arrive' },
     then: (u) => `${u} ahead`, status: (a, b) => `Walking · ${a} · ${b} left`, headingTo: (s) => `Heading to ${s}`, openDest: 'Open destination',
-    endTitle: 'End walking navigation?', endMsg: 'The route on the map and the navigation will both stop.', cancel: 'Cancel', endConfirm: 'End navigation', unit: { ft: 'feet', mi: 'miles' } },
+    endTitle: 'End walking navigation?', endMsg: 'The route on the map and the navigation stop.', cancel: 'Cancel', endConfirm: 'End navigation', unit: { ft: 'feet', mi: 'miles' } },
   ja: { all: 'すべて', search: 'ランドマークや住所を検索', live: '現在地を共有', liveOn: '位置を共有中', openEvent: '予定の詳細を開く', openInMaps: 'マップで開く',
     updated: (s) => `${s}に更新`, wiu: '相手の位置情報の許可は「App の使用中」までです。iOS が TripEZGo を終了させると、最後に更新された位置が表示され続けます。',
     man: { straight: '直進', slightLeft: '左寄り', left: '左折', slightRight: '右寄り', right: '右折', uTurn: 'Uターン', arrive: '到着' },
     then: (u) => `${u} 先`, status: (a, b) => `徒歩ナビ · 残り ${a} · ${b}`, headingTo: (s) => `${s} へ移動中`, openDest: '目的地を開く',
-    endTitle: '徒歩ナビを終了しますか？', endMsg: 'マップ上のルートとナビの両方が終了します。', cancel: 'キャンセル', endConfirm: 'ナビを終了', unit: { m: 'm', km: 'km' } },
+    endTitle: '徒歩ナビを終了しますか？', endMsg: '地図上のルートとナビの両方が終了します。', cancel: 'キャンセル', endConfirm: 'ナビを終了', unit: { m: 'm', km: 'km' } },
 }[lang] || null;
 const L = S || {};
 const LOCALE = { 'zh-Hant-TW': 'zh-TW', en: 'en-US', ja: 'ja' }[lang] || 'en-US';
 const IMPERIAL = lang === 'en';
-const TABS_JA = ['概要', '旅行', 'マップ', '資料', '設定'];
+const TABS_JA = ['概要', '旅程', '地図', '資料', '設定'];
 
 // ── 座標 ↔ 圖上的點（圖 603×1044pt，四角座標在 mapdemo.json；範圍只有 3 公里見方，線性換算的誤差可以忽略） ──
 const W = bounds.w, H = bounds.h;
@@ -140,8 +140,8 @@ d.insertAdjacentHTML('beforeend', `<div class="mk" id="mk"><div class="layer" id
     <svg id="lines" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true"></svg></div><div class="pins" id="pins"></div></div>`);
 const P10 = {
   'zh-Hant-TW': { byDay: '依日程', nearby: '附近', chips: ['行程', '餐廳', '咖啡', '博物館', '公園', '大眾運輸', '停車場', '購物'] },
-  en: { byDay: 'By Day', nearby: 'Nearby', chips: ['Trip', 'Restaurants', 'Cafés', 'Museums', 'Parks', 'Transit', 'Parking', 'Shopping'] },
-  ja: { byDay: '日程順', nearby: '近く', chips: ['旅程', 'レストラン', 'カフェ', '博物館', '公園', '公共交通', '駐車場', 'ショッピング'] },
+  en: { byDay: 'By Day', nearby: 'Nearby', chips: ['Events', 'Restaurants', 'Cafés', 'Museums', 'Parks', 'Transit', 'Parking', 'Shopping'] },
+  ja: { byDay: '日程順', nearby: '近く', chips: ['予定', 'レストラン', 'カフェ', '博物館', '公園', '公共交通', '駐車場', 'ショッピング'] },
 }[lang] || {};
 const CHIP_ICON = [null, 'restaurant', 'cafe', 'museum', 'park', 'rail-metro', 'parking', 'shop'];
 const sv = (inner, sw = 1.8) => `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${inner}</svg>`;

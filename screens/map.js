@@ -38,7 +38,7 @@ const S = {
 }[lang] || {};
 // chrome.js 的日文與 App 不一樣的兩處（App：「%lld 日目」有空格；分頁叫「旅行」「マップ」）——先在這一頁蓋掉
 const dayLabel = n => lang === 'ja' ? `${n} 日目` : t.day(n);
-const TABS_JA = ['概要', '旅行', 'マップ', '資料', '設定'];   // 1.3.0：ツール → 資料
+const TABS_JA = ['概要', '旅程', '地図', '資料', '設定'];   // 1.3.0：ツール → 資料
 
 // 範本裡沒有的那一家店（地圖上點到的 7-ELEVEN）。店名與地址是 MapKit 給的日文原名，三語同一份。
 const STORE = { name: '7-ELEVEN 広島若草町', address: '広島県広島市東区若草町１８−４６' };
