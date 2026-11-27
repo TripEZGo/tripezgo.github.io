@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=1190f691ed","/screens/chrome.js":"/screens/chrome.js?v=292f16ff00","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=61a7c515aa","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=963b6d1355","/screens/map-live.js":"/screens/map-live.js?v=229d142f64","/screens/map-static.js":"/screens/map-static.js?v=270410e88f","/screens/map.js":"/screens/map.js?v=0623c458ce","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=b64c731387","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=1ff6396919","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=ead80965c2","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=49f922643b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=647d020fff"}}</script><!-- stamp-screens:end -->
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/autoplay.js":"/screens/autoplay.js?v=1190f691ed","/screens/chrome.js":"/screens/chrome.js?v=292f16ff00","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=a2d1a27041","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=963b6d1355","/screens/map-live.js":"/screens/map-live.js?v=229d142f64","/screens/map-static.js":"/screens/map-static.js?v=270410e88f","/screens/map.js":"/screens/map.js?v=0623c458ce","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=b64c731387","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=1ff6396919","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=ead80965c2","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=49f922643b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=647d020fff"}}</script><!-- stamp-screens:end -->
 <meta name="viewport" content="width=402">
 <title>主頁</title>
 <!--
@@ -429,8 +429,8 @@ const S = {
   en: { share: 'Trip Sharing', swap: 'Switch trip', day: n => `Day ${n}`, prog: (a, b) => `Day ${a} of ${b}`, count: n => `${n} days`, done: 'Done',
     remainingShort: n => `${n} left`,
     noEvent: 'No event',
-    agenda: 'Now', todosToday: 'Today’s to-dos', remainP: 'In ', endsAt: x => ` · ends ${x}`, remainingOpen: n => `${n} still open`, nearest: x => ` · soonest ${x}`,
-    overview: 'Overview', overviewEmpty: 'Write the key points of this trip', scan: 'Scan', fx: 'Currency Converter', fxEmpty: 'Nothing converted yet. Tap to start',
+    agenda: 'Now', todosToday: 'Today', remainP: 'In ', endsAt: x => ` · ends ${x}`, remainingOpen: n => `${n} still open`, nearest: x => ` · soonest ${x}`,
+    overview: 'Overview', overviewEmpty: 'Write the key points of this trip', scan: 'Scan', fx: 'Currency', fxEmpty: 'Tap to convert',
     live: 'Now', remain: 'Ends in', next: x => `Next · ${x}`,
     veilTitle: 'Upgrade to Premium for more pages', veilBody: 'The free version has one page of cards. Upgrade to Premium for more pages on Home.', veilGo: 'Upgrade to Premium',
     places: 'Hiroshima, Okayama' },
@@ -438,7 +438,7 @@ const S = {
     remainingShort: n => `あと ${n} 件`,
     noEvent: '予定に紐づけない',
     agenda: '進行中', todosToday: '今日のやること', remainP: '残り ', endsAt: x => ` · ${x} 終了`, remainingOpen: n => `未完了があと ${n} 件`, nearest: x => ` · 直近 ${x}`,
-    overview: '概要', overviewEmpty: 'この旅程の要点を書く', scan: 'スキャン', fx: '通貨換算', fxEmpty: 'まだ換算していません。タップで開始',
+    overview: '概要', overviewEmpty: 'この旅程の要点を書く', scan: 'スキャン', fx: '為替換算', fxEmpty: 'タップして換算',
     live: '進行中', remain: '残り', next: x => `次 · ${x}`,
     veilTitle: 'Premium にアップグレードしてページを増やす', veilBody: '無料版のウィジェットは 1 ページです。Premium にアップグレードすると、ホームにページを増やせます。', veilGo: 'Premium にアップグレード',
     places: '広島市、岡山市' },
@@ -446,7 +446,7 @@ const S = {
     remainingShort: n => `${n}건 남음`,
     noEvent: '일정에 묶지 않음',
     agenda: '진행 중', todosToday: '오늘 할 일', remainP: '남은 시간 ', endsAt: x => ` · ${x} 종료`, remainingOpen: n => `미완료 ${n}건 남음`, nearest: x => ` · 가장 가까운 ${x}`,
-    overview: '개요', overviewEmpty: '이번 여행의 핵심을 적어 두세요', scan: '스캔', fx: '환율 변환', fxEmpty: '아직 환산한 적이 없습니다. 탭하여 시작',
+    overview: '개요', overviewEmpty: '이번 여행의 핵심을 적어 두세요', scan: '스캔', fx: '환율 계산', fxEmpty: '탭하여 환산',
     live: '진행 중', remain: '남은 시간', next: x => `다음 · ${x}`,
     veilTitle: 'Premium으로 업그레이드하고 페이지 더 추가하기', veilBody: '무료 버전에서는 위젯을 한 페이지만 쓸 수 있어요. Premium으로 업그레이드하면 홈에 페이지를 더 추가할 수 있어요.', veilGo: 'Premium으로 업그레이드',
     places: '히로시마시, 오카야마시' },
@@ -684,7 +684,7 @@ const W = {
     groupCarried: `Carried throughout`,
     tripFileTotal: (a) => `${a} files on this trip`,
     emptyFiles: `No files yet`,
-    todosToday: `Today's to-dos`,
+    todosToday: `Today`,
     groupOpen: (a) => `Open · ${a}`,
     groupDone: `Done`,
     todosOpenToday: (a) => `${a} left today`,
@@ -708,7 +708,7 @@ const W = {
     exchangePrevious: `Earlier`,
     exchangeAsOf: (a) => `Rate as of ${a}`,
     exchangeTap: `Tap to convert`,
-    emptyExchange: `Nothing converted yet. Tap to start`,
+    emptyExchange: `Tap to convert`,
     tripOngoing: `On the trip`,
     dayCountTotal: (a) => `${a} days`,
     returnsOn: (a, b) => `Back ${a} · ${b} days to go`,
@@ -788,7 +788,7 @@ const W = {
     exchangePrevious: `これまでの換算`,
     exchangeAsOf: (a) => `レート基準日 ${a}`,
     exchangeTap: `タップして換算`,
-    emptyExchange: `まだ換算していません。タップで開始`,
+    emptyExchange: `タップして換算`,
     tripOngoing: `旅行中`,
     dayCountTotal: (a) => `全 ${a} 日`,
     returnsOn: (a, b) => `帰着 ${a} · あと ${b} 日`,
@@ -868,7 +868,7 @@ const W = {
     exchangePrevious: `이전 환산`,
     exchangeAsOf: (a) => `환율 기준 ${a}`,
     exchangeTap: `탭하여 환산`,
-    emptyExchange: `아직 환산한 적이 없습니다. 탭하여 시작`,
+    emptyExchange: `탭하여 환산`,
     tripOngoing: `여행 중`,
     dayCountTotal: (a) => `총 ${a}일`,
     returnsOn: (a, b) => `귀국 ${a} · ${b}일 남음`,
