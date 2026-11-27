@@ -195,7 +195,7 @@ export function chrome(device, { tab = null, dark = false, back = false } = {}) 
     // iPad 狀態列：時刻＋日期（擷取 01 繁中「9:41 AM  9月29日 週二」、en「9:41 AM  Tue Sep 29」、ja「9:41  9月29日 (火)」）。
     // 日期固定是範本旅程的「今天」2026-10-10（週六）——各畫面預設 start=2026-10-10、today=1。沒有動態島。
     // 主畫面橫條只在系統畫面（dark：鎖定畫面等）畫；App 畫面的擷取 01–07 底下都沒有。
-    const sbDate = { 'zh-Hant-TW': '10月10日 週六', en: 'Sat Oct 10', ja: '10月10日 (土)' }[lang] || '10月10日 週六';
+    const sbDate = { 'zh-Hant-TW': '10月10日 週六', en: 'Sat Oct 10', ja: '10月10日 (土)', ko: '10월 10일 (토)' }[lang] || '10月10日 週六';
     device.insertAdjacentHTML('beforeend', `
     <div class="sb${dark ? ' on-dark' : ''}"><div class="sb-time">${lang === 'ja' ? '9:41' : '9:41 AM'}</div><div class="sb-date">${sbDate}</div>${SB_ICONS}</div>
     ${dark ? '<div class="home on-dark"></div>' : '<svg class="resize-grip" viewBox="0 0 26 26" aria-hidden="true"><path d="M23.5 2.5A21 21 0 0 1 2.5 23.5"/></svg>'}`);
