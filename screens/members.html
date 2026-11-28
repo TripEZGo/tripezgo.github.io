@@ -184,6 +184,10 @@
   .duo .col { top: 97px; right: 104px; }
   .duo .scroller .col { top: 97px; }
   .duo .scroller .col { margin-right: 104px; }
+  /* Duo 只有 669pt 高：旅伴名單只留到第二位旅伴、之後整段不畫，讓畫面結束在一列的邊上，不露出被切一半的下一列（使用者 2026-11-28：新介面不准截斷；商城共編那格）。
+     只掛在 html.duo 底下，iPhone／iPad 不受影響。 */
+  .duo .col > .sec-title.xs + .list .mb:nth-child(n+3) { display: none; }
+  .duo .col > .sec-title.xs ~ .sec-title.xs, .duo .col > .sec-title.xs ~ .sec-title.xs ~ * { display: none; }
 </style>
 </head>
 <body>
