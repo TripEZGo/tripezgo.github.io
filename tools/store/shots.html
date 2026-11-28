@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  TripEZGo · App Store 商城截圖（1.7.0 起順序：主頁、行事曆、總覽、靈感、地圖、行程＋路程（兩台並排）、資料、共編、位置、即時動態；1.4.0 起分享那格併進靈感；1.3.0，2026-10-12：畫面改由官網 screens/ 的 HTML 直接產，iPhone＋iPad 各 10 張×中英日；iPad 畫面同樣出自 screens/ 的 ?device=ipad）
+  TripEZGo · App Store 商城截圖（1.11.0 起順序：主頁、AI 規劃行程、行事曆、總覽、靈感、地圖、行程＋路程（兩台並排）、資料、共編、位置、即時動態；1.4.0 起分享那格併進靈感；1.3.0，2026-10-12：畫面改由官網 screens/ 的 HTML 直接產，iPhone＋iPad 各 10 張×中英日；iPad 畫面同樣出自 screens/ 的 ?device=ipad）
   原稿：Open Design appstore-2026/screenshots.html；產生：node tools/store/make.mjs <輸出目錄>
   語言（目前 zh-Hant / ja / en；ko 另外補）× 兩個裝置欄位 × 十張。
     · iPhone 6.9"  1320×2868 px   原始畫面 raw/<lang>/iphone/NN.png（1206×2622）
@@ -282,6 +282,7 @@
   var COPY = {
     'zh-Hant': [
       ['[主頁]小工具|自己排', '即時動態、待辦、匯率、總覽，長按可移動'],
+      ['AI 規劃行程，|[免費、隱私優先]', 'Apple 私密雲端運算、TripEZGo MCP 或你自己的 API 金鑰'],
       ['行事曆排行程，|[時間軸]排路程', '拖曳調整時段，待排行程拖進時段'],
       ['[總覽]|一天一頁', '行程卡有封面與待辦，卡與卡之間是路程'],
       ['從其他 App|分享進[靈感]', 'Safari、地圖、社群、相簿，可直接排成行程'],
@@ -294,6 +295,7 @@
     ],
     'zh-Hans': [
       ['[主页]小工具|自己排', '实时活动、待办、汇率、总览，长按可移动'],
+      ['AI 规划行程，|[免费、隐私优先]', 'Apple 私有云计算、TripEZGo MCP 或你自己的 API 密钥'],
       ['日历排行程，|[时间轴]排路程', '拖动调整时段，待排行程拖进时段'],
       ['[总览]|一天一页', '行程卡有封面和待办，卡片之间是路程'],
       ['从其他 App|分享进[灵感]', 'Safari、地图、社交媒体、相册，可直接排成行程'],
@@ -306,6 +308,7 @@
     ],
     'ja': [
       ['[ホーム]の|ウィジェットを自分で配置', 'ライブアクティビティ・やること・為替・概要。長押しで移動'],
+      ['AI で旅程づくり、|[無料・プライバシー優先]', 'Apple のクラウド、TripEZGo MCP、自分の API キー'],
       ['予定はカレンダー、^移動は[タイムライン]', 'ドラッグで時間帯を調整、未定の予定も時間帯へ'],
       ['[概要]は|1日1ページ', '予定カードにカバーとやること、カードのあいだは移動'],
       ['他の App から|[インスピレーション]へ共有', 'Safari・地図・SNS・写真から、そのまま予定に組めます'],
@@ -318,6 +321,7 @@
     ],
     'en': [
       ['[Home] cards, |arranged by you', 'Live Activity, to-dos, currency and overview. Touch and hold to move'],
+      ['Plan with AI, |[free and private]', 'Apple Private Cloud Compute, TripEZGo MCP or your own API key'],
       ['Plan events on a calendar, |[legs on a timeline]', 'Drag to change the time slot. Drag unscheduled events into a slot'],
       ['[Overview]: |one page a day', 'Event cards with covers and to-dos. Legs appear between cards'],
       ['Share in from other apps |to [Inspiration]', 'Safari, Maps, social apps and Photos. Plan an item as an event'],
@@ -332,6 +336,7 @@
        라이브 액티비티——即時動態一律照 App 字串表寫「라이브 액티비티」（使用者 2026-10-12 裁定統一）；홈＝App 的「主頁」分頁） */
     'ko': [
       ['[홈] 위젯을 |직접 배치', '라이브 액티비티, 할 일, 환율, 개요. 길게 눌러 이동'],
+      ['AI로 일정 계획, |[무료, 개인정보 우선]', 'Apple Private Cloud Compute, TripEZGo MCP 또는 내 API 키'],
       ['일정은 캘린더, |이동은 [타임라인]', '끌어서 시간대 조정, 미정 일정은 시간대로 끌어다 놓기'],
       ['[개요]는 |하루 한 페이지', '커버와 할 일이 붙은 일정 카드, 카드 사이에는 이동'],
       ['다른 앱에서 공유해 |[영감]으로', 'Safari, 지도, SNS, 사진에서 바로 일정으로 짤 수 있어요'],
@@ -343,7 +348,7 @@
       ['[라이브 액티비티]와 |위젯', '잠금 화면에 다음 장소, 잠금 해제 불필요']
     ]
   };
-  var N = 10, PREMIUM = 9, PAIR = 5;   /* 第 6 張（行程＋路程）兩支並排；第 10 張（即時動態）掛 Premium 標籤 */
+  var N = 11, PREMIUM = 10, PAIR = 6;   /* 第 7 張（行程＋路程）兩支並排；第 11 張（即時動態）掛 Premium 標籤（1.11.0：第 2 張插入 AI 規劃行程） */
   var LANGS = ['zh-Hant', 'zh-Hans', 'ja', 'en', 'ko'];
   var LANG_NAME = { 'zh-Hant': '繁體中文', 'zh-Hans': '简体中文', 'ja': '日本語', 'en': 'English', 'ko': '한국어' };
   var DEVICES = {

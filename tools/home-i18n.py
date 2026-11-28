@@ -166,9 +166,18 @@ T = {
   '靈感：從其他 App 分享進來的網頁、地圖與貼文，標著未讀與未關聯，資料分頁右上是通知鈴鐺': ('Inspiration: pages, maps and posts shared in from other apps, marked unread and not added, with the notification bell at the top right of the Library', 'インスピレーション：ほかの App から共有されたページ・地図・投稿。未読と未関連の印つきで、資料タブの右上は通知のベル', '영감: 다른 앱에서 공유해 온 웹페이지·지도·게시물. 읽지 않음·미연결 표시가 붙고, 자료 탭 오른쪽 위는 알림 벨'),
   '<li><b>靈感</b>：Safari、地圖、社群分享進來的內容存在這裡，可以排成行程，或存成筆記、購物清單。</li>': ('<li><b>Inspiration</b>: Items you share from Safari, Maps and social apps are saved here. Plan them as events, or save them as notes or shopping items.</li>', '<li><b>インスピレーション</b>：Safari・地図・SNS から共有した内容をここに保存します。予定にしたり、メモや買い物リストに保存したりできます。</li>', '<li><b>영감</b>: Safari·지도·SNS에서 공유한 내용이 여기에 저장됩니다. 일정으로 짜거나 메모·쇼핑 목록으로 저장할 수 있습니다.</li>'),
   # AI
-  '讓 AI': ('Let AI', 'AI に', 'AI에게'),
-  '幫你排行程': ('plan it for you', '予定を組んでもらう', '일정을 맡기세요'),
-  '內建 MCP，連接你的 AI Agent。說「幫我排京都第二天」，行程直接寫進旅程。': ('Built-in MCP connects your AI agent. Say “Plan day two in Kyoto for me” and the events are added to the trip.', 'MCP を内蔵。AI エージェントを接続して「京都の 2 日目を組んで」と伝えると、予定が旅程に追加されます。', 'MCP 내장. AI 에이전트를 연결하고 “교토 둘째 날 일정 짜 줘”라고 말하면 일정이 여행에 추가됩니다.'),
+  # AI 規劃行程（1.11.0）：Private Cloud Compute／自訂金鑰兩句取自 App 字串表（planningcanvas.ai.*），其餘是官網稿的字
+  'AI 規劃行程，': ('Plan with AI.', 'AI で旅程づくり。', 'AI로 일정 계획,'),
+  '免費、隱私優先': ('Free and private.', '無料、プライバシー優先', '무료, 개인정보 우선'),
+  '上傳機票、訂單紀錄或旅遊遊記自動幫你排行程。': ('Upload tickets, bookings or travel posts and get an itinerary.', 'チケット、予約記録、旅行記をアップロードすると、旅程を自動で組みます。', '항공권, 예약 내역, 여행기를 올리면 일정을 자동으로 짜 드려요.'),
+  '由 Apple® 直接提供技術支援。TripEZGo 免費。': ('Powered directly by Apple®. TripEZGo is free.', 'Apple® が直接技術を提供。TripEZGo は無料です。', 'Apple®이 직접 기술을 제공합니다. TripEZGo는 무료입니다.'),
+  '讓電腦上的 AI 連進 App 幫你排。': ('Let the AI on your computer connect to the app and plan it.', 'パソコンの AI を App につないで、旅程を組ませられます。', '컴퓨터의 AI를 앱에 연결해 일정을 짜게 하세요.'),
+  '你自己的 AI API 金鑰': ('Your own AI API key', 'ご自身の AI API キー', '내 AI API 키'),
+  '支援 Claude、OpenAI、Gemini；資料直接送達 AI 供應商端。': ('Works with Claude, OpenAI and Gemini. Your data goes directly to the AI provider.', 'Claude、OpenAI、Gemini に対応。データは AI プロバイダに直接送信されます。', 'Claude, OpenAI, Gemini를 지원합니다. 데이터는 AI 제공업체로 직접 전송됩니다.'),
+  'TripEZGo 不收任何 AI 費用，也沒有架設自己的伺服器，不會轉發、保留你的任何資料。': ('TripEZGo charges nothing for AI, runs no servers of its own, and never forwards or keeps your data.', 'TripEZGo は AI の料金をいただかず、独自のサーバーも持たないため、データを転送・保存することはありません。', 'TripEZGo는 AI 비용을 받지 않고 자체 서버도 없어서, 데이터를 전달하거나 보관하지 않습니다.'),
+  'TripEZGo 免費。Private Cloud Compute 的使用額度依你的 iCloud 方案而定，用完後可以「取得更多」，由 Apple 加量（iCloud+）。': ('TripEZGo is free. Your Private Cloud Compute allowance depends on your iCloud plan; when it runs out, “Get More” lets Apple raise it (iCloud+).', 'TripEZGo は無料です。Private Cloud Compute の使用枠はご利用の iCloud プランによって決まり、使い切った場合は「上限を増やす」から Apple が枠を追加します（iCloud+）。', 'TripEZGo는 무료입니다. Private Cloud Compute 사용량은 iCloud 요금제에 따라 정해지며, 다 쓰면 ‘더 받기’로 Apple이 늘려 줍니다(iCloud+).'),
+  '排行程中可以切到其他 App，背景繼續排。': ('Switch to another app while it plans; planning continues in the background.', '行程づくりの途中で他の App に切り替えても、バックグラウンドで続きます。', '일정을 짜는 도중 다른 앱으로 전환해도 백그라운드에서 계속됩니다.'),
+  'AI 規劃行程：三張截圖、PDF、文字與連結丟上畫布，AI 讀完後給出可以一次套用的預覽，套用後行事曆排好第 2 天': ('Plan with AI: screenshots, a PDF, text and links go onto the canvas, AI reads them and shows a preview you can apply at once, and the calendar fills in day 2', 'AI で旅程づくり：スクリーンショット、PDF、テキスト、リンクをキャンバスに置くと、AI が読み取って一括で適用できるプレビューを作り、カレンダーに 2 日目が組まれます', 'AI로 일정 계획: 스크린샷, PDF, 텍스트, 링크를 캔버스에 올리면 AI가 읽고 한 번에 적용할 수 있는 미리보기를 만들어, 캘린더에 2일차가 채워집니다'),
   # plans
   '免費開始，': ('Start free,', '無料ではじめて、', '무료로 시작하고,'),
   '需要再升級': ('upgrade when you need to', '必要なときにアップグレード', '필요할 때 업그레이드'),
@@ -345,7 +354,6 @@ T = {
   '<p><b>Siri、Apple Intelligence</b>：問「下一個行程是什麼」，不用打開 App。</p>': ('<p><b>Siri, Apple Intelligence</b>: Ask “What is my next event?” without opening the app.</p>', '<p><b>Siri、Apple Intelligence</b>：「次の予定は？」と聞けば、App を開かずにわかります。</p>', '<p><b>Siri, Apple Intelligence</b>: “다음 일정이 뭐야?”라고 물으면 앱을 열 필요가 없습니다.</p>'),
   '<p><b>公開分享</b>：用連結把旅程公開給所有人。只公開行程標題、地點與時間，不公開行程描述、附件與待辦。</p>': ('<p><b>Public sharing</b>: Make a trip public with a link, so anyone can see it. Only event titles, places and times are public. Event descriptions, files and to-dos are not public.</p>', '<p><b>公開共有</b>：リンクで旅程を誰にでも公開できます。公開されるのは予定のタイトル、場所、時間だけです。予定の説明、添付、やることは公開されません。</p>', '<p><b>공개 공유</b>: 링크로 여행을 누구나 볼 수 있게 공개합니다. 일정 제목, 장소, 시간만 공개됩니다. 일정 설명, 첨부, 할 일은 공개되지 않습니다.</p>'),
   # AI
-  '手機與電腦在同一個 Wi-Fi 時，AI Agent 可以用 MCP 連接 TripEZGo，排行程、整理待辦、筆記與購物清單。': ('When your phone and computer are on the same Wi-Fi, an AI agent can connect to TripEZGo over MCP. It plans events and organizes to-dos, notes and shopping lists.', 'iPhone とパソコンが同じ Wi-Fi にあるとき、AI エージェントは MCP で TripEZGo に接続できます。予定を組み、やること・メモ・買い物リストを整理します。', 'iPhone과 컴퓨터가 같은 Wi-Fi에 있으면 AI 에이전트가 MCP로 TripEZGo에 연결할 수 있습니다. 일정을 짜고 할 일·메모·쇼핑 목록을 정리합니다.'),
   # 方案
   '免費版與 Premium 有 6 項差異。': ('The free version and Premium differ in 6 ways.', '無料版と Premium の違いは 6 つです。', '무료 버전과 Premium의 차이는 6가지입니다.'),
   'Widget、Siri': ('Widgets, Siri', 'ウィジェット・Siri', '위젯, Siri'),

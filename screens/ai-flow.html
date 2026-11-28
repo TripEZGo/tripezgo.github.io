@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<!-- stamp-screens:start --><script type="importmap">{"imports":{"/screens/ai-flow-strings.js":"/screens/ai-flow-strings.js?v=5520dea0df","/screens/autoplay.js":"/screens/autoplay.js?v=1190f691ed","/screens/chrome.js":"/screens/chrome.js?v=f1b4c64be9","/screens/demo-state.js":"/screens/demo-state.js?v=9a9fea154c","/screens/hans-dict.js":"/screens/hans-dict.js?v=a2d1a27041","/screens/inspiration-chain.js":"/screens/inspiration-chain.js?v=6d5d165659","/screens/inspiration-data.js":"/screens/inspiration-data.js?v=b870cb0027","/screens/inspiration-strings.js":"/screens/inspiration-strings.js?v=963b6d1355","/screens/map-live.js":"/screens/map-live.js?v=229d142f64","/screens/map-static.js":"/screens/map-static.js?v=270410e88f","/screens/map.js":"/screens/map.js?v=0623c458ce","/screens/pending-state.js":"/screens/pending-state.js?v=4a8a79f431","/screens/share-ext.js":"/screens/share-ext.js?v=b64c731387","/screens/stories-demo-home.js":"/screens/stories-demo-home.js?v=121b109219","/screens/stories-demo-library.js":"/screens/stories-demo-library.js?v=9d80a801a2","/screens/stories-demo-map.js":"/screens/stories-demo-map.js?v=17db08d328","/screens/stories-demo-paywall.js":"/screens/stories-demo-paywall.js?v=58fbe0ec90","/screens/stories-demo-plan.js":"/screens/stories-demo-plan.js?v=5291740d88","/screens/stories-map.js":"/screens/stories-map.js?v=4532c86530","/screens/stories-plan.js":"/screens/stories-plan.js?v=1ff6396919","/screens/stories-tools.js":"/screens/stories-tools.js?v=06af332914","/screens/stories.js":"/screens/stories.js?v=e8193cb5be","/screens/tools.js":"/screens/tools.js?v=6273dbcff9","/screens/type-picker.js":"/screens/type-picker.js?v=105b6ed75a","/screens/zoom.js":"/screens/zoom.js?v=02ec7a2682","/trip/app.js":"/trip/app.js?v=ead80965c2","/trip/cloudkit.js":"/trip/cloudkit.js?v=da0e9f9ebd","/trip/config.js":"/trip/config.js?v=d7fac2d1c8","/trip/core.js":"/trip/core.js?v=49f922643b","/trip/icons.js":"/trip/icons.js?v=179e1f6e03","/trip/looks.js":"/trip/looks.js?v=d145355228","/trip/strings.js":"/trip/strings.js?v=647d020fff"}}</script><!-- stamp-screens:end -->
+<meta name="viewport" content="width=402">
+<title>AI 規劃行程流程動畫</title>
+<!--
+  1.11.0「AI 規劃行程」流程動畫（App：Modules/PlanningCanvas）。官網首頁的 AI 段與商城第 2 張共用這一支。
+  一輪 13.9 秒：三張截圖（長榮 BR132 登機證、JR 關西廣域周遊券、USJ 門票）一張張疊上畫布 → 其他卡片 → 點送出 → 讀取清單 → 預覽甩上來 →
+  點〔套用〕→ 已套用 → 點 ✕ → 行事曆一筆筆排好 → 淡出重播。
+  參數：?lang=zh-Hant-TW|zh-Hans|en|ja|ko　?device=ipad|duo（對話紙在寬螢幕是靠側邊的紙）
+        ?t=<秒> 停在那一秒（截圖與商城用；時間軸見 opAt）　still=1 或系統「減少動態」→ 停在最後的行事曆
+  畫面取自 Open Design 定稿 z-1110-flow／z-ai-unified-1110（畫布、讀取、預覽、已套用）與 z-1110-onb-calendar（行事曆）。
+  字：ai-flow-strings.js，五語。App 字串表有的照抄，示範內容（截圖、AI 回覆、旅程資料）是擬的。
+-->
+<link rel="stylesheet" href="screen.css?v=7e1e128cfb">
+<link rel="stylesheet" href="ai-flow.css?v=462396fe8d">
+<style>
+  /* ── 行事曆（旅程分頁，取自 calendar.html，示範資料是京都第 2 天） ── */
+  .head { position: absolute; left: 20px; top: 74px; width: 314px; }
+  .greet { font-size: var(--t-xs); line-height: 14px; color: var(--muted); letter-spacing: .24px; }
+  .title { margin-top: 2px; font: 600 var(--t-xxl)/34px var(--font); letter-spacing: -.59px; white-space: nowrap; }
+  .head-act { position: absolute; left: 346px; top: 70px; width: 44px; height: 44px; display: grid; place-items: center; color: var(--ink); }
+  .head-act svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .chips { position: absolute; top: 138px; left: 4px; display: flex; gap: 8px; white-space: nowrap; }
+  .chip { height: 44px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--sunken); display: flex; flex-direction: column; justify-content: center; gap: 1px; }
+  .chip b { font: 600 var(--t-sm)/16px var(--font); color: var(--muted-on-sunken); display: flex; align-items: center; gap: 6px; }
+  .chip span { font: 400 var(--t-xs)/14px var(--font); color: var(--muted-on-sunken); }
+  .chip.on { background: var(--ink); border-color: var(--ink); }
+  .chip.on b { color: var(--card); font-weight: 700; }
+  .chip.on span { color: color-mix(in oklch, var(--card) 28%, var(--ink)); }
+  .chip i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .allday { position: absolute; top: 186px; left: 0; right: 0; padding: 8px 20px 6px 52px; border-bottom: 1px solid var(--border-soft); background: var(--card); }
+  .allday-label { position: absolute; left: 0; width: 44px; text-align: right; top: 13px; font-size: var(--t-xs); line-height: 20px; color: var(--muted); }
+  .ad { position: relative; min-height: 36px; border: 1px solid var(--sw-stroke); border-radius: 8px; background: var(--sw-fill); overflow: hidden; display: flex; align-items: center; padding: 0 22px 0 14px; font: 600 var(--t-sm)/18px var(--font); color: var(--ink); }
+  .ad::before, .ev::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--sw-base); }
+  .grid { position: absolute; left: 0; right: 0; bottom: 0; top: 277px; overflow: hidden; }
+  .hour { position: absolute; left: 0; right: 0; height: 0; }
+  .hour::after { content: ""; position: absolute; left: 64px; right: 0; top: 0; border-top: 1px solid var(--border-soft); }
+  .hour span { position: absolute; left: 0; width: 44px; text-align: right; top: -8px; font-size: var(--t-xs); line-height: 16px; color: var(--muted); }
+  .route { position: absolute; left: 227.5px; width: 2px; background: var(--muted); }
+  .ev { position: absolute; left: 56px; right: 20px; border: 1px solid var(--sw-stroke); border-radius: 8px; background: var(--sw-fill); overflow: hidden; padding: 0 10px 0 14px; }
+  .ev .t { margin-top: -1px; font: 600 var(--t-sm)/17px var(--font); color: var(--ink); }
+  .ev .m { font: 400 var(--t-xs)/16px var(--font); color: var(--muted); }
+  .fab { position: absolute; left: 335px; top: 728px; width: 50px; height: 50px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; z-index: 30; box-shadow: 0 0 0 1px color-mix(in srgb, var(--page) 90%, transparent), 0 6px 16px rgba(var(--shadow-rgb),.18); }
+  .fab svg { width: 24px; height: 24px; fill: none; stroke: var(--on-accent); stroke-width: 2.2; stroke-linecap: round; }
+  .scrim { position: absolute; left: 0; right: 0; top: 760px; bottom: 0; z-index: 20; background: linear-gradient(to bottom, color-mix(in srgb, var(--page) 0%, transparent), var(--page) 30px); }
+  .ipad .head { top: 108px; width: auto; right: 76px; } .ipad .head-act { left: 976px; top: 104px; } .ipad .chips { top: 172px; } .ipad .allday { top: 220px; }
+  .ipad .route { left: 542.5px; } .ipad .fab { left: 965px; top: 1293px; } .ipad .scrim { display: none; }
+  .duo .head { top: 12px; width: auto; right: 146px; } .duo .head-act { left: 811px; top: 8px; } .duo .chips { top: 76px; } .duo .allday { top: 124px; right: 84px; } .duo .grid { right: 84px; }
+  .duo .route { left: 460px; } .duo .fab { left: 800px; top: 572px; } .duo .scrim { display: none; }
+
+  /* ── AI 畫布：寬螢幕（iPad／Duo）的版面 ──
+     App 沒有 iPad 專屬版型；定稿 ⑨⑪：對話紙在 regular width 是靠側邊的紙（同樣毛玻璃），標題模型膠囊在兩顆圓鈕之間，
+     附件列與對話框在底部限讀寬置中；Duo 的紙讓到摺線（x 455.5–495.5）左邊，內容避開右側 84pt 的垂直列。 */
+  .ipad .scn .gtop { top: 40px; } .ipad .scn .vtool { right: 20px; }
+  .ipad .scn .dock { padding-bottom: 14px; left: 50%; right: auto; width: 640px; transform: translateX(-50%); border-radius: 22px 22px 0 0; border: 1px solid var(--border-soft); border-bottom: 0; }
+  .ipad .scn.sheeted .dock { left: auto; right: 20px; transform: none; width: 460px; bottom: 20px; border-radius: 0 0 30px 30px; z-index: 38; border: 0; border-top: .5px solid var(--border); }
+  .ipad .scn .csheet { left: auto; right: 20px; width: 460px; top: 96px !important; bottom: 20px; border-radius: 30px; }
+  .ipad .scn .csheet.ap { top: auto !important; bottom: 100px; }
+  .ipad .scn.sheeted .vtool { right: 500px; }
+  .duo .scn .gtop { top: 12px; left: 20px; right: 104px; } .duo .scn .vtool { right: 104px; }
+  .duo .scn .dock { padding: 10px 20px 14px; left: 0; right: 84px; }
+  .duo .scn.sheeted .dock { left: 20px; right: auto; width: 420px; bottom: 8px; border-radius: 0 0 24px 24px; z-index: 38; border: 0; border-top: .5px solid var(--border); }
+  .duo .scn .csheet { left: 20px; right: auto; width: 420px; top: 66px !important; bottom: 8px; border-radius: 24px; }
+  .duo .scn.sheeted .vtool { right: 104px; }
+  .duo .scn .gtop .sp { width: 46px; }
+  .scn .tray .tsc { gap: 8px; }
+  .od-strip { will-change: transform; }
+  html.is-interactive #d { pointer-events: none; }
+</style>
+</head>
+<body>
+<div class="device" id="d"></div>
+<script type="module">
+import { params, lang, fmt, HANS_MODE, ipad, duo, chrome, ready, swatchClass, loadCategories, categoryName } from './chrome.js';
+import { strings } from './ai-flow-strings.js';
+
+const S = strings(HANS_MODE ? 'zh-Hans' : lang);
+const d = document.getElementById('d');
+const LOOP = 13900;
+const FREEZE = params.get('t') === null ? -1 : parseFloat(params.get('t')) * 1000;
+const STILL = params.get('still') === '1' || matchMedia('(prefers-reduced-motion: reduce)').matches;
+await loadCategories();
+const cat = categoryName;
+
+const ic = (p) => `<svg class="ln" viewBox="0 0 24 24">${p}</svg>`;
+const I = {
+  img: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 16 5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="9.5" r="1.4"/>',
+  pdf: '<path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h4"/>',
+  text: '<path d="M5 6h14M5 10h14M5 14h10M5 18h7"/>',
+  url: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/>',
+  bulb: '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5c0-.9.5-1.7 1.1-2.2A6 6 0 0 0 12 3z"/>',
+  x: '<path d="M6 6l12 12M18 6 6 18"/>', chev: '<path d="m9 5 7 7-7 7"/>', check: '<path d="m5 13 5 5 9-11"/>', plus: '<path d="M12 5v14M5 12h14"/>',
+  clip: '<path d="M20 11.5 12.2 19.3a5 5 0 0 1-7.1-7.1l8-8a3.4 3.4 0 0 1 4.8 4.8l-8 8a1.7 1.7 0 0 1-2.4-2.4L15 7.1"/>',
+  tbox: '<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M8 9.5h8M12 9.5V16"/>',
+  link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+  cloud: '<path d="M7 18h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.1 9.2 4.4 4.4 0 0 0 7 18z"/><rect x="10" y="12" width="4" height="3.5" rx=".6"/><path d="M10.8 12v-1a1.2 1.2 0 0 1 2.4 0v1"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.6v.4"/>',
+  cal: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/>',
+  kbd: '<rect x="2.5" y="6" width="19" height="12.5" rx="2.5"/><path d="M6.5 10h.01M10 10h.01M14 10h.01M17.5 10h.01M6.5 13.5h.01M17.5 13.5h.01M9.5 14.5h5"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>',
+  rain: '<path d="M7 15a4.4 4.4 0 0 1-.5-8.8A6 6 0 0 1 18 7.5a3.8 3.8 0 0 1-.5 7.5z"/><path d="M8 18l-1 2.5M12 18l-1 2.5M16 18l-1 2.5"/>',
+  note: '<path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M8.5 12.5h7M8.5 16.5h5"/>',
+};
+const PLANE = '<path d="M13.5 3.6a1.5 1.5 0 0 0-3 0v5.3L3 13.5v2.3l7.5-2.2v4.6l-2.2 1.6V21l3.7-1 3.7 1v-1.2l-2.2-1.6v-4.6l7.5 2.2v-2.3l-7.5-4.6z"/>';
+const BED = '<path d="M2 5.4h2.4v9.2H2z"/><path d="M2 16.2h20v3.2H2z"/><path d="M6.2 9.4h13a2.8 2.8 0 0 1 2.8 2.8v2.4H6.2z"/><circle cx="9" cy="10.8" r="2.4"/>';
+const TKT = '<path d="M2 5.6h20v4.2a2.2 2.2 0 0 0 0 4.4v4.2H2v-4.2a2.2 2.2 0 0 0 0-4.4z"/>';
+const SPIN = '<span class="mini-spin"></span>';
+
+// ── 卡片位置（畫布座標，.lay 左上為原點）：iPhone 照定稿；iPad／Duo 攤開 ──
+const POS = ipad ? { pile: [30, 12], pdf: [200, 18], t1: [370, 12], url: [200, 215], insp: [370, 160], t2: [30, 262] }
+  : duo ? { pile: [44, 0], pdf: [190, 6], t1: [190, 182], url: [20, 232], insp: [20, 340], t2: [520, 0] }
+  : { pile: [16, 8], pdf: [184, 14], t1: [184, 176], url: [16, 228], insp: [16, 372], t2: [184, 350] };
+const cardPos = (k, extra = '') => `style="left:${POS[k][0]}px;top:${POS[k][1]}px;${extra}"`;
+
+const tickets = [
+  `<div class="tk bp"><div class="hd"><span>${S.tkAir}</span><span>${S.tkBoard}</span></div><div class="rt"><b>TPE</b><i></i><b>KIX</b></div><div class="mt"><span>BR132</span><span>11/26 08:50</span></div><div class="mt"><span>${S.tkSeat}</span><span>${S.tkGate}</span></div><div class="bc"></div></div>`,
+  `<div class="tk jr"><div class="hd"><span>JR WEST</span><span>${S.tkJr5}</span></div><b class="big">${S.tkJrName}</b><div class="mt"><span>11/26 – 11/30</span><span>${S.tkAdult}</span></div><div class="mg"></div></div>`,
+  `<div class="tk usj"><div class="hd"><span>USJ</span><span>${S.tkUsj1}</span></div><div class="qr"></div><div class="mt"><span>11/29</span><span>${S.tkUsjPax}</span></div></div>`,
+];
+const FAN = [[0, 0, -8], [10, 2, 6], [4, 14, 0]];
+const STAMP = `<div class="stamp a" style="font-size:9px"><span>${S.stamp}</span></div>`;
+
+const canvasBg = (stamped) => {
+  const st = stamped ? STAMP : '';
+  const pile = `<div class="pile" ${cardPos('pile')}>` + tickets.map((tk, i) =>
+    `<div class="cc" data-pile="${i}" style="left:${FAN[i][0]}px;top:${FAN[i][1]}px;z-index:${8 + i};transform:rotate(${FAN[i][2]}deg)"><div class="th shot tall od-tk">${tk}</div>${st}<div class="bd"><div class="kd">${ic(I.img)}${S.kScreenshot}</div><div class="tx b">11/20 14:0${[2, 5, 9][i]}</div></div></div>`).join('') + `<span class="pbadge" data-badge>3</span></div>`;
+  return `<div class="free"><div class="lay">${pile}
+    <div class="cc" data-item ${cardPos('pdf')}><div class="th pg"><span class="pgp"><i class="t"></i><i></i><i></i><i style="width:70%"></i><i></i><i style="width:55%"></i></span></div>${st}<div class="bd"><div class="kd">${ic(I.pdf)}${S.kPdf}</div><div class="tx b">${S.pdfName}</div></div></div>
+    <div class="cc" data-item ${cardPos('t1')}>${st}<div class="bd"><div class="kd">${ic(I.text)}${S.kText}</div><div class="tx">${S.textDay2}</div></div></div>
+    <div class="cc" data-item ${cardPos('url')}>${st}<div class="bd"><div class="kd">${ic(I.url)}${S.kUrl}</div><div class="tx b">${S.urlTitle}</div><div class="dom">travel.example.com</div></div></div>
+    <div class="cc" data-item ${cardPos('insp')}><div class="th" style="background:linear-gradient(160deg,#e7d3b8,#b98f6a)"></div>${st}<div class="bd"><div class="kd">${ic(I.bulb)}${S.kInsp}</div><div class="tx b">${S.inspName}</div></div></div>
+    <div class="cc" data-item ${cardPos('t2')}>${st}<div class="bd"><div class="kd">${ic(I.text)}${S.kText}</div><div class="tx">${S.textDay3}</div></div></div>
+  </div></div>`;
+};
+const top = `<div class="gtop"><span class="gcirc glass" data-close>${ic(I.x)}</span><span class="gtabs"><span class="mcap glass pq">${ic(I.cloud)}<span class="mt"><span class="qbar sm"><i class="on"></i><i class="on"></i><i></i></span></span>${ic(I.chev).replace('class="ln"', 'class="ln dn"')}</span></span><span class="sp"></span></div>`;
+const vtool = (topPx) => `<div class="vtool glass" style="top:${topPx}px">${ic(I.clip)}${ic(I.img)}${ic(I.tbox)}${ic(I.link)}${ic(I.bulb)}<span class="sep"></span><span class="colb">${ic(I.chev)}</span></div>`;
+const snb = `<div class="snb"><span class="snt"><b>Apple® Private Cloud Compute</b></span><span class="sni">${ic(I.info)}</span></div>`;
+const BUB = '<div class="bub"><i style="left:26px;width:12px;height:12px;--dx:2px;animation-delay:0s"></i><i style="left:8px;width:9px;height:9px;--dx:-6px;animation-delay:.7s"></i><i style="left:36px;width:14px;height:14px;--dx:8px;animation-delay:1.4s"></i><i style="left:14px;width:10px;height:10px;--dx:-2px;animation-delay:2.1s"></i></div>';
+
+const chipsHtml = `<div class="tray"><div class="tsc">
+  <span class="tchip" data-chip="0"><span class="tth shot"></span><span class="tct">11/20 14:02</span><span class="n" data-n>3</span>${ic(I.x).replace('class="ln"', 'class="ln x"')}</span>
+  <span class="tchip" data-chip="1"><span class="tth pdf">${ic(I.pdf)}</span><span class="tct">${S.pdfShort}</span>${ic(I.x).replace('class="ln"', 'class="ln x"')}</span>
+  <span class="tchip" data-chip="2"><span class="tth">${ic(I.text)}</span><span class="tct">${S.textDay2Short}</span>${ic(I.x).replace('class="ln"', 'class="ln x"')}</span>
+  <span class="tchip" data-chip="3"><span class="tth">${ic(I.url)}</span><span class="tct">${S.urlShort}</span>${ic(I.x).replace('class="ln"', 'class="ln x"')}</span>
+  <span class="tchip" data-chip="4"><span class="tth img"></span><span class="tct">${S.inspShort}</span>${ic(I.x).replace('class="ln"', 'class="ln x"')}</span>
+  <span class="tchip" data-chip="5"><span class="tth">${ic(I.text)}</span><span class="tct">${S.textDay3Short}</span>${ic(I.x).replace('class="ln"', 'class="ln x"')}</span>
+</div></div>`;
+const compIdle = `<div class="comp"><span class="pls">${ic(I.plus)}</span><span class="tf2">${S.placeholder}</span><span class="sd2" data-send>↑${BUB}</span></div>`;
+
+const rd = (th, name, sub) => `<div class="rd">${th}<span class="bt"><b>${name}</b><small>${sub}</small></span></div>`;
+const shotTh = '<span class="tth shot"></span>';
+const readHtml = `<div class="chat"><div class="u">${S.userMsg}</div>  <div class="ccard"><div class="ch">${S.found}</div>
+  ${rd(shotTh, S.rdAir, S.rdAirSub)}${rd(shotTh, S.rdJr, S.rdJrSub)}${rd(shotTh, S.rdUsj, S.rdUsjSub)}
+  ${rd(`<span class="tth pdf">${ic(I.pdf)}</span>`, S.pdfName, S.rdPdfSub)}${rd(`<span class="tth">${ic(I.url)}</span>`, S.urlTitle, S.rdUrlSub)}</div>
+  <div class="a"><div class="aith" role="status">${SPIN}<span class="shim">${S.reading(3)}</span></div><div class="steps">
+  <div>${ic(I.check)}${S.st1}</div><div>${ic(I.check)}${S.st2}</div><div>${ic(I.check)}${S.st3}</div><div>${SPIN}${S.st4}</div>
+  <div class="w"><span style="width:18px;flex:none"></span>${S.st5}</div><div class="w"><span style="width:18px;flex:none"></span>${S.st6}</div></div></div></div>`;
+
+const ck = (on) => `<span class="ck${on ? ' on' : ''}">${on ? ic(I.check) : ''}</span>`;
+const ty = (bg, p) => `<span class="ty" style="background:var(--${bg})"><svg viewBox="0 0 24 24">${p}</svg></span>`;
+const prow = (on, tyHtml, title, sub, tm, extra = '') => `<div class="bprev">${ck(on)}${tyHtml}<span class="bt"><b>${extra}<span class="t">${title}</span></b>${sub ? `<small>${sub}</small>` : ''}</span><span class="tm${tm === S.allday ? ' all' : ''}">${tm}</span>${ic(I.chev).replace('class="ln"', 'class="ln chev"')}</div>`;
+const orig = `<span class="orig">${S.asLiteral}</span>`;
+const day = (n, i, wx) => `<div class="bday">${S.dayHead(n, `11/${25 + n}`, S.wd[i])}<span class="wx">${wx}</span></div>`;
+const wxS = ic(I.sun) + S.wxClear, wxR = ic(I.rain) + S.wxRain;
+const clr = `<div class="clrdiv"><span class="cl">${S.clear}</span></div>`;
+const preview1 = `<div class="chat"><div class="a">${S.aiReply}</div><div class="pvbox">
+  <div class="bprev">${ck(1)}<span class="tyc">${ic(I.cal)}</span><span class="bt"><b><span class="chg mod">${S.chgModify}</span><span class="t">${S.tripDates}</span></b><small>${S.tripDatesVal}</small></span><span class="tm"></span>${ic(I.chev).replace('class="ln"', 'class="ln chev"')}</div>
+  ${day(1, 0, wxS)}${prow(1, ty('ty-move', PLANE), S.flight1, S.tpeKix, '08:50')}  ${day(2, 1, wxR)}${prow(1, ty('ty-see', TKT), S.kiyomizu, '', '09:00', '')}${prow(1, ty('ty-see', TKT), S.ninen, '', '10:30')}
+  <div class="gap">${S.gap}</div>${prow(1, ty('ty-see', TKT), S.nishiki, '', '13:00')}${prow(1, ty('ty-see', TKT), S.fushimi, '', '15:00')}
+  <div class="more">${S.more35}</div></div>${clr}</div>`;
+const preview2 = `<div class="chat" style="margin-top:12px"><div class="pvbox">
+  ${day(5, 4, wxS)}${prow(1, ty('ty-see', TKT), S.bamboo, S.bambooSub, '09:00')}${prow(1, ty('ty-move', PLANE), S.flight2, S.kixTpe, '13:30')}
+  <div class="notecard">${ic(I.note)}<span><b>${S.noteTitle}</b><small>${S.noteBody}</small></span>${ck(1)}</div>
+  <div class="bday">${S.notPlaced}</div>${prow(0, ty('ty-see', TKT), S.sagano, S.saganoSub, '')}${prow(1, ty('ty-see', TKT), S.eikando, S.urlShort, '')}${prow(0, ty('ty-see', TKT), S.tofuku, S.urlShort, '')}</div>${clr}</div>`;
+const appliedHtml = `<div class="chat"><div class="pvbox done"><div class="ph"><span>${S.preview}</span><b>${S.applied}</b></div>
+  <div class="bprev">${ck(1)}<span class="tyc">${ic(I.cal)}</span><span class="bt"><b><span class="chg mod">${S.chgModify}</span><span class="t">${S.tripDates}</span></b><small>${S.tripDatesVal}</small></span><span class="tm"></span>${ic(I.chev).replace('class="ln"', 'class="ln chev"')}</div>
+  <div class="more">${S.more15}</div></div><div class="a">${S.added(12)}<span class="lk">${S.view}</span></div>${clr}</div>`;
+
+const layerCanvas = `<div class="scn" data-ly="canvas"><div class="cnv g">${canvasBg(false)}${top}${vtool(ipad ? 270 : duo ? 150 : 299)}<div class="dock">${chipsHtml}${compIdle}</div></div></div>`;
+const layerRead = `<div class="scn sheeted" data-ly="read"><div class="cnv g busy">${canvasBg(false)}${top}<div class="csheet gl" style="top:58px"><div class="grabber"></div>${snb}<div class="od-strip" data-strip-read>${readHtml}</div></div>
+  <div class="dock"><div class="comp dis busy"><span class="pls">${ic(I.plus)}</span><span class="tf2">${S.placeholder}</span><span class="sd2 stop"><i></i></span></div></div></div></div>`;
+const layerPreview = `<div class="scn sheeted" data-ly="preview"><div class="cnv g">${canvasBg(true)}${top}<div class="csheet gl" style="top:58px"><div class="grabber"></div>${snb}<div class="od-strip" data-strip>${preview1}</div></div>
+  <div class="dock"><div class="actbar"><span class="tog">${ic(I.kbd)}</span><span class="btn-primary" data-apply>${S.applyN(12)}</span></div></div></div></div>`;
+const layerApplied = `<div class="scn sheeted" data-ly="applied"><div class="cnv g">${canvasBg(true)}${top}${ipad || duo ? '' : vtool(123)}<div class="csheet gl ap" style="top:400px"><div class="grabber"></div>${appliedHtml}</div>
+  <div class="dock"><div class="comp"><span class="pls">${ic(I.plus)}</span><span class="tf2">${S.placeholder}</span><span class="sd2 off">↑</span></div></div></div></div>`;
+
+// ── 行事曆 ──
+const hm = (h, m) => (h ? `${h}${{ en: ' h', ja: '時間', ko: '시간' }[lang] ?? ' 小時'}` : '') + (h && m ? ' ' : '') + (m ? `${m}${{ en: ' min', ja: '分', ko: '분' }[lang] ?? ' 分'}` : '');
+const dur = (h, m) => HANS_MODE ? hm(h, m).replace('小時', '小时') : hm(h, m);
+const calChips = () => {
+  const t = [ { 'zh-Hant-TW': '今天', 'zh-Hans': '今天', en: 'Today', ja: '今日', ko: '오늘' }[HANS_MODE ? 'zh-Hans' : lang],
+    n => ({ 'zh-Hant-TW': `第 ${n} 天`, 'zh-Hans': `第 ${n} 天`, en: `Day ${n}`, ja: `${n} 日目`, ko: `${n}일차` }[HANS_MODE ? 'zh-Hans' : lang]) ];
+  const wk = S.wd;
+  let h = '';
+  for (let n = 1; n <= 5; n++) {
+    const date = lang === 'ko' && !HANS_MODE ? `11. ${25 + n}.` : `11/${25 + n}`;
+    h += `<div class="chip${n === 2 ? ' on' : ''}"><b>${n === 1 ? '<i></i>' + t[0] : t[1](n)}</b><span>${date} ${wk[n - 1]}</span></div>`;
+  }
+  return h;
+};
+const TOPH = 9, H = 66, yy = (h, m) => 33.5 + (h + m / 60 - TOPH) * H, p2 = n => (n < 10 ? '0' : '') + n;
+const EVS = [[9, 0, 10, 15, S.kiyomizu, 'temple', 'see'], [10, 30, 12, 0, S.ninen, 'sight', 'see'], [13, 0, 14, 15, S.nishiki, 'market', 'eat'], [15, 0, 16, 30, S.fushimi, 'temple', 'see']];
+const place = { 'zh-Hant-TW': ['清水寺（京都府 京都市）', '二年坂（京都府 京都市）', '錦市場（京都府 京都市）', '伏見稻荷大社（京都府 京都市）'], 'zh-Hans': ['清水寺（京都府 京都市）', '二年坂（京都府 京都市）', '锦市场（京都府 京都市）', '伏见稻荷大社（京都府 京都市）'],
+  en: ['Kiyomizu-dera, Kyoto', 'Ninenzaka, Kyoto', 'Nishiki Market, Kyoto', 'Fushimi Inari Taisha, Kyoto'], ja: ['清水寺（京都府 京都市）', '二年坂（京都府 京都市）', '錦市場（京都府 京都市）', '伏見稲荷大社（京都府 京都市）'], ko: ['기요미즈데라 (교토부 교토시)', '니넨자카 (교토부 교토시)', '니시키 시장 (교토부 교토시)', '후시미 이나리 신사 (교토부 교토시)'] }[HANS_MODE ? 'zh-Hans' : lang];
+let calEv = '', prev = -1;
+EVS.forEach(([a, b, c, e, name, ct, sw], i) => {
+  const tp = yy(a, b) + 3, ht = yy(c, e) - yy(a, b) - 6, mins = c * 60 + e - a * 60 - b;
+  calEv += `<div class="ev ${swatchClass(sw === 'eat' ? 'dining' : 'sight')}" data-ev="${i}" style="top:${tp}px;height:${ht}px"><div class="t">${name}</div><div class="m">${p2(a)}:${p2(b)} <span class="lt">–</span> ${p2(c)}:${p2(e)} · ${dur(Math.floor(mins / 60), mins % 60)}</div><div class="m">${cat(ct)} · ${place[i]}</div></div>`;
+  if (prev >= 0) calEv += `<div class="route" data-ev="${i}" style="top:${prev + 7}px;height:${tp - prev - 14}px"></div>`;
+  prev = tp + ht;
+});
+let hours = ''; for (let hr = TOPH - 1; hr <= 24; hr++) hours += `<div class="hour" style="top:${33.5 + (hr - TOPH) * H}px"><span>${p2(hr)}:00</span></div>`;
+const layerCal = `<div class="scn" data-ly="cal"><div class="head"><div class="greet">${S.calGreet}</div><div class="title">${S.calTitle}</div></div>
+  <div class="head-act"><svg viewBox="0 0 24 24"><path d="M8 3.6v1.7M8 9.5v5M8 18.7v1.7M12.4 7.4H20M12.4 16.6h4.8"/><circle cx="8" cy="7.4" r="2.1"/><circle cx="8" cy="16.6" r="2.1"/></svg></div>
+  <div class="chips">${calChips()}</div><div class="allday" id="allday"><div class="allday-label">${S.calAllday}</div><div class="ad ${swatchClass('hotel')}">${S.calStay}</div></div>
+  <div class="grid" id="grid">${hours}${calEv}</div><div class="fab"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><div class="scrim"></div></div>`;
+
+d.innerHTML = layerCal + layerCanvas + layerRead + layerPreview + layerApplied + '<div class="fg"><i id="fi"></i></div>';
+chrome(d, { tab: 2 });
+// 「–」「→」：Chromium 在中日文頁會用 PingFang 畫成全形，包成西文 span（chrome.js fmt 同一套）
+{
+  const w = document.createTreeWalker(d, NodeFilter.SHOW_TEXT); const hits = []; let n;
+  while ((n = w.nextNode())) if (/[–→]/.test(n.nodeValue) && !n.parentElement.closest('.lt')) hits.push(n);
+  hits.forEach(n => { const sp = document.createElement('span'); sp.innerHTML = n.nodeValue.replace(/[–→]/g, c => `<span class="lt${c === '–' ? '' : ' ar'}">${c}</span>`); n.replaceWith(...sp.childNodes); });
+}
+// 行事曆以外的畫面沒有分頁列：分頁列只在行事曆那一層出現
+const tabbar = d.querySelector('.tabbar');
+const L = Object.fromEntries([...d.querySelectorAll('[data-ly]')].map(e => [e.dataset.ly, e]));
+if (tabbar) L.cal.appendChild(tabbar);   // 分頁列跟著行事曆一起放大、淡出
+const grid = d.querySelector('#grid'), allday = d.querySelector('#allday');
+grid.style.top = (allday.getBoundingClientRect().bottom - d.getBoundingClientRect().top) + 'px';
+// 日期籤：放不下的整顆拿掉（不畫被裁一半的）
+{ const lim = d.getBoundingClientRect().right - (ipad ? 0 : duo ? 84 : 0) - 4; d.querySelectorAll('.chips .chip').forEach(c => { if (c.getBoundingClientRect().right > lim) c.style.display = 'none'; }); }
+const lay = L.canvas.querySelector('.lay');
+// 計算 .lay 頂端（寬螢幕沒有 112 那麼低）
+const layTop = ipad ? 84 : duo ? 86 : 112;
+d.querySelectorAll('.cnv.g .free .lay').forEach(l => { l.style.top = layTop + 'px'; });
+
+// ── 時間軸（毫秒，跟 Open Design 的 z-1110-flow 同一份）──
+const fade = (t, a, b) => Math.max(0, Math.min(1, (t - a) / (b - a)));
+const decel = x => 1 - Math.pow(1 - x, 3);
+const ease = x => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+const opAt = u => ({
+  cal: u >= 10450 && u < 13500 ? 1 : u >= 13500 ? 1 - fade(u, 13500, 13900) : 0,
+  canvas: u < 4100 ? 1 : u < 4400 ? 1 - fade(u, 4100, 4400) : u >= 13500 ? fade(u, 13500, 13900) : 0,
+  read: u < 4100 ? 0 : u < 5600 ? fade(u, 4100, 4400) : 1 - fade(u, 5600, 5950),
+  preview: u < 5600 ? 0 : u < 8650 ? fade(u, 5600, 5950) : 1 - fade(u, 8650, 8950),
+  applied: u < 8650 ? 0 : u < 10850 ? fade(u, 8650, 8950) : 0,
+});
+const items = [...lay.querySelectorAll('[data-pile]'), ...lay.querySelectorAll('[data-item]')];
+const nShots = 3, chips = [...L.canvas.querySelectorAll('.tchip')], tray = L.canvas.querySelector('.tray'), badge = L.canvas.querySelector('[data-badge]');
+const chipOf = items.map((_, i) => Math.max(0, i - nShots + 1));
+const ARR = i => 300 + i * 350;
+const setItems = (u) => {
+  let shotsIn = 0; const chipP = chips.map(() => 0);
+  items.forEach((el, i) => {
+    const p = u < 0 ? 0 : fade(u, ARR(i), ARR(i) + 300), e = decel(p);
+    el.style.opacity = i < nShots ? Math.min(1, p * 2.5) : p; el.style.scale = (.8 + .2 * e).toFixed(3);
+    if (i < nShots && p > 0) shotsIn++;
+    chipP[chipOf[i]] = Math.max(chipP[chipOf[i]], p);
+  });
+  chips.forEach((c, i) => { c.style.opacity = chipP[i]; c.style.scale = (.8 + .2 * decel(chipP[i])).toFixed(3); });
+  tray.style.opacity = chipP[0] > 0 ? 1 : 0;
+  badge.style.opacity = shotsIn >= 2 ? 1 : 0; badge.textContent = shotsIn;
+  const n = chips[0].querySelector('[data-n]'); n.textContent = Math.max(1, shotsIn);
+};
+const calEls = [...d.querySelectorAll('[data-ev]')];
+const EVA = i => 10900 + i * 250;
+const setEvents = (u) => calEls.forEach(el => { const i = +el.dataset.ev, p = u < 0 ? 0 : fade(u, EVA(i), EVA(i) + 250); el.style.opacity = p; el.style.translate = '0 ' + (8 * (1 - decel(p))).toFixed(2) + 'px'; });
+const strip = L.preview.querySelector('[data-strip]'), stripRead = L.read.querySelector('[data-strip-read]');
+// 對話紙裡的捲動：內容比紙長時，只留「整列」——頂端與底端都對齊到列的邊，不讓任何一行字被切一半（使用者 2026-11-28：新介面任何語言都不准截斷）。
+// 捲動進行中（甩的那 0.4 秒）才跟著手指走，停下來就貼齊。
+class Scroller {
+  constructor(el, sheet, dock) { this.el = el; this.sheet = sheet; this.dock = dock; }
+  measure() {
+    const e = this.el, base = e.getBoundingClientRect().top;
+    this.hv = this.dock.getBoundingClientRect().top - base;          // 看得到的高度（到對話框／動作列上緣）
+    this.leaves = [...e.querySelectorAll('.u,.att,.ch,.rd,.aith,.steps > div,.a,.bprev,.bday,.notecard,.gap,.more,.clrdiv')]
+      .filter(x => !x.querySelector('.bprev,.rd,.steps > div'))
+      .map(x => { const r = x.getBoundingClientRect(); return [r.top - base, r.bottom - base]; });
+    this.total = Math.max(...this.leaves.map(l => l[1]));
+  }
+  // 從 minT 起第一個「底端不切到任何一列」的列頂
+  snapTop(minT) {
+    const tops = this.leaves.map(l => l[0]).filter(t => t >= minT - 0.5).sort((a, b) => a - b);
+    for (const t of tops) if (t + this.hv >= this.total || !this.leaves.some(l => l[0] < t + this.hv - 0.5 && l[1] > t + this.hv + 0.5)) return t;
+    return minT;
+  }
+  set(off, snap) {   // off：往上捲了多少（≥0）
+    const e = this.el; let a = off, bot = off + this.hv;
+    if (snap) { bot = Math.max(...this.leaves.filter(l => l[1] <= off + this.hv + 0.5).map(l => l[1]), off); }
+    e.style.transform = `translateY(${-off}px)`;
+    e.style.clipPath = `inset(${a}px 0 ${Math.max(0, e.offsetHeight - bot)}px 0)`;
+  }
+}
+const scPrev = new Scroller(strip, null, L.preview.querySelector('.dock')), scRead = new Scroller(stripRead, null, L.read.querySelector('.dock'));
+const calcFinal = () => { scPrev.measure(); scRead.measure(); };
+let dr = d.getBoundingClientRect();
+// 甩上去的終點：停在第 2 天第一列的上緣（不讓字被切一半）
+const at = (el) => { const r = el.getBoundingClientRect(); return [r.left - dr.left + r.width / 2, r.top - dr.top + r.height / 2]; };
+const fi = document.getElementById('fi').style;
+let posSend, posApply, posClose;
+const measure = () => { posSend = at(L.canvas.querySelector('[data-send]')); posApply = at(L.preview.querySelector('[data-apply]')); posClose = at(L.applied.querySelector('[data-close]')); };
+const finger = (pos, u, a, press, b) => {
+  if (!pos || u < a || u >= b) return false;
+  Object.assign(fi, { left: pos[0] + 'px', top: pos[1] + 'px', opacity: u < a + 100 ? fade(u, a, a + 100) : 1 - fade(u, b - 100, b), transform: `scale(${u < press ? 1 : .86})` });
+  return true;
+};
+const FROZEN = FREEZE >= 0 || STILL;
+const render = (u) => {
+  const op = opAt(u);
+  for (const [n, el] of Object.entries(L)) el.style.opacity = op[n];
+  L.applied.style.transform = `translateY(${u < 10450 ? 0 : (dr.height) * ease(fade(u, 10450, 10850))}px)`;
+  setItems(u >= 13000 ? -1 : u);
+  setEvents(u >= 10450 ? u : -1);
+  scPrev.set(0, true); scRead.set(0, true);
+  // 手指：點送出、點〔套用〕、點 ✕；加卡片那段不出手指
+  const on = finger(posSend, u, 3750, 3950, 4150) ||
+    finger(posApply, u, 8300, 8500, 8700) || finger(posClose, u, 10100, 10300, 10500);
+  if (!on) fi.opacity = 0;
+};
+// 凍結（截圖）：氣泡不動；播放中的 .bub 靠 CSS 動畫
+if (FROZEN) d.classList.add('frz');
+d.querySelectorAll('.bub').forEach(b => { if (FROZEN) b.classList.add('frz'); });
+// 寬螢幕的紙：凍結時 strip 的高度夠不夠要看版面——量完再畫
+const run = () => {
+  grid.style.top = (allday.getBoundingClientRect().bottom - d.getBoundingClientRect().top) + 'px';
+  d.querySelectorAll('.chips .chip').forEach(c => { c.style.display = ''; }); d.querySelectorAll('.chips .chip').forEach(c => { if (c.getBoundingClientRect().right > d.getBoundingClientRect().right - (duo ? 84 : 0) - 4) c.style.display = 'none'; });
+  { const tr = L.canvas.querySelector('.tsc'), lim = tr.getBoundingClientRect().right - 6; chips.forEach(c => { c.style.display = ''; }); chips.forEach(c => { if (c.getBoundingClientRect().right > lim) c.style.display = 'none'; }); }
+  if (!ipad && !duo) {   // 已套用的紙：上緣停在兩張卡之間，不切到任何一張卡的字
+    const sh = L.applied.querySelector('.csheet'), dk = L.applied.querySelector('.dock'), base = d.getBoundingClientRect().top;
+    const need = sh.querySelector('.chat').offsetHeight + 40;
+    const cards = [...L.applied.querySelectorAll('.lay > .cc, .pile')].map(c => { const r = c.getBoundingClientRect(); return [r.top - base - 16, r.bottom - base]; });
+    let top = dk.getBoundingClientRect().top - base - need - 4; // 最高能放到哪
+    const lo = 360, hi = Math.max(lo, top);
+    let best = null; for (let t = Math.ceil(lo); t <= hi; t++) if (!cards.some(c => c[0] < t - 8 && c[1] > t - 8 && c[1] - c[0] > 0)) { best = t; break; }
+    sh.style.top = (best ?? Math.max(lo, hi)) + 'px';
+  }
+  calcFinal(); measure();
+  if (FREEZE >= 0) render(Math.min(FREEZE, LOOP - 1));
+  else if (STILL) render(12500);
+  else {
+    let t0 = performance.now(), paused = false, held = 0;
+    addEventListener('message', (e) => { if (e.data?.type !== 'tz-auto-ctl') return; if (e.data.cmd === 'pause' && !paused) { paused = true; held = performance.now() - t0; } else if (e.data.cmd === 'play' && paused) { paused = false; t0 = performance.now() - held; } });
+    const frame = (now) => { if (!paused) render((now - t0) % LOOP); requestAnimationFrame(frame); };
+    requestAnimationFrame(frame);
+  }
+};
+await document.fonts.ready; await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+run();
+ready();
+</script>
+</body>
+</html>

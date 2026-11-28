@@ -342,7 +342,7 @@ const SCREEN_OF = {
   'share-location': ['share-location', ''], lock: ['lock', ''], widget: ['widget', ''],
   note: ['note', ''], fx: ['fx', ''], shop: ['shop', ''], scan: ['scan', ''],
   notes: ['notes', ''], 'scan-history': ['scan', 'hist=1'], 'fx-nokbd': ['fx', 'kbd=0'],
-  'map-live': ['map-live', 'pan=0'], 'map-route': ['map-live', 'pan=0&nav=0&today=2'], 'map-mates': ['map-live', 'pan=0&nav=0&today=2&focus=mates'], 'share-ig': ['share-ig', ''], 'share-gmap': ['share-gmap', ''], 'inspiration-flow': ['share-web', ''], inspiration: ['inspiration', ''], 'apple-calendar': ['apple-calendar', ''], siri: ['siri', ''],
+  'map-live': ['map-live', 'pan=0'], 'map-route': ['map-live', 'pan=0&nav=0&today=2'], 'map-mates': ['map-live', 'pan=0&nav=0&today=2&focus=mates'], 'share-ig': ['share-ig', ''], 'share-gmap': ['share-gmap', ''], 'ai-flow': ['ai-flow', ''], 'inspiration-flow': ['share-web', ''], inspiration: ['inspiration', ''], 'apple-calendar': ['apple-calendar', ''], siri: ['siri', ''],
 };
 const SCREEN_LANG = document.documentElement.lang === 'zh-Hans' ? 'zh-Hans' : { zh: 'zh-Hant-TW', en: 'en', ja: 'ja', ko: 'ko' }[L2];   // 簡體中文版（/zh-cn/）：畫面用 screens 的 ?lang=zh-Hans
 const [ZOOM, CLOSE, PLAYHINT] = pick({ zh: ['放大，自己玩玩看', '關閉', '親自玩玩看'], en: ['Open full screen and try it', 'Close', 'Try it yourself'], ja: ['拡大して自分で試す', '閉じる', '実際に触ってみよう'],
@@ -425,10 +425,10 @@ if (hwRoot) {
   new ResizeObserver(fitCard).observe(demo);
   render();
 }
-const DIRECT = new Set(['lock']);
+const DIRECT = new Set(['lock', 'ai-flow']);   // ai-flow：自己播的動畫，不蓋「點了全螢幕」那一層
 // autoplay.js＋stories*.js 的內容雜湊（tools/stamp-home.mjs 蓋）：帶進 iframe 網址，改了腳本手機不會用到快取裡的舊版
 const AUTO_V = '96efeeffed';
-const NO_AUTO = new Set(['note', 'members', 'lock', 'widget', 'apple-calendar', 'scan', 'fx', 'fx-nokbd', 'siri']);   // 沒有東西可演的、或使用者自己拖比較好的
+const NO_AUTO = new Set(['note', 'members', 'lock', 'widget', 'apple-calendar', 'scan', 'fx', 'fx-nokbd', 'siri', 'ai-flow']);   // 沒有東西可演的、或使用者自己拖比較好的
 addEventListener('message', (e) => {
   if (e.data?.type === 'tz-esc' && playDlg?.open) { playDlg.close(); return; }
   if (e.data?.type === 'tz-auto-hello') { for (const f of phones) if (f._fr?.contentWindow === e.source) f._auto?.apply(); return; }
@@ -463,7 +463,7 @@ const vio = new IntersectionObserver((es) => es.forEach((en) => {
   a.st.visible = en.isIntersecting; a.apply();
 }), { threshold: 0.35 });
 const phones = [...document.querySelectorAll('figure.ph.shot')].filter((f) => {
-  const m = f.querySelector('img')?.getAttribute('src')?.match(/\/shots\/v2\/\w+\/([\w-]+)\.webp$/);
+  const m = f.querySelector('img')?.getAttribute('src')?.match(/\/shots\/v2\/[\w-]+\/([\w-]+)\.webp$/);
   const key = f.dataset.screenPage || m?.[1];   // data-screen-page：圖還是舊的，畫面換成新的那一支
   if (!m || !SCREEN_OF[key]) return false;
   f.dataset.screen = key; f.classList.add('phone'); return true;

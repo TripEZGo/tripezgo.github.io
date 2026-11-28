@@ -31,6 +31,7 @@ export const SHOTS = [
   ['event', 'event', ''], ['event-extra', 'event', 'extra=1'], ['event-airport', 'event', 'event=d1-flight-tpe-okj'], ['leg', 'leg', ''],
   ['map-live', 'map-live', ''], ['map-route', 'map-live', 'nav=0&today=2'], ['map-mates', 'map-live', 'nav=0&today=2&focus=mates'], ['map', 'map', ''], ['map-place', 'map-live', 'nav=0&today=2&sel=d2-itsukushima'], ['map-store', 'map-store', ''], ['map-nav', 'map-nav', ''],
   ['share-ig', 'share-ig', ''], ['share-gmap', 'share-gmap', ''], ['inspiration-flow', 'share-web', 'step=post'], ['inspiration', 'inspiration', ''], ['apple-calendar', 'apple-calendar', ''], ['siri', 'siri', ''],
+  ['ai-flow', 'ai-flow', 't=6.2'],   // 1.11.0 首頁 AI 段的預覽圖（動畫停在預覽那一格；動畫本身是 screens/ai-flow.html）
   ['members', 'members', ''], ['share-location', 'share-location', ''], ['lock', 'lock', ''], ['widget', 'widget', ''],
 ];
 

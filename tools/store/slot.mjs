@@ -1,4 +1,4 @@
-/* 只重出商城截圖的某一格（iPhone）：node tools/store/slot.mjs <格號 01–10> <輸出目錄>
+/* 只重出商城截圖的某一格（iPhone）：node tools/store/slot.mjs <格號 01–11> <輸出目錄>
  * 跟 make.mjs 同一條路（screens.mjs render → raw → shots.html 截圖），只是不重畫其他九格、也不碰 iPad／Duo。 */
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -9,8 +9,8 @@ import { chromium } from 'playwright';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '../..');
 const [n, outDir] = process.argv.slice(2);
-const SLOTS = { '03': ['overview', 'overview-170', 'day=1', 'overview'] };   // [商城檔名, screens 頁, query, make.mjs 的 SLOTS 名]
-if (!SLOTS[n] || !outDir) { console.log('usage: node tools/store/slot.mjs 03 <輸出目錄>'); process.exit(1); }
+const SLOTS = { '04': ['overview', 'overview-170', 'day=1', 'overview'] };   // [商城檔名, screens 頁, query, make.mjs 的 SLOTS 名]
+if (!SLOTS[n] || !outDir) { console.log('usage: node tools/store/slot.mjs 04 <輸出目錄>'); process.exit(1); }
 const [name, page, query] = SLOTS[n];
 const LOCALES = { zh: 'zh-Hant', en: 'en-US', ja: 'ja', ko: 'ko' };
 const TEMPLATE_LANG = { zh: 'zh-Hant', en: 'en', ja: 'ja', ko: 'ko' };

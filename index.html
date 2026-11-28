@@ -36,8 +36,8 @@
 <meta name="twitter:title" content="TripEZGo — 旅行規劃 App｜行事曆排行程、旅伴共編">
 <meta name="twitter:description" content="TripEZGo 是 iPhone、iPad 的旅行規劃 App：行事曆排行程，時間軸排路程，旅伴共編。票券與待辦加在行程上。免註冊、離線可用、免費下載。">
 <meta name="twitter:image" content="https://tripezgo.com/assets/img/og-zh.png">
-<link rel="stylesheet" href="/assets/css/home.css?v=d22407dd4c">
-<script type="module" src="/assets/js/home.js?v=6aafc79e53"></script>
+<link rel="stylesheet" href="/assets/css/home.css?v=4c5470b150">
+<script type="module" src="/assets/js/home.js?v=2062d601be"></script>
 <script type="module" src="/assets/js/promo.js?v=5d20a329c9"></script>
 <script type="application/ld+json">
 {
@@ -320,6 +320,32 @@
     </div>
   </section>
 
+  <!-- AI 規劃行程（1.11.0，使用者 2026-11-28 裁定放在「隱私與安全」之後；手機整支置中不動，最後行事曆排好、停住、淡回畫布，沒有任何放大）：三條 AI 路、TripEZGo 免費、沒有自己的伺服器。
+       右邊的手機是 screens/ai-flow.html 的流程動畫（13.9 秒一輪；減少動態時停在行事曆）。設計稿 Open Design z-1110-marketing-site.html -->
+  <section class="section" id="ai">
+    <div class="wrap">
+      <div class="ai-band">
+        <div>
+          <h2>AI 規劃行程，<span class="nb">免費、隱私優先</span></h2>
+          <p>上傳機票、訂單紀錄或旅遊遊記自動幫你排行程。</p>
+          <div class="caps one">
+            <div class="cap"><div class="cap-head"><svg class="i"><use href="#i-cloud"/></svg>Apple Private Cloud Compute</div><p>由 Apple® 直接提供技術支援。TripEZGo 免費。</p></div>
+            <div class="cap"><div class="cap-head"><svg class="i"><use href="#i-plug"/></svg>TripEZGo MCP</div><p>讓電腦上的 AI 連進 App 幫你排。</p></div>
+            <div class="cap"><div class="cap-head"><svg class="i"><use href="#i-key"/></svg>你自己的 AI API 金鑰</div><p>支援 Claude、OpenAI、Gemini；資料直接送達 AI 供應商端。</p></div>
+          </div>
+          <p class="foot">TripEZGo 不收任何 AI 費用，也沒有架設自己的伺服器，不會轉發、保留你的任何資料。</p>
+          <details class="more"><summary>展開介紹</summary><div class="more-body">
+<p>TripEZGo 免費。Private Cloud Compute 的使用額度依你的 iCloud 方案而定，用完後可以「取得更多」，由 Apple 加量（iCloud+）。</p>
+<p>排行程中可以切到其他 App，背景繼續排。</p>
+          </div></details>
+        </div>
+        <div class="feature-media">
+          <figure class="ph shot" data-screen-page="ai-flow"><img src="/assets/img/shots/v2/zh/ai-flow.webp" width="720" height="1565" alt="AI 規劃行程：三張截圖、PDF、文字與連結丟上畫布，AI 讀完後給出可以一次套用的預覽，套用後行事曆排好第 2 天" loading="lazy"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="features">
     <div class="wrap">
       <article class="feature is-flipped">
@@ -583,21 +609,6 @@
 <p><b>Siri、Apple Intelligence</b>：問「下一個行程是什麼」，不用打開 App。</p>
 <p><b>公開分享</b>：用連結把旅程公開給所有人。只公開行程標題、地點與時間，不公開行程描述、附件與待辦。</p>
           </div></details>
-    </div>
-  </section>
-
-  <section class="section" id="ai">
-    <div class="wrap">
-      <div class="ai-band">
-        <div>
-          <h2>讓 AI <span class="nb">幫你排行程</span></h2>
-          <p>內建 MCP，連接你的 AI Agent。說「幫我排京都第二天」，行程直接寫進旅程。</p>
-          <details class="more"><summary>展開介紹</summary><div class="more-body">
-<p>手機與電腦在同一個 Wi-Fi 時，AI Agent 可以用 MCP 連接 TripEZGo，排行程、整理待辦、筆記與購物清單。</p>
-          </div></details>
-        </div>
-        <div class="demo-slot" data-lazy-demo="ai-chat"></div>
-      </div>
     </div>
   </section>
 
