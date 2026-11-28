@@ -24,6 +24,7 @@
   .ar { margin: 0 .06em; }
   html[lang="zh-Hant-TW"] .md { font-family: "PingFang TC"; }
   html[lang="ja"] .md { font-family: "Hiragino Sans"; }
+  html[lang^="ko"] .h1 { word-break: keep-all; }   /* iOS UILabel 的 lineBreakStrategy .standard 含 hangulWordPriority：韓文不在詞中斷行 */
   html[lang="ja"] .device { --font: BlinkMacSystemFont, "Hiragino Sans", sans-serif; }  /* large detent：後面那一層整片被系統壓成灰，看不到行事曆 */
   html[lang="ko"] .device { --font: BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; }
 
