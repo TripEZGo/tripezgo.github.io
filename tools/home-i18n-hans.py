@@ -59,7 +59,7 @@ TH = {
   '讓電腦上的 AI 連進 App 幫你排。': '让电脑上的 AI 连进 App 帮你排。',
   '你自己的 AI API 金鑰': '你自己的 AI API 密钥',
   '支援 Claude、OpenAI、Gemini；資料直接送達 AI 供應商端。': '支持 Claude、OpenAI、Gemini；数据直接发送到 AI 供应商。',
-  'TripEZGo 不收任何 AI 費用，也沒有架設自己的伺服器，不會轉發、保留你的任何資料。': 'TripEZGo 不收取任何 AI 费用，也没有自己的服务器，不会转发、保留你的任何数据。',
+  'TripEZGo 免費，也沒有架設自己的伺服器，不會轉發、保留你的任何資料。': 'TripEZGo 免费，也没有自己的服务器，不会转发、保留你的任何数据。',
   'TripEZGo 免費。Private Cloud Compute 的使用額度依你的 iCloud 方案而定，用完後可以「取得更多」，由 Apple 加量（iCloud+）。': 'TripEZGo 免费。Private Cloud Compute 的使用额度取决于你的 iCloud 方案，用完后可通过“获取更多”由 Apple 加量（iCloud+）。',
   '排行程中可以切到其他 App，背景繼續排。': '排行程时可以切到其他 App，后台继续排。',
   'AI 規劃行程：三張截圖、PDF、文字與連結丟上畫布，AI 讀完後給出可以一次套用的預覽，套用後行事曆排好第 2 天': 'AI 规划行程：三张截图、PDF、文字和链接放上画布，AI 读完后给出可以一次套用的预览，套用后日历排好第 2 天',

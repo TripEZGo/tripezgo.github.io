@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  TripEZGo · App Store 商城截圖（1.11.0 起順序：主頁、AI 規劃行程、行事曆、總覽、靈感、地圖、行程＋路程（兩台並排）、資料、共編、位置、即時動態；1.4.0 起分享那格併進靈感；1.3.0，2026-10-12：畫面改由官網 screens/ 的 HTML 直接產，iPhone＋iPad 各 10 張×中英日；iPad 畫面同樣出自 screens/ 的 ?device=ipad）
+  TripEZGo · App Store 商城截圖（1.11.0 起順序：主頁、AI 規劃行程、行事曆、總覽、靈感、地圖、行程＋路程（兩台並排）、資料、共編＋位置分享、即時動態；1.4.0 起分享那格併進靈感；1.3.0，2026-10-12：畫面改由官網 screens/ 的 HTML 直接產，iPhone＋iPad 各 10 張×中英日；iPad 畫面同樣出自 screens/ 的 ?device=ipad）
   原稿：Open Design appstore-2026/screenshots.html；產生：node tools/store/make.mjs <輸出目錄>
   語言（目前 zh-Hant / ja / en；ko 另外補）× 兩個裝置欄位 × 十張。
     · iPhone 6.9"  1320×2868 px   原始畫面 raw/<lang>/iphone/NN.png（1206×2622）
@@ -289,8 +289,7 @@
       ['[地圖]|每天的行程照片卡', '依上午、下午、晚上分組，附近地點與步行導航'],
       ['票券與待辦|[加在行程上]^[路程]估算交通時間', '出發前勾選待辦，路上時間自動估算'],
       ['[購物清單]|與筆記', '邊買邊勾選，記下實付金額'],
-      ['[旅伴共編]|同一趟旅程', '傳邀請連結或掃 QR Code 加入'],
-      ['旅途中|[位置分享]', '旅伴的位置顯示在地圖上'],
+      ['[一起安排]|安心出發', '旅伴一起編行程；出發後開啟位置分享，彼此照應更安心。'],
       ['[即時動態]|與 Widget', '鎖定畫面顯示下一站，不用解鎖']
     ],
     'zh-Hans': [
@@ -302,8 +301,7 @@
       ['[地图]|每天的行程照片卡', '按上午、下午、晚上分组，附近地点与步行导航'],
       ['票券和待办|[加在行程上]^[路程]估算交通时间', '出发前勾选待办，路上时间自动估算'],
       ['[购物清单]|与笔记', '边买边勾选，记下实付金额'],
-      ['[旅伴共编]|同一趟旅程', '发邀请链接或扫 QR Code 加入'],
-      ['旅途中|[位置分享]', '旅伴的位置显示在地图上'],
+      ['[一起安排]|安心出发', '旅伴一起编行程；出发后开启位置共享，彼此照应更安心。'],
       ['[实时活动]|与小组件', '锁屏显示下一站，不用解锁']
     ],
     'ja': [
@@ -315,8 +313,7 @@
       ['[地図]に|毎日の予定を写真カードで', '午前・午後・夜に分けて、近くの場所と徒歩ナビ'],
       ['チケットとやることを|[予定に追加]^[移動]で所要時間を見積もり', '出発前にやることをチェック、移動時間は自動で計算'],
       ['[買い物リスト]|とメモ', '買いながらチェック、支払額も記録'],
-      ['[旅の仲間]と|共同編集', '招待リンクか QR コードで参加'],
-      ['旅程中は|[位置の共有]', '旅の仲間の位置が地図に表示されます'],
+      ['[一緒に組んで]、|安心して出発', '旅の仲間と一緒に予定を組み、出発後は現在地を共有して、お互いに安心。'],
       ['[ライブアクティビティ]と^ウィジェット', 'ロック画面に次の行き先。ロック解除は不要']
     ],
     'en': [
@@ -328,8 +325,7 @@
       ['The [map] shows |each day as photo cards', 'Grouped by morning, afternoon and evening, with nearby places and walking directions'],
       ['Tickets and to-dos |[added to the event]^[Legs] estimate travel time', 'Tick to-dos before you leave. Travel time is estimated automatically'],
       ['[Shopping list] |and notes', 'Tick items as you buy, and record what you paid'],
-      ['[Companion co-editing] |on one trip', 'Send an invite link or scan a QR code to join'],
-      ['During the trip, |[location sharing]', 'Companions’ locations appear on the map'],
+      ['Plan together, |[go with peace of mind]', 'Companions edit the plan together; once you set off, share your locations to look out for each other.'],
       ['[Live Activity] |and widgets', 'The next stop on the Lock Screen. No unlock needed']
     ],
     /* 韓文：照中文那組的意思寫，用詞照 App 韓文字串表與 fastlane/metadata/ko（동행、공동 편집、미정、자료、도구、위치 공유、
@@ -343,12 +339,11 @@
       ['[지도]에 |하루 일정을 사진 카드로', '오전·오후·저녁으로 나누고, 주변 장소와 도보 길 안내'],
       ['승차권과 할 일을 |[일정에 추가]^[이동]으로 시간 추정', '출발 전에 할 일을 체크하고, 이동 시간은 자동으로 추정'],
       ['[쇼핑 목록]과 |메모', '사면서 체크하고, 낸 금액도 기록'],
-      ['[동행]과 |공동 편집', '초대 링크나 QR 코드로 참여'],
-      ['여행 중에는 |[위치 공유]', '동행의 위치가 지도에 표시돼요'],
+      ['함께 짜고, |[마음 편히 떠나요]', '동행과 함께 일정을 짜고, 출발한 뒤에는 위치를 공유해 서로 더 든든하게.'],
       ['[라이브 액티비티]와 |위젯', '잠금 화면에 다음 장소, 잠금 해제 불필요']
     ]
   };
-  var N = 11, PREMIUM = 10, PAIR = 6;   /* 第 7 張（行程＋路程）兩支並排；第 11 張（即時動態）掛 Premium 標籤（1.11.0：第 2 張插入 AI 規劃行程） */
+  var N = 10, PREMIUM = 9, PAIR = 6;   /* 第 7 張（行程＋路程）兩支並排；第 10 張（即時動態）掛 Premium 標籤（1.11.0：第 2 張插入 AI 規劃行程、共編與位置分享併成第 9 張） */
   var LANGS = ['zh-Hant', 'zh-Hans', 'ja', 'en', 'ko'];
   var LANG_NAME = { 'zh-Hant': '繁體中文', 'zh-Hans': '简体中文', 'ja': '日本語', 'en': 'English', 'ko': '한국어' };
   var DEVICES = {
@@ -382,7 +377,7 @@
     var cjk = (lang === 'zh-Hant' || lang === 'zh-Hans' || lang === 'ja');
     /* 有手動斷點：行數就是段數；沒有：中日一行放完，英韓最多兩行 */
     var maxT = t.segs > 1 ? t.segs : (cjk ? 1 : 2);
-    var maxS = cjk ? 1 : 2;
+    var maxS = cjk && !(lang === 'ja' && i === 8) ? 1 : 2;   /* 日文共編那格的副標（welcome.demo.mates.detail）太長，允許兩行 */
 
     var sec = document.createElement('section');
     sec.className = 'shot n' + n + ((i + 1) % 2 === 0 ? ' even' : '');

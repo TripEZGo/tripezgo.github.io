@@ -68,8 +68,8 @@ const T = {
   wd: [['四', '五', '六', '日', '一'], ['四', '五', '六', '日', '一'], ['Thu', 'Fri', 'Sat', 'Sun', 'Mon'], ['木', '金', '土', '日', '月'], ['목', '금', '토', '일', '월']],
   wxClear: ['晴', '晴', 'Clear', '晴れ', '맑음'],                                           // [App] home.weather.condition.clear
   wxRain: ['下午雨', '下午雨', 'PM rain', '午後は雨', '오후 비'],
-  flight1: ['BR132 台北 → 大阪關西', 'BR132 台北 → 大阪关西', 'BR132 Taipei → Osaka Kansai', 'BR132 台北 → 大阪関西', 'BR132 타이베이 → 오사카 간사이'],
-  flight2: ['BR131 大阪關西 → 台北', 'BR131 大阪关西 → 台北', 'BR131 Osaka Kansai → Taipei', 'BR131 大阪関西 → 台北', 'BR131 오사카 간사이 → 타이베이'],
+  flight1: ['BR132 台北 → 大阪關西', 'BR132 台北 → 大阪关西', 'BR132 Taipei → Osaka Kansai', 'BR132 台北 → 大阪関西', 'BR132 타이베이 → 간사이'],
+  flight2: ['BR131 大阪關西 → 台北', 'BR131 大阪关西 → 台北', 'BR131 Osaka Kansai → Taipei', 'BR131 大阪関西 → 台北', 'BR131 간사이 → 타이베이'],
   hotel: ['Hotel 京都三條', 'Hotel 京都三条', 'Hotel Kyoto Sanjo', 'ホテル京都三条', '호텔 교토 산조'],
   hotelSub: ['入住 3 晚', '入住 3 晚', '3 nights', '3泊', '3박'],                           // [App] label.checkin 是「入住」，這裡是行內說明
   allday: ['全日', '全天', 'All day', '終日', '하루 종일'],                                  // [App] preview.allday
